@@ -93,6 +93,29 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Oklahoma_v._Castro-Huerta
+argument_audio:
+- kind: argument
+  date: '2022-04-27'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/21-429.mp3
+  duration_seconds: 7782
+  file:
+    storage_key: supreme-court-audio/court/2021/21-429.mp3
+    checksum: e1ed579aa49e3875d686ca3b3af9190e7064c5897cd14290290ba5e35bca9d8e
+    media_type: audio/mpeg
+    bytes: 62265856
+- kind: argument
+  date: '2022-04-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2021_term/267a-2271.mp3
+  catalog: https://catalog.archives.gov/id/318410253
+  whole_session: true
+  duration_seconds: 7948
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2271.mp3
+    checksum: 633e54486f53fcf0867686d5966c8b840710271a4eff94ffcb1a9578a18ceb70
+    media_type: audio/mpeg
+    bytes: 158962118
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -121,9 +144,9 @@ case_box:
   holding: |-
     No. The Court held that the federal government and the State have concurrent jurisdiction over such crimes. It reasoned that Indian country is part of the State and that neither the General Crimes Act, Public Law 280, nor *Bracker* balancing preempts state jurisdiction.
   quotes:
-  - text: "Indian country is part of the State, not separate from the State ..."
+  - text: "Indian country is part of the State, not separate from the State."
     pinpoint: "p. 636"
-  - text: "... the Federal Government and the State have concurrent jurisdiction to prosecute crimes committed by non-Indians against Indians in Indian country ..."
+  - text: "[T]he Federal Government and the State have concurrent jurisdiction to prosecute crimes committed by non-Indians against Indians in Indian country."
     pinpoint: "p. 633"
   topics:
   - "Criminal jurisdiction"

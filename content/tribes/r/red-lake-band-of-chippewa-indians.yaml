@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Chippewa-Red Lake and Pembina Bands, Oct. 2, 1863, 13 Stat. 667
+  since: '1863-10-02'
+  source: treaty-with-the-chippewa-red-lake-and-pembina-bands-1863
+  confidence: medium
+  verification: inferred
+  as_of: '1863-10-02'
+  locator: p. 853 (Treaty with the Chippewa-Red Lake and Pembina Bands, 1863; Kappler header "Oct. 2, 1863.| 13 Stats., 667.| Ratified Mar. 1, 1864.| Proclaimed May 5, 1864.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Red Lake; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: MN
   presence: government-office
@@ -174,6 +184,73 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Bemidji Area
   note: Listed as "Red Lake Tribal Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1997
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Red Lake Nation' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Red Lake Nation'.
+- program: pl-102-477-plan
+  start: '2024-07-01'
+  end: '2027-06-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Native Employment Works
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  - Higher Education
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Red Lake Band of Chippewa Indians, Minnesota'; PL102_477_PartnerEnrollment, its 8 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 6060951
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MN, row 'Red Lake Band of Chippewa Indians' (Red Lake)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 50689266
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'RED LAKE BAND OF CHIPPEWA INDIANS' (UEI JFP3SNA2BU35), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'RED LAKE BAND OF CHIPPEWA INDIANS'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 23039658
+  amount_kind: obligations
+  through: Red Lake Comprehensive Health Services
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'RED LAKE COMPREHENSIVE HEALTH SERVICES' (UEI K2MWYM5EF8N7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'RED LAKE COMPREHENSIVE HEALTH SERVICES'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 961572
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'RED LAKE BAND OF CHIPPEWA INDIANS' (UEI JFP3SNA2BU35), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'RED LAKE BAND OF CHIPPEWA INDIANS'.
 governance:
 - aspect: governing-body
   value: Tribal Council
@@ -533,6 +610,22 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Nov. 23, 2021 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2021-11-23'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Minnesota Department of Human Services

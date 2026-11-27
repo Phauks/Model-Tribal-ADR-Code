@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Mar. 16, 1877, 1 Kappler 880
+  since: '1877-03-16'
+  source: executive-order-1877-03-16-zuni-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1877-03-16'
+  locator: 1 Kappler 880
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Zuni Pueblo Reserve, New Mexico.
 states:
 - state: NM
   presence: government-office
@@ -211,6 +221,54 @@ indian_health_service:
   locator: page text
   note: 'The source''s words: "Zuni-Ramah SU (ZRSU) – IHS".'
   operator: indian-health-service
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2025
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Albuquerque Area, row 'Pueblo of Zuni'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Pueblo of Zuni'.
+- program: pl-102-477-plan
+  start: '2024-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Low Income Home Energy Assistance Program
+  - Native Employment Works
+  - Temporary Assistance for Needy Families
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  - Higher Education
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Zuni Tribe of the Zuni Reservation, New Mexico'; PL102_477_PartnerEnrollment, its 10 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 4149927
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Zuni Tribe' (Zuni)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 5206254
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'PUEBLO OF ZUNI' (UEI Y5JCNJHCRGL3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PUEBLO OF ZUNI'.
 governance:
 - aspect: form
   value: Constitution approved under the Act of June 18, 1934 (48 Stat. 984), as amended
@@ -750,6 +808,14 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Zuni Indian Tribe Water Rights Settlement Act of 2003 in 2003 (Pub. L. No. 108-34), settling the water rights of Zuni Indian Tribe. It quantifies 10,600 acre-feet a year in all and authorizes about $19.3 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-108-34
+  confidence: high
+  verification: inferred
+  as_of: '2003'
+  locator: Congressional Research Service, R44148, Table 1, 2003
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: New Mexico Children, Youth and Families Department

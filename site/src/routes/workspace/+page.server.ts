@@ -13,8 +13,10 @@ import { listRequests } from '#lib/server/request-store.ts';
 import { latestReviews } from '#lib/server/reviews.ts';
 import { requirePerson, storage } from '#lib/server/workspace.ts';
 import { reviewRequestCount } from '#lib/server/essay-review-requests.ts';
-import { commentsForYouCount } from '#lib/server/essay-comments.ts';
+import { everyCommentForYouCount } from '#lib/server/page-comments.ts';
 import type { PageServerLoad } from './$types';
+import { isMissingTable } from '#lib/problems.ts';
+import { reportHere } from '#lib/server/report-here.ts';
 
 export const load: PageServerLoad = async (event) => {
 	const person = requirePerson(event);
@@ -73,7 +75,11 @@ export const load: PageServerLoad = async (event) => {
 				const today = nevadaToday();
 				const [facts, completions, tasks] = await Promise.all([readFacts(database), readCompletions(database), readTasks(database)]);
 				return { today, items: needingAttention(occurrencesFor(facts, completions, today), tasks, today) };
-			})().catch(() => undefined)
+			})().catch((problem: unknown) => {
+					// The workspace opens without the nonprofit's reminders; a failure other than a missing table is reported.
+					if (!isMissingTable(problem)) reportHere(problem, { code: 'workspace.nonprofit', place: '/workspace' });
+					return undefined;
+				})
 		: undefined;
 
 	// Co-authors and reviewers keep a contributor profile too, so their credit is their own choice.
@@ -92,7 +98,7 @@ export const load: PageServerLoad = async (event) => {
 	// Drafts and sections people asked this person to review.
 	const reviewRequestsForYou = await reviewRequestCount(database, person.identifier);
 	// Comments that mention this person or answer them.
-	const commentsForYou = can(person, 'comment') ? await commentsForYouCount(database, person.identifier) : 0;
+	const commentsForYou = can(person, 'comment') ? await everyCommentForYouCount(database, person) : 0;
 
 	return {
 		teams,

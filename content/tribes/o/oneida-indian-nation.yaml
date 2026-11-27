@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Six Nations, Oct. 22, 1784, 7 Stat. 15
+  since: '1784-10-22'
+  source: treaty-with-the-six-nations-1784
+  confidence: medium
+  verification: inferred
+  as_of: '1784-10-22'
+  locator: p. 5 (Treaty with the Six Nations, 1784; Kappler header "Oct. 22, 1784. | 7 Stat., 15.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Oneidea; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 8 nations' profiles link this treaty.
 states:
 - state: NY
   presence: government-office
@@ -197,6 +207,15 @@ languages:
   verification: read-in-full
   as_of: '2026-11-21'
   note: '"its indigenous language, Onyota’a:ká:"'
+language_programs:
+- name: Oneida Indian Nation Language Department
+  link: https://www.oneidaindiannation.org/language-learning
+  run_by: nation
+  source: oneida-indian-nation-language-learning
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: Language Learning
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office
@@ -221,6 +240,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Oneida Indian Nation Health Services".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1250714
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NY, row 'Oneida Indian Nation of New York' (Oneida)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 4514459
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'ONEIDA INDIAN NATION' (UEI FBJDDZ284KU6), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: head-of-government
   value: Nation Representative
@@ -473,6 +511,22 @@ jurisdiction:
   verification: read-in-full
   locator: 25 U.S.C. § 233; Act of Sept. 13, 1950, ch. 947, 64 Stat. 845
   note: Section 233 also excludes civil actions involving Indian lands or claims about events before Sept. 13, 1952; tribes could preserve their own laws and customs by enactment before Sept. 13, 1952.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Oneida Indian Nation of New York, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on June 14, 2016, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-oneida-indian-nation-2016-06-14
+  confidence: high
+  verification: inferred
+  as_of: '2016-06-14'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2016
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Oneida Indian Nation of New York, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Jan. 28, 2015, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-oneida-indian-nation-2015-01-28
+  confidence: high
+  verification: inferred
+  as_of: '2015-01-28'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2015
 court_practice:
 - kind: bar-admission
   title: Nation Court

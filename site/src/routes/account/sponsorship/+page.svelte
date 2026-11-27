@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>Sponsorship · Model Tribal ADR Code</title>
+	<title>Sponsorship · Tribal Law Project</title>
 </svelte:head>
 
 {#if data.viewingAs && data.sponsor}
@@ -214,6 +214,13 @@
 				<div class="field">
 					<label for="sponsor-line">One line about you (optional)</label>
 					<input id="sponsor-line" name="oneLine" type="text" maxlength="160" value={sponsor.oneLine ?? ''} />
+				</div>
+				<div class="field">
+					<div class="choice">
+						<input type="checkbox" id="home-row" name="homeRow" value="yes" checked={sponsor.homeRowChosen} />
+						<label for="home-row">Show us in the sponsors row on the home page</label>
+					</div>
+					<p class="hint">For Patrons, by name, and Benefactors, by logo. Being there shows you give at least a Patron’s amount, so it is your choice. Listed by name only.</p>
 				</div>
 				<button class="button" type="submit">Save</button>
 			</section>

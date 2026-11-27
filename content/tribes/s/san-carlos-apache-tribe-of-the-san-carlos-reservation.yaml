@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Dec. 14, 1872, 1 Kappler 813
+  since: '1872-12-14'
+  source: executive-order-1872-12-14-white-mountain-reservation-san-carlos-division
+  confidence: high
+  verification: read-in-full
+  as_of: '1872-12-14'
+  locator: 1 Kappler 813
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the San Carlos division of the White Mountain Indian Reservation, Arizona.
 states:
 - state: AZ
   presence: government-office
@@ -203,6 +213,26 @@ indian_health_service:
   locator: page text
   note: 'The source''s words: "San Carlos Apache Healthcare".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 9855221
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'San Carlos Apache Tribe' (San Carlos)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 111921376
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SAN CARLOS APACHE TRIBAL COUNCIL' (UEI MSRJNX85HTV3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SAN CARLOS APACHE TRIBAL COUNCIL'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The San Carlos Apache Tribe, Arizona" among organizations under constitutions approved
@@ -693,6 +723,22 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Apr. 13, 2020 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2020-04-13'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the San Carlos Apache Tribe Water Rights Settlement Act of 1992 in 1992, amended 1994, 1997, 2004 (Pub. L. No. 102-575, Pub. L. No. 103-435, Pub. L. No. 105-18, Pub. L. No. 108-451), settling the water rights of San Carlos Apache Indian Tribe. It quantifies 67,965 acre-feet a year in all and authorizes about $41.4 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-102-575
+  confidence: high
+  verification: inferred
+  as_of: '1992'
+  locator: Congressional Research Service, R44148, Table 1, 1992
 court_practice:
 - kind: public-defender
   title: Public Defender

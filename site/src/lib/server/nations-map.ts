@@ -4,10 +4,10 @@ import { feature } from 'topojson-client';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 import regionsTopology from '../../../geography/bureau-of-indian-affairs-regions.json';
 import landAreaPoints from '../../../geography/census-land-area-points-2020.json';
-import tileManifest from '../../../geography/map-tiles.json';
 import officeList from '../../../geography/nation-office-points.json';
 import withdrawnList from '../../../geography/withdrawn-land-areas.json';
 import { documentHistories, nations } from '#lib/server/content.ts';
+import { tileSetNames } from '#lib/server/map-tile-names.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
 import { displayName, regionAnchor, stateName } from '#lib/nation-labels.ts';
 import { healthServiceAreaShades, shadedMapViews, shadedRowAnchor, shadedViewDefinitions, type ShadeCategory, type ShadedMapView } from '#lib/shaded-map-views.ts';
@@ -182,6 +182,10 @@ function addLandAreaSources(records: ReturnType<typeof nations>, sources: Source
 		section: 'Basemap',
 		text: 'the map of places, roads and water under each view, where the browser can draw it'
 	});
+	sources.add('esa-hipparcos-catalogue', {
+		section: 'Basemap',
+		text: 'the stars behind the globe'
+	});
 	sources.add('census-geocoder', {
 		section: 'Offices of nations with no land area',
 		text: 'where the office address in each nation’s entry lies',
@@ -275,20 +279,23 @@ export function tileMapData() {
 			}))
 		},
 		areas: tileMapAreas(byArea, () => true),
+		/** Each nation's land areas by Census code, so the map's search can show and mark a nation's lands (Trevor, 2026-11-27). */
+		nationAreas: nationAreasOf(byArea),
 		offices: placedOffices().map((office) => ({ ...office, anchor: `/nations/${office.nation}` })),
 		shading: tileMapShading() as ReturnType<typeof tileMapShading> | undefined
 	};
 }
 
-/** The tile sets' names, which change whenever their files do. */
-const tileSetNames = {
-	landAreas: tileManifest.landAreas.set,
-	basemap: tileManifest.basemap.set,
-	maximumZoom: tileManifest.basemap.maxZoom,
-	/** The whole world, to zoom 8, where the basemap above (cut to the United States and its territories) has nothing. */
-	worldBasemap: tileManifest.worldBasemap.set,
-	worldMaximumZoom: tileManifest.worldBasemap.maxZoom
-};
+
+/** The land areas each nation's entry names, by the nation's id, leaving out withdrawn areas. */
+function nationAreasOf(byArea: Map<string, ListedNation[]>): Record<string, string[]> {
+	const areas: Record<string, string[]> = {};
+	for (const [code, linked] of byArea) {
+		if (withdrawnLandAreas.has(code)) continue;
+		for (const nation of linked) (areas[nation.id] ??= []).push(code);
+	}
+	return areas;
+}
 
 /** Each land area's dot, box and label for the tiled map, for the areas the test keeps. */
 function tileMapAreas(byArea: Map<string, ListedNation[]>, keep: (code: string) => boolean) {
@@ -321,6 +328,7 @@ export function nationTileMapData(codes: string[]): TileMapData {
 		states: {},
 		regions: { type: 'FeatureCollection', features: [] },
 		areas: tileMapAreas(new Map(), (code) => wanted.has(code)),
+		nationAreas: {},
 		offices: [],
 		shading: undefined
 	};

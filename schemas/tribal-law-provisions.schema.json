@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/tribal-law-provisions.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/tribal-law-provisions.schema.json",
   "title": "Tribal law provision (table row)",
   "description": "One row of research/tribal-law/provisions.csv: a dispute resolution provision found in a Native nation's own law code, court rules or ordinance, as the first machine reader recorded it, with the second reader's verdict beside it (research/tribal-law/README.md). Built by scripts/law/collect_law_texts.py and scripts/law/second_pass.py; the site's Find recourse page reads it (site/src/lib/server/recourse.ts). Every cell is text and an empty cell is left out before checking, so 'required' means the cell may not be empty. The vocabularies are those of the parsing brief (research/tribal-law/briefs/2026-11-21-parse-passages.md).",
   "type": "object",

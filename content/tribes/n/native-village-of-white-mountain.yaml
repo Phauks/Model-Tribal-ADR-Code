@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7237 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7237 (entry "White Mountain Apache Tribe, Fort Apache Reservation, Arizona")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "White Mountain Apache Tribe, Fort Apache Reservation, Arizona." The entry is matched to the nation by name.
 states:
 - state: AK
   presence: government-office
@@ -166,6 +176,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
   note: 'The source''s words: "Native Village of White Mountain".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 228697
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'White Mountain' (White Mountain)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'White Mountain'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of White Mountain" among organizations under constitutions approved

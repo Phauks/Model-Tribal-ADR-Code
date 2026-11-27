@@ -1,0 +1,47 @@
+key: wisconsin-statutes-125-51
+kind: state-statute
+citation:
+  type: legislation
+  title: Retail licenses and permits
+  title-short: Wis. Stat. § 125.51
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '125.51'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/125.51
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/125.51
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 125.51 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 125.51 (2023-24). History: 1981 c. 79, 202, 220; 1983 a. 27 ss. 1489c, 2202 (38); 1983 a. 250, 516; 1985 a. 74, 239, 302; 1987 a. 27, 91, 103, 249, 354, 399; 1989 a. 16, 30, 31, 252, 253, 359; 1991 a. 39; 1993 a. 112; 1995 a. 27; 1997 a. 27, 41, 248, 259; 1999 a. 9, 185; 2001 a. 16, 49; 2003 a. 124; 2005 a. 22, 268, 307; 2007 a. 20, 69, 85, 192; 2009 a. 28, 73; 2011 a. 129; 2013 a. 268; 2015 a. 10, 55, 62, 286, 372; 2017 a. 95, 364; 2019 a. 6; 2021 a. 21, 39, 43; 2021 a. 239 ss. 73, 74; 2023 a. 73. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: tribe; tribes); AI reader''s verdict incidental: Special Class B liquor permit for qualifying tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribe; tribes'

@@ -93,6 +93,20 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Alaska_v._Native_Village_of_Venetie_Tribal_Government
+argument_audio:
+- kind: argument
+  date: '1997-10-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1047.mp3
+  catalog: https://catalog.archives.gov/id/138282687
+  whole_session: true
+  note: "The National Archives dates the recording 1997-10-10; the case was argued on 1997-12-10."
+  duration_seconds: 7834
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1047.mp3
+    checksum: 736a720eed452e6b039af11351d3921ea1d4011b3417996b091e61f545042daf
+    media_type: audio/mpeg
+    bytes: 125342740
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -121,9 +135,9 @@ case_box:
   holding: |-
     No. The Court held that a dependent Indian community requires federal set-aside and federal superintendence. The Alaska Native Claims Settlement Act lands meet neither, because the Alaska Native Claims Settlement Act revoked reservations and conveyed land to state-chartered corporations. Venetie therefore could not tax a contractor on those lands as Indian country.
   quotes:
-  - text: "Equally clearly, ANCSA ended federal superintendence over the Tribe's lands ..."
+  - text: "Equally clearly, ANCSA ended federal superintendence over the Tribe's lands."
     pinpoint: "p. 533"
-  - text: "Whether the concept of Indian country should be modified is a question entirely for Congress ..."
+  - text: "Whether the concept of Indian country should be modified is a question entirely for Congress."
     pinpoint: "p. 534"
   treatment: |-
     The Alaska Supreme Court in *John v. Baker* (1999) held that Alaska Native Tribes retain non-territorial jurisdiction over members' domestic disputes despite *Venetie*. [@john-v-baker]

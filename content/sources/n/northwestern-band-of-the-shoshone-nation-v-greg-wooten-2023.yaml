@@ -1,0 +1,70 @@
+key: northwestern-band-of-the-shoshone-nation-v-greg-wooten-2023
+kind: federal-case
+citation:
+  type: legal_case
+  title: Northwestern Band of the Shoshone Nation v. Greg Wooten
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.4th
+  volume: '83'
+  page: '1205'
+  issued:
+    date-parts:
+    - - 2023
+      - 10
+      - 17
+  URL: https://www.courtlistener.com/opinion/9433396/northwestern-band-of-the-shoshone-nation-v-greg-wooten/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 22-35140
+original_link: https://www.courtlistener.com/opinion/9433396/northwestern-band-of-the-shoshone-nation-v-greg-wooten/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2023-02-06'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2023/02/06/22-35140.mp3
+  duration_seconds: 2792
+  file:
+    storage_key: appeals-court-audio/ca9/2023/2023-02-06-22-35140.mp3
+    checksum: c3c5f6f32a4e7ea274e5e5531dcaed8a6d704255de22b0d2e043f601f73c0029
+    media_type: audio/mpeg
+    bytes: 44672730
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- northwestern-band-of-the-shoshone-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: northwestern-band-of-the-shoshone-nation
+    named_as: Northwestern Band of the Shoshone Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 83 F.4th 1205. Decided by the United States Court of Appeals for the Ninth Circuit on Oct. 17, 2023. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 12, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 12
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

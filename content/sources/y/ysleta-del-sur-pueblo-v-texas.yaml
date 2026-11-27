@@ -93,6 +93,29 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Ysleta_del_Sur_Pueblo_v._Texas
+argument_audio:
+- kind: argument
+  date: '2022-02-22'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/20-493.mp3
+  duration_seconds: 5502
+  file:
+    storage_key: supreme-court-audio/court/2021/20-493.mp3
+    checksum: d630a513962978e92bebe90f2fba18ed3e2337b7edb24abd2d3e21b64e58c3e1
+    media_type: audio/mpeg
+    bytes: 44026832
+- kind: argument
+  date: '2022-02-22'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2021_term/267a-2255.mp3
+  catalog: https://catalog.archives.gov/id/318410221
+  whole_session: true
+  duration_seconds: 9657
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2255.mp3
+    checksum: dfd4e0b722bb10a0341789dfb98bd5af291a8b3f23eca199611d2bdfcf885b85
+    media_type: audio/mpeg
+    bytes: 193148678
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -122,7 +145,7 @@ case_box:
   holding: |-
     The Court held that the Restoration Act bans on the Pueblo's lands only gaming activities that Texas prohibits, not those it merely regulates, adopting the prohibitory/regulatory distinction from *California v. Cabazon Band*.
   quotes:
-  - text: "The Restoration Act bans as a matter of federal law on tribal lands only those gaming activities also banned in Texas ..."
+  - text: "The Restoration Act bans as a matter of federal law on tribal lands only those gaming activities also banned in Texas."
     pinpoint: "p. 708"
   topics:
   - "Gaming"

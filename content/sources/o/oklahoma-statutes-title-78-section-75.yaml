@@ -1,0 +1,59 @@
+key: oklahoma-statutes-title-78-section-75
+kind: state-statute
+citation:
+  type: legislation
+  title: Penalties
+  title-short: Okla. Stat. tit. 78, § 75
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '78'
+  section: '75'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1974
+      - 6
+      - 1
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os78.pdf#page=20
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os78.pdf#page=20
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-78-section-71
+- oklahoma-statutes-title-78-section-72
+- oklahoma-statutes-title-78-section-73
+- oklahoma-statutes-title-78-section-74
+state_law:
+  relevance: core
+  citation: Okla. Stat. tit. 78, § 75 (2026)
+  page: 20
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 78, § 75 (2026). History: Added by Laws 1974, c. 149, § 5, emerg. eff. June 1, 1974. Amended by Laws 2016, c. 391, Text read from the Legislative Service Bureau''s Title 78 PDF (updated Nov. 12, 2026), page 20. Found by the state statutes pilot (terms: american indian); AI reader''s verdict core: Penalties for falsely labeling goods as American Indian arts and crafts. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: american indian'

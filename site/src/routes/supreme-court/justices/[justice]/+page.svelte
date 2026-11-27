@@ -42,7 +42,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Supreme Court · Model Tribal ADR Code</title>
+	<title>{data.name} · Supreme Court · Tribal Law Project</title>
 	<meta name="description" content="{data.name}, {data.summary}: votes and opinions in the cases on this site." />
 </svelte:head>
 
@@ -53,12 +53,12 @@
 	glance={data.glance}
 	sources={data.sources}
 	trail={[
-		{ label: 'Library', href: '/library' },
+		{ label: 'Courts and cases', href: '/cases' },
 		{ label: 'Supreme Court', href: '/supreme-court' }
 	]}
 >
 	<Collapsible heading="On the Court" identifier="service">
-		<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.cases} width={560} labelWidth={110} />
+		<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.chartCases} self={data.key} width={560} labelWidth={110} />
 	</Collapsible>
 
 	<Collapsible heading="Cases on this site" identifier="cases" count={data.cases.length}>
@@ -92,7 +92,7 @@
 </InfoPage>
 
 <style>
-	/* One line each, with a thin rule between, as At a glance stacks values: no bullets (Trevor, Nov. 23, 2026). The years stand first, in their own column ("segment by year"). */
+	/* One line each, with a thin rule between, as Key facts stacks values: no bullets (Trevor, Nov. 23, 2026). The years stand first, in their own column ("segment by year"). */
 	.career {
 		display: flow-root;
 		padding: 0;

@@ -5,7 +5,9 @@
 	// one filled, whether draft changes show, History, and Publish in the
 	// action color (design/header-page-controls, option A, approved by Trevor
 	// on Nov. 23, 2026). A page edited elsewhere, such as a nation's page,
-	// offers links instead of the three modes. Readers see none of this.
+	// offers links instead of the three modes. Readers see none of this. The
+	// Commenting button carries the number of open comments on the page
+	// (design/page-comments, Nov. 26, 2026).
 	import BookOpenText from '@lucide/svelte/icons/book-open-text';
 	import History from '@lucide/svelte/icons/history';
 	import Layers from '@lucide/svelte/icons/layers';
@@ -26,9 +28,17 @@
 		{#if controls.modes.length > 1}
 			<span class="modes" role="group" aria-label="Mode">
 				{#each controls.modes as mode (mode)}
-					<button type="button" class="icon-button" aria-pressed={controls.mode === mode} title={modeNames[mode]} onclick={() => controls.setMode?.(mode)}>
+					{@const open = mode === 'commenting' ? (controls.openComments ?? 0) : 0}
+					<button
+						type="button"
+						class="icon-button"
+						aria-pressed={controls.mode === mode}
+						title={open ? `${modeNames[mode]}: ${open} open ${open === 1 ? 'comment' : 'comments'}` : modeNames[mode]}
+						onclick={() => controls.setMode?.(mode)}
+					>
 						{#if mode === 'reading'}<BookOpenText size={22} aria-hidden="true" />{:else if mode === 'commenting'}<MessageSquare size={22} aria-hidden="true" />{:else}<Pencil size={22} aria-hidden="true" />{/if}
-						<span class="visually-hidden">{modeNames[mode]}</span>
+						<span class="visually-hidden">{modeNames[mode]}{open ? `, ${open} open` : ''}</span>
+						{#if open}<span class="count comments-count" aria-hidden="true">{open}</span>{/if}
 					</button>
 				{/each}
 			</span>
@@ -51,7 +61,11 @@
 			</button>
 		{/if}
 		{#if controls.history}
-			<a class="icon-button" href={controls.history.href} title={controls.history.title} aria-label="History"><History size={22} aria-hidden="true" /></a>
+			{#if controls.history.onclick}
+				<button type="button" class="icon-button history" title={controls.history.title} aria-label="History" onclick={controls.history.onclick}><History size={22} aria-hidden="true" /></button>
+			{:else}
+				<a class="icon-button history" href={controls.history.href} title={controls.history.title} aria-label="History"><History size={22} aria-hidden="true" /></a>
+			{/if}
 		{/if}
 		{#each (controls.links ?? []).filter((link) => link.icon === 'team') as link (link.href)}
 			<a class="icon-button" href={link.href} title={link.title} aria-label={link.title}><Users size={22} aria-hidden="true" /></a>
@@ -156,6 +170,21 @@
 		font-weight: var(--font-weight-semibold);
 		line-height: 1.25rem;
 		text-align: center;
+	}
+
+	/* The open comments on the page, in the action color so it shows on the pressed button too (design/page-comments). */
+	.modes .icon-button {
+		position: relative;
+	}
+
+	.comments-count {
+		top: -2px;
+		right: -2px;
+		min-width: 1.05rem;
+		background: var(--color-action);
+		color: var(--color-action-text);
+		font-size: 0.68rem;
+		line-height: 1.05rem;
 	}
 
 	@media (forced-colors: active) {

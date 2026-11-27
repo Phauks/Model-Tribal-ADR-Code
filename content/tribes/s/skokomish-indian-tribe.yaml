@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the S'Klallams (Point No Point), Jan. 26, 1855, 12 Stat. 933
+  since: '1855-01-26'
+  source: treaty-with-the-sklallam-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-01-26'
+  locator: p. 674 (Treaty with the S'klallam, 1855; Kappler header "Jan. 26, 1855. | 12 Stats., 933. | Ratified Mar. 8, 1859. | Proclaimed Apr. 29, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Sko-ko-mish; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 4 nations' profiles link this treaty.
 states:
 - state: WA
   presence: government-office
@@ -149,6 +159,48 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Skokomish Indian Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Skokomish Indian Tribe (2002)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Skokomish Indian Tribe' (Northwest Region)
+- program: indian-health-service-self-governance-compact
+  since: 2002
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Skokomish Indian Tribe'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 963840
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Skokomish Indian Tribe' (Skokomish Nation)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 4517453
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SKOKOMISH INDIAN TRIBE' (UEI H3DKB6KSGSB5), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 3021659
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SKOKOMISH INDIAN TRIBE' (UEI H3DKB6KSGSB5), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Skokomish Indian Tribe of the Skokomish Reservation, Washington" among organizations

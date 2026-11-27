@@ -1,0 +1,52 @@
+key: connecticut-general-statutes-53-343a
+kind: state-statute
+citation:
+  type: legislation
+  title: Presence of persons under twenty-one years of age in class III gaming facilities prohibited. Wagering and misrepresentation of age by such persons prohibited
+  title-short: Conn. Gen. Stat. § 53-343a
+  container-title: General Statutes of Connecticut
+  container-title-short: Conn. Gen. Stat.
+  section: 53-343a
+  author:
+  - literal: Connecticut General Assembly
+  issued:
+    date-parts:
+    - - 2003
+  URL: https://www.cga.ct.gov/current/pub/chap_946.htm#sec_53-343a
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.cga.ct.gov/current/pub/chap_946.htm#sec_53-343a
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- connecticut-general-statutes-53-278g
+state_law:
+  relevance: core
+  citation: Conn. Gen. Stat. § 53-343a (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Conn. Gen. Stat. § 53-343a (2026). History: P.A. 03-114, S. 2; P.A. 04-257, S. 85. Text read from the Connecticut General Assembly''s chapter page for the section in the General Statutes of Connecticut, revised to Jan. 1, 2025, or in its 2026 Supplement (cga.ct.gov), on Nov. 27, 2026. Found by the state statutes sweep (terms: indian gaming; indian lands; tribal-state; indian; tribal); AI reader''s verdict core: Age limits for class III Indian gaming facilities under tribal compacts. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian gaming; indian lands; tribal-state; indian; tribal'

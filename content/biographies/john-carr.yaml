@@ -1,6 +1,6 @@
 key: john-carr
 name: John Carr
-lead: Signed two treaties with the United States for the Creek nation, 1814–1825.
+lead: Signed three treaties with the United States for the Creek nation, 1814–1825.
 living: false
 names:
 - name: Tuskegee Emautla
@@ -11,6 +11,10 @@ names:
   note: as the Treaty with the Creeks, 1825 prints it
   source: treaty-with-the-creeks-1825
   where: 7 Stat. 239
+- name: Tuskeegee Emautla
+  note: as the Treaty with the Creeks, 1818 prints it
+  source: treaty-with-the-creeks-1818
+  where: 7 Stat. 172
 nations:
 - nation: the-muscogee-nation
   named_as: Creek nation
@@ -22,8 +26,12 @@ events:
   text: Signed the Treaty with the Creeks, 1814, for the Creek nation.
   source: treaty-with-the-creeks-1814
   where: 7 Stat. 122
+- when: Jan. 22, 1818
+  text: Signed the Treaty with the Creeks, 1818, for the Creek nation.
+  source: treaty-with-the-creeks-1818
+  where: 7 Stat. 172
 - when: Feb. 12, 1825
   text: Signed the Treaty with the Creeks, 1825, for the Creek Nation.
   source: treaty-with-the-creeks-1825
   where: 7 Stat. 239
-checked: '2026-11-24'
+checked: '2026-11-26'

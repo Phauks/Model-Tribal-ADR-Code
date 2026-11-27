@@ -108,6 +108,31 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=546%20U.S.%2095
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2005-10-03'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_03/267a-1347.MP3
+  catalog: https://catalog.archives.gov/id/183517729
+  whole_session: true
+  duration_seconds: 7790
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1347.mp3
+    checksum: b6fede5dd2799c943f8aef4424f54781dc5d75bb23020e404ebd227084335d24
+    media_type: audio/mpeg
+    bytes: 62324449
+- kind: opinion announcement
+  date: '2005-12-06'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_03/267a-1364.MP3
+  catalog: https://catalog.archives.gov/id/183517746
+  whole_session: true
+  duration_seconds: 7719
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1364.mp3
+    checksum: 3adc361e3f2e0296367ab4d382d9e90fd71bff4e5a9ae106feeafe8d79762353
+    media_type: audio/mpeg
+    bytes: 61752567
 rights:
   status: no-permission-needed
   basis: us-government-work

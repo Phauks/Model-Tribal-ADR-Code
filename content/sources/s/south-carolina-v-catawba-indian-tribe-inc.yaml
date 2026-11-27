@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=476%20U.S.%20498
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1985-12-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-544.mp3
+  catalog: https://catalog.archives.gov/id/118974719
+  whole_session: true
+  duration_seconds: 14254
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-544.mp3
+    checksum: fc3894bd0946a731d7fddfb98f93e3376474fc7cbb17316e6b6cfa9edee2e007
+    media_type: audio/mpeg
+    bytes: 228065403
 rights:
   status: no-permission-needed
   basis: us-government-work

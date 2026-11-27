@@ -1,0 +1,61 @@
+key: larissa-waln-v-dysart-school-district-2022
+kind: federal-case
+citation:
+  type: legal_case
+  title: Waln v. Dysart School District
+  authority: United States Court of Appeals for the Ninth Circuit
+  issued:
+    date-parts:
+    - - 2022
+      - 12
+      - 9
+  URL: https://www.courtlistener.com/opinion/9367633/larissa-waln-v-dysart-school-district/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 21-15737
+original_link: https://www.courtlistener.com/opinion/9367633/larissa-waln-v-dysart-school-district/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2022-07-27'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2022/07/27/21-15737.mp3
+  duration_seconds: 2008
+  file:
+    storage_key: appeals-court-audio/ca9/2022/2022-07-27-21-15737.mp3
+    checksum: a11d353b7d44d7ad8b1bf92316b8dee9bb3dfe533f48f2bfb9372ee99473d461
+    media_type: audio/mpeg
+    bytes: 32129775
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 21-15737; no reporter citation yet. Decided by the United States Court of Appeals for the Ninth Circuit on Dec. 9, 2022. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 7; an AI reader read excerpts and judged it an Indian law case (eagle feather religious accommodation for enrolled tribal member).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 7; reader: eagle feather religious accommodation for enrolled tribal member'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

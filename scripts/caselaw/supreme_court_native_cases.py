@@ -22,6 +22,10 @@ writes content/sources/<letter>/<key>.yaml:
   matched to nation records only where a name matches one nation; other
   names go under not_linked for a person to settle.
 
+For cases after the Caselaw Access Project's last volume (572), the second reading of the report is the Legal
+Information Institute's text of the Court's slip opinion, and the official report is the Court's bound volume or,
+for volumes it has not bound yet, its preliminary print (PRELIMINARY_PRINTS); see lii_case().
+
 Each record gets a `review` block listing the cross-checks and their results.
 Where the sources disagree, the official report settles it (official_report.py):
 the scan's pages are mapped to the report's printed pages, the opinion
@@ -91,7 +95,7 @@ READINGS = ROOT / "research" / "supreme-court-coverage" / "report-readings.json"
 # ("use": "scan") or its scan can't be read for a fact ("use": "second copy", for the checks named).
 OTHER_SCANS_PATH = ROOT / "research" / "supreme-court-coverage" / "other-scans.json"
 TODAY = datetime.date.today().isoformat()
-REPORT = ROOT / "research" / "reviews" / f"{TODAY}-supreme-court-native-cases.csv"
+REPORT = ROOT / "research" / "reviews" / "2026-11-24-supreme-court-native-cases.csv"
 SESSION = "2026-11-24-supreme-court-native-cases"
 SCRIPT = "scripts/caselaw/supreme_court_native_cases.py"
 SCDB = "http://scdb.wustl.edu/_brickFiles"
@@ -138,13 +142,22 @@ TITLE_FIXES = {
     "570 U.S. 1": "Arizona v. Inter Tribal Council of Arizona, Inc.",
     # The Caselaw Access Project joins the two captions of the consolidated cases.
     "492 U.S. 408": "Brendale v. Confederated Tribes and Bands of Yakima Indian Nation",
+    # Volumes 573 on (no Caselaw Access Project name): the short name as the report's running head gives it, written out.
+    "577 U.S. 250": "Menominee Indian Tribe of Wisconsin v. United States",
+    "577 U.S. 481": "Nebraska v. Parker",
+    "583 U.S. 244": "Patchak v. Zinke",
+    "584 U.S. 554": "Upper Skagit Indian Tribe v. Lundgren",
+    "584 U.S. 837": "Washington v. United States",
+    "586 U.S. 347": "Washington State Department of Licensing v. Cougar Den, Inc.",
+    "587 U.S. 329": "Herrera v. Wyoming",
+    "591 U.S. 977": "Sharp v. Murphy",
 }
 
 
 def end_stop(text: str) -> str:
     """Spaces evened and a closing full stop dropped, unless it ends an abbreviation ("Inc.", "Co.")."""
     text = re.sub(r"\s+", " ", text).strip()
-    return text if re.search(r"\b(Inc|Co|Corp|Ltd|Jr|Sr|Bros|al)\.$", text) else text.rstrip(".")
+    return text if re.search(r"\b(Inc|Co|Corp|Ltd|Jr|Sr|Bros|al)\.$", text, re.I) else text.rstrip(".")
 
 
 SMALL_WORDS = {"of", "the", "and", "v", "in", "on", "for", "at", "to", "a", "an", "et", "al", "ex", "rel"}
@@ -351,13 +364,28 @@ class Oyez:
                 time.sleep(2 ** attempt)
         return None
 
-    def find(self, volume: str, page: str, year: int) -> dict | None:
+    def find(self, volume: str, page: str, year: int, docket: str = "") -> dict | None:
         for term in (year - 1, year, year - 2, year + 1):
             for case in self.get(f"{OYEZ}/cases?filter=term:{term}&per_page=0") or []:
                 citation = case.get("citation") or {}
                 if str(citation.get("volume")) == volume and str(citation.get("page")) == page:
                     return case
+        # Oyez often has no page for recent cases: the docket number, with the volume
+        for term in (year - 1, year, year - 2, year + 1):
+            for case in self.get(f"{OYEZ}/cases?filter=term:{term}&per_page=0") or []:
+                citation = case.get("citation") or {}
+                if docket and case.get("docket_number") == docket and str(citation.get("volume")) in (volume, "None", ""):
+                    return case
         return None
+
+    def argued(self, case: dict) -> list[str]:
+        """The days Oyez gives for argument, as ISO days (Oyez keeps them as times at 5 or 6 a.m. UTC)."""
+        data = self.get(case["href"]) or {}
+        days = []
+        for event in data.get("timeline") or []:
+            if event and event.get("event") in ("Argued", "Reargued"):
+                days += [datetime.datetime.fromtimestamp(t, datetime.timezone.utc).date().isoformat() for t in event.get("dates") or []]
+        return sorted(days)
 
     def bench(self, case: dict) -> dict | None:
         data = self.get(case["href"])
@@ -400,6 +428,8 @@ class Volumes:
         self.loaded: dict[str, list[tuple[dict, str]]] = {}
 
     def cases(self, volume: str) -> list[tuple[dict, str]]:
+        if int(volume) > LAST_CAP_VOLUME:
+            return []
         if volume not in self.loaded:
             path = self.cache / f"{volume}.zip"
             if not path.exists():
@@ -414,7 +444,9 @@ class Volumes:
             self.loaded[volume] = found
         return self.loaded[volume]
 
-    def find(self, case_id: str, volume: str, page: str) -> tuple[dict, str] | None:
+    def find(self, case_id: str, volume: str, page: str, rows: list[dict] | None = None) -> tuple[dict, str] | None:
+        if int(volume) > LAST_CAP_VOLUME:
+            return lii_case(case_id, volume, page, rows or [], self.cache.parent)
         cases = self.cases(volume)
         for case, page_html in cases:
             if any(c["cite"] == f"SCDB {case_id}" for c in case.get("citations", [])):
@@ -451,6 +483,7 @@ KIND_PATTERNS = [
     (r"concurring in part,? concurring in the result in part,? and dissenting in part", "concurrence in part, concurrence in the result in part, and dissent in part"),
     (r"concurring in part and concurring in the judgment", "concurrence in part and in the judgment"),
     (r"concurring in part and concurring in the result", "concurrence in part and in the result"),
+    (r"concurring in the judgment,? and dissenting in part", "concurrence in the judgment and dissent in part"),
     (r"dissenting in part", "dissent in part"),
     (r"concurring in the judgment", "special concurrence"),
     (r"concurring in the result", "concurrence in the result"),
@@ -472,7 +505,8 @@ def opinion_kind(opinion: dict) -> str:
             return "judgment"
         if re.search(r"delivered the opinion of the court", lowered) or not author.strip():
             return "majority" if author.strip() else "per curiam"
-    head = lowered[:250]
+    # the slip opinion's heading sentence alone, where there is one: its first lines may already say "the dissent"
+    head = re.sub(r"\s+", " ", opinion["heading"].lower()) if opinion.get("heading") else lowered[:250]
     for pattern, kind in KIND_PATTERNS:
         if re.search(pattern, head):
             return kind
@@ -602,17 +636,45 @@ def loc_pages(volume: str, page: str, cache: Path) -> list[str] | None:
     return pages
 
 
+# Volumes the Court has not yet bound are in its preliminary print, in parts: the first page of each part and its file
+# (supremecourt.gov/opinions/USReports.aspx, read 2026-11-26).
+PRELIMINARY_PRINTS = {
+    "588": [(1, "588US1PP_final.pdf"), (358, "588US2PP_final.pdf")],
+    "589": [(1, "589US1PP_web.pdf"), (154, "589US2PP_final.pdf")],
+    "590": [(1, "590US1PP_web.pdf"), (432, "590US2PP_web.pdf")],
+    "591": [(1, "591US1PP_web.pdf"), (464, "591US2PP_web.pdf")],
+    "592": [(1, "592US1PP_web.pdf"), (209, "592US2PP.pdf")],
+}
+
+
+def report_volume(volume: str, page: str) -> str:
+    """The name the Court's own printing of a case's pages goes by in the cache: the volume ("577"), or the volume and
+    part of a preliminary print ("591-2")."""
+    parts = PRELIMINARY_PRINTS.get(str(int(volume)))
+    if not parts:
+        return str(int(volume))
+    return f"{int(volume)}-{max(number for number, (start, _) in enumerate(parts, 1) if start <= int(page))}"
+
+
 def bound_volume(volume: str) -> str:
+    """The Court's bound volume, or for "591-2" the part of its preliminary print."""
+    if "-" in volume:
+        number, part = volume.split("-")
+        return f"https://www.supremecourt.gov/opinions/preliminaryprint/{PRELIMINARY_PRINTS[number][int(part) - 1][1]}"
     return f"https://www.supremecourt.gov/opinions/boundvolumes/{int(volume)}bv.pdf"
 
 
+def court_printing(volume: str) -> str:
+    return "the Court's preliminary print" if "-" in volume else "the Court's bound volume"
+
+
 def official_pdf(volume: str, page: str) -> str:
-    """The official report as a PDF: the Library of Congress scan through volume 542, the Court's bound volume after,
-    or the copy other-scans.json names for the case."""
+    """The official report as a PDF: the Library of Congress scan through volume 542, the Court's bound volume or
+    preliminary print after, or the copy other-scans.json names for the case."""
     other = other_scan(volume, page)
     if other:
         return other["pdf"]
-    return loc_pdf(volume, page) if int(volume) <= 542 else bound_volume(volume)
+    return loc_pdf(volume, page) if int(volume) <= 542 else bound_volume(report_volume(volume, page))
 
 
 def other_scan(volume: str, page: str, use: str = "scan") -> dict | None:
@@ -673,6 +735,118 @@ def bound_volume_pages(volume: str, first: int, last: int, cache: Path) -> list[
         return None
     start = printed[first]
     return pages[start:start + (last - first + 1)]
+
+
+def court_last_page(volume: str, first: int, cache: Path) -> int | None:
+    """The last page of the case that starts on `first` in the Court's own printing: the page before the next case's
+    first page, which prints the term ("OCTOBER TERM, 2017") at its head."""
+    if bound_volume_pages(volume, first, first, cache) is None:
+        return None
+    pages = json.loads((cache / "bound" / f"{volume}.json").read_text())
+    start = next(i for i in range(len(pages)) if bound_volume_pages(volume, first, first, cache)[0] == pages[i])
+    last = first
+    for text in pages[start + 1:]:
+        head = " ".join(line.strip() for line in text.splitlines() if line.strip())[:160]
+        if not text.strip() or re.search(r"OCTOBER TERM,\s+\d{4}", head) or re.match(r"\s*(?:ORDERS|INDEX|Reporter's Note)", head):
+            break
+        last += 1
+    return last
+
+
+# ---------------------------------------------------------------- cases after the Caselaw Access Project
+#
+# The Caselaw Access Project's volumes end with volume 572 (2014). For later cases the second reading of the report
+# is the Legal Information Institute's text of the Court's slip opinion (law.cornell.edu/supremecourt/text/<docket>),
+# a separate printing from the report itself: its caption, its "Argued ... Decided ..." line, and its opinions with
+# their headings. It is shaped like a Caselaw Access Project case so that build() checks it against the report the
+# same way. The report's page where each opinion starts is found from the opinion's opening words.
+
+LAST_CAP_VOLUME = 572
+LII = "https://www.law.cornell.edu/supremecourt/text"
+LII_LABEL = "the Legal Information Institute's text of the slip opinion"
+
+
+def lii_text(fragment: str) -> str:
+    fragment = re.sub(r"<(script|style)\b.*?</\1>", " ", fragment, flags=re.S)
+    fragment = re.sub(r"<(?:br|/p|/div|/h\d)[^>]*>", "\n", fragment)
+    text = re.sub(r"[ \t\r\f\v\u00a0\u2002\u2003\u2009]+", " ", html_lib.unescape(re.sub(r"<[^>]+>", " ", fragment))).replace(" \n", "\n")
+    return re.sub(r" +([.,;:])", r"\1", text)  # tags closed before punctuation leave a space: "Oklahoma , ante"
+
+
+def report_caption(caption: str) -> str:
+    """The slip's caption ("Upper Skagit Indian Tribe v. Lundgren et vir") in the report's form ("UPPER SKAGIT INDIAN TRIBE v. LUNDGREN et vir")."""
+    text = re.sub(r"\s+", " ", caption).strip().upper()
+    text = re.sub(r"\bV\. ", "v. ", text)
+    for words in ("et al.", "et vir", "et ux.", "et ux"):
+        text = re.sub(rf"\b{re.escape(words.upper())}", words, text)
+    return text
+
+
+def lii_case(case_id: str, volume: str, page: str, rows: list[dict], cache: Path) -> tuple[dict, str] | None:
+    docket = (rows[0].get("docket") or "").strip()
+    if not docket:
+        return None
+    path = cache / "lii" / f"{docket}.html"
+    if not path.exists():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            fetch(f"{LII}/{docket}", path)
+        except subprocess.CalledProcessError:
+            return None
+    source = path.read_text(encoding="utf-8", errors="replace")
+    marks = list(re.finditer(r'id="writing-[^"_]+_([A-Z]+)_?(\d*)"', source))
+    sections = []
+    for index, mark in enumerate(marks):
+        end = marks[index + 1].start() if index + 1 < len(marks) else len(source)
+        sections.append((mark[1], lii_text(source[mark.end():end])))
+    if not sections:  # a short per curiam opinion: one writing, no syllabus
+        sections = [("OPINION", lii_text(source[source.find("<body"):]))]
+    syllabus = next((text for kind, text in sections if kind == "SYLLABUS"), "")
+    caption = ""
+    found = re.search(r".*Syllabus\s+(.+?)\s+(?:certiorari|on writ|on petition|appeal|on bill|on application|on exceptions)", syllabus, re.S | re.I)
+    if found:
+        caption = report_caption(found[1])
+    opinions = []
+    for kind, text in sections:
+        if kind in ("SYLLABUS", "ZS"):
+            continue
+        # the opinion's heading ends with the date it was announced, in brackets: "[May 21, 2018]"
+        dated = re.search(r"\[\s*([A-Z][a-z]+\s+\d{1,2},\s*\d{4})\s*\]\s*(.*)", text, re.S)
+        if not dated:
+            continue
+        body = re.sub(r"\s+", " ", dated[2]).strip()
+        if not caption:
+            head = re.search(r"No\.\s*[\d–-]+\s*_*\s*(.+?)\s+(?:on writ|on petition|on application|on bill|on appeal)", text, re.S)
+            if head:
+                # the opinion's heading names the parties' roles ("Washington, petitioner v. United States, et al."),
+                # which the report's caption leaves out with the comma before "et al."
+                caption = report_caption(re.sub(r",\s*(?:PETITIONERS?|RESPONDENTS?|APPELLANTS?|APPELLEES?)\b|,(?=\s*et al\.)", "", head[1], flags=re.I))
+        # the writer only ("Justice Gorsuch"), as the Caselaw Access Project gives it: the heading goes on to name the
+        # Justices who join ("with whom Justice Ginsburg joins"), whom Justices.from_author() would take for the writer
+        author = re.match(r"(Per Curiam|(?:Chief )?Justice [A-Z][\w'’-]+)", body, re.I)
+        heading = re.match(r"((?:Per Curiam|(?:Chief )?Justice )[^.]{0,400}\.)", body, re.I)
+        opinions.append({"type": {"OPINION": "majority", "CONCUR": "concurrence", "DISSENT": "dissent"}.get(kind, kind.lower()),
+                         "author": author[1] if author else "", "heading": heading[1] if heading else "", "text": body, "announced": dated[1]})
+    if not opinions:
+        return None
+    last = court_last_page(report_volume(volume, page), int(page), cache)
+    lines = re.sub(r"\s+", " ", syllabus)
+    day = parse_days(opinions[0]["announced"])
+    title = TITLE_FIXES.get(f"{volume} U.S. {page}") or end_stop(rows[0]["caseName"].title())
+    case = {"name": caption or report_caption(rows[0]["caseName"]), "name_abbreviation": title,
+            "citations": [{"type": "official", "cite": f"{volume} U.S. {page}"}, {"type": "vendor", "cite": f"SCDB {case_id}"}],
+            "first_page": str(int(page)), "last_page": str(last or int(page)), "decision_date": day[0] if day else "",
+            "file_name": docket, "casebody": {"head_matter": lines, "opinions": opinions},
+            "_text_label": LII_LABEL, "_short": "Slip opinion (Legal Information Institute)", "_text_link": f"{LII}/{docket}"}
+    # page marks for opinion_pages(): where each opinion's opening words fall in the report
+    pages = bound_volume_pages(report_volume(volume, page), int(page), last or int(page), cache) or []
+    html = ""
+    for opinion in opinions:
+        words = " ".join(plain(opinion["text"][len(opinion["author"]):]).split()[:14])
+        scores = [contains_fuzzy(words, text) for text in pages]
+        best = int(page) + max(range(len(scores)), key=lambda i: scores[i]) if scores and max(scores) >= 0.75 else int(page)
+        html += f'<article class="opinion"><p><a data-label="{best}" class="page-label"></a>{html_lib.escape(opinion["text"][:200])}</p></article>'
+    return case, html
 
 
 # ---------------------------------------------------------------- nations
@@ -821,11 +995,12 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
     if not rows:
         return None, [], "not in the Supreme Court Database files"
     day = mdy(rows[0]["dateDecision"]) or mdy(row["decided"])
-    found = volumes.find(row["scdb_case_id"], volume, page)
+    found = volumes.find(row["scdb_case_id"], volume, page, rows)
     if not found:
-        return None, [], "not found in the Caselaw Access Project volume"
+        return None, [], "not found in the Caselaw Access Project volume" if int(volume) <= LAST_CAP_VOLUME else "no slip opinion text found"
     cap, page_html = found
     checks: list[dict] = []
+    reader = cap.get("_short", "Caselaw Access Project")
 
     # citation and name
     official = next((c["cite"] for c in cap["citations"] if c["type"] == "official"), "")
@@ -833,7 +1008,7 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
     words_shared = set(plain(cap["name_abbreviation"]).split()) & set(plain(rows[0]["caseName"]).split())
     cite_ok = official == f"{volume} U.S. {page}" and (any(c["cite"] == f"SCDB {row['scdb_case_id']}" for c in cap["citations"]) or name_ratio > 0.8)
     checks.append({"check": "cite", "result": "agree" if cite_ok and (name_ratio > 0.5 or len(words_shared) >= 2) else "differs",
-                   "detail": f"Caselaw Access Project {official} \"{cap['name_abbreviation']}\"; Database {rows[0]['usCite']} \"{rows[0]['caseName']}\""})
+                   "detail": f"{reader} {official} \"{cap['name_abbreviation']}\"; Database {rows[0]['usCite'] or rows[0].get('docket', '')} \"{rows[0]['caseName']}\""})
 
     # the Library of Congress scan
     last_page = int(cap["last_page"]) if str(cap.get("last_page", "")).isdigit() else int(page)
@@ -842,7 +1017,7 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
         found_other = other_scan_pages(other, volume, page, last_page - int(page) + 1, cache)
         pages = found_other[0] if found_other else None
     else:
-        pages = loc_pages(volume, page, cache) if int(volume) <= 542 else bound_volume_pages(volume, int(page), last_page, cache)
+        pages = loc_pages(volume, page, cache) if int(volume) <= 542 else bound_volume_pages(report_volume(volume, page), int(page), last_page, cache)
     first, last = int(cap["first_page"]), int(cap["last_page"]) if str(cap.get("last_page", "")).isdigit() else None
     if pages is None:
         checks.append({"check": "scan", "result": "missing", "detail": "No scan of the official report found"})
@@ -874,7 +1049,7 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
         # the words may match while a figure is misread ("Argued December 14, 17, 1000."): the figures must match too
         same = same and (scan_line is None or official_report.numbers(line) == official_report.numbers(scan_line)) and plausible_dates(court_dates, day)
         checks.append({"check": "printed dates", "result": "agree" if same and court_dates else "differs",
-                       "detail": f"Caselaw Access Project \"{line}\"; scan \"{scan_line or 'not found'}\""})
+                       "detail": f"{reader} \"{line}\"; scan \"{scan_line or 'not found'}\""})
     elif (volume, page) in TABLE:
         entry = TABLE[(volume, page)]
         decided = parse_days(entry["decided"]) if re.fullmatch(r"[A-Z][a-z]{2,4}\.?\s+\d{1,2},\s*\d{4}\*?", entry["decided"]) else []
@@ -889,7 +1064,20 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
                            "checked": TODAY}
     elif len(cap.get("decision_date", "")) == 10:
         decided_check = {"check": "decided", "result": "agree" if cap["decision_date"] == day else "differs",
-                         "detail": f"Caselaw Access Project {cap['decision_date']}; Database {day}"}
+                         "detail": f"{reader} {cap['decision_date']}; Database {day}"}
+    if court_dates is None and cap.get("_text_label") and pages:
+        # A slip opinion without a syllabus (a short per curiam) prints no "Argued ... Decided ..." line: the report's
+        # line is checked against Oyez's argument days and the Database's decision day instead.
+        report_line = printed_dates(" ".join(pages[:2]))
+        block = court_dates_block(report_line, official_pdf(volume, page)) if report_line else None
+        if block:
+            found_oyez = oyez.find(volume, page, int(day[:4]), rows[0].get("docket", "").strip())
+            oyez_days = oyez.argued(found_oyez) if found_oyez else []
+            decided = parse_days(re.search(r"Decided\s+(.*)", report_line)[1])
+            same = bool(decided) and decided[0] == day and block.get("argued", []) == oyez_days and plausible_dates(block, day)
+            court_dates = block
+            checks.append({"check": "printed dates", "result": "agree" if same else "differs",
+                           "detail": f"The slip opinion prints no dates line; the report prints \"{report_line}\"; Oyez argued {', '.join(oyez_days) or 'none'}; Database decided {day}"})
     checks.append(decided_check)
 
     # opinions
@@ -924,6 +1112,14 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
     scdb = scdb_bench(rows, day, justices)
     scdb_writers = scdb["writers"]
     writers_ok = writers == scdb_writers or (not scdb_writers and not writers)
+    if cap.get("_text_label"):
+        # From a slip opinion the kind of each opinion is read from its heading: a dissent must be a dissent, and a
+        # concurrence or the Court's opinion not one, in the Database's coding of the writer's opinion too.
+        coded = {m["name"]: m.get("opinion", "") for m in scdb["justices"]}
+        for entry in listing:
+            if entry["justice"] in coded and ("dissent" in entry["kind"]) != ("dissent" in coded[entry["justice"]]):
+                writers_ok = False
+                unknown.append(f"{Justices.family(entry['justice']).title()}'s opinion reads as a {entry['kind']} but the Database codes a {coded[entry['justice']] or 'vote without an opinion'}")
     checks.append({"check": "opinions", "result": "agree" if opinion_ok and writers_ok else "differs",
                    "detail": "; ".join(filter(None, [
                        f"Report: {', '.join(f'{e['kind']} {Justices.family(e['justice']).title()} p. {e['page']}' for e in listing) or 'none read'}",
@@ -932,9 +1128,17 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
                        f"not read: {', '.join(unknown)}" if unknown else ""]))})
 
     # bench
-    oyez_case = oyez.find(volume, page, int(day[:4]))
+    oyez_case = oyez.find(volume, page, int(day[:4]), rows[0].get("docket", "").strip())
     oyez_bench = oyez.bench(oyez_case) if oyez_case else None
     result, detail = bench_agreement(oyez_bench, scdb, listing, justices, day)
+    divided = scdb["decision_type"] == "equally divided Court" and bool(pages) and "equally divided court" in plain(" ".join(pages[:2]))
+    if divided and result != "agree":
+        # An equally divided Court affirms without saying who voted which way: Oyez counts every Justice in the
+        # majority, the Database records no votes. The Database's bench is kept.
+        result = "confirmed"
+        detail += (". Confirmed: the report prints that the judgment is affirmed by an equally divided Court, so no vote is"
+                   " recorded for any Justice; the Database's bench (no votes) is kept and Oyez's is not used")
+        oyez_bench = None
     checks.append({"check": "bench", "result": result, "detail": detail})
     court, natural = justices.natural_court(day)
     if oyez_bench:
@@ -943,6 +1147,11 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
         bench = {"court": court, "natural_court": natural, "decision_type": scdb["decision_type"], "vote": scdb["vote"],
                  "justices": scdb["justices"], "source": f"{SCDB}/{SCDB_FILES['modern' if int(day[:4]) >= 1946 else 'legacy']}.csv.zip",
                  "note": f"From the Supreme Court Database, case {row['scdb_case_id']}; Oyez has no votes for this case."}
+    # "Justice Gorsuch took no part in the consideration or decision of this case": no vote, not an unrecorded one
+    for family in re.findall(r"(?:Chief\s+)?Justice\s+([A-Z][\w'’-]+)\s+took\s+no\s+part", " ".join(pages or [])):
+        for member in bench["justices"]:
+            if Justices.family(member["name"]) == plain(family) and member["vote"] == "not recorded":
+                member["vote"] = "none"
     bench["checked"] = TODAY
 
     # nations
@@ -960,7 +1169,9 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
     elif pages and int(volume) <= 542:
         links.append({"site": "library-of-congress", "label": "Library of Congress", "access": "official", "link": loc_item})
     elif pages:
-        links.append({"site": "supremecourt", "label": "Supreme Court of the United States", "access": "official", "link": bound_volume(volume)})
+        links.append({"site": "supremecourt", "label": "Supreme Court of the United States", "access": "official", "link": bound_volume(report_volume(volume, page))})
+    if cap.get("_text_link"):
+        links.append({"site": "cornell", "label": "Cornell LII", "access": "free", "link": cap["_text_link"]})
     links.append({"site": "justia", "label": "Justia", "access": "free", "link": f"https://supreme.justia.com/cases/federal/us/{volume}/{page}/", "unchecked": True})
     if oyez_case and Oyez.link(oyez_case):
         links.append({"site": "oyez", "label": "Oyez", "access": "free", "link": Oyez.link(oyez_case)})
@@ -972,6 +1183,8 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
     ]
     report = official_pdf(volume, page) if pages else f"https://static.case.law/us/{volume}/html/{cap['file_name']}.html"
     status = "verified" if all(c["result"] == "agree" for c in checks) else "unverified"
+    if divided and status == "unverified" and all(c["result"] in ("agree", "confirmed") for c in checks):
+        status = "verified"
     settled = SETTLED_READINGS.get(row["scdb_case_id"])
     if settled and status == "unverified":
         fixes = settled.get("corrections") or {}
@@ -1024,7 +1237,7 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
                         "redistribution": True}
     record["found_in"] = [SESSION]
     record["notes"] = (f"Full citation: {full}. Official report scan: {report}. Written by {SCRIPT} from the Supreme Court Database "
-                       f"(case {row['scdb_case_id']}), the Caselaw Access Project's text of the report and {'the Library of Congress scan' if int(volume) <= 542 else "the Court's bound volume"}; "
+                       f"(case {row['scdb_case_id']}), {cap.get('_text_label', "the Caselaw Access Project's text of the report")} and {'the Library of Congress scan' if int(volume) <= 542 else court_printing(report_volume(volume, page))}; "
                        "not yet read by a person.")
     if pages and other:
         record["notes"] = record["notes"].replace("the Library of Congress scan;", f"the {other['label']} scan named in research/supreme-court-coverage/other-scans.json;") + f" {other['why']}"
@@ -1072,10 +1285,10 @@ def confirm_in_report(row, checks, listing, caption, court_dates, day, pages, fi
         return listing, caption, court_dates, day, scan_pages
     other = other_scan(volume, page)
     bound = int(volume) > 542 and not other
-    pdf = cache / "bound" / f"{volume}bv.pdf" if bound else cache / "loc" / f"{loc_name(volume, page)}.pdf"
+    pdf = cache / "bound" / f"{report_volume(volume, page)}bv.pdf" if bound else cache / "loc" / f"{loc_name(volume, page)}.pdf"
     if other:
         pdf = other_scan_pages(other, volume, page, len(pages), cache)[1]
-    base = bound_volume_start(volume, pages, cache) if bound else 0
+    base = bound_volume_start(report_volume(volume, page), pages, cache) if bound else 0
     mapping, map_notes = official_report.page_map(pages, first, last)
     index_of = {printed: index for index, printed in enumerate(mapping) if printed is not None}
 
@@ -1133,7 +1346,7 @@ def confirm_in_report(row, checks, listing, caption, court_dates, day, pages, fi
             score, how, index = official_report.find_text(caption, pages, [0, 1], pdf if not bound else None, cache)
             if score >= 0.9:
                 auto = f"the report prints the caption \"{caption}\" on p. {mapping[index] if index is not None else first} ({how}, {score:.2f})"
-        elif name in ("printed dates", "decided") and court_dates and court_dates.get("source", "").startswith(("https://tile.loc.gov", "https://www.supremecourt.gov/opinions/bound", "https://archive.org/")):
+        elif name in ("printed dates", "decided") and court_dates and court_dates.get("source", "").startswith(("https://tile.loc.gov", "https://www.supremecourt.gov/opinions/bound", "https://www.supremecourt.gov/opinions/preliminaryprint", "https://archive.org/")):
             line = court_dates["printed"]
             decided = parse_days(re.search(r"Decided\s+(.*)", line)[1]) if re.search(r"Decided\s+(.*)", line) else []
             score, how, index = official_report.find_text(line, pages, [0, 1, 2], pdf if not bound else None, cache)
@@ -1351,9 +1564,10 @@ def file_captures(cache: Path, captures: Path) -> None:
         if opinions.hashlib.sha256(path.read_bytes()).hexdigest() in filed:
             continue
         volume = path.name[:-6]
-        subprocess.run(mirror + ["--topic", "supremecourt.gov", "--name", f"opinions/boundvolumes/{path.name}",
-                                 "--title", f"United States Reports, volume {volume} (the Court's bound volume)",
-                                 "--obtained", f"downloaded by {SCRIPT}", "--redistribution", "yes", "--link", bound_volume(volume),
+        link = bound_volume(volume)
+        subprocess.run(mirror + ["--topic", "supremecourt.gov", "--name", link.split("supremecourt.gov/", 1)[1],
+                                 "--title", f"United States Reports, volume {volume.split('-')[0]} ({court_printing(volume)}{', part ' + volume.split('-')[1] if '-' in volume else ''})",
+                                 "--obtained", f"downloaded by {SCRIPT}", "--redistribution", "yes", "--link", link,
                                  "--rights", "Official report of the Supreme Court of the United States; a work of the U.S. government (17 U.S.C. § 105).",
                                  str(path)], check=True)
     keys_by_citation = {row["citation"]: row["key"] for row in csv.DictReader(REPORT.open(encoding="utf-8")) if row["key"]}

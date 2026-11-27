@@ -14,6 +14,9 @@
 	- `children`: the record's sections.
 	- `sources`: the Sources list. Optional.
 
+	A section drawn for the full width, such as a wide chart, takes the class
+	`clear-glance` and starts below the glance column.
+
 	When the page's column has room for both, the record's sections are held to
 	the reading measure on the left and the glance column sits on the right,
 	its top level with the line under the title. Otherwise the glance column
@@ -21,7 +24,7 @@
 	page open in a new tab.
 
 	Use:
-	<RecordPage glanceLabel="At a glance">
+	<RecordPage glanceLabel="Key facts">
 		{#snippet title()}<h1>…</h1>{/snippet}
 		{#snippet introduction()}<p class="lead">…</p>{/snippet}
 		{#snippet glance()}<GlancePanel>…</GlancePanel>{/snippet}
@@ -43,7 +46,7 @@
 		sources?: Snippet;
 	}
 
-	let { title, introduction, glance, glanceLabel = 'At a glance', children, sources }: Props = $props();
+	let { title, introduction, glance, glanceLabel = 'Key facts', children, sources }: Props = $props();
 </script>
 
 <span id={newTabNoteIdentifier} hidden>Opens in a new tab</span>
@@ -208,8 +211,19 @@
 			margin-top: 0;
 		}
 
-		.has-glance :global(:is(.record-details, .record-sources) :is(.notice, .panel, .timeline, figure, hr, .source-group, .source-list > li)) {
+		/* Not a figure kept hidden, such as a map view not chosen (NationMap.svelte). */
+		.has-glance :global(:is(.record-details, .record-sources) :is(.notice, .panel, .timeline, figure:not([hidden]), hr, .source-group, .source-list > li)) {
 			display: flow-root;
+		}
+
+		/*
+		 * A section drawn for the full width, such as a Court's chart of its
+		 * Justices, starts below the glance column instead of shrinking beside
+		 * it (Trevor, Nov. 26, 2026: the timelines "hit the at a glance on the
+		 * right"). The section takes the class clear-glance.
+		 */
+		.has-glance :global(.record-details .clear-glance) {
+			clear: right;
 		}
 	}
 

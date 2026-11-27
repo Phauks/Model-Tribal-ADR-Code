@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Chippewa, June 16, 1820, 7 Stat. 206
+  since: '1820-06-16'
+  source: treaty-with-the-chippewa-1820
+  confidence: medium
+  verification: inferred
+  as_of: '1820-06-16'
+  locator: p. 187 (Treaty with the Chippewa, 1820; Kappler header "June 16, 1820. | 7 Stat., 206. | Proclamation, Mar. 2, 1821.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Chippewa tribe (Sault de St. Marie); the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: MI
   presence: government-office
@@ -143,6 +153,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Sault Ste. Marie Tribe of Chippewa Indians of Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Sault Ste. Marie Tribe of Chippewa Indians (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1997
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Sault Ste. Marie Tribe Of Chippewa' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Sault Ste. Marie Tribe Of Chippewa'.
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Sault Ste. Marie Tribe of Chippewa Indians'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Sault Ste. Marie Tribe of Chippewa Indians'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 8427845
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MI, row 'Sault Ste. Marie Tribe of Chippewa Indians' (Sault Ste. Marie)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 11094898
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SAULT STE MARIE TRIBE OF CHIPPEWA INDIANS' (UEI PMNWBLLRNMM3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SAULT STE MARIE TRIBE OF CHIPPEWA INDIANS'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 22628529
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SAULT STE MARIE TRIBE OF CHIPPEWA INDIANS' (UEI PMNWBLLRNMM3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SAULT STE MARIE TRIBE OF CHIPPEWA INDIANS'.
 governance:
 - aspect: form
   value: Constitution adopted under Section 16 of the Indian Reorganization Act

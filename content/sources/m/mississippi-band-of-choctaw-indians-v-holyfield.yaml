@@ -93,6 +93,19 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Mississippi_Band_of_Choctaw_Indians_v._Holyfield
+argument_audio:
+- kind: argument
+  date: '1989-01-11'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-687.mp3
+  catalog: https://catalog.archives.gov/id/118974839
+  whole_session: true
+  duration_seconds: 12981
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-687.mp3
+    checksum: a767acf71d8c1ec591f8a0822be69db5ea7ad8b55665b76d74cc25d7bdbeb632
+    media_type: audio/mpeg
+    bytes: 207705357
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -121,7 +134,7 @@ case_box:
   holding: |-
     Yes. The Court held that "domicile" under the Indian Child Welfare Act is a matter of federal law, and that the children took their mother's reservation domicile. The Tribe's exclusive jurisdiction under 25 U.S.C. § 1911(a) could not be defeated by the parents' deliberate off-reservation birth and consent to adoption.
   quotes:
-  - text: "Tribal jurisdiction under § 1911(a) was not meant to be defeated by the actions of individual members of the tribe, for Congress was concerned not solely about the interests of Indian children and families, but also about the impact on the tribes themselves of the large numbers of Indian children adopted by non-Indians ..."
+  - text: "Tribal jurisdiction under § 1911(a) was not meant to be defeated by the actions of individual members of the tribe, for Congress was concerned not solely about the interests of Indian children and families, but also about the impact on the tribes themselves of the large numbers of Indian children adopted by non-Indians."
     pinpoint: "p. 49"
   treatment: |-
     *Haaland v. Brackeen* (2023) rejected constitutional challenges to the Indian Child Welfare Act on the merits or for lack of standing. [@haaland-v-brackeen]

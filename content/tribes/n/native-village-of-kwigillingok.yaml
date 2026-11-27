@@ -21,6 +21,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Native Village of Kwigillingok (approved by the Secretary of the Interior Oct. 24, 1949)
+  since: '1949-10-24'
+  source: constitution-native-village-of-kwigillingok-1949-text
+  document_version:
+    document: native-village-of-kwigillingok-constitution
+    version: 1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-10-24'
+  locator: 1949 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: AK
   presence: government-office
@@ -184,6 +197,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Native Village of Kwigillingok".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 497972
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Kwigillingok' (Kwigillingok)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Kwigillingok'.
 governance:
 - aspect: governing-body-selection
   value: Chosen as the Village decides

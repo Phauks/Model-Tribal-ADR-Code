@@ -23,7 +23,8 @@ describe('Biographies of Native people', () => {
 		]);
 		expect(page.picture?.src).toBe('/biographies/portraits/crow-dog.jpg');
 		expect(page.sources.map((source) => source.key)).toEqual(['ex-parte-crow-dog']);
-	});
+		// The first call reads every record (about 49,000 by Nov. 27, 2026), which can take more than 60 seconds on a CI runner.
+	}, 180_000);
 
 	it('lists the people with a page on their case and their nation', () => {
 		expect(peopleInCase('ex-parte-crow-dog').map((person) => person.name)).toEqual(['Crow Dog', 'Spotted Tail']);
@@ -96,5 +97,32 @@ describe('Biographies of Native people', () => {
 				})
 			]
 		});
+	});
+
+	it('gives the people who signed treaties for the United States a page, and links a President to his own', () => {
+		const cass = biographyPage('lewis-cass')!;
+		expect(cass.treaties.length).toBeGreaterThan(10);
+		expect(cass.treaties.every((item) => item.signedFor === 'United States')).toBe(true);
+		expect(signersOfTreaty(cass.treaties[0].key).map((person) => person.name)).toContain('Lewis Cass');
+		const jackson = biographyPage('andrew-jackson-united-states')!;
+		expect(jackson.glance.find((group) => group.field === 'office')?.items[0].link).toBe('/presidents/andrew-jackson');
+		// The Makah sub-chief the 1855 treaty prints as Andrew Jackson keeps his own page, with no President link.
+		expect(biographyPage('andrew-jackson')!.glance.find((group) => group.field === 'office')).toBeUndefined();
+	});
+
+	it('gives a treaty signer the offices the treaty names and the terms in Congress', () => {
+		const parris = biographyPage('albion-k-parris')!;
+		expect(parris.lead).toBe('U.S. Representative from Massachusetts and U.S. Senator from Maine. Signed the Treaty with the Winnebago, 1846, for the United States.');
+		const directory = parris.sources.find((source) => source.key === 'biographical-directory-of-the-united-states-congress');
+		expect(directory?.html).toContain('Biographical Directory of the United States Congress');
+		expect(biographyPage('william-clark')!.lead).toContain('Governor of the Missouri Territory');
+	});
+
+	it('marks a page that holds only treaty signings as a stub, and no other', () => {
+		expect(biographyPage('little-robe')!.stub).toEqual({ kind: 'person', record: 'biographies/little-robe' });
+		expect(biographyPage('william-clark')!.stub?.kind).toBe('person');
+		// Terms in Congress are more than a signing, so Lewis Cass's page is not a stub.
+		expect(biographyPage('lewis-cass')!.stub).toBeUndefined();
+		expect(biographyPage('crow-dog')!.stub).toBeUndefined();
 	});
 });

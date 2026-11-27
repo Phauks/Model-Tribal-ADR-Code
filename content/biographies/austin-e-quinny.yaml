@@ -1,16 +1,25 @@
 key: austin-e-quinny
 name: Austin E. Quinny
-lead: Signed the Treaty with the Stockbridge and Munsee, 1839, for the Munsee as sachem.
+lead: Sachem of the Stockbridge and Munsee tribes, as listed in the Treaty with the Stockbridge and Munsee, 1839. Signed two treaties with the United States, 1832–1839.
 living: false
+names:
+- name: Austin Quinny
+  note: as the Treaty with the Menominee, 1832 prints it
+  source: treaty-with-the-menominee-1832
+  where: 7 Stat. 409
 nations:
 - nation: stockbridge-munsee-community
-  named_as: Munsee
+  named_as: Stockbridge and Munsee tribes
   source: treaty-with-the-stockbridge-and-munsee-1839
   where: 7 Stat. 581
 cases: []
 events:
+- when: Oct. 27, 1832
+  text: Signed the Treaty with the Menominee, 1832, for the Stockbridges and Munsees.
+  source: treaty-with-the-menominee-1832
+  where: 7 Stat. 409
 - when: Sept. 3, 1839
-  text: Signed the Treaty with the Stockbridge and Munsee, 1839, for the Munsee, listed as sachem.
+  text: Signed the Treaty with the Stockbridge and Munsee, 1839, for the Stockbridge and Munsee tribes, listed as sachem.
   source: treaty-with-the-stockbridge-and-munsee-1839
   where: 7 Stat. 581
-checked: '2026-11-24'
+checked: '2026-11-27'

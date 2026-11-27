@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>{answer?.problem ? 'Error: ' : ''}{title} · Model Tribal ADR Code</title>
+	<title>{answer?.problem ? 'Error: ' : ''}{title} · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">
@@ -23,5 +23,12 @@
 		</div>
 	{/if}
 
-	<SignInForms {answer} codesAvailable={data.codesAvailable} {returnTo} creating={data.create} />
+	<SignInForms
+		{answer}
+		codesAvailable={data.codesAvailable}
+		turnstileSiteKey={data.turnstileSiteKey}
+		providers={data.providers}
+		{returnTo}
+		creating={data.create}
+	/>
 </div>

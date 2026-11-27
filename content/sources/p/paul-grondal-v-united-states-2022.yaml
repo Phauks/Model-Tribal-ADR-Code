@@ -1,0 +1,64 @@
+key: paul-grondal-v-united-states-2022
+kind: federal-case
+citation:
+  type: legal_case
+  title: Paul Grondal v. United States
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.4th
+  volume: '37'
+  page: '610'
+  issued:
+    date-parts:
+    - - 2022
+      - 6
+      - 13
+  URL: https://www.courtlistener.com/opinion/6477141/paul-grondal-v-united-states/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 21-35507
+original_link: https://www.courtlistener.com/opinion/6477141/paul-grondal-v-united-states/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2022-05-18'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2022/05/18/21-35507.mp3
+  duration_seconds: 2261
+  file:
+    storage_key: appeals-court-audio/ca9/2022/2022-05-18-21-35507.mp3
+    checksum: c618dfd0f7cb5782e9e348efba0d0ddc36c4c95d5e984c336133c31e8b8e899d
+    media_type: audio/mpeg
+    bytes: 36173948
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 37 F.4th 610. Decided by the United States Court of Appeals for the Ninth Circuit on June 13, 2022. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 56, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 56
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

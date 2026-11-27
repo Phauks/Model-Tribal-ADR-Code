@@ -104,6 +104,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=524%20U.S.%20103
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1998-02-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1054.mp3
+  catalog: https://catalog.archives.gov/id/138282694
+  whole_session: true
+  duration_seconds: 7276
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1054.mp3
+    checksum: 8d23ea70b3c69a94a33339c818cea5547d901292abfa7587ef20cef4e793eb45
+    media_type: audio/mpeg
+    bytes: 116424327
 rights:
   status: no-permission-needed
   basis: us-government-work

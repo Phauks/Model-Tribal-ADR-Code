@@ -93,6 +93,79 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Santa_Clara_Pueblo_v._Martinez
+argument_audio:
+- kind: argument
+  date: '1977-11-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-210-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048592
+  whole_session: true
+  duration_seconds: 142
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-210-r1.mp3
+    checksum: ae90186633ae5a2706d2bcd325e9f2590badb54c9b777483c19205844ff361ee
+    media_type: audio/mpeg
+    bytes: 2270901
+- kind: argument
+  date: '1977-11-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-210-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048592
+  whole_session: true
+  duration_seconds: 104
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-210-r2.mp3
+    checksum: b704f994f608162c01cfae30a16e1978125f5e7ca416e90bb867d99bacd88857
+    media_type: audio/mpeg
+    bytes: 1663188
+- kind: argument
+  date: '1977-11-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-210-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048592
+  whole_session: true
+  duration_seconds: 3541
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-210-r3.mp3
+    checksum: c05b75df486300a777bbe4ea76bfffcd8e8a3d81ac792a709d9bad7b9a3ca6c3
+    media_type: audio/mpeg
+    bytes: 56664109
+- kind: argument
+  date: '1977-11-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-210-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048592
+  whole_session: true
+  duration_seconds: 3644
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-210-r4.mp3
+    checksum: 775b30ec67630b1d06b0554251fb05abbac4deec33c075cae8759ccbd48c64f8
+    media_type: audio/mpeg
+    bytes: 58312540
+- kind: argument
+  date: '1977-11-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-210-r5.mp3
+  catalog: https://catalog.archives.gov/id/102048592
+  whole_session: true
+  duration_seconds: 3492
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-210-r5.mp3
+    checksum: 86113ad32f48e324f8fd7eaa7d8bcc47d17bbff0a3e12c850f5069bd3c8baedc
+    media_type: audio/mpeg
+    bytes: 55879182
+- kind: argument
+  date: '1977-11-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-210-r6.mp3
+  catalog: https://catalog.archives.gov/id/102048592
+  whole_session: true
+  duration_seconds: 3433
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-210-r6.mp3
+    checksum: 343b7c23ab190ebeb9fccb76630bc85623109a522f5b45d71ac8d18227114a71
+    media_type: audio/mpeg
+    bytes: 54930832
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -121,13 +194,13 @@ case_box:
   holding: |-
     No. The Court held that the Pueblo's sovereign immunity bars suit against it under the Indian Civil Rights Act. The Indian Civil Rights Act also creates no implied federal cause of action against Tribal officers beyond habeas corpus. Its rights are to be enforced in Tribal forums, including nonjudicial ones.
   quotes:
-  - text: "As separate sovereigns pre-existing the Constitution, tribes have historically been regarded as unconstrained by those constitutional provisions framed specifically as limitations on federal or state authority ..."
+  - text: "As separate sovereigns pre-existing the Constitution, tribes have historically been regarded as unconstrained by those constitutional provisions framed specifically as limitations on federal or state authority."
     pinpoint: "p. 56"
-  - text: "Tribal courts have repeatedly been recognized as appropriate forums for the exclusive adjudication of disputes affecting important personal and property interests of both Indians and non-Indians ..."
+  - text: "Tribal courts have repeatedly been recognized as appropriate forums for the exclusive adjudication of disputes affecting important personal and property interests of both Indians and non-Indians."
     pinpoint: "p. 65"
-  - text: "Nonjudicial tribal institutions have also been recognized as competent law-applying bodies ..."
+  - text: "Nonjudicial tribal institutions have also been recognized as competent law-applying bodies."
     pinpoint: "p. 66"
-  - text: "A tribe's right to define its own membership for tribal purposes has long been recognized as central to its existence as an independent political community ..."
+  - text: "A tribe's right to define its own membership for tribal purposes has long been recognized as central to its existence as an independent political community."
     pinpoint: "p. 72 n.32"
   topics:
   - "Dispute resolution and arbitration"

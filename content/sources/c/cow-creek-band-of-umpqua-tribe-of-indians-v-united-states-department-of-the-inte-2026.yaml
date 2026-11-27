@@ -1,0 +1,56 @@
+key: cow-creek-band-of-umpqua-tribe-of-indians-v-united-states-department-of-the-inte-2026
+kind: federal-case
+citation:
+  type: legal_case
+  title: Cow Creek Band of Umpqua Tribe of Indians v. United States Department of the Interior
+  authority: United States District Court for the District of Columbia
+  issued:
+    date-parts:
+    - - 2026
+      - 9
+      - 4
+  URL: https://www.courtlistener.com/opinion/10967486/cow-creek-band-of-umpqua-tribe-of-indians-v-united-states-department-of/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/10967486/cow-creek-band-of-umpqua-tribe-of-indians-v-united-states-department-of/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- cow-creek-band-of-umpqua-tribe-of-indians
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: cow-creek-band-of-umpqua-tribe-of-indians
+    named_as: Cow Creek Band of Umpqua Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket Civil Action No. 2024-3594; no reporter citation yet. Decided by the United States District Court for the District of Columbia on Sept. 4, 2026. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 65, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 65
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

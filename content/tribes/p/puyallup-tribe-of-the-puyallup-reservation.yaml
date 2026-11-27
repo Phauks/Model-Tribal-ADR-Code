@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty of Medicine Creek, Dec. 26, 1854, 10 Stat. 1132
+  since: '1854-12-26'
+  source: treaty-with-the-nisqualli-puyallup-etc-1854
+  confidence: medium
+  verification: inferred
+  as_of: '1854-12-26'
+  locator: p. 661 (Treaty with the Nisqualli, Puyallup, etc., 1854; Kappler header "Dec. 26, 1854. | 10 Stat., 1132. | Ratified Mar. 3, 1855. | Proclaimed Apr. 10, 1855.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Puyallup; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 3 nations' profiles link this treaty.
 states:
 - state: WA
   presence: government-office
@@ -174,6 +184,37 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Puyallup Tribe of Indians".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 6930533
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Puyallup Tribe' (Tacoma)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 5210879
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'PUYALLUP TRIBE OF INDIANS' (UEI K3P8QSSCSJC4), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PUYALLUP TRIBE OF INDIANS'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 17540489
+  amount_kind: obligations
+  through: Puyallup Tribal Health Authority
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'PUYALLUP TRIBAL HEALTH AUTHORITY' (UEI N9XLV9935GG8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PUYALLUP TRIBAL HEALTH AUTHORITY'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Puyallup Tribe, Washington" among organizations under constitutions approved
@@ -847,6 +888,22 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on May 25, 1994 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Oct. 31, 1994.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1994-05-25'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
 nearby_state_courts:
 - state: WA
   county: Pierce County

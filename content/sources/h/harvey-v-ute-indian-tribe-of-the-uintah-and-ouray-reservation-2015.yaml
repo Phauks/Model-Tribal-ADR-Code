@@ -1,0 +1,59 @@
+key: harvey-v-ute-indian-tribe-of-the-uintah-and-ouray-reservation-2015
+kind: federal-case
+citation:
+  type: legal_case
+  title: Harvey v. Ute Indian Tribe of the Uintah & Ouray Reservation
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.3d
+  volume: '797'
+  page: '800'
+  issued:
+    date-parts:
+    - - 2015
+      - 8
+      - 13
+  URL: https://static.case.law/f3d/797/html/0800-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 14-4089
+original_link: https://static.case.law/f3d/797/html/0800-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- ute-indian-tribe-of-the-uintah-and-ouray-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: ute-indian-tribe-of-the-uintah-and-ouray-reservation
+    named_as: Ute Indian Tribe of the Uintah & Ouray Reservation
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 797 F.3d 800. Decided by the United States Court of Appeals for the Tenth Circuit on Aug. 13, 2015. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 5; an AI reader read excerpts and judged it an Indian law case (Ute tribal regulatory authority over non-Indian businesses, tribal immunity).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 5; reader: Ute tribal regulatory authority over non-Indian businesses, tribal immunity'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

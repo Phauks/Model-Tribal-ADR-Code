@@ -1,0 +1,69 @@
+key: wyoming-v-united-states-environmental-protection-agency-2017
+kind: federal-case
+citation:
+  type: legal_case
+  title: Wyoming v. United States Environmental Protection Agency
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.3d
+  volume: '875'
+  page: '505'
+  issued:
+    date-parts:
+    - - 2017
+      - 2
+      - 22
+  URL: https://static.case.law/f3d/875/html/0505-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 14-9512, 14-9514
+original_link: https://static.case.law/f3d/875/html/0505-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- northern-arapaho-tribe-of-the-wind-river-reservation
+- eastern-shoshone-tribe-of-the-wind-river-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: northern-arapaho-tribe-of-the-wind-river-reservation
+    named_as: Respondents. The Northern Arapaho Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: eastern-shoshone-tribe-of-the-wind-river-reservation
+    named_as: Eastern Shoshone Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  not_linked:
+  - named_as: American Indians
+    reason: More than one of today's nations shares this name (american-indian-council-of-mariposa-county, native-american-mohegans-inc, piedmont-american-indian-association-lower-eastern-cherokee-nation-of-south-carolina, samoan-people-of-american-samoa, southern-sierra-miwuk-nation, the-yamassee-native-american-moors-of-the-creek-nation); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 875 F.3d 505. Decided by the United States Court of Appeals for the Tenth Circuit on Feb. 22, 2017. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 49, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 49
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 2 matched, 1 not linked

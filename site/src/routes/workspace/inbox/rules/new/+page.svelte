@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>New rule · Inbox · Workspace · Model Tribal ADR Code</title>
+	<title>New rule · Inbox · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -19,6 +19,7 @@
 		{ label: 'Inbox', href: '/workspace/inbox' },
 		{ label: 'Auto-sort rules', href: '/workspace/inbox/rules' }
 	]}
+	current="New rule"
 />
 <h1>New rule</h1>
 

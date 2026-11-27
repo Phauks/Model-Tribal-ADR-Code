@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { pageChangesLink } from '#lib/page-history.ts';
 	import Breadcrumbs from '../Breadcrumbs.svelte';
 	// Every published version of an essay, newest first. Each stays readable.
 	let {
@@ -17,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>Versions of {title} · {section} · Model Tribal ADR Code</title>
+	<title>Versions of {title} · {section} · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -25,6 +26,7 @@
 		{ label: section, href: sectionLink },
 		{ label: title, href: path }
 	]}
+	current="Versions of {title}"
 />
 
 <div class="reading">
@@ -38,5 +40,5 @@
 			</li>
 		{/each}
 	</ol>
-	<p><a href="/changes?page={encodeURIComponent(path)}">Compare versions, and see who changed what</a></p>
+	<p><a href={pageChangesLink(path)}>Compare versions, and see who changed what</a></p>
 </div>

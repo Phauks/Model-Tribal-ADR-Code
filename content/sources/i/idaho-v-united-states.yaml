@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=533%20U.S.%20262
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2001-04-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1186.mp3
+  catalog: https://catalog.archives.gov/id/138282831
+  whole_session: true
+  duration_seconds: 7144
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1186.mp3
+    checksum: ffc9a08399bc4938cf75d804efdd004330d61f5eb2b518410bb36ebcd0221331
+    media_type: audio/mpeg
+    bytes: 114304438
 rights:
   status: no-permission-needed
   basis: us-government-work

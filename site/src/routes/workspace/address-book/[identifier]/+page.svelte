@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-	<title>{contact.name} · Address book · Workspace · Model Tribal ADR Code</title>
+	<title>{contact.name} · Address book · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -40,6 +40,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Address book', href: '/workspace/address-book' }
 	]}
+	current={contact.name}
 />
 <h1>{contact.name}</h1>
 <p class="muted">

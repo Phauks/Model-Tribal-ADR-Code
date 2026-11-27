@@ -32,6 +32,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Native Village of Tanana (approved by the Secretary of the Interior May 15, 1939)
+  since: '1939-05-15'
+  source: constitution-native-village-of-tanana-1939-text
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1939-text
+  confidence: medium
+  verification: inferred
+  as_of: '1939-05-15'
+  locator: 1939 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AK
   presence: government-office
@@ -194,6 +207,58 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
   note: 'The source''s words: "Native Village of Tanana".'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2002
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Native Village Of Tanana' (Alaska Region)
+- program: indian-health-service-self-governance-compact
+  since: 2023
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Alaska Area, row 'Tanana Tribal Council'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Tanana Tribal Council'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 270562
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Tanana' (Tanana)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Tanana'.
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Native Village of Tanana'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 829059
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'NATIVE VILLAGE OF TANANA' (UEI KM2BJ229TJP2), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 1365066
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'NATIVE VILLAGE OF TANANA' (UEI KM2BJ229TJP2), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Amended Constitution by authority of the Act of June 18, 1934

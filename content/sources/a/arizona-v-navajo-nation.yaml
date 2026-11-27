@@ -93,6 +93,41 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Arizona_v._Navajo_Nation
+argument_audio:
+- kind: argument
+  date: '2023-03-20'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/21-1484.mp3
+  duration_seconds: 6602
+  file:
+    storage_key: supreme-court-audio/court/2022/21-1484.mp3
+    checksum: deabcabdf4324e5ef4813e3bc9fa0d3d8dcec4420900b556866837d7b41083f5
+    media_type: audio/mpeg
+    bytes: 52826725
+- kind: argument
+  date: '2023-03-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2022_term/267-2299.mp3
+  catalog: https://catalog.archives.gov/id/326769280
+  whole_session: true
+  duration_seconds: 6911
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2299.mp3
+    checksum: ee78a241fce92674199dfe2c48bad81b61893d570339fbbbf2a3bafb6d0ed8bc
+    media_type: audio/mpeg
+    bytes: 138217958
+- kind: opinion announcement
+  date: '2023-06-22'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2022_term/267-2322.mp3
+  catalog: https://catalog.archives.gov/id/326769326
+  whole_session: true
+  duration_seconds: 1491
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2322.mp3
+    checksum: 1b90b2354724d6ca7a9e49afb3f7665e2c38582d5d3d03034fcd018a16019c3f
+    media_type: audio/mpeg
+    bytes: 29816198
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -121,7 +156,7 @@ case_box:
   holding: |-
     No. The Court held that the treaty reserved water rights under *Winters* but imposed no affirmative duty on the United States to assess the Nation's water needs or build infrastructure, so the Nation's breach-of-trust claim failed.
   quotes:
-  - text: "In light of the treaty’s text and history, we conclude that the treaty does not require the United States to take those affirmative steps ..."
+  - text: "In light of the treaty’s text and history, we conclude that the treaty does not require the United States to take those affirmative steps."
     pinpoint: "p. 559"
   reading:
     title: "*Arizona v. Navajo Nation* (2023)"

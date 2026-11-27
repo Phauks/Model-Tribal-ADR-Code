@@ -33,7 +33,9 @@ export type ScanPurpose =
 	| 'sponsor-logo'
 	| 'room-recording'
 	| 'event-material'
-	| 'book-order-photo';
+	| 'book-order-photo'
+	/** A file the source watch fetched from a public source (docs/source-watch.md, "Storage and hosting"). */
+	| 'watch-capture';
 
 export interface FileScan {
 	objectKey: string;
@@ -185,7 +187,7 @@ export async function storeSentFile(
 	try {
 		await requestScan(database, { objectKey: file.objectKey, purpose: file.purpose, subject: file.subject }, now);
 	} catch (problem) {
-		await bucket.delete(file.objectKey).catch(() => undefined);
+		await bucket.delete(file.objectKey).catch(() => /* expected: the original problem is thrown; an object left without a scan is never served */ undefined);
 		throw problem;
 	}
 }
@@ -209,7 +211,7 @@ export async function openScannedFile(database: D1Database, bucket: R2Bucket, ob
 	const object = await bucket.get(objectKey);
 	if (!object) return { state: 'missing', scan };
 	if (!mayServe(scan, object)) {
-		await object.body.cancel().catch(() => undefined);
+		await object.body.cancel().catch(() => /* expected: the body is only being let go */ undefined);
 		return { state: 'held', scan };
 	}
 	return { state: 'ready', object, scan: scan! };

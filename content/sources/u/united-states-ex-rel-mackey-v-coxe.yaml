@@ -137,7 +137,7 @@ review:
     detail: Supreme Court Library's table (from the Court's minutes) Jan. 14, 1856; Database 1856-01-14
   - check: opinions
     result: confirmed
-    detail: 'Report: majority Mclean p. 100; Database writers: Curtis, Mclean, Nelson. Read from the scan by an AI reader (record right): p.100: Mr. Justice McLEAN delivered the opinion of the court. p.105: Justices NELSON and CURTIS stated that they concurred in the decision of the court to affirm the judgment of the circuit ... (a statement of concurrence only; no opinion text by either Justice appears in the scan).. Confirmed: The report prints p. 100: "Mr. Justice McLEAN delivered the opinion of the court"'
+    detail: 'Report: majority Mclean p. 100; Database writers: Curtis, Mclean, Nelson. Read from the scan by an AI reader (record right): p.100: Mr. Justice McLEAN delivered the opinion of the court. p.105: Justices NELSON and CURTIS stated that they concurred in the decision of the court to affirm the judgment of the circuit . . . (a statement of concurrence only; no opinion text by either Justice appears in the scan).. Confirmed: The report prints p. 100: "Mr. Justice McLEAN delivered the opinion of the court"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

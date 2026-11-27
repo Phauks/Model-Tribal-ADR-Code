@@ -1,0 +1,71 @@
+key: schugg-v-gila-river-indian-community-2017
+kind: federal-case
+citation:
+  type: legal_case
+  title: Schugg v. Gila River Indian Community
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F. App'x
+  volume: '688'
+  page: '477'
+  issued:
+    date-parts:
+    - - 2017
+      - 4
+      - 24
+  URL: https://static.case.law/f-appx/688/html/0477-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 15-15872
+original_link: https://static.case.law/f-appx/688/html/0477-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2017-04-05'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2017/04/05/15-15872.mp3
+  duration_seconds: 2596
+  file:
+    storage_key: appeals-court-audio/ca9/2017/2017-04-05-15-15872.mp3
+    checksum: 09d79dee6db1113f44610b5bc0cdebda188260eb1efb1621512e3946b15c4caa
+    media_type: audio/mpeg
+    bytes: 10383987
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- gila-river-indian-community-of-the-gila-river-indian-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: gila-river-indian-community-of-the-gila-river-indian-reservation
+    named_as: Gila River Indian Community
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 688 F. App'x 477. Decided by the United States Court of Appeals for the Ninth Circuit on Apr. 24, 2017. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (tribal sovereign immunity of Gila River Indian Community).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: tribal sovereign immunity of Gila River Indian Community'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

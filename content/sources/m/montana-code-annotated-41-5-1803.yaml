@@ -1,0 +1,50 @@
+key: montana-code-annotated-41-5-1803
+kind: state-statute
+citation:
+  type: legislation
+  title: County responsibility to provide youth detention services
+  title-short: Mont. Code Ann. § 41-5-1803
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 41-5-1803
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1991
+  URL: https://mca.legmt.gov/bills/mca/title_0410/chapter_0050/part_0180/section_0030/0410-0050-0180-0030.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0410/chapter_0050/part_0180/section_0030/0410-0050-0180-0030.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 41-5-1803 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 41-5-1803 (2025). History: En. Sec. 2, Ch. 799, L. 1991; Sec. 41-5-810, MCA 1995; redes. 41-5-1803 by Sec. 47, Ch. 286, L. 1997; amd. Sec. 13, Ch. 532, L. 1999; amd. Sec. 4, Ch. 536, L. 1999. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribal; tribe); AI reader''s verdict incidental: Counties may contract with an Indian tribe for secure detention. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribal; tribe'

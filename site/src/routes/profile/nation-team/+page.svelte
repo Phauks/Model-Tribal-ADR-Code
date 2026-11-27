@@ -120,7 +120,7 @@
 </script>
 
 <svelte:head>
-	<title>Ask to edit your nation’s page · Model Tribal ADR Code</title>
+	<title>Ask to edit your nation’s page · Tribal Law Project</title>
 </svelte:head>
 
 <p class="small"><a href="/profile">Your profile</a></p>
@@ -456,7 +456,7 @@
 	}
 
 	.choice-chip:has(input:focus-visible) {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 2px;
 	}
 

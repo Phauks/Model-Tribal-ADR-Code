@@ -11,6 +11,7 @@
 	// icon (nation page review, Nov. 22, 2026); it opens in a new tab
 	// (src/lib/new-tab-links.ts).
 	import ExternalLink from '@lucide/svelte/icons/external-link';
+	import { imageViewerAttributes } from '#lib/image-viewer.ts';
 	import type { CitationMark } from '#lib/citation-marks.ts';
 	import CitationMarks from './CitationMarks.svelte';
 	import TopicBadges from './TopicBadges.svelte';
@@ -21,12 +22,21 @@
 		link?: string;
 		detail?: string;
 		/** A detail with linked citations, such as a recognition status's legal basis. */
-		detailParts?: { text: string; link?: string }[];
+		detailParts?: { text: string; link?: string; viewer?: string; original?: string }[];
 		/** A short line under the value, such as what sources record in each state. */
 		note?: string;
 		citations?: CitationMark[];
 		/** Short tags, such as topics, shown as badges in place of the text. */
 		badges?: { text: string; link?: string }[];
+		/** An estimate's margin of error, shown after it as "± 5" (Census figures). */
+		margin?: string;
+	}
+
+	interface FactTable {
+		headers: string[];
+		rows: { text: string; link?: string; value: string; citations?: CitationMark[] }[];
+		/** A short line under the table, such as the year of a count. */
+		note?: string;
 	}
 
 	interface FactGroup {
@@ -35,6 +45,10 @@
 		items: FactItem[];
 		/** The note every value shares, in the words to say it once, such as "Law codes". */
 		note?: string;
+		/** The group takes the panel's full width, its label above its values, such as a Census area's figures. */
+		wide?: boolean;
+		/** Values shown as a small table, such as a nation's Census areas; any items follow it. */
+		table?: FactTable;
 	}
 
 	let { groups }: { groups: FactGroup[] } = $props();
@@ -47,6 +61,26 @@
 
 	/** Every value has its own label, so they show as label rows. */
 	const labeled = (group: FactGroup) => group.items.every((item) => item.label);
+
+	/**
+	 * The value a group is named for comes first with no label of its own,
+	 * such as a governing body's name before its members and term; the
+	 * labeled values under it stay label rows (Trevor, Nov. 27, 2026).
+	 */
+	const leadThenLabeled = (group: FactGroup) =>
+		group.items.length > 1 && !group.items[0].label && group.items.slice(1).every((item) => item.label);
+
+	/**
+	 * Several values with no label, such as the branches of a government,
+	 * stack one per line, and the labeled values after them, such as
+	 * "Separation of powers", stay label rows under them (Trevor chose this,
+	 * "one line per branch", on Nov. 27, 2026; design/branches-of-government).
+	 */
+	function stackThenLabeled(group: FactGroup): number | undefined {
+		const first = group.items.findIndex((item) => item.label);
+		if (first < 2 || !group.items.slice(first).every((item) => item.label)) return undefined;
+		return group.items.slice(0, first).some((item) => item.label) ? undefined : first;
+	}
 
 	/**
 	 * The detail and note every value of the group shares, said once under the
@@ -76,18 +110,31 @@
 			>{joiner}<ExternalLink class="external-icon" size={14} strokeWidth={1.75} aria-hidden="true" /><CitationMarks
 				marks={item.citations}
 			/></span
-		>{:else if item.link}<a href={item.link}>{item.text}</a><CitationMarks marks={item.citations} />{:else}{item.text}<CitationMarks
-			marks={item.citations}
-		/>{/if}
+		>{:else if item.link}<a href={item.link}>{item.text}</a><CitationMarks marks={item.citations} />{:else}{item.text}{#if item.margin}<span
+				class="fact-margin muted small"
+				><span class="visually-hidden">, margin of error</span> ± {item.margin}</span
+			>{/if}<CitationMarks marks={item.citations} />{/if}
 	{#if item.detailParts}
 		<span class="fact-detail muted small"
-			>{#each item.detailParts as part, partIndex (partIndex)}{#if part.link}<a href={part.link}>{part.text}</a
+			>{#each item.detailParts as part, partIndex (partIndex)}{#if part.link && part.viewer}<a href={part.link} {...imageViewerAttributes(part.viewer, { title: part.viewer, original: part.original })}>{part.text}</a
+					>{:else if part.link}<a href={part.link}>{part.text}</a
 					>{:else}{part.text}{/if}{/each}</span
 		>
 	{:else if item.detail}
 		<span class="fact-detail muted small">{item.detail}</span>
 	{/if}
 	{#if item.note}<span class="fact-detail muted small">{item.note}</span>{/if}
+{/snippet}
+
+{#snippet labelRows(rows: FactItem[])}
+	<dl class="label-rows">
+		{#each rows as item, index (index)}
+			<div>
+				<dt>{item.label}</dt>
+				<dd>{@render value(item)}</dd>
+			</div>
+		{/each}
+	</dl>
 {/snippet}
 
 {#snippet fact(item: FactItem)}
@@ -98,20 +145,43 @@
 	{#each groups as group (group.field)}
 		{@const note = sharedNote(group)}
 		{@const items = shownItems(group)}
-		<div>
+		<div class:wide={group.wide}>
 			<dt>{group.label}{#if note}<span class="group-note muted small">{note}</span>{/if}</dt>
 			<dd>
-				{#if items.length === 1}
+				{#if group.table}
+					<!-- Two short columns in a narrow panel: no handles to resize them (src/lib/tables/resizable-columns.ts). -->
+					<table class="fact-table" data-fixed-columns>
+						<thead>
+							<tr>
+								{#each group.table.headers as header, index (index)}<th scope="col">{header}</th>{/each}
+							</tr>
+						</thead>
+						<tbody>
+							{#each group.table.rows as row, index (index)}
+								<tr>
+									<td>{#if row.link}<a href={row.link}>{row.text}</a>{:else}{row.text}{/if}</td>
+									<td class="number">{row.value}<CitationMarks marks={row.citations} /></td>
+								</tr>
+							{/each}
+						</tbody>
+					</table>
+					{#if group.table.note}<span class="fact-detail muted small">{group.table.note}</span>{/if}
+					{#each items as item, index (index)}<div class="table-after">{@render fact(item)}</div>{/each}
+				{:else if items.length === 1}
 					{@render fact(items[0])}
 				{:else if labeled(group)}
-					<dl class="label-rows">
-						{#each items as item, index (index)}
-							<div>
-								<dt>{item.label}</dt>
-								<dd>{@render value(item)}</dd>
-							</div>
+					{@render labelRows(items)}
+				{:else if leadThenLabeled(group)}
+					<div class="lead-value">{@render value(items[0])}</div>
+					{@render labelRows(items.slice(1))}
+				{:else if stackThenLabeled(group)}
+					{@const first = stackThenLabeled(group) ?? 0}
+					<ul class="stacked-list lead-value">
+						{#each items.slice(0, first) as item, index (index)}
+							<li>{@render fact(item)}</li>
 						{/each}
-					</dl>
+					</ul>
+					{@render labelRows(items.slice(first))}
 				{:else}
 					<ul class="stacked-list">
 						{#each items as item, index (index)}
@@ -135,7 +205,9 @@
 	 * reaches 24 by 24 pixels without growing the line. It leaves a pixel or
 	 * two to spare, because a fallback font draws the number smaller than the
 	 * site's own font does (23.5 by 23 pixels in Liberation Sans with 4 and 8
-	 * pixels; measured Nov. 23, 2026).
+	 * pixels; measured Nov. 23, 2026). The right padding is 10 pixels: with 9,
+	 * a [1], the narrowest marker, drew 23.9 pixels wide in the site's font,
+	 * short of a full target where it follows a link (measured Nov. 27, 2026).
 	 *
 	 * A link that is the whole fact gets the same treatment: two pixels above
 	 * and below take a line of it from 21 to 25 pixels, so it is a full target
@@ -143,7 +215,7 @@
 	 * which changes wherever the link wraps.
 	 */
 	.summary-list :global(.note-marker) {
-		padding: 5px 9px 5px 0.05em;
+		padding: 5px 10px 5px 0.05em;
 	}
 
 	.summary-list dd > a,
@@ -151,8 +223,83 @@
 		padding-block: 2px;
 	}
 
+	/* The same gap as between two label rows. */
+	.lead-value {
+		margin-bottom: var(--space-1);
+	}
+
+	/* Branches stacked above their label rows: the gap between stacked lines. */
+	.stacked-list.lead-value {
+		margin-bottom: var(--space-2);
+	}
+
 	.link-tail {
 		white-space: nowrap;
+	}
+
+	/*
+	 * A wide group, such as a Census area's figures, takes the panel's full
+	 * width: its label above, then its values, the numbers lined up on the
+	 * right (Trevor approved the mockup on Nov. 27, 2026; project files
+	 * design/census-key-facts/).
+	 */
+	.summary-list > .wide > dt {
+		grid-column: 1 / -1;
+		border-bottom: 0;
+		padding-bottom: var(--space-1);
+	}
+
+	.summary-list > .wide > dd {
+		grid-column: 1 / -1;
+	}
+
+	.wide .lead-value {
+		margin-bottom: var(--space-2);
+	}
+
+	.summary-list > .wide :global(.label-rows) {
+		grid-template-columns: 1fr auto;
+	}
+
+	.summary-list > .wide :global(.label-rows dd) {
+		text-align: right;
+		white-space: nowrap;
+		font-variant-numeric: tabular-nums;
+	}
+
+	/* The panel's own type size, as in the approved mockup, not the smaller size of a data table. */
+	.fact-table {
+		width: 100%;
+		margin: 2px 0 0;
+		border-collapse: collapse;
+		font-size: inherit;
+	}
+
+	.fact-table th {
+		padding: 2px 0 var(--space-1);
+		border-bottom: 1px solid var(--color-line);
+		background: none;
+		font-weight: var(--font-weight-semibold);
+		text-align: left;
+	}
+
+	.fact-table td {
+		padding: 3px 0;
+		font-size: inherit;
+		border-bottom: 1px solid var(--color-line);
+		vertical-align: top;
+	}
+
+	.fact-table th:last-child,
+	.fact-table td.number {
+		padding-left: var(--space-3);
+		text-align: right;
+		white-space: nowrap;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.table-after {
+		margin-top: var(--space-2);
 	}
 
 	.summary-list :global(.external-icon),

@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Register · {data.event.title} · Events · Model Tribal ADR Code</title>
+	<title>Register · {data.event.title} · Events · Tribal Law Project</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
@@ -22,6 +22,7 @@
 			{ label: 'Events', href: '/events' },
 			{ label: data.event.title, href: `/events/${data.event.slug}` }
 		]}
+		current="Register"
 	/>
 	<h1>Register</h1>
 	<p>{data.event.when}</p>

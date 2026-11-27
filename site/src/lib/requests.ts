@@ -3,8 +3,12 @@
  * docs/requests.md, shared by the request form and the co-author workspace.
  */
 
+/** Files a request takes, added one at a time in the form (Trevor, Nov. 27, 2026). */
+export const maximumRequestFiles = 5;
+
 export const requestKinds = [
 	'correct',
+	'broken-page',
 	'restrict',
 	'remove',
 	'replace-name',
@@ -16,6 +20,7 @@ export type RequestKind = (typeof requestKinds)[number];
 
 export const requestKindLabels: Record<RequestKind, string> = {
 	correct: 'Correct something',
+	'broken-page': 'Report a broken page',
 	restrict: 'Make something private',
 	remove: 'Delete something',
 	'replace-name': 'Replace a name with initials',
@@ -26,6 +31,7 @@ export const requestKindLabels: Record<RequestKind, string> = {
 
 export const requestKindHints: Record<RequestKind, string> = {
 	correct: 'A fact, name, spelling or citation is wrong.',
+	'broken-page': 'A link or address did not open a page, or part of a page did not work.',
 	restrict:
 		'We keep it in our private records but stop showing it, for example because it is sensitive or belongs to the community. We hide it within 7 days, then review it.',
 	remove:
@@ -111,6 +117,26 @@ export const authorityStatementLabels: Record<AuthorityStatement, string> = {
 	'not-writing-for-government':
 		'I am not writing for the nation’s government. We will contact the nation ourselves.'
 };
+
+/**
+ * The Terms of Submission a reader accepts, with one checkbox, before any
+ * request is sent, each on its own line (Trevor, Nov. 27, 2026). The last three repeat
+ * how the project uses what is sent (docs/requests.md, "How it is used").
+ */
+export function requestStatements(kind: RequestKind): string[] {
+	const sensitive = kind === 'restrict' || kind === 'remove' || kind === 'replace-name';
+	return [
+		'The information you give is true to the best of your knowledge.',
+		'You have the right to share any files and sources you send.',
+		'Nothing you send is confidential or legally privileged.',
+		'You have not included the name or other personal details of a child or a protected person.',
+		sensitive
+			? 'We never publish the material you ask us to make private or delete.'
+			: 'Files and sources you send may be cited or published, because the work shows its sources.',
+		'Your contact details are never published.',
+		'Your name, role and contact details are deleted 12 months after the request is resolved, unless you asked to be credited.'
+	];
+}
 
 const day = 24 * 60 * 60 * 1000;
 

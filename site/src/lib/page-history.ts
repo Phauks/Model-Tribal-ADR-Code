@@ -10,6 +10,9 @@
  * parts, never their earlier wording (Trevor, Nov. 23, 2026).
  */
 
+import type { RecognitionBadge } from './recognition-badges.ts';
+import type { BadgeExplanation } from './recognition-explanation.ts';
+
 export const pageKinds = [
 	'code',
 	'foundations',
@@ -19,7 +22,8 @@ export const pageKinds = [
 	'story',
 	'glossary',
 	'front-matter',
-	'about'
+	'about',
+	'news'
 ] as const;
 export type PageKind = (typeof pageKinds)[number];
 
@@ -32,7 +36,8 @@ export const pageKindLabels: Record<PageKind, string> = {
 	story: 'Story',
 	glossary: 'Glossary',
 	'front-matter': 'Front matter',
-	about: 'About the site'
+	about: 'About the site',
+	news: 'News post'
 };
 
 /** Plural names for the "Kind of page" filter. */
@@ -45,7 +50,8 @@ export const pageKindFilterLabels: Record<PageKind, string> = {
 	story: 'Stories',
 	glossary: 'Glossary',
 	'front-matter': 'Front matter',
-	about: 'About the site'
+	about: 'About the site',
+	news: 'News'
 };
 
 /** Pages whose earlier wording is never shown: a change names only the parts that changed. */
@@ -324,7 +330,7 @@ export function lastChangeSentence(change: Pick<ChangeView, 'change' | 'parts' |
 }
 
 /** Pages under /nations/ that list nations rather than being one nation's page. */
-const nationListings = new Set(['data', 'map', 'recourse', 'law', 'timeline', 'federal-offices', 'coverage']);
+const nationListings = new Set(['data', 'map', 'recourse', 'law', 'timeline', 'federal-offices', 'federal-programs', 'coverage']);
 
 /**
  * The address whose history "Changes to this page" opens, for a page whose
@@ -336,8 +342,42 @@ export function followedPageAddress(path: string): string | undefined {
 	if (!address) return undefined;
 	const nation = /^\/nations\/([a-z0-9-]+)$/.exec(address);
 	if (nation) return nationListings.has(nation[1]) ? undefined : address;
-	if (/^\/(stories|glossary|essays|foundations|back-matter|licenses)\/[a-z0-9][a-z0-9-]*$/.test(address)) return address;
+	if (/^\/(stories|glossary|essays|foundations|back-matter|news|licenses)\/[a-z0-9][a-z0-9-]*$/.test(address)) return address;
 	return ['/acknowledgments', '/charter', '/licenses', '/about', '/sponsor'].includes(address) ? address : undefined;
+}
+
+/** What a nation's page shows above its text, for its Changes view (src/routes/nations/[id]/heading.json). */
+export interface NationHeading {
+	name: string;
+	withdrawn: boolean;
+	badges: RecognitionBadge[];
+	badgeExplanations: Record<string, BadgeExplanation>;
+	/** How many court opinions the nation's side column counts. */
+	opinions: number;
+}
+
+/** The last part of the address of a page's own Changes view. */
+export const changesViewSegment = 'changes';
+
+/**
+ * Where a page's changes are listed. A page whose changes the site records
+ * shows them in its own place, at its address with /changes after it, so the
+ * side column, the breadcrumbs and the page's title stay as they were
+ * (Trevor, Nov. 27, 2026, option B of design/page-changes-in-page). Any other
+ * address, such as a page no longer on the site, keeps the list on Recent
+ * changes.
+ */
+export function pageChangesLink(address: string): string {
+	return followedPageAddress(address) === address ? `${address}/${changesViewSegment}` : `/changes?page=${encodeURIComponent(address)}`;
+}
+
+/** The page whose Changes view an address is, or undefined when it is none. */
+export function pageOfChangesView(path: string): string | undefined {
+	const address = cleanAddress(path);
+	const suffix = `/${changesViewSegment}`;
+	if (!address?.endsWith(suffix)) return undefined;
+	const pageAddress = address.slice(0, -suffix.length);
+	return pageAddress && followedPageAddress(pageAddress) === pageAddress ? pageAddress : undefined;
 }
 
 export function pageAddressOfFile(file: string): string | undefined {

@@ -1,5 +1,6 @@
 <script lang="ts" module>
 	import { isShadedMapView, type ShadedMapView } from '#lib/shaded-map-views.ts';
+	import { patternImage, patternImageName, patternOfImageName, shapeImage, shapeImageName, shapeOfShade, type MapShape } from '#lib/map-shapes.ts';
 	import { readStored, writeStored } from '#lib/browser-storage.ts';
 
 	/** The views of the map on /nations/map; each is a set of layers over the same basemap. The shaded views color the land areas by a fact about their nations (src/lib/shaded-map-views.ts). */
@@ -14,6 +15,40 @@
 		{ value: 'topographic', label: 'Topographic', credit: 'USGS The National Map: Shaded Relief and Contours' }
 	];
 
+	/**
+	 * The layers the Map page turns on and off (Trevor, 2026-11-26, map redesign D): today's layers, which the map draws at Today only, and the history layers, which follow the timeline's year. Land cessions keep their own switch (the cessions prop), shared with nation and treaty pages.
+	 */
+	export interface TileMapLayers {
+		lands: boolean;
+		states: boolean;
+		offices: boolean;
+		regions: boolean;
+		borders: boolean;
+		routes: boolean;
+		homelands: boolean;
+		/** The reservations traced from the Office of Indian Affairs' 1909 map (approved mockup, 2026-11-27). */
+		reservations1909: boolean;
+		/** The 1909 map itself under the tracing, its "Show the original map" switch. */
+		scan1909: boolean;
+	}
+
+	/** A shape from a history layer that the reader chose, for the details beside the map. */
+	export type TileMapFeature =
+		| { kind: 'border'; id: string; name: string; territory: string; from: number; to: number; change: string; citation: string }
+		| { kind: 'homeland'; area: number; named: string }
+		| { kind: 'route'; routes: string }
+		| { kind: 'reservation1909'; n: number; id: string; name: string; status: string; nations: string[]; label: boolean; neighbors: string[]; placed: boolean; panel: string; note: string; review: string };
+
+	/** The base map and switches are remembered on the device, and every map on the site shares them. */
+	const baseStorage = 'map-base';
+	const outlinesStorage = 'map-land-outlines';
+	export function storedBaseMap(): TileMapBase {
+		const stored = typeof window === 'undefined' ? null : readStored(baseStorage);
+		return tileMapBases.some((entry) => entry.value === stored) ? (stored as TileMapBase) : 'map';
+	}
+	/** Whether land areas are outlined, as remembered on the device. */
+	export const storedOutlines = () => typeof window === 'undefined' || readStored(outlinesStorage) !== 'off';
+
 	/** Where the map is looking, kept by the page so that changing views keeps the reader's place. */
 	export interface TileMapCamera {
 		center: [number, number];
@@ -23,6 +58,9 @@
 	/**
 	 * Places the map can go to by name. The states and territories are where they really are on the map, so the map page's Go to menu names each rather than drawing a box at its own scale (Trevor, 2026-11-22: every territory shown and named on its own). Bounds are west, south, east, north in degrees.
 	 */
+	/** Room to leave around what the map moves to, in pixels: one number for every side, or each side's own. */
+	export type TileMapPadding = number | { top: number; right: number; bottom: number; left: number };
+
 	export const tileMapPlaces: { name: string; bounds: [number, number, number, number] }[] = [
 		{ name: 'The 48 contiguous states', bounds: [-125, 24.4, -66.9, 49.4] },
 		{ name: 'Alaska', bounds: [-179.2, 51.2, -129.9, 71.4] },
@@ -38,15 +76,22 @@
 <script lang="ts">
 	// The map drawn in the browser with MapLibre GL JS from the project's own tiles (decision record 0039): the Census Bureau's land areas and states, over a basemap of OpenStreetMap data, all served by the site's own Worker under /map-tiles/. No third party sees where a reader looks.
 	//
-	// MapLibre and the map's data are loaded only when this component starts, so other pages carry none of it. If the device cannot draw it (no WebGL), the tiles do not load, or the reader is offline, the component calls onfail and the page keeps showing the drawn map, which also stays for printing.
+	// MapLibre and the map's data are loaded only when this component starts, so other pages carry none of it. If the device cannot draw it (no WebGL), the tiles do not load, or the reader is offline, the map says Map failed to load in its own frame (ProblemNotice.svelte), reports the failure with a reference and offers Report, and calls onfail; the drawn map stays for printing (site/ERRORS.md).
 	//
 	// Ways to zoom and move: the + and - buttons, the keyboard once the map has focus (arrows move, + and - zoom), the scroll wheel over the map, a trackpad pinch, and two fingers on a touch screen. On a touch screen one finger still scrolls the page, and MapLibre says to use two, so the map never traps a reader scrolling past it.
 	//
 	// Small land areas get a dot until their outline is big enough to see, and nearby dots are grouped into numbered circles when zoomed out. Selecting a place goes to its row in the table.
-	import { onMount, tick } from 'svelte';
+	import { tick, untrack } from 'svelte';
 	import type { Map as MapLibreMap, StyleSpecification, LayerSpecification, SourceSpecification, ExpressionSpecification, FilterSpecification } from 'maplibre-gl';
 	import type { TileMapData } from '#lib/server/nations-map.ts';
 	import { motionDuration, motionEasing } from '#lib/motion.ts';
+	import { censusYearFor, writeCessionsSwitch } from '#lib/historic-map.ts';
+	import { loadAllNationsTileMapData, loadTileMapLibrary } from '#lib/tile-map-loading.ts';
+	import { drawGlobeSky, type GlobeSkyColors, type Star } from '#lib/globe-sky.ts';
+	import { page } from '$app/state';
+	import ProblemNotice from './ProblemNotice.svelte';
+	import { sendProblem } from '#lib/problem-reports.ts';
+	import { partReport } from '#lib/report-request.ts';
 
 	let {
 		view,
@@ -58,7 +103,18 @@
 		onready,
 		onfail,
 		onselect,
-		opening: openingBox
+		opening: openingBox,
+		year,
+		cessions = $bindable(false),
+		cessionsShown,
+		cessionsAlways = false,
+		cessionsBounds,
+		oncession,
+		layerSwitches,
+		statesBy = 'count',
+		onfeature,
+		baseMap = $bindable(storedBaseMap()),
+		outlines = $bindable(storedOutlines())
 	}: {
 		view: TileMapView;
 		/** For a shaded view: shade each nation's land areas, or each state by the category most of its nations have. */
@@ -76,7 +132,33 @@
 		onselect?: (anchor: string) => void;
 		/** Where the map opens, and where its reset button goes back to, [west, south, east, north] in degrees: a state's page opens on the state (Trevor, 2026-11-24). Without it the map opens on the 48 contiguous states, or on a nation's lands. */
 		opening?: [number, number, number, number];
+		/** The year the slider under the map picks (YearSlider.svelte): the land the United States had taken by then, and the Census Bureau's land areas as they were then. Without it, or at the latest Census year, the land areas are today's. */
+		year?: number;
+		/** Whether Royce's land cessions are drawn, from the Historic switch in the Layers menu (historic maps mockup A), remembered on the device. */
+		cessions?: boolean;
+		/** Only these cessions, by Royce's number: a nation's page shows the cessions that name it. */
+		cessionsShown?: string[];
+		/** A treaty's page: its cessions are always drawn, whatever the year, with no switch and no land areas (mockup 7). */
+		cessionsAlways?: boolean;
+		/** The box around cessionsShown; turning the switch on widens a nation's map to take them in (mockup 6). */
+		cessionsBounds?: [number, number, number, number];
+		/** Called with Royce's number when the reader chooses a cession on the map. */
+		oncession?: (royce: string) => void;
+		/**
+		 * The Map page's layers (map redesign D). With them the map draws each layer that is on, together, rather than one view: "view" then says only how the land is colored ("lands" for one color, or a shaded view), and the page draws its own Layers list, so the map keeps only zoom, flat or globe, and full screen, at the top right.
+		 */
+		layerSwitches?: TileMapLayers;
+		/** On the Map page, how the States layer is colored: 'count' for its number of nations, a shaded view's key for what most of its nations have, or '' for outlines only. */
+		statesBy?: string;
+		/** Called with a shape from the borders, removal routes or homelands layer that the reader chose. */
+		onfeature?: (feature: TileMapFeature) => void;
+		/** The base map, which the page's Layers list can choose too; remembered on the device. */
+		baseMap?: TileMapBase;
+		/** Whether the land areas are outlined. */
+		outlines?: boolean;
 	} = $props();
+
+	const explorer = $derived(layerSwitches !== undefined);
 
 	const oneNation = $derived(given !== undefined);
 
@@ -111,8 +193,99 @@
 	// The shape can change while the map is open; the style built for each theme carries it too.
 	$effect(() => {
 		const type = shape === 'globe' ? 'globe' : 'mercator';
-		if (ready && map) map.setProjection({ type });
+		showShape();
+		if (ready && map) {
+			map.setProjection({ type });
+			showStarCredit(map, type === 'globe');
+		}
+		drawSkySoon();
 	});
+
+	/**
+	 * The starry sky behind the globe (Trevor, 2026-11-27, mockup A), drawn on a canvas under the map by src/lib/globe-sky.ts: a night sky in both themes, its stars where the real sky is behind that side of the earth at the moment the map opened. It moves only when the reader moves the globe, and the flat map has none. The stars are fetched the first time the globe is shown.
+	 */
+	let skyCanvas: HTMLCanvasElement | undefined = $state();
+	let skyStars: Star[] | undefined;
+	let skyStarsLoading = false;
+	let skyFrame = 0;
+	const skyTime = new Date();
+
+	function drawSkySoon(): void {
+		if (skyFrame || typeof requestAnimationFrame === 'undefined') return;
+		skyFrame = requestAnimationFrame(() => {
+			skyFrame = 0;
+			drawSky();
+		});
+	}
+
+	function drawSky(): void {
+		if (!skyCanvas || !container) return;
+		const shown = ready && map !== undefined && shape === 'globe';
+		skyCanvas.hidden = !shown;
+		if (!shown || !map) return;
+		if (!skyStars) {
+			if (!skyStarsLoading) {
+				skyStarsLoading = true;
+				fetch('/map-sky/stars.json')
+					.then((response) => (response.ok ? response.json() : Promise.reject(new Error(String(response.status)))))
+					.then((file: { stars: Star[] }) => {
+						skyStars = file.stars;
+						drawSkySoon();
+					})
+					.catch((problem) => {
+						// Without the stars the globe still shows, on the plain sky.
+						sendProblem(problem, { code: 'map.stars' });
+						skyStars = [];
+						drawSkySoon();
+					});
+			}
+			return;
+		}
+		const width = container.clientWidth;
+		const height = container.clientHeight;
+		const ratio = window.devicePixelRatio || 1;
+		if (skyCanvas.width !== Math.round(width * ratio) || skyCanvas.height !== Math.round(height * ratio)) {
+			skyCanvas.width = Math.round(width * ratio);
+			skyCanvas.height = Math.round(height * ratio);
+		}
+		const context = skyCanvas.getContext('2d');
+		if (!context) return;
+		context.setTransform(ratio, 0, 0, ratio, 0, 0);
+		const center = map.getCenter();
+		const colors: GlobeSkyColors = {
+			sky: token('map-sky'),
+			skyEdge: token('map-sky-edge'),
+			star: token('map-sky-star'),
+			starCool: token('map-sky-star-cool'),
+			starWarm: token('map-sky-star-warm'),
+			glow: token('map-sky-glow')
+		};
+		drawGlobeSky(context, skyStars, { width, height, longitude: center.lng, latitude: center.lat, zoom: map.getZoom(), fieldOfView: map.getVerticalFieldOfView(), time: skyTime }, colors);
+	}
+
+	/** The stars' credit, which ESA's license asks for, in the map's credit line while the globe is shown: an empty source carrying it, with a layer so MapLibre lists it. */
+	const starCredit = '<a href="https://www.cosmos.esa.int/web/hipparcos">Stars: ESA Hipparcos</a>';
+	const starCreditSource: SourceSpecification = { type: 'geojson', data: { type: 'FeatureCollection', features: [] }, attribution: starCredit };
+	const starCreditLayer: LayerSpecification = { id: 'star-credit', type: 'circle', source: 'star-credit' };
+	function showStarCredit(shown: MapLibreMap, on: boolean): void {
+		if (on && !shown.getSource('star-credit')) {
+			shown.addSource('star-credit', starCreditSource);
+			shown.addLayer(starCreditLayer);
+		} else if (!on && shown.getSource('star-credit')) {
+			shown.removeLayer('star-credit');
+			shown.removeSource('star-credit');
+		}
+	}
+
+	/** The flat-or-globe button, which names and shows the shape it switches to. */
+	let shapeButton: HTMLButtonElement | undefined;
+	function showShape(): void {
+		if (!shapeButton) return;
+		const next = shape === 'globe' ? { label: 'Show as a flat map', icon: shapeIcons.flat } : { label: 'Show as a globe, every place at its true size', icon: shapeIcons.globe };
+		shapeButton.title = next.label;
+		shapeButton.setAttribute('aria-label', next.label);
+		shapeButton.innerHTML = next.icon;
+	}
 
 	let container: HTMLDivElement | undefined = $state();
 	let map: MapLibreMap | undefined;
@@ -121,37 +294,54 @@
 	let ready = $state(false);
 
 	/**
-	 * The base map and what is drawn on it, chosen from the Layers button (mockup 1A) and remembered on the device, as the key's open or closed state is. Every map on the site shares them.
+	 * The base map and what is drawn on it, chosen from the Layers button (mockup 1A), or on the Map page from its Layers list, and remembered on the device (storedBaseMap above).
 	 */
-	const baseStorage = 'map-base';
-	const placeNamesStorage = 'map-place-names';
-	const outlinesStorage = 'map-land-outlines';
-	const storedBase = typeof window === 'undefined' ? null : readStored(baseStorage);
-	let baseMap = $state<TileMapBase>(tileMapBases.some((entry) => entry.value === storedBase) ? (storedBase as TileMapBase) : 'map');
-	let placeNames = $state(typeof window === 'undefined' || readStored(placeNamesStorage) !== 'off');
-	let outlines = $state(typeof window === 'undefined' || readStored(outlinesStorage) !== 'off');
 	let layersOpen = $state(false);
 	let layersButton: HTMLButtonElement | undefined;
 	let layersMenu: HTMLElement | undefined = $state();
 	let layersMenuBottom = $state(0);
 	/** Whether the view draws land areas, so the outline switch has something to turn off. */
-	const hasLandAreas = $derived(oneNation || view === 'lands' || (isShadedMapView(view) && by === 'nation'));
+	const hasLandAreas = $derived((oneNation && !cessionsAlways) || view === 'lands' || (isShadedMapView(view) && by === 'nation'));
 
 	$effect(() => {
 		writeStored(baseStorage, baseMap);
-		writeStored(placeNamesStorage, placeNames ? 'on' : 'off');
-		writeStored(outlinesStorage, outlines ? 'on' : 'off');
+		// The Map page has its own Nations' land switch and no outline switch, so it leaves the nation pages' choice alone.
+		if (!explorer) writeStored(outlinesStorage, outlines ? 'on' : 'off');
+	});
+	$effect(() => {
+		if (!cessionsAlways && ready) writeCessionsSwitch(cessions);
+	});
+	const drawsCessions = $derived(cessions || cessionsAlways);
+	let cessionsWereOn: boolean | undefined;
+	$effect(() => {
+		const on = cessions;
+		if (!ready || !map) return;
+		const turnedOn = cessionsWereOn === false && on;
+		cessionsWereOn = on;
+		if (!turnedOn || !cessionsBounds || !oneNation) return;
+		const box = map.getBounds();
+		const around: [number, number, number, number] = [Math.min(box.getWest(), cessionsBounds[0]), Math.min(box.getSouth(), cessionsBounds[1]), Math.max(box.getEast(), cessionsBounds[2]), Math.max(box.getNorth(), cessionsBounds[3])];
+		map.fitBounds(around, { padding: 16, duration: motionDuration('long'), easing: motionEasing('standard') });
 	});
 	// A new base map or switch redraws the map's layers on the same map, as changing the view does.
 	let styledWith = '';
 	$effect(() => {
-		const wanted = `${baseMap} ${placeNames} ${outlines}`;
+		const wanted = `${baseMap} ${outlines} ${drawsCessions} ${year} ${statesBy} ${cessionsShown?.join(',')} ${JSON.stringify(layerSwitches ?? {})}`;
 		if (!ready || !map) return;
 		if (styledWith === '') styledWith = wanted;
 		if (wanted === styledWith) return;
 		styledWith = wanted;
-		void restyleMap?.();
+		restyleSoon();
 	});
+	/** Moving the slider asks for many redraws a second; only the last one in each frame is drawn. */
+	let restyleFrame = 0;
+	function restyleSoon(): void {
+		if (restyleFrame) return;
+		restyleFrame = requestAnimationFrame(() => {
+			restyleFrame = 0;
+			void restyleMap?.();
+		});
+	}
 
 	/**
 	 * Places the menu beside the Layers button where it fits. On a short map, or when choosing a picture adds a row, it moves down so it never reaches past the map's top.
@@ -186,15 +376,10 @@
 		if (returnFocus) layersButton?.focus();
 	}
 
-	let dataLoading: Promise<TileMapData> | undefined;
-	/** The map's data is the same for every view, so it is fetched once a page. */
+	/** The map's data is the same for every view, so it is fetched once a page (src/lib/tile-map-loading.ts). */
 	function loadData(): Promise<TileMapData> {
 		if (given) return Promise.resolve(given);
-		dataLoading ??= fetch('/nations/map/tile-map.json').then((response) => {
-			if (!response.ok) throw new Error(`The map data answered ${response.status}`);
-			return response.json() as Promise<TileMapData>;
-		});
-		return dataLoading;
+		return loadAllNationsTileMapData();
 	}
 
 	function canDrawMaps(): boolean {
@@ -202,6 +387,7 @@
 		try {
 			return Boolean(document.createElement('canvas').getContext('webgl2') ?? document.createElement('canvas').getContext('webgl'));
 		} catch {
+			// expected: a browser that refuses a drawing surface cannot draw the map, and the caller reports that.
 			return false;
 		}
 	}
@@ -216,6 +402,12 @@
 		if (chosen === 'dark' || chosen === 'light') return chosen === 'dark';
 		return matchMedia('(prefers-color-scheme: dark)').matches;
 	}
+
+	/** The size, in screen pixels, the category shapes' images are made at; each layer scales them to its own size. */
+	const shapeImageSize = 6;
+	/** Each category shade's shape image, the darkest by default as for the dots' shades. */
+	const shapeImageOfShade = ['match', ['get', 'shade'], 1, shapeImageName('triangle'), 2, shapeImageName('circle'), 3, shapeImageName('square'), shapeImageName('diamond')] as unknown as ExpressionSpecification;
+	const shapeByImageName = new Map(Object.values(shapeOfShade).map((shape): [string, MapShape] => [shapeImageName(shape), shape]));
 
 	/** Dots fade in for areas too small to see as shapes at each zoom, and out once their outline is big enough. */
 	const dotOpacity: ExpressionSpecification = [
@@ -237,14 +429,15 @@
 	];
 
 	async function styleFor(data: TileMapData): Promise<StyleSpecification> {
-		const basemaps = await import('@protomaps/basemaps');
+		const [, , basemaps] = await loadTileMapLibrary();
 		const dark = isDark();
 		const colors = {
 			paper: token('paper'),
 			ink: token('ink'),
 			muted: token('ink-muted'),
 			line: token('control-border'),
-			focus: token('focus'),
+			lineLight: token('line'),
+			focus: token('map-highlight'),
 			surface: token('surface'),
 			action: token('action'),
 			actionText: token('action-text'),
@@ -276,11 +469,114 @@
 			colors.classes[2]
 		];
 		const pointShade: ExpressionSpecification = ['match', ['get', 'group'], 'federal', colors.classes[4], 'state', colors.classes[3], colors.classes[2]];
-		const hovered = (color: ExpressionSpecification | string): ExpressionSpecification => ['case', ['boolean', ['feature-state', 'hover'], false], colors.focus, color];
+		// A shape under the pointer, or one the reader found with the map's search, takes the focus color.
+		const hovered = (color: ExpressionSpecification | string): ExpressionSpecification => ['case', ['any', ['boolean', ['feature-state', 'hover'], false], ['boolean', ['feature-state', 'found'], false]], colors.focus, color];
+		/** Each category's pattern over its areas' shade (src/lib/map-shapes.ts): stripes, dots and a grid, the darkest shade solid, so no area rests on its shade alone. `shadeOf` gives each area's shade, 0 to 4. */
+		const patternOver = (id: string, from: { source: string; 'source-layer'?: string; filter?: FilterSpecification }, shadeOf: ExpressionSpecification): LayerSpecification => ({
+			id,
+			type: 'fill',
+			source: from.source,
+			...(from['source-layer'] ? { 'source-layer': from['source-layer'] } : {}),
+			filter: ['all', ...(from.filter ? [from.filter] : []), ['match', shadeOf, [1, 2, 3], true, false]] as FilterSpecification,
+			paint: { 'fill-pattern': ['match', shadeOf, 3, patternImageName('stripes', colors.paper), 2, patternImageName('dots', colors.ink), patternImageName('grid', colors.ink)] as unknown as ExpressionSpecification }
+		});
+
+		// An earlier year than the latest Census year shows the Census Bureau's land areas as they were drawn that year, and none before its first (historic maps mockup A). The dots and names are from the 2020 Census, so they are left out before it.
+		const censusYears = data.tiles.landAreaYears;
+		const pastYear = year !== undefined && year < censusYears[censusYears.length - 1];
+		const census = pastYear && year !== undefined ? censusYearFor(year, censusYears) : undefined;
+		const landSource = pastYear ? 'areas-by-year' : 'places';
+		const inCensusYear: FilterSpecification | undefined = census === undefined ? undefined : ['all', ['<=', ['get', 'from'], census], ['>=', ['get', 'to'], census]];
+		const hideLandAreas = (pastYear && census === undefined) || cessionsAlways;
+		const hideDots = hideLandAreas || (pastYear && (census ?? 0) < 2020);
 
 		const fills: LayerSpecification[] = [];
 		const tops: LayerSpecification[] = [];
-		if (view === 'states') {
+
+		/**
+		 * The states and territories as they stood on the timeline's day (the Newberry Library's Atlas of Historical County Boundaries): states pale teal, territories pale green, unorganized territory paper, land claimed or shared with another country grey. At Today, the states as they stand now.
+		 */
+		const borderDay = year === undefined || !pastYear ? 99990101 : year * 10000 + 701;
+		const addBorders = () => {
+			const onDay: FilterSpecification = ['all', ['<=', ['get', 'from'], borderDay], ['>=', ['get', 'to'], borderDay]];
+			const kindShade = ['match', ['get', 'kind'], 'state', colors.classes[1], 'district', colors.classes[1], 'territory', token('status-published-background'), 'unorganized-territory', colors.surface, colors.lineLight] as unknown as ExpressionSpecification;
+			fills.push({ id: 'borders', type: 'fill', source: 'borders', 'source-layer': 'borders', filter: onDay, paint: { 'fill-color': hovered(kindShade), 'fill-opacity': 0.9 } });
+			tops.push(
+				{ id: 'borders-lines', type: 'line', source: 'borders', 'source-layer': 'borders', filter: onDay, paint: { 'line-color': colors.ink, 'line-width': 0.9, 'line-opacity': 0.7 } },
+				{
+					id: 'borders-names',
+					type: 'symbol',
+					source: 'borders',
+					// One point for each shape, so a state cut across tiles is named once.
+					'source-layer': 'border-names',
+					filter: onDay,
+					layout: { 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Medium'], 'text-size': 12, 'text-max-width': 7, 'text-padding': 4 },
+					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 1.5 }
+				}
+			);
+		};
+		/** The lands the Indian Claims Commission found each nation held, from the 1978 map: findings, so dashed and lightly filled, never solid borders (map redesign D; decision 0056). */
+		const addHomelands = () => {
+			const gold = token('status-draft-rule');
+			fills.push({ id: 'homelands', type: 'fill', source: 'homelands', 'source-layer': 'homelands', paint: { 'fill-color': gold, 'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 0.35, 0.12] } });
+			tops.push(
+				{ id: 'homelands-lines', type: 'line', source: 'homelands', 'source-layer': 'homelands', paint: { 'line-color': gold, 'line-width': 1.6, 'line-dasharray': [3, 2] } },
+				{
+					id: 'homelands-names',
+					type: 'symbol',
+					source: 'homelands',
+					'source-layer': 'homelands',
+					minzoom: 5,
+					layout: { 'text-field': ['get', 'named'], 'text-font': ['Noto Sans Medium'], 'text-size': 12, 'text-max-width': 8, 'text-padding': 4 },
+					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 1.5 }
+				}
+			);
+		};
+		/**
+		 * The reservations on the Office of Indian Affairs' 1909 map, as the map draws them (approved mockup, 2026-11-27): a reservation in its brown, Opened land as brown stripes over paper, and a reservation too small to draw as a dot. A shape too small to see far out also has a dot there. Under them, if the reader asks, the map itself; then the shapes are only outlined, in a blue that reads on the old paper, so the two can be compared.
+		 */
+		const addReservations1909 = (scan: boolean) => {
+			const brown = token('map-reservation-1909');
+			const edge = scan ? token('map-tracing-over-scan') : token('map-reservation-1909-line');
+			// Pointed at, or chosen and shown in the details (marked as the search marks what it found).
+			const marked: ExpressionSpecification = ['any', ['boolean', ['feature-state', 'hover'], false], ['boolean', ['feature-state', 'found'], false]];
+			const opened: ExpressionSpecification = ['==', ['get', 'status'], 'Opened'];
+			const shapes: FilterSpecification = ['!=', ['geometry-type'], 'Point'];
+			if (scan) fills.push({ id: 'scan-1909', type: 'raster', source: 'scan1909', paint: { 'raster-opacity': 1 } });
+			fills.push({
+				id: 'reservations-1909',
+				type: 'fill',
+				source: 'reservations1909',
+				'source-layer': 'reservations',
+				filter: shapes,
+				paint: { 'fill-color': ['case', marked, colors.focus, opened, colors.paper, brown], 'fill-opacity': ['case', marked, scan ? 0.45 : 0.85, scan ? 0 : 0.75] }
+			});
+			if (!scan) fills.push({ id: 'reservations-1909-stripes', type: 'fill', source: 'reservations1909', 'source-layer': 'reservations', filter: ['all', shapes, opened], paint: { 'fill-pattern': patternImageName('stripes', brown) } });
+			const dot = (id: string, filter: FilterSpecification, extra: Partial<LayerSpecification> = {}): LayerSpecification =>
+				({
+					id,
+					type: 'circle',
+					source: 'reservations1909',
+					'source-layer': 'reservations',
+					filter,
+					...extra,
+					paint: { 'circle-color': ['case', marked, colors.focus, opened, colors.paper, brown], 'circle-radius': 5, 'circle-stroke-color': edge, 'circle-stroke-width': 1.5 }
+				}) as LayerSpecification;
+			tops.push(
+				{ id: 'reservations-1909-lines', type: 'line', source: 'reservations1909', 'source-layer': 'reservations', filter: shapes, paint: { 'line-color': ['case', marked, colors.ink, edge], 'line-width': ['case', marked, 2.4, scan ? 1.6 : 1] } },
+				dot('reservations-1909-markers', ['all', ['==', ['geometry-type'], 'Point'], ['has', 'marker']], { maxzoom: 7 }),
+				dot('reservations-1909-dots', ['all', ['==', ['geometry-type'], 'Point'], ['!', ['has', 'marker']]])
+			);
+		};
+		/** The removal routes the National Park Service maps (the Trail of Tears, 1837 to 1839), in the action color with a paper edge so they read over any layer. */
+		const addRoutes = () => {
+			tops.push(
+				{ id: 'routes-edge', type: 'line', source: 'routes', 'source-layer': 'routes', layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': colors.paper, 'line-width': 4.5 } },
+				{ id: 'routes', type: 'line', source: 'routes', 'source-layer': 'routes', layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': colors.action, 'line-width': 2.5 } }
+			);
+		};
+		/** Each state shaded by its number of nations, with its name and number. */
+		const addStatesByCount = () => {
 			fills.push({ id: 'states', type: 'fill', source: 'places', 'source-layer': 'states', paint: { 'fill-color': hovered(stateShade), 'fill-opacity': 0.85 } });
 			tops.push({ id: 'states-lines', type: 'line', source: 'places', 'source-layer': 'states', paint: { 'line-color': colors.line, 'line-width': 0.8 } });
 			// Each state's name and its number of nations, as on the approved States view (map engine mockup 4). On the two darkest shades the words are paper with an ink halo, so they keep their contrast, as on the drawn map.
@@ -292,9 +588,12 @@
 				layout: { 'text-field': ['concat', ['get', 'name'], '\n', ['to-string', ['get', 'count']]], 'text-font': ['Noto Sans Medium'], 'text-size': 12, 'text-max-width': 8, 'text-padding': 2 },
 				paint: { 'text-color': ['case', onDark, colors.paper, colors.ink], 'text-halo-color': ['case', onDark, colors.ink, colors.paper], 'text-halo-width': 1.5 }
 			});
-		} else if (view === 'regions') {
-			fills.push({ id: 'regions', type: 'fill', source: 'regions', paint: { 'fill-color': hovered(colors.classes[1]), 'fill-opacity': 0.75 } });
-			tops.push({ id: 'regions-lines', type: 'line', source: 'regions', paint: { 'line-color': colors.classes[4], 'line-width': 1.4 } });
+		};
+		/** The Bureau of Indian Affairs' regions: shaded on their own view; on the Map page, outlined in orange over the other layers (map redesign D). */
+		const addRegions = (outlined: boolean) => {
+			// A clear fill still lets the reader choose a region anywhere inside it.
+			fills.push({ id: 'regions', type: 'fill', source: 'regions', paint: { 'fill-color': hovered(colors.classes[1]), 'fill-opacity': outlined ? ['case', ['boolean', ['feature-state', 'hover'], false], 0.35, 0] : 0.75 } });
+			tops.push({ id: 'regions-lines', type: 'line', source: 'regions', paint: { 'line-color': outlined ? colors.action : colors.classes[4], 'line-width': outlined ? 2 : 1.4 } });
 			tops.push({
 				id: 'regions-names',
 				type: 'symbol',
@@ -302,15 +601,36 @@
 				layout: { 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Medium'], 'text-size': 13, 'text-max-width': 8 },
 				paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 2 }
 			});
-		} else if (isShadedMapView(view) && by === 'state') {
+		};
+		/** A shaded view by state: each state takes the shade of the category most of its nations have. */
+		const addStatesByCategory = (shading = shadingIn(data)) => {
 			// A shaded view by state: each state takes the shade of the category most of its nations have.
-			const entries = Object.entries(shadingIn(data)?.states ?? {});
+			const entries = Object.entries(shading?.states ?? {});
 			const byStateShade = (entries.length > 0
 				? ['match', ['get', 'code'], ...entries.flatMap(([code, state]) => [code, colors.classes[state.shade]]), colors.classes[0]]
 				: colors.classes[0]) as unknown as ExpressionSpecification;
 			fills.push({ id: 'states', type: 'fill', source: 'places', 'source-layer': 'states', paint: { 'fill-color': hovered(byStateShade), 'fill-opacity': 0.85 } });
+			const stateShadeNumber = (entries.length > 0 ? ['match', ['get', 'code'], ...entries.flatMap(([code, state]) => [code, state.shade]), 0] : ['literal', 0]) as unknown as ExpressionSpecification;
+			fills.push(patternOver('states-patterns', { source: 'places', 'source-layer': 'states' }, stateShadeNumber));
 			tops.push({ id: 'states-lines', type: 'line', source: 'places', 'source-layer': 'states', paint: { 'line-color': colors.line, 'line-width': 0.8 } });
-		} else if (isShadedMapView(view)) {
+		};
+		/** The states outlined and named, with a clear fill so a state can still be pointed at and chosen. */
+		const addStatesOutlined = () => {
+			const marked: ExpressionSpecification = ['any', ['boolean', ['feature-state', 'hover'], false], ['boolean', ['feature-state', 'found'], false]];
+			fills.push({ id: 'states', type: 'fill', source: 'places', 'source-layer': 'states', paint: { 'fill-color': colors.focus, 'fill-opacity': ['case', marked, 0.35, 0] } });
+			tops.push(
+				{ id: 'states-lines', type: 'line', source: 'places', 'source-layer': 'states', paint: { 'line-color': colors.ink, 'line-width': 1, 'line-opacity': 0.6 } },
+				{
+					id: 'states-names',
+					type: 'symbol',
+					source: 'state-names',
+					layout: { 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Medium'], 'text-size': 12, 'text-max-width': 8, 'text-padding': 2 },
+					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 1.5 }
+				}
+			);
+		};
+		/** A shaded view's land areas, each in its category's shade. */
+		const addShadedLands = () => {
 			// A shaded view: each area takes its category's shade, and areas with no fact stay the lightest. Only areas with a fact get a dot, so the dots show where the facts are.
 			const shading = shadingIn(data);
 			const entries = Object.entries(shading?.areas ?? {});
@@ -318,22 +638,21 @@
 				? ['match', ['to-string', ['get', 'code']], ...entries.flatMap(([code, area]) => [code, colors.classes[area.shade]]), colors.classes[0]]
 				: colors.classes[0]) as unknown as ExpressionSpecification;
 			const dotShade = ['match', ['get', 'shade'], 1, colors.classes[1], 2, colors.classes[2], 3, colors.classes[3], colors.classes[4]] as unknown as ExpressionSpecification;
-			fills.push({ id: 'land-areas', type: 'fill', source: 'places', 'source-layer': 'land-areas', paint: { 'fill-color': hovered(areaShade), 'fill-opacity': 0.85 } });
+			// A past year shows the areas as the Census Bureau drew them that year, colored by the facts recorded today (Trevor, 2026-11-27: the coloring ignored the timeline).
+			const thatYear: { filter?: FilterSpecification } = inCensusYear ? { filter: inCensusYear } : {};
+			fills.push({ id: 'land-areas', type: 'fill', source: landSource, 'source-layer': 'land-areas', ...thatYear, paint: { 'fill-color': hovered(areaShade), 'fill-opacity': 0.85 } });
+			const areaShadeNumber = (entries.length > 0 ? ['match', ['to-string', ['get', 'code']], ...entries.flatMap(([code, area]) => [code, area.shade]), 0] : ['literal', 0]) as unknown as ExpressionSpecification;
+			fills.push(patternOver('land-areas-patterns', { source: landSource, 'source-layer': 'land-areas', ...thatYear }, areaShadeNumber));
 			tops.push(
-				{ id: 'land-areas-lines', type: 'line', source: 'places', 'source-layer': 'land-areas', paint: { 'line-color': colors.line, 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.4] } },
+				{ id: 'land-areas-lines', type: 'line', source: landSource, 'source-layer': 'land-areas', ...thatYear, paint: { 'line-color': colors.line, 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.4] } },
+				// Each small area's dot takes its category's shape as well as its shade (src/lib/map-shapes.ts), so no reader has to tell the shades apart.
 				{
 					id: 'area-dots',
-					type: 'circle',
+					type: 'symbol',
 					source: 'area-points',
 					filter: ['>', ['get', 'shade'], 0],
-					paint: {
-						'circle-color': hovered(dotShade),
-						'circle-radius': 5,
-						'circle-stroke-color': colors.ink,
-						'circle-stroke-width': 1,
-						'circle-opacity': dotOpacity,
-						'circle-stroke-opacity': dotOpacity
-					}
+					layout: { 'icon-image': shapeImageOfShade, 'icon-size': 5 / shapeImageSize, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+					paint: { 'icon-color': hovered(dotShade), 'icon-halo-color': colors.ink, 'icon-halo-width': 1, 'icon-opacity': dotOpacity }
 				},
 				{
 					id: 'area-names',
@@ -361,14 +680,19 @@
 					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 2.5 }
 				}
 			);
-		} else {
+		};
+		/** The land areas in one color by kind, with dots for small ones grouped into numbered circles. */
+		const addLands = () => {
 			// On a nation's page, only the nation's own areas are drawn.
-			const onlyTheseAreas: { filter?: FilterSpecification } = oneNation
-				? { filter: ['in', ['to-string', ['get', 'code']], ['literal', data.areas.map((area) => area.code)]] }
-				: {};
-			fills.push({ id: 'land-areas', type: 'fill', source: 'places', 'source-layer': 'land-areas', ...onlyTheseAreas, paint: { 'fill-color': hovered(groupShade), 'fill-opacity': 0.55 } });
+			const filters: FilterSpecification[] = [
+				...(oneNation ? [['in', ['to-string', ['get', 'code']], ['literal', data.areas.map((area) => area.code)]] as FilterSpecification] : []),
+				...(inCensusYear ? [inCensusYear] : [])
+			];
+			const onlyTheseAreas: { filter?: FilterSpecification } = filters.length === 0 ? {} : { filter: filters.length === 1 ? filters[0] : (['all', ...filters] as FilterSpecification) };
+			fills.push({ id: 'land-areas', type: 'fill', source: landSource, 'source-layer': 'land-areas', ...onlyTheseAreas, paint: { 'fill-color': hovered(groupShade), 'fill-opacity': 0.55 } });
+			fills.push(patternOver('land-areas-patterns', { source: landSource, 'source-layer': 'land-areas', ...onlyTheseAreas }, ['match', ['get', 'kind'], 'federal-reservation-or-trust-land', 4, 'state-reservation', 3, 2]));
 			tops.push(
-				{ id: 'land-areas-lines', type: 'line', source: 'places', 'source-layer': 'land-areas', ...onlyTheseAreas, paint: { 'line-color': colors.classes[4], 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.6] } },
+				{ id: 'land-areas-lines', type: 'line', source: landSource, 'source-layer': 'land-areas', ...onlyTheseAreas, paint: { 'line-color': colors.classes[4], 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.6] } },
 				{
 					id: 'area-groups',
 					type: 'circle',
@@ -390,19 +714,14 @@
 					layout: { 'text-field': ['get', 'point_count_abbreviated'], 'text-font': ['Noto Sans Medium'], 'text-size': 12, 'text-allow-overlap': true },
 					paint: { 'text-color': colors.actionText }
 				},
+				// Each small area's dot takes its group's shape: federal lands the darkest shade's diamond, state reservations the square, statistical areas the circle (src/lib/map-shapes.ts).
 				{
 					id: 'area-dots',
-					type: 'circle',
+					type: 'symbol',
 					source: 'area-points',
 					filter: ['!', ['has', 'point_count']],
-					paint: {
-						'circle-color': hovered(pointShade),
-						'circle-radius': 5,
-						'circle-stroke-color': colors.paper,
-						'circle-stroke-width': 1.5,
-						'circle-opacity': dotOpacity,
-						'circle-stroke-opacity': dotOpacity
-					}
+					layout: { 'icon-image': ['match', ['get', 'group'], 'federal', shapeImageName('diamond'), 'state', shapeImageName('square'), shapeImageName('circle')], 'icon-size': 5 / shapeImageSize, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+					paint: { 'icon-color': hovered(pointShade), 'icon-halo-color': colors.ink, 'icon-halo-width': 1, 'icon-opacity': dotOpacity }
 				},
 				{
 					id: 'area-names',
@@ -423,18 +742,22 @@
 					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 2 }
 				}
 			);
-		}
-
-		// Nations with no Census land area, marked at their offices with a dark ring, on every view of the big map.
-		if (!oneNation && by === 'nation') {
+		};
+		/** Nations with no Census land area, marked at their offices with a dark ring. */
+		const addOffices = () => {
 			const officeShade = ['match', ['get', 'shade'], 1, colors.classes[1], 2, colors.classes[2], 3, colors.classes[3], 4, colors.classes[4], colors.classes[0]] as unknown as ExpressionSpecification;
+			// On a category view an office with a category takes its category's shape too, and one with none stays a ringed circle.
+			const officeDots: LayerSpecification = isShadedMapView(view)
+				? {
+						id: 'office-dots',
+						type: 'symbol',
+						source: 'offices',
+						layout: { 'icon-image': ['match', ['get', 'shade'], 0, shapeImageName('circle'), shapeImageOfShade], 'icon-size': 5.5 / shapeImageSize, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+						paint: { 'icon-color': hovered(officeShade), 'icon-halo-color': colors.ink, 'icon-halo-width': 2 }
+					}
+				: { id: 'office-dots', type: 'circle', source: 'offices', paint: { 'circle-color': hovered(officeShade), 'circle-radius': 5.5, 'circle-stroke-color': colors.ink, 'circle-stroke-width': 2 } };
 			tops.push(
-				{
-					id: 'office-dots',
-					type: 'circle',
-					source: 'offices',
-					paint: { 'circle-color': hovered(officeShade), 'circle-radius': 5.5, 'circle-stroke-color': colors.ink, 'circle-stroke-width': 2 }
-				},
+				officeDots,
 				{
 					id: 'office-names',
 					type: 'symbol',
@@ -444,17 +767,82 @@
 					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 2 }
 				}
 			);
+		};
+
+		const layersOn = layerSwitches;
+		if (layersOn) {
+			// The Map page (map redesign D): every layer that is on, from the bottom up. Today's layers are drawn at Today only.
+			const today = !pastYear;
+			if (layersOn.borders) addBorders();
+			// The states are colored on their own, apart from the land (Trevor, 2026-11-27): by number of nations, by what most of their nations have in a view, or not at all.
+			if (layersOn.states && today) {
+				if (isShadedMapView(statesBy)) addStatesByCategory(data.shading?.[statesBy]);
+				else if (statesBy === 'count') addStatesByCount();
+				else addStatesOutlined();
+			}
+			if (layersOn.regions && today) addRegions(true);
+			if (layersOn.homelands) addHomelands();
+			if (layersOn.reservations1909) addReservations1909(layersOn.scan1909);
+			if (layersOn.lands) {
+				if (isShadedMapView(view)) addShadedLands();
+				else addLands();
+			}
+			if (layersOn.routes) addRoutes();
+			if (layersOn.offices) addOffices();
+		} else {
+			if (view === 'states') addStatesByCount();
+			else if (view === 'regions') addRegions(false);
+			else if (isShadedMapView(view) && by === 'state') addStatesByCategory();
+			else if (isShadedMapView(view)) addShadedLands();
+			else addLands();
+			// Nations with no Census land area, on every view of the big map.
+			if (!oneNation && by === 'nation') addOffices();
+		}
+
+		// Royce's land cessions (historic maps mockup A), under the land areas: light for land ceded by the slider's year, dark for land ceded in it, with Royce's numbers once zoomed in. A treaty's page draws its own cessions dark.
+		if (drawsCessions) {
+			const cessionColor = token('timeline-treaty');
+			const byYear: FilterSpecification[] = cessionsAlways || year === undefined ? [] : [['<=', ['get', 'year'], year]];
+			const only: FilterSpecification[] = cessionsShown ? [['in', ['get', 'royce'], ['literal', cessionsShown]]] : [];
+			const filter = ['all', ...byYear, ...only] as FilterSpecification;
+			const inThisYear: ExpressionSpecification | boolean = cessionsAlways ? true : year === undefined ? false : ['==', ['get', 'year'], year];
+			// Above a view's shades of states or regions, so it shows on every view, and under the land areas.
+			const landFill = fills.findIndex((layer) => layer.id === 'land-areas');
+			fills.splice(landFill === -1 ? fills.length : landFill, 0, { id: 'cession-fills', type: 'fill', source: 'cessions', 'source-layer': 'cessions', filter, paint: { 'fill-color': hovered(cessionColor), 'fill-opacity': ['case', inThisYear, 0.7, 0.22] } } as LayerSpecification);
+			tops.unshift(
+				{ id: 'cession-lines', type: 'line', source: 'cessions', 'source-layer': 'cessions', filter, paint: { 'line-color': cessionColor, 'line-width': ['case', inThisYear, 2.2, 0.7], 'line-opacity': ['case', inThisYear, 1, 0.7] } },
+				{
+					id: 'cession-numbers',
+					type: 'symbol',
+					source: 'cessions',
+					'source-layer': 'cessions',
+					filter,
+					minzoom: 5.2,
+					layout: { 'text-field': ['get', 'royce'], 'text-font': ['Noto Sans Medium'], 'text-size': 11, 'text-padding': 4 },
+					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 1.5 }
+				}
+			);
+		}
+		const landAreaLayers = new Set(['land-areas', 'land-areas-patterns', 'land-areas-lines']);
+		const dotLayers = new Set(['area-groups', 'area-group-counts', 'area-dots', 'area-names']);
+		// The offices mark nations with no land area today, so they go with today's map too.
+		const officeLayers = new Set(['office-dots', 'office-names']);
+		// The Map page's map shows the land areas themselves, without the numbered circles that group small ones (mockup D1).
+		const groupLayers = new Set(['area-groups', 'area-group-counts']);
+		const yearHides = (layer: LayerSpecification) => (hideLandAreas && landAreaLayers.has(layer.id)) || (hideDots && dotLayers.has(layer.id)) || (pastYear && officeLayers.has(layer.id)) || (explorer && groupLayers.has(layer.id));
+		for (const list of [fills, tops]) {
+			for (let index = list.length - 1; index >= 0; index -= 1) if (yearHides(list[index])) list.splice(index, 1);
 		}
 
 		// On a picture base map the shades let the picture show through, and land areas are outlined in a light orange that reads on photos (mockup 1A). The reader can also turn the land area outlines off, and on a picture keep or drop the place names and roads.
 		const picture = baseMap !== 'map';
-		const landLayers = new Set(['land-areas', 'land-areas-lines']);
+		const landLayers = new Set(['land-areas', 'land-areas-patterns', 'land-areas-lines']);
 		const shownFills = fills.filter((layer) => outlines || !landLayers.has(layer.id));
 		const shownTops = tops.filter((layer) => outlines || !landLayers.has(layer.id));
 		if (picture) {
 			const onPictureLine = token('band-progress');
 			for (const layer of shownFills) {
-				if (layer.type === 'fill' && layer.paint) layer.paint['fill-opacity'] = layer.id === 'land-areas' && !isShadedMapView(view) ? 0.2 : 0.6;
+				if (layer.type === 'fill' && layer.paint && !layer.id.startsWith('cession')) layer.paint['fill-opacity'] = layer.id === 'land-areas' && !isShadedMapView(view) ? 0.2 : 0.6;
 			}
 			for (const layer of shownTops) {
 				if (layer.id === 'land-areas-lines' && layer.type === 'line' && layer.paint) {
@@ -477,16 +865,15 @@
 				worldLand,
 				...pictureLayers(baseMap),
 				...shownFills,
-				...(placeNames ? over : []),
+				// Place names and roads are always drawn (Trevor, 2026-11-27). The site's own fills (water, buildings, runways) are left off, so the picture shows its own water and ground.
+				...over.filter((layer) => layer.type !== 'fill'),
 				...shownTops
 			];
 		} else if (baseMap === 'topographic') {
-			// The site's own land, water and parks, with the survey's shaded relief laid over the land and its contour lines over that. Neither carries names, so the only names are the site's own, which the reader can turn off.
-			const water = under.findIndex((layer) => layer.id.startsWith('water'));
-			const firstWater = water === -1 ? under.length : water;
+			// The site's own land and parks, with the survey's shaded relief laid over the land and its contour lines over that, then the site's own water, roads and names. Protomaps lists the water after its first road layers (the runways), so the water comes in `over`: without it the relief covers the oceans and the globe is all white (Trevor, 2026-11-27, with place names turned off), so names and roads are always drawn.
 			const relief = pictureLayers('terrain', dark ? { 'raster-opacity': 0.55, 'raster-brightness-max': 0.45 } : { 'raster-opacity': 0.7 });
 			const contours: LayerSpecification = { id: 'contours', type: 'raster', source: 'imagery-contours', minzoom: 10, paint: { 'raster-opacity': dark ? 1 : 0.85 } };
-			layers = [...under.slice(0, firstWater), ...relief, ...under.slice(firstWater), contours, ...shownFills, ...(placeNames ? over : []), ...shownTops];
+			layers = [...under, ...relief, contours, ...shownFills, ...over, ...shownTops];
 		} else {
 			layers = [...under, ...shownFills, ...over, ...shownTops];
 		}
@@ -533,6 +920,21 @@
 					promoteId: { states: 'code', 'land-areas': 'code' },
 					attribution: 'U.S. Census Bureau'
 				},
+				// The historic layers, each a source only while it is drawn, so its credit shows only then.
+				...(drawsCessions
+					? { cessions: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.landCessions}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.landCessionsMaximumZoom, promoteId: { cessions: 'royce' }, attribution: 'U.S. Forest Service, after Royce (1899)' } as SourceSpecification }
+					: {}),
+				...(layerSwitches?.borders ? { borders: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.borders}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.bordersMaximumZoom, promoteId: { borders: 'id' }, attribution: 'Newberry Library, Atlas of Historical County Boundaries' } as SourceSpecification } : {}),
+				...(layerSwitches?.homelands ? { homelands: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.homelands}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.homelandsMaximumZoom, promoteId: { homelands: 'area' }, attribution: 'National Park Service, after the U.S. Geological Survey (1978)' } as SourceSpecification } : {}),
+				...(layerSwitches?.reservations1909
+					? {
+							reservations1909: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.reservations1909}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.reservations1909MaximumZoom, promoteId: { reservations: 'n' }, attribution: 'Office of Indian Affairs (1909), National Archives' } as SourceSpecification,
+							// On a high-density screen each 256-pixel picture is laid out at 128 pixels, so the map asks for the next zoom's pictures and the old lettering stays sharp instead of being stretched (Trevor, 2026-11-27: "low resolution when zoomed out").
+							...(layerSwitches.scan1909 ? { scan1909: { type: 'raster', tiles: [`${origin}/map-tiles/${data.tiles.scan1909}/{z}/{x}/{y}.webp`], tileSize: devicePixelRatio >= 1.5 ? 128 : 256, maxzoom: data.tiles.scan1909MaximumZoom } as SourceSpecification } : {})
+						}
+					: {}),
+				...(layerSwitches?.routes ? { routes: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.removalRoutes}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.removalRoutesMaximumZoom, attribution: 'National Park Service' } as SourceSpecification } : {}),
+				...(pastYear ? { 'areas-by-year': { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.landAreasByYear}/{z}/{x}/{y}.mvt`], maxzoom: 12, promoteId: { 'land-areas': 'code' }, attribution: 'U.S. Census Bureau' } as SourceSpecification } : {}),
 				regions: { type: 'geojson', data: data.regions, promoteId: 'name', attribution: 'Bureau of Indian Affairs' },
 				offices: {
 					type: 'geojson',
@@ -582,9 +984,10 @@
 					cluster: !oneNation && view === 'lands',
 					clusterMaxZoom: 5,
 					clusterRadius: 40
-				}
+				},
+				...(shape === 'globe' ? { 'star-credit': starCreditSource } : {})
 			},
-			layers
+			layers: shape === 'globe' ? [...layers, starCreditLayer] : layers
 		};
 	}
 
@@ -626,18 +1029,61 @@
 		else location.hash = anchor;
 	}
 
-	/** Moves the map to one of the places in tileMapPlaces, by name; the map page's Go to menu calls it. */
-	export function showPlace(name: string): void {
+	/**
+	 * The shapes the reader found with the map's search: a state, or a nation's land areas and office. They keep the focus color until the reader finds something else or closes the details (Trevor, 2026-11-27: finding a nation should mark it and go to it).
+	 */
+	type FoundShape = { source: string; sourceLayer?: string; id: string | number };
+	let found: FoundShape[] = [];
+	function markFound(shapes: FoundShape[]): void {
+		for (const shape of found) if (map?.getSource(shape.source)) map.setFeatureState(shape, { found: false });
+		found = shapes;
+		markFoundAgain();
+	}
+	/** A redrawn map can drop a source and add it back, losing its marks, so they are set again after each redraw. */
+	function markFoundAgain(): void {
+		for (const shape of found) if (map?.getSource(shape.source)) map.setFeatureState(shape, { found: true });
+	}
+	/** Clears what the search found, as when the reader closes its details. */
+	export function clearFound(): void {
+		markFound([]);
+	}
+
+	/** Moves the map to one of the places in tileMapPlaces, or a state, by name; the map page's search calls it. A state is marked too. */
+	export function showPlace(name: string, padding: TileMapPadding = 24): void {
 		const place = tileMapPlaces.find((entry) => entry.name === name);
 		// The move takes its time from the motion tokens, so Reduce motion makes it a jump (src/lib/motion.ts).
 		if (place) {
-			map?.fitBounds(place.bounds, { padding: 24, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+			markFound([]);
+			map?.fitBounds(place.bounds, { padding, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
 			return;
 		}
 		// Every state is a place too, from the map's data.
 		void loadData().then((data) => {
-			const state = Object.values(data.states).find((entry) => 'name' in entry && entry.name === name);
-			if (state && 'bounds' in state && state.bounds) map?.fitBounds(state.bounds, { padding: 24, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+			const entry = Object.entries(data.states).find(([, state]) => 'name' in state && state.name === name);
+			if (!entry) return;
+			const [code, state] = entry;
+			markFound([{ source: 'places', sourceLayer: 'states', id: code }]);
+			if ('bounds' in state && state.bounds) map?.fitBounds(state.bounds, { padding, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+		});
+	}
+
+	/** Moves the map to a nation's land areas, or to its office if it has none, and marks them. The padding keeps them clear of what floats over the map. */
+	export function showNation(id: string, padding: TileMapPadding = 48): void {
+		void loadData().then((data) => {
+			const codes = new Set(data.nationAreas?.[id] ?? []);
+			const areas = data.areas.filter((area) => codes.has(area.code));
+			const officeIndex = (data.offices ?? []).findIndex((office) => office.nation === id);
+			markFound([
+				...areas.flatMap((area): FoundShape[] => [
+					{ source: 'places', sourceLayer: 'land-areas', id: area.code },
+					{ source: 'areas-by-year', sourceLayer: 'land-areas', id: area.code },
+					{ source: 'area-points', id: Number(area.code) }
+				]),
+				...(officeIndex === -1 ? [] : [{ source: 'offices', id: officeIndex }])
+			]);
+			const moving = { padding, duration: motionDuration('long'), easing: motionEasing('standard') };
+			if (areas.length > 0) map?.fitBounds(boundsOfAreas(areas), { ...moving, maxZoom: 10 });
+			else if (officeIndex !== -1) map?.flyTo({ center: data.offices[officeIndex].point, zoom: 8, padding: typeof padding === 'number' ? { top: padding, right: padding, bottom: padding, left: padding } : padding, duration: moving.duration, easing: moving.easing });
 		});
 	}
 
@@ -650,32 +1096,61 @@
 		return [Math.min(...boxes.map((box) => box[0])), Math.min(...boxes.map((box) => box[1])), Math.max(...boxes.map((box) => box[2])), Math.max(...boxes.map((box) => box[3]))];
 	}
 
-	onMount(() => {
+	/**
+	 * When the map cannot start, it says so in its own frame, with Try again, rather than the page swapping in the drawn map (Trevor, 2026-11-27: "I would rather, map failed to load"). A device that cannot draw maps at all gets no Try again, since trying again would fail the same way.
+	 */
+	let failed = $state<'' | 'retry' | 'device'>('');
+	/** The reference the failure was reported under (site/ERRORS.md), shown with Report. */
+	let failureReference = $state<string | undefined>();
+	let attempt = $state(0);
+	function tryAgain(): void {
+		failed = '';
+		attempt += 1;
+	}
+
+	// The map starts when the component does, and again from the start each time the reader presses Try again.
+	$effect(() => {
+		void attempt;
+		return untrack(() => startMap());
+	});
+
+	function startMap(): (() => void) | undefined {
 		let stopped = false;
 		let cleanups: (() => void)[] = [];
-		const fail = () => {
+		ready = false;
+		const fail = (problem: unknown, code: string, reason: 'retry' | 'device' = 'retry') => {
 			if (stopped) return;
 			stopped = true;
 			map?.remove();
 			map = undefined;
+			ready = false;
+			failed = reason;
+			// Offline, nothing could be sent and there is nothing to fix.
+			failureReference = navigator.onLine ? sendProblem(problem, { code, path: location.pathname, place: 'TileMap' }) : undefined;
 			onfail?.();
 		};
 		if (!canDrawMaps()) {
-			fail();
+			fail(new Error(navigator.onLine ? 'The browser has no WebGL' : 'The reader is offline'), 'map.webgl', 'device');
 			return;
 		}
 
 		void (async () => {
 			try {
-				const [{ default: maplibre }, data] = await Promise.all([import('maplibre-gl'), loadData(), import('maplibre-gl/dist/maplibre-gl.css')]);
+				const [[{ default: maplibre }], data] = await Promise.all([loadTileMapLibrary(), loadData()]);
 				if (stopped || !container) return;
-				if (data.areas.length === 0 && oneNation) throw new Error('The nation has no land areas to show');
+				if (data.areas.length === 0 && oneNation && !openingBox) throw new Error('The nation has no land areas to show');
 				const style = await styleFor(data);
 				const start = camera ?? undefined;
-				const opening = oneNation
-					? { bounds: boundsOfAreas(data.areas), fitBoundsOptions: { padding: 32, maxZoom: nationClosestZoom } }
-					: openingBox
-						? { bounds: openingBox, fitBoundsOptions: { padding: 16, maxZoom: 10 } }
+				// A nation's map opens on its lands, and with the cessions on, on the land its predecessors ceded too (mockup 6).
+				const ownBounds = (): [number, number, number, number] => {
+					const lands = boundsOfAreas(data.areas);
+					if (!cessions || !cessionsBounds) return lands;
+					return [Math.min(lands[0], cessionsBounds[0]), Math.min(lands[1], cessionsBounds[1]), Math.max(lands[2], cessionsBounds[2]), Math.max(lands[3], cessionsBounds[3])];
+				};
+				const opening = openingBox
+					? { bounds: openingBox, fitBoundsOptions: { padding: 16, maxZoom: 10 } }
+					: oneNation
+						? { bounds: ownBounds(), fitBoundsOptions: { padding: 32, maxZoom: nationClosestZoom } }
 					: start
 						? { center: start.center, zoom: start.zoom }
 						: { bounds: tileMapPlaces[0].bounds, fitBoundsOptions: { padding: 16 } };
@@ -694,6 +1169,15 @@
 				});
 				map.touchZoomRotate.disableRotation();
 				map.keyboard.disableRotation();
+				// The category shapes are drawn here as distance fields, once per style, when a layer first asks for one; MapLibre colors them by category and rings them in ink.
+				const loaded = map;
+				loaded.on('styleimagemissing', (event: { id: string }) => {
+					if (loaded.hasImage(event.id)) return;
+					const shape = shapeByImageName.get(event.id);
+					if (shape) loaded.addImage(event.id, shapeImage(shape, shapeImageSize, 1), { sdf: true, pixelRatio: 1 });
+					const pattern = patternOfImageName(event.id);
+					if (pattern) loaded.addImage(event.id, patternImage(pattern.pattern, pattern.color, 2), { pixelRatio: 2 });
+				});
 				// The credit line, then the buttons, all in the bottom-right corner (Trevor, 2026-11-23). MapLibre stacks each later bottom control above the earlier ones, so the credit line is added first and the zoom buttons last, on top.
 				map.addControl(new maplibre.AttributionControl({ compact: false }), 'bottom-right');
 				// Full screen, where the browser allows it (Trevor, 2026-11-23). On the map page the whole view goes full screen, its picker, key, preview and table with it, from the element marked data-map-full-screen; elsewhere the map alone does.
@@ -707,10 +1191,12 @@
 				resetButton.setAttribute('aria-label', 'Reset the map');
 				resetButton.innerHTML = resetIcon;
 				resetButton.addEventListener('click', () => {
-					const bounds = oneNation ? boundsOfAreas(data.areas) : (openingBox ?? tileMapPlaces[0].bounds);
-					map?.fitBounds(bounds, { padding: oneNation ? 32 : 16, maxZoom: oneNation ? nationClosestZoom : 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+					const bounds = openingBox ?? (oneNation ? boundsOfAreas(data.areas) : tileMapPlaces[0].bounds);
+					const ownLands = oneNation && !openingBox;
+					map?.fitBounds(bounds, { padding: ownLands ? 32 : 16, maxZoom: ownLands ? nationClosestZoom : 10, duration: motionDuration('long'), easing: motionEasing('standard') });
 				});
-				viewGroup.append(resetButton);
+				// The Map page keeps only zoom, flat or globe, and full screen (map redesign D).
+				if (!explorer) viewGroup.append(resetButton);
 				if (document.fullscreenEnabled) {
 					const fullScreenButton = document.createElement('button');
 					fullScreenButton.type = 'button';
@@ -723,42 +1209,33 @@
 					};
 					fullScreenButton.addEventListener('click', () => {
 						if (document.fullscreenElement) void document.exitFullscreen();
-						else void (mapElement.closest<HTMLElement>('[data-map-full-screen]') ?? mapElement).requestFullscreen().catch(() => {});
+						else void (mapElement.closest<HTMLElement>('[data-map-full-screen]') ?? mapElement).requestFullscreen().catch(() => /* expected: the browser refused full screen; the map stays as it was. */ {});
 					});
 					showFullScreenState();
 					document.addEventListener('fullscreenchange', showFullScreenState);
 					cleanups.push(() => document.removeEventListener('fullscreenchange', showFullScreenState));
 					viewGroup.append(fullScreenButton);
 				}
-				map.addControl({ onAdd: () => viewGroup, onRemove: () => viewGroup.remove() }, 'bottom-right');
-				// Flat or globe, as two buttons inside the map (Trevor, 2026-11-23).
+				// On the Map page the buttons stand at the top right, zoom first, each group apart (map redesign D); elsewhere they stack in the bottom-right corner, zoom on top.
+				const corner = explorer ? 'top-right' : 'bottom-right';
+				if (explorer) map.addControl(new maplibre.NavigationControl({ showCompass: false }), corner);
+				else map.addControl({ onAdd: () => viewGroup, onRemove: () => viewGroup.remove() }, corner);
+				// Flat or globe, as one button inside the map that switches between them (Trevor, 2026-11-23; one button rather than two, 2026-11-26). It shows the shape it switches to.
 				const shapeButtons = document.createElement('div');
 				shapeButtons.className = 'maplibregl-ctrl maplibregl-ctrl-group map-buttons map-shape';
-				shapeButtons.setAttribute('role', 'group');
-				shapeButtons.setAttribute('aria-label', 'Map shape');
-				const shapeChoices: { value: 'flat' | 'globe'; label: string; icon: string }[] = [
-					{ value: 'flat', label: 'Flat map', icon: shapeIcons.flat },
-					{ value: 'globe', label: 'Globe, every place at its true size', icon: shapeIcons.globe }
-				];
-				const pressed = () => {
-					for (const button of shapeButtons.querySelectorAll('button')) button.setAttribute('aria-pressed', String(button.dataset.shape === shape));
-				};
-				for (const choice of shapeChoices) {
-					const button = document.createElement('button');
-					button.type = 'button';
-					button.dataset.shape = choice.value;
-					button.title = choice.label;
-					button.setAttribute('aria-label', choice.label);
-					button.innerHTML = choice.icon;
-					button.addEventListener('click', () => {
-						shape = choice.value;
-						pressed();
-					});
-					shapeButtons.append(button);
-				}
-				pressed();
-				map.addControl({ onAdd: () => shapeButtons, onRemove: () => shapeButtons.remove() }, 'bottom-right');
-				map.addControl(new maplibre.NavigationControl({ showCompass: false }), 'bottom-right');
+				const shapeToggle = document.createElement('button');
+				shapeToggle.type = 'button';
+				shapeToggle.addEventListener('click', () => {
+					shape = shape === 'globe' ? 'flat' : 'globe';
+					showShape();
+				});
+				shapeButtons.append(shapeToggle);
+				shapeButton = shapeToggle;
+				showShape();
+				map.addControl({ onAdd: () => shapeButtons, onRemove: () => shapeButtons.remove() }, corner);
+				if (explorer) {
+					if (viewGroup.childElementCount > 0) map.addControl({ onAdd: () => viewGroup, onRemove: () => viewGroup.remove() }, corner);
+				} else map.addControl(new maplibre.NavigationControl({ showCompass: false }), corner);
 				// The Layers button, at the top of the stack (mockup 1A): it opens the menu of base maps drawn below in this component.
 				const layersGroup = document.createElement('div');
 				layersGroup.className = 'maplibregl-ctrl maplibregl-ctrl-group map-buttons map-layers';
@@ -772,7 +1249,8 @@
 				layersToggle.addEventListener('click', toggleLayers);
 				layersButton = layersToggle;
 				layersGroup.append(layersToggle);
-				map.addControl({ onAdd: () => layersGroup, onRemove: () => layersGroup.remove() }, 'bottom-right');
+				// The Map page draws its own Layers list beside its search.
+				if (!explorer) map.addControl({ onAdd: () => layersGroup, onRemove: () => layersGroup.remove() }, 'bottom-right');
 				// The menu closes when the reader clicks elsewhere or presses Escape.
 				const onOutside = (event: PointerEvent) => {
 					const target = event.target as Node | null;
@@ -781,21 +1259,26 @@
 				document.addEventListener('pointerdown', onOutside);
 				cleanups.push(() => document.removeEventListener('pointerdown', onOutside));
 				// The distance scale sits at the bottom of the map (Trevor, 2026-11-23).
-				map.addControl(new maplibre.ScaleControl({ unit: 'imperial' }), 'bottom-left');
+				// The Map page's map has no distance scale: its key and Layers list take that corner (mockup D).
+				if (!explorer) map.addControl(new maplibre.ScaleControl({ unit: 'imperial' }), 'bottom-left');
 				const sameInWords = oneNation ? 'The list under the map names the same areas.' : 'The table beside the map lists the same places.';
 				map.getCanvas().setAttribute('aria-label', `Map: ${label}. Use the arrow keys to move and the plus and minus keys to zoom. ${sameInWords}`);
 
 				// If the first view does not finish loading, the reader keeps the drawn map rather than an empty frame.
-				const giveUp = setTimeout(fail, 20000);
+				const giveUp = setTimeout(() => fail(new Error('The map did not finish loading in 20 seconds'), 'map.timeout'), 20000);
 				cleanups.push(() => clearTimeout(giveUp));
 				map.once('load', () => {
 					clearTimeout(giveUp);
 					ready = true;
 					onready?.();
+					drawSkySoon();
 				});
 				map.on('error', (event) => {
-					if (!ready && /\/map-tiles\//.test(String((event.error as Error | undefined)?.message ?? ''))) fail();
+					if (!ready && /\/map-tiles\//.test(String((event.error as Error | undefined)?.message ?? ''))) fail(event.error, 'map.tiles');
 				});
+				// The sky behind the globe follows the map as it moves and resizes.
+				map.on('move', drawSkySoon);
+				map.on('resize', drawSkySoon);
 				map.on('moveend', () => {
 					if (!map) return;
 					const center = map.getCenter();
@@ -804,7 +1287,7 @@
 
 				// Selecting a place goes to its row; hovering marks it, as the drawn map does.
 				const interactive: { layer: string; source: string; sourceLayer?: string; anchor: (properties: Record<string, unknown>) => string | undefined }[] = [
-					{ layer: 'states', source: 'places', sourceLayer: 'states', anchor: (properties) => (by === 'state' ? shadingIn(data)?.states[String(properties.code)]?.anchor : data.states[String(properties.code)]?.anchor) },
+					{ layer: 'states', source: 'places', sourceLayer: 'states', anchor: (properties) => (explorer ? (isShadedMapView(statesBy) ? data.shading?.[statesBy]?.states[String(properties.code)]?.anchor : data.states[String(properties.code)]?.anchor) : by === 'state' ? shadingIn(data)?.states[String(properties.code)]?.anchor : data.states[String(properties.code)]?.anchor) },
 					{ layer: 'regions', source: 'regions', anchor: (properties) => String(properties.anchor) },
 					{ layer: 'area-dots', source: 'area-points', anchor: (properties) => String(properties.anchor) },
 					{ layer: 'office-dots', source: 'offices', anchor: (properties) => String(properties.anchor ?? '') },
@@ -823,16 +1306,18 @@
 				// On a nation's page only its land areas can be chosen, and only where the page shows their details under the map (mockup 5).
 				const chosenLayers = oneNation ? (onselect ? interactive.filter((entry) => entry.layer === 'land-areas' || entry.layer === 'area-dots') : []) : interactive;
 				for (const entry of chosenLayers) {
-					// Every layer a view may have is listened to, since changing the view swaps the layers on the same map.
-					map.on('click', entry.layer, (event) => {
-						const found = event.features?.[0];
-						if (found) openRow(entry.anchor(found.properties ?? {}));
-					});
+					// Every layer a view may have is listened to, since changing the view swaps the layers on the same map. On the Map page, where layers lie over each other, one click handler below picks the top one.
+					if (!explorer)
+						map.on('click', entry.layer, (event) => {
+							const found = event.features?.[0];
+							if (found) openRow(entry.anchor(found.properties ?? {}));
+						});
 					map.on('mousemove', entry.layer, (event) => {
 						const found = event.features?.[0];
 						if (!map || !found || found.id === undefined) return;
 						clearHover();
-						hover = { source: entry.source, sourceLayer: entry.sourceLayer, id: found.id };
+						// The land areas come from today's tiles or a past year's, so the hover goes to the source the shape came from.
+						hover = { source: found.source, sourceLayer: found.sourceLayer, id: found.id };
 						map.setFeatureState(hover, { hover: true });
 						map.getCanvas().style.cursor = 'pointer';
 					});
@@ -841,6 +1326,84 @@
 						if (map) map.getCanvas().style.cursor = '';
 					});
 				}
+				/** Cessions overlap, so the one made in the slider's year wins, then the latest. */
+				const chosenCession = (features: import('maplibre-gl').MapGeoJSONFeature[] | undefined) =>
+					[...(features ?? [])].sort((first, second) => Number(second.properties?.year === year) - Number(first.properties?.year === year) || Number(second.properties?.year) - Number(first.properties?.year))[0];
+				// On the Map page (map redesign D) the layers lie over each other, so a click goes to the topmost thing under the pointer: a removal route, a land area or its dot or an office, a homeland, a cession, a region, a state, then a state or territory of the past. A numbered circle opens on its own (below).
+				if (explorer) {
+					const words = (value: unknown, separator: string) => String(value ?? '').split(separator).filter(Boolean);
+					const reservation1909 = (properties: Record<string, unknown>): TileMapFeature => ({
+						kind: 'reservation1909',
+						n: Number(properties.n),
+						id: String(properties.id ?? ''),
+						name: String(properties.name ?? ''),
+						status: String(properties.status ?? ''),
+						nations: words(properties.nations, ','),
+						label: Number(properties.label) === 1,
+						neighbors: words(properties.neighbors, '|'),
+						placed: Number(properties.placed) === 1,
+						panel: String(properties.panel ?? ''),
+						note: String(properties.note ?? ''),
+						review: String(properties.review ?? '')
+					});
+					const history: Record<string, (properties: Record<string, unknown>) => TileMapFeature> = {
+						routes: (properties) => ({ kind: 'route', routes: String(properties.routes ?? '') }),
+						homelands: (properties) => ({ kind: 'homeland', area: Number(properties.area), named: String(properties.named ?? '') }),
+						'reservations-1909': reservation1909,
+						'reservations-1909-dots': reservation1909,
+						'reservations-1909-markers': reservation1909,
+						borders: (properties) => ({ kind: 'border', id: String(properties.id), name: String(properties.name ?? ''), territory: String(properties.kind ?? ''), from: Number(properties.from), to: Number(properties.to), change: String(properties.change ?? ''), citation: String(properties.citation ?? '') })
+					};
+					const order = ['routes', 'reservations-1909-dots', 'reservations-1909-markers', 'area-groups', 'area-dots', 'office-dots', 'land-areas', 'reservations-1909', 'homelands', 'cession-fills', 'regions', 'states', 'borders'];
+					map.on('click', (event) => {
+						if (!map) return;
+						for (const layer of order) {
+							if (!map.getLayer(layer)) continue;
+							const features = map.queryRenderedFeatures(event.point, { layers: [layer] });
+							if (features.length === 0) continue;
+							if (layer === 'area-groups') return;
+							if (layer in history) {
+								const feature = history[layer](features[0].properties ?? {});
+								// A 1909 reservation stays marked while its details are open, as a found nation does.
+								if (feature.kind === 'reservation1909') markFound([{ source: 'reservations1909', sourceLayer: 'reservations', id: feature.n }]);
+								else if (found.some((shape) => shape.source === 'reservations1909')) markFound([]);
+								onfeature?.(feature);
+								return;
+							}
+							// Anything else chosen ends the mark on a 1909 reservation.
+							if (found.some((shape) => shape.source === 'reservations1909')) markFound([]);
+							if (layer === 'cession-fills') {
+								const cession = chosenCession(features);
+								if (cession) oncession?.(String(cession.properties?.royce));
+							} else {
+								const entry = interactive.find((item) => item.layer === layer);
+								if (entry) openRow(entry.anchor(features[0].properties ?? {}));
+							}
+							return;
+						}
+					});
+					for (const [layer, source, sourceLayer] of [['homelands', 'homelands', 'homelands'], ['borders', 'borders', 'borders'], ['reservations-1909', 'reservations1909', 'reservations'], ['reservations-1909-dots', 'reservations1909', 'reservations'], ['reservations-1909-markers', 'reservations1909', 'reservations']]) {
+						map.on('mousemove', layer, (event) => {
+							const found = event.features?.[0];
+							if (!map || !found || found.id === undefined) return;
+							clearHover();
+							hover = { source, sourceLayer, id: found.id };
+							map.setFeatureState(hover, { hover: true });
+							map.getCanvas().style.cursor = 'pointer';
+						});
+						map.on('mouseleave', layer, () => {
+							clearHover();
+							if (map) map.getCanvas().style.cursor = '';
+						});
+					}
+					map.on('mouseenter', 'routes', () => {
+						if (map) map.getCanvas().style.cursor = 'pointer';
+					});
+					map.on('mouseleave', 'routes', () => {
+						if (map) map.getCanvas().style.cursor = '';
+					});
+				}
+
 				// A numbered circle opens to its areas.
 				map.on('click', 'area-groups', async (event) => {
 					const found = event.features?.[0];
@@ -850,9 +1413,36 @@
 					map.easeTo({ center: (found.geometry as GeoJSON.Point).coordinates as [number, number], zoom, duration: motionDuration('medium'), easing: motionEasing('standard') });
 				});
 
+				// Choosing a cession opens its details (mockup 2A). Cessions overlap, so the one made in the slider's year wins, then the latest; a land area, dot or office drawn over it wins over both.
+				if (oncession) {
+					const above = ['land-areas', 'area-dots', 'area-groups', 'office-dots'];
+					const onTop = (point: import('maplibre-gl').PointLike) => (map ? map.queryRenderedFeatures(point, { layers: above.filter((layer) => map?.getLayer(layer)) }).length > 0 : false);
+					if (!explorer) map.on('click', 'cession-fills', (event) => {
+						if (onTop(event.point)) return;
+						const found = chosenCession(event.features);
+						if (found) oncession(String(found.properties?.royce));
+					});
+					map.on('mousemove', 'cession-fills', (event) => {
+						if (!map || onTop(event.point)) return;
+						const found = chosenCession(event.features);
+						if (!found || found.id === undefined) return;
+						clearHover();
+						hover = { source: 'cessions', sourceLayer: 'cessions', id: found.id };
+						map.setFeatureState(hover, { hover: true });
+						map.getCanvas().style.cursor = 'pointer';
+					});
+					map.on('mouseleave', 'cession-fills', () => {
+						clearHover();
+						if (map) map.getCanvas().style.cursor = '';
+					});
+				}
+
 				// The map follows the site's theme: the sun and moon button sets data-theme, and without it the system setting decides.
 				const restyle = async () => {
-					if (map) map.setStyle(await styleFor(data));
+					if (!map) return;
+					map.setStyle(await styleFor(data));
+					markFoundAgain();
+					drawSkySoon();
 				};
 				restyleMap = restyle;
 				const themeWatcher = new MutationObserver(() => void restyle());
@@ -860,8 +1450,8 @@
 				const scheme = matchMedia('(prefers-color-scheme: dark)');
 				scheme.addEventListener('change', restyle);
 				cleanups.push(() => themeWatcher.disconnect(), () => scheme.removeEventListener('change', restyle));
-			} catch {
-				fail();
+			} catch (problem) {
+				fail(problem, 'map.load');
 			}
 		})();
 
@@ -869,13 +1459,29 @@
 			stopped = true;
 			for (const cleanup of cleanups) cleanup();
 			cleanups = [];
+			if (skyFrame) cancelAnimationFrame(skyFrame);
+			skyFrame = 0;
 			map?.remove();
 			map = undefined;
 		};
-	});
+	}
 </script>
 
-<div class="tile-map" class:ready bind:this={container} role="region" aria-label="Map: {label}">
+<div class="tile-map" class:ready class:explorer class:failed={failed !== ''} bind:this={container} role="region" aria-label="Map: {label}">
+	<!-- The starry sky behind the globe, under MapLibre's canvas; only a picture, so screen readers skip it. -->
+	<canvas class="globe-sky" bind:this={skyCanvas} hidden aria-hidden="true"></canvas>
+	{#if failed}
+		<div class="map-failed">
+			<ProblemNotice
+				size={explorer ? 'section' : 'small'}
+				title="Map failed to load"
+				line={failed === 'device' ? (navigator.onLine ? 'This browser cannot draw the map.' : 'The map needs an internet connection.') : explorer ? 'The map could not be drawn. Try again, or report it if it keeps happening.' : 'The map could not be drawn.'}
+				reference={failureReference}
+				report={failureReference ? partReport(page.url, 'The map failed to load.') : undefined}
+				onretry={failed === 'retry' ? tryAgain : undefined}
+			/>
+		</div>
+	{/if}
 	<!-- The base map menu (mockup 1A), opened by the Layers button in the map's corner stack. Escape closes it and returns to the button. -->
 	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 	<div
@@ -906,11 +1512,14 @@
 				{/each}
 			</div>
 		</fieldset>
-		{#if baseMap !== 'map'}
-			<label class="layers-switch"><input type="checkbox" bind:checked={placeNames} />Place names and roads</label>
-		{/if}
 		{#if hasLandAreas}
 			<label class="layers-switch"><input type="checkbox" bind:checked={outlines} />Land area outlines</label>
+		{/if}
+		{#if !cessionsAlways}
+			<fieldset class="layers-historic">
+				<legend>Historic</legend>
+				<label class="layers-switch"><input type="checkbox" bind:checked={cessions} />Land cessions <span class="layers-note">Royce, 1899</span></label>
+			</fieldset>
 		{/if}
 	</div>
 </div>
@@ -918,10 +1527,39 @@
 <style>
 	.tile-map {
 		container: tile-map / inline-size;
+		position: relative;
 		width: 100%;
 		aspect-ratio: 975 / 883;
 		border: 1px solid var(--color-line);
 		background: var(--color-paper);
+	}
+
+	/* The sky behind the globe fills the map under MapLibre's canvas, which comes after it, and lets every press through to the map. */
+	.globe-sky {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+
+	.globe-sky[hidden] {
+		display: none;
+	}
+
+	/* Said in the map's own frame when it cannot start, over everything else in it, and shown even where the page keeps a map that has not loaded out of sight. */
+	.map-failed {
+		visibility: visible;
+		position: absolute;
+		inset: 0;
+		z-index: 3;
+		display: grid;
+		background: var(--color-paper);
+	}
+
+	/* The box keeps the map's frame with its own dashed border, so the map's border steps aside (mockup 1, project files design/error-framework/). */
+	.tile-map.failed {
+		border-color: transparent;
 	}
 
 	/* A map that is full screen by itself fills the screen. */
@@ -931,11 +1569,29 @@
 		border: 0;
 	}
 
-	/* MapLibre's controls and credit line, in the site's colors and type. */
+	/* On the Map page the map fills the frame the page gives it (map redesign D). */
+	.tile-map.explorer {
+		aspect-ratio: auto;
+		height: 100%;
+		border: 0;
+	}
+
+	/* MapLibre's controls and credit line, in the site's colors and type, and in the map controls' one look: paper, a 1px border, the control corner and one soft shadow (global.css, "Controls that float on a map"). */
 	.tile-map :global(.maplibregl-ctrl-group) {
+		overflow: hidden;
 		border: 1px solid var(--color-control-border);
+		border-radius: var(--radius-control);
 		background: var(--color-paper);
-		box-shadow: none;
+		box-shadow: var(--map-float-shadow);
+	}
+
+	/* The Map page's buttons stand at the top right, a little apart (map redesign D). */
+	.tile-map.explorer :global(.maplibregl-ctrl-top-right .maplibregl-ctrl) {
+		margin: var(--space-3) var(--space-3) 0 0;
+	}
+
+	.tile-map.explorer :global(.maplibregl-ctrl-top-right .maplibregl-ctrl + .maplibregl-ctrl) {
+		margin-top: var(--space-2);
 	}
 
 	.tile-map :global(.maplibregl-ctrl-group button) {
@@ -944,7 +1600,7 @@
 	}
 
 	.tile-map :global(.maplibregl-ctrl-group button + button) {
-		border-top: 1px solid var(--color-control-border);
+		border-top: 1px solid var(--color-line);
 	}
 
 	/* The distance scale sits above the credit line, which runs along the bottom. */
@@ -959,10 +1615,6 @@
 	}
 
 	/* The shape on screen is marked as the site marks a chosen option. */
-	.tile-map :global(.map-shape button[aria-pressed='true']) {
-		background: var(--color-action);
-		color: var(--color-action-text);
-	}
 
 	.tile-map :global(.maplibregl-ctrl-attrib),
 	.tile-map :global(.maplibregl-ctrl-scale) {
@@ -985,7 +1637,7 @@
 	}
 
 	.tile-map :global(.maplibregl-canvas:focus-visible) {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: -3px;
 	}
 
@@ -1060,7 +1712,7 @@
 	}
 
 	.layers-base:has(input:focus-visible) {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 1px;
 	}
 
@@ -1072,6 +1724,24 @@
 		margin-top: var(--space-1);
 	}
 
+	.layers-historic {
+		margin: var(--space-3) 0 0;
+		padding: 0;
+		border: 0;
+		border-top: 1px solid var(--color-line);
+	}
+
+	.layers-historic legend {
+		margin: 0 0 var(--space-1);
+		padding: var(--space-2) 0 0;
+		font-weight: var(--font-weight-bold);
+	}
+
+	.layers-note {
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+	}
+
 	.layers-switch input {
 		width: 1.15rem;
 		height: 1.15rem;
@@ -1080,8 +1750,8 @@
 
 	/* The Layers button is marked while its menu is open. */
 	.tile-map :global(.map-layers button[aria-expanded='true']) {
-		background: var(--color-focus);
-		color: var(--focus-text, var(--color-ink));
+		background: var(--color-selection);
+		color: var(--color-ink);
 	}
 
 	/* MapLibre's control icons are dark; in the dark theme they are turned light. */
@@ -1135,6 +1805,20 @@
 		.tile-map :global(.maplibregl-ctrl-bottom-left .maplibregl-ctrl) {
 			margin: var(--space-2) 0 0 var(--space-2);
 		}
+	}
+
+	/* On a narrow Map page (a phone), the map's buttons stand at the bottom right, above the timeline (mockup D on a phone). */
+	@container tile-map (max-width: 40rem) {
+		.tile-map.explorer :global(.maplibregl-ctrl-top-right) {
+			top: auto;
+			/* Above the timeline, which takes two rows on a phone (MapExplorer.svelte). */
+			bottom: 11rem;
+		}
+
+		.tile-map.explorer :global(.maplibregl-ctrl-top-right .maplibregl-ctrl) {
+			margin: var(--space-2) var(--space-3) 0 0;
+		}
+
 	}
 
 	@media print {

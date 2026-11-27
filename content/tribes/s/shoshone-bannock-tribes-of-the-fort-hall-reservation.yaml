@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of June 14, 1867, 1 Kappler 837
+  since: '1867-06-14'
+  source: executive-order-1867-06-14-southern-and-northern-idaho-reservations
+  confidence: medium
+  verification: read-in-full
+  as_of: '1867-06-14'
+  locator: 1 Kappler 837
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Fort Hall Reserve (southern Idaho reservation for the Boise and Bruneau Shoshones and Bannocks).
 states:
 - state: ID
   presence: government-office
@@ -170,6 +180,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: '"instruction in both Shoshone and Bannock languages"; Bannock is coded under Northern Paiute'
+language_programs:
+- name: Language and Cultural Preservation Department
+  link: https://www.sbtribes.com/language-culture/
+  run_by: nation
+  source: shoshone-bannock-tribes-of-the-fort-hall-language-culture
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: page title
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Fort Hall Agency
@@ -202,6 +221,46 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Fort Hall Business Council (Sho-Ban)". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: pl-102-477-plan
+  start: '2023-10-01'
+  end: '2028-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Community Service Block Grant
+  - Low Income Home Energy Assistance Program
+  - Temporary Assistance for Needy Families
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  - Adult Education
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Shoshone-Bannock Tribes of the Fort Hall Reservation'; PL102_477_PartnerEnrollment, its 10 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2644209
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: ID, row 'Shoshone-Bannock Tribes, Ft. Hall Reservation' (Fort Hall)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 11952753
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SHOSHONE BANNOCK TRIBES' (UEI PFM3F9M7MG44), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SHOSHONE BANNOCK TRIBES'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Shoshone-Bannock Tribes of the Fort Hall Reservation, Idaho" among organizations
@@ -649,6 +708,30 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Sept. 5, 2008 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2008-09-05'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 106; 107(c)-(e); 110(a)(2)(D); 126; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 106; 107(c)-(e); 110(a)(2)(D); 126; 505(a)(2)"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Fort Hall Indian Water Rights Act of 1990 in 1990 (Pub. L. No. 101-602), settling the water rights of Fort Hall Shoshone-Bannock Tribes. It quantifies 581,331 acre-feet a year in all and authorizes about $22.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-101-602
+  confidence: high
+  verification: inferred
+  as_of: '1990'
+  locator: Congressional Research Service, R44148, Table 1, 1990
 nearby_state_courts:
 - state: ID
   county: Bingham County
@@ -710,7 +793,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 1 Kappler 837
-  note: 'The instrument reads: “Let the lands be set apart as reservations for the Indians within named, as recommended by the Acting Secretary of the Interior.”. The recommendation printed with the order describes the southern reservation as "The Boise and Bruneau bands of Shoshones and Bannock Reservation ... comprehending Fort Hall" (1 Kappler 836). The July 30, 1869 order (1 Kappler 839) designated this tract as the Bannock reservation under the Treaty of July 3, 1868; Kappler: "This reservation is included in the executive order of June 14, 1867" (1 Kappler 838). Fort Hall boundaries later changed by treaty and acts.'
+  note: 'The instrument reads: “Let the lands be set apart as reservations for the Indians within named, as recommended by the Acting Secretary of the Interior.”. The recommendation printed with the order describes the southern reservation as "The Boise and Bruneau bands of Shoshones and Bannock Reservation . . . comprehending Fort Hall" (1 Kappler 836). The July 30, 1869 order (1 Kappler 839) designated this tract as the Bannock reservation under the Treaty of July 3, 1868; Kappler: "This reservation is included in the executive order of June 14, 1867" (1 Kappler 838). Fort Hall boundaries later changed by treaty and acts.'
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

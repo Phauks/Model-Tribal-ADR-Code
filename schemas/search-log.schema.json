@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/search-log.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/search-log.schema.json",
   "title": "Search log",
   "description": "research/search-logs/<topic>/<letter>/<profile id>.yaml: how the project searched for one kind of information about one Native nation, every place it looked, and what each search found or why it failed, so an empty field says whether anyone looked (decision record 0025). One record per nation per topic; searches that find something are logged too.",
   "type": "object",

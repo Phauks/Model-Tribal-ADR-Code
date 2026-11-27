@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>Differences · Address book · Workspace · Model Tribal ADR Code</title>
+	<title>Differences · Address book · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -26,6 +26,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Address book', href: '/workspace/address-book' }
 	]}
+	current="Differences with the nation pages"
 />
 <h1>Differences with the nation pages</h1>
 <p>

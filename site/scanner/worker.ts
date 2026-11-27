@@ -1,5 +1,5 @@
 /**
- * The scanner Worker, model-tribal-adr-code-scanner (site/SCANNING.md). It
+ * The scanner Worker, tribal-law-project-scanner (site/SCANNING.md). It
  * scans files in the private bucket for viruses and malware and writes the
  * results to the file_scans table, which the website reads before serving a
  * file. It has no public address and the website has no binding to it: the
@@ -19,6 +19,8 @@
 import { Container, getContainer } from '@cloudflare/containers';
 import { DurableObject } from 'cloudflare:workers';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
+import { report } from '../src/lib/server/report.ts';
+import { reported, runReported } from '../src/lib/server/reported.ts';
 import { chooseProvider, type ProviderSettings } from '../src/lib/server/scanning/providers.ts';
 import { DeskObject, defaultSizeLimitBytes, type DeskSetup } from '../src/lib/server/scanning/scan-desk.ts';
 
@@ -76,7 +78,10 @@ export class ScanDesk extends DurableObject<ScannerEnvironment> {
 
 	constructor(context: DurableObjectState, environment: ScannerEnvironment) {
 		super(context, environment);
-		this.desk = new DeskObject(context, () => deskSetup(environment));
+		// A round that fails is reported, and the desk tries again in a minute (site/ERRORS.md).
+		this.desk = new DeskObject(context, () => deskSetup(environment), (problem) =>
+			report(problem, { code: 'scanner.round', source: 'scanner', place: 'alarm:ScanDesk', database: environment.database, keep: (write) => context.waitUntil(write) })
+		);
 	}
 
 	override fetch(): Promise<Response> {
@@ -84,14 +89,14 @@ export class ScanDesk extends DurableObject<ScannerEnvironment> {
 	}
 
 	override alarm(): Promise<void> {
-		return this.desk.alarm();
+		return runReported({ source: 'scanner', handler: 'alarm:ScanDesk', database: this.env.database }, () => this.desk.alarm());
 	}
 }
 
 /** Every minute: wake the desk. Once a day at 06:23 UTC: rebuild, for fresh ClamAV signatures, if a deploy hook is set. */
 const rebuildCron = '23 6 * * *';
 
-export default {
+const handlers = {
 	async fetch(): Promise<Response> {
 		return new Response('Nothing is served here. The website reads scan results from its database.', {
 			status: 404,
@@ -99,7 +104,7 @@ export default {
 		});
 	},
 
-	async scheduled(controller: ScheduledController, environment: ScannerEnvironment, context: ExecutionContext): Promise<void> {
+	async scheduled(controller: ScheduledController, environment: ScannerEnvironment): Promise<void> {
 		if (controller.cron === rebuildCron) {
 			if (!environment.SCAN_REBUILD_HOOK_URL) return;
 			const response = await fetch(environment.SCAN_REBUILD_HOOK_URL, { method: 'POST' });
@@ -107,6 +112,14 @@ export default {
 			return;
 		}
 		const desk = environment.scanDesk.get(environment.scanDesk.idFromName('desk'));
-		context.waitUntil(desk.fetch('https://desk/wake', { method: 'POST' }).then((response) => response.body?.cancel()));
+		// Waited for, so a desk that does not answer counts as a failed run.
+		const response = await desk.fetch('https://desk/wake', { method: 'POST' });
+		await response.body?.cancel();
+		if (response.status !== 202) throw new Error(`The scan desk answered ${response.status} instead of 202.`);
 	}
 } satisfies ExportedHandler<ScannerEnvironment>;
+
+// Reported and recorded (site/ERRORS.md, "Worker runs"): the minute's wake-up as scheduled:wake, the daily rebuild as scheduled:rebuild.
+export default reported('scanner', handlers, {
+	scheduledHandler: (controller) => (controller.cron === rebuildCron ? 'scheduled:rebuild' : 'scheduled:wake')
+}) satisfies ExportedHandler<ScannerEnvironment>;

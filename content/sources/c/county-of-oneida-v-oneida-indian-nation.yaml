@@ -112,6 +112,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=470%20U.S.%20226
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1984-10-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-489.mp3
+  catalog: https://catalog.archives.gov/id/102048865
+  whole_session: true
+  duration_seconds: 12293
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-489.mp3
+    checksum: 5bef62c030e66cfdf63ff385c23b339f471127dd7e70dd2bfd32e5bdd8505c4b
+    media_type: audio/mpeg
+    bytes: 196697984
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -154,7 +167,7 @@ review:
     detail: 'Printed and Database: 1985-03-04'
   - check: opinions
     result: confirmed
-    detail: 'Report: majority Powell p. 229, concurrence Stevens p. 254, concurrence in part and dissent in part Brennan p. 254, dissent Stevens p. 255; Database writers: Powell, Stevens. Read from the scan by an AI reader (record right): p. 229: JUSTICE POWELL delivered the opinion of the Court. p. 228: STEVENS, J., filed a separate statement concurring in the judgment in part, post, p. 254, and an opinion dissenting in part ... post, p. 255. p. 228: BRENNAN, J., filed an opinion concurring in part and dissenting in part, ... post, p. 254. p. 254: JUSTICE BRENNAN, with whom JUSTICE MARSHALL joins, concurring in part and dissenting in part. p. 255: JUSTICE STEVENS, with whom THE CHIEF JUSTICE, JUSTICE WHITE, and JUSTICE REHNQUIST join, dissenting in part.. Confirmed: the report prints (read from the page images) p. 229: "JUSTICE POWELL delivered the opinion of the Court."; p. 254: "JUSTICE STEVENS concurs in the judgment with respect to No. 83-1240."; p. 254: "JUSTICE BRENNAN, with whom JUSTICE MARSHALL joins, concurring in part and dissenting in part."; p. 255: "JUSTICE STEVENS, with whom THE CHIEF JUSTICE, JUSTICE WHITE, and JUSTICE REHNQUIST join, dissenting in No. 83-1065." (Justice Stevens''s concurrence in the judgment in No. 83-1240 is a vote noted without an opinion)'
+    detail: 'Report: majority Powell p. 229, concurrence Stevens p. 254, concurrence in part and dissent in part Brennan p. 254, dissent Stevens p. 255; Database writers: Powell, Stevens. Read from the scan by an AI reader (record right): p. 229: JUSTICE POWELL delivered the opinion of the Court. p. 228: STEVENS, J., filed a separate statement concurring in the judgment in part, post, p. 254, and an opinion dissenting in part . . . post, p. 255. p. 228: BRENNAN, J., filed an opinion concurring in part and dissenting in part, . . . post, p. 254. p. 254: JUSTICE BRENNAN, with whom JUSTICE MARSHALL joins, concurring in part and dissenting in part. p. 255: JUSTICE STEVENS, with whom THE CHIEF JUSTICE, JUSTICE WHITE, and JUSTICE REHNQUIST join, dissenting in part.. Confirmed: the report prints (read from the page images) p. 229: "JUSTICE POWELL delivered the opinion of the Court."; p. 254: "JUSTICE STEVENS concurs in the judgment with respect to No. 83-1240."; p. 254: "JUSTICE BRENNAN, with whom JUSTICE MARSHALL joins, concurring in part and dissenting in part."; p. 255: "JUSTICE STEVENS, with whom THE CHIEF JUSTICE, JUSTICE WHITE, and JUSTICE REHNQUIST join, dissenting in No. 83-1065." (Justice Stevens''s concurrence in the judgment in No. 83-1240 is a vote noted without an opinion)'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

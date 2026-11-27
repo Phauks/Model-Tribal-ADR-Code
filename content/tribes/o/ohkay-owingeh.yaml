@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Act of Dec. 22, 1858, ch. 5, 11 Stat. 374
+  since: '1858-12-22'
+  source: act-1858-12-22-pueblo-land-claims-confirmed
+  confidence: medium
+  verification: read-in-full
+  as_of: '1858-12-22'
+  locator: 11 Stat. 374
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the San Juan Pueblo (Ohkay Owingeh) land grant, New Mexico.
 states:
 - state: NM
   presence: government-office
@@ -162,6 +172,65 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Albuquerque Area
   note: Listed as "Ohkay Owingeh Pueblo". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2012
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Ohkay Owingeh' (Southwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Ohkay Owingeh'.
+- program: pl-102-477-plan
+  start: '2025-01-01'
+  end: '2029-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Ohkay Owingeh, New Mexico'; PL102_477_PartnerEnrollment, its 4 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 768053
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Ohkay Owingeh (San Juan Pueblo)' (Ohkay Owingeh Pueblo)
+- program: tribal-transportation-self-governance-compact
+  source: ict-news-2024-08-20-potawatomi-transportation-compact
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-08-20'
+  locator: 'names ''Ohkay Owingeh'': named among the first four compacts'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Ohkay Owingeh'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 3154544
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'OHKAY OWINGEH TRIBAL COUNCIL' (UEI H1ZEEZK2D6B3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'OHKAY OWINGEH TRIBAL COUNCIL'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 388508
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'OHKAY OWINGEH TRIBAL COUNCIL' (UEI H1ZEEZK2D6B3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'OHKAY OWINGEH TRIBAL COUNCIL'.
 governance:
 - aspect: head-of-government
   value: Governor
@@ -370,6 +439,22 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural, Business, Residential, Wind and Solar Resource) of the Ohkay Owingeh, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Jan. 4, 2016, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-ohkay-owingeh-2016-01-04
+  confidence: high
+  verification: inferred
+  as_of: '2016-01-04'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2016
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on May 12, 1993 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Sept. 16, 1993.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1993-05-12'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: filing-fees
   title: Ohkay Owingeh Court Fees and Costs Schedule
@@ -411,7 +496,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 11 Stat. 374
-  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as ... C, Pueblo of San Juan in the county of Rio Ariba ... be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
+  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as . . . C, Pueblo of San Juan in the county of Rio Ariba . . . be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

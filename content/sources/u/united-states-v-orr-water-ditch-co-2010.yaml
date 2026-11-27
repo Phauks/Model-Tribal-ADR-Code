@@ -1,0 +1,71 @@
+key: united-states-v-orr-water-ditch-co-2010
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Orr Water Ditch Co.
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '600'
+  page: '1152'
+  issued:
+    date-parts:
+    - - 2010
+      - 4
+      - 7
+  URL: https://static.case.law/f3d/600/html/1152-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 07-17001
+original_link: https://static.case.law/f3d/600/html/1152-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2009-07-15'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2009/07/15/07-17001.wma
+  duration_seconds: 3270
+  file:
+    storage_key: appeals-court-audio/ca9/2009/2009-07-15-07-17001.wma
+    checksum: 02dbddffd62de9f8f0f30bcb21ef8c777f77905c3d8b890aa03e4e2b1994ab37
+    media_type: audio/x-ms-wma
+    bytes: 8384356
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation
+    named_as: Pyramid Lake Paiute Tribe of Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 600 F.3d 1152. Decided by the United States Court of Appeals for the Ninth Circuit on Apr. 7, 2010. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 4; an AI reader read excerpts and judged it an Indian law case (Pyramid Lake Indian Reservation water rights decree).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 4; reader: Pyramid Lake Indian Reservation water rights decree'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

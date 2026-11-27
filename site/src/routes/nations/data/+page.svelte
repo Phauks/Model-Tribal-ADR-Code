@@ -7,12 +7,12 @@
 </script>
 
 <svelte:head>
-	<title>Data and charts · Model Tribal ADR Code</title>
+	<title>Data and charts · Tribal Law Project</title>
 	<meta name="description" content="Charts of Native nations’ courts, constitutions, jurisdiction, recognition, gaming compacts, treaties and cases, by topic." />
 </svelte:head>
 
 <div class="data-page">
-	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Data and charts" />
 	<h1>Data and charts</h1>
 	<p class="lead">Counts drawn from the nation pages and the documents behind them. Every bar opens the records it counts.</p>
 	<ul class="topic-list">

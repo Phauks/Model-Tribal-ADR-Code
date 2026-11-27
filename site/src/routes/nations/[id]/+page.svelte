@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { pageChangesLink } from '#lib/page-history.ts';
 	import { courtPagePath } from '#lib/court-pages.ts';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
+	import type { Snippet } from 'svelte';
 	import Collapsible from '#lib/components/Collapsible.svelte';
 	import ContactCard from '#lib/components/ContactCard.svelte';
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
@@ -86,7 +88,51 @@
 			}
 		}))
 	);
+	// The land the nation's predecessors ceded, from Royce's schedule (Trevor, 2026-11-26, historic maps mockup 6). A treaty with no page here is named by Royce's schedule alone; each map sheet opens in the image viewer.
+	const cessionColumns: TableColumn[] = [
+		{ key: 'royce', header: 'Royce no.', type: 'number', isRowHeader: true, sortable: true, searchable: true },
+		{ key: 'ceded', header: 'Ceded', type: 'date', sortable: true },
+		{ key: 'by', header: 'By', sortable: true, searchable: true, custom: true },
+		{ key: 'maps', header: 'Royce’s map', searchable: true, filterable: true, custom: true }
+	];
+	const cessionRows: TableRow[] = $derived(
+		data.landCessions.map((cession) => ({
+			key: cession.royce,
+			cells: {
+				royce: { text: cession.royce, sortValue: Number.parseFloat(cession.royce) },
+				ceded: { text: cession.dates.map((date) => readableDate(date)).join('; '), sortValue: cession.dates[0] ?? '' },
+				by: { text: cession.treaties.length > 0 ? cession.treaties.map((treaty) => treaty.name).join('; ') : cession.schedule },
+				maps: { text: cession.sheets.map((sheet) => sheet.name).join(', '), values: cession.sheets.map((sheet) => sheet.name) }
+			}
+		}))
+	);
+	const cessionsByRoyce = $derived(new Map(data.landCessions.map((cession) => [cession.royce, cession])));
 	const treatyMarks = $derived(new Map(data.treaties.map((treaty) => [treaty.key, treaty.citations])));
+
+	// The self-governance and federal programs table: Program, Agency, Dates,
+	// Through (only when an organization holds a program for the nation) and
+	// Latest amount (Trevor chose mockup B, Nov. 26, 2026: "just providing the
+	// value is interesting enough"). The program's markers follow its name.
+	const programColumns: TableColumn[] = $derived([
+		{ key: 'program', header: 'Program', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'agency', header: 'Agency', sortable: true, searchable: true },
+		{ key: 'dates', header: 'Dates', type: 'date', sortable: true },
+		...(data.programs.some((row) => row.through) ? [{ key: 'through', header: 'Through', sortable: true, searchable: true }] : []),
+		...(data.programs.some((row) => row.amount) ? [{ key: 'amount', header: 'Latest amount', sortable: true }] : [])
+	]);
+	const programRows: TableRow[] = $derived(
+		data.programs.map((row) => ({
+			key: row.key,
+			cells: {
+				program: { text: row.name, href: row.link },
+				agency: { text: row.agency },
+				dates: { text: row.dates, sortValue: row.datesSort },
+				through: { text: row.through ?? '' },
+				amount: { text: row.amount ?? '', sortValue: row.amountSort === undefined ? undefined : String(row.amountSort) }
+			}
+		}))
+	);
+	const programMarks = $derived(new Map(data.programs.map((row) => [row.key, row.citations])));
 
 	// The court cases that name the nation, as a party or as what the case is
 	// about (Trevor, Nov. 23, 2026). Four short columns; under the case's name,
@@ -110,6 +156,26 @@
 		}))
 	);
 	const casesByKey = $derived(new Map(data.cases.map((entry) => [entry.key, entry])));
+	// The documents of the nation's federal acknowledgment petition (Trevor,
+	// Nov. 27, 2026: "if petitioning, we should show petitioning documents"),
+	// in the same three short columns as the cases table: under each
+	// document's name, its citation and source marker.
+	const petitionColumns: TableColumn[] = [
+		{ key: 'year', header: 'Year', type: 'date', sortable: true },
+		{ key: 'name', header: 'Document', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'from', header: 'From', sortable: true, searchable: true }
+	];
+	const petitionRows: TableRow[] = $derived(
+		data.petition.map((entry) => ({
+			key: entry.key,
+			cells: {
+				year: { text: entry.issued?.slice(0, 4) ?? '', sortValue: entry.issued },
+				name: { text: [entry.name, entry.citation].filter(Boolean).join(', '), sortValue: entry.name, href: entry.link },
+				from: { text: entry.from }
+			}
+		}))
+	);
+	const petitionByKey = $derived(new Map(data.petition.map((entry) => [entry.key, entry])));
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
@@ -140,18 +206,18 @@
 </script>
 
 <svelte:head>
-	<title>{page.officialName} · Nations · Model Tribal ADR Code</title>
+	<title>{page.officialName} · Nations · Tribal Law Project</title>
 </svelte:head>
 
 <!-- For someone on the nation's team: Edit, History and Your nation's team in the masthead (decision record 0041). -->
 {#if !page.withdrawn}<NationPageControls nation={page.id} />{/if}
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current={page.officialName} />
 
 <!--
 	A record page (site/DESIGN.md, "Record pages", "Nation pages"): the text on
-	the left, held to a readable line length, and beside it "At a glance" (the
-	seal, key facts and map) and the contacts. On a narrow screen "At a glance"
+	the left, held to a readable line length, and beside it "Key facts" (the
+	seal, key facts and map) and the contacts. On a narrow screen "Key facts"
 	comes right after the title, so the key facts come first.
 -->
 <RecordPage glance={!page.withdrawn && (data.glance.length > 0 || data.map || hasContacts) ? glance : undefined}>
@@ -165,13 +231,13 @@
 			</div>
 		{/if}
 
-		<!-- 1. Name. The nation's seal or logo heads At a glance (docs/official-images.md). -->
+		<!-- 1. Name. The nation's seal or logo heads Key facts (docs/official-images.md). -->
 		<h1>{page.officialName}</h1>
 	{/snippet}
 	{#snippet introduction()}
 		{#if !page.withdrawn}
 			<!-- Recognition badges (Trevor, Nov. 22, 2026; the full wording and legal basis
-			     are in At a glance), then who keeps the page, on the same line since both
+			     are in Key facts), then who keeps the page, on the same line since both
 			     are badges (Trevor, Nov. 23, 2026). The build always says "Unclaimed"; for
 			     a claimed page the Worker hides it and fills the status place with the
 			     claimed badge (src/lib/server/nation-page-overlay.ts). -->
@@ -199,7 +265,7 @@
 						>
 						<div class="status-panel">
 							<p class="muted">Nation pages show when they changed and which parts, never earlier wording.</p>
-							<p><a href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">See all changes to this page</a></p>
+							<p><a href={pageChangesLink(`/nations/${page.id}`)}>See all changes to this page</a></p>
 						</div>
 					</details>
 				</span>
@@ -398,11 +464,10 @@
 			<div class="nation-slot" data-nation-slot="jurisdiction"></div>
 		</Collapsible>
 
-		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service -->
-		{#if data.treaties.length > 0 || data.ties.length > 0 || data.enforcement.length > 0}
+		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service, self-governance and federal programs -->
+		{#if data.treaties.length > 0 || data.ties.length > 0 || data.petition.length > 0 || data.programs.length > 0 || data.enforcement.length > 0}
 			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
 				{#if data.treaties.length > 0}
-					<h3 id="treaties-heading">Treaties</h3>
 					<DataTable
 						identifier="treaties"
 						label="Table: treaties"
@@ -412,6 +477,7 @@
 						rowName={['treaty', 'treaties']}
 						download="{data.page.id}-treaties"
 					>
+						{#snippet heading(count: Snippet)}<h3 id="treaties-heading">Treaties {@render count()}</h3>{/snippet}
 						{#snippet cell(row: TableRow, column: TableColumn)}
 							{#if column.key === 'treaty'}
 								<span class="treaty-cell"
@@ -423,9 +489,49 @@
 					</DataTable>
 				{/if}
 				{#if data.ties.length > 0}<FactGroups groups={data.ties} />{/if}
+				{#if data.petition.length > 0}
+					<DataTable
+						identifier="petition-documents"
+						label="Table: acknowledgment petition documents"
+						columns={petitionColumns}
+						rows={petitionRows}
+						defaultSort={{ key: 'year', direction: 'ascending' }}
+						rowName={['document', 'documents']}
+						download="{data.page.id}-petition-documents"
+					>
+						{#snippet heading(count: Snippet)}<h3 id="petition-documents-heading">Petition documents {@render count()}</h3>{/snippet}
+						{#snippet cell(row: TableRow, column: TableColumn)}
+							{@const entry = petitionByKey.get(row.key)}
+							{#if entry && column.key === 'name'}
+								<span class="case-name">{#if entry.link}<a href={entry.link}>{entry.name}</a>{:else}{entry.name}{/if}</span>
+								<span class="case-detail small muted">{#if entry.citation}{entry.citation}{/if}<CitationMarks marks={entry.citations} /></span>
+								<span class="case-detail case-phone small muted">{entry.from}</span>
+							{/if}
+						{/snippet}
+					</DataTable>
+				{/if}
+				{#if data.programs.length > 0}
+					<DataTable
+						identifier="federal-programs"
+						label="Table: self-governance and federal programs"
+						columns={programColumns}
+						rows={programRows}
+						rowName={['program', 'programs']}
+						download="{data.page.id}-federal-programs"
+					>
+						{#snippet heading(count: Snippet)}<h3 id="federal-programs-heading">Self-governance and federal programs {@render count()}</h3>{/snippet}
+						{#snippet cell(row: TableRow, column: TableColumn)}
+							{#if column.key === 'program'}
+								<span class="program-cell"
+									>{#if row.cells.program.href}<a href={row.cells.program.href}>{row.cells.program.text}</a
+										>{:else}{row.cells.program.text}{/if}<CitationMarks marks={programMarks.get(row.key)} /></span
+								>
+							{/if}
+						{/snippet}
+					</DataTable>
+				{/if}
 				{#if data.enforcement.length > 0}
 					<!-- The Gaming Commission's enforcement actions, as a table (Trevor, Nov. 23, 2026). -->
-					<h3 id="enforcement-heading">Gaming Commission enforcement actions</h3>
 					<DataTable
 						identifier="enforcement-actions"
 						label="Table: Gaming Commission enforcement actions"
@@ -436,6 +542,7 @@
 						filters
 						download="{data.page.id}-enforcement-actions"
 					>
+						{#snippet heading(count: Snippet)}<h3 id="enforcement-heading">Gaming Commission enforcement actions {@render count()}</h3>{/snippet}
 						{#snippet cell(row: TableRow, column: TableColumn)}
 							{#if column.key === 'document'}
 								{#if row.cells.document.href}<a href={row.cells.document.href}>{row.cells.document.text}</a>{/if}
@@ -445,6 +552,35 @@
 						{/snippet}
 					</DataTable>
 				{/if}
+			</Collapsible>
+		{/if}
+
+		<!-- 7a''. Land cessions: Royce's schedule (1899), with the present-day nations the Forest Service lists (historic maps mockup 6). -->
+		{#if data.landCessions.length > 0}
+			<Collapsible heading="Land cessions" identifier="cessions-heading" count={data.landCessions.length}>
+				<DataTable
+					identifier="land-cessions"
+					label="Table: land cessions"
+					columns={cessionColumns}
+					rows={cessionRows}
+					defaultSort={{ key: 'ceded', direction: 'ascending' }}
+					rowName={['cession', 'cessions']}
+					download="{data.page.id}-land-cessions"
+				>
+					{#snippet cell(row: TableRow, column: TableColumn)}
+						{@const cession = cessionsByRoyce.get(row.key)}
+						{#if cession && column.key === 'by'}
+							{#if cession.treaties.length > 0}
+								{#each cession.treaties as treaty, index (treaty.key)}{#if index > 0}{'; '}{/if}<a href="/laws/{treaty.key}">{treaty.name}</a>{/each}
+							{:else}
+								{cession.schedule}
+							{/if}
+						{:else if cession && column.key === 'maps'}
+							{#each cession.sheets as sheet, index (sheet.plate)}{#if index > 0}{', '}{/if}<a href={sheet.image} {...imageViewerAttributes(`Royce’s map: ${sheet.name}`, { title: `Royce’s map: ${sheet.name}`, original: sheet.link })}>{sheet.name}</a>{/each}
+						{/if}
+					{/snippet}
+				</DataTable>
+				<p class="small muted">From Royce’s schedule (1899), with the present-day nations the U.S. Forest Service lists.</p>
 			</Collapsible>
 		{/if}
 
@@ -464,7 +600,7 @@
 			</Collapsible>
 		{/if}
 
-		<!-- 7b. Stories: the nation's stories about disputes and peace, each linked
+		<!-- 7b. Stories: the nation's stories about law, justice and governance, each linked
 		     to its own page, which quotes the teller and cites the source. A
 		     restricted or withdrawn story is never listed (decision record 0029). -->
 		{#if data.stories.length > 0}
@@ -488,7 +624,7 @@
 					{#each data.neighbors as entry (entry.state)}
 						<h3 class="neighbors-state">{entry.stateName}</h3>
 						{#if entry.nations.length > 0}
-							<ul class="neighbors">
+							<ul class="neighbors stacked-list">
 								{#each entry.nations as nation (nation.id)}
 									<li><a href="/nations/{nation.id}">{nation.name}</a></li>
 								{/each}
@@ -524,10 +660,11 @@
 	<p class="empty-section">{empty.text}</p>
 {/snippet}
 
-<!-- 3. At a glance, with the seal and the map, then the contacts. -->
+<!-- 3. Key facts, with the seal and the map, then the contacts. -->
 {#snippet glance()}
 	{#if data.glance.length > 0 || data.map}
-		<GlancePanel>
+		<!-- On a phone the first facts show and the rest, with the map, wait behind "Show all" (GlancePanel.svelte). -->
+		<GlancePanel facts={data.glance.length} more={data.map ? 'the map' : undefined}>
 			{#snippet picture()}
 				{#if data.image && !imageFailed}
 					<!-- Selecting the seal opens it larger, as on Wikipedia (src/lib/image-viewer.ts). -->
@@ -556,7 +693,7 @@
 			<FactGroups groups={data.glance} />
 			<div class="nation-slot" data-nation-slot="glance"></div>
 			{#if data.map}
-				<div class="glance-map">
+				<div class="glance-map" data-glance-more>
 					<NationMap map={data.map} nationName={page.officialName} />
 				</div>
 			{/if}
@@ -603,7 +740,9 @@
 			display: block;
 		}
 		:global(#nation-cases th:nth-child(n + 3)),
-		:global(#nation-cases td:nth-child(n + 3)) {
+		:global(#nation-cases td:nth-child(n + 3)),
+		:global(#petition-documents th:nth-child(n + 3)),
+		:global(#petition-documents td:nth-child(n + 3)) {
 			display: none;
 		}
 	}
@@ -617,6 +756,24 @@
 	}
 
 	.treaty-cell > a {
+		padding-block: 2px;
+	}
+
+	/*
+	 * A program's row can cite several sources, so its markers sit side by
+	 * side; each is a full 24 pixel target (WCAG 2.2, 2.5.8), as in the
+	 * records table on the chart pages, so neighbors never crowd each other.
+	 */
+	.program-cell :global(.note-marker) {
+		display: inline-block;
+		min-width: 24px;
+		min-height: 24px;
+		line-height: 24px;
+		text-align: center;
+		vertical-align: top;
+	}
+
+	.program-cell > a {
 		padding-block: 2px;
 	}
 
@@ -641,7 +798,7 @@
 		display: block;
 	}
 
-	/* Its rules keep clear of the floated At a glance column and contacts (RecordPage.svelte). */
+	/* Its rules keep clear of the floated Key facts column and contacts (RecordPage.svelte). */
 	.empty-section {
 		display: flow-root;
 		margin: 0 0 var(--space-5);
@@ -680,17 +837,13 @@
 		font-size: var(--font-size-body);
 	}
 
-	/* As many columns as fit, so the list spreads out under At a glance. */
+	/*
+	 * One nation per line, with the thin dashed rule of a stacked list between
+	 * them, so a long name never runs into the next (Trevor chose "one per
+	 * line, full width" on Nov. 27, 2026; design/nearby-nations). No bullets
+	 * (Trevor, Nov. 23, 2026).
+	 */
 	.neighbors {
-		columns: var(--layout-card-min);
-		column-gap: var(--space-5);
 		max-width: none;
-		/* Names in columns need no bullets (Trevor, Nov. 23, 2026). */
-		list-style: none;
-		padding-left: 0;
-	}
-
-	.neighbors li {
-		break-inside: avoid;
 	}
 </style>

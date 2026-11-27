@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { openToSearchEngines } from '#lib/search-engines.ts';
 	// Self-hosted type (site/DESIGN.md, section 7): Atkinson Hyperlegible Next
 	// in the three weights the site uses, then Noto fonts that the browser
 	// downloads only for characters Atkinson Hyperlegible Next lacks, through
@@ -27,6 +28,7 @@
 	import SiteHeader from '#lib/components/SiteHeader.svelte';
 	import SiteFooter from '#lib/components/SiteFooter.svelte';
 	import SiteSidebar from '#lib/components/SiteSidebar.svelte';
+	import SectionBar from '#lib/components/SectionBar.svelte';
 	import PrintDetails from '#lib/components/PrintDetails.svelte';
 	import OfflineNotice from '#lib/components/OfflineNotice.svelte';
 	import UpdateNotice from '#lib/components/UpdateNotice.svelte';
@@ -35,8 +37,10 @@
 	import LinkPreviews from '#lib/components/LinkPreviews.svelte';
 	import ImageViewer from '#lib/components/ImageViewer.svelte';
 	import SiteTextEditor from '#lib/components/SiteTextEditor.svelte';
+	import PageComments from '#lib/components/PageComments.svelte';
 	import { onMount } from 'svelte';
-	import { onNavigate } from '$app/navigation';
+	import { afterNavigate, onNavigate } from '$app/navigation';
+	import { arriveAfterNavigate, watchArrivals } from '#lib/arrival-highlight.ts';
 	import { page } from '$app/state';
 	import { crossFadePages, startMotion } from '#lib/motion.ts';
 	import { copyHashOnClick } from '#lib/copy-hash.ts';
@@ -61,6 +65,9 @@
 		document.addEventListener('click', copy);
 		return () => document.removeEventListener('click', copy);
 	});
+	// The place a link goes to is highlighted for a moment, then the highlight goes (src/lib/arrival-highlight.ts).
+	onMount(watchArrivals);
+	afterNavigate(arriveAfterNavigate);
 	// The layout's own start comes after every part inside it has started (src/lib/page-started.ts).
 	onMount(markPageStarted);
 
@@ -72,7 +79,8 @@
 </script>
 
 <svelte:head>
-	<meta name="robots" content="noindex" />
+	<!-- Until the first release (src/lib/search-engines.ts). -->
+	{#if !openToSearchEngines}<meta name="robots" content="noindex" />{/if}
 	<meta name="theme-color" content={data.themeColor.light} media="(prefers-color-scheme: light)" />
 	<meta name="theme-color" content={data.themeColor.dark} media="(prefers-color-scheme: dark)" />
 	<link rel="manifest" href="/manifest.webmanifest" />
@@ -85,10 +93,12 @@
 		{@render children()}
 	</main>
 {:else}
-	<SiteHeader contentVersion={data.versions.content} />
+	<SiteHeader contentVersion={data.versions.content} versions={data.versions} />
+	<!-- The site's six sections in a row under the masthead, on wide screens (SectionBar.svelte). -->
+	<SectionBar />
 	<PrintDetails />
 	<OfflineNotice contentVersion={data.versions.content} />
-	<UpdateNotice versions={data.versions} />
+	<UpdateNotice />
 	<div class="site-body">
 		<SiteSidebar />
 		<main id="main-content" class="page-width" tabindex="-1" {@attach resizableTables}>
@@ -101,6 +111,7 @@
 	<LinkPreviews />
 	<ImageViewer />
 	<SiteTextEditor />
+	<PageComments />
 {/if}
 
 <style>
@@ -141,15 +152,18 @@
 		   first screen and the Hide sidebar button keeps its place at the bottom. */
 		.site-body {
 			display: grid;
-			/* One width on every page, so the page never moves when the sidebar
-			   changes from the sections to a section's panel (SiteSidebar.svelte). */
-			grid-template-columns: 17rem minmax(0, 1fr);
+			/* One width on every page with a column, so the page never moves from
+			   page to page (SiteSidebar.svelte; design/navigation-models, model C).
+			   A page with nothing beneath it to list, such as the home page, has
+			   no column and takes the whole width (Trevor, Nov. 27, 2026). */
+			grid-template-columns: 16rem minmax(0, 1fr);
 			align-items: start;
 			min-height: 100dvh;
 		}
 
 		/* Hidden with the masthead's button, the sidebar is gone and the page takes the whole width. */
-		:global(:root[data-sidebar-hidden='true']) .site-body {
+		:global(:root[data-sidebar-hidden='true']) .site-body,
+		.site-body:has(> :global(.sidebar-wide.empty)) {
 			grid-template-columns: minmax(0, 1fr);
 		}
 	}

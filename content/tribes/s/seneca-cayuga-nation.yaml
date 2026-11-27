@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Wyandot, etc., July 22, 1814, 7 Stat. 118
+  since: '1814-07-22'
+  source: treaty-with-the-wyandot-etc-1814
+  confidence: medium
+  verification: inferred
+  as_of: '1814-07-22'
+  locator: p. 105 (Treaty with the Wyandot, etc., 1814; Kappler header "July 22, 1814. | 7 Stat., 118. | Ratified, Dec. 13, 1814. | Proclaimed Dec. 21, 1814.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Seneka; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 18 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -163,6 +173,44 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Seneca-Cayuga Nation".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2001
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Seneca-Cayuga Nation Of Oklahoma' (Eastern Oklahoma Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Seneca-Cayuga Nation Of Oklahoma'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 282600
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Seneca-Cayuga Nation' (Grove)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1424781
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SENECA CAYUGA TRIBE OFOKLAHOMA' (UEI ECLJH8AM5EN7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SENECA CAYUGA TRIBE OFOKLAHOMA'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 304567
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SENECA CAYUGA TRIBE OFOKLAHOMA' (UEI ECLJH8AM5EN7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SENECA CAYUGA TRIBE OFOKLAHOMA'.
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Seneca-Cayuga Tribe of Oklahoma" among organizations under constitutions approved
@@ -574,6 +622,28 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Seneca Cayuga Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 21, 1997 (file 34159).
+  source: oklahoma-filing-34159
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 34159
+  note: 'From the register line: “Seneca-Cayuga Tribe and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Feb. 10, 2004 (file 39497).
+  source: oklahoma-filing-39497
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 39497
+  note: 'From the register line: “The Seneca-Cayuga Tribe and the State of Oklahoma”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Ottawa County

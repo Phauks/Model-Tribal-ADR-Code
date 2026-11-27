@@ -1,0 +1,60 @@
+key: oklahoma-statutes-title-20-section-3018
+kind: state-statute
+citation:
+  type: legislation
+  title: Construction of act
+  title-short: Okla. Stat. tit. 20, § 3018
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '20'
+  section: '3018'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 2023
+      - 11
+      - 1
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os20.pdf#page=799
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os20.pdf#page=799
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-20-section-1005-1
+- oklahoma-statutes-title-20-section-1601-1
+- oklahoma-statutes-title-20-section-1601-2
+- oklahoma-statutes-title-20-section-1602
+- oklahoma-statutes-title-20-section-3012
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 20, § 3018 (2026)
+  page: 799
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 20, § 3018 (2026). History: Added by Laws 2023, c. 350, § 8, eff. Nov. 1, 2023. Text read from the Legislative Service Bureau''s Title 20 PDF (updated Nov. 12, 2026), page 799. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Information sharing exception covers tribal governments; tribal judges protected. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

@@ -1,0 +1,121 @@
+key: table-bluff-reservation-wiyot-tribe-v-philip-morris-inc-2001
+kind: federal-case
+citation:
+  type: legal_case
+  title: Table Bluff Reservation (Wiyot Tribe) v. Philip Morris, Inc.
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '256'
+  page: '879'
+  issued:
+    date-parts:
+    - - 2001
+      - 7
+      - 16
+  URL: https://static.case.law/f3d/256/html/0879-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/256/html/0879-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- apache-tribe-of-oklahoma
+- hopi-tribe-of-arizona
+- kiowa-tribe
+- la-jolla-band-of-luiseno-indians
+- confederated-tribes-of-the-colville-reservation
+- nez-perce-tribe
+- wiyot-tribe
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: apache-tribe-of-oklahoma
+    named_as: Apache Tribe of Oklahoma
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: hopi-tribe-of-arizona
+    named_as: Independent Hopi Village of Shungopavi
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: kiowa-tribe
+    named_as: Kiowa Tribe of Oklahoma
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: la-jolla-band-of-luiseno-indians
+    named_as: La Jolla Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: confederated-tribes-of-the-colville-reservation
+    named_as: Confederated Tribes of Colville Consisting
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: nez-perce-tribe
+    named_as: Nez Perce Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: wiyot-tribe
+    named_as: Wiyot Tribe
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Comanche Tribe
+    reason: More than one of today's nations shares this name (comanche-nation, comanche-penateka-tribe); which the case concerns has not been checked.
+  - named_as: Delaware Tribe of Western Ohio
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Eight Northern Indian Pueblo
+    reason: More than one of today's nations shares this name (carolinian-people-of-the-northern-mariana-islands, koi-nation-of-northern-california, northern-arapaho-tribe-of-the-wind-river-reservation, northern-band-of-mono-yokuts, northern-cherokee-nation-of-the-old-louisiana-territory, northern-cherokee-tribe-of-indians-of-missouri-and-arkansas and 5 more); which the case concerns has not been checked.
+  - named_as: Ponca Tribe
+    reason: More than one of today's nations shares this name (ponca-tribe-of-indians-of-oklahoma, ponca-tribe-of-nebraska); which the case concerns has not been checked.
+  - named_as: Chelan Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Entiats Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Lakes Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Methow Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Moses-Columbia Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Nespelem Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Okanogan Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Palouse Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: San Poil Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Wenatchee Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 256 F.3d 879. Decided by the United States Court of Appeals for the Ninth Circuit on July 16, 2001. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 21, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 21
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 7 matched, 14 not linked

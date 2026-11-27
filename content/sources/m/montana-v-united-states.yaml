@@ -94,6 +94,19 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Montana_v._United_States
+argument_audio:
+- kind: argument
+  date: '1980-12-03'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-335.mp3
+  catalog: https://catalog.archives.gov/id/102048716
+  whole_session: true
+  duration_seconds: 13540
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-335.mp3
+    checksum: 52487ecbfceeeaad87fc1f86f9fabae154a61fd38c549189a7b2faf17ecc79a0
+    media_type: audio/mpeg
+    bytes: 216637145
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -122,11 +135,11 @@ case_box:
   holding: |-
     No. The Court held that the bed of the Big Horn River passed to Montana at statehood. It also held that, as a general rule, the inherent sovereign powers of a nation do not extend to nonmember activities on non-Indian fee land. There are two exceptions: consensual relationships with the Tribe or its members, and conduct threatening or directly affecting the Tribe's political integrity, economic security, or health or welfare.
   quotes:
-  - text: "... exercise of tribal power beyond what is necessary to protect tribal self-government or to control internal relations is inconsistent with the dependent status of the tribes, and so cannot survive without express congressional delegation ..."
+  - text: "[E]xercise of tribal power beyond what is necessary to protect tribal self-government or to control internal relations is inconsistent with the dependent status of the tribes, and so cannot survive without express congressional delegation."
     pinpoint: "p. 564"
-  - text: "A tribe may regulate, through taxation, licensing, or other means, the activities of nonmembers who enter consensual relationships with the tribe or its members, through commercial dealing, contracts, leases, or other arrangements ..."
+  - text: "A tribe may regulate, through taxation, licensing, or other means, the activities of nonmembers who enter consensual relationships with the tribe or its members, through commercial dealing, contracts, leases, or other arrangements."
     pinpoint: "p. 565"
-  - text: "A tribe may also retain inherent power to exercise civil authority over the conduct of non-Indians on fee lands within its reservation when that conduct threatens or has some direct effect on the political integrity, the economic security, or the health or welfare of the tribe ..."
+  - text: "A tribe may also retain inherent power to exercise civil authority over the conduct of non-Indians on fee lands within its reservation when that conduct threatens or has some direct effect on the political integrity, the economic security, or the health or welfare of the tribe."
     pinpoint: "p. 566"
   treatment: |-
     Narrowed and applied in *Strate* (1997), *Atkinson* (2001), *Hicks* (2001) and *Plains Commerce Bank* (2008); *United States v. Cooley* (2021) applied the second exception to uphold Tribal police authority. [@united-states-v-cooley]

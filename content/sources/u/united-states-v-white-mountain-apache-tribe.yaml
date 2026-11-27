@@ -112,6 +112,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=537%20U.S.%20465
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2002-12-02'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1239.mp3
+  catalog: https://catalog.archives.gov/id/183517545
+  whole_session: true
+  duration_seconds: 7337
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1239.mp3
+    checksum: b6555ff273a0bfbc83be17d03edfa6391c001dd4c6d47d4361056dfcb99b3b40
+    media_type: audio/mpeg
+    bytes: 117401098
 rights:
   status: no-permission-needed
   basis: us-government-work

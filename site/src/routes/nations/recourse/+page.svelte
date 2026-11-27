@@ -153,7 +153,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>Find recourse · Model Tribal ADR Code</title>
+	<title>Find recourse · Tribal Law Project</title>
 	<meta
 		name="description"
 		content="Search the dispute resolution provisions in Native nations' own laws by method, kind of dispute and state."
@@ -163,7 +163,7 @@
 <span id={newTabNoteIdentifier} hidden>Opens in a new tab</span>
 
 <div class="recourse" {@attach outsideLinksOpenInNewTab}>
-	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Find recourse" />
 	<h1>Find recourse</h1>
 	<!-- The approved mockup's lead (design/data-views); the count above the results gives the numbers. -->
 	<p class="lead">Search the dispute resolution provisions in Native nations’ own laws. Pick a kind of dispute and a method to see which nations provide it and what their law says.</p>

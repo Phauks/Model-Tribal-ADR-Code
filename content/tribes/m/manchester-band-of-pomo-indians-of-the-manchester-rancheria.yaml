@@ -19,6 +19,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Manchester Band of Pomo Indians of the Manchester Rancheria, California (approved by the Secretary of the Interior Mar. 11, 1936), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1936-03-11'
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1936-text
+  document_version:
+    document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+    version: 1936-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: 1936 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -165,6 +178,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Manchester Band of Pomo Indians of the Manchester Rancheria, California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1708927
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Manchester Band of Pomo Indians' (Point Arena)
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Manchester Band of Pomo Indians of the Manchcester Rancherai, California" among

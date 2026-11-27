@@ -1,0 +1,70 @@
+key: ronald-oertwich-v-traditional-village-of-togiak-2022-ninth-circuit
+kind: federal-case
+citation:
+  type: legal_case
+  title: Ronald Oertwich v. Traditional Village of Togiak
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.4th
+  volume: '29'
+  page: '1108'
+  issued:
+    date-parts:
+    - - 2022
+      - 3
+      - 30
+  URL: https://www.courtlistener.com/opinion/6456683/ronald-oertwich-v-traditional-village-of-togiak/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 19-36029
+original_link: https://www.courtlistener.com/opinion/6456683/ronald-oertwich-v-traditional-village-of-togiak/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2021-06-15'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2021/06/15/19-36029.mp3
+  duration_seconds: 2518
+  file:
+    storage_key: appeals-court-audio/ca9/2021/2021-06-15-19-36029.mp3
+    checksum: 138e029e431130d0d505f387ea35d15d3d3fc970a31a35870ecd13885b074073
+    media_type: audio/mpeg
+    bytes: 10071980
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- traditional-village-of-togiak
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: traditional-village-of-togiak
+    named_as: Traditional Village of Togiak
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 29 F.4th 1108. Decided by the United States Court of Appeals for the Ninth Circuit on Mar. 30, 2022. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 88, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 88
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

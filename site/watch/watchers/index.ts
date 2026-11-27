@@ -1,0 +1,92 @@
+/**
+ * Every watcher, and every collection or nation page part no watcher feeds,
+ * with the reason (docs/source-watch.md, "Every collection and data type, and
+ * its watcher"). A new collection in src/lib/server/collections.ts, or a new
+ * top-level field in schemas/tribe.schema.json, fails
+ * tests/source-watch-guard.test.ts until it is fed by a watcher here or
+ * listed in notWatched.
+ *
+ * To add a source: write its watcher in this folder with defineWatcher, add
+ * it to `watchers`, and take its collections out of notWatched.
+ */
+import type { NotWatched, WatcherDefinition } from '../../src/lib/server/watch/watcher.ts';
+import citedLinks from './cited-links.ts';
+import ecfr from './ecfr.ts';
+import federalRegister from './federal-register.ts';
+import federalRegisterSearch from './federal-register-search.ts';
+
+export const watchers: WatcherDefinition[] = [federalRegister, federalRegisterSearch, ecfr, citedLinks];
+
+export const notWatched: NotWatched[] = [
+	// Collections (src/lib/server/collections.ts).
+	{ feed: 'stories', kind: 'never', reason: 'Stories come from people, with their consent and their nations’ protocols (decision records 0019 and 0036).' },
+	{ feed: 'united-states-code-sections', kind: 'planned', reason: 'us-code-release-points (the Office of the Law Revision Counsel’s release points for Title 25), phase 1, next after these.' },
+	{ feed: 'supreme-court-cases', kind: 'planned', reason: 'supreme-court (the Court’s slip opinions page) and govinfo (U.S. Reports pagination), phase 1; govinfo needs the api.data.gov key.' },
+	{ feed: 'other-court-cases', kind: 'planned', reason: 'courtlistener once Free Law Project has answered, and govinfo (USCOURTS) once the api.data.gov key is set; phase 2.' },
+	{ feed: 'federal-court-opinions', kind: 'planned', reason: 'courtlistener (the federal courts of appeals, district courts and Court of Federal Claims, by the same Indian law terms) once Free Law Project has answered, phase 2; until then scripts/caselaw/courtlistener_federal_opinions.py reads the quarterly bulk files.' },
+	{ feed: 'state-court-opinions', kind: 'planned', reason: 'courtlistener (state appellate courts, by the same Indian law terms) once Free Law Project has answered, phase 2; the Caselaw Access Project set ends about 2019 and does not change.' },
+	{ feed: 'interior-board-of-indian-appeals', kind: 'planned', reason: 'ibia (the Board’s chronological index of decisions, weekly), phase 2; scripts/law/ibia_decisions.py rebuilds the collection meanwhile.' },
+	{ feed: 'indian-claims-commission', kind: 'never', reason: 'The Indian Claims Commission closed in 1978; its 43 volumes of decisions do not change (scripts/law/indian_claims_commission.py).' },
+	{ feed: 'repatriation-notices', kind: 'planned', reason: 'federal-register (National Park Service notices under the Native American Graves Protection and Repatriation Act, by the Act’s name), phase 2; scripts/law/repatriation_notices.py rebuilds the collection meanwhile.' },
+	{ feed: 'federal-acknowledgment', kind: 'planned', reason: 'federal-register (acknowledgment notices) and the Office of Federal Acknowledgment’s petition pages, phase 2; scripts/law/acknowledgment_petitions.py rebuilds the collection meanwhile.' },
+	{ feed: 'indian-affairs-films', kind: 'never', reason: 'Record Group 75 at the National Archives is a closed set of Bureau of Indian Affairs films and recordings, 1908-1980; scripts/law/national_archives_films.py rebuilds the collection.' },
+	{ feed: 'solicitor-opinions', kind: 'planned', reason: 'solicitor (the Solicitor’s index of M-Opinions, doi.gov/solicitor/opinions, compared by M-number, weekly), phase 2; scripts/law/solicitor_opinions.py rebuilds the collection meanwhile. The 1917-1974 volumes are closed.' },
+	{ feed: 'national-indian-gaming-commission', kind: 'planned', reason: 'nigc (the Commission’s document sitemaps, daily), phase 2; scripts/law/nigc_documents.py rebuilds the collection meanwhile.' },
+	{ feed: 'congressional-hearings', kind: 'planned', reason: 'govinfo (the CHRG collection’s new packages, by the same committees and title terms; needs the api.data.gov key), phase 2; scripts/law/congressional_documents.py rebuilds the collection meanwhile.' },
+	{ feed: 'committee-reports', kind: 'planned', reason: 'govinfo (the CRPT collection and new Serial Set volumes) and congress-gov (new reports on the bills behind laws we hold), phase 2; scripts/law/congressional_documents.py rebuilds the collection meanwhile.' },
+	{ feed: 'committee-prints', kind: 'planned', reason: 'govinfo (the CPRT collection), phase 2; scripts/law/congressional_documents.py rebuilds the collection meanwhile.' },
+	{ feed: 'congressional-research-service-reports', kind: 'planned', reason: 'congress-gov (its crsreport list, by update date; new versions replace the stored copy), phase 2; scripts/law/crs_reports.py rebuilds the collection meanwhile.' },
+	{ feed: 'tribal-court-opinions', kind: 'planned', reason: 'consented-courts, phase 3: only nations that publish their opinions and agree, with initials and privacy holds first (decision record 0057). Its list of courts starts empty.' },
+	{ feed: 'oklahoma-state-tribal-agreements', kind: 'planned', reason: 'oklahoma-register (the Oklahoma Secretary of State’s register data file, json/dataTribal.json, compared by file number; scripts/agreements/oklahoma_register.py reads it today), phase 2.' },
+	{ feed: 'federal-programs', kind: 'derived', reason: 'Built from the nation profiles’ federal_programs facts.' },
+	{ feed: 'approved-nation-laws', kind: 'planned', reason: 'interior-and-epa-lists (the Bureau of Indian Affairs’ approved HEARTH Act regulations page and EPA’s treatment-as-a-state and tribal water quality standards pages, compared by link), phase 2; scripts/law/approved_nation_laws.py rebuilds the collection meanwhile.' },
+	{ feed: 'historic-nation-laws', kind: 'never', reason: 'Volumes printed by the nations’ own governments before 1934; nothing new is published. A newly digitized copy is added by rerunning scripts/law/historic_nation_laws.py.' },
+	{ feed: 'serial-set', kind: 'never', reason: 'The Serial Set’s volumes for 1817 to 1899 are closed; the University of Oklahoma’s index of its Native documents is not being added to. scripts/law/serial_set.py rebuilds the records from the index and GovInfo.' },
+	{ feed: 'water-rights-settlements', kind: 'derived', reason: 'A new settlement is an Act of Congress, which the federal statutes watchers will find; research/water-settlements/enacted-settlements.csv is updated by hand from the Congressional Research Service’s report R44148 when it is revised.' },
+	{ feed: 'state-statutes', kind: 'planned', reason: 'One watcher per state legislature’s code site, re-running the state statutes sweep on each new edition (research/analyses/2026-11-26-state-statutes-pilot.md, section 7); scripts/law/state_statutes/run.py rebuilds each state meanwhile.' },
+	{ feed: 'indian-affairs-manual', kind: 'planned', reason: 'bia-manual (the Bureau of Indian Affairs’ manual page, compared by part, chapter and issued date, monthly), phase 2; scripts/law/indian_affairs_manual.py rebuilds the collection meanwhile.' },
+	{ feed: 'supreme-courts', kind: 'derived', reason: 'Built from the Justices.' },
+	{ feed: 'courts', kind: 'planned', reason: 'nation-sites (court pages) in phase 3, and courtlistener (new court names) in phase 2.' },
+	{ feed: 'biographies', kind: 'planned', reason: 'wikidata, phase 2, and new parties and leaders in accepted cases and treaties. No automatic people pages.' },
+	{ feed: 'justices', kind: 'planned', reason: 'supreme-court (the Court’s members page) and wikidata, phase 2.' },
+	{ feed: 'presidents', kind: 'planned', reason: 'wikidata, phase 2.' },
+	{ feed: 'charts', kind: 'derived', reason: 'Rebuilt from records; the census watcher will feed their inputs.' },
+	{ feed: 'glossary-terms', kind: 'never', reason: 'Definitions come only from Black’s Law Dictionary, 12th ed. (project rule).' },
+	{ feed: 'forms', kind: 'never', reason: 'The project’s own forms.' },
+	{ feed: 'languages', kind: 'planned', reason: 'glottolog (a new Glottolog release on Zenodo) and the ISO 639-3 change requests, yearly; scripts/languages/build_registry.py rebuilds the registry meanwhile.' },
+	{ feed: 'language-families', kind: 'derived', reason: 'Built from the languages.' },
+	{ feed: 'land-cessions', kind: 'never', reason: 'Royce’s schedule (1899) and the Forest Service’s tracing of it are fixed; scripts/maps/land_cessions.py relinks them as treaty and nation records change.' },
+	{ feed: 'historic-maps', kind: 'never', reason: 'Royce’s 1899 map sheets do not change.' },
+
+	// Nation page parts (top-level fields of schemas/tribe.schema.json).
+	{ feed: 'nation:id', kind: 'never', reason: 'The project’s own identifier.' },
+	{ feed: 'nation:former_ids', kind: 'never', reason: 'The project’s own record of merged profiles.' },
+	{ feed: 'nation:entity_type', kind: 'derived', reason: 'Follows recognition, which federal-register watches.' },
+	{ feed: 'nation:part_of', kind: 'derived', reason: 'Follows the list of recognized entities, which federal-register watches.' },
+	{ feed: 'nation:names', kind: 'derived', reason: 'A rename appears in the list of recognized entities, which federal-register watches.' },
+	{ feed: 'nation:states', kind: 'derived', reason: 'Follows recognition and land, which federal-register watches.' },
+	{ feed: 'nation:census_areas', kind: 'planned', reason: 'census, phase 2 (the Census data API needs a key).' },
+	{ feed: 'nation:population', kind: 'planned', reason: 'census, phase 2.' },
+	{ feed: 'nation:contacts', kind: 'planned', reason: 'leaders-directory (by hand: it answers scripts with 403) and nation-sites, phase 3. Office details only (decision record 0051).' },
+	{ feed: 'nation:tribal_insignia_database_entries', kind: 'never', reason: 'The USPTO insignia database changes rarely; entries are checked by hand when a page is reviewed.' },
+	{ feed: 'nation:languages', kind: 'never', reason: 'Changes are rare and come from nations.' },
+	{ feed: 'nation:language_programs', kind: 'planned', reason: 'nation-sites (language program pages), phase 3; the language programs pass (research/analyses/2026-11-27-language-resources.md) fills them meanwhile.' },
+	{ feed: 'nation:federal_administration', kind: 'planned', reason: 'interior-pages (Bureau of Indian Affairs regions and agencies), phase 2.' },
+	{ feed: 'nation:indian_health_service', kind: 'planned', reason: 'indian-health-service, by hand: ihs.gov did not answer the cloud on Nov. 24 and 26, 2026.' },
+	{ feed: 'nation:federal_programs', kind: 'planned', reason: 'self-governance-lists (the Office of Self-Governance and Indian Health Service lists, the 477 Plan Directory services and USAspending, yearly) and HUD’s housing block grant allocations each spring, phase 2; scripts/tribes/federal_programs.py rebuilds the facts meanwhile.' },
+	{ feed: 'nation:government_structure', kind: 'planned', reason: 'nation-sites and document history changes, phase 3.' },
+	{ feed: 'nation:governance', kind: 'planned', reason: 'nation-sites and document history changes, phase 3 (decision record 0042).' },
+	{ feed: 'nation:justice_institutions', kind: 'planned', reason: 'nation-sites (court pages), phase 3; judges’ names are not collected.' },
+	{ feed: 'nation:court_practice', kind: 'planned', reason: 'nation-sites (court rules, fees, forms), phase 3.' },
+	{ feed: 'nation:dispute_resolution_law', kind: 'derived', reason: 'From the nation’s codes and court rules, through the provision review.' },
+	{ feed: 'nation:dispute_resolution', kind: 'derived', reason: 'From the nation’s codes and court rules, through the provision review.' },
+	{ feed: 'nation:memberships', kind: 'never', reason: 'Changes are rare and come from the organizations.' },
+	{ feed: 'nation:related_entities', kind: 'never', reason: 'Changes are rare and come from nations and organizations.' },
+	{ feed: 'nation:consultation', kind: 'never', reason: 'The project’s own record of its contact with the nation.' },
+	{ feed: 'nation:review', kind: 'never', reason: 'The project’s own review status.' },
+	{ feed: 'nation:sensitivity', kind: 'never', reason: 'The project’s own handling choices.' }
+];
+
+export function watcherNamed(identifier: string): WatcherDefinition | undefined {
+	return watchers.find((watcher) => watcher.identifier === identifier);
+}

@@ -1,0 +1,80 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ch
+name: Chamorro
+iso_639_3:
+  code: cha
+  reference_name: Chamorro
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: cham1312
+  level: language
+  source: glottolog-5-4
+family:
+  name: Austronesian
+  glottocode: aust1307
+  source: glottolog-5-4
+own_names:
+- name: Fino' Chamoru
+  language: ch
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/846
+  source: glottolog-5-4
+dialects:
+- name: Nuclear Chamorro
+  glottocode: nucl1565
+  source: glottolog-5-4
+- name: Rotanese Chamorro
+  glottocode: rota1237
+  source: glottolog-5-4
+works:
+- glottolog_reference: '579624'
+  title: Chamorro grammar
+  kinds:
+  - grammar
+  author: Sandra Chung
+  year: 2020
+  publisher: University of California
+  pages: 754
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '38174'
+  title: Chamorro-English dictionary
+  kinds:
+  - dictionary
+  author: Donald M. Topping, Pedro M. Ogo and Bernadita C. Dungca
+  year: 1975
+  publisher: The University Press of Hawaii
+  pages: 336
+  source: glottolog-5-4
+- glottolog_reference: '14702'
+  title: Die Chamoro Sprache
+  kinds:
+  - grammar
+  author: H. Costenoble
+  year: 1940
+  publisher: Koninklijk Instituut voor de Taal-, Land- en Volkenkunde van Nederlandsch-Indië
+  pages: 549
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '54796'
+  title: Dictionary and Grammar of the Chamorro Language of the Island of Guam
+  kinds:
+  - dictionary
+  author: Edward R. von Preissig
+  year: 1918
+  publisher: Government Printing Office
+  pages: 235
+  source: glottolog-5-4
+- glottolog_reference: '143478'
+  title: 'The Chamorro Language of Guam: A Grammar of the Idiom Spoken by the Inhabitants of the Marianne or Ladrones, Islands'
+  kinds:
+  - grammar
+  author: William E. Safford
+  year: 1903
+  publisher: W. Lowdermilk & Company
+  pages: 131
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

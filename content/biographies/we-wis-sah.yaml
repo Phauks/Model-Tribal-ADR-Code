@@ -1,9 +1,26 @@
 key: we-wis-sah
 name: We-wis-sah
-lead: Signed two treaties with the United States for the Potawattimie tribe, 1836.
+lead: Signed four treaties with the United States for the Potawattimie tribe, 1832–1836.
 living: false
+names:
+- name: We-wiss-lah
+  note: as the Treaty with the Potawatomi, 1832 prints it
+  source: treaty-with-the-potawatomi-1832-oct-26
+  where: 7 Stat. 395
+- name: We-wus-sah
+  note: as the Treaty with the Potawatomi, 1834 prints it
+  source: treaty-with-the-potawatomi-1834-dec-16
+  where: 7 Stat. 469
 cases: []
 events:
+- when: Oct. 26, 1832
+  text: Signed the Treaty with the Potawatomi, 1832, for the Pottawatimies.
+  source: treaty-with-the-potawatomi-1832-oct-26
+  where: 7 Stat. 395
+- when: Dec. 16, 1834
+  text: Signed the Treaty with the Potawatomi, 1834, for the Potawattimies tribe of Indians.
+  source: treaty-with-the-potawatomi-1834-dec-16
+  where: 7 Stat. 469
 - when: Aug. 5, 1836
   text: Signed the Treaty with the Potawatomi, 1836, for the Potawattimie tribe.
   source: treaty-with-the-potawatomi-1836-aug-5
@@ -12,4 +29,4 @@ events:
   text: Signed the Treaty with the Potawatomi, 1836, for the Potawattimies of the Wabash.
   source: treaty-with-the-potawatomi-1836-0471a
   where: 7 Stat. 516
-checked: '2026-11-24'
+checked: '2026-11-26'

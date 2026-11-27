@@ -121,6 +121,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=476%20U.S.%20693
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1986-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-546.mp3
+  catalog: https://catalog.archives.gov/id/118974721
+  whole_session: true
+  duration_seconds: 13712
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-546.mp3
+    checksum: 89ff09944290858d33577910fc331a7a2401f8e25341e5b1eb9accd7c253d1e4
+    media_type: audio/mpeg
+    bytes: 219394004
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -155,7 +168,7 @@ review:
     detail: 'Printed and Database: 1986-06-11'
   - check: opinions
     result: confirmed
-    detail: 'Report: judgment Burger p. 695, concurrence Blackmun p. 712, concurrence in part and in the result Stevens p. 716, concurrence in part and dissent in part O Connor p. 724, dissent White p. 733; Database writers: Blackmun, Burger, O Connor, Stevens, White; scan pages [(695, 694)]. Read from the scan by an AI reader (corrected): p. 695: CHIEF JUSTICE BURGER announced the judgment of the Court and delivered the opinion of the Court with respect to Parts I and II, and an opinion with respect to Part III ... p. 694: opinion of the Court with respect to Parts I and II, in which BRENNAN, MARSHALL, BLACKMUN, POWELL, REHNQUIST, STEVENS, and O''CONNOR, JJ., joined. p. 712: JUSTICE BLACKMUN, concurring in part. p. 716: JUSTICE STEVENS, concurring in part and concurring in the result. p. 724: JUSTICE O''CONNOR, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, concurring in part and dissenting in part. p. 733: WHITE, J., filed a dissenting opinion. Writer names corrected to match the bench list (Warren E. Burger, Byron R. White); Burger''s Parts I-II were joined by a majority, so his opinion is a majority opinion, and Stevens''s statement is concurring in part and in the result.. Confirmed: the report prints (read from the page images) p. 695: "CHIEF JUSTICE BURGER announced the judgment of the Court and delivered the opinion of the Court with respect to Parts I and II"; p. 712: "JUSTICE BLACKMUN, concurring in part."; p. 716: "JUSTICE STEVENS, concurring in part and concurring in the result."; p. 724: "JUSTICE O''CONNOR, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, concurring in part and dissenting in part."; p. 733: "JUSTICE WHITE, dissenting."'
+    detail: 'Report: judgment Burger p. 695, concurrence Blackmun p. 712, concurrence in part and in the result Stevens p. 716, concurrence in part and dissent in part O Connor p. 724, dissent White p. 733; Database writers: Blackmun, Burger, O Connor, Stevens, White; scan pages [(695, 694)]. Read from the scan by an AI reader (corrected): p. 695: CHIEF JUSTICE BURGER announced the judgment of the Court and delivered the opinion of the Court with respect to Parts I and II, and an opinion with respect to Part III . . . p. 694: opinion of the Court with respect to Parts I and II, in which BRENNAN, MARSHALL, BLACKMUN, POWELL, REHNQUIST, STEVENS, and O''CONNOR, JJ., joined. p. 712: JUSTICE BLACKMUN, concurring in part. p. 716: JUSTICE STEVENS, concurring in part and concurring in the result. p. 724: JUSTICE O''CONNOR, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, concurring in part and dissenting in part. p. 733: WHITE, J., filed a dissenting opinion. Writer names corrected to match the bench list (Warren E. Burger, Byron R. White); Burger''s Parts I-II were joined by a majority, so his opinion is a majority opinion, and Stevens''s statement is concurring in part and in the result.. Confirmed: the report prints (read from the page images) p. 695: "CHIEF JUSTICE BURGER announced the judgment of the Court and delivered the opinion of the Court with respect to Parts I and II"; p. 712: "JUSTICE BLACKMUN, concurring in part."; p. 716: "JUSTICE STEVENS, concurring in part and concurring in the result."; p. 724: "JUSTICE O''CONNOR, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, concurring in part and dissenting in part."; p. 733: "JUSTICE WHITE, dissenting."'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

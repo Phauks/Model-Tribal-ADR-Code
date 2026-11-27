@@ -1,0 +1,47 @@
+key: wisconsin-statutes-73-03
+kind: state-statute
+citation:
+  type: legislation
+  title: Powers and duties defined
+  title-short: Wis. Stat. § 73.03
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '73.03'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/73.03
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/73.03
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 73.03 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 73.03 (2023-24). History: 1971 c. 40, 215; 1973 c. 90; 1975 c. 39; 1977 c. 143; 1977 c. 196 s. 130 (7); 1977 c. 313; 1979 c. 34; 1979 c. 110 s. 60 (13); 1979 c. 221, 350; 1981 c. 20; 1981 c. 79 s. 18; 1983 a. 275 s. 15 (4); 1983 a. 524; 1983 a. 538 s. 269 (3); 1985 a. 12, 29, 273; 1987 a. 4, 27, 186; 1987 a. 312 s. 17; 1987 a. 328, 378, 399; 1989 a. 31; 1989 a. 56 s. 259; 1989 a. 74, 335; 1991 a. 39, 219, 313, 316; 1993 a. 16, 112, 205, 490; 1995 a. 27 ss. 3434g to 3440m, 9145 (1); 1995 a. 209, 233; 1997 a. 27, 35, 191, 237, 252; 1999 a. 9, 31, 185; 2001 a. 16, 44, 104, 107, 109; 2003 a. 33, 127; 2005 a. 25, 259; 2007 a. 20, 86; 2009 a. 2, 28, 180, 401; 2011 a. 10, 32, 257; 2013 a. 20, 54; 2015 a. 55, 216, 254, 295; 2017 a. 59, 270, 324, 358, 368; 2019 a. 10; 2021 a. 66, 87, 240, 258; 2023 a. 12, 73; 2025 a. 118. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; federally recognized tribes; tribal lands; tribal members; indian; tribal; tribe; tribes); AI reader''s verdict incidental: DOR may agree with tribes on tax collection and refund offsets. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; federally recognized tribes; tribal lands; tribal members; indian; tribal; tribe; tribes'

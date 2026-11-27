@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 47 Fed. Reg. 53130, 53134 (Nov. 24, 1982)
+  since: '1982-11-24'
+  source: bia-recognized-entities-1982
+  confidence: medium
+  verification: bulk-import
+  as_of: '1982-11-24'
+  locator: 47 Fed. Reg. 53134 (entry "Chickaloon Village.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Chickaloon Village." The entry is matched to the nation by name.
 states:
 - state: AK
   presence: government-office
@@ -204,6 +214,63 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Chickaloon Native Village".'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2019
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Chickaloon Village Traditional Council' (Alaska Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Chickaloon Village Traditional Council'.
+- program: indian-health-service-self-governance-compact
+  since: 2011
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Alaska Area, row 'Chickaloon Native Village'
+- program: pl-102-477-plan
+  start: '2022-10-01'
+  end: '2026-09-30'
+  programs_included:
+  - Job Placement and Training
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Chickaloon Native Village'; PL102_477_PartnerEnrollment, its 3 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 219369
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Chickaloon' (Chickaloon)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Chickaloon'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 8753398
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'CHICKALOON NATIVE VILLAGE' (UEI YWH8Q1JLRDN9), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 98459
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'CHICKALOON NATIVE VILLAGE' (UEI YWH8Q1JLRDN9), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Adopted pursuant to Traditional Government consent

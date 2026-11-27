@@ -1,0 +1,59 @@
+key: new-mexico-ex-rel-energy-and-minerals-department-mining-and-minerals-division-v-1987
+kind: federal-case
+citation:
+  type: legal_case
+  title: New Mexico ex rel. Energy & Minerals Department, Mining & Minerals Division v. U.S. Department of the Interior
+  authority: United States Court of Appeals for the District of Columbia Circuit
+  container-title: F.2d
+  volume: '820'
+  page: '441'
+  issued:
+    date-parts:
+    - - 1987
+      - 6
+      - 5
+  URL: https://static.case.law/f2d/820/html/0441-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f2d/820/html/0441-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- navajo-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: navajo-nation
+    named_as: Navajo Tribe of Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 820 F.2d 441. Decided by the United States Court of Appeals for the District of Columbia Circuit on June 5, 1987. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 24, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 24
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

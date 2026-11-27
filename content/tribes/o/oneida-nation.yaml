@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Six Nations, Oct. 22, 1784, 7 Stat. 15
+  since: '1784-10-22'
+  source: treaty-with-the-six-nations-1784
+  confidence: medium
+  verification: inferred
+  as_of: '1784-10-22'
+  locator: p. 5 (Treaty with the Six Nations, 1784; Kappler header "Oct. 22, 1784. | 7 Stat., 15.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Oneidea; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 8 nations' profiles link this treaty.
 states:
 - state: WI
   presence: government-office
@@ -189,6 +199,84 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Oneida Tribe of Indians of Wisconsin". Roster "Oneida Nation" taken as the Wisconsin nation; Indian Health Service lists it under Bemidji Area Wisconsin Tribal Health Programs. Also on the Indian Health Service Self-Governance Tribes list (Oneida Nation of Wisconsin (1997)); the list does not say which service unit or programs the compact covers.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1994
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Oneida Tribe Of Indians' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Oneida Tribe Of Indians'.
+- program: indian-health-service-self-governance-compact
+  since: 1997
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Oneida Nation of Wisconsin'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Oneida Nation of Wisconsin'.
+- program: pl-102-477-plan
+  start: '2025-10-01'
+  end: '2030-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - American Indian Vocational Rehabilitation Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Native Employment Works
+  - Temporary Assistance for Needy Families
+  - 'Welfare Assistance: General Assistance'
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Oneida Nation'; PL102_477_PartnerEnrollment, its 8 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 8455458
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WI, row 'Oneida Nation, Wisconsin' (Oneida)
+- program: fdpir-self-determination-demonstration
+  start: 2021-10
+  detail: Round 1 (a joint project with the Menominee Indian Tribe of Wisconsin)
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 1 projects, 'Oneida Nation'
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Oneida Nation'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 3965808
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'ONEIDA NATION' (UEI HZ8CHGL3B3S6), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 34753444
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'ONEIDA NATION' (UEI HZ8CHGL3B3S6), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Oneida Tribe of Indians of Wisconsin" among organizations under constitutions
@@ -884,6 +972,14 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural, Business, Residential) of the Oneida Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Jan. 23, 2018, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-oneida-nation-2018-01-23
+  confidence: high
+  verification: inferred
+  as_of: '2018-01-23'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2018
 court_practice:
 - kind: bar-admission
   title: What are the Rules of Admission to Practice Before the Judiciary?

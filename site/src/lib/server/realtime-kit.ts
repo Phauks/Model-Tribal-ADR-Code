@@ -66,7 +66,7 @@ export type Fetcher = (input: string, init?: RequestInit) => Promise<Response>;
 const apiRoot = 'https://api.cloudflare.com/client/v4';
 
 /** The name that marks the site's app when an account has several RealtimeKit apps. */
-export const videoRoomAppName = 'Model Tribal ADR Code video rooms';
+export const videoRoomAppName = 'Tribal Law Project video rooms';
 
 interface Answer {
 	success?: boolean;
@@ -90,7 +90,7 @@ async function request(fetcher: Fetcher, token: string, method: string, address:
 	try {
 		parsed = text ? JSON.parse(text) : {};
 	} catch {
-		// Not JSON: reported below with the status.
+		// expected: not JSON: reported below with the status.
 	}
 	if (!response.ok || parsed.success === false) {
 		const message = parsed.errors?.[0]?.message ?? parsed.error?.message ?? (text.slice(0, 200) || response.statusText);
@@ -149,7 +149,7 @@ export function videoRoomPlace(settings: VideoRoomSettings, fetcher: Fetcher = f
 	if (!found) {
 		found = findPlace(settings, fetcher);
 		places.set(key, found);
-		found.catch(() => places.delete(key));
+		found.catch(() => /* expected: the caller sees the failure through found; forgetting it lets the next call try again */ places.delete(key));
 	}
 	return found;
 }

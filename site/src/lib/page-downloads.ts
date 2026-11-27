@@ -14,6 +14,7 @@
  */
 
 import { dataChartList, dataChartTableLink, dataTopicLink, dataTopicList } from './data-chart-list.ts';
+import { citePage, indigoDate } from './citation-styles.ts';
 
 /**
  * A file's extension as readers see it on a format button, ".docx" from "/a/b.docx". Trevor asked on
@@ -106,7 +107,7 @@ export interface PageDownloads {
 /** On the map page, the view on screen, whose table the menu offers first. */
 export function pageDownloads(path: string, mapTable?: { file: string; label: string }): PageDownloads {
 	const nation = /^\/nations\/([^/]+)$/.exec(path)?.[1];
-	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'coverage') {
+	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'federal-programs' && nation !== 'coverage') {
 		return {
 			citable: true,
 			files: [
@@ -242,7 +243,7 @@ export function pageDownloads(path: string, mapTable?: { file: string; label: st
 			]
 		};
 	}
-	return { citable: /^\/(stories|cases)\/[^/]+$/.test(path) || /^\/supreme-court\/(justices|presidents)\/[^/]+$/.test(path) || /^\/supreme-court\/(?!justices$|presidents$|portraits$)[^/]+$/.test(path), files: [] };
+	return { citable: /^\/(stories|cases|laws|essays|foundations|biographies|courts|back-matter|news|presidents)\/[^/]+$/.test(path) || /^\/nations\/federal-offices\/[^/]+\/[^/]+$/.test(path) || /^\/supreme-court\/(justices|presidents)\/[^/]+$/.test(path) || /^\/supreme-court\/(?!justices$|presidents$|portraits$)[^/]+$/.test(path), files: [] };
 }
 
 /** The map's layers as GeoJSON (RFC 7946), for mapping programs; also listed on the Downloads page. */
@@ -268,16 +269,14 @@ export const mapFiles: PageFile[] = [
 ];
 
 /** "Nov. 22, 2026", the Indigo Book's month abbreviations. */
-export function citationDate(date: Date): string {
-	const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
-	return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-}
+export const citationDate = indigoDate;
 
 /**
  * A citation to a page of the site, in the form the Indigo Book gives for
  * an internet source: the page's title, the site's name with the content
  * version, the address, and the day the reader visited it, since the page can
- * change. The title is italic in the HTML form.
+ * change. The title is italic in the HTML form. The other styles are in
+ * citation-styles.ts.
  */
 export function pageCitation(
 	title: string,
@@ -286,9 +285,5 @@ export function pageCitation(
 	address: string,
 	visited: Date
 ): { text: string; html: string } {
-	const version = contentVersion ? ` (draft content ver. ${contentVersion})` : '';
-	const rest = `, ${siteName}${version}, ${address} (last visited ${citationDate(visited)}).`;
-	const escape = (value: string) =>
-		value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
-	return { text: `${title}${rest}`, html: `<i>${escape(title)}</i>${escape(rest)}` };
+	return citePage('indigo', { title, siteName, contentVersion, address, visited });
 }

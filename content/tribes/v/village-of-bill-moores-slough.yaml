@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 53 Fed. Reg. 52829, 52833 (Dec. 29, 1988)
+  since: '1988-12-29'
+  source: bia-recognized-entities-1988
+  confidence: medium
+  verification: inferred
+  as_of: '1988-12-29'
+  locator: 53 Fed. Reg. 52833 (entry "Bill Moore’s (aka Bill Moore’s Slough)")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Bill Moore’s (aka Bill Moore’s Slough)." The entry is matched to the nation by name. The 1988 list also named Alaska Native Claims Settlement Act corporations, which are not tribal governments (58 Fed. Reg. 54364, 54365 (Oct. 21, 1993)).
 states:
 - state: AK
   presence: government-office
@@ -147,6 +157,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Village of Bill Moore’s Slough".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Bill Moore's Slough' (Kotlik)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Bill Moore's Slough'.
 governance:
 - aspect: form
   value: Constitution of the People of the Village of Bill Moore's Slough

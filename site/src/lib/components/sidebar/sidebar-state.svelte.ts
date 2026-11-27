@@ -12,9 +12,6 @@ import { parseSectionChoices, sectionChoicesKey } from '#lib/sidebar-outline.ts'
 /** Whether the reader hid the wide sidebar; read before the page paints in app.html. */
 export const sidebarHiddenKey = 'sidebar-hidden';
 
-/** The key, among the remembered choices, of whether the list of sections is open. */
-export const sectionsKey = 'sections';
-
 export class SidebarState {
 	sectionChoices = $state<Record<string, boolean>>({});
 	itemChoices = $state<Record<string, boolean>>({});
@@ -25,7 +22,7 @@ export class SidebarState {
 		try {
 			this.sectionChoices = parseSectionChoices(localStorage.getItem(sectionChoicesKey));
 		} catch {
-			// Storage can be blocked; every section then starts as the defaults say.
+			// expected: storage can be blocked; every section then starts as the defaults say.
 		}
 	}
 
@@ -38,7 +35,7 @@ export class SidebarState {
 		try {
 			localStorage.setItem(sectionChoicesKey, JSON.stringify(this.sectionChoices));
 		} catch {
-			// Nothing to remember with; the choice lasts for this page only.
+			// expected: nothing to remember with; the choice lasts for this page only.
 		}
 	}
 
@@ -58,8 +55,7 @@ export function forgetSidebarChoices(): void {
 		localStorage.removeItem(sectionChoicesKey);
 		localStorage.removeItem(sidebarHiddenKey);
 		delete document.documentElement.dataset.sidebarHidden;
-		delete document.documentElement.dataset.sidebarSectionsShut;
 	} catch {
-		// Storage can be blocked; there is then nothing to forget.
+		// expected: storage can be blocked; there is then nothing to forget.
 	}
 }

@@ -9,15 +9,18 @@
  */
 import { error, type Cookies } from '@sveltejs/kit';
 import { version as siteBuild } from '$app/env';
-import { essayBoxFacts, essayCaseLinks, essayCaseNames, essayCitations, essayOpinions, essayRecordBoxes, essayTerms, essaysInGit } from 'virtual:essay-library';
+import { essayTerms, essaysInGit } from 'virtual:essay-library';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
-import { renderEssay, type EssayHeading, type EssayLibrary, type RenderedEssay } from '../essays/render.ts';
+import type { EssayHeading, EssayLibrary, RenderedEssay } from '../essays/render.ts';
+import { builtDataWhileBuilding } from './built-files.ts';
+import { essayCaseNamesFile, essayRecordFiles } from '../built-files.ts';
+import { caseNamesLibrary, citationsWhileBuilding, essayCaseNames, recordLibrary, renderWithCitations, withEssayData, type CaseNames, type EssayRecord } from './essay-citations.ts';
 import { essayDateTime } from '../essays/dates.ts';
 import type { LineChange } from '../essays/merge.ts';
 import { syncEssaysFromGitOnce } from './essay-git-sync.ts';
 import { casesByTopicMarkdown, taggedCases } from '../essays/case-topics.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
-import { boxMarkdown, fillBoxes, readingMarkdown } from '../essays/record-boxes.ts';
+import { fillBoxes } from '../essays/record-boxes.ts';
 import { workerEnvironment } from './environment.ts';
 import { sessionCookie } from '#lib/server/accounts.ts';
 import { signedInHintCookie } from '#lib/signed-in-hint.ts';
@@ -38,26 +41,29 @@ import {
 } from './essays.ts';
 
 let boxPageList: Record<string, string> | undefined;
-let caseTitles: Record<string, string> | undefined;
 
+/** Every record's box facts, case page, opinions and box parts, while the site is built (essay-citations.ts). */
+const recordsWhileBuilding = () => builtDataWhileBuilding<Record<string, EssayRecord>>(essayRecordFiles.name);
+
+/**
+ * What essays are drawn with. Citations and records are at hand here only
+ * while the site is built: in the Worker, draw with renderWithCitations()
+ * or withEssayData(), which read the ones a text needs (essay-citations.ts).
+ */
 export const essayLibrary: EssayLibrary = {
-	citation: (key) => essayCitations[key],
+	citation: (key) => citationsWhileBuilding()?.[key],
 	term: (id) => essayTerms[id],
-	facts: (box, key) => (box === 'law' ? essayBoxFacts.laws[key] : essayBoxFacts.cases[key]) ?? [],
 	boxPage: (anchor) => (boxPageList ??= boxPages(essaysInGit))[anchor],
-	caseNames: () => (caseTitles ??= Object.fromEntries(Object.entries(essayCaseNames).map(([key, name]) => [key, name.title]))),
-	caseLink: (key) => essayCaseLinks[key],
-	opinions: (key) => essayOpinions[key],
-	box: (kind, key) => boxMarkdown(kind, key, essayRecordBoxes[kind === 'law' ? 'laws' : 'cases'][key]) || undefined,
-	boxReading: (kind, key) => readingMarkdown(essayRecordBoxes[kind === 'law' ? 'laws' : 'cases'][key]) || undefined
+	...recordLibrary((key) => recordsWhileBuilding()?.[key]),
+	caseNames: () => caseNamesLibrary(builtDataWhileBuilding<CaseNames>(essayCaseNamesFile)).caseNames?.() ?? {}
 };
 
-/** An essay's text with the boxes it leaves empty filled from their records (record-boxes.ts). */
-export function withRecordBoxes(text: string): string {
+/** An essay's text with the boxes it leaves empty filled from their records (record-boxes.ts), while the site is built. */
+export function withRecordBoxes(text: string, library: EssayLibrary = essayLibrary): string {
 	return fillBoxes(
 		text,
-		(kind, key) => essayLibrary.box?.(kind, key),
-		(kind, key) => essayLibrary.boxReading?.(kind, key)
+		(kind, key) => library.box?.(kind, key),
+		(kind, key) => library.boxReading?.(kind, key)
 	).text;
 }
 
@@ -129,12 +135,13 @@ export function generatedKind(text: string): string | undefined {
  * each linked to the page that holds its box (case-topics.ts).
  */
 export async function renderWithGenerated(text: string, which: EssayTexts, options: { lines?: LineChange[] } = {}): Promise<RenderedEssay> {
-	if (generatedKind(text) !== 'cases-by-topic') return renderEssay(text, essayLibrary, options);
+	if (generatedKind(text) !== 'cases-by-topic') return renderWithCitations(text, essayLibrary, options);
 	const texts = Object.fromEntries(Object.entries(await currentTexts(which)).filter(([, other]) => !generatedKind(other)));
-	const tagged = Object.values(texts).flatMap((other) => taggedCases(withRecordBoxes(other)));
-	const index = casesByTopicMarkdown(tagged, (key) => essayCaseNames[key]);
+	const tagged = (await Promise.all(Object.values(texts).map((other) => withEssayData(essayLibrary, (library) => taggedCases(withRecordBoxes(other, library)))))).flat();
+	const names = await essayCaseNames();
+	const index = casesByTopicMarkdown(tagged, (key) => names[key]);
 	const pages = boxPages(texts);
-	return renderEssay(`${text.trimEnd()}\n\n${index}\n`, { ...essayLibrary, boxPage: (anchor) => pages[anchor] }, options);
+	return renderWithCitations(`${text.trimEnd()}\n\n${index}\n`, { ...essayLibrary, boxPage: (anchor) => pages[anchor] }, options);
 }
 
 /**
@@ -147,16 +154,16 @@ export async function renderedVersion(bucket: R2Bucket, row: { object_key: strin
 	const cache = (globalThis as { caches?: { default?: Cache } }).caches?.default;
 	const cacheKey = `https://essay-cache.invalid/${encodeURIComponent(siteBuild)}/${row.sha256}`;
 	if (cache) {
-		const cached = await cache.match(cacheKey).catch(() => undefined);
+		const cached = await cache.match(cacheKey).catch(() => /* expected: the cache is optional; a miss renders the essay again */ undefined);
 		if (cached) return (await cached.json()) as RenderedEssay;
 	}
 	const text = await readVersionText(bucket, row);
 	if (generatedKind(text)) return renderWithGenerated(text, which);
-	const rendered = renderEssay(text, essayLibrary);
+	const rendered = await renderWithCitations(text, essayLibrary);
 	if (cache) {
 		await cache
 			.put(cacheKey, new Response(JSON.stringify(rendered), { headers: { 'Cache-Control': 'max-age=31536000' } }))
-			.catch(() => undefined);
+			.catch(() => /* expected: the cache is optional; the page is rendered again next time */ undefined);
 	}
 	return rendered;
 }
@@ -236,7 +243,12 @@ export function cacheForReaders(event: { cookies: Pick<Cookies, 'get'>; setHeade
 	event.setHeaders({ 'cache-control': 'public, max-age=60' });
 }
 
-export async function essayPage(part: EssayPart, slug: string, publicationNumber?: number) {
+/**
+ * An essay's page. News posts leave out the credit lines under each heading
+ * (`credits: false`): a post names its author once, under the title
+ * (src/lib/server/news-posts.ts).
+ */
+export async function essayPage(part: EssayPart, slug: string, publicationNumber?: number, { credits = true }: { credits?: boolean } = {}) {
 	const identifier = identifierFromPath(part, slug);
 	const { database, bucket } = storageForPages();
 	// Text merged in git since the build is saved as a draft version; readers see it once published.
@@ -270,7 +282,7 @@ export async function essayPage(part: EssayPart, slug: string, publicationNumber
 	const row = publicationNumber === undefined ? listed[0] : listed.find((candidate) => candidate.number === publicationNumber);
 	if (!row?.object_key || !row.sha256) error(404, 'No publication of this essay has this number.');
 	const rendered = await renderedVersion(bucket, { object_key: row.object_key, sha256: row.sha256 });
-	const html = await withCredits(database, bucket, identifier, row.version_number, rendered.html);
+	const html = credits ? await withCredits(database, bucket, identifier, row.version_number, rendered.html) : rendered.html;
 	return {
 		identifier,
 		part,

@@ -4,7 +4,7 @@
  * Prerendered pages are served as files and never reach this code.
  */
 import { building, dev } from '$app/env';
-import type { Handle } from '@sveltejs/kit/hooks';
+import type { Handle, HandleServerError } from '@sveltejs/kit/hooks';
 import { sealNewEntries } from '#lib/server/activity-seals.ts';
 import { afterResponse, workerEnvironment } from '#lib/server/environment.ts';
 import { activityStatement, refusedAction } from '#lib/server/activity-log.ts';
@@ -14,16 +14,13 @@ import { isLiveEditingRequest, openLiveEditing } from '#lib/server/live-editing.
 import { restrictedPageAnswer, restrictedPagePrefix } from '#lib/server/restricted-pages.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
 import { framePolicy, publicSecurityHeaders } from '#lib/server/security-headers.ts';
+import { report } from '#lib/server/report.ts';
+import { reportHere } from '#lib/server/report-here.ts';
 import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
 import { needsTwoStep, permissionsOf } from '#lib/permissions.ts';
 import { workspacePagesFor } from '#lib/workspace-menu.ts';
-
-/** Pages that show private information and must never be cached or framed. */
-const privatePrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/sign-out', '/requests', '/following', '/uploads', '/orders', '/book/orders', '/book/files', '/events', '/rooms', '/sponsorship'];
-
-/** Pages that need to know who is signed in. Recent changes needs it for "Only pages I follow". */
-const signedInPrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/following', '/uploads', '/files', '/events', '/rooms', '/sponsorship/invite', '/changes'];
+import { isUnder, privatePrefixes, signedInPrefixes } from '#lib/private-pages.ts';
 
 /**
  * Files people send (src/lib/server/uploads.ts): starting a file at
@@ -71,12 +68,12 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	// While the site is built, links to the workspace are followed but there is
 	// no Worker and nobody is signed in.
-	if (!building && signedInPrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))) {
+	if (!building && isUnder(path, signedInPrefixes)) {
 		const environment = workerEnvironment();
 		if (environment.database) {
 			const session = await sessionAccount(environment.database, event.cookies.get(sessionCookie)).catch(
 				(problem) => {
-					console.error('Could not read the session', problem);
+					reportHere(problem, { code: 'sign-in.session-read', place: 'hooks.handle', path, method: event.request.method });
 					return undefined;
 				}
 			);
@@ -147,6 +144,22 @@ export const handle: Handle = async ({ event, resolve }) => {
 };
 
 /**
+ * Every error thrown while answering that SvelteKit did not expect: a bug,
+ * or a service that failed. It is reported once (src/lib/server/report.ts)
+ * and the reader's error page shows its reference, so a report from the
+ * reader and the log line can be matched (site/ERRORS.md). Errors the site
+ * raised itself with error(), such as a page that is not there, are answers
+ * rather than problems, and are not reported.
+ */
+export const handleError: HandleServerError = ({ kind, error, event }) => {
+	if (kind !== 'unknown') return;
+	const context = { code: 'page.unexpected', place: event.route.id ?? event.url.pathname, path: event.url.pathname, method: event.request.method, status: 500 };
+	// While the site is built there is no Worker, so a page that fails to prerender is only logged.
+	const { reference } = building ? report(error, context) : reportHere(error, context);
+	return { reference };
+};
+
+/**
  * Adds the security headers every answer carries (src/lib/server/security-headers.ts).
  * Private pages are never cached or framed, and send no address to other sites.
  */
@@ -157,7 +170,7 @@ function withSecurityHeaders(given: Response, path: string): Response {
 	try {
 		response.headers.set('x-content-type-options', 'nosniff');
 	} catch {
-		// A response passed on as it came, such as one fetched from elsewhere, has headers that cannot change; a copy's can.
+		// expected: a response passed on as it came, such as one fetched from elsewhere, has headers that cannot change; a copy's can.
 		response = new Response(given.body, given);
 	}
 	for (const [name, value] of Object.entries(publicSecurityHeaders)) {
@@ -166,7 +179,7 @@ function withSecurityHeaders(given: Response, path: string): Response {
 		response.headers.set(name, value);
 	}
 	let frameAncestors = "'self'";
-	if (privatePrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))) {
+	if (isUnder(path, privatePrefixes)) {
 		response.headers.set('cache-control', 'no-store');
 		// A message's HTML is shown in a sandboxed frame on the conversation page (src/routes/workspace/inbox/messages).
 		const framedHere = /^\/workspace\/inbox\/messages\/[^/]+\/html$/.test(path);

@@ -1,0 +1,50 @@
+key: iowa-code-99f-10
+kind: state-statute
+citation:
+  type: legislation
+  title: Regulatory fee — local fees — initial license fee
+  title-short: Iowa Code § 99F.10
+  container-title: Iowa Code
+  container-title-short: Iowa Code
+  section: 99F.10
+  author:
+  - literal: Iowa Legislature
+  issued:
+    date-parts:
+    - - 1989
+  URL: https://www.legis.iowa.gov/docs/code/99F.10.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.legis.iowa.gov/docs/code/99F.10.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Iowa Code § 99F.10 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: IA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Iowa Code § 99F.10 (2026). History: 89 Acts, ch 67, §10; 91 Acts, ch 267, §605; 95 Acts, ch 207, §22; 2000 Acts, ch 1229, §18; 2004 Acts, ch 1136, §49; 2005 Acts, ch 48, §1; 2007 Acts, ch 188, §14; 2010 Acts, ch 1190, §25; 2011 Acts, ch 127, §47, 89; 2012 Acts, ch 1134, §16, 21; 2013 Acts, ch 139, §50; 2013 Acts, ch 142, §36; 2016 Acts, ch 1091, §1, 2; 2020 Acts, ch 1063, §52; 2021 Acts, ch 166, §26, 27; 2021 Acts, ch 174, §47; 2024 Acts, ch 1185, §129. Text read from the Iowa Legislature''s XML file for the chapter of the Iowa Code (2026 edition, legis.iowa.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal governments; indian; tribal); AI reader''s verdict incidental: Fee cost rate uses federal rules for Indian tribal governments. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal governments; indian; tribal'

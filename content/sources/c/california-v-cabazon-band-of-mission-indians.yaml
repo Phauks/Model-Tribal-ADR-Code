@@ -93,6 +93,19 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/California_v._Cabazon_Band_of_Mission_Indians
+argument_audio:
+- kind: argument
+  date: '1986-12-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-584.mp3
+  catalog: https://catalog.archives.gov/id/118974757
+  whole_session: true
+  duration_seconds: 13022
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-584.mp3
+    checksum: 21c2ea96b0d8ca279c6c0ff9ec9243deb2eb9fd802e08fe00d8b15bdcfb26436
+    media_type: audio/mpeg
+    bytes: 208354030
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -126,7 +139,7 @@ case_box:
   holding: |-
     No. The Court held that California's gaming laws were civil/regulatory rather than criminal/prohibitory, so Public Law 280 did not authorize their enforcement. State regulation was also preempted given the strong federal and Tribal interests in Tribal gaming as a source of revenue.
   quotes:
-  - text: "... if the intent of a state law is generally to prohibit certain conduct, it falls within Pub. L. 280's grant of criminal jurisdiction, but if the state law generally permits the conduct at issue, subject to regulation, it must be classified as civil/regulatory ..."
+  - text: "[I]f the intent of a state law is generally to prohibit certain conduct, it falls within Pub. L. 280's grant of criminal jurisdiction, but if the state law generally permits the conduct at issue, subject to regulation, it must be classified as civil/regulatory . . . ."
     pinpoint: "p. 209"
   treatment: |-
     Congress adopted the Indian Gaming Regulatory Act (1988) in response to *Cabazon*, as described in *Michigan v. Bay Mills Indian Community* (2014). [@michigan-v-bay-mills-indian-community]

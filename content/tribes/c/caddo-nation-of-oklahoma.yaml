@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Caddo, July 1, 1835, 7 Stat. 470
+  since: '1835-07-01'
+  source: treaty-with-the-caddo-1835
+  confidence: medium
+  verification: inferred
+  as_of: '1835-07-01'
+  locator: p. 432 (Treaty with the Caddo, 1835; Kappler header "July 1, 1835. | 7 Stat., 470. | Proclamation, Feb. 2, 1836.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Caddo; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OK
   presence: government-office
@@ -177,6 +187,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: 'Page: ''The Caddo language is known as Hasinai (ha-SEE-nay) to its native speakers.'''
+language_programs:
+- name: Caddo Language Program
+  link: https://mycaddonation.com/language-preservation
+  run_by: nation
+  source: mycaddonation-language-preservation
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: page heading
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Anadarko Agency
@@ -209,6 +228,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Caddo Nation". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1150471
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Caddo Nation' (Binger)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 175905
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'CADDO NATION OF OKLAHOMA' (UEI F2LBNLNG9LF3), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Caddo Indian Tribe of Oklahoma" among organizations under constitutions approved
@@ -636,6 +674,14 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agriculture, Business, Residential) of the Caddo Nation of Oklahoma, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on June 22, 2026, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-caddo-nation-of-oklahoma-2026-06-22
+  confidence: high
+  verification: inferred
+  as_of: '2026-06-22'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2026
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services
@@ -648,6 +694,39 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Caddo Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 10, 1999 (file 35806).
+  source: oklahoma-filing-35806
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 35806
+  note: 'From the register line: “Caddo Indian Tribe of Oklahoma/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 13, 2000 (file 36879).
+  source: oklahoma-filing-36879
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 36879
+  note: 'From the register line: “Caddo Tribe of Oklahoma/state of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 18, 2024 (file 53012).
+  source: oklahoma-filing-53012
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53012
+  note: 'From the register line: “Tribal-State Tobacco Compact between the Caddo Nation of Oklahoma and the State of Oklahoma”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Caddo County

@@ -2,13 +2,13 @@
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { accessLevelLabels } from '#lib/permissions.ts';
-	import { sectionOf } from '#lib/site-sections.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
 
 	// The essay's section, such as Essays or Foundations, now that Workspace › Essays is gone.
-	const section = $derived(sectionOf(data.page));
+	const essayParts: Record<string, { label: string; link: string }> = { foundations: { label: 'Foundations', link: '/foundations' }, essays: { label: 'Essays', link: '/essays' }, news: { label: 'News', link: '/news' } };
+	const section = $derived(essayParts[data.page.split('/')[1]]);
 
 	const originLabels = { editor: 'Saved', git: 'Brought in from git', restore: 'Restored' } as const;
 
@@ -31,7 +31,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.title} · Essays · Workspace · Model Tribal ADR Code</title>
+	<title>{data.title} · Essays · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -39,6 +39,7 @@
 		...(section ? [{ label: section.label, href: section.link }] : []),
 		{ label: data.title, href: data.page }
 	]}
+	current={data.title}
 />
 
 <h1>{data.title}</h1>

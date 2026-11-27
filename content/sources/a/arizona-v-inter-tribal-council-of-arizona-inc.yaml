@@ -118,6 +118,41 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=570%20U.S.%201
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2013-03-18'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/12-71.mp3
+  duration_seconds: 3818
+  file:
+    storage_key: supreme-court-audio/court/2012/12-71.mp3
+    checksum: c8ad61380172833f50a07faffba8ccb558fb076a8584caea3519f0300cd47c85
+    media_type: audio/mpeg
+    bytes: 30550834
+- kind: argument
+  date: '2013-03-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1796-March18_2013.MP3
+  catalog: https://catalog.archives.gov/id/183518178
+  whole_session: true
+  duration_seconds: 7792
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1796-march18_2013.mp3
+    checksum: e7c60464198fb41d82a7ba6a81c343d9f4da998d2ecc6d2c00c66105751e16f0
+    media_type: audio/mpeg
+    bytes: 124679168
+- kind: opinion announcement
+  date: '2013-06-17'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1819-Non-ArgumentJune17_2013.MP3
+  catalog: https://catalog.archives.gov/id/183518201
+  whole_session: true
+  duration_seconds: 2135
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1819-non-argumentjune17_2013.mp3
+    checksum: a4ba1601ffef579b99246e3771eaae05f9122435ea6d5b9aaae8f9ba0a97c8c5
+    media_type: audio/mpeg
+    bytes: 34153472
 rights:
   status: no-permission-needed
   basis: us-government-work

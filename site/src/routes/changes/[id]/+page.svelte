@@ -9,14 +9,14 @@
 	import HideChangeFields from '#lib/components/changes/HideChangeFields.svelte';
 	import Modal from '#lib/components/Modal.svelte';
 	import { dateTime } from '#lib/change-dates.ts';
-	import { pageKindLabels, sizeChangeText, type ChangeView } from '#lib/page-history.ts';
+	import { pageChangesLink, pageKindLabels, sizeChangeText, type ChangeView } from '#lib/page-history.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 	const change = $derived(data.change);
 	const pageName = $derived(change.title ?? 'A page no longer on this site');
-	const historyLink = $derived(`/changes?page=${encodeURIComponent(change.address)}`);
+	const historyLink = $derived(pageChangesLink(change.address));
 
 	// The lead author can hide parts of a change from the workspace; the link shows when the signed-in hint says they can open it.
 	let canHide = $state(false);
@@ -39,7 +39,7 @@
 	async function openHide(event: MouseEvent & { currentTarget: HTMLAnchorElement }): Promise<void> {
 		event.preventDefault();
 		hideOpener = event.currentTarget;
-		const response = await fetch(`/workspace/changes/${change.id}/hiding.json`).catch(() => undefined);
+		const response = await fetch(`/workspace/changes/${change.id}/hiding.json`).catch(() => /* expected: None */ undefined);
 		if (!response?.ok) {
 			// Signed out since, or the network failed: the workspace page explains.
 			window.location.href = hideOpener.href;
@@ -57,7 +57,7 @@
 </script>
 
 <svelte:head>
-	<title>Change to {pageName} · Recent changes · Model Tribal ADR Code</title>
+	<title>Change to {pageName} · Recent changes · Tribal Law Project</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
@@ -66,6 +66,7 @@
 		{ label: 'Recent changes', href: '/changes' },
 		{ label: `History of ${pageName}`, href: historyLink }
 	]}
+	current="Change to {pageName}"
 />
 
 <h1>
@@ -111,7 +112,7 @@
 						if (result.type === 'success') {
 							hideDialog?.close();
 							// The change's page is cached for a minute: fetch it fresh into the cache, then show it.
-							await fetch(window.location.href, { cache: 'reload' }).catch(() => undefined);
+							await fetch(window.location.href, { cache: 'reload' }).catch(() => /* expected: the page is reloaded below either way. */ undefined);
 							window.location.reload();
 						} else if (result.type === 'failure') {
 							hideProblem = String(result.data?.problem ?? 'The change could not be hidden.');

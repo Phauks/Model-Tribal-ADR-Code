@@ -117,12 +117,12 @@
 </script>
 
 <svelte:head>
-	<title>Find the law · Model Tribal ADR Code</title>
+	<title>Find the law · Tribal Law Project</title>
 	<meta name="description" content="Pick a Native nation and a subject to see its laws, court decisions, agreements and the federal law that applies." />
 </svelte:head>
 
 <div class="find-law">
-	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Find the law" />
 	<h1>Find the law</h1>
 	<p class="lead">Pick a Native nation and a subject to see its laws, court decisions, agreements and the federal law that applies.</p>
 

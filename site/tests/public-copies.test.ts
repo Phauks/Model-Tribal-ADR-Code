@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { copiesByLink, copyDetailsShard, copyPagePath, copyPath, linkForMatching, type PublicCopy } from '../src/lib/public-copies.ts';
+import { copiesByLink, copyDetailsShard, copyPagePath, copyPath, copyPreference, linkForMatching, type PublicCopy } from '../src/lib/public-copies.ts';
 import { copyDetailShardNames, copyDetails } from '../src/lib/server/copy-lists.ts';
-import { publicCopies } from '../src/lib/server/content.ts';
-import { sectionOf } from '../src/lib/site-sections.ts';
+import { copyMoves, publicCopies } from '../src/lib/server/content.ts';
+import { navigationSectionOf } from '../src/lib/site-navigation.ts';
 import {
+	copyContentType,
 	fetchOriginal,
 	hexDigest,
 	isIndexedFile,
@@ -78,7 +79,7 @@ describe('matching a page link to a copy', () => {
 	it('gives each copy a page inside the site, in the Library section, apart from its file', () => {
 		const page = copyPagePath({ key: 'constitutions/a b/law.pdf' });
 		expect(page).toBe('/copies/view/constitutions/a%20b/law.pdf');
-		expect(sectionOf(page)?.label).toBe('Library');
+		expect(navigationSectionOf(page)?.label).toBe('Library');
 	});
 });
 
@@ -94,8 +95,9 @@ describe('the details a copy’s page shows', () => {
 		const details = copyDetails(copyDetailsShard(first))?.[first.key];
 		expect(details?.title).toBe(first.title);
 		expect(details?.list.slug).toBeTruthy();
-		// The first call works out every copy's details, which takes 15 to 25 seconds on a CI runner.
-	}, 60_000);
+		// The first call works out every copy's details, citing each copy's record, which took 15 to 25 seconds on a CI runner
+		// and more than 60 once the Indian Claims Commission's and the repatriation notices' 9,700 copies came (Nov. 27, 2026).
+	}, 180_000);
 
 	it('gives a tribal court opinion its citation', () => {
 		const opinion = publicCopies().find((each) => each.topic === 'caselaw-access-project');
@@ -129,6 +131,15 @@ describe('filling the bucket', () => {
 		expect(await fetchOriginal(copy, network({ [copy.links[0]]: changed }))).toBeUndefined();
 		expect((await fetchOriginal(copy, network({ [copy.links[1]]: pdf })))?.source).toBe(copy.links[1]);
 	});
+
+	it('gives up on a government site that does not answer', async () => {
+		// A site that never answers, as www.govinfo.gov did on Nov. 27, 2026, until the request is called off.
+		const silent = ((_link: string, init?: RequestInit) =>
+			new Promise<Response>((_resolve, reject) => init?.signal?.addEventListener('abort', () => reject(init.signal?.reason)))) as typeof fetch;
+		const started = Date.now();
+		expect(await fetchOriginal(copy, silent, 50)).toBeUndefined();
+		expect(Date.now() - started).toBeLessThan(2_000);
+	});
 });
 
 describe('serving a copy', () => {
@@ -139,6 +150,14 @@ describe('serving a copy', () => {
 		expect(response.headers.get('content-type')).toBe('application/pdf');
 		expect(await response.text()).toBe('%PDF-1.4 a statute page');
 		expect(put).toEqual([]);
+	});
+
+	it('names the file by its title, not the code in its key', async () => {
+		const { bucket } = memoryBucket({ [copy.key]: { bytes: pdf, sha256 } });
+		const named = { ...copy, name: 'Peacemaker Court - Alabama-Coushatta Tribe of Texas.pdf' };
+		const response = await servePublicCopy(new Request('https://site.test/copies/x'), named, bucket, network({}));
+		expect(response.headers.get('content-disposition')).toBe('inline; filename="Peacemaker Court - Alabama-Coushatta Tribe of Texas.pdf"');
+		expect(await response.text()).toBe('%PDF-1.4 a statute page');
 	});
 
 	it('answers "not modified" when the reader has the current copy', async () => {
@@ -224,6 +243,48 @@ describe('copies of nations’ documents', async () => {
 		const { bucket } = memoryBucket({ [saved.key]: { bytes: page, sha256: saved.sha256 } });
 		const response = await servePublicCopy(new Request('https://site.test/copies/x'), saved, bucket, network({}));
 		expect(response.headers.get('content-security-policy')).toContain('sandbox');
+		// No scripts, but a clicked link may leave the frame (an opinion's citations).
+		expect(response.headers.get('content-security-policy')).not.toContain('allow-scripts');
+		expect(response.headers.get('content-security-policy')).toContain('allow-top-navigation-by-user-activation');
 		expect(mediaLabel(saved.mediaType)).toBe('saved web page');
+		// Named as UTF-8, so a page with no <meta charset> is not read as Windows-1252.
+		expect(response.headers.get('content-type')).toBe('text/html; charset=utf-8');
+	});
+
+	it('names a saved page’s own encoding when it is not UTF-8', () => {
+		expect(copyContentType({ mediaType: 'text/html', charset: 'windows-1252' })).toBe('text/html; charset=windows-1252');
+		expect(copyContentType({ mediaType: 'text/plain' })).toBe('text/plain; charset=utf-8');
+		expect(copyContentType({ mediaType: 'application/pdf' })).toBe('application/pdf');
+	});
+});
+
+describe('more than one copy of the same document', () => {
+	const order = (mediaType: string, key: string) =>
+		({ key, mediaType, links: ['https://treaties.okstate.edu/treaties/executive-order-fort-stanton-indian-reserve-1873'] }) as PublicCopy;
+
+	it('opens a PDF or a text before a saved web page, whatever order they come in', () => {
+		const page = order('text/html', 'jurisdiction/order.html');
+		const text = order('text/plain', 'executive-orders/order.txt');
+		for (const copies of [
+			[page, text],
+			[text, page]
+		]) {
+			expect(copiesByLink(copies).get(page.links[0])?.key).toBe(text.key);
+		}
+		expect(copyPreference('application/pdf')).toBeLessThan(copyPreference('text/plain'));
+	});
+
+	it('sends a saved page of an executive order to the order’s text', () => {
+		const moves = copyMoves();
+		const served = new Set(publicCopies().map((copy) => copy.key));
+		for (const [from, to] of Object.entries(moves)) {
+			expect(served.has(to)).toBe(true);
+			expect(from.endsWith('.html')).toBe(true);
+		}
+		if (served.has('executive-orders/executive-order-1873-05-29-mescalero-apache-reservation.txt')) {
+			expect(moves['jurisdiction/executive-order-1873-05-29-mescalero-apache-reservation.html']).toBe(
+				'executive-orders/executive-order-1873-05-29-mescalero-apache-reservation.txt'
+			);
+		}
 	});
 });

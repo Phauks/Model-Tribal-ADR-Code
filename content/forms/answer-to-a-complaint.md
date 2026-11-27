@@ -110,7 +110,7 @@ These notes are not part of the form. They explain where each part came from.
 
 - **What the three forms share.** All three have a caption, admit or deny each paragraph, a defenses section, a statement of what the defendant wants, a signature, a deadline and a duty to give the plaintiff a copy (comparison of the forms listed in `based_on`, read Nov. 23, 2026).
 - **Deadlines.** Comanche and Puyallup give 20 days; Lummi gives 21. The model uses `court.answer_days`, the same value as the summons.
-- **Silence and "do not know."** Comanche says "Averments which are not specifically denied ... are deemed admitted," and both Comanche and Lummi treat lack of knowledge as a denial. The model tells the defendant both rules in plain words.
+- **Silence and "do not know."** Comanche says "Averments which are not specifically denied . . . are deemed admitted," and both Comanche and Lummi treat lack of knowledge as a denial. The model tells the defendant both rules in plain words.
 - **Counterclaims.** Comanche and Lummi include one; Puyallup does not. The model includes it so a defendant does not lose a claim by not knowing to raise it.
 - **Oath.** Lummi and Puyallup use a penalty-of-perjury declaration; Comanche says an answer "need not be verified." The model uses the same oath as its other forms; a court may drop it.
 - **Mediation.** None of the three forms offers a referral to mediation or peacemaking. The model adds it as a choice; this is the project's choice.

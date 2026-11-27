@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Wilton Rancheria, California (approved by the Secretary of the Interior Apr. 13, 1940), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1940-04-13'
+  source: university-of-oklahoma-indian-reorganization-act-mewukcons
+  document_version:
+    document: wilton-rancheria-constitution
+    version: 1940-text
+  confidence: medium
+  verification: inferred
+  as_of: '1940-04-13'
+  locator: 1940 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -171,6 +184,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Wilton Rancheria, California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1129870
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Wilton Rancheria' (Elk Grove)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 3949917
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'WILTON RANCHERIA' (UEI GKHGN6GPJPX5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'WILTON RANCHERIA'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Me-wuk Indian Community of the Wilton Rancheria, California" among organizations
@@ -593,6 +626,14 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Wilton Rancheria, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Sept. 24, 2020, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-wilton-rancheria-2020-09-24
+  confidence: high
+  verification: inferred
+  as_of: '2020-09-24'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2020
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

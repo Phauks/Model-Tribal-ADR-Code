@@ -1,0 +1,64 @@
+key: henzler-v-salazar-2010
+kind: federal-case
+citation:
+  type: legal_case
+  title: Henzler v. Salazar
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F. App'x
+  volume: '393'
+  page: '457'
+  issued:
+    date-parts:
+    - - 2010
+      - 8
+      - 26
+  URL: https://static.case.law/f-appx/393/html/0457-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 09-35597
+original_link: https://static.case.law/f-appx/393/html/0457-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2010-07-26'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2010/07/26/09-35597.wma
+  duration_seconds: 1272
+  file:
+    storage_key: appeals-court-audio/ca9/2010/2010-07-26-09-35597.wma
+    checksum: eeafbb3891366cca26e09b76134ecc275ac89174f62e0989596207f50b1f1e9f
+    media_type: audio/x-ms-wma
+    bytes: 3296523
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 393 F. App'x 457. Decided by the United States Court of Appeals for the Ninth Circuit on Aug. 26, 2010. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (Alaska Native allotment applicants due process).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: Alaska Native allotment applicants due process'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

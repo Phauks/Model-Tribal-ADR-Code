@@ -1,0 +1,66 @@
+key: united-states-v-miranda-guerena-2006
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Miranda-Guerena
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '445'
+  page: '1233'
+  issued:
+    date-parts:
+    - - 2006
+      - 4
+      - 25
+  URL: https://static.case.law/f3d/445/html/1233-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 05-10198
+original_link: https://static.case.law/f3d/445/html/1233-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2006-02-16'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2006/02/16/05-10198.mp3
+  duration_seconds: 1118
+  held: true
+  note: Held until a reading of the argument finds no child or victim named; the opinion itself is shown.
+  file:
+    storage_key: appeals-court-audio/ca9/2006/2006-02-16-05-10198.mp3
+    checksum: 752d97d4d4cc29af8c241176eaf03b2a406e3aaacad7481c3037bd49d28ce02c
+    media_type: audio/mpeg
+    bytes: 8947690
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 445 F.3d 1233. Decided by the United States Court of Appeals for the Ninth Circuit on Apr. 25, 2006. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (tribal ranger authority under tribal law, Fourth Amendment).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: tribal ranger authority under tribal law, Fourth Amendment'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

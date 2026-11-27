@@ -108,9 +108,8 @@ export function recordingCarrier(name: 'cloudflare' | 'smtp' = 'cloudflare'): Ma
 export function testSettings(overrides: Partial<MailSettings> = {}): MailSettings {
 	return {
 		domain: 'example.org',
-		noticeAddress: 'lead@personal.example',
 		siteAddress: 'https://example.org',
-		senderName: 'Model Tribal ADR Code',
+		senderName: 'Tribal Law Project',
 		outreach: {
 			carrier: 'smtp',
 			from: 'outreach@outreach.example.org',

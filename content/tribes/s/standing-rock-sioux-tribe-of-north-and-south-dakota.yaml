@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Teton, etc., Sioux, June 22, 1825, 7 Stat. 250
+  since: '1825-06-22'
+  source: treaty-with-the-teton-etc-sioux-1825
+  confidence: medium
+  verification: inferred
+  as_of: '1825-06-22'
+  locator: p. 227 (Treaty with the Teton, etc., Sioux, 1825; Kappler header "June 22, 1825. | 7 Stat., 250. | Proclamation, Feb. 6, 1826.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Yanktonai; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 4 nations' profiles link this treaty.
 states:
 - state: ND
   presence: government-office
@@ -216,6 +226,41 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Standing Rock Sioux Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: pl-102-477-plan
+  start: '2026-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Employment Works
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Standing Rock Sioux Tribe of North & South Dakota'; PL102_477_PartnerEnrollment, its 5 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 7573737
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: ND, row 'Standing Rock Sioux Tribe' (Fort Yates)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 4160330
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'STANDING ROCK SIOUX TRIBE' (UEI WM1NHUZASLP6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'STANDING ROCK SIOUX TRIBE'.
 governance:
 - aspect: form
   value: Not an Indian Reorganization Act constitution
@@ -931,6 +976,14 @@ jurisdiction:
   verification: read-in-full
   locator: N.D. Legis. Council Memo. 59215, Conclusion (p. 3)
   note: 'Secondary source (legislative staff memo, 2004); the research has no later source. "This amendment" is the 1968 consent amendment. The 1946 Devils Lake act (separate fact) is a separate criminal grant. Also cites: three-affiliated-tribes-v-wold-engineering-1984.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business, Residential, Wind and Solar Resource, WEEL) of the Standing Rock Sioux, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Apr. 14, 2021, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-standing-rock-sioux-tribe-of-north-and-south-dakota-2021-04-14
+  confidence: high
+  verification: inferred
+  as_of: '2021-04-14'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2021
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: North Dakota Department of Human Services

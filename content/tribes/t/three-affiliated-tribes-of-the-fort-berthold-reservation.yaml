@@ -18,6 +18,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Arikara Tribe, July 18, 1825, 7 Stat. 259
+  since: '1825-07-18'
+  source: treaty-with-the-arikara-tribe-1825
+  confidence: medium
+  verification: inferred
+  as_of: '1825-07-18'
+  locator: p. 237 (Treaty with the Arikara Tribe, 1825; Kappler header "July 18, 1825. | 7 Stat., 259. | Proclamation, Feb. 6, 1826.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Arikara; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: ND
   presence: government-office
@@ -187,6 +197,43 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
   note: Listed as "Mandan, Hidatsa, and Arikara Nation". Roster uses the Three Affiliated Tribes name; Indian Health Service lists the same nation as "Mandan, Hidatsa, and Arikara Nation".
+federal_programs:
+- program: pl-102-477-plan
+  start: '2025-10-01'
+  end: '2028-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Native Employment Works
+  - Job Placement and Training
+  - Johnson O’Malley
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota'; PL102_477_PartnerEnrollment, its 7 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 5114785
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: ND, row 'Three Affiliated Tribes of Fort Berthold' (New Town)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 34747848
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'THREE AFFILIATED TRIBES' (UEI FFWAHTLVF2S7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'THREE AFFILIATED TRIBES'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota" among

@@ -1,5 +1,5 @@
 {
-  "$description": "Design tokens for the Model Tribal ADR Code website. Format: Design Tokens Community Group draft (https://www.designtokens.org/tr/drafts/format/). The build turns these into CSS custom properties named --<group>-<token>, for example --color-paper. Names are spelled out (docs/style-guide.md, section 7). See site/DESIGN.md for how each token is used. Palette of Nov. 21, 2026: deep teal and burnt orange, chosen by the lead author; it carries no tribal symbolism and is a placeholder until commissioned Native art can inform it.",
+  "$description": "Design tokens for the Tribal Law Project website. Format: Design Tokens Community Group draft (https://www.designtokens.org/tr/drafts/format/). The build turns these into CSS custom properties named --<group>-<token>, for example --color-paper. Names are spelled out (docs/style-guide.md, section 7). See site/DESIGN.md for how each token is used. Palette of Nov. 21, 2026: deep teal and burnt orange, chosen by the lead author; it carries no tribal symbolism and is a placeholder until commissioned Native art can inform it.",
   "color": {
     "$type": "color",
     "light": {
@@ -51,9 +51,25 @@
         "$value": "#FFFFFF",
         "$description": "Text on the band. 9.6:1 on band."
       },
+      "band-inset": {
+        "$value": "#0C3B42",
+        "$description": "The masthead's search box at rest, a recessed strip in the band (Trevor, Nov. 27, 2026, closed look 2 in design/header-search/closed-looks). Band text is 12.2:1 on it."
+      },
       "band-progress": {
         "$value": "#F2A65A",
         "$description": "The filled part of a progress bar on the band, such as the Sponsorship page's goal. 4.8:1 on band."
+      },
+      "section-bar": {
+        "$value": "#FFFAF5",
+        "$description": "The section bar under the masthead and its open menu: one surface, the page's own paper (palette C, chosen by Trevor on Nov. 27, 2026; design/header-nav-colors). Ink on it 15.7:1."
+      },
+      "section-bar-raised": {
+        "$value": "#F6EEE6",
+        "$description": "The side box in an open section menu, a row under the mouse, and count badges there. Ink on it 14.1:1; link 5.2:1."
+      },
+      "menu-shadow": {
+        "$value": "#22201E59",
+        "$description": "Shadow under an open section menu (ink at 35%)."
       },
       "track-alternative-dispute-resolution": {
         "$value": "#B4461A",
@@ -119,13 +135,21 @@
         "$value": "#CFC8EE",
         "$description": "Edge of the In review band."
       },
-      "focus": {
-        "$value": "#FFD34D",
-        "$description": "Keyboard focus fill."
-      },
       "focus-ring": {
-        "$value": "#22201E",
-        "$description": "Keyboard focus outline, 3 px."
+        "$value": "#0F4C54",
+        "$description": "Keyboard focus ring, 3 px, 2 px from the control, with no fill (focus F1, chosen by Trevor on Nov. 27, 2026, in place of the yellow box). 9.3:1 on paper, 8.4:1 on surface, 9.6:1 on surface-raised, 7.8:1 on selection."
+      },
+      "focus-ring-on-band": {
+        "$value": "#FFFFFF",
+        "$description": "The focus ring on the band. 9.6:1 on band, 12.2:1 on the search box's inset."
+      },
+      "selection": {
+        "$value": "#D5EBEE",
+        "$description": "Fill of the choice the arrow keys are on in a list, with a 3 px focus-ring bar at its left; also an open toggle such as the map's Layers button. Ink on it 13.1:1; link 4.9:1."
+      },
+      "map-highlight": {
+        "$value": "#FFD34D",
+        "$description": "Fill of the place on the drawn map under the mouse or keyboard. Not a focus box: the place itself lights up."
       },
       "danger": {
         "$value": "#9C1C10",
@@ -167,6 +191,42 @@
         "$value": "#0F4C54",
         "$description": "Map: 100 or more nations."
       },
+      "map-reservation-1909": {
+        "$value": "#9C5F2A",
+        "$description": "Map: a reservation on the Office of Indian Affairs' 1909 map, after its brown; Opened land is its stripes over paper. Always beside its key entry."
+      },
+      "map-reservation-1909-line": {
+        "$value": "#6E3F17",
+        "$description": "Map: the edge of a reservation or Opened land on the 1909 map, darker than its fill."
+      },
+      "map-tracing-over-scan": {
+        "$value": "#1838B0",
+        "$description": "Map: the traced shapes' edges drawn over a scanned map, which stays light in both themes, so the same blue in both."
+      },
+      "map-sky": {
+        "$value": "#122630",
+        "$description": "Map: the night sky behind the globe, near the earth. Dark in both themes, so the stars show (Trevor, 2026-11-27, mockup A)."
+      },
+      "map-sky-edge": {
+        "$value": "#08131A",
+        "$description": "Map: the night sky behind the globe, at the map's edges."
+      },
+      "map-sky-star": {
+        "$value": "#FFF8EE",
+        "$description": "Map: a white star in the sky behind the globe, the same in both themes. Drawn faint to full by the star's brightness."
+      },
+      "map-sky-star-cool": {
+        "$value": "#D6E2FF",
+        "$description": "Map: a hot, blue-white star (B-V under 0.2) in the sky behind the globe."
+      },
+      "map-sky-star-warm": {
+        "$value": "#FFE2C0",
+        "$description": "Map: a cool, orange-white star (B-V over 1.0) in the sky behind the globe."
+      },
+      "map-sky-glow": {
+        "$value": "#8FD3DA",
+        "$description": "Map: the thin glow at the earth's edge on the globe, drawn at 38 percent and fading out."
+      },
       "scrollbar-thumb": {
         "$value": "#3F7F86",
         "$description": "Scrollbar thumb, the part a reader drags. 4.0:1 on the scrollbar track and 4.4:1 on paper (non-text minimum 3:1)."
@@ -182,6 +242,10 @@
       "image-backing": {
         "$value": "#FFFAF5",
         "$description": "Plate behind a nation's seal or logo. Seals are drawn for light paper, so in dark mode they sit on a light plate and their dark lines stay visible (Trevor, Nov. 23, 2026)."
+      },
+      "sponsor-logo-plate": {
+        "$value": "#FFFFFF",
+        "$description": "White plate behind a sponsor's logo in the home page row, in both themes, since logos are drawn for white paper (mockup Trevor approved on Nov. 27, 2026, design/home-sponsor-row/)."
       },
       "scan-code-light": {
         "$value": "#FFFFFF",
@@ -208,52 +272,60 @@
         "$description": "Borders of buttons in the image viewer (non-text minimum 3:1). 6.0:1 on viewer-background."
       },
       "timeline-treaty": {
-        "$value": "#8A4B9C",
-        "$description": "Timeline: treaties and land. Always beside its row's name and icon. 5.7:1 on paper."
+        "$value": "#9048F8",
+        "$description": "Timeline: treaties and land. Always beside its kind's icon and name. 4.5:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-document": {
         "$value": "#1A6D76",
-        "$description": "Timeline: laws and agreements. Always beside its row's name and icon. 5.8:1 on paper."
+        "$description": "Timeline: laws and agreements. Always beside its kind's icon and name. 5.8:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-case": {
         "$value": "#B4461A",
-        "$description": "Timeline: court decisions. Always beside its row's name and icon. 5.3:1 on paper."
+        "$description": "Timeline: court decisions. Always beside its kind's icon and name. 5.3:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-opinion": {
-        "$value": "#5E7D1E",
-        "$description": "Timeline: Tribal court opinions. Always beside its row's name and icon. 4.6:1 on paper."
+        "$value": "#783838",
+        "$description": "Timeline: Tribal court opinions. Always beside its kind's icon and name. 8.4:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-federal": {
         "$value": "#7A6F66",
-        "$description": "Timeline: federal law. Always beside its row's name and icon. 4.7:1 on paper."
+        "$description": "Timeline: federal law. Always beside its kind's icon and name. 4.7:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "chart-series-1": {
-        "$value": "#2A78D6",
-        "$description": "Chart slice or series 1 (blue), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#0072B2",
+        "$description": "Chart slice 1 (blue), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-2": {
-        "$value": "#EB6834",
-        "$description": "Chart slice or series 2 (orange), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#E69F00",
+        "$description": "Chart slice 2 (orange), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-3": {
-        "$value": "#1BAF7A",
-        "$description": "Chart slice or series 3 (aqua), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#009E73",
+        "$description": "Chart slice 3 (bluish green), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-4": {
-        "$value": "#EDA100",
-        "$description": "Chart slice or series 4 (yellow), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#CC79A7",
+        "$description": "Chart slice 4 (reddish purple), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-5": {
-        "$value": "#E87BA4",
-        "$description": "Chart slice or series 5 (magenta), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#D55E00",
+        "$description": "Chart slice 5 (vermilion), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-6": {
-        "$value": "#008300",
-        "$description": "Chart slice or series 6 (green), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#56B4E9",
+        "$description": "Chart slice 6 (sky blue), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-7": {
-        "$value": "#6250D6",
-        "$description": "Chart slice or series 7 (violet), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#F0E442",
+        "$description": "Chart slice 7 (yellow), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
+      },
+      "vote-majority": {
+        "$value": "#0072B2",
+        "$description": "Justice timelines: a vote with the majority, drawn as a filled dot (Okabe-Ito blue). Always a dot, never only a color; the card names the Justices. The vote colors must pass npm run check:color-vision."
+      },
+      "vote-dissent": {
+        "$value": "#D55E00",
+        "$description": "Justice timelines: a dissent, drawn as a cross (Okabe-Ito vermillion). Always a cross, never only a color; the card names the Justices."
       },
       "viewer-checker-light": {
         "$value": "#FFFFFF",
@@ -313,9 +385,25 @@
         "$value": "#F3EFEA",
         "$description": "Text on the band. 12.0:1 on band."
       },
+      "band-inset": {
+        "$value": "#08272B",
+        "$description": "The masthead's search box at rest, a recessed strip in the band (Trevor, Nov. 27, 2026, closed look 2 in design/header-search/closed-looks). Band text is 13.7:1 on it."
+      },
       "band-progress": {
         "$value": "#F2A65A",
         "$description": "The filled part of a progress bar on the band, such as the Sponsorship page's goal. 6.8:1 on band."
+      },
+      "section-bar": {
+        "$value": "#16292D",
+        "$description": "The section bar under the masthead and its open menu: one surface, the panels' surface (palette C). Ink on it 13.2:1."
+      },
+      "section-bar-raised": {
+        "$value": "#1D3438",
+        "$description": "The side box in an open section menu, a row under the mouse, and count badges there. Ink on it 11.5:1; link 6.9:1."
+      },
+      "menu-shadow": {
+        "$value": "#00000099",
+        "$description": "Shadow under an open section menu (black at 60%, since a light shadow would glow)."
       },
       "track-alternative-dispute-resolution": {
         "$value": "#FF9A66",
@@ -381,13 +469,21 @@
         "$value": "#4A4380",
         "$description": "Edge of the In review band."
       },
-      "focus": {
-        "$value": "#FFD34D",
-        "$description": "Keyboard focus fill."
-      },
       "focus-ring": {
+        "$value": "#6CCAD3",
+        "$description": "Keyboard focus ring, 3 px, 2 px from the control, with no fill. 9.0:1 on paper, 7.9:1 on surface, 6.9:1 on surface-raised, 5.1:1 on selection."
+      },
+      "focus-ring-on-band": {
+        "$value": "#6CCAD3",
+        "$description": "The focus ring on the band. 7.2:1 on band."
+      },
+      "selection": {
+        "$value": "#1A4A51",
+        "$description": "Fill of the choice the arrow keys are on in a list, with a 3 px focus-ring bar at its left; also an open toggle such as the map's Layers button. Ink on it 8.6:1; link 5.1:1."
+      },
+      "map-highlight": {
         "$value": "#FFD34D",
-        "$description": "Keyboard focus outline, 3 px."
+        "$description": "Fill of the place on the drawn map under the mouse or keyboard."
       },
       "danger": {
         "$value": "#FF8A80",
@@ -429,6 +525,42 @@
         "$value": "#B5E8EC",
         "$description": "Map: 100 or more nations."
       },
+      "map-reservation-1909": {
+        "$value": "#C98A52",
+        "$description": "Map: a reservation on the Office of Indian Affairs' 1909 map, after its brown; Opened land is its stripes over paper. Always beside its key entry."
+      },
+      "map-reservation-1909-line": {
+        "$value": "#E3B184",
+        "$description": "Map: the edge of a reservation or Opened land on the 1909 map, darker than its fill."
+      },
+      "map-tracing-over-scan": {
+        "$value": "#1838B0",
+        "$description": "Map: the traced shapes' edges drawn over a scanned map, which stays light in both themes, so the same blue in both."
+      },
+      "map-sky": {
+        "$value": "#10232A",
+        "$description": "Map: the night sky behind the globe, near the earth. Dark in both themes, so the stars show (Trevor, 2026-11-27, mockup A)."
+      },
+      "map-sky-edge": {
+        "$value": "#070F13",
+        "$description": "Map: the night sky behind the globe, at the map's edges."
+      },
+      "map-sky-star": {
+        "$value": "#FFF8EE",
+        "$description": "Map: a white star in the sky behind the globe, the same in both themes. Drawn faint to full by the star's brightness."
+      },
+      "map-sky-star-cool": {
+        "$value": "#D6E2FF",
+        "$description": "Map: a hot, blue-white star (B-V under 0.2) in the sky behind the globe."
+      },
+      "map-sky-star-warm": {
+        "$value": "#FFE2C0",
+        "$description": "Map: a cool, orange-white star (B-V over 1.0) in the sky behind the globe."
+      },
+      "map-sky-glow": {
+        "$value": "#8FD3DA",
+        "$description": "Map: the thin glow at the earth's edge on the globe, drawn at 38 percent and fading out."
+      },
       "scrollbar-thumb": {
         "$value": "#5A979E",
         "$description": "Scrollbar thumb, the part a reader drags. 4.6:1 on the scrollbar track and 5.2:1 on paper (non-text minimum 3:1)."
@@ -444,6 +576,10 @@
       "image-backing": {
         "$value": "#F6EEE6",
         "$description": "Plate behind a nation's seal or logo. Seals are drawn for light paper, so in dark mode they sit on a light plate and their dark lines stay visible (Trevor, Nov. 23, 2026)."
+      },
+      "sponsor-logo-plate": {
+        "$value": "#FFFFFF",
+        "$description": "White plate behind a sponsor's logo in the home page row, in both themes, since logos are drawn for white paper (mockup Trevor approved on Nov. 27, 2026, design/home-sponsor-row/)."
       },
       "scan-code-light": {
         "$value": "#FFFFFF",
@@ -470,52 +606,60 @@
         "$description": "Borders of buttons in the image viewer (non-text minimum 3:1). 6.0:1 on viewer-background."
       },
       "timeline-treaty": {
-        "$value": "#D7A6E3",
-        "$description": "Timeline: treaties and land. Always beside its row's name and icon. 8.5:1 on paper."
+        "$value": "#8090F8",
+        "$description": "Timeline: treaties and land. Always beside its kind's icon and name. 5.9:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-document": {
         "$value": "#6CCAD3",
-        "$description": "Timeline: laws and agreements. Always beside its row's name and icon. 9.0:1 on paper."
+        "$description": "Timeline: laws and agreements. Always beside its kind's icon and name. 9.0:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-case": {
         "$value": "#FF9A66",
-        "$description": "Timeline: court decisions. Always beside its row's name and icon. 8.2:1 on paper."
+        "$description": "Timeline: court decisions. Always beside its kind's icon and name. 8.2:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-opinion": {
-        "$value": "#B5D46A",
-        "$description": "Timeline: Tribal court opinions. Always beside its row's name and icon. 10.3:1 on paper."
+        "$value": "#D0F8B8",
+        "$description": "Timeline: Tribal court opinions. Always beside its kind's icon and name. 14.5:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-federal": {
-        "$value": "#9FB0B3",
-        "$description": "Timeline: federal law. Always beside its row's name and icon. 7.6:1 on paper."
+        "$value": "#A8A29C",
+        "$description": "Timeline: federal law. Always beside its kind's icon and name. 6.8:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "chart-series-1": {
-        "$value": "#3987E5",
-        "$description": "Chart slice or series 1 (blue), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#0072B2",
+        "$description": "Chart slice 1 (blue), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-2": {
-        "$value": "#D95926",
-        "$description": "Chart slice or series 2 (orange), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#E69F00",
+        "$description": "Chart slice 2 (orange), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-3": {
-        "$value": "#199E70",
-        "$description": "Chart slice or series 3 (aqua), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#009E73",
+        "$description": "Chart slice 3 (bluish green), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-4": {
-        "$value": "#C98500",
-        "$description": "Chart slice or series 4 (yellow), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#CC79A7",
+        "$description": "Chart slice 4 (reddish purple), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-5": {
-        "$value": "#D55181",
-        "$description": "Chart slice or series 5 (magenta), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#D55E00",
+        "$description": "Chart slice 5 (vermilion), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-6": {
-        "$value": "#0CA30C",
-        "$description": "Chart slice or series 6 (green), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#56B4E9",
+        "$description": "Chart slice 6 (sky blue), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-7": {
-        "$value": "#9085E9",
-        "$description": "Chart slice or series 7 (violet), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#F0E442",
+        "$description": "Chart slice 7 (yellow), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
+      },
+      "vote-majority": {
+        "$value": "#56B4E9",
+        "$description": "Justice timelines: a vote with the majority, drawn as a filled dot (Okabe-Ito sky blue). Always a dot, never only a color; the card names the Justices. The vote colors must pass npm run check:color-vision."
+      },
+      "vote-dissent": {
+        "$value": "#E69F00",
+        "$description": "Justice timelines: a dissent, drawn as a cross (Okabe-Ito orange). Always a cross, never only a color; the card names the Justices."
       },
       "viewer-checker-light": {
         "$value": "#FFFFFF",
@@ -643,43 +787,6 @@
       },
       "heading": {
         "$value": 1.25
-      },
-      "reading-wide": {
-        "$value": 2,
-        "$description": "Wide text spacing in Settings. WCAG 2.2, 1.4.12 asks that text still work at 1.5."
-      },
-      "heading-wide": {
-        "$value": 1.5
-      }
-    },
-    "letter-spacing": {
-      "$type": "dimension",
-      "wide": {
-        "$value": {
-          "value": 0.12,
-          "unit": "em"
-        },
-        "$description": "Wide text spacing in Settings, the value WCAG 2.2, 1.4.12 tests."
-      }
-    },
-    "word-spacing": {
-      "$type": "dimension",
-      "wide": {
-        "$value": {
-          "value": 0.16,
-          "unit": "em"
-        },
-        "$description": "Wide text spacing in Settings, the value WCAG 2.2, 1.4.12 tests."
-      }
-    },
-    "paragraph-spacing": {
-      "$type": "dimension",
-      "wide": {
-        "$value": {
-          "value": 2,
-          "unit": "em"
-        },
-        "$description": "Wide text spacing in Settings, the value WCAG 2.2, 1.4.12 tests."
       }
     }
   },
@@ -763,7 +870,7 @@
         "value": 40,
         "unit": "rem"
       },
-      "$description": "Widest column beside the text on wide screens, such as At a glance and its map on a nation's page."
+      "$description": "Widest column beside the text on wide screens, such as Key facts and its map on a nation's page."
     },
     "label-column": {
       "$value": {
@@ -823,7 +930,7 @@
     }
   },
   "motion": {
-    "$description": "How long movement takes and how it speeds up and slows down (site/DESIGN.md, section 6, \"Motion\"). Every transition, animation and script animation on the site takes its timing from here, through src/lib/motion.ts or the --motion-* custom properties. Motion happens only in answer to something the reader does. When the reader picks Reduce motion in Settings, or the device asks for less motion, every duration becomes 0.",
+    "$description": "How long movement takes and how it speeds up and slows down (site/DESIGN.md, section 6, \"Motion\"). Every transition, animation and script animation on the site takes its timing from here, through src/lib/motion.ts or the --motion-* custom properties. Motion happens only in answer to something the reader does, except the rolling row of sponsors on the home page, which Trevor asked for on Nov. 27, 2026 and which the reader can pause. When the reader picks Reduce motion in Settings, or the device asks for less motion, every duration becomes 0.",
     "duration": {
       "$type": "duration",
       "short": {
@@ -853,6 +960,13 @@
           "unit": "ms"
         },
         "$description": "How long the mark on a source or note a link has just gone to takes to fade to its resting color."
+      },
+      "roll": {
+        "$value": {
+          "value": 5000,
+          "unit": "ms"
+        },
+        "$description": "How long the rolling row of sponsors on the home page takes to move by one sponsor's tile, so the whole row takes this times the number of sponsors. Slow enough to read each name as it passes."
       }
     },
     "easing": {
@@ -883,6 +997,15 @@
           1
         ],
         "$description": "Something leaving: it starts slowly and speeds away."
+      },
+      "steady": {
+        "$value": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "$description": "An even speed from start to end, for movement that loops, such as the rolling row of sponsors."
       }
     }
   }

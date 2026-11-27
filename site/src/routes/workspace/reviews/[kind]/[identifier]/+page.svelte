@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.subject.title} · Reviews · Workspace · Model Tribal ADR Code</title>
+	<title>{data.subject.title} · Reviews · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 {#if data.allowed.capacity !== 'nation'}
@@ -28,6 +28,7 @@
 			{ label: 'Workspace', href: '/workspace' },
 			{ label: 'Reviews', href: '/workspace/reviews' }
 		]}
+		current={data.subject.title}
 	/>
 {/if}
 <h1>{data.subject.title}</h1>

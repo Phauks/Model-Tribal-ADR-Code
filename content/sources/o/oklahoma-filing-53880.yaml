@@ -1,0 +1,53 @@
+key: oklahoma-filing-53880
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Choctaw Nation of Oklahoma and USDA Forest Service (Ouachita National Forest): memorandum of understanding'
+  author:
+  - literal: The Choctaw Nation of Oklahoma
+  - literal: USDA Forest Service, Ouachita National Forest
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 53880
+  URL: https://execleg.sos.ok.gov/documents/filelog/97801.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2025
+      - 10
+      - 8
+original_link: https://execleg.sos.ok.gov/documents/filelog/97801.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- the-choctaw-nation-of-oklahoma
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- environment
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 53880, filed Oct. 8, 2025. The register''s title reads “MOU - Memorandum of Understanding” and its description “MOU Between the Choctaw Nation of Oklahoma and the USDA, Forest Service Ouachita National Forest”. The register line reads as an agreement or compact. The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date. The reader noted: Subject not stated in the register; environment is a guess from the forest service partner.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: differs
+    detail: script other, reader environment. The AI reader's reading is used; checked by hand on Nov. 26, 2026.

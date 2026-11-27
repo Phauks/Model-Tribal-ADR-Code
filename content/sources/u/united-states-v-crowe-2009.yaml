@@ -1,0 +1,66 @@
+key: united-states-v-crowe-2009
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Crowe
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '563'
+  page: '969'
+  issued:
+    date-parts:
+    - - 2009
+      - 4
+      - 24
+  URL: https://static.case.law/f3d/563/html/0969-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 08-30173
+original_link: https://static.case.law/f3d/563/html/0969-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2009-02-03'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2009/02/03/08-30173.wma
+  duration_seconds: 1950
+  held: true
+  note: Held until a reading of the argument finds no child or victim named; the opinion itself is shown.
+  file:
+    storage_key: appeals-court-audio/ca9/2009/2009-02-03-08-30173.wma
+    checksum: f2672a6fdc0a255a28db643dca8204ef8003b89eab748f9143f1e1de0ba659d2
+    media_type: audio/x-ms-wma
+    bytes: 5047715
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 563 F.3d 969. Decided by the United States Court of Appeals for the Ninth Circuit on Apr. 24, 2009. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (crime in Indian country, Fort Peck reservation).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: crime in Indian country, Fort Peck reservation'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

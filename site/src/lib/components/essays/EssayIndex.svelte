@@ -12,6 +12,7 @@
 	import NewEssayButton from '#lib/components/essays/NewEssayButton.svelte';
 	import { newEssayPlace, partSections } from '#lib/essays/new-essay.svelte.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let {
 		section,
@@ -41,7 +42,7 @@
 				canStart = body?.canStart ?? false;
 				if (canStart && partSections[ownPart]) newEssayPlace.current = { sectionLink: partSections[ownPart], part: ownPart };
 			})
-			.catch(() => undefined);
+			.catch((problem) => sendProblem(problem, { code: 'essays.drafts' }));
 	});
 
 	onDestroy(() => {
@@ -50,7 +51,7 @@
 </script>
 
 <svelte:head>
-	<title>{section} · Model Tribal ADR Code</title>
+	<title>{section} · Tribal Law Project</title>
 	<meta name="description" content={lead} />
 </svelte:head>
 

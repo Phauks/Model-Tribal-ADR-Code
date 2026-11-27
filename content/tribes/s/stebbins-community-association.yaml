@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 47 Fed. Reg. 53130, 53135 (Nov. 24, 1982)
+  since: '1982-11-24'
+  source: bia-recognized-entities-1982
+  confidence: medium
+  verification: bulk-import
+  as_of: '1982-11-24'
+  locator: 47 Fed. Reg. 53135 (entry "Stebbins Community Association.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Stebbins Community Association." The entry is matched to the nation by name.
 states:
 - state: AK
   presence: government-office
@@ -176,6 +186,16 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
   note: 'The source''s words: "Stebbins Community Association".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 986002
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Stebbins Community Association' (Stebbins)
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Stebins Community Association" among organizations under constitutions approved

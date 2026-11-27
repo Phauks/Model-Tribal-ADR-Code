@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Yankton Sioux, July 19, 1815, 7 Stat. 128
+  since: '1815-07-19'
+  source: treaty-with-the-yankton-sioux-1815
+  confidence: medium
+  verification: inferred
+  as_of: '1815-07-19'
+  locator: p. 115 (Treaty with the Yankton Sioux, 1815; Kappler header "July 19, 1815. | 7 Stat., 128. | Ratified Dec. 26, 1815.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Yankton; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: SD
   presence: government-office
@@ -201,6 +211,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Yankton Sioux Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3061665
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: SD, row 'Yankton Sioux Tribe' (Wagner)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1540479
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'YANKTON SIOUX TRIBE' (UEI DMNUSE1NLTU6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'YANKTON SIOUX TRIBE'.
 governance:
 - aspect: form
   value: Amended 1932 constitution, not subject to the Indian Reorganization Act
@@ -841,7 +871,7 @@ land_establishment:
   confidence: high
   verification: read-in-full
   locator: 11 Stat. 744
-  note: 'The instrument reads: “except four hundred ... thousand acres thereof, situated and described as follows”. Reserved tract on the Missouri River, mouth of the Choteau (Chouteau) Creek north.'
+  note: 'The instrument reads: “except four hundred . . . thousand acres thereof, situated and described as follows”. Reserved tract on the Missouri River, mouth of the Choteau (Chouteau) Creek north.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

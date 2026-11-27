@@ -1,0 +1,167 @@
+key: sharp-v-murphy
+kind: federal-case
+citation:
+  type: legal_case
+  title: Sharp v. Murphy
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '591'
+  page: '977'
+  issued:
+    date-parts:
+    - - 2020
+      - 7
+      - 9
+  URL: https://www.supremecourt.gov/opinions/preliminaryprint/591US2PP_web.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: SHARP, WARDEN v. MURPHY
+  source: https://www.supremecourt.gov/opinions/preliminaryprint/591US2PP_web.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://www.supremecourt.gov/opinions/preliminaryprint/591US2PP_web.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: per curiam
+    justice: The Court
+    page: 978
+original_link: https://www.supremecourt.gov/opinions/preliminaryprint/591US2PP_web.pdf
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '2018-11-27'
+  printed: Argued November 27, 2018—Decided July 9, 2020
+  source: https://www.supremecourt.gov/opinions/preliminaryprint/591US2PP_web.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2018-2020)
+  decision_type: per curiam
+  vote:
+    majority: 6
+    minority: 2
+  justices:
+  - name: John G. Roberts, Jr.
+    vote: majority
+  - name: Clarence Thomas
+    vote: minority
+  - name: Ruth Bader Ginsburg
+    vote: majority
+  - name: Stephen G. Breyer
+    vote: majority
+  - name: Samuel A. Alito, Jr.
+    vote: minority
+  - name: Sonia Sotomayor
+    vote: majority
+  - name: Elena Kagan
+    vote: majority
+  - name: Neil M. Gorsuch
+    vote: none
+  - name: Brett M. Kavanaugh
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 2019-075; Oyez has no votes for this case.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/preliminaryprint/591US2PP_web.pdf
+  - site: cornell
+    label: Cornell LII
+    access: free
+    link: https://www.law.cornell.edu/supremecourt/text/17-1107
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/591/977/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2018/17-1107
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22591%20U.S.%20977%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=591%20U.S.%20977
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=591%20U.S.%20977
+    unchecked: true
+argument_audio:
+- kind: argument
+  date: '2018-11-27'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/17-1107.mp3
+  duration_seconds: 3894
+  file:
+    storage_key: supreme-court-audio/court/2018/17-1107.mp3
+    checksum: 3676cf897c6b67ffe0e2786d8fd03574a31292e187414e509787a11232b0a554
+    media_type: audio/mpeg
+    bytes: 31155220
+- kind: argument
+  date: '2018-11-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2115-November27_2018.mp3
+  catalog: https://catalog.archives.gov/id/183518497
+  whole_session: true
+  duration_seconds: 8331
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2115-november27_2018.mp3
+    checksum: 47ea1414e75116723387124a5a7e188d8464f739aa99958b994690e362a67d23
+    media_type: audio/mpeg
+    bytes: 166612838
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 591 U.S. 977 (2020). Official report scan: https://www.supremecourt.gov/opinions/preliminaryprint/591US2PP_web.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2019-075), the Legal Information Institute''s text of the slip opinion and the Court''s preliminary print; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Slip opinion (Legal Information Institute) 591 U.S. 977 "Sharp v. Murphy"; Database 17-1107 "SHARP v. MURPHY"
+  - check: scan
+    result: agree
+    detail: Scan has 2 pages; the report runs 977 to 978
+  - check: caption
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.44. Confirmed: the report prints the caption "SHARP, WARDEN v. MURPHY" on p. 977 (text layer, 1.00)'
+  - check: printed dates
+    result: agree
+    detail: The slip opinion prints no dates line; the report prints "Argued November 27, 2018—Decided July 9, 2020"; Oyez argued 2018-11-27; Database decided 2020-07-09
+  - check: decided
+    result: agree
+    detail: Slip opinion (Legal Information Institute) 2020-07-09; Database 2020-07-09
+  - check: opinions
+    result: agree
+    detail: 'Report: per curiam Court p. 978; Database writers: none'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

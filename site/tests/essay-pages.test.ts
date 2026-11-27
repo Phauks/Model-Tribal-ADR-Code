@@ -4,24 +4,24 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { essayHistory, essayIndex, essayPage, generatedKind, renderedVersion, renderWithGenerated, storageForPages } from '#lib/server/essay-pages.ts';
 import { publishVersion, saveVersion, setPublicationListed } from '#lib/server/essays.ts';
 import { memoryBucket } from './mail-fixtures.ts';
+import { staticFiles } from './static-files.ts';
+import { essayCaseNamesFile, privateFilePath } from '#lib/built-files.ts';
 import { testDatabase } from './database.ts';
 
 const bindings = vi.hoisted(() => ({}) as Record<string, unknown>);
 vi.mock('cloudflare:workers', () => ({ env: bindings, waitUntil: () => undefined }));
-vi.mock('$app/env', () => ({ version: 'test-build' }));
+vi.mock('$app/env', () => ({ version: 'test-build', building: false, dev: false }));
 vi.mock('virtual:essay-library', () => ({
-	essayBoxFacts: { cases: {}, laws: {} },
-	essayCaseLinks: {},
-	essayCaseNames: {
-		'worcester-v-georgia': { title: 'Worcester v. Georgia', date: [1832, 3, 3] },
-		'cherokee-nation-v-georgia': { title: 'Cherokee Nation v. Georgia', date: [1831, 3, 18] }
-	},
-	essayCitations: {},
-	essayOpinions: {},
 	essayTerms: {},
 	// Nothing in git, so the pages are built only from what each test saves.
 	essaysInGit: {}
 }));
+const assets = staticFiles({
+	[privateFilePath(essayCaseNamesFile)]: {
+		'worcester-v-georgia': { title: 'Worcester v. Georgia', date: [1832, 3, 3] },
+		'cherokee-nation-v-georgia': { title: 'Cherokee Nation v. Georgia', date: [1831, 3, 18] }
+	}
+});
 
 let database: D1Database;
 let bucket: ReturnType<typeof memoryBucket>;
@@ -56,7 +56,7 @@ beforeEach(async () => {
 	for (const key of Object.keys(bindings)) delete bindings[key];
 	database = testDatabase();
 	bucket = memoryBucket();
-	Object.assign(bindings, { database, sourceDocuments: bucket });
+	Object.assign(bindings, { database, sourceDocuments: bucket, ASSETS: assets });
 	await database
 		.prepare(`INSERT INTO people (identifier, email, display_name, role, status, added_at) VALUES ('lead', 'lead@example.org', 'Lead', 'lead-author', 'active', '2026-11-20T00:00:00Z')`)
 		.run();

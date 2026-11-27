@@ -1,0 +1,50 @@
+key: louisiana-childrens-code-art-612
+kind: state-statute
+citation:
+  type: legislation
+  title: Assignment of reports for investigation and assessment
+  title-short: La. Child. Code Ann. art. 612
+  container-title: Louisiana Children's Code
+  container-title-short: La. Child. Code Ann.
+  section: art. 612
+  author:
+  - literal: Louisiana State Legislature
+  issued:
+    date-parts:
+    - - 1991
+  URL: https://legis.la.gov/Legis/Law.aspx?d=73204
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legis.la.gov/Legis/Law.aspx?d=73204
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: La. Child. Code Ann. art. 612 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: LA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: La. Child. Code Ann. art. 612 (2026). History: Acts 1991, No. 235, §6, eff. Jan. 1, 1992; Acts 1992, No. 705, §1, eff. July 6, 1992; Acts 1993, No. 675, §1; Acts 1995, No. 444 §1, eff. June 17, 1995; Acts 1999, No. 1355, §1, eff. July 12, 1999; Acts 2011, No. 189, §1; Acts 2013, No. 225, §1; Acts 2014, No. 486, §1; Acts 2018, No. 296, §1; Acts 2022, No. 272, §1; Acts 2025, No. 409, §7; Acts 2026, No. 960, §5, eff. Jan. 1, 2027. Text read from the Louisiana State Legislature''s page for the section (legis.la.gov/Legis/Law.aspx) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian); AI reader''s verdict incidental: Child abuse investigation must inquire whether child is Indian child. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian'

@@ -1,0 +1,70 @@
+key: cahto-tribe-of-the-laytonville-rancheria-v-dutschke-2013-9th-cir
+kind: federal-case
+citation:
+  type: legal_case
+  title: Cahto Tribe of the Laytonville Rancheria v. Dutschke
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F. App'x
+  volume: '524'
+  page: '362'
+  issued:
+    date-parts:
+    - - 2013
+      - 5
+      - 15
+  URL: https://static.case.law/f-appx/524/html/0362-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 11-15104
+original_link: https://static.case.law/f-appx/524/html/0362-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2012-12-05'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2012/12/05/11-15104.wma
+  duration_seconds: 405
+  file:
+    storage_key: appeals-court-audio/ca9/2012/2012-12-05-11-15104.wma
+    checksum: ca74e5e84939ca8c4f88cca8cc1e8063a7bc9b747900f53036d93c812861c864
+    media_type: audio/x-ms-wma
+    bytes: 1054253
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- cahto-tribe-of-the-laytonville-rancheria
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: cahto-tribe-of-the-laytonville-rancheria
+    named_as: Cahto Tribe of the Laytonville Rancheria
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 524 F. App'x 362. Decided by the United States Court of Appeals for the Ninth Circuit on May 15, 2013. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 8; an AI reader read excerpts and judged it an Indian law case (tribe challenge to BIA decision and intervention).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 8; reader: tribe challenge to BIA decision and intervention'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

@@ -8,101 +8,124 @@
 
 <script lang="ts">
 	// The trail above a page's title, on every page that sits inside another
-	// (Trevor chose it on Nov. 23, 2026: the "eyebrow" mockup with a back arrow;
-	// site/DESIGN.md, Breadcrumbs). It lists only the pages above this one, since
-	// the title right under it names this one. The arrow goes back up one level.
-	// On phones only the arrow and the page just above show, since the section
-	// already shows in the menu bar. No page draws its own trail
+	// (Trevor chose the "plain trail" mockup on Nov. 27, 2026, in place of the
+	// eyebrow of Nov. 23; site/DESIGN.md, Breadcrumbs). It lists the pages above
+	// this one, then this page's own name, in small muted type with a chevron
+	// between them, on one line. Names are cut short with "…" only when the
+	// line runs out of room, each name giving way in proportion to its
+	// length, and a cut name shows whole on hover (Trevor, Nov. 27, 2026: no "…"
+	// "unless it runs out of space to the right"). On phones only a link back to the page just above shows, since the
+	// menu bar already names the section. No page draws its own trail
 	// (tests/breadcrumbs.test.ts).
-	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
+	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 
-	let { trail }: { trail: Crumb[] } = $props();
+	let { trail, current }: { trail: Crumb[]; current: string } = $props();
 	const parent = $derived(trail.at(-1));
 </script>
 
 {#if parent}
 	<nav aria-label="Breadcrumb" class="breadcrumbs no-print">
-		<a class="icon-button back" href={parent.href} aria-label="Back to {parent.label}" title="Back to {parent.label}"
-			><ArrowLeft size={20} aria-hidden="true" /></a
-		>
-		<ol>
+		<ol class="trail">
 			{#each trail as crumb, index (index)}
-				<li class:parent={crumb === parent}>
-					<a href={crumb.href}>{crumb.label}</a>{#if crumb !== parent}<span class="separator" aria-hidden="true">/</span>{/if}
+				<li>
+					<a href={crumb.href} title={crumb.label}>{crumb.label}</a><ChevronRight size={14} aria-hidden="true" />
 				</li>
 			{/each}
+			<li><span class="current" aria-current="page" title={current}>{current}</span></li>
 		</ol>
+		<a class="up" href={parent.href}><ChevronLeft size={18} aria-hidden="true" /><span>{parent.label}</span></a>
 	</nav>
 {/if}
 
 <style>
 	.breadcrumbs {
-		display: flex;
-		align-items: center;
-		gap: var(--space-1);
-		/* The title's letters sit about 0.375rem under the trail's, as in the
-		   approved mockup: this takes back all but 0.25rem of the title's own top
-		   margin (space 5), whether or not the title is the trail's next sibling.
-		   The line box below is 0.125rem taller than the text on each side. */
-		margin: -0.125rem 0 calc(var(--space-5) * -1 + 0.25rem) calc(var(--space-3) * -1);
+		/* The title sits half a line under the trail: this takes back all but
+		   0.5rem of the title's own top margin (space 5), as in the approved
+		   mockup. */
+		margin: 0 0 calc(var(--space-5) * -1 + 0.5rem);
 	}
 
-	.back {
-		flex: none;
-		/* A 44 px target that does not make the trail taller than its line. */
-		margin-block: -0.75rem;
-		color: var(--color-link);
-	}
-
-	ol {
+	.trail {
 		display: flex;
-		flex-wrap: wrap;
 		align-items: center;
-		gap: 0 var(--space-2);
+		gap: 0.375rem;
+		min-width: 0;
 		margin: 0;
-		padding: 0 0 0 calc(var(--space-2) + 2px);
-		border-left: 3px solid var(--color-action);
+		padding: 0;
 		list-style: none;
-		font-size: 0.8125rem;
-		font-weight: 650;
-		letter-spacing: 0.07em;
-		/* Each link is a full 24 px tall, the smallest target WCAG 2.5.8 allows,
-		   so a trail that wraps onto two lines still passes. */
+		font-size: 0.875rem;
+		/* Each link is a full 24 px tall, the smallest target WCAG 2.5.8 allows. */
 		line-height: 1.5rem;
-		text-transform: uppercase;
+		color: var(--color-ink-muted);
 	}
 
 	li {
-		display: inline-flex;
+		display: flex;
 		align-items: center;
-		gap: var(--space-2);
+		gap: 0.375rem;
+		min-width: 0;
+		white-space: nowrap;
 	}
 
-	a {
+	li :global(svg) {
+		flex: none;
+		opacity: 0.6;
+	}
+
+	.trail a,
+	.current {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.trail a {
+		color: var(--color-ink-muted);
+		text-decoration: underline;
+		text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+		text-underline-offset: 0.2em;
+	}
+
+	.trail a:hover {
+		color: var(--color-link);
+	}
+
+	.current {
+		color: var(--color-ink);
+	}
+
+	.up {
+		display: none;
+		align-items: center;
+		gap: 0.375rem;
+		width: fit-content;
+		max-width: 100%;
+		font-size: 0.9375rem;
+		line-height: 1.5rem;
 		color: var(--color-link);
 		text-decoration: none;
 	}
 
-	ol a:hover {
+	.up :global(svg) {
+		flex: none;
+	}
+
+	.up span {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 		text-decoration: underline;
+		text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
 		text-underline-offset: 0.2em;
 	}
 
-	.separator {
-		color: var(--color-ink-muted);
-		font-weight: 400;
-		opacity: 0.5;
-	}
-
 	@media (max-width: 40rem) {
-		li:not(.parent) {
+		.trail {
 			display: none;
 		}
-	}
 
-	@media (forced-colors: active) {
-		ol {
-			border-left-color: CanvasText;
+		.up {
+			display: flex;
 		}
 	}
 </style>

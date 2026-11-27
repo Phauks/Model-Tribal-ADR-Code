@@ -1,0 +1,64 @@
+key: davilla-v-enable-midstream-partners-l-p-2019
+kind: federal-case
+citation:
+  type: legal_case
+  title: Davilla v. Enable Midstream Partners L.P.
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.3d
+  volume: '913'
+  page: '959'
+  issued:
+    date-parts:
+    - - 2019
+      - 1
+      - 10
+  URL: https://static.case.law/f3d/913/html/0959-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 17-6088
+original_link: https://static.case.law/f3d/913/html/0959-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2018-05-16'
+  source: United States Court of Appeals for the Tenth Circuit
+  link: https://www.ca10.uscourts.gov/sites/ca10/files/oralarguments/17-6088.MP3
+  duration_seconds: 1941
+  file:
+    storage_key: appeals-court-audio/ca10/2018/2018-05-16-17-6088.mp3
+    checksum: ad752be1e0df81edc7432ac70d1c3430a0e68a713c0400867f51cb710835bc51
+    media_type: audio/mpeg
+    bytes: 7768443
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 913 F.3d 959. Decided by the United States Court of Appeals for the Tenth Circuit on Jan. 10, 2019. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 38, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 38
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

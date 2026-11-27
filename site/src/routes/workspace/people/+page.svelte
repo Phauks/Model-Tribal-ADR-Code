@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import Dropdown from '#lib/components/Dropdown.svelte';
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
@@ -84,7 +85,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>People · Workspace · Model Tribal ADR Code</title>
+	<title>People · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>People</h1>
@@ -113,8 +114,9 @@
 	{/each}
 </dl>
 
-<h2>Everyone on the list</h2>
-<DataTable identifier="people" label="Table: people" {columns} {rows} rowName={['person', 'people']} {cell} />
+<DataTable identifier="people" label="Table: people" {columns} {rows} rowName={['person', 'people']} {cell}>
+	{#snippet heading(count: Snippet)}<h2>Everyone on the list {@render count()}</h2>{/snippet}
+</DataTable>
 
 <form method="post" action="?/role" class="panel">
 	<h2>Change a role</h2>

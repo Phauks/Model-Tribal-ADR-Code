@@ -7,17 +7,22 @@
  */
 import { readableDate } from '../readable-date.ts';
 import type { CitationMark } from '../citation-marks.ts';
+import type { ChartCase } from '../bench-chart.ts';
 import { casePreviewList } from './case-previews.ts';
+import { chartCasesOfCourt } from './chart-cases.ts';
 import { sources } from './content.ts';
 import { renderMarkdown } from './markdown.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
 import { associatesOf, courts, justicesFile, seatLaws, seatLawsSource, surname, type Court, type Justice } from './supreme-courts.ts';
 import type { InfoPicture } from '../info-page.ts';
-import { portraitView, type FactGroup } from './justice-pages.ts';
+import { type FactGroup } from './justice-pages.ts';
+import { pictureView } from './supreme-court-pictures.ts';
 import { decidedDay, justicePath, personForCase, personOf, presidentNamed, presidentPath } from './supreme-court-people.ts';
 
 export interface BenchRow {
 	name: string;
+	/** The Justice's key (people.yaml), which each case's votes carry too. */
+	person: string;
 	role: Justice['role'];
 	/** The Justice's page. */
 	link: string;
@@ -85,7 +90,7 @@ export interface CourtPage {
 	endText?: string;
 	years: string;
 	facts: { label: string; text: string; marks: CitationMark[] }[];
-	/** The Chief Justice's portrait, for At a glance. */
+	/** A picture of the Court, or else of its Chief Justice, for Key facts. */
 	picture?: InfoPicture;
 	glance: FactGroup[];
 	historyHtml: string;
@@ -96,6 +101,8 @@ export interface CourtPage {
 	changes: Change[];
 	changeMarks: CitationMark[];
 	cases: CourtCase[];
+	/** The same cases with each Justice's vote, for the chart. */
+	chartCases: ChartCase[];
 	sources: SourceEntry[];
 }
 
@@ -126,8 +133,10 @@ const opinionKinds: Record<string, { column: OpinionColumn; qualifier?: string; 
 		column: 'dissenting',
 		qualifier: 'concurring in part and in the judgment in part'
 	},
+	'concurrence in the judgment and dissent in part': { column: 'concurring', qualifier: 'in the judgment, dissenting in part' },
 	dissent: { column: 'dissenting' },
 	'dissent in part': { column: 'dissenting', qualifier: 'in part' },
+	'in chambers': { column: 'court', qualifier: 'in chambers' },
 	'coauthored dissent': { column: 'dissenting', qualifier: 'written jointly' },
 	'joining the dissent in part': null
 };
@@ -200,11 +209,17 @@ function presidentLink(name: string): string | undefined {
 	return president ? presidentPath(president) : undefined;
 }
 
-function benchRows(court: Court): BenchRow[] {
-	const end = court.end ?? today();
-	const members = [court.chief, ...associatesOf(court)];
+/**
+ * Who sat on the Court, with the part of each Justice's service that fell
+ * between the Court's start and `end`. `end` can run past the Chief
+ * Justice's last day: the White Court's last cases came down on June 1,
+ * 1921, after White died and before Taft took the oath.
+ */
+function benchRows(court: Court, end: string): BenchRow[] {
+	const members = [court.chief, ...associatesOf(court, end)];
 	return members.map((justice) => ({
 		name: justice.name,
+		person: personOf(justice).key,
 		role: justice.role,
 		link: justicePath(personOf(justice)),
 		appointedBy: justice.appointed_by,
@@ -314,7 +329,9 @@ export function courtPage(key: string): CourtPage | null {
 	});
 
 	sourceUses.part('Justices');
-	const bench = benchRows(court);
+	const chartCases = chartCasesOfCourt(court.name);
+	const lastCase = chartCases.reduce((last, item) => (item.decided && item.decided > last ? item.decided : last), end);
+	const bench = benchRows(court, lastCase);
 	const benchMarks: CitationMark[] = [];
 	sourceUses.cite(serviceSource, { section: 'Justices', text: 'Each Justice, the appointing President and the dates of service' }, benchMarks);
 	sourceUses.cite(seatSource, { section: 'Justices', text: 'The seat each Justice took and how service ended' }, benchMarks);
@@ -331,7 +348,7 @@ export function courtPage(key: string): CourtPage | null {
 		endText: court.end ? readableDate(court.end) : undefined,
 		years: `${years} (${yearsBetween(court.start, end)} years)`,
 		facts,
-		picture: portraitView(chief.portrait, chief.key, chief.name),
+		picture: pictureView(court.key) ?? pictureView(chief.key),
 		glance: [
 			{ field: 'chief', label: 'Chief Justice', items: [{ text: court.chief.name, link: justicePath(chief), citations: chiefMarks }] },
 			{ field: 'served', label: 'Served', items: [{ text: span, citations: servedMarks }] },
@@ -341,10 +358,11 @@ export function courtPage(key: string): CourtPage | null {
 		bench,
 		benchMarks,
 		start: court.start,
-		end,
+		end: lastCase,
 		changes: changes(court),
 		changeMarks,
 		cases: courtCases(court),
+		chartCases,
 		sources: sourceUses.list
 	};
 }

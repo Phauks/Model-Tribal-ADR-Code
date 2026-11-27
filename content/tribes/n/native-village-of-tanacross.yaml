@@ -32,6 +32,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Native Village of Tanacross (approved by the Secretary of the Interior May 20, 1941), under the Act of May 1, 1936, ch. 254, § 1, 49 Stat. 1250, 1250
+  since: '1941-05-20'
+  source: university-of-oklahoma-indian-reorganization-act-tancons
+  document_version:
+    document: native-village-of-tanacross-constitution
+    version: 1941-text
+  confidence: medium
+  verification: inferred
+  as_of: '1941-05-20'
+  locator: 1941 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AK
   presence: government-office
@@ -174,6 +187,17 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
   note: 'The source''s words: "Native Village of Tanacross".'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 113822
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Tanacross' (Tanacross)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Tanacross'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Tanacross" among organizations under constitutions approved

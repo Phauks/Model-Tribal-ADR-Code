@@ -60,7 +60,7 @@
 </script>
 
 <svelte:head>
-	<title>Court opinions · {data.nation.name} · Model Tribal ADR Code</title>
+	<title>Court opinions · {data.nation.name} · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">
@@ -69,6 +69,7 @@
 			{ label: 'Nations', href: '/nations' },
 			{ label: data.nation.name, href: `/nations/${data.nation.id}` }
 		]}
+		current="Court opinions: {data.nation.name}"
 	/>
 	<h1>Court opinions: {data.nation.name}</h1>
 	<p>

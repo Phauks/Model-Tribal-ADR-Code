@@ -1,7 +1,7 @@
 /**
  * The website's side of live editing: checks who is opening a live
  * connection to an essay, then hands the connection to that essay's room
- * (the EssayRoom Durable Object in the model-tribal-adr-code-live Worker,
+ * (the EssayRoom Durable Object in the tribal-law-project-live Worker,
  * src/lib/server/live/essay-room.ts) with the person's name and level.
  *
  * The browser connects to /workspace/essays/<id>/live with a WebSocket

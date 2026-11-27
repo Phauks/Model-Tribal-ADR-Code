@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7235 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: inferred
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7235 (entry "Bums Paiute Indian Colony, Oregon")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Bums Paiute Indian Colony, Oregon." The entry is matched to the nation by name.
 states:
 - state: OR
   presence: government-office
@@ -185,6 +195,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: Language & Traditional Culture Program page refers to the Wadatika Paiute language.
+language_programs:
+- name: 'Language & Traditional Culture Program'
+  link: https://burnspaiute-nsn.gov/language-traditional-culture-program/
+  run_by: nation
+  source: burnspaiute-nsn-language-traditional-culture-program
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: page title
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Warm Springs Agency
@@ -201,6 +220,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Burns Paiute Tribe".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 281494
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OR, row 'Burns Paiute Tribe' (Burns)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1554560
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'BURNS PAIUTE TRIBE' (UEI EK9EEUAAJ577), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Tribal Council

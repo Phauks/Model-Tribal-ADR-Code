@@ -288,6 +288,72 @@ function agreementDataset(): BuilderDataset {
 	);
 }
 
+/** What kind of Census area a name is, from the words the Census Bureau ends it with. */
+function censusAreaKind(name: string): string {
+	if (/\bOTSA\b/.test(name)) return 'Oklahoma tribal statistical area';
+	if (/\bANVSA\b/.test(name)) return 'Alaska Native village statistical area';
+	if (/Hawaiian Home Land/.test(name)) return 'Hawaiian home land';
+	if (/\bSDTSA\b/.test(name)) return 'State designated tribal statistical area';
+	if (/\bTDSA\b/.test(name)) return 'Tribal designated statistical area';
+	if (/joint-use area/i.test(name)) return 'Joint-use area';
+	if (/Off-Reservation Trust Land/.test(name) && !/\band Off-Reservation/.test(name)) return 'Off-reservation trust land';
+	if (/state reservation/i.test(name)) return 'State reservation';
+	return 'Reservation';
+}
+
+/**
+ * The American Community Survey's 2020-2024 five-year figures for every American Indian, Alaska Native and Native
+ * Hawaiian area (scripts/tribes/acs_native_areas.py), each area linked to the nations whose pages name it
+ * (census_areas). The figures describe everyone living in an area, Native or not; an area is not a nation.
+ */
+function censusAreaDataset(): BuilderDataset {
+	const byArea = new Map<string, { id: string; name: string }[]>();
+	for (const record of nations()) {
+		for (const area of (record as NationRecord & { census_areas?: { geographic_identifier: string | number }[] }).census_areas ?? []) {
+			const code = String(area.geographic_identifier).padStart(4, '0');
+			byArea.set(code, [...(byArea.get(code) ?? []), { id: record.id, name: displayName(record.names.official) }]);
+		}
+	}
+	const rows = readCsv('research/census/acs-2020-2024-native-areas.csv');
+	const figure = (value: string | undefined): number | null => (value === undefined || value === '' ? null : Number(value));
+	const share = (row: Record<string, string>): number | null => {
+		const part = figure(row.american_indian_alaska_native_alone_or_in_combination);
+		const whole = figure(row.total_population);
+		return part === null || !whole ? null : Math.round((1000 * part) / whole) / 10;
+	};
+	return datasetOf(
+		{
+			identifier: 'census-areas',
+			title: 'Census areas (American Community Survey, 2020-2024)',
+			rowName: ['area', 'areas'],
+			nameColumn: 'name',
+			nationColumn: 'nations',
+			sourceHref: '/nations/data'
+		},
+		rows,
+		[
+			{ key: 'name', header: 'Area', type: 'text', starting: true, value: (row) => row.name.replace(/, [A-Z]{2}(--[A-Z]{2})*$/, '') },
+			{ key: 'states', header: 'States', type: 'list', starting: true, value: (row) => unique((/, ([A-Z]{2}(?:--[A-Z]{2})*)$/.exec(row.name)?.[1] ?? '').split('--').map((code) => (code ? stateName(code) : ''))) },
+			{ key: 'kind', header: 'Kind', type: 'text', value: (row) => censusAreaKind(row.name) },
+			{ key: 'nations', header: 'Nations', type: 'list', value: (row) => unique((byArea.get(row.geographic_identifier) ?? []).map((nation) => nation.name)) },
+			{ key: 'population', header: 'Population', type: 'number', starting: true, value: (row) => figure(row.total_population) },
+			{ key: 'american-indian-alaska-native-alone', header: 'American Indian and Alaska Native alone', type: 'number', value: (row) => figure(row.american_indian_alaska_native_alone) },
+			{ key: 'american-indian-alaska-native', header: 'American Indian and Alaska Native alone or in combination', type: 'number', starting: true, value: (row) => figure(row.american_indian_alaska_native_alone_or_in_combination) },
+			{ key: 'american-indian-alaska-native-share', header: 'American Indian and Alaska Native share (%)', type: 'number', value: share },
+			{ key: 'median-age', header: 'Median age', type: 'number', value: (row) => figure(row.median_age) },
+			{ key: 'median-household-income', header: 'Median household income (2024 dollars)', type: 'number', starting: true, value: (row) => figure(row.median_household_income) },
+			{ key: 'poverty-rate', header: 'Below the poverty level (%)', type: 'number', starting: true, value: (row) => figure(row.poverty_rate) },
+			{ key: 'unemployment-rate', header: 'Unemployed (%)', type: 'number', value: (row) => figure(row.unemployment_rate) },
+			{ key: 'bachelors-or-more-rate', header: 'Bachelor’s degree or more, age 25 and older (%)', type: 'number', value: (row) => figure(row.bachelors_or_more_rate) },
+			{ key: 'broadband-rate', header: 'Households with broadband (%)', type: 'number', value: (row) => figure(row.broadband_rate) }
+		],
+		(row) => {
+			const first = byArea.get(row.geographic_identifier)?.[0];
+			return first ? nationPath(first.id) : '';
+		}
+	);
+}
+
 const builders: Record<string, () => BuilderDataset> = {
 	nations: nationDataset,
 	provisions: provisionDataset,
@@ -296,7 +362,8 @@ const builders: Record<string, () => BuilderDataset> = {
 	constitutions: constitutionDataset,
 	opinions: opinionDataset,
 	treaties: treatyDataset,
-	agreements: agreementDataset
+	agreements: agreementDataset,
+	'census-areas': censusAreaDataset
 };
 
 const datasetCache = new Map<string, BuilderDataset>();
@@ -304,8 +371,28 @@ const datasetCache = new Map<string, BuilderDataset>();
 export function builderDataset(identifier: string): BuilderDataset | undefined {
 	const build = builders[identifier];
 	if (!build) return undefined;
-	if (!datasetCache.has(identifier)) datasetCache.set(identifier, build());
+	if (!datasetCache.has(identifier)) datasetCache.set(identifier, withNationLinks(build()));
 	return datasetCache.get(identifier);
+}
+
+/** Adds the page of each nation named in the dataset's nation column, so every nation in a cell links to it. */
+function withNationLinks(dataset: BuilderDataset): BuilderDataset {
+	const position = dataset.columns.findIndex((column) => column.key === dataset.nationColumn);
+	if (position === -1) return dataset;
+	const byName = new Map<string, string | null>();
+	for (const record of nations()) {
+		const name = displayName(record.names.official);
+		byName.set(name, byName.has(name) ? null : nationPath(record.id));
+	}
+	const nationLinks: Record<string, string> = {};
+	for (const row of dataset.rows) {
+		const value = row[position];
+		for (const name of Array.isArray(value) ? value : typeof value === 'string' ? [value] : []) {
+			const link = byName.get(name);
+			if (link) nationLinks[name] = link;
+		}
+	}
+	return { ...dataset, nationLinks };
 }
 
 export const builderDatasetIdentifiers = Object.keys(builders);

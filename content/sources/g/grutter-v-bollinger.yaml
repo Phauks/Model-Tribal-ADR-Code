@@ -1,0 +1,173 @@
+key: grutter-v-bollinger
+kind: federal-case
+citation:
+  type: legal_case
+  title: Grutter v. Bollinger
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '539'
+  page: '306'
+  issued:
+    date-parts:
+    - - 2003
+      - 6
+      - 23
+  URL: https://www.loc.gov/item/usrep539306/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: GRUTTER v. BOLLINGER et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep539/usrep539306/usrep539306.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep539/usrep539306/usrep539306.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Sandra Day O'Connor
+    page: 311
+  - kind: concurrence
+    justice: Ruth Bader Ginsburg
+    page: 344
+  - kind: concurrence in part and dissent in part
+    justice: Antonin Scalia
+    page: 346
+  - kind: concurrence in part and dissent in part
+    justice: Clarence Thomas
+    page: 349
+  - kind: dissent
+    justice: William H. Rehnquist
+    page: 378
+  - kind: dissent
+    justice: Anthony M. Kennedy
+    page: 387
+original_link: https://www.loc.gov/item/usrep539306/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '2003-04-01'
+  printed: Argued April 1, 2003 Decided June 23, 2003
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep539/usrep539306/usrep539306.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1994-2005)
+  decision_type: majority opinion
+  vote:
+    majority: 5
+    minority: 4
+  justices:
+  - name: William H. Rehnquist
+    vote: minority
+    opinion: dissent
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+    opinion: majority
+  - name: Antonin Scalia
+    vote: minority
+    opinion: dissent
+  - name: Anthony M. Kennedy
+    vote: minority
+    opinion: dissent
+  - name: David H. Souter
+    vote: majority
+  - name: Clarence Thomas
+    vote: minority
+    opinion: dissent
+  - name: Ruth Bader Ginsburg
+    vote: majority
+    opinion: concurrence
+  - name: Stephen G. Breyer
+    vote: majority
+  source: https://api.oyez.org/cases/2002/02-241
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep539306/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/539/306/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2002/02-241
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22539%20U.S.%20306%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=539%20U.S.%20306
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=539%20U.S.%20306
+    unchecked: true
+argument_audio:
+- kind: argument
+  date: '2003-04-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1260.mp3
+  catalog: https://catalog.archives.gov/id/300885143
+  whole_session: true
+  duration_seconds: 7593
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1260.mp3
+    checksum: 6fa448f35a48ea1ec5875a80a55e36841df03760183af45a083c109712603bcd
+    media_type: audio/mpeg
+    bytes: 121483305
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 539 U.S. 306 (2003). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep539/usrep539306/usrep539306.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2002-078), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 539 U.S. 306 "Grutter v. Bollinger"; Database 539 U.S. 306 "BARBARA GRUTTER v. LEE BOLLINGER et al."
+  - check: scan
+    result: agree
+    detail: Scan has 90 pages; the report runs 306 to 395
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued April 1, 2003 Decided June 23, 2003"; scan "Argued April 1, 2003-Decided June 23, 2003"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 2003-06-23'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority O Connor p. 311, concurrence Ginsburg p. 344, concurrence in part and dissent in part Scalia p. 346, concurrence in part and dissent in part Thomas p. 349, dissent Rehnquist p. 378, dissent Kennedy p. 387; Database writers: Ginsburg, Kennedy, O Connor, Rehnquist, Scalia, Thomas'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

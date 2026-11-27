@@ -12,11 +12,11 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Stories · Model Tribal ADR Code</title>
+	<title>{data.name} · Stories · Tribal Law Project</title>
 	<meta name="description" content="Accounts of {data.name.toLocaleLowerCase('en-US')}, each in the teller’s own words." />
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Stories', href: '/stories' }]} />
+<Breadcrumbs trail={[{ label: 'Stories', href: '/stories' }]} current="Event: {data.name}" />
 
 <div class="reading">
 	<h1><span class="muted event-kind">Event:</span> {data.name}</h1>

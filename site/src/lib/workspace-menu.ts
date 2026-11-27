@@ -30,7 +30,7 @@ export type WorkspacePageName =
 	| 'nonprofit'
 	| 'service-checks'
 	| 'wayback'
-	| 'site-text'
+	| 'watch'
 	| 'sponsors'
 	| 'orders'
 	| 'activity';
@@ -85,6 +85,8 @@ export const workspacePages: readonly WorkspacePage[] = [
 	// A nation reviewer reads and comments on files sent about their nation.
 	{ name: 'nation-uploads', label: 'Files about your nation', link: '/workspace/nation-uploads', category: 'Files and sources', needs: 'comment-on-nation-uploads' },
 	{ name: 'library', label: 'Source library', link: '/workspace/library', category: 'Files and sources', needs: 'search-source-library' },
+	// What the source watch found (docs/source-watch.md, "The review queue"): add, link or dismiss each item.
+	{ name: 'watch', label: 'Source watch', link: '/workspace/watch', category: 'Files and sources', needs: 'review-watch' },
 	{ name: 'nation-teams', label: 'Nation teams', link: '/workspace/nation-teams', category: 'Nations', needs: 'manage-people' },
 	// What nations published on their own pages, for the project to read afterwards.
 	{ name: 'nation-pages', label: 'Nations’ changes', link: '/workspace/nation-pages', category: 'Nations', needs: 'review-nation-pages' },
@@ -100,7 +102,6 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'orders', label: 'Orders', link: '/workspace/orders', category: 'Money', needs: 'manage-orders' },
 	{ name: 'nonprofit', label: 'Nonprofit', link: '/workspace/nonprofit', category: 'Money', needs: 'manage-nonprofit' },
 	// The site's own wording, edited on its pages (docs/site-text.md); the page checks the person's level.
-	{ name: 'site-text', label: 'Site text', link: '/workspace/site-text', category: 'Site', needs: 'comment' },
 	{ name: 'changes', label: 'Hidden changes', link: '/workspace/changes', category: 'Site', needs: 'hide-changes' },
 	{ name: 'service-checks', label: 'Service checks', link: '/workspace/service-checks', category: 'Site', needs: 'check-services' },
 	// Links the Wayback Worker could not save (site/WAYBACK.md): the lead author marks them or sends a copy.

@@ -2,7 +2,7 @@
  * Export and import of a reader's data (site/DESIGN.md, section 6,
  * "Settings", Data): the reading settings, the theme, the print choices,
  * the starred pages with the reader's notes (src/lib/starred-items.ts) and
- * which parts of the site are saved for offline reading, as one JSON file the
+ * which parts and pages of the site are chosen for offline reading, as one JSON file the
  * reader can carry to another browser or device. Trevor asked for this on
  * Nov. 22, 2026. Saved pages themselves are not in the file; the importing
  * device saves them again from the site. A file made before stars existed
@@ -10,7 +10,6 @@
  *
  * This module must work in the browser and in Node (for tests).
  */
-import { collections, type CollectionIdentifier } from './offline-collections.ts';
 import { parsePrintOptions, type PrintOptions } from './print-options.ts';
 import { parseSettings, parseTheme, type ReadingSettings, type Theme } from './reading-settings.ts';
 import { readStarredItems, type StarredItem } from './starred-items.ts';
@@ -26,8 +25,13 @@ export interface ReaderData {
 	settings: ReadingSettings;
 	theme: Theme;
 	printOptions: PrintOptions;
-	/** The collections kept for offline reading on the device that made the file. */
-	savedParts: CollectionIdentifier[];
+	/**
+	 * The parts and groups chosen for offline reading on the device that made the file (src/lib/offline-choices.ts). A
+	 * file made before Nov. 26, 2026 lists the collections kept then, whose names are parts of the outline too.
+	 */
+	savedParts: string[];
+	/** The single pages chosen for offline reading, by address. */
+	savedPages: string[];
 	/** The starred pages and the reader's notes on them. */
 	starred: StarredItem[];
 }
@@ -39,7 +43,7 @@ export function buildReaderData(
 	settings: ReadingSettings,
 	theme: Theme,
 	printOptions: PrintOptions,
-	savedParts: CollectionIdentifier[],
+	saved: { parts: string[]; pages: string[] },
 	starred: StarredItem[],
 	now = new Date()
 ): ReaderData {
@@ -50,7 +54,8 @@ export function buildReaderData(
 		settings,
 		theme,
 		printOptions,
-		savedParts,
+		savedParts: saved.parts,
+		savedPages: saved.pages,
 		starred
 	};
 }
@@ -70,15 +75,18 @@ export function parseReaderData(text: string): ReaderData | undefined {
 	try {
 		parsed = JSON.parse(text);
 	} catch {
+		// expected: a file that is not JSON is not this site's export; the page says so.
 		return undefined;
 	}
 	if (typeof parsed !== 'object' || parsed === null) return undefined;
 	const record = parsed as Record<string, unknown>;
 	if (record.kind !== readerDataKind || record.version !== readerDataVersion) return undefined;
 	const exported = typeof record.exported === 'string' && !Number.isNaN(Date.parse(record.exported)) ? record.exported : '';
-	const knownParts = new Set<string>(collections.map((collection) => collection.id));
 	const savedParts = Array.isArray(record.savedParts)
-		? [...new Set(record.savedParts.filter((part): part is CollectionIdentifier => typeof part === 'string' && knownParts.has(part)))]
+		? [...new Set(record.savedParts.filter((part): part is string => typeof part === 'string' && /^[a-z0-9-]{1,80}$/.test(part)))]
+		: [];
+	const savedPages = Array.isArray(record.savedPages)
+		? [...new Set(record.savedPages.filter((path): path is string => typeof path === 'string' && /^\/[^\s]{0,300}$/.test(path)))]
 		: [];
 	return {
 		kind: readerDataKind,
@@ -88,6 +96,7 @@ export function parseReaderData(text: string): ReaderData | undefined {
 		theme: parseTheme(typeof record.theme === 'string' ? record.theme : null),
 		printOptions: parsePrintOptions(JSON.stringify(record.printOptions ?? {})),
 		savedParts,
+		savedPages,
 		starred: readStarredItems(record.starred)
 	};
 }

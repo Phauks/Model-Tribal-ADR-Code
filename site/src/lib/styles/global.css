@@ -12,6 +12,8 @@
 }
 
 html {
+	/* Headings follow the body font unless the reader picks another in Settings (data-heading-font below). */
+	--font-family-heading: var(--font-family-reading);
 	font-family: var(--font-family-reading);
 	font-size: 100%;
 	line-height: var(--font-line-height-reading);
@@ -38,6 +40,15 @@ body {
 	background: var(--color-paper);
 	color: var(--color-ink);
 	overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-family-heading);
 }
 
 h1,
@@ -135,46 +146,37 @@ a.term-link {
 }
 
 /*
- * Yellow focus with an ink ring (DESIGN.md, section 9). Text on the yellow
- * fill is the darkest token of each theme: ink in light, paper in dark.
+ * Keyboard focus is a 3 px teal ring set 2 px off the control, with no fill
+ * (DESIGN.md, section 9; focus F1, chosen by Trevor on Nov. 27, 2026, in place
+ * of the yellow box). The ring's color comes from --focus-ring, so a surface
+ * of another color can swap it: on the band it turns white (light) or stays
+ * cyan (dark), and the light panels that open from the band switch it back.
  */
 :root {
-	--focus-text: var(--color-ink);
+	--focus-ring: var(--color-focus-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root:not([data-theme='light']) {
-		--focus-text: var(--color-paper);
-	}
+.masthead {
+	--focus-ring: var(--color-focus-ring-on-band);
 }
 
-:root[data-theme='dark'] {
-	--focus-text: var(--color-paper);
+.masthead :is(dialog, [popover]:not(.masthead-more), .search-panel, .cite-panel, .download-panel, .account-menu) {
+	--focus-ring: var(--color-focus-ring);
 }
 
-:focus-visible,
-a:focus-visible,
-a:visited:focus-visible {
-	outline: 3px solid var(--color-focus-ring);
-	outline-offset: 0;
-	background-color: var(--color-focus);
-	color: var(--focus-text);
-	box-shadow: 0 0 0 3px var(--color-focus);
-	text-decoration: none;
+:focus-visible {
+	outline: 3px solid var(--focus-ring);
+	outline-offset: 2px;
 }
 
 /*
  * Elements that take focus only from a script or a skip link, such as the
- * main landmark and the error summary, are not controls: they keep their
- * own colors so the text inside them stays readable (WCAG 1.4.3). Table
- * boxes that scroll sideways take focus so a keyboard can scroll them
- * (WCAG 2.1.1); they show the ring without the yellow fill.
+ * main landmark and the error summary, are not controls, so they show no
+ * ring. Table boxes that scroll sideways take focus so a keyboard can scroll
+ * them (WCAG 2.1.1); their ring sits on the box's edge.
  */
-[tabindex='-1']:focus-visible,
 .table-scroll:focus-visible {
-	background-color: transparent;
-	color: inherit;
-	box-shadow: none;
+	outline-offset: 0;
 }
 
 [tabindex='-1']:focus-visible {
@@ -450,6 +452,28 @@ table {
 }
 
 /*
+ * A long table's columns stay still while the page arrives
+ * (src/lib/tables/steady-columns.ts; Trevor, Nov. 27, 2026: on /nations "the
+ * table constantly reforms as it loads more data"). Fixed layout takes the
+ * widths from the header row, which carries each column's share, so rows
+ * that arrive later cannot move them; below its least width the table
+ * scrolls in its box. Widths a reader sets (columns-resized) and the
+ * measuring the resize handles do (columns-measuring) take over from these.
+ */
+table.steady-columns:not(.columns-resized, .columns-measuring) {
+	table-layout: fixed;
+	width: max(100%, var(--steady-least));
+}
+
+table.steady-columns:not(.columns-resized, .columns-measuring) > thead > tr > th {
+	width: var(--column-share);
+}
+
+table.steady-columns:not(.columns-resized, .columns-measuring) :is(th, td) {
+	overflow-wrap: break-word;
+}
+
+/*
  * Column widths readers can change (src/lib/tables/resizable-columns.ts;
  * Trevor, Nov. 23, 2026). The handle straddles the line between two header
  * cells, 24 px wide for a pointer or a finger (WCAG 2.5.8), and shows as a
@@ -514,6 +538,15 @@ main table.columns-resized :is(th, td) :is(a, code) {
 
 	table.columns-resized > colgroup[data-column-widths] {
 		display: none;
+	}
+
+	table.steady-columns {
+		table-layout: auto !important;
+		width: 100% !important;
+	}
+
+	table.steady-columns > thead > tr > th {
+		width: auto !important;
 	}
 }
 
@@ -587,12 +620,6 @@ th[scope='row'] {
 
 .icon-button:hover {
 	background: color-mix(in srgb, currentColor 14%, transparent);
-}
-
-/* The rule above would hide the focus fill, so restore it. */
-.icon-button:focus-visible {
-	background-color: var(--color-focus);
-	color: var(--focus-text);
 }
 
 @media (forced-colors: active) {
@@ -758,18 +785,29 @@ sup.citation {
  * The marker or source a link has just gone to is highlighted, so the eye
  * finds it. It arrives marked in the fill-in yellow, which fades to the
  * resting highlight; with motion reduced it shows the resting highlight at once.
+ * With scripts on, the highlight goes a few seconds later, or when the reader
+ * clicks or taps elsewhere (src/lib/arrival-highlight.ts; Trevor, Nov. 27,
+ * 2026: the highlight "would not go away"). Without scripts the browser's
+ * :target shows it until the address changes.
  */
-.note-marker:target,
-.source-list > li:target {
+/* Only the entry fades out; a marker's own fill is also its focus fill, which must show at once. */
+.source-list > li {
+	transition: background-color var(--motion-duration-medium) var(--motion-easing-exit);
+}
+
+:root:not([data-scripts='on']) .note-marker:target,
+:root:not([data-scripts='on']) .source-list > li:target,
+.note-marker[data-arrived],
+.source-list > li[data-arrived] {
 	background: var(--color-notice-background);
-	outline: 2px solid var(--color-focus-ring);
+	outline: 2px solid var(--focus-ring);
 	outline-offset: 1px;
 	animation: arrived var(--motion-duration-highlight) var(--motion-easing-standard);
 }
 
 @keyframes arrived {
 	from {
-		background: var(--color-placeholder-background);
+		background: var(--color-selection);
 	}
 }
 
@@ -852,9 +890,9 @@ sup.citation {
 }
 
 /*
- * The facts each source supports wait behind "Show what each source
- * supports" (SourceList.svelte). Without scripts that button cannot work, so
- * the facts show; on paper they always print.
+ * The facts each source supports wait behind the "Expand all" button on the
+ * References heading row (SourceList.svelte). Without scripts that button
+ * cannot work, so the facts show; on paper they always print.
  */
 @media screen {
 	:root[data-scripts='on'] .notes:not(.showing-facts) .source-uses {
@@ -923,6 +961,19 @@ sup.citation {
 	--font-family-reading: var(--font-family-opendyslexic);
 }
 
+/* The heading font (Settings, Text), when the reader picks one other than the body font. */
+:root:root[data-heading-font='atkinson-hyperlegible-next'] {
+	--font-family-heading: var(--font-family-atkinson-hyperlegible-next);
+}
+
+:root:root[data-heading-font='serif'] {
+	--font-family-heading: var(--font-family-serif);
+}
+
+:root:root[data-heading-font='opendyslexic'] {
+	--font-family-heading: var(--font-family-opendyslexic);
+}
+
 /*
  * Text width (Settings, Text): how much of the page's column running text
  * may use, from 40 to 100 percent; 100, the default, fills the column (Trevor,
@@ -952,18 +1003,6 @@ sup.citation {
 
 :root:root[data-line-width='90'] {
 	--layout-measure: 90cqi;
-}
-
-/* Wide spacing uses the values WCAG 2.2, 1.4.12 Text Spacing tests. */
-:root:root[data-text-spacing='wide'] {
-	--font-line-height-reading: var(--font-line-height-reading-wide);
-	--font-line-height-heading: var(--font-line-height-heading-wide);
-	letter-spacing: var(--font-letter-spacing-wide);
-	word-spacing: var(--font-word-spacing-wide);
-}
-
-:root[data-text-spacing='wide'] :is(p, li, dd, blockquote) {
-	margin-bottom: var(--font-paragraph-spacing-wide);
 }
 
 /*
@@ -1060,6 +1099,31 @@ sup.citation {
 	margin-top: var(--space-4);
 	padding-top: var(--space-3);
 	border-top: 1px solid var(--color-line);
+}
+
+/* The later cases under a case's Treatment, by kind of treatment, each kind's count in a badge (record-boxes.ts, laterCasesMarkdown; Trevor, Nov. 27, 2026). */
+.later-cases-kind {
+	margin: var(--space-4) 0 var(--space-1);
+}
+
+.later-cases-kind .count-badge {
+	font-weight: normal;
+}
+
+ul.later-cases {
+	margin: 0 0 var(--space-3);
+	padding-left: 1.3em;
+}
+
+ul.later-cases li + li {
+	margin-top: var(--space-1);
+}
+
+/* A link that leaves the site, such as a case on case.law, ends with an arrow (as in the opinion copies, scripts/caselaw/copy_links.py). */
+a.external::after {
+	content: '\2197';
+	font-size: 0.75em;
+	margin-left: 0.1em;
 }
 
 /* A case box's topics, as tags; the index of cases by topic is built from them. */
@@ -1348,7 +1412,7 @@ sup.citation {
 }
 
 .essay-figure-youtube:focus-visible {
-	outline: 3px solid var(--color-focus-ring);
+	outline: 3px solid var(--focus-ring);
 	outline-offset: 2px;
 }
 
@@ -1493,6 +1557,19 @@ sup.citation {
 
 	.essay-figure-transcript {
 		display: block;
+	}
+
+	/* A printed picture fits on one page with its caption, as in the book
+	   (figure-picture in pdf/typst/book.typ): never taller than three fifths
+	   of the page, centered with its caption under it. */
+	.essay-figure-picture img {
+		max-height: 60vh;
+		width: auto;
+		margin-inline: auto;
+	}
+
+	.essay-figure-picture figcaption {
+		text-align: center;
 	}
 
 	.essay-chart-table {
@@ -1670,11 +1747,6 @@ sup.citation {
 	}
 }
 
-.copy-hash-button:focus-visible {
-	background-color: var(--color-focus);
-	color: var(--focus-text);
-}
-
 /* Copied: the hover shade deepens to the link color and glows, then fades back as a highlight does. */
 .copy-hash:not(.copy-hash-icon-only) .copy-hash-button {
 	transition:
@@ -1842,6 +1914,7 @@ sup.citation {
 	--motion-duration-medium: 0ms;
 	--motion-duration-long: 0ms;
 	--motion-duration-highlight: 0ms;
+	--motion-duration-roll: 0ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1850,6 +1923,7 @@ sup.citation {
 		--motion-duration-medium: 0ms;
 		--motion-duration-long: 0ms;
 		--motion-duration-highlight: 0ms;
+	--motion-duration-roll: 0ms;
 	}
 
 	*,
@@ -2184,16 +2258,27 @@ details > .nation-edit-link {
 	margin-left: var(--space-2);
 }
 
+/*
+ * Every status badge has one shape, the same as a nation's recognition badges
+ * (src/lib/components/RecognitionBadges.svelte), so badges side by side share
+ * one height, padding, border and middle line on every page (Trevor, Nov. 27,
+ * 2026: "items are not aligned"). The height is at least 24 px to tap (WCAG 2.5.8).
+ */
 .review-badge {
 	display: inline-flex;
 	align-items: center;
 	gap: var(--space-1);
+	min-height: 1.5rem;
 	margin-right: var(--space-2);
 	padding: 0 var(--space-2);
 	border: 1px solid var(--color-control-border);
 	border-radius: 999px;
 	background: var(--color-surface);
+	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-semibold);
+	line-height: 1.5;
+	vertical-align: middle;
+	white-space: nowrap;
 }
 
 .review-badge-verified {
@@ -2223,12 +2308,32 @@ details > .nation-edit-link {
 	margin-right: 0;
 }
 
+/* A badge that opens a panel sits in a place the build or the Worker fills, sometimes two deep. Each place is a flex box, so it is exactly the badge's height and the badge centers on the line like the others, instead of riding on a line of text. */
+.badge-line span:has(.status-popover) {
+	display: inline-flex;
+	align-items: center;
+}
+
+/* Topics in the same line as the status badges take the same height. */
+.badge-line .topic-badges {
+	align-items: center;
+}
+
+.badge-line .topic-badge {
+	display: inline-flex;
+	align-items: center;
+	min-height: 1.5rem;
+}
+
 .status-popover {
 	position: relative;
 	display: inline-block;
+	vertical-align: middle;
 }
 
+/* The badge is a flex box of its own, not a run of text in the details element, so the details element is exactly the badge's height. */
 .status-popover > summary {
+	display: flex;
 	list-style: none;
 	cursor: pointer;
 }
@@ -2287,10 +2392,7 @@ details > .nation-edit-link {
 	}
 }
 
-/*
- * A stub (src/lib/stubs.ts): the "Stub" badge beside the title, and the note
- * at the page's end, where Wikipedia puts its stub template.
- */
+/* A stub (src/lib/stubs.ts): the "Stub" badge beside the title, whose panel has the links to expand the page. */
 .status-badges {
 	display: flex;
 	flex-wrap: wrap;
@@ -2306,30 +2408,10 @@ details > .nation-edit-link {
 	color: var(--color-link);
 }
 
-.stub-note {
-	display: flex;
-	align-items: flex-start;
-	gap: var(--space-3);
-	margin: var(--space-5) 0 var(--space-2);
-	padding: var(--space-3) var(--space-4);
-	border: 1px dashed var(--color-line);
-	border-radius: var(--radius-control);
-}
-
-.stub-note p {
-	margin: 0;
-}
-
-.stub-note .stub-mark {
-	flex: none;
-	margin-top: 3px;
-}
-
-.stub-note .stub-actions {
+.status-panel .stub-actions {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--space-2) var(--space-4);
-	margin-top: var(--space-2);
 }
 
 /* Topics, methods and other short tags as badges (src/lib/components/TopicBadges.svelte; Trevor, Nov. 23, 2026). */
@@ -2388,7 +2470,7 @@ a.topic-badge:hover {
  * A nation's seal or logo is drawn for light paper, and many are black lines
  * on a clear ground, which vanish on the dark theme's paper. In dark mode the
  * image sits on a light plate (Trevor, Nov. 23, 2026: "yes, standard"), the
- * same wherever a seal shows: search, At a glance, link previews and the map.
+ * same wherever a seal shows: search, Key facts, link previews and the map.
  */
 @media (prefers-color-scheme: dark) {
 	:root:not([data-theme='light']) .image-backing {
@@ -2521,4 +2603,69 @@ a.topic-badge:hover {
 
 .table-popover .popover-button:hover {
 	background: var(--color-surface);
+}
+
+/*
+ * Controls that float on a map (Trevor, 2026-11-26: one visual language for the map's search, layers and buttons; map redesign D). Everything on the map is paper with a 1px border and one soft shadow. Controls are the touch size tall with the control corner; panels have the panel corner. One "on" look everywhere: a light action fill, an action border and an action check. Teal stays for links and the map's own colors, so a control never looks like map data.
+ */
+:root {
+	--map-float-shadow: 0 2px 10px color-mix(in srgb, var(--color-ink) 16%, transparent);
+	--map-on-background: color-mix(in srgb, var(--color-action) 12%, var(--color-paper));
+}
+
+.map-float {
+	border: 1px solid var(--color-control-border);
+	background: var(--color-paper);
+	box-shadow: var(--map-float-shadow);
+	color: var(--color-ink);
+}
+
+.map-control {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	gap: var(--space-2);
+	min-height: var(--layout-target-minimum);
+	padding: 0 var(--space-3);
+	border-radius: var(--radius-control);
+	font: inherit;
+	font-weight: var(--font-weight-bold);
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.map-control-square {
+	justify-content: center;
+	width: var(--layout-target-minimum);
+	padding: 0;
+}
+
+.map-control[aria-pressed='true'],
+.map-control[aria-expanded='true'],
+.map-control-on {
+	border-color: var(--color-action);
+	background: var(--map-on-background);
+}
+
+.map-control-check {
+	color: var(--color-action);
+}
+
+.map-control:focus-visible {
+	outline: 3px solid var(--focus-ring);
+	outline-offset: 2px;
+}
+
+.map-panel {
+	border-radius: var(--radius-panel);
+}
+
+/* Small capitals over a group in a map panel, as the Layers list and the key name theirs. */
+.map-panel-heading {
+	margin: var(--space-3) 0 var(--space-1);
+	color: var(--color-ink-muted);
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-bold);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
 }

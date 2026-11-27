@@ -40,7 +40,7 @@
 </script>
 
 <svelte:head>
-	<title>{document.title} · Source library · Workspace · Model Tribal ADR Code</title>
+	<title>{document.title} · Source library · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -48,6 +48,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Source library', href: `/workspace/library${data.query ? `?q=${encodeURIComponent(data.query)}` : ''}` }
 	]}
+	current={documentHeading(document)}
 />
 <h1>{documentHeading(document)}</h1>
 
@@ -152,7 +153,7 @@
 	}
 
 	.passage.highlight {
-		border-top-color: var(--color-focus);
+		border-top-color: var(--color-link);
 		border-top-width: 3px;
 	}
 

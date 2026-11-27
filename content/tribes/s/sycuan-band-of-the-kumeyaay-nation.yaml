@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Dec. 27, 1875, 1 Kappler 820-821
+  since: '1875-12-27'
+  source: executive-order-1875-12-27-mission-indian-reservations
+  confidence: medium
+  verification: read-in-full
+  as_of: '1875-12-27'
+  locator: 1 Kappler 820-821
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Sycuan Reservation, San Diego County, California.
 states:
 - state: CA
   presence: government-office
@@ -161,6 +171,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Sycuan Band of Kumeyaay Nation".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Sycuan Band of Kumeyaay Nation' (El Cajon)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 778374
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SYCUAN BAND OF THE KUMEYAAY NATION' (UEI S1THLGJW7ZB9), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Articles of Association
@@ -495,6 +524,14 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Sycuan Band of the Kumeyaay Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Oct. 29, 2021, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-sycuan-band-of-the-kumeyaay-nation-2021-10-29
+  confidence: high
+  verification: inferred
+  as_of: '2021-10-29'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2021
 court_practice:
 - kind: bar-admission
   title: Southern California Tribal Bar Association admission application
@@ -556,7 +593,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 1 Kappler 820-821
-  note: 'The instrument reads: “Sycuan. — Township 16 south, range 1 east ... withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. Section 13 only.'
+  note: 'The instrument reads: “Sycuan. — Township 16 south, range 1 east . . . withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. Section 13 only.'
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

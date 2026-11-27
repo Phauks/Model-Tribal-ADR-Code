@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Grand Pawnee, June 18, 1818, 7 Stat. 172
+  since: '1818-06-18'
+  source: treaty-with-the-grand-pawnee-1818
+  confidence: medium
+  verification: inferred
+  as_of: '1818-06-18'
+  locator: p. 156 (Treaty with the Grand Pawnee, 1818; Kappler header "June 18, 1818. | 7 Stat., 172. | Proclamation, Jan. 7, 1819.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Grand Pawnee; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OK
   presence: government-office
@@ -166,6 +176,68 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Oklahoma City Area
   note: Listed as "Pawnee Nation of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2024
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Pawnee Nation' (Southern Plains Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Pawnee Nation'.
+- program: indian-health-service-self-governance-compact
+  since: 2022
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Pawnee Nation of Oklahoma'
+- program: pl-102-477-plan
+  start: '2023-01-01'
+  end: '2027-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Youth Community Project
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Job Placement and Training
+  - Adult Education
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Pawnee Nation of Oklahoma'; PL102_477_PartnerEnrollment, its 9 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1025611
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Pawnee Nation' (Pawnee)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 2762847
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'PAWNEE NATION OF OKLAHOMA' (UEI Q8CAGGKTKXS3), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 954644
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'PAWNEE NATION OF OKLAHOMA' (UEI Q8CAGGKTKXS3), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Pawnee Indians of Oklahoma" among organizations under constitutions approved
@@ -743,6 +815,22 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural, Business, Residential, Wind and Solar Resource, WEEL) of the Pawnee Nation of Oklahoma, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 22, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pawnee-nation-of-oklahoma-2022-11-22
+  confidence: high
+  verification: inferred
+  as_of: '2022-11-22'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Nov. 4, 2004 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2004-11-04'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services
@@ -755,6 +843,116 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Pawnee Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 10, 1999 (file 35808).
+  source: oklahoma-filing-35808
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 35808
+  note: 'From the register line: “Pawnee Tribe of Oklahoma/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 14, 1999 (file 36231).
+  source: oklahoma-filing-36231
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 36231
+  note: 'From the register line: “Pawnee Tribe of Oklahoma/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 31, 2008 (file 43125).
+  source: oklahoma-filing-43125
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 43125
+  note: 'From the register line: “The Pawnee Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46227).
+  source: oklahoma-filing-46227
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46227
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 26, 2013 (file 46257).
+  source: oklahoma-filing-46257
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46257
+  note: 'From the register line: “Amendment between the Pawnee Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 1, 2013 (file 46447).
+  source: oklahoma-filing-46447
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46447
+  note: 'From the register line: “Amendment between the Pawnee Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 31, 2013 (file 46548).
+  source: oklahoma-filing-46548
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46548
+  note: 'From the register line: “Pawnee Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 4, 2013 (file 46553).
+  source: oklahoma-filing-46553
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46553
+  note: 'From the register line: “Pawnee Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 29, 2023 (file 52889).
+  source: oklahoma-filing-52889
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52889
+  note: 'From the register line: “Amendment to Tobacco Tax Compact Between the State of Oklahoma and the Pawnee Nation”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 19, 2024 (file 53443).
+  source: oklahoma-filing-53443
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53443
+  note: 'From the register line: “Tobacco Tax Compact between the State of Oklahoma and the Pawnee Nation”. Whether it is still in force is not recorded.'
 court_practice:
 - kind: filing-fees
   title: Fee Schedule (Uniform Fee Schedule, AD-19-001)

@@ -31,7 +31,7 @@
 		}))
 	);
 	const accepted = 'application/pdf,image/png,image/jpeg,image/webp';
-	/** The form's key facts, At a glance (site/DESIGN.md, "Info pages"). */
+	/** The form's key facts, Key facts (site/DESIGN.md, "Info pages"). */
 	const glance = $derived(
 		[
 			{ field: 'use', label: 'When to use it', items: [{ text: template.summary }] },
@@ -61,7 +61,7 @@
 </script>
 
 <svelte:head>
-	<title>{template.title} · Forms · Model Tribal ADR Code</title>
+	<title>{template.title} · Forms · Tribal Law Project</title>
 	<meta name="description" content="{template.title}. When to use it: {template.summary}." />
 </svelte:head>
 

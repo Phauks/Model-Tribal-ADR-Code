@@ -1,14 +1,14 @@
 /**
- * Reading settings (site/DESIGN.md, section 6, "Settings"): text size, font,
- * text spacing, text alignment, theme, contrast, how notes and source links
+ * Reading settings (site/DESIGN.md, section 6, "Settings"): text size, body
+ * font, heading font, text alignment, theme, contrast, how notes and source links
  * show, glossary cards and motion. They are kept on the reader's device in
  * local storage, so they work offline and are never sent to the server.
  *
  * Each setting other than the theme becomes a data attribute on the root
  * element, for example data-text-size="larger", and global.css reacts to it.
  * A setting at its default value has no attribute. The theme keeps the
- * "theme" storage key and data-theme attribute that the theme button uses
- * (site/DESIGN.md, section 8).
+ * "theme" storage key and data-theme attribute it had when the masthead
+ * had a theme button (site/DESIGN.md, section 8).
  *
  * The inline script in src/app.html applies the stored settings before the
  * first paint. It repeats the storage keys and setting names below;
@@ -19,7 +19,7 @@
 
 export const settingsStorageKey = 'reading-settings';
 /**
- * Sent on window after Settings or the theme button saves a change, so the
+ * Sent on window after Settings or the Page settings panel saves a change, so the
  * copy kept with a signed-in person's account can follow
  * (src/lib/settings-everywhere.ts).
  */
@@ -29,7 +29,11 @@ export const themeStorageKey = 'theme';
 /** Text size as a percentage of the standard size; the slider in Settings steps through these. */
 export const textSizes = ['50', '62.5', '75', '87.5', '100', '112.5', '125', '137.5', '150', '175', '200'] as const;
 export const fonts = ['atkinson-hyperlegible-next', 'serif', 'opendyslexic'] as const;
-export const textSpacings = ['standard', 'wide'] as const;
+/**
+ * Headings may use another font than the body text (Trevor, Nov. 27, 2026:
+ * "allow changing body fonts and heading fonts"). "same" follows the body font.
+ */
+export const headingFonts = ['same', ...fonts] as const;
 export const textAlignments = ['left', 'justified'] as const;
 /**
  * Text width as a percentage of the page's column; the slider in Settings
@@ -47,7 +51,7 @@ export const themes = ['device', 'light', 'dark'] as const;
 
 export type TextSize = (typeof textSizes)[number];
 export type Font = (typeof fonts)[number];
-export type TextSpacing = (typeof textSpacings)[number];
+export type HeadingFont = (typeof headingFonts)[number];
 export type TextAlignment = (typeof textAlignments)[number];
 export type LineWidth = (typeof lineWidths)[number];
 export type Contrast = (typeof contrasts)[number];
@@ -63,7 +67,7 @@ export type Theme = (typeof themes)[number];
 export interface ReadingSettings {
 	textSize: TextSize;
 	font: Font;
-	textSpacing: TextSpacing;
+	headingFont: HeadingFont;
 	textAlignment: TextAlignment;
 	lineWidth: LineWidth;
 	contrast: Contrast;
@@ -78,7 +82,7 @@ export interface ReadingSettings {
 export const settingNames = [
 	'textSize',
 	'font',
-	'textSpacing',
+	'headingFont',
 	'textAlignment',
 	'lineWidth',
 	'contrast',
@@ -93,7 +97,7 @@ export const settingNames = [
 export const defaultSettings: ReadingSettings = {
 	textSize: '100',
 	font: 'atkinson-hyperlegible-next',
-	textSpacing: 'standard',
+	headingFont: 'same',
 	textAlignment: 'left',
 	lineWidth: '100',
 	contrast: 'standard',
@@ -108,7 +112,7 @@ export const defaultSettings: ReadingSettings = {
 const allowedValues: { [Name in keyof ReadingSettings]: readonly ReadingSettings[Name][] } = {
 	textSize: textSizes,
 	font: fonts,
-	textSpacing: textSpacings,
+	headingFont: headingFonts,
 	textAlignment: textAlignments,
 	lineWidth: lineWidths,
 	contrast: contrasts,
@@ -134,17 +138,19 @@ export const fontChoices: Choice<Font>[] = [
 	{ value: 'opendyslexic', label: 'OpenDyslexic' }
 ];
 
-/** Each font's design token, so the font dropdown in Settings can show every choice in its own typeface. */
-export const fontFamilyTokens: Record<Font, string> = {
+/** The heading font's choices: the body font, or any of the fonts by name. */
+export const headingFontChoices: Choice<HeadingFont>[] = [{ value: 'same', label: 'Same as body' }, ...fontChoices];
+
+/**
+ * Each font's design token, so the font dropdowns in Settings can show every
+ * choice in its own typeface. "Same as body" shows in the body font.
+ */
+export const fontFamilyTokens: Record<HeadingFont, string> = {
+	same: '--font-family-reading',
 	'atkinson-hyperlegible-next': '--font-family-atkinson-hyperlegible-next',
 	serif: '--font-family-serif',
 	opendyslexic: '--font-family-opendyslexic'
 };
-
-export const textSpacingChoices: Choice<TextSpacing>[] = [
-	{ value: 'standard', label: 'Standard' },
-	{ value: 'wide', label: 'Wide' }
-];
 
 export const textAlignmentChoices: Choice<TextAlignment>[] = [
 	{ value: 'left', label: 'Left aligned', hint: 'Even space between words, with a ragged right edge' },
@@ -254,6 +260,7 @@ export function parseSettings(stored: string | null): ReadingSettings {
 	try {
 		parsed = JSON.parse(stored);
 	} catch {
+		// expected: stored settings that are not JSON fall back to the defaults.
 		return settings;
 	}
 	if (typeof parsed !== 'object' || parsed === null) return settings;
@@ -292,6 +299,7 @@ function storage(): Storage | undefined {
 	try {
 		return window.localStorage;
 	} catch {
+		// expected: storage is blocked, as in a private window; settings last for this page only.
 		return undefined;
 	}
 }
@@ -300,6 +308,7 @@ export function loadSettings(): ReadingSettings {
 	try {
 		return parseSettings(storage()?.getItem(settingsStorageKey) ?? null);
 	} catch {
+		// expected: storage is blocked; the defaults apply.
 		return { ...defaultSettings };
 	}
 }
@@ -308,6 +317,7 @@ export function loadTheme(): Theme {
 	try {
 		return parseTheme(storage()?.getItem(themeStorageKey) ?? null);
 	} catch {
+		// expected: storage is blocked; the device's theme applies.
 		return 'device';
 	}
 }
@@ -340,7 +350,7 @@ export function addOpenDyslexicFaces(): Promise<void> {
 /** Applies the settings to the page and saves them on this device. */
 export function saveSettings(settings: ReadingSettings): void {
 	const root = document.documentElement;
-	if (settings.font === 'opendyslexic') void addOpenDyslexicFaces();
+	if (settings.font === 'opendyslexic' || settings.headingFont === 'opendyslexic') void addOpenDyslexicFaces();
 	for (const [name, value] of Object.entries(settingsAttributes(settings))) {
 		if (value === undefined) delete root.dataset[name];
 		else root.dataset[name] = value;
@@ -350,7 +360,7 @@ export function saveSettings(settings: ReadingSettings): void {
 		if (serialized === null) storage()?.removeItem(settingsStorageKey);
 		else storage()?.setItem(settingsStorageKey, serialized);
 	} catch {
-		// Storage blocked or full: the settings still apply to this page.
+		// expected: storage blocked or full: the settings still apply to this page.
 	}
 	announceSaved();
 }
@@ -359,7 +369,7 @@ function announceSaved(): void {
 	if (typeof window !== 'undefined') window.dispatchEvent(new Event(settingsSavedEvent));
 }
 
-const fontFamilyNames: Partial<Record<Font, string>> = {
+const fontFamilyNames: Partial<Record<HeadingFont, string>> = {
 	serif: 'Noto Serif',
 	opendyslexic: 'OpenDyslexic'
 };
@@ -370,14 +380,14 @@ const fontFamilyNames: Partial<Record<Font, string>> = {
  * font still works on pages read later offline. Atkinson Hyperlegible Next is
  * saved when the service worker installs.
  */
-export function downloadFont(font: Font): void {
+export function downloadFont(font: HeadingFont): void {
 	const family = fontFamilyNames[font];
 	if (!family || !('fonts' in document)) return;
 	// The browser knows OpenDyslexic's faces only once their style sheet is read.
 	const facesKnown = font === 'opendyslexic' ? addOpenDyslexicFaces() : Promise.resolve();
 	void facesKnown.then(() => {
 		for (const face of ['400', 'italic 400', '600', '700', 'italic 700']) {
-			document.fonts.load(`${face} 1em "${family}"`).catch(() => {
+			document.fonts.load(`${face} 1em "${family}"`).catch(() => /* expected: offline or blocked: the next font in the token's list is used. */ {
 				// Offline or blocked: the next font in the token's list is used.
 			});
 		}
@@ -393,7 +403,7 @@ export function saveTheme(theme: Theme): void {
 		if (theme === 'device') storage()?.removeItem(themeStorageKey);
 		else storage()?.setItem(themeStorageKey, theme);
 	} catch {
-		// Storage blocked or full: the theme still applies to this page.
+		// expected: storage blocked or full: the theme still applies to this page.
 	}
 	announceSaved();
 }

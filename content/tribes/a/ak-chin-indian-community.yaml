@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7235 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7235 (entry "Ak Chin Indian Community, Maricopa, Ak")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Ak Chin Indian Community, Maricopa, Ak." The entry is matched to the nation by name.
 states:
 - state: AZ
   presence: government-office
@@ -202,6 +212,48 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Phoenix Area
   note: Listed as "Ak-Chin Indian Community". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2004
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Ak-Chin Indian Community' (Western Region)
+- program: indian-health-service-self-governance-compact
+  since: 2019
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Phoenix Area, row 'Ak-Chin Indian Community'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 843306
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Ak-Chin Indian Community' (Maricopa)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 2502222
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'AK-CHIN INDIAN COMMUNITY' (UEI UKQHPB2M4YA6), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 540049
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'AK-CHIN INDIAN COMMUNITY' (UEI UKQHPB2M4YA6), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Articles of Association
@@ -562,6 +614,22 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Ak-Chin Indian Community, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 10, 2013, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-ak-chin-indian-community-2013-11-10
+  confidence: high
+  verification: inferred
+  as_of: '2013-11-10'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2013
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Ak-Chin Indian Water Rights Settlement Act in 1978, amended 1984, 1992, 2000 (Pub. L. No. 95-328, Pub. L. No. 98-530, Pub. L. No. 102-497, Pub. L. No. 106-285), settling the water rights of Ak-Chin Indian Community of Papago Indians of the Maricopa. It quantifies 85,000 acre-feet a year in all and authorizes about $101.1 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-95-328
+  confidence: high
+  verification: inferred
+  as_of: '1978'
+  locator: Congressional Research Service, R44148, Table 1, 1978
 nearby_state_courts:
 - state: AZ
   county: Pinal County

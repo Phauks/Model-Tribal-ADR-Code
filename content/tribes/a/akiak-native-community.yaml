@@ -21,6 +21,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Akiak Native Community (approved by the Secretary of the Interior May 11, 1949), under the Act of May 1, 1936, ch. 254, § 1, 49 Stat. 1250, 1250
+  since: '1949-05-11'
+  source: constitution-akiak-native-community-1949-text
+  document_version:
+    document: akiak-native-community-constitution
+    version: 1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-05-11'
+  locator: 1949 constitution and bylaws (1949-05-11), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: AK
   presence: government-office
@@ -176,6 +189,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Akiak Native Community".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 368763
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Akiak' (Akiak)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Akiak'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution and By-Laws of the Akiak Native Community (approved 1949) states it was adopted

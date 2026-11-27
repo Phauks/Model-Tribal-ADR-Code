@@ -1,0 +1,69 @@
+key: kansas-ex-rel-schmidt-v-zinke-2017
+kind: federal-case
+citation:
+  type: legal_case
+  title: Kansas ex rel. Schmidt v. Zinke
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.3d
+  volume: '861'
+  page: '1024'
+  issued:
+    date-parts:
+    - - 2017
+      - 6
+      - 27
+  URL: https://static.case.law/f3d/861/html/1024-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 16-3015
+original_link: https://static.case.law/f3d/861/html/1024-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- quapaw-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: quapaw-nation
+    named_as: Quapaw Tribe of Oklahoma Business Committee
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  not_linked:
+  - named_as: Associate Commissioner Nation
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: General Counsel Nation
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Quapaw Tribe of Oklahoma Development Corporation
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Fox Nation of Missouri
+    reason: More than one of today's nations shares this name (cherokee-nation-west-of-missouri-and-arkansas, lost-cherokee-of-arkansas-and-missouri, northern-cherokee-tribe-of-indians-of-missouri-and-arkansas, ozark-mountain-cherokee-tribe-of-arkansas-and-missouri, sac-and-fox-nation-of-missouri-in-kansas-and-nebraska, sac-river-and-white-river-bands-of-the-chickamauga-cherokee-nation-of-arkansas-and-missouri-inc and 3 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 861 F.3d 1024. Decided by the United States Court of Appeals for the Tenth Circuit on June 27, 2017. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 82, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 82
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 4 not linked

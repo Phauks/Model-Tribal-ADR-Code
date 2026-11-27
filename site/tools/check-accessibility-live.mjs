@@ -35,7 +35,7 @@ import {
 } from './seed-local-database.mjs';
 
 /** Time limits, in milliseconds. */
-const limits = { navigation: 60_000, page: 120_000, open: 10_000 };
+const limits = { navigation: 60_000, page: 120_000, start: 30_000, open: 10_000 };
 const wide = { width: 1280, height: 800 };
 const phone = { width: 390, height: 844 };
 
@@ -47,7 +47,13 @@ const phone = { width: 390, height: 844 };
 const allowed = [
 	// The small "Document access" link in each row sits 2 px above the row's
 	// "Remove access" button. Making it a 24 px target moves the buttons.
-	{ where: '/workspace/people as leadAuthor', rule: 'target-size', reason: 'link and button stacked in the Actions column' }
+	{ where: '/workspace/people as leadAuthor', rule: 'target-size', reason: 'link and button stacked in the Actions column' },
+	// The open search panel drops from the masthead over the right of the
+	// section bar (SectionBar.svelte), so axe measures the sections under it
+	// as partly covered. They are behind the panel, which closes on a click
+	// outside it, not beside it.
+	{ where: '/glossary as signedOut › search', rule: 'target-size', reason: 'sections behind the open search panel' },
+	{ where: '/workspace as leadAuthor › search', rule: 'target-size', reason: 'sections behind the open search panel' }
 ];
 
 /* Opening menus and dialogs ------------------------------------------------ */
@@ -62,11 +68,21 @@ async function mastheadButton(page, name) {
 /** The open states each page can be checked in, by name. */
 const openers = {
 	async search(page) {
-		await mastheadButton(page, 'Search');
-		await page.locator('.search-panel input[type="search"]').waitFor({ state: 'visible' });
+		// Wide screens show the search box in the masthead; narrower ones show the icon that opens it as a bar.
+		const icon = page.locator('.masthead .site-search > button[aria-label="Search"]');
+		if (await icon.isVisible()) await icon.click();
+		const box = page.locator('.masthead input[type="search"]');
+		await box.click();
+		await box.fill('navajo');
+		await page.locator('.search-panel').waitFor({ state: 'visible' });
+	},
+	async 'page settings'(page) {
+		await mastheadButton(page, 'Settings');
+		await page.locator('#page-settings').waitFor({ state: 'visible' });
 	},
 	async settings(page) {
-		await mastheadButton(page, 'Settings');
+		await openers['page settings'](page);
+		await page.locator('#page-settings').getByRole('button', { name: 'More settings' }).click();
 		await page.locator('dialog.modal[open]').waitFor({ state: 'visible' });
 	},
 	async 'settings dropdown'(page) {
@@ -83,7 +99,7 @@ const openers = {
 		await page.locator('#download-choices').waitFor({ state: 'visible' });
 	},
 	async report(page) {
-		await mastheadButton(page, 'Report a problem');
+		await mastheadButton(page, 'Request a Change');
 		await page.locator('dialog.modal[open]').waitFor({ state: 'visible' });
 	},
 	async follow(page) {
@@ -98,14 +114,14 @@ const openers = {
 		await mastheadButton(page, 'Sign in');
 		await page.locator('#sign-in-panel form').first().waitFor({ state: 'visible' });
 	},
-	async 'all sections'(page) {
-		await page.locator('.sidebar-wide .pages-column button.back').click();
-		await page.locator('.sidebar-wide .sections-column').waitFor({ state: 'visible' });
+	async 'section menu'(page) {
+		await page.locator('.section-bar summary').first().click();
+		await page.locator('.section-bar details[open] .menu-panel').waitFor({ state: 'visible' });
 	},
 	async 'phone menu'(page) {
 		await page.setViewportSize(phone);
-		await page.locator('.sidebar-narrow summary').click();
-		await page.locator('.sidebar-narrow[open] > nav').waitFor({ state: 'visible' });
+		await page.locator('.sidebar-narrow .menu-sheet > summary').click();
+		await page.locator('.sidebar-narrow .menu-sheet[open] > nav').waitFor({ state: 'visible' });
 	},
 	async 'phone more'(page) {
 		await page.setViewportSize(phone);
@@ -124,12 +140,12 @@ const openers = {
 
 /* The pages, and whom to see them as -------------------------------------- */
 
-const headerStates = ['search', 'settings', 'settings dropdown', 'print', 'download', 'report'];
+const headerStates = ['search', 'page settings', 'settings', 'settings dropdown', 'print', 'download', 'report'];
 
 /** Each visitor's pages: an address, or an address and the open states to check it in. */
 const visits = {
 	signedOut: [
-		['/glossary', [...headerStates, 'sign-in panel', 'all sections', 'phone menu', 'phone more']],
+		['/glossary', [...headerStates, 'sign-in panel', 'section menu', 'phone menu', 'phone more']],
 		['/nations/hannahville-indian-community', ['follow']],
 		['/supreme-court/burger-court', ['column filter']],
 		// One page of each family the Worker draws from built data (src/lib/server/page-data.ts); the prerendered check no longer sees them.
@@ -137,7 +153,13 @@ const visits = {
 		'/laws/act-1858-12-22-pueblo-land-claims-confirmed',
 		'/biographies/a-pish-ka-go-gi',
 		'/supreme-court/justices/john-marshall',
-		'/supreme-court/presidents/abraham-lincoln',
+		'/presidents/abraham-lincoln',
+		// A browsed Federal collection (src/lib/collection-browser.ts), and an order's page with its place in the list.
+		'/laws/executive-orders',
+		'/laws/executive-order-6145',
+		// A page's own Changes view (src/lib/server/page-changes.ts): a nation's, with its badges, and a glossary entry's.
+		'/nations/hannahville-indian-community/changes',
+		'/glossary/peacemaking/changes',
 		'/sign-in',
 		'/sign-in/forgot',
 		['/requests', ['sign-in panel']],
@@ -179,7 +201,6 @@ const visits = {
 		'/workspace/rooms',
 		'/workspace/intake',
 		'/workspace/address-book',
-		'/workspace/site-text',
 		'/workspace/nonprofit',
 		'/workspace/comments',
 		'/workspace/review-requests'
@@ -211,7 +232,17 @@ const { statements, tokens } = fixtureSessions(signedIn);
 executeLocally(statements);
 
 const worker = await startLocalWorker();
-const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+// The browser reaches no other host: every request to one goes to a proxy
+// that is not there and fails at once. Blocking them with context.route()
+// alone is not enough, because Playwright routes a request's first address
+// and not where it is redirected. A copy the local bucket lacks is answered
+// with a redirect to its government address, so the law page's embedded
+// Statutes at Large copy loaded www.govinfo.gov, and when govinfo.gov stopped
+// answering on Nov. 27, 2026 the page's load never finished.
+const browser = await chromium.launch({
+	...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}),
+	proxy: { server: 'http://127.0.0.1:9', bypass: '127.0.0.1' }
+});
 const problems = [];
 const accepted = [];
 let checked = 0;
@@ -222,6 +253,12 @@ async function load(page, address) {
 	const landed = new URL(page.url()).pathname;
 	if (!response?.ok()) return `answered ${response?.status()}`;
 	if (landed !== address) return `went to ${landed} instead`;
+	// The load event can come before the page's script has started, since SvelteKit loads it with import(), which the load event does not wait for. A control pressed in between may do nothing: on Nov. 27, 2026 the Download menu on /workspace "could not be opened" when the script reached the CI runner's browser late. The site's layout marks the start once every part of the page is running (src/lib/page-started.ts).
+	try {
+		await page.locator('html[data-started="on"]').waitFor({ state: 'attached', timeout: limits.start });
+	} catch {
+		return `its script did not start within ${limits.start / 1000} s`;
+	}
 	await waitUntilSettled(page);
 	return undefined;
 }
@@ -268,7 +305,11 @@ try {
 						await check(page, label);
 						for (const state of states) {
 							await page.setViewportSize(wide);
-							if ((await load(page, address)) !== undefined) continue;
+							const reloadProblem = await load(page, address);
+							if (reloadProblem) {
+								problems.push(`${label} › ${state}: ${reloadProblem}`);
+								continue;
+							}
 							try {
 								await openers[state](page);
 							} catch (error) {

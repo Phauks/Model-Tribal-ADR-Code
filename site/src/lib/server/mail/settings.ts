@@ -7,8 +7,6 @@
 export interface MailSettings {
 	/** The project's mail domain, such as example.org, or null while email is off. */
 	domain: string | null;
-	/** Where the "new mail" notice goes: a verified address in Email Routing, or null for none. */
-	noticeAddress: string | null;
 	/** The website's address, for links in notices and unsubscribe links. */
 	siteAddress: string | null;
 	/** The sender's name on mail from the project. */
@@ -40,9 +38,8 @@ export function mailSettings(environment: WorkerEnvironment): MailSettings {
 	const domain = text(environment.MAIL_DOMAIN)?.toLowerCase() ?? null;
 	return {
 		domain,
-		noticeAddress: text(environment.MAIL_NOTICE_ADDRESS),
 		siteAddress: text(environment.SITE_ADDRESS)?.replace(/\/+$/, '') ?? null,
-		senderName: text(environment.MAIL_SENDER_NAME) ?? 'Model Tribal ADR Code',
+		senderName: text(environment.MAIL_SENDER_NAME) ?? 'Tribal Law Project',
 		outreach: outreachSettings(environment),
 		signingKey: text(environment.MAIL_SIGNING_KEY)
 	};

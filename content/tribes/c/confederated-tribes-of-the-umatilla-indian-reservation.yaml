@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Walla-Wallas, Cayuses, and Umatilla, June 9, 1855, 12 Stat. 945
+  since: '1855-06-09'
+  source: treaty-with-the-wallawalla-cayuse-etc-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-06-09'
+  locator: p. 694 (Treaty with the Wallawalla, Cayuse, etc., 1855; Kappler header "June 9, 1855. | 12 Stats., 945. | Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Walla Walla; Cayuse; Umatilla; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OR
   presence: government-office
@@ -223,6 +233,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: 'Page: ''Weyíiletpuu is a dialect of the Nez Perce language as used by the Cayuse''.'
+language_programs:
+- name: CTUIR Language Program
+  link: https://ctuir.org/about/language/
+  run_by: nation
+  source: ctuir-about-language
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: Mission Statement
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Umatilla Agency
@@ -239,6 +258,69 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Confederated Tribes of the Umatilla Indian Reservation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Confederated Tribes of the Umatilla Indian Reservation (2005)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2006
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Confederated Tribes Of The Umatilla Reservation' (Northwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Confederated Tribes Of The Umatilla Reservation'.
+- program: indian-health-service-self-governance-compact
+  since: 2005
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Confederated Tribes of the Umatilla Indian Reservation'
+- program: pl-102-477-plan
+  start: '2024-01-01'
+  end: '2026-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Job Placement and Training
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Confederated Tribes of the Umatilla Indian Reservation'; PL102_477_PartnerEnrollment, its 3 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2750453
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OR, row 'Confederated Tribes of the Umatilla Indian Reservation' (Pendleton)
+- program: fdpir-self-determination-demonstration
+  start: 2023-08
+  detail: Round 2
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 2 projects, 'Confederated Tribes of the Umatilla Indian Reservation'
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Confederated Tribes of the Umatilla Indian Reservation'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 16896972
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'CONFEDERATED TRIBES OF THE UMATILLA INDIAN RESERVATION' (UEI MX2KEMW2J5Z3), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Umatilla Reservation in Oregon) (approved 1949) states it was adopted under Act
@@ -1078,6 +1160,22 @@ jurisdiction:
   verification: read-in-full
   as_of: '2011'
   note: Statement on an individual NCAI implementing-tribe profile page, not a list.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Apr. 30, 2001 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Oct. 18, 2001.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2001-04-30'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oregon Department of Human Services

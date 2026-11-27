@@ -1,9 +1,18 @@
 key: kaw-kawk-kay
 name: Kaw-kawk-kay
-lead: Signed two treaties with the United States for the Potawattimies tribe of Indians, 1834–1836.
+lead: Signed three treaties with the United States for the Potawattimies tribe of Indians, 1826–1836.
 living: false
+names:
+- name: Kaukaukshee
+  note: as the Treaty with the Potawatomi, 1826 prints it
+  source: treaty-with-the-potawatomi-1826
+  where: 7 Stat. 298
 cases: []
 events:
+- when: Oct. 16, 1826
+  text: Signed the Treaty with the Potawatomi, 1826, for the Potawatamie tribe.
+  source: treaty-with-the-potawatomi-1826
+  where: 7 Stat. 298
 - when: Dec. 16, 1834
   text: Signed the Treaty with the Potawatomi, 1834, for the Potawattimies tribe of Indians.
   source: treaty-with-the-potawatomi-1834-dec-16
@@ -12,4 +21,4 @@ events:
   text: Signed the Treaty with the Potawatomi, 1836, for the Potawattimie tribe.
   source: treaty-with-the-potawatomi-1836-aug-5
   where: 7 Stat. 505
-checked: '2026-11-24'
+checked: '2026-11-26'

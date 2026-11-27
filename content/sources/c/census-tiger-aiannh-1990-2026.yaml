@@ -1,0 +1,27 @@
+key: census-tiger-aiannh-1990-2026
+kind: dataset
+citation:
+  type: dataset
+  title: TIGER/Line Shapefiles, American Indian/Alaska Native/Native Hawaiian Areas, national files, 1990, 2000 and 2007 to 2026
+  author:
+  - literal: U.S. Census Bureau
+  medium: Zipped shapefiles
+  URL: https://www2.census.gov/geo/tiger/
+  accessed:
+    date-parts: [[2026, 11, 26]]
+original_link: https://www2.census.gov/geo/tiger/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the U.S. Census Bureau, a federal agency, so not protected by copyright in the United States (17 U.S.C. § 105). The website credits the Census Bureau on the map.
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-26-historic-maps-core
+notes: 'One national file for each year the Census Bureau published: the 1990 cartographic boundary file (PREVGENZ/aianhh/ir/ir99_d90_shp.zip), the 2000 file (TIGER2010/AIANNH/2000), the 2007 to 2009 national files and the 2010 to 2026 TIGER/Line files. The website''s map year slider draws them from one tile set in which each shape carries the years the Bureau drew it so (site/tools/build-historic-maps.mjs). These are statistical areas, not legal boundaries; landless nations have none. The 22 files are kept in the project''s bucket under historic-maps/census-land-areas/.'

@@ -1,0 +1,66 @@
+key: united-states-v-maytubby-2025
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Maytubby
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.4th
+  volume: '130'
+  page: '1194'
+  issued:
+    date-parts:
+    - - 2025
+      - 3
+      - 18
+  URL: https://www.courtlistener.com/opinion/10357621/united-states-v-maytubby/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 23-7084
+original_link: https://www.courtlistener.com/opinion/10357621/united-states-v-maytubby/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2025-01-22'
+  source: United States Court of Appeals for the Tenth Circuit
+  link: https://www.ca10.uscourts.gov/sites/ca10/files/oralarguments/23-7084.mp3
+  duration_seconds: 1855
+  held: true
+  note: Held until a reading of the argument finds no child or victim named; the opinion itself is shown.
+  file:
+    storage_key: appeals-court-audio/ca10/2025/2025-01-22-23-7084.mp3
+    checksum: e93087fb411899d78018a47afa2236751dcecc7d2aae86478388bd32e8b33c9f
+    media_type: audio/mpeg
+    bytes: 25973008
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 130 F.4th 1194. Decided by the United States Court of Appeals for the Tenth Circuit on Mar. 18, 2025. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (aggravated sexual abuse in Indian Country, Maytubby).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: aggravated sexual abuse in Indian Country, Maytubby'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

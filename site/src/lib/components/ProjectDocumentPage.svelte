@@ -26,10 +26,10 @@
 </script>
 
 <svelte:head>
-	<title>{title} · Model Tribal ADR Code</title>
+	<title>{title} · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={crumbs} />
+<Breadcrumbs trail={crumbs} current={title} />
 
 <div class="reading">
 	<h1>{title}</h1>

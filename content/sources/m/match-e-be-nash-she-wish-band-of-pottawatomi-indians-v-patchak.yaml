@@ -107,6 +107,41 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=567%20U.S.%20209
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2012-04-24'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/11-246.mp3
+  duration_seconds: 3726
+  file:
+    storage_key: supreme-court-audio/court/2011/11-246.mp3
+    checksum: fc51999ead5bc7ca0841947b60bc5785ad73404171f19bec4a0217d6f42d8805
+    media_type: audio/mpeg
+    bytes: 29812591
+- kind: argument
+  date: '2012-04-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1752-April24_2012.MP3
+  catalog: https://catalog.archives.gov/id/183518134
+  whole_session: true
+  duration_seconds: 4253
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1752-april24_2012.mp3
+    checksum: 5d13700c92cb3256f81dc3a91b9d398acf4afdfe68a35cb86a167e820ce26137
+    media_type: audio/mpeg
+    bytes: 68053909
+- kind: opinion announcement
+  date: '2012-06-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1764-June18_2012Non-Argument.MP3
+  catalog: https://catalog.archives.gov/id/183518146
+  whole_session: true
+  duration_seconds: 1509
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1764-june18_2012non-argument.mp3
+    checksum: e986dd47bc2c816e856a55b07e56417c53f1c2841e4a34796d91a8f0c5b570e5
+    media_type: audio/mpeg
+    bytes: 24145920
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Chickasaw, Jan. 10, 1786, 7 Stat. 24
+  since: '1786-01-10'
+  source: treaty-with-the-chickasaw-1786
+  confidence: medium
+  verification: inferred
+  as_of: '1786-01-10'
+  locator: p. 14 (Treaty with the Chickasaw, 1786; Kappler header "Jan. 10, 1786. | 7 Stat. 24.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Chickasaw; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OK
   presence: government-office
@@ -216,6 +226,75 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "The Chickasaw Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Chickasaw Nation (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1994
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Chickasaw Nation' (Eastern Oklahoma Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Chickasaw Nation'.
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Chickasaw Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Chickasaw Nation'.
+- program: pl-102-477-plan
+  start: '2024-10-01'
+  end: '2027-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Employment Works
+  - 'Welfare Assistance: General Assistance'
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'The Chickasaw Nation'; PL102_477_PartnerEnrollment, its 4 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 19639187
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Chickasaw Nation' (Ada)
+- program: fdpir-self-determination-demonstration
+  start: 2021-10
+  detail: Round 1
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 1 projects, 'Chickasaw Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Chickasaw Nation'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 23933680
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'CHICKASAW NATION' (UEI KS8HLVMJEMW9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CHICKASAW NATION'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 147722962
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'CHICKASAW NATION' (UEI KS8HLVMJEMW9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CHICKASAW NATION'.
 governance:
 - aspect: form
   value: Constitution ordained under Treaties of 1855 and 1866
@@ -937,6 +1016,14 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.51)
   note: Listed as "CHICKASAW NATION" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Choctaw Nation of Oklahoma and the Chickasaw Nation Water Settlement in 2016 (Pub. L. No. 114-322), settling the water rights of Choctaw Nation of Oklahoma and Chickasaw Nation. (Congressional Research Service, R44148, Table 1).
+  source: public-law-114-322
+  confidence: high
+  verification: inferred
+  as_of: '2016'
+  locator: Congressional Research Service, R44148, Table 1, 2016
 jurisdiction_agreements:
 - kind: tax-agreement
   other_party: State of Oklahoma, Office of the Governor
@@ -971,6 +1058,446 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Chickasaw Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: cross-deputization
+  other_party: Office of the District Attorney, District 22; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on May 28, 1992 (file 27138).
+  source: oklahoma-filing-27138
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 27138
+  note: 'From the register line: “District Attorney District #22 & Bureau of Indian Affairs, Chickasaw Nation”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 8, 1992 (file 27176).
+  source: oklahoma-filing-27176
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 27176
+  note: 'From the register line: “Chickasaw Nation/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 26, 1996 (file 33902).
+  source: oklahoma-filing-33902
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 33902
+  note: 'From the register line: “Chickasaw Nation, State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 6, 2003 (file 38497).
+  source: oklahoma-filing-38497
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38497
+  note: 'From the register line: “Chickasaw Nation and the State of Oklahoma, amendment to Tribal/State Tobacco Tax Compact”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 7, 2003 (file 38951).
+  source: oklahoma-filing-38951
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38951
+  note: 'From the register line: “Amendment Chickasaw Nation and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 18, 2003 (file 39335).
+  source: oklahoma-filing-39335
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 39335
+  note: 'From the register line: “Chickasaw Nation and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Bureau of Indian Affairs; State of Oklahoma
+  agreement: Resolution 23-064 updating deputation agreement with Bureau of Indian Affairs and State of Oklahoma
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 4, 2006 (file 41467).
+  source: oklahoma-filing-41467
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 41467
+  note: 'From the register line: “Updating GR 22-007, Deputation Agreement between U.S. Bureau of Indian Affairs, Office of Law Enforcement Services and Security and the State of Oklahoma filed on 1/23/2006”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Bureau of Indian Affairs; Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45020).
+  source: oklahoma-filing-45020
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45020
+  note: 'From the register line: “Chickasaw Nation/BIA/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Bureau of Indian Affairs; Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45021).
+  source: oklahoma-filing-45021
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45021
+  note: 'From the register line: “Chickasaw Nation/BIA/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45022).
+  source: oklahoma-filing-45022
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45022
+  note: 'From the register line: “Chickasaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45023).
+  source: oklahoma-filing-45023
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45023
+  note: 'From the register line: “Chickasaw Nation/ ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45024).
+  source: oklahoma-filing-45024
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45024
+  note: 'From the register line: “Chickasaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45025).
+  source: oklahoma-filing-45025
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45025
+  note: 'From the register line: “Chickasaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: City of Newcastle; Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45026).
+  source: oklahoma-filing-45026
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45026
+  note: 'From the register line: “Chickasaw Nation/City of Newcastle/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45036).
+  source: oklahoma-filing-45036
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45036
+  note: 'From the register line: “Chickasaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45037).
+  source: oklahoma-filing-45037
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45037
+  note: 'From the register line: “Chicasaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45038).
+  source: oklahoma-filing-45038
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45038
+  note: 'From the register line: “Chickasaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45039).
+  source: oklahoma-filing-45039
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45039
+  note: 'From the register line: “Chickasaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45040).
+  source: oklahoma-filing-45040
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45040
+  note: 'From the register line: “Chickasaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45041).
+  source: oklahoma-filing-45041
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45041
+  note: 'From the register line: “Chickasaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45042).
+  source: oklahoma-filing-45042
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45042
+  note: 'From the register line: “Chickasaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46218).
+  source: oklahoma-filing-46218
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46218
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: Bob Rabon; State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 14, 2013 (file 46240).
+  source: oklahoma-filing-46240
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46240
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 26, 2013 (file 46256).
+  source: oklahoma-filing-46256
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46256
+  note: 'From the register line: “Amendment between the Chickasaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 1, 2013 (file 46445).
+  source: oklahoma-filing-46445
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46445
+  note: 'From the register line: “Amendment between the Chickasaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 31, 2013 (file 46549).
+  source: oklahoma-filing-46549
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46549
+  note: 'From the register line: “Chickasaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor vehicle registration and license tag compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 23, 2014 (file 47156).
+  source: oklahoma-filing-47156
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 47156
+  note: 'From the register line: “Motor Vehicle Registration and License Tag Compact between the State of Oklahoma and the Chickasaw Nation”. Whether it is still in force is not recorded.'
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services; Oklahoma Office of Juvenile Affairs
+  agreement: Intergovernmental agreement on jurisdiction over Indian children
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 7, 2020 (file 50531).
+  source: oklahoma-filing-50531
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 50531
+  note: 'From the register line: “Agreement between Department of Human Services, Oklahoma Office of Juvenile Affairs, and the Chickasaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Tuttle; Tuttle Police Department
+  agreement: Law enforcement commission agreement for Tuttle Police Department
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 13, 2023 (file 52754).
+  source: oklahoma-filing-52754
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52754
+  note: 'From the register line: “Agreement between the City of Tuttle, Tuttle Police Department and Chickasaw Nation Indian Country”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Acceptance of supplemental term extending tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 27, 2023 (file 52793).
+  source: oklahoma-filing-52793
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52793
+  note: 'From the register line: “Chickasaw Nation accepts the State''s offer, made to the Nation by the Oklahoma Legislature''s enactment of SB26x”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Office of the District Attorney, District 20
+  agreement: Law enforcement commission agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 15, 2023 (file 52829).
+  source: oklahoma-filing-52829
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52829
+  note: 'From the register line: “Tribal agreement between Oklahoma District Attorney, District 20, Melissa Handke and the Chickasaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Blanchard; Blanchard Police Department
+  agreement: Law enforcement commission agreement for Blanchard Police Department
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 17, 2023 (file 52836).
+  source: oklahoma-filing-52836
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52836
+  note: 'From the register line: “Agreement between the City of Blanchard, Blanchard Police Department and the laws of the State of Oklahoma , within Chickasaw Nation Indian Country”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Office of the District Attorney, District 19; Council on Law Enforcement Education and Training (CLEET)
+  agreement: Law enforcement agreement within Chickasaw Nation
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 13, 2023 (file 52866).
+  source: oklahoma-filing-52866
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52866
+  note: 'From the register line: “Agreement between Office of the District Attorney for District No. 19 and the Council on Law Enforcement Education and Training ("CLEET") within Chickasaw Nation”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor vehicle registration and license tag compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 18, 2024 (file 52917).
+  source: oklahoma-filing-52917
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52917
+  note: 'From the register line: “Motor vehicle registration and license tag compact between the state of oklahoma and the chickasaw nation”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 19, 2024 (file 52918).
+  source: oklahoma-filing-52918
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52918
+  note: 'From the register line: “Tobacco tax compact between the state oklahoma and the chickasaw nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Stonewall; Stonewall Police Department
+  agreement: Law enforcement commission agreement for Stonewall Police Department
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Feb. 16, 2024 (file 52958).
+  source: oklahoma-filing-52958
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52958
+  note: 'From the register line: “City of Stonewall is a municipality organized under the law of the State of Oklahoma. Stonewall Police Department exercise criminal law enforcement authority as well as the laws of the State of Oklahoma, within Chickasaw Nation Indian Country”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Wynnewood Public Schools; Wynnewood Public Schools Police Department
+  agreement: Law enforcement agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 20, 2024 (file 53202).
+  source: oklahoma-filing-53202
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53202
+  note: 'From the register line: “Law enforcement agreement between Wynnewood Public Schools ("WPS"), Wynnewood Public Schools Police Department ("Department"), and Chickasaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Office of the District Attorney for District No. 6
+  agreement: Law enforcement commission agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 16, 2024 (file 53233).
+  source: oklahoma-filing-53233
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53233
+  note: 'From the register line: “The Office of the District Attorney for District No. 6 is authorized to employ investigators certified by the Council on Law Enforcement Education and Training ("CLEET") to exercise criminal law enforcement authority, within Chickasaw Nation Indian Country”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Velma-Alma Public Schools
+  agreement: Law enforcement commission agreement for campus police
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 29, 2024 (file 53294).
+  source: oklahoma-filing-53294
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53294
+  note: 'From the register line: “Velma-Alma Public Schools (VAPS) authority granted by the State of Oklahoma through the Oklahoma Campus Security Act to exercise municipal and state criminal law enforcement authority on the campus of VAPS, within Chickasaw Nation Indian Country”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Kingston Public Schools; Kingston ISD Police Department
+  agreement: Law enforcement commission agreement for Kingston ISD Police Department
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 21, 2026 (file 54339).
+  source: oklahoma-filing-54339
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 54339
+  note: 'From the register line: “Keingston Public Schools employs a law enforcement agency, Kingston ISD Police Department to exercise municipal and state criminal law enforcement authority on the campus of KPS, which is within Chickasaw Nation Indian Country”. Whether it is still in force is not recorded.'
 court_practice:
 - kind: bar-admission
   title: Bar Association

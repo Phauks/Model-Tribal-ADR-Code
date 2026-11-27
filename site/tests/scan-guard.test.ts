@@ -100,6 +100,28 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "The Wayback Worker's own progress record, written from what the Wayback Machine answered; it holds only links and dates.",
   },
+  // The source watch (docs/source-watch.md): files it fetches from public
+  // sources are kept privately and put in line for the scan by storeCapture;
+  // the rest are records the watch Worker or the site writes itself.
+  "src/lib/server/watch/capture.ts storeCapture put(key)": {
+    kind: "sent-file-store",
+  },
+  "src/lib/server/watch/drivers/page.ts read get(key)": {
+    kind: "kept-not-served",
+    why: "Text the watch Worker extracted from a watched page, read only to show a short difference on the review page; never a file, never served.",
+  },
+  "src/lib/server/watch/drivers/page.ts write put(key)": {
+    kind: "kept-not-served",
+    why: "Text the watch Worker extracted from a watched page (tags removed), kept to compare with the next version; never a file, never served.",
+  },
+  "src/lib/server/watch/progress.ts readWatchProgress get(progressObject)": {
+    kind: "project-file",
+    why: "The watch Worker's own progress record (counts and run outcomes), read by its progress page and the Service checks page.",
+  },
+  "src/lib/server/watch/progress.ts writeWatchProgress put(progressObject)": {
+    kind: "project-file",
+    why: "The watch Worker's own progress record: counts, run outcomes and model spend, never an item's text.",
+  },
   "src/lib/server/uploads.ts finishUpload get(upload.original_key)": {
     kind: "kept-not-served",
     why: "Reads a sent picture to make its copy without location details; both are put in line for the scan, and neither is served until it passes.",
@@ -231,6 +253,14 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "Copies of government documents and constitutions the project saved from their official sources.",
   },
+  "src/routes/cases/[id]/opinions.json/+server.ts GET get(copy.key)": {
+    kind: "project-file",
+    why: "The served copy of a case's opinions, which the project built from the Caselaw Access Project; only the file indexed with the site is read.",
+  },
+  "src/routes/copies/reading/[...key]/+server.ts GET get(copy.key)": {
+    kind: "project-file",
+    why: "A served copy read for its reading version, the same file /copies serves; only the file indexed with the site is read.",
+  },
   "src/routes/nations/[id]/image/+server.ts GET get(image.key)": {
     kind: "project-file",
     why: "Nation seals and images the project collected from official sources.",
@@ -241,11 +271,11 @@ const bucketCalls: Record<string, BucketUse> = {
   },
   "src/routes/supreme-court/portraits/[person]/+server.ts GET get(portrait.key)": {
     kind: "project-file",
-    why: "Justices' and Presidents' portraits the project chose from Wikimedia Commons, each served only if it matches the SHA-256 recorded in content/supreme-court/people.yaml.",
+    why: "Pictures of Justices, Presidents and Courts the project checked by hand, each served only if it matches the SHA-256 recorded in content/supreme-court/pictures.yaml.",
   },
   "src/routes/supreme-court/portraits/[person]/+server.ts GET put(portrait.key)": {
     kind: "project-file",
-    why: "Justices' and Presidents' portraits the project chose from Wikimedia Commons, kept only if the fetched copy matches the SHA-256 recorded in content/supreme-court/people.yaml.",
+    why: "Pictures of Justices, Presidents and Courts the project checked by hand, kept only if the fetched copy matches the SHA-256 recorded in content/supreme-court/pictures.yaml.",
   },
   "src/lib/server/source-library.ts applyLibraryChanges get(`${changesPrefix}latest.json`)":
     {
@@ -265,11 +295,15 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "The project's own copies of public documents (U.S. government works and nations' governing documents), zipped for download.",
   },
+  "src/routes/search/download/+server.ts open get(key)": {
+    kind: "project-file",
+    why: "The project's own copies of the search results a reader ticked, zipped for download. Keys come only from the records built with the site and the list of copies it may serve, never from the request.",
+  },
 };
 
 /** Every place site code reads the bytes of a file or a request body, and where they go. */
 const fileIntakes: Record<string, string> = {
-  "src/lib/server/request-form.ts readFile File.arrayBuffer":
+  "src/lib/server/request-form.ts checkFile File.arrayBuffer":
     "Files sent with requests and forms, proof for a nation team, nation page pictures, and photos sent with a problem about a printed-copy order. Stored with storeSentFile by saveRequest, saveApplication, savePicture and reportProblem.",
   "src/routes/profile/edit/+page.server.ts default File.arrayBuffer":
     "Profile pictures, sent with the profile form. Stored with storeSentFile by savePicture (profile-pictures.ts).",
@@ -288,7 +322,7 @@ const fileIntakes: Record<string, string> = {
   "src/routes/uploads/pieces/[reference]/[number]/+server.ts PUT Request.arrayBuffer":
     "Upload pieces, written into the upload’s multipart object; finishUpload puts the file in line.",
   "src/lib/server/limited-body.ts formWithin Request.body":
-    "The public request form's body, read with a size limit and only turned back into form data. Its files are then read by readFile (request-form.ts) and stored with storeSentFile by saveRequest.",
+    "The public request form's body, read with a size limit and only turned back into form data. Its files are then read by checkFile (request-form.ts) and stored with storeSentFile by saveRequest.",
   "src/lib/sha256.ts hashFile Blob.arrayBuffer":
     "Verify a file: hashes a file the reader picks, in their own browser. It is never sent or stored.",
   "src/lib/sha256.ts hashFile Blob.stream":

@@ -1,0 +1,64 @@
+key: arakaki-v-lingle-2007
+kind: federal-case
+citation:
+  type: legal_case
+  title: Arakaki v. Lingle
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '477'
+  page: '1048'
+  issued:
+    date-parts:
+    - - 2007
+      - 2
+      - 9
+  URL: https://static.case.law/f3d/477/html/1048-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 04-15306
+original_link: https://static.case.law/f3d/477/html/1048-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2004-11-01'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2004/11/01/04-15306.mp3
+  duration_seconds: 3922
+  file:
+    storage_key: appeals-court-audio/ca9/2004/2004-11-01-04-15306.mp3
+    checksum: 0c60745f605bc3177ac41c6a0db441185b5b264e90a4aa699cc411ebbab13f35
+    media_type: audio/mpeg
+    bytes: 31377445
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 477 F.3d 1048. Decided by the United States Court of Appeals for the Ninth Circuit on Feb. 9, 2007. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 43, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 43
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

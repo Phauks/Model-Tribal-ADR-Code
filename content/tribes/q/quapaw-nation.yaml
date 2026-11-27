@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Quapaw, Aug. 24, 1818, 7 Stat. 176
+  since: '1818-08-24'
+  source: treaty-with-the-quapaw-1818
+  confidence: medium
+  verification: inferred
+  as_of: '1818-08-24'
+  locator: p. 160 (Treaty with the Quapaw, 1818; Kappler header "Aug. 24, 1818. | 7 Stat., 176. | Proclamation Jan. 5, 1819 [1818].")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Quapaw; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OK
   presence: government-office
@@ -181,6 +191,58 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "The Quapaw Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Quapaw Tribe of Oklahoma (2017)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2005
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Quapaw Tribe Of Oklahoma' (Eastern Oklahoma Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Quapaw Tribe Of Oklahoma'.
+- program: indian-health-service-self-governance-compact
+  since: 2017
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Quapaw Tribe of Oklahoma'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Quapaw Tribe of Oklahoma'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 416264
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Quapaw Tribe' (Quapaw)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Quapaw Nation'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 2078952
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'QUAPAW NATION' (UEI XD7MLAKQGW59), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 394415
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'QUAPAW NATION' (UEI XD7MLAKQGW59), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Business Committee
@@ -538,6 +600,14 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.53)
   note: Listed as "QUAPAW NATION" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 107(d)(3); 126; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107(d)(3); 126; 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services
@@ -550,6 +620,171 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Quapaw Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 3, 1992 (file 27595).
+  source: oklahoma-filing-27595
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 27595
+  note: 'From the register line: “Quapaw Tribe/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 2, 2001 (file 37088).
+  source: oklahoma-filing-37088
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 37088
+  note: 'From the register line: “Quapaw Tribe of Oklahoma Business Committee/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on May 19, 2003 (file 38864).
+  source: oklahoma-filing-38864
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38864
+  note: 'From the register line: “Amendment Quapaw Tribe and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 24, 2003 (file 39344).
+  source: oklahoma-filing-39344
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 39344
+  note: 'From the register line: “Quapaw Tribe and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Town of Quapaw
+  agreement: Cooperative enforcement and cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 8, 2012 (file 45792).
+  source: oklahoma-filing-45792
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45792
+  note: 'From the register line: “Between the Quapaw Tribe of Oklahoma (O-Gah-Pah) and the Town of Quapaw”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46229).
+  source: oklahoma-filing-46229
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46229
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 27, 2013 (file 46262).
+  source: oklahoma-filing-46262
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46262
+  note: 'From the register line: “Amendment between the Quapaw Tribe and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 25, 2013 (file 46441).
+  source: oklahoma-filing-46441
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46441
+  note: 'From the register line: “Quapaw Tribe of Oklahoma and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Tar Creek Superfund record of decision
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on May 1, 2014 (file 46920).
+  source: oklahoma-filing-46920
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46920
+  note: 'From the register line: “Between the Quapaw Tribe of Oklahoma and the State of Oklahoma for Remediation of Contaminated Properties at the Tar Creek Superfund Site”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Tar Creek Superfund remediation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Apr. 29, 2015 (file 47519).
+  source: oklahoma-filing-47519
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 47519
+  note: 'From the register line: “Agreement between the Quapaw Tribe of Oklahoma and the State of Oklahoma for Remediation of Contaminated Properties at the Tar Creek Superfund Site”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: First amendment to the Tar Creek remediation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 18, 2015 (file 47738).
+  source: oklahoma-filing-47738
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 47738
+  note: 'From the register line: “First Amendment to Agreement between Quapaw Tribe of Oklahoma and the State of Oklahoma for remediation of contaminated properties at the Tar Creek Superfund Site”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Tar Creek remediation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 22, 2016 (file 48381).
+  source: oklahoma-filing-48381
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 48381
+  note: 'From the register line: “Agreement Between the Quapaw Tribe of Oklahoma and the State of Oklahoma for remediation of contaminated properties at the Tar Creek Superfund site”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: First amendment to the Tar Creek remediation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 12, 2017 (file 48893).
+  source: oklahoma-filing-48893
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 48893
+  note: 'From the register line: “First Amendment to Agreement between the Quapaw Tribe of Oklahoma and the State of Oklahoma for Remediation of Contaminated Properties at the Tar Creek Superfund Site”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Acceptance of supplemental term to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 14, 2023 (file 52869).
+  source: oklahoma-filing-52869
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52869
+  note: 'From the register line: “Between the Quapaw Nation and the State of Oklahoma shall be deemed in effect until December 31, 2024. SB 26X”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: First amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 2, 2025 (file 53455).
+  source: oklahoma-filing-53455
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53455
+  note: 'From the register line: “First Amendment of the Tobacco Tax Compact between the State of Oklahoma and the Quapaw Tribe of Oklahoma (The O-GAH-PAH)”. Whether it is still in force is not recorded.'
 court_practice:
 - kind: filing-fees
   title: Resolution No. 092025-F (Updated Quapaw Nation Court Fee Schedule, signed)

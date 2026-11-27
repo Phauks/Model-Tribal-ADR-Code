@@ -46,7 +46,7 @@ export function eventEmailDelivery(environment: WorkerEnvironment): EventEmailDe
 		kind: 'email',
 		site,
 		send: async (email) => {
-			await binding.send({ to: email.to, from: { email: from, name: 'Model Tribal ADR Code' }, subject: email.subject, text: email.text });
+			await binding.send({ to: email.to, from: { email: from, name: 'Tribal Law Project' }, subject: email.subject, text: email.text });
 		}
 	};
 }
@@ -72,7 +72,7 @@ export function eventMessage(message: DueMessage, site: string): EventEmail {
 	const footer = [
 		'',
 		`Your registration and the event's details: ${page}`,
-		'You get this email because you registered for this event on the Model Tribal ADR Code website.'
+		'You get this email because you registered for this event on the Tribal Law Project website.'
 	];
 	const greeting = `Hello ${registration.name},`;
 	let subject: string;

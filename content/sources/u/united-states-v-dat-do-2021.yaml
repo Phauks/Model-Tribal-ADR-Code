@@ -1,0 +1,66 @@
+key: united-states-v-dat-do-2021
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Dat Do
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '994'
+  page: '1096'
+  issued:
+    date-parts:
+    - - 2021
+      - 4
+      - 19
+  URL: https://www.courtlistener.com/opinion/4874762/united-states-v-dat-do/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 19-30138
+original_link: https://www.courtlistener.com/opinion/4874762/united-states-v-dat-do/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2020-12-08'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2020/12/09/19-30138.mp3
+  duration_seconds: 1897
+  held: true
+  note: Held until a reading of the argument finds no child or victim named; the opinion itself is shown.
+  file:
+    storage_key: appeals-court-audio/ca9/2020/2020-12-08-19-30138.mp3
+    checksum: f124eff8f43cacc7a2640676999644e867ceff7f6794498c72230ee2e63658d4
+    media_type: audio/mpeg
+    bytes: 15175888
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 994 F.3d 1096. Decided by the United States Court of Appeals for the Ninth Circuit on Apr. 19, 2021. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 5; an AI reader read excerpts and judged it an Indian law case (Assimilative Crimes Act on Warm Springs Indian Reservation highway).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 5; reader: Assimilative Crimes Act on Warm Springs Indian Reservation highway'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

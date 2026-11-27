@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Yakama, June 9, 1855, 12 Stat. 951
+  since: '1855-06-09'
+  source: treaty-with-the-yakima-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-06-09'
+  locator: p. 698 (Treaty with the Yakima, 1855; Kappler header "June 9, 1855. | 12 Stat., 951. | Ratified Mar. 8, 1859. | Proclaimed Apr. 18, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Yakama; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: WA
   presence: government-office
@@ -223,6 +233,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Confederated Tribes & Bands of the Yakama Nation". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 9237006
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Confederated Tribes and Bands of the Yakama Nation' (Toppenish)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 19558612
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'CONFEDERATED TRIBES AND BANDS OF THE YAKAMA NATION' (UEI Q4EDSUR34U61), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: General Council
@@ -630,7 +659,7 @@ land_establishment:
   confidence: high
   verification: read-in-full
   locator: 12 Stat. 952
-  note: 'The instrument reads: “There is, however, reserved, from the lands above ceded ... for the use and occupation of the aforesaid confederated tribes and bands of Indians, the tract of land included within the following boundaries”. Ratified Mar. 8, 1859; proclaimed Apr. 18, 1859. Kappler also lists the Yakima reserve as established by this treaty and by later orders.'
+  note: 'The instrument reads: “There is, however, reserved, from the lands above ceded . . . for the use and occupation of the aforesaid confederated tribes and bands of Indians, the tract of land included within the following boundaries”. Ratified Mar. 8, 1859; proclaimed Apr. 18, 1859. Kappler also lists the Yakima reserve as established by this treaty and by later orders.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

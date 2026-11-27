@@ -1,0 +1,50 @@
+key: kansas-statutes-annotated-79-3295
+kind: state-statute
+citation:
+  type: legislation
+  title: Withholding tax; definitions
+  title-short: Kan. Stat. Ann. § 79-3295
+  container-title: Kansas Statutes Annotated
+  container-title-short: Kan. Stat. Ann.
+  section: 79-3295
+  author:
+  - literal: Kansas Office of Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1965
+  URL: https://ksrevisor.gov/statutes/chapters/ch79/079_032_0095.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://ksrevisor.gov/statutes/chapters/ch79/079_032_0095.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Kan. Stat. Ann. § 79-3295 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KS
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Kan. Stat. Ann. § 79-3295 (2025). History: L. 1965, ch. 525, § 2; L. 1967, ch. 497, § 37; L. 1987, ch. 384, § 1; L. 2000, ch. 184, § 8; L. 2002, ch. 185, § 29; L. 2003, ch. 147, § 37; July 1. Text read from the Kansas Revisor of Statutes'' page for the section in the Kansas Statutes Annotated (ksrevisor.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian); AI reader''s verdict incidental: Withholding definition covers taxable Indian casino profit payments. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian'

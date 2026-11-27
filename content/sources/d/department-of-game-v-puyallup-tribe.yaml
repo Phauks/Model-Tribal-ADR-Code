@@ -108,6 +108,67 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=414%20U.S.%2044
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1973-10-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-28-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048377
+  whole_session: true
+  duration_seconds: 101
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-28-r1.mp3
+    checksum: adc342bd1d6920c43e682d2e6867329085f5d9cc01ad66c7f4390f414b9be9b1
+    media_type: audio/mpeg
+    bytes: 1615957
+- kind: argument
+  date: '1973-10-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-28-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048377
+  whole_session: true
+  duration_seconds: 3227
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-28-r2.mp3
+    checksum: 46f2b378469b23eed99e015c8d76e37ad1e91ccdc9e4f0fb637c6f83f154bcb4
+    media_type: audio/mpeg
+    bytes: 51631461
+- kind: argument
+  date: '1973-10-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-28-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048377
+  whole_session: true
+  duration_seconds: 2836
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-28-r3.mp3
+    checksum: 4106f4da56fb08ffdb1743c6fe792baad1c06946b69be5465bfe1032468a33b5
+    media_type: audio/mpeg
+    bytes: 45372104
+- kind: argument
+  date: '1973-10-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-28-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048377
+  whole_session: true
+  duration_seconds: 3654
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-28-r4.mp3
+    checksum: 4208eedbb64acb0b7a30dc97d8eae8fe6590c0f6d92f57401618f557299ef1b9
+    media_type: audio/mpeg
+    bytes: 58458406
+- kind: argument
+  date: '1973-10-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-28-r5.mp3
+  catalog: https://catalog.archives.gov/id/102048377
+  whole_session: true
+  duration_seconds: 3683
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-28-r5.mp3
+    checksum: 24c48d4f32b89a098782e6c4d599d5312215b2baba9108ebb5da43ea683490ca
+    media_type: audio/mpeg
+    bytes: 58923594
 rights:
   status: no-permission-needed
   basis: us-government-work

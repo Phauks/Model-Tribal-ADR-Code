@@ -8,16 +8,17 @@
  *    sees a new build, the page asks the browser to check the worker now.
  * 2. Install. The new worker saves the new build's scripts and core pages in
  *    its own cache, then waits. The reader keeps reading the old edition.
- * 3. Ask. The page fetches /edition.json from the network and shows what the
- *    update brings, with "Update now", "What changed" and "Later". It also
+ * 3. Ask. The page fetches /edition.json from the network, and a button in
+ *    the masthead (UpdateButton.svelte) opens what the update brings, with
+ *    "Update now" and "What changed". It also
  *    compares the fingerprints of the build being read (saved by its worker)
  *    with the new build's, to say whether the update changes this page.
  * 4. Apply. "Update now" tells the waiting worker to take over; the page
  *    reloads once it does. The notice shows only once the new worker has
  *    installed, and the worker tidies the old cache only after it has taken
- *    over, so the reload is not held up. "Later" hides the notice for this visit; the
- *    browser applies the update on its own once every tab of the site has
- *    been closed.
+ *    over, so the reload is not held up. A reader who does not update keeps
+ *    the button; the browser applies the update on its own once every tab of
+ *    the site has been closed.
  * 5. Save again. On the first page load under the new worker, the page asks
  *    it to save the collections the reader keeps, from the new build.
  */
@@ -33,7 +34,7 @@ import {
 } from './offline-fingerprints.ts';
 import { controllingWorker, resumeSaving, type Progress } from './offline-saving.ts';
 import type { Change } from './recent-changes.ts';
-import { readStored, writeStored } from '#lib/browser-storage.ts';
+import { sendProblem } from './problem-reports.ts';
 
 export interface Edition {
 	build: string;
@@ -44,15 +45,11 @@ export interface Edition {
 	changes?: Change[];
 }
 
-const dismissedKey = 'update-dismissed';
-
 class SiteUpdates {
 	/** A new version is installed and waiting for the reader. */
 	waiting = $state(false);
 	/** What the waiting update brings, when it could be read. */
 	available = $state<Edition | undefined>();
-	/** The reader chose "Later" during this visit. */
-	dismissed = $state(false);
 	checking = $state(false);
 	lastChecked = $state<Date | undefined>();
 	/** Progress while kept collections are saved again from the new build. */
@@ -68,8 +65,6 @@ class SiteUpdates {
 	async start(): Promise<void> {
 		if (this.#started || !('serviceWorker' in navigator)) return;
 		this.#started = true;
-		// With storage blocked, the notice shows again on each page.
-		this.dismissed = readStored(dismissedKey, 'session') === 'yes';
 		navigator.serviceWorker.addEventListener('controllerchange', () => {
 			if (this.#reloadWhenReplaced) location.reload();
 		});
@@ -92,8 +87,9 @@ class SiteUpdates {
 		try {
 			const response = await fetch('/edition.json', { cache: 'no-store' });
 			if (response.ok) this.available = (await response.json()) as Edition;
-		} catch {
-			// Offline again: the notice still offers the update, without version numbers.
+		} catch (problem) {
+			// The notice still offers the update, without version numbers.
+			sendProblem(problem, { code: 'updates.edition' });
 		}
 		await this.#compareBuilds();
 	}
@@ -110,8 +106,9 @@ class SiteUpdates {
 			// The server may already hold a newer build than the one waiting.
 			if (this.available && waiting.version !== this.available.build) return;
 			this.#fingerprints = { reading, waiting };
-		} catch {
-			// Offline, or storage blocked.
+		} catch (problem) {
+			// The notice says nothing about the page.
+			sendProblem(problem, { code: 'updates.fingerprints' });
 		}
 	}
 
@@ -126,8 +123,9 @@ class SiteUpdates {
 			await resumeSaving((progress) => {
 				this.resaving = progress.done < progress.total ? progress : undefined;
 			});
-		} catch {
-			// Offline, or a save was cut short: it continues on a later visit.
+		} catch (problem) {
+			// It continues on a later visit.
+			sendProblem(problem, { code: 'updates.resume' });
 		} finally {
 			this.resaving = undefined;
 		}
@@ -135,7 +133,7 @@ class SiteUpdates {
 
 	/** Called when SvelteKit has seen a new build: have the browser fetch the new worker now. */
 	newBuildSeen(): void {
-		void this.#registration?.update().catch(() => undefined);
+		void this.#registration?.update().catch(() => /* expected: offline; the next check fetches the new worker. */ undefined);
 	}
 
 	async check(): Promise<void> {
@@ -147,8 +145,9 @@ class SiteUpdates {
 			await registration?.update();
 			if (registration?.installing) this.#watch(registration.installing);
 			if (registration?.waiting && controllingWorker()) await this.#found();
-		} catch {
-			// Offline: nothing to check against.
+		} catch (problem) {
+			// Nothing to check against; offline is only noted (sendProblem).
+			sendProblem(problem, { code: 'updates.check' });
 		} finally {
 			this.lastChecked = new Date();
 			this.checking = false;
@@ -163,12 +162,6 @@ class SiteUpdates {
 		}
 		this.#reloadWhenReplaced = true;
 		waiting.postMessage({ type: 'skip-waiting' });
-	}
-
-	later(): void {
-		this.dismissed = true;
-		// With storage blocked, it is hidden until the next page load only.
-		writeStored(dismissedKey, 'yes', 'session');
 	}
 }
 

@@ -11,8 +11,17 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
-  note: 'The notice adds in parentheses: Six component reservations: Bois Forte Band (Nett Lake); Fond
-    du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band.'
+  note: 'The notice adds in parentheses: Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band.'
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Chippewa, Oct. 4, 1842, 7 Stat. 591
+  since: '1842-10-04'
+  source: treaty-with-the-chippewa-1842
+  confidence: medium
+  verification: inferred
+  as_of: '1842-10-04'
+  locator: p. 542 (Treaty with the Chippewa, 1842; Kappler header "Oct. 4, 1842. | 7 Stat., 591. | Proclamation, Mar. 23, 1843.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Chippewa of the Mississippi; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 13 nations' profiles link this treaty.
 states:
 - state: MN
   presence: government-office
@@ -182,6 +191,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band". The Minnesota Chippewa Tribe itself is not listed; Indian Health Service lists its constituent bands (Bois Forte, Fond du Lac, Grand Portage, Leech Lake, Mille Lacs, White Earth) under Bemidji Area Minnesota Tribal Health Programs. Area inferred from the constituent bands.
+federal_programs:
+- program: interior-non-bia-funding-agreement
+  agency: National Park Service (Grand Portage National Monument; listed as "Grand Portage Band of Lake Superior Chippewa Indians")
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, National Park Service agreements, 'Minnesota Chippewa Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Minnesota Chippewa Tribe'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Minnesota Chippewa Tribe" among organizations under constitutions approved by

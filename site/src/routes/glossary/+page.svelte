@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>Glossary · Model Tribal ADR Code</title>
+	<title>Glossary · Tribal Law Project</title>
 	<meta
 		name="description"
 		content="Terms the Model Tribal ADR Code defines, how it uses them, and what to write instead."

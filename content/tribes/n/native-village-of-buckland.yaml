@@ -21,6 +21,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Native Village of Buckland (approved by the Secretary of the Interior Oct. 13, 1950), under the Act of May 1, 1936, ch. 254, § 1, 49 Stat. 1250, 1250
+  since: '1950-10-13'
+  source: university-of-oklahoma-indian-reorganization-act-buckcons
+  document_version:
+    document: native-village-of-buckland-constitution
+    version: 1950-text
+  confidence: medium
+  verification: inferred
+  as_of: '1950-10-13'
+  locator: 1950 constitution and bylaws (1950-10-13), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AK
   presence: government-office
@@ -168,6 +181,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
   note: 'The source''s words: "Native Village of Buckland".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 650761
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Buckland' (Buckland)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Buckland'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution and By-Laws of the Native Village of Buckland Alaska (approved 1950) states it

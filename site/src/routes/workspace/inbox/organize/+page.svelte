@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-	<title>Folders and tags · Inbox · Workspace · Model Tribal ADR Code</title>
+	<title>Folders and tags · Inbox · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Folders and tags</h1>

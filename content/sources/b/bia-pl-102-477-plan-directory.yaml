@@ -1,0 +1,28 @@
+key: bia-pl-102-477-plan-directory
+kind: dataset
+citation:
+  type: dataset
+  title: 477 Plan Directory (PL102_477_Contracts and PL102_477_PartnerEnrollment)
+  author:
+  - literal: U.S. Department of the Interior, Bureau of Indian Affairs, Office of Indian Services, Division of Workforce Development
+  medium: ArcGIS feature service
+  URL: https://biamaps.geoplatform.gov/server/rest/services/Hosted/PL102_477_Contracts/FeatureServer/0
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://biamaps.geoplatform.gov/server/rest/services/Hosted/PL102_477_Contracts/FeatureServer/0
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the United States government, not subject to copyright (17 U.S.C. § 105).
+  redistribution: true
+found_in:
+- 2026-11-26-self-governance-programs
+notes: 'The two public map services behind the Bureau''s 477 Plan Directory (https://www.bia.gov/bia/ois/dwd/477Initiative/477PlanDirectory): PL102_477_Contracts, one row per plan with its organization type, agreement type, region and plan dates (84 plans on Nov. 26, 2026), and PL102_477_PartnerEnrollment (https://biamaps.geoplatform.gov/server/rest/services/Hosted/PL102_477_PartnerEnrollment/FeatureServer/0), one row per federal program merged into a plan (686 rows). The services also hold names, titles and email addresses of Tribal and federal officials; those fields were never read into the project (charter, commitment 1), so no copy of the raw responses is kept. The plan and program fields are in research/self-governance/2026-11-26/.'

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Comanche, Aionai, Anadarko, Caddo, etc., May 15, 1846, 9 Stat. 844
+  since: '1846-05-15'
+  source: treaty-with-the-comanche-aionai-anadarko-caddo-etc-1846
+  confidence: medium
+  verification: inferred
+  as_of: '1846-05-15'
+  locator: p. 554 (Treaty with the Comanche, Aionai, Anadarko, Caddo, etc., 1846; Kappler header "May 15, 1846. | 9 Stat., 844. | Proclamation, Mar. 8, 1847.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Tonkawa; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 4 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -184,6 +194,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Tonkawa Tribe of Indians of Oklahoma".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 669724
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Tonkawa Tribe' (Tonkawa)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 168803
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'TONKAWA TRIBE' (UEI M19HCJ5VD6F5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'TONKAWA TRIBE'.
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Tonkawa Tribe of Indians of Oklahoma" among organizations under constitutions
@@ -632,6 +662,83 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Tonakawa Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 10, 1994 (file 30949).
+  source: oklahoma-filing-30949
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 30949
+  note: 'From the register line: “Tonkawa Tribe/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 31, 2000 (file 36528).
+  source: oklahoma-filing-36528
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 36528
+  note: 'From the register line: “Tonkawa Tribal Council and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 10, 2004 (file 39858).
+  source: oklahoma-filing-39858
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 39858
+  note: 'From the register line: “The Tonkawa Tribe of Oklahoma and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46233).
+  source: oklahoma-filing-46233
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46233
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 27, 2013 (file 46261).
+  source: oklahoma-filing-46261
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46261
+  note: 'From the register line: “Amendment between the Tonkawa Tribe and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 15, 2013 (file 46521).
+  source: oklahoma-filing-46521
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46521
+  note: 'From the register line: “Tonkawa Tribe of Oklahoma and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 19, 2024 (file 53444).
+  source: oklahoma-filing-53444
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53444
+  note: 'From the register line: “Tobacco Tax Compact between the State of Oklahoma and the Tonkawa Tribe”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Kay County

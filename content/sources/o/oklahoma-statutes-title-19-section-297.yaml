@@ -1,0 +1,55 @@
+key: oklahoma-statutes-title-19-section-297
+kind: state-statute
+citation:
+  type: legislation
+  title: Record of certificate showing Indian lands exempt from taxation
+  title-short: Okla. Stat. tit. 19, § 297
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '19'
+  section: '297'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1929
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os19.pdf#page=186
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os19.pdf#page=186
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-19-section-339
+- oklahoma-statutes-title-19-section-421-1
+state_law:
+  relevance: core
+  citation: Okla. Stat. tit. 19, § 297 (2026)
+  page: 186
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 19, § 297 (2026). History: Added by Laws 1929, c. 32, p. 32, § 1. Text read from the Legislative Service Bureau''s Title 19 PDF (updated Nov. 12, 2026), page 186. Found by the state statutes pilot (terms: five civilized tribes; indian lands); AI reader''s verdict core: Five Civilized Tribes exempt Indian land certificates recording. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: five civilized tribes; indian lands'

@@ -21,6 +21,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Native Village of Tyonek (approved by the Secretary of the Interior May 23, 1939), under the Act of May 1, 1936, ch. 254, § 1, 49 Stat. 1250, 1250
+  since: '1939-05-23'
+  source: university-of-oklahoma-indian-reorganization-act-tyocons
+  document_version:
+    document: native-village-of-tyonek-constitution
+    version: 1939-text
+  confidence: medium
+  verification: inferred
+  as_of: '1939-05-23'
+  locator: 1939 constitution and bylaws (text 1), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AK
   presence: government-office
@@ -188,6 +201,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Native Village of Tyonek".'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 324835
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Tyonek' (Tyonek)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Tyonek'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 372929
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'NATIVE VILLAGE OF TYONEK' (UEI YY1TEPLZK7U8), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Tyonek" among organizations under constitutions approved by

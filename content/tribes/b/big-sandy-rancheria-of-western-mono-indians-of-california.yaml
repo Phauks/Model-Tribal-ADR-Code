@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 48 Fed. Reg. 56862, 56863 (Dec. 23, 1983)
+  since: '1983-12-23'
+  source: bia-recognized-entities-1983
+  confidence: medium
+  verification: bulk-import
+  as_of: '1983-12-23'
+  locator: 48 Fed. Reg. 56863 (entry "Big Sandy Ranchería of Mono Indians of California")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Big Sandy Ranchería of Mono Indians of California." The entry is matched to the nation by name.
 states:
 - state: CA
   presence: government-office
@@ -157,6 +167,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Big Sandy Rancheria of Western Mono Indians of California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 472239
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Big Sandy Rancheria of Western Mono Indians' (Auberry)
 governance:
 - aspect: governing-body
   value: Tribal Council

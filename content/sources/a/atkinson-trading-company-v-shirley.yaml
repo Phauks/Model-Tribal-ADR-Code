@@ -93,6 +93,19 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Atkinson_Trading_Co._v._Shirley
+argument_audio:
+- kind: argument
+  date: '2001-03-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1181.mp3
+  catalog: https://catalog.archives.gov/id/138282826
+  whole_session: true
+  duration_seconds: 7196
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1181.mp3
+    checksum: 5401c01ede8907c72259ac1b03ffb5f4bc084c18ee323332fabbc223852e8075
+    media_type: audio/mpeg
+    bytes: 115134923
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -121,9 +134,9 @@ case_box:
   holding: |-
     No. The Court held that *Montana*'s general rule governs Tribal taxation of nonmember activity on non-Indian fee land, that the guests' receipt of Tribal services did not create a consensual relationship, and that the second *Montana* exception did not apply.
   quotes:
-  - text: "An Indian tribe's sovereign power to tax-whatever its derivation-reaches no further than tribal land ..."
+  - text: "An Indian tribe's sovereign power to tax-whatever its derivation-reaches no further than tribal land."
     pinpoint: "p. 653"
-  - text: "... a nonmember's actual or potential receipt of tribal police, fire, and medical services does not create the requisite connection ..."
+  - text: "[A] nonmember's actual or potential receipt of tribal police, fire, and medical services does not create the requisite connection."
     pinpoint: "p. 655"
   topics:
   - "Civil jurisdiction"

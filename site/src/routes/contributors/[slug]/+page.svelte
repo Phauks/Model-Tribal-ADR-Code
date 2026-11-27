@@ -2,7 +2,7 @@
 	@component
 	A contributor's public page (docs/contributor-profiles.md, "Contributor
 	pages"), as an info page (site/DESIGN.md, "Info pages"): the picture and
-	key facts At a glance, the person's own words, then their work on this
+	key facts Key facts, the person's own words, then their work on this
 	site.
 -->
 <script lang="ts">
@@ -36,8 +36,8 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Contributors · Model Tribal ADR Code</title>
-	<meta name="description" content="{data.name}: credit and published work on the Model Tribal ADR Code." />
+	<title>{data.name} · Contributors · Tribal Law Project</title>
+	<meta name="description" content="{data.name}: credit and published work on the Tribal Law Project." />
 </svelte:head>
 
 <InfoPage title={data.name} {picture} {glance} trail={[{ label: 'People', href: '/people' }]}>

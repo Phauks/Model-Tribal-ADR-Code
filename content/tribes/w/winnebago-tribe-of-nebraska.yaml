@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Winnebago, June 3, 1816, 7 Stat. 144
+  since: '1816-06-03'
+  source: treaty-with-the-winnebago
+  confidence: medium
+  verification: inferred
+  as_of: '1816-06-03'
+  locator: page not determined (Treaty with the Winnebago, 1816; Kappler header "June 3, 1816. | 7 Stat., 144. | Proclamation, Dec. 30, 1816.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Winnebago; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: NE
   presence: government-office
@@ -232,6 +242,50 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
   note: 'Listed as "Winnebago Tribe of Nebraska". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Winnebago Tribe of Nebraska (2018)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2018
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Great Plains Area, row 'Winnebago Tribe of Nebraska'
+- program: pl-102-477-plan
+  start: '2026-10-01'
+  end: '2031-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Native Employment Works
+  - Temporary Assistance for Needy Families
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Winnebago Tribe of Nebraska'; PL102_477_PartnerEnrollment, its 8 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2081053
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NE, row 'Winnebago Tribe' (Winnebago)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 29165119
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'WINNEBAGO TRIBE OF NEBRASKA' (UEI QHU1JXKM7D51), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Winnebago Tribe of Nebraska" among organizations under constitutions approved
@@ -804,6 +858,14 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Jan. 19, 2021 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2021-01-19'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Nebraska Department of Health and Human Services, Division of Children and Family Services
@@ -852,7 +914,7 @@ nearby_state_courts:
 - state: NE
   county: Thurston County
   court: District Court for Thurston County
-  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  link: https://nebraskajudicial.gov/directories/district-court-contacts
   source: state-trial-court-directory-ne
   confidence: medium
   verification: inferred
@@ -861,7 +923,7 @@ nearby_state_courts:
 - state: NE
   county: Dixon County
   court: District Court for Dixon County
-  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  link: https://nebraskajudicial.gov/directories/district-court-contacts
   source: state-trial-court-directory-ne
   confidence: medium
   verification: inferred
@@ -1020,7 +1082,7 @@ land_establishment:
   confidence: high
   verification: read-in-full
   locator: 14 Stat. 671
-  note: 'The instrument reads: “the United States agree to set apart for the ... occupation and future home of the Winnebago Indians, forever”. Land taken from the Omaha cession of Mar. 6, 1865.'
+  note: 'The instrument reads: “the United States agree to set apart for the . . . occupation and future home of the Winnebago Indians, forever”. Land taken from the Omaha cession of Mar. 6, 1865.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

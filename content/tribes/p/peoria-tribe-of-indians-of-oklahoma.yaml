@@ -191,6 +191,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: '"Peewaaliaataweenki (Peoria language)"; tag is Miami-Illinois'
+language_programs:
+- name: Peoria Language Program
+  link: https://www.peoriatribe.gov/207/CultureLanguage
+  run_by: nation
+  source: peoria-tribe-of-indians-of-oklahoma-207-culturelanguage
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: Course Information
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Miami Agency
@@ -207,6 +216,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Peoria Tribe of Indians of Oklahoma".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1922353
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Peoria Tribe' (Miami)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 146962
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'PEORIA TRIBE OF INDIANS OF OKLAHOMA' (UEI W1MBR397G6U5), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Peoria Tribe of Indians of Oklahoma" among organizations under constitutions
@@ -681,6 +709,22 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business Leasing Ordinance) of the Peoria Tribe of Indians of Oklahoma, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on May 21, 2026, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-peoria-tribe-of-indians-of-oklahoma-2026-05-21
+  confidence: high
+  verification: inferred
+  as_of: '2026-05-21'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2026
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 126(a); 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 126(a); 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services
@@ -693,6 +737,28 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Peoria Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 8, 1997 (file 34899).
+  source: oklahoma-filing-34899
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 34899
+  note: 'From the register line: “Peoria Tribe /State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Boxing compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Feb. 17, 2005 (file 40310).
+  source: oklahoma-filing-40310
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 40310
+  note: 'From the register line: “Peoria Tribe of Indians of Oklahoma and State of Oklahoma”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Ottawa County

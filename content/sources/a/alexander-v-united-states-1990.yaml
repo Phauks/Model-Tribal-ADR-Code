@@ -1,0 +1,62 @@
+key: alexander-v-united-states-1990
+kind: state-case
+citation:
+  type: legal_case
+  title: Alexander v. United States
+  authority: Supreme Court of Wyoming
+  container-title: P.2d
+  volume: '803'
+  page: '61'
+  issued:
+    date-parts:
+    - - 1990
+      - 11
+      - 30
+  URL: https://static.case.law/p2d/803/html/0061-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/p2d/803/html/0061-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- northern-arapaho-tribe-of-the-wind-river-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: northern-arapaho-tribe-of-the-wind-river-reservation
+    named_as: Northern Arapaho Tribe of the Wind River Reservation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Shoshone Tribe
+    reason: More than one of today's nations shares this name (duckwater-shoshone-tribe, eastern-shoshone-tribe-of-the-wind-river-reservation, ely-shoshone-tribe-of-nevada, fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation, lone-pine-paiute-shoshone-tribe, northwestern-band-of-the-shoshone-nation and 6 more); which the case concerns has not been checked.
+jurisdictions:
+- level: state
+  state: WY
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 803 P.2d 61. Decided by the Supreme Court of Wyoming on Nov. 30, 1990. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 17, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 17
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 1 not linked

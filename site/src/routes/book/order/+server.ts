@@ -27,7 +27,7 @@ export const POST: RequestHandler = async ({ request, url, getClientAddress, loc
 		return json({ placed: false, reason: 'Too many orders from this connection. Wait a minute and try again.' }, { status: 429 });
 	}
 
-	const body = await request.json().catch(() => undefined);
+	const body = await request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ undefined);
 	const read = readBookOrderForm(body, true);
 	if (!read.ok) return json({ placed: false, reason: read.problem }, { status: 400 });
 	const { choice, shippingLevel, address, email } = read.form;
@@ -75,7 +75,7 @@ export const POST: RequestHandler = async ({ request, url, getClientAddress, loc
 			reference: identifier,
 			description: `${fileSet.title}, ${sizeOf(choice.size)?.name ?? choice.size} ${binding.toLowerCase()}, ${fileSet.pages} pages, printed and mailed by Lulu`,
 			amountInCents: quote.priceCents,
-			gift: gift.cents > 0 ? { amountInCents: gift.cents, description: 'Gift to Model Tribal ADR Code' } : undefined,
+			gift: gift.cents > 0 ? { amountInCents: gift.cents, description: 'Gift to Tribal Law Project' } : undefined,
 			email,
 			successAddress: `${url.origin}/orders/${identifier}?paid=1`,
 			cancelAddress: `${url.origin}/book`

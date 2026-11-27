@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=515%20U.S.%20450
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1995-04-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-956.mp3
+  catalog: https://catalog.archives.gov/id/118975090
+  whole_session: true
+  duration_seconds: 14633
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-956.mp3
+    checksum: 4c1995f75b021e70dde63f55c77da7a75e487cd7130b3094101c549577ac6b5c
+    media_type: audio/mpeg
+    bytes: 234129990
 rights:
   status: no-permission-needed
   basis: us-government-work

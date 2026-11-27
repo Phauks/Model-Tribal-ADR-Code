@@ -1,0 +1,77 @@
+key: united-states-v-board-of-directors-of-the-truckee-carson-irrigation-district-2013
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Board of Directors of the Truckee-Carson Irrigation District
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '723'
+  page: '1029'
+  issued:
+    date-parts:
+    - - 2013
+      - 7
+      - 22
+  URL: https://static.case.law/f3d/723/html/1029-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 12-15474, 12-15476, 12-15594, 12-15595, 12-15599
+original_link: https://static.case.law/f3d/723/html/1029-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2013-06-12'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2013/06/12/12-15474.wma
+  duration_seconds: 2568
+  file:
+    storage_key: appeals-court-audio/ca9/2013/2013-06-12-12-15474.wma
+    checksum: f001869225e97e97ae264e16854983e4f1b301b96424312c543e1c1c42873e55
+    media_type: audio/x-ms-wma
+    bytes: 6642413
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation
+- paiute-shoshone-tribe-of-the-fallon-reservation-and-colony
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation
+    named_as: Pyramid Lake Paiute Tribe of Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: paiute-shoshone-tribe-of-the-fallon-reservation-and-colony
+    named_as: Fallon-Paiute Shoshone Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 723 F.3d 1029. Decided by the United States Court of Appeals for the Ninth Circuit on July 22, 2013. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (Pyramid Lake Paiute water rights).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: Pyramid Lake Paiute water rights'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 2 matched, 0 not linked

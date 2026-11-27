@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 47 Fed. Reg. 53130, 53134 (Nov. 24, 1982)
+  since: '1982-11-24'
+  source: bia-recognized-entities-1982
+  confidence: medium
+  verification: bulk-import
+  as_of: '1982-11-24'
+  locator: 47 Fed. Reg. 53134 (entry "Nome Eskimo Community.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Nome Eskimo Community." The entry is matched to the nation by name.
 states:
 - state: AK
   presence: government-office
@@ -216,6 +226,32 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
   note: 'The source''s words: "Nome Eskimo Community".'
   operator: tribal
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2005
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Nome Eskimo Community' (Alaska Region)
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1513245
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Nome Eskimo Community' (Nome)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1443142
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'NOME ESKIMO COMMUNITY' (UEI TN9RANKKJGR4), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Nome Eskimo Community" among organizations under constitutions approved by the

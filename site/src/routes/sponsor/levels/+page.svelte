@@ -36,11 +36,11 @@
 </script>
 
 <svelte:head>
-	<title>Sponsorship levels · Model Tribal ADR Code</title>
+	<title>Sponsorship levels · Tribal Law Project</title>
 	<meta name="description" content="What everyone gets free, and what each sponsorship level adds." />
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Sponsorship', href: '/sponsor' }]} />
+<Breadcrumbs trail={[{ label: 'Sponsorship', href: '/sponsor' }]} current="Sponsorship levels" />
 <div class="sponsorship-levels">
 	<div class="title-row">
 		<h1>Sponsorship levels</h1>
@@ -175,7 +175,7 @@
 	}
 
 	.segmented input:focus-visible + label {
-		outline: 3px solid var(--color-focus);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: -3px;
 	}
 

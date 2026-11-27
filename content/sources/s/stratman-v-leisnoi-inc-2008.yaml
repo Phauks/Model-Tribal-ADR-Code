@@ -1,0 +1,64 @@
+key: stratman-v-leisnoi-inc-2008
+kind: federal-case
+citation:
+  type: legal_case
+  title: Stratman v. Leisnoi, Inc.
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '545'
+  page: '1161'
+  issued:
+    date-parts:
+    - - 2008
+      - 10
+      - 6
+  URL: https://static.case.law/f3d/545/html/1161-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 07-35934
+original_link: https://static.case.law/f3d/545/html/1161-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2008-08-06'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2008/08/07/07-35934.wma
+  duration_seconds: 1992
+  file:
+    storage_key: appeals-court-audio/ca9/2008/2008-08-06-07-35934.wma
+    checksum: 19d17e6bdeb1ca32868c15e63efcb5d7a73dc63f0303ce6e8dbd4dd3ed120bb3
+    media_type: audio/x-ms-wma
+    bytes: 5123321
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 545 F.3d 1161. Decided by the United States Court of Appeals for the Ninth Circuit on Oct. 6, 2008. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 63, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 63
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

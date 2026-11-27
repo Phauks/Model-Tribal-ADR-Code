@@ -12,6 +12,16 @@ recognition:
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
   note: 'The notice adds in parentheses: Wichita, Keechi, Waco, & Tawakonie.'
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Comanche, etc., Aug. 24, 1835, 7 Stat. 474
+  since: '1835-08-24'
+  source: treaty-with-the-comanche-etc-1835
+  confidence: medium
+  verification: inferred
+  as_of: '1835-08-24'
+  locator: p. 435 (Treaty with the Comanche, etc., 1835; Kappler header "Aug. 24, 1835. | 7 Stat., 474. | Proclamation, May 19, 1836.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Wichita; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 8 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -249,6 +259,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Wichita & Affiliated Tribes of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2022
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Wichita and Affiliated Tribes' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Wichita and Affiliated Tribes'.
+- program: indian-health-service-self-governance-compact
+  since: 2022
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Wichita & Affiliated Tribes'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Wichita & Affiliated Tribes'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 641964
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Wichita and Affiliated Tribes' (Anadarko)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 830702
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'WICHITA AND AFFILIATED TRIBES' (UEI HB2ERLNW6KD8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'WICHITA AND AFFILIATED TRIBES'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 757194
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'WICHITA AND AFFILIATED TRIBES' (UEI HB2ERLNW6KD8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'WICHITA AND AFFILIATED TRIBES'.
 governance:
 - aspect: head-of-government
   value: President
@@ -393,6 +449,14 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Wichita and Affiliated Tribes, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Apr. 8, 2014, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-wichita-and-affiliated-tribes-2014-04-08
+  confidence: high
+  verification: inferred
+  as_of: '2014-04-08'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2014
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services
@@ -405,6 +469,83 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Wichita & Affiliated Tribes”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 30, 1998 (file 35542).
+  source: oklahoma-filing-35542
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 35542
+  note: 'From the register line: “Wichita and Affiliated Tribes/ State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 22, 1999 (file 36368).
+  source: oklahoma-filing-36368
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 36368
+  note: 'From the register line: “Wichita and Affiliated Tribes of Oklahoma/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 9, 2006 (file 41707).
+  source: oklahoma-filing-41707
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 41707
+  note: 'From the register line: “The Wichita & Affiliated Tribes and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 7, 2008 (file 43135).
+  source: oklahoma-filing-43135
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 43135
+  note: 'From the register line: “The Wichita and Affiliated Tribes and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on May 1, 2014 (file 46918).
+  source: oklahoma-filing-46918
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46918
+  note: 'From the register line: “Between the Wichita and Affiliated Tribes and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Supplemental term to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 22, 2023 (file 52884).
+  source: oklahoma-filing-52884
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52884
+  note: 'From the register line: “Supplemental Term to Tobacco Products Excise Tax Compact Between the Wichita and Affiliated Tribes and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Feb. 12, 2024 (file 52951).
+  source: oklahoma-filing-52951
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52951
+  note: 'From the register line: “Tobacco Tax Compact Between the State of Oklahoma and the Wichita and Affiliated Tribes”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Caddo County

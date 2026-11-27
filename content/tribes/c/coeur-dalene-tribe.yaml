@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of June 14, 1867, 1 Kappler 837
+  since: '1867-06-14'
+  source: executive-order-1867-06-14-southern-and-northern-idaho-reservations
+  confidence: low
+  verification: inferred
+  as_of: '1867-06-14'
+  locator: 1 Kappler 837
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Northern Idaho reservation for the Coeur d'Alenes and other tribes.
 states:
 - state: ID
   presence: government-office
@@ -167,6 +177,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: 'Page: ''The Coeur d’Alene Language (snchitsu’umshtsn) is a southern interior Salishan language.'''
+language_programs:
+- name: Tribal Language Department
+  link: https://www.cdatribe-nsn.gov/our-tribe/language/
+  run_by: nation
+  source: cdatribe-nsn-our-tribe-language
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: Language
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Coeur d'Alene Agency
@@ -183,6 +202,35 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Coeur D''Alene Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Coeur D’Alene Tribe (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Coeur D’Alene Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Coeur D’Alene Tribe'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1544985
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: ID, row 'Coeur D'Alene Tribe' (Plummer)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 14853084
+  amount_kind: obligations
+  through: Coeur d'Alene Tribal Health Authority
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'COEUR D'ALENE TRIBAL HEALTH AUTHORITY' (UEI KSNKJDS7WQM3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'COEUR D'ALENE TRIBAL HEALTH AUTHORITY'.
 governance:
 - aspect: form
   value: Approved by Acting Commissioner of Indian Affairs
@@ -404,7 +452,7 @@ dispute_resolution:
   provisions:
   - kind: arbitration
     title: Coeur D'Alene Tribal Arbitration Act.
-    citation: Coeur D'Alene Tribal Arbitration Act.; Validity of agreement to arbitrate.; Effect of agreement to arbitrate; nonwaivable provisions.; Initiation of arbitration.; Motion to compel or stay arbitration.; ...
+    citation: Coeur D'Alene Tribal Arbitration Act.; Validity of agreement to arbitrate.; Effect of agreement to arbitrate; nonwaivable provisions.; Initiation of arbitration.; Motion to compel or stay arbitration.; . . .
     link: https://narf.org/nill/codes/coeur_dalene/index.html
     source: national-indian-law-library-code-codes-coeur-dalene
     confidence: medium
@@ -566,6 +614,14 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image, and the name was found word for word in the notice''s
     machine-read (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Aug. 5, 2005 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on June 12, 2014.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2005-08-05'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: public-defender
   title: Justice Department (Public Defender's Office)

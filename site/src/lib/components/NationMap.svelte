@@ -9,11 +9,13 @@
 
 	The views are picked from the same searchable dropdown as the map of all
 	nations (src/lib/map-views.ts). Without scripts every view is shown, one after another. The same
-	facts are listed in words under "At a glance", so the map is never the only
+	facts are listed in words under "Key facts", so the map is never the only
 	way to them.
 -->
 <script lang="ts">
-	import { tick } from 'svelte';
+	import { onMount, tick } from 'svelte';
+	import YearSlider from './YearSlider.svelte';
+	import { censusYearFor, readCessionsSwitch, yearSliderSetup } from '#lib/historic-map.ts';
 	import type { NationMapData } from '#lib/presence-map.ts';
 	import ZoomableMap from './ZoomableMap.svelte';
 	import TileMap from './TileMap.svelte';
@@ -28,14 +30,25 @@
 	let chosen = $state<NationMapView | undefined>();
 	const currentKey = $derived(chosen ?? map.views[0]?.key);
 	const current = $derived(Math.max(0, map.views.findIndex((view) => view.key === currentKey)));
-	/** The Land Areas view is drawn with MapLibre over the site's tiles when the browser can (TileMap.svelte); the drawn map stays for print, offline reading and old devices. */
-	let tileMapWanted = $state(true);
-	/** Said to screen readers when the tiled map cannot start and the drawn map takes its place. */
-	let tileMapProblem = $state('');
+	/** The Land Areas view is drawn with MapLibre over the site's tiles (TileMap.svelte); the drawn map stays for print and for readers without scripts. If MapLibre cannot start, the map says so in its own frame, with Try again, rather than the drawn map taking its place (Trevor, 2026-11-27). */
+	const tileMapWanted = true;
 	let tileMapReady = $state(false);
+	let tileMapFailed = $state(false);
+
+	/**
+	 * The year slider under the tiled map, and the Land cessions switch in its Layers menu, shared with the Map page (Trevor, 2026-11-26, historic maps mockup 6): the slider picks the Census year of the land areas, and with the switch on, the land the nation's predecessors had ceded by then.
+	 */
+	const censusYears = $derived(map.tileMap?.tiles.landAreaYears ?? []);
+	let cessionsOn = $state(false);
+	onMount(() => (cessionsOn = readCessionsSwitch()));
+	const slider = $derived(yearSliderSetup(map.cessions?.years ?? [], censusYears, cessionsOn && map.cessions !== undefined));
+	let year = $state<number | undefined>();
+	const shownYear = $derived(year ?? slider.maximum);
+	const censusShown = $derived(censusYearFor(shownYear, censusYears));
 
 	function choose(key: NationMapView): void {
 		tileMapReady = false;
+		tileMapFailed = false;
 		chosen = key;
 	}
 
@@ -93,7 +106,6 @@
 			{/each}
 		</defs>
 	</svg>
-	<p class="visually-hidden" role="status">{tileMapProblem}</p>
 
 	{#if map.views.length > 1}
 		<div class="nation-map-picker">
@@ -103,7 +115,7 @@
 
 	{#each map.views as view, index (view.key)}
 		{@const layout = view.layout}
-		{@const tiled = view.key === 'lands' && tileMapReady && index === current}
+		{@const tiled = view.key === 'lands' && (tileMapReady || tileMapFailed) && index === current}
 		<figure
 			class="nation-map-view"
 			id="nation-map-view-{view.key}"
@@ -116,12 +128,15 @@
 						view="lands"
 						label="Land Areas map of {nationName}"
 						data={map.tileMap}
+						year={shownYear}
+						bind:cessions={cessionsOn}
+						cessionsShown={map.cessions?.royce ?? []}
+						cessionsBounds={map.cessions?.bounds}
 						onselect={(anchor) => void chooseArea(anchor)}
 						onready={() => (tileMapReady = true)}
 						onfail={() => {
-							tileMapWanted = false;
 							tileMapReady = false;
-							tileMapProblem = 'The interactive map could not be loaded, so the drawn map is shown.';
+							tileMapFailed = true;
 						}}
 					/>
 				</div>
@@ -187,7 +202,26 @@
 						<a href={map.region?.link}>All Bureau of Indian Affairs regions</a>.
 					</p>
 				{:else}
-					<p class="key"><span class="swatch land" aria-hidden="true"></span>Census land areas named in this entry</p>
+					{#if tiled}
+						<YearSlider
+							compact
+							bind:value={() => shownYear, (value) => (year = value)}
+							minimum={slider.minimum}
+							maximum={slider.maximum}
+							stops={slider.stops}
+							bands={slider.bands}
+							describe={(value) => {
+								const census = censusYearFor(value, censusYears);
+								return census === undefined ? 'no Census land areas' : `Census land areas of ${census}`;
+							}}
+						/>
+					{/if}
+					{#if !tiled || censusShown !== undefined}
+						<p class="key"><span class="swatch land" aria-hidden="true"></span>Census land areas named in this entry{#if tiled && censusShown !== undefined && shownYear < slider.maximum}, {censusShown}{/if}</p>
+					{/if}
+					{#if tiled && cessionsOn && map.cessions}
+						<p class="key"><span class="swatch cession" aria-hidden="true"></span>Land this nation’s predecessors ceded</p>
+					{/if}
 					{#if tiled && areaDetails}
 						<div class="details"><MapDetails bind:this={detailsPanel} details={areaDetails} /></div>
 					{/if}
@@ -198,7 +232,7 @@
 					</ul>
 					<p class="small muted">
 						{#if tiled}
-							Outlines are the Census Bureau’s 2020 areas, drawn over a map of OpenStreetMap data. They are not a statement of the nation’s own boundaries. A dot marks an area until it is big enough to see. Scroll over the map, or pinch, to zoom.
+							Outlines are the Census Bureau’s {censusShown !== undefined && shownYear < slider.maximum ? censusShown : 2020} areas, drawn over a map of OpenStreetMap data. They are not a statement of the nation’s own boundaries. A dot marks an area until it is big enough to see. Scroll over the map, or pinch, to zoom.
 						{:else}
 							Outlines are the Census Bureau’s 2020 areas, simplified for a national map. They are not a statement of the nation’s own boundaries.{#if Object.values(view.layers).some((layer) => layer.dots.length > 0)}{' '}A dot marks an area too small to see.{/if}
 						{/if}
@@ -243,7 +277,7 @@
 			display: none;
 		}
 
-		/* While the tiled map loads, the drawn map keeps its place but is not shown, so the reader never sees one map and then the other. It shows again if the tiled map cannot start, and always without scripts. */
+		/* While the tiled map loads, the drawn map keeps its place but is not shown, so the reader never sees one map and then the other. Without scripts it is the map. */
 		:global(html[data-scripts='on']) .drawing.waiting {
 			visibility: hidden;
 		}
@@ -298,6 +332,11 @@
 
 	.land-area,
 	.land-area-dot,
+	.swatch.cession {
+		background: color-mix(in srgb, var(--color-timeline-treaty) 35%, var(--color-paper));
+		border-color: var(--color-timeline-treaty);
+	}
+
 	.swatch.land {
 		fill: var(--color-map-class-4);
 		background: var(--color-map-class-4);

@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=460%20U.S.%20605
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1982-12-08'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-422.mp3
+  catalog: https://catalog.archives.gov/id/102048800
+  whole_session: true
+  duration_seconds: 13998
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-422.mp3
+    checksum: c6fd9ad274e70fb1ecabb9594d555db8b5cf40e15adce68c91e4ceddbb243b5a
+    media_type: audio/mpeg
+    bytes: 223973582
 rights:
   status: no-permission-needed
   basis: us-government-work

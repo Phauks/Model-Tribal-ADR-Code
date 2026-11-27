@@ -44,6 +44,7 @@ import { SourceUses } from './source-uses.ts';
 import { caseCitation, issuedDate, lawCitation } from './timeline.ts';
 import { recordPageLink } from './law-records.ts';
 import { opinionsOf } from './tribal-court-opinions.ts';
+import { savedCopyFor } from './markdown.ts';
 
 /** provisions.csv subject_area -> subject. "other" has none. */
 const provisionSubjects: Record<string, LawSubject[]> = {
@@ -132,7 +133,10 @@ const jurisdictionSubjects: Record<string, LawSubject[]> = {
 	'state-jurisdiction-statute': ['criminal', 'courts'],
 	'violence-against-women-act-special-tribal-criminal-jurisdiction': ['criminal'],
 	'tribal-law-and-order-act-enhanced-sentencing': ['criminal'],
-	'indian-child-welfare-act': ['family']
+	'indian-child-welfare-act': ['family'],
+	'hearth-act-leasing-regulations': ['land', 'business'],
+	'environmental-treatment-as-a-state': ['land', 'government'],
+	'water-rights-settlement': ['land']
 };
 
 const jurisdictionNames: Record<string, string> = {
@@ -140,7 +144,10 @@ const jurisdictionNames: Record<string, string> = {
 	'state-jurisdiction-statute': 'State jurisdiction under other federal laws',
 	'violence-against-women-act-special-tribal-criminal-jurisdiction': 'Violence Against Women Act jurisdiction',
 	'tribal-law-and-order-act-enhanced-sentencing': 'Tribal Law and Order Act sentencing',
-	'indian-child-welfare-act': 'Indian Child Welfare Act'
+	'indian-child-welfare-act': 'Indian Child Welfare Act',
+	'hearth-act-leasing-regulations': 'Leasing under the HEARTH Act',
+	'environmental-treatment-as-a-state': 'Environmental treatment as a state',
+	'water-rights-settlement': 'Water rights settlement'
 };
 
 const agreementSubjects: Record<string, LawSubject[]> = {
@@ -206,7 +213,7 @@ function humanize(slug: string): string {
 /** A source record's own address: this site's copy when it keeps one, else where it was published. */
 function recordLink(record: SourceRecord | undefined): string | undefined {
 	if (!record) return undefined;
-	const copy = publicCopyFor(record.original_link) ?? publicCopyFor(record.citation.URL);
+	const copy = savedCopyFor(record);
 	if (copy) return copyPagePath(copy);
 	return webLink(record.original_link) ?? webLink(record.citation.URL);
 }

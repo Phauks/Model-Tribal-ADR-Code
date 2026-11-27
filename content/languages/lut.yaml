@@ -1,0 +1,66 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: lut
+name: Northern Lushootseed
+iso_639_3:
+  code: lut
+  reference_name: Lushootseed
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: lush1252
+  level: language
+  source: glottolog-5-4
+family:
+  name: Salishan
+  glottocode: sali1255
+  source: glottolog-5-4
+iso_names:
+- name: Lushootseed
+  source: iso-639-3-code-tables
+dialects:
+- name: Skagit
+  glottocode: skag1239
+  source: glottolog-5-4
+- name: Snohomish
+  glottocode: snoh1241
+  source: glottolog-5-4
+works:
+- glottolog_reference: '578837'
+  title: Elements of Lushootseed Grammar in Discourse Perspective
+  kinds:
+  - grammar
+  author: Zalmai Zahir
+  year: 2018
+  publisher: University of Oregon
+  pages: 290
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '31549'
+  title: Lushootseed dictionary
+  kinds:
+  - dictionary
+  author: Dawn Bates, Thom Hess and Vi Hilbert
+  year: 1994
+  publisher: University of Washington Press
+  pages: 381
+  source: glottolog-5-4
+- glottolog_reference: '300898'
+  title: 'Lushootseed: the language of the Skagit, Nisqually, and other tribes of Puget Sound'
+  kinds:
+  - grammar
+  author: Thom Hess and Vi Hilbert
+  year: 1980
+  publisher: Daybreak Star Press
+  pages: 210
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '33039'
+  title: Dictionary of Puget Salish
+  kinds:
+  - dictionary
+  author: Thom Hess
+  year: 1976
+  publisher: Univ. of Washington Press
+  pages: 770
+  source: glottolog-5-4
+retrieved: '2026-11-27'

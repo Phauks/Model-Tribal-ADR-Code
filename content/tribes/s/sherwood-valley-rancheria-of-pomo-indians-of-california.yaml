@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Sherwood Valley Rancheria of Pomo Indians of California (approved by the Secretary of the Interior July 25, 1974)
+  since: '1974-07-25'
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: 1974 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -160,6 +173,43 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Sherwood Valley Rancheria of Pomo Indians of California".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2018
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Sherwood Valley Rancheria Of Pomo Indians Of California' (Pacific Region)
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 767503
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Sherwood Valley Rancheria of Pomo Indians' (Willits)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 348090
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SHERWOOD VALLEY RANCHERIA' (UEI G5E3XSXB3YP5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SHERWOOD VALLEY RANCHERIA'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 353113
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SHERWOOD VALLEY RANCHERIA' (UEI G5E3XSXB3YP5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SHERWOOD VALLEY RANCHERIA'.
 governance:
 - aspect: form
   value: Constitution and Bylaws

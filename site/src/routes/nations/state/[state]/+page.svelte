@@ -9,10 +9,10 @@
 </script>
 
 <svelte:head>
-	<title>{data.state.label} · Nations · Model Tribal ADR Code</title>
+	<title>{data.state.label} · Nations · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Nations with a presence in {data.state.label}" />
 
 <h1>Nations with a presence in {data.state.label}</h1>
 <p class="small muted">
@@ -25,7 +25,6 @@
 
 {#each data.groups as group (group.entityType)}
 	<section aria-labelledby="group-{group.entityType}">
-		<h2 id="group-{group.entityType}">{group.label}</h2>
-		<NationTable {group} identifier="nations-{data.state.key}-{group.entityType}" />
+		<NationTable {group} identifier="nations-{data.state.key}-{group.entityType}" headingLevel={2} headingIdentifier="group-{group.entityType}" />
 	</section>
 {/each}

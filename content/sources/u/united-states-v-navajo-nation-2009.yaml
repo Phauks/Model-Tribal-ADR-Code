@@ -105,6 +105,31 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=556%20U.S.%20287
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2009-02-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1567-February23.MP3
+  catalog: https://catalog.archives.gov/id/183517949
+  whole_session: true
+  duration_seconds: 7517
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1567-february23.mp3
+    checksum: 0710383a4f3101f87d7f7182d5dedb5c24f029ae4a930017bde4282c68b3c859
+    media_type: audio/mpeg
+    bytes: 120273920
+- kind: opinion announcement
+  date: '2009-04-06'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1589-April6Non-Argument.MP3
+  catalog: https://catalog.archives.gov/id/183517971
+  whole_session: true
+  duration_seconds: 826
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1589-april6non-argument.mp3
+    checksum: efaf43cd27f229e01a8208b24158327f0c47fc1c7e4165bcbeb07bcb5cabea55
+    media_type: audio/mpeg
+    bytes: 13215232
 rights:
   status: no-permission-needed
   basis: us-government-work

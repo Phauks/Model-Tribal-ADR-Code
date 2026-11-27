@@ -7,14 +7,20 @@ import { CompositionError, queueMessage, recordDeliveryEvent, sendDueMessages, s
 import {
 	addRecipients,
 	addressBookRecipients,
+	copyBatch,
 	createBatch,
+	discardBatchDraft,
 	fieldsFor,
 	insideWindow,
+	listBatches,
 	outreachAudience,
+	outreachCounts,
 	runOutreach,
+	saveBatchDraft,
 	sendOutreachTest,
 	saveTemplate,
 	setBatchStatus,
+	startBatch,
 	templateVersions,
 	timeZoneForStates,
 	unsubscribeWithToken
@@ -55,9 +61,9 @@ describe('mail arriving', () => {
 		expect(thread).toMatchObject({ subject: 'A question about the model code', counterpartAddress: 'office@nation.example', counterpartName: 'Tribal Office', folder: 'inbox', unread: true });
 		expect(thread!.messages[0].text).toContain('peacemaking provisions');
 		expect([...context.bucket.files.keys()].some((key) => key.startsWith('mail/raw/2026/11/'))).toBe(true);
-		// A second message within 30 minutes sends no second notice.
+		// Each message people should hear about says so; how often anyone is told is the alerts' own business (tests/mail-alerts.test.ts).
 		const again = await receiveMail(context, arriving(rawMessage({ From: 'other@else.example', To: 'contact@example.org', Subject: 'Other' }, 'Hi')));
-		expect(again).toMatchObject({ notify: false });
+		expect(again).toMatchObject({ notify: true, inboxIdentifier: 'contact' });
 	});
 
 	it('threads a reply by its headers, and by subject and sender when the headers are gone', async () => {
@@ -585,7 +591,7 @@ describe('outreach', () => {
 		expect(await runOutreach(context, carriers)).toEqual({ sent: 0, failed: 0 });
 
 		const mail = outreach.sent[0];
-		expect(mail.from).toEqual({ email: 'outreach@outreach.example.org', name: 'Model Tribal ADR Code' });
+		expect(mail.from).toEqual({ email: 'outreach@outreach.example.org', name: 'Tribal Law Project' });
 		expect(mail.replyTo).toEqual({ email: 'replies@example.org' });
 		expect(mail.subject).toBe('The Model Tribal ADR Code and Example Nation');
 		expect(mail.headers?.['List-Unsubscribe-Post']).toBe('List-Unsubscribe=One-Click');
@@ -620,6 +626,54 @@ describe('outreach', () => {
 		expect(await unsubscribeWithToken(context, 'notatoken', 'test')).toBeNull();
 		expect(await unsubscribeWithToken(context, await makeToken(context.settings.signingKey!, 'unsubscribe', row!.identifier), 'test')).toBe('secretary@nation.example');
 		expect(await isSuppressed(context, 'secretary@nation.example')).toBe(true);
+	});
+
+	it('saves a batch as a draft, schedules it, and sends its replies to the inbox it names', async () => {
+		const { context, templateIdentifier } = await setUp();
+		const draft = {
+			identifier: null,
+			name: 'Arizona',
+			templateIdentifier,
+			subject: 'Hello {{nation.name}}',
+			body: 'Dear {{contact.greeting}}',
+			perDay: 5,
+			windowStartHour: 0,
+			windowEndHour: 24,
+			weekdaysOnly: false,
+			followUpDays: 10,
+			askAcknowledgment: false,
+			startsAt: null,
+			replyAddress: 'contact@example.org',
+			audience: { tag: 'nation-government', label: null, nationsOnly: true }
+		};
+		const first = await saveBatchDraft(context, 'lead', draft);
+		// Saving again changes the same draft.
+		expect((await saveBatchDraft(context, 'lead', { ...draft, identifier: first.identifier, subject: 'About {{nation.name}}' })).identifier).toBe(first.identifier);
+		expect(await outreachCounts(context)).toMatchObject({ all: 1, drafts: 1, sending: 0, scheduled: 0, doNotEmail: 1 });
+		expect((await listBatches(context))[0]).toMatchObject({ stage: 'draft', subject: 'About {{nation.name}}', templateName: 'First letter', replyAddress: 'contact@example.org', audience: draft.audience });
+
+		await addRecipients(context, first.identifier, [{ contactIdentifier: 'c-office', nationIdentifier: 'example-nation', email: 'secretary@nation.example', name: 'Office', fields: fieldsFor({ name: 'Office', kind: 'organization', role: null, organizationName: null }, nation, 'https://example.org', 'Lead'), timeZone: 'America/Phoenix' }]);
+		// Scheduled for tomorrow: it waits until then.
+		await startBatch(context, 'lead', first.identifier, '2026-11-25T17:00:00.000Z');
+		expect(await outreachCounts(context)).toMatchObject({ drafts: 0, scheduled: 1, sending: 0 });
+		expect((await listBatches(context))[0].stage).toBe('scheduled');
+		const outreach = recordingCarrier('smtp');
+		const carriers = { replies: recordingCarrier(), outreach };
+		expect(await runOutreach(context, carriers)).toEqual({ sent: 0, failed: 0 });
+		const tomorrow = { ...context, now: () => new Date('2026-11-25T17:05:00Z') };
+		expect(await runOutreach(tomorrow, carriers)).toEqual({ sent: 1, failed: 0 });
+		expect(outreach.sent[0].replyTo).toEqual({ email: 'contact@example.org' });
+		expect(outreach.sent[0].subject).toBe('About Example Nation');
+
+		// A copy is a new draft with no recipients; a draft can be thrown away.
+		const copy = await copyBatch(context, 'lead', first.identifier);
+		expect((await listBatches(context)).find((batch) => batch.identifier === copy)).toMatchObject({ name: 'Arizona (copy)', stage: 'draft', counts: {} });
+		expect(await discardBatchDraft(context, 'lead', copy)).toBe(true);
+		expect(await discardBatchDraft(context, 'lead', first.identifier)).toBe(false);
+
+		// A letter with a field the site does not know cannot start.
+		const bad = await saveBatchDraft(context, 'lead', { ...draft, body: 'Dear {{nation.motto}}' });
+		await expect(startBatch(context, 'lead', bad.identifier, null)).rejects.toThrow(/nation\.motto/);
 	});
 
 	it('sends nothing while outreach is not set up', async () => {

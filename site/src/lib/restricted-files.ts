@@ -17,6 +17,9 @@
 import { csvDocument, parseCsv } from './csv.ts';
 import { copyItemId, type RestrictableItem, type RestrictionLevel } from './nation-restrictions.ts';
 import type { SearchRecordsFile } from './search-records.ts';
+import { fileOf, type SearchFiles } from './search-selection.ts';
+import type { SearchEntry } from './site-search.ts';
+import type { SitemapEntry } from './sitemap.ts';
 import type { CopyDetails } from './public-copies.ts';
 import { kindLabels, type OpinionYear, type TimelineEntry, type TimelineRow } from './timeline.ts';
 
@@ -45,6 +48,7 @@ export function copyIdOfLink(link: string | undefined | null): string | undefine
 	try {
 		return copyItemId(link.split(/[?#]/)[0]);
 	} catch {
+		// expected: a link that does not name a copy is not one.
 		return undefined;
 	}
 }
@@ -116,14 +120,63 @@ export function hiddenOpinions(restrictions: SiteRestrictions, year: string | nu
 
 // ----- Search -----
 
-/** The advanced search's records (/search/records.json): a document whose every version is hidden is not listed. Rows name documents, never their text. */
+/**
+ * The advanced search's records (/search/records.json): a document whose
+ * every version is hidden is not listed, nor one linked to a hidden copy; one
+ * linked to a cited copy opens where the original is kept. Rows name
+ * documents, never their text.
+ */
 export function filterSearchRecords(file: SearchRecordsFile, restrictions: SiteRestrictions): SearchRecordsFile {
 	return {
 		...file,
-		documents: file.documents.filter(
-			(row) => !(row.anchor.startsWith('document-') && restrictions.hiddenDocuments.has(`${row.nation}#${row.anchor.slice('document-'.length)}`))
-		)
+		documents: file.documents.flatMap((row) => {
+			if (row.anchor.startsWith('document-') && restrictions.hiddenDocuments.has(`${row.nation}#${row.anchor.slice('document-'.length)}`)) return [];
+			const level = linkLevel(restrictions, row.link);
+			if (level === 'hide') return [];
+			if (level === 'cite') return [{ ...row, link: originalOf(restrictions, row.link) || undefined }];
+			return [row];
+		})
 	};
+}
+
+/**
+ * The site search's index (/search/index.json): an entry linked to a copy a
+ * nation hid is left out, one linked to a cited copy opens where the original
+ * is kept, and one opening at a document whose every version is hidden is
+ * left out. Entries give names, never words from a document's text.
+ */
+export function filterSearchIndex(entries: SearchEntry[], restrictions: SiteRestrictions): SearchEntry[] {
+	return entries.flatMap((entry) => {
+		const anchor = /^\/nations\/([a-z0-9-]+)#document-(.+)$/.exec(entry.link);
+		if (anchor && restrictions.hiddenDocuments.has(`${anchor[1]}#${anchor[2]}`)) return [];
+		const level = linkLevel(restrictions, entry.link);
+		if (level === 'hide') return [];
+		if (level === 'cite') {
+			const original = originalOf(restrictions, entry.link);
+			return original ? [{ ...entry, link: original }] : [];
+		}
+		return [entry];
+	});
+}
+
+/**
+ * The file each search result can be downloaded as (/search/files.json): a result whose file is a
+ * copy a nation hid or asked to cite only has no file here, since this site does not offer it.
+ */
+export function filterSearchFiles(files: SearchFiles, restrictions: SiteRestrictions): SearchFiles {
+	return Object.fromEntries(Object.entries(files).filter(([link]) => linkLevel(restrictions, fileOf(files, link)?.[1]) === 'show'));
+}
+
+/**
+ * The sitemap's pages (/sitemaps/<part>.xml, src/lib/sitemap.ts): a page that
+ * is a copy a nation hid is left out, and so is one it asked to cite only,
+ * since the site then links to where the original is kept instead of
+ * showing its own copy; so is a case's or law's page that shows such a copy.
+ * A page whose only link to the copy is in a list, such as a nation's page,
+ * stays: the list is drawn without it.
+ */
+export function filterSitemapEntries(entries: SitemapEntry[], restrictions: SiteRestrictions): SitemapEntry[] {
+	return entries.filter((entry) => linkLevel(restrictions, entry.path) === 'show' && linkLevel(restrictions, entry.copy) === 'show');
 }
 
 // ----- Copies -----

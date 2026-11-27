@@ -112,6 +112,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=526%20U.S.%20172
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1998-12-02'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1083.mp3
+  catalog: https://catalog.archives.gov/id/138282724
+  whole_session: true
+  duration_seconds: 3968
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1083.mp3
+    checksum: cb17a10d78ae40274692e66eaa3fb92a8a9956abf00a252d600de137834d329d
+    media_type: audio/mpeg
+    bytes: 63489379
 rights:
   status: no-permission-needed
   basis: us-government-work

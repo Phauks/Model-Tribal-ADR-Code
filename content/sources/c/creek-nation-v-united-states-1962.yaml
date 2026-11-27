@@ -100,6 +100,29 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=370%20U.S.%20157
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1962-04-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-388-124-19620424-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81138467
+  duration_seconds: 4099
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-388-124-19620424-1of2.mp3
+    checksum: 94f411a16edb4b066775987150f03ca4df5a8e5a2588b8c7e7265d759f8bd585
+    media_type: audio/mpeg
+    bytes: 65581556
+- kind: argument
+  date: '1962-04-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-388-124-19620424-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81138467
+  duration_seconds: 3136
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-388-124-19620424-2of2.mp3
+    checksum: 5a58cb54b8c60b19fe48caefc4eb667df8cbb8dc045bbfc64b3a9bb6f8167a9f
+    media_type: audio/mpeg
+    bytes: 50173491
 rights:
   status: no-permission-needed
   basis: us-government-work

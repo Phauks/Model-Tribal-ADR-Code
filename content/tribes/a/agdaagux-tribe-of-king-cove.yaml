@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 47 Fed. Reg. 53130, 53134 (Nov. 24, 1982)
+  since: '1982-11-24'
+  source: bia-recognized-entities-1982
+  confidence: medium
+  verification: inferred
+  as_of: '1982-11-24'
+  locator: 47 Fed. Reg. 53134 (entry "King Cove Village.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "King Cove Village." The entry is matched to the nation by name.
 states:
 - state: AK
   presence: government-office
@@ -167,6 +177,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Agdaagux Tribe of King Cove".'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 359954
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Agdaagux Tribe of King Cove' (King Cove)
 governance:
 - aspect: head-of-government
   value: President

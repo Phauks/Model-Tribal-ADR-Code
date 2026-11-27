@@ -11,10 +11,10 @@
 </script>
 
 <svelte:head>
-	<title>{data.letter.label} · Nations · Model Tribal ADR Code</title>
+	<title>{data.letter.label} · Nations · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current={heading} />
 
 <h1>{heading}</h1>
 <p class="small muted">{data.letter.count.toLocaleString('en-US')} {data.letter.count === 1 ? 'page' : 'pages'}</p>
@@ -22,12 +22,7 @@
 
 {#each data.groups as group (group.entityType)}
 	<section aria-labelledby="group-{group.entityType}">
-		{#if data.groups.length > 1 || group.entityType !== 'native-nation'}
-			<h2 id="group-{group.entityType}">{group.label}</h2>
-		{:else}
-			<h2 id="group-{group.entityType}" class="visually-hidden">{group.label}</h2>
-		{/if}
-		<NationTable {group} identifier="nations-{data.letter.key}-{group.entityType}" />
+		<NationTable {group} identifier="nations-{data.letter.key}-{group.entityType}" headingLevel={2} headingIdentifier="group-{group.entityType}" />
 	</section>
 {/each}
 

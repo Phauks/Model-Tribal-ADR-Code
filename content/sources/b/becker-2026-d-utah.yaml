@@ -1,0 +1,56 @@
+key: becker-2026-d-utah
+kind: federal-case
+citation:
+  type: legal_case
+  title: Becker v. Ute Indian Tribe of the Uintah and Ouray Reservation
+  authority: United States District Court for the District of Utah
+  issued:
+    date-parts:
+    - - 2026
+      - 4
+      - 22
+  URL: https://www.courtlistener.com/opinion/10846998/lynn-d-becker-v-ute-indian-tribe-of-the-uintah-and-ouray-reservation-et/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/10846998/lynn-d-becker-v-ute-indian-tribe-of-the-uintah-and-ouray-reservation-et/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- ute-indian-tribe-of-the-uintah-and-ouray-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: ute-indian-tribe-of-the-uintah-and-ouray-reservation
+    named_as: Ute Indian Tribe of the Uintah
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 2:25-cv-00643; no reporter citation yet. Decided by the United States District Court for the District of Utah on Apr. 22, 2026. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (suit against Ute Indian Tribe and officials).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: suit against Ute Indian Tribe and officials'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

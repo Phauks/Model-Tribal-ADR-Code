@@ -31,11 +31,11 @@
 </script>
 
 <svelte:head>
-	<title>{name} · Files about your nation · Workspace · Model Tribal ADR Code</title>
+	<title>{name} · Files about your nation · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="wide">
-	<Breadcrumbs trail={[{ label: `Files about ${nationName}`, href: '/workspace/nation-uploads' }]} />
+	<Breadcrumbs trail={[{ label: `Files about ${nationName}`, href: '/workspace/nation-uploads' }]} current={name} />
 	<h1>{name}</h1>
 	<p class="muted">{upload.reference} · sent {mediumDateAndTime(upload.received_at)}</p>
 	<p><span class="chip">{nationStatusLabels[upload.status]}</span></p>

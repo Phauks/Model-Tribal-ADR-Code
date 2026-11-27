@@ -96,6 +96,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=531%20U.S.%201
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2000-04-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1147.mp3
+  catalog: https://catalog.archives.gov/id/138282790
+  whole_session: true
+  duration_seconds: 7466
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1147.mp3
+    checksum: cf60bd349b8135ba230952d52500b3772e4b7eff9bdbfd87b42e0b08da7b7fff
+    media_type: audio/mpeg
+    bytes: 119455785
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -1,0 +1,173 @@
+key: adarand-constructors-inc-v-pena
+kind: federal-case
+citation:
+  type: legal_case
+  title: Adarand Constructors, Inc. v. Pena
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '515'
+  page: '200'
+  issued:
+    date-parts:
+    - - 1995
+      - 6
+      - 12
+  URL: https://www.loc.gov/item/usrep515200/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: ADARAND CONSTRUCTORS, INC. v. PENA, SECRETARY OF TRANSPORTATION, et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep515/usrep515200/usrep515200.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep515/usrep515200/usrep515200.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: judgment
+    justice: Sandra Day O'Connor
+    page: 204
+  - kind: concurrence in part and in the judgment
+    justice: Antonin Scalia
+    page: 239
+  - kind: concurrence in part and in the judgment
+    justice: Clarence Thomas
+    page: 240
+  - kind: dissent
+    justice: John Paul Stevens
+    page: 242
+  - kind: dissent
+    justice: David H. Souter
+    page: 264
+  - kind: dissent
+    justice: Ruth Bader Ginsburg
+    page: 271
+original_link: https://www.loc.gov/item/usrep515200/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '1995-01-17'
+  printed: Argued January 17,1995 — Decided June 12, 1995
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep515/usrep515200/usrep515200.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1994-2005)
+  decision_type: majority opinion
+  vote:
+    majority: 5
+    minority: 4
+  justices:
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: minority
+    opinion: dissent
+  - name: Sandra Day O'Connor
+    vote: majority
+    opinion: majority
+  - name: Antonin Scalia
+    vote: majority
+    opinion: concurrence
+  - name: Anthony M. Kennedy
+    vote: majority
+  - name: David H. Souter
+    vote: minority
+    opinion: dissent
+  - name: Clarence Thomas
+    vote: majority
+    opinion: concurrence
+  - name: Ruth Bader Ginsburg
+    vote: minority
+    opinion: dissent
+  - name: Stephen G. Breyer
+    vote: minority
+  source: https://api.oyez.org/cases/1994/93-1841
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep515200/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/515/200/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1994/93-1841
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22515%20U.S.%20200%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=515%20U.S.%20200
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=515%20U.S.%20200
+    unchecked: true
+argument_audio:
+- kind: argument
+  date: '1995-01-17'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-941.mp3
+  catalog: https://catalog.archives.gov/id/118975075
+  whole_session: true
+  duration_seconds: 11261
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-941.mp3
+    checksum: 336679bd95dec30924c33fb51b742f0d80a31e22e6cd645ce951d33ba0712e47
+    media_type: audio/mpeg
+    bytes: 180184835
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 515 U.S. 200 (1995). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep515/usrep515200/usrep515200.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1994-069), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 515 U.S. 200 "Adarand Constructors, Inc. v. Pena"; Database 515 U.S. 200 "ADARAND CONSTRUCTORS, INC. v. FEDERICO PENA, SECRETARY OF TRANSPORTATION, et al."
+  - check: scan
+    result: agree
+    detail: Scan has 77 pages; the report runs 200 to 276
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 17,1995 — Decided June 12, 1995"; scan "Argued January 17, 1995-Decided June 12, 1995"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1995-06-12'
+  - check: opinions
+    result: agree
+    detail: 'Report: judgment O Connor p. 204, concurrence in part and in the judgment Scalia p. 239, concurrence in part and in the judgment Thomas p. 240, dissent Stevens p. 242, dissent Souter p. 264, dissent Ginsburg p. 271; Database writers: Ginsburg, O Connor, Scalia, Souter, Stevens, Thomas'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

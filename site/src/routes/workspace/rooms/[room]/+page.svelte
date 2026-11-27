@@ -41,7 +41,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.room.title} · Video rooms · Workspace · Model Tribal ADR Code</title>
+	<title>{data.room.title} · Video rooms · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -49,6 +49,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Video rooms', href: '/workspace/rooms' }
 	]}
+	current={data.room.title}
 />
 <h1>{data.room.title}</h1>
 <p>{data.room.when} · {data.room.visibility === 'public' ? 'Public' : 'Private'}{#if data.room.open}<span class="chip">Open now</span>{:else if data.room.closed}<span class="chip">Closed</span>{/if}</p>

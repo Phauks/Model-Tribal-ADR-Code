@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>{fullName(profile.answers) || 'Contributor'} · Workspace · Model Tribal ADR Code</title>
+	<title>{fullName(profile.answers) || 'Contributor'} · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -27,6 +27,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Contributors', href: '/workspace/contributors' }
 	]}
+	current={fullName(profile.answers) || '(no name given)'}
 />
 <h1>{fullName(profile.answers) || '(no name given)'}</h1>
 

@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=445%20U.S.%20535
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1979-12-03'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-296.mp3
+  catalog: https://catalog.archives.gov/id/102048678
+  whole_session: true
+  duration_seconds: 13843
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-296.mp3
+    checksum: 14d27f7476c82d51b96fdeb9147c6c1ae2c877f4fb2d5fcacd546a9d5c5b0bcb
+    media_type: audio/mpeg
+    bytes: 221490905
 rights:
   status: no-permission-needed
   basis: us-government-work

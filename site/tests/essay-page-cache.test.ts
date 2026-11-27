@@ -9,11 +9,6 @@ import { testDatabase } from './database.ts';
 const worker = vi.hoisted(() => ({ env: {} as Record<string, unknown> }));
 
 vi.mock('virtual:essay-library', () => ({
-	essayBoxFacts: { laws: {}, cases: {} },
-	essayCaseLinks: {},
-	essayCaseNames: {},
-	essayCitations: {},
-	essayOpinions: {},
 	essayTerms: {},
 	essaysInGit: { 'ii-beta': 'From git.\n', 'i-zeta': 'Only in git.\n' }
 }));

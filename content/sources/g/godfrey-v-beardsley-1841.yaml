@@ -1,0 +1,51 @@
+key: godfrey-v-beardsley-1841
+kind: federal-case
+citation:
+  type: legal_case
+  title: Godfrey v. Beardsley
+  authority: United States Circuit Court for the District of Indiana
+  container-title: F. Cas.
+  volume: '10'
+  page: '520'
+  issued:
+    date-parts:
+    - - 1841
+      - 5
+  URL: https://static.case.law/f-cas/10/html/0520-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-cas/10/html/0520-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 10 F. Cas. 520; 2 McLean 412. Decided by the United States Circuit Court for the District of Indiana on 1841. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 6; an AI reader read excerpts and judged it an Indian law case (Indian treaty cession and right of occupancy).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 6; reader: Indian treaty cession and right of occupancy'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

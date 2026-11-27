@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Flatheads, etc. (Treaty of Hell Gate), July 16, 1855, 12 Stat. 975
+  since: '1855-07-16'
+  source: treaty-with-the-flatheads-etc-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-07-16'
+  locator: p. 722 (Treaty with the Flatheads, etc., 1855; Kappler header "July 16, 1855. | 12 Stats., 975. | Ratified Mar. 8, 1859. | Proclaimed Apr. 18, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Kootenai; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: ID
   presence: government-office
@@ -203,6 +213,48 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Kootenai Tribe of Idaho". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Kootenai Tribe of Idaho (2001)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Kootenai Tribe Of Idaho' (Northwest Region)
+- program: indian-health-service-self-governance-compact
+  since: 2001
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Kootenai Tribe of Idaho'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 124862
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: ID, row 'Kootenai Tribe' (Bonners Ferry)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1008770
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'KOOTENAI TRIBE OF IDAHO' (UEI Y8E2BMZLN3S9), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 980945
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'KOOTENAI TRIBE OF IDAHO' (UEI Y8E2BMZLN3S9), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Tribal Council
@@ -521,6 +573,22 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Kootenai Tribe of Idaho, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Feb. 1, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-kootenai-tribe-of-idaho-2022-02-01
+  confidence: high
+  verification: inferred
+  as_of: '2022-02-01'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Kootenai Tribe of Idaho, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 9, 2017, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-kootenai-tribe-of-idaho-2017-11-09
+  confidence: high
+  verification: inferred
+  as_of: '2017-11-09'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2017
 nearby_state_courts:
 - state: ID
   county: Boundary County

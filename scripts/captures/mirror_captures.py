@@ -5,7 +5,7 @@ The captures are the project's private copies of documents (constitutions,
 Tribal law, gaming compacts, nation images, hand-pulled Westlaw prints and
 others). They live in the project's working files under research/captures/
 and, after the move decided on 2026-11-22, in the private R2 bucket
-`model-tribal-adr-code-sources`, under the same paths: the object key is the
+`tribal-law-project-files`, under the same paths: the object key is the
 path below research/captures/ (for example
 `constitutions/caddo-nation-of-oklahoma/45f8a88c34c9cb61.pdf`). They are never
 committed to git (decision record 0004).
@@ -64,18 +64,17 @@ import shutil
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import capture_index  # noqa: E402  (same folder; written so that a script loading this file by path finds it too)
+
 REPO = Path(__file__).resolve().parents[2]
-INDEX_CSV = REPO / "research" / "capture-index.csv"
+INDEX_CSV = capture_index.INDEX
 ORPHANS_CSV = REPO / "research" / "capture-orphans.csv"
-DEFAULT_BUCKET = "model-tribal-adr-code-sources"
+DEFAULT_BUCKET = "tribal-law-project-files"
 TEXT_SUFFIXES = (".txt", ".json", ".raw")
 HAND_PULLER = "Trevor Goldsmith"
 
-FIELDS = [
-    "key", "bytes", "sha256", "media_type", "topic", "title", "nations",
-    "obtained", "link", "captured", "records", "record_kinds", "listed_in",
-    "catalog", "derived_from", "rights", "redistribution", "keep_local", "orphan",
-]
+FIELDS = capture_index.FIELDS
 
 # Rights notes used when no source record states the rights. Project analysis
 # from the data model's permission statuses and decision records 0004 and 0017.
@@ -91,6 +90,15 @@ TOPIC_RIGHTS = {
     "nation-images": "A nation's seal or logo: reuse status is in the tribe profile's official_images; served only as decision record 0017 allows.",
     "westlaw": "Westlaw printout: subscription content for the lead author's educational use; never redistributed.",
     "articles": "Journal article: copyright held by the author or journal; private copy, not redistributed.",
+    "oklahoma-secretary-of-state": ("A state-tribal compact or agreement as filed with the Oklahoma Secretary of State, a public record: "
+                                    "served on the website under decision record 0060; a nation can ask for removal or redaction."),
+    "state-court-opinions": ("A state or territorial court's published opinion, from the Caselaw Access Project (released without restriction, 2024): "
+                             "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
+    "federal-court-opinions": ("A federal court's opinion, from the Caselaw Access Project (released without restriction, 2024) or CourtListener's bulk files (Free Law Project, public domain mark): "
+                               "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
+    "supreme-court-opinions": ("The opinions of the Supreme Court of the United States in a case, as the Caselaw Access Project (released without restriction, 2024) "
+                               "read them from the United States Reports: works of the United States government, no copyright (17 U.S.C. § 105); "
+                               "the reporter's syllabus and statement of the case left out; the Library of Congress scan of the report is the official copy."),
 }
 DEFAULT_RIGHTS = "Private research copy; not redistributed."
 
@@ -116,12 +124,41 @@ LIBRARY_RIGHTS = ("Copy taken from the National Indian Law Library: private rese
                   "not served until the nation consents; pages link to NILL (decision record 0043).")
 
 
+# Saved web pages of sites that publish other people's law with their own
+# pages around it (Trevor Goldsmith's standing rule: third-party copyrighted
+# works stay private). The law in them may have no copyright, but the page is
+# the site's: the Legal Information Institute at Cornell Law School, the
+# National Center on Restorative Justice and the Oklahoma State University
+# Tribal Treaties Database (whose executive order texts are served on their
+# own, under executive-orders/). Fixed on 2026-11-27, when 191 such pages were
+# marked for serving. A PDF or text taken from one of them is not affected.
+THIRD_PARTY_PAGES = ("law.cornell.edu/", "ncorj.org/", "treaties.okstate.edu/")
+THIRD_PARTY_RIGHTS = ("A page of another site that publishes the law (Cornell's Legal Information Institute, "
+                      "the National Center on Restorative Justice or Oklahoma State University's Tribal Treaties Database): "
+                      "the page is that site's work; private research copy, not served. Pages link to the original.")
+
+
+def third_party_page(media_type: str, link: str) -> bool:
+    """Whether a saved web page is another site's page around the law (THIRD_PARTY_PAGES)."""
+    return media_type == "text/html" and any(
+        re.match(r"^https?://(www\.)?" + re.escape(site), address) for address in link.split() for site in THIRD_PARTY_PAGES)
+
+
 # Files under govinfo/ come from GovInfo, the Government Publishing Office's
 # site: federal statutes and Federal Register documents, works of the United
 # States government with no copyright (17 U.S.C. 105), whatever the rights
 # note of a record that cites the same act says (site/tools/fetch-public-copies.mjs).
 GOVERNMENT_TOPICS = {"govinfo"}
 GOVERNMENT_RIGHTS = "Work of the United States government; no copyright (17 U.S.C. § 105). Served on the website (decision record 0031)."
+
+
+def spaces_encoded(link: str) -> str:
+    """The link column with each address's own spaces written as %20. The
+    column separates addresses with spaces, so an address such as Red Cliff's
+    "https://www.redcliff-nsn.gov/Document Center/..." was read as pieces and
+    matched no source record (fixed on 2026-11-27); a space that starts a new
+    address is kept."""
+    return re.sub(r" +(?!https?://)", "%20", link.strip())
 
 
 def nation_law_policy(topic: str, link: str) -> tuple[str, str] | None:
@@ -399,9 +436,12 @@ def build_index(args) -> None:
         media = mimetypes.guess_type(key)[0] or ("text/plain" if key.endswith(".raw") else "application/octet-stream")
         orphan = not ({"source", "document-history", "story", "tribe-profile"} & kinds)
         link = " ".join(extra["link"]) if isinstance(extra.get("link"), list) else (extra.get("link") or cat.get("link") or prev.get("link") or "")
+        link = spaces_encoded(link)
         policy = nation_law_policy(topic, link) if parent is None and "redistribution" not in extra else None
         if policy:
             redistributable, rights = policy
+        if third_party_page(media, link) and "redistribution" not in extra:
+            redistributable, rights = "no", THIRD_PARTY_RIGHTS
         rows.append({
             "key": key, "bytes": item["bytes"], "sha256": item["sha256"], "media_type": media,
             "topic": topic, "title": (title or "")[:300],
@@ -421,12 +461,8 @@ def build_index(args) -> None:
 
 
 def write_index(rows: list[dict]) -> None:
-    """Write the index (CSV and JSON) and the orphans list."""
-    INDEX_CSV.parent.mkdir(parents=True, exist_ok=True)
-    with INDEX_CSV.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
+    """Write the index and the orphans list, both in key order (scripts/captures/capture_index.py)."""
+    rows = capture_index.write_rows(rows)
     orphans = [r for r in rows if r["orphan"] == "yes" and not r["derived_from"]]
     with ORPHANS_CSV.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=["key", "topic", "title", "link", "catalog", "listed_in", "nations"],
@@ -435,6 +471,25 @@ def write_index(rows: list[dict]) -> None:
         writer.writerows(orphans)
     total = sum(int(r["bytes"]) for r in rows)
     print(f"{len(rows)} files, {total / 1e9:.2f} GB; {len(orphans)} main files with no citing record.")
+    count_new_pages(rows)
+
+
+# The captures folder of this run, when the command names one, so new PDFs can be counted from their local copies.
+LOCAL_CAPTURES: list[Path] = []
+
+
+def count_new_pages(rows: list[dict]) -> None:
+    """
+    Count the pages of newly filed PDFs the website may serve (research/copy-pages.csv), so the Statistics page gives
+    their pages without anyone re-running scripts/library/count_pages.py (Nov. 27, 2026). Never stops a filing: a
+    file it cannot read yet is counted on the next index write or upload.
+    """
+    sys.path.insert(0, str(REPO / "scripts" / "library"))
+    try:
+        import count_pages  # noqa: PLC0415
+        count_pages.count_new(rows, LOCAL_CAPTURES)
+    except Exception as error:  # noqa: BLE001  (counting pages must never stop a filing)
+        print(f"Page counts not updated ({error}); run scripts/library/count_pages.py.", file=sys.stderr)
 
 
 # ---------------------------------------------------------------- bucket
@@ -492,8 +547,7 @@ def index_row(*, key: str, size: int, digest: str, media: str, topic: str, title
 
 
 def load_index() -> list[dict]:
-    with INDEX_CSV.open(encoding="utf-8") as handle:
-        return list(csv.DictReader(handle))
+    return capture_index.read_rows()
 
 
 def remote_state(s3, bucket: str, key: str):
@@ -529,6 +583,7 @@ def upload(args) -> None:
         if done % 200 == 0:
             print(f"  uploaded {done}...", file=sys.stderr)
     print(f"uploaded {done}, already there {skipped}, of {len(rows)}")
+    count_new_pages(rows)
 
 
 def verify(args) -> None:
@@ -645,6 +700,7 @@ def main() -> None:
             p.add_argument("--work", help="folder for the downloaded files (default: a temporary folder)")
             p.add_argument("--obtained", default=f"hand pull by {HAND_PULLER}, sent through the website")
     args = parser.parse_args()
+    LOCAL_CAPTURES.append(Path(args.captures))
     if args.command == "intake":
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         import intake_uploads

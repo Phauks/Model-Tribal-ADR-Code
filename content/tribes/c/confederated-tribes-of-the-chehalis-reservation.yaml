@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Order of the Sec'y of the Interior, July 8, 1864, 1 Kappler 903
+  since: '1864-07-08'
+  source: order-1864-07-08-chehalis-reservation
+  confidence: medium
+  verification: read-in-full
+  as_of: '1864-07-08'
+  locator: 1 Kappler 903
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Chehalis Reserve (selection at the mouth of the Black River), Washington Territory.
 states:
 - state: WA
   presence: government-office
@@ -229,6 +239,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Confederated Tribes of the Chehalis Reservation".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1704359
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Confederated Tribes of the Chehalis Reservation' (Oakville)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 3672887
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'CONFEDERATED TRIBES OF THE CHEHALIS RESERVATION' (UEI MQNXENNHSVP8), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Business Committee
@@ -570,6 +599,14 @@ jurisdiction:
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Confederated Tribes of the Chehalis Reservation". Also on the NCAI implementing tribes
     list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Mar. 7, 1995 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Feb. 3, 1997.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1995-03-07'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: filing-fees
   title: Court (Chehalis Tribe) filing fee schedule

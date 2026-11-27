@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California (approved by the Secretary of the Interior Apr. 13, 1940), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1940-04-13'
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1940-text
+  confidence: medium
+  verification: inferred
+  as_of: '1940-04-13'
+  locator: 1940 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -167,6 +180,34 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California Kletsel Dehe Band of Wintun Indians".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2019
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Kashia Band Of Pomo Indians Of The Stewarts Point Rancheria' (Pacific Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Kashia Band Of Pomo Indians Of The Stewarts Point Rancheria'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1125756
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Kashia Band of Pomo Indians, Stewarts Point Rancheria' (Santa Rosa)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 5386524
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'KASHIA BAND OF POMO INDIANS OF THE STEWARTS POINT RANCHERIA' (UEI GFCMA234QPH3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KASHIA BAND OF POMO INDIANS OF THE STEWARTS POINT RANCHERIA'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Kashia Band of Pomo Indians of the Stewart's Point Rancheria, California" among

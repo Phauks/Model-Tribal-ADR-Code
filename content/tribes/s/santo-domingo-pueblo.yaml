@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Act of Dec. 22, 1858, ch. 5, 11 Stat. 374
+  since: '1858-12-22'
+  source: act-1858-12-22-pueblo-land-claims-confirmed
+  confidence: medium
+  verification: read-in-full
+  as_of: '1858-12-22'
+  locator: 11 Stat. 374
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Pueblo of Santo Domingo (Kewa) land grant, New Mexico.
 states:
 - state: NM
   presence: government-office
@@ -169,6 +179,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: Kewa Keres Language Program
+language_programs:
+- name: Kewa Keres Language Program
+  link: https://www.santodomingopueblo.com/kewa-keres-language-program/
+  run_by: nation
+  source: santo-domingo-pueblo-kewa-keres-language-program
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: page title
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Southern Pueblos Agency
@@ -193,6 +212,36 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: page text
   note: 'The source''s words: "Kewa Pueblo Health Corporation (Santo Domingo Health Center)".'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1328109
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Santo Domingo Pueblo' (Santo Domingo Pueblo)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 11319666
+  amount_kind: obligations
+  through: Kewa Pueblo Health Corporation (KPHC)
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'KEWA PUEBLO HEALTH CORPORATION (KPHC)' (UEI KFZ5AKUHWH99), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KEWA PUEBLO HEALTH CORPORATION (KPHC)'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1148224
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SANTO DOMINGO PUEBLO' (UEI LCAEDR3912Z7), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: head-of-government
   value: Governor
@@ -298,7 +347,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 11 Stat. 374
-  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as ... H, Pueblo of Santo Domingo in the county of Santa Ana ... be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
+  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as . . . H, Pueblo of Santo Domingo in the county of Santa Ana . . . be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

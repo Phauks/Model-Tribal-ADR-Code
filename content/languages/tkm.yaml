@@ -1,0 +1,26 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: tkm
+name: Takelma
+iso_639_3:
+  code: tkm
+  reference_name: Takelma
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: take1257
+  level: language
+  source: glottolog-5-4
+family: null
+dialects: []
+works:
+- glottolog_reference: '47896'
+  title: The Takelma Language of Southwestern Oregon
+  kinds:
+  - grammar
+  author: Edward Sapir
+  year: 1909
+  publisher: Columbia University
+  pages: 304
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

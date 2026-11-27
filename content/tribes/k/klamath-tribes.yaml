@@ -195,6 +195,15 @@ languages:
   as_of: '2026-11-21'
   note: 'Language page: ''our Paiute, Modoc, and Klamath languages''. Tag pao (Northern Paiute) assigned
     by researcher.'
+language_programs:
+- name: Language Department
+  link: https://klamathtribes.org/language/
+  run_by: nation
+  source: klamathtribes-language
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: page heading
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Northwest Regional Office
@@ -211,6 +220,44 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Klamath Tribes".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2019
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Klamath Tribes' (Northwest Region)
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 6223150
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OR, row 'Klamath Tribes' (Chiloquin)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 5455652
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'THE KLAMATH TRIBES' (UEI SH4JJFWHQHH4), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'THE KLAMATH TRIBES'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 9850477
+  amount_kind: obligations
+  through: Klamath Tribal Health & Family Services
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'KLAMATH TRIBAL HEALTH & FAMILY SERVICES' (UEI K673DBBK3UM6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KLAMATH TRIBAL HEALTH & FAMILY SERVICES'.
 governance:
 - aspect: head-of-government
   value: Chairperson

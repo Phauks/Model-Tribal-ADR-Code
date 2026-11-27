@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	// Coverage (improvements report, Nov. 24, 2026, idea 6): which sections of
 	// each nation's page say None Identified, so contributors and nations can
 	// see where help is needed. Each bar opens the table filtered to the
@@ -18,11 +19,10 @@
 </svelte:head>
 
 <div class="coverage-page">
-	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Coverage" />
 	<h1>Coverage</h1>
 	<p class="lead">Which sections of each nation’s page say None Identified. <a href="/requests?kind=contribute">Contribute</a></p>
 	<BarChart chart={data.chart} />
-	<h2 id="coverage-table">Nations</h2>
 	<DataTable
 		identifier="coverage"
 		label="Table: coverage of each nation’s page"
@@ -35,6 +35,7 @@
 		shareable
 		download="coverage"
 	>
+		{#snippet heading(count: Snippet)}<h2 id="coverage-table">Nations {@render count()}</h2>{/snippet}
 		{#snippet cell(row, column)}
 			{@const text = row.cells[column.key]?.text}
 			{#if text === 'Found'}

@@ -28,6 +28,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 58 Fed. Reg. 54364, 54369 (Oct. 21, 1993)
+  since: '1993-10-21'
+  source: bia-recognized-entities-1993
+  confidence: medium
+  verification: bulk-import
+  as_of: '1993-10-21'
+  locator: 58 Fed. Reg. 54369 (entry "Skagway Village")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Skagway Village." The entry is matched to the nation by name.
 states:
 - state: AK
   presence: government-office
@@ -258,6 +268,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
   note: 'The source''s words: "Skagway Village".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Skagway' (Skagway)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Skagway'.
 governance:
 - aspect: form
   value: Constitution and Bylaws of the federally recognized tribe

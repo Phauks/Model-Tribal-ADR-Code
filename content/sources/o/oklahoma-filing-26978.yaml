@@ -1,0 +1,50 @@
+key: oklahoma-filing-26978
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Stephens County and Bureau of Indian Affairs: agreement'
+  author:
+  - literal: Stephens County
+  - literal: Bureau of Indian Affairs
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 26978
+  URL: https://execleg.sos.ok.gov/documents/filelog/54102.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 1992
+      - 4
+      - 21
+original_link: https://execleg.sos.ok.gov/documents/filelog/54102.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: removed
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's site has no filed copy to serve.
+  redistribution: true
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- other
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 26978, filed Apr. 21, 1992. The register''s title reads “Agreements” and its description “Stephens Co / Bureau of Indian Affairs”. The register line reads as an agreement or compact. The State''s site has no file at this filing''s address, which answered “not found” when checked on Nov. 27, 2026, so no copy is held or served; this record''s facts come from the register''s own title and description, read by script and by an AI reader. The date is the filing date, not the signing date. The reader noted: No nation named; generic register name and text give no subject, so classed as other.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

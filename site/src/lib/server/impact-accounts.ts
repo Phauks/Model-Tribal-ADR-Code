@@ -48,6 +48,8 @@ const kindNames: Record<string, string> = {
 	'federal-statute': 'Federal statute',
 	'federal-regulation': 'Federal regulation',
 	'federal-register-notice': 'Federal Register notice',
+	'federal-agency-document': 'Federal agency document',
+	'congressional-document': 'Congressional document',
 	'executive-order': 'Executive order',
 	'federal-case': 'Court case',
 	'tribal-case': 'Court case',

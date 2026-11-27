@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of July 1, 1874, 1 Kappler 806
+  since: '1874-07-01'
+  source: executive-order-1874-07-01-papago-san-xavier-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1874-07-01'
+  locator: 1 Kappler 806
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Papago Indian Reserve (San Xavier del Bac), Arizona.
 states:
 - state: AZ
   presence: government-office
@@ -175,6 +185,58 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: page text
   note: Listed as "Tohono O'odham Nation". Also on the Indian Health Service Self-Governance Tribes list (Tohono O'odham Nation (2016)); the list does not say which service unit or programs the compact covers.
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2016
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Tucson Area, row 'Tohono O'odham Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Tohono O'odham Nation'.
+- program: pl-102-477-plan
+  start: '2024-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Employment Works
+  - Job Placement and Training
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Tohono O'odham Nation of Arizona'; PL102_477_PartnerEnrollment, its 4 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 26386885
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Tohono O'odham Nation' (Sells)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Tohono O'odham Nation'.
+- program: fdpir-self-determination-demonstration
+  start: 2023-08
+  detail: Round 2
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 2 projects, 'Tohono O'odham Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Tohono O'odham Nation'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 52099383
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'TOHONO O'ODHAM NATION' (UEI CBVGALEXQ8K3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'TOHONO O'ODHAM NATION'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Papago Tribe, Arizona" among organizations under constitutions approved by the
@@ -788,6 +850,22 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Southern Arizona Water Rights Settlement Act in 1982, amended 1992 (Pub. L. No. 97-293, Pub. L. No. 102-497), settling the water rights of San Xavier and Schuk Toak Districts, Tohono O'odham Nation. It quantifies 66,000 acre-feet a year in all and authorizes about $39.8 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-97-293
+  confidence: high
+  verification: inferred
+  as_of: '1982'
+  locator: Congressional Research Service, R44148, Table 1, 1982
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Arizona Water Settlements Act in 2004 (Pub. L. No. 108-451), settling the water rights of Gila River Indian Community, Tohono O'odham Nation. It quantifies 653,500 acre-feet a year in all and authorizes about $2,328.3 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-108-451
+  confidence: high
+  verification: inferred
+  as_of: '2004'
+  locator: Congressional Research Service, R44148, Table 1, 2004
 nearby_state_courts:
 - state: AZ
   county: Pima County

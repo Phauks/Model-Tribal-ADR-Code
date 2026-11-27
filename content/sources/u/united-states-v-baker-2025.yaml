@@ -1,0 +1,63 @@
+key: united-states-v-baker-2025
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Baker
+  authority: United States Court of Appeals for the Tenth Circuit
+  issued:
+    date-parts:
+    - - 2025
+      - 10
+      - 27
+  URL: https://www.courtlistener.com/opinion/10711673/united-states-v-baker/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 24-7017
+original_link: https://www.courtlistener.com/opinion/10711673/united-states-v-baker/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2025-05-14'
+  source: United States Court of Appeals for the Tenth Circuit
+  link: https://www.ca10.uscourts.gov/sites/ca10/files/oralarguments/24-7017.mp3
+  duration_seconds: 2091
+  held: true
+  note: Held until a reading of the argument finds no child or victim named; the opinion itself is shown.
+  file:
+    storage_key: appeals-court-audio/ca10/2025/2025-05-14-24-7017.mp3
+    checksum: 51be20be52dc901fdff9c7997b946668409ee113bab060bb00dc606f4eacd409
+    media_type: audio/mpeg
+    bytes: 16727360
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 24-7017; no reporter citation yet. Decided by the United States Court of Appeals for the Tenth Circuit on Oct. 27, 2025. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (aggravated sexual abuse in Indian country, Indian defendant).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: aggravated sexual abuse in Indian country, Indian defendant'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

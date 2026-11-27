@@ -1,0 +1,2529 @@
+# The pictures on the Supreme Court pages: one for each Justice and appointing
+# President (people.yaml) and one for each Court that has a group photograph
+# of its own (courts.yaml); a Court without one shows its Chief Justice.
+# Each entry is written by hand from the record of the library, archive or
+# museum that holds the original: what it shows, who made it and when, the
+# source's number for it, and why it is in the public domain or under an open
+# license. Nothing is copied from a copy's description page. The site builds
+# each credit line from creator, date, source, source_id and license.
+# scripts/law/supreme_court_pictures.py fills media_type, width, height,
+# sha256 and key from the downloaded copy. An entry with rotate or crop is
+# served as a picture the script turns or cuts from the copy (a print
+# photographed on its side, one Justice in a group photograph).
+pictures:
+- subject: john-jay
+  shows: John Jay, three-quarter-length portrait in judicial robes
+  creator: Gilbert Stuart
+  date: '1794'
+  source: National Gallery of Art
+  source_id: 2009.132.1
+  source_link: https://www.nga.gov/artworks/75023-john-jay
+  license: Public domain
+  basis: Painting by Gilbert Stuart (d. 1828), so the work is old and public domain. The National Gallery of Art page states the object's media is free and in the public domain.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/John_Jay_%28Gilbert_Stuart_portrait%29.jpg/500px-John_Jay_%28Gilbert_Stuart_portrait%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 621
+  sha256: 8a1225032e600823ab17d32994be99ce8b3da9ec17e54211f862a1bd44aff412
+  key: supreme-court/portraits/john-jay.jpg
+- subject: john-rutledge
+  shows: John Rutledge, miniature portrait in an oval, head and shoulders in right profile
+  creator: John Trumbull
+  date: c. 1791
+  source: National Portrait Gallery, Smithsonian Institution
+  source_id: NPG.97.190
+  source_link: https://npg.si.edu/object/npg_NPG.97.190
+  license: Public domain
+  basis: Oil on mahogany panel by John Trumbull (d. 1843), so the work is public domain by age. The Smithsonian's record marks the object CC0 (Smithsonian Open Access).
+  checked: '2026-11-27'
+  copy: https://ids.si.edu/ids/deliveryService?id=NPG-NPG_97_190_inex&max=800
+  media_type: image/jpeg
+  width: 669
+  height: 800
+  sha256: 3b1eb7de38a0a551decb2b19d2509476adf65e18b3d4707e746fa1fc0465d361
+  key: supreme-court/portraits/john-rutledge-3b1eb7de38a0.jpg
+- subject: oliver-ellsworth
+  shows: Oliver Ellsworth, half-length, from a photograph of a painting
+  creator: Anderson, New York
+  date: '1891'
+  source: Library of Congress
+  source_id: cph.3c34187
+  source_link: https://www.loc.gov/pictures/item/2004666056/
+  license: Public domain
+  basis: Photograph copyrighted 1891 (before 1931). LoC record says "No known restrictions on publication."
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3c30000/3c34000/3c34100/3c34187r.jpg
+  media_type: image/jpeg
+  width: 513
+  height: 640
+  sha256: 535a15551dce80fdc59617957fccaf2b395f4d4ac781501aa1b7ff5cf758d01e
+  key: supreme-court/portraits/oliver-ellsworth-535a15551dce.jpg
+- subject: john-marshall
+  shows: John Marshall, half-length oil portrait
+  creator: Henry Inman
+  date: '1832'
+  source: Library of Virginia
+  source_link: https://artsandculture.google.com/asset/eAG5QDFfZUEkPQ
+  license: Public domain
+  basis: Painting by Henry Inman (d. 1846), public domain by age.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/John_Marshall_by_Henry_Inman%2C_1832.jpg/500px-John_Marshall_by_Henry_Inman%2C_1832.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 595
+  sha256: b4d7d3067116738f340fcd7ab2f782c0449e87b504d3ac7823ae4199487f967c
+  key: supreme-court/portraits/john-marshall.jpg
+- subject: roger-brooke-taney
+  shows: Roger B. Taney as Chief Justice, seated portrait photograph
+  creator: Brady's National Photographic Portrait Galleries
+  date: c. 1855–1864
+  source: Library of Congress
+  source_id: ppmsca.70245
+  source_link: https://www.loc.gov/pictures/item/2020634809/
+  license: Public domain
+  basis: Photograph made in the 1850s-60s, long before 1931. LoC record says "No known restrictions on publication."
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ppmsca/70200/70245r.jpg
+  media_type: image/jpeg
+  width: 396
+  height: 640
+  sha256: 1dcbd81adfdb18b68794433a7dfafe78e30dc008ed1738228d526f9939102e52
+  key: supreme-court/portraits/roger-brooke-taney-1dcbd81adfdb.jpg
+- subject: salmon-portland-chase
+  shows: Salmon P. Chase, head and shoulders
+  creator: Brady's National Photographic Portrait Galleries
+  date: c. 1860–1865
+  source: Library of Congress
+  source_id: cwpb.05620
+  source_link: https://www.loc.gov/item/2018666381/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1866.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Mathew_Brady%2C_Portrait_of_Secretary_of_the_Treasury_Salmon_P._Chase%2C_officer_of_the_United_States_government_%281860%E2%80%931865%2C_full_version%29_%281%29.jpg/500px-Mathew_Brady%2C_Portrait_of_Secretary_of_the_Treasury_Salmon_P._Chase%2C_officer_of_the_United_States_government_%281860%E2%80%931865%2C_full_version%29_%281%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: a9ea5f9ad1417131afe36266d01e5f2d6257d9c58facf8ceaf5c9931fd45f9f7
+  key: supreme-court/portraits/salmon-portland-chase.jpg
+- subject: morrison-remick-waite
+  shows: Morrison R. Waite, half-length
+  creator: Brady-Handy studio
+  date: c. 1870–1880
+  source: Library of Congress
+  source_id: cwpbh.03696
+  source_link: https://www.loc.gov/item/2017893253/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Chief_Justice_Morrison_Waite.jpg/500px-Chief_Justice_Morrison_Waite.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 600
+  sha256: 3ae01300d8b84cb36b30e545cbe0cdd29afa83705ebe7abccd13e7a5ce0f441c
+  key: supreme-court/portraits/morrison-remick-waite.jpg
+- subject: melville-weston-fuller
+  shows: Melville W. Fuller in his robe, seated
+  creator: Theodore C. Marceau
+  date: '1908'
+  source: Library of Congress
+  source_id: cph.3b41804
+  source_link: https://www.loc.gov/item/91794581/
+  license: Public domain
+  basis: Copyrighted in 1908 by Marceau of Boston, so in the public domain in the United States as published before 1931.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Melville_Weston_Fuller_Chief_Justice_1908.jpg/500px-Melville_Weston_Fuller_Chief_Justice_1908.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 756
+  sha256: 1626cbb521e28cd184afc9345d301db762711984578c452b395509b9ae65e012
+  key: supreme-court/portraits/melville-weston-fuller.jpg
+- subject: edward-douglass-white
+  shows: Edward D. White, head and shoulders
+  creator: Frances Benjamin Johnston
+  date: '1905'
+  source: Library of Congress
+  source_id: cph.3c07142
+  source_link: https://www.loc.gov/item/93502577/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Edward_White%2C_head-and-shoulders_portrait%2C_facing_slightly_left%2C_1905.jpg/500px-Edward_White%2C_head-and-shoulders_portrait%2C_facing_slightly_left%2C_1905.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 611
+  sha256: 613c0f69a15ed356ff26769a771e67daad489fef0510460881055dfb50305c22
+  key: supreme-court/portraits/edward-douglass-white.jpg
+- subject: william-howard-taft
+  shows: William Howard Taft, bust-length cabinet card
+  creator: Pach Brothers
+  date: '1908'
+  source: National Portrait Gallery, Smithsonian Institution
+  source_id: NPG.80.198
+  source_link: https://www.si.edu/object/william-howard-taft:npg_NPG.80.198
+  license: Public domain
+  basis: Published in the United States in 1908, before 1931. The National Portrait Gallery marks its image CC0 and public domain.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Cabinet_card_of_William_Howard_Taft_by_Pach_Brothers_-_Cropped_to_image.jpg/500px-Cabinet_card_of_William_Howard_Taft_by_Pach_Brothers_-_Cropped_to_image.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 680
+  sha256: 74d45c7390849f7aa3dec78826dc135c8abf7eaa20c45f3e43890f519876bb4e
+  key: supreme-court/portraits/william-howard-taft.jpg
+- subject: charles-evans-hughes
+  shows: Charles Evans Hughes, head and shoulders, in a straw hat
+  creator: Bain News Service
+  date: '1907'
+  source: Library of Congress
+  source_id: ggbain.00632
+  source_link: https://www.loc.gov/pictures/item/2014680628/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Bain News Service negative, 1907.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ggbain/00600/00632r.jpg
+  media_type: image/jpeg
+  width: 468
+  height: 640
+  sha256: 7ba9f7c1c88286f28ac0d4b4cd88ba07c6d44ae30d3c5b5a0d71cb54bc1dfbb4
+  key: supreme-court/portraits/charles-evans-hughes-7ba9f7c1c882.jpg
+- subject: harlan-fiske-stone
+  shows: Harlan F. Stone in his robe, seated
+  creator: National Photo Company
+  date: c. 1925–1932
+  source: Library of Congress
+  source_id: cph.3c37254
+  source_link: https://www.loc.gov/item/94503349/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Chief_Justice_Harlan_Fiske_Stone_photograph_circa_1927-1932.jpg/500px-Chief_Justice_Harlan_Fiske_Stone_photograph_circa_1927-1932.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 609
+  sha256: dd1b552bcbe3393f215ccfff65c453fec0ce2e1ca8e4f1468d218c250cf3a995
+  key: supreme-court/portraits/harlan-fiske-stone.jpg
+- subject: fred-moore-vinson
+  shows: Fred M. Vinson in judicial robes, standing, holding a document, library shelves behind
+  creator: Harris & Ewing
+  date: '1938'
+  source: Library of Congress
+  source_id: hec.24600
+  source_link: https://www.loc.gov/pictures/item/2016873571/
+  license: Public domain
+  basis: Library of Congress record says 'No known restrictions on publication' (Harris & Ewing Collection, gift of Harris & Ewing, Inc., 1955). Published/created 1938, before 1964 and by a news photo agency whose collection LoC treats as unrestricted.
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/hec/24600/24600r.jpg
+  media_type: image/jpeg
+  width: 514
+  height: 640
+  sha256: a23e4c38c382efce84b4aa1863a1946c1cc6773766319e1b0091f49df3d09df4
+  key: supreme-court/portraits/fred-moore-vinson-a23e4c38c382.jpg
+- subject: earl-warren
+  shows: Earl Warren, Chief Justice, seated in his robe, detail of the Court's group portrait of 1958
+  creator: Warren K. Leffler
+  date: '1958'
+  source: Library of Congress
+  source_id: ppmsca.78058
+  source_link: https://www.loc.gov/pictures/item/2023630495/
+  license: Public domain
+  copy: https://tile.loc.gov/storage-services/master/pnp/ppmsca/78000/78058u.tif
+  basis: 'Library of Congress record: "No known restrictions on publication." Made for U.S. News & World Report, whose photographs the magazine gave to the Library. This is a detail of the Court''s group portrait of November 24, 1958 (the Warren Court picture). The Library''s record names only the Chief Justice; he is identified by the record and his place at the center of the front row.'
+  checked: '2026-11-27'
+  crop:
+  - 2547
+  - 1209
+  - 3233
+  - 2066
+  media_type: image/jpeg
+  width: 640
+  height: 800
+  sha256: eb14f90cea072bb3ac4638c137dbc66582e3e09a81f04c983ae7db1c586c86c7
+  key: supreme-court/portraits/earl-warren-eb14f90cea07.jpg
+- subject: warren-earl-burger
+  shows: Chief Justice Warren E. Burger, official portrait in judicial robe
+  creator: Robert S. Oakes
+  date: '1971'
+  source: Library of Congress
+  source_id: cph.3b07875
+  source_link: https://www.loc.gov/pictures/item/2002721279/
+  license: Public domain
+  basis: Library of Congress record says 'No known restrictions on publication. Verified with the Supreme Court, 2004.' It is an official Supreme Court portrait; the record notes it is a color negative by Robert S. Oakes.
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3b00000/3b07000/3b07800/3b07875r.jpg
+  media_type: image/jpeg
+  width: 454
+  height: 640
+  sha256: b2b33d77cff1b6368b5fbfbfea84096e36d1d48c8b24ee35967a1c44aac30942
+  key: supreme-court/portraits/warren-earl-burger-b2b33d77cff1.jpg
+- subject: william-h-rehnquist
+  shows: Associate Justice William H. Rehnquist, official portrait in judicial robe
+  creator: Robert S. Oakes
+  date: '1972'
+  source: Library of Congress
+  source_id: cph.3b07880
+  source_link: https://www.loc.gov/pictures/item/2002721284/
+  license: Public domain
+  basis: Library of Congress record says 'No known restrictions on publication. Verified with the Supreme Court, 2004.' It is an official Supreme Court portrait; the record notes it is a color negative by Robert S. Oakes.
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3b00000/3b07000/3b07800/3b07880r.jpg
+  media_type: image/jpeg
+  width: 448
+  height: 640
+  sha256: 72c556973a8b00e6a83b42bf10baf56e8a1add9dccc037df5b2d2e2beabc6eb6
+  key: supreme-court/portraits/william-h-rehnquist-72c556973a8b.jpg
+- subject: john-g-roberts-jr
+  shows: John G. Roberts, Jr., Chief Justice, official portrait
+  creator: Steve Petteway
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/biographies.aspx
+  license: Public domain
+  basis: Official portrait from the Collection of the Supreme Court of the United States, made by a Court photographer (federal employee, 17 U.S.C. 105). Credit line on supremecourthistory.org names the photographer; supremecourt.gov shows the Justice's official portrait without a copyright claim.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Official_roberts_CJ.jpg/500px-Official_roberts_CJ.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 600
+  sha256: d6384b5ec63c8c3d6278554ef3da6e457a2d42c6f505ecf588e9d0f8fe14b40e
+  key: supreme-court/portraits/john-g-roberts-jr.jpg
+- subject: william-cushing
+  shows: William Cushing, bust portrait in left profile, with his signature
+  creator: John Chester Buttre
+  source: Art Institute of Chicago
+  source_id: '274357'
+  source_link: https://www.artic.edu/artworks/274357
+  license: Public domain
+  basis: Etching by John Chester Buttre (d. 1893). The Art Institute of Chicago's record marks it public domain and releases its image under CC0.
+  checked: '2026-11-27'
+  copy: https://www.artic.edu/iiif/2/634786fb-6c6e-4399-53a8-a05b14a30ece/full/843,/0/default.jpg
+  media_type: image/jpeg
+  width: 843
+  height: 1098
+  sha256: 8d62f6c99194877b8cb77ae9b51c0b0edd6cfdf51cfa7aedfe2b5fc887c3e89f
+  key: supreme-court/portraits/william-cushing-8d62f6c99194.jpg
+- subject: james-wilson
+  shows: James Wilson, half length, wearing spectacles
+  creator: James Barton Longacre, after Jean Pierre Henri Elouis
+  date: c. 1825
+  source: National Portrait Gallery, Smithsonian Institution
+  source_id: NPG.77.299
+  source_link: https://npg.si.edu/object/npg_NPG.77.299
+  license: Public domain
+  basis: Sepia ink wash with watercolor by James Barton Longacre (d. 1869), so the work is public domain by age. The Smithsonian's record marks the object CC0 (Smithsonian Open Access).
+  checked: '2026-11-27'
+  copy: https://ids.si.edu/ids/deliveryService?id=NPG-NPG_77_299&max=800
+  media_type: image/jpeg
+  width: 669
+  height: 800
+  sha256: 3aa050a37b19258b0b471e15777a97e6d552bc39ff00a2d4e2091f0cfd871342
+  key: supreme-court/portraits/james-wilson-3aa050a37b19.jpg
+- subject: john-blair
+  shows: John Blair, bust portrait, facing front
+  creator: Albert Rosenthal
+  source: Art Institute of Chicago
+  source_id: '274504'
+  source_link: https://www.artic.edu/artworks/274504
+  license: Public domain
+  basis: Print by Albert Rosenthal (1863-1939), lettered "From the original in the possession of the Family". The Art Institute of Chicago's record marks it public domain and releases its image under CC0. The Institute photographed the sheet on its side, so the copy is turned upright and cut to the sheet.
+  checked: '2026-11-27'
+  copy: https://www.artic.edu/iiif/2/a140df31-e099-827d-1d65-ca3d3b64fbeb/full/843,/0/default.jpg
+  rotate: 90
+  crop:
+  - 120
+  - 120
+  - 530
+  - 765
+  media_type: image/jpeg
+  width: 410
+  height: 645
+  sha256: 6d55777f41eda394e279ce7eb87a29eae76c31549a3191eeb520246900f2c5af
+  key: supreme-court/portraits/john-blair-6d55777f41ed.jpg
+- subject: james-iredell
+  shows: James Iredell, head and shoulders in profile
+  creator: Charles B. J. F. de Saint-Mémin
+  date: c. 1798–1799
+  source: Library of Congress
+  source_id: pga.13209
+  source_link: https://www.loc.gov/pictures/item/2007676892/
+  license: Public domain
+  basis: Engraving made about 1798-99, long before 1931. LoC record says "No known restrictions on publication."
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/pga/13200/13209r.jpg
+  media_type: image/jpeg
+  width: 640
+  height: 640
+  sha256: 30cd4773e4e1237e73840094d7a9a1afb2dd7cc74a8ba49f43471c7adc751a92
+  key: supreme-court/portraits/james-iredell-30cd4773e4e1.jpg
+- subject: william-paterson
+  shows: William Paterson, half-length portrait
+  creator: Edward Ludlow Mooney
+  source: Princeton University Art Museum
+  source_id: PP127
+  source_link: https://artmuseum.princeton.edu/collections/objects/44638
+  license: Public domain
+  basis: Painting by Edward Ludlow Mooney (d. 1887), public domain by age. The museum supports free access to images of public-domain works and invites downloads.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Edward_Ludlow_Mooney_-_William_Paterson%2C_Class_of_1763_%281745-1806%29_-_PP127_-_Princeton_University_Art_Museum.jpg/500px-Edward_Ludlow_Mooney_-_William_Paterson%2C_Class_of_1763_%281745-1806%29_-_PP127_-_Princeton_University_Art_Museum.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 580
+  sha256: dcbba47dcffb81d3f0a9ac2d80aeea9fb27e9156635ee46621b6c981c9618aa6
+  key: supreme-court/portraits/william-paterson.jpg
+- subject: samuel-chase
+  shows: Samuel Chase, portrait painting
+  creator: John Wesley Jarvis
+  date: '1811'
+  source: National Portrait Gallery, Smithsonian Institution
+  source_id: NPG.67.2
+  source_link: https://npg.si.edu/object/npg_NPG.67.2
+  license: Public domain
+  basis: Painted in 1811 by John Wesley Jarvis, who died in 1840. The National Portrait Gallery marks its image of the painting CC0 and public domain.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/John_Wesley_Jarvis_-_Samuel_Chase_-_NPG.67.2_-_National_Portrait_Gallery.jpg/500px-John_Wesley_Jarvis_-_Samuel_Chase_-_NPG.67.2_-_National_Portrait_Gallery.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 586
+  sha256: bf56449f8e1d565eb511bffc7384b8c6addddaf2ccbd3f40874df06f76fa741a
+  key: supreme-court/portraits/samuel-chase.jpg
+- subject: bushrod-washington
+  shows: Bushrod Washington, head and shoulders, oil portrait
+  creator: Chester Harding
+  date: c. 1828–1830
+  source: National Portrait Gallery, Smithsonian Institution
+  source_id: NPG.2017.80
+  source_link: https://npg.si.edu/object/npg_NPG.2017.80
+  license: Public domain
+  basis: Painting by Chester Harding (d. 1866), public domain by age. The NPG record gives no rights statement (Restrictions field blank); the number NPG.2017.80 comes from the record URL.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/BushrodWashington.jpg/500px-BushrodWashington.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 574
+  sha256: 2b065e597516ce4f5ce1e6610155f6d045889ff18ee5c688dfb1f575ca84279f
+  key: supreme-court/portraits/bushrod-washington.jpg
+- subject: alfred-moore
+  shows: Alfred Moore, head and shoulders engraved portrait
+  creator: J. Veagle
+  date: '1820'
+  source: Library of Congress
+  source_id: cph.3b46370
+  source_link: https://www.loc.gov/pictures/item/2002705689/
+  license: Public domain
+  basis: Engraving published in 1820 (before 1931). LoC record says "No known restrictions on publication."
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3b40000/3b46000/3b46300/3b46370r.jpg
+  media_type: image/jpeg
+  width: 344
+  height: 640
+  sha256: 69d8e616474a9d34a949a4f0967678750fd54e15819ba9adb687c2c942419947
+  key: supreme-court/portraits/alfred-moore-69d8e616474a.jpg
+- subject: gabriel-duvall
+  shows: Gabriel Duvall, head and shoulders in profile
+  creator: Charles B. J. F. de Saint-Mémin
+  date: '1806'
+  source: Library of Congress
+  source_id: pga.13181
+  source_link: https://www.loc.gov/pictures/item/2007676863/
+  license: Public domain
+  basis: Engraving/physiognotrace portrait made in 1806, long before 1931. LoC record says "No known restrictions on publication."
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/pga/13100/13181r.jpg
+  media_type: image/jpeg
+  width: 640
+  height: 632
+  sha256: aabeeb35b74744c01c6e6d92daae05dc3fb40a605124d010fcd944d2765a4b37
+  key: supreme-court/portraits/gabriel-duvall-aabeeb35b747.jpg
+- subject: joseph-story
+  shows: Joseph Story in his robe, half-length
+  creator: Mathew Brady's studio
+  date: c. 1844–1845
+  source: Library of Congress
+  source_id: cph.3c10196
+  source_link: https://www.loc.gov/pictures/item/2004664059/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Daguerreotype made by Mathew Brady''s studio in 1844 or 1845.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Daguerreotype_of_Joseph_Story%2C_1844_%28edit%29.jpg/500px-Daguerreotype_of_Joseph_Story%2C_1844_%28edit%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 586
+  sha256: 1c1ac749b69cdbd3e318ea822ef318ac4121feca48ce9883bca25e35ee974295
+  key: supreme-court/portraits/joseph-story.jpg
+- subject: john-mclean
+  shows: John McLean in his robe, seated
+  date: c. 1850
+  source: Library of Congress
+  source_id: cph.3g04772
+  source_link: https://www.loc.gov/pictures/item/2004664434/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Daguerreotype made about 1850; the photographer is not known.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3g00000/3g04000/3g04700/3g04772r.jpg
+  media_type: image/jpeg
+  width: 508
+  height: 640
+  sha256: 55b2f83677e33360ac9757b56e441cb7df2e6c2a8ad2d862944327825d03254e
+  key: supreme-court/portraits/john-mclean-55b2f83677e3.jpg
+- subject: james-moore-wayne
+  shows: James M. Wayne, half-length
+  creator: Brady-Handy studio
+  date: c. 1855–1865
+  source: Library of Congress
+  source_id: cwpbh.02282
+  source_link: https://www.loc.gov/item/2017896974/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/James_Moore_Wayne_-_Brady-Handy.jpg/500px-James_Moore_Wayne_-_Brady-Handy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 630
+  sha256: aba328fb16b9f3b3b27bee57bf8291aaa61b25238e931e9a5549c9cc6c2c1879
+  key: supreme-court/portraits/james-moore-wayne.jpg
+- subject: philip-pendleton-barbour
+  shows: Philip P. Barbour, head and shoulders engraved portrait
+  creator: Albert Rosenthal
+  date: '1889'
+  source: Library of Congress
+  source_id: cph.3a22128
+  source_link: https://www.loc.gov/pictures/item/2022636480/
+  license: Public domain
+  basis: Print published 1889 (before 1931). LoC record says "No known restrictions on publication."
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3a20000/3a22000/3a22100/3a22128r.jpg
+  media_type: image/jpeg
+  width: 446
+  height: 640
+  sha256: 9c561e61174f9443bd8ba1c9ae27bd0a29a7c594604989fed24775b18fa779a7
+  key: supreme-court/portraits/philip-pendleton-barbour-9c561e61174f.jpg
+- subject: john-catron
+  shows: John Catron, seated
+  creator: Brady-Handy studio
+  date: c. 1855–1865
+  source: Library of Congress
+  source_id: cwpbh.01590
+  source_link: https://www.loc.gov/item/2017896729/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/John_Catron_-_Brady-Handy.jpg/500px-John_Catron_-_Brady-Handy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 592
+  sha256: de373e98b09f851f7e6b7a40cc919625e774a1ecb125343f6412117ba46398d8
+  key: supreme-court/portraits/john-catron.jpg
+- subject: john-mckinley
+  shows: John McKinley, head and shoulders engraved portrait
+  creator: Albert Rosenthal
+  date: '1890'
+  source: Library of Congress
+  source_id: cph.3a22137
+  source_link: https://www.loc.gov/pictures/item/2022636489/
+  license: Public domain
+  basis: Print published 1890 (before 1931). LoC record says "No known restrictions on publication."
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3a20000/3a22000/3a22100/3a22137r.jpg
+  media_type: image/jpeg
+  width: 445
+  height: 640
+  sha256: 0ea0a1284152443d6d2c57833d4b1e3cd88866984b5ee47ca56bfe306a20696f
+  key: supreme-court/portraits/john-mckinley-0ea0a1284152.jpg
+- subject: peter-vivian-daniel
+  shows: Peter V. Daniel, head and shoulders in right profile, signed "Judge P. V. Daniel, U.S.S.C."
+  creator: Mathew B. Brady; Edward and Henry T. Anthony
+  date: c. 1865
+  source: U.S. Senate Collection
+  source_id: 38.00719.001
+  source_link: https://www.senate.gov/art-artifacts/historical-images/photos-stereoviews/38_00719_001.htm
+  license: Public domain
+  basis: Carte de visite photograph by Brady, published by E. & H. T. Anthony about 1865, so it is in the public domain in the United States by age (published before 1931). The Senate's record states no restriction and leaves rights to the user.
+  checked: '2026-11-27'
+  copy: https://www.senate.gov/art-artifacts/resources/graphics/xlarge/38_00719.jpg
+  media_type: image/jpeg
+  width: 370
+  height: 610
+  sha256: 0a6e6a27bff15ff1b79686420288088d2e1ceff39878944d047765e51b447959
+  key: supreme-court/portraits/peter-vivian-daniel-0a6e6a27bff1.jpg
+- subject: samuel-nelson
+  shows: Samuel Nelson, seated
+  creator: Brady-Handy studio
+  date: c. 1855–1865
+  source: Library of Congress
+  source_id: cwpbh.02019
+  source_link: https://www.loc.gov/item/2017897073/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Samuel_Nelson_-_Brady-Handy.jpg/500px-Samuel_Nelson_-_Brady-Handy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 609
+  sha256: a15edb956cfb456033e8a9f72e7551422c5289b5ffbe7f3d689a3b4af6f82f1e
+  key: supreme-court/portraits/samuel-nelson.jpg
+- subject: levi-woodbury
+  shows: Levi Woodbury, half-length
+  creator: Mathew Brady's studio
+  date: c. 1844–1851
+  source: Library of Congress
+  source_id: cph.3c10056
+  source_link: https://www.loc.gov/item/2004664088/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Levi_Woodbury.jpg/500px-Levi_Woodbury.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 587
+  sha256: f0b432b862c9a64431ee011546a009ba95dbbf040a1e5fb6c1ce096345dbd23a
+  key: supreme-court/portraits/levi-woodbury.jpg
+- subject: robert-cooper-grier
+  shows: Robert C. Grier, half-length
+  creator: Brady-Handy studio
+  date: c. 1855–1865
+  source: Library of Congress
+  source_id: cwpbh.01399
+  source_link: https://www.loc.gov/item/2017896025/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Robert_Cooper_Grier_-_Brady-Handy.jpg/500px-Robert_Cooper_Grier_-_Brady-Handy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 591
+  sha256: 9ca8b4df588a1b493dfac04144193ea049b5bb5e4d3077d5f7dc4ef901887227
+  key: supreme-court/portraits/robert-cooper-grier.jpg
+- subject: benjamin-robbins-curtis
+  shows: Benjamin R. Curtis, half length, facing front
+  creator: Albert Rosenthal
+  date: '1899'
+  source: Library of Congress
+  source_id: ppmsca.46390
+  source_link: https://www.loc.gov/pictures/item/2018697006/
+  license: Public domain
+  basis: 'Etching published in Philadelphia in 1899 and deposited for copyright by Albert Rosenthal (before 1931). Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ppmsca/46300/46390r.jpg
+  media_type: image/jpeg
+  width: 521
+  height: 640
+  sha256: 5a639f602726ab01c3027db7a7b331140d8a9fc93b1b89f4ab17fb87d4a11d72
+  key: supreme-court/portraits/benjamin-robbins-curtis-5a639f602726.jpg
+- subject: john-archibald-campbell
+  shows: John A. Campbell, half-length
+  creator: Brady-Handy studio
+  date: c. 1870–1880
+  source: Library of Congress
+  source_id: cwpbh.04017
+  source_link: https://www.loc.gov/item/2017893380/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/John_Archibald_Campbell_-_Brady-Handy.jpg/500px-John_Archibald_Campbell_-_Brady-Handy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 616
+  sha256: 55202aefc53b4595c058308792dda6e30ea46d138ab826fe0f8ad65792ed300e
+  key: supreme-court/portraits/john-archibald-campbell.jpg
+- subject: nathan-clifford
+  shows: Nathan Clifford, half-length
+  creator: Brady-Handy studio
+  date: c. 1855–1865
+  source: Library of Congress
+  source_id: cwpbh.00695
+  source_link: https://www.loc.gov/item/2017896622/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/NClifford.jpg/500px-NClifford.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: dc76415cfdb90460eb86a8fc027ec4187b5960778babe7d9f886000dd83b9323
+  key: supreme-court/portraits/nathan-clifford.jpg
+- subject: noah-haynes-swayne
+  shows: Noah H. Swayne in his robe, seated
+  creator: Brady-Handy studio
+  date: c. 1865–1880
+  source: Library of Congress
+  source_id: cwpbh.04992
+  source_link: https://www.loc.gov/item/2017895202/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Noah_Haynes_Swayne%2C_photo%2C_head_and_shoulders%2C_seated.jpg/500px-Noah_Haynes_Swayne%2C_photo%2C_head_and_shoulders%2C_seated.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: b5b926f4b0c099c2a8385667c12ce2c409cb382fe1ae13b044bb810de5d1efac
+  key: supreme-court/portraits/noah-haynes-swayne.jpg
+- subject: samuel-freeman-miller
+  shows: Samuel F. Miller in his robe
+  creator: Brady-Handy studio
+  date: c. 1870–1880
+  source: Library of Congress
+  source_id: cwpbh.03994
+  source_link: https://www.loc.gov/item/2017893429/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Samuel_Freeman_Miller_-_Brady-Handy.jpg/500px-Samuel_Freeman_Miller_-_Brady-Handy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: 0e71e8d7f7d33f3613270d00c5c56b8da9c60b2182a0fca45c182c69f33d58a2
+  key: supreme-court/portraits/samuel-freeman-miller.jpg
+- subject: david-davis
+  shows: David Davis, seated
+  creator: Brady-Handy studio
+  date: c. 1855–1865
+  source: Library of Congress
+  source_id: cwpbh.02279
+  source_link: https://www.loc.gov/item/2017896971/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/DDavis.jpg/500px-DDavis.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 530
+  sha256: c4820ae5703a8bbe531d0d780a736230569fdf73360dbaa6f255d52e0393c400
+  key: supreme-court/portraits/david-davis.jpg
+- subject: stephen-johnson-field
+  shows: Stephen J. Field in his robe, seated
+  creator: Brady-Handy studio
+  date: c. 1865–1880
+  source: Library of Congress
+  source_id: cwpbh.04973
+  source_link: https://www.loc.gov/item/2017895197/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Stephen_Johnson_Field%2C_photo_half_length_seated%2C_1875.jpg/500px-Stephen_Johnson_Field%2C_photo_half_length_seated%2C_1875.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 543
+  sha256: 8d60d0a9d2e7ea184f6be275a3bab776ce49eb5e289adee743af0632abba854e
+  key: supreme-court/portraits/stephen-johnson-field.jpg
+- subject: william-strong
+  shows: William Strong in his robe
+  creator: Brady-Handy studio
+  date: c. 1865–1880
+  source: Library of Congress
+  source_id: cwpbh.04963
+  source_link: https://www.loc.gov/item/2017895229/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/William_Strong_judge_-_Brady-Handy.jpg/500px-William_Strong_judge_-_Brady-Handy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 556
+  sha256: bd0045a5789e1f018440b092eed0f235e7d3f195d8734a54c4ee5b1bf1eba4dd
+  key: supreme-court/portraits/william-strong.jpg
+- subject: joseph-p-bradley
+  shows: Joseph P. Bradley, half-length
+  creator: Brady-Handy studio
+  date: c. 1870–1880
+  source: Library of Congress
+  source_id: cwpbh.03889
+  source_link: https://www.loc.gov/item/2017893219/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Joseph_Philo_Bradley_-_Brady-Handy.jpg/500px-Joseph_Philo_Bradley_-_Brady-Handy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: 83afcfe54e0ffd403e4ff7ae36e02d04eab2eb77c9e377f43be9aeadacf98c64
+  key: supreme-court/portraits/joseph-p-bradley.jpg
+- subject: ward-hunt
+  shows: Ward Hunt in his robe
+  creator: Brady-Handy studio
+  date: c. 1870–1880
+  source: Library of Congress
+  source_id: cwpbh.03893
+  source_link: https://www.loc.gov/item/2017893181/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Ward_Hunt_-_Brady-Handy.jpg/500px-Ward_Hunt_-_Brady-Handy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 695
+  sha256: a23ddd14d2cb575f1c473dd2ae88925346dd0092272cd1cccd9d5fae2e23d9fb
+  key: supreme-court/portraits/ward-hunt.jpg
+- subject: john-marshall-harlan-1833
+  shows: John Marshall Harlan in his robe, seated
+  creator: Brady-Handy studio
+  date: c. 1870–1880
+  source: Library of Congress
+  source_id: cwpbh.03603
+  source_link: https://www.loc.gov/item/2017893360/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/John_Marshall_Harlan-LC-DIG-cwpbh-03603.jpg/500px-John_Marshall_Harlan-LC-DIG-cwpbh-03603.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: e40849f70cc5ee5ca67384cb9a448ae30ede655b1a738312c18e58a8ce159529
+  key: supreme-court/portraits/john-marshall-harlan-1833.jpg
+- subject: stanley-matthews
+  shows: Stanley Matthews, half-length
+  creator: Brady-Handy studio
+  date: c. 1870–1880
+  source: Library of Congress
+  source_id: cwpbh.04015
+  source_link: https://www.loc.gov/item/2017893378/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Thomas_Stanley_Matthews_-_Brady-Handy.jpg/500px-Thomas_Stanley_Matthews_-_Brady-Handy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 606
+  sha256: 1fdbc4e677abbb6552214bfe9300b2f60537d310b492ece256288a6463755a64
+  key: supreme-court/portraits/stanley-matthews.jpg
+- subject: horace-gray
+  shows: Horace Gray, half length, in a judicial robe
+  creator: Charles Milton Bell
+  date: c. 1880
+  source: National Portrait Gallery, Smithsonian Institution
+  source_id: S/NPG.2008.68
+  source_link: https://npg.si.edu/object/npg_S_NPG.2008.68
+  license: Public domain
+  basis: Albumen silver print by C. M. Bell (d. 1893), made about 1880, so it is public domain by age. The Smithsonian's record marks the object CC0 (Smithsonian Open Access).
+  checked: '2026-11-27'
+  copy: https://ids.si.edu/ids/deliveryService?id=NPG-S_NPG_2008_68Gray-000001&max=800
+  media_type: image/jpeg
+  width: 539
+  height: 800
+  sha256: aec73c99046f31aee02e3601dfbf8bf39250eadc740e7b745b81fb406dadad71
+  key: supreme-court/portraits/horace-gray-aec73c99046f.jpg
+- subject: samuel-blatchford
+  shows: Samuel Blatchford in his robe, half-length
+  creator: C. M. Bell
+  date: c. 1882–1890
+  source: Library of Congress
+  source_id: bellcm.01177
+  source_link: https://www.loc.gov/pictures/item/2016688654/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative from the C. M. Bell studio, labeled "Blatchford, Justice"; Samuel Blatchford joined the Court in 1882.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/bellcm/01100/01177r.jpg
+  media_type: image/jpeg
+  width: 465
+  height: 640
+  sha256: 6000f6db17538bf231340fb02a5d80873144e778f497597e23d7f3536cc5d2bd
+  key: supreme-court/portraits/samuel-blatchford-6000f6db1753.jpg
+- subject: lucius-quintus-c-lamar
+  shows: Lucius Q. C. Lamar, half-length
+  creator: Brady-Handy studio
+  date: c. 1870–1880
+  source: Library of Congress
+  source_id: cwpbh.03965
+  source_link: https://www.loc.gov/item/2017893535/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Lucius_Quintus_Cincinnatus_Lamar_II_-_Brady-Handy.jpg/500px-Lucius_Quintus_Cincinnatus_Lamar_II_-_Brady-Handy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 591
+  sha256: 1ca6aab138df3e3f3c9a373be656f1ee61f2d0536c5e9bff097b7173a31bc4a0
+  key: supreme-court/portraits/lucius-quintus-c-lamar.jpg
+- subject: david-josiah-brewer
+  shows: David J. Brewer in his robe
+  creator: Frances Benjamin Johnston
+  date: c. 1906
+  source: Library of Congress
+  source_id: cph.3b29728
+  source_link: https://www.loc.gov/item/2001704066/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on reproduction."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/DavidBrewer.jpg/330px-DavidBrewer.jpg
+  media_type: image/jpeg
+  width: 330
+  height: 447
+  sha256: e73223d06d55ad0c660e5796c8dcaddb74cd65f8abcd1c2d5baee7b394c100a9
+  key: supreme-court/portraits/david-josiah-brewer.jpg
+- subject: henry-billings-brown
+  shows: Henry Billings Brown in his robe, half-length
+  creator: C. M. Bell
+  date: c. 1901–1903
+  source: Library of Congress
+  source_id: bellcm.13402
+  source_link: https://www.loc.gov/pictures/item/2016700841/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative from the C. M. Bell studio, labeled "Brown, Hon. Justice" and dated from the studio logbook; Henry Billings Brown was the only Justice Brown on the Court then.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/bellcm/13400/13402r.jpg
+  media_type: image/jpeg
+  width: 466
+  height: 640
+  sha256: 13e79ca6df65b13f234fb58015394641bf838a37c6dca465a33d087751271851
+  key: supreme-court/portraits/henry-billings-brown-13e79ca6df65.jpg
+- subject: george-shiras-jr
+  shows: George Shiras Jr. in his robe, half-length
+  creator: C. M. Bell
+  date: c. 1892–1894
+  source: Library of Congress
+  source_id: bellcm.03528
+  source_link: https://www.loc.gov/pictures/item/2016690969/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative from the C. M. Bell studio, labeled "Shiras, Justice"; George Shiras Jr. joined the Court in 1892.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/bellcm/03500/03528r.jpg
+  media_type: image/jpeg
+  width: 457
+  height: 640
+  sha256: 345786e3a9e71f58674fa49ed99d7dc50deaad614646ac8d9d7c1b5f6bdfa13a
+  key: supreme-court/portraits/george-shiras-jr-345786e3a9e7.jpg
+- subject: howell-edmunds-jackson
+  shows: Howell E. Jackson in his robe, half-length
+  creator: C. M. Bell
+  date: c. 1893
+  source: Library of Congress
+  source_id: bellcm.05206
+  source_link: https://www.loc.gov/pictures/item/2016692645/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative from the C. M. Bell studio, labeled "Jackson, Justice"; Howell E. Jackson joined the Court in 1893.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/bellcm/05200/05206r.jpg
+  media_type: image/jpeg
+  width: 462
+  height: 640
+  sha256: f8569d5c1ac2a462f30438d4b8792a70fbc5df545731caef1600d6b628b07ea8
+  key: supreme-court/portraits/howell-edmunds-jackson-f8569d5c1ac2.jpg
+- subject: rufus-wheeler-peckham
+  shows: Rufus W. Peckham, head and shoulders
+  date: '1909'
+  source: Library of Congress
+  source_id: cph.3b30513
+  source_link: https://www.loc.gov/pictures/item/2002712539/
+  license: Public domain
+  basis: Published in 1909; the Library of Congress record notes no copyright renewal.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Rufus_W._Peckham_cph.3b30513.jpg/500px-Rufus_W._Peckham_cph.3b30513.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 687
+  sha256: 93e1cfc321e7f635ea747e8911f68d426b33f9bbec8c10c36423bd7f8eb60a73
+  key: supreme-court/portraits/rufus-wheeler-peckham.jpg
+- subject: joseph-mckenna
+  shows: Joseph McKenna standing outside in a top hat
+  creator: Harris & Ewing
+  date: '1914'
+  source: Library of Congress
+  source_id: hec.03713
+  source_link: https://www.loc.gov/pictures/item/2016865203/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative given to the Library by the Harris & Ewing studio.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/hec/03700/03713r.jpg
+  media_type: image/jpeg
+  width: 473
+  height: 640
+  sha256: bd56383dca98db44f144c992bcee333edab8726ac5fd69253f3df8bfec917433
+  key: supreme-court/portraits/joseph-mckenna-bd56383dca98.jpg
+- subject: oliver-wendell-holmes
+  shows: Oliver Wendell Holmes in his robe, seated
+  creator: Harris & Ewing
+  date: c. 1930
+  source: Library of Congress
+  source_id: cph.3a47967
+  source_link: https://www.loc.gov/item/2004672087/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication. Copyright not renewed; checked by staff 12/2000."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Oliver_Wendell_Holmes_Jr_circa_1930.jpg/500px-Oliver_Wendell_Holmes_Jr_circa_1930.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 702
+  sha256: b91d49047f088ab8cb7eab9e742c4f1b6a4e30bb5a887b6bca910323876714cf
+  key: supreme-court/portraits/oliver-wendell-holmes.jpg
+- subject: william-rufus-day
+  shows: William R. Day, head and shoulders
+  date: '1910'
+  source: Library of Congress
+  source_id: cph.3b31004
+  source_link: https://www.loc.gov/pictures/item/2002712867/
+  license: Public domain
+  basis: Copyrighted about 1910; the Library of Congress record notes no copyright renewal.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/William_Rufus_Day_cph.3b31004.jpg/500px-William_Rufus_Day_cph.3b31004.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 671
+  sha256: d2e18cbcf89b42ed647743013105d878c12d773f65e8141ece37b291ba0f6ad2
+  key: supreme-court/portraits/william-rufus-day.jpg
+- subject: william-henry-moody
+  shows: William H. Moody, seated at a desk
+  creator: James E. Purdy
+  date: '1905'
+  source: Library of Congress
+  source_id: cph.3b35759
+  source_link: https://www.loc.gov/item/2002718787/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/WHMoody.jpg/500px-WHMoody.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 620
+  sha256: bdeb07bc56901d5b9efb001c7db32f475024c8d7baf205a50cd3f1f7d567dbe7
+  key: supreme-court/portraits/william-henry-moody.jpg
+- subject: horace-harmon-lurton
+  shows: Horace H. Lurton in his robe, seated
+  creator: Harris & Ewing
+  date: c. 1905–1914
+  source: Library of Congress
+  source_id: hec.16451
+  source_link: https://www.loc.gov/item/2016857515/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative given to the Library by the Harris & Ewing studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/HoraceHarmonLurton.jpg/500px-HoraceHarmonLurton.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: edc125099366a039a18c6064c9d4a7c21282d26dec62a236e9d13e79a48d9ded
+  key: supreme-court/portraits/horace-harmon-lurton.jpg
+- subject: willis-van-devanter
+  shows: Willis Van Devanter, head and shoulders
+  creator: Bain News Service
+  source: Library of Congress
+  source_id: ggbain.02657
+  source_link: https://www.loc.gov/item/2014682652/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Bain News Service negative, made before 1930.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Willis_Van_Devanter.jpg/500px-Willis_Van_Devanter.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 661
+  sha256: 164fe84f0458f81b2843739190bade12aa81c1f7f67afb4b51ce68b56be51c16
+  key: supreme-court/portraits/willis-van-devanter.jpg
+- subject: joseph-rucker-lamar
+  shows: Joseph R. Lamar, head and shoulders
+  date: '1910'
+  source: Library of Congress
+  source_id: cph.3b30511
+  source_link: https://www.loc.gov/pictures/item/2002712537/
+  license: Public domain
+  basis: Published in 1910; the Library of Congress record notes no copyright renewal.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Joseph_Lamar.jpg/500px-Joseph_Lamar.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 743
+  sha256: 565a88c6200b6164c915af35737c31e026a7b77df3c1d208aecf42fcacbdea81
+  key: supreme-court/portraits/joseph-rucker-lamar.jpg
+- subject: mahlon-pitney
+  shows: Mahlon Pitney standing in a doorway in a top hat
+  creator: Harris & Ewing
+  date: '1913'
+  source: Library of Congress
+  source_id: hec.03701
+  source_link: https://www.loc.gov/pictures/item/2016865192/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative given to the Library by the Harris & Ewing studio.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/hec/03700/03701r.jpg
+  media_type: image/jpeg
+  width: 473
+  height: 640
+  sha256: 6f25b9430fdc9bf97e0d5a5d37cf31a97aa3a766575f6f22746b22704c76b344
+  key: supreme-court/portraits/mahlon-pitney-6f25b9430fdc.jpg
+- subject: james-clark-mcreynolds
+  shows: James C. McReynolds, head and shoulders
+  creator: National Photo Company
+  date: c. 1924
+  source: Library of Congress
+  source_id: npcc.26433
+  source_link: https://www.loc.gov/item/2016849767/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." National Photo Company negative, made before 1932.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Jamescmcreynolds.jpg/330px-Jamescmcreynolds.jpg
+  media_type: image/jpeg
+  width: 330
+  height: 471
+  sha256: be41ee256b6c2dddf4533e5f9e436ca2386f5cc9e645d83748c415908c75f336
+  key: supreme-court/portraits/james-clark-mcreynolds.jpg
+- subject: louis-dembitz-brandeis
+  shows: Louis D. Brandeis, head and shoulders
+  creator: Harris & Ewing
+  date: c. 1916
+  source: Library of Congress
+  source_id: ppmsca.06024
+  source_link: https://www.loc.gov/item/2004673443/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Brandeisl_%281%29.jpg/500px-Brandeisl_%281%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: 857372f3332856069aa6072b8b23a6ebacce57ebb5341db2bc9d833583c57ddf
+  key: supreme-court/portraits/louis-dembitz-brandeis.jpg
+- subject: john-hessin-clarke
+  shows: John H. Clarke, head and shoulders
+  creator: Bain News Service
+  source: Library of Congress
+  source_id: ggbain.38016
+  source_link: https://www.loc.gov/item/2014718162/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Bain News Service negative, made before 1930.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/JohnHessinClarke.jpg/500px-JohnHessinClarke.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 589
+  sha256: 7b53830da95c578fdb2c312bcf4d34853c1d0b9707aaae3f6e116cb8e60b2bb9
+  key: supreme-court/portraits/john-hessin-clarke.jpg
+- subject: george-sutherland
+  shows: George Sutherland, head and shoulders
+  creator: Harris & Ewing
+  source: Library of Congress
+  source_id: hec.20296
+  source_link: https://www.loc.gov/item/2016861353/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative given to the Library by the Harris & Ewing studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Justice_George_Sutherland_5.jpg/500px-Justice_George_Sutherland_5.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 588
+  sha256: ce5e4df81fadd677ab34e04c0c24aebf7186a02f193a1dee7cb78fa7d867859a
+  key: supreme-court/portraits/george-sutherland.jpg
+- subject: pierce-butler
+  shows: Pierce Butler, head and shoulders
+  creator: Harris & Ewing
+  date: c. 1922
+  source: Library of Congress
+  source_id: cph.3a45959
+  source_link: https://www.loc.gov/item/2005685536/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Pierce_Butler.jpg/500px-Pierce_Butler.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 704
+  sha256: 84091f573b6a98cc181efea205c420acdfec7bde6344a8b9bbc9ddf548c21d41
+  key: supreme-court/portraits/pierce-butler.jpg
+- subject: edward-terry-sanford
+  shows: Edward T. Sanford in his robe, seated
+  creator: Harris & Ewing
+  source: Library of Congress
+  source_id: cph.3b09856
+  source_link: https://www.loc.gov/item/2005683961/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Justice_Edward_Terry_Sanford.jpg/500px-Justice_Edward_Terry_Sanford.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 627
+  sha256: 60d459e315526c498b72b7e87d0b8ee220908a6f6401f7b0758cef1f2ff42828
+  key: supreme-court/portraits/edward-terry-sanford.jpg
+- subject: owen-josephus-roberts
+  shows: Owen J. Roberts, head and shoulders
+  creator: Harris & Ewing
+  date: '1939'
+  source: Library of Congress
+  source_id: hec.20950
+  source_link: https://www.loc.gov/pictures/item/2016861996/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative given to the Library by the Harris & Ewing studio.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/hec/20900/20950r.jpg
+  media_type: image/jpeg
+  width: 509
+  height: 640
+  sha256: 496e2c57dcde904aef1c04137de3038c729f5292bc3933c8f30ebbe99fbaa78a
+  key: supreme-court/portraits/owen-josephus-roberts-496e2c57dcde.jpg
+- subject: benjamin-nathan-cardozo
+  shows: Benjamin N. Cardozo, head and shoulders
+  creator: Harris & Ewing
+  date: c. 1932
+  source: Library of Congress
+  source_id: cph.3a38655
+  source_link: https://www.loc.gov/item/2004671927/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication. No copyright found in Copyright office."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Benjamin_Cardozo.jpg/500px-Benjamin_Cardozo.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 672
+  sha256: c36b653a1030db69aed062f8b928fa1723d19b0c26bb686ca2abe936debad9f7
+  key: supreme-court/portraits/benjamin-nathan-cardozo.jpg
+- subject: hugo-lafayette-black
+  shows: Hugo L. Black in his robe, seated
+  creator: Harris & Ewing
+  date: '1937'
+  source: Library of Congress
+  source_id: cph.3a34024
+  source_link: https://www.loc.gov/item/2004671938/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication. No renewal in Copyright office."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/HugoLaFayetteBlack.jpg/500px-HugoLaFayetteBlack.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 605
+  sha256: 684b1ed189c3ea47f2172c49182fd766d1b5299da841cda2991a448a3d3c3a0c
+  key: supreme-court/portraits/hugo-lafayette-black.jpg
+- subject: stanley-forman-reed
+  shows: Stanley F. Reed in his robe, seated
+  creator: Harris & Ewing
+  date: c. 1942
+  source: Library of Congress
+  source_id: cph.3a47008
+  source_link: https://www.loc.gov/item/2005687292/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Stanley_Reed.jpg/500px-Stanley_Reed.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 615
+  sha256: 8c867095f76e0b8a40ecf18c76b7001782171fee8f7e92d123f35965b9172c47
+  key: supreme-court/portraits/stanley-forman-reed.jpg
+- subject: felix-frankfurter
+  shows: Felix Frankfurter in a robe, seated
+  creator: Harris & Ewing
+  date: '1918'
+  source: Library of Congress
+  source_id: cph.3a37338
+  source_link: https://www.loc.gov/item/2004671904/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication. No renewal in Copyright office; checked by staff December 2000."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Frankfurter-Felix-LOC.jpg/500px-Frankfurter-Felix-LOC.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 607
+  sha256: 62f346e071f929e60fe650d29dc1d5e259cda81937b305b167ed1035afcda0d7
+  key: supreme-court/portraits/felix-frankfurter.jpg
+- subject: william-orville-douglas
+  shows: William O. Douglas, head and shoulders
+  creator: Harris & Ewing
+  date: '1939'
+  source: Library of Congress
+  source_id: hec.26502
+  source_link: https://www.loc.gov/item/2016875459/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative given to the Library by the Harris & Ewing studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/1939_William_Orville_Douglas_%28cropped%29.jpg/500px-1939_William_Orville_Douglas_%28cropped%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 639
+  sha256: 0898f227484b18f001133cad18dde88224f4e9294b519b0e5f3eaa477c3984bb
+  key: supreme-court/portraits/william-orville-douglas.jpg
+- subject: frank-murphy
+  shows: Frank Murphy in his robe, seated
+  creator: Harris & Ewing
+  date: 1940s
+  source: Library of Congress
+  source_id: cph.3a47939
+  source_link: https://www.loc.gov/item/2004672063/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Justice_Frank_Murphy.jpg/500px-Justice_Frank_Murphy.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 596
+  sha256: 074a27a36805f17a814932b29fb9569cb0e79f451ac300766a7d3210b5dcac92
+  key: supreme-court/portraits/frank-murphy.jpg
+- subject: james-francis-byrnes
+  shows: James F. Byrnes at his desk
+  creator: Office of War Information
+  date: '1943'
+  source: Library of Congress
+  source_id: fsa.8d44476
+  source_link: https://www.loc.gov/item/2017870863/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions." Made by the Office of War Information, a federal agency.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/James_Francis_Byrnes%2C_at_his_desk%2C_1943.jpg/500px-James_Francis_Byrnes%2C_at_his_desk%2C_1943.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 329
+  sha256: 9ac8eb860bad2130715f1eabb9488ac27db0012e51f98f5e5aefa69f4b6e5962
+  key: supreme-court/portraits/james-francis-byrnes.jpg
+- subject: robert-houghwout-jackson
+  shows: Robert H. Jackson, seated at a desk
+  creator: Harris & Ewing
+  date: c. 1945
+  source: Library of Congress
+  source_id: cph.3a39174
+  source_link: https://www.loc.gov/item/2005687436/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Roberthjackson.jpg/500px-Roberthjackson.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 594
+  sha256: 49fff3b8d4d7a8084aabe696c50c68137959b1da0634d1de3749c9d22fbe49cf
+  key: supreme-court/portraits/robert-houghwout-jackson.jpg
+- subject: wiley-blount-rutledge
+  shows: Wiley B. Rutledge in judicial robe, seated, three-quarter length
+  creator: Harris & Ewing
+  date: c. 1905–1945
+  source: Library of Congress
+  source_id: hec.21703
+  source_link: https://www.loc.gov/pictures/item/2016862748/
+  license: Public domain
+  basis: Library of Congress record says 'No known restrictions on publication' (Harris & Ewing Collection, gift of Harris & Ewing, Inc., 1955).
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/hec/21700/21703r.jpg
+  media_type: image/jpeg
+  width: 513
+  height: 640
+  sha256: 10b1bab38a11aed8092a3fd46337ee95fb5848df47dd61256f1526e88f7f826b
+  key: supreme-court/portraits/wiley-blount-rutledge-10b1bab38a11.jpg
+- subject: harold-hitz-burton
+  shows: Harold H. Burton, Mayor of Cleveland, seated at a Senate hearing, speaking
+  creator: Harris & Ewing
+  date: '1938'
+  source: Library of Congress
+  source_id: hec.23913
+  source_link: https://www.loc.gov/pictures/item/2016872884/
+  license: Public domain
+  basis: Library of Congress record says 'No known restrictions on publication' (Harris & Ewing Collection, gift of Harris & Ewing, Inc., 1955).
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/hec/23900/23913r.jpg
+  media_type: image/jpeg
+  width: 640
+  height: 504
+  sha256: 1ff3f6f914ec8bebb1fe918184c8961588943baa0144bb91a06873f0bacac8c3
+  key: supreme-court/portraits/harold-hitz-burton-1ff3f6f914ec.jpg
+- subject: tom-campbell-clark
+  shows: Tom C. Clark, seated in his robe and a bow tie, detail of the Court's group portrait of 1958
+  creator: Warren K. Leffler
+  date: '1958'
+  source: Library of Congress
+  source_id: ppmsca.78058
+  source_link: https://www.loc.gov/pictures/item/2023630495/
+  license: Public domain
+  copy: https://tile.loc.gov/storage-services/master/pnp/ppmsca/78000/78058u.tif
+  basis: 'Library of Congress record: "No known restrictions on publication." Made for U.S. News & World Report, whose photographs the magazine gave to the Library. This is a detail of the Court''s group portrait of November 24, 1958 (the Warren Court picture). The Library''s record names only the Chief Justice; Tom C. Clark is identified by the Court''s seating by seniority (front row, left to right: Douglas, Black, Warren, Frankfurter, Clark) and his bow tie.'
+  checked: '2026-11-27'
+  crop:
+  - 4164
+  - 1229
+  - 4849
+  - 2086
+  media_type: image/jpeg
+  width: 639
+  height: 800
+  sha256: 3879d93f16f0c37e994f3ebc26cf78f8a9bc23f9a367499fe180a245eee0841a
+  key: supreme-court/portraits/tom-campbell-clark-3879d93f16f0.jpg
+- subject: sherman-minton
+  shows: Sherman Minton at his desk in the Capitol, as a Senator
+  creator: Harris & Ewing
+  date: '1940'
+  source: Library of Congress
+  source_id: hec.28793
+  source_link: https://www.loc.gov/pictures/item/2016877739/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative given to the Library by the Harris & Ewing studio.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/hec/28700/28793r.jpg
+  media_type: image/jpeg
+  width: 513
+  height: 640
+  sha256: 244e6eefcb5d186ce85d1ec071616ef370428ed948edfeaba497a356e0aab31d
+  key: supreme-court/portraits/sherman-minton-244e6eefcb5d.jpg
+- subject: john-marshall-harlan-1899
+  shows: John M. Harlan, standing in his robe, detail of the Court's group portrait of 1958
+  creator: Warren K. Leffler
+  date: '1958'
+  source: Library of Congress
+  source_id: ppmsca.78058
+  source_link: https://www.loc.gov/pictures/item/2023630495/
+  license: Public domain
+  copy: https://tile.loc.gov/storage-services/master/pnp/ppmsca/78000/78058u.tif
+  basis: 'Library of Congress record: "No known restrictions on publication." Made for U.S. News & World Report, whose photographs the magazine gave to the Library. This is a detail of the Court''s group portrait of November 24, 1958 (the Warren Court picture). The Library''s record names only the Chief Justice; John M. Harlan is identified by the Court''s seating by seniority (back row, left to right: Whittaker, Harlan, Brennan, Stewart).'
+  checked: '2026-11-27'
+  crop:
+  - 2262
+  - 713
+  - 2804
+  - 1392
+  media_type: image/jpeg
+  width: 542
+  height: 679
+  sha256: a07edac64573daab5ebc01dc13b08fad890e0e58b443f6b338a381dcad51a8e7
+  key: supreme-court/portraits/john-marshall-harlan-1899-a07edac64573.jpg
+- subject: william-j-brennan-jr
+  shows: William J. Brennan Jr. in his robe
+  creator: Robert S. Oakes
+  date: '1972'
+  source: Library of Congress
+  source_id: cph.3b07877
+  source_link: https://www.loc.gov/item/2002721281/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication. Verified with the Supreme Court, 2004." Official portrait for the Supreme Court; the Library verified the rights with the Court.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/US_Supreme_Court_Justice_William_Brennan_-_1972_official_portrait.jpg/500px-US_Supreme_Court_Justice_William_Brennan_-_1972_official_portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 693
+  sha256: 717e314feb665e27ddd061065188da8cb1c57935608a174bbf8244a8e44f2b2f
+  key: supreme-court/portraits/william-j-brennan-jr.jpg
+- subject: charles-evans-whittaker
+  shows: Charles E. Whittaker, standing in his robe, detail of the Court's group portrait of 1958
+  creator: Warren K. Leffler
+  date: '1958'
+  source: Library of Congress
+  source_id: ppmsca.78058
+  source_link: https://www.loc.gov/pictures/item/2023630495/
+  license: Public domain
+  copy: https://tile.loc.gov/storage-services/master/pnp/ppmsca/78000/78058u.tif
+  basis: 'Library of Congress record: "No known restrictions on publication." Made for U.S. News & World Report, whose photographs the magazine gave to the Library. This is a detail of the Court''s group portrait of November 24, 1958 (the Warren Court picture). The Library''s record names only the Chief Justice; Charles E. Whittaker is identified by the Court''s seating by seniority (back row, left to right: Whittaker, Harlan, Brennan, Stewart).'
+  checked: '2026-11-27'
+  crop:
+  - 1394
+  - 769
+  - 1965
+  - 1483
+  media_type: image/jpeg
+  width: 571
+  height: 714
+  sha256: cba866a1e6f49022ab84e801d931ed3bf8e153695828024bf416c430ddd6fa1a
+  key: supreme-court/portraits/charles-evans-whittaker-cba866a1e6f4.jpg
+- subject: potter-stewart
+  shows: Potter Stewart in his robe
+  creator: Robert S. Oakes
+  date: '1976'
+  source: Library of Congress
+  source_id: cph.3b07882
+  source_link: https://www.loc.gov/item/2002721286/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication. Verified with the Supreme Court, 2004." Official portrait for the Supreme Court; the Library verified the rights with the Court.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/US_Supreme_Court_Justice_Potter_Stewart_-_1976_official_portrait.jpg/500px-US_Supreme_Court_Justice_Potter_Stewart_-_1976_official_portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 578
+  sha256: 58abff9b9d835790bb4c3188f0f8f560f189501ab43f4453f13f3500de0be1ad
+  key: supreme-court/portraits/potter-stewart.jpg
+- subject: byron-raymond-white
+  shows: Associate Justice Byron R. White, official portrait in judicial robe
+  creator: Robert S. Oakes
+  date: '1976'
+  source: Library of Congress
+  source_id: cph.3b07883
+  source_link: https://www.loc.gov/pictures/item/2002721287/
+  license: Public domain
+  basis: Library of Congress record says 'No known restrictions on publication. Verified with the Supreme Court, 2004.' It is an official Supreme Court portrait; the record notes it is a color negative by Robert S. Oakes.
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3b00000/3b07000/3b07800/3b07883r.jpg
+  media_type: image/jpeg
+  width: 450
+  height: 640
+  sha256: 536aa8819b1ddf2754a7c20e8cfb4809205b50cf04f9208894bbdd417d54a19e
+  key: supreme-court/portraits/byron-raymond-white-536aa8819b1d.jpg
+- subject: arthur-joseph-goldberg
+  shows: Arthur J. Goldberg, U.S. Representative to the United Nations, speaking at a lectern, United Nations, New York (detail)
+  creator: Bernard Gotfryd
+  date: between 1965 and 1968
+  source: Library of Congress
+  source_id: gtfy.06243
+  source_link: https://www.loc.gov/pictures/item/2020735784/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Bernard Gotfryd photograph collection, given to the Library by the photographer in 2004. The picture is cut from the Library''s master file to show him at about half length.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/master/pnp/gtfy/06200/06243u.tif
+  crop:
+  - 1400
+  - 560
+  - 3400
+  - 3060
+  media_type: image/jpeg
+  width: 640
+  height: 800
+  sha256: 2d685421a13c00c1906dfcfda138ce875357d17fe3ab4f4c0c187266ba305fe9
+  key: supreme-court/portraits/arthur-joseph-goldberg-2d685421a13c.jpg
+- subject: abe-fortas
+  shows: Abe Fortas, head and shoulders, in judicial robe
+  creator: Marion S. Trikosko
+  date: '1965'
+  source: Library of Congress
+  source_id: ds.04062
+  source_link: https://www.loc.gov/pictures/item/2013647412/
+  license: Public domain
+  basis: Library of Congress record says "No known restrictions on publication" (U.S. News & World Report Magazine Collection, photographer Marion S. Trikosko).
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ds/04000/04062r.jpg
+  media_type: image/jpeg
+  width: 640
+  height: 399
+  sha256: 0a927d14f25d4f8a5c882a867b070cacc4b222867b2adbec4e56a2a4868668d6
+  key: supreme-court/portraits/abe-fortas-0a927d14f25d.jpg
+- subject: thurgood-marshall
+  shows: Thurgood Marshall in his robe
+  creator: Robert S. Oakes
+  date: '1976'
+  source: Library of Congress
+  source_id: cph.3b07878
+  source_link: https://www.loc.gov/item/2002721282/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication. Verified with the Supreme Court, 2004." Official portrait for the Supreme Court; the Library verified the rights with the Court.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Thurgood-marshall-2.jpg/500px-Thurgood-marshall-2.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 603
+  sha256: 0bad5d4666fa634fafee6346d6e3104b91c12784f389264db6cc3bd42d53cda4
+  key: supreme-court/portraits/thurgood-marshall.jpg
+- subject: harry-a-blackmun
+  shows: Associate Justice Harry A. Blackmun, official portrait in judicial robe
+  creator: Robert S. Oakes
+  date: '1976'
+  source: Library of Congress
+  source_id: cph.3b07876
+  source_link: https://www.loc.gov/pictures/item/2002721280/
+  license: Public domain
+  basis: Library of Congress record says 'No known restrictions on publication. Verified with the Supreme Court, 2004.' It is an official Supreme Court portrait; the record notes it is a color negative by Robert S. Oakes.
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3b00000/3b07000/3b07800/3b07876r.jpg
+  media_type: image/jpeg
+  width: 454
+  height: 640
+  sha256: 4cd1ab344c49e1ad773e7ae0949beac612387cb4ed9716ac9be85dfbc5a093fe
+  key: supreme-court/portraits/harry-a-blackmun-4cd1ab344c49.jpg
+- subject: lewis-f-powell-jr
+  shows: Lewis F. Powell Jr. in his robe
+  creator: Robert S. Oakes
+  date: '1976'
+  source: Library of Congress
+  source_id: cph.3b07879
+  source_link: https://www.loc.gov/item/2002721283/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication. Verified with the Supreme Court, 2004." Official portrait for the Supreme Court; the Library verified the rights with the Court.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/US_Supreme_Court_Justice_Lewis_Powell_-_1976_official_portrait.jpg/500px-US_Supreme_Court_Justice_Lewis_Powell_-_1976_official_portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 624
+  sha256: e5ce79bc96ca256a5f7db51a8fe7efa8af300f6fec56fe837e5d86923d4d9e90
+  key: supreme-court/portraits/lewis-f-powell-jr.jpg
+- subject: john-paul-stevens
+  shows: Associate Justice John Paul Stevens, official portrait in judicial robe
+  creator: Robert S. Oakes
+  date: '1976'
+  source: Library of Congress
+  source_id: ds.09330
+  source_link: https://www.loc.gov/pictures/item/2002721285/
+  license: Public domain
+  basis: Library of Congress record says 'No known restrictions on publication. Verified with the Supreme Court, 2004.' It is an official Supreme Court portrait; the record names Robert S. Oakes (1922-2004) as photographer.
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ds/09300/09330r.jpg
+  media_type: image/jpeg
+  width: 470
+  height: 640
+  sha256: 895f33474465369d9d647d66a445197f4961433b8db655d126eabfc144579e86
+  key: supreme-court/portraits/john-paul-stevens-895f33474465.jpg
+- subject: sandra-day-oconnor
+  shows: Judge Sandra Day O'Connor, half length, at the first day of her Supreme Court nomination hearing
+  creator: Chick Harrity
+  date: '1981'
+  source: Library of Congress
+  source_id: ppmsca.98621
+  source_link: https://www.loc.gov/pictures/item/2026162974/
+  license: Public domain
+  basis: Library of Congress record says "No known restrictions on publication" (U.S. News & World Report Magazine Collection).
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ppmsca/98600/98621r.jpg
+  media_type: image/jpeg
+  width: 640
+  height: 436
+  sha256: 34aaba320d0aa529af7c8461a6c75a2fc11bffaf26c6c9e0a45a91a4b32e7d49
+  key: supreme-court/portraits/sandra-day-oconnor-34aaba320d0a.jpg
+- subject: antonin-scalia
+  shows: Antonin Scalia, official portrait in judicial robe, standing before the flag and shelves of the United States Reports
+  creator: Steve Petteway
+  date: '2013'
+  source: Supreme Court of the United States
+  source_link: https://web.archive.org/web/20160101220823/http://supremecourthistory.org/history-of-the-court/the-current-court/justice-antonin-scalia
+  license: Public domain
+  basis: 'Official portrait made by Steve Petteway, the Court''s photographer (federal employee, 17 U.S.C. 105). The Supreme Court Historical Society''s page for him (archived January 1, 2016) shows this photograph with the credit "Collection of the Supreme Court of the United States, Photographer: Steve Petteway"; its camera data gives March 21, 2013. supremecourt.gov showed a head-and-shoulders crop from the same sitting (Scalia_Crop.jpg, archived January 10, 2019). The Court asks that anyone reproducing images from its collection first clear it with the Curator''s Office.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Antonin_Scalia_Official_SCOTUS_Portrait.jpg/500px-Antonin_Scalia_Official_SCOTUS_Portrait.jpg
+  media_type: image/jpeg
+  width: 500
+  height: 625
+  sha256: ef5a0219c159d2de4f988f7256beba9cdbbd768b416fe29910a170ded3a8986d
+  key: supreme-court/portraits/antonin-scalia-ef5a0219c159.jpg
+- subject: anthony-m-kennedy
+  shows: Anthony M. Kennedy, official portrait in judicial robe
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/biographies.aspx
+  license: Public domain
+  basis: Official portrait published by the Supreme Court on its own website from the Collection of the Supreme Court of the United States, made by the Court's photographers as part of their duties (17 U.S.C. 105). The Court's page states no copyright claim but asks that reproduction for publication be cleared with the Court.
+  checked: '2026-11-27'
+  copy: https://www.supremecourt.gov/about/justice_pictures/Kennedy-Official-2001-Crop.jpg
+  media_type: image/jpeg
+  width: 151
+  height: 189
+  sha256: e27ecc1f0a7ae6af0d1bb5bb25a7d79bac8bbab34019660765a51e3e41c98e00
+  key: supreme-court/portraits/anthony-m-kennedy-e27ecc1f0a7a.jpg
+- subject: david-h-souter
+  shows: David H. Souter, official portrait in judicial robe, head and shoulders
+  creator: Joseph Bailey, National Geographic Society
+  date: c. 1990
+  source: Supreme Court of the United States
+  source_link: https://web.archive.org/web/20080501083805/http://www.supremecourthistory.org/02_history/subs_current/images_b/007.html
+  license: Public domain
+  basis: 'Official portrait made for the Court by a National Geographic Society photographer. The Supreme Court Historical Society''s page for him (archived May 1, 2008) shows this photograph with the credit "Courtesy of the Supreme Court of the United States, National Geographic Society, Photographer: Joseph Bailey". The photographer was not a federal employee, so this rests on the same arrangement as the Court''s 1976 official portraits by Robert S. Oakes of the National Geographic Society, which the Library of Congress lists as "No known restrictions on publication. Verified with the Supreme Court, 2004." No such statement was found for this photograph itself.'
+  checked: '2026-11-27'
+  copy: https://upload.wikimedia.org/wikipedia/commons/2/2f/DavidSouter.jpg
+  media_type: image/jpeg
+  width: 383
+  height: 496
+  sha256: 36ae9448a2a3ccde8f746dc0a53652437c1d1ea59905c71d6cb529431f1e35bb
+  key: supreme-court/portraits/david-h-souter-36ae9448a2a3.jpg
+- subject: clarence-thomas
+  shows: Clarence Thomas, official portrait in judicial robe
+  creator: Steve Petteway
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/biographies.aspx
+  license: Public domain
+  basis: Official portrait from the Collection of the Supreme Court of the United States, made by a Court photographer (federal employee, 17 U.S.C. 105). Credit line on supremecourthistory.org names the photographer; supremecourt.gov shows the Justice's official portrait without a copyright claim.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Clarence_Thomas_official_SCOTUS_portrait.jpg/500px-Clarence_Thomas_official_SCOTUS_portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 660
+  sha256: b90292a758f99705f74563f39469a84b2b3a38f9182f4892ce692a318f80f2b2
+  key: supreme-court/portraits/clarence-thomas.jpg
+- subject: ruth-bader-ginsburg
+  shows: Ruth Bader Ginsburg, official portrait in judicial robe and lace collar, seated
+  creator: Steve Petteway
+  date: '2016'
+  source: Supreme Court of the United States
+  source_link: https://web.archive.org/web/20200428233849/https://www.supremecourthistory.org/history-of-the-court/the-current-court/justice-ruth-bader-ginsburg/
+  license: Public domain
+  basis: 'Official portrait made by Steve Petteway, the Court''s photographer (federal employee, 17 U.S.C. 105). The Supreme Court Historical Society''s page for her (archived April 28, 2020) shows this photograph with the credit "Collection of the Supreme Court of the United States, Photographer: Steve Petteway"; supremecourt.gov showed a crop of the same photograph (Ginsburg_11565-006-Crop.jpg, archived August 15, 2017). The camera data in both gives January 5, 2016. The Court asks that anyone reproducing images from its collection first clear it with the Curator''s Office.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Ruth_Bader_Ginsburg_2016_portrait.jpg/500px-Ruth_Bader_Ginsburg_2016_portrait.jpg
+  media_type: image/jpeg
+  width: 500
+  height: 625
+  sha256: 4d42e41e7648627720b99df190f746c728772cf4014eca5a6d5eb5dc2b65fa62
+  key: supreme-court/portraits/ruth-bader-ginsburg-4d42e41e7648.jpg
+- subject: stephen-g-breyer
+  shows: Stephen G. Breyer, official portrait in judicial robe
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/biographies.aspx
+  license: Public domain
+  basis: Official portrait published by the Supreme Court on its own website from the Collection of the Supreme Court of the United States, made by the Court's photographers as part of their duties (17 U.S.C. 105). The Court's page states no copyright claim but asks that reproduction for publication be cleared with the Court.
+  checked: '2026-11-27'
+  copy: https://www.supremecourt.gov/about/justice_pictures/Breyer_8664-13-Crop.jpg
+  media_type: image/jpeg
+  width: 151
+  height: 189
+  sha256: bdc9680538c55565111e9ef3c0a5dd84e3c0f7f766baa4d18a6c8c0106193b8c
+  key: supreme-court/portraits/stephen-g-breyer-bdc9680538c5.jpg
+- subject: samuel-a-alito-jr
+  shows: Samuel A. Alito, Jr., official portrait, head and shoulders
+  creator: Steve Petteway
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/biographies.aspx
+  license: Public domain
+  basis: Official portrait published by the Supreme Court on its own website from the Collection of the Supreme Court of the United States, made by the Court's photographers as part of their duties (17 U.S.C. 105). The Court's page states no copyright claim but asks that reproduction for publication be cleared with the Court.
+  checked: '2026-11-27'
+  copy: https://www.supremecourt.gov/about/justice_pictures/Alito_9264-001-Crop.jpg
+  media_type: image/jpeg
+  width: 151
+  height: 189
+  sha256: dac1a41249fc4a6fbf74894ebe260d144bbf095a2327dc88b4acb4f983c973ec
+  key: supreme-court/portraits/samuel-a-alito-jr-dac1a41249fc.jpg
+- subject: sonia-sotomayor
+  shows: Sonia Sotomayor, official portrait in judicial robe
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/biographies.aspx
+  license: Public domain
+  basis: Official portrait published by the Supreme Court on its own website from the Collection of the Supreme Court of the United States, made by the Court's photographers as part of their duties (17 U.S.C. 105). The Court's page states no copyright claim but asks that reproduction for publication be cleared with the Court.
+  checked: '2026-11-27'
+  copy: https://www.supremecourt.gov/about/justice_pictures/Sotomayor_Official_2025.jpg
+  media_type: image/jpeg
+  width: 151
+  height: 189
+  sha256: 378381ff53067dcdc2f9ed6c7f46da8888d56eb504aaea226f4dbd5d268be517
+  key: supreme-court/portraits/sonia-sotomayor-378381ff5306.jpg
+- subject: elena-kagan
+  shows: Elena Kagan, official portrait in judicial robe
+  creator: Steve Petteway
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/biographies.aspx
+  license: Public domain
+  basis: Official portrait from the Collection of the Supreme Court of the United States, made by a Court photographer (federal employee, 17 U.S.C. 105). Credit line on supremecourthistory.org names the photographer; supremecourt.gov shows the Justice's official portrait without a copyright claim.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Elena_Kagan_Official_SCOTUS_Portrait_%282013%29.jpg/500px-Elena_Kagan_Official_SCOTUS_Portrait_%282013%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 720
+  sha256: 8313aea432692f9b28ff05b1de98fc54d60a98615ad125841f611926648898b8
+  key: supreme-court/portraits/elena-kagan.jpg
+- subject: neil-m-gorsuch
+  shows: Neil M. Gorsuch, official portrait in judicial robe
+  creator: Franz Jantzen
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/biographies.aspx
+  license: Public domain
+  basis: Official portrait from the Collection of the Supreme Court of the United States, made by a Court photographer (federal employee, 17 U.S.C. 105). Credit line on supremecourthistory.org names the photographer; supremecourt.gov shows the Justice's official portrait without a copyright claim.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Associate_Justice_Neil_Gorsuch_Official_Portrait.jpg/500px-Associate_Justice_Neil_Gorsuch_Official_Portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 600
+  sha256: c8a2fca44053b2d972f2f380651c905fa9b9cd04faa923ad7f11a559bc9e2cf0
+  key: supreme-court/portraits/neil-m-gorsuch.jpg
+- subject: brett-m-kavanaugh
+  shows: Brett M. Kavanaugh, official portrait in judicial robe
+  creator: Fred Schilling
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/biographies.aspx
+  license: Public domain
+  basis: Official portrait from the Collection of the Supreme Court of the United States, made by a Court photographer (federal employee, 17 U.S.C. 105). Credit line on supremecourthistory.org names the photographer; supremecourt.gov shows the Justice's official portrait without a copyright claim.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Associate_Justice_Brett_Kavanaugh_Official_Portrait.jpg/500px-Associate_Justice_Brett_Kavanaugh_Official_Portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 600
+  sha256: d27049dd8472ff0d888f92812333a38a49bfaa5c04e890fdf87f1eb15cea29b7
+  key: supreme-court/portraits/brett-m-kavanaugh.jpg
+- subject: amy-coney-barrett
+  shows: Amy Coney Barrett, official portrait in judicial robe
+  creator: Fred Schilling
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/biographies.aspx
+  license: Public domain
+  basis: Official portrait from the Collection of the Supreme Court of the United States, made by a Court photographer (federal employee, 17 U.S.C. 105). Credit line on supremecourthistory.org names the photographer; supremecourt.gov shows the Justice's official portrait without a copyright claim.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Amy_Coney_Barrett_official_portrait.jpg/500px-Amy_Coney_Barrett_official_portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 579
+  sha256: 257dac082ac74ef6110bb2205b019129d02faf43d9dd5cb951e341022e611792
+  key: supreme-court/portraits/amy-coney-barrett.jpg
+- subject: ketanji-brown-jackson
+  shows: Ketanji Brown Jackson, official portrait, head and shoulders
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/biographies.aspx
+  license: Public domain
+  basis: Official portrait published by the Supreme Court on its own website from the Collection of the Supreme Court of the United States, made by the Court's photographers as part of their duties (17 U.S.C. 105). The Court's page states no copyright claim but asks that reproduction for publication be cleared with the Court.
+  checked: '2026-11-27'
+  copy: https://www.supremecourt.gov/about/justice_pictures/KBJackson3.jpg
+  media_type: image/jpeg
+  width: 151
+  height: 189
+  sha256: 580ff9bbba3c06fcef70218003b76ccade0d5610bf36e13d8ff44193cd5fa14e
+  key: supreme-court/portraits/ketanji-brown-jackson-580ff9bbba3c.jpg
+- subject: george-washington
+  shows: George Washington, head and shoulders, oil portrait (Williamstown portrait, a copy after the Athenaeum portrait)
+  creator: Gilbert Stuart
+  date: 1796–1803
+  source: Clark Art Institute
+  source_id: '1955.16'
+  source_link: https://www.clarkart.edu/ArtPiece/Detail/George-Washington
+  license: Public domain
+  basis: Photograph of a two-dimensional oil painting by Gilbert Stuart (died 1828), which is in the public domain by age. The Clark record names the sitter and artist and gives no rights restriction on the painting itself.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg/500px-Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 583
+  sha256: c749568452e16846a343c8644b36791d17128186014d2fa2c6162e1d5f96f000
+  key: supreme-court/portraits/george-washington.jpg
+- subject: john-adams
+  shows: John Adams, head and shoulders, oil portrait
+  creator: Gilbert Stuart
+  date: c. 1800–1815
+  source: National Gallery of Art
+  source_id: 1954.7.1
+  source_link: https://www.nga.gov/artworks/42933
+  license: Public domain
+  basis: Photograph of a two-dimensional oil painting by Gilbert Stuart (died 1828), public domain by age. NGA open-data record lists it as John Adams by Gilbert Stuart.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/John_Adams_A18236.jpg/500px-John_Adams_A18236.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 584
+  sha256: 76d28db25385497a25fc83a9ddf80f28d29d8f0b851c68f62884af8ee6604574
+  key: supreme-court/portraits/john-adams.jpg
+- subject: thomas-jefferson
+  shows: Thomas Jefferson, head and shoulders, oil portrait (cropped and brightened copy of the White House portrait)
+  creator: Rembrandt Peale
+  date: '1800'
+  source: White House Historical Association
+  source_link: https://www.whitehousehistory.org/galleries/presidential-portraits
+  license: Public domain
+  basis: Photograph of a two-dimensional oil painting made in 1800 by Rembrandt Peale (died 1860), public domain by age. The White House Historical Association gallery names the sitter, artist and date.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Official_Presidential_portrait_of_Thomas_Jefferson_%28by_Rembrandt_Peale%2C_1800%29%28cropped%29.jpg/500px-Official_Presidential_portrait_of_Thomas_Jefferson_%28by_Rembrandt_Peale%2C_1800%29%28cropped%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 590
+  sha256: b20f16c6d7cc0b54dd8c18a47b1a4eda84e4a704fe95385f51f234e767a18003
+  key: supreme-court/portraits/thomas-jefferson.jpg
+- subject: james-madison
+  shows: James Madison, head and shoulders, oil portrait
+  creator: John Vanderlyn
+  date: '1816'
+  source: White House Historical Association
+  source_link: https://www.whitehousehistory.org/galleries/presidential-portraits
+  license: Public domain
+  basis: Photograph of a two-dimensional oil painting made in 1816 by John Vanderlyn (died 1852), public domain by age. The White House Historical Association gallery names the sitter, artist and date.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/James_Madison.jpg/500px-James_Madison.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 584
+  sha256: f11841b4553fd2721c35d3d00894d5f1a6c28d40d44551915b9134ef93591791
+  key: supreme-court/portraits/james-madison.jpg
+- subject: james-monroe
+  shows: James Monroe, head and shoulders, oil portrait
+  creator: Gilbert Stuart
+  date: c. 1817
+  source: National Gallery of Art
+  source_id: 1979.4.3
+  source_link: https://www.nga.gov/artworks/56915
+  license: Public domain
+  basis: Photograph of a two-dimensional oil painting by Gilbert Stuart (died 1828), public domain by age. NGA open-data record lists it as James Monroe by Gilbert Stuart.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/James_Monroe_by_Gilbert_Stuart_c1817.jpg/500px-James_Monroe_by_Gilbert_Stuart_c1817.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 570
+  sha256: 462c00b8be6d34d2021f671d0244b5c5e50e4f9661efd4952259c2e971937e08
+  key: supreme-court/portraits/james-monroe.jpg
+- subject: john-quincy-adams
+  shows: John Quincy Adams, half-length
+  creator: Brady-Handy studio
+  source: Library of Congress
+  source_id: cwpbh.02619
+  source_link: https://www.loc.gov/item/2017897506/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/John_Q._Adams-edit.jpg/500px-John_Q._Adams-edit.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 664
+  sha256: d417741f6acd8b901ffd38f96b896593b0f323e52375bab8a4d42b8533699152
+  key: supreme-court/portraits/john-quincy-adams.jpg
+- subject: andrew-jackson
+  shows: Andrew Jackson, head and shoulders, oil portrait
+  creator: Ralph E. W. Earl
+  date: c. 1835
+  source: White House Historical Association
+  source_link: https://www.whitehousehistory.org/galleries/presidential-portraits
+  license: Public domain
+  basis: Photograph of a two-dimensional oil painting made c. 1835 by Ralph E. W. Earl (died 1838), public domain by age. The White House Historical Association gallery names the sitter, artist and date.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Andrew_jackson_head.jpg/500px-Andrew_jackson_head.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 583
+  sha256: a135d27c00406ba9617566209622d450fdc23dcee4603a893d6259f7599d92a5
+  key: supreme-court/portraits/andrew-jackson.jpg
+- subject: martin-van-buren
+  shows: Martin Van Buren, seated head-and-shoulders photograph (restored sepia copy)
+  creator: Mathew B. Brady
+  date: 1855–1858
+  source: Metropolitan Museum of Art
+  source_id: 56.517.4
+  source_link: https://www.metmuseum.org/art/collection/search/269852
+  license: Public domain
+  basis: Salted paper print made 1855–58 by Mathew Brady (died 1896), published or created in the United States before 1931. The Met's open-access record marks it public domain.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Martin_Van_Buren_by_Mathew_Brady_c1855-58_sepia_original_restored.jpg/500px-Martin_Van_Buren_by_Mathew_Brady_c1855-58_sepia_original_restored.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 601
+  sha256: c28b7fda45afb6cf494d79b1c72138131a214650749e572180e32232db9056e6
+  key: supreme-court/portraits/martin-van-buren.jpg
+- subject: william-henry-harrison
+  shows: William Henry Harrison, head and shoulders, lithograph from a painting by Franquinet
+  creator: Charles Fenderich
+  date: '1841'
+  source: Library of Congress
+  source_id: cph.3a53386
+  source_link: https://www.loc.gov/item/96522278/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Lithograph published by Chas. Fenderich & Co., Washington, copyright Feb. 9, 1841, so public domain by age.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3a50000/3a53000/3a53300/3a53386v.jpg
+  media_type: image/jpeg
+  width: 1028
+  height: 1280
+  sha256: b53a56ebae10c55b8f545fec4b70b2aeb64760ba55e7a6f666e992375604ec6e
+  key: supreme-court/portraits/william-henry-harrison-b53a56ebae10.jpg
+- subject: john-tyler
+  shows: John Tyler, oil portrait (official White House portrait)
+  creator: George Peter Alexander Healy
+  date: '1859'
+  source: White House Historical Association
+  source_link: https://www.whitehousehistory.org/galleries/presidential-portraits
+  license: Public domain
+  basis: Photograph of a two-dimensional oil painting by G. P. A. Healy (died 1894), public domain by age. The White House Historical Association gallery names the sitter, artist and date.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/WHOportTyler.jpg/500px-WHOportTyler.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 634
+  sha256: 0dfcaba3c8951ada0f062b9dd04eb90a51dbfcc9ad757150ec068686df89951a
+  key: supreme-court/portraits/john-tyler.jpg
+- subject: james-k-polk
+  shows: James K. Polk, seated three-quarter-length daguerreotype portrait (restored, cropped copy)
+  creator: Mathew B. Brady
+  date: '1849'
+  source: Library of Congress
+  source_id: cph.3g06742
+  source_link: https://www.loc.gov/pictures/item/2004664042/
+  license: Public domain
+  basis: Daguerreotype made 14 February 1849 by Brady's studio, published/created before 1931. The Library of Congress record says "No known restrictions on publication."
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/James_K._Polk_restored_%283x4_cropped%29.jpg/500px-James_K._Polk_restored_%283x4_cropped%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: cf180bd725d7eba185b6c10fd3a8c0b7834aa9abc55d97a73194f781a81f8705
+  key: supreme-court/portraits/james-k-polk.jpg
+- subject: zachary-taylor
+  shows: Zachary Taylor, head and shoulders, facing left, in an oval mount
+  creator: Mathew B. Brady
+  date: photographed 1849, rephotographed c. 1860–1890
+  source: Library of Congress
+  source_id: ds.14461
+  source_link: https://www.loc.gov/item/96522425/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." A print of Brady''s daguerreotype of 1849, made before 1891, so public domain by age. The copy is cut to the oval of the card mount.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ds/14400/14461v.jpg
+  crop:
+  - 150
+  - 270
+  - 530
+  - 770
+  media_type: image/jpeg
+  width: 380
+  height: 500
+  sha256: 539556213db6f4cb0531ae7270d6e6274993338c52730c2009f05966edf22b01
+  key: supreme-court/portraits/zachary-taylor-539556213db6.jpg
+- subject: millard-fillmore
+  shows: Millard Fillmore, seated
+  creator: Brady-Handy studio
+  date: c. 1855–1865
+  source: Library of Congress
+  source_id: cwpbh.00699
+  source_link: https://www.loc.gov/item/2017896626/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Millard_Fillmore.jpg/500px-Millard_Fillmore.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 631
+  sha256: 77622a9a2ab411b67438a35d6d7e44978b8b818577f56de7e10a161077152685
+  key: supreme-court/portraits/millard-fillmore.jpg
+- subject: franklin-pierce
+  shows: Franklin Pierce, seated
+  creator: Mathew Brady's studio
+  date: c. 1855–1865
+  source: Library of Congress
+  source_id: cwpbh.02545
+  source_link: https://www.loc.gov/item/2017897684/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Franklin_Pierce.jpg/500px-Franklin_Pierce.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 658
+  sha256: d1663ff8dcf544133561754ab0a95dfcca2c61fd0ad6182c6796f5bfb67834e9
+  key: supreme-court/portraits/franklin-pierce.jpg
+- subject: james-buchanan
+  shows: James Buchanan, head and shoulders
+  creator: Mathew Brady's studio
+  date: c. 1850–1868
+  source: Library of Congress
+  source_id: ppmsc.00051
+  source_link: https://www.loc.gov/item/96524290/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/James_Buchanan_%28cropped%29.jpg/500px-James_Buchanan_%28cropped%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 615
+  sha256: 8850b2cf9d7c76a90adddc906a1a1a7bf558c70204380935c8a3631d2cc11702
+  key: supreme-court/portraits/james-buchanan.jpg
+- subject: abraham-lincoln
+  shows: Abraham Lincoln, head and shoulders
+  creator: Alexander Gardner
+  date: '1863'
+  source: Library of Congress
+  source_id: ppmsca.19301
+  source_link: https://www.loc.gov/item/96522529/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg/500px-Abraham_Lincoln_O-77_matte_collodion_print.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 619
+  sha256: 81a6bd51e7f4d3953b78b304766f9f4e8292390691367a4bf33923e5a4a1e05e
+  key: supreme-court/portraits/abraham-lincoln.jpg
+- subject: andrew-johnson
+  shows: Andrew Johnson, half-length, facing left
+  date: c. 1860–1875
+  source: Library of Congress
+  source_id: ppmsca.53277
+  source_link: https://www.loc.gov/item/2017660632/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." An albumen carte de visite made between 1860 and 1875 (Liljenquist Family Collection), so public domain by age. The copy is cut to the photograph, without the card mount.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ppmsca/53200/53277v.jpg
+  crop:
+  - 110
+  - 260
+  - 530
+  - 800
+  media_type: image/jpeg
+  width: 420
+  height: 540
+  sha256: dec78d06495685b0eb269c2517753f74004abf87619fc31f18e67ddeb93edaff
+  key: supreme-court/portraits/andrew-johnson-dec78d064956.jpg
+- subject: ulysses-grant
+  shows: Ulysses S. Grant, seated
+  creator: Brady-Handy studio
+  date: c. 1870–1880
+  source: Library of Congress
+  source_id: cwpbh.03890
+  source_link: https://www.loc.gov/item/2017893220/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Ulysses_S._Grant_1870-1880.jpg/500px-Ulysses_S._Grant_1870-1880.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 643
+  sha256: 2ecb237b673290cd9557464eb7aac79349c83673167919333e6916e55d1a31c1
+  key: supreme-court/portraits/ulysses-grant.jpg
+- subject: rutherford-b-hayes
+  shows: Rutherford B. Hayes, half-length
+  creator: Mathew Brady
+  date: c. 1870–1880
+  source: Library of Congress
+  source_id: cwpbh.03606
+  source_link: https://www.loc.gov/item/2017893107/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/President_Rutherford_Hayes_1870_-_1880_Restored.jpg/500px-President_Rutherford_Hayes_1870_-_1880_Restored.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 584
+  sha256: 423c94e1dae2581176e540c23e93143fe25a3e79cfefae28e424791652b962e7
+  key: supreme-court/portraits/rutherford-b-hayes.jpg
+- subject: james-a-garfield
+  shows: James A. Garfield, seated
+  creator: Brady-Handy studio
+  date: c. 1870–1880
+  source: Library of Congress
+  source_id: cwpbh.03744
+  source_link: https://www.loc.gov/item/2017893237/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made before 1881 by a commercial studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/James_Abram_Garfield%2C_photo_portrait_seated.jpg/500px-James_Abram_Garfield%2C_photo_portrait_seated.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 609
+  sha256: ffa8d5b6697df9f981201ae4d39704a1081925187d458a6331756acbb3f55ca2
+  key: supreme-court/portraits/james-a-garfield.jpg
+- subject: chester-a-arthur
+  shows: Chester A. Arthur, head and shoulders, studio photograph (restored copy)
+  creator: Abraham Bogardus
+  date: c. 1880
+  source: National Portrait Gallery, Smithsonian Institution
+  source_id: S/NPG.77.140
+  source_link: https://npg.si.edu/object/npg_S_NPG.77.140
+  license: Public domain
+  basis: Albumen print by Abraham Bogardus (died 1908) made around 1880, published or created before 1931. The Smithsonian's open-access record marks it CC0.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Chester_A._Arthur_by_Abraham_Bogardus.jpg/500px-Chester_A._Arthur_by_Abraham_Bogardus.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 718
+  sha256: 9fd59418104befac07c6b0991d4314dd99078068615aa84676b79325c4bddc2c
+  key: supreme-court/portraits/chester-a-arthur.jpg
+- subject: grover-cleveland
+  shows: Grover Cleveland as President, bust portrait photograph
+  creator: C. M. Bell
+  date: c. 1888
+  source: Library of Congress
+  source_id: cph.3f06237
+  source_link: https://www.loc.gov/pictures/item/2001696910/
+  license: Public domain
+  basis: Photograph published about 1888 and copyrighted by C. M. Bell, so published in the United States before 1931. The Library of Congress record says "No known restrictions on publication."
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3f00000/3f06000/3f06200/3f06237r.jpg
+  media_type: image/jpeg
+  width: 431
+  height: 640
+  sha256: 383e925083ad3bd56ac578cf7bbfda32f0c61192c1a836e144a637dc6832c875
+  key: supreme-court/portraits/grover-cleveland-383e925083ad.jpg
+- subject: benjamin-harrison
+  shows: Benjamin Harrison, half-length
+  creator: Pach Brothers
+  date: '1896'
+  source: Library of Congress
+  source_id: cph.3c34885
+  source_link: https://www.loc.gov/item/2004676808/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Benjamin_Harrison%2C_head_and_shoulders_bw_photo%2C_1896.jpg/500px-Benjamin_Harrison%2C_head_and_shoulders_bw_photo%2C_1896.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 609
+  sha256: 0ea0f26df974d6df20da551c12a47adba0bad1654894edb0c1cea5b7929a4fcc
+  key: supreme-court/portraits/benjamin-harrison.jpg
+- subject: william-mckinley
+  shows: William McKinley, head and shoulders
+  date: '1900'
+  source: Library of Congress
+  source_id: cph.3a10814
+  source_link: https://www.loc.gov/item/96522569/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/William_mckinley.jpg/500px-William_mckinley.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 673
+  sha256: 27bd4551f50dc1c38cced9facf662329247e710dfba2704efc9910e45d76ed7e
+  key: supreme-court/portraits/william-mckinley.jpg
+- subject: theodore-roosevelt
+  shows: Theodore Roosevelt, half-length
+  creator: Pach Brothers
+  date: '1904'
+  source: Library of Congress
+  source_id: ppmsca.35645
+  source_link: https://www.loc.gov/item/2002718198/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Theodore_Roosevelt_by_the_Pach_Bros.jpg/500px-Theodore_Roosevelt_by_the_Pach_Bros.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 573
+  sha256: ebbd51ebc3303ce6a141b09704ab5e2d493cb2f02b64b2103fb870634ec76ba3
+  key: supreme-court/portraits/theodore-roosevelt.jpg
+- subject: william-h-taft
+  shows: William H. Taft, head and shoulders, cabinet-card studio photograph (restored, cropped copy)
+  creator: Pach Brothers
+  date: '1908'
+  source: National Portrait Gallery, Smithsonian Institution
+  source_id: NPG.80.198
+  source_link: https://npg.si.edu/object/npg_NPG.80.198
+  license: Public domain
+  basis: Gelatin silver cabinet card by Pach Brothers Studio made in 1908, published or created in the United States before 1931. The Smithsonian's open-access record marks it CC0.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Cabinet_card_of_William_Howard_Taft_by_Pach_Brothers_-_Cropped_to_image.jpg/500px-Cabinet_card_of_William_Howard_Taft_by_Pach_Brothers_-_Cropped_to_image.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 680
+  sha256: 74d45c7390849f7aa3dec78826dc135c8abf7eaa20c45f3e43890f519876bb4e
+  key: supreme-court/portraits/william-h-taft.jpg
+- subject: woodrow-wilson
+  shows: Woodrow Wilson, half-length
+  creator: Harris & Ewing
+  date: c. 1914
+  source: Library of Congress
+  source_id: hec.16849
+  source_link: https://www.loc.gov/item/2016857913/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Glass negative given to the Library by the Harris & Ewing studio.'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/President_Woodrow_Wilson_Harris_%26_Ewing_%283x4_cropped_b%29.jpg/500px-President_Woodrow_Wilson_Harris_%26_Ewing_%283x4_cropped_b%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: 3604b3a98ad74801534007bd080c88b17356d1584ec2787a1d1f15b025329c5c
+  key: supreme-court/portraits/woodrow-wilson.jpg
+- subject: warren-g-harding
+  shows: Warren G. Harding, head and shoulders
+  creator: Moffett Studio
+  date: '1920'
+  source: Library of Congress
+  source_id: cph.3a53301
+  source_link: https://www.loc.gov/item/96522644/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Warren_G_Harding_portrait_as_senator_June_1920.jpg/500px-Warren_G_Harding_portrait_as_senator_June_1920.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 638
+  sha256: 5eee080c9bc4baa69b3b88e65563ded4bc416699f4d6ccb7bae5bffc65848b08
+  key: supreme-court/portraits/warren-g-harding.jpg
+- subject: calvin-coolidge
+  shows: Calvin Coolidge, head and shoulders
+  creator: Harris & Ewing
+  date: '1924'
+  source: Library of Congress
+  source_id: cph.3c25494
+  source_link: https://www.loc.gov/item/00649598/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication. No renewal in the U.S. Copyright Office (checked 7/2016)."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/President_Calvin_Coolidge%2C_1924_portrait_photograph_%283x4_cropped%29.jpeg/500px-President_Calvin_Coolidge%2C_1924_portrait_photograph_%283x4_cropped%29.jpeg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: 2f2f173b91fd45788d0cedebdeb6d22892d2c34262e5892b83e00e2167fe4c93
+  key: supreme-court/portraits/calvin-coolidge.jpg
+- subject: herbert-hoover
+  shows: Herbert Hoover, head and shoulders
+  creator: Underwood & Underwood
+  date: c. 1928
+  source: Library of Congress
+  source_id: cph.3a25105
+  source_link: https://www.loc.gov/item/96522651/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/President_Hoover_portrait.jpg/500px-President_Hoover_portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 639
+  sha256: b12f78c726d8d0a4c7cb9956b8b396f7dfc03b393f7508bc701f0edab6ea0800
+  key: supreme-court/portraits/herbert-hoover.jpg
+- subject: franklin-d-roosevelt
+  shows: Franklin D. Roosevelt, head and shoulders, color portrait from the 1944 campaign portrait session
+  creator: Leon A. Perskie
+  date: '1944'
+  source: Franklin D. Roosevelt Presidential Library
+  source_id: CT 09-109(1)
+  source_link: https://www.flickr.com/photos/fdrlibrary/8145288140/
+  license: CC BY 2.0
+  license_link: https://creativecommons.org/licenses/by/2.0/
+  basis: The FDR Library's own Flickr record for the original color transparency carries the Creative Commons Attribution 2.0 license (links to creativecommons.org/licenses/by/2.0/). The photographer was a private photographer whose transparency the library holds as a gift, so this is an open license from the holder, not a federal work.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/FDR_1944_Color_Portrait.jpg/500px-FDR_1944_Color_Portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 692
+  sha256: 28400a0283ad67680a22e7f0db35adf2d8ed4f70c5478cb8d5587f3f966a0f88
+  key: supreme-court/portraits/franklin-d-roosevelt.jpg
+- subject: harry-s-truman
+  shows: Harry S. Truman as President, bust portrait, head and shoulders
+  date: c. 1945
+  source: Library of Congress
+  source_id: cph.3b45707
+  source_link: https://www.loc.gov/pictures/item/90708375/
+  license: Public domain
+  basis: The Library of Congress record says "No known restrictions on publication. No renewal in the U.S. Copyright Office (checked 10/2014)." The photograph was registered for copyright (J38750) but the copyright was not renewed.
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3b40000/3b45000/3b45700/3b45707r.jpg
+  media_type: image/jpeg
+  width: 481
+  height: 640
+  sha256: 9c8e951e0996aa01c9663be7b4dfe433ce73131370cb74ff8fc61b8ed8f7b879
+  key: supreme-court/portraits/harry-s-truman-9c8e951e0996.jpg
+- subject: dwight-d-eisenhower
+  shows: Dwight D. Eisenhower, head-and-shoulders portrait, facing front
+  date: c. 1950–1960
+  source: Library of Congress
+  source_id: cph.3a55065
+  source_link: https://www.loc.gov/pictures/item/2014648294/
+  license: Public domain
+  basis: The Library of Congress record says "No known restrictions on publication."
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3a50000/3a55000/3a55000/3a55065r.jpg
+  media_type: image/jpeg
+  width: 523
+  height: 640
+  sha256: 9ba932fffbfb95e082591ad73d1ee0f4d416c6a3bf21abe516c6dfa174b1bc16
+  key: supreme-court/portraits/dwight-d-eisenhower-9ba932fffbfb.jpg
+- subject: john-f-kennedy
+  shows: John F. Kennedy, head-and-shoulders color portrait photograph in the White House
+  creator: Cecil Stoughton
+  date: '1963'
+  source: National Archives
+  source_id: '194255'
+  source_link: https://catalog.archives.gov/id/194255
+  license: Public domain
+  basis: Made by White House photographer Cecil Stoughton as part of his official duties, so it is a federal work (17 U.S.C. 105). The NARA record gives its use restriction as Unrestricted.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/500px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 622
+  sha256: 450c5d348065f6ce7563e5d4142458229164655eb6214cc5c0429f41680db557
+  key: supreme-court/portraits/john-f-kennedy.jpg
+- subject: lyndon-b-johnson
+  shows: Lyndon B. Johnson as President, head-and-shoulders portrait, facing left
+  date: '1964'
+  source: Library of Congress
+  source_id: cph.3a53305
+  source_link: https://www.loc.gov/pictures/item/96522661/
+  license: Public domain
+  basis: The Library of Congress record says "No known restrictions on publication" and notes the photograph came from the White House (a federal work).
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3a50000/3a53000/3a53300/3a53305r.jpg
+  media_type: image/jpeg
+  width: 514
+  height: 640
+  sha256: d2022db0814c57634eddf1cf16e8995fd75e6a614ee4b83ff34a105f632b6da0
+  key: supreme-court/portraits/lyndon-b-johnson-d2022db0814c.jpg
+- subject: richard-m-nixon
+  shows: Richard M. Nixon, head-and-shoulders color portrait
+  creator: U.S. Army Audiovisual Center
+  source: National Archives
+  source_id: '530679'
+  source_link: https://catalog.archives.gov/id/530679
+  license: Public domain
+  basis: The portrait is held in a series made by the Department of Defense, Department of the Army, U.S. Army Audiovisual Center, so it is a federal work. The NARA record gives its use restriction as Unrestricted.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Richard_Nixon_presidential_portrait.jpg/500px-Richard_Nixon_presidential_portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 581
+  sha256: 4a2b1c22f0a22c458e7a82686b57d44dccdfa4121c845c5a119d941275dc6fd8
+  key: supreme-court/portraits/richard-m-nixon.jpg
+- subject: gerald-ford
+  shows: Gerald Ford, head-and-shoulders color portrait
+  creator: U.S. Army Audiovisual Center
+  source: National Archives
+  source_id: '530680'
+  source_link: https://catalog.archives.gov/id/530680
+  license: Public domain
+  basis: The portrait is held in a series made by the Department of Defense, Department of the Army, U.S. Army Audiovisual Center, so it is a federal work. The NARA record gives its use restriction as Unrestricted.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Gerald_Ford_presidential_portrait_%28cropped%29.jpg/500px-Gerald_Ford_presidential_portrait_%28cropped%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 598
+  sha256: 652ddcf1e133497c6b8c83e83cfc7f36c5acbf2e59cd0aef400e31bceb7e5941
+  key: supreme-court/portraits/gerald-ford.jpg
+- subject: jimmy-carter
+  shows: Jimmy Carter, head and shoulders, facing front, next to an American flag; official White House photograph
+  creator: Karl Schumacher
+  date: Jan. 31, 1977
+  source: Library of Congress
+  source_id: cph.3b52090
+  source_link: https://www.loc.gov/item/96522672/
+  license: Public domain
+  basis: 'Library of Congress record: "Official White House photograph" and "No known restrictions on publication." Made by a White House photographer as part of his duties, so a work of the United States government (17 U.S.C. § 105).'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3b50000/3b52000/3b52000/3b52090r.jpg
+  media_type: image/jpeg
+  width: 460
+  height: 640
+  sha256: be5d8f5b185bc32b48e95ef2086b63e6cd1bb71c36ec73aef71f9498aeea7686
+  key: supreme-court/portraits/jimmy-carter-be5d8f5b185b.jpg
+- subject: ronald-reagan
+  shows: Ronald Reagan, head-and-shoulders color official portrait, 1981
+  creator: White House Photographic Office
+  date: '1981'
+  source: National Archives
+  source_id: '75856593'
+  source_link: https://catalog.archives.gov/id/75856593
+  license: Public domain
+  basis: Official White House photograph made by the White House Photographic Office, so a federal work (17 U.S.C. 105). The NARA record gives its use restriction as Unrestricted.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Ronald_Reagan_1981_presidential_portrait.jpg/500px-Ronald_Reagan_1981_presidential_portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 600
+  sha256: a129a582974875bb5656009f9667833aece0839bdc9b82dbf9b5080b34358567
+  key: supreme-court/portraits/ronald-reagan.jpg
+- subject: george-h-w-bush
+  shows: George H. W. Bush, head-and-shoulders official portrait, 1989
+  creator: White House Photograph Office
+  date: '1989'
+  source: National Archives
+  source_id: '545293626'
+  source_link: https://catalog.archives.gov/id/545293626
+  license: Public domain
+  basis: Official White House photograph made by the White House Photograph Office, so a federal work (17 U.S.C. 105). The NARA record gives its use restriction as Unrestricted.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/George_H._W._Bush_presidential_portrait_%28cropped%29.jpg/500px-George_H._W._Bush_presidential_portrait_%28cropped%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 630
+  sha256: ef1f477cd8cdc0a194bed692a007c68eca7a071347e0f6a338cfa434ac555007
+  key: supreme-court/portraits/george-h-w-bush.jpg
+- subject: william-j-clinton
+  shows: Bill Clinton, head-and-shoulders color official portrait with flag and bookshelves behind
+  creator: White House Photograph Office
+  date: '1993'
+  source: National Archives
+  source_id: '7891095'
+  source_link: https://catalog.archives.gov/id/7891095
+  license: Public domain
+  basis: Official White House photograph from the White House Photograph Office (Clinton Administration), so a federal work (17 U.S.C. 105). The NARA record gives its use restriction as Unrestricted.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Bill_Clinton.jpg/500px-Bill_Clinton.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 626
+  sha256: 851a1f4f1a1251a07c4f1f07d00978bcee2c6be327eb7841829b3591be1b72c1
+  key: supreme-court/portraits/william-j-clinton.jpg
+- subject: george-w-bush
+  shows: George W. Bush, head-and-shoulders color official portrait with flag behind, wearing a flag lapel pin
+  creator: Eric Draper
+  date: '2004'
+  source: George W. Bush Presidential Library and Museum
+  source_id: P25695-23
+  source_link: https://georgewbushlibrary.gov/media/4952
+  license: Public domain
+  basis: Official White House photograph by White House photographer Eric Draper, made as part of his official duties, so a federal work (17 U.S.C. 105). The library's own file carries the credit "Photo by Eric Draper, Courtesy of the George W. Bush Presidential Library".
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/George-W-Bush.jpeg/500px-George-W-Bush.jpeg
+  media_type: image/jpeg
+  width: 480
+  height: 635
+  sha256: 6de98edfb94ef497bc25f0e778c6a34283683082de304b8f57a389ccf819b386
+  key: supreme-court/portraits/george-w-bush.jpg
+- subject: barack-obama
+  shows: Barack Obama, official portrait in the Oval Office
+  creator: Pete Souza
+  date: '2012'
+  source: White House
+  source_id: P120612PS-0463
+  source_link: https://www.flickr.com/photos/whitehouse/8390033709/
+  license: Public domain
+  basis: Official White House photo by White House chief photographer Pete Souza, a federal work (17 U.S.C. 105). The White House's own Flickr record is marked with the license "United States Government Work".
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/500px-President_Barack_Obama.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 600
+  sha256: 8e6ff05a09df260a30d766724aeaeaca58fd5d7a78454d3a6025a86f0f29be30
+  key: supreme-court/portraits/barack-obama.jpg
+- subject: donald-j-trump
+  shows: Donald J. Trump, official presidential portrait, 2025
+  creator: Daniel Torok
+  date: '2025'
+  source: White House Historical Association
+  source_id: '1139877'
+  source_link: https://archives.whitehousehistory.org/fotoweb/archives/5017-Digital-Archives/Main%20Index/Presidents/Donald%20Trump/1139877.tif.info
+  license: Public domain
+  basis: Official White House photograph credited to White House photographer Daniel Torok, made as part of his official duties, so a federal work (17 U.S.C. 105). The WHHA record shows no copyright notice.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29_%283x4%29.jpg/500px-Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29_%283x4%29.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 640
+  sha256: dbf26e76c07aed3aeb3627a57332e65c918c6953e23e8a011017461c8a30c56a
+  key: supreme-court/portraits/donald-j-trump.jpg
+- subject: joseph-r-biden
+  shows: Joe Biden, head-and-shoulders official portrait with flag, 2021
+  creator: Adam Schultz
+  date: '2021'
+  source: U.S. Navy
+  source_id: 210303-N-NO101-150
+  source_link: https://www.navy.mil/Resources/Photo-Gallery/igphoto/2002616037
+  license: Public domain
+  basis: Official White House photograph by White House photographer Adam Schultz, a federal work (17 U.S.C. 105), republished on a U.S. Navy (Defense Department) site. The page carries no rights restriction.
+  checked: '2026-11-27'
+  copy: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/500px-Joe_Biden_presidential_portrait.jpg
+  media_type: image/jpeg
+  width: 480
+  height: 600
+  sha256: 0fe50eafde03eb1d04582c408f869b07d7d548f267f9adc157adcb4df760df8a
+  key: supreme-court/portraits/joseph-r-biden.jpg
+- subject: fuller-court
+  shows: Oval portraits of the nine Justices of the Fuller Court in 1894, on one printed sheet
+  creator: William H. Allen
+  date: '1894'
+  source: Library of Congress
+  source_id: ppmsca.46241
+  source_link: https://www.loc.gov/pictures/item/2018696858/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Published with a copyright notice in 1894, so in the public domain in the United States.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ppmsca/46200/46241r.jpg
+  media_type: image/jpeg
+  width: 640
+  height: 521
+  sha256: b844e8ca64ba59304960ae2416aa9b44f053192750758f78e11a42bd5b17f55b
+  key: supreme-court/portraits/fuller-court-b844e8ca64ba.jpg
+- subject: taft-court
+  shows: The nine Justices of the Taft Court in their robes, five seated and four standing, 1925
+  creator: Harris & Ewing
+  date: '1925'
+  source: Library of Congress
+  source_id: ds.00230
+  source_link: https://www.loc.gov/pictures/item/2008675031/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication. No renewal in Copyright office."'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ds/00200/00230r.jpg
+  media_type: image/jpeg
+  width: 640
+  height: 517
+  sha256: 577058028c537802e4f655cab0c066ac9db22f79ffcafab8f7eb073cedc40e22
+  key: supreme-court/portraits/taft-court-577058028c53.jpg
+- subject: warren-court
+  shows: The nine Justices of the Warren Court in their robes, five seated and four standing, November 1958
+  creator: Warren K. Leffler
+  date: '1958'
+  source: Library of Congress
+  source_id: ppmsca.78058
+  source_link: https://www.loc.gov/pictures/item/2023630495/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Made for U.S. News & World Report, whose photographs the magazine gave to the Library.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ppmsca/78000/78058r.jpg
+  media_type: image/jpeg
+  width: 640
+  height: 435
+  sha256: 0e2251d3692cd86abb994eb64acbda05bfccbf5c88afb273b2778170be8ba4d0
+  key: supreme-court/portraits/warren-court-0e2251d3692c.jpg
+- subject: burger-court
+  shows: The nine Justices of the Burger Court in their robes, five seated and four standing, 1976
+  creator: Robert S. Oakes
+  date: '1976'
+  source: Library of Congress
+  source_id: cph.3a55040
+  source_link: https://www.loc.gov/pictures/item/2002721278/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication. Verified with the Supreme Court, 2004."'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3a50000/3a55000/3a55000/3a55040r.jpg
+  media_type: image/jpeg
+  width: 640
+  height: 520
+  sha256: 2719c89ebbc6e35c376bc635a9711199aba8a411b40e48b61ee1ea52fc62cfa8
+  key: supreme-court/portraits/burger-court-2719c89ebbc6.jpg
+- subject: roberts-court
+  shows: The nine Justices of the Roberts Court in their robes, five seated and four standing, 2022
+  creator: Fred Schilling
+  date: '2022'
+  source: Supreme Court of the United States
+  source_link: https://www.supremecourt.gov/about/justices.aspx
+  license: Public domain
+  basis: The Court's site credits it to "Fred Schilling, Collection of the Supreme Court of the United States". A photograph the Court's own photographer made as part of his duties is a work of the United States government (17 U.S.C. § 105).
+  checked: '2026-11-27'
+  copy: https://www.supremecourt.gov/about/images/2022_Roberts_Court_Formal_083122_Web.jpg
+  media_type: image/jpeg
+  width: 1500
+  height: 1000
+  sha256: 7bc841ed4f581c35d1e14f59811354dd022aa26e1f9a228cc4120c2bd811310e
+  key: supreme-court/portraits/roberts-court-7bc841ed4f58.jpg

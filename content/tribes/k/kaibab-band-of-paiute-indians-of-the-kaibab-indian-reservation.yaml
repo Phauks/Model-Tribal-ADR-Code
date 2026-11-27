@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order No. 2667
+  since: '1917-07-17'
+  source: executive-order-1917-07-17-2667
+  confidence: medium
+  verification: read-in-full
+  as_of: '1917-07-17'
+  locator: 4 Kappler 1003
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Kaibab Indian Reservation, Arizona.
 states:
 - state: AZ
   presence: government-office
@@ -158,6 +168,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Phoenix Area
   note: Listed as "Kaibab Band of Paiute Indians". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 647809
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Kaibab Band of Paiute Indians' (Fredonia)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 598030
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'KAIBAB BAND OF PAIUTE INDIANS' (UEI TEG8LAQYBVK7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KAIBAB BAND OF PAIUTE INDIANS'.
 governance:
 - aspect: form
   value: Tribal Constitution

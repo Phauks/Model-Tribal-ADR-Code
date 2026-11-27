@@ -5,7 +5,7 @@
 	wiki info page for all items"). It puts together the parts every item page
 	shares, so a person, a court, a case or an office reads alike: the
 	breadcrumbs, the title with any other names and a one-line lead, a status
-	badge, At a glance (a picture with its credit, then the key facts, each
+	badge, Key facts (a picture with its credit, then the key facts, each
 	with its source markers), the page's own sections, and References.
 
 	It builds on RecordPage, which lays the parts out (site/DESIGN.md, "Record
@@ -19,7 +19,7 @@
 -->
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import type { InfoName, InfoPicture } from '#lib/info-page.ts';
+	import { glancePanelMinimum, withoutRepeats, type InfoName, type InfoPicture } from '#lib/info-page.ts';
 	import { imageViewerAttributes } from '#lib/image-viewer.ts';
 	import Breadcrumbs from './Breadcrumbs.svelte';
 	import CitationMarks from './CitationMarks.svelte';
@@ -34,25 +34,43 @@
 		lead?: string;
 		names?: InfoName[];
 		trail?: { label: string; href: string }[];
+		/** The page's name at the end of the trail, when shorter than its title, such as "§ 5321". */
+		crumb?: string;
 		picture?: InfoPicture;
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any -- FactGroups' own type
 		glance?: any[];
-		/** Short panels under At a glance, such as contacts. */
+		/** Short panels under Key facts, such as contacts. */
 		panels?: Snippet;
 		/** A status badge beside the title, such as "Unverified". */
 		status?: Snippet;
+		/** A line under the lead, such as an executive order's place in its list with the orders before and after it. */
+		pager?: Snippet;
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any -- SourceList's own type
 		sources?: any[];
 		children?: Snippet;
 	}
 
-	let { title: titleText, lead, names = [], trail, picture, glance = [], panels, status, sources = [], children }: Props = $props();
+	let { title: titleText, lead, names = [], trail, crumb, picture, glance = [], panels, status, pager, sources = [], children }: Props = $props();
 	// The panel's picture snippet shares the prop's name.
 	const pictureView = $derived(picture);
-	const hasGlance = $derived(picture !== undefined || glance.length > 0 || panels !== undefined);
+	// Key facts only where it earns its place (src/lib/info-page.ts): without
+	// the facts the title and lead already say, and as a panel only with enough
+	// facts or a picture or panel; fewer facts are label rows under the lead.
+	const facts = $derived(withoutRepeats(glance, [titleText, lead, ...names.map((other) => other.name)]));
+	const hasGlance = $derived(picture !== undefined || panels !== undefined || facts.length >= glancePanelMinimum);
+	// Too few for a panel, the facts are labeled rows under the lead, one for each, such as Type, Nation and Date (Trevor, Nov. 27, 2026, option C).
+	// Under a citation the rows keep what the citation only implies, such as its date; a fact that is the citation itself is left out.
+	const leadIsCitation = $derived(lead !== undefined && !/[.!?]$/.test(lead.trim()));
+	const rowFacts = $derived(
+		hasGlance
+			? []
+			: leadIsCitation
+				? withoutRepeats(glance, [titleText, ...names.map((other) => other.name)]).filter((group: { items: { text: string }[] }) => !group.items.every((item) => item.text.trim() === lead?.trim()))
+				: facts
+	);
 </script>
 
-{#if trail}<Breadcrumbs {trail} />{/if}
+{#if trail}<Breadcrumbs {trail} current={crumb ?? titleText} />{/if}
 
 <RecordPage glance={hasGlance ? glancePart : undefined} sources={sources.length > 0 ? sourcesPart : undefined}>
 	{#snippet title()}<h1>{titleText}</h1>{/snippet}
@@ -63,14 +81,16 @@
 			</p>
 		{/if}
 		{#if lead}<p class="lead">{lead}</p>{/if}
+		{#if rowFacts.length > 0}<div class="fact-rows"><FactGroups groups={rowFacts} /></div>{/if}
 		{#if status}<div class="info-status">{@render status()}</div>{/if}
+		{@render pager?.()}
 	{/snippet}
 
 	{@render children?.()}
 </RecordPage>
 
 {#snippet glancePart()}
-	<GlancePanel>
+	<GlancePanel facts={facts.length}>
 		{#snippet picture()}
 			{#if pictureView}
 				<figure class="info-picture">
@@ -83,7 +103,7 @@
 				</figure>
 			{/if}
 		{/snippet}
-		{#if glance.length > 0}<div class="facts"><FactGroups groups={glance} /></div>{/if}
+		{#if facts.length > 0}<div class="facts"><FactGroups groups={facts} /></div>{/if}
 	</GlancePanel>
 	{@render panels?.()}
 {/snippet}
@@ -95,6 +115,33 @@
 <style>
 	.other-names {
 		margin-top: calc(-1 * var(--space-2));
+	}
+
+	/* The facts too few for a panel: compact label rows, the label small and muted, the value in body type. */
+	.fact-rows {
+		margin-top: calc(-1 * var(--space-2));
+	}
+
+	.fact-rows :global(.summary-list) {
+		grid-template-columns: max-content minmax(0, 1fr);
+		column-gap: var(--space-4);
+		margin: 0;
+		border-top: 0;
+	}
+
+	.fact-rows :global(.summary-list > div > dt),
+	.fact-rows :global(.summary-list > div > dd) {
+		padding: var(--space-1) 0;
+		border-bottom: 0;
+	}
+
+	.fact-rows :global(.summary-list > div > dt) {
+		padding-top: 0.3em;
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
 	}
 
 	.info-status {

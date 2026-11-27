@@ -1,0 +1,109 @@
+key: united-states-v-washington-2009-9th-cir
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Washington
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '593'
+  page: '790'
+  issued:
+    date-parts:
+    - - 2009
+      - 12
+      - 11
+  URL: https://static.case.law/f3d/593/html/0790-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 08-35794
+original_link: https://static.case.law/f3d/593/html/0790-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2009-06-03'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2009/06/03/08-35794.wma
+  duration_seconds: 1890
+  file:
+    storage_key: appeals-court-audio/ca9/2009/2009-06-03-08-35794.wma
+    checksum: 9bf6a207db4c176ad1d96b27f1678319f0f520e6fb815d0227cb5820fd1b6da1
+    media_type: audio/x-ms-wma
+    bytes: 4848205
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- swinomish-indian-tribal-community
+- lummi-tribe-of-the-lummi-reservation
+- upper-skagit-indian-tribe
+- tulalip-tribes-of-washington
+- port-gamble-sklallam-tribe
+- jamestown-sklallam-tribe
+- confederated-tribes-and-bands-of-the-yakama-nation
+- samish-indian-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: swinomish-indian-tribal-community
+    named_as: Swinomish Tribal Community
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: lummi-tribe-of-the-lummi-reservation
+    named_as: Lummi Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: upper-skagit-indian-tribe
+    named_as: Upper Skagit Indian Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: tulalip-tribes-of-washington
+    named_as: Tulalip Tribes
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: port-gamble-sklallam-tribe
+    named_as: Port Gamble S'Klallam Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: jamestown-sklallam-tribe
+    named_as: Jamestown S'Klallam Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: confederated-tribes-and-bands-of-the-yakama-nation
+    named_as: Bands of the Yakama Indian Nation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: samish-indian-nation
+    named_as: Samish Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 593 F.3d 790. Decided by the United States Court of Appeals for the Ninth Circuit on Dec. 11, 2009. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 19, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 19
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 8 matched, 0 not linked

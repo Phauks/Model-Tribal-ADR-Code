@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Plan a room · Video rooms · Workspace · Model Tribal ADR Code</title>
+	<title>Plan a room · Video rooms · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -17,6 +17,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Video rooms', href: '/workspace/rooms' }
 	]}
+	current="Plan a room"
 />
 <h1>Plan a room</h1>
 <p>For an interview, choose a private room, then send the person an invite link from the room’s page.</p>

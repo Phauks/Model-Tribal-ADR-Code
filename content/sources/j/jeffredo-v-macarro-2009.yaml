@@ -1,0 +1,64 @@
+key: jeffredo-v-macarro-2009
+kind: federal-case
+citation:
+  type: legal_case
+  title: Jeffredo v. Macarro
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '590'
+  page: '751'
+  issued:
+    date-parts:
+    - - 2009
+      - 12
+      - 22
+  URL: https://static.case.law/f3d/590/html/0751-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 08-55037
+original_link: https://static.case.law/f3d/590/html/0751-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2009-04-17'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2009/04/17/08-55037.wma
+  duration_seconds: 2222
+  file:
+    storage_key: appeals-court-audio/ca9/2009/2009-04-17-08-55037.wma
+    checksum: 253934d3aa6ca56ff41c409a041230db81ec7747edb8a339535f870480806ddf
+    media_type: audio/x-ms-wma
+    bytes: 5750453
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 590 F.3d 751. Decided by the United States Court of Appeals for the Ninth Circuit on Dec. 22, 2009. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 60, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 60
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

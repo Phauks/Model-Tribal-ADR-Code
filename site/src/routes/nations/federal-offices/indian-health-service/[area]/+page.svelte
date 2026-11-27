@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-	<title>{name} · Indian Health Service · Model Tribal ADR Code</title>
+	<title>{name} · Indian Health Service · Tribal Law Project</title>
 </svelte:head>
 
 <InfoPage
@@ -58,14 +58,13 @@
 
 	<Collapsible heading="Nations served" identifier="nations-served" count={data.count} class="past-glance">
 		{#each data.groups as group (group.entityType)}
-			{#if data.groups.length > 1}<h3>{group.label}</h3>{/if}
-			<NationTable {group} identifier="health-area-{data.office.key}-{group.entityType}" />
+			<NationTable {group} identifier="health-area-{data.office.key}-{group.entityType}" headingLevel={3} />
 		{/each}
 	</Collapsible>
 </InfoPage>
 
 <style>
-	/* The table of nations is wide, so it starts under At a glance rather than squeezed beside it; the service units, a list, run beside it. */
+	/* The table of nations is wide, so it starts under Key facts rather than squeezed beside it; the service units, a list, run beside it. */
 	:global(.collapsible.past-glance) {
 		clear: both;
 	}

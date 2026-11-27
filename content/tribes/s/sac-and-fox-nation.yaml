@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Wyandot, etc., Jan. 9, 1789, 7 Stat. 28
+  since: '1789-01-09'
+  source: treaty-with-the-wyandot-etc-1789
+  confidence: low
+  verification: inferred
+  as_of: '1789-01-09'
+  locator: p. 18 (Treaty with the Wyandot, etc., 1789; Kappler header "Jan. 9, 1789. | 7 Stat., 28. | Proclamation, Sept. 27, 1789.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Sac; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 13 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -218,6 +228,60 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "Sac & Fox Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Sac and Fox Nation (1994)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1992
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Sac & Fox Nation Of Oklahoma' (Southern Plains Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Sac & Fox Nation Of Oklahoma'.
+- program: indian-health-service-self-governance-compact
+  since: 1994
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Sac and Fox Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Sac and Fox Nation'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2561151
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Sac and Fox Nation, Oklahoma' (Stroud)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Sac and Fox Nation, Oklahoma'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 3515368
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SAC & FOX NATION' (UEI PCL5NAEB5PE6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SAC & FOX NATION'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 11880495
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SAC & FOX NATION' (UEI PCL5NAEB5PE6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SAC & FOX NATION'.
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Sac and Fox Tribe of Indians of Oklahoma" among organizations under constitutions
@@ -704,6 +768,215 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Paragraph 3
   note: 'The source reads: “the City of Stroud agrees to issue Peace Officer of Police”. Month and year read from a scanned entry date ("August 1991"); the copy bears an Oklahoma Secretary of State filing stamp of April 8, 1992. The roster match is by the agreement title "Sac and Fox Nation" and Oklahoma location. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+- kind: cross-deputization
+  other_party: Pottawatomie County Sheriff's Office
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 2, 1991 (file 26347).
+  source: oklahoma-filing-26347
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 26347
+  note: 'From the register line: “Sac & Fox / Pottawatomie County/ Sheriff''s Off”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Lincoln County Sheriff's Office
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 2, 1991 (file 26348).
+  source: oklahoma-filing-26348
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 26348
+  note: 'From the register line: “Sac & Fox and Lincoln County Sheriff''s Office”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Stroud
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Apr. 8, 1992 (file 26915).
+  source: oklahoma-filing-26915
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 26915
+  note: 'From the register line: “Sac & Fox Nation & City of Stroud”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Prague
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 27, 1992 (file 27560).
+  source: oklahoma-filing-27560
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 27560
+  note: 'From the register line: “Sac & Fox Nation/City of Prague”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Payne County
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 4, 1993 (file 28140).
+  source: oklahoma-filing-28140
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 28140
+  note: 'From the register line: “Sac & Fox Nation/Payne Co”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 29, 1993 (file 28529).
+  source: oklahoma-filing-28529
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 28529
+  note: 'From the register line: “Sac & Fox Nation/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Lincoln County
+  agreement: Juvenile facility interlocal cooperative agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Feb. 18, 1997 (file 34290).
+  source: oklahoma-filing-34290
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 34290
+  note: 'From the register line: “Sac & Fox Nation/Lincoln County”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Apr. 21, 1999 (file 35869).
+  source: oklahoma-filing-35869
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 35869
+  note: 'From the register line: “Sac and Fox Nation/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 6, 2003 (file 38501).
+  source: oklahoma-filing-38501
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38501
+  note: 'From the register line: “Sac and Fox Nation and the State of Oklahoma, amendment to Tribal/State Tobacco Tax Compact”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 7, 2003 (file 38950).
+  source: oklahoma-filing-38950
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38950
+  note: 'From the register line: “Amendment Sac and Fox Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 26, 2004 (file 39638).
+  source: oklahoma-filing-39638
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 39638
+  note: 'From the register line: “Sac & Fox Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46230).
+  source: oklahoma-filing-46230
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46230
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 1, 2013 (file 46271).
+  source: oklahoma-filing-46271
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46271
+  note: 'From the register line: “Amendment between the Sac & Fox Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 8, 2013 (file 46506).
+  source: oklahoma-filing-46506
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46506
+  note: 'From the register line: “Amendment between the Sac & Fox Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 4, 2013 (file 46551).
+  source: oklahoma-filing-46551
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46551
+  note: 'From the register line: “Sac & Fox Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Professional combative sports agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 24, 2018 (file 49430).
+  source: oklahoma-filing-49430
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 49430
+  note: 'From the register line: “Professional Combative Sports Agreement between the State of Oklahoma and the Sac and Fox Nation of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 10, 2020 (file 50683).
+  source: oklahoma-filing-50683
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 50683
+  note: 'From the register line: “Amendment to Tobacco Tax Compact Between the State of Oklahoma and the Sac and Fox Nation”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 25, 2021 (file 51262).
+  source: oklahoma-filing-51262
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 51262
+  note: 'From the register line: “AMENDMENT TO TOBACCO TAX COMPACT BETWEEN THE STATE OF OKLAHOMA AND THE SAC & FOX NATION”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 19, 2024 (file 53445).
+  source: oklahoma-filing-53445
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53445
+  note: 'From the register line: “Tobacco Tax Compact between the State of Oklahoma and the Sac and Fox Nation”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Lincoln County

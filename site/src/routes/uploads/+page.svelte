@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>Your uploads · Model Tribal ADR Code</title>
+	<title>Your uploads · Tribal Law Project</title>
 </svelte:head>
 
 <div class="uploads-page">

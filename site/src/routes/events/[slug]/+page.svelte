@@ -16,13 +16,13 @@
 </script>
 
 <svelte:head>
-	<title>{event.title} · Events · Model Tribal ADR Code</title>
+	<title>{event.title} · Events · Tribal Law Project</title>
 	{#if event.summary}<meta name="description" content={event.summary} />{/if}
 	{#if event.status === 'draft'}<meta name="robots" content="noindex, nofollow" />{/if}
 </svelte:head>
 
 <div class="event-page">
-	<Breadcrumbs trail={[{ label: 'Events', href: '/events' }]} />
+	<Breadcrumbs trail={[{ label: 'Events', href: '/events' }]} current={event.title} />
 	<h1>{event.title}</h1>
 	<p class="meta">
 		<span><CalendarDays size={20} strokeWidth={1.75} aria-hidden="true" /> {event.when}</span>
@@ -334,7 +334,7 @@
 	}
 
 	.ticket input:focus-visible + label {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 2px;
 	}
 

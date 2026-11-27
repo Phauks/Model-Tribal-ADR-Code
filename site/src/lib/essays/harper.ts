@@ -51,7 +51,7 @@ export function harper(projectWords: string[]): Promise<Linter> {
 		await loaded.setLintConfig({ ...(await loaded.getLintConfig()), Dashes: false, NumericRangeEnDash: false, UseEllipsisCharacter: false });
 		return loaded;
 	})();
-	linter.catch(() => (linter = undefined));
+	linter.catch(() => /* expected: the caller gets the rejection and shows it (EssayChecks); this only lets the next check load Harper again. */ (linter = undefined));
 	return linter;
 }
 

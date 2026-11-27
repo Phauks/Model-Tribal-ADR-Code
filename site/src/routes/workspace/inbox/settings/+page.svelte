@@ -1,13 +1,10 @@
 <script lang="ts">
 	// Settings for the project inbox (site/MAIL.md, "Inboxes" and "Writing"):
-	// the inboxes and who is on each, signatures, saved replies, the pause
-	// before mail goes, and the away message.
+	// the inboxes and who is on each (InboxesCard.svelte), signatures, saved
+	// replies, the pause before mail goes, the away message and blocked
+	// senders. Someone who does not manage mail sees only the Inboxes card.
 	import { onMount } from 'svelte';
 	import Ban from '@lucide/svelte/icons/ban';
-	import InboxIcon from '@lucide/svelte/icons/inbox';
-	import UserRound from '@lucide/svelte/icons/user-round';
-	import Users from '@lucide/svelte/icons/users';
-	import X from '@lucide/svelte/icons/x';
 	import CalendarOff from '@lucide/svelte/icons/calendar-off';
 	import MessageSquareText from '@lucide/svelte/icons/message-square-text';
 	import PenLine from '@lucide/svelte/icons/pen-line';
@@ -17,11 +14,9 @@
 	import { fullDate } from '../dates.ts';
 	import type { PageProps } from './$types';
 	import DateTimeField from '#lib/components/DateTimeField.svelte';
-	import Dropdown from '#lib/components/Dropdown.svelte';
+	import InboxesCard from './InboxesCard.svelte';
 
 	let { data, form }: PageProps = $props();
-
-	const personChoices = (people: { identifier: string; name: string }[]) => people.map((person) => ({ value: person.identifier, label: person.name }));
 
 	// Times are kept as UTC and shown in the browser's own time zone once the page has loaded.
 	let zone = $state('America/Denver');
@@ -31,16 +26,12 @@
 		const pad = (value: number) => String(value).padStart(2, '0');
 		return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
 	};
-	const startingAway = () => ({ from: localValue(data.away.from), until: localValue(data.away.until) });
+	const startingAway = () => (data.canManage ? { from: localValue(data.away.from), until: localValue(data.away.until) } : { from: '', until: '' });
 	let awayTimes = $state(startingAway());
 	onMount(() => {
 		zone = Intl.DateTimeFormat().resolvedOptions().timeZone || zone;
 		awayTimes = startingAway();
 	});
-
-	// Whether the new inbox is someone's own, so the form asks whose it is.
-	let newKind = $state<'shared' | 'personal'>('shared');
-	const addressOf = (localPart: string) => `${localPart}@${data.domain ?? '…'}`;
 
 	function notice(section: string): { problem?: string; done?: string } | null {
 		return form && 'section' in form && form.section === section ? (form as { problem?: string; done?: string }) : null;
@@ -48,11 +39,15 @@
 </script>
 
 <svelte:head>
-	<title>Inbox settings · Inbox · Workspace · Model Tribal ADR Code</title>
+	<title>Inbox settings · Inbox · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Inbox settings</h1>
-<p class="lead">The project’s inboxes and who reads each one; how mail from them is written: a signature for each address, replies you give often, a pause to take a message back, and an away message; and the senders whose mail goes straight to Spam.</p>
+{#if data.canManage}
+	<p class="lead">The project’s inboxes and who reads each one; how mail from them is written: a signature for each address, replies you give often, a pause to take a message back, and an away message; and the senders whose mail goes straight to Spam.</p>
+{:else}
+	<p class="lead">The inboxes you are on, and how you hear about their new mail.</p>
+{/if}
 
 {#snippet message(section: string)}
 	{@const shown = notice(section)}
@@ -64,111 +59,9 @@
 {/snippet}
 
 <div class="columns">
-	<section class="card wide" id="inboxes" aria-labelledby="inboxes-heading">
-		<h2 id="inboxes-heading"><InboxIcon size={20} aria-hidden="true" />Inboxes</h2>
-		<p class="small muted">
-			Each address has its own inbox. A shared inbox, such as contact@, is read and answered by everyone on it. A personal inbox is read only by the person it belongs to: nobody else, including whoever manages mail, sees what comes to it. Mail to an address no inbox has goes to the inbox marked “Gets other mail”.
-		</p>
-		{@render message('inboxes')}
-		{#if !data.domain}
-			<p class="small muted">Email is not switched on yet, so no mail comes in or goes out. You can still set up the inboxes now.</p>
-		{/if}
-		<ul class="inbox-list">
-			{#each data.inboxes as inbox (inbox.identifier)}
-				<li>
-					<div class="inbox-head">
-						{#if inbox.kind === 'personal'}<UserRound size={18} aria-hidden="true" />{:else}<Users size={18} aria-hidden="true" />{/if}
-						<span class="what">
-							<strong>{inbox.name}</strong>
-							<span class="small muted break">{addressOf(inbox.localPart)}</span>
-						</span>
-						<span class="tag small">{inbox.kind === 'personal' ? 'Personal' : 'Shared'}</span>
-						{#if inbox.catchAll}<span class="tag tag-strong small">Gets other mail</span>{/if}
-					</div>
-					{#if inbox.kind === 'personal'}
-						<p class="small muted">Belongs to {inbox.ownerName ?? 'someone no longer on the project'}. Only they see its mail.</p>
-					{:else}
-						<p class="small muted">
-							{inbox.conversationCount} conversation{inbox.conversationCount === 1 ? '' : 's'}{#if inbox.unread}, {inbox.unread} unread{/if}. Read by:
-						</p>
-						<ul class="members">
-							{#each inbox.members as member (member.identifier)}
-								<li>
-									<span>{member.name}</span>
-									{#if inbox.members.length > 1}
-										<form method="post" action="?/removeMember">
-											<input type="hidden" name="inbox" value={inbox.identifier} />
-											<input type="hidden" name="member" value={member.identifier} />
-											<button class="icon-button" type="submit" aria-label="Take {member.name} off {inbox.name}" title="Take off this inbox"><X size={16} aria-hidden="true" /></button>
-										</form>
-									{/if}
-								</li>
-							{/each}
-						</ul>
-						{@const others = data.candidates.filter((person) => !inbox.members.some((member) => member.identifier === person.identifier))}
-						{#if others.length}
-							<form method="post" action="?/addMember" class="inline-form">
-								<input type="hidden" name="inbox" value={inbox.identifier} />
-								<Dropdown label="Person to add to {inbox.name}" hideLabel id="add-{inbox.identifier}" name="member" required choices={personChoices(others)} value={others[0].identifier} />
-								<button class="button button-quiet small" type="submit"><Plus size={16} aria-hidden="true" />Add</button>
-							</form>
-						{/if}
-					{/if}
-					<details class="small more">
-						<summary>Change or delete</summary>
-						<form method="post" action="?/renameInbox" class="inline-form">
-							<input type="hidden" name="inbox" value={inbox.identifier} />
-							<label for="rename-{inbox.identifier}">Name</label>
-							<input type="text" id="rename-{inbox.identifier}" name="name" value={inbox.name} maxlength="80" required />
-							<button class="button button-quiet small" type="submit">Rename</button>
-						</form>
-						<div class="row-buttons">
-							{#if inbox.kind === 'shared' && !inbox.catchAll}
-								<form method="post" action="?/makeCatchAll">
-									<input type="hidden" name="inbox" value={inbox.identifier} />
-									<button class="button button-quiet small" type="submit">Send other mail here</button>
-								</form>
-							{/if}
-							{#if !inbox.catchAll}
-								<form method="post" action="?/deleteInbox">
-									<input type="hidden" name="inbox" value={inbox.identifier} />
-									<button class="button button-quiet small" type="submit"><Trash2 size={16} aria-hidden="true" />Delete the inbox</button>
-								</form>
-							{/if}
-						</div>
-						{#if !inbox.catchAll}
-							<p class="muted">An inbox can be deleted once it has no conversations. Mail to its address then goes to the inbox that gets other mail.</p>
-						{/if}
-					</details>
-				</li>
-			{/each}
-		</ul>
-		<form method="post" action="?/createInbox" class="stack new">
-			<h3><Plus size={18} aria-hidden="true" />New inbox</h3>
-			<fieldset class="choices">
-				<legend class="visually-hidden">Kind of inbox</legend>
-				<label class="choice"><input type="radio" name="kind" value="shared" bind:group={newKind} />Shared, for a list of people</label>
-				<label class="choice"><input type="radio" name="kind" value="personal" bind:group={newKind} />Personal, for one person only</label>
-			</fieldset>
-			<div class="dates">
-				<div class="field">
-					<label for="new-inbox-local">Address</label>
-					<span class="address-field"><input type="text" id="new-inbox-local" name="localPart" maxlength="64" required placeholder={newKind === 'personal' ? 'trevor' : 'nations'} autocomplete="off" /><span class="muted">@{data.domain ?? 'the project’s domain'}</span></span>
-				</div>
-				<div class="field">
-					<label for="new-inbox-name">Name</label>
-					<input type="text" id="new-inbox-name" name="name" maxlength="80" required placeholder={newKind === 'personal' ? 'Trevor' : 'Nations'} />
-				</div>
-				{#if newKind === 'personal'}
-					<div class="field">
-						<Dropdown label="Whose inbox" id="new-inbox-owner" name="owner" required choices={personChoices(data.candidates)} value={data.candidates[0]?.identifier ?? ''} />
-					</div>
-				{/if}
-			</div>
-			<div><button class="button" type="submit">Make the inbox</button></div>
-		</form>
-	</section>
+	<InboxesCard inboxes={data.inboxes} candidates={data.candidates} domain={data.domain} me={data.me} canManage={data.canManage} notice={notice('inboxes')} />
 
+	{#if data.canManage}
 	<section class="card" id="signatures" aria-labelledby="signatures-heading">
 		<h2 id="signatures-heading"><PenLine size={20} aria-hidden="true" />Signatures</h2>
 		<p class="small muted">Added below each new message and reply sent from that address, above any quoted message. You can change or delete it in the message before sending.</p>
@@ -180,7 +73,7 @@
 			<form method="post" action="?/signature" class="stack">
 				<input type="hidden" name="address" value={address} />
 				<label for="signature-{address}"><strong>{address}</strong></label>
-				<textarea id="signature-{address}" name="body" rows="4" maxlength="2000" placeholder="Name&#10;Model Tribal ADR Code&#10;Website">{data.signatures[address] ?? ''}</textarea>
+				<textarea id="signature-{address}" name="body" rows="4" maxlength="2000" placeholder="Name&#10;Tribal Law Project&#10;Website">{data.signatures[address] ?? ''}</textarea>
 				<div><button class="button button-quiet" type="submit">Save the signature</button></div>
 			</form>
 		{/each}
@@ -327,6 +220,7 @@
 			<div><button class="button button-quiet" type="submit">Block</button></div>
 		</form>
 	</section>
+	{/if}
 </div>
 
 <style>
@@ -341,7 +235,7 @@
 		}
 	}
 	@media (min-width: 110rem) {
-		.wide {
+		.columns > :global(.wide) {
 			grid-column: 1 / -1;
 		}
 	}
@@ -399,6 +293,8 @@
 		gap: var(--space-2);
 	}
 	.row-buttons .button {
+		display: inline-flex;
+		align-items: center;
 		gap: var(--space-1);
 	}
 	.new {
@@ -461,112 +357,6 @@
 	}
 	.break {
 		overflow-wrap: anywhere;
-	}
-	.inbox-list,
-	.members {
-		list-style: none;
-		margin: 0 0 var(--space-3);
-		padding: 0;
-	}
-	.inbox-list > li {
-		padding-block: var(--space-3);
-		border-bottom: 1px solid var(--color-line);
-	}
-	.inbox-list > li:last-child {
-		border-bottom: 0;
-	}
-	.inbox-list p {
-		margin: var(--space-1) 0;
-	}
-	.inbox-head {
-		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-		gap: var(--space-2);
-	}
-	.inbox-head .what {
-		display: grid;
-		flex: 1;
-		min-width: 12rem;
-	}
-	.tag {
-		padding: 0.1em 0.7em;
-		border-radius: 999px;
-		background: var(--color-surface);
-		color: var(--color-ink-muted);
-	}
-	.tag-strong {
-		background: var(--color-link);
-		color: var(--color-paper);
-	}
-	.members {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-1) var(--space-2);
-		margin: 0 0 var(--space-2);
-	}
-	.members li {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-		padding-inline-start: var(--space-2);
-		border: 1px solid var(--color-line);
-		border-radius: 999px;
-		min-height: var(--layout-target-minimum);
-	}
-	.members li > span:only-child {
-		padding-inline-end: var(--space-2);
-	}
-	.members form {
-		display: contents;
-	}
-	.icon-button {
-		display: inline-grid;
-		place-items: center;
-		min-width: var(--layout-target-minimum);
-		min-height: var(--layout-target-minimum);
-		border: 0;
-		border-radius: 999px;
-		background: none;
-		color: var(--color-ink-muted);
-		cursor: pointer;
-	}
-	.icon-button:hover {
-		color: var(--color-ink);
-		background: var(--color-surface);
-	}
-	.inline-form :global(.dropdown) {
-		margin: 0;
-	}
-	.inline-form {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: var(--space-2);
-		margin: 0 0 var(--space-2);
-	}
-	.inline-form .button,
-	.row-buttons .button {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-	}
-	.more {
-		margin-top: var(--space-2);
-	}
-	.more summary {
-		cursor: pointer;
-		color: var(--color-link);
-		margin-bottom: var(--space-2);
-	}
-	.address-field {
-		display: flex;
-		align-items: center;
-		gap: var(--space-1);
-	}
-	.address-field input {
-		flex: 1;
-		min-width: 0;
 	}
 	.status-pill {
 		display: inline-block;

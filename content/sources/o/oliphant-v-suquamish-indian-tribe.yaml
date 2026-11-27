@@ -93,6 +93,67 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Oliphant_v._Suquamish_Indian_Tribe
+argument_audio:
+- kind: argument
+  date: '1978-01-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-215-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048597
+  whole_session: true
+  duration_seconds: 119
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-215-r1.mp3
+    checksum: 7a6b44723f57bd5633c78476a15a77ca503b2bd70b490a0c122f423aaa72f438
+    media_type: audio/mpeg
+    bytes: 1900589
+- kind: argument
+  date: '1978-01-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-215-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048597
+  whole_session: true
+  duration_seconds: 3816
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-215-r2.mp3
+    checksum: cadb35d5359ea2e2671c01392c147097651dc83e5382ab0da8d087856490079b
+    media_type: audio/mpeg
+    bytes: 61053099
+- kind: argument
+  date: '1978-01-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-215-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048597
+  whole_session: true
+  duration_seconds: 1879
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-215-r3.mp3
+    checksum: d7d5b44b3616d5bc966357fc01f8dc2b8a4f20e49445ac9466ab03474b59ccc1
+    media_type: audio/mpeg
+    bytes: 30062261
+- kind: argument
+  date: '1978-01-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-215-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048597
+  whole_session: true
+  duration_seconds: 4171
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-215-r4.mp3
+    checksum: 4c4756a9b0a3b42281cef8a5da686522b8fa0823e7930bf4ba5e1e8630f07742
+    media_type: audio/mpeg
+    bytes: 66744867
+- kind: argument
+  date: '1978-01-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-215-r5.mp3
+  catalog: https://catalog.archives.gov/id/102048597
+  whole_session: true
+  duration_seconds: 3798
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-215-r5.mp3
+    checksum: 35449abf37eaa1c0349f351204b14eac0d666c0f9d32f9afbff6dfbf33f92720
+    media_type: audio/mpeg
+    bytes: 60766796
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -122,9 +183,9 @@ case_box:
   holding: |-
     No. The Court held that, absent authorization by Congress, Native nations lack inherent criminal jurisdiction to try and punish non-Indians, reasoning that such power is inconsistent with their dependent status.
   quotes:
-  - text: "Indian tribes do not have inherent jurisdiction to try and to punish non-Indians ..."
+  - text: "Indian tribes do not have inherent jurisdiction to try and to punish non-Indians."
     pinpoint: "p. 212"
-  - text: "Indian tribes are prohibited from exercising both those powers of autonomous states that are expressly terminated by Congress and those powers \"inconsistent with their status\" ..."
+  - text: "Indian tribes are prohibited from exercising both those powers of autonomous states that are expressly terminated by Congress and those powers \"inconsistent with their status.\""
     pinpoint: "p. 208"
   treatment: |-
     Congress partly restored jurisdiction over non-Indians: the Violence Against Women Reauthorization Act of 2013 amended the Indian Civil Rights Act to authorize "special domestic violence criminal jurisdiction" (25 U.S.C. § 1304), as described in *United States v. Bryant* (2016) [@united-states-v-bryant] and recorded in [@violence-against-women-reauthorization-act-2013-title-ix]. The 2022 reauthorization expanded the covered crimes [@violence-against-women-act-reauthorization-act-2022-title-viii].

@@ -1,0 +1,37 @@
+key: the-sudden-appearance
+name: The Sudden Appearance
+lead: Warrior of the Great and Little Osage nation of Indians, as listed in the Treaty with the Osage, 1808. Signed three treaties with the United States, 1808–1818.
+living: false
+names:
+- name: Gri na che
+  note: as the Treaty with the Osage, 1808 prints it
+  source: treaty-with-the-osage-1808
+  where: 7 Stat. 110
+- name: Greenachee
+  note: as the Treaty with the Osage, 1815 prints it
+  source: treaty-with-the-osage-1815
+  where: 7 Stat. 134
+- name: Grinachie
+  note: as the Treaty with the Osage, 1818 prints it
+  source: treaty-with-the-osage-1818
+  where: 7 Stat. 184
+nations:
+- nation: the-osage-nation
+  named_as: Great and Little Osage nation of Indians
+  source: treaty-with-the-osage-1808
+  where: 7 Stat. 110
+cases: []
+events:
+- when: Nov. 10, 1808
+  text: Signed the Treaty with the Osage, 1808, for the Great and Little Osage nation of Indians, listed as warrior.
+  source: treaty-with-the-osage-1808
+  where: 7 Stat. 110
+- when: Sept. 12, 1815
+  text: Signed the Treaty with the Osage, 1815, for the The Little Osages.
+  source: treaty-with-the-osage-1815
+  where: 7 Stat. 134
+- when: Sept. 25, 1818
+  text: Signed the Treaty with the Osage, 1818, for the Great and Little Osage nation.
+  source: treaty-with-the-osage-1818
+  where: 7 Stat. 184
+checked: '2026-11-27'

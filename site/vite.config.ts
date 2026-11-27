@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import adapter from '@sveltejs/adapter-cloudflare';
@@ -8,21 +8,26 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, type Plugin } from 'vite';
 import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
-import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
+import { keptChanges, mergeChanges, parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
-import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, everyOpinionList, everyRecordBox, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
+import { citationFileCount, citationFileNumber, citationFilePath, citationTextsPath, plainCitation } from './src/lib/essay-citation-files.ts';
+import { caseNames, essayRecords, essaysInGit, everyBoxFact, everyFullCitation, everyOpinionList, everyRecordBox, glossaryTerms, spellingWords, type EssayRecord } from './src/lib/server/essay-library.ts';
+import { builtDataFolder, copyFiles, copyMovesFile, restrictableCopiesFile, textLinkFiles, essayCaseNamesFile, essayRecordFiles, privateFilePath, spreadFilePath, spreadRecords, type SpreadFiles } from './src/lib/built-files.ts';
+import type { StoredCopy } from './src/lib/server/copy-list.ts';
 import { caseLinks } from './src/lib/server/case-previews.ts';
+import { textLinkIndex } from './src/lib/server/text-link-index.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
 import { nationIndexRows } from './src/lib/server/nation-index.ts';
 import { followableBuild } from './src/lib/server/followable-build.ts';
 import { historyBuild } from './src/lib/server/page-history-build.ts';
-import { servablePortraits } from './src/lib/server/supreme-court-people.ts';
+import { servablePortraits } from './src/lib/server/supreme-court-pictures.ts';
 import {
 	essaysForReview,
 	glossary,
 	glossaryForReview,
 	nations,
 	nationsForReview,
+	copyMoves,
 	publicCopies,
 	servableImages,
 	sources,
@@ -32,8 +37,10 @@ import { isoDate, storyIsShown, storySourceKeys } from './src/lib/story-visibili
 import { directoryNameOf, sourceKindOf } from './src/lib/address-book-sync.ts';
 import { markSiteText, type SiteTextEntry } from './src/lib/site-text-markers.ts';
 import { copyRestriction } from './src/lib/nation-restrictions.ts';
+import { copyFileNames } from './src/lib/server/copy-lists.ts';
 import { installCandidates, readerToolFiles, type ManifestChunk } from './src/lib/offline-shell.ts';
 import { loadPublishedSiteText, siteTextCatalog } from './src/lib/server/site-text-build.ts';
+import { loadLiveChanges, loadRepositoryHistory } from './src/lib/server/recent-changes-build.ts';
 import { publishedRecordText, recordTextCatalog, usePublishedRecordText } from './src/lib/server/record-text-build.ts';
 
 const designTokensPath = fileURLToPath(new URL('./design-tokens.json', import.meta.url));
@@ -42,6 +49,8 @@ const siteFolder = fileURLToPath(new URL('.', import.meta.url));
 // The site's wording as published from the website (docs/site-text.md), read
 // once before anything is built.
 const publishedSiteText = await loadPublishedSiteText(siteFolder);
+const liveChanges = await loadLiveChanges(siteFolder);
+const repositoryHistory = loadRepositoryHistory();
 const publishedSiteTextWords = new Map(Object.entries(publishedSiteText.texts));
 // The parts of case and law boxes that can be edited the same way ("Record
 // text"). Their catalog is read from the records before any published words
@@ -286,10 +295,10 @@ const portraitsModule = 'virtual:portraits';
 const resolvedPortraitsModule = `\0${portraitsModule}`;
 
 /**
- * Lists the portraits of Justices and Presidents the Worker may serve
+ * Lists the pictures of Justices, Presidents and Courts the Worker may serve
  * (src/routes/supreme-court/portraits), as a small module bundled into the
- * Worker: only portraits whose license allows showing them, each with the
- * SHA-256 of the reviewed copy.
+ * Worker: only pictures checked by hand (content/supreme-court/pictures.yaml),
+ * each with the SHA-256 of the reviewed copy.
  */
 function portraitList(): Plugin {
 	return {
@@ -304,30 +313,55 @@ function portraitList(): Plugin {
 	};
 }
 
-const publicCopiesModule = 'virtual:public-copies';
-const resolvedPublicCopiesModule = `\0${publicCopiesModule}`;
+/** Every copy the Worker may serve, worked out once for the whole build. */
+let servedCopies: Record<string, StoredCopy> | undefined;
+const servedCopiesOnce = () => {
+	if (servedCopies) return servedCopies;
+	// The name a reader saves each file under: its title rather than the code its key ends in (src/lib/readable-file-names.ts).
+	const names = copyFileNames();
+	servedCopies = Object.fromEntries(
+		publicCopies().map((copy) => {
+			const { key, mediaType, sha256, bytes, links, charset } = copy;
+			// A nation's law or opinion carries its kind and nations, so the Worker can follow the nation's choices (src/lib/nation-restrictions.ts).
+			const restrict = copyRestriction(copy);
+			const name = names.get(key);
+			return [key, { mediaType, sha256, bytes, links, ...(charset ? { charset } : {}), ...(name ? { name } : {}), ...(restrict ? { restrict } : {}) }];
+		})
+	);
+	return servedCopies;
+};
+let movedCopies: Record<string, string> | undefined;
+const copyMovesOnce = () => (movedCopies ??= copyMoves());
+let everyTextLink: Record<string, string> | undefined;
+/** The pages a citation inside a document's text links to (src/lib/server/text-link-index.ts), worked out once. */
+const textLinksOnce = () => (everyTextLink ??= textLinkIndex());
+const restrictableCopiesOnce = () => Object.entries(servedCopiesOnce()).flatMap(([key, copy]) => (copy.restrict ? [{ key, restrict: copy.restrict }] : []));
 
 /**
- * Lists the copies of public documents the Worker may serve at /copies/, as a
- * small module bundled into the Worker: only capture index rows marked for
- * redistribution (src/lib/public-copies.ts). A file left off this list is
- * never served, whatever the private bucket holds.
+ * The copies of public documents the Worker may serve at /copies/: only
+ * capture index rows marked for redistribution (src/lib/public-copies.ts).
+ * A file left off this list is never served, whatever the private bucket
+ * holds. The list is written as private static files, which the Worker
+ * reads when a copy is asked for, and the copies of nations' laws and
+ * court opinions, which follow the nations' choices, as one more
+ * (src/lib/server/copy-list.ts). Until Nov. 27, 2026 it was a module in the
+ * Worker's code, 6 MB of it.
  */
 function publicCopiesList(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:public-copies',
-		resolveId(identifier) {
-			return identifier === publicCopiesModule ? resolvedPublicCopiesModule : undefined;
+		buildStart() {
+			writeBuiltData(copyFiles.name, servedCopiesOnce());
+			writeBuiltData(restrictableCopiesFile, restrictableCopiesOnce());
+			writeBuiltData(copyMovesFile, copyMovesOnce());
+			writeBuiltData(textLinkFiles.name, textLinksOnce());
 		},
-		load(identifier) {
-			if (identifier !== resolvedPublicCopiesModule) return undefined;
-			const copies = publicCopies().map((copy) => {
-				const { key, mediaType, sha256, bytes, links } = copy;
-				// A nation's law or opinion carries its kind and nations, so the Worker can follow the nation's choices (src/lib/nation-restrictions.ts).
-				const restrict = copyRestriction(copy);
-				return restrict ? { key, mediaType, sha256, bytes, links, restrict } : { key, mediaType, sha256, bytes, links };
-			});
-			return `export const publicCopies = ${JSON.stringify(copies)};`;
+		generateBundle() {
+			if (this.environment.name !== 'client') return;
+			emitSpreadFiles(this, copyFiles, servedCopiesOnce());
+			this.emitFile({ type: 'asset', fileName: privateFilePath(restrictableCopiesFile).slice(1), source: JSON.stringify(restrictableCopiesOnce()) });
+			this.emitFile({ type: 'asset', fileName: privateFilePath(copyMovesFile).slice(1), source: JSON.stringify(copyMovesOnce()) });
+			emitSpreadFiles(this, textLinkFiles, textLinksOnce());
 		}
 	};
 }
@@ -371,30 +405,84 @@ function sourceCitations(): Plugin {
 const essayLibraryModule = 'virtual:essay-library';
 const resolvedEssayLibraryModule = `\0${essayLibraryModule}`;
 
+/** Every source's full citation, worked out once for the whole build (about 25 seconds for 22,000 sources). */
+let everyCitation: Record<string, string> | undefined;
+const citationsOnce = () => (everyCitation ??= everyFullCitation());
+let citationsFileWritten = false;
+/** Each case and law box's facts and parts, and each case's page and opinions, by key, worked out once. */
+let everyEssayRecord: Record<string, EssayRecord> | undefined;
+const essayRecordsOnce = () =>
+	(everyEssayRecord ??= essayRecords({ facts: everyBoxFact(), links: caseLinks(), opinions: everyOpinionList(), boxes: everyRecordBox() }));
+let everyCaseName: ReturnType<typeof caseNames> | undefined;
+const caseNamesOnce = () => (everyCaseName ??= caseNames());
+
+/** Writes data for the pages built ahead of time and the development server (src/lib/server/built-files.ts). */
+function writeBuiltData(name: string, data: unknown): void {
+	const file = path.join(siteFolder, builtDataFolder, `${name}.json`);
+	mkdirSync(path.dirname(file), { recursive: true });
+	writeFileSync(file, JSON.stringify(data));
+}
+
+/** Writes records spread over a set of private static files, for the Worker (src/lib/built-files.ts). */
+function emitSpreadFiles(context: { emitFile: (file: { type: 'asset'; fileName: string; source: string }) => unknown }, set: SpreadFiles, records: Record<string, unknown>): void {
+	spreadRecords(set, records).forEach((file, number) => {
+		context.emitFile({ type: 'asset', fileName: spreadFilePath(set, number).slice(1), source: JSON.stringify(file) });
+	});
+}
+
 /**
  * What the Worker needs to render essays, which live in the private bucket
- * and are rendered on request (docs/editing.md): the full citation of every
- * source record, so an essay can cite any of them; the glossary terms; and
- * the essays as git holds them, which the workspace can bring into the
- * bucket as a new version (src/lib/server/essay-library.ts).
+ * and are rendered on request (docs/editing.md): the glossary terms, the
+ * words the spelling check accepts, and the essays as git holds them, which
+ * the workspace can bring into the bucket as a new version
+ * (src/lib/server/essay-library.ts).
+ *
+ * The full citation of every source record is not in the module: about 51 MB
+ * by Nov. 26, 2026, it took the Worker past Cloudflare's 64 MiB limit
+ * (src/lib/essay-citation-files.ts). The build writes the citations instead
+ * as static files under /page-data/essay-citations/, which the Worker reads
+ * when it draws a page, and as one file in .svelte-kit/ for the pages built
+ * ahead of time (src/lib/server/essay-citations.ts). The facts and parts of
+ * every case and law box, each case's page and opinions, and every case's
+ * name (about 4 MB by Nov. 27, 2026) are written the same way, as private
+ * static files (src/lib/built-files.ts).
  */
 function essayLibrary(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:essay-library',
+		buildStart() {
+			// For the pages built ahead of time and the development server, which read every citation from here.
+			if (citationsFileWritten) return;
+			citationsFileWritten = true;
+			const file = path.join(siteFolder, '.svelte-kit', 'essay-citations.json');
+			mkdirSync(path.dirname(file), { recursive: true });
+			writeFileSync(file, JSON.stringify(citationsOnce()));
+			writeBuiltData(essayRecordFiles.name, essayRecordsOnce());
+			writeBuiltData(essayCaseNamesFile, caseNamesOnce());
+		},
+		generateBundle() {
+			if (this.environment.name !== 'client') return;
+			emitSpreadFiles(this, essayRecordFiles, essayRecordsOnce());
+			this.emitFile({ type: 'asset', fileName: privateFilePath(essayCaseNamesFile).slice(1), source: JSON.stringify(caseNamesOnce()) });
+			const files: Record<string, string>[] = Array.from({ length: citationFileCount }, () => ({}));
+			const texts: [string, string][] = [];
+			for (const [key, html] of Object.entries(citationsOnce())) {
+				files[citationFileNumber(key)][key] = html;
+				texts.push([key, plainCitation(html)]);
+			}
+			files.forEach((citations, number) => {
+				this.emitFile({ type: 'asset', fileName: citationFilePath(number).slice(1), source: JSON.stringify(citations) });
+			});
+			this.emitFile({ type: 'asset', fileName: citationTextsPath.slice(1), source: JSON.stringify(texts) });
+		},
 		resolveId(identifier) {
 			return identifier === essayLibraryModule ? resolvedEssayLibraryModule : undefined;
 		},
 		load(identifier) {
 			if (identifier !== resolvedEssayLibraryModule) return undefined;
 			return [
-				`export const essayCitations = ${JSON.stringify(everyFullCitation())};`,
 				`export const essayTerms = ${JSON.stringify(glossaryTerms())};`,
-				`export const essayBoxFacts = ${JSON.stringify(everyBoxFact())};`,
 				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`,
-				`export const essayCaseNames = ${JSON.stringify(caseNames())};`,
-				`export const essayCaseLinks = ${JSON.stringify(caseLinks())};`,
-				`export const essayOpinions = ${JSON.stringify(everyOpinionList())};`,
-				`export const essayRecordBoxes = ${JSON.stringify(everyRecordBox())};`,
 				`export const essaySpellingWords = ${JSON.stringify(spellingWords())};`
 			].join('\n');
 		}
@@ -432,20 +520,33 @@ const resolvedBuildModule = `\0${buildModule}`;
  * WORKERS_CI_COMMIT_SHA; a build on a computer has none. A review in the
  * workspace records it, so a sign-off names the exact text it approved.
  *
- * Also the pull requests merged most recently, read from git, which
- * /edition.json serves so the update card can list what an update brings
- * (src/lib/recent-changes.ts). A shallow clone gives fewer; no git gives none.
+ * Also the pull requests merged most recently, which /edition.json serves
+ * so the update card can list what an update brings
+ * (src/lib/recent-changes.ts): those git names, those the repository's
+ * history names (Cloudflare's shallow clone names only the latest, and it
+ * skips builds a newer push overtakes), and those the live site already
+ * lists (src/lib/server/recent-changes-build.ts). Changes the live site
+ * lists that are newer than this build's own are left out, so a rebuild of
+ * an older commit does not claim them.
  */
-function recentChanges(): Change[] {
+let builtChanges: { own: Change[]; all: Change[] } | undefined;
+function recentChanges(): { own: Change[]; all: Change[] } {
+	if (builtChanges) return builtChanges;
+	let fromGit: Change[] = [];
 	try {
-		const log = execFileSync('git', ['log', '--first-parent', '-n', '60', '--format=%cI%x09%s', 'HEAD'], {
+		const log = execFileSync('git', ['log', '--first-parent', '-n', String(keptChanges), '--format=%cI%x09%s', 'HEAD'], {
 			encoding: 'utf8',
 			stdio: ['ignore', 'pipe', 'ignore']
 		});
-		return parseGitLog(log);
+		fromGit = parseGitLog(log);
 	} catch {
-		return [];
+		// No git: only the repository's history and what the live site lists.
 	}
+	const own = mergeChanges([fromGit, parseGitLog(repositoryHistory)]);
+	const end = own[0] ? Date.parse(own[0].merged) : Infinity;
+	const carried = liveChanges.filter((change) => Date.parse(change.merged) <= end);
+	builtChanges = { own, all: mergeChanges([own, carried]) };
+	return builtChanges;
 }
 
 const sponsorshipCountsModule = 'virtual:sponsorship-counts';
@@ -559,18 +660,33 @@ const siteTextMarkers = {
 	}
 };
 
+/**
+ * The newest pull request this build has, for the reader's page
+ * (virtual:build-change), so the update card lists what a waiting update
+ * adds to it (src/lib/recent-changes.ts, changesSince). It is a separate
+ * module so the page does not carry the whole list.
+ */
+const buildChangeModule = 'virtual:build-change';
+const resolvedBuildChangeModule = `\0${buildChangeModule}`;
+
 function buildInformation(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:build',
 		resolveId(identifier) {
-			return identifier === buildModule ? resolvedBuildModule : undefined;
+			if (identifier === buildModule) return resolvedBuildModule;
+			if (identifier === buildChangeModule) return resolvedBuildChangeModule;
+			return undefined;
 		},
 		load(identifier) {
+			if (identifier === resolvedBuildChangeModule) {
+				const newest = recentChanges().own[0];
+				return `export const newestChange = ${JSON.stringify(newest ? { number: newest.number, merged: newest.merged } : null)};`;
+			}
 			if (identifier !== resolvedBuildModule) return undefined;
 			const commit = process.env.WORKERS_CI_COMMIT_SHA ?? process.env.GITHUB_SHA ?? '';
 			return [
 				`export const buildCommit = ${JSON.stringify(commit.slice(0, 40))};`,
-				`export const recentChanges = ${JSON.stringify(recentChanges())};`
+				`export const recentChanges = ${JSON.stringify(recentChanges().all)};`
 			].join('\n');
 		}
 	};
@@ -606,8 +722,35 @@ function offlineFiles(): Plugin {
 	};
 }
 
+/** Libraries only the browser runs: the map (MapLibre and its basemap styles), the video room's kit and the spelling checker. */
+const browserOnlyLibraries = [/^maplibre-gl(\/|$)/, /^@protomaps\/basemaps$/, /^@cloudflare\/realtimekit(-ui)?(\/|$)/, /^harper\.js(\/|$)/];
+const browserOnlyStub = '\0browser-only-library';
+
+/**
+ * Gives the server build an empty module for each library only the browser
+ * runs. Components load them on demand, after the page has started in the
+ * browser, so the Worker never calls them; but the server build still wrote
+ * them out as chunks, and Cloudflare counts every file of the Worker toward
+ * its 64 MiB limit, about 4.6 MiB of them by Nov. 27, 2026 (tools/check-worker-size.mjs).
+ */
+function browserOnlyInServer(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:browser-only-in-server',
+		enforce: 'pre',
+		resolveId(identifier) {
+			if (this.environment.name !== 'ssr') return undefined;
+			return browserOnlyLibraries.some((pattern) => pattern.test(identifier)) ? browserOnlyStub : undefined;
+		},
+		load(identifier) {
+			if (identifier !== browserOnlyStub) return undefined;
+			return 'throw new Error("This library runs only in the browser.");\nexport default undefined;\n';
+		}
+	};
+}
+
 export default defineConfig({
 	plugins: [
+		browserOnlyInServer(),
 		designTokens(),
 		mapGeometry(),
 		reviewSubjects(),
@@ -650,7 +793,10 @@ export default defineConfig({
 						'unsafe-hashes',
 						scriptHash('this.__e=event'),
 						// Spelling and grammar checking (Harper) and other WebAssembly.
-						'wasm-unsafe-eval'
+						'wasm-unsafe-eval',
+						// Cloudflare Turnstile, the "are you a person?" check on public forms
+						// (src/lib/components/TurnstileCheck.svelte, decision record 0062).
+						'https://challenges.cloudflare.com'
 					],
 					// The map (MapLibre) and the video call kit start workers from blob: addresses.
 					'worker-src': ['self', 'blob:'],

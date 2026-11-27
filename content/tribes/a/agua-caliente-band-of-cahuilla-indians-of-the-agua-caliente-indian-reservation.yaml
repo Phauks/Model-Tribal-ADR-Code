@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California (approved by the Secretary of the Interior Apr. 18, 1957)
+  since: '1957-04-18'
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  confidence: medium
+  verification: inferred
+  as_of: '1957-04-18'
+  locator: 1957 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -192,6 +205,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 357247
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Agua Caliente Band of Cahuilla Indians' (Palm Springs)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 53219
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'AGUA CALIENTE BAND OF CAHUILLA INDIANS' (UEI NHDLABSN8LH8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'AGUA CALIENTE BAND OF CAHUILLA INDIANS'.
 governance:
 - aspect: form
   value: Constitution and By-Laws
@@ -598,6 +631,22 @@ jurisdiction:
     names were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image
     (the govinfo PDF has no text layer for the table); verification level unchanged because the name was
     not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Agua Caliente Band of Cahuilla Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Feb. 9, 2016, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-2016-02-09
+  confidence: high
+  verification: inferred
+  as_of: '2016-02-09'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2016
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Agua Caliente Band of Cahuilla Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Sept. 23, 2014, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-2014-09-23
+  confidence: high
+  verification: inferred
+  as_of: '2014-09-23'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2014
 nearby_state_courts:
 - state: CA
   county: Riverside County

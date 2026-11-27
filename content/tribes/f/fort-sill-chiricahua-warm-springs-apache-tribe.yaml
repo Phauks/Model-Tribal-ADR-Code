@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7235 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7235 (entry "Fort Still Apache Tribe of Oklahoma")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Fort Still Apache Tribe of Oklahoma." The entry is matched to the nation by name.
 states:
 - state: OK
   presence: government-office
@@ -235,6 +245,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: 'Page: Language Program ''designed to preserve and teach our traditional Chiricahua language''.'
+language_programs:
+- name: Cultural and Language Program
+  link: https://fortsillapache-nsn.gov/programs/cultural-language-program/
+  run_by: nation
+  source: fortsillapache-nsn-programs-cultural-language-program
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: page heading
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Southern Plains Regional Office
@@ -268,6 +287,44 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Fort Sill Apache Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2005
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Fort Sill Apache Tribe' (Southern Plains Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Fort Sill Apache Tribe'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 127124
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Fort Sill Apache Tribe' (Apache)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 882917
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'FORT SILL APACHE TRIBE' (UEI ET84X6MSYG77), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'FORT SILL APACHE TRIBE'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 61935
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'FORT SILL APACHE TRIBE' (UEI ET84X6MSYG77), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'FORT SILL APACHE TRIBE'.
 governance:
 - aspect: form
   value: Approved under the Act of June 26, 1936
@@ -692,6 +749,83 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Fort Sill Apache Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46211).
+  source: oklahoma-filing-46211
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46211
+  note: 'From the register line: “Ft. Sill Apache Tribe and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Burn ban agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46212).
+  source: oklahoma-filing-46212
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46212
+  note: 'From the register line: “Ft. Sill Apache Tribe and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 30, 2017 (file 48836).
+  source: oklahoma-filing-48836
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 48836
+  note: 'From the register line: “Amendment to Tobacco Tax Compact between the State of Oklahoma and the Ft. Sill Apache Tribe”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Second amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 20, 2021 (file 50821).
+  source: oklahoma-filing-50821
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 50821
+  note: 'From the register line: “Second (2nd) Amendment to Tobacco Tax Compact between the State of Oklahoma and the Ft. Sill Apache Trib”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Third amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 29, 2021 (file 51269).
+  source: oklahoma-filing-51269
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 51269
+  note: 'From the register line: “Third Amendment to Tobacco Tax Compact between the State of Oklahoma and the Ft. Sill Apache Tribe”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Restoration of and supplemental term to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 3, 2023 (file 52727).
+  source: oklahoma-filing-52727
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52727
+  note: 'From the register line: “Tribal resolution of the Fort Sill Apache tribe general council approving the restoration of, and supplemental term to, the tobacco products excise tax compact term as passed by the Oklahoma Legislature”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 23, 2024 (file 53447).
+  source: oklahoma-filing-53447
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53447
+  note: 'From the register line: “Tobacco Tax Compact between the State of Oklahoma and the Sill Apache Tribe of Oklahoma”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: NM
   county: Luna County

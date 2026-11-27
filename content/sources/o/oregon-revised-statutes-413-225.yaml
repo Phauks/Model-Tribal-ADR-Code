@@ -1,0 +1,59 @@
+key: oregon-revised-statutes-413-225
+kind: state-statute
+citation:
+  type: legislation
+  title: Grants to safety net providers; evaluation of implementation of Cover All People program; rules
+  title-short: Or. Rev. Stat. § 413.225
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '413.225'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 2009
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors413.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors413.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-413-017
+- oregon-revised-statutes-413-032
+- oregon-revised-statutes-413-166
+- oregon-revised-statutes-413-234
+- oregon-revised-statutes-413-241
+- oregon-revised-statutes-413-256
+- oregon-revised-statutes-413-572
+- oregon-revised-statutes-413-600
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 413.225 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 413.225 (2025). History: [2009 c.867 §33; 2009 c.828 §56; 2013 c.683 §2; 2019 c.536 §3; 2019 c.601 §2; 2021 c.554 §4; 2025 c.624 §43]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; tribal; tribe); AI reader''s verdict incidental: School-based health center may be on grounds of tribe-operated school. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; tribal; tribe'

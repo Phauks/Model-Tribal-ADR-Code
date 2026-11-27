@@ -26,6 +26,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Oto, June 24, 1817, 7 Stat. 154
+  since: '1817-06-24'
+  source: treaty-with-the-oto-1817
+  confidence: medium
+  verification: inferred
+  as_of: '1817-06-24'
+  locator: p. 139 (Treaty with the Oto, 1817; Kappler header "June 24, 1817. | 7 Stat., 154. | Proclamation, Dec. 26, 1817.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Ottoe; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OK
   presence: government-office
@@ -197,6 +207,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Oklahoma City Area
   note: Listed as "Otoe-Missouria Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 499628
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Otoe-Missouria Tribe' (Red Rock)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 858122
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'OTOE-MISSOURIA TRIBE' (UEI KRYSABHAADZ9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'OTOE-MISSOURIA TRIBE'.
 governance:
 - aspect: form
   value: Adopted under the Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936
@@ -725,6 +755,105 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Otoe-Missouria Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Apr. 3, 2000 (file 36530).
+  source: oklahoma-filing-36530
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 36530
+  note: 'From the register line: “Otoe-Missouria Tribe State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 21, 2008 (file 42995).
+  source: oklahoma-filing-42995
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 42995
+  note: 'From the register line: “The Otoe-Missouria Tribe of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46225).
+  source: oklahoma-filing-46225
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46225
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 21, 2013 (file 46248).
+  source: oklahoma-filing-46248
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46248
+  note: 'From the register line: “The Otoe-Missouria Tribe of Indians and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 15, 2017 (file 48857).
+  source: oklahoma-filing-48857
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 48857
+  note: 'From the register line: “Amendment toTribal Tobacco Tax Compact between the State of Oklahoma and the Otoe-Missouria Tribe”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 21, 2020 (file 50662).
+  source: oklahoma-filing-50662
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 50662
+  note: 'From the register line: “Amendment to Tobacco Tax Compact Between the State of Oklahoma and the Otoe-Missouria Tribe”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 31, 2021 (file 50968).
+  source: oklahoma-filing-50968
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 50968
+  note: 'From the register line: “Amendment to Tobacco Tax Compact between the State of Oklahoma and the Otoe-Missouria Tribe”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Acceptance of supplemental term to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 18, 2023 (file 52689).
+  source: oklahoma-filing-52689
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52689
+  note: 'From the register line: “A Resolution to accept supplemental term to the tobacco tax compact between the state of Oklahoma and the Otoe-Missouria Tribe Senate Bill 26x”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 7, 2024 (file 52988).
+  source: oklahoma-filing-52988
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52988
+  note: 'From the register line: “Resolution to Accept the proposed Tobacco Tax Compact between the State of Oklahoma and the Otoe-Missouria Tribe”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Noble County

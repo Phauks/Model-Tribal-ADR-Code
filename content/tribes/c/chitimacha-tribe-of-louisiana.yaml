@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7235 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7235 (entry "Chitimacha Tribe of Louisiana")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Chitimacha Tribe of Louisiana." The entry is matched to the nation by name.
 states:
 - state: LA
   presence: government-office
@@ -200,6 +210,32 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Chitimacha Tribe of Louisiana".
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 1998
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Nashville Area, row 'Chitimacha Tribe of Louisiana'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 325427
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: LA, row 'Chitimacha Tribe' (Charenton)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 1933966
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'CHITIMACHA TRIBE OF LOUISIANA' (UEI Z1Q2STNKV4V5), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Indian Reorganization Act of June 18, 1934, Section 16

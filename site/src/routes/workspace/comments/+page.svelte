@@ -11,11 +11,11 @@
 </script>
 
 <svelte:head>
-	<title>Comments for you · Workspace · Model Tribal ADR Code</title>
+	<title>Comments for you · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Comments for you</h1>
-<p class="lead">Comments that mention you, and comments of yours someone has answered. Each opens the essay at the comment.</p>
+<p class="lead">Comments that mention you, and comments of yours someone has answered. Each opens the page at the comment.</p>
 
 {#if data.threads.length === 0}
 	<p class="muted">Nothing is waiting on you.</p>

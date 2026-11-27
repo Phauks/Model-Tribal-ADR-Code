@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Native nations · Model Tribal ADR Code</title>
+	<title>Native nations · Tribal Law Project</title>
 </svelte:head>
 
 <h1>
@@ -26,7 +26,6 @@
 
 {#each data.otherGroups as group (group.entityType)}
 	<section aria-labelledby="group-{group.entityType}">
-		<h2 id="group-{group.entityType}">{group.label} <CountBadge count={group.rows.length} /></h2>
-		<NationTable {group} identifier="nations-{group.entityType}" count={false} />
+		<NationTable {group} identifier="nations-{group.entityType}" headingLevel={2} headingIdentifier="group-{group.entityType}" />
 	</section>
 {/each}

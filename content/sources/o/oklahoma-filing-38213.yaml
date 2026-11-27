@@ -1,0 +1,53 @@
+key: oklahoma-filing-38213
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Muscogee (Creek) Nation, United States and City of Okmulgee: cross-deputization addendum'
+  author:
+  - literal: The Muscogee Nation
+  - literal: United States
+  - literal: City of Okmulgee
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 38213
+  URL: https://execleg.sos.ok.gov/documents/filelog/57149.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2002
+      - 7
+      - 24
+original_link: https://execleg.sos.ok.gov/documents/filelog/57149.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- the-muscogee-nation
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- cross-deputization
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 38213, filed July 24, 2002. The register''s title reads “Agreement Tribal Cross Deputization Addendum” and its description “United States, Muscogee (Creek) Nation, City of Okmulgee”. The register line reads as an addendum adding a party to an existing agreement. The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date. The reader noted: Parent agreement not named in text.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

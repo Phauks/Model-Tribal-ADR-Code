@@ -6,7 +6,7 @@ import { error, json } from '@sveltejs/kit';
 import { siteTextSubject } from '#lib/permissions.ts';
 import { requireDocumentLevel } from '#lib/server/access.ts';
 import { recordPiece } from '#lib/server/record-text.ts';
-import { pieceStates, saveVersion, SiteTextProblem } from '#lib/server/site-text.ts';
+import { pieceStates, saveVersion, SiteTextProblem, waitingCount } from '#lib/server/site-text.ts';
 import { catalogByKey } from '#lib/server/site-text-catalog.ts';
 import { requirePersonForData, storage } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
@@ -17,7 +17,7 @@ export const POST: RequestHandler = async (event) => {
 	const person = requirePersonForData(event);
 	const { database } = storage(event);
 	await requireDocumentLevel(event, database, siteTextSubject, 'contribute');
-	const body = (await event.request.json().catch(() => null)) as { key?: unknown; words?: unknown; page?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON names no text, which is refused just below with 409 */ null)) as { key?: unknown; words?: unknown; page?: unknown } | null;
 	const entry = typeof body?.key === 'string' ? catalogByKey().get(body.key) : undefined;
 	if (!entry) error(409, 'This text is no longer on the site. Reload the page and try again.');
 	const words = body?.words === null ? null : typeof body?.words === 'string' ? body.words : undefined;
@@ -35,8 +35,8 @@ export const POST: RequestHandler = async (event) => {
 			key: entry.key,
 			published: state?.published ?? null,
 			draft: state?.draft ? { words: state.draft.words, personName: state.draft.personName, createdAt: state.draft.createdAt } : null,
-			record: recordPiece(entry, state),
-			waiting: [...states.values()].filter((each) => each.draft).length
+			record: await recordPiece(entry, state),
+			waiting: waitingCount(states, catalogByKey())
 		},
 		{ headers: { 'cache-control': 'no-store' } }
 	);

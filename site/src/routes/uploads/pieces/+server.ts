@@ -18,7 +18,7 @@ export const POST: RequestHandler = (event) =>
 	answering(async () => {
 		const account = senderOf(event);
 		const { database, bucket } = storage(event);
-		const body = (await event.request.json().catch(() => null)) as Record<string, unknown> | null;
+		const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as Record<string, unknown> | null;
 		if (!body || typeof body !== 'object') error(400, 'Send the file’s name and size.');
 		// A file from the pull list, sent by a workspace editor: no questions, no per-minute limit (docs/uploads.md, "Intake").
 		const pulled = body.pulled === true;

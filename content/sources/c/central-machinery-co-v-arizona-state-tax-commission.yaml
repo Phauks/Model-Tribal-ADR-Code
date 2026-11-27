@@ -112,6 +112,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=448%20U.S.%20160
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1980-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-302.mp3
+  catalog: https://catalog.archives.gov/id/102048684
+  whole_session: true
+  duration_seconds: 14284
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-302.mp3
+    checksum: 530bcecc00f9df18f8d907a245d431e76d73e9602ce8c0af893bc93cc3a0c1b9
+    media_type: audio/mpeg
+    bytes: 228547728
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 47 Fed. Reg. 53130, 53134 (Nov. 24, 1982)
+  since: '1982-11-24'
+  source: bia-recognized-entities-1982
+  confidence: medium
+  verification: inferred
+  as_of: '1982-11-24'
+  locator: 47 Fed. Reg. 53134 (entry "Knik Village.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Knik Village." The entry is matched to the nation by name.
 states:
 - state: AK
   presence: government-office
@@ -183,6 +193,68 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Knik Tribe".'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2009
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Knik Tribal Council' (Alaska Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Knik Tribal Council'.
+- program: indian-health-service-self-governance-compact
+  since: 2009
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Alaska Area, row 'Knik Tribal Council'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Knik Tribal Council'.
+- program: pl-102-477-plan
+  start: '2025-10-01'
+  end: '2030-09-30'
+  programs_included:
+  - ''
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Title IV-B Subpart 1 – Stephanie Tubbs Jones Child Welfare Services Program
+  - Title IV-B Subpart 2 – MaryLee Allen Promoting Safe and Stable Families Program
+  - Job Placement and Training
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Knik Tribe'; PL102_477_PartnerEnrollment, its 7 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2785070
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Knik' (Wasilla)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Knik'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 7477545
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'KNIK TRIBE' (UEI T66QMVWRG4L7), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 110714
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'KNIK TRIBE' (UEI T66QMVWRG4L7), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Adopted by Knik Village Council, subject to voter ratification

@@ -1,0 +1,50 @@
+key: south-carolina-code-62-5-101
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions and use of terms
+  title-short: S.C. Code Ann. § 62-5-101
+  container-title: Code of Laws of South Carolina 1976
+  container-title-short: S.C. Code Ann.
+  section: 62-5-101
+  author:
+  - literal: South Carolina General Assembly
+  issued:
+    date-parts:
+    - - 1986
+  URL: https://www.scstatehouse.gov/code/t62c005.php
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.scstatehouse.gov/code/t62c005.php
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: S.C. Code Ann. § 62-5-101 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: SC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: S.C. Code Ann. § 62-5-101 (2025). History: 1986 Act No. 539, SECTION 1; 1990 Act No. 521, SECTION 81; 2008 Act No. 303, SECTION 1, eff June 11, 2008; 2010 Act No. 244, SECTION 24, eff June 7, 2010. Formerly Code 1976 SECTIONS 62-5-101 and 62-5-106, renumbered and amended by 2017 Act No. 87 (S.415), SECTION 5.A, eff January 1, 2019; 2023 Act No. 10 (S.341), SECTION 1, eff May 8, 2023; 2024 Act No. 200 (H.4234), SECTION 1, eff May 21, 2024. Text read from the South Carolina Legislative Services Agency''s page for the section''s chapter of the Code of Laws (scstatehouse.gov/code) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; tribe); AI reader''s verdict incidental: Protective proceedings definition of State includes federally recognized Indian tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; tribe'

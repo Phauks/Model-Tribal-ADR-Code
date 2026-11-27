@@ -90,6 +90,41 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Haaland_v._Brackeen
+argument_audio:
+- kind: argument
+  date: '2022-11-09'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/21-376.mp3
+  duration_seconds: 11540
+  file:
+    storage_key: supreme-court-audio/court/2022/21-376.mp3
+    checksum: c0f9a6b870c19517eba74e497fb8aa5c7c5a2f006318959137b1e3957cfdf296
+    media_type: audio/mpeg
+    bytes: 92327625
+- kind: argument
+  date: '2022-11-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2022_term/267-2282.mp3
+  catalog: https://catalog.archives.gov/id/326769246
+  whole_session: true
+  duration_seconds: 11741
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2282.mp3
+    checksum: b668e7df94746f29e192e67b2c117f230e9df11c06fcb89b35b611a97c05c59b
+    media_type: audio/mpeg
+    bytes: 234811718
+- kind: opinion announcement
+  date: '2023-06-15'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2022_term/267-2320.mp3
+  catalog: https://catalog.archives.gov/id/326769322
+  whole_session: true
+  duration_seconds: 1133
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2320.mp3
+    checksum: 65e4b25abc2a525f35b8a97bcca515ffa68c324d1bc670157ba767700608eb78
+    media_type: audio/mpeg
+    bytes: 22667078
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -147,9 +182,9 @@ case_box:
   holding: |-
     The Court rejected the Article I and anticommandeering challenges to the Indian Child Welfare Act on the merits and held that the individual petitioners and Texas lacked standing to raise the equal-protection and nondelegation challenges.
   quotes:
-  - text: "Our cases leave little doubt that Congress’s power in this field is muscular, superseding both tribal and state authority ..."
+  - text: "Our cases leave little doubt that Congress’s power in this field is muscular, superseding both tribal and state authority."
     pinpoint: "p. 273"
-  - text: "But the bottom line is that we reject all of petitioners’ challenges to the statute, some on the merits and others for lack of standing ..."
+  - text: "But the bottom line is that we reject all of petitioners’ challenges to the statute, some on the merits and others for lack of standing."
     pinpoint: "p. 264"
   topics:
   - "Child welfare"
@@ -157,4 +192,62 @@ case_box:
     title: "*Haaland v. Brackeen* (2023)"
     text: |-
       Upholds the Indian Child Welfare Act, including the role of Tribal courts and Tribal placement preferences.
+  later_cases:
+    checked: 2026-11-20
+    source: westlaw/haaland-v-brackeen-2023-westlaw.pdf
+    list:
+    - treatment: Declined to extend
+      name: In re Marriage of Quijada and Dominguez
+      citation: 550 P.3d 153 (Ariz. 2024)
+    - treatment: Declined to extend
+      name: United States v. Harjo
+      citation: 122 F.4th 1240 (10th Cir. 2024)
+    - treatment: Declined to extend
+      name: Texas v. United States
+      citation: 126 F.4th 392 (5th Cir. 2025)
+    - treatment: Declined to extend
+      name: New York v. Trump
+      citation: 133 F.4th 51 (1st Cir. 2025)
+    - treatment: Declined to extend
+      name: Mast v. A.A.
+      citation: 925 S.E.2d 665 (Va. 2026)
+    - treatment: Distinguished
+      name: Missouri v. Biden
+      citation: 680 F. Supp. 3d 630 (W.D. La. 2023)
+    - treatment: Distinguished
+      name: Timothy B. v. Kinsley
+      citation: 2024 WL 1350071 (M.D.N.C. Mar. 29, 2024)
+    - treatment: Distinguished
+      name: Doe v. Austin
+      citation: 755 F. Supp. 3d 51 (D. Me. 2024)
+    - treatment: Distinguished
+      name: Chamber of Commerce of United States v. Consumer Financial Protection Bureau
+      citation: 767 F. Supp. 3d 357 (N.D. Tex. 2024)
+    - treatment: Distinguished
+      name: New Jersey v. Trump
+      citation: 131 F.4th 27 (1st Cir. 2025)
+    - treatment: Distinguished
+      name: Happel v. Guilford County Board of Education
+      citation: 913 S.E.2d 174 (N.C. 2025)
+    - treatment: Distinguished
+      name: Faulk Company, Inc. v. Becerra
+      citation: 777 F. Supp. 3d 714 (N.D. Tex. 2025)
+    - treatment: Distinguished
+      name: North Dakota v. United States
+      citation: 785 F. Supp. 3d 473 (D.N.D. 2025)
+    - treatment: Distinguished
+      name: Washington v. Trump
+      citation: 145 F.4th 1013 (9th Cir. 2025)
+    - treatment: Distinguished
+      name: Schoenthal v. Raoul
+      citation: 150 F.4th 889 (7th Cir. 2025)
+    - treatment: Distinguished
+      name: Doe v. Trump
+      citation: 157 F.4th 36 (1st Cir. 2025)
+    - treatment: Distinguished
+      name: Ziegenfuss v. Martin
+      citation: 824 F. Supp. 3d 540 (N.D. Tex. 2026)
+    - treatment: Distinguished
+      name: Wisconsinites for Alternatives to Smoking & Tobacco, Inc. v. Casey
+      citation: 172 F.4th 976 (7th Cir. 2026)
 subjects: [family]

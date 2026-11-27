@@ -1,0 +1,64 @@
+key: dunn-and-black-p-s-v-united-states-2007
+kind: federal-case
+citation:
+  type: legal_case
+  title: Dunn & Black, P.S. v. United States
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '492'
+  page: '1084'
+  issued:
+    date-parts:
+    - - 2007
+      - 7
+      - 11
+  URL: https://static.case.law/f3d/492/html/1084-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 05-35766
+original_link: https://static.case.law/f3d/492/html/1084-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2007-03-06'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2007/03/06/05-35766.mp3
+  duration_seconds: 2433
+  file:
+    storage_key: appeals-court-audio/ca9/2007/2007-03-06-05-35766.mp3
+    checksum: 9706425d3a638231485a6c7584875f8c81a2801e96bfe5047393c75763d50f66
+    media_type: audio/mpeg
+    bytes: 19468972
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 492 F.3d 1084. Decided by the United States Court of Appeals for the Ninth Circuit on July 11, 2007. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (immunity of Indian nations in tutelage, cross-claim).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: immunity of Indian nations in tutelage, cross-claim'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

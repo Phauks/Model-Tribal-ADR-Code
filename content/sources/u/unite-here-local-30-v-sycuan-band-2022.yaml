@@ -1,0 +1,71 @@
+key: unite-here-local-30-v-sycuan-band-2022
+kind: federal-case
+citation:
+  type: legal_case
+  title: Unite Here Local 30 v. Sycuan Band
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.4th
+  volume: '35'
+  page: '695'
+  issued:
+    date-parts:
+    - - 2022
+      - 5
+      - 20
+  URL: https://www.courtlistener.com/opinion/6470591/unite-here-local-30-v-sycuan-band/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 21-55017
+original_link: https://www.courtlistener.com/opinion/6470591/unite-here-local-30-v-sycuan-band/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2022-01-10'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2022/01/10/21-55017.mp3
+  duration_seconds: 1948
+  file:
+    storage_key: appeals-court-audio/ca9/2022/2022-01-10-21-55017.mp3
+    checksum: 904a69e082a6f5fee8fa79a5604b39e1498108fe24445459747e9c2bc8f610e6
+    media_type: audio/mpeg
+    bytes: 31165543
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- sycuan-band-of-the-kumeyaay-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: sycuan-band-of-the-kumeyaay-nation
+    named_as: Sycuan Band
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 35 F.4th 695. Decided by the United States Court of Appeals for the Ninth Circuit on May 20, 2022. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 13, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 13
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

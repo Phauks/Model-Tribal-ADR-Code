@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Sept. 22, 1866, 1 Kappler 924
+  since: '1866-09-22'
+  source: executive-order-1866-09-shoalwater-reservation
+  confidence: medium
+  verification: read-in-full
+  as_of: '1866-09-22'
+  locator: 1 Kappler 924
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Shoalwater Reserve, Washington Territory.
 states:
 - state: WA
   presence: government-office
@@ -165,6 +175,50 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Shoalwater Bay Indian Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Shoalwater Bay Indian Tribe (1999)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1997
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Shoalwater Bay Tribe' (Northwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Shoalwater Bay Tribe'.
+- program: indian-health-service-self-governance-compact
+  since: 1999
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Shoalwater Bay Indian Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Shoalwater Bay Indian Tribe'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 343368
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Shoalwater Bay Indian Tribe' (Tokeland)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1923694
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SHOALWATER BAY INDIAN TRIBE OF THE SHOALWATER BAY INDIAN RESERVATION' (UEI DQLDQDFTJMY5), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 3860412
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SHOALWATER BAY INDIAN TRIBE OF THE SHOALWATER BAY INDIAN RESERVATION' (UEI DQLDQDFTJMY5), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution approved by Secretary of the Interior and ratified by voters

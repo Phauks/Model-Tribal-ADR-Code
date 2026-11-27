@@ -16,7 +16,7 @@ import type { ReadingLinks } from '../reading-links.ts';
 import type { StoryRecord } from '../story-visibility.ts';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
 import { parseCsv } from '../csv.ts';
-import { copiesByLink, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
+import { copiesByLink, copyPreference, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
 import type { RecordBox } from '../essays/record-boxes.ts';
 import { applyRecordText, type RecordTextWords } from '../record-text.ts';
 
@@ -98,12 +98,18 @@ export interface SourceRecord {
 		volume?: string;
 		page?: string;
 		number?: string;
+		/** The kind of document, such as "Proposed Finding", "Public comment" or "Petitioner's document". */
+		genre?: string;
 		issued?: { 'date-parts'?: number[][] };
 		URL?: string;
 	};
 	original_link?: string;
+	/** What became of the file at the source's address (schemas/source.schema.json): "removed" when it is no longer there. */
+	history?: { status?: string; last_checked?: string };
 	/** The nations a source is about, by profile id. */
 	tribes?: string[];
+	/** Free tags (schemas/source.schema.json), such as "oklahoma-state-tribal-agreement". */
+	topics?: string[];
 	/** For a court case: each nation it names, how, and in what role (schemas/source.schema.json). */
 	nations_in_case?: NationsInCase;
 	archives?: { link?: string; url?: string; captured?: string }[];
@@ -113,6 +119,10 @@ export interface SourceRecord {
 	case_box?: RecordBox;
 	/** A law's box: what it does, quotations and treatment (src/lib/essays/record-boxes.ts). */
 	law_box?: RecordBox;
+	/** A state statute section's Indian law label and citation (schemas/source.schema.json). */
+	state_law?: { relevance: 'core' | 'incidental'; citation: string; act?: string; page?: number };
+	/** A congressional document's Congress, committees, bills and the laws it is the history of (schemas/source.schema.json). */
+	legislative?: { chamber: string; congress?: number; session?: number; committees?: string[]; bills?: string[]; laws?: string[]; held?: string[]; govinfo_package?: string; crs_status?: string };
 }
 
 let sourceCache: Map<string, SourceRecord> | undefined;
@@ -137,6 +147,30 @@ export function sources(): Map<string, SourceRecord> {
 		if (published) applyRecordText(sourceCache, JSON.parse(readFileSync(published, 'utf8')) as RecordTextWords);
 	}
 	return sourceCache;
+}
+
+let sourcesByNation: { from: Map<string, SourceRecord>; byNation: Map<string, SourceRecord[]> } | undefined;
+
+/**
+ * The source records linked to a nation (their `tribes`), in the order
+ * sources() holds them. Listed for every nation at once: each of some 950
+ * nation pages, and each nation's list of downloads, asks, and going through
+ * every record for each took minutes of the build.
+ */
+export function sourcesOfNation(nationIdentifier: string): SourceRecord[] {
+	const all = sources();
+	if (sourcesByNation?.from !== all) {
+		const byNation = new Map<string, SourceRecord[]>();
+		for (const record of all.values()) {
+			for (const tribe of new Set(record.tribes ?? [])) {
+				const list = byNation.get(tribe);
+				if (list) list.push(record);
+				else byNation.set(tribe, [record]);
+			}
+		}
+		sourcesByNation = { from: all, byNation };
+	}
+	return sourcesByNation.byNation.get(nationIdentifier) ?? [];
 }
 
 /** A source record's file, relative to the repository root, such as content/sources/i/indian-removal-act-1830.yaml. */
@@ -200,10 +234,13 @@ export interface NationRecord {
 	/** Ids of profiles merged into this one; their old page addresses redirect here. */
 	former_ids?: string[];
 	entity_type: string;
+	/** The entity whose entry in the federal list names this band, such as the Minnesota Chippewa Tribe for its six bands. */
+	part_of?: string;
 	names: {
 		official: string;
 		official_source?: string;
-		self_designation?: (CitedFact & { name: string; language_tag?: string })[];
+		self_designation?: (CitedFact & { name: string; language_tag?: string; romanized?: string })[];
+		alternate?: (CitedFact & { name: string })[];
 		former?: (CitedFact & { name: string })[];
 		pronunciation?: (CitedFact & {
 			name: string;
@@ -230,12 +267,28 @@ export interface NationRecord {
 	})[];
 	official_images?: (CitedFact & OfficialImageRecord)[];
 	languages?: (CitedFact & { name?: string })[];
+	/** The nation's own language program, where one is on record (src/lib/server/languages.ts). */
+	language_programs?: (CitedFact & { name: string; link: string; run_by?: string })[];
 	population?: (CitedFact & { count?: number; kind?: string })[];
 	federal_administration?: CitedFact & {
 		bureau_of_indian_affairs_region?: string;
 		bureau_of_indian_affairs_agency?: string;
 	};
 	indian_health_service?: (CitedFact & { area: string; service_unit?: string; operator?: string })[];
+	/** Federal self-governance, self-determination and block grant programs, one fact per program per source (site/src/lib/federal-programs.ts). */
+	federal_programs?: (CitedFact & {
+		program: string;
+		agency?: string;
+		since?: number;
+		start?: string;
+		end?: string;
+		fiscal_year?: number;
+		through?: string;
+		programs_included?: string[];
+		amount?: number;
+		amount_kind?: 'allocation' | 'obligations';
+		detail?: string;
+	})[];
 	government_structure?: (CitedFact & { kind: string; detail?: string })[];
 	/** How the government is set up, one plain fact per item (decision record 0042). */
 	governance?: (CitedFact & { aspect: string; value: string; quote?: string })[];
@@ -557,11 +610,16 @@ let withheldDigests: Set<string> | undefined;
  * Whether a copy belongs to material the site does not publish: a nation whose
  * record is restricted or still waits for the nation's approval, or a document
  * history marked restricted or held for review. A nation's constitution is
- * filed under constitutions/<nation id>/, so the key names its nation too.
+ * filed under constitutions/<nation id>/, so the key names its nation too,
+ * except under constitutions/_unmatched/, where the collection script filed
+ * the scans it could not first place with a nation; their index row names the
+ * nation a reviewer found (13 such scans were hidden until Nov. 27, 2026).
  */
+const unplacedConstitutions = '_unmatched';
 function isWithheld(copy: PublicCopy): boolean {
 	const named = [...copy.nations];
-	if (copy.topic === 'constitutions') named.push(copy.key.split('/')[1] ?? '');
+	const folder = copy.key.split('/')[1] ?? '';
+	if (copy.topic === 'constitutions' && folder !== unplacedConstitutions) named.push(folder);
 	if (named.length === 0) return false;
 	publishedNations ??= new Set(nations().map((record) => record.id));
 	const published = publishedNations;
@@ -586,6 +644,8 @@ function indexedCopies(): PublicCopy[] {
 		const indexPath = 'research/capture-index.csv';
 		const rows = existsSync(path.join(repositoryRoot, indexPath)) ? parseCsv(readText(indexPath)) : [];
 		const namesReplaced = redactedOpinionKeys();
+		const charsets = copyCharsets();
+		const pages = copyPageCounts();
 		indexedCopyCache = rows
 			.filter(
 				(row) =>
@@ -610,7 +670,9 @@ function indexedCopies(): PublicCopy[] {
 				nations: row.nations.split(';').filter(Boolean),
 				rights: row.rights,
 				...(namesReplaced.has(row.key) ? { namesReplaced: true } : {}),
-				records: (row.records ?? '').split(';').filter(Boolean)
+				records: (row.records ?? '').split(';').filter(Boolean),
+				...(charsets.has(row.key) ? { charset: charsets.get(row.key) } : {}),
+				...(pages.has(row.sha256) ? { pages: pages.get(row.sha256) } : {})
 			}))
 			// A redacted opinion never points to the original, which still has the names in it.
 			.map((copy) => (copy.namesReplaced ? { ...copy, links: [] } : copy))
@@ -618,6 +680,70 @@ function indexedCopies(): PublicCopy[] {
 			.sort((first, second) => first.title.localeCompare(second.title));
 	}
 	return indexedCopyCache;
+}
+
+/**
+ * The saved web pages that are not in UTF-8, with their encoding
+ * (research/copy-charsets.csv, written by scripts/captures/check_saved_pages.py
+ * charsets). The Worker names the encoding when it serves a saved page, since
+ * a browser that is not told reads a page with no <meta charset> as
+ * Windows-1252 and garbles its accented letters, dashes and section signs.
+ */
+function copyCharsets(): Map<string, string> {
+	const file = 'research/copy-charsets.csv';
+	if (!existsSync(path.join(repositoryRoot, file))) return new Map();
+	return new Map(
+		parseCsv(readText(file))
+			.filter((row) => /^[a-z0-9-]+$/i.test(row.charset ?? ''))
+			.map((row) => [row.key, row.charset.toLowerCase()])
+	);
+}
+
+/** Court opinions' topics, whose withheld copies are never named, not even to send a reader on. */
+const opinionTopics = new Set(['state-court-opinions', 'caselaw-access-project', 'federal-court-opinions', 'tribal-court-decisions', 'tribal-court-opinions']);
+
+/**
+ * Saved web pages that open another copy of the same document instead, by
+ * key: the copy the site serves of the page's address, when that copy is a
+ * PDF, a text or a picture (copyPreference). A saved page carries the other
+ * site's menus around the text, and some of these are no longer served at all
+ * (the Oklahoma State University pages of executive orders, whose texts are
+ * served under executive-orders/), so an old link to one still reaches the
+ * document.
+ */
+export function copyMoves(): Record<string, string> {
+	const indexPath = 'research/capture-index.csv';
+	if (!existsSync(path.join(repositoryRoot, indexPath))) return {};
+	const served = copiesByLink(publicCopies());
+	const moves: Record<string, string> = {};
+	for (const row of parseCsv(readText(indexPath))) {
+		if (row.media_type !== 'text/html' || row.derived_from || opinionTopics.has(row.topic)) continue;
+		for (const link of row.link.split(/\s+/)) {
+			const matching = linkForMatching(link);
+			const copy = matching ? served.get(matching) : undefined;
+			if (copy && copy.key !== row.key && copyPreference(copy.mediaType) < copyPreference('text/html')) {
+				moves[row.key] = copy.key;
+				break;
+			}
+		}
+	}
+	return moves;
+}
+
+/**
+ * How many pages each PDF has, by SHA-256 (research/copy-pages.csv, written by
+ * scripts/library/count_pages.py), so the Statistics page and nation pages can
+ * give documents and their pages separately (Trevor, Nov. 27, 2026). Empty
+ * when the file is missing.
+ */
+function copyPageCounts(): Map<string, number> {
+	const file = 'research/copy-pages.csv';
+	if (!existsSync(path.join(repositoryRoot, file))) return new Map();
+	return new Map(
+		parseCsv(readText(file))
+			.map((row): [string, number] => [row.sha256, Number(row.pages)])
+			.filter(([, pages]) => pages > 0)
+	);
 }
 
 /**
@@ -667,4 +793,13 @@ export function publicCopyFor(link: string | undefined): PublicCopy | undefined 
 	publicCopyLinks ??= copiesByLink(indexedCopies());
 	const copy = publicCopyLinks.get(matching);
 	return copy && !isWithheld(copy) ? copy : undefined;
+}
+
+/** The SHA-256 of every file in the capture index, for the source watch's known-identifiers index (src/lib/server/watch/known-build.ts). */
+export function captureIndexSha256s(): string[] {
+	const indexPath = 'research/capture-index.csv';
+	if (!existsSync(path.join(repositoryRoot, indexPath))) return [];
+	return parseCsv(readText(indexPath))
+		.map((row) => row.sha256)
+		.filter((sha256) => /^[0-9a-f]{64}$/.test(sha256 ?? ''));
 }

@@ -35,6 +35,7 @@
 	} from '#lib/image-viewer.ts';
 	import { fileSize } from '#lib/public-copies.ts';
 	import { saveFile } from '#lib/save-file.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	const identifier = $props.id();
 	let dialog: HTMLDialogElement | undefined = $state();
@@ -77,8 +78,9 @@
 			if (!answer.ok) return;
 			const blob = await answer.blob();
 			if (item?.file === shown.file) fileFacts = { file: shown.file, name: downloadName(name, shown.file, blob.type), size: fileSize(blob.size) };
-		} catch {
+		} catch (problem) {
 			// Without the facts the line is left out; the picture and its download still work.
+			sendProblem(problem, { code: 'image-viewer.facts' });
 		}
 	}
 
@@ -147,6 +149,7 @@
 			// Inside the dialog, since the page behind it is inert.
 			saveFile(blob, downloadName(title, file, blob.type), dialog ?? document.body);
 		} catch {
+			// expected: the browser downloads the file itself instead.
 			location.href = file;
 		}
 	}
@@ -463,9 +466,9 @@
 		text-decoration: underline;
 	}
 
-	.image-viewer a:focus-visible,
-	.viewer-caption :global(a:focus-visible) {
-		color: var(--focus-text);
+	/* The viewer is dark in both themes, so the focus ring takes its link color. */
+	.image-viewer {
+		--focus-ring: var(--color-viewer-link);
 	}
 
 	@media (forced-colors: active) {

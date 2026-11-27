@@ -157,23 +157,53 @@ export function isAttribution(paragraph: string): boolean {
 }
 
 /**
- * Whether a quotation leaves out words without saying so, by the rule the
- * print build applies to the Foundations chapters: a quotation that starts
- * with a lowercase letter (or a bracketed lowercase change such as "[w]e")
- * needs a leading "... ", and one that does not end in ".", "?" or "!"
- * (perhaps followed by a closing quotation mark or bracket) needs a trailing
- * " ...". Citations after the quoted words are ignored.
+ * Whether a quotation marks words left out at its ends in the Indigo Book
+ * form (R8.3; docs/style-guide.md, "Quotations"). `start` is true when it
+ * begins with "..." or with a lowercase letter (bare or bracketed, "[w]e"):
+ * a quotation that begins after the start of the sentence takes no "..." and
+ * capitalizes its first letter in brackets, "[W]e" (R8.3.2). `end` is true
+ * when it ends in a bare "..." or does not end in ".", "?" or "!" (perhaps
+ * followed by a closing quotation mark or bracket): a sentence cut short ends ". . . ." with the
+ * sentence's own closing mark (R8.3.5). Citations after the quoted words are
+ * ignored.
  */
-export function missingEllipses(quotation: string): { start: boolean; end: boolean } {
+export function quotationEndProblems(quotation: string): { start: boolean; end: boolean } {
 	const text = quotation
 		.replace(/\s*\[@[^\]]*\]\s*$/g, '')
 		.replace(/^[\s"“‘']+/, '')
 		.trim();
 	if (!text) return { start: false, end: false };
-	const startsCut = /^(\.\.\.|…)/.test(text);
-	const start = !startsCut && /^(\[[a-z]|[a-z])/.test(text);
-	const end = !/(\.\.\.|…)$/.test(text) && !/[.?!][\]"”’')]*$/.test(text);
+	const start = /^(\.\.\.|…|\. \. \.)/.test(text) || /^[*_]*(\[[a-z]|[a-z])/.test(text);
+	const end = /(\.\.\.|…|(?<!\. )\. \. \.)$/.test(text) || !/[.?!][\]"”’')]*$/.test(text);
 	return { start, end };
+}
+
+/** Whether a quotation writes an ellipsis as "..." or "…" rather than three spaced periods, ". . ." (Indigo Book R8.3.1). */
+export function unspacedEllipsis(quotation: string): boolean {
+	return /\.\.\.|…/.test(quotation);
+}
+
+/**
+ * The text with each ellipsis written ". . ." (and a closing mark after
+ * one, ". . . .") held together by no-break spaces, joined to the word
+ * before it, so a line never breaks inside it or starts with it.
+ */
+export function bindEllipses(text: string): string {
+	return text.replace(/ ?\. \. \.(?: [.?!])?/g, (ellipsis) => ellipsis.replace(/ /g, '\u00a0'));
+}
+
+/**
+ * Whether a quotation ends its sentence and then adds an ellipsis, as in
+ * "of a ward to his guardian. . . .". Nothing is left out after a sentence's own
+ * period, so the ellipsis is needless (Indigo Book R8.3.7: "When omitting
+ * material following a final punctuation mark, do not use an ellipsis").
+ * Citations after the quoted words are ignored.
+ */
+export function needlessEndEllipsis(quotation: string): boolean {
+	const text = quotation.replace(/\s*\[@[^\]]*\]\s*$/g, '').trim();
+	// "knowledge . . . ." is a sentence cut short, not a sentence that ended.
+	if (/[^\s.]\s+(\. \. \.|\.\.\.|…)\s+[.?!]$/.test(text)) return false;
+	return /[.?!]["”’')\]]*\s*(\.\.\.|…|\. \. \.)$/.test(text);
 }
 
 /**
@@ -189,6 +219,13 @@ export function essayMarkdown({ forEditing = false }: { forEditing?: boolean } =
 		markdown.use(container, name, { validate: (info: string) => pattern.test(info.trim()) });
 	}
 	markdown.disable('replacements');
+	if (!forEditing) {
+		markdown.core.ruler.push('bind_ellipses', (state) => {
+			for (const token of state.tokens) {
+				for (const child of token.children ?? []) if (child.type === 'text') child.content = bindEllipses(child.content);
+			}
+		});
+	}
 	markdown.inline.ruler.before('link', 'term_link', termLinkRule);
 	markdown.inline.ruler.before('link', 'citation', citationRule);
 	return markdown;
@@ -215,10 +252,27 @@ export function frontMatterField(frontMatter: string, name: string): string | un
 		try {
 			return JSON.parse(value) as string;
 		} catch {
+			// expected: a quoted title that is not valid JSON keeps its text between the quotes.
 			return value.slice(1, -1);
 		}
 	}
 	return value.replace(/^'(.*)'$/, '$1').replaceAll("''", "'");
+}
+
+/**
+ * The front matter with one field set to a single line of text, written as a
+ * JSON string (which YAML reads as a quoted string), added at the end when
+ * it is missing, or taken out when the text is empty. A News post's summary
+ * is its `description` (src/lib/server/news-posts.ts).
+ */
+export function setFrontMatterField(frontMatter: string, name: string, value: string): string {
+	// Not trimmed, so a space typed at the end of the box stays while the writer types on; readers' pages trim it.
+	const text = value.replace(/\s+/g, ' ');
+	const line = new RegExp(`^${name}:.*$\\n?`, 'm');
+	if (!text.trim()) return frontMatter.replace(line, '').replace(/\n+$/, '');
+	const field = `${name}: ${JSON.stringify(text)}`;
+	if (line.test(frontMatter)) return frontMatter.replace(new RegExp(`^${name}:.*$`, 'm'), field);
+	return frontMatter.trim() ? `${frontMatter.replace(/\n+$/, '')}\n${field}` : field;
 }
 
 /** Every source key and glossary id an essay uses, to check that each exists before it is saved or published. */

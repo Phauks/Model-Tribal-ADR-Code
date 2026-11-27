@@ -3,7 +3,9 @@ kind: state-statute
 citation:
   type: legislation
   title: Standards for recognizing records and proceedings of tribal courts - Reciprocity
+  title-short: Okla. Stat. tit. 12, § 728
   container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
   volume: '12'
   section: '728'
   author:
@@ -13,30 +15,47 @@ citation:
     - - 1992
       - 9
       - 1
-  URL: https://law.justia.com/codes/oklahoma/title-12/section-12-728/
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=160
   accessed:
     date-parts:
     - - 2026
       - 11
-      - 21
-original_link: https://law.justia.com/codes/oklahoma/title-12/section-12-728/
-retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=160
+retrieved: '2026-11-26'
+archives: []
 history:
   status: live
-  last_checked: '2026-11-21'
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-12-section-1481
+- oklahoma-statutes-title-12-section-1532
+- oklahoma-statutes-title-12-section-20
+- oklahoma-statutes-title-12-section-3251
+- oklahoma-statutes-title-12-section-3402
+- oklahoma-statutes-title-12-section-718a
+state_law:
+  relevance: core
+  citation: Okla. Stat. tit. 12, § 728 (2026)
+  page: 160
 rights:
   status: no-permission-needed
   basis: government-edict
-  basis_note: >-
-    Official state statutes and court rules are not copyrightable under the government edicts doctrine
-    (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)).
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
   redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
 found_in:
-- 2026-11-21-legal-history-and-key-cases
-notes: >-
-  Citations: Okla. Stat. tit. 12, § 728 (Laws 1992, c. 384, § 1, eff. Sept. 1, 1992). Later history: Implemented
-  by Rule 30 of the Rules for District Courts of Oklahoma (standard for recognition of tribal judicial
-  proceedings), not opened. The official OSCN site blocked access (Turnstile challenge), so the text was
-  read via Justia through WebFetch, which returned fragments. Rule 30 was not opened. Westlaw: Pull 12
-  O.S. § 728 and Okla. Dist. Ct. R. 30 on Westlaw; OSCN blocked automated access.
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 12, § 728 (2026). History: Added by Laws 1992, c. 384, § 1, eff. Sept. 1, 1992. Text read from the Legislative Service Bureau''s Title 12 PDF (updated Nov. 12, 2026), page 160. Found by the state statutes pilot (terms: federally recognized indian nation; tribal courts); AI reader''s verdict core: Full faith and credit standards for tribal court judgments. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: federally recognized indian nation; tribal courts'

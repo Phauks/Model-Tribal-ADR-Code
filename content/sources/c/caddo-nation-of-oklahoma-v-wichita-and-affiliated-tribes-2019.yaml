@@ -1,0 +1,72 @@
+key: caddo-nation-of-oklahoma-v-wichita-and-affiliated-tribes-2019
+kind: federal-case
+citation:
+  type: legal_case
+  title: Caddo Nation of Oklahoma v. Wichita and Affiliated Tribes
+  authority: United States Court of Appeals for the Tenth Circuit
+  issued:
+    date-parts:
+    - - 2019
+      - 10
+      - 4
+  URL: https://www.courtlistener.com/opinion/4667183/caddo-nation-of-oklahoma-v-wichita-and-affiliated-tribes/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 18-6142
+original_link: https://www.courtlistener.com/opinion/4667183/caddo-nation-of-oklahoma-v-wichita-and-affiliated-tribes/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2019-03-19'
+  source: United States Court of Appeals for the Tenth Circuit
+  link: https://www.ca10.uscourts.gov/sites/ca10/files/oralarguments/18-6142.MP3
+  duration_seconds: 1891
+  file:
+    storage_key: appeals-court-audio/ca10/2019/2019-03-19-18-6142.mp3
+    checksum: 34a011e34fa63e88020e4c61badf4cb9ba2acfa2fd193fdf81d1a4ca8ca95bf7
+    media_type: audio/mpeg
+    bytes: 15129222
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- caddo-nation-of-oklahoma
+- wichita-and-affiliated-tribes
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: caddo-nation-of-oklahoma
+    named_as: Caddo Nation of Oklahoma
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: wichita-and-affiliated-tribes
+    named_as: Wichita and Affiliated Tribes
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 18-6142; no reporter citation yet. Decided by the United States Court of Appeals for the Tenth Circuit on Oct. 4, 2019. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 8; an AI reader read excerpts and judged it an Indian law case (tribal sovereign immunity against NEPA and NHPA claims, Caddo Nation).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 8; reader: tribal sovereign immunity against NEPA and NHPA claims, Caddo Nation'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 2 matched, 0 not linked

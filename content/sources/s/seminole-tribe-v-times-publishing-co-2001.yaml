@@ -1,0 +1,53 @@
+key: seminole-tribe-v-times-publishing-co-2001
+kind: state-case
+citation:
+  type: legal_case
+  title: Seminole Tribe v. Times Publishing Co.
+  authority: Florida District Court of Appeal
+  container-title: So. 2d
+  volume: '780'
+  page: '310'
+  issued:
+    date-parts:
+    - - 2001
+      - 3
+      - 21
+  URL: https://static.case.law/so2d/780/html/0310-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/so2d/780/html/0310-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: FL
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 780 So. 2d 310. Decided by the Florida District Court of Appeal on Mar. 21, 2001. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 7 and a Native nation or Native organization named as a party.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 7; kept because a party is a Native nation or organization
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

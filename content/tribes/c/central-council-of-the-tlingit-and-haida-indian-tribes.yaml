@@ -201,6 +201,15 @@ languages:
   as_of: '2026-11-23'
   locator: Language Resources
   note: 'The source reads: “Lingít and Xaad Kíl into everyday life”. Haida language, spelled Xaad Kíl on the page; page names it together with Lingít.'
+language_programs:
+- name: Lingít and X̲aad Kíl classes
+  link: https://tlingitandhaida.gov/about-us/language-resources/
+  run_by: nation
+  source: tlingit-and-haida-language-resources
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: Language Resources
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Alaska Regional Office
@@ -226,6 +235,75 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
   note: 'The source''s words: "Central Council of Tlingit & Haida Indian Tribes".'
   operator: tribal
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1992
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Central Council Of Tlingit And Haida Indians' (Alaska Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Central Council Of Tlingit And Haida Indians'.
+- program: pl-102-477-plan
+  start: '2022-01-01'
+  end: '2026-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - American Indian Vocational Rehabilitation Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Community Service Block Grant
+  - Early Head Start
+  - Head Start
+  - Native Employment Works
+  - Temporary Assistance for Needy Families
+  - Title IV-B Subpart 1 – Stephanie Tubbs Jones Child Welfare Services Program
+  - Title IV-B Subpart 2 – MaryLee Allen Promoting Safe and Stable Families Program
+  - Title IV-D – Tribal Child Support Enforcement
+  - Indian Child Welfare Act
+  - Job Placement and Training
+  - Social Services
+  - 'Welfare Assistance:  Children Services'
+  - 'Welfare Assistance: Burial Assistance'
+  - 'Welfare Assistance: Emergency Assistance'
+  - 'Welfare Assistance: General Assistance'
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Central Council of Tlingit and Haida Indians of Alaska'; PL102_477_PartnerEnrollment, its 22 programs
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Central Council of Tlingit and Haida Indians of Alaska'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 7648640
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Central Council of the Tlingit and Haida Indian Tribes' (Juneau)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Central Council of the Tlingit and Haida Indian Tribes'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 21660287
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'CENTRAL COUNCIL TLINGIT AND HAIDA INDIAN TRIBES OF ALASKA' (UEI LS3SAF1GZK94), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CENTRAL COUNCIL TLINGIT AND HAIDA INDIAN TRIBES OF ALASKA'.
 governance:
 - aspect: form
   value: Single regional tribal government

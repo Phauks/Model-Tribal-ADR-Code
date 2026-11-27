@@ -15,7 +15,7 @@
  * them.
  */
 import { untrack, type Snippet } from 'svelte';
-import { joinPageControls } from './join-page-controls.ts';
+import { joinFallbacks, joinPageControls } from './join-page-controls.ts';
 
 export type PageMode = 'reading' | 'commenting' | 'editing';
 
@@ -48,8 +48,11 @@ export interface PageControls {
 	drafts?: { shown: boolean; set: (shown: boolean) => void } | null;
 	/** Links for a page edited elsewhere, such as a nation's page. */
 	links?: readonly PageLink[];
-	history?: { title: string; href: string } | null;
+	/** A link to the page's history, or a button that opens it in place (the site text's list). */
+	history?: { title: string; href?: string; onclick?: () => void } | null;
 	publish?: PagePublish | null;
+	/** How many comment threads are open on the page, shown on the Commenting button. */
+	openComments?: number;
 }
 
 // Raw, so the getters a page passes are kept as they are, not copied into state.
@@ -58,16 +61,30 @@ let offers = $state.raw<{ controls: PageControls; fallback: boolean }[]>([]);
 /** The controls the masthead shows now, or null on a page that offers none. */
 export function currentPageControls(): PageControls | null {
 	const own = offers.findLast((offer) => !offer.fallback)?.controls;
-	const fallback = offers.findLast((offer) => offer.fallback)?.controls;
+	// Every page can have more than one fallback, such as the site text's and the page's comments.
+	const fallbacks = offers.filter((offer) => offer.fallback).map((offer) => offer.controls);
+	const fallback = fallbacks.length > 1 ? joinFallbacks(fallbacks) : fallbacks[0];
 	if (own && fallback) return joinPageControls(own, fallback);
 	return own ?? fallback ?? null;
 }
 
 /**
+ * Whether the page has commenting of its own, such as an essay's on its
+ * draft (EssayArticle.svelte, also on About, Sponsor and Using AI); the
+ * page's comments (PageComments.svelte) then stay out, as the masthead does
+ * (joinPageControls).
+ */
+export function pageHasOwnCommenting(): boolean {
+	return offers.some((offer) => !offer.fallback && offer.controls.modes.includes('commenting'));
+}
+
+/**
  * Offers the page's controls to the masthead; call the returned function to
  * take them back. A fallback, such as the site text's controls that every
- * page has (src/lib/components/SiteTextEditor.svelte), is joined to the
- * page's own offer (joinPageControls), whenever either was offered.
+ * page has (src/lib/components/SiteTextEditor.svelte) or the page's comments
+ * (src/lib/components/PageComments.svelte), is joined to the page's own offer
+ * (joinPageControls), whenever either was offered; several fallbacks are
+ * joined first (joinFallbacks).
  */
 export function offerPageControls(controls: PageControls, { fallback = false }: { fallback?: boolean } = {}): () => void {
 	const offer = { controls, fallback };

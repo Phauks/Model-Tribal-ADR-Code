@@ -104,6 +104,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=508%20U.S.%20114
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1993-03-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-875.mp3
+  catalog: https://catalog.archives.gov/id/118975002
+  whole_session: true
+  duration_seconds: 10998
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-875.mp3
+    checksum: c4cd756bbe4b126c0c63cbe751491f60a1cedacfd85cd97faf955a93a798bd66
+    media_type: audio/mpeg
+    bytes: 175972642
 rights:
   status: no-permission-needed
   basis: us-government-work

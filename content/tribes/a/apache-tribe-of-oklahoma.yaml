@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Comanche, Kiowa, and Apache, July 27, 1853, 10 Stat. 1013
+  since: '1853-07-27'
+  source: treaty-with-the-comanche-kiowa-and-apache-1853
+  confidence: medium
+  verification: inferred
+  as_of: '1853-07-27'
+  locator: p. 600 (Treaty with the Comanche, Kiowa, and Apache, 1853; Kappler header "July 27, 1853. | 10 Stats., 1013. | Ratified Apr. 12, 1854. | Proclaimed Feb. 12, 1855 [4].")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Apache; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 3 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -196,6 +206,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Apache Tribe of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1146812
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Apache Tribe' (Anadarko)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 183582
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'APACHE TRIBE OF OKLAHOMA' (UEI G96YJA4HK7M3), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Organized by constitution
@@ -579,6 +608,14 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Apache Tribe of Oklahoma, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Dec. 28, 2017, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-apache-tribe-of-oklahoma-2017-12-28
+  confidence: high
+  verification: inferred
+  as_of: '2017-12-28'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2017
 jurisdiction_agreements:
 - kind: tax-agreement
   other_party: State of Oklahoma, Office of the Governor
@@ -591,6 +628,105 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Press release of January 22, 2024
   note: 'The source reads: “We now have fully executed tobacco compacts with both the Chickasaw and the Apache tribes”. Ten-year compact; the release says the Apache compact text is filed with the Oklahoma Secretary of State. The Apache Tribe of Oklahoma is the roster match for "the Apache tribes" in a release about Oklahoma compacts; the release does not give the full name.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 14, 1993 (file 28214).
+  source: oklahoma-filing-28214
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 28214
+  note: 'From the register line: “Apache/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on May 8, 2000 (file 36677).
+  source: oklahoma-filing-36677
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 36677
+  note: 'From the register line: “Apache Tribe of Oklahoma/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 6, 2003 (file 38498).
+  source: oklahoma-filing-38498
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38498
+  note: 'From the register line: “Apache Nation and the State of Oklahoma, amendment to Tribal/State Tobacco Tax Compact”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact amendment (original signature)
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 9, 2003 (file 38507).
+  source: oklahoma-filing-38507
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38507
+  note: 'From the register line: “Apache Nation and the State of Oklahoma Amendment to Tribal/State Compact original signature for file # 38498”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 18, 2003 (file 39020).
+  source: oklahoma-filing-39020
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 39020
+  note: 'From the register line: “Amendment Apache Tribe and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 8, 2004 (file 39565).
+  source: oklahoma-filing-39565
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 39565
+  note: 'From the register line: “Apache Tribe and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Burn ban agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on May 30, 2013 (file 46190).
+  source: oklahoma-filing-46190
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46190
+  note: 'From the register line: “The Apache Tribe and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on May 30, 2013 (file 46191).
+  source: oklahoma-filing-46191
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46191
+  note: 'From the register line: “The Apache Tribe and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 3, 2024 (file 52894).
+  source: oklahoma-filing-52894
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52894
+  note: 'From the register line: “Tobacco Tax Compact entered between the State of Oklahoma and the Apache Tribe of Oklahoma”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Comanche County

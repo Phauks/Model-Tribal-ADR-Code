@@ -1,0 +1,50 @@
+key: iowa-code-216a-4
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Iowa Code § 216A.4
+  container-title: Iowa Code
+  container-title-short: Iowa Code
+  section: 216A.4
+  author:
+  - literal: Iowa Legislature
+  issued:
+    date-parts:
+    - - 1986
+  URL: https://www.legis.iowa.gov/docs/code/216A.4.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.legis.iowa.gov/docs/code/216A.4.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Iowa Code § 216A.4 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: IA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Iowa Code § 216A.4 (2026). History: 86 Acts, ch 1245, §1204; C87, §601K.4; 90 Acts, ch 1180, §5; C93, §216A.4; 2010 Acts, ch 1031, §104, 170; 2023 Acts, ch 19, §287; 2024 Acts, ch 1170, §447. Text read from the Iowa Legislature''s XML file for the chapter of the Iowa Code (2026 edition, legis.iowa.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; native americans; tribal government; indian; native; tribal; tribe); AI reader''s verdict incidental: Human rights definitions include tribal government as defined term. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; native americans; tribal government; indian; native; tribal; tribe'

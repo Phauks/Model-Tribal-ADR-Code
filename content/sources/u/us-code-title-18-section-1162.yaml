@@ -44,6 +44,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=18%20U.S.C.%20%C2%A7%201162
+file:
+  storage_key: united-states-code/2024/title-18-section-1162.pdf
+  checksum: 65c5eae52203e7611cddb0c4cf4a1a7d496d649fea1bcc4437e467fcf920c230
+  media_type: application/pdf
+  bytes: 149731
 rights:
   status: no-permission-needed
   basis: fact-only
@@ -51,4 +56,5 @@ rights:
   redistribution: false
 found_in:
 - 2026-11-21-jurisdiction-and-memberships
-notes: Read through the Legal Information Institute, Cornell Law School.
+- 2026-11-27-us-code-sections
+notes: Read through the Legal Information Institute, Cornell Law School. The stored copy is 18 U.S.C. § 1162 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.

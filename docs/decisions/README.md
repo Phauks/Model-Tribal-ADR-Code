@@ -64,5 +64,14 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0056](0056-let-nations-restrict-their-laws-and-opinions.md) | Let a nation choose how the site shows its own laws and court opinions | Accepted |
 | [0057](0057-replace-names-in-tribal-court-opinions-with-initials.md) | Replace names in Tribal court opinions with initials | Accepted |
 | [0058](0058-draw-item-pages-on-request.md) | Draw the large families of item pages when a reader opens them | Accepted |
+| [0059](0059-watch-for-new-legal-sources-with-plug-in-watchers.md) | Watch for new and changed legal sources with plug-in watchers, and review every find by hand | Accepted |
+| [0060](0060-serve-state-agreements-and-state-court-opinions.md) | Serve copies of Oklahoma's filed state-tribal agreements and of published state court opinions | Accepted |
+| [0061](0061-keep-public-worker-answers-at-the-edge.md) | Keep the Worker's public answers at Cloudflare's edge, and nothing personal | Accepted |
+| [0062](0062-add-passkeys-outside-sign-in-and-a-person-check.md) | Add passkeys, Google and Microsoft sign-in, and Cloudflare Turnstile on public forms | Accepted |
+| [0063](0063-widen-stories-to-law-justice-and-governance.md) | Widen story records to law, justice and governance | Accepted |
+| [0064](0064-check-facts-against-their-sources-and-answer-from-our-records.md) | Check each fact against the source it cites, and answer visitors' questions only from our records | Accepted |
+| [0065](0065-take-in-public-domain-myths-and-religious-texts.md) | Take in public-domain myths and religious texts, including ceremonial ones | Accepted |
+| [0066](0066-show-case-opinions-in-full-on-the-case-page.md) | Show a case's opinions in full on its page, read from the copy the site serves | Accepted |
+| [0067](0067-form-an-indigenous-advisory-council.md) | Form an Indigenous Advisory Council, starting with a small unpaid group | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Chippewa, Oct. 4, 1842, 7 Stat. 591
+  since: '1842-10-04'
+  source: treaty-with-the-chippewa-1842
+  confidence: medium
+  verification: inferred
+  as_of: '1842-10-04'
+  locator: p. 542 (Treaty with the Chippewa, 1842; Kappler header "Oct. 4, 1842. | 7 Stat., 591. | Proclamation, Mar. 23, 1843.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Chippewa of Lake Superior; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 13 nations' profiles link this treaty.
 states:
 - state: WI
   presence: government-office
@@ -185,6 +195,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 4763806
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WI, row 'Lac Courte Oreilles Band of Lake Superior Chippewa' (Hayward,)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 11098383
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'LAC COURTE OREILLES BAND OF LAKE SUPERIOR CHIPPEWA INDIANS OF WISCONSIN' (UEI XPJZNYCBRLR6), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution and Bylaws
@@ -554,6 +583,14 @@ jurisdiction:
   confidence: high
   verification: inferred
   as_of: '1981-03-06'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural, Business, Residential, Wind and Solar Resource, WEEL) of the Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Mar. 28, 2023, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-lac-courte-oreilles-band-of-lake-superior-chippewa-indians-o-2023-03-28
+  confidence: high
+  verification: inferred
+  as_of: '2023-03-28'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2023
 jurisdiction_agreements:
 - kind: cross-deputization
   other_party: Sawyer County and Sawyer County Sheriff's Office, Wisconsin

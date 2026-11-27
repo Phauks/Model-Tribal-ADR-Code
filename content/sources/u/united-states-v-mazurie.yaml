@@ -104,6 +104,43 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=419%20U.S.%20544
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1974-11-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-77-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048450
+  whole_session: true
+  duration_seconds: 3228
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-77-r1.mp3
+    checksum: 347ffbcbf79356c33512f2c18c035d8f43feea23779b36b6f3a5ff1256733f61
+    media_type: audio/mpeg
+    bytes: 51656956
+- kind: argument
+  date: '1974-11-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-77-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048450
+  whole_session: true
+  duration_seconds: 4103
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-77-r2.mp3
+    checksum: da08bf128559034913afb278c8372f57e01fcab497e25d36652f2a8eafef3bc3
+    media_type: audio/mpeg
+    bytes: 65649394
+- kind: argument
+  date: '1974-11-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-77-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048450
+  whole_session: true
+  duration_seconds: 4299
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-77-r3.mp3
+    checksum: 5d7ff59bebc3b0093fa90d89c14b09ee14734cf40261564e89a2baf5c29cf9f0
+    media_type: audio/mpeg
+    bytes: 68789521
 rights:
   status: no-permission-needed
   basis: us-government-work

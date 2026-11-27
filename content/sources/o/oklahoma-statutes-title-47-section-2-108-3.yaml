@@ -1,0 +1,63 @@
+key: oklahoma-statutes-title-47-section-2-108-3
+kind: state-statute
+citation:
+  type: legislation
+  title: Vehicle ownership and registration information
+  title-short: Okla. Stat. tit. 47, § 2-108.3
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '47'
+  section: 2-108.3
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 2011
+      - 11
+      - 1
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os47.pdf#page=88
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os47.pdf#page=88
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-47-section-1110
+- oklahoma-statutes-title-47-section-1135-1v1
+- oklahoma-statutes-title-47-section-1135-1v2
+- oklahoma-statutes-title-47-section-161a
+- oklahoma-statutes-title-47-section-2-316
+- oklahoma-statutes-title-47-section-6-125-1
+- oklahoma-statutes-title-47-section-6-201-2
+- oklahoma-statutes-title-47-section-6-205-2
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 47, § 2-108.3 (2026)
+  page: 88
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 47, § 2-108.3 (2026). History: Added by Laws 2011, c. 188, § 1, eff. Nov. 1, 2011. Amended by Laws 2022, c. 282, § 29, Text read from the Legislative Service Bureau''s Title 47 PDF (updated Nov. 12, 2026), page 88. Found by the state statutes pilot (terms: tribal governments); AI reader''s verdict incidental: Directs cooperative agreement with tribal governments issuing license plates. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal governments'

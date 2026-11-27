@@ -1,0 +1,66 @@
+key: united-states-v-kee-2025
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Kee
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.4th
+  volume: '129'
+  page: '1249'
+  issued:
+    date-parts:
+    - - 2025
+      - 2
+      - 27
+  URL: https://www.courtlistener.com/opinion/10346838/united-states-v-kee/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 23-2189
+original_link: https://www.courtlistener.com/opinion/10346838/united-states-v-kee/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2024-11-19'
+  source: United States Court of Appeals for the Tenth Circuit
+  link: https://www.ca10.uscourts.gov/sites/ca10/files/oralarguments/23-2189.mp3
+  duration_seconds: 1977
+  held: true
+  note: Held until a reading of the argument finds no child or victim named; the opinion itself is shown.
+  file:
+    storage_key: appeals-court-audio/ca10/2024/2024-11-19-23-2189.mp3
+    checksum: e6fd019c5ec9aa41c94c0639e6f1903f298c11279a49c3b5e171f91ea54e1988
+    media_type: audio/mpeg
+    bytes: 15818432
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 129 F.4th 1249. Decided by the United States Court of Appeals for the Tenth Circuit on Feb. 27, 2025. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (assault with dangerous weapon in Indian country, Doyle violation).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: assault with dangerous weapon in Indian country, Doyle violation'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

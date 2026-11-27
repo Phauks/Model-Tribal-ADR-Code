@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Florida Tribes of Indians, Sept. 18, 1823, 7 Stat. 224
+  since: '1823-09-18'
+  source: treaty-with-the-florida-tribes-of-indians-1823
+  confidence: medium
+  verification: inferred
+  as_of: '1823-09-18'
+  locator: p. 203 (Treaty with the Florida Tribes of Indians, 1823; Kappler header "Sept. 18, 1823. | 7 Stat., 224. | Proclamation, Jan. 2, 1824.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Florida Tribes; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -226,6 +236,34 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Oklahoma City Area
   note: Listed as "Seminole Nation of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2017
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Seminole Nation of Oklahoma'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Seminole Nation of Oklahoma'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3242012
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Seminole Nation' (Wewoka)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 1281315
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SEMINOLE NATION OF OKLAHOMA, THE' (UEI KJYDNF7PDEF1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SEMINOLE NATION OF OKLAHOMA, THE'.
 governance:
 - aspect: form
   value: Constitution, ratified by majority of qualified voters in special election
@@ -893,6 +931,182 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Seminole Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 4, 1992 (file 27164).
+  source: oklahoma-filing-27164
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 27164
+  note: 'From the register line: “Seminole Nation/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 8, 1997 (file 34901).
+  source: oklahoma-filing-34901
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 34901
+  note: 'From the register line: “Seminole Nation/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on May 19, 2003 (file 38863).
+  source: oklahoma-filing-38863
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38863
+  note: 'From the register line: “Amendment Seminole Nation and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 8, 2003 (file 38960).
+  source: oklahoma-filing-38960
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38960
+  note: 'From the register line: “Amendment Seminole Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 9, 2003 (file 39294).
+  source: oklahoma-filing-39294
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 39294
+  note: 'From the register line: “Seminole Nation/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46231).
+  source: oklahoma-filing-46231
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46231
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 21, 2013 (file 46246).
+  source: oklahoma-filing-46246
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46246
+  note: 'From the register line: “Amendment between the Seminole Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 8, 2013 (file 46505).
+  source: oklahoma-filing-46505
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46505
+  note: 'From the register line: “Amendment between the Seminole Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 4, 2013 (file 46552).
+  source: oklahoma-filing-46552
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46552
+  note: 'From the register line: “Seminole Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 28, 2018 (file 49597).
+  source: oklahoma-filing-49597
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 49597
+  note: 'From the register line: “Tobacco Tax Compact Between the State of Oklahoma and the Seminole Nation of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 28, 2019 (file 49927).
+  source: oklahoma-filing-49927
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 49927
+  note: 'From the register line: “Amendment to Tobacco Tax compact between the State of Oklahoma and the Seminole Nation of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 14, 2020 (file 50185).
+  source: oklahoma-filing-50185
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 50185
+  note: 'From the register line: “Amendment to Tobacco Tax Compact between the State of Oklahoma and the Seminole Nation of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: child-welfare-agreement
+  other_party: State of Oklahoma, Department of Human Services; Office of Juvenile Affairs
+  agreement: Child welfare agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 14, 2021 (file 51298).
+  source: oklahoma-filing-51298
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 51298
+  note: 'From the register line: “Child Welfare Agreement between Seminole Nation of Oklahoma and State of Oklahoma, Department of Human Services, Office of Juvenile Affairs”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Acceptance of supplemental term to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 28, 2023 (file 52725).
+  source: oklahoma-filing-52725
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52725
+  note: 'From the register line: “Restoration of and supplemental term to tobacco products excise tax compact term between the Seminole Nation of Oklahoma and the State of Oklahoma. Senate Bill 26x”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 0, 2025 (file 53456).
+  source: oklahoma-filing-53456
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53456
+  note: 'From the register line: “Amendment of the Tobacco Tax Compact between the State of Oklahoma and the Seminole Nation of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Apr. 18, 2025 (file 53649).
+  source: oklahoma-filing-53649
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53649
+  note: 'From the register line: “Amendment of the Tabacco Tax Compact Between the State of Oklahoma and the Seminole Nation”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Seminole County

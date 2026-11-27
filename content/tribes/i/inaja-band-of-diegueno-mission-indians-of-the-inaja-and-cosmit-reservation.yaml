@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Dec. 27, 1875, 1 Kappler 820-821
+  since: '1875-12-27'
+  source: executive-order-1875-12-27-mission-indian-reservations
+  confidence: medium
+  verification: read-in-full
+  as_of: '1875-12-27'
+  locator: 1 Kappler 820-821
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Inaja and Cosmit Reservation, San Diego County, California.
 states:
 - state: CA
   presence: government-office
@@ -144,6 +154,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Inaja Band of Diegueno Mission Indians of the Inaja and Cosmit Reservation, California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Inaja Band of Diegueno Mission Indians' (Escondido)
 governance:
 - aspect: head-of-government
   value: Chairperson
@@ -199,7 +219,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 1 Kappler 820-821
-  note: 'The instrument reads: “Inaja. — Township 13 south, range 3 east ... withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. The order also lists "Cosmit" (OCR reads "Gosmit") as a separate tract; the roster nation holds the combined Inaja and Cosmit Reservation.'
+  note: 'The instrument reads: “Inaja. — Township 13 south, range 3 east . . . withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. The order also lists "Cosmit" (OCR reads "Gosmit") as a separate tract; the roster nation holds the combined Inaja and Cosmit Reservation.'
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

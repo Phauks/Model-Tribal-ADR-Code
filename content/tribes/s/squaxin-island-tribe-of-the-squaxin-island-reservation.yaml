@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty of Medicine Creek, Dec. 26, 1854, 10 Stat. 1132
+  since: '1854-12-26'
+  source: treaty-with-the-nisqualli-puyallup-etc-1854
+  confidence: medium
+  verification: inferred
+  as_of: '1854-12-26'
+  locator: p. 661 (Treaty with the Nisqualli, Puyallup, etc., 1854; Kappler header "Dec. 26, 1854. | 10 Stat., 1132. | Ratified Mar. 3, 1855. | Proclaimed Apr. 10, 1855.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Squawskin; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 3 nations' profiles link this treaty.
 states:
 - state: WA
   presence: government-office
@@ -158,6 +168,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Squaxin Island Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Squaxin Island Indian Tribe (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1994
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Squaxin Island Tribe' (Northwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Squaxin Island Tribe'.
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Squaxin Island Indian Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Squaxin Island Indian Tribe'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1355079
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Squaxin Island Tribe' (Shelton)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 4839312
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SQUAXIN ISLAND TRIBE' (UEI Z7LUCA1NAJ85), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SQUAXIN ISLAND TRIBE'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 4134854
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SQUAXIN ISLAND TRIBE' (UEI Z7LUCA1NAJ85), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SQUAXIN ISLAND TRIBE'.
 governance:
 - aspect: governing-body
   value: Tribal Council
@@ -745,6 +801,30 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Amended Leasing Ordinance) of the Squaxin Island Tribe Of the Squaxin Island Reservation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Apr. 17, 2025, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-squaxin-island-tribe-of-the-squaxin-island-reservation-2025-04-17
+  confidence: high
+  verification: inferred
+  as_of: '2025-04-17'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2025
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Squaxin Island Tribe, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Aug. 20, 2015, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-squaxin-island-tribe-of-the-squaxin-island-reservation-2015-08-20
+  confidence: high
+  verification: inferred
+  as_of: '2015-08-20'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2015
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Feb. 9, 2023 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2023-02-09'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: forms
   title: Squaxin Island Tribal Court Form

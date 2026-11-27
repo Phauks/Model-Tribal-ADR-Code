@@ -1,7 +1,7 @@
 /**
  * The source library in the workspace (decision record 0051): the text of
  * every document in the private bucket, page by page, searchable by the
- * project's writers. It lives in its own D1 database, model-tribal-adr-code-
+ * project's writers. It lives in its own D1 database, tribal-law-project-
  * library (binding sourceLibrary), loaded from the library that
  * scripts/library/build_library.py builds. Each build writes the changes since
  * the last one as SQL files in the bucket under _library/d1/, and the hourly
@@ -15,6 +15,7 @@
  */
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { matchEnd, matchStart } from '../source-library-text.ts';
+import { isMissingTable } from '../problems.ts';
 
 /** How many documents a search lists, and passages shown for each. */
 export const resultsPerPage = 20;
@@ -236,7 +237,7 @@ export async function searchLibrary(
 		rows = found.results;
 		count = counted;
 	} catch {
-		// Not valid in the query language: search the words themselves.
+		// expected: not valid in the query language: search the words themselves.
 		readAs = plainQuery(filters.query);
 		if (readAs === '') return { results: [], more: false, readAs, total: { passages: 0, documents: 0, more: false } };
 		const [found, counted] = await run(readAs);
@@ -281,6 +282,7 @@ export async function findLibraryDocuments(database: D1Database, query: string, 
 	try {
 		return (await statement(query).all<DocumentRow>()).results.map(summary);
 	} catch {
+		// expected: not valid in the query language: search the words themselves. A plain search that fails too is thrown.
 		const plain = plainQuery(query);
 		return plain === '' ? [] : (await statement(plain).all<DocumentRow>()).results.map(summary);
 	}
@@ -313,6 +315,7 @@ export async function libraryDocument(database: D1Database, documentIdentifier: 
 	try {
 		otherKeys = row.other_keys ? (JSON.parse(row.other_keys) as string[]) : [];
 	} catch {
+		// expected: damaged stored keys read as none.
 		otherKeys = [];
 	}
 	return {
@@ -396,8 +399,10 @@ async function metaValue(database: D1Database, name: string): Promise<string | n
 	try {
 		const row = await database.prepare('SELECT value FROM meta WHERE name = ?').bind(name).first<{ value: string }>();
 		return row?.value ?? null;
-	} catch {
-		return null; // before the first load there is no meta table
+	} catch (problem) {
+		// Before the first load there is no meta table; any other failure is thrown.
+		if (isMissingTable(problem)) return null;
+		throw problem;
 	}
 }
 

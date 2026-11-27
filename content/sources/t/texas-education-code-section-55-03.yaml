@@ -1,0 +1,50 @@
+key: texas-education-code-section-55-03
+kind: state-statute
+citation:
+  type: legislation
+  title: Minority-Owned and Women-Owned Businesses
+  title-short: Tex. Educ. Code Ann. § 55.03
+  container-title: Education Code
+  container-title-short: Tex. Educ. Code Ann.
+  section: '55.03'
+  author:
+  - literal: Texas Legislative Council
+  issued:
+    date-parts:
+    - - 1993
+  URL: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.55.htm#55.03
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.55.htm#55.03
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Tex. Educ. Code Ann. § 55.03 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: TX
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Tex. Educ. Code Ann. § 55.03 (2025). History: Added by Acts 1993, 73rd Leg., ch. 803, Sec. 2, eff. Sept. 1, 1993. Text read from the Texas Legislative Council''s download of the code as HTML (statutes.capitol.texas.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indians; indians); AI reader''s verdict incidental: Bond contract goals define minority group including American Indians. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indians; indians'

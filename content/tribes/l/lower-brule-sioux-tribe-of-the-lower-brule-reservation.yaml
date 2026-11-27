@@ -9,16 +9,16 @@ names:
     confidence: high
     verification: read-in-full
     as_of: '2026-11-21'
-    note: 'About page: ''...within the Tetonwan (Lakota) Nation who identify as Sicangu (burnt thighs).
+    note: 'About page: ''[W]ithin the Tetonwan (Lakota) Nation who identify as Sicangu (burnt thighs).
       Long ago the Sicangu divided into the Kul Wicasa Oyate (lower people) and the Heyata Wicasa Oyate
-      (uplands people). Our Kul Wicasa ancestors...'''
+      (uplands people). Our Kul Wicasa ancestors . . . .'''
   - name: Sicangu
     language_tag: lkt
     source: lowerbrulesiouxtribe-about-us
     confidence: high
     verification: read-in-full
     as_of: '2026-11-21'
-    note: 'About page: ''...within the Tetonwan (Lakota) Nation who identify as Sicangu (burnt thighs).'''
+    note: 'About page: ''[W]ithin the Tetonwan (Lakota) Nation who identify as Sicangu (burnt thighs).'''
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -28,6 +28,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Sioux-Lower Brule Band, Oct. 14, 1865, 14 Stat. 699
+  since: '1865-10-14'
+  source: treaty-with-the-sioux-lower-brule-band-1865
+  confidence: medium
+  verification: inferred
+  as_of: '1865-10-14'
+  locator: p. 885 (Treaty with the Sioux-Lower Brule Band, 1865; Kappler header "Oct. 14, 1865. | 14 Stats., 699.| Ratified Mar. 5, 1866. | Proclaimed Mar. 17, 1866.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Lower Brulé; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: SD
   presence: government-office
@@ -210,6 +220,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Great Plains Area
   note: Listed as "Lower Brule Sioux Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1945937
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: SD, row 'Lower Brule Sioux Tribe' (Lower Brule)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 2645353
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'LOWER BRULE SIOUX TRIBE' (UEI LBKTNCQZVHZ7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'LOWER BRULE SIOUX TRIBE'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Lower Brule Tribe, South Dakota" among organizations under constitutions approved

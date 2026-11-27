@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import Dropdown from '#lib/components/Dropdown.svelte';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -71,6 +72,7 @@
 		}))
 	);
 	const grants = $derived(new Map(data.grants.map((grant) => [grant.identifier, grant])));
+	const grantsHeading = $derived(data.chosen ? `${data.chosen.displayName}’s grants` : 'Every grant in force');
 
 	const peopleCounts = $derived(
 		roles
@@ -85,7 +87,7 @@
 </script>
 
 <svelte:head>
-	<title>Access · Workspace · Model Tribal ADR Code</title>
+	<title>Access · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Access</h1>
@@ -197,10 +199,8 @@
 </section>
 
 <section aria-labelledby="grants-heading">
-	<h2 id="grants-heading">
-		{data.chosen ? `${data.chosen.displayName}’s grants` : 'Every grant in force'}
-	</h2>
 	{#if data.grants.length === 0}
+		<h2 id="grants-heading">{grantsHeading}</h2>
 		<p>No grants{data.chosen ? ' for this person' : ''}. Everyone has their role’s default.</p>
 	{:else}
 		<DataTable
@@ -211,6 +211,7 @@
 			defaultSort={{ key: 'granted', direction: 'descending' }}
 			rowName={['grant', 'grants']}
 		>
+			{#snippet heading(count: Snippet)}<h2 id="grants-heading">{grantsHeading} {@render count()}</h2>{/snippet}
 			{#snippet cell(row, column)}
 				{@const grant = grants.get(row.key)}
 				{#if !grant}

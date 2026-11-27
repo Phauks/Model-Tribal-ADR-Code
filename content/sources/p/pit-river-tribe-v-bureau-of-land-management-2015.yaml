@@ -1,0 +1,70 @@
+key: pit-river-tribe-v-bureau-of-land-management-2015
+kind: federal-case
+citation:
+  type: legal_case
+  title: Pit River Tribe v. Bureau of Land Management
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '793'
+  page: '1147'
+  issued:
+    date-parts:
+    - - 2015
+      - 7
+      - 20
+  URL: https://static.case.law/f3d/793/html/1147-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 13-16961
+original_link: https://static.case.law/f3d/793/html/1147-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2015-03-12'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2015/03/12/13-16961.mp3
+  duration_seconds: 2549
+  file:
+    storage_key: appeals-court-audio/ca9/2015/2015-03-12-13-16961.mp3
+    checksum: cfc4824efd7aec0d74fcd3485dd5e084d7e36f4a232206bf03ff6ec6abf06a5c
+    media_type: audio/mpeg
+    bytes: 10195905
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- pit-river-tribe
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: pit-river-tribe
+    named_as: Pit River Tribe
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 793 F.3d 1147. Decided by the United States Court of Appeals for the Ninth Circuit on July 20, 2015. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 6; an AI reader read excerpts and judged it an Indian law case (tribal standing, sacred Medicine Lake Highlands, trust duties).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 6; reader: tribal standing, sacred Medicine Lake Highlands, trust duties'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

@@ -1,8 +1,11 @@
 <script lang="ts">
 	// One level of an outline in the sidebar, and the levels under it
-	// (SiteSidebar.svelte): a section's pages, a page's headings. Each entry
-	// with entries under it has a caret to its left; the entry that is the page
-	// or heading being read is marked with a bar across its whole row.
+	// (SiteSidebar.svelte): a page's headings. The text of each lines up with
+	// the column's pages, a heading under another one step in, with no guide
+	// line; an entry with entries under it has a caret at the end of its row;
+	// the entry that is the page or heading being read is marked with a bar
+	// and a fill, as a page is (Trevor, Nov. 27, 2026,
+	// design/nation-column-restyle).
 	// While an essay is edited, its case, law and analysis boxes show their
 	// icons, and a dot after an entry marks a draft change (amber), something
 	// new (an amber ring) or a section in review (purple), as in
@@ -19,7 +22,6 @@
 		listIdentifier,
 		depth = 1,
 		shut = false,
-		flush = false,
 		isActive,
 		isCurrent,
 		isOpen,
@@ -29,8 +31,6 @@
 		listIdentifier: string;
 		depth?: number;
 		shut?: boolean;
-		/** A top-level list in the second column, with no rule or indent of its own. */
-		flush?: boolean;
 		/** The page or heading being read. */
 		isActive: (item: OutlineItem) => boolean;
 		/** The page being read (as opposed to a heading on it). */
@@ -54,7 +54,7 @@
 	}
 </script>
 
-<ul class="outline" class:flush data-depth={depth} id={listIdentifier} hidden={shut}>
+<ul class="outline" data-depth={depth} id={listIdentifier} hidden={shut}>
 	{#each items as item, index (item.link)}
 		{@const branch = Boolean(item.children?.length)}
 		{@const open = branch && isOpen(item)}
@@ -67,7 +67,7 @@
 					name="Contents of {item.label}"
 					onclick={() => ontoggle(item)}
 				/>
-				<a href={item.link} class:active aria-current={ariaCurrent(item)}>
+				<a href={item.link} class:active aria-current={ariaCurrent(item)} style:--level={depth - 1}>
 					{#if item.number}<span class="number">{item.number}</span>{/if}
 					{#if item.kind}
 						{@const Icon = kindIcons[item.kind]}
@@ -106,13 +106,6 @@
 
 	.outline {
 		font-size: var(--font-size-small);
-		border-left: 1px solid var(--color-line);
-		margin-left: var(--space-3) !important;
-	}
-
-	.outline.flush {
-		border-left: 0;
-		margin-left: 0 !important;
 	}
 
 	/* Without scripts nothing can be unfolded, so everything shows. */
@@ -120,12 +113,19 @@
 		display: block;
 	}
 
+	/* The caret goes at the end of the row; the bar marking where the reader is lies at the column's edge, as on the pages above. */
 	.entry {
 		display: flex;
+		flex-direction: row-reverse;
 		align-items: flex-start;
-		/* The bar marking where the reader is spans the whole row, caret included. */
-		margin-left: -1px;
+		margin-left: calc(-1 * var(--space-3) + 3px);
 		border-left: 3px solid transparent;
+		border-radius: 0 var(--radius-control) var(--radius-control) 0;
+	}
+
+	/* An entry with nothing under it keeps no room for a caret. */
+	.entry > :global(.fold.space) {
+		display: none;
 	}
 
 	a {
@@ -134,14 +134,10 @@
 		min-width: 0;
 		gap: var(--space-2);
 		align-items: baseline;
-		padding: 0.35rem var(--space-3) 0.35rem var(--space-1);
+		padding: 0.35rem var(--space-3) 0.35rem calc(var(--space-3) - 3px + var(--level, 0) * var(--sidebar-step, 1rem));
 		color: var(--color-ink-muted);
 		text-decoration: none;
 		line-height: 1.35;
-	}
-
-	:global(:root:not([data-scripts='on'])) a {
-		padding-left: var(--space-3);
 	}
 
 	a:hover {

@@ -37,6 +37,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7236 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7236 (entry "United Keetoowah Band of Cherokee Indians, Oklahoma")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "United Keetoowah Band of Cherokee Indians, Oklahoma." The entry is matched to the nation by name.
 states:
 - state: OK
   presence: government-office
@@ -183,7 +193,7 @@ languages:
   confidence: high
   verification: inferred
   as_of: '2026-11-21'
-  note: '"Giduwa Language ... represented by the Cherokee Syllabary"'
+  note: '"Giduwa Language . . . represented by the Cherokee Syllabary"'
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Eastern Oklahoma Regional Office
@@ -200,6 +210,44 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "United Keetoowah Band of Cherokee Indians in Oklahoma".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2011
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'United Keetowah Band Of Cherokee' (Eastern Oklahoma Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'United Keetowah Band Of Cherokee'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2630386
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'United Keetoowah Band of Cherokee Indians' (Tahlequah)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 2357054
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'UNITED KEETOOWAH BAND OF CHEROKEE' (UEI R112PP2REV21), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'UNITED KEETOOWAH BAND OF CHEROKEE'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 6028726
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'UNITED KEETOOWAH BAND OF CHEROKEE' (UEI R112PP2REV21), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'UNITED KEETOOWAH BAND OF CHEROKEE'.
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Constitution (United Keetowah Band of Cherokee Indians Oklahoma) (approved 1950) states it was
@@ -639,6 +687,61 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “United Keetoowah Band”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 30, 1999 (file 36280).
+  source: oklahoma-filing-36280
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 36280
+  note: 'From the register line: “United Keetoowah Band of Cherokee Indians in Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 16, 1999 (file 36402).
+  source: oklahoma-filing-36402
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 36402
+  note: 'From the register line: “United Keetoowah Band of Cherokee Indians in Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 7, 2011 (file 44634).
+  source: oklahoma-filing-44634
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 44634
+  note: 'From the register line: “United Keetoowah Band of Cherokee Indians and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46234).
+  source: oklahoma-filing-46234
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46234
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 1, 2013 (file 46273).
+  source: oklahoma-filing-46273
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46273
+  note: 'From the register line: “Amendment between the United Keetoowah Band of Cherokee Indians and the State of Oklahoma”. Whether it is still in force is not recorded.'
 court_practice:
 - kind: court-rules
   title: 2022 Civil Procedure Act

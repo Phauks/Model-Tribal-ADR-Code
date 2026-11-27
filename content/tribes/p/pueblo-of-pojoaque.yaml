@@ -9,7 +9,7 @@ names:
     confidence: high
     verification: inferred
     as_of: '2026-11-21'
-    note: '"In Tewa ... our community is called ''P’o-suwae-geh Owingeh,'' meaning Water Drinking Place
+    note: '"In Tewa . . . our community is called ''P’o-suwae-geh Owingeh,'' meaning Water Drinking Place
       Village"; also written P’osuwäegeh Ówingeh'
   official_source: bia-recognized-entities-2026
   pronunciation:
@@ -32,6 +32,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Act of Dec. 22, 1858, ch. 5, 11 Stat. 374
+  since: '1858-12-22'
+  source: act-1858-12-22-pueblo-land-claims-confirmed
+  confidence: medium
+  verification: read-in-full
+  as_of: '1858-12-22'
+  locator: 11 Stat. 374
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Pueblo of Pojoaque (spelled "Pojuaque" in the act) land grant, New Mexico.
 states:
 - state: NM
   presence: government-office
@@ -221,6 +231,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Albuquerque Area
   note: Listed as "Pueblo of Pojoaque". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 262823
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Pojoaque Pueblo' (Santa Fe)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 195999
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'PUEBLO OF POJOAQUE' (UEI QMPRAMPLN159), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PUEBLO OF POJOAQUE'.
 governance:
 - aspect: form
   value: Indian Reorganization Act (1934)
@@ -485,6 +515,22 @@ jurisdiction:
   as_of: '2026-08-11'
   locator: Chart row 36, "Implemented VAWA STCJ" column
   note: Listed as "Pueblo of Pojoaque". The chart is undated (file last modified Aug. 11, 2026) and comes from a Justice Department technical-assistance provider, not the Department itself.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Mar. 21, 1996 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Mar. 21, 1996.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1996-03-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Aamodt Litigation Settlement Act in 2010, amended 2020 (Pub. L. No. 111-291, Pub. L. No. 116-260), settling the water rights of Nambé, Pojoaque, San Ildefonso, and Tesuque Pueblos. It quantifies 6,467 acre-feet a year in all and authorizes about $311.3 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-111-291
+  confidence: high
+  verification: inferred
+  as_of: '2010'
+  locator: Congressional Research Service, R44148, Table 1, 2010
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: New Mexico Children, Youth and Families Department
@@ -578,7 +624,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 11 Stat. 374
-  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as ... N, Pueblo of Pojuaque in the county of Santa Fe ... be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
+  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as . . . N, Pueblo of Pojuaque in the county of Santa Fe . . . be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

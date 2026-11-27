@@ -26,6 +26,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Sept. 27, 1917, 4 Kappler 1001
+  since: '1917-09-27'
+  source: executive-order-1917-09-27-cocopah-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1917-09-27'
+  locator: 4 Kappler 1001
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Cocopah Reservation (west half of sec. 12 and related lands), Arizona.
 states:
 - state: AZ
   presence: government-office
@@ -195,6 +205,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Phoenix Area
   note: Listed as "Cocopah Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1220331
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Cocopah Tribe' (Somerton)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 616151
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'COCOPAH INDIAN TRIBE' (UEI C17XR3XZFSV4), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'COCOPAH INDIAN TRIBE'.
 governance:
 - aspect: governing-body
   value: Tribal Council
@@ -562,6 +592,14 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Cocopah Tribe of Arizona, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on July 26, 2023, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-cocopah-tribe-of-arizona-2023-07-26
+  confidence: high
+  verification: inferred
+  as_of: '2023-07-26'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2023
 court_practice:
 - kind: bar-admission
   title: Tribal Advocate Application

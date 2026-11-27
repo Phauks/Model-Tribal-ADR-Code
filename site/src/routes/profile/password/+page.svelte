@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-	<title>{problem ? 'Error: ' : ''}{hasPassword ? 'Change your password' : 'Choose a password'} · Model Tribal ADR Code</title>
+	<title>{problem ? 'Error: ' : ''}{hasPassword ? 'Change your password' : 'Choose a password'} · Tribal Law Project</title>
 </svelte:head>
 
 {#snippet fieldError(name: string)}

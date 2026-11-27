@@ -46,7 +46,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.event.title} · Events · Workspace · Model Tribal ADR Code</title>
+	<title>{data.event.title} · Events · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -54,6 +54,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Events', href: '/workspace/events' }
 	]}
+	current={data.event.title}
 />
 <h1>{data.event.title}</h1>
 <p>

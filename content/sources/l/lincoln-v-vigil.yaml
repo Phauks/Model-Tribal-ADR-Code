@@ -104,6 +104,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=508%20U.S.%20182
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1993-03-03'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-873.mp3
+  catalog: https://catalog.archives.gov/id/118975000
+  whole_session: true
+  duration_seconds: 10506
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-873.mp3
+    checksum: 2855be5d89e6178036e8ac78eb561c6bac1d34f5c96fc46508cef9df550f2e5d
+    media_type: audio/mpeg
+    bytes: 168095365
 rights:
   status: no-permission-needed
   basis: us-government-work

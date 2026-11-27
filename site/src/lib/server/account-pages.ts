@@ -9,6 +9,8 @@
  * device; the only part of that kept here is the optional copy in
  * account_settings.
  */
+import { connectedSignIns } from './outside-sign-in.ts';
+import { passkeysOf } from './passkeys.ts';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { parseSettings, parseTheme, serializeSettings, type ReadingSettings, type Theme } from '#lib/reading-settings.ts';
 import type { SignedInAccount } from './contributor-profiles.ts';
@@ -216,7 +218,7 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 	]);
 	return {
 		about:
-			'Everything the Model Tribal ADR Code project keeps with your account, as of the time below. Settings, starred pages and pages saved for offline are kept on each device instead; export them from Settings, under This device.',
+			'Everything the Tribal Law Project keeps with your account, as of the time below. Settings, starred pages and pages saved for offline are kept on each device instead; export them from Settings, under This device.',
 		madeAt: now(),
 		account: accountRow ? { ...accountRow, has_password: Boolean(accountRow.has_password) } : null,
 		workspace: person ?? null,
@@ -251,6 +253,9 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 		followedPages: follows.results,
 		emailAboutFollowedPages: followSettings ?? { email: 'daily' },
 		settingsOnEveryDevice: settingsCopy ?? null,
-		signedIn: sessions.map(({ device, createdAt, lastSeenAt, method }) => ({ device, createdAt, lastSeenAt, method }))
+		signedIn: sessions.map(({ device, createdAt, lastSeenAt, method }) => ({ device, createdAt, lastSeenAt, method })),
+		// The passkeys' names and dates; their public keys are only of use to this site.
+		passkeys: (await passkeysOf(database, account.subject)).map(({ name, device, createdAt, lastUsedAt }) => ({ name, device, createdAt, lastUsedAt })),
+		connectedSignIns: await connectedSignIns(database, account.subject)
 	};
 }

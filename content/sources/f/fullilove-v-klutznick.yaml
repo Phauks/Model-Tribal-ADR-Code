@@ -1,0 +1,169 @@
+key: fullilove-v-klutznick
+kind: federal-case
+citation:
+  type: legal_case
+  title: Fullilove v. Klutznick
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '448'
+  page: '448'
+  issued:
+    date-parts:
+    - - 1980
+      - 7
+      - 2
+  URL: https://www.loc.gov/item/usrep448448/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: FULLILOVE et al. v. KLUTZNICK, SECRETARY OF COMMERCE, et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep448/usrep448448/usrep448448.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep448/usrep448448/usrep448448.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: judgment
+    justice: Warren Earl Burger
+    page: 453
+  - kind: concurrence
+    justice: Lewis F. Powell, Jr.
+    page: 495
+  - kind: special concurrence
+    justice: Thurgood Marshall
+    page: 517
+  - kind: dissent
+    justice: Potter Stewart
+    page: 522
+  - kind: dissent
+    justice: John Paul Stevens
+    page: 532
+original_link: https://www.loc.gov/item/usrep448448/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '1979-11-27'
+  printed: Argued November 27, 1979 Decided July 2, 1980
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep448/usrep448448/usrep448448.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1975-1981)
+  decision_type: plurality opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Potter Stewart
+    vote: minority
+    opinion: dissent
+  - name: Thurgood Marshall
+    vote: majority
+    opinion: special concurrence
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Warren E. Burger
+    vote: majority
+    opinion: plurality
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+    opinion: concurrence
+  - name: William H. Rehnquist
+    vote: minority
+  - name: John Paul Stevens
+    vote: minority
+    opinion: dissent
+  source: https://api.oyez.org/cases/1979/78-1007
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep448448/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/448/448/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1979/78-1007
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22448%20U.S.%20448%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=448%20U.S.%20448
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=448%20U.S.%20448
+    unchecked: true
+argument_audio:
+- kind: argument
+  date: '1979-11-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-294.mp3
+  catalog: https://catalog.archives.gov/id/102048676
+  whole_session: true
+  duration_seconds: 14527
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-294.mp3
+    checksum: d058a4af5a090a8029ed7786fe889143a61781960b9d9e5525436e4733b9d0ff
+    media_type: audio/mpeg
+    bytes: 232441853
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 448 U.S. 448 (1980). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep448/usrep448448/usrep448448.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1979-153), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 448 U.S. 448 "Fullilove v. Klutznick"; Database 448 U.S. 448 "FULLILOVE et al. v. KLUTZNICK, SECRETARY OF COMMERCE, et al."
+  - check: scan
+    result: agree
+    detail: Scan has 107 pages; the report runs 448 to 554
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued November 27, 1979 Decided July 2, 1980"; scan "Argued November 27, 1979--Decided July 2, 1980"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1980-07-02'
+  - check: opinions
+    result: agree
+    detail: 'Report: judgment Burger p. 453, concurrence Powell p. 495, special concurrence Marshall p. 517, dissent Stewart p. 522, dissent Stevens p. 532; Database writers: Burger, Marshall, Powell, Stevens, Stewart'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

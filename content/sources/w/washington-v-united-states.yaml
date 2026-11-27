@@ -1,0 +1,181 @@
+key: washington-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Washington v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '584'
+  page: '837'
+  issued:
+    date-parts:
+    - - 2018
+      - 6
+      - 11
+  URL: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: WASHINGTON v. UNITED STATES et al.
+  source: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: per curiam
+    justice: The Court
+    page: 838
+original_link: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+shares_link_with:
+- upper-skagit-indian-tribe-v-lundgren
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '2018-04-18'
+  printed: Argued April 18, 2018—Decided June 11, 2018
+  source: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2017-2018)
+  decision_type: equally divided Court
+  vote:
+    majority: 4
+    minority: 4
+  justices:
+  - name: John G. Roberts, Jr.
+    vote: not recorded
+  - name: Anthony M. Kennedy
+    vote: none
+  - name: Clarence Thomas
+    vote: not recorded
+  - name: Ruth Bader Ginsburg
+    vote: not recorded
+  - name: Stephen G. Breyer
+    vote: not recorded
+  - name: Samuel A. Alito, Jr.
+    vote: not recorded
+  - name: Sonia Sotomayor
+    vote: not recorded
+  - name: Elena Kagan
+    vote: not recorded
+  - name: Neil M. Gorsuch
+    vote: not recorded
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 2017-062; Oyez has no votes for this case.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+  - site: cornell
+    label: Cornell LII
+    access: free
+    link: https://www.law.cornell.edu/supremecourt/text/17-269
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/584/837/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2017/17-269
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22584%20U.S.%20837%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=584%20U.S.%20837
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=584%20U.S.%20837
+    unchecked: true
+argument_audio:
+- kind: argument
+  date: '2018-04-18'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/17-269.mp3
+  duration_seconds: 3692
+  file:
+    storage_key: supreme-court-audio/court/2017/17-269.mp3
+    checksum: ba428177999a273fd31f5da65821be0a005e09468d9df8615848c682959f18ef
+    media_type: audio/mpeg
+    bytes: 29545300
+- kind: argument
+  date: '2018-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2080-April18_2018.mp3
+  catalog: https://catalog.archives.gov/id/183518462
+  whole_session: true
+  duration_seconds: 7621
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2080-april18_2018.mp3
+    checksum: 3493ab35155e5de39a692bfd3ab2b1dc40341f27aa0baceffd9dcfbdad2443a6
+    media_type: audio/mpeg
+    bytes: 152423078
+- kind: opinion announcement
+  date: '2018-06-11'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2095-June11_2018.mp3
+  catalog: https://catalog.archives.gov/id/183518477
+  whole_session: true
+  duration_seconds: 1787
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2095-june11_2018.mp3
+    checksum: 34bb58d90965e34a12069d0637cd920a0fb721566253dfe78edf929cb6496ef2
+    media_type: audio/mpeg
+    bytes: 35748998
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 584 U.S. 837 (2018). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2017-062), the Legal Information Institute''s text of the slip opinion and the Court''s bound volume; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Slip opinion (Legal Information Institute) 584 U.S. 837 "Washington v. United States"; Database 17-269 "WASHINGTON v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 3 pages; the report runs 837 to 839
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: The slip opinion prints no dates line; the report prints "Argued April 18, 2018—Decided June 11, 2018"; Oyez argued 2018-04-18; Database decided 2018-06-11
+  - check: decided
+    result: agree
+    detail: Slip opinion (Legal Information Institute) 2018-06-11; Database 2018-06-11
+  - check: opinions
+    result: agree
+    detail: 'Report: per curiam Court p. 838; Database writers: none'
+  - check: bench
+    result: confirmed
+    detail: 'Oyez and the Database differ for Clarence Thomas (Oyez majority, Database not recorded), Elena Kagan (Oyez majority, Database not recorded), John G. Roberts, Jr. (Oyez majority, Database not recorded), Neil M. Gorsuch (Oyez majority, Database not recorded), Ruth Bader Ginsburg (Oyez majority, Database not recorded), Samuel A. Alito, Jr. (Oyez majority, Database not recorded), Sonia Sotomayor (Oyez majority, Database not recorded), Stephen G. Breyer (Oyez majority, Database not recorded). Confirmed: the report prints that the judgment is affirmed by an equally divided Court, so no vote is recorded for any Justice; the Database''s bench (no votes) is kept and Oyez''s is not used'

@@ -1,7 +1,7 @@
 <!--
 	@component
 	One glossary entry on its own page: the dictionary entry, its status and
-	basis At a glance, the other entries that use the term, and References. An
+	basis Key facts, the other entries that use the term, and References. An
 	info page (site/DESIGN.md, "Info pages").
 -->
 <script lang="ts">
@@ -13,18 +13,18 @@
 
 	let { data }: PageProps = $props();
 	const entry = $derived(data.entry);
+	// The breadcrumbs lead to the list of terms, so Key facts keeps only facts about the term (Trevor, Nov. 26, 2026; src/lib/info-page.ts).
 	const glance = $derived(
 		[
 			{ field: 'status', label: 'Status', items: [{ text: statusLabels[entry.status] ?? entry.status }] },
 			{ field: 'basis', label: 'Basis', items: entry.basis ? [{ text: basisLabels[entry.basis] ?? entry.basis }] : [] },
-			{ field: 'code', label: 'Model code', items: entry.codeDefinition ? [{ text: `Defined in ${entry.codeDefinition}` }] : [] },
-			{ field: 'glossary', label: 'Glossary', items: [{ text: `${entry.term} among all the terms`, link: `/glossary#${entry.id}` }] }
+			{ field: 'code', label: 'Model code', items: entry.codeDefinition ? [{ text: `Defined in ${entry.codeDefinition}` }] : [] }
 		].filter((group) => group.items.length > 0)
 	);
 </script>
 
 <svelte:head>
-	<title>{entry.term} · Glossary · Model Tribal ADR Code</title>
+	<title>{entry.term} · Glossary · Tribal Law Project</title>
 </svelte:head>
 
 <InfoPage title={entry.term} {glance} sources={data.sources} trail={[{ label: 'Glossary', href: '/glossary' }]}>

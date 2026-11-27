@@ -1,0 +1,62 @@
+key: oklahoma-statutes-title-22-section-60-9
+kind: state-statute
+citation:
+  type: legislation
+  title: Warrantless arrest
+  title-short: Okla. Stat. tit. 22, § 60.9
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '22'
+  section: '60.9'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1994
+      - 6
+      - 8
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os22.pdf#page=90
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os22.pdf#page=90
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-22-section-1602
+- oklahoma-statutes-title-22-section-210
+- oklahoma-statutes-title-22-section-60-1
+- oklahoma-statutes-title-22-section-60-14
+- oklahoma-statutes-title-22-section-60-22
+- oklahoma-statutes-title-22-section-983v-3
+- oklahoma-statutes-title-22-section-983v4
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 22, § 60.9 (2026)
+  page: 90
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 22, § 60.9 (2026). History: Added by Laws 1994, c. 316, § 1, emerg. eff. June 8, 1994. Amended by Laws 2000, c. 85, § Text read from the Legislative Service Bureau''s Title 22 PDF (updated Nov. 12, 2026), page 90. Found by the state statutes pilot (terms: tribal court); AI reader''s verdict incidental: Warrantless arrest on foreign order from tribal court. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal court'

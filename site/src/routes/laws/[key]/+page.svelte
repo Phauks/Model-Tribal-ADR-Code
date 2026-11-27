@@ -2,7 +2,7 @@
 	@component
 	One federal law's, treaty's or executive order's page
 	(src/lib/server/law-pages.ts), on the site's one item layout: the law's
-	kind, date and citation At a glance (with an order's number and President,
+	kind, date and citation Key facts (with an order's number and President,
 	and the nations whose pages cite it), its box's parts as sections, the
 	accounts of its impact, where to read it, the text this site keeps of it,
 	and where this site cites it.
@@ -12,11 +12,29 @@
 	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
+	import DocumentText from '#lib/components/DocumentText.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
-	import StubNote from '#lib/components/StubNote.svelte';
+	import TileMap from '#lib/components/TileMap.svelte';
+	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+	import ChevronRight from '@lucide/svelte/icons/chevron-right';
+	import CodeContents from '#lib/components/code/CodeContents.svelte';
+	import CodePager from '#lib/components/code/CodePager.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+
+	let cededMapReady = $state(false);
+	/** If the map cannot start it says so in its frame, with Try again (Trevor, 2026-11-27), so the frame shows then too. */
+	let cededMapFailed = $state(false);
+
+	// An order's trail runs through its collection and the list it was found in, and ends with its number (mockup C2-order).
+	const browsed = $derived(data.browsed);
+	const trail = $derived(
+		browsed
+			? [{ label: browsed.section.label, href: browsed.section.href }, { label: browsed.collection.crumb, href: browsed.collection.path }, ...(browsed.place.focus ? [browsed.place.focus] : [])]
+			: (data.trail ?? [data.kind === 'state-statute' ? { label: 'Library', href: '/library' } : { label: 'Federal law', href: '/laws' }])
+	);
+	const crumb = $derived(browsed ? (/No\. [\w-]+/.exec(data.citation)?.[0] ?? data.name) : data.chapter ? data.name.split('.')[0] : undefined);
 
 	/** Past this many, the nation pages wait behind a summary line. */
 	const longList = 12;
@@ -28,17 +46,64 @@
 	{/each}
 {/snippet}
 
+{#snippet enactedList()}
+	{#each data.enacted as section (section.link)}
+		<p><a href={section.link}>{section.label}</a><span class="muted">&nbsp;› {section.heading}</span></p>
+	{/each}
+{/snippet}
+
+{#snippet sectionRow(section: NonNullable<typeof data.sections>['inForce'][number])}
+	<div>
+		<dt id={section.anchor}>{#if section.link}<a href={section.link}>{section.label}</a>{:else}{section.label}{/if}</dt>
+		<dd>{section.heading}{#if section.act}<span class="muted">&nbsp;› {#if section.act.link}<a href={section.act.link}>{section.act.name}</a>{:else}{section.act.name}{/if}</span>{/if}</dd>
+	</div>
+{/snippet}
+
 <svelte:head>
-	<title>{data.name} · Laws · Model Tribal ADR Code</title>
+	<title>{data.name} · Laws · Tribal Law Project</title>
 	<meta name="description" content="{data.name}, {data.citation}: what it did, the accounts of its impact and where to read it." />
 </svelte:head>
 
-<InfoPage title={data.name} lead={data.citation} glance={data.glance} sources={data.sources} trail={[{ label: 'Library', href: '/library' }]} status={data.stub ? stubStatus : undefined}>
+<!-- The land a treaty ceded, drawn under Key facts (Trevor, 2026-11-26, historic maps mockup 7). Key facts' Land ceded row says the same in words. -->
+{#snippet cededMap()}
+	{#if data.landCeded}
+		<div class="ceded-map no-print" class:ready={cededMapReady || cededMapFailed}>
+			<TileMap
+				view="lands"
+				label="Land ceded by {data.name}"
+				data={data.landCeded.map}
+				opening={data.landCeded.bounds}
+				cessionsShown={data.landCeded.royce}
+				cessionsAlways
+				onready={() => (cededMapReady = true)}
+				onfail={() => (cededMapFailed = true)}
+			/>
+		</div>
+	{/if}
+{/snippet}
+
+<InfoPage title={data.name} lead={data.citation} glance={data.glance} panels={data.landCeded ? cededMap : undefined} sources={data.sources} {trail} {crumb} pager={browsed ? pager : undefined} status={data.stub ? stubStatus : undefined}>
 	{#if data.fullTitle}<p class="full-title muted">{data.fullTitle}</p>{/if}
+
+	{#if data.chapter}
+		<!-- A chapter of Title 25: the chapters before and after, then its contents (src/lib/server/code-outline.ts; design/title-25-navigation, option A). -->
+		{@const subchapters = data.chapter.contents.filter((group) => group.label && !group.part).length}
+		<p class="chapter-counts muted">
+			{#if subchapters > 0}<span>{subchapters} subchapters</span>{/if}
+			<span>{data.chapter.inForce.toLocaleString('en-US')} sections in force{#if data.chapter.notInForce > 0}, {data.chapter.notInForce.toLocaleString('en-US')} repealed, moved or omitted{/if}</span>
+		</p>
+		<CodePager previous={data.chapter.previous} next={data.chapter.next} look="line" line="heading" />
+		<Collapsible heading="Contents" identifier="contents" count={data.chapter.inForce}>
+			<CodeContents groups={data.chapter.contents} />
+		</Collapsible>
+	{/if}
 
 	<RecordBoxSections sections={data.boxSections} />
 
 	<ImpactAccounts accounts={data.accounts} />
+
+	<!-- The copy of the text this site keeps, in the one card every document page shows (DocumentText.svelte); "None Identified" without one. -->
+	<DocumentText file={data.text} identifier="law-text" name={data.name} citation={data.citation} signers={data.signers} />
 
 	{#if data.readingHtml}
 		<Collapsible heading="Where to read it" identifier="where-to-read" count={data.readingCount}>
@@ -47,23 +112,54 @@
 		</Collapsible>
 	{/if}
 
-	{#if data.text}
-		<Collapsible heading="Text" identifier="law-text">
-			<!-- Its own block, so the frame takes the width beside At a glance instead of dropping below it. -->
-			<div class="law-frame-box">
-				{#if data.text.isPdf}
-					<iframe class="law-frame" src={data.text.file} title="{data.name} (PDF)" loading="lazy"></iframe>
-				{:else}
-					<!-- The saved text or web page runs nothing and loads nothing (src/lib/server/public-copy-serving.ts). -->
-					<iframe class="law-frame law-frame-text" src={data.text.file} title={data.name} sandbox="" referrerpolicy="no-referrer" loading="lazy"></iframe>
-				{/if}
-			</div>
+	{#if data.sections}
+		<Collapsible heading="Sections" identifier="sections" count={data.sections.inForce.length}>
+			<dl class="summary-list section-list">
+				{#each data.sections.inForce as section (section.anchor)}
+					{@render sectionRow(section)}
+				{/each}
+			</dl>
+			{#if data.sections.notInForce.length > 0}
+				<details class="sections-gone">
+					<summary>{data.sections.notInForce.length.toLocaleString('en-US')} repealed, transferred or omitted</summary>
+					<dl class="summary-list section-list">
+						{#each data.sections.notInForce as section (section.anchor)}
+							{@render sectionRow(section)}
+						{/each}
+					</dl>
+				</details>
+			{/if}
 		</Collapsible>
 	{/if}
 
-	{#if data.essays.length + data.nations.length + data.signers.length > 0}
-		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length + data.signers.length}>
+	{#if data.essays.length + data.nations.length + data.treatySigners.length + data.enacted.length + data.legislativeHistory.length > 0}
+		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length + data.treatySigners.length + data.enacted.length + data.legislativeHistory.length}>
 			<dl class="summary-list">
+				{#if data.enacted.length > 0}
+					<div>
+						<dt>United States Code</dt>
+						<dd>
+							{#if data.enacted.length > longList}
+								<details>
+									<summary>{data.enacted.length.toLocaleString('en-US')} sections of Title 25</summary>
+									{@render enactedList()}
+								</details>
+							{:else}
+								{@render enactedList()}
+							{/if}
+						</dd>
+					</div>
+				{/if}
+				{#if data.legislativeHistory.length > 0}
+					<div>
+						<dt>Legislative history</dt>
+						<dd>
+							{#each data.legislativeHistory as document (document.link)}
+								<p><a href={document.link}>{document.name}</a><span class="muted">&nbsp;› {document.detail}</span></p>
+							{/each}
+						</dd>
+					</div>
+				{/if}
 				{#if data.nations.length > 0}
 					<div>
 						<dt>Nation pages</dt>
@@ -89,11 +185,11 @@
 						</dd>
 					</div>
 				{/if}
-				{#if data.signers.length > 0}
+				{#if data.treatySigners.length > 0}
 					<div>
 						<dt>Signers</dt>
 						<dd>
-							{#each data.signers as signer (signer.link)}
+							{#each data.treatySigners as signer (signer.link)}
 								<p><a href={signer.link}>{signer.name}</a>{#if signer.detail}<span class="muted">, for {signer.detail}</span>{/if}</p>
 							{/each}
 						</dd>
@@ -103,14 +199,43 @@
 		</Collapsible>
 	{/if}
 
-	{#if data.stub}<StubNote stub={data.stub} />{/if}
+	{#if data.chapter}<CodePager previous={data.chapter.previous} next={data.chapter.next} />{/if}
 </InfoPage>
+
+<!-- The orders before and after this one in its list, and its place there (mockup C2-order). -->
+{#snippet pager()}
+	{#if browsed}
+		<nav class="pager no-print" aria-label="{browsed.place.label}: previous and next">
+			<span class="pager-side">{#if browsed.place.previous}<a href={browsed.place.previous.href} rel="prev"><ChevronLeft size={16} aria-hidden="true" /><span class="visually-hidden">Previous: </span>{browsed.place.previous.label}</a>{/if}</span>
+			<span class="pager-place">{browsed.place.position.toLocaleString('en-US')} of {browsed.place.total.toLocaleString('en-US')} · {browsed.place.label}</span>
+			<span class="pager-side next">{#if browsed.place.next}<a href={browsed.place.next.href} rel="next"><span class="visually-hidden">Next: </span>{browsed.place.next.label}<ChevronRight size={16} aria-hidden="true" /></a>{/if}</span>
+		</nav>
+	{/if}
+{/snippet}
 
 {#snippet stubStatus()}{#if data.stub}<StubBadge stub={data.stub} />{/if}{/snippet}
 
 <style>
+	/* The map takes its place once it has drawn, or once it says it could not load, so the page never shows an empty frame. */
+	.ceded-map {
+		margin-top: var(--space-3);
+	}
+
+	.ceded-map:not(.ready) {
+		visibility: hidden;
+		height: 0;
+		overflow: hidden;
+	}
+
 	.full-title {
 		margin-top: 0;
+	}
+
+	.chapter-counts {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 0.9rem;
+		margin: 0 0 1rem;
 	}
 
 	.law-reading :global(.reading-list) {
@@ -122,22 +247,47 @@
 		margin: 0;
 	}
 
-	.law-frame-box {
-		display: flow-root;
+	/* The row a link from an Act's page lands on, below the sticky header. */
+	.section-list dt {
+		scroll-margin-top: 4.5rem;
 	}
 
-	.law-frame {
-		display: block;
-		width: 100%;
-		height: 70vh;
-		min-height: 24rem;
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-control);
+	/* Shaded for a moment, then not (src/lib/arrival-highlight.ts); without scripts, while the address points to it. */
+	:global(:root:not([data-scripts='on'])) .section-list dt:target,
+	:global(:root:not([data-scripts='on'])) .section-list dt:target + dd,
+	.section-list dt:global([data-arrived]),
+	.section-list dt:global([data-arrived]) + dd {
 		background: var(--color-surface-raised);
 	}
 
-	/* A short text needs no tall frame. */
-	.law-frame-text {
-		height: 24rem;
+	.pager {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		align-items: center;
+		gap: var(--space-3);
+		margin: var(--space-3) 0;
+		padding: var(--space-2) 0;
+		border-top: 1px solid var(--color-line);
+		border-bottom: 1px solid var(--color-line);
+	}
+
+	.pager a {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		white-space: nowrap;
+	}
+
+	.pager-place {
+		text-align: center;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.pager-side.next {
+		text-align: right;
+	}
+
+	.sections-gone {
+		margin-top: 1rem;
 	}
 </style>

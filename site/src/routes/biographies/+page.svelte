@@ -1,13 +1,14 @@
 <!--
 	@component
-	Every Native person with a page on this site: people in the cases and
-	leaders in nations' histories (Trevor, Nov. 24, 2026).
+	Every person with a page on this site: Native people in the cases and
+	leaders in nations' histories (Trevor, Nov. 24, 2026), and the people who
+	signed treaties for the United States (Nov. 26, 2026).
 -->
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
-	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
+	import { listCell, type TableColumn, type TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -22,7 +23,7 @@
 			key: person.key,
 			cells: {
 				name: { text: person.name, href: `/biographies/${person.key}` },
-				nation: { text: person.nations.map((nation) => nation.name).join('; '), href: person.nations.length === 1 ? `/nations/${person.nations[0].id}` : undefined },
+				nation: person.unitedStates ? { text: 'United States' } : listCell(person.nations.map((nation) => ({ text: nation.name, href: `/nations/${nation.id}` }))),
 				lead: { text: person.lead },
 				cases: { text: String(person.cases), sortValue: person.cases }
 			}
@@ -31,11 +32,11 @@
 </script>
 
 <svelte:head>
-	<title>Biographies · Model Tribal ADR Code</title>
-	<meta name="description" content="Native people in the cases on this site and leaders in nations' histories, each fact with its source." />
+	<title>Biographies · Tribal Law Project</title>
+	<meta name="description" content="Native people in the cases on this site, leaders in nations' histories, and the people who signed treaties for the United States, each fact with its source." />
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Library', href: '/library' }]} />
+<Breadcrumbs trail={[{ label: 'Library', href: '/library' }]} current="Biographies" />
 
 <h1>Biographies <CountBadge count={data.people.length} /></h1>
-<DataTable identifier="biographies" label="Table: Native people with a page on this site" {columns} {rows} rowName={['person', 'people']} download="biographies" filters />
+<DataTable identifier="biographies" label="Table: people with a page on this site" {columns} {rows} rowName={['person', 'people']} download="biographies" filters />

@@ -17,6 +17,7 @@
 	the shared table's Sum row.
 -->
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { onMount } from 'svelte';
 	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
@@ -50,6 +51,7 @@
 	} from '#lib/table-builder.ts';
 	import type { PageProps } from './$types';
 	import { copyText } from '#lib/clipboard.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let { data }: PageProps = $props();
 
@@ -145,6 +147,7 @@
 			await copyText(location.href);
 			copyStatus = 'Link copied';
 		} catch {
+			// expected: the browser would not copy; the status says to copy the address by hand.
 			copyStatus = 'Copy the address from the address bar';
 		}
 	}
@@ -164,12 +167,18 @@
 		const parameters = new URLSearchParams(location.search);
 		const requested = parameters.get('data') ?? '';
 		const identifier = data.datasets.some((summary) => summary.identifier === requested) ? requested : data.datasets[0].identifier;
-		open(identifier, parameters).catch(() => (loadFailed = true));
+		open(identifier, parameters).catch((problem) => {
+			sendProblem(problem, { code: 'table-builder.open', place: identifier });
+			loadFailed = true;
+		});
 		// The team makes essay charts here too (Trevor, Nov. 24, 2026: "it should be the same flow"); the list is empty unless someone who can edit an essay is signed in.
 		fetch('/workspace/essays/editable.json')
 			.then((response) => (response.ok ? response.json() : { essays: [] }))
 			.then((body: { essays?: { identifier: string; title: string; editLink: string }[] }) => (editableEssays = body.essays ?? []))
-			.catch(() => (editableEssays = []));
+			.catch((problem) => {
+				sendProblem(problem, { code: 'table-builder.essays' });
+				editableEssays = [];
+			});
 	});
 
 	/** Where "Add to essay" takes the editor: the essay in Editing, which places this chart at its end (src/lib/table-builder.ts, essayChartFrom). */
@@ -181,12 +190,12 @@
 <svelte:window onclick={onWindowClick} />
 
 <svelte:head>
-	<title>Build a table · Model Tribal ADR Code</title>
+	<title>Build a table · Tribal Law Project</title>
 	<meta name="description" content="Build a table from the site’s data on Native nations, courts, laws, gaming compacts, constitutions, treaties and tribal court opinions." />
 </svelte:head>
 
 <div class="builder-page">
-	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }, { label: 'Data and charts', href: '/nations/data' }]} />
+	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }, { label: 'Data and charts', href: '/nations/data' }]} current="Build a table" />
 	<h1>Build a table</h1>
 
 	{#if loadFailed}
@@ -296,11 +305,11 @@
 			{#if chart}
 				<BarChart {chart} />
 			{:else if cross}
-				<h2 class="result-title">{title}</h2>
-				<DataTable identifier="built" label="Table: {title}" columns={cross.columns} rows={cross.rows} download="table" />
+				<DataTable identifier="built" label="Table: {title}" columns={cross.columns} rows={cross.rows} download="table">
+					{#snippet heading(count: Snippet)}<h2 class="result-title">{title} {@render count()}</h2>{/snippet}
+				</DataTable>
 				<p class="small"><a href={dataset.sourceHref}>Source</a></p>
 			{:else if records && !settings.groupBy}
-				<h2 class="result-title">{title}</h2>
 				<DataTable
 					identifier="built"
 					label="Table: {title}"
@@ -312,7 +321,9 @@
 					filters
 					bind:shownColumns={() => shownKeys, (keys) => update({ columns: chosenColumns(dataset as BuilderDataset, keys) })}
 					bind:columnFilters={() => settings?.filters ?? {}, (filters: ColumnFilters) => update({ filters })}
-				/>
+				>
+					{#snippet heading(count: Snippet)}<h2 class="result-title">{title} {@render count()}</h2>{/snippet}
+				</DataTable>
 				<p class="small"><a href={dataset.sourceHref}>Source</a></p>
 			{/if}
 		{/key}

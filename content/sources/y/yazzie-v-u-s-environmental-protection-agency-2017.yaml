@@ -1,0 +1,76 @@
+key: yazzie-v-u-s-environmental-protection-agency-2017
+kind: federal-case
+citation:
+  type: legal_case
+  title: Yazzie v. U.S. Environmental Protection Agency
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '851'
+  page: '960'
+  issued:
+    date-parts:
+    - - 2017
+      - 3
+      - 20
+  URL: https://static.case.law/f3d/851/html/0960-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 14-73100, 14-73101, 14-73102
+original_link: https://static.case.law/f3d/851/html/0960-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2016-11-18'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2016/11/18/14-73100.mp3
+  duration_seconds: 2866
+  file:
+    storage_key: appeals-court-audio/ca9/2016/2016-11-18-14-73100.mp3
+    checksum: 3b7e9d582799d47c3a70ec0c9c9d805d0efbee3a52016d20c2d0c3166efbc1b5
+    media_type: audio/mpeg
+    bytes: 11466000
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- gila-river-indian-community-of-the-gila-river-indian-reservation
+- navajo-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: gila-river-indian-community-of-the-gila-river-indian-reservation
+    named_as: Gila River Indian Community
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: navajo-nation
+    named_as: Navajo Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 851 F.3d 960. Decided by the United States Court of Appeals for the Ninth Circuit on Mar. 20, 2017. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 12, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 12
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 2 matched, 0 not linked

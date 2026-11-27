@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Dec. 27, 1875, 1 Kappler 820-821
+  since: '1875-12-27'
+  source: executive-order-1875-12-27-mission-indian-reservations
+  confidence: medium
+  verification: read-in-full
+  as_of: '1875-12-27'
+  locator: 1 Kappler 820-821
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Pala Reservation, San Diego County, California.
 states:
 - state: CA
   presence: government-office
@@ -174,6 +184,15 @@ languages:
   as_of: '2026-11-23'
   locator: Language Revitalization
   note: 'The source reads: “Online Cupeño Language Classes”.'
+language_programs:
+- name: Pala Language Revitalization Program
+  link: https://www.palatribe.com/residents/language-revitalization/
+  run_by: nation
+  source: pala-band-language-revitalization
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: Lesson Plans
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency
@@ -190,6 +209,32 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Pala Band of Mission Indians".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2018
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Pala Band Of Mission Indians' (Pacific Region)
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 629966
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Pala Band of Mission Indians' (Pala)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 874620
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'PALA BAND OF MISSION INDIANS' (UEI NH82JK5LSJ14), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution (adopted November 1994)
@@ -509,6 +554,46 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business, Residential) of the Pala Band of Mission Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on May 2, 2023, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pala-band-of-mission-indians-2023-05-02
+  confidence: high
+  verification: inferred
+  as_of: '2023-05-02'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2023
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Pala Band of Mission Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Mar. 25, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pala-band-of-mission-indians-2022-03-25
+  confidence: high
+  verification: inferred
+  as_of: '2022-03-25'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Apr. 19, 2016 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2016-04-19'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the San Luis Rey Indian Water Rights Settlement Act of 1988 in 1988, amended 2016 (Pub. L. No. 100-675, Pub. L. No. 114-322), settling the water rights of La Jolla, San Pasquale, Pauma, Pala Bands of Mission Indians. It authorizes about $30.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-100-675
+  confidence: high
+  verification: inferred
+  as_of: '1988'
+  locator: Congressional Research Service, R44148, Table 1, 1988
 court_practice:
 - kind: filing-fees
   title: Fees & Costs (Pala Tribal Court)
@@ -550,7 +635,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 1 Kappler 820-821
-  note: 'The instrument reads: “Pala. — Township 9 south, range 2 west ... withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. An earlier Jan. 31, 1870 order set apart the "San Pasqual and Pala Valleys" but was revoked Feb. 17, 1871; the 1875 order is the first surviving one. The 1875 tract was reduced later.'
+  note: 'The instrument reads: “Pala. — Township 9 south, range 2 west . . . withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. An earlier Jan. 31, 1870 order set apart the "San Pasqual and Pala Valleys" but was revoked Feb. 17, 1871; the 1875 order is the first surviving one. The 1875 tract was reduced later.'
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

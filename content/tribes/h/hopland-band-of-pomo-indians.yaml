@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7235 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7235 (entry "Hopland Band of Porno Indians, Hopland Rancheria, California")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Hopland Band of Porno Indians, Hopland Rancheria, California." The entry is matched to the nation by name.
 states:
 - state: CA
   presence: government-office
@@ -190,6 +200,44 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Hopland Band of Pomo Indians, California".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2020
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Hopland Band of Pomo Indians' (Pacific Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Hopland Band of Pomo Indians'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1205129
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Hopland Band of Pomo Indians' (Hopland)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 388268
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'HOPLAND BAND OF POMO INDIANS' (UEI DZB6Q2N9L4K1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'HOPLAND BAND OF POMO INDIANS'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 313573
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'HOPLAND BAND OF POMO INDIANS' (UEI DZB6Q2N9L4K1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'HOPLAND BAND OF POMO INDIANS'.
 governance:
 - aspect: form
   value: Constitution under Indian Reorganization Act of June 18, 1934

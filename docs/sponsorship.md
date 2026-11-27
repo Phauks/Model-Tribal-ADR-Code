@@ -12,6 +12,7 @@ Organizations, and people, can sponsor the project: give once or every month, ch
 | `/sponsor` | Everyone | The Sponsorship page's own text (edited on the website), the goal of a copy for every nation, what else a gift can fund, then every sponsor shown in public; a link to give only while gifts are open |
 | `/sponsor/levels` | Everyone | What everyone gets free and what each sponsorship level adds, monthly or yearly, with a heart to give at each level, and a note on taxes |
 | `/sponsors/<name>` | Everyone | One sponsor listed by name, once they have given |
+| `/sponsor/row.json` | Everyone | The sponsors in the home page's rolling row, by name and whether their logo shows; never an amount or a level |
 | `/workspace/sponsors` | The lead author | Whether gifts work, setting by setting, the costs and level amounts the public pages show, and every sponsor |
 | `/workspace/sponsors/<identifier>` | The lead author | One sponsor's details, managers, gifts with amounts and history; take off or put back on the public pages; ask Stripe about them |
 | `/sponsorship/payment-webhook` | Stripe | Records paid gifts |
@@ -40,8 +41,8 @@ Monthly and yearly sponsors reach a level by what they give. Trevor approved the
 | Free | $0 | $0 | Every page, source and case; data sets as .csv and .xlsx; forms as .docx and PDF; saving pages to read offline; starring and following pages; events |
 | Friend | $5 | $50 | Listed among sponsors, as they choose; a sponsor mark on their profile; a discount on CLE programs, once there are any |
 | Supporter | $25 | $250 | Their name in the next printed edition |
-| Patron | $100 | $1,000 | A paperback of each new edition; listed first on the Sponsorship page |
-| Benefactor | $500 | $5,000 | Their logo in the next printed edition; their logo and one line about them first on the Sponsorship page; five hardcovers of each new edition; CLE programs free for five of their staff, once there are any; 10 paperbacks a year sent to the nations, courts or libraries they choose |
+| Patron | $100 | $1,000 | A paperback of each new edition; listed first on the Sponsorship page; their name in the sponsors row on the home page, if they choose |
+| Benefactor | $500 | $5,000 | Their logo in the next printed edition; their logo and one line about them first on the Sponsorship page; their logo in place of their name in the sponsors row on the home page; five hardcovers of each new edition; CLE programs free for five of their staff, once there are any; 10 paperbacks a year sent to the nations, courts or libraries they choose |
 
 Each level includes everything the levels before it give. A year costs ten months (Trevor, Nov. 23, 2026), and a yearly gift reaches the level its amount over ten months reaches. No benefit gives a say in what the site or the code says.
 
@@ -49,7 +50,26 @@ The lead author sets each level's amount a month under "Sponsorship levels" on t
 
 The page's note on taxes says gifts are not tax-deductible yet. Once the IRS recognizes the nonprofit, the note should name it and give its EIN, and say that a gift is deductible less the value of any books received (26 U.S.C. §§ 170(c), 6115).
 
-Still to build: each sponsor's level on their Account page and, if they choose, in public, Patrons and Benefactors first on the Sponsorship page, and the sponsor mark on profiles.
+Still to build: each sponsor's level on their Account page and, if they choose, in public, Patrons and Benefactors first on the Sponsorship page, and the sponsor mark on profiles. The home page row is built (below).
+
+## The home page row
+
+Trevor asked on Nov. 27, 2026 for a rolling row of sponsors on the home page, and chose that Patrons appear by name and Benefactors by logo. It is built to match the mockup he approved that day (project files, `design/home-sponsor-row/`). It sits at the bottom of the home page under the heading "Thank you to our sponsors", which links to the Sponsorship page (`src/lib/components/SponsorRow.svelte`).
+
+Who is in it (`src/lib/server/sponsor-row.ts`):
+
+- A sponsor shown in public by name ("Name, logo and link" or "Name only"), never one listed as "a sponsor" or not listed, and never one the lead author took off the public pages.
+- By level, a sponsor whose managers ticked "Show us in the sponsors row on the home page" on the Account page and who gives at Patron's amount or more: their latest monthly gift within 35 days, or their latest yearly gift within a year and 35 days, at the amounts set for the levels. Being in the row tells anyone they give at least a Patron's amount, which is why it is their choice. One-time gifts reach no level.
+- Patrons show by name. Benefactors show by logo, once it has passed the virus check and if their listing includes it; otherwise by name.
+- The lead author can change this for one sponsor under "Home page row" on their workspace page: By level (the default), Always show (in the row whatever they give, by logo if their listing has one, such as a sponsor who gave by check) or Never show. Always show still needs a public listing by name.
+
+The longest-standing sponsors come first, logos and names mixed. Each tile links to the sponsor's own page. No amount or level is ever sent.
+
+How it moves: it rolls to the left at an even speed only when the tiles are too many to fit, one roll duration (a motion token) for each sponsor. It stops while the pointer is over it or a tile has focus, and its Pause button stops it until pressed again. With Reduce motion, on the device or in Settings, it never moves and the tiles wrap onto more lines. This is the one exception to the rule that the site moves only when the reader does something (site/DESIGN.md, section 6, "Motion").
+
+With no sponsor in it, the row shows one dashed tile, "Your organization here", that links to Sponsorship levels.
+
+The home page is built ahead of time, so the row asks `/sponsor/row.json` for its sponsors once the page opens. The edge keeps that answer for five minutes (docs/edge-caching.md), so a change shows within five minutes. Without scripts only the heading shows, linking to the Sponsorship page.
 
 ## Managers
 

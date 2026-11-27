@@ -1,0 +1,66 @@
+key: united-states-v-bad-marriage-2006
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Bad Marriage
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '439'
+  page: '534'
+  issued:
+    date-parts:
+    - - 2006
+      - 2
+      - 22
+  URL: https://static.case.law/f3d/439/html/0534-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 05-30149
+original_link: https://static.case.law/f3d/439/html/0534-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2005-12-06'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2005/12/06/05-30149.mp3
+  duration_seconds: 1031
+  held: true
+  note: Held until a reading of the argument finds no child or victim named; the opinion itself is shown.
+  file:
+    storage_key: appeals-court-audio/ca9/2005/2005-12-06-05-30149.mp3
+    checksum: 4a16e3a396152cdadc128b50dcd6cb15d7f6fadb67a882e58ec51e14805f1d34
+    media_type: audio/mpeg
+    bytes: 8245784
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 439 F.3d 534. Decided by the United States Court of Appeals for the Ninth Circuit on Feb. 22, 2006. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 6; an AI reader read excerpts and judged it an Indian law case (Indian country assault sentencing).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 6; reader: Indian country assault sentencing'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

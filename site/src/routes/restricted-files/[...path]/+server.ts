@@ -19,12 +19,15 @@ import {
 	filterCopyDetails,
 	filterLawItems,
 	filterOfflineList,
+	filterSearchFiles,
+	filterSearchIndex,
 	filterSearchRecords,
 	filterTimelineRows,
 	type BuilderFile,
 	type SiteRestrictions
 } from '#lib/restricted-files.ts';
 import { timelineCsv, type TimelineRow } from '#lib/timeline.ts';
+import { verifierNames } from '#lib/zip-verifiers.ts';
 import type { RequestHandler } from './$types';
 
 export const prerender = false;
@@ -44,6 +47,8 @@ const json = (value: unknown) => JSON.stringify(value);
 /** The files the Worker filters, by their address. Keep in step with filteredFiles in tools/nation-page-changes-worker.js. */
 const restrictedFiles: RestrictedFile[] = [
 	{ pattern: /^\/search\/records\.json$/, filter: (text, restrictions) => json(filterSearchRecords(JSON.parse(text), restrictions)) },
+	{ pattern: /^\/search\/index\.json$/, filter: (text, restrictions) => json(filterSearchIndex(JSON.parse(text), restrictions)) },
+	{ pattern: /^\/search\/files\.json$/, filter: (text, restrictions) => json(filterSearchFiles(JSON.parse(text), restrictions)) },
 	{ pattern: /^\/copies\/list\.csv$/, filter: (text, restrictions) => filterCopiesCsv(text, restrictions) },
 	{
 		pattern: /^\/copies\/offline\/nations\/([a-z0-9-]+)\.json$/,
@@ -114,7 +119,7 @@ async function filteredDataZip(restrictions: SiteRestrictions, assets: Assets, o
 	}
 	const sums: string[] = [];
 	for (const [name, content] of Object.entries(files)) {
-		if (name === 'SHA256SUMS.txt') continue;
+		if (name === 'SHA256SUMS.txt' || verifierNames.includes(name)) continue;
 		sums.push(`${await hex(content as Uint8Array)}  ${name}\n`);
 	}
 	files['SHA256SUMS.txt'] = strToU8(sums.join(''));

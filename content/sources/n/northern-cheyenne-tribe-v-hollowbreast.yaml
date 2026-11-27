@@ -108,6 +108,67 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=425%20U.S.%20649
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1976-03-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-146-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048524
+  whole_session: true
+  duration_seconds: 136
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-146-r1.mp3
+    checksum: 36fcd308eec3467a9449a4c23f5d21b9f2b960078775b6be5048671c0fc10f06
+    media_type: audio/mpeg
+    bytes: 2183965
+- kind: argument
+  date: '1976-03-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-146-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048524
+  whole_session: true
+  duration_seconds: 3804
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-146-r2.mp3
+    checksum: edbf2edbd6e7ca5ea0a00577cc28859236207f01ac5803fb698a4802239cbf1d
+    media_type: audio/mpeg
+    bytes: 60867943
+- kind: argument
+  date: '1976-03-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-146-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048524
+  whole_session: true
+  duration_seconds: 3733
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-146-r3.mp3
+    checksum: d396aa7785d83f22da9274bc5a99d5ce0822550e7d9dfce2bdd1397d31d38976
+    media_type: audio/mpeg
+    bytes: 59726496
+- kind: argument
+  date: '1976-03-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-146-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048524
+  whole_session: true
+  duration_seconds: 4046
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-146-r4.mp3
+    checksum: a17c7d89a502f336b022ac38903e3761ae76827c83922db20995244439fc504a
+    media_type: audio/mpeg
+    bytes: 64741170
+- kind: argument
+  date: '1976-03-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-146-r5.mp3
+  catalog: https://catalog.archives.gov/id/102048524
+  whole_session: true
+  duration_seconds: 3063
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-146-r5.mp3
+    checksum: 0cd631c479585c1c8e18623857724789776aaf333010e1a43e1a256cd723f08c
+    media_type: audio/mpeg
+    bytes: 49008769
 rights:
   status: no-permission-needed
   basis: us-government-work

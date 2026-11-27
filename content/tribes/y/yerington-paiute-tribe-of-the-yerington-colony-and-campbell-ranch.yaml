@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada (approved by the Secretary of the Interior Nov. 13, 1936), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1936-11-13'
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  confidence: medium
+  verification: inferred
+  as_of: '1936-11-13'
+  locator: 1936 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: NV
   presence: government-office
@@ -161,6 +174,34 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
   note: 'Listed as "Yerington Paiute Tribe (Campbell Ranch)". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2001
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Phoenix Area, row 'Yerington Paiute Tribe of Nevada'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Yerington Paiute Tribe of Nevada'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1501761
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NV, row 'Yerington Paiute Tribe' (Yerington)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 2759736
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'YERINGTON PAIUTE TRIBE' (UEI U1CWE5KCUA89), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'YERINGTON PAIUTE TRIBE'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Yerington Paiute Tribe, Nevada" among organizations under constitutions approved
@@ -516,6 +557,14 @@ jurisdiction:
   verification: inferred
   locator: 40 Fed. Reg. at 27,501
   note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Feb. 13, 2020 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2020-02-13'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 nearby_state_courts:
 - state: NV
   county: Lyon County

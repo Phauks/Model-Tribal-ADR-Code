@@ -1,0 +1,28 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: del
+name: Common Delaware
+iso_639_3:
+  code: del
+  reference_name: Delaware
+  scope: macrolanguage
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: comm1246
+  level: family
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+iso_names:
+- name: Delaware
+  source: iso-639-3-code-tables
+dialects:
+- name: Munsee
+  glottocode: muns1251
+  source: glottolog-5-4
+- name: Unami
+  glottocode: unam1242
+  source: glottolog-5-4
+works: []
+retrieved: '2026-11-27'

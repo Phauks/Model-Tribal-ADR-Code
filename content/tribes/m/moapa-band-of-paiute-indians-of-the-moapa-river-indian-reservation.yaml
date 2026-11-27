@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Mar. 12, 1873, 1 Kappler 866
+  since: '1873-03-12'
+  source: executive-order-1873-03-12-moapa-river-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1873-03-12'
+  locator: 1 Kappler 866
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Moapa River (Muddy Valley) Reserve, Nevada.
 states:
 - state: NV
   presence: government-office
@@ -176,6 +186,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
   note: Listed as "Moapa Band of Paiute Indians".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 611630
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NV, row 'Moapa Band of Paiute Indians' (Moapa)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 93762
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'MOAPA BAND OF PAIUTE INDIANS' (UEI KQV3N28LCLQ9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'MOAPA BAND OF PAIUTE INDIANS'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Moapa Band of Paiute Indians" among organizations under constitutions approved
@@ -579,6 +609,14 @@ jurisdiction:
   verification: inferred
   locator: 40 Fed. Reg. at 27,501
   note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 107(d)(3); 112(r)(7)(B)(iii); 126; 169B; 176A; 184; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107(d)(3); 112(r)(7)(B)(iii); 126; 169B; 176A; 184; 505(a)(2)"'
 nearby_state_courts:
 - state: NV
   county: Clark County

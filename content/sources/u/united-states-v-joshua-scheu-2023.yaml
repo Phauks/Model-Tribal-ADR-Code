@@ -1,0 +1,66 @@
+key: united-states-v-joshua-scheu-2023
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Joshua Scheu
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.4th
+  volume: '83'
+  page: '1124'
+  issued:
+    date-parts:
+    - - 2023
+      - 8
+      - 2
+  URL: https://www.courtlistener.com/opinion/9417684/united-states-v-joshua-scheu/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 22-10044
+original_link: https://www.courtlistener.com/opinion/9417684/united-states-v-joshua-scheu/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2023-02-07'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2023/02/07/22-10044.mp3
+  duration_seconds: 1167
+  held: true
+  note: Held until a reading of the argument finds no child or victim named; the opinion itself is shown.
+  file:
+    storage_key: appeals-court-audio/ca9/2023/2023-02-07-22-10044.mp3
+    checksum: 0a1f8119391eee874b3b57169dab3b05809866388212e39f3121c430a584e052
+    media_type: audio/mpeg
+    bytes: 18675840
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 83 F.4th 1124. Decided by the United States Court of Appeals for the Ninth Circuit on Aug. 2, 2023. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (Major Crimes Act, sexual abuse in Indian country).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: Major Crimes Act, sexual abuse in Indian country'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>Compose · Inbox · Workspace · Model Tribal ADR Code</title>
+	<title>Compose · Inbox · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -25,6 +25,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Inbox', href: '/workspace/inbox' }
 	]}
+	current="New message"
 />
 <h1>New message</h1>
 

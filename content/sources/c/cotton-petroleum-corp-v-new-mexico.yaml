@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=490%20U.S.%20163
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1988-11-30'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-680.mp3
+  catalog: https://catalog.archives.gov/id/118974833
+  whole_session: true
+  duration_seconds: 13327
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-680.mp3
+    checksum: cae6c59e9ca0db794baaf42387f421cd0e1ada8f931d650a9e619843b5224a3a
+    media_type: audio/mpeg
+    bytes: 213228270
 rights:
   status: no-permission-needed
   basis: us-government-work

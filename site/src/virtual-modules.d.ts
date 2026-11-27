@@ -29,7 +29,7 @@ declare module 'virtual:mail-nations' {
 }
 
 declare module 'virtual:section-lists' {
-	/** Every nation's name and page id, A to Z, for the sidebar (src/lib/section-lists.ts). */
+	/** Every nation's name and page id, A to Z, for the pickers that choose a nation, such as on the home page and Find the law. */
 	export const nationNames: [name: string, id: string][];
 	/** How many of them are Native nations, leaving out the Native Hawaiian community and the territories' peoples. */
 	export const nationCount: number;
@@ -41,16 +41,9 @@ declare module 'virtual:nation-images' {
 }
 
 declare module 'virtual:portraits' {
-	/** The portraits of Justices and Presidents the Worker may serve, listed at build time. */
-	export const portraits: { person: string; key: string; mediaType: string; sha256: string; link: string }[];
-}
-
-declare module 'virtual:public-copies' {
-	/** The copies of public documents the Worker may serve at /copies/, listed at build time. */
-	export const publicCopies: (Pick<import('#lib/public-copies.ts').PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'> & {
-		/** For a nation's law or court opinion, the choices it follows (src/lib/nation-restrictions.ts). */
-		restrict?: import('#lib/nation-restrictions.ts').CopyRestriction;
-	})[];
+	/** The pictures of Justices, Presidents and Courts the Worker may serve, listed at build time. */
+	/** link is left out for a picture turned or cut from its copy, which only the bucket holds. */
+	export const portraits: { person: string; key: string; mediaType: string; sha256: string; link?: string }[];
 }
 
 declare module 'virtual:source-citations' {
@@ -59,22 +52,11 @@ declare module 'virtual:source-citations' {
 }
 
 declare module 'virtual:essay-library' {
-	/** The full citation, as HTML in the project's Indigo Book style, of every source record, by key. */
-	export const essayCitations: Record<string, string>;
+	// The full citation of every source record, the facts and parts of every case and law box and every case's name are read on request instead (src/lib/server/essay-citations.ts).
 	/** Glossary terms by id, for every entry that has a page. */
 	export const essayTerms: Record<string, string>;
-	/** The lines under each case or law box's heading, as [label, HTML] pairs. */
-	export const essayBoxFacts: { cases: Record<string, [string, string][]>; laws: Record<string, [string, string][]> };
 	/** The essays in content/essays/, the back matter in content/back-matter/ and the pages about the site in content/about/ as git held them when the site was built, by id. */
 	export const essaysInGit: Record<string, string>;
-	/** Each court case's name and decision date, by source key. */
-	export const essayCaseNames: Record<string, { title: string; date: number[] }>;
-	/** Where a case's name links when no essay has a box for it (the copy of the opinion on this site, or where it was published), by source key. */
-	export const essayCaseLinks: Record<string, string>;
-	/** Each court case's opinions and the report page each starts on, by source key (src/lib/case-opinions.ts). */
-	export const essayOpinions: Record<string, import('#lib/case-opinions.ts').OpinionEntry[]>;
-	/** The parts of each case and law box its source's record keeps, by source key (src/lib/essays/record-boxes.ts). */
-	export const essayRecordBoxes: { cases: Record<string, import('#lib/essays/record-boxes.ts').RecordBox>; laws: Record<string, import('#lib/essays/record-boxes.ts').RecordBox> };
 	/** Words the spelling check should accept: names of nations, glossary terms and court cases. */
 	export const essaySpellingWords: string[];
 }
@@ -91,6 +73,11 @@ declare module 'virtual:build' {
 	export const recentChanges: import('#lib/recent-changes.ts').Change[];
 }
 
+declare module 'virtual:build-change' {
+	/** The newest pull request this build has, or null when git named none (vite.config.ts). */
+	export const newestChange: Pick<import('#lib/recent-changes.ts').Change, 'number' | 'merged'> | null;
+}
+
 declare module 'virtual:sponsorship-counts' {
 	/** Counts the Sponsorship page shows, taken when the site is built (src/lib/server/sponsorship-goals.ts). */
 	export const sponsorshipCounts: import('#lib/server/sponsorship-goals.ts').SponsorshipCounts;
@@ -101,6 +88,12 @@ declare module 'cloudflare:workers' {
 	export const env: WorkerEnvironment;
 	/** Keeps the Worker running until the promise settles, after the response has gone (at most 30 seconds). */
 	export function waitUntil(promise: Promise<unknown>): void;
+	/** The Worker's own edge cache (Workers Cache), for purging what it keeps (src/lib/server/edge-cache.ts). Missing where the runtime has none. */
+	export const cache:
+		| {
+				purge(options: { tags?: string[]; pathPrefixes?: string[]; purgeEverything?: boolean }): Promise<{ success: boolean; errors: { code: number; message: string }[] }>;
+		  }
+		| undefined;
 }
 
 declare module 'virtual:followable-pages' {

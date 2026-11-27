@@ -11,8 +11,17 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
-  note: 'The notice adds in parentheses: includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
-    and Roaring Creek Rancherias.'
+  note: 'The notice adds in parentheses: includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek, and Roaring Creek Rancherias.'
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 47 Fed. Reg. 53130, 53132 (Nov. 24, 1982)
+  since: '1982-11-24'
+  source: bia-recognized-entities-1982
+  confidence: medium
+  verification: inferred
+  as_of: '1982-11-24'
+  locator: 47 Fed. Reg. 53132 (entry "Pit River Indian Tribe of the X-L Ranch Reservation, California.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Pit River Indian Tribe of the X-L Ranch Reservation, California." The entry is matched to the nation by name.
 states:
 - state: CA
   presence: government-office
@@ -270,6 +279,36 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek, and Roaring Creek Rancherias)".
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2022
+  through: Pit River Tribe – Pit River Health Service, Inc.
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: California Area, row 'Pit River Tribe – Pit River Health Service, Inc.'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Pit River Tribe – Pit River Health Service, Inc.'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2847028
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Pit River Tribe' (Burney)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 3102291
+  amount_kind: obligations
+  through: Pit River Health Service
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'PIT RIVER HEALTH SERVICE' (UEI C65ENYEEG357), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PIT RIVER HEALTH SERVICE'.
 governance:
 - aspect: form
   value: Election called under regulations of the Secretary of the Interior

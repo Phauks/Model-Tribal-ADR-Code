@@ -18,6 +18,29 @@ describe('the collections the Statistics page counts', () => {
 		expect([...kinds].filter((kind) => !counted.has(kind))).toEqual([]);
 	});
 
+	it('never links a filing to the State address that has no file', () => {
+		const items = (identifier: string) => collections.find((collection) => collection.identifier === identifier)?.items() ?? [];
+		const oklahoma = items('oklahoma-state-tribal-agreements');
+		const youthServices = oklahoma.find((item) => item.key === 'oklahoma-filing-21664');
+		expect(youthServices?.title).toBe('Muskogee Youth Council: youth services agreement');
+		expect(youthServices?.href).toBeUndefined();
+		for (const item of oklahoma) expect(item.href === undefined || item.href.startsWith('/copies/view/oklahoma-secretary-of-state/')).toBe(true);
+	});
+
+	it('opens the saved copy of every constitution it counts as saved (Nov. 27, 2026)', () => {
+		const constitutions = collections.find((collection) => collection.identifier === 'tribal-constitutions')?.items() ?? [];
+		const byKey = new Map(constitutions.map((item) => [item.key, item]));
+		// Scans filed under constitutions/_unmatched/ name their nation in the index, and are served.
+		expect(byKey.get('constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text')?.href).toBe('/copies/view/constitutions/_unmatched/89ce6b5923b139d9.pdf');
+		// An address with spaces in it still finds the copy filed under it.
+		expect(byKey.get('constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text')?.href).toMatch(/^\/copies\/view\//);
+		for (const item of constitutions) if (item.copies?.length) expect(item.href ?? '').toMatch(/^\/copies\/view\//);
+		// A record cited at the National Indian Law Library opens another publisher's copy of the same text when the site has one.
+		expect(byKey.get('constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text')?.href).toBe('/copies/view/constitutions/ute-indian-tribe-of-the-uintah-and-ouray-reservation/fcf7098402c35d0d.html');
+		// Copies taken from the National Indian Law Library stay link-only until the nation consents (decision record 0043).
+		expect(byKey.get('hopi-constitution-nill')?.copies).toBeUndefined();
+	});
+
 	it('counts only what the site shows, and held-back items only as a number', () => {
 		const opinions = collectionCounts().find((collection) => collection.identifier === 'tribal-court-opinions');
 		expect(opinions?.count).toBeGreaterThan(0);

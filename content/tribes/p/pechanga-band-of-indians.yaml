@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7236 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7236 (entry "Pechanga Band of Luiseno Mission Indians, Pechanga Reservation, California")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Pechanga Band of Luiseno Mission Indians, Pechanga Reservation, California." The entry is matched to the nation by name.
 states:
 - state: CA
   presence: government-office
@@ -150,6 +160,23 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Pechanga Band of Indians".
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2026
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: California Area, row 'Pechanga Band of Indians'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 117839
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Pechanga Band of Indians' (Temecula)
 governance:
 - aspect: head-of-government
   value: Chairperson
@@ -305,6 +332,46 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Pechanga Band of Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Mar. 25, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pechanga-band-of-indians-2022-03-25
+  confidence: high
+  verification: inferred
+  as_of: '2022-03-25'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Pechanga Band of Luiseno Mission Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Dec. 28, 2017, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pechanga-band-of-indians-2017-12-28
+  confidence: high
+  verification: inferred
+  as_of: '2017-12-28'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2017
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-implementation-plan
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state for tribal implementation plan (Clean Air Act § 110). EPA''s table: "TIP (including CAA § 175A)".'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "TIP (including CAA § 175A)"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 107(d); 126; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107(d); 126; 505(a)(2)"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Pechanga Band of Luiseño Mission Indians Water Rights Settlement Act in 2016 (Pub. L. No. 114-322), settling the water rights of Pechanga Band of Luiseño Mission Indians. It quantifies 4,994 acre-feet a year in all and authorizes about $28.5 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-114-322
+  confidence: high
+  verification: inferred
+  as_of: '2016'
+  locator: Congressional Research Service, R44148, Table 1, 2016
 nearby_state_courts:
 - state: CA
   county: Riverside County

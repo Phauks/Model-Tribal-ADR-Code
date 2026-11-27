@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7235 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7235 (entry "Kialegee Tribal Town of Creek Indians, Oklahoma")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Kialegee Tribal Town of Creek Indians, Oklahoma." The entry is matched to the nation by name.
 states:
 - state: OK
   presence: government-office
@@ -89,6 +99,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Kialegee Tribal Town".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 489465
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Kialegee Tribal Town' (Wetumka)
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Kialegge Tribal Town" among organizations under constitutions approved by the
@@ -532,6 +552,28 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Kialagee Tribal Town”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on May 30, 1996 (file 33384).
+  source: oklahoma-filing-33384
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 33384
+  note: 'From the register line: “Kialegee Tribal Town/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Apr. 29, 2014 (file 46911).
+  source: oklahoma-filing-46911
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46911
+  note: 'From the register line: “Between the Kialegee Tribal Town and the State of Oklahoma”. Whether it is still in force is not recorded.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

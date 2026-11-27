@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Choctaw, Jan. 3, 1786, 7 Stat. 21
+  since: '1786-01-03'
+  source: treaty-with-the-choctaw-1786
+  confidence: medium
+  verification: inferred
+  as_of: '1786-01-03'
+  locator: p. 11 (Treaty with the Choctaw, 1786; Kappler header "Jan. 3, 1786. | 7 Stat., 21.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Choctaw; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -200,6 +210,78 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "The Choctaw Nation of Oklahoma". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Choctaw Nation (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Choctaw Nation' (Eastern Oklahoma Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Choctaw Nation'.
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Choctaw Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Choctaw Nation'.
+- program: pl-102-477-plan
+  start: '2022-10-01'
+  end: '2027-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - American Indian Vocational Rehabilitation Services
+  - Native American Career and Technical Education Program
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Head Start
+  - Low Income Home Energy Assistance Program
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'The Choctaw Nation of Oklahoma'; PL102_477_PartnerEnrollment, its 8 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 19877228
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Choctaw Nation' (Durant)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'The Choctaw Nation of Oklahoma'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 69391653
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'CHOCTAW NATION OF OKLAHOMA' (UEI GNZLNKLREX72), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CHOCTAW NATION OF OKLAHOMA'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 164374903
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'CHOCTAW NATION OF OKLAHOMA' (UEI GNZLNKLREX72), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CHOCTAW NATION OF OKLAHOMA'.
 governance:
 - aspect: form
   value: Constitution, pursuant to inherent tribal sovereignty
@@ -877,6 +959,22 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Leasing Ordinance) of the Choctaw Nation of Oklahoma, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on May 13, 2025, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-the-choctaw-nation-of-oklahoma-2025-05-13
+  confidence: high
+  verification: inferred
+  as_of: '2025-05-13'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2025
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Choctaw Nation of Oklahoma and the Chickasaw Nation Water Settlement in 2016 (Pub. L. No. 114-322), settling the water rights of Choctaw Nation of Oklahoma and Chickasaw Nation. (Congressional Research Service, R44148, Table 1).
+  source: public-law-114-322
+  confidence: high
+  verification: inferred
+  as_of: '2016'
+  locator: Congressional Research Service, R44148, Table 1, 2016
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services
@@ -899,6 +997,523 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Choctaw Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 8, 1992 (file 27175).
+  source: oklahoma-filing-27175
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 27175
+  note: 'From the register line: “Choctaw Nation/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Historical Society; Skullyville Cemetery, Inc.
+  agreement: Skullyville Cemetery contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Feb. 4, 1993 (file 28283).
+  source: oklahoma-filing-28283
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 28283
+  note: 'From the register line: “Oklahoma Historical Society / Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Historical Society; Skullyville Cemetery, Inc.
+  agreement: Skullyville Cemetery contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on May 24, 1993 (file 28872).
+  source: oklahoma-filing-28872
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 28872
+  note: 'From the register line: “Contract Oklahoma Historical Society and the Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Bokoshe; City of Stigler; City of Calvin; Hughes County; City of Panama; Bureau of Indian Affairs
+  agreement: Cross-deputization agreements
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 22, 1994 (file 31212).
+  source: oklahoma-filing-31212
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31212
+  note: 'From the register line: “BIA/Choctaw Nation & City of Bokoshe, City of Stigler, City of Calvin, Hughes County, City of Panama”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Choctaw County; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 14, 1994 (file 31324).
+  source: oklahoma-filing-31324
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31324
+  note: 'From the register line: “Choctaw Co./Bureau of Indian Affairs/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Bokchito; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 14, 1994 (file 31325).
+  source: oklahoma-filing-31325
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31325
+  note: 'From the register line: “Bokchito/Bureau of Indian Affairs/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Hartshorne; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 14, 1994 (file 31326).
+  source: oklahoma-filing-31326
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31326
+  note: 'From the register line: “City of Hartshorne/BIA/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Atoka County; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 14, 1994 (file 31327).
+  source: oklahoma-filing-31327
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31327
+  note: 'From the register line: “Atoka County/Bureau of Indian Affairs/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Wright City; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 14, 1994 (file 31328).
+  source: oklahoma-filing-31328
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31328
+  note: 'From the register line: “City of Wright City/Bureau of Indian Affairs/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Valliant; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 14, 1994 (file 31329).
+  source: oklahoma-filing-31329
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31329
+  note: 'From the register line: “City of Valliant/Bureau of Indian Affairs/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Red Oak; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 14, 1994 (file 31330).
+  source: oklahoma-filing-31330
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31330
+  note: 'From the register line: “City of Red Oak/Bureau of Indian Affairs/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: United States Department of the Interior; Bureau of Indian Affairs; Keota
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 14, 1994 (file 31331).
+  source: oklahoma-filing-31331
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31331
+  note: 'From the register line: “U.S. Dept of Interior/Bureau of Indian Affaris/Choctaw Nation/ Keota”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: United States Department of the Interior; Heavener
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 14, 1994 (file 31332).
+  source: oklahoma-filing-31332
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31332
+  note: 'From the register line: “U.S. Dept of Interior, Choctaw Nation/Heavener”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: United States Department of the Interior; Bureau of Indian Affairs; Coal County
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 14, 1994 (file 31333).
+  source: oklahoma-filing-31333
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31333
+  note: 'From the register line: “U.S. Dept of Interior Bureau of Indian Affairs/Coal County, Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Idabel; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 23, 1994 (file 31355).
+  source: oklahoma-filing-31355
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31355
+  note: 'From the register line: “City of Idabel/Bureau of Indian Affairs/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Boswell; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 4, 1994 (file 31407).
+  source: oklahoma-filing-31407
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31407
+  note: 'From the register line: “City of Boswell/ Bureau of Indian Affairs/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Colbert; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 4, 1994 (file 31408).
+  source: oklahoma-filing-31408
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31408
+  note: 'From the register line: “Colbert, City of/Bureau of Indian Affairs/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Quinton; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 4, 1994 (file 31409).
+  source: oklahoma-filing-31409
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31409
+  note: 'From the register line: “Krebs, City of /Bureau of Indian Affairs/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Pushmataha County; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 4, 1994 (file 31410).
+  source: oklahoma-filing-31410
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31410
+  note: 'From the register line: “Pushmataha County/Bureau of Indian Affairs/Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Rattan; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 14, 1994 (file 31533).
+  source: oklahoma-filing-31533
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31533
+  note: 'From the register line: “Rattan/Bureau of Indian Affairs, Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Clayton; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 14, 1994 (file 31534).
+  source: oklahoma-filing-31534
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31534
+  note: 'From the register line: “Clayton, Bureau of Indian Affairs, Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Spiro; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 14, 1994 (file 31535).
+  source: oklahoma-filing-31535
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31535
+  note: 'From the register line: “City of Spiro, Bureau of Indian Affairs, Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Bennington; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 14, 1994 (file 31536).
+  source: oklahoma-filing-31536
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31536
+  note: 'From the register line: “City of Bennington, Bureau of Indian Affairs, Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Pottawatomie County; City of Atoka; City of Caddo; LeFlore County; City of Poteau; City of Pocola; City of Talihina; Haskell County; Latimer County; City of Calera; Pittsburg County; City of Kiowa; City of McAlester; City of Stringtown; Coal County; City of Shady Point; City of Coalgate; City of Tupelo; City of Tushka; Bureau of Indian Affairs
+  agreement: Cross-deputization agreements
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 9, 1995 (file 31851).
+  source: oklahoma-filing-31851
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31851
+  note: 'From the register line: “Citizen Band Potawatomi & Pottawatomie County; City of Atoka, Bureau of Indian Affairs & Choctaw Nation ICA 94-0017; City of Caddo, Bureau of Indian Affairs & Choctaw Nation ICA 94-0051; LeFlore County, Bureau of Indian Affairs & Choctaw Nation ICA 94-0026; City of Poteau, Bureau of Indian Affairs & Choctaw Nation ICA 94-0016; City of Pocola, Bureau of Indian Affairs & Choctaw Nation ICA 94-0018; City of Talihina, Bureau of Indian Affaris and Choctaw Nation ICA 94-0014; Haskell County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0025; Latimer County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0013; City of Calera, Bureau of Indian Affairs and Choctaw Nation ICA 94-0031; Pittsburg County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0020; City of Kiowa, Bureau of Indian Affairs and Choctaw Nation ICA 94-0023; City of McAlester, Bureau of Indian Affairs and Choctaw Nation ICA 94-0022; City of Stringtown, Bureau of Indian Affairs and Choctaw Nation ICA 94-0032; Coal County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0046; City of Shady Point, Bureau of Indian Affairs and Choctaw Nation ICA 94-0024; City of Coalgate, Bureau of Indian Affairs and Choctaw Nation ICA 94-0021; City of Tupelo, Bureau of Indian Affairs and Choctaw Nation ICA 94-0028; City of Tushka, Bureau of Indian Affairs and Choctaw Nation ICA 94-0027”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Tushka; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on May 22, 1995 (file 32319).
+  source: oklahoma-filing-32319
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 32319
+  note: 'From the register line: “City of Tushka/Bureau of Indian Affairs and the Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 6, 2003 (file 38502).
+  source: oklahoma-filing-38502
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38502
+  note: 'From the register line: “Choctaw Nation of Oklahoma and the State of Oklahoma, amendment to Tribal/State Tobacco Tax Compact”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 8, 2003 (file 38962).
+  source: oklahoma-filing-38962
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38962
+  note: 'From the register line: “Amendment Choctaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 28, 2003 (file 39319).
+  source: oklahoma-filing-39319
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 39319
+  note: 'From the register line: “Choctaw Nation and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45032).
+  source: oklahoma-filing-45032
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45032
+  note: 'From the register line: “Choctaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45033).
+  source: oklahoma-filing-45033
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45033
+  note: 'From the register line: “Choctaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45034).
+  source: oklahoma-filing-45034
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45034
+  note: 'From the register line: “Choctaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45035).
+  source: oklahoma-filing-45035
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45035
+  note: 'From the register line: “Choctaw Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46219).
+  source: oklahoma-filing-46219
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46219
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: Bob Rabon; State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 14, 2013 (file 46240).
+  source: oklahoma-filing-46240
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46240
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 26, 2013 (file 46255).
+  source: oklahoma-filing-46255
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46255
+  note: 'From the register line: “Amendment betweent the Choctaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 1, 2013 (file 46446).
+  source: oklahoma-filing-46446
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46446
+  note: 'From the register line: “Amendment between the Choctaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 4, 2013 (file 46555).
+  source: oklahoma-filing-46555
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46555
+  note: 'From the register line: “Choctaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor vehicle registration and license tag compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 2, 2014 (file 47129).
+  source: oklahoma-filing-47129
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 47129
+  note: 'From the register line: “Motor Vehicle Registration and License Tag Compact Between the State of Oklahoma and the Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Hunting and fishing compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 31, 2016 (file 48254).
+  source: oklahoma-filing-48254
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 48254
+  note: 'From the register line: “Hunting and Fishing Compact between the State of Oklahoma and the Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Wildlife Conservation
+  agreement: Memorandum of understanding on Lake Nanih Waiya
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 31, 2016 (file 48255).
+  source: oklahoma-filing-48255
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 48255
+  note: 'From the register line: “Memorandum of Understanding between the Choctaw Nation and the Oklahoma Department of Wildlife Conservation - Lake Nanih Waiya”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Office of the District Attorney, District 19
+  agreement: Interlocal cooperation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 9, 2017 (file 48394).
+  source: oklahoma-filing-48394
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 48394
+  note: 'From the register line: “Interlocal Cooperation Agreement between the District 19 District Attorney and the Choctaw Tribal Police Department”. Whether it is still in force is not recorded.'
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services; Oklahoma Office of Juvenile Affairs
+  agreement: Intergovernmental agreement on jurisdiction over Indian children
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 17, 2020 (file 50549).
+  source: oklahoma-filing-50549
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 50549
+  note: 'From the register line: “Agreement between Oklahoma Department of Human Services, Oklahoma Office of Juvenile Affairs, and the Choctaw Nation of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Extension of the hunting and fishing compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 7, 2020 (file 50739).
+  source: oklahoma-filing-50739
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 50739
+  note: 'From the register line: “Extension Agreement of the Hunting and Fishing Compact between the State of Oklahoma and the Choctaw Nation”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Acceptance of supplemental term to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 20, 2023 (file 52879).
+  source: oklahoma-filing-52879
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52879
+  note: 'From the register line: “Between the Choctaw Nation and the State of Oklahoma shall be deemed in effect until December 31, 2024. SB 26X”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Apr. 1, 2024 (file 53034).
+  source: oklahoma-filing-53034
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53034
+  note: 'From the register line: “TOBACCO TAX COMPACT BETWEEN THE STATE OF OKLAHOMA AND THE CHOCTAW NATION OF OKLAHOMA”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor vehicle registration and license tag compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Apr. 8, 2024 (file 53051).
+  source: oklahoma-filing-53051
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53051
+  note: 'From the register line: “Motor Vehicle Registration & License Tag Compact between the State of Oklahoma and the Choctaw Nation of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: USDA Forest Service, Ouachita National Forest
+  agreement: Memorandum of understanding
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 8, 2025 (file 53880).
+  source: oklahoma-filing-53880
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53880
+  note: 'From the register line: “MOU Between the Choctaw Nation of Oklahoma and the USDA, Forest Service Ouachita National Forest”. Whether it is still in force is not recorded.'
 court_practice:
 - kind: bar-admission
   title: Choctaw Nation Legal Services | Choctaw Nation Bar Association

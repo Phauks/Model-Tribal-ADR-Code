@@ -1,0 +1,70 @@
+key: oklahoma-statutes-title-21-section-1111
+kind: state-statute
+citation:
+  type: legislation
+  title: Rape defined
+  title-short: Okla. Stat. tit. 21, § 1111
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '21'
+  section: '1111'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1910
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os21.pdf#page=594
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os21.pdf#page=594
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-21-section-1111-1
+- oklahoma-statutes-title-21-section-1123
+- oklahoma-statutes-title-21-section-1125
+- oklahoma-statutes-title-21-section-1168-2
+- oklahoma-statutes-title-21-section-1168-4
+- oklahoma-statutes-title-21-section-1168-5
+- oklahoma-statutes-title-21-section-1168-7
+- oklahoma-statutes-title-21-section-142a-3
+- oklahoma-statutes-title-21-section-142c
+- oklahoma-statutes-title-21-section-1533
+- oklahoma-statutes-title-21-section-1533-1
+- oklahoma-statutes-title-21-section-1836
+- oklahoma-statutes-title-21-section-548
+- oklahoma-statutes-title-21-section-648
+- oklahoma-statutes-title-21-section-941
+- oklahoma-statutes-title-21-section-99
+- oklahoma-statutes-title-21-section-99a
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 21, § 1111 (2026)
+  page: 594
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 21, § 1111 (2026). History: R.L. 1910, § 2414. Amended by Laws 1981, c. 325, § 1; Laws 1983, c. 41, § 1, eff. Nov. 1, Laws 1993, c. 62, § 1, eff. Sept. 1, 1993; Laws 1995, c. 22, § 1, eff. Nov. 1, 1995; Laws 1999, Laws 2025, c. 365, § 1 repealed by Laws 2026, c. 12, § 41, emerg. eff. April 13, 2026. Text read from the Legislative Service Bureau''s Title 21 PDF (updated Nov. 12, 2026), page 594. Found by the state statutes pilot (terms: tribal court); AI reader''s verdict incidental: Rape definition references victim in custody of tribal court. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal court'

@@ -1,0 +1,59 @@
+key: oklahoma-statutes-title-12-section-1481
+kind: state-statute
+citation:
+  type: legislation
+  title: Occupying claimant entitled to pay for improvements and taxes
+  title-short: Okla. Stat. tit. 12, § 1481
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '12'
+  section: '1481'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1910
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=353
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=353
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-12-section-1532
+- oklahoma-statutes-title-12-section-20
+- oklahoma-statutes-title-12-section-3251
+- oklahoma-statutes-title-12-section-3402
+- oklahoma-statutes-title-12-section-718a
+- oklahoma-statutes-title-12-section-728
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 12, § 1481 (2026)
+  page: 353
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 12, § 1481 (2026). History: R.L. 1910, § 4933. Text read from the Legislative Service Bureau''s Title 12 PDF (updated Nov. 12, 2026), page 353. Found by the state statutes pilot (terms: indian lands; indian tribe); AI reader''s verdict incidental: Occupant improvement payment rights extend to Indian lands. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian lands; indian tribe'

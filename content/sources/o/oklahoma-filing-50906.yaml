@@ -1,0 +1,51 @@
+key: oklahoma-filing-50906
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Choctaw Nation: council bill rescinding CB-92-06 and authorizing law enforcement agreements'
+  author:
+  - literal: The Choctaw Nation of Oklahoma
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 50906
+  URL: https://execleg.sos.ok.gov/documents/filelog/94016.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2021
+      - 3
+      - 2
+original_link: https://execleg.sos.ok.gov/documents/filelog/94016.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- the-choctaw-nation-of-oklahoma
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- cross-deputization
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 50906, filed Mar. 2, 2021. The register''s title reads “Choctaw Nation - council bill rescind CB-92-06 (re: Agreement Tribal Cross Deputization Law Enforcement Addendum file #41100)” and its description “Council Bill to Rescind CB-92-06 and to authorize and approve agreements between the Choctaw Nation of Oklahoma and law enforcement agencies operating with the Choctaw Nation of Oklahoma”. The register line reads as a filing of another kind. The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date. The reader noted: A tribal council bill, not a state filing; it concerns the file #41100 deputation agreements.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

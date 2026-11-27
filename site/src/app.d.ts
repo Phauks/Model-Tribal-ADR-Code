@@ -9,7 +9,14 @@ import type { SignedInPerson } from '#lib/server/people.ts';
 
 declare global {
 	namespace App {
-		// interface Error {}
+		interface Error {
+			/**
+			 * The reference of a reported problem, such as P-4F7K-92QD, shown on
+			 * the error page so a reader's report can be matched to the log
+			 * (src/lib/server/report.ts, site/ERRORS.md).
+			 */
+			reference?: string;
+		}
 		interface Locals {
 			/** The signed-in person, set by src/hooks.server.ts on pages the Worker renders. */
 			person: SignedInPerson | undefined;
@@ -58,11 +65,13 @@ declare global {
 		signInNetworkLimit?: RateLimit;
 		/** Files one account can start sending in a minute (src/routes/uploads/pieces). */
 		uploadLimit?: RateLimit;
-		/** The live editing rooms, one per essay, in the model-tribal-adr-code-live Worker (src/lib/server/live-editing.ts). */
+		/** Problems one network address's browsers can report in a minute (src/routes/problems, site/ERRORS.md). */
+		problemReportLimit?: RateLimit;
+		/** The live editing rooms, one per essay, in the tribal-law-project-live Worker (src/lib/server/live-editing.ts). */
 		essayRooms?: DurableObjectNamespace;
-		/** The virus scanner's desk, in model-tribal-adr-code-scanner (src/lib/server/scanner-wake.ts). */
+		/** The virus scanner's desk, in tribal-law-project-scanner (src/lib/server/scanner-wake.ts). */
 		scanDesks?: DurableObjectNamespace;
-		/** The Wayback Worker, model-tribal-adr-code-wayback, for its progress (src/lib/server/wayback.ts). */
+		/** The Wayback Worker, tribal-law-project-wayback, for its progress (src/lib/server/wayback.ts). */
 		waybackWorker?: Fetcher;
 		/** Cloudflare Email Service, for sign-in codes (src/lib/server/sign-in-email.ts). */
 		signInEmail?: SignInEmailBinding;
@@ -86,7 +95,6 @@ declare global {
 		/** The project's mail domain, such as example.org; empty while email is off (site/MAIL.md, "Switching email on"). */
 		MAIL_DOMAIN?: string;
 		/** Where the "new mail" notice goes, if anywhere. Not one of the project's own addresses. */
-		MAIL_NOTICE_ADDRESS?: string;
 		/** The sender's name on mail from the project. */
 		MAIL_SENDER_NAME?: string;
 		/** Secret: signs unsubscribe and acknowledgment links. Set as a Secret in the dashboard. */
@@ -112,6 +120,24 @@ declare global {
 		 * it stop working.
 		 */
 		PASSWORD_KEY?: string;
+		/**
+		 * Cloudflare Turnstile, the "are you a person?" check on public forms
+		 * (src/lib/server/turnstile.ts). The site key and host names are in
+		 * wrangler.jsonc; the secret key is a Secret in the dashboard. The check
+		 * is on only when the site key and the secret are both set.
+		 */
+		TURNSTILE_SITE_KEY?: string;
+		TURNSTILE_SECRET_KEY?: string;
+		TURNSTILE_HOSTNAMES?: string;
+		/**
+		 * Google and Microsoft sign-in (src/lib/server/outside-sign-in.ts). Each
+		 * client identifier is public, in wrangler.jsonc; each client secret is
+		 * a Secret in the dashboard. A provider is on only when both are set.
+		 */
+		GOOGLE_CLIENT_ID?: string;
+		GOOGLE_CLIENT_SECRET?: string;
+		MICROSOFT_CLIENT_ID?: string;
+		MICROSOFT_CLIENT_SECRET?: string;
 		/**
 		 * Printed copies (docs/book-orders.md). Ordering stays off unless
 		 * BOOK_ORDERS is "test" (Stripe test keys and Lulu's sandbox only) or

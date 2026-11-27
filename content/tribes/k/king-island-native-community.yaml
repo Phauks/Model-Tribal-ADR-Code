@@ -21,6 +21,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the King Island Native Community (approved by the Secretary of the Interior Sept. 17, 1938), under the Act of May 1, 1936, ch. 254, § 1, 49 Stat. 1250, 1250
+  since: '1938-09-17'
+  source: university-of-oklahoma-indian-reorganization-act-kingiscon
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1938-text
+  confidence: medium
+  verification: inferred
+  as_of: '1938-09-17'
+  locator: 1938 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AK
   presence: government-office
@@ -126,6 +139,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
   note: 'The source''s words: "King Island Native Community".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 381220
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'King Island' (Nome)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'King Island'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The King Island Native Community" among organizations under constitutions approved

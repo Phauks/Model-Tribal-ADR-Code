@@ -1,0 +1,72 @@
+key: oklahoma-statutes-title-21-section-142a-3
+kind: state-statute
+citation:
+  type: legislation
+  title: Informing victim of rights – Lethality assessment
+  title-short: Okla. Stat. tit. 21, § 142A-3
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '21'
+  section: 142A-3
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 2010
+      - 11
+      - 1
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os21.pdf#page=131
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os21.pdf#page=131
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-21-section-1111
+- oklahoma-statutes-title-21-section-1111-1
+- oklahoma-statutes-title-21-section-1123
+- oklahoma-statutes-title-21-section-1125
+- oklahoma-statutes-title-21-section-1168-2
+- oklahoma-statutes-title-21-section-1168-4
+- oklahoma-statutes-title-21-section-1168-5
+- oklahoma-statutes-title-21-section-1168-7
+- oklahoma-statutes-title-21-section-142c
+- oklahoma-statutes-title-21-section-1533
+- oklahoma-statutes-title-21-section-1533-1
+- oklahoma-statutes-title-21-section-1836
+- oklahoma-statutes-title-21-section-548
+- oklahoma-statutes-title-21-section-648
+- oklahoma-statutes-title-21-section-941
+- oklahoma-statutes-title-21-section-99
+- oklahoma-statutes-title-21-section-99a
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 21, § 142A-3 (2026)
+  page: 131
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 21, § 142A-3 (2026). History: Added by Laws 2010, c. 135, § 5, eff. Nov. 1, 2010. Amended by Laws 2014, c. 196, § 1, eff. Text read from the Legislative Service Bureau''s Title 21 PDF (updated Nov. 12, 2026), page 131. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Lethality referral may go to a tribal domestic violence program. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

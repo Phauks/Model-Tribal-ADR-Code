@@ -1,0 +1,66 @@
+key: united-states-v-platero-2021
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Platero
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.3d
+  volume: '996'
+  page: '1060'
+  issued:
+    date-parts:
+    - - 2021
+      - 5
+      - 6
+  URL: https://www.courtlistener.com/opinion/4880710/united-states-v-platero/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 19-2193
+original_link: https://www.courtlistener.com/opinion/4880710/united-states-v-platero/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2021-01-07'
+  source: United States Court of Appeals for the Tenth Circuit
+  link: https://www.ca10.uscourts.gov/sites/ca10/files/oralarguments/19-2193.mp3
+  duration_seconds: 1966
+  held: true
+  note: Held until a reading of the argument finds no child or victim named; the opinion itself is shown.
+  file:
+    storage_key: appeals-court-audio/ca10/2021/2021-01-07-19-2193.mp3
+    checksum: 0c3a956cb91c38075b0d52f7a17867080356a843b923138d3f395ad0dc1c314d
+    media_type: audio/mpeg
+    bytes: 9837851
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 996 F.3d 1060. Decided by the United States Court of Appeals for the Tenth Circuit on May 6, 2021. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (abusive sexual contact with child in Indian country (1153)).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: abusive sexual contact with child in Indian country (1153)'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

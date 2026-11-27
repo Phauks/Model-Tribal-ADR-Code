@@ -174,6 +174,34 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Federated Indians of Graton Rancheria, California".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2015
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Federated Indians Of Graton Rancheria' (Pacific Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Federated Indians Of Graton Rancheria'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1877968
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Graton Rancheria Federated Indians' (Rohnert Park)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 488254
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'FEDERATED INDIANS OF GRATON RANCHERIA' (UEI VWLYSMJE1B54), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'FEDERATED INDIANS OF GRATON RANCHERIA'.
 governance:
 - aspect: form
   value: Constitution approved at May 3, 1997 General Membership Meeting
@@ -503,6 +531,14 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Federated Indians of Graton Rancheria, California, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Feb. 1, 2013, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-federated-indians-of-graton-rancheria-2013-02-01
+  confidence: high
+  verification: inferred
+  as_of: '2013-02-01'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2013
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

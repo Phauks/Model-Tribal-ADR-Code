@@ -27,9 +27,15 @@ export const workerFirstPaths = [
 	'/copies/list/*',
 	'/copies/details/*',
 	'/search/records.json',
+	'/search/index.json',
+	'/search/files.json',
 	'/zip/data.zip',
 	'/stats/*',
-	'/courts/*'
+	'/courts/*',
+	// The sitemap's lists as built, which only the Worker reads (src/routes/sitemaps).
+	'/sitemaps/*',
+	// The Worker's private data files, which only it reads (src/lib/built-files.ts).
+	'/page-data/private/*'
 ];
 
 /** @param {string} innerEntry the entry the build made, such as scheduled-entry.js */

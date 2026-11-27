@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Shawnee, Jan. 31, 1786, 7 Stat. 26
+  since: '1786-01-31'
+  source: treaty-with-the-shawnee-1786
+  confidence: medium
+  verification: inferred
+  as_of: '1786-01-31'
+  locator: p. 16 (Treaty with the Shawnee, 1786; Kappler header "Jan. 31, 1786. | 7 Stat., 26.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Shawnee; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 3 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -166,6 +176,68 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Eastern Shawnee Tribe of Oklahoma".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1997
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Eastern Shawnee Tribe' (Eastern Oklahoma Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Eastern Shawnee Tribe'.
+- program: pl-102-477-plan
+  start: '2024-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Low Income Home Energy Assistance Program
+  - Title IV-B Subpart 1 – Stephanie Tubbs Jones Child Welfare Services Program
+  - Title IV-B Subpart 2 – MaryLee Allen Promoting Safe and Stable Families Program
+  - Job Placement and Training
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Eastern Shawnee Tribe of Oklahoma'; PL102_477_PartnerEnrollment, its 6 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 102072
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MO, row 'Eastern Shawnee Tribe' (Wyandotte)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Eastern Shawnee Tribe of Oklahoma'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 9679299
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'EASTERN SHAWNEE TRIBE' (UEI CEJGR9KUE6U3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'EASTERN SHAWNEE TRIBE'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 399919
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'EASTERN SHAWNEE TRIBE' (UEI CEJGR9KUE6U3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'EASTERN SHAWNEE TRIBE'.
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Eastern Shawnee Tribe of Indians, Oklahoma" among organizations under constitutions
@@ -775,6 +847,30 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Eastern Shawnee Tribe of Oklahoma, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Jan. 24, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-eastern-shawnee-tribe-of-oklahoma-2022-01-24
+  confidence: high
+  verification: inferred
+  as_of: '2022-01-24'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural) of the Eastern Shawnee Tribe of Oklahoma, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Dec. 22, 2021, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-eastern-shawnee-tribe-of-oklahoma-2021-12-22
+  confidence: high
+  verification: inferred
+  as_of: '2021-12-22'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2021
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Eastern Shawnee Tribe of Oklahoma, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Dec. 22, 2021, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-eastern-shawnee-tribe-of-oklahoma-2021-12-22-2
+  confidence: high
+  verification: inferred
+  as_of: '2021-12-22'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2021
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services
@@ -787,6 +883,72 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Eastern Shawnee Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Feb. 10, 2009 (file 43298).
+  source: oklahoma-filing-43298
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 43298
+  note: 'From the register line: “The Eastern Shawnee Tribe of Oklahoma and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46222).
+  source: oklahoma-filing-46222
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46222
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 15, 2013 (file 46520).
+  source: oklahoma-filing-46520
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46520
+  note: 'From the register line: “Eastern Shawnee Tribe and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Fairland
+  agreement: Inter-agency cooperative agreement for cross-deputization
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 7, 2015 (file 47648).
+  source: oklahoma-filing-47648
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 47648
+  note: 'From the register line: “Cooperative Agreement between the Police Department of the City of Fairland, OK, a municipality and subdivision of the State of Oklahoma, located in Ottawa County, and the Police Department of The Eastern Shawnee Tribe of Oklahoma, a federally recognized Indian Tribe, located in Ottawa County, Oklahoma”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Commerce
+  agreement: Inter-agency cooperative agreement for cross-deputization
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 7, 2015 (file 47649).
+  source: oklahoma-filing-47649
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 47649
+  note: 'From the register line: “Cooperative Agreement between the Police Department of the City of Commerce, OK, a municipality and subdivision of the State of Oklahoma, located in Ottawa County, and the Police Department of The Eastern Shawnee Tribe of Oklahoma, a federally recognized Indian Tribe, located in Ottawa County, Oklahoma”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Quapaw
+  agreement: Inter-agency cooperative agreement for cross-deputization
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 7, 2015 (file 47650).
+  source: oklahoma-filing-47650
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 47650
+  note: 'From the register line: “Cooperative Agreement between the Police Department of the City of Quapaw, OK, a municipality and subdivision of the State of Oklahoma, located in Ottawa County, and the Police Department of The Eastern Shawnee Tribe of Oklahoma, a federally recognized Indian Tribe, located in Ottawa County, Oklahoma”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Ottawa County

@@ -3,14 +3,15 @@
 The Wayback Worker (site/wayback, site/WAYBACK.md) saves links with the
 project's archive.org keys, which live only in Cloudflare. It reads its list
 from research/wayback-queue.tsv on main, and lists what it captured at
-https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev/captures.json.
+https://tribal-law-project-wayback.trevordgoldsmith.workers.dev/captures.json.
 
   python3 scripts/captures/wayback_queue.py --write
       Rewrites research/wayback-queue.tsv: every source record with an
       'original_link' and no archived copy, except links already on
       archive.org and Federal Register and eCFR pages (both send Save Page
       Now to unblock.federalregister.gov; scripts/find_archived_copies.py
-      reuses older copies of those).
+      reuses older copies of those). The Worker works down the list in
+      order, so the most important records come first (priority()).
 
   python3 scripts/captures/wayback_queue.py --report WORKER_JSON OUT_JSON
       Turns the Worker's captures.json into the report format
@@ -30,22 +31,42 @@ import yaml
 QUEUE = pathlib.Path("research/wayback-queue.tsv")
 SKIPPED_HOSTS = ("archive.org", "federalregister.gov", "ecfr.gov")
 
+# The order the Worker saves links in. First: nations' own laws, constitutions, court rules and
+# opinions, which live on nations' websites and are the likeliest to move or vanish, and the federal
+# core (tier 1: Supreme Court cases, treaties and other federal agreements, statutes, executive orders,
+# Federal Register notices). Then the rest of federal and state law and agencies' documents (tier 2).
+# Last: state court opinions from the Caselaw Access Project's fixed copies, Oklahoma's state-tribal
+# agreements (tier 3) and secondary sources such as articles and books.
+FIRST_KINDS = {"tribal-constitution", "tribal-code", "tribal-court-rule", "tribal-case", "federal-statute", "executive-order", "federal-register-notice", "intergovernmental-agreement"}
+LAST_KINDS = {"state-case", "territorial-case", "journal-article", "book"}
+STATE_AGREEMENT_HOSTS = ("execleg.sos.ok.gov",)
+
 
 def on_hosts(link: str, hosts) -> bool:
     host = (urllib.parse.urlsplit(link).hostname or "").removeprefix("www.")
     return any(host == known or host.endswith("." + known) for known in hosts)
 
 
-def records_without_copies():
+def records_without_copies(with_records: bool = False):
     for path in sorted(pathlib.Path("content/sources").glob("*/*.yaml")):
         record = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         link = str(record.get("original_link") or "").strip()
         if link and not record.get("archives"):
-            yield path, link
+            yield (path, link, record) if with_records else (path, link)
+
+
+def priority(record: dict, link: str) -> int:
+    kind = record.get("kind")
+    if record.get("supreme_court") or (kind in FIRST_KINDS and not on_hosts(link, STATE_AGREEMENT_HOSTS)):
+        return 0
+    if kind in LAST_KINDS or on_hosts(link, STATE_AGREEMENT_HOSTS):
+        return 2
+    return 1
 
 
 def write_queue() -> int:
-    rows = [(path.stem, link) for path, link in records_without_copies() if not on_hosts(link, SKIPPED_HOSTS) and "\t" not in link]
+    found = [(priority(record, link), path.stem, link) for path, link, record in records_without_copies(with_records=True) if not on_hosts(link, SKIPPED_HOSTS) and "\t" not in link]
+    rows = [(key, link) for _, key, link in sorted(found)]
     QUEUE.write_text("record\tlink\n" + "".join(f"{key}\t{link}\n" for key, link in rows), encoding="utf-8")
     print(f"Wrote {len(rows)} links to {QUEUE}.")
     return 0

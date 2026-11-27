@@ -65,6 +65,7 @@ function hostOf(link: string): string {
 	try {
 		return new URL(link).hostname.replace(/^www\./, '');
 	} catch {
+		// expected: a link that is not a web address has no host.
 		return '';
 	}
 }
@@ -104,7 +105,7 @@ export function saveItYourselfLink(link: string): string {
 }
 
 /** The Wayback Worker's public progress page. */
-export const waybackWorkerAddress = 'https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev';
+export const waybackWorkerAddress = 'https://tribal-law-project-wayback.trevordgoldsmith.workers.dev';
 
 export type WaybackState = 'not-running' | 'keys-refused' | 'paused-daily-limit' | 'saving' | 'waiting-to-retry' | 'idle';
 

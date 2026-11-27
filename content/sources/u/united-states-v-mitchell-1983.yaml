@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=463%20U.S.%20206
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1983-03-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-433.mp3
+  catalog: https://catalog.archives.gov/id/102048810
+  whole_session: true
+  duration_seconds: 14241
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-433.mp3
+    checksum: 718dc3b0557a2cdfbbff20f624d1a1761a28854e14200cbc6062562a983c484b
+    media_type: audio/mpeg
+    bytes: 227864364
 rights:
   status: no-permission-needed
   basis: us-government-work

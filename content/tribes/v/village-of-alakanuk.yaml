@@ -28,6 +28,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 48 Fed. Reg. 56862, 56865 (Dec. 23, 1983)
+  since: '1983-12-23'
+  source: bia-recognized-entities-1983
+  confidence: medium
+  verification: inferred
+  as_of: '1983-12-23'
+  locator: 48 Fed. Reg. 56865 (entry "Alakanuk, Village of Alakanuk")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Alakanuk, Village of Alakanuk." The entry is matched to the nation by name.
 states:
 - state: AK
   presence: government-office
@@ -173,6 +183,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Village of Alakanuk".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1016398
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Alakanuk' (Alakanuk)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Alakanuk'.
 governance:
 - aspect: head-of-government
   value: President

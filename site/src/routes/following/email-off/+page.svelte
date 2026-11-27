@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Stop emails about pages you follow · Model Tribal ADR Code</title>
+	<title>Stop emails about pages you follow · Tribal Law Project</title>
 	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 

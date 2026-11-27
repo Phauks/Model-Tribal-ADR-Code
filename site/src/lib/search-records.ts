@@ -36,9 +36,12 @@ export interface DocumentFile {
 	title: string;
 	kind: string;
 	year?: string;
+	/** The nation it belongs to; empty when the record names none on this site. */
 	nation: string;
 	/** The heading on the nation's page that the result opens at. */
 	anchor: string;
+	/** Where it opens instead, for a document known from its source record: this site's copy, or where it is published. */
+	link?: string;
 }
 
 export interface SearchRecordsFile {
@@ -154,9 +157,13 @@ export const documentFacets: Facet<DocumentSearchRow>[] = [
 
 /** Whether every word typed appears in the document's title, kind, year or nation. */
 export function documentMatches(row: DocumentSearchRow, words: string[]): boolean {
-	const haystack = foldForSearch(`${row.title} ${row.kindLabel} ${row.year ?? ''} ${row.nationName}`);
+	const haystack = documentHaystacks.get(row) ?? foldForSearch(`${row.title} ${row.kindLabel} ${row.year ?? ''} ${row.nationName}`);
+	documentHaystacks.set(row, haystack);
 	return words.every((word) => haystack.includes(word));
 }
+
+/** Each document's words folded once, so typing does not fold every document again. */
+const documentHaystacks = new WeakMap<DocumentSearchRow, string>();
 
 function labelOf(options: FacetOption[], value: string): string {
 	return options.find((option) => option.value === value)?.label ?? value;
@@ -184,7 +191,7 @@ export function expandRecords(file: SearchRecordsFile): SearchRecords {
 			...row,
 			kindLabel: labelOf(documentKindOptions, row.kind),
 			nationName: names.get(row.nation) ?? row.nation,
-			link: `/nations/${row.nation}#${row.anchor}`
+			link: row.link ?? `/nations/${row.nation}#${row.anchor}`
 		}))
 	};
 }

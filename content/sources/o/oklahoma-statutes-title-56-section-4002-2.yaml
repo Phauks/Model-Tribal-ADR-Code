@@ -1,0 +1,59 @@
+key: oklahoma-statutes-title-56-section-4002-2
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Okla. Stat. tit. 56, § 4002.2
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '56'
+  section: '4002.2'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 2021
+      - 9
+      - 1
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os56.pdf#page=332
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os56.pdf#page=332
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-56-section-1011-3
+- oklahoma-statutes-title-56-section-230-77
+- oklahoma-statutes-title-56-section-4002-12
+- oklahoma-statutes-title-56-section-4002-3c
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 56, § 4002.2 (2026)
+  page: 332
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 56, § 4002.2 (2026). History: Added by Laws 2021, c. 542, § 2, eff. Sept. 1, 2021. Amended by Laws 2022, c. 395, § 2, eff. Text read from the Legislative Service Bureau''s Title 56 PDF (updated Nov. 12, 2026), page 332. Found by the state statutes pilot (terms: indian health; native american); AI reader''s verdict incidental: Medicaid definitions include Indian Health Care Provider and tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian health; native american'

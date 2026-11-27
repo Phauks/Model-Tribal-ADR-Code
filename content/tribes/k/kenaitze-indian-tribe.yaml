@@ -29,6 +29,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Kenaitze Indian Tribe (approved by the Secretary of the Interior June 21, 1971)
+  since: '1971-06-21'
+  source: constitution-kenaitze-indian-tribe-1971-text
+  document_version:
+    document: kenaitze-indian-tribe-constitution
+    version: 1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-06-21'
+  locator: 1971 constitution, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: AK
   presence: government-office
@@ -226,6 +239,70 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Kenaitze Indian Tribe".'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2010
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Kenaitze Indian Tribe' (Alaska Region)
+- program: indian-health-service-self-governance-compact
+  since: 2006
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Alaska Area, row 'Kenaitze Indian Tribe'
+- program: pl-102-477-plan
+  start: '2026-10-01'
+  end: '2031-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Youth Community Project
+  - Child Care & Development Funds – Discretionary
+  - Community Service Block Grant
+  - Low Income Home Energy Assistance Program
+  - Job Placement and Training
+  - 'Welfare Assistance: Burial Assistance'
+  - 'Welfare Assistance: Emergency Assistance'
+  - 'Welfare Assistance: General Assistance'
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Kenaitze Indian Tribe'; PL102_477_PartnerEnrollment, its 11 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2478538
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Kenaitze' (Kenai)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Kenaitze'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 2003623
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'KENAITZE INDIAN TRIBE' (UEI UWLMMPTKNZN1), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 21513993
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'KENAITZE INDIAN TRIBE' (UEI UWLMMPTKNZN1), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution adopted pursuant to the Indian Reorganization Act of June 18, 1934

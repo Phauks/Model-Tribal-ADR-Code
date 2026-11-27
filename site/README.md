@@ -4,7 +4,7 @@ The website is built with SvelteKit (Svelte 5, TypeScript) and served by a Cloud
 
 ## Run it on your computer
 
-Needs Node.js 22 or later. From this folder:
+Needs Node.js 26 or later and npm 12 (the version in `.node-version` and the `packageManager` field of `package.json`; `npm install --global npm@12` updates an older npm). From this folder:
 
 ```sh
 npm ci            # install the exact versions in package-lock.json
@@ -39,7 +39,7 @@ npm run check:accessibility  # axe-core on every built page, light and dark them
 npm run check:accessibility:live  # axe-core on the Worker's pages and on open menus and dialogs
 ```
 
-The accessibility checks open each page in Chromium through Playwright. Install the browser once with `npx playwright install chromium`, or set `CHROMIUM_PATH` to a Chromium that is already installed. `check:accessibility` covers the prerendered pages as first loaded; pass `--pages /,/nations/map` to check only some. `check:accessibility:live` serves the built Worker with Wrangler on the local database, which it fills with the fixtures of First run, and covers what the other cannot reach: the sign-in, request, account, profile, events, uploads and workspace pages, signed out and as the fixture accounts, and the header's menus and dialogs, the sidebar and dropdowns while open. Pass `--only /workspace,/sign-in` to check only some pages. Problems it may not fail on for now are listed, with the reason, at the top of `tools/check-accessibility-live.mjs`.
+The accessibility checks open each page in Chromium through Playwright. Install the browser once with `npx playwright install chromium`, or set `CHROMIUM_PATH` to a Chromium that is already installed. `check:accessibility` covers the prerendered pages as first loaded; pass `--pages /,/nations/map` to check only some. In CI, a pull request checks the pages it can change plus a sample of every kind of page (`tools/accessibility-scope.mjs`), and the nightly run checks every page. `check:accessibility:live` serves the built Worker with Wrangler on the local database, which it fills with the fixtures of First run, and covers what the other cannot reach: the sign-in, request, account, profile, events, uploads and workspace pages, signed out and as the fixture accounts, and the header's menus and dialogs, the sidebar and dropdowns while open. Pass `--only /workspace,/sign-in` to check only some pages. Problems it may not fail on for now are listed, with the reason, at the top of `tools/check-accessibility-live.mjs`.
 
 ## How it is deployed
 
@@ -47,14 +47,14 @@ Cloudflare Workers Builds deploys the site from GitHub ([decision record 0006](.
 
 | Setting | Value |
 | --- | --- |
-| Worker name | `model-tribal-adr-code` (must match `name` in `wrangler.jsonc`) |
+| Worker name | `tribal-law-project-site` (must match `name` in `wrangler.jsonc`) |
 | Production branch | `main` |
 | Root directory | `site` |
 | Build command | `npm ci && npm run build` |
 | Deploy command | `npx wrangler deploy` |
 | Preview command | `npx wrangler preview` |
 
-Each merge to `main` deploys to `https://triballawproject.org`, a Custom Domain of the Worker; the workers.dev address is off ([what waited on the domain](../docs/domain-to-do.md)). `wrangler.jsonc` has no `main` or `assets` setting because `@sveltejs/adapter-cloudflare` sets both when it builds. The last three steps of `npm run build` (`tools/add-scheduled-run.mjs`, `tools/add-nation-page-changes.mjs` and `tools/add-mail-handlers.mjs`) wrap the Worker the adapter makes, so the adapter is pinned to one version in `package.json`; after changing it, run `npm run build` and `npm run check:built-worker`.
+Each merge to `main` deploys to `https://triballawproject.org`, a Custom Domain of the Worker; the workers.dev address is off ([what waited on the domain](../docs/domain-to-do.md)). `wrangler.jsonc` has no `main` or `assets` setting because `@sveltejs/adapter-cloudflare` sets both when it builds. The last four steps of `npm run build` (`tools/add-scheduled-run.mjs`, `tools/add-nation-page-changes.mjs`, `tools/add-mail-handlers.mjs` and `tools/add-edge-cache.mjs`) wrap the Worker the adapter makes, so the adapter is pinned to one version in `package.json`; after changing it, run `npm run build` and `npm run check:built-worker`. The last wrapper tells Cloudflare's edge which answers it may keep; everything not on its list, including every signed-in page, is never kept ([edge caching](../docs/edge-caching.md)).
 
 ## Cloudflare resources
 
@@ -78,6 +78,6 @@ No secrets are needed. One setting, `LEAD_AUTHOR_EMAIL`, is made in the Cloudfla
 - **Type.** Atkinson Hyperlegible Next, served by the site itself through the Fontsource packages, with Noto Sans, Noto Sans Cherokee, Noto Sans Osage and Noto Sans Canadian Aboriginal as fallbacks that the browser downloads only for characters Atkinson Hyperlegible Next lacks. The fonts' SIL Open Font License texts are in `static/fonts/`.
 - **Content.** `src/lib/server/content.ts` reads the glossary, sources, nation records and changelogs from the repository at build time. Restricted records, and records that need a nation's approval it has not yet given, are left out. Until nation records are merged into `content/tribes/`, the nations section shows the fictitious example from `schemas/examples/tribe.example.yaml`, marked as an example.
 - **Map.** `/nations/map` has one map with buttons that switch between views: nations by state, the Bureau of Indian Affairs regions, and the Census Bureau's land areas. Alaska, Hawaiʻi and the territories are drawn in framed boxes below the other states, each with its own scale bar. `src/lib/map-geometry.ts` projects the shapes with d3-geo when the site is built. A small Vite plugin in `vite.config.ts` serves them as the module `virtual:map-geometry`, so the browser gets plain SVG. The region and land area outlines are in `geography/`; see [geography/README.md](geography/README.md).
-- **Nation pages.** Facts carry no citation marks; their sources are listed together at the end of the page (`src/lib/server/source-uses.ts`). Addresses link to Google Maps, phone numbers to the dialer and email addresses to a new message (`src/lib/contact-links.ts`). One "Report a problem" link sits at the top of the page.
+- **Nation pages.** Facts carry no citation marks; their sources are listed together at the end of the page (`src/lib/server/source-uses.ts`). Addresses link to Google Maps, phone numbers to the dialer and email addresses to a new message (`src/lib/contact-links.ts`). One "Request a Change" link sits at the top of the page.
 - **Offline.** `src/service-worker/index.ts` saves the app shell, the fonts and the core pages when the site is first opened, saves other pages as they are read, and shows `/offline` for a page that was never saved. `/manifest.webmanifest` and `/icon.svg` make the site installable; both take their colors from the tokens.
-- **Search engines.** `static/robots.txt` and a `noindex` tag ask search engines not to index the site while it is a 0.0.x draft.
+- **Search engines.** robots.txt (`src/routes/robots.txt`) and a `noindex` tag ask search engines not to index the site while it is a 0.0.x draft; `openToSearchEngines` in `src/lib/search-engines.ts` opens both at the first release. The sitemap at `/sitemap.xml` is built from the collections registry and written when a crawler asks ([docs/sitemap.md](../docs/sitemap.md)).

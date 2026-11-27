@@ -484,7 +484,7 @@
      "opinions": [
       {
        "kind": "majority",
-       "justice": "Byron Raymond White",
+       "justice": "Byron R. White",
        "page": 138
       },
       {
@@ -790,6 +790,719 @@
      }
     ],
     "note": "the words \"JUSTICE THOMAS concurs\" on p. 690 are in Justice Sotomayor's dissent, describing his opinion"
+   }
+  }
+ },
+ "2019-075": {
+  "key": "sharp-v-murphy",
+  "read": "2026-11-26",
+  "facts": {
+   "caption": {
+    "lines": [
+     {
+      "page": 977,
+      "text": "SHARP, WARDEN v. MURPHY"
+     }
+    ],
+    "correct": {
+     "caption": "SHARP, WARDEN v. MURPHY"
+    },
+    "note": "the slip opinion (a per curiam with no syllabus) names the parties in full (\"Tommy Sharp, interim Warden, petitioner v. Patrick Dwayne Murphy\"); the report's syllabus prints the short caption"
+   }
+  }
+ },
+ "1824-019": {
+  "key": "danforth-v-wear",
+  "read": "2026-11-26",
+  "facts": {
+   "caption": {
+    "lines": [
+     {
+      "page": 673,
+      "text": "DANFORTH v. WEAR.",
+      "ocr_poor": true
+     }
+    ],
+    "correct": {
+     "caption": "DANFORTH v. WEAR"
+    },
+    "note": "printed in small capitals"
+   }
+  }
+ },
+ "1840-015": {
+  "key": "lessee-of-lattimer-v-poteet",
+  "read": "2026-11-26",
+  "facts": {
+   "opinions": {
+    "lines": [
+     {
+      "page": 4,
+      "text": "Mr. Justice M'LEAN delivered the opinion."
+     },
+     {
+      "page": 15,
+      "text": "I agree with the majority of the Court in affirming these judgments; but I dissent from some of the principles upon which they have founded their opinion."
+     },
+     {
+      "page": 17,
+      "text": "Mr. Justice WAYNE dissented."
+     },
+     {
+      "page": 18,
+      "text": "It follows, I feel bound to concur with a majority of the Court, in affirming the judgment, on the presumption that the instructions were proper."
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "majority",
+       "justice": "John McLean",
+       "page": 4
+      },
+      {
+       "kind": "special concurrence",
+       "justice": "Roger Brooke Taney",
+       "page": 15
+      },
+      {
+       "kind": "special concurrence",
+       "justice": "John Catron",
+       "page": 17
+      }
+     ]
+    },
+    "note": "Chief Justice Taney (p. 15) and Justice Catron (p. 17) each agree in affirming the judgment but not with all of the Court's reasons; Justice Wayne dissented without an opinion. The Database counts Justice Catron as dissenting."
+   }
+  }
+ },
+ "1844-027": {
+  "key": "kinney-v-clark",
+  "read": "2026-11-26",
+  "facts": {
+   "caption": {
+    "lines": [
+     {
+      "page": 76,
+      "text": "WILLIAM KINNEY AND JAMES J. MECHIE, EXECUTORS AND TRUSTEES OF ROBERT PORTERFIELD, DECEASED, v. MERIWETHER L. CLARK",
+      "ocr_poor": true
+     }
+    ],
+    "note": "printed in small capitals at the foot of p. 76; the running heads call the case Porterfield v. Clark"
+   }
+  }
+ },
+ "1853-025": {
+  "key": "united-states-v-dawson",
+  "read": "2026-11-26",
+  "facts": {
+   "opinions": {
+    "lines": [
+     {
+      "page": 484,
+      "text": "Mr. Justice NELSON delivered the opinion of the court."
+     },
+     {
+      "page": 489,
+      "text": "Mr. Justice McLEAN dissented."
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "majority",
+       "justice": "Samuel Nelson",
+       "page": 484
+      },
+      {
+       "kind": "dissent",
+       "justice": "John McLean",
+       "page": 489
+      }
+     ]
+    },
+    "note": "the Caselaw Access Project gives the Court's opinion to Justice McLean, who dissented"
+   }
+  }
+ },
+ "1883-002": {
+  "key": "slidell-v-grandjean",
+  "read": "2026-11-26",
+  "facts": {
+   "decided": {
+    "lines": [
+     {
+      "page": 414,
+      "text": "The case was argued on the 2d January, and a decision announced on the 3d March, 1884."
+     }
+    ],
+    "correct": {
+     "decided": "1884-03-03",
+     "court_dates": {
+      "printed": "The case was argued on the 2d January, and a decision announced on the 3d March, 1884.",
+      "argued": [
+       "1884-01-02"
+      ],
+      "note": "The report prints no date line; this is the reporter's note on p. 414. On March 24, 1884, Justice Field announced the order on the petition for rehearing that the report prints."
+     }
+    },
+    "note": "the Database gives the first day of the term (October 1, 1883) and the Caselaw Access Project the day of the order on rehearing (March 24, 1884)"
+   }
+  }
+ },
+ "1886-225": {
+  "key": "noonan-v-caledonia-mining-co",
+  "read": "2026-11-26",
+  "facts": {
+   "opinions": {
+    "lines": [
+     {
+      "page": 398,
+      "text": "MR. JUSTICE FIELD, after stating the case, delivered the opinion of the court.",
+      "ocr_poor": true
+     }
+    ]
+   }
+  }
+ },
+ "1893-219": {
+  "key": "hegler-v-faulkner",
+  "read": "2026-11-26",
+  "facts": {
+   "printed dates": {
+    "lines": [
+     {
+      "page": 109,
+      "text": "No. 166. Submitted December 13, 1893.—Decided April 23, 1894."
+     }
+    ],
+    "note": "the scan's text layer reads \"April 2\""
+   }
+  }
+ },
+ "1896-019": {
+  "key": "draper-v-united-states",
+  "read": "2026-11-26",
+  "facts": {
+   "printed dates": {
+    "lines": [
+     {
+      "page": 240,
+      "text": "No. 496. Submitted October 23, 1896.—Decided November 30, 1896."
+     }
+    ],
+    "note": "the scan's text layer reads \"November 80\""
+   }
+  }
+ },
+ "1897-100": {
+  "key": "united-states-v-wong-kim-ark",
+  "read": "2026-11-26",
+  "facts": {
+   "opinions": {
+    "lines": [
+     {
+      "page": 652,
+      "text": "MR. JUSTICE GRAY, after stating the case, delivered the opinion of the court."
+     },
+     {
+      "page": 705,
+      "text": "MR. CHIEF JUSTICE FULLER, with whom concurred MR. JUSTICE HARLAN, dissenting."
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "majority",
+       "justice": "Horace Gray",
+       "page": 652
+      },
+      {
+       "kind": "dissent",
+       "justice": "Melville Weston Fuller",
+       "page": 705
+      }
+     ]
+    }
+   }
+  }
+ },
+ "1897-143": {
+  "key": "wagoner-v-evans",
+  "read": "2026-11-26",
+  "facts": {
+   "printed dates": {
+    "lines": [
+     {
+      "page": 588,
+      "text": "Nos. 252, 262. Submitted April 29, 1898.—Decided May 23, 1898.",
+      "ocr_poor": true
+     }
+    ],
+    "correct": {
+     "court_dates_printed": "Submitted April 29, 1898.—Decided May 23, 1898."
+    },
+    "note": "the Caselaw Access Project read the decision day as May 28"
+   },
+   "decided": {
+    "lines": [
+     {
+      "page": 588,
+      "text": "Nos. 252, 262. Submitted April 29, 1898.—Decided May 23, 1898.",
+      "ocr_poor": true
+     }
+    ],
+    "correct": {
+     "decided": "1898-05-23"
+    }
+   }
+  }
+ },
+ "1911-098": {
+  "key": "ex-parte-webb",
+  "read": "2026-11-26",
+  "facts": {
+   "opinions": {
+    "lines": [
+     {
+      "page": 670,
+      "text": "MR. JUSTICE PITNEY, after making the foregoing statement, delivered the opinion of the court."
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "majority",
+       "justice": "Mahlon Pitney",
+       "page": 670
+      }
+     ]
+    },
+    "note": "the Caselaw Access Project put the opinion's start on p. 674"
+   }
+  }
+ },
+ "1912-031": {
+  "key": "robertson-v-gordon",
+  "read": "2026-11-26",
+  "facts": {
+   "caption": {
+    "lines": [
+     {
+      "page": 311,
+      "text": "ROBERTSON v. GORDON, AND BUTLER AND VALE."
+     }
+    ],
+    "correct": {
+     "caption": "ROBERTSON v. GORDON, AND BUTLER AND VALE"
+    }
+   }
+  }
+ },
+ "1913-111": {
+  "key": "johnson-v-gearlds",
+  "read": "2026-11-26",
+  "facts": {
+   "opinions": {
+    "lines": [
+     {
+      "page": 433,
+      "text": "MR. JUSTICE PITNEY, after making the foregoing statement, delivered the opinion of the court."
+     },
+     {
+      "page": 448,
+      "text": "MR. JUSTICE McKENNA and MR. JUSTICE LURTON dissent upon grounds expressed in the opinion of the District Court, reported in 183 Fed. Rep. 611."
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "majority",
+       "justice": "Mahlon Pitney",
+       "page": 433
+      },
+      {
+       "kind": "dissent",
+       "justice": "Joseph McKenna",
+       "page": 448,
+       "note": "A joint statement of Justices McKenna and Lurton, who dissent on the grounds the District Court gave (183 F. 611)."
+      }
+     ]
+    }
+   }
+  }
+ },
+ "1925-163": {
+  "key": "jaybird-mining-co-v-weir",
+  "read": "2026-11-26",
+  "facts": {
+   "opinions": {
+    "lines": [
+     {
+      "page": 611,
+      "text": "MR. JUSTICE BUTLER delivered the opinion of the Court."
+     },
+     {
+      "page": 615,
+      "text": "MR. JUSTICE McREYNOLDS is of opinion that the effect of the assailed tax upon the instrumentality of the United States is remote and tax is valid"
+     },
+     {
+      "page": 615,
+      "text": "MR. JUSTICE BRANDEIS, dissenting."
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "majority",
+       "justice": "Pierce Butler",
+       "page": 611
+      },
+      {
+       "kind": "dissent",
+       "justice": "James Clark McReynolds",
+       "page": 615,
+       "note": "A one-sentence statement that the tax is valid."
+      },
+      {
+       "kind": "dissent",
+       "justice": "Louis Dembitz Brandeis",
+       "page": 615
+      }
+     ]
+    },
+    "note": "the Caselaw Access Project gives the Court's opinion to Justice McReynolds; the report and the Database give it to Justice Butler"
+   }
+  }
+ },
+ "1935-144": {
+  "key": "oklahoma-ex-rel-oklahoma-tax-commission-v-barnsdall-refineries-inc",
+  "read": "2026-11-26",
+  "facts": {
+   "printed dates": {
+    "lines": [
+     {
+      "page": 521,
+      "text": "No. 116. Argued December 12, 1935.—Decided January 6, 1936."
+     }
+    ],
+    "note": "the scan's text layer reads \"1035\""
+   }
+  }
+ },
+ "1939-014": {
+  "key": "board-of-county-commissioners-v-united-states",
+  "read": "2026-11-26",
+  "facts": {
+   "opinions": {
+    "lines": [
+     {
+      "page": 347,
+      "text": "MR. JUSTICE FRANKFURTER delivered the opinion of the Court."
+     },
+     {
+      "page": 353,
+      "text": "MR. JUSTICE McREYNOLDS concurs in the result."
+     },
+     {
+      "page": 353,
+      "text": "Opinion of MR. JUSTICE BLACK."
+     },
+     {
+      "page": 355,
+      "text": "MR. JUSTICE DOUGLAS concurs in this opinion."
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "majority",
+       "justice": "Felix Frankfurter",
+       "page": 347
+      },
+      {
+       "kind": "special concurrence",
+       "justice": "Hugo Lafayette Black",
+       "page": 353,
+       "note": "Justice Black concurs in the modification of the judgment below; Justice Douglas joins him."
+      }
+     ]
+    },
+    "note": "the Caselaw Access Project gives the Court's opinion to Justice Black; the report and the Database give it to Justice Frankfurter"
+   }
+  }
+ },
+ "1962-127": {
+  "key": "arizona-v-california-1963",
+  "read": "2026-11-26",
+  "facts": {
+   "opinions": {
+    "lines": [
+     {
+      "page": 550,
+      "text": "MR. JUSTICE BLACK delivered the opinion of the Court."
+     },
+     {
+      "page": 603,
+      "text": "MR. JUSTICE HARLAN, whom MR. JUSTICE DOUGLAS and MR. JUSTICE STEWART join, dissenting in part."
+     },
+     {
+      "page": 627,
+      "text": "MR. JUSTICE DOUGLAS, dissenting."
+     }
+    ],
+    "note": "the scan has two blank leaves and two map pages after p. 602"
+   }
+  }
+ },
+ "1978-026": {
+  "key": "arizona-v-california-1979",
+  "read": "2026-11-26",
+  "facts": {
+   "decided": {
+    "lines": [
+     {
+      "page": 419,
+      "text": "Argued October 10, 1978—Decided and supplemental decree entered January 9, 1979"
+     }
+    ],
+    "correct": {
+     "court_dates": {
+      "printed": "Decided June 3, 1963—Decree entered March 9, 1964—Amended decree entered February 28, 1966—Argued October 10, 1978—Decided and supplemental decree entered January 9, 1979",
+      "argued": [
+       "1978-10-10"
+      ],
+      "note": "The heading lists every decision and decree in this original case since 1963; this entry is the supplemental decree of January 9, 1979."
+     },
+     "decided": "1979-01-09"
+    },
+    "note": "the heading lists every decision and decree in the case since 1963; this entry is the last of them"
+   },
+   "opinions": {
+    "lines": [
+     {
+      "page": 420,
+      "text": "PER CURIAM AND SUPPLEMENTAL DECREE."
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "per curiam",
+       "justice": "The Court",
+       "page": 420
+      }
+     ]
+    }
+   }
+  }
+ },
+ "1983-065": {
+  "key": "arizona-v-california-1984",
+  "read": "2026-11-26",
+  "facts": {
+   "decided": {
+    "lines": [
+     {
+      "page": 144,
+      "text": "Decided March 30, 1983—Second supplemental decree entered April 16, 1984"
+     }
+    ],
+    "correct": {
+     "court_dates": {
+      "printed": "Decided June 3, 1963—Decree entered March 9, 1964—Amended decree entered February 28, 1966—Decided and supplemental decree entered January 9, 1979—Decided March 30, 1983—Second supplemental decree entered April 16, 1984",
+      "note": "The heading lists every decision and decree in this original case since 1963; this entry is the second supplemental decree of April 16, 1984."
+     },
+     "decided": "1984-04-16"
+    },
+    "note": "the heading lists every decision and decree in the case since 1963; this entry is the last of them"
+   }
+  }
+ },
+ "2005-043": {
+  "key": "arizona-v-california-2006",
+  "read": "2026-11-26",
+  "facts": {
+   "decided": {
+    "lines": [
+     {
+      "page": 150,
+      "text": "Supplemental decree entered October 10, 2000—Consolidated decree entered March 27, 2006"
+     }
+    ],
+    "correct": {
+     "court_dates": {
+      "printed": "Decided June 3, 1963—Decree entered March 9, 1964—Amended decree entered February 28, 1966—Decided and supplemental decree entered January 9, 1979—Decided March 30, 1983—Second supplemental decree entered April 16, 1984—Decided June 19, 2000—Supplemental decree entered October 10, 2000—Consolidated decree entered March 27, 2006",
+      "note": "The heading lists every decision and decree in this original case since 1963; this entry is the consolidated decree of March 27, 2006."
+     },
+     "decided": "2006-03-27"
+    },
+    "note": "the heading lists every decision and decree in the case since 1963; this entry is the last of them"
+   },
+   "printed dates": {
+    "lines": [
+     {
+      "page": 150,
+      "text": "Supplemental decree entered October 10, 2000—Consolidated decree entered March 27, 2006"
+     }
+    ]
+   }
+  }
+ },
+ "1977-147": {
+  "key": "regents-of-the-university-of-california-v-bakke",
+  "read": "2026-11-26",
+  "facts": {
+   "decided": {
+    "lines": [
+     {
+      "page": 265,
+      "text": "No. 76-811. Argued October 12, 1977—Decided June 28, 1978"
+     }
+    ],
+    "correct": {
+     "decided": "1978-06-28"
+    },
+    "note": "the Database gives June 26, 1978"
+   },
+   "opinions": {
+    "lines": [
+     {
+      "page": 269,
+      "text": "MR. JUSTICE POWELL announced the judgment of the Court."
+     },
+     {
+      "page": 324,
+      "text": "Opinion of MR. JUSTICE BRENNAN, MR. JUSTICE WHITE, MR. JUSTICE MARSHALL, and MR. JUSTICE BLACKMUN, concurring in the judgment in part and dissenting in part."
+     },
+     {
+      "page": 379,
+      "text": "MR. JUSTICE WHITE."
+     },
+     {
+      "page": 387,
+      "text": "MR. JUSTICE MARSHALL."
+     },
+     {
+      "page": 402,
+      "text": "MR. JUSTICE BLACKMUN."
+     },
+     {
+      "page": 408,
+      "text": "MR. JUSTICE STEVENS, with whom THE CHIEF JUSTICE, MR. JUSTICE STEWART, and MR. JUSTICE REHNQUIST join, concurring in the judgment in part and dissenting in part.",
+      "ocr_poor": true
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "judgment",
+       "justice": "Lewis F. Powell, Jr.",
+       "page": 269
+      },
+      {
+       "kind": "concurrence in part and dissent in part",
+       "justice": "William J. Brennan, Jr.",
+       "page": 324,
+       "note": "Headed \"concurring in the judgment in part and dissenting in part\"; the joint opinion of Justices Brennan, White, Marshall and Blackmun."
+      },
+      {
+       "kind": "concurrence in part and dissent in part",
+       "justice": "Byron R. White",
+       "page": 379,
+       "note": "Headed only with his name; on Title VI."
+      },
+      {
+       "kind": "concurrence in part and dissent in part",
+       "justice": "Thurgood Marshall",
+       "page": 387,
+       "note": "Headed only with his name."
+      },
+      {
+       "kind": "concurrence in part and dissent in part",
+       "justice": "Harry A. Blackmun",
+       "page": 402,
+       "note": "Headed only with his name."
+      },
+      {
+       "kind": "concurrence in part and dissent in part",
+       "justice": "John Paul Stevens",
+       "page": 408,
+       "note": "Headed \"concurring in the judgment in part and dissenting in part\"; joined by Chief Justice Burger and Justices Stewart and Rehnquist."
+      }
+     ]
+    }
+   }
+  }
+ },
+ "1988-026": {
+  "key": "city-of-richmond-v-j-a-croson-co",
+  "read": "2026-11-26",
+  "facts": {
+   "opinions": {
+    "lines": [
+     {
+      "page": 476,
+      "text": "JUSTICE O'CONNOR announced the judgment of the Court and delivered the opinion of the Court with respect to Parts I, III-B, and IV"
+     },
+     {
+      "page": 511,
+      "text": "JUSTICE STEVENS, concurring in part and concurring in the judgment."
+     },
+     {
+      "page": 518,
+      "text": "JUSTICE KENNEDY, concurring in part and concurring in the judgment."
+     },
+     {
+      "page": 520,
+      "text": "JUSTICE SCALIA, concurring in the judgment.",
+      "ocr_poor": true
+     },
+     {
+      "page": 528,
+      "text": "JUSTICE MARSHALL, with whom JUSTICE BRENNAN and JUSTICE BLACKMUN join, dissenting."
+     },
+     {
+      "page": 561,
+      "text": "JUSTICE BLACKMUN, with whom JUSTICE BRENNAN joins, dissenting."
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "majority",
+       "justice": "Sandra Day O'Connor",
+       "page": 476,
+       "note": "The opinion of the Court as to Parts I, III-B and IV; as to Parts II and III-A, a plurality."
+      },
+      {
+       "kind": "concurrence in part and in the judgment",
+       "justice": "John Paul Stevens",
+       "page": 511
+      },
+      {
+       "kind": "concurrence in part and in the judgment",
+       "justice": "Anthony M. Kennedy",
+       "page": 518
+      },
+      {
+       "kind": "special concurrence",
+       "justice": "Antonin Scalia",
+       "page": 520
+      },
+      {
+       "kind": "dissent",
+       "justice": "Thurgood Marshall",
+       "page": 528
+      },
+      {
+       "kind": "dissent",
+       "justice": "Harry A. Blackmun",
+       "page": 561
+      }
+     ]
+    },
+    "note": "the Caselaw Access Project's heading put Justice Marshall's name on the opinion that announces the judgment"
    }
   }
  }

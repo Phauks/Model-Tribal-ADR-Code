@@ -1,0 +1,60 @@
+key: oklahoma-statutes-title-43a-section-3-322a
+kind: state-statute
+citation:
+  type: legislation
+  title: Problem Gambling Treatment Counselors - Certification
+  title-short: Okla. Stat. tit. 43A, § 3-322a
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: 43A
+  section: 3-322a
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 2021
+      - 11
+      - 1
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os43A.pdf#page=90
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os43A.pdf#page=90
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-43a-section-2-311
+- oklahoma-statutes-title-43a-section-2-403
+- oklahoma-statutes-title-43a-section-3-318
+- oklahoma-statutes-title-43a-section-3-326
+- oklahoma-statutes-title-43a-section-3-428
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 43A, § 3-322a (2026)
+  page: 90
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 43A, § 3-322a (2026). History: Added by Laws 2021, c. 246, § 1, eff. Nov. 1, 2021. Text read from the Legislative Service Bureau''s Title 43A PDF (updated Nov. 12, 2026), page 90. Found by the state statutes pilot (terms: tribal; tribe); AI reader''s verdict incidental: Tribal facility employees may be certified counselors. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal; tribe'

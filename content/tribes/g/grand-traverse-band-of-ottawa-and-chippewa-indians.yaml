@@ -184,6 +184,64 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Grand Traverse Band of Ottawa and Chippewa Indians, Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Grand Traverse Band of Ottawa and Chippewa Indians of Michigan (1994)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1993
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Grand Traverse Band Of Ottawa & Chippewa' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Grand Traverse Band Of Ottawa & Chippewa'.
+- program: indian-health-service-self-governance-compact
+  since: 1994
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Grand Traverse Band of Ottawa and Chippewa Indians of Michigan'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Grand Traverse Band of Ottawa and Chippewa Indians of Michigan'.
+- program: pl-102-477-plan
+  start: '2026-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Job Placement and Training
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Grand Traverse Band of Ottawa and Chippewa Indians, Michigan'; PL102_477_PartnerEnrollment, its 2 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2434043
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MI, row 'Grand Traverse Band of Ottawa and Chippewa Indians' (Peshawbestown)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 7340905
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'GRAND TRAVERSE BAND OF OTTAWA AND CHIPPEWA INDIANS' (UEI HCHWNDWBGWE5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'GRAND TRAVERSE BAND OF OTTAWA AND CHIPPEWA INDIANS'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 4158766
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'GRAND TRAVERSE BAND OF OTTAWA AND CHIPPEWA INDIANS' (UEI HCHWNDWBGWE5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'GRAND TRAVERSE BAND OF OTTAWA AND CHIPPEWA INDIANS'.
 governance:
 - aspect: form
   value: Adopted under the Indian Reorganization Act of June 18, 1934
@@ -774,6 +832,14 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.51)
   note: Listed as "GRAND TRAVERSE BAND OF OTTAWA AND CHIPPEWA INDIANS" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Grand Traverse Band of Ottawa & Chippewa, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Apr. 5, 2021, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-grand-traverse-band-of-ottawa-and-chippewa-indians-2021-04-05
+  confidence: high
+  verification: inferred
+  as_of: '2021-04-05'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2021
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Michigan Department of Human Services

@@ -18,6 +18,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Kansa, Oct. 28, 1815, 7 Stat. 137
+  since: '1815-10-28'
+  source: treaty-with-the-kansa-1815
+  confidence: medium
+  verification: inferred
+  as_of: '1815-10-28'
+  locator: p. 123 (Treaty with the Kansa, 1815; Kappler header "Oct. 28, 1815. | 7 Stat., 137. | Ratified Dec. 26, 1818.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Kansa; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OK
   presence: government-office
@@ -196,6 +206,77 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "Kaw Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Kaw Nation (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Kaw Nation' (Southern Plains Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Kaw Nation'.
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Kaw Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Kaw Nation'.
+- program: pl-102-477-plan
+  start: '2025-01-01'
+  end: '2027-12-31'
+  programs_included:
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Adult Education
+  - Education Line Officer
+  - Higher Education
+  - Johnson O’Malley
+  - Tribal Youth Program PA9
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Kaw Nation, Oklahoma'; PL102_477_PartnerEnrollment, its 7 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 981908
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Kaw Nation' (Kaw City)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Kaw Nation, Oklahoma'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 6240352
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'KAW NATION' (UEI EXZ8JXKFKVA8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KAW NATION'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 3989989
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'KAW NATION' (UEI EXZ8JXKFKVA8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KAW NATION'.
 governance:
 - aspect: form
   value: Constitution under Oklahoma Indian Welfare Act
@@ -674,6 +755,22 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Kaw Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Dec. 13, 2013, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-kaw-nation-2013-12-13
+  confidence: high
+  verification: inferred
+  as_of: '2013-12-13'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2013
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services
@@ -696,6 +793,105 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Kaw Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 2, 2001 (file 37089).
+  source: oklahoma-filing-37089
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 37089
+  note: 'From the register line: “Kaw Nation/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 24, 2008 (file 42955).
+  source: oklahoma-filing-42955
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 42955
+  note: 'From the register line: “Kaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 11, 2013 (file 46014).
+  source: oklahoma-filing-46014
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46014
+  note: 'From the register line: “Kaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Burn ban agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 11, 2013 (file 46015).
+  source: oklahoma-filing-46015
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46015
+  note: 'From the register line: “Kaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: First amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 22, 2014 (file 47142).
+  source: oklahoma-filing-47142
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 47142
+  note: 'From the register line: “First Amended Tobacco Tax Compact between the State of Oklahoma and The Kaw Nation”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Wildlife Conservation
+  agreement: Memorandum of understanding on Beaver Creek wetland and outdoor education
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 3, 2016 (file 48387).
+  source: oklahoma-filing-48387
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 48387
+  note: 'From the register line: “Memorandum of Understanding between the Kaw Nation and the Oklahoma Department of Wildlife Conservation - Beaver Creek Weleand site, a.k.a. the Beaver Night Club area of Kaw Wildlife Management Area - outdoor education program”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Second amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Feb. 3, 2017 (file 48428).
+  source: oklahoma-filing-48428
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 48428
+  note: 'From the register line: “Second Amended Tobacco Tax Compact between the State of Oklahoma and the Kaw Nation”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Supplemental term to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 15, 2024 (file 53228).
+  source: oklahoma-filing-53228
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53228
+  note: 'From the register line: “Resolution Authorizing the Supplemental term to the Tobacco Compact Between the Kaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 8, 2024 (file 53337).
+  source: oklahoma-filing-53337
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53337
+  note: 'From the register line: “Resolution 24- 98, Authorizing the Tobacco Compact between te Kaw Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
 court_practice:
 - kind: bar-admission
   title: Application for Bar Association

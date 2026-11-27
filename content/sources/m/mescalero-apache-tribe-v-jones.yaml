@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=411%20U.S.%20145
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1972-12-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-2c.mp3
+  catalog: https://catalog.archives.gov/id/102048347
+  whole_session: true
+  duration_seconds: 2582
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-2c.mp3
+    checksum: 66b0a9fcb2745f992b2145054d8f6105ee0077cd8b8da8e3094c0a7ef2e30891
+    media_type: audio/mpeg
+    bytes: 41321655
 rights:
   status: no-permission-needed
   basis: us-government-work

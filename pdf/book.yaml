@@ -36,6 +36,14 @@ metadata:
 # "footnotes" prints them at the foot of each page (lead author, Nov. 22, 2026).
 notes: endnotes
 
+# Pictures in essays (":::: figure picture /files/<reference>/<name>") print
+# from the website's own copy of each file, downloaded when the book is built
+# and made grayscale for black-and-white ink (pipeline/pictures.mjs). The
+# website shows an essay's pictures to everyone once the essay is published.
+# "none" prints each picture as a box with its caption instead.
+pictures:
+  site: https://triballawproject.org
+
 # Working titles for the book's parts and the chapters of Part II
 # (provisions are grouped by the `chapter` number in their front matter).
 parts:
@@ -57,4 +65,4 @@ chapters: {}
 cover:
   back_text: >-
     Model provisions, commentary, and a collection of methods and manners of dispute resolution for Native nations in the United States. The project offers an optional framework that a nation may adapt through its own processes; it does not speak for any nation.
-  back_note: Everything in this book is free to read on the project's website.
+  back_note: Everything in this book is free to read at triballawproject.org.

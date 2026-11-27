@@ -1,0 +1,81 @@
+key: hopi-tribe-v-u-s-environmental-protection-agency-2017
+kind: federal-case
+citation:
+  type: legal_case
+  title: Hopi Tribe v. U.S. Environmental Protection Agency
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '851'
+  page: '957'
+  issued:
+    date-parts:
+    - - 2017
+      - 3
+      - 20
+  URL: https://static.case.law/f3d/851/html/0957-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 14-73055
+original_link: https://static.case.law/f3d/851/html/0957-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2016-11-18'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2016/11/18/14-73055.mp3
+  duration_seconds: 2620
+  file:
+    storage_key: appeals-court-audio/ca9/2016/2016-11-18-14-73055.mp3
+    checksum: b69e0a9e8add8649047257dad496b2bda411668895d9040994c8f5936a6fd0d9
+    media_type: audio/mpeg
+    bytes: 10481904
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- navajo-nation
+- gila-river-indian-community-of-the-gila-river-indian-reservation
+- hopi-tribe-of-arizona
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: navajo-nation
+    named_as: Navajo Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: gila-river-indian-community-of-the-gila-river-indian-reservation
+    named_as: Gila River Indian Community
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: hopi-tribe-of-arizona
+    named_as: Hopi Tribe
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 851 F.3d 957. Decided by the United States Court of Appeals for the Ninth Circuit on Mar. 20, 2017. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (Hopi Tribe challenge to EPA plan, tribal consultation and trust).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: Hopi Tribe challenge to EPA plan, tribal consultation and trust'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 3 matched, 0 not linked

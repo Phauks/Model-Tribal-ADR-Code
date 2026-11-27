@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7236 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7236 (entry "Thlopthlocco Creek Tribal Town of Oklahoma")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Thlopthlocco Creek Tribal Town of Oklahoma." The entry is matched to the nation by name.
 states:
 - state: OK
   presence: government-office
@@ -135,6 +145,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Thlopthlocco Tribal Town".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 557547
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Thlopthlocco Tribal Town' (Okemah)
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Thlopthlocco Tribal Town" among organizations under constitutions approved by
@@ -469,6 +489,95 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+jurisdiction_agreements:
+- kind: other
+  other_party: COEDD
+  agreement: Interlocal cooperation resolution
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 15, 1973 (file 1897).
+  source: oklahoma-filing-1897
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 1897
+  note: 'From the register line: “Resolution - Thlopthlocco Tribal Town”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Feb. 27, 1997 (file 34331).
+  source: oklahoma-filing-34331
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 34331
+  note: 'From the register line: “Thlopthlocco Tribal Town of Ok/State of Ok”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 17, 1998 (file 35655).
+  source: oklahoma-filing-35655
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 35655
+  note: 'From the register line: “Thlopthlocco Tribal Town/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 29, 1998 (file 35664).
+  source: oklahoma-filing-35664
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 35664
+  note: 'From the register line: “Thlopthlocco Tribal Town/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 27, 2007 (file 42253).
+  source: oklahoma-filing-42253
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 42253
+  note: 'From the register line: “Thlopthlocco Tribal Town & State of Olahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46232).
+  source: oklahoma-filing-46232
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46232
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 28, 2013 (file 46266).
+  source: oklahoma-filing-46266
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46266
+  note: 'From the register line: “Amendment between the Thlopthlocco Tribal Town and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 4, 2013 (file 46554).
+  source: oklahoma-filing-46554
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46554
+  note: 'From the register line: “Thlopthlocco Tribal Town and the State of Oklahoma”. Whether it is still in force is not recorded.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

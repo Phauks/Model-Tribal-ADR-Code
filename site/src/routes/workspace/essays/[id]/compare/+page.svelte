@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Compare versions · {data.title} · Workspace · Model Tribal ADR Code</title>
+	<title>Compare versions · {data.title} · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -16,6 +16,7 @@
 		{ label: 'Essays', href: '/workspace/essays' },
 		{ label: data.title, href: `/workspace/essays/${data.identifier}` }
 	]}
+	current="Version {data.from.number} to version {data.to.number}"
 />
 
 <h1>Version {data.from.number} to version {data.to.number}</h1>

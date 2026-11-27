@@ -19,6 +19,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Kletsel Dehe Wintun Nation of the Cortina Rancheria (approved by the Secretary of the Interior Aug. 10, 1973)
+  since: '1973-08-10'
+  source: constitution-kletsel-dehe-wintun-nation-of-the-cortina-rancheria-1973-text
+  document_version:
+    document: kletsel-dehe-wintun-nation-of-the-cortina-rancheria-constitution
+    version: 1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-08-10'
+  locator: 1973 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -189,6 +202,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Kletsel Dehe Band of Wintun Indians". Roster name is Kletsel Dehe Wintun Nation; Indian Health Service page uses the older name. Appears run on to the end of the preceding line on the page.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 178553
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Kletsel Dehe Wintun Nation of the Cortina Rancheria' (Williams)
 governance:
 - aspect: form
   value: Constitution and Bylaws approved under the Act of June 18, 1934
@@ -404,6 +427,14 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Apr. 7, 2016 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Apr. 16, 2021.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2016-04-07'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 nearby_state_courts:
 - state: CA
   county: Colusa County

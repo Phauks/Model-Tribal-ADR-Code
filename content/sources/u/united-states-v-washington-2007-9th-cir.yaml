@@ -1,0 +1,88 @@
+key: united-states-v-washington-2007-9th-cir
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Washington
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F. App'x
+  volume: '252'
+  page: '183'
+  issued:
+    date-parts:
+    - - 2007
+      - 10
+      - 26
+  URL: https://static.case.law/f-appx/252/html/0183-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 06-35185, 06-35241
+original_link: https://static.case.law/f-appx/252/html/0183-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2007-10-17'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2007/10/17/06-35185.wma
+  duration_seconds: 2439
+  file:
+    storage_key: appeals-court-audio/ca9/2007/2007-10-17-06-35185.wma
+    checksum: 4e19efc59452bbbab5532dd678f847e8fea4234b5704c298f1c6b00b3313f3b4
+    media_type: audio/x-ms-wma
+    bytes: 6304815
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- tulalip-tribes-of-washington
+- swinomish-indian-tribal-community
+- suquamish-indian-tribe-of-the-port-madison-reservation
+- lummi-tribe-of-the-lummi-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: tulalip-tribes-of-washington
+    named_as: Tulalip Tribes
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: swinomish-indian-tribal-community
+    named_as: Swinomish Tribal Community
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: suquamish-indian-tribe-of-the-port-madison-reservation
+    named_as: Suquamish Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: lummi-tribe-of-the-lummi-reservation
+    named_as: Lummi Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 252 F. App'x 183. Decided by the United States Court of Appeals for the Ninth Circuit on Oct. 26, 2007. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 4; an AI reader read excerpts and judged it an Indian law case (Tribal treaty fishing rights, Washington tribes).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 4; reader: Tribal treaty fishing rights, Washington tribes'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 4 matched, 0 not linked

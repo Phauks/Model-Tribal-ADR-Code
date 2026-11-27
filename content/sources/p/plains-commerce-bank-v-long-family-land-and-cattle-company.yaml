@@ -90,6 +90,31 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=554%20U.S.%20316
+argument_audio:
+- kind: argument
+  date: '2008-04-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1526-April14.MP3
+  catalog: https://catalog.archives.gov/id/183517908
+  whole_session: true
+  duration_seconds: 7439
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1526-april14.mp3
+    checksum: 9f1f753caf9ac2ace675faa1e8059bfa9e47679da2b8a9e4cce1e964c7bb1283
+    media_type: audio/mpeg
+    bytes: 119019008
+- kind: opinion announcement
+  date: '2008-06-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1542-June25non-arg.MP3
+  catalog: https://catalog.archives.gov/id/183517924
+  whole_session: true
+  duration_seconds: 1554
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1542-june25non-arg.mp3
+    checksum: c25f10c4fde26e93230b2ff75ecf43210126e40258e01b66c13fccd8b02d21f2
+    media_type: audio/mpeg
+    bytes: 24869376
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -119,9 +144,9 @@ case_box:
   holding: |-
     No. The Court held that *Montana* does not permit Tribal regulation of the sale of non-Indian fee land, so the Tribal court lacked jurisdiction over the discrimination claim; it also held the bank had standing to challenge Tribal-court jurisdiction.
   quotes:
-  - text: "*Montana* and its progeny permit tribal regulation of nonmember conduct inside the reservation that implicates the tribe’s sovereign interests ..."
+  - text: "*Montana* and its progeny permit tribal regulation of nonmember conduct inside the reservation that implicates the tribe’s sovereign interests."
     pinpoint: "p. 332"
-  - text: "The Bill of Rights does not apply to Indian tribes ..."
+  - text: "The Bill of Rights does not apply to Indian tribes."
     pinpoint: "p. 337"
   treatment: |-
     *United States v. Bryant* (2016) cites *Plains Commerce Bank* for the point that the Sixth Amendment does not apply in Tribal-court proceedings. [@united-states-v-bryant]

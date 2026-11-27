@@ -6,6 +6,7 @@
 import {
 	authorityStatements,
 	isRequestKind,
+	maximumRequestFiles,
 	sourceKinds,
 	type AuthorityStatement,
 	type RequestKind,
@@ -19,6 +20,11 @@ export const sourceSlots = 3;
 
 const shortText = 300;
 const longText = 8000;
+
+/** An address with a name, an at sign and a domain with a dot; the sender's own mail system decides the rest. */
+function isEmailAddress(value: string): boolean {
+	return /^[^\s@]+@[^\s@]+\.[^\s@]+$/u.test(value);
+}
 
 /** File types accepted, checked by their first bytes, not only by their name. */
 const acceptedFiles: { type: string; extension: string; matches: (bytes: Uint8Array) => boolean }[] = [
@@ -104,7 +110,15 @@ export async function readFile(
 	name: string,
 	errors: Record<string, string>
 ): Promise<UploadedFile | null> {
-	const value = form.get(name);
+	return checkFile(form.get(name), name, errors);
+}
+
+/** Checks one sent file: its size, and its type by its first bytes. */
+async function checkFile(
+	value: FormDataEntryValue | null,
+	name: string,
+	errors: Record<string, string>
+): Promise<UploadedFile | null> {
 	if (!(value instanceof File) || value.size === 0) return null;
 	if (value.size > maximumFileBytes) {
 		errors[name] = 'The file is larger than 10 MB. Please send a smaller copy or a link instead.';
@@ -125,8 +139,9 @@ export async function readFile(
 }
 
 /**
- * Checks a submitted request. Only a way to reply is always required
- * (docs/requests.md, step 3); each kind adds what it needs.
+ * Checks a submitted request. An email address and accepting the statements
+ * are always required (docs/requests.md, steps 3 and 6); each kind adds what
+ * it needs.
  */
 export async function readRequestForm(form: FormData): Promise<FormResult> {
 	const errors: Record<string, string> = {};
@@ -150,11 +165,15 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 		return value;
 	};
 
+	// Replies go by email only (Trevor, Nov. 27, 2026). Requests saved earlier may hold a phone number.
 	const contact = limit('contact', shortText, text(form, 'contact'));
-	if (contact === '') errors.contact = 'Give an email address or phone number so we can reply.';
+	if (contact === '') errors.contact = 'Give an email address so we can reply.';
+	else if (!errors.contact && !isEmailAddress(contact)) errors.contact = 'Write the whole address, for example name@example.org.';
+
+	if (text(form, 'acceptStatements') !== 'yes') errors.acceptStatements = 'Tick the box to accept these statements.';
 
 	const details = limit('details', longText, text(form, 'details'));
-	if (details === '' && kind !== 'add-nation') {
+	if (details === '' && kind !== 'add-nation' && kind !== 'broken-page') {
 		errors.details =
 			kind === 'replace-name'
 				? 'Say whose name it is, for example "the mother" or "me". Please do not write the full name.'
@@ -164,15 +183,16 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 	}
 
 	const material = limit('material', longText, text(form, 'material'));
-	if ((kind === 'correct' || kind === 'restrict' || kind === 'remove' || kind === 'replace-name') && material === '') {
-		errors.material = 'Say which page, record or passage this is about.';
+	if ((kind === 'correct' || kind === 'broken-page' || kind === 'restrict' || kind === 'remove' || kind === 'replace-name') && material === '') {
+		errors.material = 'Say which web page this is about.';
 	}
 
 	const writingFor = text(form, 'writingForGovernment');
 	const request: NewRequest = {
 		// A request to replace a name is kept as a request to make something private, so the opinion
 		// is hidden within 7 days while the name is replaced (research/analyses/2026-11-24-redaction-practices-for-opinions.md).
-		kind: kind === 'replace-name' ? 'restrict' : kind,
+		// A broken page is kept as a correction, marked as broken in its details (site/ERRORS.md).
+		kind: kind === 'replace-name' ? 'restrict' : kind === 'broken-page' ? 'correct' : kind,
 		material: optional(material),
 		nationIdentifier: optional(limit('nationIdentifier', shortText, text(form, 'nationIdentifier'))),
 		requesterName: optional(limit('requesterName', shortText, text(form, 'requesterName'))),
@@ -181,7 +201,7 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 		writingForGovernment: writingFor === 'yes',
 		contact,
 		sharedWithTeam: text(form, 'shareWithTeam') === 'yes' && isTeamReportKind(kind) && text(form, 'nationIdentifier') !== '',
-		details: optional(kind === 'replace-name' ? `Replace a name with initials. ${details}` : details),
+		details: optional(kind === 'replace-name' ? `Replace a name with initials. ${details}` : kind === 'broken-page' ? `Broken page. ${details}`.trim() : details),
 		creditPreference: null,
 		publicationPermission: null,
 		missingNationOfficialName: null,
@@ -258,8 +278,10 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 				'Give at least one government source that names the nation: a citation, an upload, or both.';
 		}
 	} else {
-		for (let slot = 1; slot <= maximumFiles; slot += 1) {
-			const file = await readFile(form, `file${slot}`, errors);
+		const sent = form.getAll('files').filter((value) => value instanceof File && value.size > 0);
+		if (sent.length > maximumRequestFiles) errors.files = `Please send at most ${maximumRequestFiles} files.`;
+		for (const value of sent.slice(0, maximumRequestFiles)) {
+			const file = await checkFile(value, 'files', errors);
 			if (file) {
 				request.sources.push({
 					sourceKind: null,

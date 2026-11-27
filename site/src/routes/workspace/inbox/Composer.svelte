@@ -9,6 +9,7 @@
 	// together) are sent up in pieces and go as download links instead
 	// (site/MAIL.md, "Big files as links"); that needs scripts.
 	import { onMount } from 'svelte';
+	import { invalidate } from '$app/navigation';
 	import Check from '@lucide/svelte/icons/check';
 	import Clock from '@lucide/svelte/icons/clock';
 	import MessageSquareText from '@lucide/svelte/icons/message-square-text';
@@ -22,6 +23,7 @@
 	import { localInputValue } from './dates.ts';
 	import DateTimeField from '#lib/components/DateTimeField.svelte';
 	import Dropdown from '#lib/components/Dropdown.svelte';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let {
 		action,
@@ -160,7 +162,10 @@
 			const response = await fetch('/workspace/inbox/drafts/save', { method: 'POST', headers: { 'content-type': 'application/json' }, body: draftBody(), keepalive });
 			if (!response.ok) throw new Error(String(response.status));
 			const saved = (await response.json()) as { identifier: string; updatedAt: string };
+			const isNew = draftIdentifier !== saved.identifier;
 			draftIdentifier = saved.identifier;
+			// A new draft changes the Drafts count in the inbox's left column, which a saved draft does not otherwise reload.
+			if (isNew) void invalidate('mail:counts');
 			savedAt = new Date(saved.updatedAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
 			if (!timer) saving = 'saved';
 		} catch {
@@ -184,6 +189,8 @@
 		window.addEventListener('pagehide', leave);
 		return () => {
 			window.removeEventListener('pagehide', leave);
+			// Moving to another inbox page before the moment is up saves what was written too.
+			if (timer && !sending) void saveDraft(true);
 			clearTimeout(timer);
 		};
 	});
@@ -191,7 +198,7 @@
 	async function discardDraft(): Promise<void> {
 		sending = true;
 		clearTimeout(timer);
-		if (draftIdentifier) await fetch(`/workspace/inbox/drafts/save?identifier=${encodeURIComponent(draftIdentifier)}`, { method: 'DELETE' }).catch(() => undefined);
+		if (draftIdentifier) await fetch(`/workspace/inbox/drafts/save?identifier=${encodeURIComponent(draftIdentifier)}`, { method: 'DELETE' }).catch((problem) => sendProblem(problem, { code: 'mail.discard-draft' }));
 		window.location.href = discard ?? window.location.pathname;
 	}
 
@@ -269,7 +276,7 @@
 			links = links.map((item) => (item.key === key ? { ...item, ...change } : item));
 		};
 		const answer = async (response: Response) => {
-			if (!response.ok) throw new Error((await response.json().catch(() => null))?.message ?? `The server answered ${response.status}.`);
+			if (!response.ok) throw new Error((await response.json().catch(() => /* expected: an answer that is not JSON; the row shows the status instead. */ null))?.message ?? `The server answered ${response.status}.`);
 			return response.json();
 		};
 		try {
@@ -296,7 +303,7 @@
 
 	async function removeLink(item: LinkedFile): Promise<void> {
 		links = links.filter((other) => other.key !== item.key);
-		if (item.identifier) await fetch(`/workspace/inbox/links/${item.identifier}`, { method: 'DELETE' }).catch(() => undefined);
+		if (item.identifier) await fetch(`/workspace/inbox/links/${item.identifier}`, { method: 'DELETE' }).catch((problem) => sendProblem(problem, { code: 'mail.remove-link' }));
 	}
 
 	/** Tomorrow, or next Monday, at 8 in the morning, for the quick picks. */
@@ -570,6 +577,8 @@
 		border: 0;
 		border-radius: 0;
 		background: transparent;
+		/* Its own ink, so the site's focus style (dark text meant for the yellow fill) does not turn the words dark on this clear background in dark mode. */
+		color: var(--color-ink);
 		padding: var(--space-4);
 		resize: vertical;
 		line-height: var(--font-line-height-reading);
@@ -703,8 +712,8 @@
 		position: relative;
 	}
 	.attach:focus-within {
-		outline: 3px solid var(--color-focus-ring);
-		background: var(--color-focus);
+		outline: 3px solid var(--focus-ring);
+		outline-offset: 2px;
 	}
 	.attach input {
 		position: absolute;

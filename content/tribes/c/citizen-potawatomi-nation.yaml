@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Wyandot, etc., Jan. 9, 1789, 7 Stat. 28
+  since: '1789-01-09'
+  source: treaty-with-the-wyandot-etc-1789
+  confidence: medium
+  verification: inferred
+  as_of: '1789-01-09'
+  locator: p. 18 (Treaty with the Wyandot, etc., 1789; Kappler header "Jan. 9, 1789. | 7 Stat., 28. | Proclamation, Sept. 27, 1789.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Potawatomi; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 13 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -179,6 +189,97 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "Citizen Potawatomi Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Citizen Potawatomi Nation (1998)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1999
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Citizen Potawatomi Nation' (Southern Plains Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Citizen Potawatomi Nation'.
+- program: indian-health-service-self-governance-compact
+  since: 1998
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Citizen Potawatomi Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Citizen Potawatomi Nation'.
+- program: pl-102-477-plan
+  start: '2023-10-01'
+  end: '2028-09-30'
+  programs_included:
+  - Tribal Broadband Connectivity Program
+  - Alcohol and Substance Abuse Program Mno Bmadzejek – Re-entry & Diversionary
+  - Office of Juvenile Justice & Delinquency Programs, Tribal Youth Program Combatting the School-to- Prison Pipeline
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native American Career and Technical Education Program
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Community Service Block Grant
+  - Family Violence Prevention and Services/Domestic Violence Shelter and Supportive Services
+  - Family Violence Prevention and Services/Domestic Violence Shelter and Supportive Services Supplemental – American Rescue Plan Act of 2021
+  - Low Income Home Energy Assistance Program
+  - Title IV-B Subpart 2 – MaryLee Allen Promoting Safe and Stable Families Program
+  - Job Placement and Training
+  - 'Welfare Assistance: Burial Assistance'
+  - 'Welfare Assistance: Custodial Care of Adults/ Homemaker Services'
+  - 'Welfare Assistance: Emergency Assistance'
+  - 'Welfare Assistance: General Assistance'
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Citizen Potawatomi Nation, Oklahoma'; PL102_477_PartnerEnrollment, its 19 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 5252361
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Citizen Potawatomi Nation' (Shawnee)
+- program: tribal-transportation-self-governance-compact
+  since: 2024
+  source: citizen-potawatomi-nation-2024-05-27-transportation-compact
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-08-20'
+  locator: 'names ''Citizen Potawatomi Nation'': named among the first four compacts (signed may 2024)'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Citizen Potawatomi Nation'.
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Citizen Potawatomi Nation, Oklahoma'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 27324292
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'CITIZEN POTAWATOMI NATION' (UEI NMFYBB8HBGC1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CITIZEN POTAWATOMI NATION'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 36328527
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'CITIZEN POTAWATOMI NATION' (UEI NMFYBB8HBGC1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CITIZEN POTAWATOMI NATION'.
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Citizen Band of Potawatomi Indians of Oklahoma" among organizations under constitutions
@@ -708,6 +809,14 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Citizen Potawatomi Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 10, 2013, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-citizen-potawatomi-nation-2013-11-10
+  confidence: high
+  verification: inferred
+  as_of: '2013-11-10'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2013
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services
@@ -730,6 +839,171 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Citizen Band of Potawatomi”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 4, 1993 (file 28138).
+  source: oklahoma-filing-28138
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 28138
+  note: 'From the register line: “Citizen Band Potawatomi/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: Pottawatomie County; City of Atoka; City of Caddo; LeFlore County; City of Poteau; City of Pocola; City of Talihina; Haskell County; Latimer County; City of Calera; Pittsburg County; City of Kiowa; City of McAlester; City of Stringtown; Coal County; City of Shady Point; City of Coalgate; City of Tupelo; City of Tushka; Bureau of Indian Affairs
+  agreement: Cross-deputization agreements
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 9, 1995 (file 31851).
+  source: oklahoma-filing-31851
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 31851
+  note: 'From the register line: “Citizen Band Potawatomi & Pottawatomie County; City of Atoka, Bureau of Indian Affairs & Choctaw Nation ICA 94-0017; City of Caddo, Bureau of Indian Affairs & Choctaw Nation ICA 94-0051; LeFlore County, Bureau of Indian Affairs & Choctaw Nation ICA 94-0026; City of Poteau, Bureau of Indian Affairs & Choctaw Nation ICA 94-0016; City of Pocola, Bureau of Indian Affairs & Choctaw Nation ICA 94-0018; City of Talihina, Bureau of Indian Affaris and Choctaw Nation ICA 94-0014; Haskell County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0025; Latimer County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0013; City of Calera, Bureau of Indian Affairs and Choctaw Nation ICA 94-0031; Pittsburg County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0020; City of Kiowa, Bureau of Indian Affairs and Choctaw Nation ICA 94-0023; City of McAlester, Bureau of Indian Affairs and Choctaw Nation ICA 94-0022; City of Stringtown, Bureau of Indian Affairs and Choctaw Nation ICA 94-0032; Coal County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0046; City of Shady Point, Bureau of Indian Affairs and Choctaw Nation ICA 94-0024; City of Coalgate, Bureau of Indian Affairs and Choctaw Nation ICA 94-0021; City of Tupelo, Bureau of Indian Affairs and Choctaw Nation ICA 94-0028; City of Tushka, Bureau of Indian Affairs and Choctaw Nation ICA 94-0027”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Wanette Community Development Authority
+  agreement: Economic development agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Feb. 8, 1999 (file 35757).
+  source: oklahoma-filing-35757
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 35757
+  note: 'From the register line: “Citizen Pottawatomie Nation/ Wanette Community Development Authority”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 6, 2003 (file 38503).
+  source: oklahoma-filing-38503
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38503
+  note: 'From the register line: “Citizen Potawatomi Nation and the State of Oklahoma, an amendment to the Tribal/State Tobacco Tax Compact”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 7, 2003 (file 38948).
+  source: oklahoma-filing-38948
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 38948
+  note: 'From the register line: “Amendment Citizen Potawatomi Nation and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: cross-deputization
+  other_party: City of Bethel Acres
+  agreement: Indian Law Enforcement Reform Act cross-deputization agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Apr. 28, 2006 (file 41286).
+  source: oklahoma-filing-41286
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 41286
+  note: 'From the register line: “Citizen Potawatomi Nation & the City of Bethel Acres”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amended tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 8, 2009 (file 43845).
+  source: oklahoma-filing-43845
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 43845
+  note: 'From the register line: “The Citizen Potawatomi Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45028).
+  source: oklahoma-filing-45028
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45028
+  note: 'From the register line: “Citizen Potawatomi Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: Oklahoma Department of Transportation
+  agreement: Transportation agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 25, 2011 (file 45031).
+  source: oklahoma-filing-45031
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45031
+  note: 'From the register line: “Citizen Potawatomi Nation/ODOT”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46220).
+  source: oklahoma-filing-46220
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46220
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 28, 2013 (file 46265).
+  source: oklahoma-filing-46265
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46265
+  note: 'From the register line: “Amendment between the Citizen Potawatomi Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 15, 2013 (file 46522).
+  source: oklahoma-filing-46522
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46522
+  note: 'From the register line: “Citizen Potawatomi Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Alcoholic beverage sales compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 9, 2018 (file 49535).
+  source: oklahoma-filing-49535
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 49535
+  note: 'From the register line: “Alcoholic Beverage Sales between the State of Oklahoma and the Citizen Potawatomi Nation”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Acceptance of supplemental term to tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Nov. 1, 2023 (file 52796).
+  source: oklahoma-filing-52796
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52796
+  note: 'From the register line: “Between the Citizen Potawatomi Nation and the State of Oklahoma shall be deemed in effect until December 31, 2024. Senate Bill 26x (2023)”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 24, 2024 (file 52927).
+  source: oklahoma-filing-52927
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 52927
+  note: 'From the register line: “Tobacco Tax Compact between the State of Oklahoma and the Citizen Potawatomi Nation”. Whether it is still in force is not recorded.'
 court_practice:
 - kind: bar-admission
   title: Application for admission to practice

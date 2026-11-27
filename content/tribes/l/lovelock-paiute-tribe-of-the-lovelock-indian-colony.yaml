@@ -20,6 +20,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada (approved by the Secretary of the Interior in Mar. 1968)
+  since: 1968-03
+  source: constitution-lovelock-paiute-tribe-of-the-lovelock-indian-colony-1968-text
+  document_version:
+    document: lovelock-paiute-tribe-of-the-lovelock-indian-colony-constitution
+    version: 1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1968-03
+  locator: 1968 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: NV
   presence: government-office
@@ -187,6 +200,26 @@ indian_health_service:
   locator: page text
   note: 'The source''s words: "Lovelock Pauite Tribe".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 308063
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NV, row 'Lovelock Paiute Tribe' (Lovelock)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 232579
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'LOVELOCK PAIUTE TRIBE' (UEI NHZ3J1NEZ3K9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'LOVELOCK PAIUTE TRIBE'.
 governance:
 - aspect: form
   value: Indian Reorganization Act of June 18, 1934

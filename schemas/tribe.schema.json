@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/tribe.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/tribe.schema.json",
   "title": "Native nation or community profile",
   "description": "One Native nation, Alaska Native entity, Native Hawaiian community or Indigenous people of a U.S. territory: names, legal status, state presence, population, official contacts, government, justice institutions, published law, gaming, jurisdiction and consultation history. Stored as content/tribes/<first letter of id, or _other>/<id>.yaml. Every fact cites a source key and a confidence level; a field with no supporting source is left out.",
   "type": "object",
@@ -155,7 +155,8 @@
           "legal_basis": { "type": "string", "description": "Citation of the law, regulation, notice or resolution that confers or describes the status." },
           "since": { "$ref": "common.schema.json#/$defs/partialDate" },
           "petition_number": { "type": "string", "description": "Federal acknowledgment petition number, as the Office of Federal Acknowledgment lists it." },
-          "petition_stage": { "type": "string", "description": "Stage of the petition, worded as the source words it." }
+          "petition_stage": { "type": "string", "description": "Stage of the petition, worded as the source words it." },
+          "earliest_record": { "type": "string", "enum": ["treaty", "land", "constitution", "federal-list"], "description": "For a federal fact that cites the earliest document found showing the United States dealing with the nation as a recognized nation, not the act that conferred recognition: its kind. treaty: a ratified treaty linked to the nation. land: the instrument that first set aside its land. constitution: the Secretary of the Interior's approval of its constitution. federal-list: the earliest Federal Register list of recognized tribes that names it. Written by scripts/tribes/first_recognition.py (profiles step)." }
         },
         "unevaluatedProperties": false
       }
@@ -298,6 +299,21 @@
         "unevaluatedProperties": false
       }
     },
+    "language_programs": {
+      "type": "array",
+      "description": "The nation's own language program: a language department, immersion school, classes or language site that the nation runs, or that the nation names as its program (research/analyses/2026-11-27-language-resources.md). Every entry needs a link, as every service on a nation page does.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["name", "link", "source"],
+        "properties": {
+          "name": { "type": "string", "description": "The program's name, as the nation gives it." },
+          "link": { "type": "string", "format": "uri", "pattern": "^https?://" },
+          "run_by": { "enum": ["nation", "tribal-college", "organization"], "description": "Who runs it: the nation itself, a tribal college, or an organization the nation names as its program." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
     "federal_administration": {
       "type": "object",
       "$ref": "#/$defs/citedFact",
@@ -319,6 +335,33 @@
           "area": { "type": "string", "description": "Indian Health Service Area, such as Billings or Navajo." },
           "service_unit": { "type": "string", "description": "Service unit, service area or health program as the source names it." },
           "operator": { "type": "string", "enum": ["indian-health-service", "tribal"], "description": "Who runs the nation's health services as the source states it: the Indian Health Service itself (Direct Service Tribes list), or the nation or a Tribal organization under the Indian Self-Determination and Education Assistance Act." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "federal_programs": {
+      "type": "array",
+      "description": "Federal self-governance and self-determination programs the nation runs, and federal block grants it runs under its own plan, one fact per program per source (research/analyses/2026-11-26-self-governance-programs.md). A fact from a funding list carries the amount; a fact from a participant list carries the dates. Absence from a list never means the nation does not take part.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["program"],
+        "properties": {
+          "program": {
+            "type": "string",
+            "enum": ["interior-self-governance-compact", "interior-non-bia-funding-agreement", "indian-health-service-self-governance-compact", "isdeaa-contract-interior", "isdeaa-contract-indian-health-service", "tribally-controlled-school-grant", "pl-102-477-plan", "tribal-transportation-self-governance-compact", "fdpir-self-determination-demonstration", "tribal-forest-protection-act-agreement", "indian-housing-block-grant", "tribal-tanf", "tribal-title-iv-e-plan"],
+            "description": "The program, by the keys in site/src/lib/federal-programs.ts."
+          },
+          "agency": { "type": "string", "description": "The federal agency, bureau, office or park unit that is party, as the source names it, when the program alone does not say." },
+          "since": { "type": "integer", "description": "The year the nation entered the program, as the source gives it." },
+          "start": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Start of the agreement or plan in force." },
+          "end": { "$ref": "common.schema.json#/$defs/partialDate", "description": "End of the agreement or plan in force." },
+          "fiscal_year": { "type": "integer", "description": "The federal fiscal year the source's list or amount is for." },
+          "through": { "type": "string", "description": "The organization that holds the agreement or receives the funds for the nation, as the source names it, when it is not the nation's government." },
+          "programs_included": { "type": "array", "items": { "type": "string" }, "description": "For a 477 plan, the federal programs merged into it, as the source names them." },
+          "amount": { "type": "number", "minimum": 0, "description": "U.S. dollars for the fiscal year: an allocation or an obligation, as amount_kind says." },
+          "amount_kind": { "type": "string", "enum": ["allocation", "obligations"], "description": "allocation: the agency's formula allocation. obligations: the total obligated to the recipient in the fiscal year as reported to USAspending." },
+          "detail": { "type": "string" }
         },
         "unevaluatedProperties": false
       }
@@ -701,6 +744,9 @@
               "violence-against-women-act-special-tribal-criminal-jurisdiction",
               "tribal-law-and-order-act-enhanced-sentencing",
               "indian-child-welfare-act",
+              "hearth-act-leasing-regulations",
+              "environmental-treatment-as-a-state",
+              "water-rights-settlement",
               "other"
             ]
           },

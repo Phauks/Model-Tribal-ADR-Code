@@ -14,6 +14,11 @@
 	//
 	// A page about the site, such as the About page (src/lib/server/about-pages.ts),
 	// has no section, and shows the text from git until it is first published.
+	//
+	// A News post (src/lib/server/news-posts.ts) shows the day it was first
+	// published and its author under the title in place of the "Published"
+	// line at the foot, and a link to the next older and newer post after the
+	// References (design/news-section/3, approved by Trevor on Nov. 26, 2026).
 	import Breadcrumbs from '../Breadcrumbs.svelte';
 	import { onDestroy, onMount } from 'svelte';
 	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
@@ -28,6 +33,9 @@
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
 	import { readStored, writeStored } from '#lib/browser-storage.ts';
+	import type { PostDetails } from '#lib/server/news-posts.ts';
+	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 
 	interface Publication {
 		number: number;
@@ -47,7 +55,9 @@
 		newest,
 		publicationCount,
 		path,
-		unpublished = false
+		unpublished = false,
+		post,
+		part
 	}: {
 		identifier: string;
 		section?: string;
@@ -62,6 +72,10 @@
 		path: string;
 		/** Nothing is published yet: readers see only that, and people with access see the draft. */
 		unpublished?: boolean;
+		/** A News post's day, author and neighbours. */
+		post?: PostDetails;
+		/** The essay's part (src/lib/server/essays.ts); a News post gets a Summary box in the editor. */
+		part?: string;
 	} = $props();
 
 	const viewKey = 'essay-view';
@@ -78,7 +92,7 @@
 		const response = await fetch(`/workspace/essays/${identifier}/page`, {
 			headers: { Accept: 'application/json' },
 			redirect: 'manual'
-		}).catch(() => null);
+		}).catch(() => /* expected: offline; the article shows what was published, and the server reports its own failures. */ null);
 		if (!response?.ok || !response.headers.get('Content-Type')?.includes('application/json')) return;
 		const answer = (await response.json()) as EssayPageState;
 		// Two loads can cross; never step back to an older version.
@@ -217,18 +231,23 @@
 </script>
 
 <svelte:head>
-	<title>{[shownTitle, section, 'Model Tribal ADR Code'].filter(Boolean).join(' · ')}</title>
+	<title>{[shownTitle, section, 'Tribal Law Project'].filter(Boolean).join(' · ')}</title>
 	{#if unpublished}<meta name="robots" content="noindex" />{/if}
 </svelte:head>
 
 <!-- The page's controls are in the masthead, so in every mode the page starts as it does for readers. -->
 {#if section && sectionLink}
-	<Breadcrumbs trail={[{ label: section, href: sectionLink }]} />
+	<Breadcrumbs trail={[{ label: section, href: sectionLink }]} current={shownTitle} />
 {/if}
 
 <article class="reading essay">
 	<!-- The editor shows the title as the essay's own first heading, to edit there. -->
 	<h1 class:visually-hidden={mode !== 'reading'}>{shownTitle}</h1>
+	{#if post && mode === 'reading'}
+		<p class="post-meta">
+			<time>{post.postedText}</time>{#if post.updatedText}{' · '}Updated {post.updatedText}{/if}{#if post.author}{' · '}{#if post.author.link}<a href={post.author.link}>{post.author.name}</a>{:else}{post.author.name}{/if}{/if}
+		</p>
+	{/if}
 	{#if access && mode === 'reading'}<EssayStatusPills state={access} />{/if}
 	{#if unpublished && !access}
 		<p>This page is not published yet.</p>
@@ -246,7 +265,7 @@
 		{:then { default: EssayEditor }}
 			{#key mode}
 				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
-				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} publishedText={access.publishedText} publishedVersion={access.publishedVersion} yourName={access.you?.name ?? null} onsaved={saved} onoutline={showOutline} addChart={mode === 'editing' ? chartToAdd : null} onchartadded={chartAdded} toolsInMasthead>
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} publishedText={access.publishedText} publishedVersion={access.publishedVersion} yourName={access.you?.name ?? null} onsaved={saved} onoutline={showOutline} addChart={mode === 'editing' ? chartToAdd : null} onchartadded={chartAdded} summaryField={part === 'news'} toolsInMasthead>
 					{#snippet titleExtras(extras)}
 						<EssayStatusPills state={access!} inReview={extras.inReview} />
 						{#if mode === 'commenting'}<p class="small muted essay-size">{extras.lines.toLocaleString('en-US')} lines · {extras.words.toLocaleString('en-US')} words</p>{/if}
@@ -261,8 +280,14 @@
 			{@html shown.html}
 		</div>
 		<SourceList sources={shown.sources} />
+		{#if post && (post.older || post.newer)}
+			<nav class="post-pager no-print" aria-label="More news">
+				{#if post.older}<a class="older" href={post.older.link}><span class="direction"><ChevronLeft size={16} aria-hidden="true" /> Older</span><span class="post-title">{post.older.title}</span></a>{/if}
+				{#if post.newer}<a class="newer" href={post.newer.link}><span class="direction">Newer <ChevronRight size={16} aria-hidden="true" /></span><span class="post-title">{post.newer.title}</span></a>{/if}
+			</nav>
+		{/if}
 	{/if}
-	{#if publication}
+	{#if publication && !post}
 		<p class="small muted essay-dateline" data-print-part="pageDetails">
 			Published {publication.publishedAtText}.
 			{#if publicationCount > 1 && section}<a class="no-print" href="{path}/history">Earlier versions</a>{/if}
@@ -271,6 +296,49 @@
 </article>
 
 <style>
+	/* A post's day and author, under its title. */
+	.post-meta {
+		margin: calc(-1 * var(--space-2)) 0 var(--space-4);
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+	}
+
+	.post-pager {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--space-4);
+		max-width: none;
+		margin-top: var(--space-6);
+		padding-top: var(--space-4);
+		border-top: 1px solid var(--color-line);
+	}
+
+	.post-pager a {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		max-width: 48%;
+		text-decoration: none;
+	}
+
+	.post-pager .direction {
+		display: inline-flex;
+		align-items: center;
+		gap: 2px;
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+	}
+
+	.post-pager .post-title {
+		text-decoration: underline;
+	}
+
+	.post-pager .newer {
+		align-items: flex-end;
+		margin-left: auto;
+		text-align: right;
+	}
+
 	/* Marks on the draft view, shown only to people with access (src/lib/essays/render.ts). */
 	.essay-text :global(.essay-draft-mark) {
 		position: relative;

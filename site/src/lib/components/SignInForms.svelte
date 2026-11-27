@@ -16,6 +16,14 @@
 	than the page's error summary; there is no hint under Password; and the
 	confirm step has no "Keep me signed in" box, because the choice made on
 	the step before it is carried along.
+
+	The other ways to sign in, a passkey, Google and Microsoft, sit under "or"
+	below the email and password, as Trevor chose on Nov. 26, 2026 (mockup B,
+	design/sign-in-providers). A passkey is also offered in the email field's
+	autofill where the browser can. Google and Microsoft show only once they
+	are switched on (src/lib/server/outside-sign-in.ts). Forms that send email
+	or try a password carry Cloudflare's "are you a person?" check
+	(TurnstileCheck.svelte) when it is on.
 -->
 <script lang="ts">
 	import { enhance } from '$app/forms';
@@ -26,8 +34,11 @@
 	import CircleAlert from '@lucide/svelte/icons/circle-alert';
 	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import X from '@lucide/svelte/icons/x';
+	import KeyRound from '@lucide/svelte/icons/key-round';
+	import { browserSupportsWebAuthn, browserSupportsWebAuthnAutofill, startAuthentication, WebAuthnAbortService } from '@simplewebauthn/browser';
 	import type { SignInState } from '#lib/sign-in-state.ts';
 	import CodeInput from './CodeInput.svelte';
+	import TurnstileCheck, { turnstileResetEvent } from './TurnstileCheck.svelte';
 	import ErrorSummary from './ErrorSummary.svelte';
 	import PasswordInput from './PasswordInput.svelte';
 
@@ -47,9 +58,26 @@
 		onchange?: (answer: SignInState) => void;
 		/** In the panel: the Close button. */
 		onclose?: () => void;
+		/** The site key of the "are you a person?" check, when it is on (src/lib/server/turnstile.ts). */
+		turnstileSiteKey?: string;
+		/** Google and Microsoft, when switched on (src/lib/server/outside-sign-in.ts). */
+		providers?: ('google' | 'microsoft')[];
 	}
 
-	let { answer, codesAvailable, returnTo, creating = false, prefix = '', level = 1, onchange, onclose }: Props = $props();
+	let {
+		answer,
+		codesAvailable,
+		returnTo,
+		creating = false,
+		prefix = '',
+		level = 1,
+		onchange,
+		onclose,
+		turnstileSiteKey,
+		providers = []
+	}: Props = $props();
+
+	const providerNames = { google: 'Google', microsoft: 'Microsoft' } as const;
 
 	const minimum = 15;
 	const inPanel = $derived(Boolean(onchange));
@@ -93,6 +121,7 @@
 			});
 			if (asked === leakAsked) leaks = found ? 'found' : 'clear';
 		} catch {
+			// expected: the password leak check is another service; the form says the check is unavailable.
 			if (asked === leakAsked) leaks = 'unavailable';
 		}
 	}
@@ -116,6 +145,73 @@
 		return ids.length > 0 ? ids.join(' ') : undefined;
 	}
 
+	/* Passkeys ------------------------------------------------------------ */
+
+	// Shown only once the page knows the browser can use passkeys.
+	let passkeysWork = $state(false);
+	let passkeyProblem = $state<string | undefined>(undefined);
+	let passkeyBusy = $state(false);
+
+	/**
+	 * Asks the browser for a passkey and signs in with it
+	 * (src/routes/sign-in/passkey/+server.ts). With autofill, the browser
+	 * offers the passkeys in the email field's list instead of opening a
+	 * window, and waits until one is picked.
+	 */
+	async function signInWithPasskey(autofill = false) {
+		if (!autofill) passkeyProblem = undefined;
+		try {
+			const asked = await fetch('/sign-in/passkey', {
+				method: 'POST',
+				headers: { 'content-type': 'application/json' },
+				body: JSON.stringify({ step: 'options' })
+			});
+			if (!asked.ok) throw new Error(`The passkey options answered ${asked.status}`);
+			const response = await startAuthentication({ optionsJSON: await asked.json(), useBrowserAutofill: autofill });
+			passkeyBusy = true;
+			const checked = await fetch('/sign-in/passkey', {
+				method: 'POST',
+				headers: { 'content-type': 'application/json' },
+				body: JSON.stringify({
+					step: 'check',
+					response,
+					returnTo,
+					keep: Boolean((document.getElementById(`${prefix}keep`) as HTMLInputElement | null)?.checked)
+				})
+			});
+			const result: { location?: string; problem?: string } = await checked.json().catch(() => /* expected: an answer that is not JSON; the form says the passkey did not work. */ ({}));
+			if (result.location) {
+				location.assign(result.location);
+				return;
+			}
+			passkeyProblem = result.problem ?? 'That passkey did not work here. Try again, or sign in another way.';
+		} catch (problem) {
+			// Closing the browser's window, or a newer request taking over, is not a problem to show.
+			const name = problem instanceof Error ? problem.name : '';
+			if (!autofill && name !== 'NotAllowedError' && name !== 'AbortError') {
+				passkeyProblem = 'The passkey could not be used. Try again, or sign in another way.';
+			}
+		}
+		passkeyBusy = false;
+	}
+
+	$effect(() => {
+		passkeysWork = browserSupportsWebAuthn();
+	});
+
+	// Offers passkeys in the email field's autofill while the sign-in form is showing.
+	$effect(() => {
+		if (step !== 'email' || paused) return;
+		let active = true;
+		void browserSupportsWebAuthnAutofill().then((works) => {
+			if (works && active) void signInWithPasskey(true);
+		});
+		return () => {
+			active = false;
+			WebAuthnAbortService.cancelCeremony();
+		};
+	});
+
 	/** The answer to a form sent from the panel. */
 	const answered: SubmitFunction = () => {
 		return async ({ result, formElement }) => {
@@ -123,6 +219,8 @@
 				location.assign(result.location);
 				return;
 			}
+			// The "are you a person?" token works once, so the form gets a fresh one.
+			formElement.dispatchEvent(new Event(turnstileResetEvent));
 			if (result.type === 'success' || result.type === 'failure') onchange?.((result.data ?? {}) as SignInState);
 			else onchange?.({ ...answer, step, problem: 'Something went wrong. Please try again in a minute.', field: undefined });
 			// A password is never left in the field after it was sent.
@@ -157,6 +255,21 @@
 			{inPanel ? (shortErrors[name] ?? problem) : problem}
 		</p>
 	{/if}
+{/snippet}
+
+{#snippet personCheck(action: string)}
+	{#if turnstileSiteKey}<TurnstileCheck siteKey={turnstileSiteKey} {action} />{/if}
+{/snippet}
+
+{#snippet providerLinks()}
+	{#each providers as provider (provider)}
+		<a
+			class="button button-quiet wide with-icon"
+			href="/sign-in/{provider}?returnTo={back}{keep ? '&keep=yes' : ''}"
+			data-sveltekit-reload
+			><img src="/sign-in/{provider}.svg" alt="" width="20" height="20" /> Continue with {providerNames[provider]}</a
+		>
+	{/each}
 {/snippet}
 
 {#snippet keepSignedIn(id: string)}
@@ -227,6 +340,7 @@
 		<input type="hidden" name="email" value={email} />
 		<input type="hidden" name="returnTo" value={returnTo} />
 		{#if keep}<input type="hidden" name="keep" value="yes" />{/if}
+		{@render personCheck(answer?.creating ? 'create_account' : 'sign_in')}
 		{#if inPanel}
 			<p class="small">No email after a minute? Check spam, or <button class="button-link" type="submit">send a new code</button>.</p>
 		{:else}
@@ -280,6 +394,7 @@
 				<label for="{prefix}email">Email address</label>
 				<input id="{prefix}email" name="email" type="email" autocomplete="username" value={email} required />
 			</div>
+			{@render personCheck('sign_in')}
 			<button class="button with-icon" type="submit"><Mail size={20} strokeWidth={1.75} aria-hidden="true" /> Email me a code</button>
 		</form>
 	{/if}
@@ -346,7 +461,12 @@
 			</ul>
 		</div>
 		{@render keepSignedIn('keep')}
+		{@render personCheck('create_account')}
 		<button class="button wide" type="submit">Create account</button>
+		{#if providers.length > 0}
+			<p class="or">or</p>
+			<div class="other-ways">{@render providerLinks()}</div>
+		{/if}
 	</form>
 	<p class="switch small">
 		Already have an account?
@@ -370,7 +490,7 @@
 				id="{prefix}email"
 				name="email"
 				type="email"
-				autocomplete="username"
+				autocomplete="username webauthn"
 				value={email}
 				aria-describedby={describedBy('email')}
 				aria-invalid={field === 'email' && problem ? 'true' : undefined}
@@ -398,12 +518,29 @@
 			<p class="forgot"><a href="/sign-in/forgot?returnTo={back}" data-sveltekit-reload>Forgot your password?</a></p>
 		</div>
 		{@render keepSignedIn('keep')}
+		{@render personCheck('sign_in')}
 		<button class="button wide" type="submit">Sign in</button>
-		{#if codesAvailable}
+		{#if codesAvailable || passkeysWork || providers.length > 0}
 			<p class="or">or</p>
-			<button class="button button-quiet wide with-icon" type="submit" formaction="/sign-in?/send"
-				><Mail size={20} strokeWidth={1.75} aria-hidden="true" /> Email me a code</button
-			>
+			<div class="other-ways">
+				{#if codesAvailable}
+					<button class="button button-quiet wide with-icon" type="submit" formaction="/sign-in?/send"
+						><Mail size={20} strokeWidth={1.75} aria-hidden="true" /> Email me a code</button
+					>
+				{/if}
+				{#if passkeysWork}
+					<button class="button button-quiet wide with-icon" type="button" disabled={passkeyBusy} onclick={() => signInWithPasskey()}
+						><KeyRound size={20} strokeWidth={1.75} aria-hidden="true" /> Sign in with a passkey</button
+					>
+				{/if}
+				{@render providerLinks()}
+			</div>
+			{#if passkeyProblem}
+				<p class="field-error passkey-problem" role="alert">
+					{#if inPanel}<CircleAlert size={18} strokeWidth={2} aria-hidden="true" />{/if}
+					{passkeyProblem}
+				</p>
+			{/if}
 		{/if}
 	</form>
 	{#if codesAvailable}
@@ -549,6 +686,15 @@
 		content: '';
 		flex: 1;
 		border-top: 1px solid var(--color-line);
+	}
+
+	.other-ways {
+		display: grid;
+		gap: var(--space-3);
+	}
+
+	.passkey-problem {
+		margin: var(--space-3) 0 0;
 	}
 
 	.button-link {

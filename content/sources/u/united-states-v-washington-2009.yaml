@@ -1,0 +1,111 @@
+key: united-states-v-washington-2009
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Washington
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '573'
+  page: '701'
+  issued:
+    date-parts:
+    - - 2009
+      - 7
+      - 13
+  URL: https://static.case.law/f3d/573/html/0701-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 07-35062, 07-35124, 07-35219
+original_link: https://static.case.law/f3d/573/html/0701-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2008-10-21'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2008/10/21/07-35062.wma
+  duration_seconds: 2717
+  file:
+    storage_key: appeals-court-audio/ca9/2008/2008-10-21-07-35062.wma
+    checksum: e7785146465168837411b8adf72965ffc01bf40453c1ffe856122ec000b08559
+    media_type: audio/x-ms-wma
+    bytes: 7028141
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- skokomish-indian-tribe
+- port-gamble-sklallam-tribe
+- jamestown-sklallam-tribe
+- makah-indian-tribe-of-the-makah-indian-reservation
+- puyallup-tribe-of-the-puyallup-reservation
+- nisqually-indian-tribe
+- lummi-tribe-of-the-lummi-reservation
+- swinomish-indian-tribal-community
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: skokomish-indian-tribe
+    named_as: Skokomish Indian Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: port-gamble-sklallam-tribe
+    named_as: Port Gamble S'Klallam Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: jamestown-sklallam-tribe
+    named_as: Jamestown S'Klallam Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: makah-indian-tribe-of-the-makah-indian-reservation
+    named_as: Makah Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: puyallup-tribe-of-the-puyallup-reservation
+    named_as: Puyallup Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: nisqually-indian-tribe
+    named_as: Nisqually Indian Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: lummi-tribe-of-the-lummi-reservation
+    named_as: Lummi Indian Nation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: swinomish-indian-tribal-community
+    named_as: Swinomish Indian Tribal Community
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Lower Elwha Klallam Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 573 F.3d 701. Decided by the United States Court of Appeals for the Ninth Circuit on July 13, 2009. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 34, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 34
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 8 matched, 1 not linked

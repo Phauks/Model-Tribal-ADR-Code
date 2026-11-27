@@ -1,0 +1,90 @@
+key: native-village-of-eyak-v-blank-2012
+kind: federal-case
+citation:
+  type: legal_case
+  title: Native Village of Eyak v. Blank
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '688'
+  page: '619'
+  issued:
+    date-parts:
+    - - 2012
+      - 7
+      - 31
+  URL: https://static.case.law/f3d/688/html/0619-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 09-35881
+original_link: https://static.case.law/f3d/688/html/0619-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2011-09-21'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2011/09/21/09-35881.wma
+  duration_seconds: 3749
+  file:
+    storage_key: appeals-court-audio/ca9/2011/2011-09-21-09-35881.wma
+    checksum: 84afbf4d5e580404e3e8d299ab4bd9f4b009ceb43eeb895988d7093ef0251339
+    media_type: audio/x-ms-wma
+    bytes: 9695807
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- native-village-of-tatitlek
+- native-village-of-chenega
+- native-village-of-nanwalek
+- native-village-of-port-graham
+- native-village-of-eyak
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: native-village-of-tatitlek
+    named_as: Native Village of Tatitlek
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: native-village-of-chenega
+    named_as: Native Village of Chenega
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: native-village-of-nanwalek
+    named_as: Native Village of Nanwalek
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: native-village-of-port-graham
+    named_as: Native Village of Port Graham
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: native-village-of-eyak
+    named_as: Native Village of Eyak
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 688 F.3d 619. Decided by the United States Court of Appeals for the Ninth Circuit on July 31, 2012. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 25, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 25
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 5 matched, 0 not linked

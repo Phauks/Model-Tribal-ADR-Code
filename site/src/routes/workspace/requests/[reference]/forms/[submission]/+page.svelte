@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.title} · Request {data.reference} · Workspace · Model Tribal ADR Code</title>
+	<title>{data.title} · Request {data.reference} · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
@@ -16,6 +16,7 @@
 		{ label: 'Requests', href: '/workspace/requests' },
 		{ label: `Request ${data.reference}`, href: `/workspace/requests/${data.reference}` }
 	]}
+	current={data.title}
 />
 <h1>{data.title}</h1>
 <p class="small muted">

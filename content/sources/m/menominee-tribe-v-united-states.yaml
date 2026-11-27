@@ -90,6 +90,62 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=391%20U.S.%20404
+argument_audio:
+- kind: argument
+  date: '1968-01-22'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-670-187-19680122-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81139904
+  duration_seconds: 3837
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-670-187-19680122-1of2.mp3
+    checksum: 1a3d642749d1fabc1246c833eed0b92ddf195f49a5bb1e3d531cf861bc02ca67
+    media_type: audio/mpeg
+    bytes: 61394023
+- kind: argument
+  date: '1968-01-22'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-670-187-19680122-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81139904
+  duration_seconds: 2161
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-670-187-19680122-2of2.mp3
+    checksum: 347dcfc209c399a27c765d98146743115167797d0be67ef20927f888965ef55d
+    media_type: audio/mpeg
+    bytes: 34583195
+- kind: argument
+  date: '1968-04-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-693-187-19680425-1of3.mp3
+  catalog: https://catalog.archives.gov/id/81140023
+  duration_seconds: 3820
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-693-187-19680425-1of3.mp3
+    checksum: 9de71d6e2ab9786c4de3bd4b013a261b513aa61ac509a4aa9fa78d2de74680de
+    media_type: audio/mpeg
+    bytes: 61127365
+- kind: argument
+  date: '1968-04-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-693-187-19680425-2of3.mp3
+  catalog: https://catalog.archives.gov/id/81140023
+  duration_seconds: 3867
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-693-187-19680425-2of3.mp3
+    checksum: 033fab49c6e32338af8f52270969a40cafde7c77f85e07d64286e38b84312cc3
+    media_type: audio/mpeg
+    bytes: 61871750
+- kind: argument
+  date: '1968-04-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-693-187-19680425-3of3.mp3
+  catalog: https://catalog.archives.gov/id/81140023
+  duration_seconds: 590
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-693-187-19680425-3of3.mp3
+    checksum: 7d214db370186491af2dde327031964365c838f5cd431c6ab729fec2d647e05b
+    media_type: audio/mpeg
+    bytes: 9444622
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -118,7 +174,7 @@ case_box:
   holding: |-
     No. Reading the Termination Act together with Public Law 280, the Court held that the treaty hunting and fishing rights survived termination because Congress did not clearly abrogate them, and it declined to infer abrogation from ambiguous language.
   quotes:
-  - text: "We decline to construe the Termination Act as a backhanded way of abrogating the hunting and fishing rights of these Indians ..."
+  - text: "We decline to construe the Termination Act as a backhanded way of abrogating the hunting and fishing rights of these Indians."
     pinpoint: "p. 412"
   treatment: |-
     Congress restored federal recognition to the Menominee Indian Tribe of Wisconsin in the Menominee Restoration Act of 1973. [@menominee-restoration-act-1973]

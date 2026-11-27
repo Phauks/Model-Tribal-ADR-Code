@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty of Point Elliott, Jan. 22, 1855, 12 Stat. 927
+  since: '1855-01-22'
+  source: treaty-with-the-dwamish-suquamish-etc-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-01-22'
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Suquamish; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 11 nations' profiles link this treaty.
 states:
 - state: WA
   presence: government-office
@@ -165,6 +175,64 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Suquamish Tribe".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Suquamish Tribe' (Northwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Suquamish Tribe'.
+- program: indian-health-service-self-governance-compact
+  since: 1998
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Suquamish Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Suquamish Tribe'.
+- program: pl-102-477-plan
+  start: '2025-01-01'
+  end: '2027-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Suquamish Indian Tribe of the Port Madison Reservation'; PL102_477_PartnerEnrollment, its 4 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1756342
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Suquamish Indian Tribe' (Suquamish)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 7632078
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SUQUAMISH INDIAN TRIBE OF THE PORT MADISON RESERVATION' (UEI DJYSH2AJVUX5), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 3199285
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SUQUAMISH INDIAN TRIBE OF THE PORT MADISON RESERVATION' (UEI DJYSH2AJVUX5), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Formal constitution, 1965
@@ -715,7 +783,7 @@ land_establishment:
   confidence: high
   verification: read-in-full
   locator: 12 Stat. 928
-  note: 'The instrument reads: “surrounding the small bight at the head of Port Madison, called by the Indians Noo-sohk-um”. Art. II reserves tracts "for the present use and occupation of the said tribes and bands"; Port Madison tract is "the amount of two sections ... surrounding the small bight at the head of Port Madison."'
+  note: 'The instrument reads: “surrounding the small bight at the head of Port Madison, called by the Indians Noo-sohk-um”. Art. II reserves tracts "for the present use and occupation of the said tribes and bands"; Port Madison tract is "the amount of two sections . . . surrounding the small bight at the head of Port Madison."'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

@@ -44,6 +44,7 @@
 	import { isZipName, unzipFiles, ZipProblem } from '#lib/unzip-files.ts';
 	import { readableSize, refusedByName } from '#lib/uploads.ts';
 	import { youtubeVideoIdentifier } from '#lib/video-links.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	type RowState = 'ready' | 'sending' | 'paused' | 'sent' | 'problem';
 
@@ -220,6 +221,7 @@
 					unpacked.push(opened);
 				}
 			} catch (problem) {
+				if (!(problem instanceof ZipProblem)) sendProblem(problem, { code: 'uploads.unzip' });
 				refusedZips.push({
 					key: nextKey++,
 					file,
@@ -377,7 +379,7 @@
 				await pause(5000);
 				continue;
 			}
-			const data = (await response.json().catch(() => ({ message: response.statusText }))) as Record<string, unknown>;
+			const data = (await response.json().catch(() => /* expected: an answer that is not JSON keeps the status text as its message. */ ({ message: response.statusText }))) as Record<string, unknown>;
 			return { ok: response.ok, status: response.status, data };
 		}
 	}
@@ -454,6 +456,7 @@
 			try {
 				response = await sendPiece(reference, number, piece);
 			} catch {
+				// expected: the row says the connection dropped, and the piece can be sent again.
 				stop(row, 'The connection dropped.');
 				return true;
 			}
@@ -463,7 +466,7 @@
 				return true;
 			}
 			if (!response.ok) {
-				const outcome = (await response.json().catch(() => ({}))) as { message?: string };
+				const outcome = (await response.json().catch(() => /* expected: an answer that is not JSON; the row says it stopped. */ ({}))) as { message?: string };
 				stop(row, outcome.message ?? 'It stopped.');
 				return true;
 			}
@@ -534,7 +537,8 @@
 				try {
 					const carryOn = row.link ? await sendLink(row) : await sendFile(row);
 					if (!carryOn) stopped = true;
-				} catch {
+				} catch (problem) {
+					sendProblem(problem, { code: 'uploads.send' });
 					strained = true;
 					stop(row, 'Something went wrong. Check your connection.');
 				}
@@ -1001,7 +1005,7 @@
 		cursor: pointer;
 	}
 	.pick:focus-within {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 2px;
 	}
 	.inline {

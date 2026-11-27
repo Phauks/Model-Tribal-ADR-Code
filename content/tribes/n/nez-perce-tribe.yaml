@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Nez Perces, June 11, 1855, 12 Stat. 957
+  since: '1855-06-11'
+  source: treaty-with-the-nez-perces-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-06-11'
+  locator: p. 702 (Treaty with the Nez Perces, 1855; Kappler header "June 11, 1855. | 12 Stats., 957. | Ratified Mar. 8. 1859. | Proclaimed Apr. 29, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Nez Percé; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: ID
   presence: government-office
@@ -203,6 +213,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Nez Perce Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Nez Perce Indian Tribe (2001)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2001
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Nez Perce Indian Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Nez Perce Indian Tribe'.
+- program: pl-102-477-plan
+  start: '2026-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native American Career and Technical Education Program
+  - Native Employment Works
+  - Job Placement and Training
+  - Adult Education
+  - Johnson O’Malley
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Nez Perce Tribe'; PL102_477_PartnerEnrollment, its 7 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1816076
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: ID, row 'Nez Perce Tribe' (Lapwai)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 15024101
+  amount_kind: obligations
+  through: Nez Perce Tribal Health Authority
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'NEZ PERCE TRIBAL HEALTH AUTHORITY' (UEI EXAESQMV9W47), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'NEZ PERCE TRIBAL HEALTH AUTHORITY'.
 governance:
 - aspect: form
   value: Revised Constitution and Bylaws
@@ -839,6 +895,14 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.53)
   note: Listed as "NEZ PERCE TRIBE" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Snake River Water Rights Act of 2004 in 2004 (Pub. L. No. 108-447), settling the water rights of Nez Perce Tribe. It quantifies 50,000 acre-feet a year in all and authorizes about $121.3 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-108-447
+  confidence: high
+  verification: inferred
+  as_of: '2004'
+  locator: Congressional Research Service, R44148, Table 1, 2004
 court_practice:
 - kind: public-defender
   title: Law and Justice (Public Defender's Office)
@@ -950,7 +1014,7 @@ land_establishment:
   confidence: high
   verification: read-in-full
   locator: 12 Stat. 957
-  note: 'The instrument reads: “There is, however, reserved from the lands above ceded ... for the use and occupation of the said tribe, and as a general reservation”. Reduced by the treaty of June 9, 1863, 14 Stat. 647 (the 1863 article again sets apart a reservation in the Clearwater country) and later acts.'
+  note: 'The instrument reads: “There is, however, reserved from the lands above ceded . . . for the use and occupation of the said tribe, and as a general reservation”. Reduced by the treaty of June 9, 1863, 14 Stat. 647 (the 1863 article again sets apart a reservation in the Clearwater country) and later acts.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

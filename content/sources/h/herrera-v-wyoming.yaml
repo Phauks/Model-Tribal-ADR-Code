@@ -1,0 +1,183 @@
+key: herrera-v-wyoming
+kind: federal-case
+citation:
+  type: legal_case
+  title: Herrera v. Wyoming
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '587'
+  page: '329'
+  issued:
+    date-parts:
+    - - 2019
+      - 5
+      - 20
+  URL: https://www.supremecourt.gov/opinions/boundvolumes/587bv.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: HERRERA v. WYOMING
+  source: https://www.supremecourt.gov/opinions/boundvolumes/587bv.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://www.supremecourt.gov/opinions/boundvolumes/587bv.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Sonia Sotomayor
+    page: 332
+  - kind: dissent
+    justice: Samuel A. Alito, Jr.
+    page: 353
+original_link: https://www.supremecourt.gov/opinions/boundvolumes/587bv.pdf
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '2019-01-08'
+  printed: Argued January 8, 2019—Decided May 20, 2019
+  source: https://www.supremecourt.gov/opinions/boundvolumes/587bv.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2018-2020)
+  decision_type: majority opinion
+  vote:
+    majority: 5
+    minority: 4
+  justices:
+  - name: Sonia Sotomayor
+    vote: majority
+    opinion: majority
+  - name: Neil Gorsuch
+    vote: majority
+  - name: Stephen G. Breyer
+    vote: majority
+  - name: Elena Kagan
+    vote: majority
+  - name: Ruth Bader Ginsburg
+    vote: majority
+  - name: Samuel A. Alito, Jr.
+    vote: minority
+    opinion: dissent
+  - name: John G. Roberts, Jr.
+    vote: minority
+  - name: Brett M. Kavanaugh
+    vote: minority
+  - name: Clarence Thomas
+    vote: minority
+  source: https://api.oyez.org/cases/2018/17-532
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/boundvolumes/587bv.pdf
+  - site: cornell
+    label: Cornell LII
+    access: free
+    link: https://www.law.cornell.edu/supremecourt/text/17-532
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/587/329/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2018/17-532
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22587%20U.S.%20329%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=587%20U.S.%20329
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=587%20U.S.%20329
+    unchecked: true
+argument_audio:
+- kind: argument
+  date: '2019-01-08'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/17-532.mp3
+  duration_seconds: 3685
+  file:
+    storage_key: supreme-court-audio/court/2018/17-532.mp3
+    checksum: c03990e92dc97c5d29d73a8b92cdf55b0b25a91f88ddf70a5bfd56a64aa087d5
+    media_type: audio/mpeg
+    bytes: 29488468
+- kind: argument
+  date: '2019-01-08'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2121-January8_2019.mp3
+  catalog: https://catalog.archives.gov/id/183518503
+  whole_session: true
+  duration_seconds: 8180
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2121-january8_2019.mp3
+    checksum: fb9b2f87b458123be0d819a5d3f941f25814e38751cc201065964509a80769d8
+    media_type: audio/mpeg
+    bytes: 163607558
+- kind: opinion announcement
+  date: '2019-05-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2149-May20_2019.mp3
+  catalog: https://catalog.archives.gov/id/183518531
+  whole_session: true
+  duration_seconds: 1516
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2149-may20_2019.mp3
+    checksum: fdb653db8afaa7d76035d992e100471ff6d90ae0845c513068cc0a84c5669ce9
+    media_type: audio/mpeg
+    bytes: 30318758
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 587 U.S. 329 (2019). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/587bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2018-026), the Legal Information Institute''s text of the slip opinion and the Court''s bound volume; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Slip opinion (Legal Information Institute) 587 U.S. 329 "Herrera v. Wyoming"; Database 17-532 "HERRERA v. WYOMING"
+  - check: scan
+    result: agree
+    detail: Scan has 41 pages; the report runs 329 to 369
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Slip opinion (Legal Information Institute) "Argued January 8, 2019—Decided May 20, 2019"; scan "Argued January 8, 2019—Decided May 20, 2019"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 2019-05-20'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Sotomayor p. 332, dissent Alito p. 353; Database writers: Alito, Sotomayor'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

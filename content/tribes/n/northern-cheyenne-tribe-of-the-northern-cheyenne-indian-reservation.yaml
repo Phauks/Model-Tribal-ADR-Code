@@ -22,6 +22,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Cheyenne Tribe, July 6, 1825, 7 Stat. 255
+  since: '1825-07-06'
+  source: treaty-with-the-cheyenne-tribe-1825
+  confidence: medium
+  verification: inferred
+  as_of: '1825-07-06'
+  locator: p. 232 (Treaty with the Cheyenne Tribe, 1825; Kappler header "July 6, 1825. | 7 Stat., 255. | Proclamation, Feb. 6, 1826.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Cheyenne; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: MT
   presence: government-office
@@ -198,6 +208,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Billings Area
   note: Listed as "Northern Cheyenne Tribal Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 4180972
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MT, row 'Northern Cheyenne Tribe' (Lame Deer)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 9298430
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'NORTHERN CHEYENNE TRIBE' (UEI WQV6F3GXKPR8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'NORTHERN CHEYENNE TRIBE'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Northern Cheyenne Tribe, Montana" among organizations under constitutions approved
@@ -772,6 +802,46 @@ jurisdiction:
   verification: read-in-full
   locator: Mont. Code Ann. § 2-1-302(1)-(2); § 2-1-303
   note: Procedure only; the research found no proclamation under it for any other tribe. Under § 2-1-303 the State assumes jurisdiction 60 days after the proclamation. Enacted as 1963 Mont. Laws ch. 81 (section history lines).
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business, Wind and Solar Resource) of the Northern Cheyenne Tribe, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Jan. 24, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-rese-2022-01-24
+  confidence: high
+  verification: inferred
+  as_of: '2022-01-24'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Aug. 11, 2006 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Mar. 21, 2013.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2006-08-11'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-implementation-plan
+  detail: EPA has approved the nation for treatment in a similar manner as a state for tribal implementation plan (Clean Air Act § 110).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "TIP"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 126; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 126; 505(a)(2)"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Northern Cheyenne Indian Reserved Water Rights Settlement Act of 1992 in 1992 (Pub. L. No. 102-374), settling the water rights of Northern Cheyenne Indian Tribe. It quantifies 83,830 acre-feet a year in all and authorizes about $73.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-102-374
+  confidence: high
+  verification: inferred
+  as_of: '1992'
+  locator: Congressional Research Service, R44148, Table 1, 1992
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Montana Department of Public Health and Human Services

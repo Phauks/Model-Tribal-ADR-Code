@@ -1,0 +1,58 @@
+key: oklahoma-statutes-title-36-section-7108
+kind: state-statute
+citation:
+  type: legislation
+  title: Exceptions to application of act
+  title-short: Okla. Stat. tit. 36, § 7108
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '36'
+  section: '7108'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1953
+      - 5
+      - 19
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os36.pdf#page=1671
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os36.pdf#page=1671
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-36-section-1115
+- oklahoma-statutes-title-36-section-607
+- oklahoma-statutes-title-36-section-7122
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 36, § 7108 (2026)
+  page: 1671
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 36, § 7108 (2026). History: Added by Laws 1953, p. 17, § 8, emerg. eff. May 19, 1953. Amended by Laws 1995, c. 82, § Laws 2010, c. 58, § 33, eff. July 1, 2010. Text read from the Legislative Service Bureau''s Title 36 PDF (updated Nov. 12, 2026), page 1671. Found by the state statutes pilot (terms: tribal land); AI reader''s verdict incidental: Cemetery care exemption covers Indian tribal cemeteries on tribal land. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal land'

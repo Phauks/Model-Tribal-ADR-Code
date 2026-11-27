@@ -1,0 +1,65 @@
+key: yankton-sioux-tribe-v-podhradsky-2009
+kind: federal-case
+citation:
+  type: legal_case
+  title: Yankton Sioux Tribe v. Podhradsky
+  authority: United States Court of Appeals for the Eighth Circuit
+  container-title: F.3d
+  volume: '577'
+  page: '951'
+  issued:
+    date-parts:
+    - - 2009
+      - 8
+      - 25
+  URL: https://static.case.law/f3d/577/html/0951-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/577/html/0951-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- yankton-sioux-tribe-of-south-dakota
+- rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: yankton-sioux-tribe-of-south-dakota
+    named_as: Yankton Sioux Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+    named_as: Interested Party. Rosebud Sioux Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 577 F.3d 951. Decided by the United States Court of Appeals for the Eighth Circuit on Aug. 25, 2009. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 134, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 134
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 2 matched, 0 not linked

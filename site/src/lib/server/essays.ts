@@ -14,7 +14,7 @@ import { activityStatement } from './activity-log.ts';
 import { now } from './identifiers.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
 
-export const essayParts = ['foundations', 'essays', 'back-matter', 'about'] as const;
+export const essayParts = ['foundations', 'essays', 'back-matter', 'about', 'news'] as const;
 export type EssayPart = (typeof essayParts)[number];
 
 /**
@@ -26,7 +26,8 @@ export type EssayPart = (typeof essayParts)[number];
 export const aboutPageAddresses: Record<string, string> = {
 	about: '/about',
 	sponsor: '/sponsor',
-	'using-ai': '/using-ai'
+	'using-ai': '/using-ai',
+	watch: '/about/watch'
 };
 
 /** The parts a new essay can be started in from the workspace. */
@@ -80,12 +81,14 @@ export interface EssaySummary extends EssayRow {
 /**
  * An essay's part, from its id ("i-…" is Part I, the Foundations) or its
  * front matter. Back matter, such as the index of cases by topic, says
- * "part: back-matter", and a page about the site "part: about".
+ * "part: back-matter", a page about the site "part: about", and a News post
+ * "part: news".
  */
 export function partOf(identifier: string, frontMatter = ''): EssayPart {
 	const part = frontMatterField(frontMatter, 'part');
 	if (part === 'back-matter') return 'back-matter';
 	if (part === 'about') return 'about';
+	if (part === 'news') return 'news';
 	if (part === 'i' || identifier.startsWith('i-')) return 'foundations';
 	return 'essays';
 }
@@ -94,6 +97,7 @@ export function partOf(identifier: string, frontMatter = ''): EssayPart {
 export function essayPath(identifier: string, part: EssayPart): string {
 	if (part === 'foundations') return `/foundations/${identifier.replace(/^i-/, '')}`;
 	if (part === 'about') return aboutPageAddresses[identifier] ?? `/${identifier}`;
+	if (part === 'news') return `/news/${identifier}`;
 	return part === 'back-matter' ? `/back-matter/${identifier}` : `/essays/${identifier}`;
 }
 

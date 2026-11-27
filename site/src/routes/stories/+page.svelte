@@ -5,17 +5,17 @@
 </script>
 
 <svelte:head>
-	<title>Stories · Model Tribal ADR Code</title>
+	<title>Stories · Tribal Law Project</title>
 	<meta
 		name="description"
-		content="Stories, accounts and teachings about resolving disputes and making peace, quoted in the words of the Native nations and people who tell them."
+		content="Stories, accounts and teachings about law, justice and governance, quoted in the words of the Native nations and people who tell them."
 	/>
 </svelte:head>
 
 <div class="reading">
 	<h1>Stories</h1>
 	<p class="lead">
-		Stories, accounts and teachings about resolving disputes, making peace and restoring relationships, as Native nations and their people tell them. They are never retold or summarized here. Each page gives the whole story in the teller’s own words wherever it can be found, with credit and a link to where the nation or teller published it.
+		Stories, accounts and teachings about law, justice and governance, as Native nations and their people tell them. They are never retold or summarized here. Each page gives the whole story in the teller’s own words wherever it can be found, with credit and a link to where the nation or teller published it.
 	</p>
 
 	{#if data.count === 0}

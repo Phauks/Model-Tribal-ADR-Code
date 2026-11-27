@@ -1,0 +1,42 @@
+key: national-archives-film-75-47-river-people
+kind: federal-agency-document
+citation:
+  type: motion_picture
+  title: River People
+  genre: Motion picture
+  number: NAID 4723910
+  archive: National Archives at College Park, Motion Pictures
+  archive_location: Record Group 75, Moving Images Documenting the Life and Culture of North American Indians (NAID 12678), item 75.47
+  URL: https://catalog.archives.gov/id/4723910
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://catalog.archives.gov/id/4723910
+retrieved: '2026-11-27'
+rights:
+  status: not-assessed
+  basis: link-only
+  basis_note: Not digitized, and the National Archives marks its use status undetermined or possibly under copyright; linked at the National Archives, and the project keeps no copy.
+  redistribution: false
+jurisdictions:
+- level: federal
+topics:
+- federal-indian-policy-film
+access:
+  open: false
+  pull_from:
+  - library
+  note: Ask the National Archives at College Park, Motion Pictures (mopix@nara.gov) for a viewing or a copy, citing the National Archives Identifier.
+found_in:
+- 2026-11-27-national-archives-films
+notes: 'Indigo Book citation: River People (Bureau of Indian Affairs records n.d.) (motion picture), National Archives Identifier 4723910, RG 75, item 75.47. The National Archives describes it: "This film provides an overview of the Southwest, focusing specifically on Pima Indians. It documents Pima farming and how an influx of farmers changed their way of life. The film mentions the San Carlos Irrigation Project and Coolidge Dam and promotes helping the Pima tribe re-learn farming techniques." Not digitized: the National Archives holds the film at College Park, where it can be viewed or copied on request. Chosen as a federal Indian policy item (Pima farming and the San Carlos Irrigation Project; marked possibly under copyright) by scripts/law/national_archives_films.py; ceremony films and children''s recordings in the same series are left out (CARE principles). Not yet watched or heard in full by a person (Unverified).'
+review:
+  status: unverified
+  by: scripts/law/national_archives_films.py
+  date: '2026-11-27'
+  checks:
+  - check: listing
+    result: missing
+    detail: Only the National Archives Catalog's description was read

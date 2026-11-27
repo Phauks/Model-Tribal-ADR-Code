@@ -104,6 +104,18 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=390%20U.S.%20365
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1968-01-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-672-65-19680124.mp3
+  catalog: https://catalog.archives.gov/id/81139915
+  duration_seconds: 3247
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-672-65-19680124.mp3
+    checksum: 28849171c7cebf6e2ef376eedbd2e86e51f83252107a64b54d7359f27fe40879
+    media_type: audio/mpeg
+    bytes: 51956505
 rights:
   status: no-permission-needed
   basis: us-government-work

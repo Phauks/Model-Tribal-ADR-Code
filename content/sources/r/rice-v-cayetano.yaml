@@ -94,6 +94,31 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Rice_v._Cayetano
+argument_audio:
+- kind: argument
+  date: '1999-10-06'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1112.mp3
+  catalog: https://catalog.archives.gov/id/138282755
+  whole_session: true
+  duration_seconds: 7284
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1112.mp3
+    checksum: 18ded4693993e7d2c8ae459b22363104e38221f3c04660367243ca6544c89a43
+    media_type: audio/mpeg
+    bytes: 116549297
+- kind: opinion announcement
+  date: '2000-02-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1133.mp3
+  catalog: https://catalog.archives.gov/id/138282776
+  whole_session: true
+  duration_seconds: 8001
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1133.mp3
+    checksum: a846b6727060090640928c852a4169cfca731ccda4a16f23a479943d60b515d4
+    media_type: audio/mpeg
+    bytes: 128011828
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -134,10 +159,61 @@ case_box:
   holding: |-
     No. The Court held that the ancestry-based voter qualification was a racial classification that violated the Fifteenth Amendment, distinguishing *Morton v. Mancari* because the Office of Hawaiian Affairs election is a state election.
   quotes:
-  - text: "Ancestry can be a proxy for race. It is that proxy here ..."
+  - text: "Ancestry can be a proxy for race. It is that proxy here."
     pinpoint: "p. 514"
   reading:
     title: "*Rice v. Cayetano* (2000)"
     text: |-
       For Native Hawaiian institutions, this limits ancestry-based eligibility in state-run bodies.
+  later_cases:
+    checked: 2026-11-20
+    source: westlaw/rice-v-cayetano-2000-westlaw.pdf
+    list:
+    - treatment: Declined to extend
+      name: Davis v. Guam
+      citation: 932 F.3d 822 (9th Cir. 2019)
+      case: davis-v-guam-2019
+    - treatment: Distinguished
+      name: Igartua De La Rosa v. United States
+      citation: 229 F.3d 80 (1st Cir. 2000)
+      link: https://case.law/caselaw/?reporter=f3d&volume=229&case=0080-01
+    - treatment: Distinguished
+      name: Flynt v. California Gambling Control Com'n
+      citation: 129 Cal. Rptr. 2d 167 (Cal. Ct. App. 2002)
+    - treatment: Distinguished
+      name: Morris v. Tanner
+      citation: 288 F. Supp. 2d 1133 (D. Mont. 2003)
+      link: https://case.law/caselaw/?reporter=f-supp-2d&volume=288&case=1133-01
+    - treatment: Distinguished
+      name: Arakaki v. Lingle
+      citation: 305 F. Supp. 2d 1161 (D. Haw. 2004)
+      link: https://case.law/caselaw/?reporter=f-supp-2d&volume=305&case=1161-01
+    - treatment: Distinguished
+      name: Kahawaiolaa v. Norton
+      citation: 386 F.3d 1271 (9th Cir. 2004)
+      link: https://case.law/caselaw/?reporter=f3d&volume=386&case=1271-01
+    - treatment: Distinguished
+      name: KG Urban Enterprises, LLC v. Patrick
+      citation: 839 F. Supp. 2d 388 (D. Mass. 2012)
+      link: https://case.law/caselaw/?reporter=f-supp-2d&volume=839&case=0388-01
+    - treatment: Distinguished
+      name: KG Urban Enterprises, LLC v. Patrick
+      citation: 693 F.3d 1 (1st Cir. 2012)
+      link: https://case.law/caselaw/?reporter=f3d&volume=693&case=0001-01
+    - treatment: Distinguished
+      name: Akina v. Hawaii
+      citation: 141 F. Supp. 3d 1106 (D. Haw. 2015)
+      link: https://case.law/caselaw/?reporter=f-supp-3d&volume=141&case=1106-01
+    - treatment: Distinguished
+      name: United States v. Government of Guam
+      citation: 2018 WL 6729629 (D. Guam Dec. 21, 2018)
+    - treatment: Distinguished
+      name: Brackeen v. Haaland
+      citation: 994 F.3d 249 (5th Cir. 2021)
+    - treatment: Distinguished
+      name: Shen v. Simpson
+      citation: 687 F. Supp. 3d 1219 (N.D. Fla. 2023)
+    - treatment: Distinguished
+      name: Nare v. Omaha Discovery Trust
+      citation: 179 F.4th 628 (8th Cir. 2026)
 subjects: [citizenship, government]

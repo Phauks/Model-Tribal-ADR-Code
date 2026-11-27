@@ -6,6 +6,7 @@ import {
 	filterCopyDetails,
 	filterLawItems,
 	filterOfflineList,
+	filterSearchIndex,
 	filterSearchRecords,
 	filterTimelineRows,
 	type SiteRestrictions
@@ -71,6 +72,36 @@ describe('files made at build time', () => {
 			regionOptions: []
 		};
 		expect(filterSearchRecords(file, await restrictions()).documents.map((row) => row.anchor)).toEqual(['document-constitution']);
+	});
+
+	it('drops search rows linked to a hidden copy and sends a cited one to the original', async () => {
+		const file = {
+			nations: [],
+			documents: [
+				{ title: '1975 constitution', kind: 'constitution', nation: cherokee, anchor: '', link: `/copies/view/${hiddenLaw}` },
+				{ title: '1999 constitution', kind: 'constitution', nation: cherokee, anchor: '', link: '/copies/view/constitutions/cherokee-nation/1999.pdf' }
+			],
+			storyNations: {},
+			stateOptions: [],
+			regionOptions: []
+		};
+		const restricted = await restrictions();
+		restricted.levels.set('copy:constitutions/cherokee-nation/1999.pdf', 'cite');
+		expect(filterSearchRecords(file, restricted).documents).toEqual([{ ...file.documents[1], link: 'https://example.org/1999.pdf' }]);
+	});
+
+	it('leaves hidden opinions and laws out of the search index and sends cited opinions to the original', async () => {
+		const entries = [
+			{ kind: 'case' as const, title: 'Takeda v. Smith', link: `/copies/view/${hiddenOpinion}` },
+			{ kind: 'case' as const, title: 'Doe v. Roe', link: `/copies/view/${citedOpinion}` },
+			{ kind: 'reference' as const, title: '1975 proposed constitution', link: `/copies/view/${hiddenLaw}` },
+			{ kind: 'reference' as const, title: 'Code', link: `/nations/${cherokee}#document-code` },
+			{ kind: 'case' as const, title: 'Worcester v. Georgia', link: '/cases/worcester-v-georgia' }
+		];
+		expect(filterSearchIndex(entries, await restrictions())).toEqual([
+			{ kind: 'case', title: 'Doe v. Roe', link: 'https://static.case.law/2.html' },
+			{ kind: 'case', title: 'Worcester v. Georgia', link: '/cases/worcester-v-georgia' }
+		]);
 	});
 
 	it('drops hidden copies from the copies list and takes the copy off cited ones, keeping the file’s form', async () => {

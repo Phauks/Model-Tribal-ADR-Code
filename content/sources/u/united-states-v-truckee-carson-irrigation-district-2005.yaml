@@ -1,0 +1,71 @@
+key: united-states-v-truckee-carson-irrigation-district-2005
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Truckee-Carson Irrigation District
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '429'
+  page: '902'
+  issued:
+    date-parts:
+    - - 2005
+      - 11
+      - 21
+  URL: https://static.case.law/f3d/429/html/0902-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 04-16032, 04-16033
+original_link: https://static.case.law/f3d/429/html/0902-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2005-07-07'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2005/07/07/04-16032.mp3
+  duration_seconds: 2795
+  file:
+    storage_key: appeals-court-audio/ca9/2005/2005-07-07-04-16032.mp3
+    checksum: 182c006ee391ddf730c93dc76fbe98fa2a822ac422c59c005d7e13f7db8fb62e
+    media_type: audio/mpeg
+    bytes: 22360752
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation
+    named_as: Pyramid Lake Paiute Tribe of Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 429 F.3d 902. Decided by the United States Court of Appeals for the Ninth Circuit on Nov. 21, 2005. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (Pyramid Lake Paiute water rights, Orr Ditch decree).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: Pyramid Lake Paiute water rights, Orr Ditch decree'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

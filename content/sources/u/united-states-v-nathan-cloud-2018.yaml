@@ -1,0 +1,63 @@
+key: united-states-v-nathan-cloud-2018
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Nathan Cloud
+  authority: United States Court of Appeals for the Ninth Circuit
+  issued:
+    date-parts:
+    - - 2018
+      - 7
+      - 23
+  URL: https://www.courtlistener.com/opinion/4519575/united-states-v-nathan-cloud/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 16-30310
+original_link: https://www.courtlistener.com/opinion/4519575/united-states-v-nathan-cloud/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2018-07-12'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2018/07/12/16-30310.mp3
+  duration_seconds: 1129
+  held: true
+  note: Held until a reading of the argument finds no child or victim named; the opinion itself is shown.
+  file:
+    storage_key: appeals-court-audio/ca9/2018/2018-07-12-16-30310.mp3
+    checksum: 5163f0a7c93505cbe3810b86348ed1912bd4bcb1a6df9aa0cb32974a0dc695c8
+    media_type: audio/mpeg
+    bytes: 9035904
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 16-30310; no reporter citation yet. Decided by the United States Court of Appeals for the Ninth Circuit on July 23, 2018. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (Yakama Nation concurrent jurisdiction and tribal land (criminal)).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: Yakama Nation concurrent jurisdiction and tribal land (criminal)'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

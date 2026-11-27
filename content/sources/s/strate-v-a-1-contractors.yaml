@@ -93,6 +93,19 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Strate_v._A-1_Contractors
+argument_audio:
+- kind: argument
+  date: '1997-01-07'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1013.mp3
+  catalog: https://catalog.archives.gov/id/138282651
+  whole_session: true
+  duration_seconds: 11066
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1013.mp3
+    checksum: 88eaa358e7076874cf003ba29a11d29f693349abf13a151d78ece641fb906705
+    media_type: audio/mpeg
+    bytes: 177052650
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -121,9 +134,9 @@ case_box:
   holding: |-
     No. The Court held that a Tribe's adjudicative jurisdiction over nonmembers does not exceed its legislative jurisdiction. The state highway right-of-way is equivalent to non-Indian fee land for *Montana* purposes, and neither *Montana* exception applied. Exhaustion was not required because Tribal jurisdiction was plainly lacking.
   quotes:
-  - text: "As to nonmembers, we hold, a tribe's adjudicative jurisdiction does not exceed its legislative jurisdiction ..."
+  - text: "As to nonmembers, we hold, a tribe's adjudicative jurisdiction does not exceed its legislative jurisdiction."
     pinpoint: "p. 453"
-  - text: "Opening the Tribal Court for her optional use is not necessary to protect tribal self-government ..."
+  - text: "Opening the Tribal Court for her optional use is not necessary to protect tribal self-government . . . ."
     pinpoint: "p. 459"
   treatment: |-
     Applied in *Nevada v. Hicks* (2001) and *Plains Commerce Bank* (2008). [@nevada-v-hicks]

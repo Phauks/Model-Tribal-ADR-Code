@@ -104,6 +104,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=522%20U.S.%20329
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1997-12-08'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1045.mp3
+  catalog: https://catalog.archives.gov/id/138282685
+  whole_session: true
+  duration_seconds: 10939
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1045.mp3
+    checksum: 10ae1094d4151444f2858a9de3d011ade57c35ec4cc84ec64e524004aa170285
+    media_type: audio/mpeg
+    bytes: 175029728
 rights:
   status: no-permission-needed
   basis: us-government-work

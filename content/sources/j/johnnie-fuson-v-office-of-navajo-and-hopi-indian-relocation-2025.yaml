@@ -1,0 +1,64 @@
+key: johnnie-fuson-v-office-of-navajo-and-hopi-indian-relocation-2025
+kind: federal-case
+citation:
+  type: legal_case
+  title: Johnnie Fuson v. Office of Navajo and Hopi Indian Relocation
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.4th
+  volume: '134'
+  page: '1010'
+  issued:
+    date-parts:
+    - - 2025
+      - 4
+      - 16
+  URL: https://www.courtlistener.com/opinion/10379772/johnnie-fuson-v-office-of-navajo-and-hopi-indian-relocation/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 23-15747
+original_link: https://www.courtlistener.com/opinion/10379772/johnnie-fuson-v-office-of-navajo-and-hopi-indian-relocation/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2024-04-08'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2024/04/08/23-15747.mp3
+  duration_seconds: 2153
+  file:
+    storage_key: appeals-court-audio/ca9/2024/2024-04-08-23-15747.mp3
+    checksum: cab62c12ab274415fbcaa160544c4af6bb89e6769463815dd785c26072f95f94
+    media_type: audio/mpeg
+    bytes: 34444416
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 134 F.4th 1010. Decided by the United States Court of Appeals for the Ninth Circuit on Apr. 16, 2025. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 8; an AI reader read excerpts and judged it an Indian law case (Navajo-Hopi relocation benefits and homesite eligibility).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 8; reader: Navajo-Hopi relocation benefits and homesite eligibility'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

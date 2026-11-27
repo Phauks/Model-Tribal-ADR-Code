@@ -21,10 +21,17 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
-  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe,
-    Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations:
-    Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band;
-    White Earth Band).'
+  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe, Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band).'
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Chippewa, Oct. 4, 1842, 7 Stat. 591
+  since: '1842-10-04'
+  source: treaty-with-the-chippewa-1842
+  confidence: medium
+  verification: inferred
+  as_of: '1842-10-04'
+  locator: p. 542 (Treaty with the Chippewa, 1842; Kappler header "Oct. 4, 1842. | 7 Stat., 591. | Proclamation, Mar. 23, 1843.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Chippewa of the Mississippi; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 13 nations' profiles link this treaty.
 states:
 - state: MN
   presence: land
@@ -136,6 +143,61 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Bemidji Area
   note: Listed as "White Earth Tribal Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2007
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'White Earth Ojibwe Tribe' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'White Earth Ojibwe Tribe'.
+- program: pl-102-477-plan
+  start: '2024-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - National Dislocated Worker Grants – Quality Jobs, Equity, Strategy, and Training
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Re-Integration of Ex-Offenders
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Employment Works
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Minnesota Chippewa Tribe, Minnesota (White Earth Band)'; PL102_477_PartnerEnrollment, its 5 programs
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Minnesota Chippewa Tribe, Minnesota (White Earth Band)'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 5496791
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: MN, row 'White Earth Band, Minnesota Chippewa Tribe' (White Earth)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'White Earth Band, Minnesota Chippewa Tribe'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 13933163
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'MINNESOTA CHIPPEWA TRIBE - WHITE EARTH BAND' (UEI GR1MGDM3ZSV7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'MINNESOTA CHIPPEWA TRIBE - WHITE EARTH BAND'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 14540118
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'MINNESOTA CHIPPEWA TRIBE - WHITE EARTH BAND' (UEI GR1MGDM3ZSV7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'MINNESOTA CHIPPEWA TRIBE - WHITE EARTH BAND'.
 governance:
 - aspect: governing-body
   value: Reservation Business Committee
@@ -817,7 +879,7 @@ land_establishment:
   confidence: high
   verification: read-in-full
   locator: 16 Stat. 720
-  note: 'The instrument reads: “there is hereby set apart for their use a tract of land, to be located in a square form as nearly as possible ... which reservation shall include White Earth Lake and Rice Lake, and contain thirty-six townships of land”. Treaty also reserves a tract for the Mississippi bands (Gull Lake / Mille Lacs, Leech Lake) in art. I.'
+  note: 'The instrument reads: “there is hereby set apart for their use a tract of land, to be located in a square form as nearly as possible . . . which reservation shall include White Earth Lake and Rice Lake, and contain thirty-six townships of land”. Treaty also reserves a tract for the Mississippi bands (Gull Lake / Mille Lacs, Leech Lake) in art. I.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

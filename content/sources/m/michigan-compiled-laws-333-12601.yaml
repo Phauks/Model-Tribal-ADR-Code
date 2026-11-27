@@ -1,0 +1,50 @@
+key: michigan-compiled-laws-333-12601
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Mich. Comp. Laws § 333.12601
+  container-title: Michigan Compiled Laws
+  container-title-short: Mich. Comp. Laws
+  section: '333.12601'
+  author:
+  - literal: Michigan Legislature
+  issued:
+    date-parts:
+    - - 1986
+  URL: https://legislature.mi.gov/Laws/MCL?objectName=mcl-333.12601
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.mi.gov/Laws/MCL?objectName=mcl-333.12601
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mich. Comp. Laws § 333.12601 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Mich. Comp. Laws § 333.12601 (2026). History: Add. 1986, Act 198, Eff. Jan. 1, 1987; Am. 1988, Act 294, Eff. Oct. 1, 1988; Am. 1988, Act 296, Eff. Mar. 30, 1989; Am. 1988, Act 315, Eff. Mar. 30, 1989; Am. 2009, Act 188, Eff. May 1, 2010. Text read from the Michigan Legislature''s page for the section''s chapter of the Michigan Compiled Laws (legislature.mi.gov), complete through Public Act 114 of 2026, on Nov. 27, 2026. Found by the state statutes sweep (terms: indian gaming; indian); AI reader''s verdict incidental: Casino definition expressly excludes Indian Gaming Regulatory Act casinos. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian gaming; indian'

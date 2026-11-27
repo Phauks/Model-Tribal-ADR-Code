@@ -1,0 +1,67 @@
+key: yocha-dehe-wintun-nation-v-gavin-newsom-2020
+kind: federal-case
+citation:
+  type: legal_case
+  title: Yocha Dehe Wintun Nation v. Gavin Newsom
+  authority: United States Court of Appeals for the Ninth Circuit
+  issued:
+    date-parts:
+    - - 2020
+      - 12
+      - 3
+  URL: https://www.courtlistener.com/opinion/4835610/yocha-dehe-wintun-nation-v-gavin-newsom/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 19-16384
+original_link: https://www.courtlistener.com/opinion/4835610/yocha-dehe-wintun-nation-v-gavin-newsom/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2020-11-20'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2020/11/21/19-16384.mp3
+  duration_seconds: 1716
+  file:
+    storage_key: appeals-court-audio/ca9/2020/2020-11-20-19-16384.mp3
+    checksum: b206ea44d7cbaac31fab02d6172a2d8db2525c9f42f2fc55af4f3e560bc4568f
+    media_type: audio/mpeg
+    bytes: 13727659
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- yocha-dehe-wintun-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: yocha-dehe-wintun-nation
+    named_as: Yocha Dehe Wintun Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 19-16384; no reporter citation yet. Decided by the United States Court of Appeals for the Ninth Circuit on Dec. 3, 2020. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 8; an AI reader read excerpts and judged it an Indian law case (IGRA tribal gaming and state compacts, Yocha Dehe).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 8; reader: IGRA tribal gaming and state compacts, Yocha Dehe'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

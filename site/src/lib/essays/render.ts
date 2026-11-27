@@ -24,9 +24,9 @@ import { youtubeEmbedAddress, youtubePosterAddress } from '../video-links.ts';
 import { attributionSource } from '../quote-context.ts';
 import { firstPage, opinionAt, quoteOpinionLabel, type OpinionEntry } from '../case-opinions.ts';
 import { readingLinksAfter } from '../reading-links.ts';
-import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
+import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, needlessEndEllipsis, quotationEndProblems, unspacedEllipsis, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
 import { escapeHtml } from '../escape-html.ts';
-import { fillBoxes, type BoxKind } from './record-boxes.ts';
+import { fillBoxes, laterCaseKinds, type BoxKind } from './record-boxes.ts';
 
 export interface EssayLibrary {
 	/** The full citation of a source, as HTML in the project's Indigo Book style. */
@@ -210,7 +210,7 @@ function caseNameForm(name: string): string {
 /** Party names too common to stand for one case. */
 const sharedParties = new Set(['united states', 'state', 'the state', 'people', 'commonwealth']);
 
-const caseNameLists = new WeakMap<EssayLibrary, Map<string, string>>();
+const caseNameLists = new WeakMap<Record<string, string>, Map<string, string>>();
 
 /**
  * Case names to source keys: each case's full name ("Worcester v.
@@ -218,7 +218,10 @@ const caseNameLists = new WeakMap<EssayLibrary, Map<string, string>>();
  * shortens it after the first mention ("Worcester", "Crow Dog").
  */
 function caseNameList(library: EssayLibrary): Map<string, string> {
-	const cached = caseNameLists.get(library);
+	// Kept for each list of names, which the library gives the same each time, so each drawing need not work it out again.
+	const titles = library.caseNames?.();
+	if (!titles) return new Map();
+	const cached = caseNameLists.get(titles);
 	if (cached) return cached;
 	const names = new Map<string, string | null>();
 	const add = (name: string, key: string) => {
@@ -226,7 +229,7 @@ function caseNameList(library: EssayLibrary): Map<string, string> {
 		if (!form || sharedParties.has(form)) return;
 		names.set(form, names.has(form) && names.get(form) !== key ? null : key);
 	};
-	const cases = Object.entries(library.caseNames?.() ?? {});
+	const cases = Object.entries(titles);
 	for (const [key, title] of cases) add(title, key);
 	const parties = new Map<string, string | null>();
 	for (const [key, title] of cases) {
@@ -238,7 +241,7 @@ function caseNameList(library: EssayLibrary): Map<string, string> {
 	}
 	for (const [form, key] of parties) if (key && !names.has(form)) add(form, key);
 	const list = new Map([...names].filter((entry): entry is [string, string] => entry[1] !== null));
-	caseNameLists.set(library, list);
+	caseNameLists.set(titles, list);
 	return list;
 }
 
@@ -267,7 +270,17 @@ function linkCaseNames(tokens: Token[], library: EssayLibrary, boxesHere: Set<st
 	let linked = new Set<string>();
 	let inHeading = false;
 	let ownBox: string | undefined;
+	// A list of later cases (laterCasesMarkdown) links each case only where its
+	// citation matched one: a name alone can match another case of the same name.
+	let laterCaseKind = false;
+	let inLaterCases = false;
 	for (const token of tokens) {
+		if (token.type === 'inline' && token.level > 0) {
+			const kind = /^\*\*(.+)\*\* \(\d+\)$/.exec(token.content)?.[1];
+			laterCaseKind = Boolean(kind && laterCaseKinds.includes(kind));
+		} else if (token.type === 'bullet_list_open') inLaterCases = laterCaseKind;
+		else if (token.type === 'bullet_list_close') inLaterCases = laterCaseKind = false;
+		if (inLaterCases) continue;
 		if (token.type === 'heading_open') {
 			inHeading = true;
 			linked = new Set();
@@ -511,6 +524,21 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 		return defaultHeadingOpen(tokens, index, options, environment, self);
 	};
 
+	// A link that leaves the site, such as a later case on case.law, opens in a
+	// new tab and is marked with an arrow (the same as the opinion copies'
+	// links, scripts/caselaw/copy_links.py).
+	const defaultLinkOpen = rules.link_open ?? ((tokens, index, options, _environment, self) => self.renderToken(tokens, index, options));
+	rules.link_open = (tokens, index, options, environment, self) => {
+		const token = tokens[index];
+		if (/^https?:\/\//.test(token.attrGet('href') ?? '') && !token.attrGet('class')) {
+			token.attrSet('class', 'external');
+			token.attrSet('target', '_blank');
+			token.attrSet('rel', 'noopener');
+			token.attrSet('title', /^https:\/\/case\.law\//.test(token.attrGet('href') ?? '') ? 'Opens on case.law' : 'Opens in a new tab');
+		}
+		return defaultLinkOpen(tokens, index, options, environment, self);
+	};
+
 	rules.table_open = () => '<div class="table-scroll essay-table" tabindex="0"><table>\n';
 	rules.table_close = () => '</table></div>\n';
 
@@ -571,7 +599,7 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 }
 
 /**
- * Quotations that may leave out words without saying so (missingEllipses in
+ * Quotations whose ends do not mark left-out words in the Indigo Book form (quotationEndProblems in
  * syntax.ts): each ">" passage and each quotation box, without its
  * attribution.
  */
@@ -582,8 +610,10 @@ function quotationWarnings(tokens: Token[]): string[] {
 		const first = paragraphs[0];
 		const last = paragraphs.at(-1)!;
 		const shown = (text: string) => `“${text.length > 50 ? `${text.slice(0, 50)}…` : text}”`;
-		if (missingEllipses(first).start) warnings.push(`The quotation ${shown(first)} starts mid-sentence; begin it with "... ".`);
-		if (missingEllipses(last).end) warnings.push(`The quotation ending ${shown(last.slice(-50))} stops mid-sentence; end it with " ...".`);
+		if (quotationEndProblems(first).start) warnings.push(`The quotation ${shown(first)} starts mid-sentence; drop any leading ellipsis and capitalize its first letter in brackets, "[T]he".`);
+		if (needlessEndEllipsis(last)) warnings.push(`The quotation ending ${shown(last.slice(-50))} ends its sentence; drop the ellipsis after the period.`);
+		else if (quotationEndProblems(last).end) warnings.push(`The quotation ending ${shown(last.slice(-50))} stops mid-sentence; end it with " . . . ." and the sentence's own period.`);
+		if (paragraphs.some(unspacedEllipsis)) warnings.push(`The quotation ${shown(first)} writes an ellipsis as "..."; write it as three spaced periods, ". . .".`);
 	};
 	for (let index = 0; index < tokens.length; index += 1) {
 		const opening = tokens[index].type;
@@ -661,6 +691,19 @@ function markChangedBlocks(tokens: Token[], lines: LineChange[]): Token[] {
  * Sources list. `lines`, one per line of the body after the front matter,
  * marks the blocks that changed (lineChanges in merge.ts).
  */
+/**
+ * Each kind of treatment in a list of later cases (laterCasesMarkdown,
+ * record-boxes.ts), written "**Distinguished** (6)", shown with its count in
+ * a badge, and the list under it marked.
+ */
+export function laterCaseLists(html: string): string {
+	return html.replace(/<p><strong>([^<]+)<\/strong> \((\d+)\)<\/p>\n<ul>/g, (whole, kind: string, count: string) =>
+		laterCaseKinds.includes(kind)
+			? `<p class="later-cases-kind"><strong>${kind}</strong> <span class="count-badge"><span class="visually-hidden">,</span>${count}</span></p>\n<ul class="later-cases">`
+			: whole
+	);
+}
+
 export function renderEssay(text: string, library: EssayLibrary, { lines }: { lines?: LineChange[] } = {}): RenderedEssay {
 	const { frontMatter, body: written } = splitFrontMatter(text.normalize('NFC'));
 	// A case or law box the essay leaves empty is filled from its record; marks made against the essay's own lines follow.
@@ -688,8 +731,7 @@ export function renderEssay(text: string, library: EssayLibrary, { lines }: { li
 	tokens = arrangeFigures(tokens);
 	const shown = lines ? markChangedBlocks(tokens, lines) : tokens;
 	// A link to a case or law box that is not on this page goes to the page that holds it.
-	const html = markdown.renderer
-		.render(shown, markdown.options, environment)
+	const html = laterCaseLists(markdown.renderer.render(shown, markdown.options, environment))
 		.replace(/href="#((?:case|law)-[a-z0-9-]+)"/g, (link, anchor: string) => {
 			if (state.slugs.has(anchor)) return link;
 			const page = library.boxPage?.(anchor);

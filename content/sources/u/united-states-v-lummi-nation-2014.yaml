@@ -1,0 +1,83 @@
+key: united-states-v-lummi-nation-2014
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Lummi Nation
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '763'
+  page: '1180'
+  issued:
+    date-parts:
+    - - 2014
+      - 8
+      - 19
+  URL: https://static.case.law/f3d/763/html/1180-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 12-35936
+original_link: https://static.case.law/f3d/763/html/1180-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2014-04-11'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2014/04/11/12-35936.wma
+  duration_seconds: 2122
+  file:
+    storage_key: appeals-court-audio/ca9/2014/2014-04-11-12-35936.wma
+    checksum: d84be321096017656af1bb7ce2a66b732df5c1f36f5b6c786ebfbc81d63189f9
+    media_type: audio/x-ms-wma
+    bytes: 12927254
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- jamestown-sklallam-tribe
+- port-gamble-sklallam-tribe
+- lummi-tribe-of-the-lummi-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: jamestown-sklallam-tribe
+    named_as: Jamestown S'Klallam Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: port-gamble-sklallam-tribe
+    named_as: Port Gamble S'Klallam Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: lummi-tribe-of-the-lummi-reservation
+    named_as: Lummi Nation
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Lower Elwha Klallam Indian Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 763 F.3d 1180. Decided by the United States Court of Appeals for the Ninth Circuit on Aug. 19, 2014. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 19, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 19
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 3 matched, 1 not linked

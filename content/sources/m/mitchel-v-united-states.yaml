@@ -1,0 +1,122 @@
+key: mitchel-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Mitchel v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '34'
+  page: '711'
+  issued:
+    date-parts:
+    - - 1835
+      - 3
+      - 17
+  URL: https://www.loc.gov/item/usrep034711/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: Colin Mitchel, Robert Mitchel, in his own right, and as assignee of the estate and effects of the mercantile house heretofore trading under, the firm of Carnochan and Mitchel, and as trustee of the creditors of said firm, and also of Richard Carnochan, William Calder, Benjamin Marshall, Benjamin W. Rogers, John P. Williamson, the heirs and legal representatives of John M'Nish deceased, and J*" <* Innerarity, appellants v. The United States
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep034/usrep034711/usrep034711.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep034/usrep034711/usrep034711.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Henry Baldwin
+    page: 725
+original_link: https://www.loc.gov/item/usrep034711/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+supreme_court:
+  court: Marshall Court
+  natural_court: Marshall Court (1835-1835)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 0
+  justices:
+  - name: John Marshall
+    vote: majority
+  - name: Joseph Story
+    vote: majority
+  - name: Smith Thompson
+    vote: majority
+  - name: John McLean
+    vote: majority
+  - name: Henry Baldwin
+    vote: majority
+    opinion: majority
+  - name: James Moore Wayne
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1835-038; Oyez has no votes for this case.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep034711/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/34/711/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2234%20U.S.%20711%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=34%20U.S.%20711
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=34%20U.S.%20711
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 34 U.S. (9 Pet. 711) 711 (1835). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep034/usrep034711/usrep034711.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1835-038), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: confirmed
+    detail: 'Caselaw Access Project 34 U.S. 711 "Mitchel v. United States"; Database 34 U.S. 711 "COLIN MITCHEL, ROBERT MITCHEL, IN HIS OWN RIGHT, AND AS ASSIGNEE OF THE ESTATE AND EFFECTS OF THE MERCANTILE HOUSE HERETOFORE TRADING UNDER THE FIRM OF CARNOCHAN AND MITCHEL, AND AS TRUSTEE OF THE CREDITORS OF SAID FIRM, AND ALSO OF RICHARD CA". Confirmed: both sources put the case at 34 U.S. 711, the report prints its caption there (the caption check), and the two names differ only in form'
+  - check: scan
+    result: agree
+    detail: Scan has 53 pages; the report runs 711 to 763
+  - check: caption
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.89. Confirmed: the report prints the caption "Colin Mitchel, Robert Mitchel, in his own right, and as assignee of the estate and effects of the mercantile house heretofore trading under, the firm of Carnochan and Mitchel, and as trustee of the creditors of said firm, and also of Richard Carnochan, William Calder, Benjamin Marshall, Benjamin W. Rogers, John P. Williamson, the heirs and legal representatives of John M''Nish deceased, and J*" <* Innerarity, appellants v. The United States" on p. 711 (fresh OCR, 0.93)'
+  - check: decided
+    result: missing
+    detail: Database 1835-03-17; no printed decision date
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Baldwin p. 725; Database writers: Baldwin'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

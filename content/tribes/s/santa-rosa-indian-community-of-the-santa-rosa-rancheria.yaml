@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Santa Rosa Indian Community of the Santa Rosa Rancheria, California (approved by the Secretary of the Interior May 8, 1963)
+  since: '1963-05-08'
+  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
+  document_version:
+    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
+    version: 1963-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1963-05-08'
+  locator: 1963 articles of association, as amended, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -175,6 +188,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Santa Rosa Indian Community of the Santa Rosa Rancheria, California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 798819
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Santa Rosa Indian Community' (Lemoore)
 governance:
 - aspect: form
   value: Articles of Community Organization

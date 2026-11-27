@@ -13,6 +13,7 @@
 	import { onMount } from 'svelte';
 	import { decodeSharedCollection, type SharedCollection } from '#lib/shared-collection.ts';
 	import { loadSearchIndex } from '#lib/site-search.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 	import {
 		loadStarred,
 		mergeStarred,
@@ -41,8 +42,9 @@
 		const names = new Map<string, { title: string; detail?: string }>();
 		try {
 			for (const entry of await loadSearchIndex()) names.set(entry.link, { title: entry.title, detail: entry.detail });
-		} catch {
-			// Offline with no saved index: the pages show by their addresses.
+		} catch (problem) {
+			// The pages show by their addresses; offline is only noted (sendProblem).
+			sendProblem(problem, { code: 'starred.names' });
 		}
 		entries = collection.addresses.map((address) => {
 			const kind = starredKindOf(address);
@@ -76,7 +78,7 @@
 </script>
 
 <svelte:head>
-	<title>{collection?.title ? `${collection.title} · ` : ''}Shared collection · Model Tribal ADR Code</title>
+	<title>{collection?.title ? `${collection.title} · ` : ''}Shared collection · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

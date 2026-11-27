@@ -9,7 +9,7 @@ export function zoneFromForm(form: FormData): string {
 			new Intl.DateTimeFormat('en-US', { timeZone: zone });
 			return zone;
 		} catch {
-			// Not a time zone this runtime knows.
+			// expected: not a time zone this runtime knows.
 		}
 	}
 	return 'America/Denver';

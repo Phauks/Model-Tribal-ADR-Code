@@ -70,7 +70,7 @@
 </script>
 
 <svelte:head>
-	<title>Upload {upload.reference} · Workspace · Model Tribal ADR Code</title>
+	<title>Upload {upload.reference} · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="wide">
@@ -79,6 +79,7 @@
 			{ label: 'Workspace', href: '/workspace' },
 			{ label: 'Uploads', href: '/workspace/uploads' }
 		]}
+		current={name}
 	/>
 	<h1>{name}</h1>
 	<p class="muted">

@@ -207,6 +207,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Kickapoo Traditional Tribe of Texas".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 333339
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: TX, row 'Kickapoo Traditional Tribe of Texas' (Eagle Pass)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1927505
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'KICKAPOO TRADITIONAL TRIBE OF TEXAS' (UEI D8LQNLJDLDX9), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Tribal Council
@@ -591,6 +610,14 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 97-429 § 6, 96 Stat. at 2270
   note: 25 U.S.C. § 1300b-15 is "omitted" from the Code. This statute was not on the research brief; found through the Cornell notes.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Kickapoo Traditional Tribe of Texas, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Sept. 4, 2020, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-kickapoo-traditional-tribe-of-texas-2020-09-04
+  confidence: high
+  verification: inferred
+  as_of: '2020-09-04'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2020
 nearby_state_courts:
 - state: TX
   county: Maverick County

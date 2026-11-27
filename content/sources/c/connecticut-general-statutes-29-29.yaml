@@ -1,0 +1,55 @@
+key: connecticut-general-statutes-29-29
+kind: state-statute
+citation:
+  type: legislation
+  title: Information concerning criminal records of applicants for permits
+  title-short: Conn. Gen. Stat. § 29-29
+  container-title: General Statutes of Connecticut
+  container-title-short: Conn. Gen. Stat.
+  section: 29-29
+  author:
+  - literal: Connecticut General Assembly
+  URL: https://www.cga.ct.gov/2026/sup/chap_529.htm#sec_29-29
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.cga.ct.gov/2026/sup/chap_529.htm#sec_29-29
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- connecticut-general-statutes-29-28
+- connecticut-general-statutes-29-28a
+- connecticut-general-statutes-29-30
+- connecticut-general-statutes-29-33
+- connecticut-general-statutes-29-36f
+- connecticut-general-statutes-29-37a
+- connecticut-general-statutes-29-37p
+state_law:
+  relevance: incidental
+  citation: Conn. Gen. Stat. § 29-29 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Conn. Gen. Stat. § 29-29 (2026). History: 1949 Rev., S. 4160; P.A. 92-130, S. 6, 10; P.A. 98-129, S. 5; P.A. 01-130, S. 6; 01-175, S. 22, 32; P.A. 22-102, S. 4; P.A. 23-130, S. 3; P.A. 25-18, S. 4. Text read from the Connecticut General Assembly''s chapter page for the section in the General Statutes of Connecticut, revised to Jan. 1, 2025, or in its 2026 Supplement (cga.ct.gov), on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native; tribe); AI reader''s verdict incidental: Tribal police chief handles pistol permit applicant records. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; native; tribe'

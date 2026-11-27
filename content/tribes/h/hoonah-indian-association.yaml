@@ -21,6 +21,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Hoonah Indian Association (approved by the Secretary of the Interior Aug. 19, 1939), under the Act of May 1, 1936, ch. 254, § 1, 49 Stat. 1250, 1250
+  since: '1939-08-19'
+  source: university-of-oklahoma-indian-reorganization-act-hooncons
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text
+  confidence: medium
+  verification: inferred
+  as_of: '1939-08-19'
+  locator: 1939 constitution and bylaws (1939-08-19), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AK
   presence: government-office
@@ -204,6 +217,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
   note: 'The source''s words: "Hoonah Indian Association".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 326776
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Hoonah' (Hoonah)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Hoonah'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Hoonah Indian Association" among organizations under constitutions approved by

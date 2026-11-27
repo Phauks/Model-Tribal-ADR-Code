@@ -31,8 +31,8 @@ import type { onNavigate } from '$app/navigation';
 /** What SvelteKit's onNavigate passes to its callback. */
 type OnNavigate = Parameters<Parameters<typeof onNavigate>[0]>[0];
 
-export const motionSpeeds = ['short', 'medium', 'long', 'highlight'] as const;
-export const motionEasings = ['standard', 'enter', 'exit'] as const;
+export const motionSpeeds = ['short', 'medium', 'long', 'highlight', 'roll'] as const;
+export const motionEasings = ['standard', 'enter', 'exit', 'steady'] as const;
 
 /** A duration token's name, such as "medium" for --motion-duration-medium. */
 export type MotionSpeed = (typeof motionSpeeds)[number];
@@ -254,7 +254,7 @@ export function finishMotion(): void {
 		try {
 			animation.finish();
 		} catch {
-			// An animation with no end, such as a looping one, cannot finish; it stops on paper anyway.
+			// expected: an animation with no end, such as a looping one, cannot finish; it stops on paper anyway.
 		}
 	}
 }

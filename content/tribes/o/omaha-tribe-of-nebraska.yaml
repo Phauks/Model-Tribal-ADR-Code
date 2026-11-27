@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Makah, July 20, 1815, 7 Stat. 129
+  since: '1815-07-20'
+  source: treaty-with-the-makah-1815
+  confidence: medium
+  verification: inferred
+  as_of: '1815-07-20'
+  locator: p. 115 (Treaty with the Makah, 1815; Kappler header "July 20, 1815. | 7 Stat., 129. | Ratified Dec. 26, 1815.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Makah; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: NE
   presence: government-office
@@ -170,6 +180,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
   note: Listed as "Omaha Tribe of Nebraska".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2384481
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NE, row 'Omaha Tribe' (Macy)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 18666033
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'OMAHA TRIBE OF NE' (UEI MQS9HLF9TWQ4), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'OMAHA TRIBE OF NE'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Omaha Tribe of Nebraska" among organizations under constitutions approved by
@@ -833,7 +863,7 @@ nearby_state_courts:
 - state: NE
   county: Thurston County
   court: District Court for Thurston County
-  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  link: https://nebraskajudicial.gov/directories/district-court-contacts
   source: state-trial-court-directory-ne
   confidence: medium
   verification: inferred
@@ -842,7 +872,7 @@ nearby_state_courts:
 - state: NE
   county: Cuming County
   court: District Court for Cuming County
-  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  link: https://nebraskajudicial.gov/directories/district-court-contacts
   source: state-trial-court-directory-ne
   confidence: medium
   verification: inferred
@@ -851,7 +881,7 @@ nearby_state_courts:
 - state: NE
   county: Burt County
   court: District Court for Burt County
-  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  link: https://nebraskajudicial.gov/directories/district-court-contacts
   source: state-trial-court-directory-ne
   confidence: medium
   verification: inferred
@@ -955,7 +985,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 10 Stat. 1043
-  note: 'The instrument reads: “which is reserved by the ... for their future home”. Reserve described as the country "north of said due west line".'
+  note: 'The instrument reads: “which is reserved by the . . . for their future home”. Reserve described as the country "north of said due west line".'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

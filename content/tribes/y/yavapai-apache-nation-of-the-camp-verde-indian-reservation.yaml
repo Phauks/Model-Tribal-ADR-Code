@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona (approved by the Secretary of the Interior May 9, 1947), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1947-05-09'
+  source: university-of-oklahoma-indian-reorganization-act-yavcons
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1947-text
+  confidence: medium
+  verification: inferred
+  as_of: '1947-05-09'
+  locator: 1947 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AZ
   presence: government-office
@@ -159,6 +172,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
   note: 'Listed as "Yavapai-Apache Indian Community". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1669757
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Yavapai-Apache Nation (Camp Verde)' (Camp Verde)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 654903
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'YAVAPAI APACHE NATION' (UEI SAGLFZKK7UK2), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'YAVAPAI APACHE NATION'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Yavapai-Apache Indian Community, Arizona" among organizations under constitutions

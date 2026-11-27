@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the S'Klallams (Point No Point), Jan. 26, 1855, 12 Stat. 933
+  since: '1855-01-26'
+  source: treaty-with-the-sklallam-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-01-26'
+  locator: p. 674 (Treaty with the S'klallam, 1855; Kappler header "Jan. 26, 1855. | 12 Stats., 933. | Ratified Mar. 8, 1859. | Proclaimed Apr. 29, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the S'klallam; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 4 nations' profiles link this treaty.
 states:
 - state: WA
   presence: government-office
@@ -158,6 +168,15 @@ languages:
   verification: title-only
   as_of: '2026-11-21'
   note: Klallam Language page.
+language_programs:
+- name: Klallam Language Program
+  link: https://www.elwha.org/culture-history/klallam-language/
+  run_by: nation
+  source: elwha-culture-history-klallam-language
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: Klallam Language
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Olympic Peninsula Agency
@@ -174,6 +193,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Lower Elwha Klallam Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Lower Elwha Klallam Tribe (2002)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1993
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Lower Elwha Klallam Tribe' (Northwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Lower Elwha Klallam Tribe'.
+- program: indian-health-service-self-governance-compact
+  since: 2002
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Lower Elwha Klallam Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Lower Elwha Klallam Tribe'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 933191
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Lower Elwha Tribal Community' (Port Angeles)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 3603949
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'LOWER ELWHA TRIBAL COMMUNITY COUNCIL' (UEI TZX8FVYKGNT3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'LOWER ELWHA TRIBAL COMMUNITY COUNCIL'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 2822050
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'LOWER ELWHA TRIBAL COMMUNITY COUNCIL' (UEI TZX8FVYKGNT3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'LOWER ELWHA TRIBAL COMMUNITY COUNCIL'.
 governance:
 - aspect: governing-body
   value: Tribal Council or Business Committee

@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Jan. 4, 1883, 1 Kappler 804
+  since: '1883-01-04'
+  source: executive-order-1883-01-04-hualapai-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1883-01-04'
+  locator: 1 Kappler 804
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Hualpai (Walapai) Reserve, Arizona.
 states:
 - state: AZ
   presence: government-office
@@ -207,6 +217,43 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Phoenix Area
   note: Listed as "Hualapai Indian Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: pl-102-477-plan
+  start: '2022-10-01'
+  end: '2027-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Employment Works
+  - Job Placement and Training
+  - Adult Education
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona'; PL102_477_PartnerEnrollment, its 7 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2126364
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Hualapai Indian Tribe' (Peach Springs)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1250679
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'HUALAPAI TRIBAL COUNCIL' (UEI QSKUU9K352J1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'HUALAPAI TRIBAL COUNCIL'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Hualapai Tribe of the Hualapai Reservation, Arizona" among organizations under
@@ -736,6 +783,30 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on July 22, 2004 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Sept. 17, 2004.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2004-07-22'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Bill Williams River Water Rights Settlement Act of 2014 in 2014 (Pub. L. No. 113-223), settling the water rights of Hualapai Tribe. (Congressional Research Service, R44148, Table 1).
+  source: public-law-113-223
+  confidence: high
+  verification: inferred
+  as_of: '2014'
+  locator: Congressional Research Service, R44148, Table 1, 2014
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Hualapai Tribe Water Rights Settlement Act of 2022 in 2022 (Pub. L. No. 117-349), settling the water rights of Hualapai Tribe. It quantifies 3,414 acre-feet a year in all and authorizes about $317.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-117-349
+  confidence: high
+  verification: inferred
+  as_of: '2022'
+  locator: Congressional Research Service, R44148, Table 1, 2022
 jurisdiction_agreements:
 - kind: cross-deputization
   other_party: Arizona Department of Public Safety

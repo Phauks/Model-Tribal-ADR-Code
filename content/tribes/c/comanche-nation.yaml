@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Comanche, etc., Aug. 24, 1835, 7 Stat. 474
+  since: '1835-08-24'
+  source: treaty-with-the-comanche-etc-1835
+  confidence: medium
+  verification: inferred
+  as_of: '1835-08-24'
+  locator: p. 435 (Treaty with the Comanche, etc., 1835; Kappler header "Aug. 24, 1835. | 7 Stat., 474. | Proclamation, May 19, 1836.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Comanche; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 8 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -232,6 +242,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Comanche Tribe of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 4316307
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Comanche Nation' (Lawton)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 735189
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'COMANCHE NATION' (UEI YKM4BJKJJTE5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'COMANCHE NATION'.
 governance:
 - aspect: form
   value: Constitution approved by Commissioner of Indian Affairs
@@ -872,6 +902,105 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Comanche Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 3, 1998 (file 35623).
+  source: oklahoma-filing-35623
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 35623
+  note: 'From the register line: “Comanche Tribe/ State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 31, 2000 (file 36527).
+  source: oklahoma-filing-36527
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 36527
+  note: 'From the register line: “Comanche Tribal of Oklahoma and State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 26, 2008 (file 42901).
+  source: oklahoma-filing-42901
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 42901
+  note: 'From the register line: “Comanche Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 13, 2013 (file 46221).
+  source: oklahoma-filing-46221
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46221
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 28, 2013 (file 46263).
+  source: oklahoma-filing-46263
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46263
+  note: 'From the register line: “Amendment between the Comanche Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Amendment to the tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Oct. 1, 2013 (file 46444).
+  source: oklahoma-filing-46444
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46444
+  note: 'From the register line: “Amendment between the Comanche Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 8, 2014 (file 46674).
+  source: oklahoma-filing-46674
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46674
+  note: 'From the register line: “Comanche Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Tribal settlement agreement
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 10, 2014 (file 46885).
+  source: oklahoma-filing-46885
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46885
+  note: 'From the register line: “Comanche Nation and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Jan. 7, 2025 (file 53460).
+  source: oklahoma-filing-53460
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53460
+  note: 'From the register line: “Compact between the State of Oklahoma and the Comanche Nation of Oklahoma”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Comanche County

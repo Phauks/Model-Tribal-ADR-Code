@@ -115,6 +115,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=492%20U.S.%20408
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1989-01-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-686.mp3
+  catalog: https://catalog.archives.gov/id/118974838
+  whole_session: true
+  duration_seconds: 12710
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-686.mp3
+    checksum: e941a7f90b0132fe6d1da940d18359d9c233bf871ef2c108df37e8b2889c4362
+    media_type: audio/mpeg
+    bytes: 203358164
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -152,7 +165,7 @@ review:
     detail: 'Printed and Database: 1989-06-29'
   - check: opinions
     result: confirmed
-    detail: 'Report: dissent White p. 414, special concurrence Stevens p. 433, special concurrence Blackmun p. 448; Database writers: Blackmun, Stevens, White; scan pages [(433, 413), (448, 412)]. Read from the scan by an AI reader (corrected): p. 414: JUSTICE WHITE, joined by THE CHIEF JUSTICE, JUSTICE SCALIA, and JUSTICE KENNEDY, delivered an opinion announcing the judgment of the Court in Nos. 87-1697 and 87-1711 and dissenting in No. 87-1622. p. 433: JUSTICE STEVENS, joined by JUSTICE O''CONNOR, delivered an opinion announcing the judgment of the Court in No. 87-1622 and concurring in the judgment in Nos. 87-1697 and 87-1711. p. 448: JUSTICE BLACKMUN, joined by JUSTICE BRENNAN and JUSTICE MARSHALL, ... filed an opinion concurring in the judgment in No. 87-1622 and dissenting in Nos. 87-1697 and 87-1711.. Confirmed: the report prints (read from the page images) p. 414: "JUSTICE WHITE, joined by THE CHIEF JUSTICE, JUSTICE SCALIA, and JUSTICE KENNEDY, delivered an opinion announcing the judgment of the Court in Nos. 87-1697 and 87-1711 and dissenting in No. 87-1622."; p. 433: "JUSTICE STEVENS, joined by JUSTICE O''CONNOR, delivered an opinion announcing the judgment of the Court in No. 87-1622 and concurring in the judgment in Nos. 87-1697 and 87-1711."; p. 448: "JUSTICE BLACKMUN, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, concurring in the judgment in No. 87-1622 and dissenting in Nos. 87-1697 and 87-1711."'
+    detail: 'Report: dissent White p. 414, special concurrence Stevens p. 433, special concurrence Blackmun p. 448; Database writers: Blackmun, Stevens, White; scan pages [(433, 413), (448, 412)]. Read from the scan by an AI reader (corrected): p. 414: JUSTICE WHITE, joined by THE CHIEF JUSTICE, JUSTICE SCALIA, and JUSTICE KENNEDY, delivered an opinion announcing the judgment of the Court in Nos. 87-1697 and 87-1711 and dissenting in No. 87-1622. p. 433: JUSTICE STEVENS, joined by JUSTICE O''CONNOR, delivered an opinion announcing the judgment of the Court in No. 87-1622 and concurring in the judgment in Nos. 87-1697 and 87-1711. p. 448: JUSTICE BLACKMUN, joined by JUSTICE BRENNAN and JUSTICE MARSHALL, . . . filed an opinion concurring in the judgment in No. 87-1622 and dissenting in Nos. 87-1697 and 87-1711.. Confirmed: the report prints (read from the page images) p. 414: "JUSTICE WHITE, joined by THE CHIEF JUSTICE, JUSTICE SCALIA, and JUSTICE KENNEDY, delivered an opinion announcing the judgment of the Court in Nos. 87-1697 and 87-1711 and dissenting in No. 87-1622."; p. 433: "JUSTICE STEVENS, joined by JUSTICE O''CONNOR, delivered an opinion announcing the judgment of the Court in No. 87-1622 and concurring in the judgment in Nos. 87-1697 and 87-1711."; p. 448: "JUSTICE BLACKMUN, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, concurring in the judgment in No. 87-1622 and dissenting in Nos. 87-1697 and 87-1711."'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

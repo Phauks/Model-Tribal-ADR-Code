@@ -1,0 +1,66 @@
+key: united-states-v-pemberton-2024
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Pemberton
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.4th
+  volume: '94'
+  page: '1130'
+  issued:
+    date-parts:
+    - - 2024
+      - 3
+      - 4
+  URL: https://www.courtlistener.com/opinion/9480778/united-states-v-pemberton/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 22-7028
+original_link: https://www.courtlistener.com/opinion/9480778/united-states-v-pemberton/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2023-09-21'
+  source: United States Court of Appeals for the Tenth Circuit
+  link: https://www.ca10.uscourts.gov/sites/ca10/files/oralarguments/22-7028.mp3
+  duration_seconds: 1548
+  held: true
+  note: Held until a reading of the argument finds no child or victim named; the opinion itself is shown.
+  file:
+    storage_key: appeals-court-audio/ca10/2023/2023-09-21-22-7028.mp3
+    checksum: 52171622e9a3a655c85f1571e9962836ccdf7044ed7983db0073709d8debf0a7
+    media_type: audio/mpeg
+    bytes: 12382592
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 94 F.4th 1130. Decided by the United States Court of Appeals for the Tenth Circuit on Mar. 4, 2024. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 29, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 29
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

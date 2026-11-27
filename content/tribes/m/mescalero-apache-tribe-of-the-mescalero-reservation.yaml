@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of May 29, 1873, 1 Kappler 871
+  since: '1873-05-29'
+  source: executive-order-1873-05-29-mescalero-apache-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1873-05-29'
+  locator: 1 Kappler 871
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Fort Stanton Indian Reserve (Mescalero Apache), New Mexico.
 states:
 - state: NM
   presence: government-office
@@ -191,6 +201,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Albuquerque Area
   note: Listed as "Mescalero Apache Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3367031
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Mescalero Apache Tribe' (Mescalero)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1723154
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'MESCALERO APACHE TRIBE' (UEI KUPBFZQBMQ53), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'MESCALERO APACHE TRIBE'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Apache Tribe of the Mescalero Reservation, New Mexico" among organizations under

@@ -1,0 +1,64 @@
+key: citizens-for-constitutional-v-united-states-2023
+kind: federal-case
+citation:
+  type: legal_case
+  title: Citizens for Constitutional v. United States
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.4th
+  volume: '57'
+  page: '750'
+  issued:
+    date-parts:
+    - - 2023
+      - 1
+      - 10
+  URL: https://www.courtlistener.com/opinion/9357669/citizens-for-constitutional-v-united-states/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 21-1317
+original_link: https://www.courtlistener.com/opinion/9357669/citizens-for-constitutional-v-united-states/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2022-09-27'
+  source: United States Court of Appeals for the Tenth Circuit
+  link: https://www.ca10.uscourts.gov/sites/ca10/files/oralarguments/21-1317.mp3
+  duration_seconds: 2463
+  file:
+    storage_key: appeals-court-audio/ca10/2022/2022-09-27-21-1317.mp3
+    checksum: 68c89d69f79731efad8cb79f6f5b35079ebfb130af130c3fe1d86e6f9a986fd8
+    media_type: audio/mpeg
+    bytes: 9858927
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 57 F.4th 750. Decided by the United States Court of Appeals for the Tenth Circuit on Jan. 10, 2023. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (SMCRA Indian lands, Ute Mountain Ute split-estate surface, coal mine).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: SMCRA Indian lands, Ute Mountain Ute split-estate surface, coal mine'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

@@ -1,0 +1,54 @@
+key: oklahoma-statutes-title-60-section-121
+kind: state-statute
+citation:
+  type: legislation
+  title: Alien or foreign government adversary may not hold land — Ownership of personalty
+  title-short: Okla. Stat. tit. 60, § 121
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '60'
+  section: '121'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1910
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os60.pdf#page=45
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os60.pdf#page=45
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-60-section-1601-3
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 60, § 121 (2026)
+  page: 45
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 60, § 121 (2026). History: R.L. 1910, § 6646. Amended by Laws 2023, c. 327, § 1, eff. Nov. 1, 2023; Laws 2024, c. 373, Text read from the Legislative Service Bureau''s Title 60 PDF (updated Nov. 12, 2026), page 45. Found by the state statutes pilot (terms: nation; tribe); AI reader''s verdict incidental: Alien land definitions exclude tribes from foreign government. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: nation; tribe'

@@ -23,6 +23,7 @@
 	// (stored as glossaryCards) turns previews off. Each file is fetched once,
 	// when first needed; without scripts there are no previews.
 	import { onMount, tick } from 'svelte';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	interface Term {
 		kind: 'term';
@@ -61,7 +62,7 @@
 	// tables, search results, and anything that asks for none.
 	const noPreview = 'nav, header, table, dialog, [role="dialog"], .sidebar-wide, .sidebar-narrow, [data-no-preview]';
 	// Addresses under /nations/ that are lists or maps, not a nation's page.
-	const nationLists = new Set(['map', 'letter', 'state', 'previews.json', 'recourse', 'law', 'data', 'timeline', 'federal-offices', 'coverage']);
+	const nationLists = new Set(['map', 'letter', 'state', 'previews.json', 'recourse', 'law', 'data', 'timeline', 'federal-offices', 'federal-programs', 'coverage']);
 
 	let terms: Promise<Map<string, Term>> | undefined;
 	let nations: Promise<Map<string, Nation>> | undefined;
@@ -91,7 +92,8 @@
 						.map((entry) => [entry.id, { ...entry, kind }])
 				);
 			})
-			.catch(() => {
+			.catch((problem) => {
+				sendProblem(problem, { code: 'link-previews.load', place: key });
 				reset();
 				return new Map();
 			});

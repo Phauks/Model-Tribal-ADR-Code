@@ -1,0 +1,76 @@
+key: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-cmty-v-zinke-2018
+kind: federal-case
+citation:
+  type: legal_case
+  title: Cachil Dehe Band of Wintun Indians of the Colusa Indian Cmty. v. Zinke
+  authority: United States Court of Appeals for the Ninth
+  container-title: F.3d
+  volume: '889'
+  page: '584'
+  issued:
+    date-parts:
+    - - 2018
+      - 5
+      - 2
+  URL: https://static.case.law/f3d/889/html/0584-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 17-15245, 17-15533
+original_link: https://static.case.law/f3d/889/html/0584-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2018-02-12'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2018/02/12/17-15245.mp3
+  duration_seconds: 2788
+  file:
+    storage_key: appeals-court-audio/ca9/2018/2018-02-12-17-15245.mp3
+    checksum: 64631294b3c73808c894b7ff8e0cb2160d24d62ddef9c008198db9b784165369
+    media_type: audio/mpeg
+    bytes: 16727980
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- enterprise-rancheria-of-maidu-indians-of-california
+- cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: enterprise-rancheria-of-maidu-indians-of-california
+    named_as: Estom Yumeka Maidu Tribe of the Enterprise Rancheria
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria
+    named_as: Cachil Dehe Band of Wintun Indians
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 889 F.3d 584. Decided by the United States Court of Appeals for the Ninth on May 2, 2018. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 103, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 103
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 2 matched, 0 not linked

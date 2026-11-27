@@ -28,6 +28,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 67 Fed. Reg. 46328, 46328 (July 12, 2002)
+  since: '2002-07-12'
+  source: bia-recognized-entities-2002
+  confidence: medium
+  verification: inferred
+  as_of: '2002-07-12'
+  locator: 67 Fed. Reg. 46328 (entry "Shoonaq’ Tribe of Kodiak")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Shoonaq’ Tribe of Kodiak." The entry is matched to the nation by name.
 states:
 - state: AK
   presence: government-office
@@ -180,6 +190,33 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Sun’aq Tribe of Kodiak (aka Shoonaq’ Tribe of Kodiak)".'
+federal_programs:
+- program: pl-102-477-plan
+  start: '2025-10-01'
+  end: '2030-09-30'
+  programs_included:
+  - Child Care & Development Funds – Discretionary
+  - Community Service Block Grant
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Sun'aq Tribe of Kodiak'; PL102_477_PartnerEnrollment, its 6 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 588769
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Sun'aq Tribe of Kodiak (Shoonaq')' (Kodiak)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Sun'aq Tribe of Kodiak (Shoonaq')'.
 governance:
 - aspect: form
   value: Articles of Incorporation and By-Laws

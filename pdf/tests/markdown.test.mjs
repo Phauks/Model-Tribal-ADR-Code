@@ -17,8 +17,8 @@ const items = {
   },
 };
 
-function writer({ notes } = {}) {
-  return new ChapterWriter({ citations: new CitationEngine(items), glossary, printedGlossaryIds: new Set(["adr"]), notes, chapterIndex: 1 });
+function writer({ notes, pictures } = {}) {
+  return new ChapterWriter({ citations: new CitationEngine(items), glossary, printedGlossaryIds: new Set(["adr"]), notes, chapterIndex: 1, pictures });
 }
 
 function write(kind, text, data = {}, chapter = writer()) {
@@ -38,6 +38,8 @@ function essay(text, chapter) {
 test("text is escaped so Typst prints it exactly", () => {
   assert.equal(escapeTypst("a -- b ... c #d $e *f* _g_ <h> @i [j] ~k /l"), "a \\-\\- b \\.\\.\\. c \\#d \\$e \\*f\\* \\_g\\_ \\<h\\> \\@i \\[j\\] \\~k \\/l");
   assert.equal(escapeTypst("1. (2)"), "1\\. \\(2)");
+  assert.equal(escapeTypst("shall . . . be"), "shall\u00a0\\.\u00a0\\.\u00a0\\. be");
+  assert.equal(escapeTypst("knowledge . . . ."), "knowledge\u00a0\\.\u00a0\\.\u00a0\\.\u00a0\\.");
 });
 
 test("subsection labels stay as written, not as a copyright sign", () => {
@@ -115,7 +117,7 @@ test("the author's analysis is boxed, with an optional title", () => {
   assert.ok(plain(essay("::: analysis Why it matters\nA reading.\n:::")).startsWith("#analysis-block([Why it matters])["));
 });
 
-test("a figure prints as a box with its caption, parts and where to find it", () => {
+test("a figure without a print copy prints as a box with its caption, parts and where to find it", () => {
   const picture = plain(essay(":::: figure picture /files/U-20261123-7KQ2MD/a.jpg\nThe council house.\n\n::: description\nA wooden building.\n:::\n\n::: credit\nPhoto by the archives.\n:::\n::::"));
   assert.equal(
     picture,
@@ -126,6 +128,22 @@ test("a figure prints as a box with its caption, parts and where to find it", ()
   const chart = plain(essay(":::: figure chart\nCompacts by state.\n\n| State | Compacts |\n| --- | ---: |\n| California | 70 |\n::::"));
   assert.ok(chart.startsWith('#figure-block("Chart", none)[Compacts by state.'), chart);
   assert.ok(chart.includes("California"), chart);
+});
+
+test("a picture with a print copy prints the picture, its caption and credit, with its description as alternative text", () => {
+  const address = "/files/U-20261123-7KQ2MD/a.jpg";
+  const pictures = new Map([[address, { file: "output/pictures/U-20261123-7KQ2MD.jpg", width: 1800, height: 1200 }]]);
+  const text = `:::: figure picture ${address}\nThe council house.\n\n::: description\nA *wooden* building, [[adr]].\n:::\n\n::: credit\nPhoto by the archives.\n:::\n::::\n\nThe next paragraph.\n\nAnother.`;
+  assert.equal(
+    plain(essay(text, writer({ pictures }))),
+    '#figure-picture(layout, "/output/pictures/U-20261123-7KQ2MD.jpg", 1.5, "A wooden building, ADR.")[The council house.\n\n#picture-credit[Photo by the archives.]]\n\n#after-picture[The next paragraph.]\n\nAnother.',
+  );
+  // A description with a citation prints, so its note is not lost.
+  const cited = plain(essay(`:::: figure picture ${address}\nThe council house.\n\n::: description\nA building [@act].\n:::\n::::`, writer({ pictures })));
+  assert.ok(cited.startsWith('#figure-picture(layout, "/output/pictures/U-20261123-7KQ2MD.jpg", 1.5, none)[The council house.\n\n#case-part("Description")[A building'), cited);
+  // A picture that could not be prepared prints as a box.
+  const missing = plain(essay(`:::: figure picture ${address}\nThe council house.\n::::`, writer({ pictures: new Map([[address, { problem: "not found" }]]) })));
+  assert.ok(missing.startsWith('#figure-block("Picture"'), missing);
 });
 
 test("with endnotes, a citation prints a numbered mark and the chapter's notes print at its end", () => {

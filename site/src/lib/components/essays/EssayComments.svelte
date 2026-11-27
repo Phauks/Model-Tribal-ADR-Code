@@ -31,6 +31,7 @@
 	import Bot from '@lucide/svelte/icons/bot';
 	import UserRoundPlus from '@lucide/svelte/icons/user-round-plus';
 	import Check from '@lucide/svelte/icons/check';
+	import Lock from '@lucide/svelte/icons/lock';
 	import CircleQuestionMark from '@lucide/svelte/icons/circle-question-mark';
 	import CornerUpLeft from '@lucide/svelte/icons/corner-up-left';
 	import LibraryBig from '@lucide/svelte/icons/library-big';
@@ -48,6 +49,12 @@
 	let {
 		essay,
 		version,
+		address,
+		peopleAddress,
+		offeredAsks = commentAsks,
+		newCommentFields = {},
+		seenBy,
+		nobodyElse = 'No one else can open this essay yet.',
 		comments,
 		you,
 		mayResolveAny,
@@ -60,8 +67,21 @@
 		onchange,
 		ongo
 	}: {
-		essay: string;
-		version: number;
+		/** The essay; another page passes `address` and `peopleAddress` instead. */
+		essay?: string;
+		version?: number | null;
+		/** Where the comments are read and sent, such as /workspace/page-comments?page=laws/x (src/lib/components/PageComments.svelte). */
+		address?: string;
+		/** Where the people to @ mention and assign are listed. */
+		peopleAddress?: string;
+		/** The quick asks offered; a page that is not an essay leaves out "Make this a case box". */
+		offeredAsks?: readonly CommentAsk[];
+		/** More fields for a new thread, such as the page's title. */
+		newCommentFields?: Record<string, unknown>;
+		/** Who sees the comments, said under the comment being written (design/page-comments). */
+		seenBy?: string;
+		/** What the @ mention list says when no one else can see the comments. */
+		nobodyElse?: string;
 		comments: EssayComment[];
 		you: string | null;
 		mayResolveAny: boolean;
@@ -204,7 +224,8 @@
 	async function send(payload: Record<string, unknown>, method = 'POST', query = ''): Promise<boolean> {
 		sending = true;
 		problem = '';
-		const sent = await sendJson<{ comments: EssayComment[] }>(`/workspace/essays/${essay}/comments${query}`, method, payload, {
+		const base = address ?? `/workspace/essays/${essay}/comments`;
+		const sent = await sendJson<{ comments: EssayComment[] }>(base.includes('?') && query ? `${base}&${query.slice(1)}` : `${base}${query}`, method, payload, {
 			complete: (answer) => !!answer.comments
 		});
 		sending = false;
@@ -226,7 +247,7 @@
 		if (!pending || (!body.trim() && asks.length === 0)) return;
 		const text = pending.suggest && body.trim() ? `Suggested wording: “${body.trim()}”` : body;
 		const mentions = mentioned.filter((person) => text.includes(`@${person.name}`)).map((person) => person.identifier);
-		if (await send({ body: text, asks, quote: pending.quote, version, mentions, ...(newAssignee ? { assign: assigneeKey(newAssignee) } : {}) })) {
+		if (await send({ ...newCommentFields, body: text, asks, quote: pending.quote, version, mentions, ...(newAssignee ? { assign: assigneeKey(newAssignee) } : {}) })) {
 			pending = null;
 			body = '';
 			asks = [];
@@ -249,8 +270,8 @@
 
 	async function loadPeople(): Promise<void> {
 		if (everyone) return;
-		const response = await fetch(`/workspace/essays/${essay}/sharing`).catch(() => null);
-		const answer = (await response?.json().catch(() => null)) as { people?: { identifier: string; name: string }[] } | null;
+		const response = await fetch(peopleAddress ?? `/workspace/essays/${essay}/sharing`).catch(() => /* expected: offline; mentions offer no names until the list loads. */ null);
+		const answer = (await response?.json().catch(() => /* expected: an answer that is not JSON gives no names, as offline. */ null)) as { people?: { identifier: string; name: string }[] } | null;
 		everyone = answer?.people ?? [];
 	}
 
@@ -351,7 +372,7 @@
 	<form class="card new-card" data-card="new" style:top={aligned ? `${at.new ?? tops.get('new') ?? 0}px` : null} onsubmit={comment} aria-label="New comment">
 		{#if pending}<p class="quote small">{#if lines.has('new')}<span class="line">Line {lines.get('new')}:</span>{' '}{/if}<em>“{short(pending.quote.quote)}”</em></p>{/if}
 		<div class="asks" role="group" aria-label="Quick asks">
-			{#each commentAsks.filter((ask) => showAsks || asks.includes(ask)) as ask (ask)}
+			{#each offeredAsks.filter((ask) => showAsks || asks.includes(ask)) as ask (ask)}
 				{@const Icon = askIcons[ask]}
 				<button type="button" class="ask" aria-pressed={asks.includes(ask)} onclick={() => toggleAsk(ask)}><Icon size={14} aria-hidden="true" /> {commentAskLabels[ask]}</button>
 			{/each}
@@ -374,7 +395,7 @@
 		></textarea>
 		{#if mentioning}
 			<ul class="mention-list" aria-label="Mention someone">
-				{#if people === null}<li class="small muted">Loading…</li>{:else if people.length === 0}<li class="small muted">No one else can open this essay yet.</li>{/if}
+				{#if people === null}<li class="small muted">Loading…</li>{:else if people.length === 0}<li class="small muted">{nobodyElse}</li>{/if}
 				{#each people ?? [] as person (person.identifier)}
 					<li><button type="button" onclick={() => mention(person)}><PersonAvatar name={person.name} size="small" /> {person.name}</button></li>
 				{/each}
@@ -390,6 +411,7 @@
 			<button class="button send" type="submit" disabled={sending || (!body.trim() && asks.length === 0)}>{sending ? 'Sending…' : 'Send'}</button>
 		</p>
 		{#if problem}<p class="field-error small" role="alert">{problem}</p>{/if}
+		{#if seenBy}<p class="seen-by small muted"><Lock size={13} aria-hidden="true" /> {seenBy}</p>{/if}
 	</form>
 {/snippet}
 
@@ -520,6 +542,14 @@
 		box-shadow: 0 0 0 1px var(--color-comment-rule);
 	}
 
+	.seen-by {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+		margin: 0;
+		font-size: 0.8rem;
+	}
+
 	.new-card {
 		cursor: default;
 		border: 2px solid var(--color-comment-rule);
@@ -601,7 +631,7 @@
 	textarea:focus-visible {
 		background: var(--color-surface-raised);
 		color: var(--color-ink);
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 1px;
 	}
 

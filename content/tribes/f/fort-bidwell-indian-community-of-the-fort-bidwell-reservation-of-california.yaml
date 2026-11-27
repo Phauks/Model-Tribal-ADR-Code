@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Fort Bidwell Indian Community of the Fort Bidwell Reservation of California (approved by the Secretary of the Interior Jan. 28, 1936), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1936-01-28'
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1936-text
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1936-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-28'
+  locator: 1936 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -127,6 +140,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Fort Bidwell Indian Community of the Fort Bidwell Indian Community of the Fort Bidwell Reservation of California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 699298
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Fort Bidwell Indian Community' (Fort Bidwell)
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Fort Bidwell Indian Community, California" among organizations under constitutions

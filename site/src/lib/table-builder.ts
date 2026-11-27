@@ -17,6 +17,7 @@
 import type { BarChartData } from './bar-chart.ts';
 import { readableDate } from './readable-date.ts';
 import { filterIsActive, foldForSearch, type ColumnFilter, type ColumnFilters, type TableColumn, type TableRow } from './tables/table-definition.ts';
+import { sendProblem } from './problem-reports.ts';
 
 export type BuilderColumnType = 'text' | 'number' | 'date' | 'list';
 
@@ -47,6 +48,11 @@ export interface BuilderDataset {
 	rows: BuilderValue[][];
 	/** Each row's page, in the order of rows; empty when a row has none. */
 	links: string[];
+	/**
+	 * Each name in the nation column with its nation's page, so every nation in a cell links to its page, one or
+	 * several (Trevor, Nov. 27, 2026). A name two nations share is left out, since it could be either.
+	 */
+	nationLinks?: Record<string, string>;
 	/** Where the data comes from, linked under the result. */
 	sourceHref: string;
 }
@@ -241,6 +247,15 @@ export function recordTable(dataset: BuilderDataset, settings: BuilderSettings, 
 		const cells: TableRow['cells'] = {};
 		shown.forEach((column, position) => {
 			const value = row[indexes[position]];
+			const nationLinks = column.key === dataset.nationColumn ? dataset.nationLinks : undefined;
+			if (nationLinks && value !== null && typeof value !== 'number') {
+				const names = valuesOf(value);
+				cells[column.key] =
+					names.length === 1
+						? { text: names[0], href: nationLinks[names[0]], values: Array.isArray(value) ? value : undefined }
+						: { text: names.join('; '), values: names, parts: names.map((name) => ({ text: name, href: nationLinks[name] })) };
+				return;
+			}
 			cells[column.key] = {
 				text: textOf(value),
 				sortValue: typeof value === 'number' ? value : undefined,
@@ -395,6 +410,7 @@ export function builderAddressParts(link: string): { dataset: string; parameters
 	try {
 		url = new URL(link, 'https://site.invalid');
 	} catch {
+		// expected: a link that is not an address is not a Build a table address.
 		return undefined;
 	}
 	if (url.pathname !== builderPath) return undefined;
@@ -454,7 +470,9 @@ export async function essayChartFrom(link: string, fetcher: typeof fetch = fetch
 		if (!response.ok) return null;
 		const dataset = (await response.json()) as BuilderDataset;
 		return essayChartOf(dataset, parts.parameters, readableDate(new Date().toISOString().slice(0, 10)));
-	} catch {
+	} catch (problem) {
+		// The editor says the chart could not be read.
+		sendProblem(problem, { code: 'table-builder.essay-chart' });
 		return null;
 	}
 }

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7236 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: inferred
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7236 (entry "Payson Tonto Apache Tribe of Arizona")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Payson Tonto Apache Tribe of Arizona." The entry is matched to the nation by name.
 states:
 - state: AZ
   presence: government-office
@@ -169,6 +179,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Phoenix Area
   note: Listed as "Tonto Apache Indian Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Tonto Apache Tribe of Arizona' (Payson)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 312168
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'TONTO APACHE TRIBE' (UEI MPHEB9496FL1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'TONTO APACHE TRIBE'.
 governance:
 - aspect: form
   value: Constitution under Section 16 of the Indian Reorganization Act of June 18, 1934

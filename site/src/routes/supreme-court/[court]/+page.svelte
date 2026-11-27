@@ -82,7 +82,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Supreme Court · Model Tribal ADR Code</title>
+	<title>{data.name} · Supreme Court · Tribal Law Project</title>
 	<meta name="description" content="{data.name} of the Supreme Court of the United States, {data.years}: its Justices, its history and the cases on this site it decided." />
 </svelte:head>
 
@@ -93,7 +93,7 @@
 	glance={data.glance}
 	sources={data.sources}
 	trail={[
-		{ label: 'Library', href: '/library' },
+		{ label: 'Courts and cases', href: '/cases' },
 		{ label: 'Supreme Court', href: '/supreme-court' }
 	]}
 >
@@ -102,8 +102,9 @@
 	{@html data.historyHtml}
 </Collapsible>
 
-<Collapsible heading="Justices" identifier="justices" count={data.bench.length}>
-	<BenchChart rows={data.bench} start={data.start} end={data.end} cases={data.cases} />
+<!-- The bench chart is drawn for the full width, so its section starts below Key facts (Trevor, Nov. 26, 2026: the timelines "hit the at a glance on the right"; RecordPage.svelte). -->
+<Collapsible heading="Justices" identifier="justices" count={data.bench.length} class="clear-glance">
+	<BenchChart rows={data.bench} start={data.start} end={data.end} cases={data.chartCases} allLink />
 	<DataTable
 		identifier="justices-{data.key}"
 		label="Table: Justices of the {data.name}"

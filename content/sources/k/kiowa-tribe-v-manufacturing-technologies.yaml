@@ -93,6 +93,19 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Kiowa_Tribe_of_Oklahoma_v._Manufacturing_Technologies,_Inc.
+argument_audio:
+- kind: argument
+  date: '1998-01-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1048.mp3
+  catalog: https://catalog.archives.gov/id/138282688
+  whole_session: true
+  duration_seconds: 10652
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1048.mp3
+    checksum: 685f267aefe329a0af6f9ede9563271c12db5923668f14179b02f3f27b348514
+    media_type: audio/mpeg
+    bytes: 170428833
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -121,11 +134,11 @@ case_box:
   holding: |-
     Yes. The Court held that Tribes enjoy immunity from suits on contracts, whether governmental or commercial and whether made on or off a reservation, unless Congress has authorized the suit or the Tribe has waived immunity. It left any narrowing of the doctrine to Congress.
   quotes:
-  - text: "As a matter of federal law, an Indian tribe is subject to suit only where Congress has authorized the suit or the tribe has waived its immunity ..."
+  - text: "As a matter of federal law, an Indian tribe is subject to suit only where Congress has authorized the suit or the tribe has waived its immunity."
     pinpoint: "p. 754"
-  - text: "Tribes enjoy immunity from suits on contracts, whether those contracts involve governmental or commercial activities and whether they were made on or off a reservation ..."
+  - text: "Tribes enjoy immunity from suits on contracts, whether those contracts involve governmental or commercial activities and whether they were made on or off a reservation."
     pinpoint: "p. 760"
-  - text: "There are reasons to doubt the wisdom of perpetuating the doctrine ..."
+  - text: "There are reasons to doubt the wisdom of perpetuating the doctrine."
     pinpoint: "p. 758"
   treatment: |-
     Reaffirmed in *Michigan v. Bay Mills Indian Community* (2014). [@michigan-v-bay-mills-indian-community]

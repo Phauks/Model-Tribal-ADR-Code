@@ -29,6 +29,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 47 Fed. Reg. 53130, 53134 (Nov. 24, 1982)
+  since: '1982-11-24'
+  source: bia-recognized-entities-1982
+  confidence: medium
+  verification: bulk-import
+  as_of: '1982-11-24'
+  locator: 47 Fed. Reg. 53134 (entry "Eklutna Native Village.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Eklutna Native Village." The entry is matched to the nation by name.
 states:
 - state: AK
   presence: government-office
@@ -222,6 +232,35 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Eklutna Native Village".'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Alaska Area, row 'Native Village of Eklutna'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Native Village of Eklutna'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 115024
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Eklutna' (Chugiak)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Eklutna'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 809824
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'NATIVE VILLAGE OF EKLUTNA' (UEI ZWNKTD5RK531), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'NATIVE VILLAGE OF EKLUTNA'.
 governance:
 - aspect: form
   value: Traditional Tribal Government

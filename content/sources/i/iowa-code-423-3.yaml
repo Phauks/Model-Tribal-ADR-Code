@@ -1,0 +1,47 @@
+key: iowa-code-423-3
+kind: state-statute
+citation:
+  type: legislation
+  title: Exemptions
+  title-short: Iowa Code § 423.3
+  container-title: Iowa Code
+  container-title-short: Iowa Code
+  section: '423.3'
+  author:
+  - literal: Iowa Legislature
+  URL: https://www.legis.iowa.gov/docs/code/423.3.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.legis.iowa.gov/docs/code/423.3.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Iowa Code § 423.3 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: IA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Iowa Code § 423.3 (2026). History: 2003 Acts, 1st Ex, ch 2, §96, 205 2004 Acts, ch 1022, §4; 2004 Acts, ch 1049, §191; 2004 Acts, ch 1073, §26, 27; 2004 Acts, ch 1086, §105; 2004 Acts, ch 1133, §1; 2004 Acts, ch 1175, §320, 394; 2005 Acts, ch 71, §1; 2005 Acts, ch 134, §1; 2005 Acts, ch 140, §6 – 11, 16, 30, 44 – 46, 72, 73; 2006 Acts, ch 1001, §1, 2, 4, 5; 2006 Acts, ch 1134, §1; 2006 Acts, ch 1158, §40 – 44; 2006 Acts, ch 1161, §5, 7; 2006 Acts, ch 1162, §1; 2006 Acts, ch 1185, §128; 2007 Acts, ch 22, §74, 75; 2007 Acts, ch 186, §21, 22; 2007 Acts, ch 199, §1; 2007 Acts, ch 215, §112, 125; 2008 Acts, ch 1006, §1; 2008 Acts, ch 1163, §1; 2008 Acts, ch 1184, §55, 56; 2009 Acts, ch 133, §144; 2009 Acts, ch 179, §136, 197, 218 – 220; 2010 Acts, ch 1031, §388; 2010 Acts, ch 1148, §1; 2011 Acts, ch 25, §41, 42, 85 – 87, 143; 2011 Acts, ch 92, §6; 2012 Acts, ch 1019, §131; 2012 Acts, ch 1104, §1; 2012 Acts, ch 1110, §18, 19; 2012 Acts, ch 1121, §13, 14; 2012 Acts, ch 1125, §1; 2012 Acts, ch 1139, §2, 3, 6; 2013 Acts, ch 11, §1; 2013 Acts, ch 70, §12 – 15; 2013 Acts, ch 92, §1; 2013 Acts, ch 138, §59; 2013 Acts, ch 140, §127, 128; 2014 Acts, ch 1026, §89; 2014 Acts, ch 1050, §1; 2014 Acts, ch 1093, §22; 2014 Acts, ch 1127, §2, 3; 2014 Acts, ch 1129, §1; 2015 Acts, ch 30, §120; 2015 Acts, ch 94, §1; 2015 Acts, ch 99, §54; 2015 Acts, ch 114, §2; 2015 Acts, ch 116, §15, 16, 19, 20; 2016 Acts, ch 1007, §8, 9; 2016 Acts, ch 1128, §6, 16, 18, 27; 2018 Acts, ch 1001, §10, 27; 2018 Acts, ch 1026, §132, 133; 2018 Acts, ch 1155, §1; 2018 Acts, ch 1161, §175 – 188, 229, 230; 2019 Acts, ch 59, §125; 2019 Acts, ch 141, §1; 2019 Acts, ch 151, §20, 46; 2019 Acts, ch 152, §22 – 24, 32, 34, 54 – 56; 2020 Acts, ch 1063, §227, 228; 2020 Acts, ch 1118, §38 – 40, 50, 51, 96; 2021 Acts, ch 75, §6; 2021 Acts, ch 86, §53 – 69; 2021 Acts, ch 177, §72; 2022 Acts, ch 1021, §102, 103, 181, 187; 2022 Acts, ch 1125, §8, 9; 2022 Acts, ch 1138, §7 – 9, 40 – 45, 61, 63, 64; 2023 Acts, ch 19, §1123 – 1125, 1419, 2017; 2023 Acts, ch 66, §101; 2024 Acts, ch 1043, §90; 2024 Acts, ch 1098, §1; 2024 Acts, ch 1161, §125, 137; 2024 Acts, ch 1170, §369; 2024 Acts, ch 1172, §2, 4, 5; 2025 Acts, ch 135, §35; 2025 Acts, ch 148, §67 – 79, 87. Text read from the Iowa Legislature''s XML file for the chapter of the Iowa Code (2026 edition, legis.iowa.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; tribal government; indian; tribal; tribe); AI reader''s verdict incidental: Sales tax exemption for sales to tribal governments, defined. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; tribal government; indian; tribal; tribe'

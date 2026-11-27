@@ -1,0 +1,195 @@
+key: patchak-v-zinke
+kind: federal-case
+citation:
+  type: legal_case
+  title: Patchak v. Zinke
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '583'
+  page: '244'
+  issued:
+    date-parts:
+    - - 2018
+      - 2
+      - 27
+  URL: https://www.supremecourt.gov/opinions/boundvolumes/583bv.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: PATCHAK v. ZINKE, SECRETARY OF THE INTERIOR, et al.
+  source: https://www.supremecourt.gov/opinions/boundvolumes/583bv.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://www.supremecourt.gov/opinions/boundvolumes/583bv.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: judgment
+    justice: Clarence Thomas
+    page: 246
+  - kind: concurrence
+    justice: Stephen G. Breyer
+    page: 260
+  - kind: special concurrence
+    justice: Ruth Bader Ginsburg
+    page: 263
+  - kind: special concurrence
+    justice: Sonia Sotomayor
+    page: 264
+  - kind: dissent
+    justice: John G. Roberts, Jr.
+    page: 266
+original_link: https://www.supremecourt.gov/opinions/boundvolumes/583bv.pdf
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '2017-11-07'
+  printed: Argued November 7, 2017—Decided February 27, 2018
+  source: https://www.supremecourt.gov/opinions/boundvolumes/583bv.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2017-2018)
+  decision_type: plurality opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Clarence Thomas
+    vote: majority
+    opinion: plurality
+  - name: Stephen G. Breyer
+    vote: majority
+    opinion: concurrence
+  - name: Samuel A. Alito, Jr.
+    vote: majority
+  - name: Elena Kagan
+    vote: majority
+  - name: Ruth Bader Ginsburg
+    vote: majority
+    opinion: special concurrence
+  - name: Sonia Sotomayor
+    vote: majority
+    opinion: special concurrence
+  - name: John G. Roberts, Jr.
+    vote: minority
+    opinion: dissent
+  - name: Anthony M. Kennedy
+    vote: minority
+  - name: Neil Gorsuch
+    vote: minority
+  source: https://api.oyez.org/cases/2017/16-498
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/boundvolumes/583bv.pdf
+  - site: cornell
+    label: Cornell LII
+    access: free
+    link: https://www.law.cornell.edu/supremecourt/text/16-498
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/583/244/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2017/16-498
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22583%20U.S.%20244%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=583%20U.S.%20244
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=583%20U.S.%20244
+    unchecked: true
+argument_audio:
+- kind: argument
+  date: '2017-11-07'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/16-498.mp3
+  duration_seconds: 3774
+  file:
+    storage_key: supreme-court-audio/court/2017/16-498.mp3
+    checksum: e7788d66ae66c5172c23ce671ca353ad8746f83329d03d8394586af1e4fea780
+    media_type: audio/mpeg
+    bytes: 30200866
+- kind: argument
+  date: '2017-11-07'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2055-November7_2017.mp3
+  catalog: https://catalog.archives.gov/id/183518437
+  whole_session: true
+  duration_seconds: 4075
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2055-november7_2017.mp3
+    checksum: 5b6b88e6cf37aeb8d3a8b07f1f4b272b4c5b0bf3e853cd841cf5447a09fe5548
+    media_type: audio/mpeg
+    bytes: 81498758
+- kind: opinion announcement
+  date: '2018-02-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2070-February27_2018.mp3
+  catalog: https://catalog.archives.gov/id/183518452
+  whole_session: true
+  duration_seconds: 8673
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2070-february27_2018.mp3
+    checksum: feeb2b42dcabc1729c12a8e7fa45623fd6d2b9066db76d86718faecc844a9a34
+    media_type: audio/mpeg
+    bytes: 173460038
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 583 U.S. 244 (2018). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/583bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2017-017), the Legal Information Institute''s text of the slip opinion and the Court''s bound volume; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Slip opinion (Legal Information Institute) 583 U.S. 244 "Patchak v. Zinke"; Database 16-498 "PATCHAK v. ZINKE"
+  - check: scan
+    result: agree
+    detail: Scan has 37 pages; the report runs 244 to 280
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Slip opinion (Legal Information Institute) "Argued November 7, 2017—Decided February 27, 2018"; scan "Argued November 7, 2017—Decided February 27, 2018"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 2018-02-27'
+  - check: opinions
+    result: agree
+    detail: 'Report: judgment Thomas p. 246, concurrence Breyer p. 260, special concurrence Ginsburg p. 263, special concurrence Sotomayor p. 264, dissent Roberts p. 266; Database writers: Breyer, Ginsburg, Roberts, Sotomayor, Thomas'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

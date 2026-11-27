@@ -1,0 +1,79 @@
+key: cachil-dehe-band-of-wintun-indians-v-california-2010
+kind: federal-case
+citation:
+  type: legal_case
+  title: Cachil Dehe Band of Wintun Indians v. California
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '618'
+  page: '1066'
+  issued:
+    date-parts:
+    - - 2010
+      - 8
+      - 20
+  URL: https://static.case.law/f3d/618/html/1066-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  number: 09-16942
+original_link: https://static.case.law/f3d/618/html/1066-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2010-02-08'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2010/02/08/09-16942.wma
+  duration_seconds: 1926
+  file:
+    storage_key: appeals-court-audio/ca9/2010/2010-02-08-09-16942.wma
+    checksum: 2904363e151d068845b7def6c2c1c2cabb7e25d7096aedff7eaf4212f5098da2
+    media_type: audio/x-ms-wma
+    bytes: 11733190
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- picayune-rancheria-of-chukchansi-indians-of-california
+- cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: picayune-rancheria-of-chukchansi-indians-of-california
+    named_as: Picayune Rancheria of the Picayune Rancheria
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria
+    named_as: Cachil Dehe Band of Wintun Indians
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Chukchansi Indians
+    reason: More than one of today's nations shares this name (chukchansi-yokotch-tribe, chukchansi-yokotch-tribe-of-mariposa-ca, picayune-rancheria-of-chukchansi-indians-of-california); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 618 F.3d 1066. Decided by the United States Court of Appeals for the Ninth Circuit on Aug. 20, 2010. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 22, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 22
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 2 matched, 1 not linked

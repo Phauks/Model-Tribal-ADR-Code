@@ -28,6 +28,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Metlakatla Indian Community, Annette Island Reserve (approved by the Secretary of the Interior Aug. 23, 1944), under the Act of May 1, 1936, ch. 254, § 1, 49 Stat. 1250, 1250
+  since: '1944-08-23'
+  source: university-of-oklahoma-indian-reorganization-act-metlacons
+  document_version:
+    document: metlakatla-indian-community-annette-island-reserve-constitution
+    version: 1944-text
+  confidence: medium
+  verification: inferred
+  as_of: '1944-08-23'
+  locator: 1944 constitution and bylaws (1944-08-23), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AK
   presence: government-office
@@ -219,6 +232,70 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Annette Island Service Unit profile'
   note: 'The source''s words: "Metlakatla Indian Community".'
   operator: tribal
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1998
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Metlakatla Indian Community' (Northwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Metlakatla Indian Community'.
+- program: indian-health-service-self-governance-compact
+  since: 1997
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Alaska Area, row 'Metlakatla Indian Community'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Metlakatla Indian Community'.
+- program: pl-102-477-plan
+  start: '2024-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - American Indian Vocational Rehabilitation Services
+  - Child Care & Development Funds – Discretionary
+  - Native Employment Works
+  - 'Welfare Assistance: General Assistance'
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Metlakatla Indian Community, Annette Island Reserve'; PL102_477_PartnerEnrollment, its 7 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1827430
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Metlakatla (Annette Island)' (Metlakatla)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Metlakatla (Annette Island)'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 8094703
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'METLAKATLA INDIAN COMMUNITY' (UEI MYPCUEP3PY65), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'METLAKATLA INDIAN COMMUNITY'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 16525334
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'METLAKATLA INDIAN COMMUNITY' (UEI MYPCUEP3PY65), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'METLAKATLA INDIAN COMMUNITY'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Metlakata Indian Community" among organizations under constitutions approved

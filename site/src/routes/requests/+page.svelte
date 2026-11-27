@@ -6,7 +6,10 @@
 
 	let { data, form }: PageProps = $props();
 
-	const values: Record<string, string> = $derived(form && 'values' in form ? (form.values ?? {}) : {});
+	// An error page's Report link may say what to put in Details to start with.
+	const values: Record<string, string> = $derived(
+		form && 'values' in form ? (form.values ?? {}) : data.details ? { details: data.details } : {}
+	);
 	const errors: Record<string, string> = $derived(form && 'errors' in form ? (form.errors ?? {}) : {});
 	const problem = $derived(form && 'problem' in form ? form.problem : undefined);
 	const sent = $derived(form && 'sent' in form ? form.sent : undefined);
@@ -16,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.toTeam ? 'Write to the nation’s team' : 'Make a request'} · Model Tribal ADR Code</title>
+	<title>{data.toTeam ? 'Write to the nation’s team' : 'Make a request'} · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

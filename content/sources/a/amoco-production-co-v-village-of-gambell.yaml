@@ -1,0 +1,164 @@
+key: amoco-production-co-v-village-of-gambell
+kind: federal-case
+citation:
+  type: legal_case
+  title: Amoco Production Co. v. Village of Gambell
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '480'
+  page: '531'
+  issued:
+    date-parts:
+    - - 1987
+      - 3
+      - 24
+  URL: https://www.loc.gov/item/usrep480531/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: AMOCO PRODUCTION CO. et al. v. VILLAGE OF GAMBELL et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep480/usrep480531/usrep480531.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep480/usrep480531/usrep480531.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Byron Raymond White
+    page: 534
+  - kind: concurrence in part and in the judgment
+    justice: John Paul Stevens
+    page: 555
+original_link: https://www.loc.gov/item/usrep480531/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '1987-01-12'
+  printed: Argued January 12, 1987 Decided March 24, 1987
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep480/usrep480531/usrep480531.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1986-1987)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+    opinion: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+    opinion: special concurrence
+  - name: Sandra Day O'Connor
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+  source: https://api.oyez.org/cases/1986/85-1239
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep480531/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/480/531/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1986/85-1239
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22480%20U.S.%20531%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=480%20U.S.%20531
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=480%20U.S.%20531
+    unchecked: true
+argument_audio:
+- kind: argument
+  date: '1987-12-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-586.mp3
+  catalog: https://catalog.archives.gov/id/118974759
+  whole_session: true
+  note: "The National Archives dates the recording 1987-12-12; the case was argued on 1987-01-12."
+  duration_seconds: 10916
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-586.mp3
+    checksum: 705e83f5d5b0f7556495c7bafc58bcf369d4cf4f3d22774f4c5d64c455231121
+    media_type: audio/mpeg
+    bytes: 174651473
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 480 U.S. 531 (1987). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep480/usrep480531/usrep480531.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1986-055), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes:
+- native-village-of-gambell
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: native-village-of-gambell
+    named_as: Village of Gambell
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 480 U.S. 531 "Amoco Production Co. v. Village of Gambell"; Database 480 U.S. 531 "AMOCO PRODUCTION CO. et al. v. VILLAGE OF GAMBELL et al."
+  - check: scan
+    result: agree
+    detail: Scan has 26 pages; the report runs 531 to 556
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 12, 1987 Decided March 24, 1987"; scan "Argued January 12, 1987-Decided March 24, 1987"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1987-03-24'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority White p. 534, concurrence in part and in the judgment Stevens p. 555; Database writers: Stevens, White'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

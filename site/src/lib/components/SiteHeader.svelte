@@ -1,19 +1,24 @@
 <script lang="ts">
 	// The masthead (site/DESIGN.md, section 6, "Masthead"). One row: the
-	// sidebar button and the site's name at the left; at the right one evenly
-	// spaced row of icon buttons (search, Report a problem as a flag, Star,
-	// Follow, Print, Download, theme, Settings), then sign-in or the account
+	// sidebar button and the site's name at the left; the search box in the
+	// middle (SiteSearch.svelte; Trevor, Nov. 27, 2026, design A in project
+	// files design/header-search), or below 64rem the search icon; at the
+	// right one evenly spaced row of icon buttons (Request a Change as a flag, Star,
+	// Follow, Print, Download, Settings), then sign-in or the account
 	// menu at the far right (Trevor, Nov. 23, 2026). Contribute left the
-	// masthead for the sidebar's list of sections, so the row holds only the
-	// buttons (Trevor, Nov. 24, 2026; src/lib/site-sections.ts). Star and
+	// masthead for the About menu, so the row holds only the buttons (Trevor,
+	// Nov. 24, 2026; src/lib/site-navigation.ts). Star and
 	// Follow show only where the page can be starred or followed; Star, Print
 	// and Download act on the page the reader is on, and Download opens a list
 	// of what the page offers (DownloadMenu.svelte). The site's sections are in
-	// the sidebar (SiteSidebar.svelte), so the masthead has no menu row. The
+	// a row under the masthead (SectionBar.svelte, drawn by the root layout). The
 	// content version shows only on paper; on screen it is in the footer.
+	// The Settings cog opens a small Page settings panel under it, which holds
+	// the theme, so the theme button left the row (Trevor, Nov. 26, 2026;
+	// PageSettings.svelte).
 	//
 	// On wide screens a hamburger button near the page's left edge, before the
-	// name, hides and shows the sidebar, so a hidden sidebar leaves nothing
+	// name, hides and shows the side column (SiteSidebar.svelte), so a hidden sidebar leaves nothing
 	// behind on the page (Trevor, Nov. 23, 2026; sidebar/sidebar-visibility.svelte.ts).
 	// It needs scripts; without them the sidebar always shows.
 	//
@@ -40,17 +45,19 @@
 	import CiteMenu from './CiteMenu.svelte';
 	import DownloadMenu from './DownloadMenu.svelte';
 	import PrintOptions from './PrintOptions.svelte';
-	import ReportProblem from './ReportProblem.svelte';
-	import SettingsPanel from './SettingsPanel.svelte';
+	import RequestChange from './RequestChange.svelte';
+	import PageSettings from './PageSettings.svelte';
 	import SiteSearch from './SiteSearch.svelte';
 	import FollowButton from './FollowButton.svelte';
 	import StarButton from './StarButton.svelte';
-	import ThemeSetting from './ThemeSetting.svelte';
+	import SaveOfflineButton from './SaveOfflineButton.svelte';
+	import UpdateButton from './UpdateButton.svelte';
+	import type { TrackVersions } from '#lib/server/versions.ts';
 
-	let { contentVersion }: { contentVersion: string } = $props();
+	let { contentVersion, versions }: { contentVersion: string; versions: TrackVersions } = $props();
 
 	/**
-	 * "Report a problem" opens a dialog with the request form (ReportProblem),
+	 * "Request a Change" opens a dialog with the request form (RequestChange),
 	 * where the reader picks what is wrong, including "Add a nation that is
 	 * missing"; without scripts it goes to the request page. On a nation or
 	 * glossary page, or a story's page, it names that record, so the report
@@ -64,7 +71,7 @@
 		const term = /^\/glossary\/([^/]+)$/.exec(path)?.[1];
 		const story = /^\/stories\/([^/]+)$/.exec(path)?.[1];
 		const record =
-			nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'coverage'
+			nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'federal-programs' && nation !== 'coverage'
 				? `tribes/${nation}`
 				: term
 					? `glossary/${term}`
@@ -91,7 +98,7 @@
 	let printOptions: PrintOptions | undefined = $state();
 
 	/**
-	 * The / key opens the search, as on Wikipedia, Wikiwand and GitHub (Trevor
+	 * The / key puts focus in the search box, as on Wikipedia, Wikiwand and GitHub (Trevor
 	 * approved this from the Wikiwand review, Nov. 22, 2026). It is ignored
 	 * while the reader types in a field or an editor, holds a modifier key, or
 	 * has a dialog open.
@@ -129,26 +136,27 @@
 			</p>
 			<span class="page-controls-row no-print"><PageControls place="row" /></span>
 		</div>
+		<div class="masthead-search no-print"><SiteSearch bind:this={search} /></div>
 		<div class="masthead-controls no-print">
-			<SiteSearch bind:this={search} />
+			<UpdateButton {versions} />
 			<button
 				class="more-button"
 				type="button"
 				popovertarget="masthead-more"
-				aria-label="More: report a problem, star, follow, print, cite, download, theme, settings and sign in"
+				aria-label="More: request a change, star, follow, print, cite, download, settings and sign in"
 			>
 				<Ellipsis size={24} /><span aria-hidden="true">More</span>
 			</button>
 			<div class="masthead-more" id="masthead-more" popover>
 				<span class="page-controls-panel"><PageControls place="panel" /></span>
-				<ReportProblem link={reportLink} />
+				<RequestChange link={reportLink} />
 				<StarButton />
+				<SaveOfflineButton />
 				<FollowButton />
 				<PrintOptions bind:this={printOptions} />
 				<CiteMenu />
 				<DownloadMenu onpdf={() => printOptions?.open()} />
-				<ThemeSetting />
-				<SettingsPanel />
+				<PageSettings />
 				<AccountLink />
 			</div>
 		</div>
@@ -164,8 +172,8 @@
 		left: var(--space-3);
 		top: -10rem;
 		padding: var(--space-2) var(--space-3);
-		background: var(--color-focus);
-		color: var(--focus-text);
+		background: var(--color-paper);
+		color: var(--color-link);
 		z-index: 10;
 	}
 
@@ -222,6 +230,44 @@
 		gap: var(--space-2);
 	}
 
+	/*
+	 * The search box takes the masthead's middle, centered between the name
+	 * and the buttons, up to 40rem wide; below 64rem it is the search icon,
+	 * just before the buttons, with the buttons' gap.
+	 */
+	.masthead-search {
+		/* A small basis, so the row fills before it wraps, and the box grows into whatever room is left. */
+		flex: 1 1 12rem;
+		min-width: 12rem;
+		max-width: 40rem;
+		margin-inline: auto;
+	}
+
+	/* Beside the box, the buttons keep their size and the box gives way. */
+	@media (min-width: 64rem) {
+		.masthead-row .masthead-controls {
+			flex: none;
+			flex-wrap: nowrap;
+			margin-left: 0;
+		}
+	}
+
+	@media (max-width: 63.99rem) {
+		.masthead-row {
+			column-gap: var(--space-2);
+		}
+
+		.masthead-start {
+			margin-right: auto;
+		}
+
+		.masthead-search {
+			flex: none;
+			min-width: 0;
+			margin-inline: 0;
+		}
+	}
+
 	/* The sidebar is on wide screens only; on phones the Menu bar holds it. */
 	.sidebar-toggle {
 		display: none;
@@ -237,6 +283,12 @@
 			display: inline-grid;
 		}
 
+		/* On a page with no column, such as the home page, there is nothing to
+		   hide or show; the button keeps its place so the name does not move. */
+		:global(:root:has(.sidebar-wide.empty)) .sidebar-toggle {
+			visibility: hidden;
+		}
+
 		:global(:root[data-scripts='on']) .masthead-row {
 			padding-left: var(--space-2);
 		}
@@ -249,6 +301,7 @@
 	}
 
 	.wordmark a {
+		white-space: nowrap;
 		font-weight: var(--font-weight-bold);
 		font-size: var(--font-size-lead);
 		color: var(--color-band-text);
@@ -322,11 +375,6 @@
 
 		.more-button:hover {
 			background: color-mix(in srgb, currentColor 14%, transparent);
-		}
-
-		.more-button:focus-visible {
-			background-color: var(--color-focus);
-			color: var(--focus-text);
 		}
 
 		.page-controls-row {

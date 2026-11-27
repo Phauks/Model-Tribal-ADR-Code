@@ -19,10 +19,17 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
-  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe,
-    Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations:
-    Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band;
-    White Earth Band).'
+  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe, Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band).'
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Pillager Band of Chippewa Indians, Aug. 21, 1847, 9 Stat. 908
+  since: '1847-08-21'
+  source: treaty-with-the-pillager-band-of-chippewa-indians-1847
+  confidence: medium
+  verification: inferred
+  as_of: '1847-08-21'
+  locator: p. 569 (Treaty with the Pillager Band of Chippewa Indians, 1847; Kappler header "Aug. 21, 1847. | 9 Stat., 908. | Proclamation Apr. 7, 1848.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Pillager; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: MN
   presence: land
@@ -95,6 +102,45 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Bemidji Area
   note: Listed as "Leech Lake Reservation Business Committee". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1994
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Leech Lake Band Of Ojibwe' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Leech Lake Band Of Ojibwe'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 6353581
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: MN, row 'Leech Lake Band, Minnesota Chippewa Tribe' (Cass Lake)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Leech Lake Band, Minnesota Chippewa Tribe'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 7701653
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'LEECH LAKE BAND OF OJIBWE' (UEI EBFFR37CPL55), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'LEECH LAKE BAND OF OJIBWE'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 5051770
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'LEECH LAKE BAND OF OJIBWE' (UEI EBFFR37CPL55), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'LEECH LAKE BAND OF OJIBWE'.
 governance:
 - aspect: governing-body
   value: Tribal Council (RBC)
@@ -403,6 +449,22 @@ jurisdiction:
   as_of: '2026-05-26'
   locator: 91 FR 30694 (Tribe column of the designated agent table)
   note: 'Listed as: Minnesota Chippewa Tribe - Leech Lake Band. Added on 2026-11-23: the second data gap review found this band''s own row in the notice (page image p-027; the govinfo PDF has no text layer for the table), and the Minnesota Chippewa Tribe profile already lists the six band rows (research/reviews/2026-11-22-second-gap-review.md). Verification is inferred because the name was read from a page image, not matched in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Nov. 2, 2021 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Dec. 20, 2024.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2021-11-02'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Minnesota Department of Human Services

@@ -1,0 +1,52 @@
+key: oklahoma-filing-43840
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Comanche Nation and State of Oklahoma: resolution of dispute over gaming compact interpretation'
+  author:
+  - literal: Comanche Nation, Oklahoma
+  - literal: State of Oklahoma
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 43840
+  URL: https://execleg.sos.ok.gov/documents/filelog/85757.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2009
+      - 12
+      - 4
+original_link: https://execleg.sos.ok.gov/documents/filelog/85757.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- comanche-nation
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- gaming
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 43840, filed Dec. 4, 2009. The register''s title reads “Agreement Tribal Gaming Compact” and its description “Comanche Nation Resolution of Dispute Regarding the Proper Interpretation of the State-Tribal Gaming Compact between the State of Oklahoma and the Comanche Nation”. The register line reads as a filing of another kind (it names State-Tribal Gaming Compact between State of Oklahoma and Comanche Nation). The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date. The reader noted: dispute-resolution agreement; no fitting filing category.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

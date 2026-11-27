@@ -22,7 +22,7 @@ export function setSidebarShown(shown: boolean): void {
 	try {
 		localStorage.setItem(sidebarHiddenKey, String(!shown));
 	} catch {
-		// Nothing to remember with; the choice lasts for this page only.
+		// expected: nothing to remember with; the choice lasts for this page only.
 	}
 }
 

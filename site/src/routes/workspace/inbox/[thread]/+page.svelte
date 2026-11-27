@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { invalidateAll } from '$app/navigation';
+	import { invalidate, invalidateAll } from '$app/navigation';
 	import Archive from '@lucide/svelte/icons/archive';
 	import Ban from '@lucide/svelte/icons/ban';
 	import BookUser from '@lucide/svelte/icons/book-user';
@@ -35,6 +35,10 @@
 	let { data, form }: PageProps = $props();
 
 	const thread = $derived(data.thread);
+	// Opening an unread conversation read it, which lowers the Inbox and folder counts in the left column; a link from the list does not otherwise reload them.
+	$effect(() => {
+		if (data.markedRead) void invalidate('mail:counts');
+	});
 	const tagged = $derived(new Set(thread.tags.map((tag) => tag.identifier)));
 	// The folder it is in already is left out; nested folders are set in under their parent.
 	const folderChoices = $derived([
@@ -112,7 +116,7 @@
 </script>
 
 <svelte:head>
-	<title>{thread.subject} · Inbox · Workspace · Model Tribal ADR Code</title>
+	<title>{thread.subject} · Inbox · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="topbar" role="toolbar" aria-label="Conversation">

@@ -1,0 +1,66 @@
+key: nevada-revised-statutes-370-515
+kind: state-statute
+citation:
+  type: legislation
+  title: Restriction on collection by Department of tax for products sold on Indian reservation or colony
+  title-short: Nev. Rev. Stat. § 370.515
+  container-title: Nevada Revised Statutes
+  container-title-short: Nev. Rev. Stat.
+  section: '370.515'
+  author:
+  - literal: Nevada Legislature
+  issued:
+    date-parts:
+    - - 1991
+  URL: https://www.leg.state.nv.us/nrs/NRS-370.html#NRS370Sec515
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.nv.us/nrs/NRS-370.html#NRS370Sec515
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- nevada-revised-statutes-370-025
+- nevada-revised-statutes-370-0325
+- nevada-revised-statutes-370-0751
+- nevada-revised-statutes-370-170
+- nevada-revised-statutes-370-240
+- nevada-revised-statutes-370-257
+- nevada-revised-statutes-370-280
+- nevada-revised-statutes-370-501
+- nevada-revised-statutes-370-503
+- nevada-revised-statutes-370-520
+- nevada-revised-statutes-370-521
+- nevada-revised-statutes-370-571
+- nevada-revised-statutes-370-577
+- nevada-revised-statutes-370-585
+- nevada-revised-statutes-370-663
+state_law:
+  relevance: core
+  citation: Nev. Rev. Stat. § 370.515 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Nev. Rev. Stat. § 370.515 (2025). History: (Added to NRS by 1991, 655; A 2015, 2499). Text read from the Nevada Legislature''s chapter page for the section (leg.state.nv.us/nrs) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservation; indian; reservation); AI reader''s verdict core: Tobacco tax collection on Indian reservations and colonies. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian reservation; indian; reservation'

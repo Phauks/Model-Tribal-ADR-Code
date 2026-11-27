@@ -107,6 +107,29 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=397%20U.S.%20598
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1970-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-768-300-19700114-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81140392
+  duration_seconds: 3616
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-768-300-19700114-1of2.mp3
+    checksum: 790d5cbfd846b547e96eab3f5247c40317e6825b08b8c0fa929e2d98184d0203
+    media_type: audio/mpeg
+    bytes: 57862268
+- kind: argument
+  date: '1970-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-768-300-19700114-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81140392
+  duration_seconds: 1068
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-768-300-19700114-2of2.mp3
+    checksum: 11e75e6629b558746cea2360f460cfd2ad9010e66ff4cda38b2a3cfb85d32dfb
+    media_type: audio/mpeg
+    bytes: 17095365
 rights:
   status: no-permission-needed
   basis: us-government-work

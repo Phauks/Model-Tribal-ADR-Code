@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Iowa, etc., Sept. 17, 1836, 7 Stat. 511
+  since: '1836-09-17'
+  source: treaty-with-the-iowa-etc-1836
+  confidence: medium
+  verification: inferred
+  as_of: '1836-09-17'
+  locator: p. 468 (Treaty with the Iowa, etc., 1836; Kappler header "Sept. 17, 1836. | 7 Stat., 511. | Proclamation, Feb. 15, 1837.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Sac and Fox of Missouri; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 3 nations' profiles link this treaty.
 states:
 - state: KS
   presence: government-office
@@ -152,6 +162,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "Sac & Fox Nation of Missouri in Kansas and Nebraska". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Sac and Fox Nation (1994)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 276542
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: KS, row 'Sac and Fox Nation of Missouri' (Reserve)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 84951
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SAC & FOX NATION OF MISSOURI IN KANSAS' (UEI JS15FQA9WDS8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SAC & FOX NATION OF MISSOURI IN KANSAS'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Sac and Fox Tribe of Missouri" among organizations under constitutions approved
@@ -671,7 +701,7 @@ nearby_state_courts:
 - state: NE
   county: Richardson County
   court: District Court for Richardson County
-  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  link: https://nebraskajudicial.gov/directories/district-court-contacts
   source: state-trial-court-directory-ne
   confidence: medium
   verification: inferred
