@@ -20,7 +20,7 @@
  * nothing in it is left out.
  */
 import { error } from '@sveltejs/kit';
-import { essayBoxFacts, essaysInGit } from 'virtual:essay-library';
+import { essaysInGit } from 'virtual:essay-library';
 import { renderEssay } from '../essays/render.ts';
 import { markRecordText } from '../record-text.ts';
 import { splitFrontMatter } from '../essays/syntax.ts';
@@ -297,7 +297,7 @@ export function casePage(key: string): CasePage {
 		citation: citationLine(record),
 		caption: record.caption?.printed,
 		// The nations have their own section, with how the case names each.
-		facts: (essayBoxFacts.cases[key] ?? []).filter(([label]) => !/^(Nations?|Peoples?|Nations and peoples)$/.test(label)),
+		facts: (essayLibrary.facts?.('case', key) ?? []).filter(([label]) => !/^(Nations?|Peoples?|Nations and peoples)$/.test(label)),
 		topics: box.topics,
 		boxSections: box.sections,
 		opinions: caseOpinions(record),

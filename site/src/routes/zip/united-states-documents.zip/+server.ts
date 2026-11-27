@@ -3,17 +3,15 @@
  * (src/lib/server/document-zips.ts). Trevor asked for it on Nov. 23, 2026.
  */
 import { error } from '@sveltejs/kit';
-import { publicCopies } from 'virtual:public-copies';
 import { datedName } from '#lib/download-names.ts';
 import { citationDate } from '#lib/page-downloads.ts';
-import { documentsReadme, documentsZip } from '#lib/server/document-zips.ts';
+import { documentsReadme, documentsZip, keyOfCopyPath } from '#lib/server/document-zips.ts';
+import { servedCopies } from '#lib/server/copy-list.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import type { DocumentSetList } from '#lib/offline-documents.ts';
 import type { RequestHandler } from './$types';
 
 export const prerender = false;
-
-const served = new Set(publicCopies.map((copy) => copy.key));
 
 export const GET: RequestHandler = async ({ url }) => {
 	const environment = workerEnvironment();
@@ -21,6 +19,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	if (!environment.sourceDocuments || !response?.ok) error(503, 'The documents cannot be gathered right now.');
 	const list = (await response.json()) as DocumentSetList;
 	const now = new Date();
+	const served = new Set((await servedCopies(list.files.map(([path]) => keyOfCopyPath(path)))).keys());
 	const readme = documentsReadme(list.title, url.origin, citationDate(now));
 	return new Response(documentsZip(list, environment.sourceDocuments, served, readme), {
 		headers: {

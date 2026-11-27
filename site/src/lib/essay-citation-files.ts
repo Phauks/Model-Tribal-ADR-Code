@@ -14,6 +14,7 @@
  *
  * Shared by the build (in Node) and the Worker, so it must stay plain.
  */
+import { fileNumber } from './built-files.ts';
 import { pageDataPrefix } from './page-data.ts';
 
 /** How many files the citations are spread over: about 20 citations, 50 KB, in each. */
@@ -21,12 +22,7 @@ export const citationFileCount = 1024;
 
 /** Which file holds a key's citation: a 32-bit FNV-1a hash of the key, taken modulo the number of files. */
 export function citationFileNumber(key: string): number {
-	let hash = 0x811c9dc5;
-	for (let index = 0; index < key.length; index++) {
-		hash ^= key.charCodeAt(index);
-		hash = Math.imul(hash, 0x01000193) >>> 0;
-	}
-	return hash % citationFileCount;
+	return fileNumber(key, citationFileCount);
 }
 
 /** The address of a citation file, such as /page-data/essay-citations/417.json. */

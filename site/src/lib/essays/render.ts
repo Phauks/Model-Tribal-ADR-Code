@@ -210,7 +210,7 @@ function caseNameForm(name: string): string {
 /** Party names too common to stand for one case. */
 const sharedParties = new Set(['united states', 'state', 'the state', 'people', 'commonwealth']);
 
-const caseNameLists = new WeakMap<EssayLibrary, Map<string, string>>();
+const caseNameLists = new WeakMap<Record<string, string>, Map<string, string>>();
 
 /**
  * Case names to source keys: each case's full name ("Worcester v.
@@ -218,7 +218,10 @@ const caseNameLists = new WeakMap<EssayLibrary, Map<string, string>>();
  * shortens it after the first mention ("Worcester", "Crow Dog").
  */
 function caseNameList(library: EssayLibrary): Map<string, string> {
-	const cached = caseNameLists.get(library);
+	// Kept for each list of names, which the library gives the same each time, so each drawing need not work it out again.
+	const titles = library.caseNames?.();
+	if (!titles) return new Map();
+	const cached = caseNameLists.get(titles);
 	if (cached) return cached;
 	const names = new Map<string, string | null>();
 	const add = (name: string, key: string) => {
@@ -226,7 +229,7 @@ function caseNameList(library: EssayLibrary): Map<string, string> {
 		if (!form || sharedParties.has(form)) return;
 		names.set(form, names.has(form) && names.get(form) !== key ? null : key);
 	};
-	const cases = Object.entries(library.caseNames?.() ?? {});
+	const cases = Object.entries(titles);
 	for (const [key, title] of cases) add(title, key);
 	const parties = new Map<string, string | null>();
 	for (const [key, title] of cases) {
@@ -238,7 +241,7 @@ function caseNameList(library: EssayLibrary): Map<string, string> {
 	}
 	for (const [form, key] of parties) if (key && !names.has(form)) add(form, key);
 	const list = new Map([...names].filter((entry): entry is [string, string] => entry[1] !== null));
-	caseNameLists.set(library, list);
+	caseNameLists.set(titles, list);
 	return list;
 }
 
