@@ -35,6 +35,8 @@
 		lead?: string;
 		names?: InfoName[];
 		trail?: { label: string; href: string }[];
+		/** The page's name at the end of the trail, when shorter than its title, such as "§ 5321". */
+		crumb?: string;
 		picture?: InfoPicture;
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any -- FactGroups' own type
 		glance?: any[];
@@ -47,7 +49,7 @@
 		children?: Snippet;
 	}
 
-	let { title: titleText, lead, names = [], trail, picture, glance = [], panels, status, sources = [], children }: Props = $props();
+	let { title: titleText, lead, names = [], trail, crumb, picture, glance = [], panels, status, sources = [], children }: Props = $props();
 	// The panel's picture snippet shares the prop's name.
 	const pictureView = $derived(picture);
 	// Key facts only where it earns its place (src/lib/info-page.ts): without
@@ -60,7 +62,7 @@
 	const factsAfterLead = $derived(lead !== undefined && !/[.!?]$/.test(lead.trim()));
 </script>
 
-{#if trail}<Breadcrumbs {trail} current={titleText} />{/if}
+{#if trail}<Breadcrumbs {trail} current={crumb ?? titleText} />{/if}
 
 <RecordPage glance={hasGlance ? glancePart : undefined} sources={sources.length > 0 ? sourcesPart : undefined}>
 	{#snippet title()}<h1>{titleText}</h1>{/snippet}

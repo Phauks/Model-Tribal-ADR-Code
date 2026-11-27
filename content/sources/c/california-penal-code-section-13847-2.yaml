@@ -1,0 +1,47 @@
+key: california-penal-code-section-13847-2
+kind: state-statute
+citation:
+  type: legislation
+  title: Penal Code section 13847.2
+  title-short: Cal. Penal Code § 13847.2
+  container-title: California Penal Code
+  container-title-short: Cal. Penal Code
+  section: '13847.2'
+  author:
+  - literal: California Legislative Counsel
+  URL: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=13847.2.
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=13847.2.
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Cal. Penal Code § 13847.2 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Cal. Penal Code § 13847.2 (2026). History: Amended by Stats. 2013, Ch. 352, Sec. 455. (AB 1317) Effective September 26, 2013. Operative July 1, 2013, by Sec. 543 of Ch. 352. Text read from the California Legislative Counsel''s database of the codes (pubinfo_2025.zip, updated Nov. 23, 2026, downloads.leginfo.legislature.ca.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: bureau of indian affairs; indian community; tribal council; indian; tribal); AI reader''s verdict core: Rural Indian Crime Prevention advisory committee with tribal members. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: bureau of indian affairs; indian community; tribal council; indian; tribal'
