@@ -1,0 +1,50 @@
+key: montana-code-annotated-90-6-205
+kind: state-statute
+citation:
+  type: legislation
+  title: Coal board -- general powers
+  title-short: Mont. Code Ann. § 90-6-205
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 90-6-205
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1975
+  URL: https://mca.legmt.gov/bills/mca/title_0900/chapter_0060/part_0020/section_0050/0900-0060-0020-0050.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0900/chapter_0060/part_0020/section_0050/0900-0060-0020-0050.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 90-6-205 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 90-6-205 (2025). History: En. 50-1706 by Sec. 7, Ch. 502, L. 1975; amd. Sec. 3, Ch. 540, L. 1977; R.C.M. 1947, 50-1806(part); (6)En. Sec. 1, Ch. 250, L. 1983; amd. Sec. 1, Ch. 690, L. 1983; amd. Sec. 1, Ch. 619, L. 1985; amd. Sec. 2, Ch. 715, L. 1985; amd. Sec. 2, Ch. 733, L. 1985; amd. Sec. 2, Ch. 5, Sp. L. June 1986; amd. Sec. 2, Ch. 19, Sp. L. June 1986; amd. Sec. 6, Ch. 662, L. 1987; amd. Sec. 3, Ch. 512, L. 1991; amd. Sec. 78, Ch. 509, L. 1995; amd. Sec. 2, Ch. 204, L. 1997. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribes; indian; tribes); AI reader''s verdict incidental: Coal board grants to governing bodies of federally recognized tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribes; indian; tribes'

@@ -72,7 +72,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10, § 403 (2026). History: Added by Laws 1953, p. 18, § 3. Amended by Laws 1963, c. 89, § 3, emerg. eff. May 23, Laws 2001, c. 174, § 3, eff. Nov. 1, 2001; Laws 2004, c. 187, § 1, eff. Nov. 1, 2004; Laws Laws 2018, c. 190, § 1, eff. Nov. 1, 2018; Laws 2022, c. 99, § 1, emerg. eff. April 28, 2022. Text read from the Legislative Service Bureau''s Title 10 PDF (updated Nov. 12, 2026), page 88. Found by the state statutes pilot (terms: tribal land); AI reader''s verdict incidental: Child care licensing exemption for programs on tribal land. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -75,10 +75,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 2-101 (2026). History: from substances of natural or synthetic origin, or independently by means of chemical derived from the seeds of the marijuana plant, Added by Laws 1971, c. 119, § 2-101, operative Sept. 1, 1971. Amended by Laws 1975, c. Laws 2004, c. 116, § 1 repealed by Laws 2005, c. 1, § 99, emerg. eff. March 15, 2005. Laws Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1010. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: Paraphernalia exempts traditional pipes of American Indian religious ceremony. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 2-101 (2026). History: Added by Laws 1971, c. 119, § 2-101, operative Sept. 1, 1971. Amended by Laws 1975, c. Laws 2004, c. 116, § 1 repealed by Laws 2005, c. 1, § 99, emerg. eff. March 15, 2005. Laws. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1010. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: Paraphernalia exempts traditional pipes of American Indian religious ceremony. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

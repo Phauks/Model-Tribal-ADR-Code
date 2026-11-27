@@ -52,7 +52,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 27A, § 2-4-201 (2026). History: Added by Laws 1963, c. 325, art. 9, § 905, operative July 1, 1963. Amended by Laws 1993, Text read from the Legislative Service Bureau''s Title 27A PDF (updated Nov. 12, 2026), page 107. Found by the state statutes pilot (terms: tribes); AI reader''s verdict incidental: DEQ lab services available to tribes as recipients. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -89,7 +89,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1226.3 (2026). History: Added by Laws 1994, c. 388, § 5, eff. Sept. 1, 1994. Amended by Laws 2000, c. 320, § 3, eff. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 839. Found by the state statutes pilot (terms: native american); AI reader''s verdict core: Native American Cultural and Educational Authority definitions. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

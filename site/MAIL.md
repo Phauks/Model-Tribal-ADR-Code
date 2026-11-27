@@ -11,11 +11,23 @@ Each address on the domain that the project uses has its own inbox (`src/lib/ser
 - **Shared**, such as `contact@`: read and answered by everyone on its list. Whoever manages mail adds and takes off people on the Inbox settings page; an inbox always keeps at least one person. Someone taken off loses sight of its conversations at once, and those assigned to them there become unassigned.
 - **Personal**, such as `trevor@`: read only by the one person it belongs to. Nobody else is ever put on it, and whoever manages mail sees only that it exists, not what is in it or how much. Deleting the person's account deletes the inbox, and the run every five minutes then removes its conversations and their files, unseen by anyone.
 
+An inbox can have extra addresses beside its main one, such as `info@` and `hello@` beside `contact@` (migration `20261127T0342_add_mail_inbox_addresses_and_alerts.sql`). Mail to an extra address files into that inbox, and a reply goes from the address the mail was sent to, so someone who wrote to `info@` hears back from `info@`. An address belongs to at most one inbox, as its main address or an extra one. An extra address can be taken off again, and mail to it then goes to the catch-all; the main address stays until the inbox is deleted. Each extra address can have its own signature.
+
 One shared inbox is marked "Gets other mail": mail to an address no inbox has goes there, so a mistyped or old address is not lost. It starts as `contact@`, the inbox the site had before there were several, read by the lead author. A `+tag` after the local part (`contact+forms@`) goes to the inbox without it. An inbox can be deleted once it has no conversations (Deleted is emptied after 30 days); mail to its address then goes to the catch-all. `unsubscribe@` is kept for the inbox's own use.
 
-Everything is by inbox. The list, counts, search, a conversation, its files and HTML, the sender card's other conversations and its export open only for someone on that conversation's inbox; anyone else gets "not found", as if it were not there. The same message sent to two addresses lands in both inboxes as separate conversations, because Email Routing gives the Worker each message with a single recipient address (`message.to`), so a message to two of the project's addresses is filed once for each.[^routing] A person sends only from the addresses of inboxes they are on, and a reply starts from the address of the conversation's inbox. When someone is on more than one inbox, the sidebar lists each with its unread count, and "All inboxes" shows them together.
+Everything is by inbox. The list, counts, search, a conversation, its files and HTML, the sender card's other conversations and its export open only for someone on that conversation's inbox; anyone else gets "not found", as if it were not there. The same message sent to two addresses lands in both inboxes as separate conversations, because Email Routing gives the Worker each message with a single recipient address (`message.to`), so a message to two of the project's addresses is filed once for each.[^routing] A person sends only from the addresses of inboxes they are on, and a reply starts from the inbox address the conversation is with. When someone is on more than one inbox, the sidebar lists each with its unread count, and "All inboxes" shows them together.
 
-Some things belong to the project's shared mail and so skip personal inboxes: auto-sort rules, the "new mail" notice and the away message. Folders, tags and saved replies are shared across inboxes, and a folder or tag shows each person only the conversations they can open. Settings, rules and the private address book (contact details on the sender card, address suggestions while writing) stay with whoever holds `manage-mail` and `manage-address-book`.
+Some things belong to the project's shared mail and so skip personal inboxes: auto-sort rules and the away message. Folders, tags and saved replies are shared across inboxes, and a folder or tag shows each person only the conversations they can open. Settings, rules and the private address book (contact details on the sender card, address suggestions while writing) stay with whoever holds `manage-mail` and `manage-address-book`. Anyone on an inbox can open the Inboxes part of Inbox settings to see the inboxes they are on, choose their own alerts and leave a shared inbox.
+
+## New-mail alerts
+
+Each person on an inbox chooses, for that inbox, how they hear about its new mail (`src/lib/server/mail/alerts.ts`). Their own chip on the Inbox settings page opens the choice:
+
+- **At once**: a short alert as mail arrives, at most one every 30 minutes for that inbox, so a busy day sends a few, not one per message. This is where everyone starts.
+- **Daily summary**: once a day, how many messages arrived since the last summary and how many conversations are unread. The hourly scheduled run sends them (`src/routes/mail/scheduled`); a day with no new mail sends nothing.
+- **No alerts**.
+
+Alerts go to the email the person signs in with, never to one of the project's own addresses, and come from the inbox's main address. They never quote the mail, name the sender or give the subject, so the message stays in the project's storage. Spam, automatic replies, delivery reports and mail an auto-sort rule marks read or files away send no alert. Only the person can change their own choice; others on the inbox see it on their chip. A personal inbox's owner chooses theirs too. This replaced the single `MAIL_NOTICE_ADDRESS` notice on Nov. 27, 2026.
 
 ## How mail comes in
 
@@ -32,7 +44,7 @@ Cloudflare Email Routing receives mail for the domain and hands each message to 
 
 Auto-sort rules then run on the message (see "Folders, tags and rules" below), except on Spam and delivery reports.
 
-If a notice address is set, one short "new mail" message goes there at most every 30 minutes. It never quotes the mail, so the message stays in the project's storage. If filing fails, the message is kept and filed later (see "When something fails").
+Then each person on the inbox gets the new-mail alert they chose (see "New-mail alerts"). If filing fails, the message is kept and filed later (see "When something fails").
 
 ### Attachments and the virus check
 
@@ -78,7 +90,7 @@ The lead author asked for tags, folders and auto-sort rules on Nov. 23, 2026.
 - **Folders.** Besides the four built-in ones (Inbox, Archive, Spam, Deleted), the lead author can make folders, three deep at most, such as "Nations / Southwest / Navajo Nation", on the Folders and tags page (`/workspace/inbox/organize`). A conversation sits in one folder at a time. A new reply to a conversation in a made folder stays in that folder, shown as unread there. Deleting a folder sends its conversations, and those of the folders inside it, back to the inbox, never to Deleted.
 - **Tags.** A conversation can have any number of tags, whatever folder it is in. A tag's page lists its conversations in every folder except Spam and Deleted. Tag colors come from the site's tokens, and the name always shows, so the color is never the only way to tell tags apart.
 - **Ticking several.** In any list, conversations can be ticked and then archived, deleted, marked as spam, read or unread, moved to a folder, or tagged and untagged together.
-- **Auto-sort rules** (`/workspace/inbox/rules`, `src/lib/server/mail/rules.ts`). Each rule has conditions (sender, To or Cc, subject, text, has an attachment, sender known in the address book with a nation, automatic reply) joined by "all" or "any", and actions (move to a folder or to Archive, Spam or Deleted; add tags; assign; mark as read). Words match without regard to capital letters. Rules run in order on each message that arrives, except Spam and delivery reports, and a rule can stop the ones after it. "Test on the inbox" shows what a rule would catch now without changing anything; "Run on inbox" or the box under the editor applies it to the conversations already in the inbox. A rule that names a folder, tag or person that has since been deleted skips that action. A conversation a rule marks read or files away sends no "new mail" notice. A conversation's page links to "Make a rule for mail from this sender".
+- **Auto-sort rules** (`/workspace/inbox/rules`, `src/lib/server/mail/rules.ts`). Each rule has conditions (sender, To or Cc, subject, text, has an attachment, sender known in the address book with a nation, automatic reply) joined by "all" or "any", and actions (move to a folder or to Archive, Spam or Deleted; add tags; assign; mark as read). Words match without regard to capital letters. Rules run in order on each message that arrives, except Spam and delivery reports, and a rule can stop the ones after it. "Test on the inbox" shows what a rule would catch now without changing anything; "Run on inbox" or the box under the editor applies it to the conversations already in the inbox. A rule that names a folder, tag or person that has since been deleted skips that action. A conversation a rule marks read or files away sends no new-mail alert. A conversation's page links to "Make a rule for mail from this sender".
 
 ## Writing
 
@@ -95,7 +107,7 @@ The lead author asked for these on Nov. 23, 2026, after a comparison with other 
 The lead author asked for these on Nov. 23, 2026, from the same comparison. The code is `src/lib/server/mail/senders.ts` and `src/lib/server/mail/export.ts`, and the table is in `migrations/20261123T0509_add_mail_blocked_senders.sql`.
 
 - **Sender card.** Beside each conversation, a card says who wrote: their entry in the address book if there is one (name, role, nation, other ways to reach them, where the details came from and when they were last checked), and the other conversations with that address. Someone not in the address book is shown as such.
-- **Blocking.** Whoever manages the inbox can block one address or a whole domain from the sender card, or from the Inbox settings page, where the list of blocked senders is kept and anyone on it can be unblocked. Mail from a blocked sender is still kept, so nothing is lost, but it goes to Spam with the reason "You blocked this sender," starts a conversation of its own instead of joining an earlier one, sends no notice, and gets no away message. The conversation it was blocked from moves to Spam too. The project's own addresses and domain cannot be blocked.
+- **Blocking.** Whoever manages the inbox can block one address or a whole domain from the sender card, or from the Inbox settings page, where the list of blocked senders is kept and anyone on it can be unblocked. Mail from a blocked sender is still kept, so nothing is lost, but it goes to Spam with the reason "You blocked this sender," starts a conversation of its own instead of joining an earlier one, sends no alert, and gets no away message. The conversation it was blocked from moves to Spam too. The project's own addresses and domain cannot be blocked.
 - **Unsubscribing.** A message from a mailing list (one with a `List-Unsubscribe` header) has an Unsubscribe button.[^rfc2369] If the list offers one-click unsubscribing, the inbox posts `List-Unsubscribe=One-Click` to the list's secure web address, without following redirects, as the standard requires;[^rfc8058] if it offers only an address, the inbox writes to it from the address the list wrote to; if it offers only a web page, the page is linked for the person to open. The conversation is then archived. A list that offers no way gets no button.
 - **Exporting.** Each message has "Save as .eml", which downloads the copy of the message the inbox kept as it arrived or was sent, with its attachments inside, so any mail program opens it. "Export" at the top of a conversation downloads the whole conversation as one .mbox file, oldest first, in the "mboxrd" form most mail programs import: lines in a message that begin with "From " get a ">" so they are not read as the start of a new message, and every byte of the message is kept as it was.[^rfc4155] A received message can be exported only once each attachment in it has passed the virus check (see "Attachments and the virus check"); until then the page says which files are still waiting. File names come from the date and subject, with the characters file systems refuse taken out, and are sent in both plain and international forms.[^rfc6266]
 
@@ -132,7 +144,6 @@ Plain settings are in `site/wrangler.jsonc` under `vars`, because plain-text var
 | Setting | What it holds |
 | --- | --- |
 | `MAIL_DOMAIN` | The project's domain. Empty while email is off. |
-| `MAIL_NOTICE_ADDRESS` | Where the "new mail" notice goes, if anywhere. Not one of the project's own addresses. |
 | `MAIL_SENDER_NAME` | The sender's name on the project's mail. |
 | `SITE_ADDRESS` | The website's address, such as `https://example.org`, for links in mail. |
 | `MAIL_SIGNING_KEY` | Secret. A long random value that signs unsubscribe and acknowledgment links. Changing it breaks links already sent. |
@@ -142,7 +153,7 @@ Plain settings are in `site/wrangler.jsonc` under `vars`, because plain-text var
 | `OUTREACH_SMTP_HOST`, `OUTREACH_SMTP_PORT`, `OUTREACH_SMTP_USERNAME` | The mailbox's SMTP server, port (465 or 587) and user name (the From address when empty). |
 | `OUTREACH_SMTP_PASSWORD` | Secret. The mailbox's app password. |
 
-The addresses are not a setting: they are the inboxes, made on the Inbox settings page. Who can use the pages is set by inbox membership (see "Inboxes") and in `src/lib/permissions.ts`: `manage-mail` (the settings, the inboxes and who is on them, and rules) and `send-outreach`, both held only by the lead author for now. Anyone on at least one inbox sees Inbox in the workspace menu.
+The addresses are not a setting: they are the inboxes and their extra addresses, made on the Inbox settings page. Who can use the pages is set by inbox membership (see "Inboxes") and in `src/lib/permissions.ts`: `manage-mail` (the settings, the inboxes and who is on them, and rules) and `send-outreach`, both held only by the lead author for now. Anyone on at least one inbox sees Inbox in the workspace menu.
 
 ## Switching email on
 
@@ -176,7 +187,7 @@ This uses the database and the bucket the inbox already has, rather than a separ
 ## Limits
 
 - Cloudflare Email Service takes at most 50 recipients and 25 MiB a message.[^limits] The compose form allows 18 MB of attachments, since encoding adds about a third; bigger files go as download links (see "Big files as links").
-- On Workers Paid, 3,000 messages a month are included, then US$0.35 per 1,000 (Nov. 2026).[^pricing] Replies and notices are a small part of that; outreach does not count, because it goes through the outreach mailbox.
+- On Workers Paid, 3,000 messages a month are included, then US$0.35 per 1,000 (Nov. 2026).[^pricing] Replies and alerts are a small part of that; outreach does not count, because it goes through the outreach mailbox.
 - The run every five minutes sends at most two outreach letters a batch, so at most 24 an hour for each running batch.
 - Spam filtering is basic: it trusts the sender's own SPF, DKIM and DMARC results. Unwanted mail that passes those lands in the inbox and can be moved to Spam by hand.
 - Conversations in Deleted are removed for good, with their files in the bucket, 30 days after they were deleted.

@@ -1,5 +1,6 @@
 // Checks the site's navigation in a browser (design/navigation-models, model C):
-// the section bar under the masthead and its menus (SectionBar.svelte), the
+// the section bar under the masthead and its menus, which open on hover
+// (SectionBar.svelte, design/section-menus), the
 // side column of where the reader is (SiteSidebar.svelte), the phone strip
 // and its sheets, a hidden column and the pages without JavaScript. Run
 // from site/ after `npm run build`:
@@ -76,7 +77,7 @@ const column = '.sidebar-wide .local-column';
 	});
 	await page.goto(`${base}/nations/navajo-nation`, { waitUntil: 'networkidle' });
 	const sections = await page.locator(`${bar} summary`).evaluateAll((list) => list.map((summary) => summary.textContent.replace(/\(.*\)/, '').trim()));
-	check(sections.join('|') === 'Nations|Federal law|Courts and cases|Library|Writing|About', `The section bar lists ${sections.join(', ')}`);
+	check(sections.join('|') === 'Nations|Federal Law|Courts and Cases|Library|Writing|About', `The section bar lists ${sections.join(', ')}`);
 	check((await page.locator(`${bar} summary.current`).textContent()).includes('Nations'), 'The section bar does not mark Nations');
 	check(await page.locator(`${column} .back-link[href='/nations']`).isVisible(), 'The column has no way back to Nations');
 	check((await page.locator(`${column} .local-title`).textContent()).trim() === 'Navajo Nation', 'The column does not name the nation');
@@ -99,34 +100,53 @@ const column = '.sidebar-wide .local-column';
 	await context.close();
 }
 
-// 3. A menu: one open at a time, with counts and "Go to a nation"; it closes
-//    on Escape, on a click outside and when a link is followed.
+// 3. A menu opens when the mouse rests on its section, with nothing shading
+//    the page, and closes when the mouse leaves; one opens at a time, with
+//    icons and counts. A click, Enter and Space open it too. It closes on
+//    Escape, on a click outside and when a link is followed.
 {
 	const { context, page, errors } = await newPage();
 	await page.goto(`${base}/charter`, { waitUntil: 'networkidle' });
 	const nations = page.locator(`${bar} details`).first();
 	const federal = page.locator(`${bar} details`).nth(1);
+	const isOpen = (menu) => menu.evaluate((element) => element.open);
+	await nations.locator('summary').hover();
+	await page.waitForTimeout(400);
+	check(await nations.locator('.menu-panel').isVisible(), 'The Nations menu does not open on hover');
+	check((await page.locator('.shade').count()) === 0, 'A shade covers the page behind an open menu');
+	check(await nations.locator(".menu-group a[href='/nations'] .count-badge").isVisible(), 'The Directory has no count');
+	check((await nations.locator('.menu-link svg').count()) === (await nations.locator('.menu-link').count()), 'A link in the menu has no icon');
+	check((await nations.locator('#go-to-nation').count()) === 0, 'The Nations menu still has "Go to a nation"');
+	// A click on a menu the mouse just opened keeps it open.
 	await nations.locator('summary').click();
-	check(await nations.locator('.menu-panel').isVisible(), 'The Nations menu does not open');
-	// The shade follows the menu's toggle event, which comes just after the click.
-	const shaded = await page.locator('.shade').waitFor({ state: 'visible', timeout: 2000 }).then(() => true, () => false);
-	check(shaded, 'No shade covers the page behind an open menu');
-	check(await nations.locator(".menu-group a[href='/nations'] + .count-badge").isVisible(), 'The Directory has no count');
-	await nations.locator('#go-to-nation').fill('navajo');
-	const matches = await nations.locator('.nation-matches a').evaluateAll((list) => list.map((a) => a.textContent.trim()));
-	check(matches.length > 0 && matches.every((name) => /navajo/i.test(name)), `Go to a nation shows ${matches.join(', ')}`);
-	await federal.locator('summary').click();
-	check(!(await nations.evaluate((element) => element.open)) && (await federal.evaluate((element) => element.open)), 'Two menus are open at once');
+	check(await isOpen(nations), 'A click shut the menu the mouse had just opened');
+	await federal.locator('summary').hover();
+	await page.waitForTimeout(100);
+	check(!(await isOpen(nations)) && (await isOpen(federal)), 'Moving to another section does not switch menus');
+	await page.mouse.move(640, 760);
+	await page.waitForTimeout(600);
+	check(!(await isOpen(federal)), 'The menu stays open after the mouse leaves it');
+	// From the keyboard: Enter opens, the mouse leaving does not close it, Escape does.
+	await federal.locator('summary').focus();
+	await page.keyboard.press('Enter');
+	check(await isOpen(federal), 'Enter does not open the menu');
+	await page.mouse.move(640, 700);
+	await page.waitForTimeout(600);
+	check(await isOpen(federal), 'A menu opened from the keyboard closed when the mouse moved');
 	await page.keyboard.press('Escape');
-	check(!(await federal.evaluate((element) => element.open)), 'Escape does not close the menu');
+	check(!(await isOpen(federal)), 'Escape does not close the menu');
+	await page.keyboard.press('Space');
+	check(await isOpen(federal), 'Space does not open the menu');
+	await page.keyboard.press('Escape');
 	await nations.locator('summary').click();
 	await page.mouse.click(640, 700);
-	check(!(await nations.evaluate((element) => element.open)), 'A click outside does not close the menu');
-	await nations.locator('summary').click();
+	check(!(await isOpen(nations)), 'A click outside does not close the menu');
+	await nations.locator('summary').hover();
+	await page.waitForTimeout(400);
 	await nations.locator(".menu-group a[href='/nations/map']").click();
 	await page.waitForURL(`${base}/nations/map`);
 	await page.waitForTimeout(300);
-	check(!(await nations.evaluate((element) => element.open)), 'The menu stayed open after following a link');
+	check(!(await isOpen(nations)), 'The menu stayed open after following a link');
 	check(errors.length === 0, `Errors in the menus: ${errors.join('; ')}`);
 	await context.close();
 }
@@ -207,8 +227,43 @@ const column = '.sidebar-wide .local-column';
 	await page.goto(`${base}/nations/map`, { waitUntil: 'load' });
 	await page.locator(`${bar} summary`).nth(1).click();
 	check(await page.locator(`${bar} details[open] .menu-panel a[href='/stats/treaties']`).isVisible(), 'The Federal law menu does not open without JavaScript');
-	check(!(await page.locator(`${bar} .go-to-nation`).isVisible()), 'Go to a nation shows without JavaScript');
 	check(await page.locator(`${column} a[href='/nations/recourse']`).isVisible(), 'The column does not list the section\'s pages without JavaScript');
+	await context.close();
+}
+
+// 9. Signed in with workspace access (the signed-in hint the Worker sets,
+//    src/lib/signed-in-hint.ts): the Workspace is the section bar's last tab,
+//    with its menu; the profile button opens the account menu; and the column
+//    holds only where the reader is (design/sidebar-workspace-profile, option B).
+{
+	const { context, page, errors } = await newPage();
+	await context.addCookies([{ name: 'signed-in-hint', value: 'overview.inbox.requests.people.access', url: base }]);
+	await page.goto(`${base}/nations/navajo-nation`, { waitUntil: 'networkidle' });
+	const sections = await page.locator(`${bar} summary`).evaluateAll((list) => list.map((summary) => summary.textContent.replace(/\(.*\)/, '').trim()));
+	check(sections.join('|') === 'Nations|Federal Law|Courts and Cases|Library|Writing|About|Workspace', `Signed in, the section bar lists ${sections.join(', ')}`);
+	const workspace = page.locator(`${bar} details[data-key='workspace']`);
+	await workspace.locator('summary').click();
+	const links = await workspace.locator('.menu-link').evaluateAll((list) => list.map((a) => a.getAttribute('href')));
+	check(links.join('|') === '/workspace/inbox|/workspace/requests|/workspace/people|/workspace/access', `The Workspace menu lists ${links.join(', ')}`);
+	check(await workspace.locator(".section-home[href='/workspace']").isVisible(), 'The Workspace menu has no link to its Overview');
+	await page.keyboard.press('Escape');
+	check((await page.locator(`${column} a[href^='/account'], ${column} a[href^='/workspace'], ${column} a[href='/starred']`).count()) === 0, 'The column still lists the account or workspace pages');
+	await page.locator('.masthead .account-button').click();
+	const account = await page.locator('#account-links a').evaluateAll((list) => list.map((a) => a.getAttribute('href')));
+	check(account.includes('/profile') && account.includes('/following') && account.includes('/starred') && account.includes('/account/data'), `The account menu lists ${account.join(', ')}`);
+	check(await page.locator('#account-links form[action="/sign-out"] button').isVisible(), 'The account menu has no Sign out');
+	await page.keyboard.press('Escape');
+	check(await page.locator('#account-links').isHidden(), 'Escape does not close the account menu');
+	check(errors.length === 0, `Errors signed in: ${errors.join('; ')}`);
+	await context.close();
+}
+
+// 10. Signed out there is no Workspace tab, and Recent Changes is in the About menu.
+{
+	const { context, page } = await newPage();
+	await page.goto(`${base}/charter`, { waitUntil: 'networkidle' });
+	check((await page.locator(`${bar} details[data-key='workspace']`).count()) === 0, 'Signed out, the section bar has a Workspace tab');
+	check((await page.locator(`${bar} details[data-key='about'] a[href='/changes']`).count()) === 1, 'The About menu has no Recent Changes');
 	await context.close();
 }
 

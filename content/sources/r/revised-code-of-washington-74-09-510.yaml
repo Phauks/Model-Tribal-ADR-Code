@@ -1,0 +1,50 @@
+key: revised-code-of-washington-74-09-510
+kind: state-statute
+citation:
+  type: legislation
+  title: Medical assistance — Eligibility
+  title-short: Wash. Rev. Code § 74.09.510
+  container-title: Revised Code of Washington
+  container-title-short: Wash. Rev. Code
+  section: 74.09.510
+  author:
+  - literal: Washington State Legislature
+  issued:
+    date-parts:
+    - - 1967
+  URL: https://app.leg.wa.gov/RCW/default.aspx?cite=74.09.510
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://app.leg.wa.gov/RCW/default.aspx?cite=74.09.510
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wash. Rev. Code § 74.09.510 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Wash. Rev. Code § 74.09.510 (2026). History: [2017 3rd sp.s. c 6 s 337; 2013 2nd sp.s. c 10 s 6. Prior: 2011 1st sp.s. c 36 s 9; 2011 1st sp.s. c 15 s 25; 2010 c 94 s 24; 2007 c 315 s 1; prior: 2001 2nd sp.s. c 15 s 3; 2001 1st sp.s. c 4 s 1; prior: 1997 c 59 s 14; 1997 c 58 s 201; 1991 sp.s. c 8 s 8; 1989 1st ex.s. c 10 s 8; 1989 c 87 s 2; 1985 c 5 s 2; 1981 2nd ex.s. c 3 s 5; 1981 1st ex.s. c 6 s 20; 1981 c 8 s 19; 1971 ex.s. c 169 s 4; 1970 ex.s. c 60 s 1; 1967 ex.s. c 30 s 4.]. Text read from the Washington State Legislature''s full-text chapter page for the section (app.leg.wa.gov/RCW) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized tribe; tribal; tribe); AI reader''s verdict incidental: Medicaid eligibility covers foster care under a federally recognized tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized tribe; tribal; tribe'

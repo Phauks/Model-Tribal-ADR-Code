@@ -67,10 +67,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 1-9-107 (2026). History: from the custody of the Department or federally recognized Indian tribe due to the entry of Added by Laws 2000, c. 374, § 38, eff. July 1, 2000. Amended by Laws 2001, c. 415, § 3, from § 7004-1.6 of Title 10 by Laws 2009, c. 233, § 299, emerg. eff. May 21, 2009. Amended Laws 2015, c. 173, § 9, eff. Nov. 1, 2015; Laws 2019, c. 243, § 2, eff. Nov. 1, 2019; Laws Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 250. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Foster youth program covers youth in tribal custody under contract. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 1-9-107 (2026). History: Added by Laws 2000, c. 374, § 38, eff. July 1, 2000. Amended by Laws 2001, c. 415, § 3, Laws 2015, c. 173, § 9, eff. Nov. 1, 2015; Laws 2019, c. 243, § 2, eff. Nov. 1, 2019; Laws. Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 250. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Foster youth program covers youth in tribal custody under contract. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -44,10 +44,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 19, § 339 (2026). History: R.L. 1910, § 1600. Amended by Laws 1949, p. 150, § 1, emerg. eff. May 20, 1949; Laws Laws 2001, c. 22, § 2 repealed by Laws 2001, c. 231, § 6, eff. Nov. 1, 2001. Laws 2003, c. repealed by Laws 2011, c. 1, § 10, emerg. eff. March 18, 2011. Laws 2012, c. 19, § 1 repealed by Laws 2013, c. 15, § 12, emerg. eff. April 8, 2013. Laws 2012, c. 144, § 1 repealed by Laws 2013, c. 15, § 13, emerg. eff. April 8, 2013. Laws 2018, c. 122, § 1 repealed by Laws 2019, c. 25, § 11, emerg. eff. April 4, 2019. Text read from the Legislative Service Bureau''s Title 19 PDF (updated Nov. 12, 2026), page 197. Found by the state statutes pilot (terms: federally recognized indian tribes); AI reader''s verdict incidental: County commissioners may agree with federally recognized tribes. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 19, § 339 (2026). History: R.L. 1910, § 1600. Amended by Laws 1949, p. 150, § 1, emerg. eff. May 20, 1949; Laws Laws 2001, c. 22, § 2 repealed by Laws 2001, c. 231, § 6, eff. Nov. 1, 2001. Laws 2003, c. Text read from the Legislative Service Bureau''s Title 19 PDF (updated Nov. 12, 2026), page 197. Found by the state statutes pilot (terms: federally recognized indian tribes); AI reader''s verdict incidental: County commissioners may agree with federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

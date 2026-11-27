@@ -42,6 +42,8 @@ export interface LawPage {
 	name: string;
 	/** The law's citation, as the Indigo Book writes it. */
 	citation: string;
+	/** The record's kind, such as "federal-statute" or "intergovernmental-agreement", which tells the Cite panel how MLA names its author. */
+	kind: string;
 	/** The law's full title, when its name is a short one. */
 	fullTitle?: string;
 	glance: FactGroup[];
@@ -246,6 +248,7 @@ function lawContent(key: string): LawPage {
 		// A chapter of the Code is named with its number, as the Code heads it: "Chapter 46. Indian Self-Determination and Education Assistance".
 		name: navigation ? `${navigation.family.title}` : named.what === 'Treaty' ? named.name : named.name.replace(/ \(\d{4}\)$/, ''),
 		citation,
+		kind: record.kind,
 		fullTitle: !title || named.name.startsWith(title) || citation.includes(title) ? undefined : title,
 		glance,
 		boxSections: box.sections,

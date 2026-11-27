@@ -54,7 +54,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 22, § 60.1 (2026). History: Added by Laws 1982, c. 255, § 2, eff. Oct. 1, 1982. Amended by Laws 1986, c. 197, § 1, eff. Laws 1996, c. 247, § 29, eff. July 1, 1996; Laws 2000, c. 85, § 1, eff. Nov. 1, 2000; Laws 2000, Laws 2022, c. 318, § 5, eff. Nov. 1, 2022; Laws 2024, c. 452, § 14, emerg. eff. June 14, 2024. Text read from the Legislative Service Bureau''s Title 22 PDF (updated Nov. 12, 2026), page 70. Found by the state statutes pilot (terms: tribal court; tribal government); AI reader''s verdict incidental: DV definitions cover tribal court orders and tribal victim support. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -62,7 +62,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 21, § 1836 (2026). History: Laws 1913, c. 78, p. 124, § 1; Laws 1945, p. 96, § 1. Text read from the Legislative Service Bureau''s Title 21 PDF (updated Nov. 12, 2026), page 981. Found by the state statutes pilot (terms: five civilized tribes; indian lands; tribe of indians); AI reader''s verdict core: Protects restricted homestead allotments of Five Civilized Tribes and Osage. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

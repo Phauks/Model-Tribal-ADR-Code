@@ -115,9 +115,10 @@ describe('A state statute section’s page', () => {
 	const tribalCourts = 'oklahoma-statutes-title-12-section-728';
 
 	it('every Oklahoma section the state statutes pilot found has one, labeled core or incidental', () => {
-		const oklahoma = [...sources().values()].filter((record) => record.kind === 'state-statute' && record.state_law);
+		const statutes = [...sources().values()].filter((record) => record.kind === 'state-statute' && record.state_law);
+		expect(statutes.filter((record) => !isLawRecord(record))).toEqual([]);
+		const oklahoma = statutes.filter((record) => ((record as typeof record & { jurisdictions?: { state?: string }[] }).jurisdictions ?? []).some((place) => place.state === 'OK'));
 		expect(oklahoma.length).toBe(381);
-		expect(oklahoma.filter((record) => !isLawRecord(record))).toEqual([]);
 		expect(oklahoma.filter((record) => record.state_law!.relevance === 'core').length).toBe(101);
 	});
 

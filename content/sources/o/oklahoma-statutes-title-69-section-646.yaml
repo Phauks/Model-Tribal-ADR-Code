@@ -50,7 +50,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 69, § 646 (2026). History: Added by Laws 1968, c. 415, § 646, operative July 1, 1968. Amended by Laws 2000, c. 230, Text read from the Legislative Service Bureau''s Title 69 PDF (updated Nov. 12, 2026), page 92. Found by the state statutes pilot (terms: indian lands); AI reader''s verdict core: County road condemnation rules where Indian lands are large share. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

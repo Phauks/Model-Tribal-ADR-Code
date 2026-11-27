@@ -43,10 +43,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 51, § 6v2 (2026). History: from serving as a member of a local board of education; laws of the state or any deputy of any officer so holding any office from serving upon the R.L. 1910, § 4274. Amended by Laws 1929, c. 255, p. 363, § 1; Laws 1939, p. 22, § 1, emerg. Laws 2013, c. 288, § 1, emerg. eff. May 15, 2013; Laws 2015, c. 269, § 1; Laws 2016, c. 297, repealed by Laws 2018, c. 304, § 18, emerg. eff. May 10, 2018. Text read from the Legislative Service Bureau''s Title 51 PDF (updated Nov. 12, 2026), page 12. Found by the state statutes pilot (terms: indian tribe; tribal law enforcement); AI reader''s verdict incidental: Officer dual-office exemption covers tribal cross-deputization agreements. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 51, § 6v2 (2026). History: R.L. 1910, § 4274. Amended by Laws 1929, c. 255, p. 363, § 1; Laws 1939, p. 22, § 1, emerg. Laws 2013, c. 288, § 1, emerg. eff. May 15, 2013; Laws 2015, c. 269, § 1; Laws 2016, c. 297, Text read from the Legislative Service Bureau''s Title 51 PDF (updated Nov. 12, 2026), page 12. Found by the state statutes pilot (terms: indian tribe; tribal law enforcement); AI reader''s verdict incidental: Officer dual-office exemption covers tribal cross-deputization agreements. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

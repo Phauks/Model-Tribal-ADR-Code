@@ -89,7 +89,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1308.2 (2026). History: Added by Laws 1989, c. 322, § 5, emerg. eff. May 26, 1989. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 882. Found by the state statutes pilot (terms: indian health); AI reader''s verdict incidental: Indian health services facilities count as prior coverage. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
