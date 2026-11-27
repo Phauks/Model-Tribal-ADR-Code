@@ -156,6 +156,8 @@ const visits = {
 		'/presidents/abraham-lincoln',
 		// A browsed Federal collection (src/lib/collection-browser.ts), and an order's page with its place in the list.
 		'/laws/executive-orders',
+		// The Federal law home: its picture cards and decade chart (SectionCards.svelte, ColumnChart.svelte).
+		'/laws',
 		'/laws/executive-order-6145',
 		// A page's own Changes view (src/lib/server/page-changes.ts): a nation's, with its badges, and a glossary entry's.
 		'/nations/hannahville-indian-community/changes',

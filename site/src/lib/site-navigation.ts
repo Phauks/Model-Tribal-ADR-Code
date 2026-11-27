@@ -102,7 +102,27 @@ export type NavigationLink = {
 	icon: NavigationIconName;
 };
 
-export type NavigationGroup = { title: string; links: NavigationLink[] };
+/** A picture on a section home's card (SectionCards.svelte): a copy served from this site, credited under the cards. */
+export type SectionPicture = {
+	src: string;
+	/** Empty when the picture only decorates the card's name. */
+	alt: string;
+	width: number;
+	height: number;
+	/** What it shows, who made it and when, where the original is, and its license, as the "Picture credits" fold lists it. */
+	credit: string;
+	/** The holding library's or archive's record of the original. */
+	source?: string;
+};
+
+export type NavigationGroup = {
+	title: string;
+	links: NavigationLink[];
+	/** One line under the group's name on the section's home page. */
+	line?: string;
+	/** The picture at the top of the group's card on the section's home page. */
+	picture?: SectionPicture;
+};
 
 export type NavigationSection = {
 	key: string;
@@ -171,37 +191,47 @@ export const navigationSections: NavigationSection[] = [
 		home: '/laws',
 		groups: [
 			{
-				title: 'Laws',
+				title: 'Treaties',
+				line: 'Made with Native nations',
+				picture: { src: '/pictures/federal-law/treaties.jpg', alt: '', width: 720, height: 400, credit: 'Treaty with the Delawares, Fort Pitt, September 17, 1778, the marks and seals of White Eyes and The Pipe. National Archives (Ratified Indian Treaty 8). Public domain.', source: 'https://catalog.archives.gov/id/176316991' },
 				links: [
 					{ label: 'Treaties and Agreements', link: '/stats/treaties', icon: 'scroll', count: 'treaties' },
-					{ label: 'Statutes', link: '/stats/federal-statutes', icon: 'book-marked', count: 'federal-statutes' },
-					{ label: 'U.S. Code, Title 25', link: '/laws/usc-25', icon: 'library', count: 'united-states-code-sections' },
-					{ label: 'Executive Orders', link: '/laws/executive-orders', icon: 'pen-line', count: 'executive-orders' }
-				]
-			},
-			{
-				title: 'Regulations and Notices',
-				links: [
-					{ label: 'Regulations', link: '/stats/federal-regulations', icon: 'clipboard-list', count: 'federal-regulations' },
-					{ label: '25 C.F.R. Sections', link: '/stats/regulation-sections', icon: 'list-ordered', count: 'regulation-sections' },
-					{ label: 'Federal Register Notices', link: '/stats/federal-register-notices', icon: 'newspaper', count: 'federal-register-notices' }
+					{ label: 'Land Cessions', link: '/stats/land-cessions', icon: 'map-pinned', count: 'land-cessions' }
 				]
 			},
 			{
 				title: 'Congress',
+				line: 'Acts of Congress and the record behind them',
+				picture: { src: '/pictures/federal-law/congress.jpg', alt: '', width: 720, height: 400, credit: 'United States Capitol, photograph by Carol M. Highsmith, December 7, 2008. Carol M. Highsmith’s America, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2010630189' },
 				links: [
+					{ label: 'Statutes', link: '/stats/federal-statutes', icon: 'book-marked', count: 'federal-statutes' },
+					{ label: 'U.S. Code, Title 25', link: '/laws/usc-25', icon: 'library', count: 'united-states-code-sections' },
 					{ label: 'Hearings', link: '/stats/congressional-hearings', icon: 'message-square', count: 'congressional-hearings' },
 					{ label: 'Committee Reports', link: '/stats/committee-reports', icon: 'file-text', count: 'committee-reports' },
 					{ label: 'Committee Prints', link: '/stats/committee-prints', icon: 'scroll-text', count: 'committee-prints' },
-					{ label: 'Research Service Reports', link: '/stats/congressional-research-service-reports', icon: 'library', count: 'congressional-research-service-reports' }
+					{ label: 'Research Service Reports', link: '/stats/congressional-research-service-reports', icon: 'library', count: 'congressional-research-service-reports' },
+					{ label: 'Serial Set, 1817–1899', link: '/stats/serial-set', icon: 'archive', count: 'serial-set' }
 				]
 			},
 			{
-				title: 'Agency Records',
+				title: 'President',
+				line: 'Orders, proclamations and memoranda',
+				picture: { src: '/pictures/federal-law/president.jpg', alt: '', width: 720, height: 400, credit: 'The White House, photograph by Carol M. Highsmith, October 3, 2008. Carol M. Highsmith’s America, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2010630940' },
+				links: [{ label: 'Executive Orders', link: '/laws/executive-orders', icon: 'pen-line', count: 'executive-orders' }]
+			},
+			{
+				title: 'Agencies',
+				line: 'Rules, notices, opinions and decisions',
+				picture: { src: '/pictures/federal-law/agencies.jpg', alt: '', width: 720, height: 400, credit: 'Department of the Interior headquarters, Washington, D.C., photograph by Carol M. Highsmith, between 1980 and 2006. Carol M. Highsmith Archive, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011634641' },
 				links: [
+					{ label: 'Regulations', link: '/stats/federal-regulations', icon: 'clipboard-list', count: 'federal-regulations' },
+					{ label: '25 C.F.R. Sections', link: '/stats/regulation-sections', icon: 'list-ordered', count: 'regulation-sections' },
+					{ label: 'Federal Register Notices', link: '/stats/federal-register-notices', icon: 'newspaper', count: 'federal-register-notices' },
+					{ label: 'Solicitor’s Opinions', link: '/stats/solicitor-opinions', icon: 'scale', count: 'solicitor-opinions' },
+					{ label: 'Indian Affairs Manual', link: '/stats/indian-affairs-manual', icon: 'book-open', count: 'indian-affairs-manual' },
 					{ label: 'Acknowledgment Petitions', link: '/stats/federal-acknowledgment', icon: 'file-check', count: 'federal-acknowledgment' },
 					{ label: 'Gaming Commission', link: '/stats/national-indian-gaming-commission', icon: 'dices', count: 'national-indian-gaming-commission' },
-					{ label: 'Land Cessions', link: '/stats/land-cessions', icon: 'map-pinned', count: 'land-cessions' }
+					{ label: 'Films and Recordings', link: '/stats/indian-affairs-films', icon: 'archive', count: 'indian-affairs-films' }
 				]
 			}
 		],
