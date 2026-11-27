@@ -174,6 +174,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
   note: 'The source''s words: "New Stuyahok Village".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 679469
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'New Stuyahok' (New Stuyahok)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'New Stuyahok'.
 governance:
 - aspect: head-of-government
   value: President

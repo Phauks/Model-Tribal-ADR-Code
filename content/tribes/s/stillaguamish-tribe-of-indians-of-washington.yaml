@@ -187,6 +187,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Stillaguamish Tribe of Indians".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 333331
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Stillaguamish Tribe' (Arlington)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 768692
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'STILLAGUAMISH TRIBE OF INDIANS' (UEI SCBFR3JUM1W3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'STILLAGUAMISH TRIBE OF INDIANS'.
 governance:
 - aspect: form
   value: Constitution

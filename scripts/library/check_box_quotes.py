@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """Check every case and law box quotation against the text it quotes, in the
-source library (library.py), and keep its ellipses honest.
+source library (library.py), and keep its ellipses in the Indigo Book form.
 
 A quotation in a record's `case_box` or `law_box` must match the opinion or
-the enacted text word for word, and "..." marks only words that are really
-left out (docs/style-guide.md, "Quotations"; Indigo Book R8.3.7: "When
-omitting material following a final punctuation mark, do not use an
-ellipsis"). So:
+the enacted text word for word, and marks left-out words the way the Indigo
+Book does (R8.3; docs/style-guide.md, "Quotations"):
 
+  - a quotation that begins after the start of the court's sentence takes no
+    "..." there; its first letter is capitalized in brackets, "[T]he", or
+    left as it is when it is already a capital (R8.3.2);
+  - a quotation that stops before the end of the court's sentence ends with
+    "..." and then the sentence's own closing mark: "knowledge ... ."
+    (R8.3.5);
   - a quotation that ends where the court's sentence ends keeps the
-    sentence's own period (or "?" or "!") and takes no trailing "...";
-  - a trailing "..." is right only when the sentence goes on after the last
-    quoted word;
-  - a leading "..." is right only when the sentence began before the first
-    quoted word.
+    sentence's own period (or "?" or "!") and takes no "..." (R8.3.7).
 
 For each quotation the script finds the words in the documents the record
 cites (the official report first, then other copies; a match in the
@@ -23,9 +23,9 @@ line-break hyphens, so a scan's hyphenation and curly quotation marks do not
 hide a match; the words themselves must all be there, in order.
 
 What it finds goes to research/quotes/box-quote-endings.json with --write:
-one entry for each quotation that begins or ends with "...", saying whether
-the sentence goes on at that end. scripts/lint_records.py reads that file,
-so a pull request that adds or changes a quotation with "..." at either end
+one entry for each quotation that ends with "... .", saying whether the
+sentence really goes on after the last quoted word. scripts/lint_records.py
+reads that file, so a pull request that adds or changes such a quotation
 fails until this script has confirmed it (check "quote-ellipsis"). An entry
 whose `how` is "read by hand" was checked by a person or Claude against a
 copy the library cannot match (a scan too poor to read, say); --write keeps
@@ -34,14 +34,16 @@ those while their quotation is unchanged.
 Commands (run from the repository root; the library downloads on first use,
 see library.py):
   python3 scripts/library/check_box_quotes.py            # report
-  python3 scripts/library/check_box_quotes.py --fix      # drop needless trailing "..."
+  python3 scripts/library/check_box_quotes.py --fix      # put ellipses in the Indigo Book form
   python3 scripts/library/check_box_quotes.py --write    # save the endings file
   python3 scripts/library/check_box_quotes.py --record cherokee-nation-v-georgia
 
---fix replaces a trailing "..." after a quotation that ends its sentence with
-that sentence's own closing mark, placed before any closing quotation mark
-the quotation already has ('status" ...' becomes 'status."'). It changes
-nothing else; every other problem is for a person to read and decide.
+--fix changes only the two ends of a quotation: a leading "..." goes and the
+first letter is capitalized in brackets; a trailing "..." becomes the
+sentence's own closing mark where the sentence ends there, or "... ." (with
+the closing mark the court's sentence ends with) where it goes on; a closing
+mark goes after any closing quotation mark the quotation already has only
+when the source puts it there. Every other problem is for a person to read.
 """
 
 from __future__ import annotations
@@ -64,7 +66,11 @@ ENDINGS_FILE = ROOT / "research" / "quotes" / "box-quote-endings.json"
 BOXES = ("case_box", "law_box")
 ELLIPSIS = r"(?:\.\s?\.\s?\.|…)"
 LEADING = re.compile(rf"^\s*{ELLIPSIS}\s*")
-TRAILING = re.compile(rf"\s*{ELLIPSIS}\s*$")
+# "knowledge ... ." : the Indigo Book's mark for a sentence cut short (R8.3.5).
+CUT_END = re.compile(r"(?<=[^\s.])\s+(?:\.\.\.|…)\s+([.?!])\s*$")
+BARE_END = re.compile(rf"\s*{ELLIPSIS}\s*$")
+# Words before a period that do not end a sentence.
+ABBREVIATIONS = {"v", "vs", "co", "corp", "inc", "no", "nos", "mr", "mrs", "ms", "dr", "st", "ct", "cir", "id", "ibid", "e.g", "i.e", "cf", "art", "sec", "secs", "ch", "cl", "stat", "rev", "ann", "supp", "ed", "eds", "ex", "rel", "jr", "sr", "gen", "gov", "dept", "assn", "ry", "bros", "u.s", "u.s.c", "f", "p", "pp", "n", "nn"}
 CLOSERS = "\"”’'"
 SENTENCE_ENDS = ".?!"
 # A quoted run of words is allowed this many letters of other text between
@@ -87,10 +93,24 @@ def letters(text: str) -> tuple[str, list[int]]:
     return "".join(out), where
 
 
+def strip_end(text: str) -> str:
+    """The quotation without a trailing "... ." or "..."."""
+    return BARE_END.sub("", CUT_END.sub("", text))
+
+
+def trailing_form(text: str) -> str | None:
+    """'cut' for "word ... .", 'bare' for "word ...", else None."""
+    if CUT_END.search(text):
+        return "cut"
+    if BARE_END.search(text):
+        return "bare"
+    return None
+
+
 def quotation_parts(text: str) -> list[tuple[str, int]]:
     """The runs of words a quotation must contain, in order, each with the
     most other letters allowed before it (after the previous run)."""
-    body = LEADING.sub("", TRAILING.sub("", text))
+    body = LEADING.sub("", strip_end(text))
     body = re.sub(r"\[@[^\]]*\]", "", body)
     parts: list[tuple[str, int]] = []
     gap = 0
@@ -208,6 +228,29 @@ def ending_after(raw: str, index: int) -> tuple[str, str]:
     return "sentence", "."
 
 
+def closing_mark_after(raw: str, index: int) -> str:
+    """The mark that ends the court's sentence somewhere after raw[index]: the
+    first ".", "?" or "!" that is not part of an abbreviation ("U. S.",
+    "v.", "Co.") and is followed by a capital, a new line or the end."""
+    position = index + 1
+    limit = min(len(raw), index + 3000)
+    while position < limit:
+        character = raw[position]
+        if character in "?!":
+            return character
+        if character == ".":
+            word = re.search(r"([A-Za-z.]+)$", raw[max(0, position - 12) : position])
+            token = word.group(1).lower().strip(".") if word else ""
+            rest = raw[position + 1 : position + 12]
+            follows = re.match(r"^[\"”’')\]\d\s]*(\S)?", rest)
+            next_character = follows.group(1) if follows else None
+            abbreviation = token in ABBREVIATIONS or (len(token) == 1 and token.isalpha())
+            if not abbreviation and (next_character is None or next_character.isupper() or next_character in "\"“*"):
+                return "."
+        position += 1
+    return "."
+
+
 def beginning_before(raw: str, index: int) -> str:
     """'sentence' when a sentence (or the text) starts at raw[index], else
     'continues'. Opening quotation marks and brackets are passed over; a
@@ -286,7 +329,7 @@ def check(record_filter: str | None):
             "text": text,
             "pinpoint": quote.get("pinpoint"),
             "leading": bool(LEADING.match(text)),
-            "trailing": bool(TRAILING.search(text)),
+            "trailing": trailing_form(text),
         }
         parts = quotation_parts(text)
         rows = connection.execute(
@@ -327,6 +370,7 @@ def check(record_filter: str | None):
             start=beginning_before(document.raw, first),
             end=end,
             mark=mark,
+            closing=closing_mark_after(document.raw, last) if end == "continues" else mark,
             syllabus=in_syllabus(document.raw, first, last),
             before=document.raw[max(0, first - 50) : first].replace("\n", " "),
             after=document.raw[last + 1 : last + 40].replace("\n", " "),
@@ -335,38 +379,83 @@ def check(record_filter: str | None):
     return results
 
 
+def first_letter(text: str) -> tuple[int, str] | None:
+    """Where the quotation's first letter is, past any opening quotation mark
+    or Markdown emphasis, and the letter."""
+    match = re.match(r"^[\s\"“‘'*_(]*(\[)?([A-Za-z])", text)
+    if not match:
+        return None
+    return match.start(2), match.group(2)
+
+
+def starts_lowercase(text: str) -> bool:
+    found = first_letter(LEADING.sub("", text))
+    return bool(found) and found[1].islower()
+
+
 def problems_of(result) -> list[str]:
     if not result["found"]:
         return ["not found in " + (", ".join(result["searched"]) or "any document the record cites")]
     problems = []
+    text = result["text"]
     if result["syllabus"]:
         problems.append("found only in the syllabus, which is the Reporter's summary, not the Court's words")
-    if result["trailing"] and result["end"] == "sentence":
-        problems.append(f'needless trailing "...": the sentence ends here with "{result["mark"]}"')
-    if result["leading"] and result["start"] == "sentence":
-        problems.append('needless leading "...": the sentence starts here')
-    stripped = TRAILING.sub("", result["text"]).rstrip()
-    if not result["trailing"] and result["end"] == "continues" and stripped[-1:] not in SENTENCE_ENDS + CLOSERS:
-        problems.append('stops mid-sentence without "..."')
+    if result["leading"]:
+        problems.append('begins with "..."; drop it and capitalize the first letter in brackets, "[T]he" (Indigo Book R8.3.2)')
+    elif starts_lowercase(text):
+        problems.append('begins with a lowercase letter; capitalize it in brackets, "[T]he" (Indigo Book R8.3.2)')
+    trailing = result["trailing"]
+    if result["end"] == "sentence" and trailing:
+        problems.append(f'needless "...": the sentence ends here with "{result["mark"]}" (Indigo Book R8.3.7)')
+    elif result["end"] == "continues":
+        if trailing == "bare":
+            problems.append(f'the sentence goes on: end with "... {result["closing"]}" (Indigo Book R8.3.5)')
+        elif trailing is None:
+            problems.append(f'stops mid-sentence: end with "... {result["closing"]}" (Indigo Book R8.3.5)')
     return problems
 
 
-def fixed_text(text: str, mark: str) -> str:
-    body = TRAILING.sub("", text).rstrip()
-    closing = ""
-    while body and body[-1] in CLOSERS:
-        closing = body[-1] + closing
-        body = body[:-1]
-    if body and body[-1] in SENTENCE_ENDS:
-        return body + closing
-    return body + mark + closing
+def capitalized_start(text: str) -> str:
+    """Drop a leading "..." and capitalize the first letter in brackets."""
+    body = LEADING.sub("", text)
+    found = first_letter(body)
+    if not found:
+        return body
+    index, letter = found
+    if letter.isupper():
+        return body
+    if index > 0 and body[index - 1] == "[":
+        return body[:index] + letter.upper() + body[index + 1 :]
+    return body[:index] + "[" + letter.upper() + "]" + body[index + 1 :]
+
+
+def fixed_text(result) -> str:
+    text = result["text"]
+    if result["leading"] or starts_lowercase(text):
+        text = capitalized_start(text)
+    trailing = trailing_form(text)
+    if result["end"] == "sentence" and trailing:
+        body = strip_end(text).rstrip()
+        closing = ""
+        while body and body[-1] in CLOSERS:
+            closing = body[-1] + closing
+            body = body[:-1]
+        if not (body and body[-1] in SENTENCE_ENDS):
+            body += result["mark"]
+        text = body + closing
+    elif result["end"] == "continues" and trailing != "cut":
+        text = strip_end(text).rstrip() + " ... " + result["closing"]
+    return text
 
 
 def apply_fixes(results) -> int:
     changes: dict[str, list[tuple[str, str]]] = {}
     for result in results:
-        if result["found"] and result["trailing"] and result["end"] == "sentence":
-            changes.setdefault(result["file"], []).append((result["text"], fixed_text(result["text"], result["mark"])))
+        if not result["found"]:
+            continue
+        new = fixed_text(result)
+        if new != result["text"]:
+            changes.setdefault(result["file"], []).append((result["text"], new))
     count = 0
     for file, pairs in changes.items():
         path = ROOT / file
@@ -380,7 +469,7 @@ def apply_fixes(results) -> int:
             source = source.replace(old_line, new_line)
             count += 1
         path.write_text(source, encoding="utf-8")
-        # The file must still say the same thing, apart from the fixed texts.
+        # The file must still read as YAML.
         yaml.safe_load(source)
     return count
 
@@ -400,21 +489,17 @@ def write_endings(results) -> int:
     today = datetime.date.today().isoformat()
     entries = list(kept)
     for result in results:
-        if not (result["leading"] or result["trailing"]) or not result["found"]:
+        if result["trailing"] != "cut" or not result["found"]:
             continue
         if (result["record"], result["text"]) in by_hand:
             continue
-        entry = {"record": result["record"], "text": result["text"], "document": result["document"], "page": result["page"]}
-        if result["leading"]:
-            entry["start"] = result["start"]
-        if result["trailing"]:
-            entry["end"] = result["end"]
+        entry = {"record": result["record"], "text": result["text"], "document": result["document"], "page": result["page"], "end": result["end"]}
         entry["how"] = "library"
         entry["checked"] = today
         entries.append(entry)
     entries.sort(key=lambda entry: (entry["record"], entry["text"]))
     document = {
-        "about": "For each case or law box quotation that begins or ends with \"...\", whether the quoted sentence goes on past that end in the document it quotes ('continues') or starts or stops there ('sentence'). Written by scripts/library/check_box_quotes.py --write; read by scripts/lint_records.py (check quote-ellipsis).",
+        "about": "For each case or law box quotation that ends with \"... .\" (a sentence cut short, Indigo Book R8.3.5), whether the quoted sentence goes on past the last quoted word in the document it quotes ('continues') or stops there ('sentence'). Written by scripts/library/check_box_quotes.py --write; read by scripts/lint_records.py (check quote-ellipsis).",
         "quotations": entries,
     }
     ENDINGS_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -425,7 +510,7 @@ def write_endings(results) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--record", help="check only this record key")
-    parser.add_argument("--fix", action="store_true", help='replace needless trailing "..." with the sentence\'s own mark')
+    parser.add_argument("--fix", action="store_true", help="put the ellipses at both ends in the Indigo Book form")
     parser.add_argument("--write", action="store_true", help=f"save the endings to {ENDINGS_FILE.relative_to(ROOT)}")
     parser.add_argument("--json", help="also save every result to this file")
     arguments = parser.parse_args()
@@ -433,7 +518,7 @@ def main() -> int:
     results = check(arguments.record)
     if arguments.fix:
         fixed = apply_fixes(results)
-        print(f"Fixed {fixed} needless trailing ellipses.")
+        print(f"Changed {fixed} quotations.")
         results = check(arguments.record)
     if arguments.json:
         Path(arguments.json).write_text(json.dumps(results, ensure_ascii=False, indent=1), encoding="utf-8")

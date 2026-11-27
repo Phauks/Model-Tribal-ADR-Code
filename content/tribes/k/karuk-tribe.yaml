@@ -202,6 +202,84 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: 'Listed as "Karuk Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Karuk Tribe of California (1998)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Karuk Tribe' (Pacific Region)
+- program: indian-health-service-self-governance-compact
+  since: 1998
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: California Area, row 'Karuk Tribe of California'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Karuk Tribe of California'.
+- program: pl-102-477-plan
+  start: '2025-04-01'
+  end: '2035-09-30'
+  programs_included:
+  - Adult Re-Entry Purpose Area 3
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Head Start
+  - Low Income Home Energy Assistance Program
+  - Native Employment Works
+  - Temporary Assistance for Needy Families
+  - Job Placement and Training
+  - 'Welfare Assistance: Burial Assistance'
+  - 'Welfare Assistance: Emergency Assistance'
+  - 'Welfare Assistance: General Assistance'
+  - Adult Education
+  - Higher Education
+  - Johnson O’Malley
+  - Tribal Youth Program PA9
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Karuk Tribe'; PL102_477_PartnerEnrollment, its 15 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 6501410
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Karuk Tribe' (Happy Camp)
+- program: interior-non-bia-funding-agreement
+  agency: Bureau of Reclamation
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Bureau of Reclamation agreements, 'Karuk Tribe'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 10510430
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'KARUK TRIBE OF CALIFORNIA' (UEI NXGLLUNXJMU8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KARUK TRIBE OF CALIFORNIA'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 4823406
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'KARUK TRIBE OF CALIFORNIA' (UEI NXGLLUNXJMU8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KARUK TRIBE OF CALIFORNIA'.
 governance:
 - aspect: governing-body
   value: Tribal Council

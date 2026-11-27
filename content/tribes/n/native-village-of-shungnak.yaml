@@ -176,6 +176,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
   note: 'The source''s words: "Native Village of Shungnak".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 255588
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Shungnak' (Shungnak)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Shungnak'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Shungnak" among organizations under constitutions approved

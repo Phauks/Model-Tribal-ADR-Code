@@ -126,6 +126,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
   note: 'The source''s words: "King Island Native Community".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 381220
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'King Island' (Nome)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'King Island'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The King Island Native Community" among organizations under constitutions approved

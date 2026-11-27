@@ -216,6 +216,32 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
   note: 'The source''s words: "Nome Eskimo Community".'
   operator: tribal
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2005
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Nome Eskimo Community' (Alaska Region)
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1513245
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Nome Eskimo Community' (Nome)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1443142
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'NOME ESKIMO COMMUNITY' (UEI TN9RANKKJGR4), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Nome Eskimo Community" among organizations under constitutions approved by the

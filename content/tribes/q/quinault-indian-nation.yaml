@@ -177,6 +177,56 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Quinault Indian Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Quinault Indian Nation (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1991
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Quinault Indian Nation' (Northwest Region)
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Quinault Indian Nation'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3968021
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Quinault Indian Nation' (Taholah)
+- program: fdpir-self-determination-demonstration
+  start: 2023-08
+  detail: Round 2
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 2 projects, 'Quinault Indian Nation'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 43513392
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'QUINAULT INDIAN NATION' (UEI HLRLS7PJ7FT3), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 10328179
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'QUINAULT INDIAN NATION' (UEI HLRLS7PJ7FT3), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Quinault Indian Nation Constitution

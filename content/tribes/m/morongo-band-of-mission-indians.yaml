@@ -185,6 +185,43 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Morongo Band of Mission Indians, California".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2015
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Morongo Band Of Mission Indians' (Pacific Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Morongo Band Of Mission Indians'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 358806
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Morongo Band of Mission Indians' (Banning)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Morongo Band of Mission Indians'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Morongo Band of Mission Indians'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1098412
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'MORONGO BAND OF MISSION INDIANS' (UEI NMPLX2KMJND6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'MORONGO BAND OF MISSION INDIANS'.
 governance:
 - aspect: governing-body
   value: Tribal Council

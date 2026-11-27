@@ -199,6 +199,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Paskenta Band of Nomlaki Indians of California".
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2019
+  through: Paskenta Band of Nomlaki Indians – Rolling Hills Clinic
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: California Area, row 'Paskenta Band of Nomlaki Indians – Rolling Hills Clinic'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Paskenta Band of Nomlaki Indians – Rolling Hills Clinic'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 502055
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Paskenta Band of Nomlaki Indians' (Corning)
 governance:
 - aspect: form
   value: Tribal Constitution
