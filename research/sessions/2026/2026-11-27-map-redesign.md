@@ -36,3 +36,7 @@ The Map page's controls follow the approved design D (mockups in the project's d
 ## Next
 
 Map stories (one nation through homeland, cessions, removal and land today) are parked on the roadmap. Removal routes for other nations need sources with legal standing, such as removal provisions in treaties.
+
+## Built design D (one visual language)
+
+The Map page now follows mockup D2 ("one visual language"): side-by-side comparisons are in the project files under design/map-redesign/compare. Differences from the mockup that remain on purpose: the Indian Health Service areas layer is left out because there is no data for it yet; the key lists the three kinds of Census land area, because the map shades them differently; the base map choices show real thumbnails and the fourth is named Topographic; "Place names and roads" and "Land area outlines" sit under Base map; the details panel has a Close link and the chosen shape is highlighted; states keep their name and count labels; there is no distance scale on this page; and phones whose browser allows full screen keep the full screen button. The numbered circles that grouped small land areas are gone from this page, as in the mockup.
