@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { accountPages } from '#lib/account-menu.ts';
 import { accountSection, isWorkspacePath, personalSectionOf, workspaceSection } from '#lib/personal-navigation.ts';
-import { holdingNavigationLink } from '#lib/site-navigation.ts';
+import { holdingNavigationLink, navigationIconNames } from '#lib/site-navigation.ts';
 import { workspacePages, workspacePagesNamed } from '#lib/workspace-menu.ts';
 
 describe('the Workspace as a section', () => {
@@ -14,12 +14,12 @@ describe('the Workspace as a section', () => {
 		expect(section?.label).toBe('Workspace');
 		expect(section?.home).toBe('/workspace');
 		expect(section?.groups.map((group) => group.title)).toEqual([
-			'Writing and review',
+			'Writing and Review',
 			'Messages',
-			'Files and sources',
+			'Files and Sources',
 			'Nations',
 			'Events',
-			'People and access',
+			'People and Access',
 			'Money',
 			'Site'
 		]);
@@ -30,7 +30,13 @@ describe('the Workspace as a section', () => {
 	it('lists only the categories the person has pages in', () => {
 		const section = workspaceSection(workspacePagesNamed(['overview', 'inbox', 'requests']));
 		expect(section?.groups).toEqual([
-			{ title: 'Messages', links: [{ label: 'Inbox', link: '/workspace/inbox' }, { label: 'Requests', link: '/workspace/requests' }] }
+			{
+				title: 'Messages',
+				links: [
+					{ label: 'Inbox', link: '/workspace/inbox', icon: 'inbox' },
+					{ label: 'Requests', link: '/workspace/requests', icon: 'flag' }
+				]
+			}
 		]);
 	});
 
@@ -45,7 +51,17 @@ describe('the Account pages as a section', () => {
 		expect(accountSection.groups.map((group) => group.title)).toEqual(['', 'Settings']);
 		const links = accountSection.groups.flatMap((group) => group.links.map((link) => link.link));
 		expect(links).toEqual(accountPages.map((item) => item.link));
-		expect(accountSection.groups[0].links.map((link) => link.label)).toEqual(['Profile and credit', 'Following', 'Your uploads', 'Nation team']);
+		expect(accountSection.groups[0].links.map((link) => link.label)).toEqual(['Profile and Credit', 'Following', 'Your Uploads', 'Nation Team']);
+	});
+});
+
+describe('the labels', () => {
+	it('names every workspace page and account page, with an icon the menus can draw', () => {
+		const links = [...(workspaceSection(workspacePages)?.groups ?? []), ...accountSection.groups].flatMap((group) => group.links);
+		for (const link of links) {
+			expect(link.label, link.link).toBeTruthy();
+			expect(navigationIconNames, link.link).toContain(link.icon);
+		}
 	});
 });
 

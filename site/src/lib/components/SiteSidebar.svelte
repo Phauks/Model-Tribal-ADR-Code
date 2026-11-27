@@ -12,7 +12,8 @@
 	//   menu (src/lib/site-navigation.ts);
 	// - then "On this page": the page's headings, the one being read marked as
 	//   the page scrolls (src/lib/active-heading.ts);
-	// - then Your work while an essay is edited.
+	// - then "Changes to This Page", where the site records the page's changes
+	//   (Trevor, Nov. 23, 2026), and Your work while an essay is edited.
 	//
 	// The Workspace and the Account pages are places too: on their own pages
 	// the column lists them as it lists a section's pages
@@ -39,11 +40,13 @@
 	import Briefcase from '@lucide/svelte/icons/briefcase';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+	import FileClock from '@lucide/svelte/icons/file-clock';
 	import Menu from '@lucide/svelte/icons/menu';
 	import X from '@lucide/svelte/icons/x';
 	import { followActiveHeading, headingIds } from '#lib/active-heading.ts';
 	import { isUnfolded } from '#lib/outline-folding.ts';
 	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
+	import { followedPageAddress } from '#lib/page-history.ts';
 	import { personalSectionOf, workspaceSection } from '#lib/personal-navigation.ts';
 	import {
 		currentNavigationLink,
@@ -68,6 +71,8 @@
 	// Pages built ahead of time cannot read the query while being built.
 	const search = $derived(building ? '' : page.url.search);
 	const counts = $derived(page.data.navigationCounts as NavigationCounts | undefined);
+	// The page the reader is on, when the site records its changes: "Changes to This Page" ends the column.
+	const followedPage = $derived(page.error ? undefined : followedPageAddress(path));
 
 	// The page's title, for the phone strip on pages with nothing else to name them.
 	let pageTitle = $state<string | undefined>(undefined);
@@ -307,8 +312,11 @@
 			/>
 		</div>
 	{/if}
+	{#if followedPage}
+		<!-- Opens the history of the page the reader is on, not every page's (Trevor, Nov. 23, 2026). -->
+		<p class="page-changes"><a href="/changes?page={encodeURIComponent(followedPage)}"><FileClock size={18} aria-hidden="true" />Changes to This Page</a></p>
+	{/if}
 {/snippet}
-
 
 <!-- Wide screens: a column beside the page. The reader hides and shows it with
      the hamburger at the top left of the masthead, or with Ctrl+\ (Trevor,
@@ -473,6 +481,34 @@
 		font-weight: var(--font-weight-bold);
 		letter-spacing: var(--font-letter-spacing-wide);
 		text-transform: uppercase;
+	}
+
+	/* The page's own history, after its headings, with a rule above it. */
+	.page-changes {
+		margin: var(--space-4) 0 0;
+		padding-top: var(--space-3);
+		border-top: 1px solid var(--color-line);
+	}
+
+	.page-changes a {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		min-height: 2.5rem;
+		padding: 0 var(--space-3);
+		border-radius: var(--radius-control);
+		color: var(--color-ink);
+		font-weight: var(--font-weight-semibold);
+		text-decoration: none;
+	}
+
+	.page-changes a:hover {
+		background: var(--color-surface);
+		text-decoration: underline;
+	}
+
+	.sidebar-narrow .page-changes a {
+		min-height: var(--layout-target-minimum);
 	}
 
 	.local-pages {

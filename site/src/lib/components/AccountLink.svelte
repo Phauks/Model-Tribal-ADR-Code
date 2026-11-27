@@ -30,21 +30,14 @@
 	// button stays a link to /sign-in.
 	import { onMount, tick } from 'svelte';
 	import { page } from '$app/state';
-	import Bell from '@lucide/svelte/icons/bell';
-	import Database from '@lucide/svelte/icons/database';
-	import HandHeart from '@lucide/svelte/icons/hand-heart';
 	import LogIn from '@lucide/svelte/icons/log-in';
 	import LogOut from '@lucide/svelte/icons/log-out';
-	import Mail from '@lucide/svelte/icons/mail';
-	import ShieldCheck from '@lucide/svelte/icons/shield-check';
-	import ShoppingBag from '@lucide/svelte/icons/shopping-bag';
-	import Star from '@lucide/svelte/icons/star';
-	import Upload from '@lucide/svelte/icons/upload';
 	import UserRound from '@lucide/svelte/icons/user-round';
-	import Users from '@lucide/svelte/icons/users';
 	import X from '@lucide/svelte/icons/x';
-	import type { Component } from 'svelte';
-	import { accountPages, currentAccountPage, type AccountPage } from '#lib/account-menu.ts';
+	import { currentAccountPage } from '#lib/account-menu.ts';
+	import { navigationIcons } from '#lib/navigation-icons.ts';
+	import { accountGroupLinks, starredPagesLink } from '#lib/personal-navigation.ts';
+	import type { NavigationLink } from '#lib/site-navigation.ts';
 	import { followingState } from '#lib/following-state.svelte.ts';
 	import { unreadLabel } from '#lib/following.ts';
 	import { roleLabels, type Role } from '#lib/permissions.ts';
@@ -82,23 +75,12 @@
 	});
 	const signedInAs = $derived(fromPage ?? remembered);
 
-	// The account menu's rows, each with its icon; Starred pages is the reader's own, kept on this device.
-	const icons: Record<string, Component<{ size?: number; 'aria-hidden'?: 'true' }>> = {
-		'/profile': UserRound,
-		'/following': Bell,
-		'/uploads': Upload,
-		'/profile/nation-team': Users,
-		'/starred': Star,
-		'/account/security': ShieldCheck,
-		'/account/email': Mail,
-		'/account/orders': ShoppingBag,
-		'/account/sponsorship': HandHeart,
-		'/account/data': Database
-	};
-	const starredPages: AccountPage = { label: 'Starred pages', link: '/starred', group: 'yours' };
-	const yours = [...accountPages.filter((item) => item.group === 'yours'), starredPages];
-	const settings = accountPages.filter((item) => item.group === 'settings');
-	const current = $derived(page.url.pathname === '/starred' ? starredPages : currentAccountPage(page.url.pathname));
+	// The account menu's rows (src/lib/personal-navigation.ts): the person's
+	// own pages, with Starred pages, the reader's own, kept on this device;
+	// then the settings kept with the account.
+	const yours = [...accountGroupLinks('yours'), starredPagesLink];
+	const settings = accountGroupLinks('settings');
+	const currentLink = $derived(page.url.pathname === '/starred' ? '/starred' : currentAccountPage(page.url.pathname)?.link);
 	// Updates to followed pages not yet seen, beside Following (site/DESIGN.md, section 6, "Follow").
 	const unread = $derived(followingState.current.signedIn ? followingState.current.unread : 0);
 
@@ -233,7 +215,7 @@
 		</button>
 		<div id="account-links" class="account-menu" hidden={!open}>
 			<div class="sheet-head">
-				<span>Your account</span>
+				<span>Your Account</span>
 				<button type="button" class="icon-button" aria-label="Close" onclick={() => ((open = false), button?.focus())}><X size={24} /></button>
 			</div>
 			<div class="signed-in-as">
@@ -248,13 +230,13 @@
 					<span>You are signed in.</span>
 				{/if}
 			</div>
-			{#snippet rows(items: AccountPage[])}
+			{#snippet rows(items: NavigationLink[])}
 				<ul>
 					{#each items as item (item.link)}
-						{@const Icon = icons[item.link]}
-						<li class:needs-scripts={item === starredPages}>
-							<a href={item.link} aria-current={item === current ? 'page' : undefined} onclick={() => (open = false)}>
-								{#if Icon}<Icon size={18} aria-hidden="true" />{/if}
+						{@const Icon = navigationIcons[item.icon]}
+						<li class:needs-scripts={item === starredPagesLink}>
+							<a href={item.link} aria-current={item.link === currentLink ? 'page' : undefined} onclick={() => (open = false)}>
+								<Icon size={18} aria-hidden="true" />
 								<span class="label">{item.label}</span>
 								{#if item.link === '/following' && unread > 0}<span class="unread">{unreadLabel(unread)} new</span>{/if}
 							</a>

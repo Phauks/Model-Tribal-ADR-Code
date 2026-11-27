@@ -231,6 +231,42 @@ const column = '.sidebar-wide .local-column';
 	await context.close();
 }
 
+// 9. Signed in with workspace access (the signed-in hint the Worker sets,
+//    src/lib/signed-in-hint.ts): the Workspace is the section bar's last tab,
+//    with its menu; the profile button opens the account menu; and the column
+//    holds only where the reader is (design/sidebar-workspace-profile, option B).
+{
+	const { context, page, errors } = await newPage();
+	await context.addCookies([{ name: 'signed-in-hint', value: 'overview.inbox.requests.people.access', url: base }]);
+	await page.goto(`${base}/nations/navajo-nation`, { waitUntil: 'networkidle' });
+	const sections = await page.locator(`${bar} summary`).evaluateAll((list) => list.map((summary) => summary.textContent.replace(/\(.*\)/, '').trim()));
+	check(sections.join('|') === 'Nations|Federal Law|Courts and Cases|Library|Writing|About|Workspace', `Signed in, the section bar lists ${sections.join(', ')}`);
+	const workspace = page.locator(`${bar} details[data-key='workspace']`);
+	await workspace.locator('summary').click();
+	const links = await workspace.locator('.menu-link').evaluateAll((list) => list.map((a) => a.getAttribute('href')));
+	check(links.join('|') === '/workspace/inbox|/workspace/requests|/workspace/people|/workspace/access', `The Workspace menu lists ${links.join(', ')}`);
+	check(await workspace.locator(".section-home[href='/workspace']").isVisible(), 'The Workspace menu has no link to its Overview');
+	await page.keyboard.press('Escape');
+	check((await page.locator(`${column} a[href^='/account'], ${column} a[href^='/workspace'], ${column} a[href='/starred']`).count()) === 0, 'The column still lists the account or workspace pages');
+	await page.locator('.masthead .account-button').click();
+	const account = await page.locator('#account-links a').evaluateAll((list) => list.map((a) => a.getAttribute('href')));
+	check(account.includes('/profile') && account.includes('/following') && account.includes('/starred') && account.includes('/account/data'), `The account menu lists ${account.join(', ')}`);
+	check(await page.locator('#account-links form[action="/sign-out"] button').isVisible(), 'The account menu has no Sign out');
+	await page.keyboard.press('Escape');
+	check(await page.locator('#account-links').isHidden(), 'Escape does not close the account menu');
+	check(errors.length === 0, `Errors signed in: ${errors.join('; ')}`);
+	await context.close();
+}
+
+// 10. Signed out there is no Workspace tab, and Recent Changes is in the About menu.
+{
+	const { context, page } = await newPage();
+	await page.goto(`${base}/charter`, { waitUntil: 'networkidle' });
+	check((await page.locator(`${bar} details[data-key='workspace']`).count()) === 0, 'Signed out, the section bar has a Workspace tab');
+	check((await page.locator(`${bar} details[data-key='about'] a[href='/changes']`).count()) === 1, 'The About menu has no Recent Changes');
+	await context.close();
+}
+
 await browser.close();
 server.close();
 if (problems.length > 0) {
