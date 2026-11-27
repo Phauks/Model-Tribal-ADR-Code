@@ -89,12 +89,12 @@
 		{@render children()}
 	</main>
 {:else}
-	<SiteHeader contentVersion={data.versions.content} />
+	<SiteHeader contentVersion={data.versions.content} versions={data.versions} />
 	<!-- The site's six sections in a row under the masthead, on wide screens (SectionBar.svelte). -->
 	<SectionBar />
 	<PrintDetails />
 	<OfflineNotice contentVersion={data.versions.content} />
-	<UpdateNotice versions={data.versions} />
+	<UpdateNotice />
 	<div class="site-body">
 		<SiteSidebar />
 		<main id="main-content" class="page-width" tabindex="-1" {@attach resizableTables}>
