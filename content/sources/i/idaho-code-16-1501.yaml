@@ -1,0 +1,47 @@
+key: idaho-code-16-1501
+kind: state-statute
+citation:
+  type: legislation
+  title: Minors and adults may be adopted
+  title-short: Idaho Code § 16-1501
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 16-1501
+  author:
+  - literal: Idaho Legislature
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title16/T16CH15/SECT16-1501
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title16/T16CH15/SECT16-1501
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 16-1501 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Idaho Code § 16-1501 (2026). History: (16-1501) 1879, p. 8, sec. 1; R.S., sec. 2545; reen. R.C. & C.L., sec. 2700; C.S., sec. 4682; I.C.A., sec. 31-1101; am. 1951, ch. 283, sec. 1, p. 611; am. 1953, ch. 150, sec. 1, p. 245; am. 1972, ch. 147, sec. 1, p. 318; am. 1991, ch. 39, sec. 1, p. 78; am. 1996, ch. 195, sec. 1, p. 610; am. 2002, ch. 233, sec. 4, p. 671; am. 2013, ch. 138, sec. 3, p. 324; am. 2014, ch. 97, sec. 1, p. 265. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian); AI reader''s verdict incidental: Adoption chapter savings clause preserving Indian Child Welfare Act requirements. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian'

@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Nez Perces, June 11, 1855, 12 Stat. 957
+  since: '1855-06-11'
+  source: treaty-with-the-nez-perces-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-06-11'
+  locator: p. 702 (Treaty with the Nez Perces, 1855; Kappler header "June 11, 1855. | 12 Stats., 957. | Ratified Mar. 8. 1859. | Proclaimed Apr. 29, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Nez Percé; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: ID
   presence: government-office

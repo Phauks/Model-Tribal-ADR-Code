@@ -1,0 +1,50 @@
+key: minnesota-statutes-256b-196
+kind: state-statute
+citation:
+  type: legislation
+  title: Intergovernmental Transfers; Hospital and Physician Payments
+  title-short: Minn. Stat. § 256B.196
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 256B.196
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2009
+  URL: https://www.revisor.mn.gov/statutes/cite/256B.196
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/256B.196
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 256B.196 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 256B.196 (2026). History: 2009 c 79 art 5 s 44; 2010 c 200 art 1 s 8; 1Sp2011 c 9 art 6 s 56 -58; 2013 c 108 art 6 s 19; 1Sp2017 c 6 art 4 s 45 -47; 2021 c 30 art 1 s 16; 2024 c 85 s 71; 2026 c 88 art 1 s 129. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal government; allotment; tribal); AI reader''s verdict incidental: Tribal government owning ambulance service ineligible for payments. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal government; allotment; tribal'

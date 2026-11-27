@@ -61,7 +61,11 @@
 			</button>
 		{/if}
 		{#if controls.history}
-			<a class="icon-button" href={controls.history.href} title={controls.history.title} aria-label="History"><History size={22} aria-hidden="true" /></a>
+			{#if controls.history.onclick}
+				<button type="button" class="icon-button history" title={controls.history.title} aria-label="History" onclick={controls.history.onclick}><History size={22} aria-hidden="true" /></button>
+			{:else}
+				<a class="icon-button history" href={controls.history.href} title={controls.history.title} aria-label="History"><History size={22} aria-hidden="true" /></a>
+			{/if}
 		{/if}
 		{#each (controls.links ?? []).filter((link) => link.icon === 'team') as link (link.href)}
 			<a class="icon-button" href={link.href} title={link.title} aria-label={link.title}><Users size={22} aria-hidden="true" /></a>

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Dec. 14, 1872, 1 Kappler 813
+  since: '1872-12-14'
+  source: executive-order-1872-12-14-white-mountain-reservation-san-carlos-division
+  confidence: high
+  verification: read-in-full
+  as_of: '1872-12-14'
+  locator: 1 Kappler 813
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the San Carlos division of the White Mountain Indian Reservation, Arizona.
 states:
 - state: AZ
   presence: government-office

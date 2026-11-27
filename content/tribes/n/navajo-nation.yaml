@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Navaho, Sept. 9, 1849, 9 Stat. 974
+  since: '1849-09-09'
+  source: treaty-with-the-navaho-1849
+  confidence: medium
+  verification: inferred
+  as_of: '1849-09-09'
+  locator: p. 583 (Treaty with the Navaho, 1849; Kappler header "Sept. 9, 1849. | 9 Stat., 974. | Ratified Sept. 9, 1850. | Proclaimed Sept. 24, 1850.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Navajo; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: AZ
   presence: government-office

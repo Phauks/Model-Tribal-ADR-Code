@@ -1,17 +1,21 @@
-import { readFilters } from '#lib/page-history.ts';
+import { redirect } from '@sveltejs/kit';
+import { followedPageAddress, pageChangesLink, readFilters } from '#lib/page-history.ts';
 import { storageForPages } from '#lib/server/essay-pages.ts';
 import { listChanges, pageRecordedSince } from '#lib/server/page-history.ts';
 import { builtPages, recordThisBuildOnce } from '#lib/server/page-history-run.ts';
 import type { PageServerLoad } from './$types';
 
 // Recent changes, and one page's history with ?page= (site/COLLABORATION.md,
-// "Recent changes"). Read from the database on each request.
+// "Recent changes"). Read from the database on each request. A page still on
+// the site shows its own changes in its place, so ?page= sends the reader there.
 export const prerender = false;
 
 export const load: PageServerLoad = async ({ url, setHeaders, locals }) => {
+	const filters = readFilters(url.searchParams);
+	// A page whose changes the site records lists them in its own place (src/lib/server/page-changes.ts).
+	if (filters.page && followedPageAddress(filters.page) === filters.page) redirect(308, pageChangesLink(filters.page));
 	const { database, bucket } = storageForPages();
 	await recordThisBuildOnce(database, bucket);
-	const filters = readFilters(url.searchParams);
 	const directory = await builtPages();
 	const account = locals.account?.subject;
 	const list = await listChanges(database, filters, directory, new Date(), account);

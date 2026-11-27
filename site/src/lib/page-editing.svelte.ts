@@ -48,7 +48,8 @@ export interface PageControls {
 	drafts?: { shown: boolean; set: (shown: boolean) => void } | null;
 	/** Links for a page edited elsewhere, such as a nation's page. */
 	links?: readonly PageLink[];
-	history?: { title: string; href: string } | null;
+	/** A link to the page's history, or a button that opens it in place (the site text's list). */
+	history?: { title: string; href?: string; onclick?: () => void } | null;
 	publish?: PagePublish | null;
 	/** How many comment threads are open on the page, shown on the Commenting button. */
 	openComments?: number;

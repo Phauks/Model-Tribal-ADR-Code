@@ -69,7 +69,8 @@ TOPIC = "water-rights-settlement"
 AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
 OAI = "https://digitalrepository.unm.edu/do/oai/"
 SETS = ("publication:nawrs", "publication:nawrs_comm")
-CRS = "congressional-research-service-indian-water-rights-settlements-r44148-2024"
+# The project's record of the report is crs-r44148 (the congressional sources thread; the June 17, 2025 version). The table
+# was copied from the Dec. 3, 2024 version, read on EveryCRSReport.com.
 CRS_LINK = "https://www.everycrsreport.com/files/2024-12-03_R44148_4e5766ec72ea73b3dcd2cb4ce6b4da016d301c7a.html"
 GOVINFO = "https://api.govinfo.gov"
 SHORT = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."]
@@ -380,16 +381,6 @@ def settlement_nations(text: str) -> list[str]:
     return found
 
 
-def crs_record() -> tuple[Path, dict]:
-    citation = {"type": "report", "title": "Indian Water Rights Settlements", "author": [{"literal": "Congressional Research Service"}], "number": "R44148",
-                "issued": {"date-parts": [[2024, 12, 3]]}, "URL": CRS_LINK, "accessed": {"date-parts": [[2026, 11, 27]]}}
-    record = {"key": CRS, "kind": "report", "citation": citation, "original_link": CRS_LINK, "retrieved": TODAY, "archives": [],
-              "rights": {"status": "no-permission-needed", "basis": "us-government-work", "basis_note": "A report of the Congressional Research Service, a work of the United States government (17 U.S.C. § 105).", "redistribution": True},
-              "jurisdictions": [{"level": "federal"}], "topics": [TOPIC], "found_in": [SESSION],
-              "notes": "Table 1, \"Enacted Indian Water Rights Settlements\", lists the 35 settlements Congress has enacted, with each Act, its amendments, the states, the nations, the acre-feet a year and the authorized federal cost; research/water-settlements/enacted-settlements.csv copies it. The report counts 39 federally approved settlements in all. Read on EveryCRSReport.com's copy (Unverified)."}
-    return record_path(CRS), record
-
-
 def records(args) -> None:
     work = Path(args.work)
     data = json.loads((work / "water.json").read_text(encoding="utf-8"))
@@ -397,7 +388,7 @@ def records(args) -> None:
     names = NationNames()
     acts, _ = act_records(data)
     catalog = university_records(data, names)
-    for path, record in acts + catalog + [crs_record()]:
+    for path, record in acts + catalog:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(dump(record), encoding="utf-8")
     with (RESEARCH / "university-of-new-mexico-items.csv").open("w", encoding="utf-8", newline="") as handle:

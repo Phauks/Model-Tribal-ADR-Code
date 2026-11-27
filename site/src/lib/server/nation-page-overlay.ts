@@ -22,7 +22,7 @@ import {
 } from '../nation-page-changes.ts';
 import { imageViewerAttributeText } from '../image-viewer.ts';
 import { pacificDay } from '../change-dates.ts';
-import { historyBadgeLabel, lastChangeSentence } from '../page-history.ts';
+import { historyBadgeLabel, lastChangeSentence, pageChangesLink } from '../page-history.ts';
 import { writeToTeamLink } from '../nation-team-reports.ts';
 import { pageRestricts, restrictItemAttribute, type PageRestrictions } from '../nation-restrictions.ts';
 import { readableDate } from '../readable-date.ts';
@@ -125,7 +125,7 @@ export interface PageClaim {
  * keeps the page, by office, when the project confirmed them, and how to ask
  * to join the team (Trevor, Nov. 23, 2026).
  */
-function claimedBadge(nationIdentifier: string, claim: PageClaim): string {
+export function claimedBadge(nationIdentifier: string, claim: PageClaim): string {
 	const check =
 		'<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
 	const chevron =
@@ -158,7 +158,7 @@ export function historyBadge(nationIdentifier: string, history: PageHistorySumma
 		: history.recordedSince
 			? `<p><strong>No changes since ${readableDate(pacificDay(history.recordedSince))},</strong> when the site began recording changes.</p>`
 			: '<p>No changes have been recorded yet.</p>';
-	const link = `/changes?page=${encodeURIComponent(`/nations/${nationIdentifier}`)}`;
+	const link = pageChangesLink(`/nations/${nationIdentifier}`);
 	return `<style>[data-build-history]{display:none!important}</style><span class="no-print"><details class="status-popover"><summary class="review-badge"><span class="visually-hidden">Page history:</span>${icon}${historyBadgeLabel(history.count)}${chevron}</summary><div class="status-panel">${last}<p class="muted">Nation pages show when they changed and which parts, never earlier wording.</p><p><a href="${link}">See all changes to this page</a></p></div></details></span>`;
 }
 

@@ -22,6 +22,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Cheyenne Tribe, July 6, 1825, 7 Stat. 255
+  since: '1825-07-06'
+  source: treaty-with-the-cheyenne-tribe-1825
+  confidence: medium
+  verification: inferred
+  as_of: '1825-07-06'
+  locator: p. 232 (Treaty with the Cheyenne Tribe, 1825; Kappler header "July 6, 1825. | 7 Stat., 255. | Proclamation, Feb. 6, 1826.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Cheyenne; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: MT
   presence: government-office

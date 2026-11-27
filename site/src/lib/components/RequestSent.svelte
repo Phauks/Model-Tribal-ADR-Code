@@ -1,7 +1,7 @@
 <script lang="ts">
 	// What the reader sees once a request is saved: the reference number and
 	// what happens next (docs/requests.md). Used by the request page and the
-	// Report a problem dialog.
+	// Request a Change dialog.
 	import type { RequestKind } from '#lib/requests.ts';
 
 	let {
@@ -23,7 +23,7 @@
 </div>
 <svelte:element this={`h${headingLevel}`}>What happens next</svelte:element>
 <ul>
-	<li>We acknowledge the request within 7 days, using the contact details you gave.</li>
+	<li>We acknowledge the request by email within 7 days.</li>
 	{#if sent.kind === 'restrict' || sent.kind === 'remove'}
 		<li>The material you named is taken out of public view within 7 days, before it is reviewed.</li>
 	{/if}

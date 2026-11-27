@@ -1,19 +1,25 @@
 <script lang="ts">
 	// The request form's questions for one kind of request (docs/requests.md):
 	// what the request is about, who is asking, the details and, for a missing
-	// nation, its proof. Used by the request page and by the Report a problem
-	// dialog (ReportProblem.svelte), so both ask the same questions. Given
+	// nation, its proof. Used by the request page and by the Request a Change
+	// dialog (RequestChange.svelte), so both ask the same questions. Given
 	// onresult, the form sends itself in place, without leaving the page.
-	// Compact, for the dialog, asks them on one short page (Trevor, Nov. 23,
-	// 2026): the material, the details and a way to reply, with the optional
-	// questions about the reader and the files folded away.
+	// Compact, for the Request a Change dialog, asks them on one page in two
+	// columns (Trevor, Nov. 27, 2026): who is asking and what it is about on
+	// the left, what should change and any files on the right, stacking into
+	// one column on phones. Every request ends with the statements the reader
+	// accepts before sending (requestStatements in src/lib/requests.ts).
+	import type { Snippet } from 'svelte';
 	import { applyAction, enhance } from '$app/forms';
 	import Dropdown from '#lib/components/Dropdown.svelte';
+	import FileAdder from '#lib/components/FileAdder.svelte';
 	import TurnstileCheck, { turnstileResetEvent } from '#lib/components/TurnstileCheck.svelte';
 	import { turnstileKey } from '#lib/turnstile-key.ts';
 	import {
 		authorityStatementLabels,
 		authorityStatements,
+		maximumRequestFiles,
+		requestStatements,
 		sourceKindLabels,
 		sourceKinds,
 		type RequestKind
@@ -31,7 +37,8 @@
 		action,
 		onresult,
 		compact = false,
-		toTeam = false
+		toTeam = false,
+		lead
 	}: {
 		kind: RequestKind;
 		nationIdentifier?: string;
@@ -52,6 +59,8 @@
 		compact?: boolean;
 		/** Written to the nation's team from its page's badge: sharing who sent it starts ticked. */
 		toTeam?: boolean;
+		/** Put first in the compact form's left column, such as the dialog's choice of request. */
+		lead?: Snippet;
 	} = $props();
 
 	type ActionResult = Parameters<typeof applyAction>[0];
@@ -61,11 +70,7 @@
 	const errorCount = $derived(Object.keys(errors).length);
 	const accepted = 'application/pdf,image/png,image/jpeg,image/webp';
 
-	/** The folded questions open by themselves when they hold an answer or an error. */
-	const aboutYouAnswered = $derived(
-		['requesterName', 'requesterNation', 'requesterRole', 'writingForGovernment'].some((name) => value(name) !== '')
-	);
-	const fileErrors = $derived(['file1', 'file2', 'file3'].some((name) => errors[name]));
+	/** The folded sources open by themselves when they hold an answer or an error. */
 	const moreSourcesAnswered = $derived(
 		[2, 3].some((slot) =>
 			['Kind', 'Title', 'Citation', 'Date', 'Location', 'File'].some(
@@ -172,10 +177,88 @@
 		</div>
 	</fieldset>
 {/snippet}
+{#snippet nationFieldset()}
+	<fieldset>
+		<legend><svelte:element this={heading}>The nation</svelte:element></legend>
+		<div class="field">
+			<label for="{prefix}missingNationOfficialName">Name as the government source writes it</label>
+			{@render fieldError('missingNationOfficialName')}
+			<input
+				type="text"
+				id="{prefix}missingNationOfficialName"
+				name="missingNationOfficialName"
+				value={value('missingNationOfficialName')}
+				aria-invalid={errors.missingNationOfficialName ? 'true' : undefined}
+				aria-describedby={describedBy('missingNationOfficialName')}
+			/>
+		</div>
+		<div class="field">
+			<label for="{prefix}missingNationOwnName">
+				Name the nation uses for itself, in any language or script (optional)
+			</label>
+			<input
+				type="text"
+				id="{prefix}missingNationOwnName"
+				name="missingNationOwnName"
+				value={value('missingNationOwnName')}
+			/>
+		</div>
+		<div class="field">
+			<label for="{prefix}missingNationStates">States where the nation is located</label>
+			{@render fieldError('missingNationStates')}
+			<input
+				type="text"
+				id="{prefix}missingNationStates"
+				name="missingNationStates"
+				value={value('missingNationStates')}
+				aria-invalid={errors.missingNationStates ? 'true' : undefined}
+				aria-describedby={describedBy('missingNationStates')}
+			/>
+		</div>
+		<div class="field">
+			<label for="{prefix}earlierReference">
+				Reference number of an earlier application, if you are applying again (optional)
+			</label>
+			<input
+				type="text"
+				id="{prefix}earlierReference"
+				name="earlierReference"
+				value={value('earlierReference')}
+				class="short"
+			/>
+		</div>
+	</fieldset>
+{/snippet}
+
+{#snippet proofFieldset()}
+	<fieldset>
+		<legend><svelte:element this={heading}>Proof</svelte:element></legend>
+		<p id="{prefix}proof-hint" class="hint">
+			One federal or state government source that names the nation as a Native nation, Tribe,
+			band or community is enough. For each source, give a citation or web address, upload a
+			copy (PDF or an image), or both. A readable copy helps when a source is not online. The
+			nation’s own website, articles, books and genealogy records are welcome as supporting
+			material but do not count on their own.
+		</p>
+		{#if compact}
+			{@render sourceSlot(1)}
+			<details class="fold" open={moreSourcesAnswered}>
+				<summary>More sources (optional)</summary>
+				{@render sourceSlot(2)}
+				{@render sourceSlot(3)}
+			</details>
+		{:else}
+			{#each [1, 2, 3] as slot (slot)}
+				{@render sourceSlot(slot)}
+			{/each}
+		{/if}
+	</fieldset>
+{/snippet}
+
 {#snippet materialField()}
 	{@const sensitive = kind === 'restrict' || kind === 'remove' || kind === 'replace-name'}
 	<div class="field">
-		<label for="{prefix}material">Page, record or passage</label>
+		<label for="{prefix}material">Web page</label>
 		{#if sensitive}
 			<p class="hint" id="{prefix}material-hint">
 				Please only say where the material is. Do not repeat sensitive material here.
@@ -197,17 +280,18 @@
 {/snippet}
 
 {#snippet detailsField()}
+	{@const question = kind === 'correct' ? 'What is wrong, and what should it say?' : kind === 'replace-name' ? 'Whose name should be replaced? Say how they appear, such as “the mother”, not their full name.' : kind === 'restrict' || kind === 'remove' ? 'What should happen to the material?' : kind === 'contribute' ? 'What would you like to offer?' : kind === 'add-nation' ? `Anything else we should know${compact ? ' (optional)' : ''}` : toTeam ? 'Your message' : 'Your question'}
 	<div class="field">
-		<label for="{prefix}details">
-			{#if kind === 'correct'}What is wrong, and what should it say?{:else if kind === 'replace-name'}Whose name should be replaced? Say how they appear, such as “the mother”, not their full name.{:else if kind === 'restrict' || kind === 'remove'}What should happen to the material?{:else if kind === 'contribute'}What would you like to offer?{:else if kind === 'add-nation'}Anything else we should know{compact ? ' (optional)' : ''}{:else if toTeam}Your message{:else}Your question{/if}
-		</label>
+		<!-- The dialog names the box "Details" and asks the question under it (Trevor, Nov. 27, 2026). -->
+		<label for="{prefix}details">{compact ? `Details${kind === 'add-nation' ? ' (optional)' : ''}` : question}</label>
+		{#if compact}<p class="hint" id="{prefix}details-hint">{question.replace(' (optional)', '')}</p>{/if}
 		{@render fieldError('details')}
 		<textarea
 			id="{prefix}details"
 			name="details"
-			rows={compact ? 4 : 6}
+			rows={compact ? 10 : 6}
 			aria-invalid={errors.details ? 'true' : undefined}
-			aria-describedby={describedBy('details')}>{value('details')}</textarea
+			aria-describedby={describedBy('details', compact)}>{value('details')}</textarea
 		>
 	</div>
 	{#if value('nationIdentifier', nationIdentifier) && (kind === 'correct' || kind === 'question' || kind === 'contribute')}
@@ -227,15 +311,15 @@
 
 {#snippet aboutYouFields()}
 	<div class="field">
-		<label for="{prefix}requesterName">Name{compact ? '' : ' (optional)'}</label>
+		<label for="{prefix}requesterName">Name (optional)</label>
 		<input type="text" id="{prefix}requesterName" name="requesterName" value={value('requesterName')} autocomplete="name" />
 	</div>
 	<div class="field">
-		<label for="{prefix}requesterNation">Nation{compact ? '' : ' (optional)'}</label>
+		<label for="{prefix}requesterNation">Nation (optional)</label>
 		<input type="text" id="{prefix}requesterNation" name="requesterNation" value={value('requesterNation')} />
 	</div>
 	<div class="field">
-		<label for="{prefix}requesterRole">Role, for example court administrator or cultural preservation officer{compact ? '' : ' (optional)'}</label>
+		<label for="{prefix}requesterRole">Role, for example court administrator or cultural preservation officer (optional)</label>
 		<input type="text" id="{prefix}requesterRole" name="requesterRole" value={value('requesterRole')} autocomplete="organization-title" />
 	</div>
 	{#if kind !== 'add-nation'}
@@ -255,10 +339,10 @@
 
 {#snippet contactField()}
 	<div class="field">
-		<label for="{prefix}contact">Email address or phone number</label>
+		<label for="{prefix}contact">Email address</label>
 		{@render fieldError('contact')}
 		<input
-			type="text"
+			type="email"
 			id="{prefix}contact"
 			name="contact"
 			value={value('contact')}
@@ -270,21 +354,26 @@
 {/snippet}
 
 {#snippet fileFields()}
-	<p class="hint">
-		{#if compact}
-			PDF, PNG, JPEG or WebP, up to 10 MB each.
-		{:else}
-			You can attach up to three files, for example a nation’s resolution or a corrected citation
-			(PDF, PNG, JPEG or WebP, up to 10 MB each).
-		{/if}
-	</p>
-	{#each [1, 2, 3] as slot (slot)}
-		<div class="field">
-			<label for="{prefix}file{slot}">File {slot}{compact ? '' : ' (optional)'}</label>
-			{@render fieldError(`file${slot}`)}
-			<input type="file" id="{prefix}file{slot}" name="file{slot}" accept={accepted} />
-		</div>
-	{/each}
+	<div class="field">
+		<label for="{prefix}files">Files (optional)</label>
+		<p class="hint" id="{prefix}files-hint">
+			{#if compact}
+				Up to {maximumRequestFiles}: PDF, PNG, JPEG or WebP, up to 10 MB each.
+			{:else}
+				Up to {maximumRequestFiles} files, for example a nation’s resolution or a corrected citation
+				(PDF, PNG, JPEG or WebP, up to 10 MB each).
+			{/if}
+		</p>
+		{@render fieldError('files')}
+		<FileAdder
+			id="{prefix}files"
+			name="files"
+			accept={accepted}
+			maximum={maximumRequestFiles}
+			invalid={Boolean(errors.files)}
+			describedBy={describedBy('files', true)}
+		/>
+	</div>
 {/snippet}
 
 {#if problem}
@@ -307,109 +396,47 @@
 			<input type="text" id="{prefix}website" name="website" tabindex="-1" autocomplete="off" />
 		</div>
 
-		{#if kind === 'add-nation'}
-			<fieldset>
-				<legend><svelte:element this={heading}>The nation</svelte:element></legend>
-				<div class="field">
-					<label for="{prefix}missingNationOfficialName">Name as the government source writes it</label>
-					{@render fieldError('missingNationOfficialName')}
-					<input
-						type="text"
-						id="{prefix}missingNationOfficialName"
-						name="missingNationOfficialName"
-						value={value('missingNationOfficialName')}
-						aria-invalid={errors.missingNationOfficialName ? 'true' : undefined}
-						aria-describedby={describedBy('missingNationOfficialName')}
-					/>
-				</div>
-				<div class="field">
-					<label for="{prefix}missingNationOwnName">
-						Name the nation uses for itself, in any language or script (optional)
-					</label>
-					<input
-						type="text"
-						id="{prefix}missingNationOwnName"
-						name="missingNationOwnName"
-						value={value('missingNationOwnName')}
-					/>
-				</div>
-				<div class="field">
-					<label for="{prefix}missingNationStates">States where the nation is located</label>
-					{@render fieldError('missingNationStates')}
-					<input
-						type="text"
-						id="{prefix}missingNationStates"
-						name="missingNationStates"
-						value={value('missingNationStates')}
-						aria-invalid={errors.missingNationStates ? 'true' : undefined}
-						aria-describedby={describedBy('missingNationStates')}
-					/>
-				</div>
-				<div class="field">
-					<label for="{prefix}earlierReference">
-						Reference number of an earlier application, if you are applying again (optional)
-					</label>
-					<input
-						type="text"
-						id="{prefix}earlierReference"
-						name="earlierReference"
-						value={value('earlierReference')}
-						class="short"
-					/>
-				</div>
-			</fieldset>
-
-			<fieldset>
-				<legend><svelte:element this={heading}>Proof</svelte:element></legend>
-				<p id="{prefix}proof-hint" class="hint">
-					One federal or state government source that names the nation as a Native nation, Tribe,
-					band or community is enough. For each source, give a citation or web address, upload a
-					copy (PDF or an image), or both. A readable copy helps when a source is not online. The
-					nation’s own website, articles, books and genealogy records are welcome as supporting
-					material but do not count on their own.
-				</p>
-				{#if compact}
-					{@render sourceSlot(1)}
-					<details class="fold" open={moreSourcesAnswered}>
-						<summary>More sources (optional)</summary>
-						{@render sourceSlot(2)}
-						{@render sourceSlot(3)}
-					</details>
-				{:else}
-					{#each [1, 2, 3] as slot (slot)}
-						{@render sourceSlot(slot)}
-					{/each}
-				{/if}
-			</fieldset>
-		{:else if toTeam}
-			<!-- A message to the nation's team is about its page as a whole. -->
-			<input type="hidden" name="material" value={value('material', material)} />
-		{:else if compact}
-			{@render materialField()}
-		{:else}
-			<fieldset>
-				<legend><svelte:element this={heading}>Which material?</svelte:element></legend>
-				{@render materialField()}
-			</fieldset>
-		{/if}
-
 		{#if compact}
-			{@render detailsField()}
-			{@render contactField()}
-			<details class="fold" open={aboutYouAnswered}>
-				<summary>About you (optional)</summary>
-				{@render aboutYouFields()}
-			</details>
-			{#if kind !== 'add-nation'}
-				<details class="fold" open={fileErrors}>
-					<summary>Attach files (optional)</summary>
-					{@render fileFields()}
-				</details>
-			{/if}
+			<div class="columns">
+				<div class="column">
+					{@render lead?.()}
+					{#if kind === 'add-nation'}
+						{@render nationFieldset()}
+					{/if}
+					{@render contactField()}
+					{@render aboutYouFields()}
+				</div>
+				<div class="column">
+					{#if kind === 'add-nation'}
+						{@render proofFieldset()}
+					{:else if toTeam}
+						<input type="hidden" name="material" value={value('material', material)} />
+					{:else}
+						{@render materialField()}
+					{/if}
+					{@render detailsField()}
+					{#if kind !== 'add-nation'}
+						{@render fileFields()}
+					{/if}
+				</div>
+			</div>
 		{:else}
+			{#if kind === 'add-nation'}
+				{@render nationFieldset()}
+				{@render proofFieldset()}
+			{:else if toTeam}
+				<!-- A message to the nation's team is about its page as a whole. -->
+				<input type="hidden" name="material" value={value('material', material)} />
+			{:else}
+				<fieldset>
+					<legend><svelte:element this={heading}>Which material?</svelte:element></legend>
+					{@render materialField()}
+				</fieldset>
+			{/if}
+
 			<fieldset>
 				<legend><svelte:element this={heading}>Who are you?</svelte:element></legend>
-				<p class="hint">Only a way to reply is required.</p>
+				<p class="hint">Only an email address is required.</p>
 				{@render aboutYouFields()}
 				{@render contactField()}
 			</fieldset>
@@ -463,17 +490,31 @@
 			</fieldset>
 		{/if}
 
-		<p class="small">
-			{#if kind === 'restrict' || kind === 'remove' || kind === 'replace-name'}
-				We never publish the material you ask us to make private or delete.
-			{:else}
-				Files and sources you send may be cited or published, because the work shows its sources.
-			{/if}
-			Your contact details are never published. Your name, role and contact details are deleted 12
-			months after the request is resolved, unless you asked to be credited.
-		</p>
+		<fieldset class="statements">
+			<legend>Terms of Submission</legend>
+			<!-- A short box that scrolls, so the terms take little room (Trevor, Nov. 27, 2026).
+			     It takes focus so keyboard readers can scroll it (WCAG 2.1.1). -->
+			<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+			<ul class="statement-lines" tabindex="0" aria-label="Terms of Submission">
+				{#each requestStatements(kind) as statement (statement)}<li>{statement}</li>{/each}
+			</ul>
+			{@render fieldError('acceptStatements')}
+			<div class="choice">
+				<input
+					type="checkbox"
+					id="{prefix}acceptStatements"
+					name="acceptStatements"
+					value="yes"
+					required
+					checked={value('acceptStatements') === 'yes'}
+					aria-invalid={errors.acceptStatements ? 'true' : undefined}
+					aria-describedby={describedBy('acceptStatements')}
+				/>
+				<label for="{prefix}acceptStatements">I accept these terms</label>
+			</div>
+		</fieldset>
 		{#if siteKey}<TurnstileCheck {siteKey} action="request" />{/if}
-		<p><button class="button" type="submit">{toTeam ? 'Send the message' : 'Send the request'}</button></p>
+		<p><button class="button" type="submit">{toTeam ? 'Send the message' : 'Submit'}</button></p>
 	</form>
 
 <style>
@@ -531,7 +572,55 @@
 		flex: 1 1 14rem;
 	}
 
-	/* The dialog's folded optional questions. */
+	/* The dialog's two columns: who and what on the left, the details and files on the right. */
+	.columns {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0 var(--space-6);
+	}
+
+	.columns textarea[name='details'] {
+		min-height: 14rem;
+	}
+
+	@media (max-width: 44rem) {
+		.columns {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+
+	/* Each term on its own line, above the one box that accepts them all. */
+	.statements {
+		margin-bottom: var(--space-3);
+	}
+
+	.statements legend {
+		font-weight: var(--font-weight-bold);
+		margin-bottom: var(--space-1);
+	}
+
+	/* Each term on its own line in a box about four lines tall that scrolls for the rest. */
+	.statement-lines {
+		list-style: none;
+		margin: 0;
+		padding: var(--space-1) var(--space-3);
+		max-height: 6.25rem;
+		overflow-y: auto;
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-control);
+		font-size: var(--font-size-small);
+		line-height: 1.45;
+	}
+
+	.statement-lines li {
+		margin: 0;
+	}
+
+	.statements .choice {
+		margin: var(--space-2) 0 0;
+	}
+
+	/* The add-nation sources' fold. */
 	details.fold {
 		margin: 0;
 	}

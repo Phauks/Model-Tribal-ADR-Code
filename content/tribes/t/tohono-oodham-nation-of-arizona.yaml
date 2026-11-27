@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of July 1, 1874, 1 Kappler 806
+  since: '1874-07-01'
+  source: executive-order-1874-07-01-papago-san-xavier-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1874-07-01'
+  locator: 1 Kappler 806
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Papago Indian Reserve (San Xavier del Bac), Arizona.
 states:
 - state: AZ
   presence: government-office

@@ -45,7 +45,6 @@ const workspaceLinks: Record<WorkspacePageName, { label: string; icon: Navigatio
 	sponsors: { label: 'Sponsors', icon: 'hand-coins' },
 	orders: { label: 'Orders', icon: 'receipt' },
 	nonprofit: { label: 'Nonprofit', icon: 'landmark' },
-	'site-text': { label: 'Site Text', icon: 'text-cursor-input' },
 	changes: { label: 'Hidden Changes', icon: 'eye-off' },
 	'service-checks': { label: 'Service Checks', icon: 'activity' },
 	wayback: { label: 'Wayback Captures', icon: 'archive' }

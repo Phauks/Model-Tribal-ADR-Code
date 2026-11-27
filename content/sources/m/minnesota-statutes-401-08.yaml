@@ -1,0 +1,50 @@
+key: minnesota-statutes-401-08
+kind: state-statute
+citation:
+  type: legislation
+  title: Corrections Advisory Board
+  title-short: Minn. Stat. § 401.08
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: '401.08'
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1973
+  URL: https://www.revisor.mn.gov/statutes/cite/401.08
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/401.08
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 401.08 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 401.08 (2026). History: 1973 c 354 s 8; 1975 c 304 s 10; 1977 c 392 s 11; 1982 c 559 s 6,7; 2023 c 52 art 17 s 22. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal nation; tribal nations; nation; tribal); AI reader''s verdict incidental: Tribal Nation governments appoint corrections advisory board members. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal nation; tribal nations; nation; tribal'

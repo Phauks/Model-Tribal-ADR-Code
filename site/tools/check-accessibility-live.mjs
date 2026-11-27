@@ -99,7 +99,7 @@ const openers = {
 		await page.locator('#download-choices').waitFor({ state: 'visible' });
 	},
 	async report(page) {
-		await mastheadButton(page, 'Report a problem');
+		await mastheadButton(page, 'Request a Change');
 		await page.locator('dialog.modal[open]').waitFor({ state: 'visible' });
 	},
 	async follow(page) {
@@ -154,6 +154,9 @@ const visits = {
 		'/biographies/a-pish-ka-go-gi',
 		'/supreme-court/justices/john-marshall',
 		'/supreme-court/presidents/abraham-lincoln',
+		// A page's own Changes view (src/lib/server/page-changes.ts): a nation's, with its badges, and a glossary entry's.
+		'/nations/hannahville-indian-community/changes',
+		'/glossary/peacemaking/changes',
 		'/sign-in',
 		'/sign-in/forgot',
 		['/requests', ['sign-in panel']],
@@ -195,7 +198,6 @@ const visits = {
 		'/workspace/rooms',
 		'/workspace/intake',
 		'/workspace/address-book',
-		'/workspace/site-text',
 		'/workspace/nonprofit',
 		'/workspace/comments',
 		'/workspace/review-requests'

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Letter of Comm'r of Indian Affairs, Nov. 29, 1859, 1 Kappler 868
+  since: '1859-11-29'
+  source: letter-1859-11-29-pyramid-lake-walker-lake-reservations
+  confidence: medium
+  verification: read-in-full
+  as_of: '1859-11-29'
+  locator: 1 Kappler 868
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Pyramid Lake (Truckee) Reserve, Nevada.
 states:
 - state: NV
   presence: government-office

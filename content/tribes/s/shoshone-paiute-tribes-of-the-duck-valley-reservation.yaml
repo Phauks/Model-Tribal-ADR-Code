@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Apr. 16, 1877, 1 Kappler 866
+  since: '1877-04-16'
+  source: executive-order-1877-04-16-duck-valley-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1877-04-16'
+  locator: 1 Kappler 866
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Duck Valley Reserve, Idaho and Nevada.
 states:
 - state: NV
   presence: government-office

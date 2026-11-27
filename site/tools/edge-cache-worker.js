@@ -45,7 +45,7 @@ export const edgeCacheRules = [
 	// Map tiles: each tile set's name changes whenever its file does
 	// (src/lib/server/map-tile-serving.ts), and pictures of the U.S. Geological
 	// Survey's maps change seldom (src/lib/server/map-imagery.ts).
-	{ pattern: /^\/map-tiles\/[a-z0-9-]+\/\d{1,2}\/\d{1,8}\/\d{1,8}\.mvt$/, seconds: 30 * day, tags: ['map-tiles'], statuses: [200, 204] },
+	{ pattern: /^\/map-tiles\/[a-z0-9-]+\/\d{1,2}\/\d{1,8}\/\d{1,8}\.(mvt|webp)$/, seconds: 30 * day, tags: ['map-tiles'], statuses: [200, 204] },
 	{ pattern: /^\/map-tiles\/imagery\/[a-z-]+\/\d{1,2}\/\d{1,8}\/\d{1,8}$/, seconds: 30 * day, tags: ['map-tiles'], statuses: [200, 204] },
 	{ pattern: /^\/map-tiles\/assets\/.+$/, seconds: 7 * day, tags: ['map-tiles'], statuses: [200] },
 	// The site search's files. They leave out what nations chose to hide

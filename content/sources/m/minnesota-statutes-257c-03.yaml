@@ -1,0 +1,50 @@
+key: minnesota-statutes-257c-03
+kind: state-statute
+citation:
+  type: legislation
+  title: Procedure
+  title-short: Minn. Stat. § 257C.03
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 257C.03
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2002
+  URL: https://www.revisor.mn.gov/statutes/cite/257C.03
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/257C.03
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 257C.03 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 257C.03 (2026). History: 2002 c 304 s 3,13; 2005 c 164 s 29; 1Sp2005 c 7 s 28; 2006 c 280 s 5; 2016 c 158 art 1 s 149. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian; tribe); AI reader''s verdict incidental: Custody petition must name Indian child''s Tribe as a venue. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian; tribe'

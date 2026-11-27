@@ -21,6 +21,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Fort McDowell Yavapai Nation, Arizona (approved by the Secretary of the Interior Aug. 18, 1936), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1936-08-18'
+  source: university-of-oklahoma-indian-reorganization-act-ftmcdowcons
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1936-text
+  confidence: medium
+  verification: inferred
+  as_of: '1936-08-18'
+  locator: 1936 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AZ
   presence: government-office
