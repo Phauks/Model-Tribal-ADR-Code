@@ -7,6 +7,7 @@ import concurrent.futures
 import html
 import json
 import re
+import time
 from pathlib import Path
 from typing import Iterator
 
@@ -14,6 +15,7 @@ from adapters.base import State
 from core import Section, clean
 
 SITE = 'https://revisor.mo.gov'
+PAUSE = 1.5  # seconds between one worker's requests: the site blocks scripts that ask faster (it did at eight workers with no pause)
 # A session law at the head of the history line: "L. 1990 H.B. 1070", "L. 2021 S.B. 26 merged with ...", "L. 1993 1st Ex. Sess. S.B. 1".
 LAW = re.compile(r'L\. (\d{4})\s*(?:(\d\w*) Ex\. Sess\.\s*)?((?:[HS]\.(?:C\.)?(?:C\.)?(?:S\.)?(?:B\.|J\.R\.))\s*(?:Nos?\.\s*)?\d+|p\. \d+)?')
 
@@ -35,7 +37,7 @@ class Missouri(State):
     NATION_NAMES = ('Osage Nation', 'Osage Tribe', 'Missouria', 'Otoe', 'Ioway', 'Shawnee Tribe', 'Delaware Nation', 'Kickapoo', 'Sac and Fox', 'Quapaw')
     PLACE_NAMES = ('Osage Beach', 'Osage County', 'Osage River', 'Lake of the Ozarks', 'Shawnee Bend', 'Miami County', 'Kansas City', 'Cherokee Place',
                    'Seneca', 'Neosho', 'Indian Creek', 'Indian Trail', 'Arrow Rock', 'Sac River', 'Pemiscot')
-    WORKERS = 8
+    WORKERS = 2
 
     def fetch(self, raw: Path) -> None:
         raw.mkdir(parents=True, exist_ok=True)
@@ -69,7 +71,10 @@ class Missouri(State):
             except Exception:
                 return row['number']
             start, end = page.find('id="effdt"'), page.find('use this link to bookmark')
-            (raw / 'sections' / f"{row['number']}-{row['bid']}.html").write_text(page[start:end] if start >= 0 else '')
+            if start < 0:  # the site's robot block page, or an error page: keep nothing, so the next run asks again
+                return row['number']
+            (raw / 'sections' / f"{row['number']}-{row['bid']}.html").write_text(page[start:end])
+            time.sleep(PAUSE)
             return None
 
         failed = []

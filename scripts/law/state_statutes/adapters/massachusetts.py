@@ -75,7 +75,7 @@ class Massachusetts(State):
 
         def one(row):
             try:
-                data = self.get(f"{SITE}/api/Chapters/{row['chapter']}/Sections/{urllib.parse.quote(row['section'])}/")
+                data = self.get(f"{SITE}/api/Chapters/{row['chapter']}/Sections/{urllib.parse.quote(row['section'].replace('/', '~'))}/")
                 json.loads(data)
             except Exception:
                 return f"{row['chapter']} § {row['section']}"
@@ -98,8 +98,8 @@ class Massachusetts(State):
             if number in seen:
                 continue
             seen.add(number)
-            common = dict(number=number, url=f"{SITE}{row['path']}/Section{row['section'].replace(' ', '')}", title=row['chapter'],
-                          title_name=f"Part {row['part']}, Title {row['title']} / Chapter {row['chapter']}: {row['name']}")
+            common = dict(number=number, url=f"{SITE}{row['path']}/Section{row['section'].replace(' ', '').replace('/', '~')}", title=row['chapter'],
+                          title_name=f"Part {row['part']}, Title {row['title']} / Chapter {row['chapter']}: {re.sub(r'^Chapter \S+\s+', '', row['name'])}")
             path = raw / 'sections' / f"{row['chapter']}-{re.sub(r'[^0-9A-Za-z]+', '_', row['section'])}.json"
             if not path.exists():
                 raise SystemExit(f'MA {number} was not downloaded: run fetch again')
