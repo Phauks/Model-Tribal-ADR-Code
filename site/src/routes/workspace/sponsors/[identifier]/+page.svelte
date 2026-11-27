@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -138,8 +139,8 @@
 </section>
 
 <section aria-labelledby="gifts-heading">
-	<h2 id="gifts-heading">Gifts</h2>
 	{#if data.gifts.length === 0}
+		<h2 id="gifts-heading">Gifts</h2>
 		<p>None yet. A gift shows here when Stripe’s webhook reports it.</p>
 	{:else}
 		<DataTable
@@ -151,6 +152,7 @@
 			rowName={['gift', 'gifts']}
 			filters
 		>
+			{#snippet heading(count: Snippet)}<h2 id="gifts-heading">Gifts {@render count()}</h2>{/snippet}
 			{#snippet cell(row)}<code>{row.key}</code>{/snippet}
 		</DataTable>
 	{/if}

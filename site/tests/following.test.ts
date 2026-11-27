@@ -66,6 +66,10 @@ describe('which pages can be followed', () => {
 		expect(followKindOf('/essays/why-peacemaking')).toBe('essay');
 		expect(followKindOf('/foundations/timeline')).toBe('essay');
 		expect(followKindOf('/back-matter/cases-by-topic')).toBe('essay');
+		expect(followKindOf('/news/welcome')).toBe('essay');
+		expect(followKindOf('/news')).toBe('news');
+		expect(historyAddress('news', '/news')).toBeUndefined();
+		expect(historyAddress('essay', '/news/welcome')).toBe('/news/welcome/history');
 	});
 
 	it('refuses lists, maps, histories and anything else', () => {
@@ -259,6 +263,32 @@ describe('essays', () => {
 		// Holding the new publication back puts the older text on the page: that is an update too.
 		await setPublicationListed(database, 'peacemaking-today', 3, false, 'lead', 'Held back for a check');
 		expect((await checkForUpdates(database, empty, await essayPages(database))).updates).toBe(1);
+	});
+
+	it('tells people who follow News about a new post, but not about a corrected one', async () => {
+		const bucket = memoryBucket();
+		await database
+			.prepare(`INSERT INTO people (identifier, email, display_name, role, status, added_at) VALUES ('lead', 'l@example.org', 'Lead', 'lead-author', 'active', '2026-11-22T00:00:00Z')`)
+			.run();
+		const post = (title: string, words: string) => `---\ntitle: "${title}"\npart: news\n---\n\n# ${title}\n\n${words}\n`;
+		const empty = build('2026-11-23T01:00:00Z', []);
+		await saveVersion(database, bucket, { identifier: 'welcome', text: post('Welcome', 'One.'), basedOn: null, personIdentifier: 'lead', origin: 'editor', part: 'news' });
+		await publishVersion(database, 'welcome', 1, 'lead');
+		await checkForUpdates(database, empty, await essayPages(database));
+		const directory = pageDirectory(empty, await essayPages(database));
+		expect(directory.get('/news')).toEqual({ kind: 'news', title: 'News' });
+		await follow(database, reader, '/news', directory);
+
+		// A corrected post is an update to the post, not to News.
+		await saveVersion(database, bucket, { identifier: 'welcome', text: post('Welcome', 'One, corrected.'), basedOn: 1, personIdentifier: 'lead', origin: 'editor' });
+		await publishVersion(database, 'welcome', 2, 'lead');
+		await checkForUpdates(database, empty, await essayPages(database));
+		expect(await noticesFor(database, reader)).toEqual([]);
+
+		await saveVersion(database, bucket, { identifier: 'second-post', text: post('Second', 'Two.'), basedOn: null, personIdentifier: 'lead', origin: 'editor', part: 'news' });
+		await publishVersion(database, 'second-post', 1, 'lead');
+		await checkForUpdates(database, empty, await essayPages(database));
+		expect((await noticesFor(database, reader)).map((notice) => [notice.address, notice.kind])).toEqual([['/news', 'news']]);
 	});
 });
 

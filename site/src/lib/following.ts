@@ -13,20 +13,23 @@
  * This module must work in the browser and in Node (for tests).
  */
 
-export type FollowKind = 'nation' | 'code' | 'essay';
+export type FollowKind = 'nation' | 'code' | 'essay' | 'news';
 
 /** The pages that can be followed, by address. Only lasting addresses count. */
 const followablePages: { kind: FollowKind; pattern: RegExp }[] = [
 	{ kind: 'nation', pattern: /^\/nations\/(?!map$|letter$|state$)[a-z0-9][a-z0-9-]*$/ },
 	// The whole model code, or one part or section of it, once its pages are built.
 	{ kind: 'code', pattern: /^\/code(?:\/[0-9][0-9a-z.-]*)?$/ },
-	{ kind: 'essay', pattern: /^\/(?:essays|foundations|back-matter)\/[a-z0-9][a-z0-9-]*$/ }
+	{ kind: 'essay', pattern: /^\/(?:essays|foundations|back-matter|news)\/[a-z0-9][a-z0-9-]*$/ },
+	// News as a whole: followers are told when a new post is published.
+	{ kind: 'news', pattern: /^\/news$/ }
 ];
 
 export const followKindLabels: Record<FollowKind, string> = {
 	nation: 'Nation',
 	code: 'Model code',
-	essay: 'Essay'
+	essay: 'Essay',
+	news: 'News'
 };
 
 /** What kind of page an address is, or undefined when it cannot be followed. */
@@ -35,9 +38,9 @@ export function followKindOf(address: unknown): FollowKind | undefined {
 	return followablePages.find((page) => page.pattern.test(address))?.kind;
 }
 
-/** Whether a kind of page has a public version history to link to. Nation pages never do. */
+/** Whether a kind of page has a public version history to link to. Nation pages never do, and the News list is only a list. */
 export function hasPublicHistory(kind: FollowKind): boolean {
-	return kind !== 'nation';
+	return kind !== 'nation' && kind !== 'news';
 }
 
 /** The public version history of a page that has one. */
