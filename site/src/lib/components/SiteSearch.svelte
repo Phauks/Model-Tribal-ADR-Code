@@ -55,8 +55,9 @@
 	let scripted = $state(false);
 	let expanded = $state(false);
 	let query = $state('');
-	let entries = $state<SearchEntry[] | undefined>();
-	let records = $state<SearchRecords | undefined>();
+	// Raw, not deeply reactive: wrapping every one of the index's entries made each keystroke about three times slower.
+	let entries = $state.raw<SearchEntry[] | undefined>();
+	let records = $state.raw<SearchRecords | undefined>();
 	let failed = $state(false);
 	let input: HTMLInputElement | undefined = $state();
 	let opener: HTMLButtonElement | undefined = $state();

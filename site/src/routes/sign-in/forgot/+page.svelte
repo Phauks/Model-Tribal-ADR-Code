@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Mail from '@lucide/svelte/icons/mail';
+	import TurnstileCheck from '#lib/components/TurnstileCheck.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -23,6 +24,7 @@
 				<label for="email">Email address</label>
 				<input id="email" name="email" type="email" autocomplete="username" required />
 			</div>
+			{#if data.turnstileSiteKey}<TurnstileCheck siteKey={data.turnstileSiteKey} action="forgot_password" />{/if}
 			<button class="button with-icon" type="submit"><Mail size={20} strokeWidth={1.75} aria-hidden="true" /> Email me a code</button>
 		</form>
 	{:else}

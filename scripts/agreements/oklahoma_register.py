@@ -13,6 +13,8 @@ Subcommands, in the order they are run:
 
   fetch     Download the data file to research/state-agreements/oklahoma/register.json
             and every filing's PDF into --pdfs (resumable; skips files already held).
+            A filing the State's site has no file for is listed in
+            research/state-agreements/oklahoma/missing-files.json, so its record says so.
   classify  Read the register (and, where given, research/state-agreements/oklahoma/
             readings.json, the parties and titles read from each description) and write
             research/state-agreements/oklahoma/filings.csv: subject, kind of filing,
@@ -43,6 +45,7 @@ import json
 import re
 import sys
 import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -66,6 +69,14 @@ def get(url: str, attempts: int = 4) -> bytes:
     raise RuntimeError(url)
 
 
+MISSING = DATA / "missing-files.json"
+
+
+def missing_files() -> dict[str, dict]:
+    """The filings, by document id, whose PDF the State's site does not have: the register lists them, but their address answers "not found"."""
+    return json.loads(MISSING.read_text(encoding="utf-8")) if MISSING.exists() else {}
+
+
 def register() -> list[dict]:
     return json.loads((DATA / "register.json").read_text(encoding="utf-8"))
 
@@ -85,6 +96,10 @@ def fetch(args: argparse.Namespace) -> None:
             return "held"
         try:
             body = get(PDF_URL.format(id=row["DOC_ID"]))
+        except urllib.error.HTTPError as error:
+            if error.code == 404:
+                return f"missing {row['DOC_ID']}"
+            return f"failed {row['DOC_ID']}: {error}"
         except Exception as error:  # noqa: BLE001
             return f"failed {row['DOC_ID']}: {error}"
         if not body.startswith(b"%PDF"):
@@ -92,13 +107,21 @@ def fetch(args: argparse.Namespace) -> None:
         path.write_bytes(body)
         return "fetched"
 
+    import datetime  # noqa: PLC0415
     results: dict[str, int] = {}
+    missing = missing_files()
     with concurrent.futures.ThreadPoolExecutor(args.jobs) as pool:
-        for result in pool.map(one, rows):
+        for row, result in zip(rows, pool.map(one, rows)):
             key = result.split(" ")[0]
             results[key] = results.get(key, 0) + 1
-            if key in ("failed", "not"):
+            if key in ("failed", "not", "missing"):
                 print(result, file=sys.stderr)
+            document = str(row["DOC_ID"])
+            if key == "missing":
+                missing.setdefault(document, {"file": row["DOC_NUM"]})["checked"] = datetime.date.today().isoformat()
+            elif key in ("held", "fetched"):
+                missing.pop(document, None)
+    MISSING.write_text(json.dumps(dict(sorted(missing.items(), key=lambda item: int(item[0]))), indent=1) + "\n", encoding="utf-8")
     print(results)
 
 
@@ -347,6 +370,7 @@ def write(args: argparse.Namespace) -> None:
     rows = list(csv_module.DictReader(open(DATA / "filings.csv", encoding="utf-8")))
     names = nation_names()
     held = held_gaming_compacts()
+    missing = missing_files()
     matches, written, facts = [], 0, []
     used_matches: set[str] = set()
     for row in rows:
@@ -377,10 +401,13 @@ def write(args: argparse.Namespace) -> None:
             else:
                 checks.append({"check": label, "result": "agree"})
         kind_words = FILING_WORDS.get(row["filing"], "a filing")
+        gone = missing.get(row["document"])
+        copy_words = (f"The State's site has no file at this filing's address, which answered “not found” when checked on {readable(gone['checked'])}, so no copy is held or served; "
+                      "this record's facts come from the register's own title and description, read by script and by an AI reader. " if gone else
+                      "The filed copy is a scan with no text layer; this record's facts come from the register's own title and description, read by script and by an AI reader, not from the scan. ")
         notes = (f"Oklahoma Secretary of State file {number}, filed {readable(row['filed'])}. The register's title reads “{row['register_title']}” and its description “{row['description'].rstrip('.')}”. "
                  f"The register line reads as {kind_words}" + (f" (it names {row['parent']})" if row["parent"] else "") + ". "
-                 "The filed copy is a scan with no text layer; this record's facts come from the register's own title and description, read by script and by an AI reader, not from the scan. "
-                 "The date is the filing date, not the signing date.")
+                 + copy_words + "The date is the filing date, not the signing date.")
         if row["unsure"]:
             notes += f" The reader noted: {row['unsure'].rstrip('.')}."
         record = {
@@ -399,11 +426,12 @@ def write(args: argparse.Namespace) -> None:
             "original_link": link,
             "retrieved": TODAY,
             "archives": [],
-            "history": {"status": "live", "last_checked": TODAY},
+            "history": {"status": "removed", "last_checked": gone["checked"]} if gone else {"status": "live", "last_checked": TODAY},
             "rights": {
                 "status": "no-permission-needed",
                 "basis": "fact-only",
-                "basis_note": "Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.",
+                "basis_note": ("Facts are recorded from the register. The State's site has no filed copy to serve." if gone else
+                               "Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down."),
                 "redistribution": True,
             },
             **({"tribes": nations} if nations else {}),

@@ -21,6 +21,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Hidden changes', href: '/workspace/changes' }
 	]}
+	current="Hide part of this change"
 />
 
 <h1>Hide part of this change</h1>

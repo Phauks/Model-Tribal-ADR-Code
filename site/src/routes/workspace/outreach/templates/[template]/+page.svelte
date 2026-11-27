@@ -20,6 +20,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Outreach', href: '/workspace/outreach' }
 	]}
+	current={data.template ? data.template.name : 'Write a template'}
 />
 <h1>{data.template ? data.template.name : 'Write a template'}</h1>
 {#if data.template}<p class="muted">Version {data.template.version}{data.template.archived ? ', archived' : ''}. Saving makes a new version; batches keep the version they were made from.</p>{/if}

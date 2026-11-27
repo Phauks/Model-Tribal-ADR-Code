@@ -1,6 +1,6 @@
 # Source watch Worker
 
-The Worker `tribal-law-project-watch` looks for new and changed legal material and puts what it finds in a queue for people. Nothing it finds is published without a person. The design, the catalog of sources and the reasons are in [docs/source-watch.md](../../docs/source-watch.md) and decision record [0059](../../docs/decisions/0059-watch-for-new-legal-sources-with-plug-in-watchers.md).
+The Worker `tribal-law-project-radar` looks for new and changed legal material and puts what it finds in a queue for people. Nothing it finds is published without a person. The design, the catalog of sources and the reasons are in [docs/source-watch.md](../../docs/source-watch.md) and decision record [0059](../../docs/decisions/0059-watch-for-new-legal-sources-with-plug-in-watchers.md).
 
 ## What is here
 
@@ -16,7 +16,7 @@ The Worker `tribal-law-project-watch` looks for new and changed legal material a
 | --- | --- | --- | --- |
 | `federal-register` | Federal Register API: the Indian affairs agencies, Title 25 of the C.F.R., and presidential documents mentioning tribes | Each weekday hour, minute 7 | On |
 | `federal-register-search` | Federal Register API: every agency, for "tribe", "tribal", "Indian country" and "Alaska Native" | Weekdays at 13:37 | On; most of its 4,900 documents a year are consultation notices, which the models sort out |
-| `ecfr` | eCFR versions API: Title 25, 42 C.F.R. parts 136, 136a and 137, and 43 C.F.R. part 4 | Daily at 14:23 | On |
+| `ecfr` | eCFR versions API: Title 25, 42 C.F.R. parts 136, 136a and 137, and subparts D, H and K of 43 C.F.R. part 4 | Daily at 14:23 | On |
 | `cited-links` | Every original link a source record cites, re-checked once every 60 days, a few every 10 minutes | Every 10 minutes | On |
 
 A first run only notes where each source stands (the Federal Register looks back 14 days), so the queue does not fill with old items.
@@ -30,14 +30,14 @@ The migration is already applied to the live database (`site/migrations/20261126
 3. Under importing a repository, select **GitHub**. If Cloudflare asks, sign in to GitHub and allow it this repository, as for the other Workers.
 4. Select the repository `Tribal-Law-Project`.
 5. On the next page, fill in:
-   - **Project name:** `tribal-law-project-watch`. It must match the name in `site/watch/wrangler.jsonc` exactly, or the build fails.
-   - **Build command:** `cd .. && npm ci && npm run watch:index`
+   - **Project name:** `tribal-law-project-radar`. It must match the name in `site/watch/wrangler.jsonc` exactly, or the build fails.
+   - **Build command:** `cd .. && npm ci`. Wrangler makes the index of known records itself before it bundles the Worker (the `build` setting in `wrangler.jsonc`, per Wrangler's [custom builds](https://developers.cloudflare.com/workers/wrangler/custom-builds/)), so a longer build command that ends in `npm run watch:index` still works.
    - **Deploy command:** `npx wrangler deploy` (usually filled in already).
    - Open **Advanced settings** and set the **Root directory** (on some screens called **Path**) to `site/watch`.
 6. Select **Deploy**. The first build takes a few minutes.
 7. When it has finished, open the new Worker, then **Settings** > **Build** > **Build watch paths**, and set the included paths to `site/watch/*`, `site/src/lib/server/watch/*`, `content/*` and `research/capture-index.csv`. Then the Worker is rebuilt with a fresh index of the records only when those files change, not on every push.
 
-To check it, open the progress page at `https://tribal-law-project-watch.trevordgoldsmith.workers.dev/`, which fills in within a few minutes. The site's Service checks page has two rows, "Source watch" and "Source watch models", which read the same progress from the bucket.
+To check it, open the progress page at `https://tribal-law-project-radar.trevordgoldsmith.workers.dev/`, which fills in within a few minutes. The site's Service checks page has two rows, "Source watch" and "Source watch models", which read the same progress from the bucket.
 
 These steps follow Cloudflare's [Workers Builds](https://developers.cloudflare.com/workers/ci-cd/builds/) ("Connect a new Worker"), [build configuration](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/) and [build watch paths](https://developers.cloudflare.com/workers/ci-cd/builds/build-watch-paths/) pages, and the name rule in [Workers Builds troubleshooting](https://developers.cloudflare.com/workers/ci-cd/builds/troubleshoot/#workers-name-requirement).
 

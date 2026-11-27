@@ -19,7 +19,8 @@ This page lists everything that waits on the domain, so that it can all be done 
 - [x] Add the domain to the Worker as a custom domain (`routes` with `custom_domain: true` in `site/wrangler.jsonc`). Added in the dashboard on 2026-11-25 and written into `site/wrangler.jsonc` afterward. Cloudflare then creates the DNS record and the certificate.[^custom-domain]
 - [x] Decide whether the workers.dev address stays on (`workers_dev` in `site/wrangler.jsonc`). Turned off on 2026-11-25, so there is one address to cite.
 - [x] Replace the workers.dev address where it is written down, including `SITE_ADDRESS` in `site/wrangler.jsonc` and the default `--site` in `site/tools/make-sign-in-link.mjs`.
-- [ ] At the first release, not before: remove the `noindex` tag in `site/src/routes/+layout.svelte`, open `site/static/robots.txt`, and add canonical links and a sitemap on the domain. The site stays out of search engines during 0.0.x because nation pages have not been reviewed by the nations.
+- [x] Build a sitemap on the domain. Done 2026-11-26: `/sitemap.xml`, written from the collections registry when a crawler asks, so it grows with the site ([sitemap.md](sitemap.md)).
+- [ ] At the first release, not before: set `openToSearchEngines` to `true` in `site/src/lib/search-engines.ts`. That removes the `noindex` tag from every page, opens robots.txt (`site/src/routes/robots.txt`) except for private and signed-in pages, and turns on its `Sitemap:` line. Then submit the sitemap in Google Search Console and Bing Webmaster Tools, and add canonical links. The site stays out of search engines during 0.0.x because nation pages have not been reviewed by the nations.
 
 ## 3. Turn on email
 

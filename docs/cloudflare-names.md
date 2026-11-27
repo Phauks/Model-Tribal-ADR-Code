@@ -10,7 +10,7 @@ The lead author renamed the project's Workers in the Cloudflare dashboard on Nov
 | `tribal-law-project-live` | `model-tribal-adr-code-live` | `site/live` | `site/live/wrangler.jsonc` |
 | `tribal-law-project-scanner` | `model-tribal-adr-code-scanner` | `site/scanner` | `site/scanner/wrangler.jsonc` |
 | `tribal-law-project-wayback` | `model-tribal-adr-code-wayback` | `site/wayback` | `site/wayback/wrangler.jsonc` |
-| `tribal-law-project-watch` | none | `site/watch` | `site/watch/wrangler.jsonc` ([source watch](source-watch.md)) |
+| `tribal-law-project-radar` | none | `site/watch` | `site/watch/wrangler.jsonc` ([source watch](source-watch.md)) |
 
 Each Worker's `name` in its Wrangler file must match the name in the dashboard. When they differ, Workers Builds deploys under the dashboard's name, prints a "Failed to match Worker name" warning and offers a pull request of its own. The rename kept each Worker's build settings, schedules, secrets, Custom Domain (`triballawproject.org`) and the site's bindings to the other three, which Cloudflare rewrote to the new names.
 
