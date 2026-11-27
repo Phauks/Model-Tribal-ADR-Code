@@ -32,5 +32,11 @@ export const tileSetNames = {
 	removalRoutesMaximumZoom: tileManifest.removalRoutes.maxZoom,
 	/** The National Park Service's tracing of the 1978 map of lands the Indian Claims Commission found each nation held. */
 	homelands: tileManifest.homelands.set,
-	homelandsMaximumZoom: tileManifest.homelands.maxZoom
+	homelandsMaximumZoom: tileManifest.homelands.maxZoom,
+	/** The reservations traced from the Office of Indian Affairs' 1909 map (scripts/maps/oia_1909_reservations.py). */
+	reservations1909: tileManifest.reservations1909.set,
+	reservations1909MaximumZoom: tileManifest.reservations1909.maxZoom,
+	/** The 1909 map itself, warped onto the web map, as pictures. */
+	scan1909: tileManifest.scan1909.set,
+	scan1909MaximumZoom: tileManifest.scan1909.maxZoom
 };
