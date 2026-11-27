@@ -1,6 +1,6 @@
 # Removal routes for the map: what route data exists beyond the Trail of Tears
 
-**Status:** research spike, written Nov. 27, 2026, in answer to Trevor's request for research on adding more removal routes to the map's historic layer. Nothing was built and no site or content was changed. A research subagent did the first sweep, as Trevor asked; I then re-ran the key counts and re-read the key quotes myself (marked "rechecked"). Numbers in brackets point to the Sources list in section 6. "Project analysis" marks my own reasoning or estimate. Everything was read on Nov. 27, 2026.
+**Status:** research spike, written Nov. 27, 2026, in answer to Trevor's request for research on adding more removal routes to the map's historic layer. Sections 1 to 5 were written first and changed nothing; section 6, added the same day at Trevor's request, records the removals data and the tile set built from it, which the map does not yet draw. A research subagent did the first sweep, as Trevor asked; I then re-ran the key counts and re-read the key quotes myself (marked "rechecked"). Numbers in brackets point to the Sources list in section 7. "Project analysis" marks my own reasoning or estimate. Everything was read on Nov. 27, 2026.
 
 ## 1. Short answer
 
@@ -61,7 +61,79 @@ The Park Service's metadata says the line "was identified before ground-verifica
 
 **Others.** ArcGIS Online searches found no route lines for the Ponca (1877), Nome Cult Trail (1863), Dakota (1863), Modoc (1873), Northern Cheyenne (1878), Yavapai (1875), Chiricahua Apache (1886), Ho-Chunk, Sauk and Meskwaki, Shawnee, Lenape, Wyandot, Odawa, Miami and Kickapoo removals. A bill to study a Ponca trail was sought in 2014 [17], but § 1244 lists none of these [3]. This means "none found," not "none exist"; state agencies were not searched one by one.
 
-## 6. Sources
+## 6. Where removed nations were sent (added Nov. 27, 2026)
+
+Trevor then asked: "if you have located more lines, create them, then we can figure out what we want to do. If not, can we at least identify where tribes migrated to?" Two research subagents compiled every removal stage they could source, and I checked their work. The result is 89 stages in 55 journeys, in `research/historic-maps/removals/removals.json`, with the land each nation was moved from, the land it was sent to, the years, the treaty, statute or order, and a quotation naming the destination.
+
+**How the quotations were checked.** Every quotation taken from a web page (the Oklahoma State University copy of Kappler, the National Park Service and others) was matched again by script against the page as fetched; all matched. The quotations from the Statutes at Large were matched against the text of the Library of Congress's scanned volumes; all were found, allowing for line-end hyphens in the scans (project check, Nov. 27, 2026). Stages that rest on military or executive orders have no quotation where no official text was fetched, and say so in their notes.
+
+**How each end is placed.** `site/tools/removal-places.mjs` gives each end one point: a named place's coordinates from Wikidata (CC0), or the label point of the nation's present Census area, or a point inside the Royce cession the treaty names. Rivers and "Indian Territory" were not used as points. Some ends are anchors chosen by me from the stage's own description and marked so in `place_note` (for example Pope County, Arkansas for the Arkansas Cherokee lands, and Quapaw, Oklahoma for the Quapaw Agency). Four ends have no point because the source names no place: the Apalachicola band's destination, the Sauk move west of the Mississippi in 1831, the attempted Stockbridge removal of 1848, and the Caddo move into Texas. Every stage's review status is Unverified.
+
+**The arrows show where, not the road taken.** Each arrow is a curve from one point to the other. It must never be read as a route; the key and any page should say so.
+
+**Not yet covered.** The Ho-Chunk removal by dragoons in 1840, the Miami removal of 1846 by the army, the Meskwaki return to Iowa in 1856, Absentee Shawnee and Delaware Nation (Anadarko) journeys, Hoopa and Tule River, the Bannock removal of 1878, the Lakota agency moves, and Native Hawaiian and Alaska Native relocations. The Northern Cheyenne stage of 1878 was a flight and recapture, not an ordered removal, and is labeled in its notes.
+
+**Built so far (nothing on the site yet).** `site/tools/build-historic-maps.mjs build --only journeys` makes one tile set, "Forced journeys", with the Nez Perce trail (532 Forest Service pieces less the road connectors and decommissioned pieces) and one arrow per placed stage; it is recorded in `site/geography/map-tiles.json` and is in the bucket, but the map does not draw it. A preview made outside the site is in the project files at `design/forced-journeys/forced-journeys-preview.png`. How the map should show it (a separate layer, arrows only at some zooms, on the timeline, on nation pages) is Trevor's choice.
+
+| People | Stages (from, to) | Treaties and statutes |
+| --- | --- | --- |
+| Cherokee (emigrating party, "Old Settlers") | 1817 to 1819: Cherokee towns in Georgia, Alabama and Tennessee to Pope County, Arkansas; 1828 to 1833: Pope County, Arkansas to Cherokee area, Oklahoma | 7 Stat. 156; 7 Stat. 195; 7 Stat. 311; 7 Stat. 414 |
+| Cherokee (Eastern Cherokee) | 1838 to 1839: Cherokee Nation in Georgia, North Carolina, Tennessee and Alabama to Cherokee area, Oklahoma | 7 Stat. 478; 4 Stat. 411 |
+| Choctaw | 1820 to 1825: Choctaw lands in Mississippi (Treaty of Doak's Stand cession) to Tract between the Arkansas and Red rivers in Arkansas Territory | 7 Stat. 210; 7 Stat. 234 |
+| Choctaw | 1831 to 1833: Choctaw Nation lands in Mississippi and Alabama (Dancing Rabbit Creek) to Choctaw area, Oklahoma | 7 Stat. 333; 4 Stat. 411 |
+| Chickasaw | 1837 to 1838: Pontotoc to Doaksville | 7 Stat. 381; 7 Stat. 450; 11 Stat. 573 |
+| Muscogee (Creek), McIntosh party (Lower Creeks) | 1825 to 1828: Creek lands in Georgia (Treaty of Indian Springs, annulled 1826 to Creek area, Oklahoma | 7 Stat. 237; 7 Stat. 286; 7 Stat. 307 |
+| Muscogee (Creek) | 1836 to 1837: Cusseta to Creek area, Oklahoma | 7 Stat. 366; 7 Stat. 417 |
+| Seminole | 1832 to 1842: Seminole lands in Florida Territory (Payne's Landing) to Fort Gibson; 1856 to 1866: Creek area, Oklahoma to Own tract between the Canadian and its North Fork west of the 97th parallel; 1866 to 1870: Seminole tract ceded by the Creek Nation in 1856 to Seminole area, Oklahoma | 7 Stat. 368; 7 Stat. 423; 11 Stat. 699; 9 Stat. 821; 14 Stat. 755 |
+| Seminole (Florida remnant, Billy Bowlegs band) | 1857 to 1858: Fort Myers, Florida to Seminole country in Indian Territory (1856 tract) | 11 Stat. 699 |
+| Apalachicola band | 1832 to 1834: Apalachicola band reservation on the Apalachicola River, Florida to "Country west" in search of a home (not placed) | 7 Stat. 377; 7 Stat. 427 |
+| United Nation of Chippewa, Ottawa and Potawatomi (Treaty of Chicago) | 1833 to 1837: Chicago to Council Bluffs | 7 Stat. 431 |
+| Potawatomi of Indiana (Tippecanoe, Yellow River and Wabash bands) | 1836 to 1840: Reservations in northern Indiana created by the 1832 Tippecanoe treaties to Osawatomie | 7 Stat. 498; 7 Stat. 499; 7 Stat. 500; 7 Stat. 501; 7 Stat. 505; 7 Stat. 513; 7 Stat. 514; 7 Stat. 515; 7 Stat. 532 |
+| Potawatomi (Chief Menominee's band, Trail of Death) | 1838: Twin Lakes to Osawatomie | 7 Stat. 505; 7 Stat. 532 |
+| Potawatomi (United Bands at Council Bluffs) | 1847 to 1848: Council Bluffs to 576,000-acre tract on the Kansas River, Kansas; 1867 to 1872: Pottawatomie County, Kansas to Citizen Potawatomi Nation-Absentee Shawnee area, Oklahoma | 9 Stat. 853; 15 Stat. 531; 12 Stat. 1191 |
+| Winnebago (Ho-Chunk) | 1832 to 1841: Winnebago lands in Wisconsin and Illinois, ceded in 1832 and 1837 to Winneshiek County; 1846 to 1848: Fort Atkinson to Long Prairie; 1855 to 1856: Long Prairie to Blue Earth reservation, Minnesota | 7 Stat. 370; 7 Stat. 544; 9 Stat. 878; 10 Stat. 1172 |
+| Sauk and Meskwaki (Fox) | 1829 to 1831: Saukenuk and Rock River country, Illinois (ceded by the 1804 treaty) to West side of the Mississippi in Iowa (no specific place) (not placed); 1843 to 1846: Sauk and Fox lands in Iowa Territory ceded in 1842 to Franklin County, Kansas; 1868 to 1869: Sac and Fox reservation in Osage and Franklin counties, Kansas to Sac and Fox area, Oklahoma | 7 Stat. 84; 7 Stat. 141; 7 Stat. 596; 15 Stat. 495 |
+| Kickapoo (Vermilion and Prairie bands) | 1819 to 1820: Kickapoo lands in Illinois and Indiana to Tract on the Osage River (Pommes de Terre), Missouri; 1832 to 1833: Kickapoo lands on the Osage River, Missouri to Leavenworth County, Kansas | 7 Stat. 200; 7 Stat. 208; 7 Stat. 391 |
+| Shawnee of Missouri (Cape Girardeau band) | 1825 to 1833: Shawnee settlement near Cape Girardeau, Missouri to Johnson County, Kansas | 7 Stat. 284; 7 Stat. 397 |
+| Shawnee of Wapakoneta and Hog Creek, Ohio | 1831 to 1833: Wapakoneta to Johnson County, Kansas | 7 Stat. 355; 4 Stat. 411 |
+| Seneca of Sandusky (Ohio) | 1831 to 1832: Seneca reservation on the Sandusky River, Ohio to Ottawa County, Oklahoma | 7 Stat. 348 |
+| Mixed Seneca and Shawnee of Lewistown, Ohio | 1831 to 1832: Lewistown reservation, Logan County, Ohio to Ottawa County, Oklahoma | 7 Stat. 351; 7 Stat. 411; 4 Stat. 411 |
+| Delaware (Lenape) | 1818 to 1820: Anderson, Indiana to Country west of the Mississippi; 1829 to 1830: James Fork of White River, Missouri to Wyandotte County, Kansas; 1867 to 1869: Delaware reserve in Kansas to Nowata County, Oklahoma | 7 Stat. 188; 7 Stat. 327; 7 Stat. 326; 14 Stat. 793; 12 Stat. 1129; 12 Stat. 1177 |
+| Wyandot | 1843: Wyandot reservations at Upper Sandusky, Ohio, and in Michigan to Wyandotte County, Kansas; 1867 to 1873: Wyandotte lands at Kansas City, Kansas to Ottawa County, Oklahoma | 11 Stat. 581; 9 Stat. 987; 15 Stat. 513; 10 Stat. 1159 |
+| Miami | 1846 to 1847: Miami lands on the Wabash in Indiana to Miami County, Kansas; 1867 to 1873: Miami reserve in Miami County, Kansas to Ottawa County, Oklahoma | 7 Stat. 569; 7 Stat. 582; 15 Stat. 513 |
+| Ottawa of Blanchard's Fork and Roche de Boeuf, Ohio | 1832 to 1837: Reservations at Blanchard's Fork, Little Auglaize and Roche de Boeuf, Ohio to Franklin County, Kansas; 1867 to 1873: Ottawa reserve in Franklin County, Kansas to Ottawa County, Oklahoma | 7 Stat. 359; 4 Stat. 411; 7 Stat. 420; 15 Stat. 513; 12 Stat. 1237 |
+| Kaskaskia, Peoria, Wea and Piankashaw (Illinois Confederacy) | 1832 to 1833: Illinois and Missouri lands of the Peoria and Kaskaskia to Miami County, Kansas; 1867 to 1871: Confederated Peoria reserve in Miami County, Kansas to Ottawa County, Oklahoma | 7 Stat. 403; 7 Stat. 410; 15 Stat. 513; 10 Stat. 1082 |
+| New York Indians (Seneca, Cayuga, Onondaga, Oneida, Tuscarora, St. Regis, Stockbridge, Munsee, Brothertown) | 1838 to 1842: Reservations in western New York to Neosho County, Kansas | 7 Stat. 550; 7 Stat. 586 |
+| New York Indians (Oneida, Stockbridge, Munsee, Brothertown) | 1822 to 1832: Oneida Nation Reservation to Lake Winnebago; 1856 to 1857: Stockbridge township on the east side of Lake Winnebago, Calumet County, Wisconsin to Stockbridge Munsee Community | 7 Stat. 342; 7 Stat. 405; 11 Stat. 663 |
+| Stockbridge | 1848 to 1856: Stockbridge township east of Lake Winnebago, Wisconsin to Land west of the Mississippi to be procured by the President (not placed) (attempted) | 9 Stat. 955 |
+| Menominee | 1848 to 1852: Menominee lands in Wisconsin ceded by the 1848 treaty to Crow Wing (attempted) | 9 Stat. 952; 10 Stat. 1064 |
+| Osage (Great and Little Osage) | 1825: Osage homelands in Missouri and Arkansas Territory to Osage reserve in southeastern Kansas Territory, 50 by 50 miles west of Missouri, reserved in the same treaty; 1870 to 1872: Osage diminished reserve in southeastern Kansas (Drum Creek / Neosho) to Osage Reservation | 7 Stat. 240; 14 Stat. 687; 16 Stat. 362 |
+| Kaw (Kansa) | 1873: Kaw (Kansa) reservation at Council Grove, Morris County, Kansas to Kaw area, Oklahoma | 12 Stat. 1111; 17 Stat. 85 |
+| Quapaw | 1824 to 1826: Quapaw villages on the lower Arkansas River, Arkansas Territory to Caddo country on the Red River, Louisiana; 1833 to 1834: Quapaw in Arkansas and on the Red River (Caddo country, Louisiana) to Quapaw area, Oklahoma | 7 Stat. 232; 7 Stat. 424 |
+| Caddo (Caddo Nation of Louisiana) | 1835 to 1836: Caddo lands on the Red River, Louisiana and Arkansas Territory to Texas (then outside the United States) (not placed) | 7 Stat. 470 |
+| Caddo, Wichita (Waco, Tawakoni, Kichai), Tonkawa and other Texas reserve nations | 1859: Fort Belknap, Texas to Fort Cobb, Oklahoma | Military or executive orders; no treaty or statute found |
+| Tonkawa and Lipan Apache | 1884 to 1885: Fort Griffin, Texas to Tonkawa area, Oklahoma | Military or executive orders; no treaty or statute found |
+| Ponca | 1877: Niobrara, Nebraska to Quapaw, Oklahoma; 1878: Quapaw, Oklahoma to Ponca area, Oklahoma | 14 Stat. 675; 19 Stat. 192; 21 Stat. 422 |
+| Pawnee (Grand, Loup, Republican, Tappage) | 1857 to 1859: Pawnee villages on the Platte and Loup Rivers, central Nebraska to Pawnee reservation on the Loup Fork of the Platte, 30 by 15 miles, Nance County, Nebraska; 1874 to 1875: Pawnee reservation on the Loup Fork, Nance County, Nebraska to Pawnee area, Oklahoma | 11 Stat. 729; 19 Stat. 29 |
+| Otoe and Missouria | 1854 to 1855: Otoe-Missouria country west of the Missouri River, Platte valley, Nebraska to Big Blue River reserve, 10 miles wide, on the Nebraska-Kansas line; 1881 to 1882: Big Blue reservation, Gage County, Nebraska and Marshall County, Kansas to Otoe-Missouria area, Oklahoma | 10 Stat. 1038; 21 Stat. 380 |
+| Iowa (Ioway) | 1836 to 1837: Platte Purchase to Iowa (KS-NE) Reservation; 1878 to 1883: Iowa (KS-NE) Reservation to Iowa area, Oklahoma | 7 Stat. 511 |
+| Sac and Fox of the Missouri | 1836 to 1837: Platte Purchase to Sac and Fox Nation Reservation | 7 Stat. 511 |
+| Ho-Chunk (Winnebago) | 1863: Blue Earth (Winnebago) Reservation, Minnesota to Crow Creek Indian Reservation; 1865 to 1866: Crow Creek Indian Reservation to Winnebago Reservation | 12 Stat. 658; 14 Stat. 671 |
+| Dakota (Santee: Mdewakanton, Wahpekute; Wahpeton and Sisseton scouts excepted) | 1863: Minnesota River Dakota reservations and Fort Snelling internment camp, Minnesota to Crow Creek Indian Reservation; 1866: Crow Creek Indian Reservation to Santee Reservation | 12 Stat. 652; 12 Stat. 784 |
+| Navajo (Diné) | 1863 to 1866: Fort Defiance, Arizona to Fort Sumner (Bosque Redondo), New Mexico; 1868: Fort Sumner (Bosque Redondo), New Mexico to Navajo Nation Reservation | 15 Stat. 667 |
+| Mescalero Apache | 1862 to 1863: Fort Stanton, New Mexico to Fort Sumner (Bosque Redondo), New Mexico | Military or executive orders; no treaty or statute found |
+| Chiricahua and Warm Springs Apache (Geronimo's band and scouts) | 1886: Fort Bowie, Arizona to Castillo de San Marcos / Fort Marion; 1887 to 1888: Castillo de San Marcos / Fort Marion to Mount Vernon Barracks; 1894: Mount Vernon Barracks to Fort Sill | Military or executive orders; no treaty or statute found |
+| Yavapai and Tonto Apache (Dilzhe'e) | 1875: Camp Verde, Arizona to San Carlos Apache Indian Reservation | Military or executive orders; no treaty or statute found |
+| Nez Perce (nimíipuu), non-treaty bands | 1877: Bear Paw Battlefield, Montana to Fort Leavenworth; 1878: Fort Leavenworth to Quapaw, Oklahoma; 1879: Quapaw, Oklahoma to Tonkawa, Oklahoma (Oakland); 1885: Tonkawa, Oklahoma (Oakland) to Colville Indian Reservation | Military or executive orders; no treaty or statute found |
+| Modoc | 1864 to 1865: Modoc country on Lost River, Tule Lake and Clear Lake, Oregon / California to Klamath Reservation; 1873: Fort Klamath to Quapaw, Oklahoma | 16 Stat. 707 |
+| Northern Cheyenne | 1877: Fort Robinson, Nebraska to Darlington Agency, Oklahoma; 1878 to 1884: Darlington Agency, Oklahoma to Fort Keogh | Military or executive orders; no treaty or statute found |
+| Northern Paiute (Malheur) prisoners after the Bannock War | 1879: Fort Harney, Oregon to Yakama Indian Reservation | Military or executive orders; no treaty or statute found |
+| Ute (Uintah, Timpanogos, Yampa and others of Utah Territory) | 1861 to 1865: Spanish Fork, Utah to Uintah and Ouray Reservation | 13 Stat. 63 |
+| White River Ute (Yampa/Parianuche) and Uncompahgre Ute | 1880 to 1881: White River Agency / White River Ute Reservation, Colorado to Uintah and Ouray Indian Reservation | 21 Stat. 199 |
+| Konkow (Concow) Maidu and others (Nomlaki, Yuki, Wintun, Pomo) of the Sacramento Valley | 1863: Chico, California to Round Valley Indian Reservation | 13 Stat. 39 |
+| Rogue River peoples (Takelma, Latgawa, Shasta, Athapaskan bands) and Chasta | 1853 to 1854: Rogue River valley homelands, southwestern Oregon to Upper and Lower Table Rock, Oregon; 1856: Upper and Lower Table Rock, Oregon to Grand Ronde Community; 1856 to 1857: Port Orford, Oregon to Siletz Reservation | 10 Stat. 1122; 10 Stat. 1018 |
+
+## 7. Sources
 
 1. National Park Service, Trail of Tears National Historic Trail designated alignment, https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services/TRTE_NHT/FeatureServer/0 (counted 2,006 features; distinct `TRALTNAME` values split on "|").
 2. National Park Service, metadata for the same layer, IRMA DataStore reference 2238914, https://irma.nps.gov/DataStore/DownloadFile/662409?Reference=2238914 (accuracy and use statements quoted); listed on Data.gov at https://catalog.data.gov/dataset/trail-of-tears-national-historic-trail.

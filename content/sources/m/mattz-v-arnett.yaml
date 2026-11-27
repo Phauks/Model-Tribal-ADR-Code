@@ -101,6 +101,91 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=412%20U.S.%20481
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1973-03-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-20-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048369
+  whole_session: true
+  duration_seconds: 3797
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-20-r1.mp3
+    checksum: 48ce2de8f3acf6e6c136e873b2d044bad3f3c211e953b14d9ab38893dc22ee57
+    media_type: audio/mpeg
+    bytes: 60757599
+- kind: argument
+  date: '1973-03-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-20-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048369
+  whole_session: true
+  duration_seconds: 3931
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-20-r2.mp3
+    checksum: 5e3ee199c95ab6d014e61792e8b047e00d4fa688b405adb6b6a4bcdbebaa0696
+    media_type: audio/mpeg
+    bytes: 62896297
+- kind: argument
+  date: '1973-03-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-20-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048369
+  whole_session: true
+  duration_seconds: 4073
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-20-r3.mp3
+    checksum: d1df319c119d245cac5c05a9bf32f995f8ba2b8bd897cfcb9ecc16f40b99e9b4
+    media_type: audio/mpeg
+    bytes: 65163725
+- kind: argument
+  date: '1973-03-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-20-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048369
+  whole_session: true
+  duration_seconds: 1628
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-20-r4.mp3
+    checksum: 144a87d92c10eca83fb9b4571bc99e98fdc4f553bda636143d123adc4bd420ab
+    media_type: audio/mpeg
+    bytes: 26052777
+- kind: argument
+  date: '1973-03-28'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-21-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048370
+  whole_session: true
+  duration_seconds: 2079
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-21-r1.mp3
+    checksum: eb514cdeb6f49a65910c7c4456156a8f5a02159893a9f2d896b4e1bbb70c3089
+    media_type: audio/mpeg
+    bytes: 33265080
+- kind: argument
+  date: '1973-03-28'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-21-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048370
+  whole_session: true
+  duration_seconds: 3062
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-21-r2.mp3
+    checksum: e8be5175ee14d0338c2ac192f84833324762362ed8de5ed2bcf5fe065075d516
+    media_type: audio/mpeg
+    bytes: 49000408
+- kind: argument
+  date: '1973-03-28'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-21-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048370
+  whole_session: true
+  duration_seconds: 3795
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-21-r3.mp3
+    checksum: affcbdf0415ddbf128ea139b01152a2a635fdd5218b3608c7ddabb4d38211997
+    media_type: audio/mpeg
+    bytes: 60721237
 rights:
   status: no-permission-needed
   basis: us-government-work

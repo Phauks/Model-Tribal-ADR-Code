@@ -160,8 +160,8 @@ export interface StorageUse {
 export async function storageUse(): Promise<StorageUse> {
 	if (typeof navigator === 'undefined' || !navigator.storage) return {};
 	const [estimate, persisted] = await Promise.all([
-		navigator.storage.estimate?.().catch(() => undefined),
-		navigator.storage.persisted?.().catch(() => undefined)
+		navigator.storage.estimate?.().catch(() => /* expected: a browser that cannot estimate its storage shows no figure. */ undefined),
+		navigator.storage.persisted?.().catch(() => /* expected: a browser that cannot say whether storage is kept shows no figure. */ undefined)
 	]);
 	return { usedBytes: estimate?.usage, persisted };
 }
@@ -169,5 +169,5 @@ export async function storageUse(): Promise<StorageUse> {
 /** Asks the browser to keep saved pages when space runs low. Some browsers decide on their own. */
 export async function askToKeepStorage(): Promise<boolean> {
 	if (typeof navigator === 'undefined' || !navigator.storage?.persist) return false;
-	return navigator.storage.persist().catch(() => false);
+	return navigator.storage.persist().catch(() => /* expected: the browser declined; the storage line shows the browser's answer. */ false);
 }

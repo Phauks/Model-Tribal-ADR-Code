@@ -100,6 +100,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=476%20U.S.%20834
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1986-04-22'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-563.mp3
+  catalog: https://catalog.archives.gov/id/118974738
+  whole_session: true
+  duration_seconds: 12645
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-563.mp3
+    checksum: 2172fdfef4c17875c1525ca821d5b46414dc19697d80b3adb99ea135fa4caba6
+    media_type: audio/mpeg
+    bytes: 202322043
 rights:
   status: no-permission-needed
   basis: us-government-work

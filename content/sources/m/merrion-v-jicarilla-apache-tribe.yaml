@@ -94,6 +94,31 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Merrion_v._Jicarilla_Apache_Tribe
+argument_audio:
+- kind: argument
+  date: '1981-03-30'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-354.mp3
+  catalog: https://catalog.archives.gov/id/102048735
+  whole_session: true
+  duration_seconds: 13936
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-354.mp3
+    checksum: ba9d9c3ca770f90db6591e367a4079545a4568a4584c45bf0be1a658bd6cb571
+    media_type: audio/mpeg
+    bytes: 222980093
+- kind: argument
+  date: '1981-11-04'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-372.mp3
+  catalog: https://catalog.archives.gov/id/102048751
+  whole_session: true
+  duration_seconds: 13897
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-372.mp3
+    checksum: 773e44a2d1a98b0740bcfd1728fc225cf78d213f9db85baea0ed9450503945ce
+    media_type: audio/mpeg
+    bytes: 222351065
 rights:
   status: no-permission-needed
   basis: us-government-work

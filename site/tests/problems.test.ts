@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { causeChain, codeOf, isMissingTable, isReference, messageOf, newReference, Problem, problemOf, withoutSecrets } from '../src/lib/problems.ts';
 import { countProblem, logEntry, problemsSince, report } from '../src/lib/server/report.ts';
-import { browserProblem, isBrowserNoise } from '../src/lib/problem-reports.ts';
+import { browserProblem, isBrowserNoise, isNetworkFailure, sendProblem } from '../src/lib/problem-reports.ts';
 import { runServiceChecks } from '../src/lib/server/service-checks.ts';
 import { catchesIn } from '../tools/check-silent-catches.mjs';
 import { testDatabase } from './database.ts';
@@ -119,6 +119,29 @@ describe('problems in the browser', () => {
 		expect(isBrowserNoise('ResizeObserver loop completed with undelivered notifications.')).toBe(true);
 		expect(isBrowserNoise('Script error.')).toBe(true);
 		expect(isBrowserNoise('x is not a function')).toBe(false);
+	});
+
+	it('only notes a request the network dropped, and sends the rest', () => {
+		expect(isNetworkFailure(new TypeError('Failed to fetch'))).toBe(true);
+		expect(isNetworkFailure(new TypeError('NetworkError when attempting to fetch resource.'))).toBe(true);
+		expect(isNetworkFailure(new TypeError('Load failed'))).toBe(true);
+		expect(isNetworkFailure(new SyntaxError('Unexpected token < in JSON at position 0'))).toBe(false);
+		expect(isNetworkFailure(new TypeError('list.nations is undefined'))).toBe(false);
+
+		const warned = vi.spyOn(console, 'warn').mockImplementation(() => {});
+		const logged = vi.spyOn(console, 'error').mockImplementation(() => {});
+		const beacon = vi.fn(() => true);
+		vi.stubGlobal('navigator', { onLine: true, sendBeacon: beacon });
+		try {
+			expect(sendProblem(new TypeError('Failed to fetch'), { code: 'nations.names', path: '/uploads/send' })).toMatch(/^P-/);
+			expect(warned).toHaveBeenCalledTimes(1);
+			expect(beacon).not.toHaveBeenCalled();
+			sendProblem(new SyntaxError('Unexpected token < in JSON at position 0'), { code: 'nations.names', path: '/uploads/send' });
+			expect(logged).toHaveBeenCalledTimes(1);
+			expect(beacon).toHaveBeenCalledTimes(1);
+		} finally {
+			vi.unstubAllGlobals();
+		}
 	});
 });
 

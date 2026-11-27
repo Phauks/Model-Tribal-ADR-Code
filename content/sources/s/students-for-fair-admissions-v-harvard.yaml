@@ -125,6 +125,41 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=600%20U.S.%20181
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2022-10-31'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/20-1199.mp3
+  duration_seconds: 6915
+  file:
+    storage_key: supreme-court-audio/court/2022/20-1199.mp3
+    checksum: 486a0c14b030aa11707548e91629304084e840a4b295ce2e147ead1b06d40df5
+    media_type: audio/mpeg
+    bytes: 138316596
+- kind: argument
+  date: '2022-10-31'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2022_term/267-2277.mp3
+  catalog: https://catalog.archives.gov/id/326769236
+  whole_session: true
+  duration_seconds: 6959
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2277.mp3
+    checksum: 17bb9e8d8a47a982764dca674b63d9ee7f4f2495734dd124a6553147912795bd
+    media_type: audio/mpeg
+    bytes: 139186118
+- kind: opinion announcement
+  date: '2023-06-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2022_term/267-2325.mp3
+  catalog: https://catalog.archives.gov/id/326769332
+  whole_session: true
+  duration_seconds: 3020
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2325.mp3
+    checksum: 1cfc990bdb6ae35ab66f0478840efb272002b29276ce380a0381c4ddb7e26b69
+    media_type: audio/mpeg
+    bytes: 60408518
 rights:
   status: no-permission-needed
   basis: us-government-work

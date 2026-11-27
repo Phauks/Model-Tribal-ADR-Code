@@ -93,6 +93,19 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/United_States_v._Lara
+argument_audio:
+- kind: argument
+  date: '2004-01-21'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1288.mp3
+  catalog: https://catalog.archives.gov/id/183517593
+  whole_session: true
+  duration_seconds: 7572
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1288.mp3
+    checksum: dfed5f61db12d78c943d6fcd0d80a02f42695899c39a7df6472dc91a49ca9f76
+    media_type: audio/mpeg
+    bytes: 121154789
 rights:
   status: no-permission-needed
   basis: us-government-work
