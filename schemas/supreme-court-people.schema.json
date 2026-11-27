@@ -110,7 +110,7 @@
       "additionalProperties": false,
       "required": ["key", "name", "years", "party"],
       "properties": {
-        "key": { "$ref": "common.schema.json#/$defs/slug", "description": "The person's address on the site, /supreme-court/presidents/<key>." },
+        "key": { "$ref": "common.schema.json#/$defs/slug", "description": "The person's address on the site, /presidents/<key>." },
         "name": { "type": "string", "minLength": 1, "description": "As the Court's list gives it." },
         "years": {
           "type": "array",

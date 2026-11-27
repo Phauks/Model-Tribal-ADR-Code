@@ -1,0 +1,47 @@
+key: new-york-laws-pen-225-00
+kind: state-statute
+citation:
+  type: legislation
+  title: Gambling offenses; definitions of terms
+  title-short: N.Y. Penal Law § 225.00
+  container-title: New York Penal Law
+  container-title-short: N.Y. Penal Law
+  section: '225.00'
+  author:
+  - literal: New York State Legislature
+  URL: https://www.nysenate.gov/legislation/laws/PEN/225.00
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.nysenate.gov/legislation/laws/PEN/225.00
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: N.Y. Penal Law § 225.00 (McKinney 2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NY
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-new-york-state-statutes
+notes: 'Indigo Book citation: N.Y. Penal Law § 225.00 (McKinney 2026). Text read from the New York State Senate''s Open Legislation laws service (legislation.nysenate.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian nation; federally recognized indian nations; federally recognized indian tribe; indian gaming; indian lands; indian nation; tribal gaming; indian; nation; reservation; tribal; tribe; tribes); AI reader''s verdict incidental: Gambling definitions reference tribal-state compact Class III gaming. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian nation; federally recognized indian nations; federally recognized indian tribe; indian gaming; indian lands; indian nation; tribal gaming; indian; nation; reservation; tribal; tribe; tribes'

@@ -11,6 +11,7 @@
 	import ViewSwitch from './ViewSwitch.svelte';
 	import { formatBytes } from '#lib/offline-collections.ts';
 	import { countOf, type CatalogNode, type CatalogPage, type OfflineView, type PendingChange } from '#lib/offline-choices.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let {
 		view,
@@ -64,7 +65,7 @@
 	async function openList(node: CatalogNode): Promise<void> {
 		if (!node.list || requested.has(node.key)) return;
 		requested.add(node.key);
-		const pages = await loadList(node.list).catch(() => undefined);
+		const pages = await loadList(node.list).catch((problem) => void sendProblem(problem, { code: 'offline.list', place: node.key }));
 		if (pages) lists = { ...lists, [node.key]: pages };
 		else requested.delete(node.key);
 	}

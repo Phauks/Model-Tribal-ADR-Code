@@ -34,6 +34,7 @@
 	import LibraryBig from '@lucide/svelte/icons/library-big';
 	import { saveFile } from '#lib/save-file.ts';
 	import { onMount } from 'svelte';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let { onpdf }: { onpdf: () => void } = $props();
 
@@ -144,7 +145,8 @@
 			saveFile(new Blob([body], { type: format.mediaType }), fileName);
 			close(true);
 			message = `Saved ${fileName}.`;
-		} catch {
+		} catch (problem) {
+			sendProblem(problem, { code: 'page.download', place: format.id });
 			message = `The page could not be saved as ${format.format}. Please try again.`;
 		}
 	}

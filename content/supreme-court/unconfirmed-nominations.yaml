@@ -1,0 +1,11 @@
+# Nominees to the Supreme Court whom the Senate never confirmed, listed on the page of a President
+# who appointed no Justice (site/src/lib/server/justice-pages.ts). Written by hand from the
+# Senate's table of Supreme Court nominations, read Nov. 27, 2026. "president" is the key in
+# content/supreme-court/people.yaml.
+source: united-states-senate-supreme-court-nominations
+nominations:
+- president: andrew-johnson
+  nominee: Henry Stanbery
+  nominated: '1866-04-16'
+  # The table's action column reads "N": no action by the Senate.
+  outcome: the Senate took no action

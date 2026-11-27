@@ -18,6 +18,7 @@
 	import { at, definitionIssues, repeatedPhrases, textBlocks, type CheckIssue, type TextBlock } from '#lib/essays/checks.ts';
 	import { checkMarksKey, showCheckMarks } from '#lib/essays/check-marks.ts';
 	import { addWord, checkText, harper, type HarperIssue } from '#lib/essays/harper.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let {
 		view,
@@ -88,7 +89,7 @@
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
 			body: JSON.stringify({ text: file() })
-		}).catch(() => null);
+		}).catch(() => /* expected: offline; the panel says the quotations could not be checked. */ null);
 		if (!response?.ok) {
 			quotationState = 'failed';
 			return;
@@ -212,7 +213,8 @@
 				const spelling = await spellingAndGrammar(linter, blocks, thisRun);
 				if (spelling === null) return;
 				found.push(...spelling);
-			} catch {
+			} catch (problem) {
+				sendProblem(problem, { code: 'essays.spelling' });
 				loading = 'Spelling and grammar stopped working. Close and open Checks to try again.';
 			}
 		}
@@ -229,7 +231,7 @@
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ text: file() })
-		}).catch(() => null);
+		}).catch(() => /* expected: offline; the publishing checks are left as they were, and the server reports its own failures. */ null);
 		if (!response?.ok) return;
 		const rendered = (await response.json()) as { problems?: string[]; warnings?: string[] };
 		publishing = { problems: rendered.problems ?? [], warnings: rendered.warnings ?? [] };
@@ -257,7 +259,8 @@
 			linter = await harper(words);
 			loading = '';
 			void runChecks();
-		} catch {
+		} catch (problem) {
+			sendProblem(problem, { code: 'essays.harper' });
 			loading = 'Spelling and grammar could not be loaded. The other checks still run.';
 		}
 	}

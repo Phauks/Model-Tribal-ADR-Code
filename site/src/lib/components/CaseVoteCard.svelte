@@ -62,6 +62,7 @@
 			await copyText(citationText);
 			copied = 'Citation copied';
 		} catch {
+			// expected: the browser would not copy; the citation is shown to copy by hand.
 			copied = citationText;
 		}
 	}
