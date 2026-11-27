@@ -7,18 +7,25 @@
 	// text the build marked (src/lib/site-text-markers.ts) shows a faint
 	// underline, and clicking it opens a small box to change it. Saved
 	// changes are drafts, shown in place; Publish lists them and publishes
-	// them, and the site then rebuilds with the new words. The prose parts of
+	// them, and the site then rebuilds with the new words. The same list,
+	// opened by Publish or History, shows the newest publications (the latest
+	// can be undone) and edits to text the code no longer has (mockup
+	// design/site-text-fold, approved by Trevor on Nov. 26, 2026, which
+	// replaced the workspace's Site text page). The prose parts of
 	// a case's or law's box (Summary, Treatment and the like) come from its
 	// record and are marked data-record-text (src/lib/record-text.ts); they
 	// edit the same way, in a larger box that keeps paragraphs.
 	import Check from '@lucide/svelte/icons/check';
 	import History from '@lucide/svelte/icons/history';
+	import Pencil from '@lucide/svelte/icons/pencil';
 	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
 	import Send from '@lucide/svelte/icons/send';
 	import Undo2 from '@lucide/svelte/icons/undo-2';
+	import Unlink from '@lucide/svelte/icons/unlink';
 	import X from '@lucide/svelte/icons/x';
 	import { onMount, tick } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
+	import { dateTime } from '#lib/change-dates.ts';
 	import { offerPageControls, type PageMode } from '#lib/page-editing.svelte.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import { shownWords, type SiteTextPiece } from '#lib/site-text.ts';
@@ -31,6 +38,28 @@
 		before: string;
 		after: string;
 		published: string | null;
+	}
+	interface Publication {
+		number: number;
+		personName: string | null;
+		undoes: number | null;
+		publishedAt: string;
+		changes: number;
+	}
+	interface GoneEdit {
+		key: string;
+		place: string;
+		page: string | null;
+		words: string;
+		builtIn: string;
+	}
+	interface ListAnswer {
+		drafts: Draft[];
+		publications: Publication[];
+		latest: number;
+		status: 'live' | 'building' | 'next-deploy';
+		gone: GoneEdit[];
+		canPublish: boolean;
 	}
 
 	const modeKey = 'site-text-mode';
@@ -50,8 +79,8 @@
 	let problem = $state('');
 	let field = $state<HTMLTextAreaElement>();
 
-	// The open Publish list.
-	let list = $state<{ top: number; left: number; drafts: Draft[]; done: boolean } | null>(null);
+	// The open list: drafts to publish, the newest publications, and edits to text no longer on the site.
+	let list = $state<(ListAnswer & { top: number; left: number; sheet: boolean; done: boolean; problem: string }) | null>(null);
 
 	const editing = $derived(mode === 'editing');
 	const showing = $derived(editing || draftsShown);
@@ -273,19 +302,61 @@
 		close();
 	}
 
-	async function showList() {
-		const button = document.querySelector('.page-controls .publish');
+	async function showList(from: 'publish' | 'history' = 'publish') {
+		if (list) {
+			list = null;
+			return;
+		}
+		const button = document.querySelector(`.page-controls .${from}`) ?? document.querySelector('.page-controls .history');
 		const box = button?.getBoundingClientRect();
-		const width = Math.min(440, window.innerWidth - 32);
-		const response = await fetch('/workspace/site-text/drafts.json').catch(() => null);
+		const width = Math.min(460, window.innerWidth - 32);
+		const response = await fetch('/workspace/site-text/list.json').catch(() => null);
 		if (!response?.ok) return;
-		const answer = (await response.json()) as { drafts: Draft[] };
+		const answer = (await response.json()) as ListAnswer;
 		list = {
-			drafts: answer.drafts,
+			...answer,
 			done: false,
+			problem: '',
+			sheet: window.matchMedia('(max-width: 37.5rem)').matches,
 			top: (box?.bottom ?? 60) + window.scrollY + 10,
 			left: Math.max(16, Math.min((box?.left ?? 16) + window.scrollX - 8, window.scrollX + window.innerWidth - width - 16))
 		};
+	}
+
+	async function problemFrom(response: Response | null): Promise<string> {
+		const body = (await response?.json().catch(() => null)) as { message?: string } | null;
+		return body?.message ?? 'That did not work. Try again.';
+	}
+
+	async function undoPublication(publication: Publication) {
+		if (!list) return;
+		const response = await fetch('/workspace/site-text/undo', {
+			method: 'POST',
+			headers: { 'content-type': 'application/json' },
+			body: JSON.stringify({ publication: publication.number })
+		}).catch(() => null);
+		if (!response?.ok) {
+			if (list) list = { ...list, problem: await problemFrom(response) };
+			return;
+		}
+		list = null;
+		await refresh();
+		await showList('history');
+	}
+
+	async function letGoOf(edit: GoneEdit) {
+		if (!list) return;
+		const response = await fetch('/workspace/site-text/let-go', {
+			method: 'POST',
+			headers: { 'content-type': 'application/json' },
+			body: JSON.stringify({ key: edit.key })
+		}).catch(() => null);
+		if (!list) return;
+		if (!response?.ok) {
+			list = { ...list, problem: await problemFrom(response) };
+			return;
+		}
+		list = { ...list, gone: list.gone.filter((each) => each.key !== edit.key) };
 	}
 
 	async function discard(draft: Draft) {
@@ -313,7 +384,10 @@
 			body: JSON.stringify({ keys: list.drafts.map((draft) => draft.key) })
 		}).catch(() => null);
 		if (!response?.ok) return;
-		list = { ...list, done: true };
+		const fresh = await fetch('/workspace/site-text/list.json').catch(() => null);
+		const answer = fresh?.ok ? ((await fresh.json()) as ListAnswer) : null;
+		if (!list) return;
+		list = { ...list, ...(answer ?? {}), done: true };
 		waiting = 0;
 		pieces = new Map([...pieces].map(([key, piece]) => [key, piece.draft ? { ...piece, published: piece.draft.words, draft: null } : piece]));
 		apply();
@@ -380,10 +454,10 @@
 					else restore();
 				}
 			},
-			history: { title: 'Site text history', href: '/workspace/site-text' },
+			history: { title: 'Site text: published, and edits no longer on the site', onclick: () => void showList('history') },
 			get publish() {
 				if (level !== 'full' || waiting === 0) return null;
-				return { title: `Publish ${waiting === 1 ? '1 change' : `${waiting} changes`}`, count: waiting, onclick: () => void showList() };
+				return { title: `Publish ${waiting === 1 ? '1 change' : `${waiting} changes`}`, count: waiting, onclick: () => void showList('publish') };
 			}
 		}, { fallback: true });
 	});
@@ -436,26 +510,91 @@
 {/if}
 
 {#if list}
-	<div class="site-text-list" style:top="{list.top}px" style:left="{list.left}px" role="dialog" aria-label="Publish">
+	{@const latest = list.publications[0]}
+	<div
+		class="site-text-list"
+		class:sheet={list.sheet}
+		style:top={list.sheet ? null : `${list.top}px`}
+		style:left={list.sheet ? null : `${list.left}px`}
+		role="dialog"
+		aria-label="Site text"
+	>
+		{#if list.sheet}<span class="grabber" aria-hidden="true"></span>{/if}
+		{#if list.problem}<p class="problem" role="alert">{list.problem}</p>{/if}
 		{#if list.done}
-			<p class="heading"><Check size={18} aria-hidden="true" />Live in a few minutes</p>
-		{:else}
-			<p class="heading"><Send size={18} aria-hidden="true" />{list.drafts.length === 1 ? '1 change' : `${list.drafts.length} changes`}</p>
-			<ol>
-				{#each list.drafts as draft (draft.key)}
-					<li>
-						<span class="where">{draft.place}</span>
-						<s class="before">{draft.before}</s>
-						<span class="after">{draft.after}</span>
-						<button type="button" class="icon-button" title="Undo this change" onclick={() => discard(draft)}><Undo2 size={20} aria-hidden="true" /><span class="visually-hidden">Undo this change</span></button>
-					</li>
-				{/each}
-			</ol>
-			{#if list.drafts.length > 0}
-				<div class="go">
-					<button type="button" class="icon-button publish" title="Publish" onclick={publishAll}><Send size={22} aria-hidden="true" /><span class="visually-hidden">Publish</span></button>
-				</div>
+			<section>
+				<p class="heading"><Check size={18} aria-hidden="true" />Live in a few minutes</p>
+			</section>
+		{:else if list.drafts.length > 0}
+			<section aria-label="Changes">
+				<p class="heading"><Send size={18} aria-hidden="true" />{list.drafts.length === 1 ? '1 change' : `${list.drafts.length} changes`}</p>
+				<ol>
+					{#each list.drafts as draft (draft.key)}
+						<li>
+							<span class="where">{draft.place}</span>
+							<s class="before">{draft.before}</s>
+							<span class="after">{draft.after}</span>
+							<span class="actions">
+								<button type="button" class="icon-button" title="Undo this change" onclick={() => discard(draft)}><Undo2 size={20} aria-hidden="true" /><span class="visually-hidden">Undo this change</span></button>
+							</span>
+						</li>
+					{/each}
+				</ol>
+				{#if list.canPublish}
+					<div class="go">
+						<button type="button" class="icon-button publish" title="Publish" onclick={publishAll}><Send size={22} aria-hidden="true" /><span class="visually-hidden">Publish</span></button>
+					</div>
+				{/if}
+			</section>
+		{/if}
+		<section aria-label="Published">
+			<p class="heading">
+				<History size={18} aria-hidden="true" />Published
+				{#if list.latest > 0}
+					<span class="status">
+						{#if list.status === 'live'}<Check size={14} aria-hidden="true" /> Live{:else if list.status === 'building'}Live in a few minutes{:else}Live with the next deploy{/if}
+					</span>
+				{/if}
+			</p>
+			{#if list.publications.length === 0}
+				<p class="none">None</p>
+			{:else}
+				<ol>
+					{#each list.publications as publication (publication.number)}
+						<li>
+							<span>Publication {publication.number} · {publication.changes === 1 ? '1 change' : `${publication.changes} changes`}{#if publication.undoes}<span class="where"> · undid {publication.undoes}</span>{/if}</span>
+							<span class="where">{publication.personName ?? ''} · {dateTime(publication.publishedAt)}</span>
+							{#if list.canPublish && publication.number === latest?.number}
+								<span class="actions">
+									<button type="button" class="icon-button outline" title="Undo publication {publication.number}" onclick={() => undoPublication(publication)}><Undo2 size={20} aria-hidden="true" /><span class="visually-hidden">Undo publication {publication.number}</span></button>
+								</span>
+							{/if}
+						</li>
+					{/each}
+				</ol>
 			{/if}
+		</section>
+		{#if list.gone.length > 0}
+			<section aria-label="No longer on the site">
+				<p class="heading"><Unlink size={18} aria-hidden="true" />No longer on the site <span class="count">{list.gone.length}</span></p>
+				<ol>
+					{#each list.gone as edit (edit.key)}
+						<li>
+							<span class="where">{edit.place}</span>
+							<span class="label">Your edit</span>
+							<span class="after">{edit.words}</span>
+							<span class="label">Built-in then</span>
+							<span class="before">{edit.builtIn}</span>
+							<span class="actions">
+								{#if edit.page}
+									<a class="icon-button outline" data-sveltekit-reload href="{edit.page}{edit.page.includes('?') ? '&' : '?'}edit-text" title="Edit the new wording"><Pencil size={20} aria-hidden="true" /><span class="visually-hidden">Edit the new wording</span></a>
+								{/if}
+								<button type="button" class="icon-button" title="Let this edit go" onclick={() => letGoOf(edit)}><X size={20} aria-hidden="true" /><span class="visually-hidden">Let this edit go</span></button>
+							</span>
+						</li>
+					{/each}
+				</ol>
+			</section>
 		{/if}
 	</div>
 {/if}
@@ -600,7 +739,54 @@
 		color: var(--color-action-text);
 	}
 	.site-text-list {
-		width: min(440px, calc(100vw - 32px));
+		width: min(460px, calc(100vw - 32px));
+		max-height: calc(100vh - 96px);
+		overflow: auto;
+		padding-top: 0;
+	}
+	.site-text-list.sheet {
+		position: fixed;
+		inset: auto 0 0 0;
+		width: auto;
+		max-height: 78vh;
+		border-radius: var(--radius-panel) var(--radius-panel) 0 0;
+		box-shadow: 0 -24px 48px color-mix(in srgb, var(--color-ink) 16%, transparent);
+	}
+	.site-text-list.sheet .grabber {
+		margin: var(--space-2) auto 0;
+	}
+	section {
+		padding: var(--space-3) 0 var(--space-1);
+	}
+	section + section {
+		border-top: 2px solid var(--color-line);
+	}
+	.status {
+		margin-left: auto;
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+		font-weight: 600;
+	}
+	.count {
+		display: inline-block;
+		min-width: 20px;
+		padding: 0 6px;
+		border-radius: 10px;
+		background: var(--color-line);
+		font-size: 0.75rem;
+		line-height: 20px;
+		text-align: center;
+	}
+	.label,
+	.none {
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+	}
+	.none {
+		margin: 0;
 	}
 	.heading {
 		display: flex;
@@ -621,13 +807,15 @@
 		padding: var(--space-2) 0;
 		border-top: 1px solid var(--color-line);
 	}
-	li > :not(button) {
+	li > :not(.actions) {
 		grid-column: 1;
 	}
-	li > button {
+	.actions {
 		grid-column: 2;
-		grid-row: 1 / span 3;
+		grid-row: 1 / span 5;
 		align-self: center;
+		display: flex;
+		gap: 2px;
 	}
 	.where {
 		color: var(--color-ink-muted);

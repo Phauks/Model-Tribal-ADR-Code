@@ -1,5 +1,5 @@
 /**
- * Shared by the editing box and the workspace's Site text pages
+ * Shared by the editing box and each piece's history page
  * (docs/site-text.md).
  */
 import { recordTextHeadings, type RecordTextPart } from './record-text.ts';
