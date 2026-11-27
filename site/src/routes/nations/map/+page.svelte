@@ -6,7 +6,7 @@
 	import { replaceState } from '$app/navigation';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
-	import SourceList from '#lib/components/SourceList.svelte';
+	import LazySourceList from '#lib/components/LazySourceList.svelte';
 	import { mapViewChoices, mapViews } from '#lib/map-views.ts';
 	import TileMap, { tileMapPlaces, type TileMapCamera } from '#lib/components/TileMap.svelte';
 	import ZoomableMap from '#lib/components/ZoomableMap.svelte';
@@ -506,6 +506,8 @@
 
 <svelte:head>
 	<title>Map · Nations · Tribal Law Project</title>
+	<!-- The tiled map's data starts coming while the page is still arriving, rather than after it starts (src/lib/tile-map-loading.ts fetches the same address, and the browser hands it this copy). -->
+	<link rel="preload" href="/nations/map/tile-map.json" as="fetch" crossorigin="anonymous" />
 	<!-- Without scripts the view buttons cannot work, so every view is shown, one after another. -->
 	<noscript>
 		<style>
@@ -519,7 +521,7 @@
 	</noscript>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Map of Native Nations" />
 
 <div class="reading">
 	<h1>Map of Native Nations</h1>
@@ -785,7 +787,7 @@
 
 
 <div class="reading">
-	<SourceList sources={data.sources} />
+	<LazySourceList count={data.sourceCount} url="/nations/map/sources.json" serverSources={data.sources} />
 </div>
 
 <style>

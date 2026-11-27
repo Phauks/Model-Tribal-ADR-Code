@@ -48,7 +48,7 @@
 	<title>Stubs · Workspace · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Workspace', href: '/workspace' }]} />
+<Breadcrumbs trail={[{ label: 'Workspace', href: '/workspace' }]} current="Stubs" />
 
 <h1>Stubs <CountBadge count={data.stubs.length} /></h1>
 <p class="lead">Pages made from references, and pages too short to stand alone, most mentioned first.</p>

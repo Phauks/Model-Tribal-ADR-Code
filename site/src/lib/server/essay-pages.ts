@@ -9,9 +9,10 @@
  */
 import { error, type Cookies } from '@sveltejs/kit';
 import { version as siteBuild } from '$app/env';
-import { essayBoxFacts, essayCaseLinks, essayCaseNames, essayCitations, essayOpinions, essayRecordBoxes, essayTerms, essaysInGit } from 'virtual:essay-library';
+import { essayBoxFacts, essayCaseLinks, essayCaseNames, essayOpinions, essayRecordBoxes, essayTerms, essaysInGit } from 'virtual:essay-library';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
-import { renderEssay, type EssayHeading, type EssayLibrary, type RenderedEssay } from '../essays/render.ts';
+import type { EssayHeading, EssayLibrary, RenderedEssay } from '../essays/render.ts';
+import { citationsWhileBuilding, renderWithCitations } from './essay-citations.ts';
 import { essayDateTime } from '../essays/dates.ts';
 import type { LineChange } from '../essays/merge.ts';
 import { syncEssaysFromGitOnce } from './essay-git-sync.ts';
@@ -40,8 +41,13 @@ import {
 let boxPageList: Record<string, string> | undefined;
 let caseTitles: Record<string, string> | undefined;
 
+/**
+ * What essays are drawn with. Citations are at hand here only while the site
+ * is built: in the Worker, draw with renderWithCitations(), which reads the
+ * ones a text cites (essay-citations.ts).
+ */
 export const essayLibrary: EssayLibrary = {
-	citation: (key) => essayCitations[key],
+	citation: (key) => citationsWhileBuilding()?.[key],
 	term: (id) => essayTerms[id],
 	facts: (box, key) => (box === 'law' ? essayBoxFacts.laws[key] : essayBoxFacts.cases[key]) ?? [],
 	boxPage: (anchor) => (boxPageList ??= boxPages(essaysInGit))[anchor],
@@ -129,12 +135,12 @@ export function generatedKind(text: string): string | undefined {
  * each linked to the page that holds its box (case-topics.ts).
  */
 export async function renderWithGenerated(text: string, which: EssayTexts, options: { lines?: LineChange[] } = {}): Promise<RenderedEssay> {
-	if (generatedKind(text) !== 'cases-by-topic') return renderEssay(text, essayLibrary, options);
+	if (generatedKind(text) !== 'cases-by-topic') return renderWithCitations(text, essayLibrary, options);
 	const texts = Object.fromEntries(Object.entries(await currentTexts(which)).filter(([, other]) => !generatedKind(other)));
 	const tagged = Object.values(texts).flatMap((other) => taggedCases(withRecordBoxes(other)));
 	const index = casesByTopicMarkdown(tagged, (key) => essayCaseNames[key]);
 	const pages = boxPages(texts);
-	return renderEssay(`${text.trimEnd()}\n\n${index}\n`, { ...essayLibrary, boxPage: (anchor) => pages[anchor] }, options);
+	return renderWithCitations(`${text.trimEnd()}\n\n${index}\n`, { ...essayLibrary, boxPage: (anchor) => pages[anchor] }, options);
 }
 
 /**
@@ -152,7 +158,7 @@ export async function renderedVersion(bucket: R2Bucket, row: { object_key: strin
 	}
 	const text = await readVersionText(bucket, row);
 	if (generatedKind(text)) return renderWithGenerated(text, which);
-	const rendered = renderEssay(text, essayLibrary);
+	const rendered = await renderWithCitations(text, essayLibrary);
 	if (cache) {
 		await cache
 			.put(cacheKey, new Response(JSON.stringify(rendered), { headers: { 'Cache-Control': 'max-age=31536000' } }))
