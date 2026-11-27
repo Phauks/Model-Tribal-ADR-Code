@@ -9,7 +9,7 @@
 
 	The views are picked from the same searchable dropdown as the map of all
 	nations (src/lib/map-views.ts). Without scripts every view is shown, one after another. The same
-	facts are listed in words under "At a glance", so the map is never the only
+	facts are listed in words under "Key facts", so the map is never the only
 	way to them.
 -->
 <script lang="ts">
