@@ -483,6 +483,7 @@ KIND_PATTERNS = [
     (r"concurring in part,? concurring in the result in part,? and dissenting in part", "concurrence in part, concurrence in the result in part, and dissent in part"),
     (r"concurring in part and concurring in the judgment", "concurrence in part and in the judgment"),
     (r"concurring in part and concurring in the result", "concurrence in part and in the result"),
+    (r"concurring in the judgment,? and dissenting in part", "concurrence in the judgment and dissent in part"),
     (r"dissenting in part", "dissent in part"),
     (r"concurring in the judgment", "special concurrence"),
     (r"concurring in the result", "concurrence in the result"),

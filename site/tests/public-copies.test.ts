@@ -233,6 +233,9 @@ describe('copies of nations’ documents', async () => {
 		const { bucket } = memoryBucket({ [saved.key]: { bytes: page, sha256: saved.sha256 } });
 		const response = await servePublicCopy(new Request('https://site.test/copies/x'), saved, bucket, network({}));
 		expect(response.headers.get('content-security-policy')).toContain('sandbox');
+		// No scripts, but a clicked link may leave the frame (an opinion's citations).
+		expect(response.headers.get('content-security-policy')).not.toContain('allow-scripts');
+		expect(response.headers.get('content-security-policy')).toContain('allow-top-navigation-by-user-activation');
 		expect(mediaLabel(saved.mediaType)).toBe('saved web page');
 	});
 });

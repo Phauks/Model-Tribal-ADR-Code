@@ -2,7 +2,9 @@
 # closes it when they pass again. Two pull requests can each pass on their own
 # and still break main together, because the ruleset does not require a branch
 # to be up to date; this makes that visible before more pull requests merge on
-# top of it. Uses only the workflow's own token.
+# top of it. The nightly run, which checks every page for accessibility where
+# pushes check only the pages they change, reports here too. Uses only the
+# workflow's own token.
 name: main status
 
 on:
@@ -21,7 +23,7 @@ concurrency:
 jobs:
   report:
     name: Report main's checks
-    if: github.event.workflow_run.event == 'push'
+    if: github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'schedule'
     runs-on: ubuntu-latest
     steps:
       - name: Open, update or close the "main is red" issue

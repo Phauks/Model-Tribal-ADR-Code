@@ -1,0 +1,142 @@
+key: hawaii-v-office-of-hawaiian-affairs
+kind: federal-case
+citation:
+  type: legal_case
+  title: Hawaii v. Office of Hawaiian Affairs
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '556'
+  page: '163'
+  issued:
+    date-parts:
+    - - 2009
+      - 3
+      - 31
+  URL: https://www.supremecourt.gov/opinions/boundvolumes/556bv.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: HAWAII et al. v. OFFICE OF HAWAIIAN AFFAIRS et al.
+  source: https://www.supremecourt.gov/opinions/boundvolumes/556bv.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://www.supremecourt.gov/opinions/boundvolumes/556bv.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Samuel A. Alito, Jr.
+    page: 166
+original_link: https://www.supremecourt.gov/opinions/boundvolumes/556bv.pdf
+shares_link_with:
+- united-states-v-navajo-nation-2009
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '2009-02-25'
+  printed: Argued February 25, 2009 Decided March 31, 2009
+  source: https://www.supremecourt.gov/opinions/boundvolumes/556bv.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2006-2009)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: John G. Roberts, Jr.
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+  - name: David H. Souter
+    vote: majority
+  - name: Clarence Thomas
+    vote: majority
+  - name: Ruth Bader Ginsburg
+    vote: majority
+  - name: Stephen G. Breyer
+    vote: majority
+  - name: Samuel A. Alito, Jr.
+    vote: majority
+    opinion: majority
+  source: https://api.oyez.org/cases/2008/07-1372
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/boundvolumes/556bv.pdf
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/556/163/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2008/07-1372
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22556%20U.S.%20163%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=556%20U.S.%20163
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=556%20U.S.%20163
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 556 U.S. 163 (2009). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/556bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2008-037), the Caselaw Access Project''s text of the report and the Court''s bound volume; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 556 U.S. 163 "Hawaii v. Office of Hawaiian Affairs"; Database 556 U.S. 163 "HAWAII et al. v. OFFICE OF HAWAIIAN AFFAIRS et al."
+  - check: scan
+    result: agree
+    detail: Scan has 15 pages; the report runs 163 to 177
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued February 25, 2009 Decided March 31, 2009"; scan "Argued February 25, 2009—Decided March 31, 2009"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 2009-03-31'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Alito p. 166; Database writers: Alito'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

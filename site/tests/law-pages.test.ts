@@ -7,7 +7,7 @@ import { formatSource } from '#lib/server/markdown.ts';
 import { mediaLabel, servedMediaTypes } from '#lib/public-copies.ts';
 
 vi.mock('virtual:source-citations', () => ({ sourceCitations: {} }));
-vi.mock('virtual:essay-library', () => ({ essaysInGit: {}, essayBoxFacts: { cases: {}, laws: {} } }));
+vi.mock('virtual:essay-library', () => ({ essaysInGit: {} }));
 vi.mock('$app/env', () => ({ version: 'test-build' }));
 vi.mock('cloudflare:workers', () => ({ env: {}, waitUntil: () => undefined }));
 

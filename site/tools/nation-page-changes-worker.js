@@ -18,13 +18,18 @@
 // Each answers with the file or page as built when nothing in it is
 // restricted. The list of a nation's restrictable items is for its team's
 // page alone, which reads it from the built files, so it is never served;
-// nor are the sitemap's lists as built, which the sitemap is written from.
+// nor are the sitemap's lists as built, which the sitemap is written from,
+// nor the Worker's private data files.
 
 const nationPage = /^\/nations\/(?!(?:coverage|data|federal-offices|federal-programs|law|letter|map|recourse|state|timeline)$)([a-z0-9-]+)(?:\/opinions)?$/;
 const restrictableList = /^\/nations\/[a-z0-9-]+\/restrictable\.json$/;
 // The sitemap's pages as built (src/routes/sitemaps/built), which the Worker
 // reads to write the sitemap less what nations hid since (src/lib/sitemap.ts).
 const builtSitemap = /^\/sitemaps\/built\//;
+// The Worker's private data files (src/lib/built-files.ts), such as the list
+// of every copy it serves, which names copies nations chose to hide. Only
+// the Worker reads them, through its ASSETS binding.
+const privateData = /^\/page-data\/private\//;
 
 /** Files the site filters (src/routes/restricted-files, restrictedFiles). */
 export const filteredFiles = [
@@ -108,7 +113,7 @@ export function withNationPageChanges(worker, Rewriter = /** @type {any} */ (glo
 			const url = new URL(request.url);
 			const reading = request.method === 'GET' || request.method === 'HEAD';
 			if (!reading) return worker.fetch(request, env, context);
-			if (restrictableList.test(url.pathname) || builtSitemap.test(url.pathname)) return new Response('Not found', { status: 404, headers: { 'cache-control': 'no-store' } });
+			if (restrictableList.test(url.pathname) || builtSitemap.test(url.pathname) || privateData.test(url.pathname)) return new Response('Not found', { status: 404, headers: { 'cache-control': 'no-store' } });
 			if (filteredFiles.some((pattern) => pattern.test(url.pathname))) return worker.fetch(forwarded(request, '/restricted-files'), env, context);
 			const asPage = filteredPages.some((pattern) => pattern.test(url.pathname));
 			const match = nationPage.exec(url.pathname);

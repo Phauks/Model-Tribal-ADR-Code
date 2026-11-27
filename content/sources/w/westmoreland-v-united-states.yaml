@@ -1,0 +1,137 @@
+key: westmoreland-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Westmoreland v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '155'
+  page: '545'
+  issued:
+    date-parts:
+    - - 1895
+      - 1
+      - 7
+  URL: https://www.loc.gov/item/usrep155545/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: WESTMORELAND v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep155/usrep155545/usrep155545.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep155/usrep155545/usrep155545.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: David Josiah Brewer
+    page: 547
+original_link: https://www.loc.gov/item/usrep155545/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  submitted:
+  - '1894-12-10'
+  printed: Submitted December 10, 1894. Decided January 7, 1895.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep155/usrep155545/usrep155545.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1894-1895)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+  - name: Stephen Johnson Field
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: Horace Gray
+    vote: majority
+  - name: David Josiah Brewer
+    vote: majority
+    opinion: majority
+  - name: Henry Billings Brown
+    vote: majority
+  - name: George Shiras, Jr.
+    vote: majority
+  - name: Howell Edmunds Jackson
+    vote: not recorded
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1894-059; Oyez has no votes for this case.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep155545/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/155/545/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22155%20U.S.%20545%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=155%20U.S.%20545
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=155%20U.S.%20545
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 155 U.S. 545 (1895). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep155/usrep155545/usrep155545.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1894-059), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 155 U.S. 545 "Westmoreland v. United States"; Database 155 U.S. 545 "WESTMORELAND v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 5 pages; the report runs 545 to 549
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Submitted December 10, 1894. Decided January 7, 1895."; scan "not found"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1895-01-07'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Brewer p. 547; Database writers: Brewer'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

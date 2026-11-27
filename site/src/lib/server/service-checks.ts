@@ -972,17 +972,12 @@ export const serviceChecks: readonly Check[] = [
 ];
 
 /**
- * The databases and buckets the site used before the Nov. 26, 2026 move to
- * new ones under the new names (docs/cloudflare-names.md). The site has no
- * binding to them, so nothing checks them; the page lists them so their names
- * are not mistaken for the ones in use. Remove each once it is deleted.
+ * Databases and buckets the site has moved off and not yet deleted, listed so
+ * their names are not mistaken for the ones in use. The Nov. 26, 2026 move's
+ * old resources were deleted on Nov. 27 (docs/cloudflare-names.md). Remove each
+ * entry once it is deleted.
  */
-export const oldResources: readonly (CheckTarget & { title: string; replacedBy: string; note?: string })[] = [
-	{ name: 'model-tribal-adr-code', kind: 'D1 database', title: 'Old main database', replacedBy: 'tribal-law-project', note: 'Only the Wayback Worker’s temporary copy code still reads it.' },
-	{ name: 'model-tribal-adr-code-library', kind: 'D1 database', title: 'Old source library database', replacedBy: 'tribal-law-project-library' },
-	{ name: 'model-tribal-adr-code-sources', kind: 'R2 bucket', title: 'Old files bucket', replacedBy: 'tribal-law-project-files', note: 'Only the Wayback Worker’s temporary copy code still reads it.' },
-	{ name: 'model-tribal-adr-code-mail', kind: 'R2 bucket', title: 'Old mail bucket', replacedBy: 'tribal-law-project-mail' }
-];
+export const oldResources: readonly (CheckTarget & { title: string; replacedBy: string; note?: string })[] = [];
 
 /** Runs every check at once; one that throws or runs too long counts as not working, without stopping the rest. */
 export async function runServiceChecks(context: CheckContext, only?: string): Promise<CheckResult[]> {
