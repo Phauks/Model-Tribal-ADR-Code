@@ -211,6 +211,10 @@
         "$value": "#FFFAF5",
         "$description": "Plate behind a nation's seal or logo. Seals are drawn for light paper, so in dark mode they sit on a light plate and their dark lines stay visible (Trevor, Nov. 23, 2026)."
       },
+      "sponsor-logo-plate": {
+        "$value": "#FFFFFF",
+        "$description": "White plate behind a sponsor's logo in the home page row, in both themes, since logos are drawn for white paper (mockup Trevor approved on Nov. 27, 2026, design/home-sponsor-row/)."
+      },
       "scan-code-light": {
         "$value": "#FFFFFF",
         "$description": "Light squares and quiet zone of a QR code, the same in both themes."
@@ -508,6 +512,10 @@
       "image-backing": {
         "$value": "#F6EEE6",
         "$description": "Plate behind a nation's seal or logo. Seals are drawn for light paper, so in dark mode they sit on a light plate and their dark lines stay visible (Trevor, Nov. 23, 2026)."
+      },
+      "sponsor-logo-plate": {
+        "$value": "#FFFFFF",
+        "$description": "White plate behind a sponsor's logo in the home page row, in both themes, since logos are drawn for white paper (mockup Trevor approved on Nov. 27, 2026, design/home-sponsor-row/)."
       },
       "scan-code-light": {
         "$value": "#FFFFFF",
@@ -858,7 +866,7 @@
     }
   },
   "motion": {
-    "$description": "How long movement takes and how it speeds up and slows down (site/DESIGN.md, section 6, \"Motion\"). Every transition, animation and script animation on the site takes its timing from here, through src/lib/motion.ts or the --motion-* custom properties. Motion happens only in answer to something the reader does. When the reader picks Reduce motion in Settings, or the device asks for less motion, every duration becomes 0.",
+    "$description": "How long movement takes and how it speeds up and slows down (site/DESIGN.md, section 6, \"Motion\"). Every transition, animation and script animation on the site takes its timing from here, through src/lib/motion.ts or the --motion-* custom properties. Motion happens only in answer to something the reader does, except the rolling row of sponsors on the home page, which Trevor asked for on Nov. 27, 2026 and which the reader can pause. When the reader picks Reduce motion in Settings, or the device asks for less motion, every duration becomes 0.",
     "duration": {
       "$type": "duration",
       "short": {
@@ -888,6 +896,13 @@
           "unit": "ms"
         },
         "$description": "How long the mark on a source or note a link has just gone to takes to fade to its resting color."
+      },
+      "roll": {
+        "$value": {
+          "value": 5000,
+          "unit": "ms"
+        },
+        "$description": "How long the rolling row of sponsors on the home page takes to move by one sponsor's tile, so the whole row takes this times the number of sponsors. Slow enough to read each name as it passes."
       }
     },
     "easing": {
@@ -918,6 +933,15 @@
           1
         ],
         "$description": "Something leaving: it starts slowly and speeds away."
+      },
+      "steady": {
+        "$value": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "$description": "An even speed from start to end, for movement that loops, such as the rolling row of sponsors."
       }
     }
   }

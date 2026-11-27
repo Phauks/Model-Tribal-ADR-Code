@@ -62,6 +62,24 @@ export const costItemQuestions: Record<CostItem, string> = {
 	website: 'The website for a year, with its web address'
 };
 
+/**
+ * Whether a sponsor is in the rolling row on the home page (docs/sponsorship.md,
+ * "The home page row"): by their level, which takes their own choice to be
+ * there, or placed there or kept off it by the lead author.
+ */
+export const homeRowPlacements = ['by-level', 'always', 'never'] as const;
+export type HomeRowPlacement = (typeof homeRowPlacements)[number];
+
+export const homeRowPlacementLabels: Record<HomeRowPlacement, string> = {
+	'by-level': 'By level',
+	always: 'Always show',
+	never: 'Never show'
+};
+
+export function isHomeRowPlacement(value: unknown): value is HomeRowPlacement {
+	return typeof value === 'string' && (homeRowPlacements as readonly string[]).includes(value);
+}
+
 export function isListing(value: unknown): value is Listing {
 	return typeof value === 'string' && (listings as readonly string[]).includes(value);
 }

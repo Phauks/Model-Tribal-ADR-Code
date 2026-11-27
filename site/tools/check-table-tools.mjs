@@ -80,7 +80,7 @@ function checkInside(where, box) {
 	check(box.bottom <= box.height + 1, `${where}: the menu runs below the screen`);
 }
 
-const count = (page) => page.locator('.table-count').first().textContent();
+const count = (page) => page.locator('.table-live-count').first().textContent();
 
 for (const viewport of viewports) {
 	const context = await browser.newContext({ serviceWorkers: 'block', reducedMotion: 'reduce', viewport: { width: viewport.width, height: viewport.height } });
@@ -124,7 +124,7 @@ for (const viewport of viewports) {
 	await nations.getByRole('button', { name: 'Filter Name', exact: true }).click();
 	// Typed into the box itself: the menu puts the focus there a moment after it opens, and on a slow machine keys pressed straight after the click would land before it (main went red this way on Nov. 24, 2026).
 	await page.locator('.table-popover:popover-open input[type="text"]').fill('Paiute');
-	await page.waitForFunction((text) => document.querySelector('.table-count')?.textContent !== text, federal, { timeout: 3000 }).catch(() => {});
+	await page.waitForFunction((text) => document.querySelector('.table-live-count')?.textContent !== text, federal, { timeout: 3000 }).catch(() => {});
 	const paiute = await nations.locator('tbody tr').evaluateAll((rows) => rows.map((row) => row.cells[0].textContent ?? ''));
 	check(paiute.length > 0 && paiute.every((name) => /paiute/i.test(name)), at(`/nations: "Contains Paiute" left names without it: ${paiute.filter((name) => !/paiute/i.test(name)).slice(0, 3).join('; ')}`));
 	checkInside(at('/nations, Name filter'), await openMenu(page));
@@ -133,7 +133,7 @@ for (const viewport of viewports) {
 	// After a reload the filters are still there; "Show all" takes them away.
 	await page.reload({ waitUntil: 'load' });
 	await nations.locator('.filter-button').first().waitFor();
-	await page.waitForFunction((text) => document.querySelector('.table-count')?.textContent !== text, all, { timeout: 3000 }).catch(() => {});
+	await page.waitForFunction((text) => document.querySelector('.table-live-count')?.textContent !== text, all, { timeout: 3000 }).catch(() => {});
 	check((await nations.getByRole('button', { name: 'Filter Name, filtered', exact: true }).count()) === 1, at('/nations: after reloading, the Name filter is gone'));
 	await page.getByRole('button', { name: 'Show all' }).first().click();
 	check((await nations.locator('.filter-button.active').count()) === 0, at('/nations: "Show all" left a filter on'));
