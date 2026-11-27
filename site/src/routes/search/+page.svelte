@@ -49,8 +49,9 @@
 	const firstShown = 25;
 	const firstNationsShown = 50;
 
-	let entries = $state<SearchEntry[] | undefined>();
-	let records = $state<SearchRecords | undefined>();
+	// Raw, not deeply reactive: wrapping every one of the index's entries made each keystroke about three times slower.
+	let entries = $state.raw<SearchEntry[] | undefined>();
+	let records = $state.raw<SearchRecords | undefined>();
 	let failed = $state(false);
 	let query = $state('');
 	/** The words last written into the address, so typing is not undone when the address catches up. */

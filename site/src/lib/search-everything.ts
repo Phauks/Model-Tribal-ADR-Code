@@ -54,12 +54,24 @@ function noMatches(): SearchMatches {
 	return { nation: [], document: [], ...forEntryGroups<SearchResult[]>(() => []) };
 }
 
+/** Each records file's nations by their addresses, made once. */
+const nationLinkMaps = new WeakMap<NationSearchRow[], Map<string, NationSearchRow>>();
+
+function nationsByLinkOf(nations: NationSearchRow[]): Map<string, NationSearchRow> {
+	let map = nationLinkMaps.get(nations);
+	if (!map) {
+		map = new Map(nations.map((row) => [row.link, row]));
+		nationLinkMaps.set(nations, map);
+	}
+	return map;
+}
+
 /** Every match for the words, best first within each group; nothing when no words are typed. */
 export function matchEverything(entries: SearchEntry[], records: SearchRecords, query: string): SearchMatches {
 	const words = foldForSearch(query.trim()).split(/\s+/).filter(Boolean);
 	if (words.length === 0) return noMatches();
 	const results = searchEntries(entries, query);
-	const nationsByLink = new Map(records.nations.map((row) => [row.link, row]));
+	const nationsByLink = nationsByLinkOf(records.nations);
 	const nation = results
 		.filter((result) => result.kind === 'nation')
 		.map((result) => ({ result, row: nationsByLink.get(result.link) }))
