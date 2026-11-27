@@ -27,6 +27,7 @@ const rememberedAtMost = 200;
 const notFound: Record<PageDataFamily, string> = {
 	cases: 'No case has this address.',
 	laws: 'No law has this address.',
+	collections: 'No collection has this address.',
 	biographies: 'This site has no page for that person.',
 	justices: 'This site has no page for that Justice.',
 	presidents: 'This site has no page for that President.',

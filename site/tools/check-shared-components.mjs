@@ -38,6 +38,8 @@ const allowed = new Map(
 		// A short summary beside a form, and the list of settings that let sponsors give.
 		'src/routes/workspace/outreach/new/+page.svelte': { table: 1 },
 		'src/routes/workspace/sponsors/+page.svelte': { table: 1 },
+		// A Federal collection browsed in groups (executive orders by President, decade or year; mockup C2, Trevor, Nov. 27, 2026): the Worker draws only the rows asked for, with a heading row for each group, so it is a grouped list drawn from the address rather than data to sort or download in the page (the collection's full table stays at /stats/<collection>).
+		'src/lib/components/CollectionBrowser.svelte': { table: 1 },
 		// The Source watch queue: each row opens in place to the item's details and the decisions on it (mockup A, Trevor, Nov. 26, 2026), a work list rather than data to sort or download.
 		'src/routes/workspace/watch/+page.svelte': { table: 1 }
 	}).map(([file, counts]) => [path.normalize(file), counts])

@@ -64,6 +64,7 @@
 	import type { OutlineItem, PageFamily, PageOutline } from '#lib/site-sections.ts';
 	import { WorkspaceAccess } from '#lib/workspace-access.svelte.ts';
 	import CountBadge from './CountBadge.svelte';
+	import CollectionFilters from './sidebar/CollectionFilters.svelte';
 	import SidebarTree from './sidebar/SidebarTree.svelte';
 	import YourWork from './sidebar/YourWork.svelte';
 	import { SidebarState } from './sidebar/sidebar-state.svelte.ts';
@@ -273,6 +274,8 @@
 				<p class="local-title">{family.title}</p>
 			{/if}
 		</div>
+		<!-- A browsed collection's find box and filters, which move only within the collection (Trevor, Nov. 27, 2026). -->
+		{#if family.filters}<CollectionFilters filters={family.filters} {idSuffix} />{/if}
 		<!-- The page being read is named but not linked, since a link to it would go nowhere (Trevor, Nov. 27, 2026). A list holding only that page is left out: the title above already names it. -->
 		{#if family.pages.some((item) => item.link !== path)}
 			<ul class="local-pages">

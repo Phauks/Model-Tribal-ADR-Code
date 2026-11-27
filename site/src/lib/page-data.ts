@@ -7,7 +7,8 @@
 /** Where each family's built page data lives: /page-data/<family>/<key>.json. */
 export const pageDataPrefix = '/page-data';
 
-export const pageDataFamilies = ['cases', 'laws', 'biographies', 'justices', 'presidents', 'courts'] as const;
+/** `collections`: a Federal collection browsed with filters, such as the executive orders, at /laws/<identifier> (src/lib/server/browse-collections.ts). */
+export const pageDataFamilies = ['cases', 'laws', 'collections', 'biographies', 'justices', 'presidents', 'courts'] as const;
 
 export type PageDataFamily = (typeof pageDataFamilies)[number];
 

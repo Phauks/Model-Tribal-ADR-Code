@@ -15,12 +15,23 @@
 	import SavedText from '#lib/components/SavedText.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
 	import TileMap from '#lib/components/TileMap.svelte';
+	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
 	let cededMapWanted = $state(true);
 	let cededMapReady = $state(false);
+
+	// An order's trail runs through its collection and the list it was found in, and ends with its number (mockup C2-order).
+	const browsed = $derived(data.browsed);
+	const trail = $derived(
+		browsed
+			? [{ label: browsed.section.label, href: browsed.section.href }, { label: browsed.collection.crumb, href: browsed.collection.path }, ...(browsed.place.focus ? [browsed.place.focus] : [])]
+			: [{ label: 'Library', href: '/library' }]
+	);
+	const crumb = $derived(browsed ? (/No\. [\w-]+/.exec(data.citation)?.[0] ?? data.name) : undefined);
 
 	/** Past this many, the nation pages wait behind a summary line. */
 	const longList = 12;
@@ -68,7 +79,7 @@
 	{/if}
 {/snippet}
 
-<InfoPage title={data.name} lead={data.citation} glance={data.glance} panels={data.landCeded ? cededMap : undefined} sources={data.sources} trail={[{ label: 'Library', href: '/library' }]} status={data.stub ? stubStatus : undefined}>
+<InfoPage title={data.name} lead={data.citation} glance={data.glance} panels={data.landCeded ? cededMap : undefined} sources={data.sources} {trail} {crumb} pager={browsed ? pager : undefined} status={data.stub ? stubStatus : undefined}>
 	{#if data.fullTitle}<p class="full-title muted">{data.fullTitle}</p>{/if}
 
 	<RecordBoxSections sections={data.boxSections} />
@@ -172,6 +183,17 @@
 	{/if}
 </InfoPage>
 
+<!-- The orders before and after this one in its list, and its place there (mockup C2-order). -->
+{#snippet pager()}
+	{#if browsed}
+		<nav class="pager no-print" aria-label="{browsed.place.label}: previous and next">
+			<span class="pager-side">{#if browsed.place.previous}<a href={browsed.place.previous.href} rel="prev"><ChevronLeft size={16} aria-hidden="true" /><span class="visually-hidden">Previous: </span>{browsed.place.previous.label}</a>{/if}</span>
+			<span class="pager-place">{browsed.place.position.toLocaleString('en-US')} of {browsed.place.total.toLocaleString('en-US')} · {browsed.place.label}</span>
+			<span class="pager-side next">{#if browsed.place.next}<a href={browsed.place.next.href} rel="next"><span class="visually-hidden">Next: </span>{browsed.place.next.label}<ChevronRight size={16} aria-hidden="true" /></a>{/if}</span>
+		</nav>
+	{/if}
+{/snippet}
+
 {#snippet stubStatus()}{#if data.stub}<StubBadge stub={data.stub} />{/if}{/snippet}
 
 <style>
@@ -210,6 +232,33 @@
 	.section-list dt:global([data-arrived]),
 	.section-list dt:global([data-arrived]) + dd {
 		background: var(--color-surface-raised);
+	}
+
+	.pager {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		align-items: center;
+		gap: var(--space-3);
+		margin: var(--space-3) 0;
+		padding: var(--space-2) 0;
+		border-top: 1px solid var(--color-line);
+		border-bottom: 1px solid var(--color-line);
+	}
+
+	.pager a {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		white-space: nowrap;
+	}
+
+	.pager-place {
+		text-align: center;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.pager-side.next {
+		text-align: right;
 	}
 
 	.sections-gone {
