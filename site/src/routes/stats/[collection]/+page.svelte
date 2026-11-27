@@ -32,7 +32,7 @@
 </svelte:head>
 
 <div class="collection-page">
-	<Breadcrumbs trail={[{ label: 'Library', href: '/library' }, { label: 'Statistics', href: `/stats#${data.identifier}` }]} />
+	<Breadcrumbs trail={[{ label: 'Library', href: '/library' }, { label: 'Statistics', href: `/stats#${data.identifier}` }]} current={data.title} />
 	<h1>{data.title}</h1>
 	<p class="summary">
 		{number(data.items.length)}{#if data.years}{" · "}<span class="years">{data.years}</span>{/if}{#if data.heldBack}<span class="held">. {number(data.heldBack)} more {data.heldBackReason}.</span>{/if}

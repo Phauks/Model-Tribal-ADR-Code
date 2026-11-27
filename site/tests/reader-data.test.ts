@@ -7,7 +7,7 @@ describe('reader data export and import', () => {
 	const when = new Date('2026-11-22T08:00:00Z');
 
 	it('reads back what it writes', () => {
-		const data = buildReaderData({ ...defaultSettings, font: 'serif', textSize: '150' }, 'dark', { ...defaultPrintOptions, maps: 'off' }, ['glossary'], [{ address: '/glossary/peacemaking', title: 'peacemaking', starredAt: when.toISOString(), note: 'Compare with the Navajo courts.' }], when);
+		const data = buildReaderData({ ...defaultSettings, font: 'serif', textSize: '150' }, 'dark', { ...defaultPrintOptions, maps: 'off' }, { parts: ['glossary', 'laws-treaties'], pages: ['/cases/williams-v-lee'] }, [{ address: '/glossary/peacemaking', title: 'peacemaking', starredAt: when.toISOString(), note: 'Compare with the Navajo courts.' }], when);
 		expect(parseReaderData(JSON.stringify(data))).toEqual(data);
 	});
 
@@ -20,12 +20,13 @@ describe('reader data export and import', () => {
 
 	it('drops unknown values inside a valid file', () => {
 		const data = parseReaderData(
-			JSON.stringify({ kind: 'model-tribal-adr-code-reader-data', version: 1, exported: 'yesterday', settings: { font: 'comic-sans', contrast: 'more' }, theme: 'purple', printOptions: { maps: 'sometimes' }, savedParts: ['nations', 'nations', 'secret'] })
+			JSON.stringify({ kind: 'model-tribal-adr-code-reader-data', version: 1, exported: 'yesterday', settings: { font: 'comic-sans', contrast: 'more' }, theme: 'purple', printOptions: { maps: 'sometimes' }, savedParts: ['nations', 'nations', 'Not A Key', 7], savedPages: ['/laws/x', 'https://example.com/', 3] })
 		);
 		expect(data?.settings).toEqual({ ...defaultSettings, contrast: 'more' });
 		expect(data?.theme).toBe('device');
 		expect(data?.printOptions).toEqual(defaultPrintOptions);
 		expect(data?.savedParts).toEqual(['nations']);
+		expect(data?.savedPages).toEqual(['/laws/x']);
 		expect(data?.exported).toBe('');
 		expect(data?.starred).toEqual([]);
 	});

@@ -46,13 +46,35 @@ export interface CopyRow {
 	removal: string;
 }
 
+/** The volumes of the Interior Board of Indian Appeals' reports each of its lists holds; the last has no end. */
+const boardVolumeRanges: [number, number | undefined][] = [
+	[1, 20],
+	[21, 40],
+	[41, 60],
+	[61, undefined]
+];
+
+function boardSlug(first: number, last: number | undefined): string {
+	return `interior-board-of-indian-appeals-volumes-${first}-${last ?? 'on'}`;
+}
+
+/** The list a Board decision is in, by the volume in its file name, such as "39ibia253.pdf" (volume 39). */
+function boardGroup(copy: PublicCopy): string {
+	const volume = Number(/^(\d+)ibia/i.exec(copy.key.split('/').at(-1) ?? '')?.[1] ?? Number.NaN);
+	const range = boardVolumeRanges.find(([first, last]) => volume >= first && (last === undefined || volume <= last)) ?? boardVolumeRanges.at(-1)!;
+	return boardSlug(...range);
+}
+
 /** The lists that are not one nation's, in page order: federal documents, then state material. */
 const fixedGroups: Record<string, string> = {
 	'supreme-court': 'Supreme Court opinions',
 	statutes: 'Federal statutes and Public Laws',
 	'federal-register': 'Federal Register documents',
-	// The Interior Board of Indian Appeals' decisions, a list of their own so the federal list stays a size a page can show.
-	'interior-board-of-indian-appeals': 'Interior Board of Indian Appeals decisions',
+	// The Interior Board of Indian Appeals' decisions, lists of their own so the federal list stays a size a page can show,
+	// split by the volume of Interior Decisions (IBIA) they are reported in: all 4,657 on one page made a 15 MB page (Nov. 27, 2026).
+	...Object.fromEntries(
+		boardVolumeRanges.map(([first, last]) => [boardSlug(first, last), last === undefined ? `Interior Board of Indian Appeals decisions, volume ${first} and later` : `Interior Board of Indian Appeals decisions, volumes ${first} to ${last}`])
+	),
 	// Lower federal courts' opinions from the Caselaw Access Project (decision record 0060).
 	'federal-court-opinions': 'Lower federal court opinions',
 	'gaming-commission': 'National Indian Gaming Commission documents',
@@ -85,7 +107,7 @@ const opinionPrefix = 'opinions-';
 
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
-	if (copy.topic === 'ibia-decisions') return 'interior-board-of-indian-appeals';
+	if (copy.topic === 'ibia-decisions') return boardGroup(copy);
 	if (copy.topic === 'federal-court-opinions') return 'federal-court-opinions';
 	if (copy.topic === 'state-court-opinions') return 'state-court-opinions';
 	if (copy.topic === 'oklahoma-secretary-of-state') return 'oklahoma-state-tribal-agreements';
@@ -143,7 +165,7 @@ export function copyGroups(): CopyGroup[] {
 		counts.set(slug, (counts.get(slug) ?? 0) + 1);
 	}
 	const order = (slug: string) =>
-		fixedGroups[slug] ? Object.keys(fixedGroups).indexOf(slug) : slug.startsWith(opinionPrefix) ? 5 : slug === 'other-nations' ? 1000 : 10 + slug.charCodeAt(0);
+		fixedGroups[slug] ? Object.keys(fixedGroups).indexOf(slug) : slug.startsWith(opinionPrefix) ? Object.keys(fixedGroups).indexOf('gaming-commission') : slug === 'other-nations' ? 1000 : 10 + slug.charCodeAt(0);
 	return [...counts]
 		.map(([slug, count]) => ({ slug, title: groupTitle(slug, names), count }))
 		.sort((first, second) => order(first.slug) - order(second.slug) || first.title.localeCompare(second.title));
