@@ -50,6 +50,14 @@
 	const labeled = (group: FactGroup) => group.items.every((item) => item.label);
 
 	/**
+	 * The value a group is named for comes first with no label of its own,
+	 * such as a governing body's name before its members and term; the
+	 * labeled values under it stay label rows (Trevor, Nov. 27, 2026).
+	 */
+	const leadThenLabeled = (group: FactGroup) =>
+		group.items.length > 1 && !group.items[0].label && group.items.slice(1).every((item) => item.label);
+
+	/**
 	 * The detail and note every value of the group shares, said once under the
 	 * group's label. Only plain words; a detail with links stays with its value.
 	 */
@@ -92,6 +100,17 @@
 	{#if item.note}<span class="fact-detail muted small">{item.note}</span>{/if}
 {/snippet}
 
+{#snippet labelRows(rows: FactItem[])}
+	<dl class="label-rows">
+		{#each rows as item, index (index)}
+			<div>
+				<dt>{item.label}</dt>
+				<dd>{@render value(item)}</dd>
+			</div>
+		{/each}
+	</dl>
+{/snippet}
+
 {#snippet fact(item: FactItem)}
 	{#if item.label}{item.label}:{' '}{/if}{@render value(item)}
 {/snippet}
@@ -106,14 +125,10 @@
 				{#if items.length === 1}
 					{@render fact(items[0])}
 				{:else if labeled(group)}
-					<dl class="label-rows">
-						{#each items as item, index (index)}
-							<div>
-								<dt>{item.label}</dt>
-								<dd>{@render value(item)}</dd>
-							</div>
-						{/each}
-					</dl>
+					{@render labelRows(items)}
+				{:else if leadThenLabeled(group)}
+					<div class="lead-value">{@render value(items[0])}</div>
+					{@render labelRows(items.slice(1))}
 				{:else}
 					<ul class="stacked-list">
 						{#each items as item, index (index)}
@@ -151,6 +166,11 @@
 	.summary-list dd > a,
 	.summary-list li > a {
 		padding-block: 2px;
+	}
+
+	/* The same gap as between two label rows. */
+	.lead-value {
+		margin-bottom: var(--space-1);
 	}
 
 	.link-tail {
