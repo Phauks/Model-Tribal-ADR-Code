@@ -104,6 +104,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=485%20U.S.%20660
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1987-12-08'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-624.mp3
+  catalog: https://catalog.archives.gov/id/118974796
+  whole_session: true
+  duration_seconds: 13008
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-624.mp3
+    checksum: 013d1d2e0c56aab0a19cdb5db5c75d9c9f1f9e158dba652f08ddbf26fd2bd6e5
+    media_type: audio/mpeg
+    bytes: 208126242
 rights:
   status: no-permission-needed
   basis: us-government-work

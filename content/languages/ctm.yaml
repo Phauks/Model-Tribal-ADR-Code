@@ -1,0 +1,27 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ctm
+name: Chitimacha
+iso_639_3:
+  code: ctm
+  reference_name: Chitimacha
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: chit1248
+  level: language
+  source: glottolog-5-4
+family: null
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/510
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '472610'
+  title: Chitimacha-English Dictionary
+  kinds:
+  - dictionary
+  author: Morris Swadesh
+  year: 1950
+  pages: 90
+  source: glottolog-5-4
+retrieved: '2026-11-27'

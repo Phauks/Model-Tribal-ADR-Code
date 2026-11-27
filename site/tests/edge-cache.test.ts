@@ -14,7 +14,7 @@ describe('what the edge may keep', () => {
 			'/laws/treaty-with-the-cheyenne-and-arapaho-1867',
 			'/biographies/a-c-hunt',
 			'/supreme-court/justices/abe-fortas',
-			'/supreme-court/presidents/andrew-jackson',
+			'/presidents/andrew-jackson',
 			'/supreme-court/marshall-court',
 			'/supreme-court/portraits/abe-fortas'
 		]) {

@@ -2,7 +2,7 @@
 	@component
 	A contributor's public page (docs/contributor-profiles.md, "Contributor
 	pages"), as an info page (site/DESIGN.md, "Info pages"): the picture and
-	key facts At a glance, the person's own words, then their work on this
+	key facts Key facts, the person's own words, then their work on this
 	site.
 -->
 <script lang="ts">

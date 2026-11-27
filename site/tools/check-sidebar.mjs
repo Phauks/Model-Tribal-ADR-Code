@@ -65,7 +65,8 @@ const bar = '.section-bar';
 const column = '.sidebar-wide .local-column';
 
 // 1. A nation's page: the bar marks Nations; the column lists the nation's
-//    own pages under "‹ Nations", then its headings, and no list of nations.
+//    own pages, then its headings, and no list of nations and no "‹ Nations"
+//    (the section bar already goes there).
 {
 	const { context, page, errors } = await newPage();
 	const requests = [];
@@ -86,12 +87,12 @@ const column = '.sidebar-wide .local-column';
 	const chevron = await page.locator(`${bar} summary`).first().boundingBox();
 	check(chevron && chevron.width >= 24 && chevron.height >= 24, `A chevron is smaller than 24 px: ${JSON.stringify(chevron)}`);
 	check((await page.locator(`${bar} .section-home, ${bar} .menu-side`).count()) === 0, 'A menu still has an "All of …" link');
-	check(await page.locator(`${column} .back-link[href='/nations']`).isVisible(), 'The column has no way back to Nations');
+	check((await page.locator(`${column} a[href='/nations']`).count()) === 0, 'The column links back to Nations, which the section bar already does');
 	check((await page.locator(`${column} .local-title`).textContent()).trim() === 'Navajo Nation', 'The column does not name the nation');
 	const current = page.locator(`${column} .local-link[aria-current='page']`);
 	check((await current.textContent()).trim() === 'Nation Page', `The nation page is not marked as current: ${await current.textContent()}`);
 	check((await current.evaluate((element) => element.tagName)) !== 'A' && (await page.locator(`${column} a[href='/nations/navajo-nation']`).count()) === 0, 'The column links the nation page to itself');
-	check((await page.locator(`${column} a[href='#glance-heading']`).count()) === 0, 'The column lists At a glance');
+	check((await page.locator(`${column} a[href='#glance-heading']`).count()) === 0, 'The column lists Key facts');
 	check(await page.locator(`${column} .local-link[href='/nations/navajo-nation/opinions'] .count-badge`).isVisible(), 'Court opinions has no count');
 	check((await page.locator(`${column} .headings a[href^='#']`).count()) > 5, 'The column does not list the page’s headings');
 	check((await page.locator(`${column} a[href^='/nations/hopi']`).count()) === 0, 'The column still lists other nations');
@@ -171,13 +172,23 @@ const column = '.sidebar-wide .local-column';
 	await context.close();
 }
 
-// 4. A section's page: the column lists the section's pages in its groups.
+// 4. The column never repeats the top navigation (Trevor, Nov. 27, 2026:
+//    "left nav becomes navigation for pages beneath, it should not be double
+//    nav for what is already in the top nav"), and the home page, or a page
+//    with nothing beneath it, has no column at all.
 {
 	const { context, page } = await newPage();
-	await page.goto(`${base}/nations/map`, { waitUntil: 'networkidle' });
-	const links = await page.locator(`${column} .local-link`).evaluateAll((list) => list.map((a) => a.getAttribute('href')));
-	check(['/nations', '/nations/recourse', '/nations/timeline', '/nations/data'].every((link) => links.includes(link)), `Nations pages missing from the column: ${links.join(', ')}`);
-	check((await page.locator(`${column} .local-link[aria-current='page']`).getAttribute('href')) === '/nations/map', 'The map is not marked in the column');
+	for (const address of ['/nations/map', '/nations/navajo-nation', '/stats/treaties', '/supreme-court', '/cases', '/glossary', '/library', '/writing', '/charter']) {
+		await page.goto(`${base}${address}`, { waitUntil: 'networkidle' });
+		const top = new Set(await page.locator(`${bar} a[href]`).evaluateAll((list) => list.map((a) => a.getAttribute('href'))));
+		const repeats = (await page.locator(`${column} a[href]`).evaluateAll((list) => list.map((a) => a.getAttribute('href')))).filter((link) => top.has(link));
+		check(repeats.length === 0, `On ${address} the column repeats the top navigation: ${repeats.join(', ')}`);
+	}
+	await page.goto(`${base}/`, { waitUntil: 'networkidle' });
+	check(!(await page.locator('.sidebar-wide').isVisible()), 'The home page has a column');
+	const left = await page.locator('main').evaluate((main) => Math.round(main.getBoundingClientRect().left));
+	check(left === 0, `With no column the home page starts ${left} px from the left`);
+	check(!(await page.locator('.masthead .sidebar-toggle').isVisible()), 'The home page shows the sidebar button with no column to hide');
 	await context.close();
 }
 
@@ -191,7 +202,7 @@ const column = '.sidebar-wide .local-column';
 			return `${Math.round(box.left)}+${Math.round(box.width)}`;
 		});
 	};
-	const places = [await placeOf('/'), await placeOf('/nations'), await placeOf('/charter'), await placeOf('/glossary')];
+	const places = [await placeOf('/nations/navajo-nation'), await placeOf('/nations/navajo-nation/opinions'), await placeOf('/charter')];
 	check(new Set(places).size === 1, `The page moves between pages: ${places.join(', ')}`);
 	await context.close();
 }
@@ -228,7 +239,7 @@ const column = '.sidebar-wide .local-column';
 // 7. The masthead's button and Ctrl+\ hide and show the column; hidden, it is gone and stays hidden from the first paint.
 {
 	const { context, page } = await newPage();
-	await page.goto(`${base}/glossary`, { waitUntil: 'networkidle' });
+	await page.goto(`${base}/charter`, { waitUntil: 'networkidle' });
 	const wide = '.sidebar-wide';
 	const button = page.locator('.masthead .sidebar-toggle');
 	check((await button.getAttribute('aria-expanded')) === 'true', 'The masthead\'s sidebar button does not start expanded');
@@ -245,13 +256,13 @@ const column = '.sidebar-wide .local-column';
 	await context.close();
 }
 
-// 8. Without JavaScript the menus still open, and the column lists the section's pages.
+// 8. Without JavaScript the menus still open, and the column lists the nation's pages.
 {
 	const { context, page } = await newPage({ javaScriptEnabled: false });
-	await page.goto(`${base}/nations/map`, { waitUntil: 'load' });
+	await page.goto(`${base}/nations/navajo-nation`, { waitUntil: 'load' });
 	await page.locator(`${bar} summary`).nth(1).click();
 	check(await page.locator(`${bar} details[open] .menu-panel a[href='/stats/treaties']`).isVisible(), 'The Federal law menu does not open without JavaScript');
-	check(await page.locator(`${column} a[href='/nations/recourse']`).isVisible(), 'The column does not list the section\'s pages without JavaScript');
+	check(await page.locator(`${column} a[href='/nations/navajo-nation/opinions']`).isVisible(), 'The column does not list the nation\'s pages without JavaScript');
 	await context.close();
 }
 

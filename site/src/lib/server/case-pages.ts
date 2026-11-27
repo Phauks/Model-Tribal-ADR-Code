@@ -31,9 +31,11 @@ import { nationNamesAndKinds, publicCopyFor, sources, type SourceRecord } from '
 import { courtPath } from './supreme-courts.ts';
 import { decidedDay, justiceLinkFor } from './supreme-court-people.ts';
 import { savedCopyFor, savedCopyLink } from './markdown.ts';
+import { publicCopyByKey, recordDocument, whereToRead } from './record-document.ts';
+import { documentFile, type DocumentFile } from '../document-text.ts';
 import { displayName } from '../nation-labels.ts';
 import { officialReportLinks, readingLinksHtml } from '../reading-links.ts';
-import { copyPagePath, copyPath } from '../public-copies.ts';
+import { copyPagePath } from '../public-copies.ts';
 import { opinionTitle, surname, type OpinionEntry } from '../case-opinions.ts';
 import { opinionTextsOf } from './case-opinion-texts.ts';
 import type { SourceEntry } from './source-uses.ts';
@@ -103,8 +105,19 @@ export interface CasePage {
 	/** The same lines as the list behind a citation's book icon (reading-links.ts), shown open. */
 	readingHtml: string;
 	readingCount: number;
-	/** The decision's text as this site keeps it, shown in a frame, when the record has a stored copy of its own (an agency decision's PDF). */
-	text?: { file: string; isPdf: boolean };
+	/** The decision's text as this site keeps it, in the Text card (DocumentText.svelte), when the record has a stored copy of its own (an agency decision's PDF). */
+	text?: DocumentFile;
+	/**
+	 * The copy that holds the opinions' text, for the card around them. A case
+	 * with one opinion and no stored copy of its own shows that copy as its
+	 * Text, as the approved design does (design/document-text/, B2); a case
+	 * with several keeps a fold for each opinion inside the card (CaseOpinions.svelte).
+	 */
+	opinionFile?: DocumentFile;
+	/** Whether the opinion copy is shown as the case's Text rather than as its Opinions. */
+	opinionAsText?: boolean;
+	/** The page the case starts on in its reporter, for a passage's pinpoint citation. */
+	firstPage?: string;
 	essays: CaseMention[];
 	nationPages: { name: string; link: string }[];
 	court?: { name: string; link: string };
@@ -144,17 +157,8 @@ export function caseKeys(): string[] {
 	return [...sources().values()].filter((record) => (record.citation as { type?: string }).type === 'legal_case' && record.citation.title).map((record) => record.key);
 }
 
-function caseBox(text: string, key: string): { inner: string; at: number; kind: string } | undefined {
-	const match = new RegExp(`^:{4,}[ \\t]*(case|law)[ \\t]+${key}[ \\t]*\\n([\\s\\S]*?)^:{4,}[ \\t]*$`, 'm').exec(text);
-	return match ? { inner: match[2], at: match.index, kind: match[1] } : undefined;
-}
-
 function headingBefore(text: string, at: number): string {
 	return [...text.slice(0, at).matchAll(/^#{2,3}\s+(.+)$/gm)].at(-1)?.[1]?.trim() ?? '';
-}
-
-function escapeRegExp(text: string): string {
-	return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 /** One part of a record's box, as one of the page's folding sections (RecordBoxSections.svelte). */
@@ -213,7 +217,7 @@ export function boxSections(key: string, title: string, box: RecordBox | undefin
  * page. Without that block, the writers the bench names, unlinked.
  */
 export function caseOpinions(record: SourceRecord & CaseRecordParts): CaseOpinion[] {
-	// The Justices' pages, as the bench in At a glance links them (case-facts.ts).
+	// The Justices' pages, as the bench in Key facts links them (case-facts.ts).
 	const decided = decidedDay(record.citation.issued);
 	const writerLink = (name: string) => (record.supreme_court ? justiceLinkFor(name, decided, record.key) : undefined);
 	const list = record.opinions?.list;
@@ -283,42 +287,63 @@ function caseNations(record: SourceRecord & CaseRecordParts): { nations: CaseNat
 	return { nations };
 }
 
-let essayTexts: { text: string; path: string }[] | undefined;
+interface EssayAsRead {
+	text: string;
+	path: string;
+	/** Where each record's box starts, and whether it is a case or law box: the first box for each key. */
+	boxes: Map<string, { at: number; kind: string }>;
+	/** Where each key is first cited, as [@key] or [@key, …]. */
+	cited: Map<string, number>;
+}
+
+let essayTexts: EssayAsRead[] | undefined;
 
 /**
  * Each essay as read, with each box it places filled from the record, so a
- * case cited inside another case's box counts. Worked out once per build,
- * since every case and law page asks.
+ * case cited inside another case's box counts, and with its boxes and
+ * citations listed by key. Worked out once per build, since every case and
+ * law page asks: searching every essay again for each of some 40,000 pages
+ * took most of the build.
  */
-function essaysAsRead(): { text: string; path: string }[] {
+function essaysAsRead(): EssayAsRead[] {
 	essayTexts ??= Object.entries(essaysInGit).map(([identifier, written]) => {
 		const text = withRecordBoxes(written);
-		return { text, path: essayPath(identifier, partOf(identifier, splitFrontMatter(text).frontMatter)) };
+		const boxes = new Map<string, { at: number; kind: string }>();
+		// A box counts only when a closing fence follows it.
+		const lastClose = Math.max(-1, ...[...text.matchAll(/^:{4,}[ \t]*$/gm)].map((match) => match.index));
+		for (const match of text.matchAll(/^:{4,}[ \t]*(case|law)[ \t]+(\S+)[ \t]*\n/gm)) {
+			if (lastClose >= match.index + match[0].length && !boxes.has(match[2])) boxes.set(match[2], { at: match.index, kind: match[1] });
+		}
+		const cited = new Map<string, number>();
+		for (const match of text.matchAll(/\[@([^\]\s,;]+)(?=[\],])/g)) if (!cited.has(match[1])) cited.set(match[1], match.index);
+		return { text, path: essayPath(identifier, partOf(identifier, splitFrontMatter(text).frontMatter)), boxes, cited };
 	});
 	return essayTexts;
 }
 
 export function essaysCiting(key: string, title: string): CaseMention[] {
 	const found: CaseMention[] = [];
-	const mention = new RegExp(`\\[@${escapeRegExp(key)}[\\],]|\\*${escapeRegExp(title)}\\*`);
-	for (const { text, path } of essaysAsRead()) {
-		const box = caseBox(text, key);
+	for (const { text, path, boxes, cited } of essaysAsRead()) {
+		const box = boxes.get(key);
 		if (box) {
 			found.push({ title: titleOf(text), link: `${path}#${box.kind}-${key}`, where: headingBefore(text, box.at) });
 			continue;
 		}
-		const at = text.search(mention);
-		if (at >= 0) found.push({ title: titleOf(text), link: path, where: headingBefore(text, at) });
+		const places = [cited.get(key) ?? -1, text.indexOf(`*${title}*`)].filter((at) => at >= 0);
+		if (places.length > 0) {
+			const at = Math.min(...places);
+			found.push({ title: titleOf(text), link: path, where: headingBefore(text, at) });
+		}
 	}
 	return found.sort((one, other) => one.title.localeCompare(other.title));
 }
 
 
-/** The record's own stored copy (its `file` block), for the page's Text section; a copy of a whole reporter volume is left to Where to read it. */
-function textOf(record: SourceRecord): CasePage['text'] {
+/** The record's own stored copy (its `file` block), for the page's Text card; a copy of a whole reporter volume is left to Where to read it. */
+function textOf(record: SourceRecord, name: string): CasePage['text'] {
 	const stored = (record as SourceRecord & { file?: { checksum?: string } }).file?.checksum;
 	const copy = stored ? savedCopyFor(record) : undefined;
-	return copy && copy.sha256 === stored ? { file: copyPath(copy), isPdf: copy.mediaType === 'application/pdf' } : undefined;
+	return copy && copy.sha256 === stored ? recordDocument(record, name, copy) : undefined;
 }
 
 /** The court, reporter, volume, first page and date of a case's citation, for the Cite panel. */
@@ -339,7 +364,15 @@ export function casePage(key: string): CasePage {
 	const name = record.citation.title;
 	const box = boxSections(key, name, record.case_box);
 	const { nations, shared } = caseNations(record);
-	const saved = savedCopyLink(record);
+	const text = textOf(record, name);
+	const opinionCopy = opinionTextsOf(key)[0]?.copy;
+	const opinionPublic = publicCopyByKey(opinionCopy);
+	const opinionFile = opinionPublic ? documentFile(opinionPublic, { title: name }) : undefined;
+	const opinionList = caseOpinions(record);
+	const opinionAsText = Boolean(opinionFile && !text && opinionList.filter((opinion) => opinion.position !== undefined).length === 1);
+	// A saved copy no card shows, such as a whole volume of the reports, keeps its line under the publisher.
+	const savedKey = savedCopyFor(record)?.key;
+	const where = whereToRead(record, savedKey && savedKey !== text?.key && savedKey !== opinionCopy ? savedCopyLink(record) : '');
 	const bench = record.supreme_court;
 	const courtLink = bench ? courtPath(bench.court) : undefined;
 	const decider = caseCourtName(record);
@@ -355,15 +388,18 @@ export function casePage(key: string): CasePage {
 		facts: (essayLibrary.facts?.('case', key) ?? []).filter(([label]) => !/^(Nations?|Peoples?|Nations and peoples)$/.test(label)),
 		topics: box.topics,
 		boxSections: box.sections,
-		opinions: caseOpinions(record),
-		opinionCopy: opinionTextsOf(key)[0]?.copy,
+		opinions: opinionList,
+		opinionCopy,
+		...(opinionFile ? { opinionFile } : {}),
+		...(opinionAsText ? { opinionAsText } : {}),
+		...(record.citation.page ? { firstPage: String(record.citation.page).replace(/\D.*$/, '') } : {}),
 		nations,
 		people: peopleInCase(key),
 		nationNote: shared,
 		// The list a citation's book icon opens, shown open here, without the icon.
-		readingHtml: readingLinksHtml(record.reading_links, saved).replace(/<button[\s\S]*?<\/button>/, ''),
-		readingCount: (record.reading_links?.links.length ?? 0) + (saved ? 1 : 0),
-		text: textOf(record),
+		readingHtml: readingLinksHtml(where.readingLinks, where.first).replace(/<button[\s\S]*?<\/button>/, ''),
+		readingCount: where.count,
+		text,
 		essays: essaysCiting(key, name),
 		nationPages: nations.filter((nation) => nationNamesAndKinds().has(nation.id)).map((nation) => ({ name: nation.name, link: `/nations/${nation.id}` })),
 		court: bench && courtLink ? { name: bench.court, link: courtLink } : undefined,

@@ -51,6 +51,7 @@ async function writeText(text: string): Promise<boolean> {
 		await copyText(text);
 		return true;
 	} catch {
+		// expected: no Clipboard API, or it refused; the hidden text box below copies instead.
 		const field = document.createElement('textarea');
 		field.value = text;
 		field.setAttribute('readonly', '');

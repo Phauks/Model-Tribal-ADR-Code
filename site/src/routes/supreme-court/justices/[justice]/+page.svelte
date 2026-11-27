@@ -92,7 +92,7 @@
 </InfoPage>
 
 <style>
-	/* One line each, with a thin rule between, as At a glance stacks values: no bullets (Trevor, Nov. 23, 2026). The years stand first, in their own column ("segment by year"). */
+	/* One line each, with a thin rule between, as Key facts stacks values: no bullets (Trevor, Nov. 23, 2026). The years stand first, in their own column ("segment by year"). */
 	.career {
 		display: flow-root;
 		padding: 0;

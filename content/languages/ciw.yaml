@@ -1,0 +1,131 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ciw
+name: Chippewa
+iso_639_3:
+  code: ciw
+  reference_name: Chippewa
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: chip1241
+  level: language
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/4171
+  source: glottolog-5-4
+dialects:
+- name: Central Minnesota Chippewa
+  glottocode: cent2135
+  source: glottolog-5-4
+- name: Minnesota Border Chippewa
+  glottocode: minn1250
+  source: glottolog-5-4
+- name: Red Lake Chippewa
+  glottocode: redl1238
+  source: glottolog-5-4
+- name: Turtle Mountain Chippewa
+  glottocode: turt1236
+  source: glottolog-5-4
+- name: Upper Michigan-Wisconsin Chippewa
+  glottocode: uppe1274
+  source: glottolog-5-4
+works:
+- glottolog_reference: '51253'
+  title: A concise dictionary of Minnesota Ojibwe
+  kinds:
+  - dictionary
+  author: John D. Nichols and Earl Nyholm
+  year: 1997
+  publisher: Univ. of Minnesota Press
+  pages: 288
+  source: glottolog-5-4
+- glottolog_reference: '114700'
+  title: A concise dictionary of Minnesota Ojibwe
+  kinds:
+  - dictionary
+  author: John D. Nichols and Earl Nyholm
+  year: 1995
+  publisher: Univ. of Minnesota Press
+  pages: 288
+  source: glottolog-5-4
+- glottolog_reference: '302824'
+  title: A dictionary of the Ojibway language [Dictionary of the Otchipwe language]
+  kinds:
+  - dictionary
+  author: Friedrich Baraga and John D. Nichols
+  year: 1992
+  publisher: Minnesota Historical Society Press
+  pages: 422
+  source: glottolog-5-4
+- glottolog_reference: '93418'
+  title: 'AND: Nichols, John D. and Earl Nyholm. A Concise Dictionary of Minnesota Ojibwe'
+  kinds:
+  - dictionary
+  author: 'Ronald J. Chippewa Language Dictionary: Red Lake Schuster and Pillager Bands Dialect. Unpublished ms'
+  year: 1970
+  publisher: University of Minnesota Press, Minneapolis and London.
+  source: glottolog-5-4
+- glottolog_reference: '686012'
+  title: 'Chippewa Language Dictionary: Red Lake and Pillager Bands Dialect'
+  kinds:
+  - dictionary
+  author: Ronald J. Schuster
+  year: 1970
+  source: glottolog-5-4
+- glottolog_reference: '671470'
+  title: A Dictionary of the Otchipwe Language
+  kinds:
+  - dictionary
+  author: F. Baraga
+  year: 1878
+  publisher: Beauchemin and Valois Publishers
+  source: glottolog-5-4
+- glottolog_reference: '554059'
+  title: A dictionary of the Otchipwe language, explained in English
+  kinds:
+  - dictionary
+  author: Frederic Baraga
+  year: 1878
+  publisher: Beauchemin & Valois
+  source: glottolog-5-4
+- glottolog_reference: '36022'
+  title: A Theoretical and Practical Grammar of the Otchipwe Language
+  kinds:
+  - grammar
+  author: Frederic Baraga
+  year: 1878
+  publisher: Beauchemin & Valois
+  pages: 433
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '40407'
+  title: 'The Ojebway language : a manual for missionaries and others employed among the Ojebway Indians'
+  kinds:
+  - grammar
+  author: Edward Francis Wilson
+  year: 1874
+  publisher: Rowsell and Hutchison
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '706806'
+  title: A Dictionary of the Otchipwe Language, Explained in English. This Language Is Spoken by the Chippewa Indians, as Also by the Otawas, Potawatamis and Algonquins, with Little Difference. For the Use of Missionaries, and Other Persons Living Among the Above Mentioned Indians.
+  kinds:
+  - dictionary
+  author: Frederic Baraga
+  year: 1853
+  publisher: Jos. A. Hemann
+  source: glottolog-5-4
+- glottolog_reference: '554060'
+  title: A Theoretical and Practical Grammar of the Otchipwe Language
+  kinds:
+  - grammar
+  author: Frederic Baraga
+  year: 1850
+  publisher: Jabez Fox
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

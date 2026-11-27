@@ -120,6 +120,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=515%20U.S.%20200
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1995-01-17'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-941.mp3
+  catalog: https://catalog.archives.gov/id/118975075
+  whole_session: true
+  duration_seconds: 11261
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-941.mp3
+    checksum: 336679bd95dec30924c33fb51b742f0d80a31e22e6cd645ce951d33ba0712e47
+    media_type: audio/mpeg
+    bytes: 180184835
 rights:
   status: no-permission-needed
   basis: us-government-work

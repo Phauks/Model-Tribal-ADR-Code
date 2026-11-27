@@ -104,6 +104,106 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=369%20U.S.%2060
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1961-12-13'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-354-2-3-19611213-19611214.mp3
+  catalog: https://catalog.archives.gov/id/81138286
+  duration_seconds: 441
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-354-2-3-19611213-19611214.mp3
+    checksum: 9807a425b79173ab4711cacbfddeca412e8239ca704982a82df69b5ec5ea99af
+    media_type: audio/mpeg
+    bytes: 7061001
+- kind: argument
+  date: '1961-12-13'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-354-61-19611213-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81138286
+  duration_seconds: 4323
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-354-61-19611213-1of2.mp3
+    checksum: a16e72318bae43b8a8f6512f404a831d62ca7e0e876a7a4dcffe3b6a1ee56b32
+    media_type: audio/mpeg
+    bytes: 69169736
+- kind: argument
+  date: '1961-12-13'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-354-61-19611213-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81138286
+  duration_seconds: 1138
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-354-61-19611213-2of2.mp3
+    checksum: 7d6bedc4afff3e80c0431566eb5cb0b124082fb267d968bfbd0b04c1f5f9fc3d
+    media_type: audio/mpeg
+    bytes: 18213406
+- kind: argument
+  date: '1961-12-13'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-354-62-19611213.mp3
+  catalog: https://catalog.archives.gov/id/81138286
+  duration_seconds: 3734
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-354-62-19611213.mp3
+    checksum: bc12226dc4ca6b66eb72241aa5a8825e0519a1374d026bae34139ef75496e171
+    media_type: audio/mpeg
+    bytes: 59740159
+- kind: argument
+  date: '1961-12-13'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-354-66-19611212-19611213.mp3
+  catalog: https://catalog.archives.gov/id/81138286
+  duration_seconds: 4081
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-354-66-19611212-19611213.mp3
+    checksum: 40fbf20c3401d5741e33723d46991e23d215d4b14e817d61faa6ba40059bc87c
+    media_type: audio/mpeg
+    bytes: 65304031
+- kind: argument
+  date: '1961-12-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-355-2-3-19611213-19611214-1of3.mp3
+  catalog: https://catalog.archives.gov/id/81138292
+  duration_seconds: 3916
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-355-2-3-19611213-19611214-1of3.mp3
+    checksum: 8fa5d284bb6ae11a5dbe3fa9ac6f683d09af748bad8d61c6af885f4f5861e536
+    media_type: audio/mpeg
+    bytes: 62650826
+- kind: argument
+  date: '1961-12-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-355-2-3-19611213-19611214-2of3.mp3
+  catalog: https://catalog.archives.gov/id/81138292
+  duration_seconds: 4091
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-355-2-3-19611213-19611214-2of3.mp3
+    checksum: b057f1dacdbc65be03c2cd65f482125bdff6c4970fb2189572a974794a408c50
+    media_type: audio/mpeg
+    bytes: 65451571
+- kind: argument
+  date: '1961-12-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-355-2-3-19611213-19611214-3of3.mp3
+  catalog: https://catalog.archives.gov/id/81138292
+  duration_seconds: 2933
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-355-2-3-19611213-19611214-3of3.mp3
+    checksum: df02eb75c4e475e5a1948046447d4c9f5b5abf74490a1037e7819862471152a9
+    media_type: audio/mpeg
+    bytes: 46925112
+- kind: argument
+  date: '1961-12-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-355-75-19611214.mp3
+  catalog: https://catalog.archives.gov/id/81138292
+  duration_seconds: 3976
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-355-75-19611214.mp3
+    checksum: 387f8cc7055f4995e0a5543d1581857b84e16e6fe42c6cd8217de6467dfee013
+    media_type: audio/mpeg
+    bytes: 63618402
 rights:
   status: no-permission-needed
   basis: us-government-work

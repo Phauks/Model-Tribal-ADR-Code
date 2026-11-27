@@ -1,0 +1,52 @@
+key: wyoming-statutes-8-1-103
+kind: state-statute
+citation:
+  type: legislation
+  title: Rules of construction for statutes
+  title-short: Wyo. Stat. Ann. § 8-1-103
+  container-title: Wyoming Statutes
+  container-title-short: Wyo. Stat. Ann.
+  section: 8-1-103
+  author:
+  - literal: Wyoming Legislative Service Office
+  URL: https://wyoleg.gov/statutes/compress/title08.pdf#page=3
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://wyoleg.gov/statutes/compress/title08.pdf#page=3
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- wyoming-statutes-8-4-105
+- wyoming-statutes-8-6-101
+- wyoming-statutes-8-7-101
+- wyoming-statutes-8-7-102
+state_law:
+  relevance: incidental
+  citation: Wyo. Stat. Ann. § 8-1-103 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WY
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wyo. Stat. Ann. § 8-1-103 (2025). Text read from the Wyoming Legislative Service Office''s PDF of the section''s title of the Wyoming Statutes (wyoleg.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: inter-tribal; tribal governing body; eastern shoshone; northern arapaho; tribal; tribe; tribes); AI reader''s verdict incidental: Defines cooperative tribal governing body; party to state agreements. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: inter-tribal; tribal governing body; eastern shoshone; northern arapaho; tribal; tribe; tribes'

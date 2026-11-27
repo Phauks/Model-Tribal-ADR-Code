@@ -14,6 +14,7 @@ import { carryForward, expandOverlay, freshBlame, overlayKey, sectionHistories, 
 import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import { readVersionText } from './essays.ts';
+import { report } from './report.ts';
 import { inGroupsOf, placeholdersFor } from '#lib/server/database-groups.ts';
 
 /** Changes when the way blame is worked out changes, so older files are worked out again. */
@@ -100,7 +101,8 @@ export async function versionBlame(
 		bySha.set(row.sha256, blame);
 		current = { text, blame };
 		if (index === rows.length - 1 || row.number % keepEvery === 0) {
-			await bucket.put(blameKey(essay, row.number), JSON.stringify(blame), { httpMetadata: { contentType: 'application/json' } }).catch(() => undefined);
+			// Who wrote what is worked out again next time; the failure is reported.
+			await bucket.put(blameKey(essay, row.number), JSON.stringify(blame), { httpMetadata: { contentType: 'application/json' } }).catch((problem: unknown) => report(problem, { code: 'essay-credits.blame', place: 'blame', database }));
 		}
 	}
 	return current ? { ...current, rows } : null;
@@ -218,7 +220,9 @@ export async function readerNames(database: D1Database, people: string[]): Promi
 			let answers: ProfileAnswers;
 			try {
 				answers = answersFromSnapshot(row.snapshot);
-			} catch {
+			} catch (problem) {
+				// The person is credited without their chosen name until the profile is confirmed again.
+				report(problem, { code: 'essay-credits.snapshot', place: 'readerNames', database });
 				continue;
 			}
 			const credit = creditIn(answers, 'website');

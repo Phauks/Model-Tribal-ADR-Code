@@ -105,6 +105,31 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=445%20U.S.%20253
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1980-01-15'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-303.mp3
+  catalog: https://catalog.archives.gov/id/102048685
+  whole_session: true
+  duration_seconds: 14270
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-303.mp3
+    checksum: 47b2b97821e163e78a20c294e9b3731c21624a0d6aed39811949c2dab1c96efb
+    media_type: audio/mpeg
+    bytes: 228322866
+- kind: argument
+  date: '1980-01-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-304.mp3
+  catalog: https://catalog.archives.gov/id/102048686
+  whole_session: true
+  duration_seconds: 14333
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-304.mp3
+    checksum: 30d34887e9411dd18b07681200b8d779a513fdb35af926830cf849daedc12282
+    media_type: audio/mpeg
+    bytes: 229328057
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -125,6 +125,17 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=609%20U.S.%20719
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2026-04-01'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/25-365.mp3
+  duration_seconds: 7710
+  file:
+    storage_key: supreme-court-audio/court/2025/25-365.mp3
+    checksum: 79cd6f3efbf231b70d41bf169fceebe0a359c6427266c03da05f0276f94d9720
+    media_type: audio/mpeg
+    bytes: 61684931
 rights:
   status: no-permission-needed
   basis: us-government-work

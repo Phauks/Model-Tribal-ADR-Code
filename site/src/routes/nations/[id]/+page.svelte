@@ -156,6 +156,26 @@
 		}))
 	);
 	const casesByKey = $derived(new Map(data.cases.map((entry) => [entry.key, entry])));
+	// The documents of the nation's federal acknowledgment petition (Trevor,
+	// Nov. 27, 2026: "if petitioning, we should show petitioning documents"),
+	// in the same three short columns as the cases table: under each
+	// document's name, its citation and source marker.
+	const petitionColumns: TableColumn[] = [
+		{ key: 'year', header: 'Year', type: 'date', sortable: true },
+		{ key: 'name', header: 'Document', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'from', header: 'From', sortable: true, searchable: true }
+	];
+	const petitionRows: TableRow[] = $derived(
+		data.petition.map((entry) => ({
+			key: entry.key,
+			cells: {
+				year: { text: entry.issued?.slice(0, 4) ?? '', sortValue: entry.issued },
+				name: { text: [entry.name, entry.citation].filter(Boolean).join(', '), sortValue: entry.name, href: entry.link },
+				from: { text: entry.from }
+			}
+		}))
+	);
+	const petitionByKey = $derived(new Map(data.petition.map((entry) => [entry.key, entry])));
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
@@ -196,8 +216,8 @@
 
 <!--
 	A record page (site/DESIGN.md, "Record pages", "Nation pages"): the text on
-	the left, held to a readable line length, and beside it "At a glance" (the
-	seal, key facts and map) and the contacts. On a narrow screen "At a glance"
+	the left, held to a readable line length, and beside it "Key facts" (the
+	seal, key facts and map) and the contacts. On a narrow screen "Key facts"
 	comes right after the title, so the key facts come first.
 -->
 <RecordPage glance={!page.withdrawn && (data.glance.length > 0 || data.map || hasContacts) ? glance : undefined}>
@@ -211,13 +231,13 @@
 			</div>
 		{/if}
 
-		<!-- 1. Name. The nation's seal or logo heads At a glance (docs/official-images.md). -->
+		<!-- 1. Name. The nation's seal or logo heads Key facts (docs/official-images.md). -->
 		<h1>{page.officialName}</h1>
 	{/snippet}
 	{#snippet introduction()}
 		{#if !page.withdrawn}
 			<!-- Recognition badges (Trevor, Nov. 22, 2026; the full wording and legal basis
-			     are in At a glance), then who keeps the page, on the same line since both
+			     are in Key facts), then who keeps the page, on the same line since both
 			     are badges (Trevor, Nov. 23, 2026). The build always says "Unclaimed"; for
 			     a claimed page the Worker hides it and fills the status place with the
 			     claimed badge (src/lib/server/nation-page-overlay.ts). -->
@@ -445,7 +465,7 @@
 		</Collapsible>
 
 		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service, self-governance and federal programs -->
-		{#if data.treaties.length > 0 || data.ties.length > 0 || data.programs.length > 0 || data.enforcement.length > 0}
+		{#if data.treaties.length > 0 || data.ties.length > 0 || data.petition.length > 0 || data.programs.length > 0 || data.enforcement.length > 0}
 			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
 				{#if data.treaties.length > 0}
 					<DataTable
@@ -469,6 +489,27 @@
 					</DataTable>
 				{/if}
 				{#if data.ties.length > 0}<FactGroups groups={data.ties} />{/if}
+				{#if data.petition.length > 0}
+					<DataTable
+						identifier="petition-documents"
+						label="Table: acknowledgment petition documents"
+						columns={petitionColumns}
+						rows={petitionRows}
+						defaultSort={{ key: 'year', direction: 'ascending' }}
+						rowName={['document', 'documents']}
+						download="{data.page.id}-petition-documents"
+					>
+						{#snippet heading(count: Snippet)}<h3 id="petition-documents-heading">Petition documents {@render count()}</h3>{/snippet}
+						{#snippet cell(row: TableRow, column: TableColumn)}
+							{@const entry = petitionByKey.get(row.key)}
+							{#if entry && column.key === 'name'}
+								<span class="case-name">{#if entry.link}<a href={entry.link}>{entry.name}</a>{:else}{entry.name}{/if}</span>
+								<span class="case-detail small muted">{#if entry.citation}{entry.citation}{/if}<CitationMarks marks={entry.citations} /></span>
+								<span class="case-detail case-phone small muted">{entry.from}</span>
+							{/if}
+						{/snippet}
+					</DataTable>
+				{/if}
 				{#if data.programs.length > 0}
 					<DataTable
 						identifier="federal-programs"
@@ -583,7 +624,7 @@
 					{#each data.neighbors as entry (entry.state)}
 						<h3 class="neighbors-state">{entry.stateName}</h3>
 						{#if entry.nations.length > 0}
-							<ul class="neighbors">
+							<ul class="neighbors stacked-list">
 								{#each entry.nations as nation (nation.id)}
 									<li><a href="/nations/{nation.id}">{nation.name}</a></li>
 								{/each}
@@ -619,7 +660,7 @@
 	<p class="empty-section">{empty.text}</p>
 {/snippet}
 
-<!-- 3. At a glance, with the seal and the map, then the contacts. -->
+<!-- 3. Key facts, with the seal and the map, then the contacts. -->
 {#snippet glance()}
 	{#if data.glance.length > 0 || data.map}
 		<!-- On a phone the first facts show and the rest, with the map, wait behind "Show all" (GlancePanel.svelte). -->
@@ -699,7 +740,9 @@
 			display: block;
 		}
 		:global(#nation-cases th:nth-child(n + 3)),
-		:global(#nation-cases td:nth-child(n + 3)) {
+		:global(#nation-cases td:nth-child(n + 3)),
+		:global(#petition-documents th:nth-child(n + 3)),
+		:global(#petition-documents td:nth-child(n + 3)) {
 			display: none;
 		}
 	}
@@ -755,7 +798,7 @@
 		display: block;
 	}
 
-	/* Its rules keep clear of the floated At a glance column and contacts (RecordPage.svelte). */
+	/* Its rules keep clear of the floated Key facts column and contacts (RecordPage.svelte). */
 	.empty-section {
 		display: flow-root;
 		margin: 0 0 var(--space-5);
@@ -794,17 +837,13 @@
 		font-size: var(--font-size-body);
 	}
 
-	/* As many columns as fit, so the list spreads out under At a glance. */
+	/*
+	 * One nation per line, with the thin dashed rule of a stacked list between
+	 * them, so a long name never runs into the next (Trevor chose "one per
+	 * line, full width" on Nov. 27, 2026; design/nearby-nations). No bullets
+	 * (Trevor, Nov. 23, 2026).
+	 */
 	.neighbors {
-		columns: var(--layout-card-min);
-		column-gap: var(--space-5);
 		max-width: none;
-		/* Names in columns need no bullets (Trevor, Nov. 23, 2026). */
-		list-style: none;
-		padding-left: 0;
-	}
-
-	.neighbors li {
-		break-inside: avoid;
 	}
 </style>

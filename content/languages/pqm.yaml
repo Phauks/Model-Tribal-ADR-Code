@@ -1,0 +1,98 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: pqm
+name: Malecite-Passamaquoddy
+iso_639_3:
+  code: pqm
+  reference_name: Malecite-Passamaquoddy
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: male1292
+  level: language
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1748
+  source: glottolog-5-4
+dialects:
+- name: Malecite
+  glottocode: male1293
+  source: glottolog-5-4
+- name: Passamaquoddy
+  glottocode: pass1249
+  source: glottolog-5-4
+works:
+- glottolog_reference: '37072'
+  title: 'A Passamaquoddy-Maliseet dictionary: Peskotomuhkati Wolastoqewi Latuwewakon'
+  kinds:
+  - dictionary
+  author: David A. Francis and Robert M. Leavitt
+  year: 2008
+  publisher: Univ. of Maine Press
+  pages: 1198
+  source: glottolog-5-4
+- glottolog_reference: '85836'
+  title: 'Syntax at the Edge: Cross-Clausal Phenomena and the Syntax of Passamaquoddy'
+  kinds:
+  - grammar
+  author: B. Bruening
+  year: 2001
+  publisher: Massachusetts Institute of Technology
+  pages: 319
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '313203'
+  title: Maliseet vocabulary
+  kinds:
+  - dictionary
+  author: Montague Chamberlain
+  year: 1999
+  publisher: Harvard Cooperative Society
+  pages: 105
+  source: glottolog-5-4
+- glottolog_reference: '676798'
+  title: Micmac - Maliseet Institute's Maliseet-Passamaquoddy Dictionary
+  kinds:
+  - dictionary
+  author: D. A. Francis and R. M. Leavitt
+  year: 1998
+  source: glottolog-5-4
+- glottolog_reference: '695849'
+  title: Kolusuwakonol, Passamaquoddy-Maliseet and English dictionary
+  kinds:
+  - dictionary
+  author: Philip S. LeSourd
+  year: 1986
+  publisher: Micmac-Maliseet Institute
+  source: glottolog-5-4
+- glottolog_reference: '676797'
+  title: Philip S. LeSourd's English and Passamaquoddy-Maliseet Dictionary
+  kinds:
+  - dictionary
+  author: Robert M. Leavitt and David A. Francis
+  year: 1986
+  publisher: Passamaquoddy-Maliseet Bilingual Program
+  source: glottolog-5-4
+- glottolog_reference: '132411'
+  title: 'Philip S. LeSourd''s English and Passamaquoddy-Maliseet dictionary: peskotomuhkati-wolastoqewi naka ikolisomani latuwewakon'
+  kinds:
+  - dictionary
+  author: Philip S. LeSourd, Robert Leavitt and David A. Francis
+  year: 1984
+  publisher: Micmac-Maliseet Institute, Univ. of New Brunswick
+  pages: 184
+  source: glottolog-5-4
+- glottolog_reference: '687145'
+  title: The main features of Malecite-Passamaquoddy Grammar
+  kinds:
+  - grammar
+  author: Karl V. Teeter
+  year: 1971
+  publisher: University of Californian Press
+  pages: 30
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

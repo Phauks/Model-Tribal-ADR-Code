@@ -23,6 +23,7 @@
 	import { localInputValue } from './dates.ts';
 	import DateTimeField from '#lib/components/DateTimeField.svelte';
 	import Dropdown from '#lib/components/Dropdown.svelte';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let {
 		action,
@@ -197,7 +198,7 @@
 	async function discardDraft(): Promise<void> {
 		sending = true;
 		clearTimeout(timer);
-		if (draftIdentifier) await fetch(`/workspace/inbox/drafts/save?identifier=${encodeURIComponent(draftIdentifier)}`, { method: 'DELETE' }).catch(() => undefined);
+		if (draftIdentifier) await fetch(`/workspace/inbox/drafts/save?identifier=${encodeURIComponent(draftIdentifier)}`, { method: 'DELETE' }).catch((problem) => sendProblem(problem, { code: 'mail.discard-draft' }));
 		window.location.href = discard ?? window.location.pathname;
 	}
 
@@ -275,7 +276,7 @@
 			links = links.map((item) => (item.key === key ? { ...item, ...change } : item));
 		};
 		const answer = async (response: Response) => {
-			if (!response.ok) throw new Error((await response.json().catch(() => null))?.message ?? `The server answered ${response.status}.`);
+			if (!response.ok) throw new Error((await response.json().catch(() => /* expected: an answer that is not JSON; the row shows the status instead. */ null))?.message ?? `The server answered ${response.status}.`);
 			return response.json();
 		};
 		try {
@@ -302,7 +303,7 @@
 
 	async function removeLink(item: LinkedFile): Promise<void> {
 		links = links.filter((other) => other.key !== item.key);
-		if (item.identifier) await fetch(`/workspace/inbox/links/${item.identifier}`, { method: 'DELETE' }).catch(() => undefined);
+		if (item.identifier) await fetch(`/workspace/inbox/links/${item.identifier}`, { method: 'DELETE' }).catch((problem) => sendProblem(problem, { code: 'mail.remove-link' }));
 	}
 
 	/** Tomorrow, or next Monday, at 8 in the morning, for the quick picks. */

@@ -141,6 +141,7 @@ export function parsePrintOptions(stored: string | null): PrintOptions {
 	try {
 		parsed = JSON.parse(stored);
 	} catch {
+		// expected: stored options that are not JSON fall back to the defaults.
 		return options;
 	}
 	if (typeof parsed !== 'object' || parsed === null) return options;
@@ -175,6 +176,7 @@ function storage(): Storage | undefined {
 	try {
 		return window.localStorage;
 	} catch {
+		// expected: storage is blocked, as in a private window; the options last for this page only.
 		return undefined;
 	}
 }
@@ -183,6 +185,7 @@ export function loadPrintOptions(): PrintOptions {
 	try {
 		return parsePrintOptions(storage()?.getItem(printStorageKey) ?? null);
 	} catch {
+		// expected: storage is blocked; the defaults apply.
 		return { ...defaultPrintOptions };
 	}
 }
@@ -199,6 +202,6 @@ export function savePrintOptions(options: PrintOptions): void {
 		if (serialized === null) storage()?.removeItem(printStorageKey);
 		else storage()?.setItem(printStorageKey, serialized);
 	} catch {
-		// Storage blocked or full: the options still apply to this page.
+		// expected: storage blocked or full: the options still apply to this page.
 	}
 }

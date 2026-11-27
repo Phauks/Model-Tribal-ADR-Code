@@ -24,7 +24,7 @@
 	page open in a new tab.
 
 	Use:
-	<RecordPage glanceLabel="At a glance">
+	<RecordPage glanceLabel="Key facts">
 		{#snippet title()}<h1>…</h1>{/snippet}
 		{#snippet introduction()}<p class="lead">…</p>{/snippet}
 		{#snippet glance()}<GlancePanel>…</GlancePanel>{/snippet}
@@ -46,7 +46,7 @@
 		sources?: Snippet;
 	}
 
-	let { title, introduction, glance, glanceLabel = 'At a glance', children, sources }: Props = $props();
+	let { title, introduction, glance, glanceLabel = 'Key facts', children, sources }: Props = $props();
 </script>
 
 <span id={newTabNoteIdentifier} hidden>Opens in a new tab</span>
@@ -211,7 +211,8 @@
 			margin-top: 0;
 		}
 
-		.has-glance :global(:is(.record-details, .record-sources) :is(.notice, .panel, .timeline, figure, hr, .source-group, .source-list > li)) {
+		/* Not a figure kept hidden, such as a map view not chosen (NationMap.svelte). */
+		.has-glance :global(:is(.record-details, .record-sources) :is(.notice, .panel, .timeline, figure:not([hidden]), hr, .source-group, .source-list > li)) {
 			display: flow-root;
 		}
 

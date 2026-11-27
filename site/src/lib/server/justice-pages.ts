@@ -9,12 +9,15 @@
  *
  * Runs at build time only.
  */
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { parse } from 'yaml';
 import { readableDate } from '../readable-date.ts';
 import type { CitationMark } from '../citation-marks.ts';
 import type { ChartCase } from '../bench-chart.ts';
 import { casePreviewList } from './case-previews.ts';
 import { chartCasesOfPeople } from './chart-cases.ts';
-import { sources } from './content.ts';
+import { repositoryRoot, sources } from './content.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
 import {
 	appointmentsOf,
@@ -23,6 +26,7 @@ import {
 	peopleFile,
 	personForCase,
 	personOf,
+	presidentByKey,
 	presidentNamed,
 	presidentPath,
 	type JusticePerson,
@@ -31,6 +35,8 @@ import {
 import { courtPath, courts, justicesFile, surname, type Justice } from './supreme-courts.ts';
 import { pictureView } from './supreme-court-pictures.ts';
 import type { InfoPicture } from '../info-page.ts';
+import type { OutlineItem, PageFamily, PageOutline } from '../site-sections.ts';
+import { presidentDocuments, termsOf, treatyDates, type PresidentDocument, type TermCase } from './president-documents.ts';
 
 interface FactItem {
 	label?: string;
@@ -110,6 +116,18 @@ export interface PresidentPage {
 	summary: string;
 	portrait?: PortraitView;
 	glance: FactGroup[];
+	/** What the President signed, and the cases decided in the term (president-documents.ts). */
+	orders: PresidentDocument[];
+	/** The browser of executive orders, filtered to this President, when they signed any. */
+	ordersLink?: string;
+	treaties: PresidentDocument[];
+	treatyMarks: CitationMark[];
+	acts: PresidentDocument[];
+	decided: TermCase[];
+	decidedMarks: CitationMark[];
+	/** A nominee the Senate never confirmed, for a President who appointed no Justice. */
+	nominees: string[];
+	nomineeMarks: CitationMark[];
 	appointees: AppointeeRow[];
 	appointeeMarks: CitationMark[];
 	rows: ServiceRow[];
@@ -119,6 +137,9 @@ export interface PresidentPage {
 	/** The same cases with each Justice's vote, for the chart. */
 	chartCases: ChartCase[];
 	sources: SourceEntry[];
+	/** The side column: the page's sections (SiteSidebar.svelte), as on a nation's page. */
+	outline: PageOutline;
+	family: PageFamily;
 }
 
 interface BenchEntry {
@@ -287,7 +308,7 @@ export function justicePage(key: string): JusticePage | null {
 	const appointments = appointmentsOf(person);
 	const glance: FactGroup[] = [];
 
-	sourceUses.part('At a glance');
+	sourceUses.part('Key facts');
 	for (const appointment of appointments) {
 		const details = person.appointments.find((entry) => entry.seat === appointment.seat);
 		const items: FactItem[] = [];
@@ -334,7 +355,7 @@ export function justicePage(key: string): JusticePage | null {
 
 	const lifeMarks = (text: string): CitationMark[] => {
 		const marks: CitationMark[] = [];
-		sourceUses.cite(biographySource, { section: 'At a glance', text }, marks);
+		sourceUses.cite(biographySource, { section: 'Key facts', text }, marks);
 		return marks;
 	};
 	if (person.born.date || person.born.place) {
@@ -416,23 +437,57 @@ function presidentYears(president: PresidentPerson): string {
 	return runs.join(', ');
 }
 
+/** Nominees to the Court whom the Senate never confirmed, for a President who appointed no Justice (content/supreme-court/unconfirmed-nominations.yaml). */
+interface UnconfirmedNominations {
+	source: string;
+	nominations: { president: string; nominee: string; nominated: string; outcome: string }[];
+}
+
+let unconfirmedCache: UnconfirmedNominations | undefined;
+
+function unconfirmedNominations(): UnconfirmedNominations {
+	unconfirmedCache ??= parse(readFileSync(path.join(repositoryRoot, 'content/supreme-court/unconfirmed-nominations.yaml'), 'utf8')) as UnconfirmedNominations;
+	return unconfirmedCache;
+}
+
+/** "Apr. 15, 1865 – Mar. 4, 1869", or "Jan. 20, 2025 –" for the President serving now. */
+function termText(run: { from: string; to?: string }): string {
+	return run.to ? `${readableDate(run.from)} – ${readableDate(run.to)}` : `${readableDate(run.from)} –`;
+}
+
 export function presidentPage(key: string): PresidentPage | null {
 	const president = peopleFile().presidents.find((candidate) => candidate.key === key);
 	if (!president) return null;
 	const sourceUses = new SourceUses();
 	const files = peopleFile().sources;
 	const serviceSource = justicesFile().sources.service;
+	const path_ = presidentPath(president);
+	const runs = termsOf(president.key);
+	if (runs.length === 0) throw new Error(`src/lib/president-terms.ts has no term for ${president.key} (content/supreme-court/people.yaml)`);
+	const documents = presidentDocuments(president.key);
 
-	sourceUses.part('At a glance');
+	sourceUses.part('Key facts');
 	const yearMarks: CitationMark[] = [];
-	sourceUses.cite(files.presidents, { section: 'At a glance', text: 'Years as President' }, yearMarks);
-	if (president.serving_since) sourceUses.cite(files.inaugurations, { section: 'At a glance', text: 'The present term' }, yearMarks);
-	const glance: FactGroup[] = [{ field: 'president', label: 'President', items: [{ text: presidentYears(president), citations: yearMarks }] }];
+	sourceUses.cite(files.presidents, { section: 'Key facts', text: 'In office' }, yearMarks);
+	sourceUses.cite(files.inaugurations, { section: 'Key facts', text: 'In office: the first day of each term' }, yearMarks);
+	const glance: FactGroup[] = [{ field: 'in-office', label: 'In office', items: runs.map((run) => ({ text: termText(run), citations: yearMarks })) }];
 	if (president.party) {
 		const marks: CitationMark[] = [];
-		sourceUses.cite(files.biography, { section: 'At a glance', text: 'Party' }, marks);
+		sourceUses.cite(files.biography, { section: 'Key facts', text: 'Party' }, marks);
 		glance.push({ field: 'party', label: 'Party', items: [{ text: president.party, citations: marks }] });
 	}
+	const neighbor = (other: string | undefined): FactItem[] => {
+		const person = other ? presidentByKey(other) : undefined;
+		return person ? [{ text: person.name, link: presidentPath(person) }] : [];
+	};
+	const before = neighbor(runs[0].before);
+	const after = neighbor(runs.at(-1)!.after);
+	if (before.length > 0) glance.push({ field: 'before', label: 'Before', items: before });
+	if (after.length > 0) glance.push({ field: 'after', label: 'After', items: after });
+
+	sourceUses.part('Treaties proclaimed');
+	const treatyMarks: CitationMark[] = [];
+	if (documents.treaties.length > 0) sourceUses.cite(treatyDates().source, { section: 'Treaties proclaimed', text: 'The dates each treaty was signed and proclaimed, from the treaty’s header' }, treatyMarks);
 
 	sourceUses.part('Justices appointed');
 	const appointed = justicesFile()
@@ -453,7 +508,11 @@ export function presidentPage(key: string): PresidentPage | null {
 		};
 	});
 	const appointeeMarks: CitationMark[] = [];
-	sourceUses.cite(serviceSource, { section: 'Justices appointed', text: 'Each Justice the President appointed, and the dates of service' }, appointeeMarks);
+	if (appointed.length > 0) sourceUses.cite(serviceSource, { section: 'Justices appointed', text: 'Each Justice the President appointed, and the dates of service' }, appointeeMarks);
+	const unconfirmed = appointed.length > 0 ? [] : unconfirmedNominations().nominations.filter((entry) => entry.president === president.key);
+	const nomineeMarks: CitationMark[] = [];
+	if (unconfirmed.length > 0) sourceUses.cite(unconfirmedNominations().source, { section: 'Justices appointed', text: 'Nominees the Senate did not confirm' }, nomineeMarks);
+	const nominees = unconfirmed.map((entry) => `He nominated ${entry.nominee} on ${readableDate(entry.nominated)}; ${entry.outcome}.`);
 	const rows: ServiceRow[] = appointed.map((appointment) => ({
 		name: appointment.name,
 		person: personOf(appointment).key,
@@ -463,12 +522,39 @@ export function presidentPage(key: string): PresidentPage | null {
 		link: justicePath(personOf(appointment))
 	}));
 
+	sourceUses.part('Supreme Court cases decided');
+	const decidedMarks: CitationMark[] = [];
+	if (documents.cases.length > 0) {
+		sourceUses.cite(files.presidents, { section: 'Supreme Court cases decided', text: 'The years of the term' }, decidedMarks);
+		sourceUses.cite(files.inaugurations, { section: 'Supreme Court cases decided', text: 'The first day of each term' }, decidedMarks);
+	}
+
+	// The side column: the page's own sections, in the page's order, as on a nation's page.
+	const items: OutlineItem[] = [
+		{ label: 'Executive orders and proclamations', link: '#orders-heading' },
+		{ label: 'Treaties proclaimed', link: '#treaties-heading' },
+		{ label: 'Acts of Congress', link: '#acts-heading' },
+		{ label: 'Justices appointed', link: '#justices-heading' },
+		{ label: 'Supreme Court cases decided', link: '#decided-heading' },
+		...(cases.length > 0 ? [{ label: 'Cases heard by Justices he appointed', link: '#cases-heading' }] : []),
+		{ label: 'References', link: '#sources-heading' }
+	];
+
 	return {
 		key: president.key,
 		name: president.name,
 		summary: `President, ${presidentYears(president)}`,
 		portrait: pictureView(president.key),
 		glance,
+		orders: documents.orders,
+		ordersLink: documents.orders.length > 0 ? `/laws/executive-orders?president=${encodeURIComponent(president.key)}` : undefined,
+		treaties: documents.treaties,
+		treatyMarks,
+		acts: documents.acts,
+		decided: documents.cases,
+		decidedMarks,
+		nominees,
+		nomineeMarks,
 		appointees,
 		appointeeMarks,
 		rows,
@@ -476,7 +562,9 @@ export function presidentPage(key: string): PresidentPage | null {
 		end: rows.reduce((last, row) => (row.to > last ? row.to : last), rows[0]?.to ?? today()),
 		cases,
 		chartCases: chartCasesOfPeople(people.map((each) => each.key)),
-		sources: sourceUses.list
+		sources: sourceUses.list,
+		outline: { title: president.name, items },
+		family: { title: president.name, link: path_, pages: [{ label: 'President Page', link: path_ }] }
 	};
 }
 

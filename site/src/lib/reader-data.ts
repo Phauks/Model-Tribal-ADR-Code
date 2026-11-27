@@ -75,6 +75,7 @@ export function parseReaderData(text: string): ReaderData | undefined {
 	try {
 		parsed = JSON.parse(text);
 	} catch {
+		// expected: a file that is not JSON is not this site's export; the page says so.
 		return undefined;
 	}
 	if (typeof parsed !== 'object' || parsed === null) return undefined;

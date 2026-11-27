@@ -15,6 +15,7 @@
 	import Building2 from '@lucide/svelte/icons/building-2';
 	import Pause from '@lucide/svelte/icons/pause';
 	import Play from '@lucide/svelte/icons/play';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	interface Tile {
 		name: string;
@@ -35,8 +36,9 @@
 			.then((answer: { sponsors?: Tile[] } | null) => {
 				if (answer && Array.isArray(answer.sponsors)) tiles = answer.sponsors;
 			})
-			.catch(() => {
+			.catch((problem) => {
 				// Without the list, the heading still links to the Sponsorship page.
+				sendProblem(problem, { code: 'sponsors.row' });
 			});
 		return () => controller.abort();
 	});

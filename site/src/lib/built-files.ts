@@ -19,6 +19,7 @@
  *
  * Shared by the build (in Node) and the Worker, so it must stay plain.
  */
+import { fileNumber } from './file-number.ts';
 import { pageDataPrefix } from './page-data.ts';
 
 /** Where the Worker's private files are kept. */
@@ -27,15 +28,7 @@ export const privateDataPrefix = `${pageDataPrefix}/private`;
 /** Where the build leaves the same data for itself and the development server, relative to site/. */
 export const builtDataFolder = '.svelte-kit/built-data';
 
-/** Which of `count` files holds a key: a 32-bit FNV-1a hash of the key, taken modulo the number of files. */
-export function fileNumber(key: string, count: number): number {
-	let hash = 0x811c9dc5;
-	for (let index = 0; index < key.length; index++) {
-		hash ^= key.charCodeAt(index);
-		hash = Math.imul(hash, 0x01000193) >>> 0;
-	}
-	return hash % count;
-}
+export { fileNumber };
 
 /** A set of records spread over files by key. */
 export interface SpreadFiles {
@@ -80,6 +73,19 @@ export const essayRecordFiles: SpreadFiles = { name: 'essay-records', count: 512
 
 /** Every court case's name and date, which an essay needs whole to link the case names in its text. */
 export const essayCaseNamesFile = 'essay-case-names';
+
+/**
+ * The pages a citation inside a document's text links to, by the key the
+ * linker finds it by, such as "case:309 us 506" or "usc:25:5321"
+ * (src/lib/server/text-link-index.ts): about 2 MB, in files of about 30 KB.
+ */
+export const textLinkFiles: SpreadFiles = { name: 'text-links', count: 64 };
+
+/**
+ * Each search result's copy, citation and nation, by the result's link, which the Worker reads when a
+ * reader downloads several results at once (src/lib/server/search-selection.ts).
+ */
+export const searchSelectionFiles: SpreadFiles = { name: 'search-selection', count: 256 };
 
 /** Spreads records over a set's files, as the build writes them. */
 export function spreadRecords<T>(set: SpreadFiles, records: Record<string, T>): Record<string, T>[] {

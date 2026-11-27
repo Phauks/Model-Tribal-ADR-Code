@@ -25,7 +25,7 @@ const mostQuotations = 300;
 
 export const POST: RequestHandler = async (event) => {
 	const { person } = await essayAccess(event, 'comment', { forData: true });
-	const body = (await event.request.json().catch(() => null)) as { text?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as { text?: unknown } | null;
 	if (!body || typeof body.text !== 'string' || body.text.length > largestEssayBytes) error(400, 'Send the text to check.');
 	const database = workerEnvironment().sourceLibrary;
 	if (!database) error(503, 'The source library is not connected.');

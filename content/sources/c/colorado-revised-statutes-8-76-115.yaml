@@ -1,0 +1,61 @@
+key: colorado-revised-statutes-8-76-115
+kind: state-statute
+citation:
+  type: legislation
+  title: Coverage of Indian tribes
+  title-short: Colo. Rev. Stat. § 8-76-115
+  container-title: Colorado Revised Statutes
+  container-title-short: Colo. Rev. Stat.
+  section: 8-76-115
+  author:
+  - literal: Colorado Office of Legislative Legal Services
+  issued:
+    date-parts:
+    - - 2001
+  URL: https://olls.info/crs/crs2026-title-08.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://olls.info/crs/crs2026-title-08.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- colorado-revised-statutes-8-2-125
+- colorado-revised-statutes-8-20-5-101
+- colorado-revised-statutes-8-20-5-206
+- colorado-revised-statutes-8-20-5-303
+- colorado-revised-statutes-8-70-113
+- colorado-revised-statutes-8-70-125-5
+- colorado-revised-statutes-8-70-140
+- colorado-revised-statutes-8-70-140-6
+- colorado-revised-statutes-8-72-110
+- colorado-revised-statutes-8-83-502
+state_law:
+  relevance: core
+  citation: Colo. Rev. Stat. § 8-76-115 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CO
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Colo. Rev. Stat. § 8-76-115 (2026). History: Source: L. 2001: Entire section added, p. 1548, § 5, effective December 21, 2000. L. 2009: (1) to (4), (5)(a), (6), (7)(b), and (8)(b) amended, (HB 09-1363), ch. 363, p. 1903, § 22, effective July 1. L. 2015: (1) and (5)(a) amended, (SB 15-264), ch. 259, p. 943, § 12, effective August 5. Text read from the Colorado Office of Legislative Legal Services'' 2026 download of the Colorado Revised Statutes (content.leg.colorado.gov, 2026 CRS Titles for Download) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian tribes; indian; tribal; tribe; tribes); AI reader''s verdict core: Unemployment premium coverage of Indian tribes and tribal units. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian tribe; indian tribes; indian; tribal; tribe; tribes'

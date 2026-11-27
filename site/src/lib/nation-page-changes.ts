@@ -46,7 +46,7 @@ export const statementSections = ['recognition', 'law', 'jurisdiction'] as const
 export type StatementSection = (typeof statementSections)[number];
 
 export const statementSectionLabels: Record<StatementSection, string> = {
-	recognition: 'Recognition (in “At a glance”)',
+	recognition: 'Recognition (in “Key facts”)',
 	law: 'Laws and agreements',
 	jurisdiction: 'Jurisdiction'
 };
@@ -185,6 +185,7 @@ export function safeWebLink(value: string): string | undefined {
 		if (url.protocol !== 'https:' || url.username || url.password) return undefined;
 		return url.href;
 	} catch {
+		// expected: a value that is not a web address gets no link.
 		return undefined;
 	}
 }

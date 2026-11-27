@@ -8,6 +8,7 @@ import {
 	sectionLinks
 } from '../src/lib/site-navigation.ts';
 import { nationFamily } from '../src/lib/nation-family.ts';
+import { browseIdentifiers } from '../src/lib/browse-identifiers.ts';
 
 const sectionOf = (path: string) => navigationSectionOf(path)?.label;
 const section = (key: string) => navigationSections.find((candidate) => candidate.key === key)!;
@@ -23,7 +24,13 @@ describe('the six sections in the bar under the masthead', () => {
 				if (link.soon) continue;
 				const address = link.link.split('?')[0];
 				const route = `src/routes${address}`;
-				const found = existsSync(`${route}/+page.svelte`) || existsSync(`${route}/+page.server.ts`) || existsSync(`${route.replace(/\/[^/]+$/, '')}/[collection]/+page.svelte`);
+				// A browsed Federal collection's page is drawn by /laws/[collection=browse] (src/lib/browse-identifiers.ts).
+				const browsed = /^\/laws\/([^/]+)$/.exec(address)?.[1];
+				const found =
+					existsSync(`${route}/+page.svelte`) ||
+					existsSync(`${route}/+page.server.ts`) ||
+					existsSync(`${route.replace(/\/[^/]+$/, '')}/[collection]/+page.svelte`) ||
+					(browsed !== undefined && (browseIdentifiers as readonly string[]).includes(browsed) && existsSync('src/routes/laws/[collection=browse]/+page.svelte'));
 				expect(found, `${candidate.label}: ${link.label} (${link.link})`).toBe(true);
 			}
 		}
@@ -77,7 +84,6 @@ describe('the six sections in the bar under the masthead', () => {
 describe('a nation’s own pages in the side column', () => {
 	it('lists the nation page, and its court opinions only when it has some', () => {
 		expect(nationFamily('navajo-nation', 'Navajo Nation', 949)).toEqual({
-			back: { label: 'Nations', link: '/nations' },
 			title: 'Navajo Nation',
 			pages: [
 				{ label: 'Nation Page', link: '/nations/navajo-nation' },

@@ -1,0 +1,74 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: tcb
+name: Tanacross
+iso_639_3:
+  code: tcb
+  reference_name: Tanacross
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: tana1290
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1446
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/tanacross.php
+  source: alaska-native-language-center-languages
+dialects: []
+works:
+- glottolog_reference: '468582'
+  title: 'Tanacross Learners'' Dictionary: Dihthâad Xt''een Iin Aanděg'' Dı́nahtlǎa'' (Arnold, Thoman, and Holton, comps.; Holton, ed.)'
+  kinds:
+  - dictionary
+  author: Andrea L. Berez
+  year: 2010
+  publisher: International Journal of American Linguistics
+  pages: 400
+  source: glottolog-5-4
+- glottolog_reference: '107754'
+  title: Tanacross learners' dictionary Dihthaad Xt'een Iin Aandeg' dinahtlaa' <eng>
+  kinds:
+  - dictionary
+  author: Irene Arnold
+  year: 2009
+  publisher: Alaska Native Language Center, Univ. of Alaska
+  source: glottolog-5-4
+- glottolog_reference: '670975'
+  title: 'Tanacross Learners'' Dictionary: Dihtâad Xt''een Iin Anděg Dínahtl''ǎa'''
+  kinds:
+  - dictionary
+  author: Irene Arnold, Richard Thoman and Gary Holton
+  year: 2009
+  publisher: Alaska Native Language Center
+  source: glottolog-5-4
+- glottolog_reference: '165570'
+  title: Laura Sanford and Irene Arnold at ANLC, Dictionary Session
+  kinds:
+  - dictionary
+  author: Irene (speaker) Arnold and Laura (speaker) Sanford
+  year: 2004
+  source: glottolog-5-4
+- glottolog_reference: '165571'
+  title: Laura Sanford and Irene Arnold at ANLC, Dictionary Session
+  kinds:
+  - dictionary
+  author: Gary. (interviewer) Holton, Richard (interviewer) Thoman, Laura (speaker) Sanford and Irene (speaker) Arnold
+  year: 2004
+  source: glottolog-5-4
+- glottolog_reference: '115859'
+  title: The Phonology and Morphology of the Tanacross Athabaskan Language
+  kinds:
+  - grammar
+  author: Gary Holton
+  year: 2000
+  publisher: University of California at Santa Barbara
+  pages: 380
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -1,0 +1,50 @@
+key: national-archives-film-75-25-modern-indian-medicine-men
+kind: federal-agency-document
+citation:
+  type: motion_picture
+  title: Modern Indian Medicine Men
+  author:
+  - literal: U.S. Department of the Interior, Office of Indian Affairs
+  genre: Motion picture
+  number: NAID 12701
+  archive: National Archives at College Park, Motion Pictures
+  archive_location: Record Group 75, Moving Images Documenting the Life and Culture of North American Indians (NAID 12678), item 75.25
+  URL: https://catalog.archives.gov/id/12701
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://catalog.archives.gov/id/12701
+retrieved: '2026-11-27'
+file:
+  storage_key: national-archives-films/75-25.wmv
+  checksum: eaf8cbc981f6117fa32e631afee3a58f6411d5c0e3ad7325aa2308f02fff25cd
+  media_type: video/x-ms-wmv
+  bytes: 152979853
+rights:
+  status: tribal-review-required
+  basis: us-government-work
+  basis_note: A work of the United States government (17 U.S.C. § 105), but it shows what may be a ceremony, so the project's copy is not served until the nation filmed has reviewed it (CARE principles).
+  redistribution: false
+jurisdictions:
+- level: federal
+topics:
+- federal-indian-policy-film
+access:
+  open: true
+  pull_from:
+  - free-web
+sensitivity:
+  tribal_review_required: true
+found_in:
+- 2026-11-27-national-archives-films
+notes: 'Indigo Book citation: Modern Indian Medicine Men (U.S. Department of the Interior, Office of Indian Affairs n.d.) (motion picture), National Archives Identifier 12701, RG 75, item 75.25. The National Archives describes it: "DOCUMENTARY FILM: Shows duties of U.S. Indian Service physician on Native American reservation.  Discusses advantages and disadvantages of working on Pima reservation southwestern U.S." Digitized by the National Archives; the project''s copy is its file, unchanged (152,979,853 bytes, SHA-256 eaf8cbc981f6117fa32e631afee3a58f6411d5c0e3ad7325aa2308f02fff25cd). The screen names its maker: "Produced by U.S. Indian Service 1947". It opens with dancers and a figure at a fire, which may be a ceremony, so the project''s copy is held for the nation''s review. Chosen as a federal Indian policy item (Indian Service physicians (1947); opens with dancers and a healing fire, so held for review) by scripts/law/national_archives_films.py; ceremony films and children''s recordings in the same series are left out (CARE principles). Not yet watched or heard in full by a person (Unverified).'
+review:
+  status: unverified
+  by: scripts/law/national_archives_films.py
+  date: '2026-11-27'
+  checks:
+  - check: listing
+    result: missing
+    detail: Only the National Archives Catalog's description was read and 30 frames of the film

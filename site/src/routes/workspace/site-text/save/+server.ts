@@ -17,7 +17,7 @@ export const POST: RequestHandler = async (event) => {
 	const person = requirePersonForData(event);
 	const { database } = storage(event);
 	await requireDocumentLevel(event, database, siteTextSubject, 'contribute');
-	const body = (await event.request.json().catch(() => null)) as { key?: unknown; words?: unknown; page?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON names no text, which is refused just below with 409 */ null)) as { key?: unknown; words?: unknown; page?: unknown } | null;
 	const entry = typeof body?.key === 'string' ? catalogByKey().get(body.key) : undefined;
 	if (!entry) error(409, 'This text is no longer on the site. Reload the page and try again.');
 	const words = body?.words === null ? null : typeof body?.words === 'string' ? body.words : undefined;

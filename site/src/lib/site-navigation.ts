@@ -54,6 +54,7 @@ export const navigationIconNames = [
 	'info',
 	'key-round',
 	'landmark',
+	'languages',
 	'layers',
 	'library',
 	'life-buoy',
@@ -146,6 +147,7 @@ export const navigationSections: NavigationSection[] = [
 					{ label: 'Data and Charts', link: '/nations/data', icon: 'chart-column', count: 'charts' },
 					{ label: 'Federal Offices', link: '/nations/federal-offices', icon: 'landmark' },
 					{ label: 'Self-Governance and Federal Programs', link: '/nations/federal-programs', icon: 'handshake' },
+					{ label: 'Languages', link: '/languages', icon: 'languages', count: 'languages' },
 					{ label: 'Coverage', link: '/nations/coverage', icon: 'gauge' }
 				]
 			},
@@ -160,7 +162,7 @@ export const navigationSections: NavigationSection[] = [
 				]
 			}
 		],
-		holds: ['/nations', '/stats/native-nations', '/stats/charts']
+		holds: ['/nations', '/languages', '/stats/native-nations', '/stats/charts', '/stats/languages', '/stats/language-families']
 	},
 	{
 		key: 'federal-law',
@@ -173,8 +175,8 @@ export const navigationSections: NavigationSection[] = [
 				links: [
 					{ label: 'Treaties and Agreements', link: '/stats/treaties', icon: 'scroll', count: 'treaties' },
 					{ label: 'Statutes', link: '/stats/federal-statutes', icon: 'book-marked', count: 'federal-statutes' },
-					{ label: 'U.S. Code, Title 25', link: '/stats/united-states-code-sections', icon: 'library', count: 'united-states-code-sections' },
-					{ label: 'Executive Orders', link: '/stats/executive-orders', icon: 'pen-line', count: 'executive-orders' }
+					{ label: 'U.S. Code, Title 25', link: '/laws/usc-25', icon: 'library', count: 'united-states-code-sections' },
+					{ label: 'Executive Orders', link: '/laws/executive-orders', icon: 'pen-line', count: 'executive-orders' }
 				]
 			},
 			{
@@ -269,7 +271,7 @@ export const navigationSections: NavigationSection[] = [
 				]
 			}
 		],
-		holds: ['/library', '/verify', '/stats/biographies', '/stats/glossary-terms', '/stats/source-copies', '/stats/forms']
+		holds: ['/library', '/verify', '/presidents', '/stats/biographies', '/stats/glossary-terms', '/stats/source-copies', '/stats/forms']
 	},
 	{
 		key: 'writing',
@@ -303,6 +305,8 @@ export const navigationSections: NavigationSection[] = [
 				title: 'The Project',
 				links: [
 					{ label: 'About the Project', link: '/about', icon: 'info' },
+					// Posts for readers, written and published on the site like the essays (src/lib/server/news-posts.ts; design/news-section).
+					{ label: 'News', link: '/news', icon: 'newspaper' },
 					{ label: 'Timeline to Public Review', link: '/about/timeline', icon: 'calendar-clock' },
 					{ label: 'Events', link: '/events', icon: 'calendar' },
 					// Every change to the site's pages, like a wiki's (site/COLLABORATION.md, "Recent changes"); it left the side column on Nov. 27, 2026.

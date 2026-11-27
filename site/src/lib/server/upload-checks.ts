@@ -70,6 +70,7 @@ function looksLikeText(bytes: Uint8Array): boolean {
 		new TextDecoder('utf-8', { fatal: true }).decode(sample.subarray(0, Math.max(0, sample.length - 3)));
 		return true;
 	} catch {
+		// expected: bytes that are not UTF-8 are not plain text.
 		return false;
 	}
 }

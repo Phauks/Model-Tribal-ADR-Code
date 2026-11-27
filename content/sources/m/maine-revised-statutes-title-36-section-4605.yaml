@@ -1,0 +1,51 @@
+key: maine-revised-statutes-title-36-section-4605
+kind: state-statute
+citation:
+  type: legislation
+  title: Potato tax
+  title-short: Me. Rev. Stat. tit. 36, § 4605
+  container-title: Maine Revised Statutes
+  container-title-short: Me. Rev. Stat.
+  volume: '36'
+  section: '4605'
+  author:
+  - literal: Maine Legislature, Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1985
+  URL: https://legislature.maine.gov/statutes/36/title36sec4605.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.maine.gov/statutes/36/title36sec4605.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Me. Rev. Stat. tit. 36, § 4605 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ME
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Me. Rev. Stat. tit. 36, § 4605 (2026). History: PL 1985, c. 753, §§14,15 (NEW). PL 1991, c. 376, §58 (AMD). PL 2011, c. 7, §§4, 5 (AMD). PL 2011, c. 657, Pt. W, §6 (REV). PL 2021, c. 681, Pt. F, §§4, 5 (AMD). PL 2021, c. 681, Pt. F, §6 (AFF). RR 2025, c. 1, Pt. F, §§16, 17 (COR). Text read from the Maine Revisor of Statutes'' page for the section (legislature.maine.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal land; tribal); AI reader''s verdict incidental: Potato tax exempts potatoes grown on tribal land. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal land; tribal'

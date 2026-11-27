@@ -34,6 +34,7 @@ export const shownCaseCount = 25;
 /** The lists of every case of a court with thousands (the Statistics page's collections, collections.ts). */
 const caseLists: Record<string, string> = {
   "interior-board-of-indian-appeals": "/stats/interior-board-of-indian-appeals",
+  "indian-claims-commission": "/stats/indian-claims-commission",
 };
 
 const caseKinds: Record<string, string> = {
@@ -129,7 +130,9 @@ export function courts(): Court[] {
       named,
       named === "Interior Board of Indian Appeals"
         ? "Federal appeals board"
-        : (caseKinds[record.kind] ?? "Court"),
+        : named === "Indian Claims Commission"
+          ? "Federal claims commission"
+          : (caseKinds[record.kind] ?? "Court"),
     );
     court.records.push(record);
     court.cases.push({
@@ -219,7 +222,7 @@ export function courtPage(key: string): CourtPage {
   );
   const caseYears = yearSpan(court.cases.map((entry) => entry.decided));
 
-  uses.part("At a glance");
+  uses.part("Key facts");
   const cite = (section: string, text: string): CitationMark[] => {
     const marks: CitationMark[] = [];
     if (court.opinions.length > 0)
@@ -228,7 +231,7 @@ export function courtPage(key: string): CourtPage {
   };
   // The page's lead already says the court's kind, how many opinions and
   // cases name it and their years (routes/courts/[court]/+page.svelte), so
-  // At a glance keeps only what it does not: the nation, with its source, and
+  // Key facts keeps only what it does not: the nation, with its source, and
   // the reporters (Trevor chose this on Nov. 26, 2026; src/lib/info-page.ts).
   if (court.nations.length > 0)
     glance.push({

@@ -1,0 +1,41 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ari
+name: Arikara
+iso_639_3:
+  code: ari
+  reference_name: Arikara
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: arik1262
+  level: language
+  source: glottolog-5-4
+family:
+  name: Caddoan
+  glottocode: cadd1255
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1672
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '158999'
+  title: An English-Arikara student dictionary
+  kinds:
+  - dictionary
+  author: Douglas R. Parks
+  year: 1986
+  publisher: White Shield School District 85
+  pages: 77
+  source: glottolog-5-4
+- glottolog_reference: '102030'
+  title: An introduction to the Arikara language
+  kinds:
+  - grammar
+  author: Douglas Parks, Janet Beltran and Ella Waters
+  year: 1979
+  publisher: Mary College
+  pages: 422
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

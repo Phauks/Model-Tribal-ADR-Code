@@ -93,6 +93,29 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Williams_v._Lee
+argument_audio:
+- kind: argument
+  date: '1958-11-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-176-39-19581120-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81137370
+  duration_seconds: 5664
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-176-39-19581120-1of2.mp3
+    checksum: 20ac753b1dc2972da5c575be0c1486ca0247366279a4160180b9c45ad628df85
+    media_type: audio/mpeg
+    bytes: 90616476
+- kind: argument
+  date: '1958-11-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-176-39-19581120-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81137370
+  duration_seconds: 1242
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-176-39-19581120-2of2.mp3
+    checksum: d90456a4f302b336447d1ad626509d8049dd3ae91999daf6bd7bc58e2688a75c
+    media_type: audio/mpeg
+    bytes: 19876466
 rights:
   status: no-permission-needed
   basis: us-government-work

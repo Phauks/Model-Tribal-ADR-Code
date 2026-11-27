@@ -15,7 +15,8 @@ import { versionItemIdentifier, type RestrictableItem, type RestrictableList, ty
 import { keyOfCopyPath } from './document-zips.ts';
 import { documentHeading, earliestDate, labelOf, nationDocumentHistories, textLink } from './document-history.ts';
 import { offlineSets } from './copy-lists.ts';
-import { nations, publicCopies, sources as sourceRecords } from './content.ts';
+import { nations, sources as sourceRecords, sourcesOfNation } from './content.ts';
+import { publicCopyByKey } from './record-document.ts';
 import { opinionsOf } from './tribal-court-opinions.ts';
 
 /** Compacts and Secretarial Procedures are agreements the United States publishes; everything else is the nation's law. */
@@ -26,7 +27,6 @@ export function documentKind(kind: string): RestrictionKind {
 export function restrictableItems(nationIdentifier: string): RestrictableList {
 	const record = nations().find((candidate) => candidate.id === nationIdentifier);
 	const names = record ? [record.names.official, displayName(record.names.official)] : [];
-	const copies = new Map(publicCopies().map((copy) => [copy.key, copy]));
 	const offline = new Set((offlineSets().nations.get(nationIdentifier)?.files ?? []).map(([path]) => `copy:${keyOfCopyPath(path)}`));
 	const items: RestrictableItem[] = [];
 	const seen = new Set<string>();
@@ -43,7 +43,7 @@ export function restrictableItems(nationIdentifier: string): RestrictableList {
 			const link = textLink(version);
 			const id = versionItemIdentifier(link, history.id, version.id);
 			const label = labelOf(version, version.id);
-			const copy = id.startsWith('copy:') ? copies.get(id.slice(5)) : undefined;
+			const copy = id.startsWith('copy:') ? publicCopyByKey(id.slice(5)) : undefined;
 			const source = version.source ? sourceRecords().get(version.source) : undefined;
 			add({
 				id,
@@ -72,14 +72,14 @@ export function restrictableItems(nationIdentifier: string): RestrictableList {
 			title: opinion.name,
 			citation: `${opinion.citation} (${opinion.court} ${opinion.year})`,
 			original: opinion.original,
-			bytes: copies.get(opinion.key)?.bytes,
+			bytes: publicCopyByKey(opinion.key)?.bytes,
 			cite: opinion.citation,
 			year: opinion.year,
 			nations: opinion.nations
 		});
 	}
 	// Counted as the nation's page lists them: its treaties, and the court cases that name it.
-	const cases = [...sourceRecords().values()].filter((source) => source.kind.endsWith('-case') && source.tribes?.includes(nationIdentifier) && source.citation.title).length;
+	const cases = sourcesOfNation(nationIdentifier).filter((source) => source.kind.endsWith('-case') && source.citation.title).length;
 	return { nation: nationIdentifier, items, alwaysShown: { treaties: record?.treaties?.length ?? 0, cases } };
 }
 

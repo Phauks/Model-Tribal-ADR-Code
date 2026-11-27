@@ -465,7 +465,7 @@ export async function saveApplication(
 	} catch (problem) {
 		if (proofKey) {
 			await bucket.delete(proofKey);
-			await forgetScan(database, proofKey).catch(() => undefined);
+			await forgetScan(database, proofKey).catch(() => /* expected: the original problem is thrown; a leftover scan row names a file that no longer exists */ undefined);
 		}
 		throw problem;
 	}

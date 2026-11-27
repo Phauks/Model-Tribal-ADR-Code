@@ -41,6 +41,7 @@
 		try {
 			return localStorage.getItem(key);
 		} catch {
+			// expected: storage is blocked, as in a private window; the defaults apply.
 			return null;
 		}
 	}
@@ -48,7 +49,7 @@
 		try {
 			localStorage.setItem(key, value);
 		} catch {
-			// The choice lasts for this visit only.
+			// expected: the choice lasts for this visit only.
 		}
 	}
 </script>
@@ -77,7 +78,6 @@
 		statesColor = $bindable(),
 		statesColorChoices,
 		baseMap = $bindable(),
-		placeNames = $bindable(),
 		year = $bindable(),
 		first,
 		last,
@@ -97,7 +97,6 @@
 		statesColor: string;
 		statesColorChoices: SearchableChoice<string>[];
 		baseMap: TileMapBase;
-		placeNames: boolean;
 		/** The timeline's year; undefined is Today. */
 		year: number | undefined;
 		first: number;
@@ -179,7 +178,7 @@
 			const stored = JSON.parse(readStored(foldedStorage) ?? '{}') as Partial<Record<Section, boolean>>;
 			folded = { ...folded, ...Object.fromEntries(Object.entries(stored).filter(([, value]) => typeof value === 'boolean')) };
 		} catch {
-			// A damaged entry leaves every section open.
+			// expected: a damaged entry leaves every section open.
 		}
 		const keyChoice = readStored(keyStorage);
 		keyFolded = keyChoice === null ? matchMedia('(max-width: 40rem)').matches : keyChoice === 'yes';
@@ -380,9 +379,6 @@
 					</label>
 				{/each}
 			</div>
-			{#if baseMap !== 'map'}
-				<label class="explorer-layer"><input type="checkbox" bind:checked={placeNames} /><span class="explorer-layer-words">Place names and roads</span></label>
-			{/if}
 		</div>
 	</section>
 </div>

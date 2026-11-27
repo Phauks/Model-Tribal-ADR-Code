@@ -1,0 +1,54 @@
+{
+  "state": "CO",
+  "code": "Colorado Revised Statutes",
+  "edition": 2026,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 35377,
+    "repealed": 3302,
+    "live": 32036,
+    "strong": 326,
+    "weak_only": 418,
+    "reserved": 39
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 403,
+    "core": 126,
+    "incidental": 277,
+    "by_pool": {
+      "A": {
+        "incidental": 220,
+        "core": 100,
+        "none": 6
+      },
+      "B": {
+        "none": 341,
+        "core": 21,
+        "incidental": 56
+      },
+      "C": {
+        "none": 299,
+        "incidental": 1
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 5
+      }
+    },
+    "meta": {
+      "live": 32036,
+      "A": 326,
+      "B": 418,
+      "E": 5,
+      "C": 1064,
+      "C_sample": 300,
+      "D": 30223,
+      "D_sample": 300,
+      "items": 1349,
+      "batches": 10
+    }
+  }
+}

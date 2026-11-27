@@ -1,0 +1,31 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: cad
+name: Caddo
+iso_639_3:
+  code: cad
+  reference_name: Caddo
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: cadd1256
+  level: language
+  source: glottolog-5-4
+family:
+  name: Caddoan
+  glottocode: cadd1255
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1678
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '569807'
+  title: 'The Caddo Language: A grammar, texts and dictionary based on materials collected by the author in Oklahoma between 1960 and 1970'
+  kinds:
+  - dictionary
+  author: Wallace Chafe
+  year: 2018
+  publisher: Mundart Press
+  pages: 323
+  source: glottolog-5-4
+retrieved: '2026-11-27'

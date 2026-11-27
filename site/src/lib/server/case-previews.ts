@@ -82,6 +82,14 @@ export function casePreviewList(records?: SourceRecord[], texts?: Record<string,
 	return makeCasePreviewList(records ?? [...sources().values()], texts ?? essaysInGit());
 }
 
+let defaultPreviewsById: Map<string, CasePreview> | undefined;
+
+/** A case's preview from the shared list, by the case's key. */
+export function casePreviewOf(key: string): CasePreview | undefined {
+	defaultPreviewsById ??= new Map(casePreviewList().cases.map((preview) => [preview.id, preview]));
+	return defaultPreviewsById.get(key);
+}
+
 function makeCasePreviewList(records: SourceRecord[], texts: Record<string, string>): CasePreviewList {
 	const holdings = boxHoldings(texts, records);
 	const cases: CasePreview[] = [];

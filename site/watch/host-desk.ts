@@ -62,6 +62,7 @@ export class HostDesk extends DurableObject {
 				if (response.ok) text = (await response.text()).slice(0, robotsSizeLimit);
 				else await response.body?.cancel();
 			} catch {
+				// expected: no answer makes the whole host off-limits until robots.txt is read again an hour later (RFC 9309, 2.3.1.4).
 				status = null;
 			}
 			state.robots = robotsFromAnswer(status, text);

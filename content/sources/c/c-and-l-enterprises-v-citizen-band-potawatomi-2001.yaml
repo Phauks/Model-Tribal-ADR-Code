@@ -73,6 +73,19 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=532%20U.S.%20411
+argument_audio:
+- kind: argument
+  date: '2001-03-19'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1177.mp3
+  catalog: https://catalog.archives.gov/id/138282822
+  whole_session: true
+  duration_seconds: 7421
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1177.mp3
+    checksum: f3bc8c6a3af2416f646d09c62dc68e8a93363d0104e1a3fad9513fe92306b2b5
+    media_type: audio/mpeg
+    bytes: 118738149
 rights:
   status: no-permission-needed
   basis: us-government-work

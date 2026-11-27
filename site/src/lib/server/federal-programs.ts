@@ -1,6 +1,6 @@
 /**
  * The federal programs a nation takes part in, as the nation page's table
- * "Self-governance and federal programs" and its At a glance row show them,
+ * "Self-governance and federal programs" and its Key facts row show them,
  * and the program pages that list every nation in one program (Trevor, Nov.
  * 26, 2026: "get it in there", mockup B with the latest amount). A record
  * has one fact per program per source: a participant list gives the dates,
@@ -82,7 +82,7 @@ export function programRows(record: NationRecord): ProgramRow[] {
 }
 
 /**
- * At a glance: the self-governance compacts by department and first year,
+ * Key facts: the self-governance compacts by department and first year,
  * "Interior (1991), Indian Health Service (1994), Transportation (2022)", or
  * "Indian Health Service (through Tribal organizations, 2011)" when only
  * organizations acting for the nation hold the compact.

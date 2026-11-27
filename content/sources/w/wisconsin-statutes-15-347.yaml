@@ -1,0 +1,47 @@
+key: wisconsin-statutes-15-347
+kind: state-statute
+citation:
+  type: legislation
+  title: Same; councils
+  title-short: Wis. Stat. § 15.347
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '15.347'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/15.347
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/15.347
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 15.347 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 15.347 (2023-24). History: 1971 c. 100 s. 23; 1971 c. 164, 211, 277, 307, 323; 1973 c. 12, 301, 318; 1975 c. 39, 198, 224, 412; 1977 c. 29 ss. 51, 52, 52d, 1650m (1), (4); 1977 c. 377; 1979 c. 34 ss. 39g, 39r, 2102 (39) (g), (58) (b); 1979 c. 221, 355; 1979 c. 361 s. 112; 1981 c. 346 s. 38; 1983 a. 410; 1985 a. 29 ss. 87h, 87m, 3200 (39); 1985 a. 65, 296, 332; 1987 a. 27, 186, 399; 1989 a. 11, 31, 335; 1991 a. 32, 39, 269, 302, 316; 1993 a. 16, 464; 1995 a. 27 ss. 169 to 175b, 9116 (5) and 9126 (19); 1995 a. 227; 1997 a. 27, 300; 2001 a. 109; 2005 a. 168; 2007 a. 20 s. 9121 (6) (a); 2009 a. 394; 2011 a. 32 ss. 117b, 125, 126; 2011 a. 104, 168; 2013 a. 16, 69; 2015 a. 55, 168, 170; 2017 a. 183; 2025 a. 172; s. 35.17 correction in (22) (b) 9. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal lands; tribal); AI reader''s verdict incidental: Nonmotorized trails council has a seat for persons who represent tribal lands. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal lands; tribal'

@@ -1,0 +1,50 @@
+key: california-fish-and-game-code-section-1927-6
+kind: state-statute
+citation:
+  type: legislation
+  title: Fish and Game Code section 1927.6
+  title-short: Cal. Fish & Game Code § 1927.6
+  container-title: California Fish and Game Code
+  container-title-short: Cal. Fish & Game Code
+  section: '1927.6'
+  author:
+  - literal: California Legislative Counsel
+  issued:
+    date-parts:
+    - - 2023
+  URL: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=FGC&sectionNum=1927.6.
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=FGC&sectionNum=1927.6.
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Cal. Fish & Game Code § 1927.6 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Cal. Fish & Game Code § 1927.6 (2026). History: Added by Stats. 2023, Ch. 51, Sec. 5. (SB 122) Effective July 10, 2023. Conditionally operative pursuant to Section 1927.2. Text read from the California Legislative Counsel''s database of the codes (pubinfo_2025.zip, updated Nov. 23, 2026, downloads.leginfo.legislature.ca.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; tribal lands; native; tribal; tribe; tribes); AI reader''s verdict incidental: Joshua tree plan requires tribal consultation and relocation rights. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; tribal lands; native; tribal; tribe; tribes'

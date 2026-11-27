@@ -1,0 +1,50 @@
+key: michigan-compiled-laws-324-63219
+kind: state-statute
+citation:
+  type: legislation
+  title: Contested case hearing
+  title-short: Mich. Comp. Laws § 324.63219
+  container-title: Michigan Compiled Laws
+  container-title-short: Mich. Comp. Laws
+  section: '324.63219'
+  author:
+  - literal: Michigan Legislature
+  issued:
+    date-parts:
+    - - 2004
+  URL: https://legislature.mi.gov/Laws/MCL?objectName=mcl-324.63219
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.mi.gov/Laws/MCL?objectName=mcl-324.63219
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mich. Comp. Laws § 324.63219 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Mich. Comp. Laws § 324.63219 (2026). History: Add. 2004, Act 449, Imd. Eff. Dec. 27, 2004. Text read from the Michigan Legislature''s page for the section''s chapter of the Michigan Compiled Laws (legislature.mi.gov), complete through Public Act 114 of 2026, on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribes; indian; tribes); AI reader''s verdict incidental: Mining hearing notice must go to affected federally recognized tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribes; indian; tribes'
