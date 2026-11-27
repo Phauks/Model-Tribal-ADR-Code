@@ -19,11 +19,12 @@
 -->
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import type { InfoName, InfoPicture } from '#lib/info-page.ts';
+	import { glancePanelMinimum, withoutRepeats, type InfoName, type InfoPicture } from '#lib/info-page.ts';
 	import { imageViewerAttributes } from '#lib/image-viewer.ts';
 	import Breadcrumbs from './Breadcrumbs.svelte';
 	import CitationMarks from './CitationMarks.svelte';
 	import FactGroups from './FactGroups.svelte';
+	import FactLine from './FactLine.svelte';
 	import GlancePanel from './GlancePanel.svelte';
 	import RecordPage from './RecordPage.svelte';
 	import SourceList from './SourceList.svelte';
@@ -49,7 +50,14 @@
 	let { title: titleText, lead, names = [], trail, picture, glance = [], panels, status, sources = [], children }: Props = $props();
 	// The panel's picture snippet shares the prop's name.
 	const pictureView = $derived(picture);
-	const hasGlance = $derived(picture !== undefined || glance.length > 0 || panels !== undefined);
+	// At a glance only where it earns its place (src/lib/info-page.ts): without
+	// the facts the title and lead already say, and as a panel only with enough
+	// facts or a picture or panel; one or two facts join the lead line.
+	const facts = $derived(withoutRepeats(glance, [titleText, lead, ...names.map((other) => other.name)]));
+	const hasGlance = $derived(picture !== undefined || panels !== undefined || facts.length >= glancePanelMinimum);
+	const lineFacts = $derived(hasGlance ? [] : facts);
+	// A lead that is a citation or a short line takes the facts after it; a lead that is a sentence has them on the line under it.
+	const factsAfterLead = $derived(lead !== undefined && !/[.!?]$/.test(lead.trim()));
 </script>
 
 {#if trail}<Breadcrumbs {trail} />{/if}
@@ -62,7 +70,10 @@
 				{#each names as other, index (other.name)}{#if index > 0}{'; '}{/if}<span lang={other.language ?? 'und'}><strong>{other.name}</strong></span>{#if other.note}<span class="muted">, {other.note}</span>{/if}<CitationMarks marks={other.citations ?? []} />{/each}
 			</p>
 		{/if}
-		{#if lead}<p class="lead">{lead}</p>{/if}
+		{#if lead}<p class="lead">{lead}{#if factsAfterLead && lineFacts.length > 0}<span class="lead-facts">{' · '}<FactLine groups={lineFacts} /></span>{/if}</p>{/if}
+		{#if lineFacts.length > 0 && !factsAfterLead}<p class="fact-line">
+				<FactLine groups={lineFacts} />
+			</p>{/if}
 		{#if status}<div class="info-status">{@render status()}</div>{/if}
 	{/snippet}
 
@@ -70,7 +81,7 @@
 </RecordPage>
 
 {#snippet glancePart()}
-	<GlancePanel>
+	<GlancePanel facts={facts.length}>
 		{#snippet picture()}
 			{#if pictureView}
 				<figure class="info-picture">
@@ -83,7 +94,7 @@
 				</figure>
 			{/if}
 		{/snippet}
-		{#if glance.length > 0}<div class="facts"><FactGroups groups={glance} /></div>{/if}
+		{#if facts.length > 0}<div class="facts"><FactGroups groups={facts} /></div>{/if}
 	</GlancePanel>
 	{@render panels?.()}
 {/snippet}
@@ -94,6 +105,16 @@
 
 <style>
 	.other-names {
+		margin-top: calc(-1 * var(--space-2));
+	}
+
+	/* The facts too few for a panel, in muted type (FactLine.svelte). */
+	.lead-facts,
+	.fact-line {
+		color: var(--color-ink-muted);
+	}
+
+	.fact-line {
 		margin-top: calc(-1 * var(--space-2));
 	}
 

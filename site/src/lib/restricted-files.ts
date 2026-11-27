@@ -18,6 +18,7 @@ import { csvDocument, parseCsv } from './csv.ts';
 import { copyItemId, type RestrictableItem, type RestrictionLevel } from './nation-restrictions.ts';
 import type { SearchRecordsFile } from './search-records.ts';
 import type { SearchEntry } from './site-search.ts';
+import type { SitemapEntry } from './sitemap.ts';
 import type { CopyDetails } from './public-copies.ts';
 import { kindLabels, type OpinionYear, type TimelineEntry, type TimelineRow } from './timeline.ts';
 
@@ -154,6 +155,18 @@ export function filterSearchIndex(entries: SearchEntry[], restrictions: SiteRest
 		}
 		return [entry];
 	});
+}
+
+/**
+ * The sitemap's pages (/sitemaps/<part>.xml, src/lib/sitemap.ts): a page that
+ * is a copy a nation hid is left out, and so is one it asked to cite only,
+ * since the site then links to where the original is kept instead of
+ * showing its own copy; so is a case's or law's page that shows such a copy.
+ * A page whose only link to the copy is in a list, such as a nation's page,
+ * stays: the list is drawn without it.
+ */
+export function filterSitemapEntries(entries: SitemapEntry[], restrictions: SiteRestrictions): SitemapEntry[] {
+	return entries.filter((entry) => linkLevel(restrictions, entry.path) === 'show' && linkLevel(restrictions, entry.copy) === 'show');
 }
 
 // ----- Copies -----

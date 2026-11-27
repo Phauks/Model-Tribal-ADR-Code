@@ -102,7 +102,8 @@
 	{@html data.historyHtml}
 </Collapsible>
 
-<Collapsible heading="Justices" identifier="justices" count={data.bench.length}>
+<!-- The bench chart is drawn for the full width, so its section starts below At a glance (Trevor, Nov. 26, 2026: the timelines "hit the at a glance on the right"; RecordPage.svelte). -->
+<Collapsible heading="Justices" identifier="justices" count={data.bench.length} class="clear-glance">
 	<BenchChart rows={data.bench} start={data.start} end={data.end} cases={data.cases} />
 	<DataTable
 		identifier="justices-{data.key}"

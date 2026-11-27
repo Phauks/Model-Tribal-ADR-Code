@@ -87,6 +87,8 @@ function wrangler(argumentsList, { quiet = false } = {}) {
 	return execFileSync('npx', ['wrangler', ...argumentsList, '--local'], {
 		encoding: 'utf8',
 		stdio: ['ignore', quiet ? 'pipe' : 'inherit', 'inherit'],
+		// Applying every migration to a fresh copy prints a table longer than the default 1 MiB.
+		maxBuffer: 64 * 1024 * 1024,
 		env: { ...process.env, CI: process.env.CI ?? '1' }
 	});
 }

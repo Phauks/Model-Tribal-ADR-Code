@@ -27,6 +27,16 @@ const skipped = new Set(['/manifest.webmanifest', '/icon.svg', '/edition.json', 
 const neverSaved = new Set(['/edition.json', '/offline-sizes.json', '/offline-fingerprints.json', '/service-worker.js', '/_headers', '/_redirects', '/_routes.json']);
 const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/copies', '/map-tiles', '/zip', '/page-data'];
 
+/** The page families drawn on request, and where their pages are (src/lib/page-data.ts; tools/write-offline-catalog.mjs). */
+const onRequestFamilies = [
+	{ family: 'cases', prefix: '/cases/' },
+	{ family: 'laws', prefix: '/laws/' },
+	{ family: 'biographies', prefix: '/biographies/' },
+	{ family: 'justices', prefix: '/supreme-court/justices/' },
+	{ family: 'presidents', prefix: '/supreme-court/presidents/' },
+	{ family: 'courts', prefix: '/supreme-court/' }
+];
+
 /**
  * The page a file belongs to: "/nations/x/__data.json" belongs to "/nations/x".
  * @param {string} address
@@ -161,9 +171,21 @@ function main() {
 		if (skipped.has(address) || staticFiles.has(address) || address.startsWith('/fonts/')) continue;
 		bytes[collectionOf(address)] += content.length;
 	}
+	// Pages drawn on request have no built file to fingerprint; their page data stands for them (onRequest in
+	// src/lib/offline-fingerprints.ts).
+	/** @type {Record<string, string>} */
+	const onRequest = {};
+	for (const { family, prefix } of onRequestFamilies) {
+		const folder = path.join(output, 'page-data', family);
+		if (!existsSync(folder)) continue;
+		for (const name of readdirSync(folder)) {
+			if (!name.endsWith('.json')) continue;
+			onRequest[`${prefix}${decodeURIComponent(name.slice(0, -'.json'.length))}`] = fingerprintOf(readFileSync(path.join(folder, name)));
+		}
+	}
 	writeFileSync(path.join(output, 'offline-sizes.json'), `${JSON.stringify(bytes)}\n`);
 	console.log(`Offline sizes: ${JSON.stringify(bytes)}`);
-	const fingerprints = { version, startName, files: fingerprintedFiles, pages };
+	const fingerprints = { version, startName, files: fingerprintedFiles, pages, onRequest };
 	writeFileSync(path.join(output, 'offline-fingerprints.json'), `${JSON.stringify(fingerprints)}\n`);
 	console.log(`Offline fingerprints: ${Object.keys(fingerprintedFiles).length} files, ${Object.keys(pages).length} pages`);
 }

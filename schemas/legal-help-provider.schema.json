@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/legal-help-provider.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/legal-help-provider.schema.json",
   "title": "Legal help provider",
   "description": "One place a person can get legal help or legal information about tribal law or Indian law: Native legal aid, a tribal government's legal aid office, a tribal court or state court self-help center, a state legal help website's tribal pages, or a law school clinic. Records which states and Native nations it serves, each with a source. Stored as research/legal-help/providers/<id>.yaml. scripts/legal-help/match_nations.py matches records to nation pages.",
   "type": "object",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/compact-history-versions.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/compact-history-versions.schema.json",
   "title": "Gaming compact version (table row)",
   "description": "One row of research/gaming/compact-history-versions.csv: a version of a nation's compact with a state, in order, with what it did, what it amends or supersedes, its dispute clause and how that clause changed from the version before (research/gaming/README.md; the full histories are in content/documents/). Built by scripts/gaming/build_histories.py. A document two nations share appears once for each, so a row is known by its nation and id together. Every cell is text and an empty cell is left out before checking, so 'required' means the cell may not be empty.",
   "type": "object",
