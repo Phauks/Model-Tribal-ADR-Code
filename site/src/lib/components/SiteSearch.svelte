@@ -4,9 +4,9 @@
 	Trevor asked on Nov. 27, 2026 for the search to sit in the masthead rather
 	than open as a panel under it, and chose design A (project files
 	design/header-search): on wide screens one search box always shows in the
-	middle of the masthead, between the site's name and the icon buttons, with
-	a "/" key hint. As the reader types, the matches from the index built with
-	the site (src/lib/site-search.ts) drop down attached under the box, the
+	middle of the masthead, between the site's name and the icon buttons. As
+	the reader types, the matches from the index built with the site
+	(src/lib/site-search.ts) drop down attached under the box, the
 	same width, grouped by kind, each group foldable. Arrow keys move between
 	the box and the results, Escape closes the results, the X clears the box,
 	and Enter opens the search page with every match. The results search what
@@ -271,8 +271,6 @@
 				<button class="icon-button clear" type="button" aria-label="Clear search" title="Clear search" onclick={clear}>
 					<X size={20} strokeWidth={1.75} />
 				</button>
-			{:else if scripted}
-				<kbd class="key-hint" aria-hidden="true">/</kbd>
 			{/if}
 		</div>
 	</form>
@@ -357,9 +355,10 @@
 	}
 
 	/*
-	 * The box: a pill on the band, tinted in the band's text color, with the
-	 * / key hint at its right; with focus in it, it turns to paper (design
-	 * A, project files design/header-search).
+	 * The box: at rest a darker strip set into the band (closed look 2, which
+	 * Trevor chose on Nov. 27, 2026, with no / key hint; project files
+	 * design/header-search/closed-looks); with focus in it, a paper pill that
+	 * opens into the results (design A).
 	 */
 	.search-field {
 		display: flex;
@@ -369,14 +368,15 @@
 		min-width: 0;
 		height: 2.5rem;
 		padding: 0 var(--space-1) 0 var(--space-3);
-		border: 1px solid color-mix(in srgb, var(--color-band-text) 30%, transparent);
-		border-radius: 1.25rem;
-		background: color-mix(in srgb, var(--color-band-text) 12%, transparent);
+		border: 1px solid transparent;
+		border-radius: 8px;
+		background: var(--color-band-inset);
 		color: var(--color-band-text);
 	}
 
 	.search-field:focus-within {
 		border-color: var(--color-paper);
+		border-radius: 1.25rem;
 		background: var(--color-paper);
 		color: var(--color-ink-muted);
 		box-shadow: 0 0 0 3px var(--color-focus-ring);
@@ -431,25 +431,6 @@
 		appearance: none;
 	}
 
-	.key-hint {
-		flex: none;
-		display: inline-grid;
-		place-items: center;
-		min-width: 1.4rem;
-		height: 1.4rem;
-		margin-right: var(--space-2);
-		padding: 0 var(--space-1);
-		border: 1px solid color-mix(in srgb, currentColor 45%, transparent);
-		border-radius: var(--radius-control);
-		font: inherit;
-		font-size: var(--font-size-small);
-		font-weight: var(--font-weight-semibold);
-		line-height: 1;
-	}
-
-	.search-field:focus-within .key-hint {
-		display: none;
-	}
 
 	.clear {
 		min-width: 2.25rem;
