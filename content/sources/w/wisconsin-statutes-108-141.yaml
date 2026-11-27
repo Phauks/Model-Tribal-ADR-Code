@@ -1,0 +1,47 @@
+key: wisconsin-statutes-108-141
+kind: state-statute
+citation:
+  type: legislation
+  title: Extended benefits
+  title-short: Wis. Stat. § 108.141
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '108.141'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/108.141
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/108.141
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 108.141 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 108.141 (2023-24). History: 1971 c. 53; 1973 c. 247; 1975 c. 1, 343; 1977 c. 29, 133, 418; 1979 c. 52; 1981 c. 36 ss. 19 to 32, 45; 1981 c. 315, 390; 1983 a. 8 ss. 28 to 33, 53, 55 (3), (14) and (15) and 56; 1983 a. 27 ss. 1400g and 1807m; 1983 a. 189 ss. 162, 329 (28); 1985 a. 17; 1987 a. 38; 1991 a. 39, 89, 189, 269; 1993 a. 184, 373, 492; 1995 a. 27 ss. 3780, 9130 (4); 1995 a. 118, 225; 1997 a. 3, 35, 39; 2001 a. 35; 2009 a. 1, 11; 2011 a. 42; 2013 a. 20, 36, 173; 2015 a. 55, 334; 2019 a. 185; 2021 a. 231. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Extended unemployment benefits; charged to Indian tribe''s account. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

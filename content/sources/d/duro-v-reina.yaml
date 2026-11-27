@@ -89,6 +89,55 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Duro_v._Reina
+argument_audio:
+- kind: argument
+  date: '1989-11-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-731-r1.mp3
+  catalog: https://catalog.archives.gov/id/118974871
+  whole_session: true
+  duration_seconds: 3812
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-731-r1.mp3
+    checksum: 2422d88492dfe37755ca2b66606be7c798b76b80dc642c296e588e6af4ed13cf
+    media_type: audio/mpeg
+    bytes: 61001690
+- kind: argument
+  date: '1989-11-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-731-r2.mp3
+  catalog: https://catalog.archives.gov/id/118974871
+  whole_session: true
+  duration_seconds: 3715
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-731-r2.mp3
+    checksum: 4278aee9ce2911746fcda2ac0b345f879606b8b7cd616f8146438bff4646ab67
+    media_type: audio/mpeg
+    bytes: 59438940
+- kind: argument
+  date: '1989-11-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-731-r3.mp3
+  catalog: https://catalog.archives.gov/id/118974871
+  whole_session: true
+  duration_seconds: 3853
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-731-r3.mp3
+    checksum: 90bc8ece424b84de470febc5161db390e96848bb1641666b7f19669368feceea
+    media_type: audio/mpeg
+    bytes: 61657050
+- kind: argument
+  date: '1989-11-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-731-r4.mp3
+  catalog: https://catalog.archives.gov/id/118974871
+  whole_session: true
+  duration_seconds: 3303
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-731-r4.mp3
+    checksum: fab654a3b16deaba06a00504602cd240c78b3c21c05c71f91258ee35fdc27db4
+    media_type: audio/mpeg
+    bytes: 52853993
 rights:
   status: no-permission-needed
   basis: us-government-work

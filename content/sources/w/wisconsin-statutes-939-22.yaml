@@ -1,0 +1,47 @@
+key: wisconsin-statutes-939-22
+kind: state-statute
+citation:
+  type: legislation
+  title: Words and phrases defined
+  title-short: Wis. Stat. § 939.22
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '939.22'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/939.22
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/939.22
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 939.22 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 939.22 (2023-24). History: 1971 c. 219; 1973 c. 336; 1977 c. 173; 1979 c. 89, 221; 1981 c. 79 s. 17; 1981 c. 89, 348; 1983 a. 17, 459; 1985 a. 146 s. 8; 1987 a. 332, 399; 1993 a. 98, 213, 227, 441, 486; 1995 a. 69, 436, 448; 1997 a. 143, 295; 2001 a. 109; 2003 a. 97, 223; 2005 a. 273, 277, 435; 2007 a. 27, 97, 127; 2009 a. 28, 276; 2011 a. 35; 2013 a. 83, 214, 265; 2017 a. 13, 364; 2019 a. 68; 2023 a. 10; 2025 a. 24 ss. 3, 4, 93; 2025 a. 127, 128, 129. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: indian); AI reader''s verdict incidental: Crime definitions include Great Lakes Indian Fish and Wildlife warden. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian'

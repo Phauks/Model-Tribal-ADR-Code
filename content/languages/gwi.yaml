@@ -1,0 +1,145 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: gwi
+name: Gwich'in
+iso_639_3:
+  code: gwi
+  reference_name: Gwichʼin
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: gwic1235
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+iso_names:
+- name: Gwichʼin
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2441
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/gwichin.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Alaskan Kutchin
+  glottocode: alas1257
+  source: glottolog-5-4
+- name: Canadian Kutchin
+  glottocode: cana1271
+  source: glottolog-5-4
+works:
+- glottolog_reference: '554548'
+  title: A Dictionary of the Gwichya Gwich'in and Teetł'it Gwich'in Dialects
+  kinds:
+  - dictionary
+  author: Gwich'in Social, Cultural Institute and Gwich'in Language Centre
+  year: 1999
+  pages: 318
+  source: glottolog-5-4
+- glottolog_reference: '173095'
+  title: Gwich'in Noun Dictionary
+  kinds:
+  - dictionary
+  author: Gwich'in Language Centre., Gwich'in Social and Cultural Institute
+  year: 1997
+  source: glottolog-5-4
+- glottolog_reference: '172333'
+  title: Gwich'in Language Dictionary
+  kinds:
+  - dictionary
+  author: William G Firth
+  year: 1991
+  source: glottolog-5-4
+- glottolog_reference: '168176'
+  title: Gwich'in Topical Dictionary
+  kinds:
+  - dictionary
+  author: Dick Mueller
+  year: 1991
+  source: glottolog-5-4
+- glottolog_reference: '314227'
+  title: 'Dinjii Zhuh Ginjik Nagwan Tr''iiltsaii: Gwich''in Junior Dictionary'
+  kinds:
+  - dictionary
+  author: Katherine Peter
+  year: 1979
+  publisher: ANLA
+  pages: 182
+  source: glottolog-5-4
+- glottolog_reference: '171502'
+  title: Gwich'in Junior Dictionary
+  kinds:
+  - dictionary
+  author: Katherine Peter
+  year: 1979
+  source: glottolog-5-4
+- glottolog_reference: '100683'
+  title: Gwich'in (Loucheux) Athapaskan Noun Dictionary, Port McPherson Dialect
+  kinds:
+  - dictionary
+  author: John Ritter
+  year: 1976
+  publisher: The Queen's Printer for the Yukon
+  source: glottolog-5-4
+- glottolog_reference: '173083'
+  title: Dictionary Catalogue of the Library of the Provincial Archives of British Columbia
+  kinds:
+  - dictionary
+  author: Provincial Archives of British Columbia
+  year: 1971
+  source: glottolog-5-4
+- glottolog_reference: '173376'
+  title: Kutchin Dictionary
+  kinds:
+  - dictionary
+  author: Richard J Mueller
+  year: 1964
+  source: glottolog-5-4
+- glottolog_reference: '169528'
+  title: Dictionnaire francais-loucheux, recopie a Good Hope
+  kinds:
+  - dictionary
+  author: Jules Lecuyer
+  year: 1906
+  source: glottolog-5-4
+- glottolog_reference: '303490'
+  title: 'Dictionnaire de la langue déné-dindjié: dialectes montagnais ou chippewayan, peaux de liévre et loucheux, renfermant en outre un grand nombre de termes propres à sept autres dialectes de la même langue ; précédé d''une monographie des Déné-Dindjié, d''une grammaire et de tableaux synoptiques des conjugaisons'
+  kinds:
+  - dictionary
+  author: Émile Petitot
+  year: 1876
+  publisher: Érnest Leroux
+  pages: 367
+  source: glottolog-5-4
+- glottolog_reference: '173842'
+  title: Dictionnaire des verbes francais-loucheux
+  kinds:
+  - dictionary
+  author: Jean Seguin
+  year: 1870
+  source: glottolog-5-4
+- glottolog_reference: '173831'
+  title: Dictionnaire francais-loucheux
+  kinds:
+  - dictionary
+  author: Jean Seguin
+  year: 1870
+  source: glottolog-5-4
+- glottolog_reference: '173931'
+  title: Dictionnaire Montagnais, Peau-de-Lievre, Loucheux, Flanc-de-chien, Esclave, Esquimaux
+  kinds:
+  - dictionary
+  author: Emile Petitot
+  year: 1870
+  source: glottolog-5-4
+- glottolog_reference: '173909'
+  title: Dictionnaire Dene-Dindjie, comprenant les dialectes Montagnais (Chipewyan), Castor (Beaver), Montagnard (Mountain), Esclave (Slave), Flanc-de-chien (Dogrib), Peau-de-Lievre (Hare), Loucheux (Kutchin)
+  kinds:
+  - dictionary
+  author: Emile Petitot
+  year: 1865
+  source: glottolog-5-4
+retrieved: '2026-11-27'

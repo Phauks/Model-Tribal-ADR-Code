@@ -1,0 +1,47 @@
+key: wisconsin-statutes-46-275
+kind: state-statute
+citation:
+  type: legislation
+  title: Community integration program for residents of state centers
+  title-short: Wis. Stat. § 46.275
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '46.275'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/46.275
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/46.275
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 46.275 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 46.275 (2023-24). History: 1983 a. 27; 1985 a. 29 ss. 896b to 896L, 3202 (23); 1985 a. 120, 176; 1987 a. 27; 1987 a. 161 s. 13m; 1987 a. 186; 1989 a. 31; 1993 a. 16; 1995 a. 27, 77; 1997 a. 27, 114; 1999 a. 9; 2001 a. 16; 2003 a. 33, 318; 2005 a. 25, 264; 2007 a. 20, 153; 2009 a. 2, 302; 2011 a. 32, 126; 2015 a. 180; 2019 a. 9; 2021 a. 232, 239. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal school; tribal); AI reader''s verdict incidental: Relocated persons may be placed in tribal school programs. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal school; tribal'

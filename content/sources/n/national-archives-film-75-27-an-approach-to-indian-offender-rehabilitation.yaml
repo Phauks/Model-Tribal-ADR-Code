@@ -1,0 +1,48 @@
+key: national-archives-film-75-27-an-approach-to-indian-offender-rehabilitation
+kind: federal-agency-document
+citation:
+  type: motion_picture
+  title: An Approach to Indian Offender Rehabilitation
+  author:
+  - literal: U.S. Department of the Interior, Bureau of Indian Affairs
+  genre: Motion picture
+  number: NAID 12702
+  archive: National Archives at College Park, Motion Pictures
+  archive_location: Record Group 75, Moving Images Documenting the Life and Culture of North American Indians (NAID 12678), item 75.27
+  URL: https://catalog.archives.gov/id/12702
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://catalog.archives.gov/id/12702
+retrieved: '2026-11-27'
+file:
+  storage_key: national-archives-films/75-27.wmv
+  checksum: ab8827c96c84aaac7cc1025b416a9b0dc1ba97579ef71f51cf27d00bf43613ae
+  media_type: video/x-ms-wmv
+  bytes: 154739931
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A film made by a federal agency, which the screen names, and so a work of the United States government, not subject to copyright (17 U.S.C. § 105).
+  redistribution: true
+jurisdictions:
+- level: federal
+topics:
+- federal-indian-policy-film
+access:
+  open: true
+  pull_from:
+  - free-web
+found_in:
+- 2026-11-27-national-archives-films
+notes: 'Indigo Book citation: An Approach to Indian Offender Rehabilitation (U.S. Department of the Interior, Bureau of Indian Affairs n.d.) (motion picture), National Archives Identifier 12702, RG 75, item 75.27. The National Archives describes it: "DOCUMENTARY FILM: Shows implementation of Native American cultural awareness program at Federal Reformatory at El Reno, Oklahoma.  Interviews with prison administrators as well as Native American prisoners." Digitized by the National Archives; the project''s copy is its file, unchanged (154,739,931 bytes, SHA-256 ab8827c96c84aaac7cc1025b416a9b0dc1ba97579ef71f51cf27d00bf43613ae). The screen names its maker: "Bureau of Indian Affairs, Morris Thompson, Commissioner; Eugene F. Suarez, Sr., Chief, Division of Law Enforcement; Donald J. Morrow, Producer-Director". Thirty frames read across the film show a prison official, a discussion with Native inmates, an inmate group meeting and a powwow inside the institution. Chosen as a federal Indian policy item (the Bureau''s Division of Law Enforcement on Indian prisoners at El Reno) by scripts/law/national_archives_films.py; ceremony films and children''s recordings in the same series are left out (CARE principles). Not yet watched or heard in full by a person (Unverified).'
+review:
+  status: unverified
+  by: scripts/law/national_archives_films.py
+  date: '2026-11-27'
+  checks:
+  - check: listing
+    result: missing
+    detail: Only the National Archives Catalog's description was read and 30 frames of the film

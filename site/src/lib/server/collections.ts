@@ -38,6 +38,7 @@ import { allSections } from './title-25-sections.ts';
 import { isLawRecord, recordPageLink } from './law-records.ts';
 import { nationsInPrograms, programSummaries } from './federal-programs.ts';
 import { federalProgramPage } from '../federal-programs.ts';
+import { familyPath, languageFamilies, languages } from './languages.ts';
 
 /** The headings the collections are grouped under, in page order. */
 export const collectionGroups = ['Native nations', 'Federal law', 'State law', 'Courts and cases', 'People', 'Reference'] as const;
@@ -270,6 +271,8 @@ function publishedAt(record: SourceRecord, link: string | undefined): string | u
  */
 const oklahomaTopic = 'oklahoma-state-tribal-agreement';
 const isOklahomaFiling = (record: SourceRecord) => (record.topics ?? []).includes(oklahomaTopic);
+/** The National Park Service's repatriation notices, their own collection (scripts/law/repatriation_notices.py). */
+const isRepatriationNotice = (record: SourceRecord) => kindOf(record) === 'federal-register-notice' && (record.topics ?? []).includes('repatriation');
 const oklahomaAgreements = () => [...sources().values()].filter(isOklahomaFiling);
 
 /**
@@ -282,11 +285,16 @@ const isApprovedNationLaw = (record: SourceRecord) => (record.topics ?? []).incl
 function approvedNationLaws(): CollectionItem[] {
 	return [...sources().values()].filter(isApprovedNationLaw).map((record) => sourceItem(record, [(record.citation as { genre?: string }).genre, tribesOf(record)].filter(Boolean).join(': ') || undefined));
 }
-/** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection, Oklahoma's register and the approved nations' laws. */
+const historicLawTopic = 'historic-nation-laws';
+const isHistoricNationLaw = (record: SourceRecord) => (record.topics ?? []).includes(historicLawTopic);
+function historicNationLaws(): CollectionItem[] {
+	return [...sources().values()].filter(isHistoricNationLaw).map((record) => sourceItem(record, tribesOf(record)));
+}
+/** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection, Oklahoma's register, the approved nations' laws and the nations' historic laws. */
 function sourcesOfKind(kinds: string[], detail?: (record: SourceRecord) => string | undefined): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record) && !isApprovedNationLaw(record))
+			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record) && !isApprovedNationLaw(record) && !isRepatriationNotice(record) && !isHistoricNationLaw(record))
 			.map((record) => sourceItem(record, detail?.(record)));
 }
 
@@ -358,6 +366,9 @@ function heldBackBoardDecisions(): number {
 
 const gamingCommission = 'National Indian Gaming Commission';
 
+/** The Indian Claims Commission's decisions (1948-1978), their own collection (scripts/law/indian_claims_commission.py). */
+const claimsCommission = (authority: string) => authority === 'Indian Claims Commission';
+
 /** The Gaming Commission's reading room: its opinions, letters, enforcement actions and bulletins, and its final decisions, which are cases (scripts/law/nigc_documents.py). */
 function gamingCommissionDocuments(): CollectionItem[] {
 	return [...sources().values()]
@@ -396,6 +407,11 @@ function solicitorOpinions(): CollectionItem[] {
 		.map((record) => sourceItem(record, (record.citation as { number?: string }).number));
 }
 
+/** The Bureau of Indian Affairs' films and sound recordings on federal Indian policy at the National Archives, Record Group 75 (scripts/law/national_archives_films.py). */
+function indianAffairsFilms(): CollectionItem[] {
+	return [...sources().values()].filter((record) => (record.topics ?? []).includes('federal-indian-policy-film')).map((record) => sourceItem(record, genreOf(record)));
+}
+
 /**
  * The settlements of Native nations' water rights that Congress enacted, one item each, linking to the enacting Act's page
  * (research/water-settlements/enacted-settlements.csv, copied from the Congressional Research Service's report R44148;
@@ -422,6 +438,15 @@ const tribesOf = (record: SourceRecord) => {
 	const name = nationNameOf();
 	return record.tribes?.map(name).join('; ') || undefined;
 };
+
+/** A notice names up to dozens of nations; the list shows the first three and counts the rest. */
+function repatriationNotices(): CollectionItem[] {
+	const name = nationNameOf();
+	return [...sources().values()].filter(isRepatriationNotice).map((record) => {
+		const named = (record.tribes ?? []).map(name);
+		return sourceItem(record, named.length === 0 ? undefined : named.length <= 3 ? named.join('; ') : `${named.slice(0, 3).join('; ')} and ${named.length - 3} more`);
+	});
+}
 
 export const collections: Collection[] = [
 	// Native nations
@@ -490,12 +515,38 @@ export const collections: Collection[] = [
 		items: approvedNationLaws
 	},
 	{
+		identifier: 'historic-nation-laws',
+		search: { group: 'document' },
+		title: 'Nations’ Historic Laws',
+		group: 'Native nations',
+		detailHeader: 'Nation',
+		sourceKinds: ['tribal-code', 'tribal-constitution', 'other'],
+		items: historicNationLaws
+	},
+	{
 		identifier: 'stories', search: { group: 'story' },
 		title: 'Stories',
 		group: 'Native nations',
 		detailHeader: 'Nation',
 		items: () => storySummaries().map((story) => ({ title: story.title, href: `/stories/${story.id}`, detail: story.nations.map((nation) => nation.name).join('; ') || undefined })),
 		breakdown: () => [`from ${counted(distinct(storySummaries().flatMap((story) => story.nations.map((nation) => nation.name))), 'nation', 'nations')}`]
+	},
+	// The languages nations' records name, and their families (language pages, approved Nov. 27, 2026).
+	{
+		identifier: 'languages', search: { group: 'reference', label: 'Language' },
+		title: 'Languages',
+		group: 'Native nations',
+		detailHeader: 'ISO 639-3',
+		list: '/languages',
+		items: () => languages().map((language) => ({ title: language.name, href: `/languages/${language.tag}`, detail: language.iso_639_3.code })),
+		breakdown: () => [`in ${counted(languageFamilies().length, 'family', 'families')}`, counted(languages().filter((language) => !language.family).length, 'isolate', 'isolates')]
+	},
+	{
+		identifier: 'language-families', search: { group: 'reference', label: 'Language family' },
+		title: 'Language Families',
+		group: 'Native nations',
+		detailHeader: 'Languages',
+		items: () => languageFamilies().map((family) => ({ title: `${family.name} languages`, href: familyPath(family.name), detail: String(family.members.length) }))
 	},
 
 	// Federal law
@@ -507,8 +558,18 @@ export const collections: Collection[] = [
 	{ identifier: 'regulation-sections', search: { group: 'law', label: 'Regulation section' }, title: 'Regulation Sections (25 C.F.R.)', group: 'Federal law', detailHeader: 'Part', items: () => allSections('regulations'), breakdown: (items) => [`in ${counted(distinct(items.map((item) => item.detail)), 'part', 'parts')}`] },
 	{ identifier: 'executive-orders', search: { group: 'law', label: 'Executive order' }, title: 'Executive Orders', group: 'Federal law', sourceKinds: ['executive-order'], items: sourcesOfKind(['executive-order']) },
 	{ identifier: 'federal-register-notices', search: { group: 'law', label: 'Federal Register notice' }, title: 'Federal Register Notices', group: 'Federal law', sourceKinds: ['federal-register-notice'], items: sourcesOfKind(['federal-register-notice']) },
+	{
+		identifier: 'repatriation-notices',
+		search: { group: 'law', label: 'Repatriation notice' },
+		title: 'Repatriation Notices',
+		group: 'Federal law',
+		detailHeader: 'Nations',
+		sourceKinds: ['federal-register-notice'],
+		items: repatriationNotices
+	},
 	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
 	{ identifier: 'solicitor-opinions', search: { group: 'law', label: 'Solicitor’s opinion' }, title: 'Solicitor’s Opinions', group: 'Federal law', detailHeader: 'Number', sourceKinds: ['federal-agency-document'], items: solicitorOpinions },
+	{ identifier: 'indian-affairs-films', search: { group: 'law', label: 'Indian Affairs film or recording' }, title: 'Indian Affairs Films and Recordings', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: indianAffairsFilms },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
 	{
 		identifier: 'water-rights-settlements',
@@ -537,7 +598,7 @@ export const collections: Collection[] = [
 
 	// Courts and cases
 	{ identifier: 'supreme-court-cases', search: { group: 'case', label: 'Court case' }, title: 'U.S. Supreme Court Cases', group: 'Courts and cases', items: casesBy(supremeCourt) },
-	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority) && !indianAppealsBoard(authority) && authority !== gamingCommission) },
+	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority) && !indianAppealsBoard(authority) && !claimsCommission(authority) && authority !== gamingCommission) },
 	{
 		identifier: 'interior-board-of-indian-appeals',
 		search: { group: 'case', label: 'Interior Board of Indian Appeals decision' },
@@ -546,6 +607,13 @@ export const collections: Collection[] = [
 		items: casesBy(indianAppealsBoard),
 		heldBack: heldBackBoardDecisions,
 		heldBackReason: 'held back for a privacy review'
+	},
+	{
+		identifier: 'indian-claims-commission',
+		search: { group: 'case', label: 'Indian Claims Commission decision' },
+		title: 'Indian Claims Commission Decisions',
+		group: 'Courts and cases',
+		items: casesBy(claimsCommission)
 	},
 	{
 		identifier: 'federal-court-opinions', search: { group: 'case', label: 'Lower federal court opinion' },

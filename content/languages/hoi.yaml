@@ -1,0 +1,41 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: hoi
+name: Holikachuk
+iso_639_3:
+  code: hoi
+  reference_name: Holikachuk
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: holi1241
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2375
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/holikachuk.php
+  source: alaska-native-language-center-languages
+dialects: []
+works:
+- glottolog_reference: '57776'
+  title: Holikachuk noun dictionary
+  kinds:
+  - dictionary
+  author: James Kari
+  year: 1978
+  publisher: Alaska Native Language Center
+  pages: 63
+  source: glottolog-5-4
+- glottolog_reference: '172723'
+  title: Holikachuk Noun Dictionary (Preliminary)
+  kinds:
+  - dictionary
+  author: Jimmy Alexander, John. Deacon, Olga. Deacon and James Kari
+  year: 1978
+  source: glottolog-5-4
+retrieved: '2026-11-27'

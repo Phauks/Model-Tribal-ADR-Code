@@ -1,0 +1,52 @@
+key: connecticut-general-statutes-45a-715
+kind: state-statute
+citation:
+  type: legislation
+  title: Petition to terminate parental rights. Cooperative postadoption agreements
+  title-short: Conn. Gen. Stat. § 45a-715
+  container-title: General Statutes of Connecticut
+  container-title-short: Conn. Gen. Stat.
+  section: 45a-715
+  author:
+  - literal: Connecticut General Assembly
+  issued:
+    date-parts:
+    - - 1973
+  URL: https://www.cga.ct.gov/current/pub/chap_803.htm#sec_45a-715
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.cga.ct.gov/current/pub/chap_803.htm#sec_45a-715
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- connecticut-general-statutes-45a-706a
+state_law:
+  relevance: incidental
+  citation: Conn. Gen. Stat. § 45a-715 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Conn. Gen. Stat. § 45a-715 (2026). History: P.A. 73-156, S. 3; P.A. 74-164, S. 2, 20; P.A. 75-420, S. 4, 6; P.A. 76-436, S. 641, 681; P.A. 77-614, S. 521, 610; P.A. 79-223; 79-631, S. 33, 77, 85, 111; P.A. 80-476, S. 144; P.A. 83-355, S. 1; P.A. 84-449, S. 2, 7; P.A. 86-264, S. 8; P.A. 93-91, S. 1, 2; 93-170, S. 2; P.A. 95-349, S. 4; P.A. 96-130, S. 5; P.A. 00-75, S. 9; 00-137, S. 4; P.A. 01-195, S. 98, 181; P.A. 04-142, S. 6; P.A. 12-66, S. 10; P.A. 15-199, S. 18; P.A. 16-7, S. 7; 16-28, S. 9; P.A. 17-136, S. 8; P.A. 19-47, S. 16. Text read from the Connecticut General Assembly''s chapter page for the section in the General Statutes of Connecticut, revised to Jan. 1, 2025, or in its 2026 Supplement (cga.ct.gov), on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian; reservation; tribe); AI reader''s verdict incidental: Termination petition must state tribe and reservation of American Indian parent or child. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; indian; reservation; tribe'

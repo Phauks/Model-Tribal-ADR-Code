@@ -47,6 +47,7 @@
 	import { forgetLocalDrafts } from '#lib/essays/local-draft.ts';
 	import { followSettingsEverywhere, forgetEverywhere } from '#lib/settings-everywhere.ts';
 	import { readStoredJson, writeStored, writeStoredJson } from '#lib/browser-storage.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	interface SignedInAs {
 		name: string;
@@ -127,7 +128,8 @@
 				providers = options.providers ?? [];
 				codesAvailable = Boolean(options.codesAvailable);
 			})
-			.catch(() => {
+			.catch((problem) => {
+				sendProblem(problem, { code: 'sign-in.options' });
 				codesAvailable = false;
 				asking = undefined;
 			});

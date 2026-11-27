@@ -1,0 +1,29 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: sis
+name: Siuslaw
+iso_639_3:
+  code: sis
+  reference_name: Siuslaw
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: sius1254
+  level: language
+  source: glottolog-5-4
+family: null
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/8390
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '138616'
+  title: Siuslawan (Lower Umpqua)
+  kinds:
+  - grammar
+  author: Leo J. Frachtenberg
+  year: 1922
+  publisher: Government Printing Office
+  pages: 200
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -1,0 +1,91 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: sac
+name: Meskwaki
+iso_639_3:
+  code: sac
+  reference_name: Meskwaki
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: mesk1242
+  level: language
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1528
+  source: glottolog-5-4
+dialects:
+- name: Meskwakie
+  glottocode: mesk1243
+  source: glottolog-5-4
+- name: Sac
+  glottocode: sacc1239
+  source: glottolog-5-4
+works:
+- glottolog_reference: '661917'
+  title: A Grammar of Meskwaki
+  kinds:
+  - grammar
+  author: Ives Goddard
+  year: 2023
+  publisher: Mundart Press
+  pages: 516
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '322219'
+  title: A Meskwaki-English and English Meskwaki Dictionary Based on Early Twentieth-Century Writings by Native Speakers
+  kinds:
+  - dictionary
+  author: Ives Goddard and Lucy Thomason
+  year: 2014
+  publisher: Mundart Press
+  pages: 423
+  source: glottolog-5-4
+- glottolog_reference: '578582'
+  title: A Concise Dictionary of the Sauk Language
+  kinds:
+  - dictionary
+  author: Gordon Whittaker
+  year: 2005
+  publisher: The Sac & Fox National Public Library
+  pages: 246
+  source: glottolog-5-4
+- glottolog_reference: '693578'
+  title: A Meskwaki-English and English-Meskwaki dictionary
+  kinds:
+  - dictionary
+  author: Ives Goddard and Lucy Thomason
+  year: 2005
+  publisher: Johns and Barlett Publishers
+  source: glottolog-5-4
+- glottolog_reference: '146218'
+  title: The Proximate and Obviative Contrast in Meskwaki
+  kinds:
+  - grammar
+  author: Lucy Grey Thomason
+  year: 2003
+  publisher: University of Texas at Austin
+  pages: 425
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '674473'
+  title: An Analog to Tough Movement in Fox Syntax
+  kinds:
+  - grammar
+  author: William Cowan
+  year: 1994
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '57803'
+  title: Leonard Bloomfield's Fox lexicon
+  kinds:
+  - dictionary
+  author: Ives Goddard
+  year: 1994
+  publisher: Algonquian and Iroquoian Linguistics
+  pages: 296
+  source: glottolog-5-4
+retrieved: '2026-11-27'

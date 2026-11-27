@@ -1,0 +1,46 @@
+key: national-archives-film-75-44-cargo-operations-beach-north-star-iii
+kind: federal-agency-document
+citation:
+  type: motion_picture
+  title: Cargo Operations - Beach, "North Star III"
+  genre: Motion picture
+  number: NAID 12715
+  archive: National Archives at College Park, Motion Pictures
+  archive_location: Record Group 75, Moving Images Documenting the Life and Culture of North American Indians (NAID 12678), item 75.44
+  URL: https://catalog.archives.gov/id/12715
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://catalog.archives.gov/id/12715
+retrieved: '2026-11-27'
+file:
+  storage_key: national-archives-films/75-44.wmv
+  checksum: bebcd7d9f52260fa6e5b9167dc46b9add8372186de28a7fae8830f3a43d32ddc
+  media_type: video/x-ms-wmv
+  bytes: 153404997
+rights:
+  status: not-assessed
+  basis: link-only
+  basis_note: The National Archives marks the use status undetermined or possibly under copyright, and the film does not name its maker on screen; linked at the National Archives, and any project copy is kept private.
+  redistribution: false
+jurisdictions:
+- level: federal
+topics:
+- federal-indian-policy-film
+access:
+  open: true
+  pull_from:
+  - free-web
+found_in:
+- 2026-11-27-national-archives-films
+notes: 'Indigo Book citation: Cargo Operations - Beach, "North Star III" (Bureau of Indian Affairs records n.d.) (motion picture), National Archives Identifier 12715, RG 75, item 75.44. Digitized by the National Archives; the project''s copy is its file, unchanged (153,404,997 bytes, SHA-256 bebcd7d9f52260fa6e5b9167dc46b9add8372186de28a7fae8830f3a43d32ddc). The film does not name its maker on screen. Thirty frames read across the film show cargo unloaded from landing craft onto a beach and hauled to a village by tractor. Chosen as a federal Indian policy item (the Bureau''s North Star III resupply of Alaska villages) by scripts/law/national_archives_films.py; ceremony films and children''s recordings in the same series are left out (CARE principles). Not yet watched or heard in full by a person (Unverified).'
+review:
+  status: unverified
+  by: scripts/law/national_archives_films.py
+  date: '2026-11-27'
+  checks:
+  - check: listing
+    result: missing
+    detail: Only the National Archives Catalog's description was read and 30 frames of the film

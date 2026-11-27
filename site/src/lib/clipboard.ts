@@ -27,6 +27,7 @@ export async function copyPageLink(): Promise<string> {
 		await copyText(location.href);
 		return 'Link copied.';
 	} catch {
+		// expected: the browser would not copy; the reader is shown the address to copy by hand.
 		return `Copy this link: ${location.href}`;
 	}
 }

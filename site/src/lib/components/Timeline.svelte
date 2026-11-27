@@ -73,6 +73,7 @@
 	import CitationMarks from './CitationMarks.svelte';
 	import { copyText } from '#lib/clipboard.ts';
 	import { readStored, writeStored } from '#lib/browser-storage.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	interface Props {
 		entries: TimelineEntry[];
@@ -177,7 +178,7 @@
 			.then((items: { link?: string }[]) => {
 				publishedHistory = Array.isArray(items) ? items.flatMap((item) => (item.link ? [item.link] : [])) : [];
 			})
-			.catch(() => {});
+			.catch((problem) => sendProblem(problem, { code: 'timeline.published' }));
 	});
 
 	function toggleKind(kind: TimelineKind) {
@@ -292,6 +293,7 @@
 			await copyText(text);
 			copied = `${what} copied`;
 		} catch {
+			// expected: the browser would not copy; the text is shown to copy by hand.
 			copied = text;
 		}
 	}

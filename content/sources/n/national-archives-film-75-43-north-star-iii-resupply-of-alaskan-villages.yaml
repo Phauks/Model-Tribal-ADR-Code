@@ -1,0 +1,46 @@
+key: national-archives-film-75-43-north-star-iii-resupply-of-alaskan-villages
+kind: federal-agency-document
+citation:
+  type: motion_picture
+  title: '"North Star III" Resupply of Alaskan Villages'
+  genre: Motion picture
+  number: NAID 12714
+  archive: National Archives at College Park, Motion Pictures
+  archive_location: Record Group 75, Moving Images Documenting the Life and Culture of North American Indians (NAID 12678), item 75.43
+  URL: https://catalog.archives.gov/id/12714
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://catalog.archives.gov/id/12714
+retrieved: '2026-11-27'
+file:
+  storage_key: national-archives-films/75-43.wmv
+  checksum: 42c4530beffaf8d7bbc2f4cd1cf4ee598b61cee7ea04278d75e8d64f144a7789
+  media_type: video/x-ms-wmv
+  bytes: 322587011
+rights:
+  status: not-assessed
+  basis: link-only
+  basis_note: The National Archives marks the use status undetermined or possibly under copyright, and the film does not name its maker on screen; linked at the National Archives, and any project copy is kept private.
+  redistribution: false
+jurisdictions:
+- level: federal
+topics:
+- federal-indian-policy-film
+access:
+  open: true
+  pull_from:
+  - free-web
+found_in:
+- 2026-11-27-national-archives-films
+notes: 'Indigo Book citation: "North Star III" Resupply of Alaskan Villages (Bureau of Indian Affairs records n.d.) (motion picture), National Archives Identifier 12714, RG 75, item 75.43. Digitized by the National Archives; the project''s copy is its file, unchanged (322,587,011 bytes, SHA-256 42c4530beffaf8d7bbc2f4cd1cf4ee598b61cee7ea04278d75e8d64f144a7789). The film does not name its maker on screen. Thirty frames read across the film show the voyage of the North Star III, loading at port and in the ice, and village life ashore. Chosen as a federal Indian policy item (the Bureau''s North Star III resupply of Alaska villages) by scripts/law/national_archives_films.py; ceremony films and children''s recordings in the same series are left out (CARE principles). Not yet watched or heard in full by a person (Unverified).'
+review:
+  status: unverified
+  by: scripts/law/national_archives_films.py
+  date: '2026-11-27'
+  checks:
+  - check: listing
+    result: missing
+    detail: Only the National Archives Catalog's description was read and 30 frames of the film

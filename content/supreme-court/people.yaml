@@ -4,7 +4,7 @@ sources:
   biography: federal-judicial-center-biographical-directory-judges
   presidents: library-of-congress-presidents-chronological-list
   inaugurations: joint-congressional-committee-past-inaugural-ceremonies
-checked: '2026-11-24'
+checked: '2026-11-27'
 justices:
 - key: john-jay
   name: John Jay
@@ -4257,6 +4257,12 @@ presidents:
   - - 1837
     - 1841
   party: Democratic
+- key: william-henry-harrison
+  name: William Henry Harrison
+  years:
+  - - 1841
+    - 1841
+  party: null
 - key: john-tyler
   name: John Tyler
   years:
@@ -4269,6 +4275,12 @@ presidents:
   - - 1845
     - 1849
   party: Democratic
+- key: zachary-taylor
+  name: Zachary Taylor
+  years:
+  - - 1849
+    - 1850
+  party: Whig
 - key: millard-fillmore
   name: Millard Fillmore
   years:
@@ -4293,6 +4305,12 @@ presidents:
   - - 1861
     - 1865
   party: Republican
+- key: andrew-johnson
+  name: Andrew Johnson
+  years:
+  - - 1865
+    - 1869
+  party: Democratic
 - key: ulysses-grant
   name: Ulysses Grant
   years:
@@ -4415,6 +4433,12 @@ presidents:
   - - 1974
     - 1977
   party: Republican
+- key: jimmy-carter
+  name: Jimmy Carter
+  years:
+  - - 1977
+    - 1981
+  party: Democratic
 - key: ronald-reagan
   name: Ronald Reagan
   years:

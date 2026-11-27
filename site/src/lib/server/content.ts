@@ -149,6 +149,30 @@ export function sources(): Map<string, SourceRecord> {
 	return sourceCache;
 }
 
+let sourcesByNation: { from: Map<string, SourceRecord>; byNation: Map<string, SourceRecord[]> } | undefined;
+
+/**
+ * The source records linked to a nation (their `tribes`), in the order
+ * sources() holds them. Listed for every nation at once: each of some 950
+ * nation pages, and each nation's list of downloads, asks, and going through
+ * every record for each took minutes of the build.
+ */
+export function sourcesOfNation(nationIdentifier: string): SourceRecord[] {
+	const all = sources();
+	if (sourcesByNation?.from !== all) {
+		const byNation = new Map<string, SourceRecord[]>();
+		for (const record of all.values()) {
+			for (const tribe of new Set(record.tribes ?? [])) {
+				const list = byNation.get(tribe);
+				if (list) list.push(record);
+				else byNation.set(tribe, [record]);
+			}
+		}
+		sourcesByNation = { from: all, byNation };
+	}
+	return sourcesByNation.byNation.get(nationIdentifier) ?? [];
+}
+
 /** A source record's file, relative to the repository root, such as content/sources/i/indian-removal-act-1830.yaml. */
 export function sourceFile(key: string): string | undefined {
 	sources();
@@ -243,6 +267,8 @@ export interface NationRecord {
 	})[];
 	official_images?: (CitedFact & OfficialImageRecord)[];
 	languages?: (CitedFact & { name?: string })[];
+	/** The nation's own language program, where one is on record (src/lib/server/languages.ts). */
+	language_programs?: (CitedFact & { name: string; link: string; run_by?: string })[];
 	population?: (CitedFact & { count?: number; kind?: string })[];
 	federal_administration?: CitedFact & {
 		bureau_of_indian_affairs_region?: string;

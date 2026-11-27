@@ -1,0 +1,53 @@
+key: connecticut-general-statutes-31-49u
+kind: state-statute
+citation:
+  type: legislation
+  title: Memorandum of understanding with federally recognized tribe re participation in program
+  title-short: Conn. Gen. Stat. § 31-49u
+  container-title: General Statutes of Connecticut
+  container-title-short: Conn. Gen. Stat.
+  section: 31-49u
+  author:
+  - literal: Connecticut General Assembly
+  issued:
+    date-parts:
+    - - 2024
+  URL: https://www.cga.ct.gov/2026/sup/chap_557.htm#sec_31-49u
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.cga.ct.gov/2026/sup/chap_557.htm#sec_31-49u
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- connecticut-general-statutes-31-49e
+- connecticut-general-statutes-31-57e
+state_law:
+  relevance: core
+  citation: Conn. Gen. Stat. § 31-49u (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Conn. Gen. Stat. § 31-49u (2026). History: P.A. 24-5, S. 6; P.A. 25-75, S. 2. Text read from the Connecticut General Assembly''s chapter page for the section in the General Statutes of Connecticut, revised to Jan. 1, 2025, or in its 2026 Supplement (cga.ct.gov), on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized tribe; tribally; tribe); AI reader''s verdict core: Memorandum of understanding with federally recognized tribe on paid leave. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: federally recognized tribe; tribally; tribe'

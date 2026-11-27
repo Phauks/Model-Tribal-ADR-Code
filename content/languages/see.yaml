@@ -1,0 +1,67 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: see
+name: Seneca
+iso_639_3:
+  code: see
+  reference_name: Seneca
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: sene1264
+  level: language
+  source: glottolog-5-4
+family:
+  name: Iroquoian
+  glottocode: iroq1247
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/514
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '104284'
+  title: A Grammar of the Seneca Language
+  kinds:
+  - grammar
+  author: Wallace Chafe
+  year: 2015
+  publisher: University of California Press
+  pages: 250
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '586482'
+  title: English-Seneca Dictionary
+  kinds:
+  - dictionary
+  author: Wallace Chafe
+  year: 2014
+  pages: 192
+  source: glottolog-5-4
+- glottolog_reference: '161085'
+  title: '''Sketch of Seneca, an Iroquoian Language'' in: Goddard, Ives. Handbook of North American Indians, Volume 17 - Languages. Chafe, Wallace L. Seneca Morphology and Dictionary'
+  kinds:
+  - grammar
+  author: Wallace L. Chafe
+  year: 1996
+  publisher: Smithsonian Press, Washington, DC.
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '547937'
+  title: Seneca morphology and dictionary
+  kinds:
+  - dictionary
+  author: Wallace L. Chafe
+  year: 1967
+  publisher: Smithsonian Press
+  pages: 126
+  source: glottolog-5-4
+- glottolog_reference: '547731'
+  title: Iroquois-Français
+  kinds:
+  - dictionary
+  author: James Bruyas
+  year: 1708
+  publisher: Ms.
+  pages: 240
+  source: glottolog-5-4
+retrieved: '2026-11-27'

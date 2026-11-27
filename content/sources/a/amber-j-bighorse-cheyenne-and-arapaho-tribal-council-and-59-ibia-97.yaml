@@ -35,16 +35,12 @@ jurisdictions:
 - level: federal
 tribes:
 - cheyenne-and-arapaho-tribes
-- confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
 nations_in_case:
   checked: '2026-11-26'
   named:
   - nation: cheyenne-and-arapaho-tribes
     named_as: Cheyenne-Arapaho Tribes of Oklahoma
     role: government
-  - nation: confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
-    named_as: Tribes
-    role: party
 access:
   open: true
   pull_from:

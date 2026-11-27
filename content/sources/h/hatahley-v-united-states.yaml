@@ -101,6 +101,29 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=351%20U.S.%20173
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1956-03-26'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-036-231-19560326-19560327.mp3
+  catalog: https://catalog.archives.gov/id/81136722
+  duration_seconds: 3223
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-036-231-19560326-19560327.mp3
+    checksum: 7cfc4f990f3f3425755b648b7a2573850986b7ae6147c54cbc5e0bea4011f95a
+    media_type: audio/mpeg
+    bytes: 51560698
+- kind: argument
+  date: '1956-03-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-037-231-19560326-19560327.mp3
+  catalog: https://catalog.archives.gov/id/81136725
+  duration_seconds: 4294
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-037-231-19560326-19560327.mp3
+    checksum: b9e0a984fc94a0b9b4783b44dcda73660cd8a4951d6e8ddaa1177b9d3209b386
+    media_type: audio/mpeg
+    bytes: 68704548
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -105,7 +105,7 @@
 			method: 'POST',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify({ keys })
-		}).catch(() => null);
+		}).catch(() => /* expected: offline; the page shows its published text, and the server reports its own failures. */ null);
 		if (!response?.ok) {
 			if (response && (response.status === 401 || response.status === 403)) {
 				level = 'no-access';
@@ -288,10 +288,10 @@
 			method: 'POST',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify({ key: open.key, words: next, page: location.pathname })
-		}).catch(() => null);
+		}).catch(() => /* expected: offline; the editor says it was not saved. */ null);
 		saving = false;
 		if (!response?.ok) {
-			problem = response ? ((await response.json().catch(() => null)) as { message?: string } | null)?.message ?? 'Not saved.' : 'Not saved. Check the connection.';
+			problem = response ? ((await response.json().catch(() => /* expected: an answer that is not JSON; the editor says it was not saved. */ null)) as { message?: string } | null)?.message ?? 'Not saved.' : 'Not saved. Check the connection.';
 			return;
 		}
 		const answer = (await response.json()) as Pick<SiteTextPiece, 'key' | 'published' | 'draft' | 'record'> & { waiting: number };
@@ -310,7 +310,7 @@
 		const button = document.querySelector(`.page-controls .${from}`) ?? document.querySelector('.page-controls .history');
 		const box = button?.getBoundingClientRect();
 		const width = Math.min(460, window.innerWidth - 32);
-		const response = await fetch('/workspace/site-text/list.json').catch(() => null);
+		const response = await fetch('/workspace/site-text/list.json').catch(() => /* expected: offline; the list does not open, and the button can be pressed again. */ null);
 		if (!response?.ok) return;
 		const answer = (await response.json()) as ListAnswer;
 		const sheet = window.matchMedia('(max-width: 37.5rem)').matches;
@@ -327,7 +327,7 @@
 	}
 
 	async function problemFrom(response: Response | null): Promise<string> {
-		const body = (await response?.json().catch(() => null)) as { message?: string } | null;
+		const body = (await response?.json().catch(() => /* expected: an answer that is not JSON; the list says that did not work. */ null)) as { message?: string } | null;
 		return body?.message ?? 'That did not work. Try again.';
 	}
 
@@ -337,7 +337,7 @@
 			method: 'POST',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify({ publication: publication.number })
-		}).catch(() => null);
+		}).catch(() => /* expected: offline; the list says that did not work. */ null);
 		if (!response?.ok) {
 			if (list) list = { ...list, problem: await problemFrom(response) };
 			return;
@@ -353,7 +353,7 @@
 			method: 'POST',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify({ key: edit.key })
-		}).catch(() => null);
+		}).catch(() => /* expected: offline; the list says that did not work. */ null);
 		if (!list) return;
 		if (!response?.ok) {
 			list = { ...list, problem: await problemFrom(response) };
@@ -367,7 +367,7 @@
 			method: 'POST',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify({ key: draft.key, words: draft.published, page: null })
-		}).catch(() => null);
+		}).catch(() => /* expected: offline; the draft stays in the list. */ null);
 		if (!response?.ok || !list) return;
 		const answer = (await response.json()) as Pick<SiteTextPiece, 'key' | 'published' | 'draft' | 'record'> & { waiting: number };
 		waiting = answer.waiting;
@@ -385,9 +385,9 @@
 			method: 'POST',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify({ keys: list.drafts.map((draft) => draft.key) })
-		}).catch(() => null);
+		}).catch(() => /* expected: offline; the drafts stay in the list. */ null);
 		if (!response?.ok) return;
-		const fresh = await fetch('/workspace/site-text/list.json').catch(() => null);
+		const fresh = await fetch('/workspace/site-text/list.json').catch(() => /* expected: offline; the list keeps what it showed. */ null);
 		const answer = fresh?.ok ? ((await fresh.json()) as ListAnswer) : null;
 		if (!list) return;
 		list = { ...list, ...(answer ?? {}), done: true };

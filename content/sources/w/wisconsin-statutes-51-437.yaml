@@ -1,0 +1,47 @@
+key: wisconsin-statutes-51-437
+kind: state-statute
+citation:
+  type: legislation
+  title: Developmental disabilities services
+  title-short: Wis. Stat. § 51.437
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '51.437'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/51.437
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/51.437
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 51.437 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 51.437 (2023-24). History: 1971 c. 307, 322; 1973 c. 90, 333; 1975 c. 39, 199, 430; 1977 c. 26 ss. 39, 75; 1977 c. 29; 1977 c. 354 s. 101; 1977 c. 418; 1977 c. 428 s. 85, 86, 115; 1979 c. 32, 117, 221, 330, 355; 1981 c. 20, 93, 329; 1983 a. 27, 365, 375, 524; 1985 a. 29 ss. 1094 to 1105m, 3200 (56) (a); 1985 a. 120, 176, 307, 332; 1987 a. 27; 1989 a. 31, 56, 107, 262; 1991 a. 39, 274, 315; 1993 a. 16, 83; 1995 a. 27 ss. 3266m, 9116 (5), 9126 (19), 9145 (1); 1995 a. 64, 77, 92, 201, 225, 352, 417; 1997 a. 27, 35, 164, 252; 1999 a. 9; 2001 a. 16, 59; 2003 a. 33; 2005 a. 25, 264, 388; 2007 a. 20 ss. 1822 to 1824b, 9121 (6) (a); 2007 a. 45, 96; 2009 a. 28, 180, 334; 2011 a. 32, 126; 2017 a. 150; 2017 a. 207 s. 5. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Tribal agencies may exchange confidential client information for DD services. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

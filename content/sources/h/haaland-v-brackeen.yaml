@@ -90,6 +90,41 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Haaland_v._Brackeen
+argument_audio:
+- kind: argument
+  date: '2022-11-09'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/21-376.mp3
+  duration_seconds: 11540
+  file:
+    storage_key: supreme-court-audio/court/2022/21-376.mp3
+    checksum: c0f9a6b870c19517eba74e497fb8aa5c7c5a2f006318959137b1e3957cfdf296
+    media_type: audio/mpeg
+    bytes: 92327625
+- kind: argument
+  date: '2022-11-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2022_term/267-2282.mp3
+  catalog: https://catalog.archives.gov/id/326769246
+  whole_session: true
+  duration_seconds: 11741
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2282.mp3
+    checksum: b668e7df94746f29e192e67b2c117f230e9df11c06fcb89b35b611a97c05c59b
+    media_type: audio/mpeg
+    bytes: 234811718
+- kind: opinion announcement
+  date: '2023-06-15'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2022_term/267-2320.mp3
+  catalog: https://catalog.archives.gov/id/326769322
+  whole_session: true
+  duration_seconds: 1133
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2320.mp3
+    checksum: 65e4b25abc2a525f35b8a97bcca515ffa68c324d1bc670157ba767700608eb78
+    media_type: audio/mpeg
+    bytes: 22667078
 rights:
   status: no-permission-needed
   basis: us-government-work

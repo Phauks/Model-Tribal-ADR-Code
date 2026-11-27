@@ -31,10 +31,11 @@ const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/copie
 const onRequestFamilies = [
 	{ family: 'cases', prefix: '/cases/' },
 	{ family: 'laws', prefix: '/laws/' },
+	{ family: 'collections', prefix: '/laws/' },
 	{ family: 'sections', prefix: '/laws/usc-25/' },
 	{ family: 'biographies', prefix: '/biographies/' },
 	{ family: 'justices', prefix: '/supreme-court/justices/' },
-	{ family: 'presidents', prefix: '/supreme-court/presidents/' },
+	{ family: 'presidents', prefix: '/presidents/' },
 	{ family: 'courts', prefix: '/supreme-court/' }
 ];
 
@@ -179,9 +180,12 @@ function main() {
 	for (const { family, prefix } of onRequestFamilies) {
 		const folder = path.join(output, 'page-data', family);
 		if (!existsSync(folder)) continue;
+		// Each file holds many pages, each key's data as devalue wrote it (src/lib/page-data.ts).
 		for (const name of readdirSync(folder)) {
 			if (!name.endsWith('.json')) continue;
-			onRequest[`${prefix}${decodeURIComponent(name.slice(0, -'.json'.length))}`] = fingerprintOf(readFileSync(path.join(folder, name)));
+			/** @type {Record<string, string>} */
+			const pagesInFile = JSON.parse(readFileSync(path.join(folder, name), 'utf8'));
+			for (const [key, text] of Object.entries(pagesInFile)) onRequest[`${prefix}${key}`] = fingerprintOf(text);
 		}
 	}
 	writeFileSync(path.join(output, 'offline-sizes.json'), `${JSON.stringify(bytes)}\n`);

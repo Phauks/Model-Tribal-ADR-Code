@@ -1,0 +1,3969 @@
+{
+	"description": "Each stage of a removal of a Native nation: the land it was moved from, the land it was sent to, the years, and the treaty, law or order behind it, with one point for each end. Compiled from treaties, statutes and official reports in research/historic-maps/removals/removals.json; placed by site/tools/removal-places.mjs. The points mark where, not the road taken.",
+	"research": "research/historic-maps/removals/removals.json",
+	"analysis": "research/analyses/2026-11-27-removal-routes-for-the-map.md",
+	"removals": [
+		{
+			"id": "cherokee-1817",
+			"journey": "cherokee-arkansas-emigration",
+			"stage": 1,
+			"people": "Cherokee (emigrating party, \"Old Settlers\")",
+			"nations": [
+				"cherokee-nation",
+				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
+			],
+			"years": [
+				1817,
+				1819
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Cherokee towns in Georgia, Alabama and Tennessee; lands ceded in exchange for land for emigrants on the Arkansas",
+				"name": "Cherokee towns in Georgia, Alabama and Tennessee; lands ceded in exchange for land for emigrants on the Arkansas",
+				"point": [
+					-83.2545,
+					35.1929
+				],
+				"basis": "Royce cession 83, 84, 85, 86, 101, 102, 103, 104, 105, 106, 107, 108, 109"
+			},
+			"to": {
+				"description": "Between the Arkansas and White rivers, Arkansas Territory (later moved by 1828 treaty)",
+				"name": "Pope County, Arkansas",
+				"point": [
+					-93.0319,
+					35.4264
+				],
+				"basis": "Wikidata Q61315"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-cherokee-1817-0140",
+					"citation": "7 Stat. 156",
+					"article": "art. 5"
+				},
+				{
+					"treaty_key": "treaty-with-the-cherokee-1819-0177",
+					"citation": "7 Stat. 195",
+					"article": "art. 6"
+				}
+			],
+			"quote": "to give to that part of the Cherokee nation on the Arkansas as much land on said river and White river as they have or may hereafter receive from the Cherokee nation east of the Mississippi, acre for acre",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1817-0140",
+			"review": "Unverified"
+		},
+		{
+			"id": "cherokee-1828",
+			"journey": "cherokee-arkansas-emigration",
+			"stage": 2,
+			"people": "Western Cherokee (Arkansas Cherokee)",
+			"nations": [
+				"cherokee-nation",
+				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
+			],
+			"years": [
+				1828,
+				1833
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Cherokee settlements in Arkansas Territory on the Arkansas and White rivers",
+				"name": "Pope County, Arkansas",
+				"point": [
+					-93.0319,
+					35.4264
+				],
+				"basis": "Wikidata Q61315"
+			},
+			"to": {
+				"description": "Seven million acres west of Arkansas and Missouri, later northeastern Oklahoma (Cherokee Nation)",
+				"name": "Cherokee OTSA",
+				"point": [
+					-95.24428,
+					36.57535
+				],
+				"basis": "Census Bureau area 5550 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-western-cherokee-1828-0288",
+					"citation": "7 Stat. 311",
+					"article": "art. 2"
+				},
+				{
+					"treaty_key": "treaty-with-the-western-cherokee-1833-0385",
+					"citation": "7 Stat. 414",
+					"article": ""
+				}
+			],
+			"quote": "The United States agree to possess the Cherokees, and to guarantee it to them forever, and that guarantee is hereby solemnly pledged, of seven millions of acres of land",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-western-cherokee-1828-0288",
+			"review": "Unverified"
+		},
+		{
+			"id": "cherokee-1838",
+			"journey": "cherokee-removal",
+			"stage": 1,
+			"people": "Cherokee (Eastern Cherokee)",
+			"nations": [
+				"cherokee-nation",
+				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
+			],
+			"years": [
+				1838,
+				1839
+			],
+			"kind": "military",
+			"from": {
+				"description": "Cherokee Nation in Georgia, North Carolina, Tennessee and Alabama; gathered in army stockades 1838",
+				"name": "Cherokee Nation in Georgia, North Carolina, Tennessee and Alabama; gathered in army stockades 1838",
+				"point": [
+					-84.8347,
+					34.5765
+				],
+				"basis": "Royce cession 203"
+			},
+			"to": {
+				"description": "Cherokee Nation west of Arkansas and Missouri (northeastern Oklahoma)",
+				"name": "Cherokee OTSA",
+				"point": [
+					-95.24428,
+					36.57535
+				],
+				"basis": "Census Bureau area 5550 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-cherokee-1835-0439",
+					"citation": "7 Stat. 478",
+					"article": "art. 1"
+				},
+				{
+					"citation": "4 Stat. 411",
+					"statute": "Act of May 28, 1830 (Indian Removal Act), ch. 148"
+				}
+			],
+			"quote": "The Cherokee nation hereby cede relinquish and convey to the United States all the lands owned claimed or possessed by them east of the Mississippi river",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1835-0439",
+			"review": "Unverified"
+		},
+		{
+			"id": "choctaw-1820",
+			"journey": "choctaw-arkansas-1820",
+			"stage": 1,
+			"people": "Choctaw",
+			"nations": [
+				"the-choctaw-nation-of-oklahoma"
+			],
+			"years": [
+				1820,
+				1825
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Choctaw lands in Mississippi (Treaty of Doak's Stand cession)",
+				"name": "Choctaw lands in Mississippi (Treaty of Doak's Stand cession)",
+				"point": [
+					-90.2164,
+					32.2578
+				],
+				"basis": "Royce cession 115"
+			},
+			"to": {
+				"description": "Tract between the Arkansas and Red rivers in Arkansas Territory (later reduced by the 1825 treaty)",
+				"name": "Tract between the Arkansas and Red rivers in Arkansas Territory (later reduced by the 1825 treaty)",
+				"point": [
+					-93.7945,
+					34.742
+				],
+				"basis": "Royce cession 122"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-choctaw-1820-0191",
+					"citation": "7 Stat. 210",
+					"article": "art. 2"
+				},
+				{
+					"treaty_key": "treaty-with-the-choctaw-1825-0211",
+					"citation": "7 Stat. 234",
+					"article": ""
+				}
+			],
+			"quote": "do hereby cede to said nation, a tract of country west of the Mississippi River, situate between the Arkansas and Red River",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1820-0191",
+			"review": "Unverified"
+		},
+		{
+			"id": "choctaw-1830",
+			"journey": "choctaw-removal",
+			"stage": 1,
+			"people": "Choctaw",
+			"nations": [
+				"the-choctaw-nation-of-oklahoma"
+			],
+			"years": [
+				1831,
+				1833
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Choctaw Nation lands in Mississippi and Alabama (Dancing Rabbit Creek)",
+				"name": "Choctaw Nation lands in Mississippi and Alabama (Dancing Rabbit Creek)",
+				"point": [
+					-88.9669,
+					32.6645
+				],
+				"basis": "Royce cession 156, 157"
+			},
+			"to": {
+				"description": "Choctaw Nation, beginning near Fort Smith, Arkansas (southeastern Oklahoma)",
+				"name": "Choctaw OTSA",
+				"point": [
+					-95.35141,
+					34.61003
+				],
+				"basis": "Census Bureau area 5590 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-choctaw-1830-0310",
+					"citation": "7 Stat. 333",
+					"article": "art. II"
+				},
+				{
+					"citation": "4 Stat. 411",
+					"statute": "Act of May 28, 1830 (Indian Removal Act), ch. 148"
+				}
+			],
+			"quote": "a tract of country west of the Mississippi River, in fee simple to them and their descendants, to inure to them while they shall exist as a nation and live on it, beginning near Fort Smith",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1830-0310",
+			"review": "Unverified"
+		},
+		{
+			"id": "chickasaw-1837",
+			"journey": "chickasaw-removal",
+			"stage": 1,
+			"people": "Chickasaw",
+			"nations": [
+				"the-chickasaw-nation"
+			],
+			"years": [
+				1837,
+				1838
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Chickasaw Nation lands in northern Mississippi and Alabama, ceded 1832; Pontotoc",
+				"name": "Pontotoc",
+				"point": [
+					-89.0067,
+					34.2486
+				],
+				"basis": "Wikidata Q985208"
+			},
+			"to": {
+				"description": "Chickasaw District of the Choctaw Nation, south-central Oklahoma, agreed at Doaksville near Fort Towson",
+				"name": "Doaksville",
+				"point": [
+					-95.0717,
+					34.0358
+				],
+				"basis": "Wikidata Q5286473"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-chickasaw-1832-0356",
+					"citation": "7 Stat. 381",
+					"article": "art. IV"
+				},
+				{
+					"treaty_key": "treaty-with-the-chickasaw-1834-0418",
+					"citation": "7 Stat. 450",
+					"article": "art. II"
+				},
+				{
+					"treaty_key": "treaty-with-the-choctaw-and-chickasaw-1837-0486",
+					"citation": "11 Stat. 573",
+					"article": "art. 1"
+				}
+			],
+			"quote": "the Chickasaws shall have the privilege of forming a district within the limits of their country",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-and-chickasaw-1837-0486",
+			"review": "Unverified"
+		},
+		{
+			"id": "creek-1825",
+			"journey": "creek-mcintosh-emigration",
+			"stage": 1,
+			"people": "Muscogee (Creek), McIntosh party (Lower Creeks)",
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"years": [
+				1825,
+				1828
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Creek lands in Georgia (Treaty of Indian Springs, annulled 1826; emigration agreed by the Treaty of Washington 1826)",
+				"name": "Creek lands in Georgia (Treaty of Indian Springs, annulled 1826; emigration agreed by the Treaty of Washington 1826)",
+				"point": [
+					-84.4516,
+					32.0905
+				],
+				"basis": "Royce cession 127, 131"
+			},
+			"to": {
+				"description": "Arkansas River at the mouth of the Canadian fork, west of the Mississippi",
+				"name": "Creek OTSA",
+				"point": [
+					-95.98876,
+					35.66579
+				],
+				"basis": "Census Bureau area 5620 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-creeks-1825-0214",
+					"citation": "7 Stat. 237",
+					"article": "art. 2"
+				},
+				{
+					"treaty_key": "treaty-with-the-creeks-1826-0264",
+					"citation": "7 Stat. 286",
+					"article": "art. 6"
+				},
+				{
+					"treaty_key": "treaty-with-the-creeks-1827-0284",
+					"citation": "7 Stat. 307",
+					"article": ""
+				}
+			],
+			"quote": "the like quantity, acre for acre, westward of the Mississippi, on the Arkansas river, commencing at the mouth of the Canadian Fork thereof",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1825-0214",
+			"review": "Unverified"
+		},
+		{
+			"id": "creek-1832",
+			"journey": "creek-removal",
+			"stage": 1,
+			"people": "Muscogee (Creek)",
+			"nations": [
+				"the-muscogee-nation",
+				"alabama-quassarte-tribal-town",
+				"kialegee-tribal-town",
+				"thlopthlocco-tribal-town"
+			],
+			"years": [
+				1836,
+				1837
+			],
+			"kind": "military",
+			"from": {
+				"description": "Creek Nation lands in eastern Alabama ceded at Cusseta",
+				"name": "Cusseta",
+				"point": [
+					-84.7769,
+					32.3056
+				],
+				"basis": "Wikidata Q2153623"
+			},
+			"to": {
+				"description": "Creek country west of the Mississippi, central eastern Oklahoma (Canadian and Arkansas rivers area), boundaries set by the 1833 treaty",
+				"name": "Creek OTSA",
+				"point": [
+					-95.98876,
+					35.66579
+				],
+				"basis": "Census Bureau area 5620 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-creeks-1832-0341",
+					"citation": "7 Stat. 366",
+					"article": "art. XII"
+				},
+				{
+					"treaty_key": "treaty-with-the-creeks-1833-0388",
+					"citation": "7 Stat. 417",
+					"article": ""
+				}
+			],
+			"quote": "The United States are desirous that the Creeks should remove to the country west of the Mississippi, and join their countrymen there",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1832-0341",
+			"review": "Unverified"
+		},
+		{
+			"id": "seminole-1832",
+			"journey": "seminole-removal",
+			"stage": 1,
+			"people": "Seminole",
+			"nations": [
+				"the-seminole-nation-of-oklahoma"
+			],
+			"years": [
+				1832,
+				1842
+			],
+			"kind": "military",
+			"from": {
+				"description": "Seminole lands in Florida Territory (Payne's Landing)",
+				"name": "Seminole lands in Florida Territory (Payne's Landing)",
+				"point": [
+					-81.2105,
+					27.588
+				],
+				"basis": "Royce cession 173"
+			},
+			"to": {
+				"description": "Creek country west of the Mississippi; Seminole tract between the Canadian and its north fork assigned at Fort Gibson 1833",
+				"name": "Fort Gibson",
+				"point": [
+					-95.2572,
+					35.8039
+				],
+				"basis": "Wikidata Q5471221"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-seminole-1832-0344",
+					"citation": "7 Stat. 368",
+					"article": "art. I"
+				},
+				{
+					"treaty_key": "treaty-with-the-seminole-1833-0394",
+					"citation": "7 Stat. 423",
+					"article": ""
+				}
+			],
+			"quote": "agree to emigrate to the country assigned to the Creeks, west of the Mississippi river",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-seminole-1832-0344",
+			"review": "Unverified"
+		},
+		{
+			"id": "seminole-1856",
+			"journey": "seminole-removal",
+			"stage": 2,
+			"people": "Seminole (in Creek Nation)",
+			"nations": [
+				"the-seminole-nation-of-oklahoma"
+			],
+			"years": [
+				1856,
+				1866
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Creek Nation in Indian Territory, where the Seminoles had been settled under the 1845 treaty",
+				"name": "Creek OTSA",
+				"point": [
+					-95.98876,
+					35.66579
+				],
+				"basis": "Census Bureau area 5620 (2020)"
+			},
+			"to": {
+				"description": "Own tract between the Canadian and its North Fork west of the 97th parallel (Indian Territory)",
+				"name": "Own tract between the Canadian and its North Fork west of the 97th parallel (Indian Territory)",
+				"point": [
+					-97.2135,
+					35.2443
+				],
+				"basis": "Royce cession 480"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-creeks-etc-1856-0756",
+					"citation": "11 Stat. 699",
+					"article": "art. 1"
+				},
+				{
+					"treaty_key": "treaty-with-the-creeks-and-seminole-1845-0550",
+					"citation": "9 Stat. 821",
+					"article": ""
+				}
+			],
+			"quote": "The Creek Nation doth hereby grant, cede, and convey to the Seminole Indians, the tract of country",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-etc-1856-0756",
+			"review": "Unverified"
+		},
+		{
+			"id": "seminole-1866",
+			"journey": "seminole-removal",
+			"stage": 3,
+			"people": "Seminole",
+			"nations": [
+				"the-seminole-nation-of-oklahoma"
+			],
+			"years": [
+				1866,
+				1870
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Seminole tract ceded by the Creek Nation in 1856 (west-central Indian Territory)",
+				"name": "Seminole tract ceded by the Creek Nation in 1856 (west-central Indian Territory)",
+				"point": [
+					-97.2135,
+					35.2443
+				],
+				"basis": "Royce cession 480, 481"
+			},
+			"to": {
+				"description": "New Seminole reservation on former Creek lands (present Seminole County, Oklahoma)",
+				"name": "Seminole OTSA",
+				"point": [
+					-96.63383,
+					35.24858
+				],
+				"basis": "Census Bureau area 5830 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-seminole-1866-0910",
+					"citation": "14 Stat. 755",
+					"article": "art. 3"
+				}
+			],
+			"quote": "the Seminoles cede and convey to the United States their entire domain",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-seminole-1866-0910",
+			"review": "Unverified"
+		},
+		{
+			"id": "seminole-1858",
+			"journey": "seminole-florida-1858",
+			"stage": 1,
+			"people": "Seminole (Florida remnant, Billy Bowlegs band)",
+			"nations": [
+				"the-seminole-nation-of-oklahoma"
+			],
+			"years": [
+				1857,
+				1858
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Seminole remnant in southern Florida after the Third Seminole War",
+				"name": "Fort Myers, Florida",
+				"point": [
+					-81.8333,
+					26.6167
+				],
+				"basis": "Wikidata Q506451"
+			},
+			"to": {
+				"description": "Seminole country in Indian Territory (1856 tract)",
+				"name": "Seminole country in Indian Territory (1856 tract)",
+				"point": [
+					-97.2135,
+					35.2443
+				],
+				"basis": "Royce cession 480"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-creeks-etc-1856-0756",
+					"citation": "11 Stat. 699",
+					"article": "art. 9"
+				}
+			],
+			"quote": "The United States agree to remove comfortably to their new country west, all those Seminoles now in Florida who can be induced to emigrate thereto",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-creeks-etc-1856-0756",
+			"review": "Unverified"
+		},
+		{
+			"id": "apalachicola-1832",
+			"journey": "apalachicola-removal",
+			"stage": 1,
+			"people": "Apalachicola band",
+			"nations": [],
+			"years": [
+				1832,
+				1834
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Apalachicola band reservation on the Apalachicola River, Florida",
+				"name": "Apalachicola band reservation on the Apalachicola River, Florida",
+				"point": [
+					-85.0557,
+					30.4059
+				],
+				"basis": "Royce cession 176, 184, 185"
+			},
+			"to": {
+				"description": "\"Country west\" in search of a home; the 1833 treaty names the country allotted to the Creeks and Seminoles (exact place undetermined)",
+				"name": "\"Country west\" in search of a home; the 1833 treaty names the country allotted to the Creeks and Seminoles (exact place undetermined)",
+				"point": null,
+				"basis": null
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-appalachicola-band-1832-0352",
+					"citation": "7 Stat. 377",
+					"article": "art. II"
+				},
+				{
+					"treaty_key": "treaty-with-the-appalachicola-band-1833-0398",
+					"citation": "7 Stat. 427",
+					"article": "art. IV"
+				}
+			],
+			"quote": "to meet the charges of a party to explore immediately the country west in search of a home more suitable to their habits",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-appalachicola-band-1832-0352",
+			"review": "Unverified"
+		},
+		{
+			"id": "potawatomi-1833",
+			"journey": "potawatomi-chicago-1833",
+			"stage": 1,
+			"people": "United Nation of Chippewa, Ottawa and Potawatomi (Treaty of Chicago)",
+			"nations": [
+				"citizen-potawatomi-nation",
+				"prairie-band-potawatomi-nation"
+			],
+			"years": [
+				1833,
+				1837
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Lands along the western shore of Lake Michigan in Illinois and Wisconsin",
+				"name": "Chicago",
+				"point": [
+					-87.6278,
+					41.8819
+				],
+				"basis": "Wikidata Q1297"
+			},
+			"to": {
+				"description": "Tract of not less than five million acres on the Missouri River beginning at the mouth of the Boyer River (Iowa; Council Bluffs)",
+				"name": "Council Bluffs",
+				"point": [
+					-95.862,
+					41.253
+				],
+				"basis": "Wikidata Q695565"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-chippewa-etc-1833-0402",
+					"citation": "7 Stat. 431",
+					"article": ""
+				}
+			],
+			"quote": "a tract of country west of the Mississippi river, to be assigned to them by the President of the United States—to be not less in quantity than five millions of acres",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1833-0402",
+			"review": "Unverified"
+		},
+		{
+			"id": "potawatomi-1836",
+			"journey": "potawatomi-indiana-removal",
+			"stage": 1,
+			"people": "Potawatomi of Indiana (Tippecanoe, Yellow River and Wabash bands)",
+			"nations": [
+				"citizen-potawatomi-nation",
+				"prairie-band-potawatomi-nation"
+			],
+			"years": [
+				1836,
+				1840
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Reservations in northern Indiana created by the 1832 Tippecanoe treaties",
+				"name": "Reservations in northern Indiana created by the 1832 Tippecanoe treaties",
+				"point": [
+					-86.3451,
+					41.1623
+				],
+				"basis": "Royce cession 201, 204, 208, 209, 210, 218, 221, 222, 223, 224, 225"
+			},
+			"to": {
+				"description": "Country provided for the Potawatomi west of the Mississippi (Osage River sub-agency, eastern Kansas)",
+				"name": "Osawatomie",
+				"point": [
+					-94.9508,
+					38.5017
+				],
+				"basis": "Wikidata Q2602955"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1836-0457",
+					"citation": "7 Stat. 498",
+					"article": "art. 2"
+				},
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1836-0457a",
+					"citation": "7 Stat. 499",
+					"article": ""
+				},
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1836-0458",
+					"citation": "7 Stat. 500",
+					"article": ""
+				},
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1836-0459",
+					"citation": "7 Stat. 501",
+					"article": ""
+				},
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1836-0462",
+					"citation": "7 Stat. 505",
+					"article": ""
+				},
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1836-0470",
+					"citation": "7 Stat. 513",
+					"article": ""
+				},
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1836-0471",
+					"citation": "7 Stat. 514",
+					"article": ""
+				},
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1836-0471a",
+					"citation": "7 Stat. 515",
+					"article": "art. 3"
+				},
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1837-0488",
+					"citation": "7 Stat. 532",
+					"article": "art. 1"
+				}
+			],
+			"quote": "to remove to the country provided for the Pottawatamy nation west of the Mississippi river within two years",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0457",
+			"review": "Unverified"
+		},
+		{
+			"id": "potawatomi-1838",
+			"journey": "potawatomi-trail-of-death",
+			"stage": 1,
+			"people": "Potawatomi (Chief Menominee's band, Trail of Death)",
+			"nations": [
+				"citizen-potawatomi-nation",
+				"prairie-band-potawatomi-nation"
+			],
+			"years": [
+				1838,
+				1838
+			],
+			"kind": "military",
+			"from": {
+				"description": "Menominee Reserve at Twin Lakes near Plymouth, Indiana",
+				"name": "Twin Lakes",
+				"point": [
+					-86.3572,
+					41.3042
+				],
+				"basis": "Wikidata Q7858198"
+			},
+			"to": {
+				"description": "Osage River sub-agency near Osawatomie, Kansas (Potawatomi reserve)",
+				"name": "Osawatomie",
+				"point": [
+					-94.9508,
+					38.5017
+				],
+				"basis": "Wikidata Q2602955"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1836-0462",
+					"citation": "7 Stat. 505",
+					"article": ""
+				},
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1837-0488",
+					"citation": "7 Stat. 532",
+					"article": "art. 1"
+				}
+			],
+			"quote": "agree to remove to the country west of the Mississippi river, provided for the Potawattimie nation by the United States within two years",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0462",
+			"review": "Unverified"
+		},
+		{
+			"id": "potawatomi-1846",
+			"journey": "potawatomi-kansas-1846",
+			"stage": 1,
+			"people": "Potawatomi (United Bands at Council Bluffs)",
+			"nations": [
+				"citizen-potawatomi-nation",
+				"prairie-band-potawatomi-nation"
+			],
+			"years": [
+				1847,
+				1848
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Potawatomi lands at Council Bluffs, Iowa Territory",
+				"name": "Council Bluffs",
+				"point": [
+					-95.862,
+					41.253
+				],
+				"basis": "Wikidata Q695565"
+			},
+			"to": {
+				"description": "576,000-acre tract on the Kansas River, Kansas",
+				"name": "576,000-acre tract on the Kansas River, Kansas",
+				"point": [
+					-96.0042,
+					39.2012
+				],
+				"basis": "Royce cession 433, 434"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-potawatomi-nation-1846-0557",
+					"citation": "9 Stat. 853",
+					"article": "art. 6"
+				}
+			],
+			"quote": "The said tribes of Indians agree to remove to their new homes on the Kansas River, within two years from the ratification of this treaty",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-nation-1846-0557",
+			"review": "Unverified"
+		},
+		{
+			"id": "potawatomi-1867",
+			"journey": "potawatomi-kansas-1846",
+			"stage": 2,
+			"people": "Potawatomi (Citizen Band)",
+			"nations": [
+				"citizen-potawatomi-nation"
+			],
+			"years": [
+				1867,
+				1872
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Potawatomi reservation on the Kansas River",
+				"name": "Pottawatomie County KS",
+				"point": [
+					-96.3,
+					39.3333
+				],
+				"basis": "Wikidata Q376947"
+			},
+			"to": {
+				"description": "Reservation in the Indian country south of Kansas (central Oklahoma)",
+				"name": "Citizen Potawatomi Nation-Absentee Shawnee OTSA",
+				"point": [
+					-97.12763,
+					35.16058
+				],
+				"basis": "Census Bureau area 5600 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1867-0970",
+					"citation": "15 Stat. 531",
+					"article": ""
+				},
+				{
+					"treaty_key": "treaty-with-the-potawatomi-1861-0824",
+					"citation": "12 Stat. 1191",
+					"article": ""
+				}
+			],
+			"quote": "a home should be secured for them in the Indian country south of Kansas",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1867-0970",
+			"review": "Unverified"
+		},
+		{
+			"id": "hochunk-1832",
+			"journey": "hochunk-removal",
+			"stage": 1,
+			"people": "Winnebago (Ho-Chunk)",
+			"nations": [
+				"ho-chunk-nation-of-wisconsin",
+				"winnebago-tribe-of-nebraska"
+			],
+			"years": [
+				1832,
+				1841
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Winnebago lands in Wisconsin and Illinois, ceded in 1832 and 1837",
+				"name": "Winnebago lands in Wisconsin and Illinois, ceded in 1832 and 1837",
+				"point": [
+					-90.5348,
+					43.7526
+				],
+				"basis": "Royce cession 174, 245"
+			},
+			"to": {
+				"description": "The Neutral Ground west of the Mississippi in northeastern Iowa",
+				"name": "Winneshiek County",
+				"point": [
+					-91.8667,
+					43.2833
+				],
+				"basis": "Wikidata Q485361"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-winnebago-1832-0345",
+					"citation": "7 Stat. 370",
+					"article": "art. II"
+				},
+				{
+					"treaty_key": "treaty-with-the-winnebago-1837-0498",
+					"citation": "7 Stat. 544",
+					"article": "art. 1"
+				}
+			],
+			"quote": "The said Indians agree to remove within eight months from the ratification of this treaty, to that portion of the neutral ground west of the Mississippi",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1837-0498",
+			"review": "Unverified"
+		},
+		{
+			"id": "hochunk-1846",
+			"journey": "hochunk-removal",
+			"stage": 2,
+			"people": "Winnebago (Ho-Chunk)",
+			"nations": [
+				"ho-chunk-nation-of-wisconsin",
+				"winnebago-tribe-of-nebraska"
+			],
+			"years": [
+				1846,
+				1848
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Neutral Ground, Iowa",
+				"name": "Fort Atkinson",
+				"point": [
+					-91.9347,
+					43.1442
+				],
+				"basis": "Wikidata Q1000175"
+			},
+			"to": {
+				"description": "Reservation near Long Prairie, Minnesota Territory",
+				"name": "Long Prairie",
+				"point": [
+					-94.8656,
+					45.9747
+				],
+				"basis": "Wikidata Q1934289"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-winnebago-1846-0565",
+					"citation": "9 Stat. 878",
+					"article": "art. 3"
+				}
+			],
+			"quote": "a tract of country north of St. Peter’s and west of the Mississippi Rivers, of not less than eight hundred thousand acres",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1846-0565",
+			"review": "Unverified"
+		},
+		{
+			"id": "hochunk-1855",
+			"journey": "hochunk-removal",
+			"stage": 3,
+			"people": "Winnebago (Ho-Chunk)",
+			"nations": [
+				"ho-chunk-nation-of-wisconsin",
+				"winnebago-tribe-of-nebraska"
+			],
+			"years": [
+				1855,
+				1856
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Long Prairie reservation, Minnesota",
+				"name": "Long Prairie",
+				"point": [
+					-94.8656,
+					45.9747
+				],
+				"basis": "Wikidata Q1934289"
+			},
+			"to": {
+				"description": "Blue Earth reservation, Minnesota",
+				"name": "Blue Earth reservation, Minnesota",
+				"point": [
+					-93.7765,
+					44.0369
+				],
+				"basis": "Royce cession 439"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-winnebago-1855-0690",
+					"citation": "10 Stat. 1172",
+					"article": "art. 2"
+				}
+			],
+			"quote": "a tract of land equal to eighteen miles square, on the Blue Earth River, in the Territory of Minnesota",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1855-0690",
+			"review": "Unverified"
+		},
+		{
+			"id": "sauk-1831",
+			"journey": "sauk-fox-removal",
+			"stage": 1,
+			"people": "Sauk and Meskwaki (Fox)",
+			"nations": [
+				"sac-and-fox-nation",
+				"sac-and-fox-nation-of-missouri-in-kansas-and-nebraska",
+				"sac-and-fox-tribe-of-the-mississippi-in-iowa"
+			],
+			"years": [
+				1829,
+				1831
+			],
+			"kind": "military",
+			"from": {
+				"description": "Saukenuk and Rock River country, Illinois (ceded by the 1804 treaty)",
+				"name": "Saukenuk and Rock River country, Illinois (ceded by the 1804 treaty)",
+				"point": [
+					-89.3947,
+					42.0479
+				],
+				"basis": "Royce cession 50, 51"
+			},
+			"to": {
+				"description": "West side of the Mississippi in Iowa (no specific place)",
+				"name": "West side of the Mississippi in Iowa (no specific place)",
+				"point": null,
+				"basis": null
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-sauk-and-foxes-1804-0074",
+					"citation": "7 Stat. 84",
+					"article": "art. 7"
+				},
+				{
+					"treaty_key": "treaty-with-the-sauk-1816-0126",
+					"citation": "7 Stat. 141",
+					"article": ""
+				}
+			],
+			"quote": "As long as the lands which are now ceded to the United States remain their property, the Indians belonging to the said tribes, shall enjoy the privilege of living and hunting upon them",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1804-0074",
+			"review": "Unverified"
+		},
+		{
+			"id": "sauk-1842",
+			"journey": "sauk-fox-removal",
+			"stage": 2,
+			"people": "Sauk and Meskwaki (Fox)",
+			"nations": [
+				"sac-and-fox-nation",
+				"sac-and-fox-nation-of-missouri-in-kansas-and-nebraska",
+				"sac-and-fox-tribe-of-the-mississippi-in-iowa"
+			],
+			"years": [
+				1843,
+				1846
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Sauk and Fox lands in Iowa Territory ceded in 1842",
+				"name": "Sauk and Fox lands in Iowa Territory ceded in 1842",
+				"point": [
+					-93.0234,
+					41.5909
+				],
+				"basis": "Royce cession 262"
+			},
+			"to": {
+				"description": "Tract on the Missouri River or its waters; in practice the Osage River reservation in eastern Kansas",
+				"name": "Franklin County KS",
+				"point": [
+					-95.2833,
+					38.5833
+				],
+				"basis": "Wikidata Q374989"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-sauk-and-foxes-1842-0546",
+					"citation": "7 Stat. 596",
+					"article": "art. II"
+				}
+			],
+			"quote": "which tract of land shall be upon the Missouri river, or some of its waters",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1842-0546",
+			"review": "Unverified"
+		},
+		{
+			"id": "sauk-1867",
+			"journey": "sauk-fox-removal",
+			"stage": 3,
+			"people": "Sauk and Fox of the Mississippi",
+			"nations": [
+				"sac-and-fox-nation"
+			],
+			"years": [
+				1868,
+				1869
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Sac and Fox reservation in Osage and Franklin counties, Kansas",
+				"name": "Sac and Fox reservation in Osage and Franklin counties, Kansas",
+				"point": [
+					-95.9025,
+					38.592
+				],
+				"basis": "Royce cession 419, 494"
+			},
+			"to": {
+				"description": "Indian country south of Kansas and south of the Cherokee lands, central Oklahoma",
+				"name": "Sac and Fox OTSA",
+				"point": [
+					-96.76559,
+					35.85923
+				],
+				"basis": "Census Bureau area 5820 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-sauk-and-foxes-1867-0951",
+					"citation": "15 Stat. 495",
+					"article": "art. 6"
+				}
+			],
+			"quote": "a tract of land in the Indian country south of Kansas, and south of the Cherokee lands, not exceeding seven hundred and fifty square miles in extent",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1867-0951",
+			"review": "Unverified"
+		},
+		{
+			"id": "kickapoo-1819",
+			"journey": "kickapoo-removal",
+			"stage": 1,
+			"people": "Kickapoo (Vermilion and Prairie bands)",
+			"nations": [
+				"kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas",
+				"kickapoo-tribe-of-oklahoma"
+			],
+			"years": [
+				1819,
+				1820
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Kickapoo lands in Illinois and Indiana",
+				"name": "Kickapoo lands in Illinois and Indiana",
+				"point": [
+					-88.7069,
+					40.0428
+				],
+				"basis": "Royce cession 110"
+			},
+			"to": {
+				"description": "Tract on the Osage River (Pommes de Terre), Missouri",
+				"name": "Tract on the Osage River (Pommes de Terre), Missouri",
+				"point": [
+					-93.7219,
+					37.4624
+				],
+				"basis": "Royce cession 179"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-kickapoo-1819-0182",
+					"citation": "7 Stat. 200",
+					"article": "art. 6"
+				},
+				{
+					"treaty_key": "treaty-with-the-kickapoo-1820-0189",
+					"citation": "7 Stat. 208",
+					"article": ""
+				}
+			],
+			"quote": "a certain tract of land lying in the territory of Missouri",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1819-0182",
+			"review": "Unverified"
+		},
+		{
+			"id": "kickapoo-1832",
+			"journey": "kickapoo-removal",
+			"stage": 2,
+			"people": "Kickapoo",
+			"nations": [
+				"kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas",
+				"kickapoo-tribe-of-oklahoma"
+			],
+			"years": [
+				1832,
+				1833
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Kickapoo lands on the Osage River, Missouri",
+				"name": "Kickapoo lands on the Osage River, Missouri",
+				"point": [
+					-93.7219,
+					37.4624
+				],
+				"basis": "Royce cession 179"
+			},
+			"to": {
+				"description": "Country on the Missouri River north of the Delaware lands (Leavenworth and Atchison area, Kansas)",
+				"name": "Leavenworth County KS",
+				"point": [
+					-95.1256,
+					39.2686
+				],
+				"basis": "Wikidata Q379660"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-kickapoo-1832-0365",
+					"citation": "7 Stat. 391",
+					"article": "art. II"
+				}
+			],
+			"quote": "from the country ceded on Osage river, in the State of Missouri, to the country selected on the Missouri river, north of lands which have been assigned to the Delawares",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1832-0365",
+			"review": "Unverified"
+		},
+		{
+			"id": "shawnee-1825",
+			"journey": "shawnee-missouri-kansas",
+			"stage": 1,
+			"people": "Shawnee of Missouri (Cape Girardeau band)",
+			"nations": [
+				"absentee-shawnee-tribe-of-indians-of-oklahoma",
+				"shawnee-tribe"
+			],
+			"years": [
+				1825,
+				1833
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Shawnee settlement near Cape Girardeau, Missouri",
+				"name": "Shawnee settlement near Cape Girardeau, Missouri",
+				"point": [
+					-93.3594,
+					36.8208
+				],
+				"basis": "Royce cession 125, 126, 150a"
+			},
+			"to": {
+				"description": "50 miles square west of Missouri on the Kansas River (Kansas Shawnee reserve)",
+				"name": "Johnson County KS",
+				"point": [
+					-94.8667,
+					38.8667
+				],
+				"basis": "Wikidata Q374979"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-shawnee-1825-0262",
+					"citation": "7 Stat. 284",
+					"article": "art. 2"
+				},
+				{
+					"treaty_key": "treaty-with-the-shawnee-etc-1832-0370",
+					"citation": "7 Stat. 397",
+					"article": "art. IV"
+				}
+			],
+			"quote": "a tract of land equal to fifty (50) miles square, situated west of the State of Missouri, and within the purchase lately made from the Osage",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1825-0262",
+			"review": "Unverified"
+		},
+		{
+			"id": "shawnee-1831",
+			"journey": "shawnee-ohio-kansas",
+			"stage": 1,
+			"people": "Shawnee of Wapakoneta and Hog Creek, Ohio",
+			"nations": [
+				"absentee-shawnee-tribe-of-indians-of-oklahoma",
+				"shawnee-tribe"
+			],
+			"years": [
+				1831,
+				1833
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Wapakoneta and Hog Creek reservations, Ohio",
+				"name": "Wapakoneta",
+				"point": [
+					-84.1942,
+					40.5692
+				],
+				"basis": "Wikidata Q492796"
+			},
+			"to": {
+				"description": "100,000 acres within the Shawnee tract west of Missouri (Kansas)",
+				"name": "Johnson County KS",
+				"point": [
+					-94.8667,
+					38.8667
+				],
+				"basis": "Wikidata Q374979"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-shawnee-1831-0331",
+					"citation": "7 Stat. 355",
+					"article": "art. II"
+				},
+				{
+					"citation": "4 Stat. 411",
+					"statute": "Act of May 28, 1830 (Indian Removal Act), ch. 148"
+				}
+			],
+			"quote": "to be removed in a convenient and suitable manner to the Western side of the Mississippi river, and will grant by patent in fee simple",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1831-0331",
+			"review": "Unverified"
+		},
+		{
+			"id": "seneca-sandusky-1831",
+			"journey": "seneca-sandusky-removal",
+			"stage": 1,
+			"people": "Seneca of Sandusky (Ohio)",
+			"nations": [
+				"seneca-cayuga-nation"
+			],
+			"years": [
+				1831,
+				1832
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Seneca reservation on the Sandusky River, Ohio",
+				"name": "Seneca reservation on the Sandusky River, Ohio",
+				"point": [
+					-83.0613,
+					41.2132
+				],
+				"basis": "Royce cession 163"
+			},
+			"to": {
+				"description": "Tract adjoining the northern boundary of the Cherokee lands on the Neosho (Grand) River, northeastern Oklahoma",
+				"name": "Ottawa County OK",
+				"point": [
+					-94.81,
+					36.84
+				],
+				"basis": "Wikidata Q495564"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-seneca-1831-0325",
+					"citation": "7 Stat. 348",
+					"article": "art. 2"
+				}
+			],
+			"quote": "to be removed in a convenient and suitable manner, to the western side of the Mississippi river; and will grant them, by patent, in fee simple",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-1831-0325",
+			"review": "Unverified"
+		},
+		{
+			"id": "seneca-shawnee-lewistown-1831",
+			"journey": "seneca-shawnee-lewistown-removal",
+			"stage": 1,
+			"people": "Mixed Seneca and Shawnee of Lewistown, Ohio",
+			"nations": [
+				"eastern-shawnee-tribe-of-oklahoma",
+				"seneca-cayuga-nation"
+			],
+			"years": [
+				1831,
+				1832
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Lewistown reservation, Logan County, Ohio",
+				"name": "Lewistown reservation, Logan County, Ohio",
+				"point": [
+					-83.9575,
+					40.442
+				],
+				"basis": "Royce cession 164"
+			},
+			"to": {
+				"description": "60,000 acres west of the Mississippi, Neosho River country (northeastern Oklahoma); boundaries adjusted by the Dec. 29, 1832 treaty",
+				"name": "Ottawa County OK",
+				"point": [
+					-94.81,
+					36.84
+				],
+				"basis": "Wikidata Q495564"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-seneca-etc-1831-0327",
+					"citation": "7 Stat. 351",
+					"article": "art. II"
+				},
+				{
+					"treaty_key": "treaty-with-the-seneca-and-shawnee-1832-0383",
+					"citation": "7 Stat. 411",
+					"article": ""
+				},
+				{
+					"citation": "4 Stat. 411",
+					"statute": "Act of May 28, 1830 (Indian Removal Act), ch. 148"
+				}
+			],
+			"quote": "the United States agree to cause the said band of Senecas and Shawnees, consisting of about three hundred souls, to be removed in a convenient and suitable manner to the western side of the Mississippi river",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-etc-1831-0327",
+			"review": "Unverified"
+		},
+		{
+			"id": "lenape-1818",
+			"journey": "lenape-removal",
+			"stage": 1,
+			"people": "Delaware (Lenape)",
+			"nations": [
+				"delaware-nation",
+				"delaware-tribe-of-indians"
+			],
+			"years": [
+				1818,
+				1820
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Delaware lands in Indiana (Treaty of St. Mary's, Oct. 3, 1818)",
+				"name": "Anderson, Indiana",
+				"point": [
+					-85.6814,
+					40.1
+				],
+				"basis": "Wikidata Q491461"
+			},
+			"to": {
+				"description": "Country west of the Mississippi; Delawares settled on the James Fork of White River, Missouri",
+				"name": "Country west of the Mississippi; Delawares settled on the James Fork of White River, Missouri",
+				"point": [
+					-93.3594,
+					36.8208
+				],
+				"basis": "Royce cession 150a"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-delawares-1818-0170",
+					"citation": "7 Stat. 188",
+					"article": "art. 2"
+				}
+			],
+			"quote": "the United States agree to provide for the Delawares a country to reside in, upon the west side of the Mississippi, and to guaranty to them the peaceable possession of the same",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1818-0170",
+			"review": "Unverified"
+		},
+		{
+			"id": "lenape-1829",
+			"journey": "lenape-removal",
+			"stage": 2,
+			"people": "Delaware (Lenape)",
+			"nations": [
+				"delaware-nation",
+				"delaware-tribe-of-indians"
+			],
+			"years": [
+				1829,
+				1830
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "James Fork of White River, Missouri; also the Delaware reserve on the Sandusky, Ohio, ceded Aug. 3, 1829",
+				"name": "James Fork of White River, Missouri; also the Delaware reserve on the Sandusky, Ohio, ceded Aug. 3, 1829",
+				"point": [
+					-93.3594,
+					36.8208
+				],
+				"basis": "Royce cession 125, 150, 150a"
+			},
+			"to": {
+				"description": "Fork of the Kansas and Missouri rivers (Delaware reserve, Wyandotte and Leavenworth counties, Kansas)",
+				"name": "Wyandotte County KS",
+				"point": [
+					-94.8186,
+					39.0636
+				],
+				"basis": "Wikidata Q375652"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-delawares-1829-0304",
+					"citation": "7 Stat. 327",
+					"article": ""
+				},
+				{
+					"treaty_key": "treaty-with-the-delawares-1829-0303",
+					"citation": "7 Stat. 326",
+					"article": ""
+				}
+			],
+			"quote": "remove, on the following conditions, from the country on James fork of White river in the State of Missouri, to the Country selected in the fork of the Kansas and Missouri River",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1829-0304",
+			"review": "Unverified"
+		},
+		{
+			"id": "lenape-1867",
+			"journey": "lenape-removal",
+			"stage": 3,
+			"people": "Delaware (Lenape)",
+			"nations": [
+				"delaware-tribe-of-indians"
+			],
+			"years": [
+				1867,
+				1869
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Delaware reserve in Kansas",
+				"name": "Delaware reserve in Kansas",
+				"point": [
+					-94.7913,
+					39.1213
+				],
+				"basis": "Royce cession 488"
+			},
+			"to": {
+				"description": "Cherokee Nation lands, northeastern Indian Territory (Washington and Nowata counties, Oklahoma)",
+				"name": "Nowata County OK",
+				"point": [
+					-95.62,
+					36.79
+				],
+				"basis": "Wikidata Q495918"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-delawares-1866-0937",
+					"citation": "14 Stat. 793",
+					"article": "art. 4"
+				},
+				{
+					"treaty_key": "treaty-with-the-delawares-1860-0803",
+					"citation": "12 Stat. 1129",
+					"article": ""
+				},
+				{
+					"treaty_key": "treaty-with-the-delawares-1861-0814",
+					"citation": "12 Stat. 1177",
+					"article": ""
+				}
+			],
+			"quote": "a tract of land ceded to the Government by the Choctaws and Chickasaws, the Creeks, or the Seminoles, or which may be ceded by the Cherokees in the Indian country",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1866-0937",
+			"review": "Unverified"
+		},
+		{
+			"id": "wyandot-1842",
+			"journey": "wyandot-removal",
+			"stage": 1,
+			"people": "Wyandot",
+			"nations": [
+				"wyandotte-nation"
+			],
+			"years": [
+				1843,
+				1843
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Wyandot reservations at Upper Sandusky, Ohio, and in Michigan",
+				"name": "Wyandot reservations at Upper Sandusky, Ohio, and in Michigan",
+				"point": [
+					-83.2445,
+					40.8215
+				],
+				"basis": "Royce cession 259, 260"
+			},
+			"to": {
+				"description": "Tract of 148,000 acres west of the Mississippi on Indian lands (Kansas City, Kansas, at the confluence of the Kansas and Missouri rivers, bought from the Delawares)",
+				"name": "Wyandotte County KS",
+				"point": [
+					-94.8186,
+					39.0636
+				],
+				"basis": "Wikidata Q375652"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-wyandot-1842-0534",
+					"citation": "11 Stat. 581",
+					"article": "art. 2"
+				},
+				{
+					"treaty_key": "treaty-with-the-wyandot-1850-0587",
+					"citation": "9 Stat. 987",
+					"article": ""
+				}
+			],
+			"quote": "a tract of land west of the Mississippi River, to contain one hundred and forty-eight thousand acres",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-1842-0534",
+			"review": "Unverified"
+		},
+		{
+			"id": "wyandot-1867",
+			"journey": "wyandot-removal",
+			"stage": 2,
+			"people": "Wyandotte (Kansas Wyandot)",
+			"nations": [
+				"wyandotte-nation"
+			],
+			"years": [
+				1867,
+				1873
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Wyandotte lands at Kansas City, Kansas",
+				"name": "Wyandotte lands at Kansas City, Kansas",
+				"point": [
+					-94.6704,
+					39.131
+				],
+				"basis": "Royce cession 263"
+			},
+			"to": {
+				"description": "Land ceded by the Senecas, north of the Seneca reserve on the Neosho River, Indian Territory",
+				"name": "Ottawa County OK",
+				"point": [
+					-94.81,
+					36.84
+				],
+				"basis": "Wikidata Q495564"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960",
+					"citation": "15 Stat. 513",
+					"article": "art. 13"
+				},
+				{
+					"treaty_key": "treaty-with-the-wyandot-1855-0677",
+					"citation": "10 Stat. 1159",
+					"article": ""
+				}
+			],
+			"quote": "The United States will set apart for the Wyandottes for their future home the land ceded by the Senecas in the first article hereof, and described in said article",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960",
+			"review": "Unverified"
+		},
+		{
+			"id": "miami-1840",
+			"journey": "miami-removal",
+			"stage": 1,
+			"people": "Miami",
+			"nations": [
+				"miami-tribe-of-oklahoma"
+			],
+			"years": [
+				1846,
+				1847
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Miami lands on the Wabash in Indiana",
+				"name": "Miami lands on the Wabash in Indiana",
+				"point": [
+					-86.0525,
+					40.4751
+				],
+				"basis": "Royce cession 251, 252, 253, 254, 255, 256, 258"
+			},
+			"to": {
+				"description": "500,000 acres west of Missouri (Miami County, Kansas)",
+				"name": "Miami County KS",
+				"point": [
+					-94.85,
+					38.5833
+				],
+				"basis": "Wikidata Q374358"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-miami-1838-0519",
+					"citation": "7 Stat. 569",
+					"article": "art. 10"
+				},
+				{
+					"treaty_key": "treaty-with-the-miami-1840-0531",
+					"citation": "7 Stat. 582",
+					"article": "art. 8"
+				}
+			],
+			"quote": "the Miami tribe of Indians shall remove to the country assigned them west of the Mississippi, within five years from this date",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-miami-1840-0531",
+			"review": "Unverified"
+		},
+		{
+			"id": "miami-1867",
+			"journey": "miami-removal",
+			"stage": 2,
+			"people": "Miami",
+			"nations": [
+				"miami-tribe-of-oklahoma"
+			],
+			"years": [
+				1867,
+				1873
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Miami reserve in Miami County, Kansas",
+				"name": "Miami reserve in Miami County, Kansas",
+				"point": [
+					-94.7561,
+					38.3273
+				],
+				"basis": "Royce cession 329, 330"
+			},
+			"to": {
+				"description": "Peoria reservation in the northeastern Indian Territory (Ottawa County, Oklahoma)",
+				"name": "Ottawa County OK",
+				"point": [
+					-94.81,
+					36.84
+				],
+				"basis": "Wikidata Q495564"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960",
+					"citation": "15 Stat. 513",
+					"article": "art. 26"
+				}
+			],
+			"quote": "The Peorias, Kaskaskias, Weas, and Piankeshaws agree that the Miamies may be confederated with them upon their new reservation",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960",
+			"review": "Unverified"
+		},
+		{
+			"id": "ottawa-1831",
+			"journey": "ottawa-ohio-removal",
+			"stage": 1,
+			"people": "Ottawa of Blanchard's Fork and Roche de Boeuf, Ohio",
+			"nations": [
+				"ottawa-tribe-of-oklahoma"
+			],
+			"years": [
+				1832,
+				1837
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Reservations at Blanchard's Fork, Little Auglaize and Roche de Boeuf, Ohio",
+				"name": "Reservations at Blanchard's Fork, Little Auglaize and Roche de Boeuf, Ohio",
+				"point": [
+					-83.8101,
+					41.4824
+				],
+				"basis": "Royce cession 167, 168, 169, 170, 182, 183"
+			},
+			"to": {
+				"description": "34,000 acres adjoining the Shawnee tract west of Missouri (Franklin County, Kansas; Ottawa reserve)",
+				"name": "Franklin County KS",
+				"point": [
+					-95.2833,
+					38.5833
+				],
+				"basis": "Wikidata Q374989"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-ottawa-1831-0335",
+					"citation": "7 Stat. 359",
+					"article": "art. III"
+				},
+				{
+					"citation": "4 Stat. 411",
+					"statute": "Act of May 28, 1830 (Indian Removal Act), ch. 148"
+				},
+				{
+					"treaty_key": "treaty-with-the-ottawa-1833-0392",
+					"citation": "7 Stat. 420",
+					"article": ""
+				}
+			],
+			"quote": "to be removed, in a convenient and suitable manner, to the western side of the Mississippi river; and will grant, by patent in fee simple",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-1831-0335",
+			"review": "Unverified"
+		},
+		{
+			"id": "ottawa-1867",
+			"journey": "ottawa-ohio-removal",
+			"stage": 2,
+			"people": "Ottawa of Blanchard's Fork and Roche de Boeuf",
+			"nations": [
+				"ottawa-tribe-of-oklahoma"
+			],
+			"years": [
+				1867,
+				1873
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Ottawa reserve in Franklin County, Kansas",
+				"name": "Ottawa reserve in Franklin County, Kansas",
+				"point": [
+					-95.2565,
+					38.6123
+				],
+				"basis": "Royce cession 435"
+			},
+			"to": {
+				"description": "West part of the Shawnee reservation in Indian Territory (Ottawa County, Oklahoma)",
+				"name": "Ottawa County OK",
+				"point": [
+					-94.81,
+					36.84
+				],
+				"basis": "Wikidata Q495564"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960",
+					"citation": "15 Stat. 513",
+					"article": "art. 16"
+				},
+				{
+					"treaty_key": "treaty-with-the-ottawa-of-blanchards-fork-and-roche-de-boeuf-1862-0830",
+					"citation": "12 Stat. 1237",
+					"article": ""
+				}
+			],
+			"quote": "The west part of the Shawnee reservation, ceded to the United States by the third article, is hereby sold to the Ottawas",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960",
+			"review": "Unverified"
+		},
+		{
+			"id": "peoria-1832",
+			"journey": "peoria-wea-piankashaw-removal",
+			"stage": 1,
+			"people": "Kaskaskia, Peoria, Wea and Piankashaw (Illinois Confederacy)",
+			"nations": [
+				"peoria-tribe-of-indians-of-oklahoma",
+				"miami-tribe-of-oklahoma"
+			],
+			"years": [
+				1832,
+				1833
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Illinois and Missouri lands of the Peoria and Kaskaskia; Wea and Piankashaw lands in Illinois and Missouri",
+				"name": "Illinois and Missouri lands of the Peoria and Kaskaskia; Wea and Piankashaw lands in Illinois and Missouri",
+				"point": [
+					-89.5405,
+					39.5389
+				],
+				"basis": "Royce cession 48, 96a"
+			},
+			"to": {
+				"description": "150 sections west of Missouri on the Osage River (Miami County, Kansas) plus 250 sections for the Piankashaw and Wea",
+				"name": "Miami County KS",
+				"point": [
+					-94.85,
+					38.5833
+				],
+				"basis": "Wikidata Q374358"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-kaskaskia-etc-1832-0376",
+					"citation": "7 Stat. 403",
+					"article": "art. IV"
+				},
+				{
+					"treaty_key": "treaty-with-the-piankashaw-and-wea-1832-0382",
+					"citation": "7 Stat. 410",
+					"article": "art. II"
+				}
+			],
+			"quote": "one hundred and fifty sections of land forever, or as long as they live upon it as a tribe, to include the present Peoria village, west of the State of Missouri, on the waters of Osage river",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-kaskaskia-etc-1832-0376",
+			"review": "Unverified"
+		},
+		{
+			"id": "peoria-1867",
+			"journey": "peoria-wea-piankashaw-removal",
+			"stage": 2,
+			"people": "Peoria, Kaskaskia, Wea and Piankashaw (confederated)",
+			"nations": [
+				"peoria-tribe-of-indians-of-oklahoma"
+			],
+			"years": [
+				1867,
+				1871
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Confederated Peoria reserve in Miami County, Kansas",
+				"name": "Confederated Peoria reserve in Miami County, Kansas",
+				"point": [
+					-94.708,
+					38.5932
+				],
+				"basis": "Royce cession 326, 327, 328"
+			},
+			"to": {
+				"description": "Land bought from the Senecas and Quapaws south of Kansas, northeastern Indian Territory (Ottawa County, Oklahoma)",
+				"name": "Ottawa County OK",
+				"point": [
+					-94.81,
+					36.84
+				],
+				"basis": "Wikidata Q495564"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960",
+					"citation": "15 Stat. 513",
+					"article": "art. 23"
+				},
+				{
+					"treaty_key": "treaty-with-the-kaskaskia-peoria-etc-1854-0636",
+					"citation": "10 Stat. 1082",
+					"article": ""
+				}
+			],
+			"quote": "remove to their new homes in the Indian country within two years from the ratification of this treaty",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960",
+			"review": "Unverified"
+		},
+		{
+			"id": "ny-buffalo-creek-1838",
+			"journey": "ny-kansas-removal",
+			"stage": 1,
+			"people": "New York Indians (Seneca, Cayuga, Onondaga, Oneida, Tuscarora, St. Regis, Stockbridge, Munsee, Brothertown)",
+			"nations": [
+				"seneca-nation-of-indians",
+				"tonawanda-band-of-seneca",
+				"cayuga-nation",
+				"onondaga-nation",
+				"oneida-nation",
+				"oneida-indian-nation",
+				"saint-regis-mohawk-tribe",
+				"tuscarora-nation",
+				"stockbridge-munsee-community",
+				"seneca-cayuga-nation"
+			],
+			"years": [
+				1838,
+				1842
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Reservations in western New York (Buffalo Creek, Cattaraugus, Allegany, Tonawanda) and Green Bay lands in Wisconsin",
+				"name": "Reservations in western New York (Buffalo Creek, Cattaraugus, Allegany, Tonawanda) and Green Bay lands in Wisconsin",
+				"point": [
+					-88.4476,
+					44.4377
+				],
+				"basis": "Royce cession 38, 39, 40, 45, 246, 247, 250"
+			},
+			"to": {
+				"description": "1,824,000 acres directly west of Missouri (Kansas tract, Neosho County area)",
+				"name": "Neosho County KS",
+				"point": [
+					-95.2975,
+					37.6825
+				],
+				"basis": "Wikidata Q375996"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-new-york-indians-1838-0502",
+					"citation": "7 Stat. 550",
+					"article": "art. 2"
+				},
+				{
+					"treaty_key": "treaty-with-the-seneca-1842-0537",
+					"citation": "7 Stat. 586",
+					"article": ""
+				}
+			],
+			"quote": "the United States agree to set apart the following tract of country, situated directly west of the State of Missouri, as a permanent home for all the New York Indians",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-new-york-indians-1838-0502",
+			"review": "Unverified"
+		},
+		{
+			"id": "ny-wisconsin-1831",
+			"journey": "ny-wisconsin-migration",
+			"stage": 1,
+			"people": "New York Indians (Oneida, Stockbridge, Munsee, Brothertown)",
+			"nations": [
+				"oneida-nation",
+				"stockbridge-munsee-community",
+				"brothertown-indians-of-wisconsin"
+			],
+			"years": [
+				1822,
+				1832
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Oneida, Stockbridge and Brothertown towns in central and western New York",
+				"name": "Oneida Nation Reservation",
+				"point": [
+					-75.63923,
+					43.06887
+				],
+				"basis": "Census Bureau area 2555 (2020)"
+			},
+			"to": {
+				"description": "Land on Fox River and the east side of Lake Winnebago, Wisconsin (Green Bay and Kaukauna area)",
+				"name": "Lake Winnebago",
+				"point": [
+					-88.4095,
+					44.017
+				],
+				"basis": "Wikidata Q1801110"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-menominee-1831-0319",
+					"citation": "7 Stat. 342",
+					"article": "art. First"
+				},
+				{
+					"treaty_key": "treaty-with-the-menominee-1832-0377",
+					"citation": "7 Stat. 405",
+					"article": "art. First"
+				}
+			],
+			"quote": "may be set apart as a home to the several tribes of the New York Indians, who may remove to, and settle upon the same, within three years from the date of this agreement",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1831-0319",
+			"review": "Unverified"
+		},
+		{
+			"id": "stockbridge-1856",
+			"journey": "ny-wisconsin-migration",
+			"stage": 2,
+			"people": "Stockbridge and Munsee",
+			"nations": [
+				"stockbridge-munsee-community"
+			],
+			"years": [
+				1856,
+				1857
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Stockbridge township on the east side of Lake Winnebago, Calumet County, Wisconsin",
+				"name": "Stockbridge township on the east side of Lake Winnebago, Calumet County, Wisconsin",
+				"point": [
+					-88.9199,
+					44.893
+				],
+				"basis": "Royce cession 272, 403"
+			},
+			"to": {
+				"description": "Reservation in Shawano County, Wisconsin",
+				"name": "Stockbridge Munsee Community and Off-Reservation Trust Land",
+				"point": [
+					-88.89011,
+					44.90742
+				],
+				"basis": "Census Bureau area 4015 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-stockbridge-and-munsee-1856-0742",
+					"citation": "11 Stat. 663",
+					"article": ""
+				}
+			],
+			"quote": "two townships of land on the east side of Winnebago Lake, Territory of Wisconsin",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-stockbridge-and-munsee-1856-0742",
+			"review": "Unverified"
+		},
+		{
+			"id": "stockbridge-1848",
+			"journey": "stockbridge-1848-attempt",
+			"stage": 1,
+			"people": "Stockbridge",
+			"nations": [
+				"stockbridge-munsee-community"
+			],
+			"years": [
+				1848,
+				1856
+			],
+			"kind": "attempted",
+			"from": {
+				"description": "Stockbridge township east of Lake Winnebago, Wisconsin",
+				"name": "Stockbridge township east of Lake Winnebago, Wisconsin",
+				"point": [
+					-88.2677,
+					44.0608
+				],
+				"basis": "Royce cession 272"
+			},
+			"to": {
+				"description": "Land west of the Mississippi to be procured by the President (not located)",
+				"name": "Land west of the Mississippi to be procured by the President (not located)",
+				"point": null,
+				"basis": null
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-stockbridge-tribe-1848-0574",
+					"citation": "9 Stat. 955",
+					"article": "art. 7"
+				}
+			],
+			"quote": "they will remove to the country set apart for them, or such other west of the Mississipi River",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-stockbridge-tribe-1848-0574",
+			"review": "Unverified"
+		},
+		{
+			"id": "menominee-1848",
+			"journey": "menominee-attempted-removal",
+			"stage": 1,
+			"people": "Menominee",
+			"nations": [
+				"menominee-indian-tribe-of-wisconsin"
+			],
+			"years": [
+				1848,
+				1852
+			],
+			"kind": "attempted",
+			"from": {
+				"description": "Menominee lands in Wisconsin ceded by the 1848 treaty (Wolf River and Green Bay country)",
+				"name": "Menominee lands in Wisconsin ceded by the 1848 treaty (Wolf River and Green Bay country)",
+				"point": [
+					-89.1872,
+					44.2317
+				],
+				"basis": "Royce cession 271"
+			},
+			"to": {
+				"description": "Land on the upper Mississippi ceded by the Chippewa in 1847, on the Crow Wing River, Minnesota",
+				"name": "Crow Wing",
+				"point": [
+					-94.2925,
+					46.28
+				],
+				"basis": "Wikidata Q27988363"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-menominee-1848-0572",
+					"citation": "9 Stat. 952",
+					"article": "art. 3"
+				},
+				{
+					"treaty_key": "treaty-with-the-menominee-1854-0626",
+					"citation": "10 Stat. 1064",
+					"article": ""
+				}
+			],
+			"quote": "all that country or tract of land ceded to the said United States by the Chippewa Indians of the Mississippi and Lake Superior, in the treaty of August 2, 1847",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-menominee-1848-0572",
+			"review": "Unverified"
+		},
+		{
+			"id": "osage-1825",
+			"journey": "osage-removal",
+			"stage": 1,
+			"people": "Osage (Great and Little Osage)",
+			"nations": [
+				"the-osage-nation"
+			],
+			"years": [
+				1825
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Osage homelands in Missouri and Arkansas Territory (Osage River / Neosho valleys), ceded 1825",
+				"name": "Osage homelands in Missouri and Arkansas Territory (Osage River / Neosho valleys), ceded 1825",
+				"point": [
+					-96.8164,
+					36.8299
+				],
+				"basis": "Royce cession 123"
+			},
+			"to": {
+				"description": "Osage reserve in southeastern Kansas Territory, 50 by 50 miles west of Missouri, reserved in the same treaty",
+				"name": "Osage reserve in southeastern Kansas Territory, 50 by 50 miles west of Missouri, reserved in the same treaty",
+				"point": [
+					-95.3022,
+					37.389
+				],
+				"basis": "Royce cession 475"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-osage-1825-0217",
+					"citation": "7 Stat. 240",
+					"article": "Art. 1 (cession), Art. 2 (reservation)"
+				}
+			],
+			"quote": "there shall be reserved, to, and for, the Great and Little Osage Tribes or Nations, aforesaid, so long as they may choose to occupy the same, the following described tract of land",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-osage-1825-0217",
+			"review": "Unverified"
+		},
+		{
+			"id": "osage-1870",
+			"journey": "osage-removal",
+			"stage": 2,
+			"people": "Osage",
+			"nations": [
+				"the-osage-nation"
+			],
+			"years": [
+				1870,
+				1871,
+				1872
+			],
+			"kind": "statute",
+			"from": {
+				"description": "Osage diminished reserve in southeastern Kansas (Drum Creek / Neosho)",
+				"name": "Osage diminished reserve in southeastern Kansas (Drum Creek / Neosho)",
+				"point": [
+					-97.5741,
+					37.2737
+				],
+				"basis": "Royce cession 530"
+			},
+			"to": {
+				"description": "Osage Reservation in the Cherokee Outlet / Indian Territory (Osage Agency, Pawhuska), purchased from the Cherokee",
+				"name": "Osage Reservation",
+				"point": [
+					-96.33394,
+					36.66584
+				],
+				"basis": "Census Bureau area 2595 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-osage-1865-0878",
+					"citation": "14 Stat. 687",
+					"article": "Art. 16 (removal from Kansas contingent)"
+				},
+				{
+					"citation": "16 Stat. 362",
+					"article": "Act of July 15, 1870, ch. 296 (Indian Appropriation Act), section removing Osage from Kansas"
+				}
+			],
+			"quote": "it shall be the duty of the President to remove said Indians from the State of Kansas to lands provided or to be provided for them for a permanent home in the Indian Territory",
+			"quote_source": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_016/llsal_016.pdf",
+			"review": "Unverified"
+		},
+		{
+			"id": "kaw-1873",
+			"journey": "kaw-removal",
+			"stage": 1,
+			"people": "Kaw (Kansa)",
+			"nations": [
+				"kaw-nation"
+			],
+			"years": [
+				1873
+			],
+			"kind": "statute",
+			"from": {
+				"description": "Kaw (Kansa) reservation at Council Grove, Morris County, Kansas",
+				"name": "Kaw (Kansa) reservation at Council Grove, Morris County, Kansas",
+				"point": [
+					-96.42,
+					38.6229
+				],
+				"basis": "Royce cession 420, 421"
+			},
+			"to": {
+				"description": "Kaw Reservation at Washunga, Indian Territory (present Kay County, Oklahoma)",
+				"name": "Kaw OTSA",
+				"point": [
+					-96.94912,
+					36.8679
+				],
+				"basis": "Census Bureau area 5690 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-kansa-tribe-1859-0800",
+					"citation": "12 Stat. 1111",
+					"article": "Arts. 1-2 (diminished Kansas reservation; trust lands)"
+				},
+				{
+					"citation": "17 Stat. 85",
+					"article": "Act of May 8, 1872, ch. 141"
+				}
+			],
+			"quote": "shall be used in providing and improving for them new homes in the Indian Territory",
+			"quote_source": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_017/llsal_017.pdf",
+			"review": "Unverified"
+		},
+		{
+			"id": "quapaw-1824",
+			"journey": "quapaw-removal",
+			"stage": 1,
+			"people": "Quapaw",
+			"nations": [
+				"quapaw-nation"
+			],
+			"years": [
+				1824,
+				1826
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Quapaw villages on the lower Arkansas River, Arkansas Territory",
+				"name": "Quapaw villages on the lower Arkansas River, Arkansas Territory",
+				"point": [
+					-91.8516,
+					33.9929
+				],
+				"basis": "Royce cession 121"
+			},
+			"to": {
+				"description": "Caddo country on the Red River, Louisiana (to be 'confined to the district of country inhabited by the Caddo Indians')",
+				"name": "Caddo country on the Red River, Louisiana (to be 'confined to the district of country inhabited by the Caddo Indians')",
+				"point": [
+					-93.8663,
+					33.3197
+				],
+				"basis": "Royce cession 202"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-quapaw-1824-0210",
+					"citation": "7 Stat. 232",
+					"article": "Art. 1 (cession), Art. 4 (concentration with the Caddo)"
+				}
+			],
+			"quote": "The Quapaw Tribe of Indians will hereafter be concentrated and confined to the district of country inhabited by the Caddo Indians, and form a part of said Tribe.",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-quapaw-1824-0210",
+			"review": "Unverified"
+		},
+		{
+			"id": "quapaw-1833",
+			"journey": "quapaw-removal",
+			"stage": 2,
+			"people": "Quapaw",
+			"nations": [
+				"quapaw-nation"
+			],
+			"years": [
+				1833,
+				1834
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Quapaw in Arkansas and on the Red River (Caddo country, Louisiana)",
+				"name": "Quapaw in Arkansas and on the Red River (Caddo country, Louisiana)",
+				"point": [
+					-93.8663,
+					33.3197
+				],
+				"basis": "Royce cession 202"
+			},
+			"to": {
+				"description": "Quapaw reserve of 150 sections west of the Missouri line between the Seneca and Shawnee lands (Neosho valley, present NE Oklahoma / SE Kansas)",
+				"name": "Quapaw OTSA",
+				"point": [
+					-94.715,
+					36.95939
+				],
+				"basis": "Census Bureau area 5810 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-quapaw-1833-0395",
+					"citation": "7 Stat. 424",
+					"article": "Art. 2 (150 sections in lieu of Red River location)"
+				}
+			],
+			"quote": "agree to convey to the Quapaw Indians one hundred and fifty sections of land west of the State line of Missouri and between the lands of the Senecas and Shawnees",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-quapaw-1833-0395",
+			"review": "Unverified"
+		},
+		{
+			"id": "caddo-1835",
+			"journey": "caddo-removal",
+			"stage": 1,
+			"people": "Caddo (Caddo Nation of Louisiana)",
+			"nations": [
+				"caddo-nation-of-oklahoma"
+			],
+			"years": [
+				1835,
+				1836
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Caddo lands on the Red River, Louisiana and Arkansas Territory (ceded, about one million acres)",
+				"name": "Caddo lands on the Red River, Louisiana and Arkansas Territory (ceded, about one million acres)",
+				"point": [
+					-93.8663,
+					33.3197
+				],
+				"basis": "Royce cession 202"
+			},
+			"to": {
+				"description": "Texas (then outside the United States); the treaty required leaving the U.S. boundaries within one year",
+				"name": "Texas (then outside the United States); the treaty required leaving the U.S. boundaries within one year",
+				"point": null,
+				"basis": null
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-caddo-1835-0432",
+					"citation": "7 Stat. 470",
+					"article": "Art. 1 (cession), Art. 2 (removal within one year)"
+				}
+			],
+			"quote": "promise to remove at their own expense out of the boundaries of the United States and the territories belonging and appertaining thereto within the period of one year",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-caddo-1835-0432",
+			"review": "Unverified"
+		},
+		{
+			"id": "texas-reserves-1859",
+			"journey": "texas-reserves-removal",
+			"stage": 1,
+			"people": "Caddo, Wichita (Waco, Tawakoni, Kichai), Tonkawa and other Texas reserve nations",
+			"nations": [
+				"caddo-nation-of-oklahoma",
+				"wichita-and-affiliated-tribes",
+				"tonkawa-tribe-of-indians-of-oklahoma"
+			],
+			"years": [
+				1859
+			],
+			"kind": "military",
+			"from": {
+				"description": "Brazos Indian Reserve (Young County) and Comanche Reserve, Texas",
+				"name": "Fort Belknap, Texas",
+				"point": [
+					-98.7411,
+					33.1508
+				],
+				"basis": "Wikidata Q5470794"
+			},
+			"to": {
+				"description": "Wichita Agency on the Washita River near Fort Cobb, Leased District, Indian Territory (delivered Sept. 1, 1859)",
+				"name": "Fort Cobb, Oklahoma",
+				"point": [
+					-98.4197,
+					35.1064
+				],
+				"basis": "Wikidata Q5470945"
+			},
+			"legal_basis": [
+				{
+					"citation": "military escort under Indian Agent Robert S. Neighbors (Texas reserves abandoned); statutory background in Texas Act of Feb. 6, 1854 and federal appropriation acts, not verified"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "tonkawa-1884",
+			"journey": "tonkawa-removal",
+			"stage": 1,
+			"people": "Tonkawa and Lipan Apache",
+			"nations": [
+				"tonkawa-tribe-of-indians-of-oklahoma"
+			],
+			"years": [
+				1884,
+				1885
+			],
+			"kind": "military",
+			"from": {
+				"description": "Fort Griffin, Shackelford County, Texas",
+				"name": "Fort Griffin, Texas",
+				"point": [
+					-99.2322,
+					32.9272
+				],
+				"basis": "Wikidata Q8564738"
+			},
+			"to": {
+				"description": "Ponca Agency (1884), then the former Nez Perce reserve at Oakland, Indian Territory (1885)",
+				"name": "Tonkawa OTSA",
+				"point": [
+					-97.3543,
+					36.68082
+				],
+				"basis": "Census Bureau area 5860 (2020)"
+			},
+			"legal_basis": [
+				{
+					"citation": "Executive/Interior Department action; no statute or order text fetched"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "ponca-1877",
+			"journey": "ponca-removal",
+			"stage": 1,
+			"people": "Ponca",
+			"nations": [
+				"ponca-tribe-of-indians-of-oklahoma",
+				"ponca-tribe-of-nebraska"
+			],
+			"years": [
+				1877
+			],
+			"kind": "statute",
+			"from": {
+				"description": "Ponca reservation at the mouth of the Niobrara River (Nebraska / Dakota Territory)",
+				"name": "Niobrara, Nebraska",
+				"point": [
+					-98.0319,
+					42.75
+				],
+				"basis": "Wikidata Q2183452"
+			},
+			"to": {
+				"description": "Quapaw Agency (Baxter Springs area), Indian Territory, May-July 1877; see ponca-1878 for the Salt Fork reservation",
+				"name": "Quapaw, Oklahoma",
+				"point": [
+					-94.7897,
+					36.9536
+				],
+				"basis": "Wikidata Q2797582"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-ponca-1865-0875",
+					"citation": "14 Stat. 675",
+					"article": "Art. 1-2 (1865 treaty: reservation boundaries; 1868 Fort Laramie treaty later ceded the same land to the Sioux)"
+				},
+				{
+					"citation": "19 Stat. 192",
+					"article": "Act of Aug. 15, 1876, ch. 289 (Indian Appropriation Act), Ponca removal clause"
+				}
+			],
+			"quote": "the Secretary of the Interior may use of the foregoing amounts the sum of twenty-five thousand dollars for the removal of the Poncas to the Indian Territory, and providing them a home therein, with the consent of said band",
+			"quote_source": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_019/llsal_019.pdf",
+			"review": "Unverified"
+		},
+		{
+			"id": "ponca-1878",
+			"journey": "ponca-removal",
+			"stage": 2,
+			"people": "Ponca",
+			"nations": [
+				"ponca-tribe-of-indians-of-oklahoma"
+			],
+			"years": [
+				1878
+			],
+			"kind": "executive",
+			"from": {
+				"description": "Quapaw Agency, Indian Territory (temporary location)",
+				"name": "Quapaw, Oklahoma",
+				"point": [
+					-94.7897,
+					36.9536
+				],
+				"basis": "Wikidata Q2797582"
+			},
+			"to": {
+				"description": "Ponca Reservation at the Salt Fork and Arkansas River, Indian Territory (Ponca Agency)",
+				"name": "Ponca OTSA",
+				"point": [
+					-97.15637,
+					36.5976
+				],
+				"basis": "Census Bureau area 5800 (2020)"
+			},
+			"legal_basis": [
+				{
+					"citation": "Executive order of Mar./May 1878 (Royce 628 dated 1878-05-27); Act of Mar. 3, 1881, 21 Stat. 422 later confirmed the reserve; neither text fetched"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "pawnee-1857",
+			"journey": "pawnee-removal",
+			"stage": 1,
+			"people": "Pawnee (Grand, Loup, Republican, Tappage)",
+			"nations": [
+				"pawnee-nation-of-oklahoma"
+			],
+			"years": [
+				1857,
+				1859
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Pawnee villages on the Platte and Loup Rivers, central Nebraska",
+				"name": "Pawnee villages on the Platte and Loup Rivers, central Nebraska",
+				"point": [
+					-99.344,
+					41.7932
+				],
+				"basis": "Royce cession 408"
+			},
+			"to": {
+				"description": "Pawnee reservation on the Loup Fork of the Platte, 30 by 15 miles, Nance County, Nebraska",
+				"name": "Pawnee reservation on the Loup Fork of the Platte, 30 by 15 miles, Nance County, Nebraska",
+				"point": [
+					-97.9302,
+					41.3922
+				],
+				"basis": "Royce cession 590"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-pawnee-1857-0764",
+					"citation": "11 Stat. 729",
+					"article": "Art. 1"
+				}
+			],
+			"quote": "the Pawnees agree to remove to their new homes, thus reserved for them, without cost to the United States, within one year",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-pawnee-1857-0764",
+			"review": "Unverified"
+		},
+		{
+			"id": "pawnee-1874",
+			"journey": "pawnee-removal",
+			"stage": 2,
+			"people": "Pawnee",
+			"nations": [
+				"pawnee-nation-of-oklahoma"
+			],
+			"years": [
+				1874,
+				1875
+			],
+			"kind": "statute",
+			"from": {
+				"description": "Pawnee reservation on the Loup Fork, Nance County, Nebraska",
+				"name": "Pawnee reservation on the Loup Fork, Nance County, Nebraska",
+				"point": [
+					-97.9302,
+					41.3922
+				],
+				"basis": "Royce cession 590"
+			},
+			"to": {
+				"description": "Pawnee Reservation on the Cimarron/Arkansas, Indian Territory (Pawnee Agency)",
+				"name": "Pawnee OTSA",
+				"point": [
+					-96.69992,
+					36.29406
+				],
+				"basis": "Census Bureau area 5780 (2020)"
+			},
+			"legal_basis": [
+				{
+					"citation": "19 Stat. 29",
+					"article": "Act of Apr. 10, 1876, ch. 51 (sale of Nebraska reservation; payment of removal expenses already incurred)"
+				}
+			],
+			"quote": "for their removal to the Indian Territory, and other necessary expenses connected with their establishment and settlement therein",
+			"quote_source": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_019/llsal_019.pdf",
+			"review": "Unverified"
+		},
+		{
+			"id": "otoe-1854",
+			"journey": "otoe-missouria-removal",
+			"stage": 1,
+			"people": "Otoe and Missouria",
+			"nations": [
+				"otoe-missouria-tribe-of-indians"
+			],
+			"years": [
+				1854,
+				1855
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Otoe-Missouria country west of the Missouri River, Platte valley, Nebraska",
+				"name": "Otoe-Missouria country west of the Missouri River, Platte valley, Nebraska",
+				"point": [
+					-96.8471,
+					41.1202
+				],
+				"basis": "Royce cession 314"
+			},
+			"to": {
+				"description": "Big Blue River reserve, 10 miles wide, on the Nebraska-Kansas line",
+				"name": "Big Blue River reserve, 10 miles wide, on the Nebraska-Kansas line",
+				"point": [
+					-96.8161,
+					40.0363
+				],
+				"basis": "Royce cession 595"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-oto-and-missouri-1854-0608",
+					"citation": "10 Stat. 1038",
+					"article": "Arts. 1-2"
+				}
+			],
+			"quote": "they will vacate the ceded country, and remove to the lands herein reserved for them.",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-oto-and-missouri-1854-0608",
+			"review": "Unverified"
+		},
+		{
+			"id": "otoe-1881",
+			"journey": "otoe-missouria-removal",
+			"stage": 2,
+			"people": "Otoe and Missouria",
+			"nations": [
+				"otoe-missouria-tribe-of-indians"
+			],
+			"years": [
+				1881,
+				1882
+			],
+			"kind": "statute",
+			"from": {
+				"description": "Big Blue reservation, Gage County, Nebraska and Marshall County, Kansas",
+				"name": "Big Blue reservation, Gage County, Nebraska and Marshall County, Kansas",
+				"point": [
+					-96.5711,
+					40.0367
+				],
+				"basis": "Royce cession 626"
+			},
+			"to": {
+				"description": "Otoe reservation at Red Rock, Indian Territory (Noble/Pawnee County, Oklahoma)",
+				"name": "Otoe-Missouria OTSA",
+				"point": [
+					-97.06676,
+					36.42016
+				],
+				"basis": "Census Bureau area 5760 (2020)"
+			},
+			"legal_basis": [
+				{
+					"citation": "21 Stat. 380",
+					"article": "Act of Mar. 3, 1881, ch. 128, sec. 5"
+				}
+			],
+			"quote": "secure other reservation lands upon which to locate said Indians, cause their removal thereto",
+			"quote_source": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_021/llsal_021.pdf",
+			"review": "Unverified"
+		},
+		{
+			"id": "iowa-1836",
+			"journey": "iowa-removal",
+			"stage": 1,
+			"people": "Iowa (Ioway)",
+			"nations": [
+				"iowa-tribe-of-kansas-and-nebraska",
+				"iowa-tribe-of-oklahoma"
+			],
+			"years": [
+				1836,
+				1837
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Ioway villages on the Des Moines and Missouri Rivers (Iowa and northern Missouri)",
+				"name": "Platte Purchase",
+				"point": [
+					-95,
+					40
+				],
+				"basis": "Wikidata Q1112748"
+			},
+			"to": {
+				"description": "Strip south of the Missouri between the Kickapoo line and the Great Nemaha River (upper half to the Ioway), Kansas/Nebraska",
+				"name": "Iowa (KS-NE) Reservation and Off-Reservation Trust Land",
+				"point": [
+					-95.36086,
+					40.00279
+				],
+				"basis": "Census Bureau area 1590 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-iowa-etc-1836-0468",
+					"citation": "7 Stat. 511",
+					"article": "Art. 2-3"
+				}
+			],
+			"quote": "they will move and settle on the lands assigned them",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-etc-1836-0468",
+			"review": "Unverified"
+		},
+		{
+			"id": "iowa-1883",
+			"journey": "iowa-removal",
+			"stage": 2,
+			"people": "Iowa (Ioway)",
+			"nations": [
+				"iowa-tribe-of-oklahoma"
+			],
+			"years": [
+				1878,
+				1883
+			],
+			"kind": "executive",
+			"from": {
+				"description": "Iowa reservation, Kansas and Nebraska (Great Nemaha)",
+				"name": "Iowa (KS-NE) Reservation and Off-Reservation Trust Land",
+				"point": [
+					-95.36086,
+					40.00279
+				],
+				"basis": "Census Bureau area 1590 (2020)"
+			},
+			"to": {
+				"description": "Iowa reservation within the Sac and Fox lands, Indian Territory",
+				"name": "Iowa OTSA",
+				"point": [
+					-97.08461,
+					35.82737
+				],
+				"basis": "Census Bureau area 5670 (2020)"
+			},
+			"legal_basis": [
+				{
+					"citation": "Executive order of Aug. 15, 1883 (not fetched)"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "sacfox-missouri-1836",
+			"journey": "sac-fox-missouri-removal",
+			"stage": 1,
+			"people": "Sac and Fox of the Missouri",
+			"nations": [
+				"sac-and-fox-nation-of-missouri-in-kansas-and-nebraska"
+			],
+			"years": [
+				1836,
+				1837
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Missouri band villages on the Missouri River north of the Platte Purchase",
+				"name": "Platte Purchase",
+				"point": [
+					-95,
+					40
+				],
+				"basis": "Wikidata Q1112748"
+			},
+			"to": {
+				"description": "Lower half of the Great Nemaha strip, Kansas/Nebraska",
+				"name": "Sac and Fox Nation Reservation and Off-Reservation Trust Land",
+				"point": [
+					-95.51285,
+					40.00966
+				],
+				"basis": "Census Bureau area 3285 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-iowa-etc-1836-0468",
+					"citation": "7 Stat. 511",
+					"article": "Art. 2-3"
+				}
+			],
+			"quote": "they will move and settle on the lands assigned them",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-iowa-etc-1836-0468",
+			"review": "Unverified"
+		},
+		{
+			"id": "hochunk-1863",
+			"journey": "hochunk-1863-removal",
+			"stage": 1,
+			"people": "Ho-Chunk (Winnebago)",
+			"nations": [
+				"ho-chunk-nation-of-wisconsin",
+				"winnebago-tribe-of-nebraska"
+			],
+			"years": [
+				1863
+			],
+			"kind": "statute",
+			"from": {
+				"description": "Blue Earth (Winnebago) Reservation, Minnesota",
+				"name": "Blue Earth (Winnebago) Reservation, Minnesota",
+				"point": [
+					-93.7765,
+					44.0369
+				],
+				"basis": "Royce cession 439"
+			},
+			"to": {
+				"description": "Crow Creek Reservation on the Missouri River, Dakota Territory",
+				"name": "Crow Creek Indian Reservation",
+				"point": [
+					-99.4739,
+					44.1289
+				],
+				"basis": "Wikidata Q5189081"
+			},
+			"legal_basis": [
+				{
+					"citation": "12 Stat. 658",
+					"article": "Act of Feb. 21, 1863, ch. 53: removal of Winnebago Indians and sale of their Minnesota reservation"
+				}
+			],
+			"quote": "the President of the United States is authorized to assign to and set apart for the Winnebago Indians a tract of unoccupied land beyond the limits of any State",
+			"quote_source": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_012/llsal_012.pdf",
+			"review": "Unverified"
+		},
+		{
+			"id": "hochunk-1865",
+			"journey": "hochunk-1863-removal",
+			"stage": 2,
+			"people": "Ho-Chunk (Winnebago)",
+			"nations": [
+				"winnebago-tribe-of-nebraska",
+				"ho-chunk-nation-of-wisconsin"
+			],
+			"years": [
+				1865,
+				1866
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Crow Creek (Usher's Landing) reservation, Dakota Territory",
+				"name": "Crow Creek Indian Reservation",
+				"point": [
+					-99.4739,
+					44.1289
+				],
+				"basis": "Wikidata Q5189081"
+			},
+			"to": {
+				"description": "Winnebago Reservation carved from Omaha lands, Thurston County, Nebraska",
+				"name": "Winnebago Reservation and Off-Reservation Trust Land",
+				"point": [
+					-96.62948,
+					42.21917
+				],
+				"basis": "Census Bureau area 4625 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-winnebago-1865-0874",
+					"citation": "14 Stat. 671",
+					"article": "Arts. 1-2, 5"
+				}
+			],
+			"quote": "the United States agree to set apart for the occupation and future home of the Winnebago Indians, forever, all that certain tract or parcel of land ceded to the United States by the Omaha tribe of Indians",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1865-0874",
+			"review": "Unverified"
+		},
+		{
+			"id": "dakota-1863",
+			"journey": "dakota-1863-removal",
+			"stage": 1,
+			"people": "Dakota (Santee: Mdewakanton, Wahpekute; Wahpeton and Sisseton scouts excepted)",
+			"nations": [
+				"santee-sioux-nation",
+				"crow-creek-sioux-tribe-of-the-crow-creek-reservation",
+				"lower-sioux-indian-community-in-the-state-of-minnesota",
+				"upper-sioux-community",
+				"prairie-island-indian-community-in-the-state-of-minnesota",
+				"shakopee-mdewakanton-sioux-community-of-minnesota",
+				"flandreau-santee-sioux-tribe-of-south-dakota"
+			],
+			"years": [
+				1863
+			],
+			"kind": "statute",
+			"from": {
+				"description": "Minnesota River Dakota reservations and Fort Snelling internment camp, Minnesota",
+				"name": "Minnesota River Dakota reservations and Fort Snelling internment camp, Minnesota",
+				"point": [
+					-96.1152,
+					45.1147
+				],
+				"basis": "Royce cession 440"
+			},
+			"to": {
+				"description": "Crow Creek Reservation (Fort Thompson), Dakota Territory",
+				"name": "Crow Creek Indian Reservation",
+				"point": [
+					-99.4739,
+					44.1289
+				],
+				"basis": "Wikidata Q5189081"
+			},
+			"legal_basis": [
+				{
+					"citation": "12 Stat. 652",
+					"article": "Act of Feb. 16, 1863, ch. 37 (treaties with the Sioux annulled, lands and annuities forfeited)"
+				},
+				{
+					"citation": "12 Stat. 784",
+					"article": "Act of Mar. 3, 1863, ch. 99, appropriation for removal of the Sioux of the Mississippi"
+				}
+			],
+			"quote": "to cause the Sioux of the Mississippi to be removed beyond the limits of",
+			"quote_source": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_012/llsal_012.pdf",
+			"review": "Unverified"
+		},
+		{
+			"id": "dakota-1866",
+			"journey": "dakota-1863-removal",
+			"stage": 2,
+			"people": "Santee Dakota",
+			"nations": [
+				"santee-sioux-nation"
+			],
+			"years": [
+				1866
+			],
+			"kind": "executive",
+			"from": {
+				"description": "Crow Creek Reservation, Dakota Territory",
+				"name": "Crow Creek Indian Reservation",
+				"point": [
+					-99.4739,
+					44.1289
+				],
+				"basis": "Wikidata Q5189081"
+			},
+			"to": {
+				"description": "Santee Reservation on the Niobrara River, Nebraska",
+				"name": "Santee Reservation",
+				"point": [
+					-97.82923,
+					42.7203
+				],
+				"basis": "Census Bureau area 3565 (2020)"
+			},
+			"legal_basis": [
+				{
+					"citation": "Executive order of Feb. 27, 1866 (not fetched)"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "navajo-1864",
+			"journey": "navajo-long-walk",
+			"stage": 1,
+			"people": "Navajo (Diné)",
+			"nations": [
+				"navajo-nation"
+			],
+			"years": [
+				1863,
+				1864,
+				1865,
+				1866
+			],
+			"kind": "military",
+			"from": {
+				"description": "Dinétah: Navajo country around Fort Defiance, Canyon de Chelly and Fort Wingate (Arizona / New Mexico), with collection points at Fort Canby and Fort Wingate",
+				"name": "Fort Defiance, Arizona",
+				"point": [
+					-109.067,
+					35.7419
+				],
+				"basis": "Wikidata Q1026027"
+			},
+			"to": {
+				"description": "Bosque Redondo Reservation at Fort Sumner, New Mexico Territory",
+				"name": "Fort Sumner (Bosque Redondo), New Mexico",
+				"point": [
+					-104.1947,
+					34.4019
+				],
+				"basis": "Wikidata Q1514927"
+			},
+			"legal_basis": [
+				{
+					"citation": "Military orders of Gen. James H. Carleton and Col. Christopher Carson (1863-64); no treaty or statute. See 1868 treaty, Art. 13 (removal cost) for the return."
+				}
+			],
+			"quote": "The Long Walk refers to the forced removal by the U.S. Army of the Mescalero Apache and Navajo people from their homelands to Fort Sumner and the Bosque Redondo Reservation in eastern New Mexico.",
+			"quote_source": "https://parkplanning.nps.gov/showFile.cfm?sfid=57824&projectID=12406",
+			"review": "Unverified"
+		},
+		{
+			"id": "mescalero-1863",
+			"journey": "mescalero-bosque-redondo",
+			"stage": 1,
+			"people": "Mescalero Apache",
+			"nations": [
+				"mescalero-apache-tribe-of-the-mescalero-reservation"
+			],
+			"years": [
+				1862,
+				1863
+			],
+			"kind": "military",
+			"from": {
+				"description": "Mescalero homeland and Fort Stanton, New Mexico Territory",
+				"name": "Fort Stanton, New Mexico",
+				"point": [
+					-105.5239,
+					33.4961
+				],
+				"basis": "Wikidata Q5472089"
+			},
+			"to": {
+				"description": "Bosque Redondo Reservation at Fort Sumner, New Mexico Territory",
+				"name": "Fort Sumner (Bosque Redondo), New Mexico",
+				"point": [
+					-104.1947,
+					34.4019
+				],
+				"basis": "Wikidata Q1514927"
+			},
+			"legal_basis": [
+				{
+					"citation": "Military orders of Gen. Carleton (1862-63); no treaty or statute"
+				}
+			],
+			"quote": "The Long Walk refers to the forced removal by the U.S. Army of the Mescalero Apache and Navajo people from their homelands to Fort Sumner and the Bosque Redondo Reservation in eastern New Mexico.",
+			"quote_source": "https://parkplanning.nps.gov/showFile.cfm?sfid=57824&projectID=12406",
+			"review": "Unverified"
+		},
+		{
+			"id": "navajo-1868",
+			"journey": "navajo-long-walk",
+			"stage": 2,
+			"people": "Navajo (Diné)",
+			"nations": [
+				"navajo-nation"
+			],
+			"years": [
+				1868
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Bosque Redondo Reservation at Fort Sumner",
+				"name": "Fort Sumner (Bosque Redondo), New Mexico",
+				"point": [
+					-104.1947,
+					34.4019
+				],
+				"basis": "Wikidata Q1514927"
+			},
+			"to": {
+				"description": "Navajo Reservation, bounded north by 37th parallel and south by a line through old Fort Defiance, Canon de Chelly included",
+				"name": "Navajo Nation Reservation and Off-Reservation Trust Land",
+				"point": [
+					-109.38734,
+					36.32997
+				],
+				"basis": "Census Bureau area 2430 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-navaho-1868-1015",
+					"citation": "15 Stat. 667",
+					"article": "Art. 2 (reservation), Art. 13 (removal cost from Bosque Redondo)"
+				}
+			],
+			"quote": "shall be, and the same is hereby, set apart for the use and occupation of the Navajo tribe of Indians",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-navaho-1868-1015",
+			"review": "Unverified"
+		},
+		{
+			"id": "chiricahua-1886",
+			"journey": "chiricahua-exile",
+			"stage": 1,
+			"people": "Chiricahua and Warm Springs Apache (Geronimo's band and scouts)",
+			"nations": [
+				"fort-sill-chiricahua-warm-springs-apache-tribe",
+				"mescalero-apache-tribe-of-the-mescalero-reservation"
+			],
+			"years": [
+				1886
+			],
+			"kind": "military",
+			"from": {
+				"description": "Fort Bowie, Arizona Territory (after the surrender at Skeleton Canyon, Sept. 1886); San Carlos and Fort Apache Chiricahua also sent",
+				"name": "Fort Bowie, Arizona",
+				"point": [
+					-109.436,
+					32.1461
+				],
+				"basis": "Wikidata Q3077790"
+			},
+			"to": {
+				"description": "Fort Marion (Castillo de San Marcos), St. Augustine, Florida (women, children, and some men); Fort Pickens, Pensacola, held the men",
+				"name": "Castillo de San Marcos / Fort Marion",
+				"point": [
+					-81.3114,
+					29.8978
+				],
+				"basis": "Wikidata Q101094405"
+			},
+			"legal_basis": [
+				{
+					"citation": "Military orders of Gen. Nelson A. Miles under direction of the President; no statute"
+				}
+			],
+			"quote": "Chiricahua Apache were held as prisoners-of-war at Fort Bowie, before being transported to Florida.",
+			"quote_source": "https://home.nps.gov/chir/learn/historyculture/post-apache-wars.htm",
+			"review": "Unverified"
+		},
+		{
+			"id": "chiricahua-1887",
+			"journey": "chiricahua-exile",
+			"stage": 2,
+			"people": "Chiricahua and Warm Springs Apache",
+			"nations": [
+				"fort-sill-chiricahua-warm-springs-apache-tribe"
+			],
+			"years": [
+				1887,
+				1888
+			],
+			"kind": "military",
+			"from": {
+				"description": "Fort Marion, St. Augustine, and Fort Pickens, Pensacola, Florida",
+				"name": "Castillo de San Marcos / Fort Marion",
+				"point": [
+					-81.3114,
+					29.8978
+				],
+				"basis": "Wikidata Q101094405"
+			},
+			"to": {
+				"description": "Mount Vernon Barracks, Mobile County, Alabama",
+				"name": "Mount Vernon Barracks (QID is Mount Vernon Arsenal and Barracks historic district)",
+				"point": [
+					-88.0286,
+					31.0878
+				],
+				"basis": "Wikidata Q6924350"
+			},
+			"legal_basis": [
+				{
+					"citation": "War Department order; no statute"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "chiricahua-1894",
+			"journey": "chiricahua-exile",
+			"stage": 3,
+			"people": "Chiricahua and Warm Springs Apache",
+			"nations": [
+				"fort-sill-chiricahua-warm-springs-apache-tribe"
+			],
+			"years": [
+				1894
+			],
+			"kind": "military",
+			"from": {
+				"description": "Mount Vernon Barracks, Alabama",
+				"name": "Mount Vernon Barracks (QID is Mount Vernon Arsenal and Barracks historic district)",
+				"point": [
+					-88.0286,
+					31.0878
+				],
+				"basis": "Wikidata Q6924350"
+			},
+			"to": {
+				"description": "Fort Sill military reservation, Oklahoma Territory (prisoners of war until 1913)",
+				"name": "Fort Sill",
+				"point": [
+					-98.5083,
+					34.7042
+				],
+				"basis": "Wikidata Q1018681"
+			},
+			"legal_basis": [
+				{
+					"citation": "War Department order (1894); statutory authority (Army appropriation act, 1894) not verified"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "yavapai-1875",
+			"journey": "yavapai-exodus",
+			"stage": 1,
+			"people": "Yavapai and Tonto Apache (Dilzhe'e)",
+			"nations": [
+				"yavapai-apache-nation-of-the-camp-verde-indian-reservation",
+				"tonto-apache-tribe-of-arizona",
+				"fort-mcdowell-yavapai-nation",
+				"yavapai-prescott-indian-tribe",
+				"san-carlos-apache-tribe-of-the-san-carlos-reservation"
+			],
+			"years": [
+				1875
+			],
+			"kind": "executive",
+			"from": {
+				"description": "Rio Verde (Camp Verde) Reservation, Arizona Territory",
+				"name": "Camp Verde, Arizona",
+				"point": [
+					-111.8544,
+					34.5636
+				],
+				"basis": "Wikidata Q983745"
+			},
+			"to": {
+				"description": "San Carlos Reservation on the Gila River, Arizona Territory (150-mile march, Feb.-Mar. 1875)",
+				"name": "San Carlos Apache Indian Reservation",
+				"point": [
+					-110.161,
+					33.3328
+				],
+				"basis": "Wikidata Q3821997"
+			},
+			"legal_basis": [
+				{
+					"citation": "Interior Department 'concentration policy'; order of the Commissioner of Indian Affairs, 1875; no statute"
+				}
+			],
+			"quote": "all Apaches were to be concentrated on one reservation, the San Carlos on the Gila River.",
+			"quote_source": "https://www.nps.gov/tont/learn/historyculture/yavapai_and_apache.htm",
+			"review": "Unverified"
+		},
+		{
+			"id": "nezperce-1877-leavenworth",
+			"journey": "nez-perce-exile",
+			"stage": 1,
+			"people": "Nez Perce (nimíipuu), non-treaty bands",
+			"nations": [
+				"nez-perce-tribe",
+				"confederated-tribes-of-the-colville-reservation"
+			],
+			"years": [
+				1877
+			],
+			"kind": "military",
+			"from": {
+				"description": "Bear Paw battlefield, Montana Territory (surrender Oct. 5, 1877)",
+				"name": "Bear Paw Battlefield, Montana",
+				"point": [
+					-109.2069,
+					48.3781
+				],
+				"basis": "Wikidata Q81351860"
+			},
+			"to": {
+				"description": "Fort Leavenworth, Kansas (winter 1877-78)",
+				"name": "Fort Leavenworth",
+				"point": [
+					-94.9211,
+					39.355
+				],
+				"basis": "Wikidata Q590879"
+			},
+			"legal_basis": [
+				{
+					"citation": "Military orders (Gen. Sherman / Gen. Miles); no treaty or statute"
+				}
+			],
+			"quote": "those 432 nimíipuu were sent to Fort Leavenworth in Kansas that winter, and exiled then to Indian Territory (Oklahoma) the next summer.",
+			"quote_source": "https://www.nps.gov/nepe/learn/historyculture/1877-aftermath.htm",
+			"review": "Unverified"
+		},
+		{
+			"id": "nezperce-1878-quapaw",
+			"journey": "nez-perce-exile",
+			"stage": 2,
+			"people": "Nez Perce (nimíipuu)",
+			"nations": [
+				"nez-perce-tribe",
+				"confederated-tribes-of-the-colville-reservation"
+			],
+			"years": [
+				1878
+			],
+			"kind": "military",
+			"from": {
+				"description": "Fort Leavenworth, Kansas",
+				"name": "Fort Leavenworth",
+				"point": [
+					-94.9211,
+					39.355
+				],
+				"basis": "Wikidata Q590879"
+			},
+			"to": {
+				"description": "Quapaw Agency, Indian Territory (Eeikish Pah, 'Hot Place'; Baxter Springs / Miami area), July 1878",
+				"name": "Quapaw, Oklahoma",
+				"point": [
+					-94.7897,
+					36.9536
+				],
+				"basis": "Wikidata Q2797582"
+			},
+			"legal_basis": [
+				{
+					"citation": "Military/Interior orders; statutory funding for the Indian Territory location not verified"
+				}
+			],
+			"quote": "those 432 nimíipuu were sent to Fort Leavenworth in Kansas that winter, and exiled then to Indian Territory (Oklahoma) the next summer.",
+			"quote_source": "https://www.nps.gov/nepe/learn/historyculture/1877-aftermath.htm",
+			"review": "Unverified"
+		},
+		{
+			"id": "nezperce-1879-oakland",
+			"journey": "nez-perce-exile",
+			"stage": 3,
+			"people": "Nez Perce (nimíipuu)",
+			"nations": [
+				"nez-perce-tribe",
+				"confederated-tribes-of-the-colville-reservation"
+			],
+			"years": [
+				1879
+			],
+			"kind": "executive",
+			"from": {
+				"description": "Quapaw Agency, Indian Territory",
+				"name": "Quapaw, Oklahoma",
+				"point": [
+					-94.7897,
+					36.9536
+				],
+				"basis": "Wikidata Q2797582"
+			},
+			"to": {
+				"description": "Nez Perce reserve on the Salt Fork of the Arkansas near Ponca Agency (Oakland, present Tonkawa), Indian Territory",
+				"name": "Tonkawa, Oklahoma (Oakland)",
+				"point": [
+					-97.3092,
+					36.6803
+				],
+				"basis": "Wikidata Q2091202"
+			},
+			"legal_basis": [
+				{
+					"citation": "Interior Department order, 1879 (not fetched)"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "nezperce-1885-return",
+			"journey": "nez-perce-exile",
+			"stage": 4,
+			"people": "Nez Perce (nimíipuu)",
+			"nations": [
+				"nez-perce-tribe",
+				"confederated-tribes-of-the-colville-reservation"
+			],
+			"years": [
+				1885
+			],
+			"kind": "executive",
+			"from": {
+				"description": "Nez Perce reserve at Oakland, Indian Territory",
+				"name": "Tonkawa, Oklahoma (Oakland)",
+				"point": [
+					-97.3092,
+					36.6803
+				],
+				"basis": "Wikidata Q2091202"
+			},
+			"to": {
+				"description": "Lapwai (Nez Perce Reservation, Idaho) and the Colville Reservation, Washington (including Chief Joseph); return of 1885",
+				"name": "Colville Indian Reservation",
+				"point": [
+					-118.8728,
+					48.2297
+				],
+				"basis": "Wikidata Q951756"
+			},
+			"legal_basis": [
+				{
+					"citation": "Order of the Secretary of the Interior, 1885 (not fetched)"
+				}
+			],
+			"quote": "in 1885 the nimíipuu were allowed to return to the Pacific Northwest. Some were sent to the Nez Perce reservation in Idaho, while others, including Chief Joseph, were relocated to the Colville Reservation in Washington State",
+			"quote_source": "https://www.nps.gov/nepe/learn/historyculture/1877-aftermath.htm",
+			"review": "Unverified"
+		},
+		{
+			"id": "modoc-1864",
+			"journey": "modoc-removal",
+			"stage": 1,
+			"people": "Modoc",
+			"nations": [
+				"modoc-nation",
+				"klamath-tribes"
+			],
+			"years": [
+				1864,
+				1865
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Modoc country on Lost River, Tule Lake and Clear Lake, Oregon / California",
+				"name": "Modoc country on Lost River, Tule Lake and Clear Lake, Oregon / California",
+				"point": [
+					-121.041,
+					42.9994
+				],
+				"basis": "Royce cession 462, 463"
+			},
+			"to": {
+				"description": "Klamath Reservation, Oregon",
+				"name": "Klamath Reservation",
+				"point": [
+					-121.33579,
+					42.42799
+				],
+				"basis": "Census Bureau area 1785 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-klamath-etc-1864-0865",
+					"citation": "16 Stat. 707",
+					"article": "Art. 1"
+				}
+			],
+			"quote": "the tribes aforesaid agree and bind themselves that, immediately after the ratification of this treaty, they will remove to said reservation and remain thereon",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-klamath-etc-1864-0865",
+			"review": "Unverified"
+		},
+		{
+			"id": "modoc-1873",
+			"journey": "modoc-removal",
+			"stage": 2,
+			"people": "Modoc (Captain Jack's band and others)",
+			"nations": [
+				"modoc-nation"
+			],
+			"years": [
+				1873
+			],
+			"kind": "military",
+			"from": {
+				"description": "Fort Klamath, Oregon (after the Modoc War and the hanging of Oct. 3, 1873)",
+				"name": "Fort Klamath",
+				"point": [
+					-121.9733,
+					42.6915
+				],
+				"basis": "Wikidata Q4804996"
+			},
+			"to": {
+				"description": "Quapaw Agency, Indian Territory (163 Modoc prisoners of war)",
+				"name": "Quapaw, Oklahoma",
+				"point": [
+					-94.7897,
+					36.9536
+				],
+				"basis": "Wikidata Q2797582"
+			},
+			"legal_basis": [
+				{
+					"citation": "Military order; Interior approval; no statute"
+				}
+			],
+			"quote": "Twelve days after the hanging, 163 Modocs were sent as prisoners of war to the Quapaw Agency in Oklahoma.",
+			"quote_source": "https://www.nps.gov/labe/learn/historyculture/modoc-war.htm",
+			"review": "Unverified"
+		},
+		{
+			"id": "ncheyenne-1877",
+			"journey": "northern-cheyenne-removal",
+			"stage": 1,
+			"people": "Northern Cheyenne",
+			"nations": [
+				"northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation",
+				"cheyenne-and-arapaho-tribes"
+			],
+			"years": [
+				1877
+			],
+			"kind": "military",
+			"from": {
+				"description": "Red Cloud Agency / Camp Robinson, Nebraska (Black Hills country)",
+				"name": "Fort Robinson, Nebraska",
+				"point": [
+					-103.4672,
+					42.6689
+				],
+				"basis": "Wikidata Q5471939"
+			},
+			"to": {
+				"description": "Darlington Agency (Cheyenne-Arapaho Agency, near Fort Reno), Indian Territory; arrived Aug. 1877",
+				"name": "Darlington Agency, Oklahoma",
+				"point": [
+					-98.0089,
+					35.5753
+				],
+				"basis": "Wikidata Q18149225"
+			},
+			"legal_basis": [
+				{
+					"citation": "Army and Interior orders after the 1876 Sioux War; no statute or treaty verified"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "ncheyenne-1878",
+			"journey": "northern-cheyenne-removal",
+			"stage": 2,
+			"people": "Northern Cheyenne (Little Wolf's and Dull Knife's bands)",
+			"nations": [
+				"northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation"
+			],
+			"years": [
+				1878,
+				1879,
+				1884
+			],
+			"kind": "military",
+			"from": {
+				"description": "Darlington Agency, Indian Territory (flight began Sept. 1878)",
+				"name": "Darlington Agency, Oklahoma",
+				"point": [
+					-98.0089,
+					35.5753
+				],
+				"basis": "Wikidata Q18149225"
+			},
+			"to": {
+				"description": "Montana: Little Wolf's band to Fort Keogh (1879); Tongue River Reservation by executive order Nov. 26, 1884",
+				"name": "Fort Keogh",
+				"point": [
+					-105.883,
+					46.3756
+				],
+				"basis": "Wikidata Q2326790"
+			},
+			"legal_basis": [
+				{
+					"citation": "Executive order of Nov. 26, 1884 (Tongue River) not fetched"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "paiute-1879",
+			"journey": "malheur-paiute-removal",
+			"stage": 1,
+			"people": "Northern Paiute (Malheur) prisoners after the Bannock War",
+			"nations": [
+				"burns-paiute-tribe"
+			],
+			"years": [
+				1879
+			],
+			"kind": "military",
+			"from": {
+				"description": "Malheur Reservation / Camp Harney, Oregon",
+				"name": "Fort Harney, Oregon",
+				"point": [
+					-118.808,
+					43.6675
+				],
+				"basis": "Wikidata Q5471298"
+			},
+			"to": {
+				"description": "Yakama Indian Reservation, Fort Simcoe, Washington Territory (winter march 1879)",
+				"name": "Yakama Indian Reservation",
+				"point": [
+					-120.8219,
+					46.2333
+				],
+				"basis": "Wikidata Q3457242"
+			},
+			"legal_basis": [
+				{
+					"citation": "Military custody; Interior Department order, 1879 (not fetched)"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "uintah-1864",
+			"journey": "uintah-ute-removal",
+			"stage": 1,
+			"people": "Ute (Uintah, Timpanogos, Yampa and others of Utah Territory)",
+			"nations": [
+				"ute-indian-tribe-of-the-uintah-and-ouray-reservation"
+			],
+			"years": [
+				1861,
+				1864,
+				1865
+			],
+			"kind": "statute",
+			"from": {
+				"description": "Spanish Fork, Sanpete and other Utah Valley reservations, Utah Territory",
+				"name": "Spanish Fork, Utah",
+				"point": [
+					-111.64,
+					40.1044
+				],
+				"basis": "Wikidata Q482552"
+			},
+			"to": {
+				"description": "Uinta Valley Reservation, Utah Territory (set apart by executive order of Oct. 3, 1861; confirmed by act)",
+				"name": "Uintah and Ouray Reservation and Off-Reservation Trust Land",
+				"point": [
+					-110.54117,
+					40.33388
+				],
+				"basis": "Census Bureau area 4390 (2020)"
+			},
+			"legal_basis": [
+				{
+					"citation": "13 Stat. 63",
+					"article": "Act of May 5, 1864, ch. 77 (sec. 2: collect and settle the Indians in Uinta Valley)"
+				}
+			],
+			"quote": "in the Uinta valley, in said territory, which is hereby set apart for the permanent settlement and exclusive occupation of such of the different tribes of Indians of said territory as may be induced to inhabit the same",
+			"quote_source": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_013/llsal_013.pdf",
+			"review": "Unverified"
+		},
+		{
+			"id": "whiteriver-ute-1881",
+			"journey": "white-river-ute-removal",
+			"stage": 1,
+			"people": "White River Ute (Yampa/Parianuche) and Uncompahgre Ute",
+			"nations": [
+				"ute-indian-tribe-of-the-uintah-and-ouray-reservation"
+			],
+			"years": [
+				1880,
+				1881
+			],
+			"kind": "statute",
+			"from": {
+				"description": "White River Agency / White River Ute Reservation, Colorado",
+				"name": "White River Agency / White River Ute Reservation, Colorado",
+				"point": [
+					-108.0383,
+					39.1896
+				],
+				"basis": "Royce cession 616, 617"
+			},
+			"to": {
+				"description": "Uintah Reservation, Utah (agricultural lands on the Uintah; Uncompahgre Ute went to the Ouray reserve, Aug.-Sept. 1881)",
+				"name": "Uintah and Ouray Indian Reservation",
+				"point": [
+					-110.181,
+					40.4578
+				],
+				"basis": "Wikidata Q7878111"
+			},
+			"legal_basis": [
+				{
+					"citation": "21 Stat. 199",
+					"article": "Act of June 15, 1880, ch. 223 (ratifying the Agreement of Mar. 6, 1880)"
+				}
+			],
+			"quote": "The White River Utes agree to remove to and settle upon agricultural lands on the Uintah Reservation in Utah.",
+			"quote_source": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_021/llsal_021.pdf",
+			"review": "Unverified"
+		},
+		{
+			"id": "nomecult-1863",
+			"journey": "nome-cult-trail",
+			"stage": 1,
+			"people": "Konkow (Concow) Maidu and others (Nomlaki, Yuki, Wintun, Pomo) of the Sacramento Valley",
+			"nations": [
+				"konkow-valley-band-of-maidu",
+				"round-valley-indian-tribes-round-valley-reservation"
+			],
+			"years": [
+				1863
+			],
+			"kind": "military",
+			"from": {
+				"description": "Camp Bidwell, near Chico, Butte County, California (Konkow homeland on the Feather River and Big Chico Creek)",
+				"name": "Chico, California",
+				"point": [
+					-121.8356,
+					39.74
+				],
+				"basis": "Wikidata Q432152"
+			},
+			"to": {
+				"description": "Round Valley Reservation (Nome Cult Farm), Covelo, Mendocino County, California; arrived Sept. 18, 1863",
+				"name": "Round Valley Indian Reservation",
+				"point": [
+					-123.329,
+					39.8928
+				],
+				"basis": "Wikidata Q7371177"
+			},
+			"legal_basis": [
+				{
+					"citation": "California state militia and Superintendent of Indian Affairs orders, Aug. 1863; federal authority from Act of Apr. 8, 1864, 13 Stat. 39 (not a basis for the 1863 removal)"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		},
+		{
+			"id": "rogue-1854-tablerock",
+			"journey": "rogue-river-removal",
+			"stage": 1,
+			"people": "Rogue River peoples (Takelma, Latgawa, Shasta, Athapaskan bands) and Chasta",
+			"nations": [
+				"confederated-tribes-of-siletz-indians-of-oregon",
+				"confederated-tribes-of-the-grand-ronde-community-of-oregon",
+				"cow-creek-band-of-umpqua-tribe-of-indians"
+			],
+			"years": [
+				1853,
+				1854
+			],
+			"kind": "treaty",
+			"from": {
+				"description": "Rogue River valley homelands, southwestern Oregon (ceded by treaties of 1853 and 1854)",
+				"name": "Rogue River valley homelands, southwestern Oregon (ceded by treaties of 1853 and 1854)",
+				"point": [
+					-122.9026,
+					42.431
+				],
+				"basis": "Royce cession 312, 343"
+			},
+			"to": {
+				"description": "Table Rock Reserve on the north side of the Rogue River, Jackson County, Oregon",
+				"name": "Upper and Lower Table Rock, Oregon",
+				"point": [
+					-122.935,
+					42.465
+				],
+				"basis": "Wikidata Q7033681"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-chasta-etc-1854-0655",
+					"citation": "10 Stat. 1122",
+					"article": "Art. 2"
+				},
+				{
+					"treaty_key": "treaty-with-the-rogue-river-1853-0603",
+					"citation": "10 Stat. 1018",
+					"article": "Art. 2-4 (Table Rock reserve)"
+				}
+			],
+			"quote": "they will remove to such portion of the Table Rock reserve as may be assigned them by the superintendent of Indian affairs or agent",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-chasta-etc-1854-0655",
+			"review": "Unverified"
+		},
+		{
+			"id": "rogue-1856-grandronde",
+			"journey": "rogue-river-removal",
+			"stage": 2,
+			"people": "Rogue River peoples",
+			"nations": [
+				"confederated-tribes-of-the-grand-ronde-community-of-oregon",
+				"confederated-tribes-of-siletz-indians-of-oregon"
+			],
+			"years": [
+				1856
+			],
+			"kind": "executive",
+			"from": {
+				"description": "Table Rock Reserve, Jackson County, Oregon",
+				"name": "Upper and Lower Table Rock, Oregon",
+				"point": [
+					-122.935,
+					42.465
+				],
+				"basis": "Wikidata Q7033681"
+			},
+			"to": {
+				"description": "Grand Ronde Agency on the Coast Reservation, Yamhill/Polk counties, Oregon (Feb.-Mar. 1856)",
+				"name": "Grand Ronde Community and Off-Reservation Trust Land",
+				"point": [
+					-123.65762,
+					45.1468
+				],
+				"basis": "Census Bureau area 1365 (2020)"
+			},
+			"legal_basis": [
+				{
+					"treaty_key": "treaty-with-the-chasta-etc-1854-0655",
+					"citation": "10 Stat. 1122",
+					"article": "Art. 2 (President may direct removal to another reserve)"
+				},
+				{
+					"citation": "Executive order of Nov. 9, 1855 setting apart the Coast Reservation (not fetched)"
+				}
+			],
+			"quote": "or to whatsoever other reserve the President of the United States may at any time hereafter direct.",
+			"quote_source": "https://treaties.okstate.edu/treaties/treaty-with-the-chasta-etc-1854-0655",
+			"review": "Unverified"
+		},
+		{
+			"id": "rogue-1856-siletz",
+			"journey": "rogue-river-removal",
+			"stage": 3,
+			"people": "Rogue River peoples (war survivors, from Fort Orford and Table Rock)",
+			"nations": [
+				"confederated-tribes-of-siletz-indians-of-oregon"
+			],
+			"years": [
+				1856,
+				1857
+			],
+			"kind": "military",
+			"from": {
+				"description": "Port Orford / Fort Orford and the Rogue River valley, Oregon",
+				"name": "Port Orford, Oregon",
+				"point": [
+					-124.4981,
+					42.7497
+				],
+				"basis": "Wikidata Q996786"
+			},
+			"to": {
+				"description": "Siletz Agency, Coast Reservation, Lincoln County, Oregon",
+				"name": "Siletz Reservation and Off-Reservation Trust Land",
+				"point": [
+					-123.72883,
+					44.75743
+				],
+				"basis": "Census Bureau area 3795 (2020)"
+			},
+			"legal_basis": [
+				{
+					"citation": "Military custody after the Rogue River War (surrender June 1856); Coast Reservation executive order of Nov. 9, 1855 (not fetched)"
+				}
+			],
+			"quote": "",
+			"quote_source": "",
+			"review": "Unverified"
+		}
+	]
+}

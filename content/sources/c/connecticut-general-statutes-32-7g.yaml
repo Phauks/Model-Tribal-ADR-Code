@@ -1,0 +1,47 @@
+key: connecticut-general-statutes-32-7g
+kind: state-statute
+citation:
+  type: legislation
+  title: Small Business Express program
+  title-short: Conn. Gen. Stat. § 32-7g
+  container-title: General Statutes of Connecticut
+  container-title-short: Conn. Gen. Stat.
+  section: 32-7g
+  author:
+  - literal: Connecticut General Assembly
+  URL: https://www.cga.ct.gov/2026/sup/chap_578.htm#sec_32-7g
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.cga.ct.gov/2026/sup/chap_578.htm#sec_32-7g
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Conn. Gen. Stat. § 32-7g (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Conn. Gen. Stat. § 32-7g (2026). History: Oct. Sp. Sess. P.A. 11-1, S. 1; June 12 Sp. Sess. P.A. 12-1, S. 199; P.A. 13-56, S. 1; P.A. 14-98, S. 43; P.A. 16-128, S. 1; May Sp. Sess. P.A. 16-3, S. 17; P.A. 17-219, S. 2; P.A. 18-122, S. 3; June Sp. Sess. P.A. 21-2, S. 283; P.A. 22-50, S. 1; 22-118, S. 154. Text read from the Connecticut General Assembly''s chapter page for the section in the General Statutes of Connecticut, revised to Jan. 1, 2025, or in its 2026 Supplement (cga.ct.gov), on Nov. 27, 2026. Found by the state statutes sweep (terms: american indians; indians; tribal); AI reader''s verdict incidental: Small business program minority definition includes American Indians with tribal affiliation. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indians; indians; tribal'

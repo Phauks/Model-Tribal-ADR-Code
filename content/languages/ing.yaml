@@ -1,0 +1,63 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ing
+name: Degexit'an
+iso_639_3:
+  code: ing
+  reference_name: Degexit'an
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: dege1248
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2371
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/degxinag.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Lower Yukon Ingalik
+  glottocode: lowe1452
+  source: glottolog-5-4
+- name: Middle Kuskokwim Ingalik
+  glottocode: midd1368
+  source: glottolog-5-4
+works:
+- glottolog_reference: '165940'
+  title: Deg Xinag Learner's Dictionary
+  kinds:
+  - dictionary
+  author: Marilyn (interviewer) Chase, Beth (interviewer) Leonard, Edna (speaker) Deacon, Jim (speaker) Dementi, Hamil (speaker) Hamilton, Katherine (speaker) Hamilton and Lucy (speaker) Hamilton
+  year: 2001
+  source: glottolog-5-4
+- glottolog_reference: '172691'
+  title: Deg Xinag. Ingalik Noun Dictionary
+  kinds:
+  - dictionary
+  author: James Kari
+  year: 1978
+  publisher: Alaska Native Language Center
+  pages: 108
+  source: glottolog-5-4
+- glottolog_reference: '680093'
+  title: Ingalik Noun Dictionary
+  kinds:
+  - dictionary
+  author: James Kari
+  year: 1978
+  publisher: Alaska Native Language Center
+  source: glottolog-5-4
+- glottolog_reference: '172659'
+  title: English-Ingalik Dictionary
+  kinds:
+  - dictionary
+  author: John W Chapman
+  year: 1911
+  pages: 109
+  source: glottolog-5-4
+retrieved: '2026-11-27'

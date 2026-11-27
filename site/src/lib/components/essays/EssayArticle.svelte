@@ -92,7 +92,7 @@
 		const response = await fetch(`/workspace/essays/${identifier}/page`, {
 			headers: { Accept: 'application/json' },
 			redirect: 'manual'
-		}).catch(() => null);
+		}).catch(() => /* expected: offline; the article shows what was published, and the server reports its own failures. */ null);
 		if (!response?.ok || !response.headers.get('Content-Type')?.includes('application/json')) return;
 		const answer = (await response.json()) as EssayPageState;
 		// Two loads can cross; never step back to an older version.

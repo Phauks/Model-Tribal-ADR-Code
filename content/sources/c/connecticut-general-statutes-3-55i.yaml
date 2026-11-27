@@ -1,0 +1,55 @@
+key: connecticut-general-statutes-3-55i
+kind: state-statute
+citation:
+  type: legislation
+  title: Mashantucket Pequot and Mohegan Fund
+  title-short: Conn. Gen. Stat. § 3-55i
+  container-title: General Statutes of Connecticut
+  container-title-short: Conn. Gen. Stat.
+  section: 3-55i
+  author:
+  - literal: Connecticut General Assembly
+  issued:
+    date-parts:
+    - - 1993
+  URL: https://www.cga.ct.gov/current/pub/chap_032.htm#sec_3-55i
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.cga.ct.gov/current/pub/chap_032.htm#sec_3-55i
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- connecticut-general-statutes-3-55j
+- connecticut-general-statutes-3-55l
+- connecticut-general-statutes-3-55m
+- connecticut-general-statutes-3-55n
+state_law:
+  relevance: core
+  citation: Conn. Gen. Stat. § 3-55i (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Conn. Gen. Stat. § 3-55i (2026). History: P.A. 93-388, S. 1, 12; May Sp. Sess. P.A. 94-1, S. 33, 53; P.A. 97-274, S. 1, 7; June Sp. Sess. P.A. 99-1, S. 3, 51; P.A. 05-287, S. 19; P.A. 14-217, S. 44. Text read from the Connecticut General Assembly''s chapter page for the section in the General Statutes of Connecticut, revised to Jan. 1, 2025, or in its 2026 Supplement (cga.ct.gov), on Nov. 27, 2026. Found by the state statutes sweep (terms: mashantucket; mohegan; pequot; tribe); AI reader''s verdict core: Mashantucket Pequot and Mohegan Fund under tribal MOU revenue. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: mashantucket; mohegan; pequot; tribe'

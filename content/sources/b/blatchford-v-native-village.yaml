@@ -104,6 +104,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=501%20U.S.%20775
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1991-02-19'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-793.mp3
+  catalog: https://catalog.archives.gov/id/118974919
+  whole_session: true
+  duration_seconds: 14487
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-793.mp3
+    checksum: 055b69ba20e179ccf501c14ca42b1a267dc6034695dd02e20882cf6673a7b7ea
+    media_type: audio/mpeg
+    bytes: 231794017
 rights:
   status: no-permission-needed
   basis: us-government-work

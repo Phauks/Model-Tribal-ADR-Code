@@ -1,0 +1,84 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: hup
+name: Hupa-Chilula
+iso_639_3:
+  code: hup
+  reference_name: Hupa
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: hupa1239
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+iso_names:
+- name: Hupa
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1862
+  source: glottolog-5-4
+dialects:
+- name: Chilula-Whilkut
+  glottocode: chil1285
+  source: glottolog-5-4
+- name: Hupa
+  glottocode: hupa1240
+  source: glottolog-5-4
+works:
+- glottolog_reference: '406951'
+  title: Hupa texts, with notes and lexicon
+  kinds:
+  - dictionary
+  author: Edward Sapir
+  year: 2001
+  publisher: Mouton de Gruyter
+  pages: 1014
+  source: glottolog-5-4
+- glottolog_reference: '453398'
+  title: Hupa Language Dictionary
+  kinds:
+  - dictionary
+  author: Victor K. Golla
+  year: 1996
+  publisher: Hoopa Valley Tribal Council
+  pages: 131
+  source: glottolog-5-4
+- glottolog_reference: '669720'
+  title: Hupa Language Dictionary
+  kinds:
+  - dictionary
+  year: 1983
+  publisher: Hoopa Valley Tribe
+  source: glottolog-5-4
+- glottolog_reference: '670808'
+  title: Hupa Language Dictionary
+  kinds:
+  - dictionary
+  author: Anonymous
+  year: 1983
+  publisher: Hoopa Valley Tribe
+  source: glottolog-5-4
+- glottolog_reference: '45349'
+  title: The Morphology of the Hupa Language
+  kinds:
+  - grammar
+  author: Pliny E. Goddard
+  year: 1905
+  publisher: University of California Press
+  pages: 344
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '45348'
+  title: The Morphology of the Hupa Language
+  kinds:
+  - grammar
+  author: Pliny Earle Goddard
+  year: 1904
+  publisher: University of California at Berkeley
+  pages: 344
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

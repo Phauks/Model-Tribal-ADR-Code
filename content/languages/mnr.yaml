@@ -1,0 +1,57 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: mnr
+name: Mono (USA)
+iso_639_3:
+  code: mnr
+  reference_name: Mono (USA)
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: mono1275
+  level: language
+  source: glottolog-5-4
+family:
+  name: Uto-Aztecan
+  glottocode: utoa1244
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/4692
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '133147'
+  title: A Dictionary of Western Mono
+  kinds:
+  - dictionary
+  author: Rosalie Bethel, Paul V. Kroskrity, Christopher Loether and Gregory Reinhardt
+  year: 1993
+  publisher: Idaho State University, Department of Anthropology and American Indian Studies
+  pages: 428
+  source: glottolog-5-4
+- glottolog_reference: '672110'
+  title: A Practical Dictionary of Western Mono
+  kinds:
+  - dictionary
+  author: Rosalie Bethel, Paul V. Kroskrity, Christopher Loether and Gregory Reinhardt
+  year: 1984
+  publisher: Idaho State University, Department of Anthropology and American Indian Studies
+  pages: 308
+  source: glottolog-5-4
+- glottolog_reference: '150618'
+  title: Mono grammar
+  kinds:
+  - grammar
+  author: Sydney MacDonald Lamb
+  year: 1958
+  publisher: University of California at Berkeley
+  pages: 389
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '305135'
+  title: Monachi dictionary
+  kinds:
+  - dictionary
+  author: Sydney Lamb
+  pages: 167
+  source: glottolog-5-4
+retrieved: '2026-11-27'
