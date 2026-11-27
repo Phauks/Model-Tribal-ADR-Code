@@ -369,6 +369,32 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Seminole Tribe of Florida".
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2001
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Nashville Area, row 'Seminole Tribe of Florida'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1000208
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: FL, row 'Seminole Tribe of Florida' (Hollywood)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 19481090
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SEMINOLE TRIBE OF FLORIDA' (UEI XKGGZYGUF5E3), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Seminole Tribe of Florida) (approved 1957) states it was adopted under Act of

@@ -157,6 +157,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Elem Indian Colony of Pomo Indians of the Sulphur Bank Rancheria, California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 125790
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Elem Indian Colony of Pomo Indians (Sulphur Bank Rancheria)' (Santa Rosa)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 85609
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'ELEM INDIAN COLONY' (UEI N6CSN75APST1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'ELEM INDIAN COLONY'.
 governance:
 - aspect: form
   value: Constitution and Bylaws adopted under Section 16 of the Indian Reorganization Act

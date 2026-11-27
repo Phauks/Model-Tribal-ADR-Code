@@ -186,6 +186,32 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: page text
   note: 'The source''s words: "located on the Iowa Tribe in Kansas and Nebraska Reservation".'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2019
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Iowa Tribe of Kansas and Nebraska'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 617527
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: KS, row 'Iowa Tribe of Kansas and Nebraska' (White Cloud)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 4406620
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'IOWA TRIBE OF KANSAS AND NEBRASKA' (UEI ZTJ7KMVTH3Y9), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Iowa Tribe in Nebraska and Kansas" among organizations under constitutions approved

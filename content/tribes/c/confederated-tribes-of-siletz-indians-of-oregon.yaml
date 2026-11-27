@@ -143,6 +143,76 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Confederated Tribes of Siletz Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Confederated Tribes of the Siletz Indians of Oregon (1994)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1992
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Confederated Tribes Of Siletz Indians' (Northwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Confederated Tribes Of Siletz Indians'.
+- program: indian-health-service-self-governance-compact
+  since: 1994
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Confederated Tribes of the Siletz Indians of Oregon'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Confederated Tribes of the Siletz Indians of Oregon'.
+- program: pl-102-477-plan
+  start: '2024-10-01'
+  end: '2027-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - American Indian Vocational Rehabilitation Services
+  - Temporary Assistance for Needy Families
+  - Food Distribution Program on Indian Reservation
+  - 'Welfare Assistance: General Assistance'
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Confederated Tribes of Siletz Indians of Oregon'; PL102_477_PartnerEnrollment, its 6 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 7562155
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OR, row 'Confederated Tribes of Siletz Indians' (Siletz)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Confederated Tribes of Siletz Indians of Oregon'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 6629890
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'CONFEDERATED TRIBES SILETZ INDIANS' (UEI WQ4YPGKMFVM4), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CONFEDERATED TRIBES SILETZ INDIANS'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 12926819
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'CONFEDERATED TRIBES SILETZ INDIANS' (UEI WQ4YPGKMFVM4), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CONFEDERATED TRIBES SILETZ INDIANS'.
 governance:
 - aspect: head-of-government
   value: Chairperson

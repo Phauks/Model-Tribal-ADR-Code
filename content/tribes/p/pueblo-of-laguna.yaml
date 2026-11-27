@@ -179,6 +179,53 @@ indian_health_service:
   locator: page text
   note: 'The source''s words: "Acoma-Canoncito-Laguna SU – IHS".'
   operator: indian-health-service
+federal_programs:
+- program: pl-102-477-plan
+  start: '2023-07-01'
+  end: '2028-06-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Job Placement and Training
+  - Adult Education
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Pueblo of Laguna, New Mexico'; PL102_477_PartnerEnrollment, its 6 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2016016
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Laguna Pueblo' (Laguna Pueblo)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 11069361
+  amount_kind: obligations
+  through: Laguna Healthcare Corp
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'LAGUNA HEALTHCARE CORP' (UEI JLKQRAMM1WN3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'LAGUNA HEALTHCARE CORP'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 2507918
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'PUEBLO OF LAGUNA' (UEI DNDLQQ7MBAB7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PUEBLO OF LAGUNA'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution and Bylaws of the Pueblo of Laguna (approved 1958) states it was adopted under

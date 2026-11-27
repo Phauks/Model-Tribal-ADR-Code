@@ -130,6 +130,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Native Village of Hamilton".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Hamilton' (Kotlik)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Hamilton'.
 governance:
 - aspect: head-of-government
   value: President

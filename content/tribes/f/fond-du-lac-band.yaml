@@ -147,6 +147,53 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Fond du Lac Band". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1998
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Fond Du Lac Band Of Chippewa' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Fond Du Lac Band Of Chippewa'.
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Fond du Lac Band of Lake Superior Chippewa'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Fond du Lac Band of Lake Superior Chippewa'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 6173023
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: MN, row 'Fond Du Lac Band, Minnesota Chippewa Tribe' (Cloquet)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Fond Du Lac Band, Minnesota Chippewa Tribe'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 3601044
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'FOND DU LAC RESERVATION' (UEI J37EL8RWMHK6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'FOND DU LAC RESERVATION'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 21788849
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'FOND DU LAC RESERVATION' (UEI J37EL8RWMHK6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'FOND DU LAC RESERVATION'.
 governance:
 - aspect: governing-body
   value: Reservation Business Committee, Tribal Council

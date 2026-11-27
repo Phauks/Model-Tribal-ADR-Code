@@ -165,6 +165,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
   note: 'The source''s words: "Native Village of Point Hope".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 672307
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Point Hope' (Point Hope)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Point Hope'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Point Hope" among organizations under constitutions approved

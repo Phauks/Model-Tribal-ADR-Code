@@ -83,6 +83,17 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Capitan Grande Band of Diegueno Mission Indians of California (Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation, California)".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 176828
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Capitan Grande Band of Diegueno Mission Indians' (Lakeside)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Capitan Grande Band of Diegueno Mission Indians'.
 governing_documents:
 - kind: law-code
   title: Tribal code

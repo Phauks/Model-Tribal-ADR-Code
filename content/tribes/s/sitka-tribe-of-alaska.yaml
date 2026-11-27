@@ -202,6 +202,33 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
   note: 'The source''s words: "Sitka Tribe of Alaska".'
   operator: tribal
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Sitka Tribe Of Alaska' (Alaska Region)
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1969871
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Sitka Tribe (Baranof Island)' (Sitka)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Sitka Tribe (Baranof Island)'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 5897331
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SITKA TRIBE OF ALASKA' (UEI RSHJU9JW4G59), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Sitka Community Association of Alaska" among organizations under constitutions

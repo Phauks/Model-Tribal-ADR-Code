@@ -193,6 +193,36 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: page text
   note: 'The source''s words: "Kewa Pueblo Health Corporation (Santo Domingo Health Center)".'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1328109
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Santo Domingo Pueblo' (Santo Domingo Pueblo)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 11319666
+  amount_kind: obligations
+  through: Kewa Pueblo Health Corporation (KPHC)
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'KEWA PUEBLO HEALTH CORPORATION (KPHC)' (UEI KFZ5AKUHWH99), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KEWA PUEBLO HEALTH CORPORATION (KPHC)'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1148224
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SANTO DOMINGO PUEBLO' (UEI LCAEDR3912Z7), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: head-of-government
   value: Governor
