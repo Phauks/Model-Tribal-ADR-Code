@@ -1,10 +1,13 @@
 <script lang="ts">
 	// The site search page (site/DESIGN.md, section 6, "Search"). The page is
 	// built ahead of time; in the browser it reads the words and filters from
-	// the address (/search?q=…&state=NV), loads the indexes built with the
-	// site and lists the matches, grouped by kind. Filters narrow the nations
-	// by the facts their records hold, and with them the laws and stories of
-	// those nations (Trevor asked for advanced search on Nov. 23, 2026).
+	// the address (/search?q=…&type=law,case&state=NV), loads the indexes built
+	// with the site and lists the matches, grouped by kind. Filters narrow the
+	// nations by the facts their records hold, and with them the laws and
+	// stories of those nations (Trevor asked for advanced search on Nov. 23,
+	// 2026). The tools live in the left sidebar, and results can be ticked and
+	// downloaded together as a .zip (Trevor, Nov. 27, 2026, the approved
+	// mockup design/search-download/revision-3; src/lib/search-selection.ts).
 	// Without scripts it says so and offers the ways to browse.
 	import { onMount } from 'svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
@@ -12,10 +15,13 @@
 	import { page } from '$app/state';
 	import { replaceState } from '$app/navigation';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
-	import SlidersHorizontal from '@lucide/svelte/icons/sliders-horizontal';
+	import ExternalLink from '@lucide/svelte/icons/external-link';
+	import Search from '@lucide/svelte/icons/search';
 	import X from '@lucide/svelte/icons/x';
 	import DataTable from '#lib/components/DataTable.svelte';
-	import FilterPanel from '#lib/components/FilterPanel.svelte';
+	import SearchTools, { type SortOrder } from '#lib/components/search/SearchTools.svelte';
+	import SelectionBar, { type ChosenResult } from '#lib/components/search/SelectionBar.svelte';
+	import { dayOf } from '#lib/download-names.ts';
 	import {
 		activeChoices,
 		choicesFromAddress,
@@ -35,15 +41,27 @@
 		type SearchRecords
 	} from '#lib/search-records.ts';
 	import { entryGroups, forEntryGroups, matchEverything, resultGroupLabels, resultGroups, type ResultGroup } from '#lib/search-everything.ts';
+	import { extensionOf, fileOf, sizeText, type SearchFiles } from '#lib/search-selection.ts';
+	import { offerSidebarTools } from '#lib/sidebar-tools.svelte.ts';
 	import { loadSearchIndex, prepareSearchIndex, type SearchEntry, type SearchResult } from '#lib/site-search.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 
-	type Show = 'all' | ResultGroup;
 	/** A result listed straight from the index; a story listed without words typed has no name that matched. */
 	type ListedResult = SearchEntry & Partial<Pick<SearchResult, 'matchedName' | 'matchedGroup'>>;
 
-	const showLabels: Record<Show, string> = { all: 'Everything', ...resultGroupLabels };
-	const showOrder: Show[] = ['all', ...resultGroups];
+	/** One row of the results, whatever its group. */
+	interface ResultRow {
+		link: string;
+		title: string;
+		group: ResultGroup;
+		detail?: string;
+		/** "also called …", or the set whose name matched. */
+		aside?: string;
+		nation?: string;
+		year?: number;
+	}
+
+	const sortOrders: SortOrder[] = ['best', 'newest', 'oldest', 'title'];
 
 	/** Results shown per group before "Show all". */
 	const firstShown = 25;
@@ -52,13 +70,17 @@
 	// Raw, not deeply reactive: wrapping every one of the index's entries made each keystroke about three times slower.
 	let entries = $state.raw<SearchEntry[] | undefined>();
 	let records = $state.raw<SearchRecords | undefined>();
+	/** Each result's file, loaded after the indexes, since only the tags and the download need it. */
+	let files = $state.raw<SearchFiles | undefined>();
 	let failed = $state(false);
 	let query = $state('');
 	/** The words last written into the address, so typing is not undone when the address catches up. */
 	let written: string | undefined;
-	let expanded = $state<Partial<Record<Show, boolean>>>({});
-	let filtersOpen = $state(false);
+	let expanded = $state<Partial<Record<ResultGroup, boolean>>>({});
+	let folded = $state<Partial<Record<ResultGroup, boolean>>>({});
 	let typingTimer: ReturnType<typeof setTimeout> | undefined;
+	/** The ticked results, by link. They stay ticked through new searches, so a selection can gather several. */
+	let selected = $state.raw(new Map<string, ResultRow>());
 
 	// Follow the address, including a new search from the masthead's box.
 	$effect(() => {
@@ -71,6 +93,10 @@
 	});
 
 	onMount(async () => {
+		void fetch('/search/files.json')
+			.then((response) => (response.ok ? (response.json() as Promise<SearchFiles>) : undefined))
+			.then((list) => (files = list ?? {}))
+			.catch(() => (files = {}));
 		try {
 			const [index, recordsFile] = await Promise.all([loadSearchIndex(), loadSearchRecords()]);
 			await prepareSearchIndex(index);
@@ -80,14 +106,25 @@
 		}
 	});
 
+	// The tools go in the left sidebar while this page is open.
+	$effect(() => offerSidebarTools({ title: 'Search', sheetLabel: 'Search tools', tools: searchTools }));
+
 	const parameters = $derived(page.url.searchParams);
-	const show = $derived<Show>(showOrder.find((value) => value === parameters.get('type')) ?? 'all');
+	/** The kinds ticked under Show; none shows every kind. */
+	const shownKinds = $derived<ResultGroup[]>(
+		resultGroups.filter((group) => (parameters.get('type') ?? '').split(',').includes(group))
+	);
+	const sort = $derived<SortOrder>(sortOrders.find((value) => value === parameters.get('sort')) ?? 'best');
+	const filesOnly = $derived(parameters.get('files') === '1');
+	/** The one kind shown, when only one is ticked: the filters then count what it lists. */
+	const onlyKind = $derived(shownKinds.length === 1 ? shownKinds[0] : undefined);
 	const facets = $derived(records ? nationFacets(records) : []);
 	const choices = $derived(choicesFromAddress(parameters, facets));
 	const documentChoices = $derived(choicesFromAddress(parameters, documentFacets));
 	const filtering = $derived(hasChoices(choices));
+	const showsDocumentFilters = $derived(shownKinds.includes('document'));
 	const filterCount = $derived(
-		Object.values(choices).flat().length + (show === 'document' ? Object.values(documentChoices).flat().length : 0)
+		Object.values(choices).flat().length + (showsDocumentFilters ? Object.values(documentChoices).flat().length : 0)
 	);
 
 	const trimmed = $derived(query.trim());
@@ -106,7 +143,9 @@
 		return (matches?.nation ?? []).map((match) => match.row);
 	});
 
-	const browsing = $derived(trimmed === '' && (filtering || show === 'nation' || show === 'document' || show === 'story'));
+	const browsing = $derived(
+		trimmed === '' && (filtering || filesOnly || shownKinds.some((kind) => kind === 'nation' || kind === 'document' || kind === 'story'))
+	);
 	const nations = $derived(trimmed || browsing ? filterRows(nationPool, facets, choices) : []);
 	/** The nations the filters allow, by id; undefined when no filter is ticked. */
 	const allowed = $derived(
@@ -118,13 +157,13 @@
 	);
 	const documentCounts = $derived(facetCounts(documentPool, documentFacets, documentChoices));
 	const documents = $derived<DocumentSearchRow[]>(
-		trimmed || browsing ? filterRows(documentPool, documentFacets, documentChoices) : []
+		trimmed || browsing ? filterRows(documentPool, documentFacets, showsDocumentFilters ? documentChoices : {}) : []
 	);
 
 	const storyPool = $derived<SearchEntry[]>(
 		trimmed
 			? (matches?.story ?? [])
-			: browsing || show === 'story'
+			: browsing || onlyKind === 'story'
 				? (entries ?? []).filter((entry) => entry.kind === 'story')
 				: []
 	);
@@ -139,12 +178,12 @@
 	 * nations; otherwise it counts nations.
 	 */
 	const counts = $derived.by(() => {
-		if (show === 'document') {
+		if (onlyKind === 'document') {
 			const pool = trimmed ? (matches?.document ?? []) : (records?.documents ?? []);
 			const found = filterRows(pool, documentFacets, documentChoices);
 			return facetCounts(throughNations(found.map((row) => [row.nation])), facets, choices);
 		}
-		if (show === 'story') {
+		if (onlyKind === 'story') {
 			return facetCounts(throughNations(storyPool.map((entry) => records?.storyNations[entry.link] ?? [])), facets, choices);
 		}
 		return facetCounts(nationPool, facets, choices);
@@ -167,48 +206,110 @@
 		});
 	}
 
-	/**
-	 * Each group listed straight from the search index. Stories follow the
-	 * nation filters; the rest belong to no nation in the index (federal law,
-	 * cases, people, glossary terms, reference material and the site's pages),
-	 * so nation filters put them away.
-	 */
-	const listed = $derived(
-		forEntryGroups<ListedResult[]>((group) => (group === 'story' ? stories : filtering ? [] : (matches?.[group] ?? [])))
-	);
+	/** The year a result gives in its line, such as "Statute · 1988", for sorting by date. */
+	function yearIn(text: string | undefined): number | undefined {
+		const years = text?.match(/\b(1[5-9]\d\d|20\d\d)\b/g);
+		return years ? Number(years.at(-1)) : undefined;
+	}
 
-	const totals = $derived<Record<Show, number>>({
-		...forEntryGroups((group) => listed[group].length),
-		all: nations.length + documents.length + entryGroups.reduce((total, group) => total + listed[group].length, 0),
-		nation: nations.length,
-		document: documents.length
+	/**
+	 * Each group's rows. Stories follow the nation filters; the rest of the
+	 * groups listed straight from the index belong to no nation in the index
+	 * (federal law, cases, people, glossary terms, reference material and the
+	 * site's pages), so nation filters put them away.
+	 */
+	const allRows = $derived.by<Record<Exclude<ResultGroup, 'nation'>, ResultRow[]>>(() => ({
+		document: documents.map((row) => ({
+			link: row.link,
+			title: row.title,
+			group: 'document' as const,
+			detail: [row.kindLabel, row.year, row.nationName].filter(Boolean).join(' · '),
+			nation: row.nationName,
+			...(row.year ? { year: Number(row.year) } : {})
+		})),
+		...forEntryGroups<ResultRow[]>((group) =>
+			((group === 'story' ? stories : filtering ? [] : (matches?.[group] ?? [])) as ListedResult[]).map((result) => ({
+				link: result.link,
+				title: result.title,
+				group,
+				...(result.detail ? { detail: result.detail } : {}),
+				...(result.matchedName ? { aside: `also called ${result.matchedName}` } : result.matchedGroup ? { aside: result.matchedGroup } : {}),
+				...(yearIn(result.detail) ? { year: yearIn(result.detail) } : {})
+			}))
+		)
+	}));
+
+	const hasFile = (link: string) => fileOf(files, link) !== undefined;
+
+	function sorted(rows: ResultRow[]): ResultRow[] {
+		if (sort === 'best') return rows;
+		if (sort === 'title') return rows.toSorted((first, second) => first.title.localeCompare(second.title, 'en', { sensitivity: 'base' }));
+		const direction = sort === 'newest' ? -1 : 1;
+		// Results without a year go last either way.
+		return rows.toSorted((first, second) => {
+			if (first.year === undefined || second.year === undefined) return (first.year === undefined ? 1 : 0) - (second.year === undefined ? 1 : 0);
+			return direction * (first.year - second.year);
+		});
+	}
+
+	const rows = $derived.by(() => {
+		const kept: Partial<Record<ResultGroup, ResultRow[]>> = {};
+		for (const [group, list] of Object.entries(allRows) as [Exclude<ResultGroup, 'nation'>, ResultRow[]][]) {
+			kept[group] = sorted(filesOnly ? list.filter((row) => hasFile(row.link)) : list);
+		}
+		return kept as Record<Exclude<ResultGroup, 'nation'>, ResultRow[]>;
 	});
-	const shows = (kind: Show) => (show === 'all' || show === kind) && totals[kind] > 0;
+	const nationList = $derived(filesOnly ? [] : sort === 'title' ? nations.toSorted((first, second) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' })) : nations);
+
+	const totals = $derived<Record<ResultGroup, number>>({
+		...forEntryGroups((group) => rows[group].length),
+		nation: nationList.length,
+		document: rows.document.length
+	});
+	const isShown = (kind: ResultGroup) => shownKinds.length === 0 || shownKinds.includes(kind);
+	const shows = (kind: ResultGroup) => isShown(kind) && totals[kind] > 0;
+	const shownTotal = $derived(resultGroups.filter(isShown).reduce((total, group) => total + totals[group], 0));
+	/** How many results of the kinds shown have a copy to download, whether or not only those are shown. */
+	const fileCount = $derived(
+		files
+			? (Object.entries(allRows) as [ResultGroup, ResultRow[]][])
+					.filter(([group]) => isShown(group))
+					.reduce((total, [, list]) => total + list.filter((row) => hasFile(row.link)).length, 0)
+			: 0
+	);
 
 	const chips = $derived<ActiveChoice[]>([
 		...activeChoices(facets, choices),
-		...(show === 'document' ? activeChoices(documentFacets, documentChoices) : [])
+		...(showsDocumentFilters ? activeChoices(documentFacets, documentChoices) : [])
 	]);
+
+	const counting = $derived(trimmed !== '' || browsing);
 
 	const status = $derived.by(() => {
 		if (!entries || !records) return '';
-		if (trimmed === '' && !browsing) return 'Type a name or a word, or choose filters.';
-		const count = show === 'all' ? totals.all : totals[show];
-		const what = `${count.toLocaleString('en-US')} ${count === 1 ? 'result' : 'results'}`;
+		if (!counting) return 'Type a name or a word, or choose filters.';
+		const what = `${shownTotal.toLocaleString('en-US')} ${shownTotal === 1 ? 'result' : 'results'}`;
 		const words = trimmed ? ` for “${trimmed}”` : '';
 		const filters = filterCount > 0 ? ` with ${filterCount} ${filterCount === 1 ? 'filter' : 'filters'}` : '';
 		return `${what}${words}${filters}`;
 	});
 
-	/** Writes the words, the kind shown and the filters into the address, replacing the current entry. */
-	function writeAddress(next: { show?: Show; choices?: FilterChoices; documentChoices?: FilterChoices } = {}) {
+	/** Writes the words, the kinds shown, the order and the filters into the address, replacing the current entry. */
+	function writeAddress(
+		next: { show?: ResultGroup[]; sort?: SortOrder; filesOnly?: boolean; choices?: FilterChoices; documentChoices?: FilterChoices } = {}
+	) {
 		const url = new URL(page.url.href);
 		written = trimmed;
 		if (trimmed) url.searchParams.set('q', trimmed);
 		else url.searchParams.delete('q');
-		const nextShow = next.show ?? show;
-		if (nextShow === 'all') url.searchParams.delete('type');
-		else url.searchParams.set('type', nextShow);
+		const nextShow = next.show ?? shownKinds;
+		if (nextShow.length === 0) url.searchParams.delete('type');
+		else url.searchParams.set('type', resultGroups.filter((group) => nextShow.includes(group)).join(','));
+		const nextSort = next.sort ?? sort;
+		if (nextSort === 'best') url.searchParams.delete('sort');
+		else url.searchParams.set('sort', nextSort);
+		if (next.filesOnly ?? filesOnly) url.searchParams.set('files', '1');
+		else url.searchParams.delete('files');
 		writeChoices(url.searchParams, facets, next.choices ?? choices);
 		writeChoices(url.searchParams, documentFacets, next.documentChoices ?? documentChoices);
 		replaceState(url, {});
@@ -226,6 +327,14 @@
 		typingTimer = setTimeout(() => writeAddress(), 300);
 	}
 
+	function clearWords() {
+		query = '';
+		expanded = {};
+		clearTimeout(typingTimer);
+		writeAddress();
+		document.getElementById('search-page-query')?.focus();
+	}
+
 	function removeChip(chip: ActiveChoice) {
 		const from = facets.some((facet) => facet.key === chip.key) ? choices : documentChoices;
 		const values = (from[chip.key] ?? []).filter((value) => value !== chip.value);
@@ -234,9 +343,44 @@
 		else writeAddress({ documentChoices: next });
 	}
 
-	function shown<Item>(kind: Show, list: Item[], limit = firstShown): Item[] {
+	function shown<Item>(kind: ResultGroup, list: Item[], limit = firstShown): Item[] {
 		return expanded[kind] ? list : list.slice(0, limit);
 	}
+
+	// ---- Ticking results ----
+
+	function tick(row: ResultRow, on: boolean) {
+		const next = new Map(selected);
+		if (on) next.set(row.link, row);
+		else next.delete(row.link);
+		selected = next;
+	}
+
+	function tickAll(list: ResultRow[], on: boolean) {
+		const next = new Map(selected);
+		for (const row of list) {
+			if (on) next.set(row.link, row);
+			else next.delete(row.link);
+		}
+		selected = next;
+	}
+
+	function tickedOf(list: ResultRow[]): 'all' | 'some' | 'none' {
+		const count = list.filter((row) => selected.has(row.link)).length;
+		return count === 0 ? 'none' : count === list.length ? 'all' : 'some';
+	}
+
+	/** Every row on the screen, in every group shown and not folded. */
+	const onScreen = $derived(
+		(Object.keys(rows) as Exclude<ResultGroup, 'nation'>[]).filter((group) => shows(group) && !folded[group]).flatMap((group) => shown(group, rows[group]))
+	);
+
+	const chosen = $derived<ChosenResult[]>(
+		[...selected.values()].map((row) => {
+			const file = fileOf(files, row.link);
+			return { link: row.link, title: row.title, group: row.group, ...(row.nation ? { nation: row.nation } : {}), ...(file ? { file } : {}) };
+		})
+	);
 
 	const nationColumns: TableColumn[] = [
 		{ key: 'name', header: 'Nation or community', sortable: true, isRowHeader: true },
@@ -257,27 +401,71 @@
 		};
 	}
 
-	const nationRows = $derived(shown('nation', nations, firstNationsShown).map(nationRow));
+	const nationRows = $derived(shown('nation', nationList, firstNationsShown).map(nationRow));
+	const toolKinds = $derived(resultGroups.map((group) => ({ group, label: resultGroupLabels[group], count: totals[group] })));
+	const today = dayOf(new Date());
 </script>
 
 <svelte:head>
 	<title>{trimmed ? `“${trimmed}” · ` : ''}Search · Tribal Law Project</title>
 </svelte:head>
 
-<div class="reading">
-	<h1>Search</h1>
+{#snippet searchTools(place: string)}
+	<SearchTools
+		{place}
+		kinds={toolKinds}
+		shown={shownKinds}
+		{counting}
+		onshow={(next) => {
+			expanded = {};
+			writeAddress({ show: next });
+		}}
+		{sort}
+		onsort={(next) => writeAddress({ sort: next })}
+		{filesOnly}
+		{fileCount}
+		onfiles={(next) => writeAddress({ filesOnly: next })}
+		facetSets={records
+			? [
+					...(showsDocumentFilters
+						? [{ identifier: 'documents', facets: documentFacets, choices: documentChoices, counts: documentCounts, onchange: (next: FilterChoices) => writeAddress({ documentChoices: next }) }]
+						: []),
+					{ identifier: 'nations', facets, choices, counts, onchange: (next: FilterChoices) => writeAddress({ choices: next }) }
+				]
+			: []}
+	/>
+{/snippet}
+
+{#snippet tag(row: ResultRow)}
+	{@const file = fileOf(files, row.link)}
+	{#if file}
+		<span class="tag"><b>{extensionOf(file[1]) || 'file'}</b>{sizeText(file[0])}</span>
+	{:else if !row.link.startsWith('/')}
+		<span class="tag link-only">Link only <ExternalLink size={14} aria-hidden="true" /></span>
+	{:else if files}
+		<span class="tag">Page</span>
+	{/if}
+{/snippet}
+
+<div class="search-page">
+	<h1 class="visually-hidden">Search</h1>
 
 	<form class="search-form needs-scripts" role="search" action="/search" method="get" onsubmit={search}>
-		<div class="field">
-			<label for="search-page-query">Search nations, laws, cases, people, stories and pages</label>
+		<label class="visually-hidden" for="search-page-query">Search nations, laws, cases, people, stories and pages</label>
+		<div class="query-field">
+			<Search size={18} aria-hidden="true" />
 			<input
 				id="search-page-query"
 				type="search"
 				name="q"
 				autocomplete="off"
+				placeholder="Search nations, laws, cases, people, stories and pages"
 				bind:value={query}
 				oninput={typed}
 			/>
+			{#if query}
+				<button class="clear-words" type="button" aria-label="Clear the search" onclick={clearWords}><X size={20} aria-hidden="true" /></button>
+			{/if}
 		</div>
 	</form>
 
@@ -296,105 +484,56 @@
 			</p>
 		</div>
 	{/if}
-</div>
 
-{#if entries && records}
-	<fieldset class="show-kinds no-print">
-		<legend class="visually-hidden">Show</legend>
-		{#each showOrder as kind (kind)}
-			<label class="show-kind" class:chosen={show === kind}>
-				<input
-					type="radio"
-					name="show"
-					value={kind}
-					checked={show === kind}
-					onchange={() => {
-						expanded = {};
-						writeAddress({ show: kind });
-					}}
-				/>
-				{showLabels[kind]}
-				{#if trimmed || browsing}<CountBadge count={totals[kind]} />{/if}
-			</label>
-		{/each}
-	</fieldset>
+	{#if entries && records}
+		<p class="status" role="status">{status}</p>
 
-	<div class="search-layout">
-		<div class="filters-toggle no-print">
-			<button
-				class="button button-quiet"
-				type="button"
-				aria-expanded={filtersOpen}
-				aria-controls="search-filters"
-				onclick={() => (filtersOpen = !filtersOpen)}
-			>
-				<SlidersHorizontal size={20} aria-hidden="true" />
-				<span>Filters{filterCount > 0 ? ` (${filterCount})` : ''}</span>
-			</button>
-		</div>
-
-		<section class="filters no-print" class:open={filtersOpen} id="search-filters" aria-labelledby="filters-heading">
-			<h2 id="filters-heading" class="filters-heading">Filter nations</h2>
-			<p class="hint">Ticking two answers in one group shows nations with either. Filters also narrow the laws and stories to those nations’.</p>
-			{#if show === 'document'}
-				<FilterPanel
-					identifier="search-documents"
-					facets={documentFacets}
-					choices={documentChoices}
-					counts={documentCounts}
-					onchange={(next) => writeAddress({ documentChoices: next })}
-				/>
-			{/if}
-			<FilterPanel
-				identifier="search-nations"
-				{facets}
-				{choices}
-				{counts}
-				onchange={(next) => writeAddress({ choices: next })}
+		{#if selected.size > 0}
+			<SelectionBar
+				{chosen}
+				shownTicked={tickedOf(onScreen)}
+				ontoggleshown={() => tickAll(onScreen, tickedOf(onScreen) !== 'all')}
+				onclear={() => (selected = new Map())}
+				query={trimmed}
+				day={today}
 			/>
-		</section>
+		{/if}
 
-		<div class="results-column">
-			<p class="small muted" role="status">{status}</p>
-
-			{#if chips.length > 0}
-				<ul class="chips no-print" aria-label="Filters in use">
-					{#each chips as chip (`${chip.key}=${chip.value}`)}
-						<li>
-							<button class="filter-chip" type="button" aria-label="Remove filter {chip.label}" onclick={() => removeChip(chip)}>
-								{chip.label}
-								<X size={16} aria-hidden="true" />
-							</button>
-						</li>
-					{/each}
+		{#if chips.length > 0}
+			<ul class="chips no-print" aria-label="Filters in use">
+				{#each chips as chip (`${chip.key}=${chip.value}`)}
 					<li>
-						<button
-							class="button button-quiet clear"
-							type="button"
-							onclick={() => writeAddress({ choices: {}, documentChoices: {} })}
-						>
-							Clear all filters
+						<button class="filter-chip" type="button" aria-label="Remove filter {chip.label}" onclick={() => removeChip(chip)}>
+							{chip.label}
+							<X size={16} aria-hidden="true" />
 						</button>
 					</li>
-				</ul>
-			{/if}
+				{/each}
+				<li>
+					<button class="button button-quiet clear" type="button" onclick={() => writeAddress({ choices: {}, documentChoices: {} })}>
+						Clear all filters
+					</button>
+				</li>
+			</ul>
+		{/if}
 
-			{#if shows('nation')}
-				<details class="result-group" open>
-					<summary>
-						<span class="fold-mark"><ChevronDown size={24} /></span>
-						<h2 id="results-nation">
-							{showLabels.nation}
-							<CountBadge count={nations.length} />
-						</h2>
-					</summary>
+		{#if shows('nation')}
+			<section class="result-group" aria-labelledby="results-nation">
+				<div class="group-head">
+					<button class="fold" type="button" aria-expanded={!folded.nation} aria-controls="results-nation-list" onclick={() => (folded.nation = !folded.nation)}>
+						<span class="fold-mark"><ChevronDown size={24} aria-hidden="true" /></span>
+						<span class="visually-hidden">Fold {resultGroupLabels.nation}</span>
+					</button>
+					<h2 id="results-nation">{resultGroupLabels.nation} <CountBadge count={nationList.length} /></h2>
+				</div>
+				<div id="results-nation-list" hidden={folded.nation}>
 					<DataTable
 						identifier="search-nations-table"
-						label="Table: {showLabels.nation}"
+						label="Table: {resultGroupLabels.nation}"
 						columns={nationColumns}
 						rows={nationRows}
 						rowName={['nation', 'nations']}
-						total={nations.length}
+						total={nationList.length}
 					>
 						{#snippet cell(row, column)}
 							{#if column.key === 'recognition'}
@@ -402,197 +541,143 @@
 							{/if}
 						{/snippet}
 					</DataTable>
-					{#if nations.length > firstNationsShown && !expanded.nation}
-						<button class="button button-quiet" type="button" onclick={() => (expanded.nation = true)}>
-							Show all {nations.length.toLocaleString('en-US')} nations and communities
+					{#if nationList.length > firstNationsShown && !expanded.nation}
+						<button class="show-all" type="button" onclick={() => (expanded.nation = true)}>
+							Show all {nationList.length.toLocaleString('en-US')} nations and communities
 						</button>
 					{/if}
-				</details>
-			{/if}
+				</div>
+			</section>
+		{/if}
 
-			{#if shows('document')}
-				<details class="result-group" open>
-					<summary>
-						<span class="fold-mark"><ChevronDown size={24} /></span>
-						<h2 id="results-document">
-							{showLabels.document}
-							<CountBadge count={documents.length} />
-						</h2>
-					</summary>
-					<ol class="results" aria-labelledby="results-document">
-						{#each shown('document', documents) as row (`${row.link} ${row.title}`)}
-							<li>
-								<a href={row.link}>{row.title}</a>
-								<p class="small muted">{[row.kindLabel, row.year, row.nationName].filter(Boolean).join(' · ')}</p>
-							</li>
-						{/each}
-					</ol>
-					{#if documents.length > firstShown && !expanded.document}
-						<button class="button button-quiet" type="button" onclick={() => (expanded.document = true)}>
-							Show all {documents.length.toLocaleString('en-US')} laws and governing documents
+		{#each ['document', ...entryGroups] as const as group (group)}
+			{@const items = rows[group]}
+			{#if shows(group)}
+				{@const visible = shown(group, items)}
+				{@const ticked = tickedOf(visible)}
+				<section class="result-group" aria-labelledby="results-{group}">
+					<div class="group-head">
+						<button class="fold" type="button" aria-expanded={!folded[group]} aria-controls="results-{group}-list" onclick={() => (folded[group] = !folded[group])}>
+							<span class="fold-mark"><ChevronDown size={24} aria-hidden="true" /></span>
+							<span class="visually-hidden">Fold {resultGroupLabels[group]}</span>
 						</button>
-					{/if}
-				</details>
-			{/if}
-
-			{#each entryGroups as group (group)}
-				{@const items = listed[group]}
-				{#if shows(group)}
-					<details class="result-group" open>
-						<summary>
-							<span class="fold-mark"><ChevronDown size={24} /></span>
-							<h2 id="results-{group}">
-								{showLabels[group]}
-								<CountBadge count={items.length} />
-							</h2>
-						</summary>
-						<ol class="results" aria-labelledby="results-{group}">
-							{#each shown(group, items) as result (result.link)}
-								<li>
-									<a href={result.link}>{result.title}</a>
-									{#if result.matchedName}
-										<span class="small muted">(also called {result.matchedName})</span>
-									{:else if result.matchedGroup}
-										<span class="small muted">({result.matchedGroup})</span>
+						<h2 id="results-{group}">{resultGroupLabels[group]} <CountBadge count={items.length} /></h2>
+						<label class="tick-group no-print">
+							<input
+								type="checkbox"
+								checked={ticked === 'all'}
+								indeterminate={ticked === 'some'}
+								onchange={(event) => tickAll(visible, event.currentTarget.checked)}
+							/>
+							<span>{ticked === 'none' ? 'Select shown' : `${visible.filter((row) => selected.has(row.link)).length} of ${visible.length} shown`}</span>
+						</label>
+					</div>
+					<div id="results-{group}-list" hidden={folded[group]}>
+						<ol class="results">
+							{#each visible as row (`${row.link} ${row.title}`)}
+								{@const isTicked = selected.has(row.link)}
+								<li class:ticked={isTicked}>
+									<input
+										class="tick no-print"
+										type="checkbox"
+										checked={isTicked}
+										aria-label="Select {row.title}"
+										onchange={(event) => tick(row, event.currentTarget.checked)}
+									/>
+									<a href={row.link}>{row.title}</a>
+									{@render tag(row)}
+									{#if row.aside || row.detail}
+										<p class="small muted">
+											{#if row.aside}<span>({row.aside})</span>{/if}
+											{row.detail ?? ''}
+										</p>
 									{/if}
-									{#if result.detail}<p class="small muted">{result.detail}</p>{/if}
 								</li>
 							{/each}
 						</ol>
 						{#if items.length > firstShown && !expanded[group]}
-							<button class="button button-quiet" type="button" onclick={() => (expanded[group] = true)}>
+							<button class="show-all" type="button" onclick={() => (expanded[group] = true)}>
 								Show all {items.length.toLocaleString('en-US')}
-								{showLabels[group].toLocaleLowerCase('en-US')} results
+								{resultGroupLabels[group].toLocaleLowerCase('en-US')} results
 							</button>
 						{/if}
-					</details>
-				{/if}
-			{/each}
-
-			{#if (trimmed !== '' || browsing) && (show === 'all' ? totals.all : totals[show]) === 0}
-				<p>
-					Nothing matches{trimmed ? ` “${trimmed}”` : ''}{filterCount > 0 ? ' with these filters' : ''}.
-					{#if filterCount > 0}Try removing a filter, or{:else}Check the spelling, try fewer words, or{/if}
-					browse the <a href="/nations">nations</a> and the <a href="/glossary">glossary</a>.
-				</p>
+					</div>
+				</section>
 			{/if}
-		</div>
-	</div>
-{/if}
+		{/each}
+
+		{#if counting && shownTotal === 0}
+			<p>
+				Nothing matches{trimmed ? ` “${trimmed}”` : ''}{filterCount > 0 || filesOnly ? ' with these filters' : ''}.
+				{#if filterCount > 0 || filesOnly}Try removing a filter, or{:else}Check the spelling, try fewer words, or{/if}
+				browse the <a href="/nations">nations</a> and the <a href="/glossary">glossary</a>.
+			</p>
+		{/if}
+	{/if}
+</div>
 
 <style>
-	.show-kinds {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-2);
-		border: 0;
-		margin: 0 0 var(--space-4);
-		padding: 0;
-	}
-
-	/* On a phone the kinds stay on one line that scrolls sideways, so the results start sooner. */
-	@media (max-width: 40rem) {
-		.show-kinds {
-			flex-wrap: nowrap;
-			overflow-x: auto;
-			padding: var(--space-1) var(--space-1) var(--space-2);
-			margin-inline: calc(-1 * var(--space-1));
-		}
-
-		.show-kind {
-			flex: none;
-		}
-	}
-
-	/* Each kind is a radio button drawn as a pill; the circle is hidden but still takes focus. */
-	.show-kind {
-		position: relative;
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
-		border: 1px solid var(--color-control-border);
-		border-radius: 999px;
-		font-size: var(--font-size-small);
-		cursor: pointer;
-	}
-
-	.show-kind input {
-		position: absolute;
-		inset: 0;
-		opacity: 0;
-		margin: 0;
-		cursor: pointer;
-	}
-
-	.show-kind:has(input:focus-visible) {
-		outline: 3px solid var(--focus-ring);
-		outline-offset: 2px;
-	}
-
-	.show-kind.chosen {
-		background: var(--color-action);
-		border-color: var(--color-action);
-		color: var(--color-action-text);
-		font-weight: var(--font-weight-semibold);
-	}
-
-	/* Filters beside the results when there is room, above them behind a button when there is not. */
-	.search-layout {
+	.search-page {
 		container-type: inline-size;
-		display: grid;
-		grid-template-columns: minmax(0, 1fr);
-		gap: var(--space-4) var(--space-6);
 	}
 
-	.filters {
-		display: none;
+	/* A smaller box than a page heading would be: the sidebar already says this is search (Trevor, Nov. 27, 2026). */
+	.query-field {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		max-width: 36rem;
+		margin: var(--space-4) 0 0.6rem;
+		padding: 0 0.4rem 0 0.7rem;
+		border: 1px solid var(--color-control-border);
+		border-radius: 8px;
+		background: var(--color-surface-raised);
+		color: var(--color-ink-muted);
 	}
 
-	.filters.open {
-		display: block;
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-panel);
-		padding: var(--space-3) var(--space-4);
+	.query-field:focus-within {
+		outline: 3px solid var(--focus-ring);
+		outline-offset: 1px;
 	}
 
-	.filters-heading {
-		font-size: var(--font-size-lead);
-		margin: 0 0 var(--space-2);
+	.query-field input {
+		flex: 1;
+		min-width: 0;
+		min-height: 2.6rem;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		color: var(--color-ink);
+		font: inherit;
+		font-size: 1rem;
+		appearance: none;
 	}
 
-	.filters-toggle .button {
-		gap: var(--space-2);
+	.query-field input:focus {
+		outline: none;
 	}
 
-	@media (min-width: 64rem) {
-		.search-layout {
-			grid-template-columns: 18rem minmax(0, 1fr);
-		}
-
-		.filters,
-		.filters.open {
-			display: block;
-			grid-row: 1;
-			grid-column: 1;
-			border: 0;
-			padding: 0;
-		}
-
-		.results-column {
-			grid-column: 2;
-		}
-
-		.filters-toggle {
-			display: none;
-		}
+	.query-field input::-webkit-search-cancel-button {
+		appearance: none;
 	}
 
-	@media print {
-		.search-layout {
-			display: block;
-		}
+	.clear-words {
+		display: inline-grid;
+		place-items: center;
+		width: var(--layout-target-minimum);
+		height: var(--layout-target-minimum);
+		margin: -0.2rem 0;
+		padding: 0;
+		border: 0;
+		background: none;
+		color: var(--color-ink);
+		cursor: pointer;
+	}
+
+	.status {
+		margin: 0 0 0.25rem;
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
 	}
 
 	.chips {
@@ -601,7 +686,7 @@
 		align-items: center;
 		gap: var(--space-2);
 		list-style: none;
-		margin: 0 0 var(--space-3);
+		margin: var(--space-2) 0 var(--space-3);
 		padding: 0;
 	}
 
@@ -634,18 +719,24 @@
 		border-top: 1px solid var(--color-line);
 	}
 
-	/* The summary is the group's heading; the marker shows it can be folded. */
-	.result-group summary {
+	.group-head {
 		display: flex;
 		align-items: center;
-		gap: var(--space-2);
-		min-height: var(--layout-target-minimum);
-		list-style: none;
-		cursor: pointer;
+		gap: 0.6rem;
+		margin: 0.9rem 0 0.25rem;
 	}
 
-	.result-group summary::-webkit-details-marker {
-		display: none;
+	.fold {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2rem;
+		min-height: var(--layout-target-minimum);
+		padding: 0;
+		border: 0;
+		background: none;
+		color: var(--color-ink-muted);
+		cursor: pointer;
 	}
 
 	.fold-mark {
@@ -653,24 +744,57 @@
 		transition: transform var(--motion-duration-short) var(--motion-easing-standard);
 	}
 
-	.result-group:not([open]) .fold-mark {
+	.fold[aria-expanded='false'] .fold-mark {
 		transform: rotate(-90deg);
 	}
 
+	.group-head h2 {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0;
+	}
 
-	.result-group summary h2 {
-		display: inline;
-		margin: var(--space-3) 0;
+	.tick-group {
+		display: flex;
+		align-items: center;
+		gap: 0.45rem;
+		margin-left: auto;
+		color: var(--color-ink-muted);
+		font-size: 0.85rem;
+		white-space: nowrap;
+		cursor: pointer;
+	}
+
+	.tick-group input,
+	.tick {
+		width: 1.05rem;
+		height: 1.05rem;
+		margin: 0;
+		accent-color: var(--color-link);
 	}
 
 	.results {
 		list-style: none;
+		margin: 0;
 		padding: 0;
 	}
 
 	.results li {
-		padding: var(--space-2) 0;
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr) auto;
+		align-items: start;
+		gap: 0.15rem 0.75rem;
+		padding: 0.6rem 0.35rem;
 		border-bottom: 1px solid var(--color-line);
+	}
+
+	.results li.ticked {
+		background: color-mix(in srgb, var(--color-link) 7%, transparent);
+	}
+
+	.results .tick {
+		margin-top: 0.25rem;
 	}
 
 	.results li > a {
@@ -678,6 +802,63 @@
 	}
 
 	.results p {
-		margin: var(--space-1) 0 0;
+		grid-column: 2;
+		margin: 0.1rem 0 0;
+	}
+
+	.tag {
+		grid-column: 3;
+		grid-row: 1;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		margin-top: 0.15rem;
+		color: var(--color-ink-muted);
+		font-size: 0.8rem;
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+	}
+
+	.tag b {
+		padding: 0 0.3rem;
+		border: 1px solid var(--color-line);
+		border-radius: 4px;
+		background: var(--color-surface);
+		color: var(--color-ink);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.tag.link-only {
+		font-style: italic;
+	}
+
+	.show-all {
+		margin: 0.5rem 0 0;
+		padding: 0.3rem 0.35rem;
+		border: 0;
+		background: none;
+		color: var(--color-link);
+		font: inherit;
+		font-size: 0.9rem;
+		cursor: pointer;
+	}
+
+	.show-all:hover {
+		text-decoration: underline;
+	}
+
+	@container (max-width: 40rem) {
+		.results li {
+			grid-template-columns: auto minmax(0, 1fr);
+		}
+
+		.tag {
+			grid-column: 2;
+			grid-row: auto;
+		}
+
+		.group-head h2 {
+			font-size: 1.3rem;
+		}
 	}
 </style>

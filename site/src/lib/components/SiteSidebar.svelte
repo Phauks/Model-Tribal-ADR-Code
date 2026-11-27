@@ -54,6 +54,7 @@
 	import { currentNavigationLink, navigationSectionOf, navigationSections, type NavigationCounts, type NavigationSection } from '#lib/site-navigation.ts';
 	import type { OutlineItem, PageFamily, PageOutline } from '#lib/site-sections.ts';
 	import { WorkspaceAccess } from '#lib/workspace-access.svelte.ts';
+	import { sidebarTools } from '#lib/sidebar-tools.svelte.ts';
 	import CountBadge from './CountBadge.svelte';
 	import SidebarTree from './sidebar/SidebarTree.svelte';
 	import YourWork from './sidebar/YourWork.svelte';
@@ -211,20 +212,25 @@
 		});
 	});
 
+	// ---- A page's own tools, such as the search page's filters (src/lib/sidebar-tools.svelte.ts) ----
+	const tools = $derived(sidebarTools.current);
+
 	// ---- The phone sheets ----
 	let menuSheet: HTMLDetailsElement | undefined = $state();
 	let localSheet: HTMLDetailsElement | undefined = $state();
+	let toolsSheet: HTMLDetailsElement | undefined = $state();
 
 	// Choosing a link closes the sheet, including a heading on this page.
 	function closeOnLink(event: MouseEvent) {
 		if (!(event.target as HTMLElement).closest('a')) return;
 		if (menuSheet) menuSheet.open = false;
 		if (localSheet) localSheet.open = false;
+		if (toolsSheet) toolsSheet.open = false;
 	}
 
 	function closeOnEscape(event: KeyboardEvent) {
 		if (event.key !== 'Escape') return;
-		for (const sheet of [menuSheet, localSheet]) {
+		for (const sheet of [menuSheet, localSheet, toolsSheet]) {
 			if (!sheet?.open) continue;
 			sheet.open = false;
 			sheet.querySelector('summary')?.focus();
@@ -234,7 +240,7 @@
 	// One sheet at a time.
 	function opened(sheet: HTMLDetailsElement | undefined) {
 		if (!sheet?.open) return;
-		for (const other of [menuSheet, localSheet]) if (other && other !== sheet) other.open = false;
+		for (const other of [menuSheet, localSheet, toolsSheet]) if (other && other !== sheet) other.open = false;
 	}
 </script>
 
@@ -303,6 +309,12 @@
      always shows. -->
 <div class="sidebar-wide no-print" class:empty={columnEmpty} id="site-sidebar" bind:this={wideSidebar}>
 	<nav aria-label="Where you are" class="local-column" bind:this={wideColumn}>
+		{#if tools}
+			<section class="page-tools" aria-labelledby="sidebar-tools-title-wide">
+				<div class="local-head"><h2 class="local-title" id="sidebar-tools-title-wide">{tools.title}</h2></div>
+				{@render tools.tools('wide')}
+			</section>
+		{/if}
 		{@render local('wide')}
 		{#if editing?.work}<YourWork work={editing.work} {path} />{/if}
 	</nav>
@@ -349,6 +361,18 @@
 		</details>
 	{:else if localTitle}
 		<span class="where plain">{localTitle}</span>
+	{/if}
+	{#if tools}
+		<details class="sheet tools-sheet" bind:this={toolsSheet} ontoggle={() => opened(toolsSheet)}>
+			<summary>
+				<span class="sheet-word">{tools.sheetLabel}</span>
+				<X size={24} aria-hidden="true" class="when-open" />
+				<span class="visually-hidden when-open">Close</span>
+			</summary>
+			<section class="sheet-body local-column page-tools" aria-label={tools.sheetLabel}>
+				{@render tools.tools('narrow')}
+			</section>
+		</details>
 	{/if}
 </div>
 
@@ -637,6 +661,7 @@
 	}
 
 	.where.plain {
+		flex: 1;
 		align-self: center;
 		padding: 0 var(--space-4);
 		font-weight: var(--font-weight-semibold);
@@ -686,6 +711,12 @@
 		background: var(--color-paper);
 	}
 
+	.tools-sheet {
+		flex: none;
+		margin-left: auto;
+	}
+
+	.tools-sheet .sheet-body,
 	.local-sheet .sheet-body {
 		padding: var(--space-4) var(--space-4) var(--space-6);
 		font-size: var(--font-size-base, 1rem);

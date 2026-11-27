@@ -19,6 +19,7 @@ import {
 	filterCopyDetails,
 	filterLawItems,
 	filterOfflineList,
+	filterSearchFiles,
 	filterSearchIndex,
 	filterSearchRecords,
 	filterTimelineRows,
@@ -47,6 +48,7 @@ const json = (value: unknown) => JSON.stringify(value);
 const restrictedFiles: RestrictedFile[] = [
 	{ pattern: /^\/search\/records\.json$/, filter: (text, restrictions) => json(filterSearchRecords(JSON.parse(text), restrictions)) },
 	{ pattern: /^\/search\/index\.json$/, filter: (text, restrictions) => json(filterSearchIndex(JSON.parse(text), restrictions)) },
+	{ pattern: /^\/search\/files\.json$/, filter: (text, restrictions) => json(filterSearchFiles(JSON.parse(text), restrictions)) },
 	{ pattern: /^\/copies\/list\.csv$/, filter: (text, restrictions) => filterCopiesCsv(text, restrictions) },
 	{
 		pattern: /^\/copies\/offline\/nations\/([a-z0-9-]+)\.json$/,

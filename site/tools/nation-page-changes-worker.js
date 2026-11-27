@@ -35,6 +35,7 @@ const privateData = /^\/page-data\/private\//;
 export const filteredFiles = [
 	/^\/search\/records\.json$/,
 	/^\/search\/index\.json$/,
+	/^\/search\/files\.json$/,
 	/^\/copies\/list\.csv$/,
 	/^\/copies\/offline\/nations\/[a-z0-9-]+\.json$/,
 	/^\/copies\/details\/[0-9a-f]{2}\.json$/,

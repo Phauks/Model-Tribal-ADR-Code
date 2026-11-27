@@ -17,6 +17,7 @@
 import { csvDocument, parseCsv } from './csv.ts';
 import { copyItemId, type RestrictableItem, type RestrictionLevel } from './nation-restrictions.ts';
 import type { SearchRecordsFile } from './search-records.ts';
+import { fileOf, type SearchFiles } from './search-selection.ts';
 import type { SearchEntry } from './site-search.ts';
 import type { SitemapEntry } from './sitemap.ts';
 import type { CopyDetails } from './public-copies.ts';
@@ -155,6 +156,14 @@ export function filterSearchIndex(entries: SearchEntry[], restrictions: SiteRest
 		}
 		return [entry];
 	});
+}
+
+/**
+ * The file each search result can be downloaded as (/search/files.json): a result whose file is a
+ * copy a nation hid or asked to cite only has no file here, since this site does not offer it.
+ */
+export function filterSearchFiles(files: SearchFiles, restrictions: SiteRestrictions): SearchFiles {
+	return Object.fromEntries(Object.entries(files).filter(([link]) => linkLevel(restrictions, fileOf(files, link)?.[1]) === 'show'));
 }
 
 /**
