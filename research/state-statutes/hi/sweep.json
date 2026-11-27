@@ -1,0 +1,55 @@
+{
+  "state": "HI",
+  "code": "Hawaii Revised Statutes",
+  "edition": 2025,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 19832,
+    "live": 18464,
+    "strong": 106,
+    "weak_only": 438,
+    "repealed": 1361,
+    "reserved": 7
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 309,
+    "core": 132,
+    "incidental": 177,
+    "by_pool": {
+      "A": {
+        "none": 5,
+        "incidental": 60,
+        "core": 41
+      },
+      "B": {
+        "none": 265,
+        "core": 56,
+        "incidental": 117
+      },
+      "C": {
+        "none": 298,
+        "core": 2
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 33,
+        "none": 1
+      }
+    },
+    "meta": {
+      "live": 18464,
+      "A": 106,
+      "B": 438,
+      "E": 34,
+      "C": 656,
+      "C_sample": 300,
+      "D": 17230,
+      "D_sample": 300,
+      "items": 1178,
+      "batches": 8
+    }
+  }
+}

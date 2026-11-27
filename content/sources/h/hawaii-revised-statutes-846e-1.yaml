@@ -1,0 +1,50 @@
+key: hawaii-revised-statutes-846e-1
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Haw. Rev. Stat. § 846E-1
+  container-title: Hawaii Revised Statutes
+  container-title-short: Haw. Rev. Stat.
+  section: 846E-1
+  author:
+  - literal: Hawaii State Legislature
+  issued:
+    date-parts:
+    - - 1997
+  URL: https://data.capitol.hawaii.gov/hrscurrent/Vol14_Ch0701-0853/HRS0846E/HRS_0846E-0001.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://data.capitol.hawaii.gov/hrscurrent/Vol14_Ch0701-0853/HRS0846E/HRS_0846E-0001.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Haw. Rev. Stat. § 846E-1 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: HI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Haw. Rev. Stat. § 846E-1 (2025). History: L 1997, c 316, pt of §2; am L 1998, c 194, §1; am L 2003, c 62, §3; am L 2004, c 59, §1; am L 2005, c 45, §3; am L 2006, c 60, §5 and c 106, §1; am L 2008, c 80, §4; am L 2009, c 11, §10; am L 2011, c 125, §1; am L 2013, c 64, §§3, 4 and c 247, §5; am L 2021, c 68, §14; am L 2022, c 278, §29; am L 2025, c 149, §2. Text read from the Hawaii State Legislature''s page for the section in the Hawaii Revised Statutes (data.capitol.hawaii.gov/hrscurrent) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; tribal court; indian; tribal; tribe); AI reader''s verdict incidental: Sex offender registration counts tribal court convictions. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Native Hawaiian or Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; tribal court; indian; tribal; tribe'

@@ -1,0 +1,47 @@
+key: hawaii-revised-statutes-88-51
+kind: state-statute
+citation:
+  type: legislation
+  title: Membership service generally
+  title-short: Haw. Rev. Stat. § 88-51
+  container-title: Hawaii Revised Statutes
+  container-title-short: Haw. Rev. Stat.
+  section: 88-51
+  author:
+  - literal: Hawaii State Legislature
+  URL: https://data.capitol.hawaii.gov/hrscurrent/Vol02_Ch0046-0115/HRS0088/HRS_0088-0051.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://data.capitol.hawaii.gov/hrscurrent/Vol02_Ch0046-0115/HRS0088/HRS_0088-0051.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Haw. Rev. Stat. § 88-51 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: HI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Haw. Rev. Stat. § 88-51 (2025). History: RL 1945, pt of §704; am L 1945, c 73, pt of §1(c); am L 1955, c 256, §1; RL 1955, §6-31; am L 1959, c 189, §1; am L 1965, c 222, §4; am L 1967, c 186, §1 and c 192, §1; HRS §88-51; am L 1969, c 74, §1, c 110, pt of §1, and c 157, §1; am L 1971, c 121, §1; am L 1973, c 73, §1; am L 1976, c 151, §1; am L 1977, c 51, §1; am L 1978, c 24, §1; am L 1982, c 165, §2(5); gen ch 1985; am L 1989, c 211, §10; am L 1990, c 281, §11; am L 2002, c 183, §7; am L 2007, c 2, §3 and c 215, §4. Text read from the Hawaii State Legislature''s page for the section in the Hawaii Revised Statutes (data.capitol.hawaii.gov/hrscurrent) on Nov. 27, 2026. Found by the state statutes sweep (terms: office of hawaiian affairs); AI reader''s verdict incidental: Pension membership credit for Office of Hawaiian Affairs trustee service. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Native Hawaiian or Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: office of hawaiian affairs'
