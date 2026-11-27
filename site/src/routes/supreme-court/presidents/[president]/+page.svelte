@@ -3,7 +3,7 @@
 	One President who appointed a Justice of the Supreme Court of the United
 	States (Trevor, Nov. 24, 2026: "sub-pages for each justice and appointed by
 	person to show their relationship to cases and such", "want pictures"). A
-	record page: the portrait and key facts At a glance, then the Justices the
+	record page: the portrait and key facts Key facts, then the Justices the
 	President appointed, drawn as bars with each case on this site marked, and
 	the cases on this site in which they sat, with what each did.
 -->

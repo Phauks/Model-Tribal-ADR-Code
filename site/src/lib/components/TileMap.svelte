@@ -438,7 +438,7 @@
 			muted: token('ink-muted'),
 			line: token('control-border'),
 			lineLight: token('line'),
-			focus: token('focus'),
+			focus: token('map-highlight'),
 			surface: token('surface'),
 			action: token('action'),
 			actionText: token('action-text'),

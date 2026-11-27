@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Wyandot, etc., 1795 (Treaty of Greenville), 7 Stat. 49
+  since: '1795-08-03'
+  source: treaty-with-the-wyandot-etc-1795
+  confidence: medium
+  verification: inferred
+  as_of: '1795-08-03'
+  locator: p. 39 (Treaty with the Wyandot, etc., 1795; Kappler header "Aug. 3, 1795. | 7 Stat., 49. | Proclamation, Dec. 2, 1795.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Kickapoo; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 14 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
