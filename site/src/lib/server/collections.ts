@@ -27,7 +27,7 @@ import { courts as namedCourts } from './courts.ts';
 import { heldBackOpinionCount, tribalCourtOpinions } from './tribal-court-opinions.ts';
 import { storySummaries } from './stories.ts';
 import { buildFormCatalog } from './form-catalog.ts';
-import { copyPagePath, isSavedWebPage, mediaLabel, type PublicCopy } from '../public-copies.ts';
+import { copyPagePath, copyPreference, isSavedWebPage, mediaLabel, type PublicCopy } from '../public-copies.ts';
 import { isNativeNation, recognitionStatus } from './recognition-status.ts';
 import type { Holding } from '../holding.ts';
 import { dataChartList, dataChartTrail } from '../data-chart-list.ts';
@@ -46,6 +46,8 @@ export type CollectionGroup = (typeof collectionGroups)[number];
 /** One item a collection counts, as a row of its list. */
 export interface CollectionItem {
 	title: string;
+	/** Its citation, when it is a numbered section such as "25 U.S.C. § 5321": the list shows it in a column of its own before the name (Trevor, Nov. 27, 2026). */
+	citation?: string;
 	/** Its page on this site, or where it is published. */
 	href?: string;
 	/** The year it was made, decided or issued, when known. */
@@ -239,9 +241,12 @@ const typeOf = (record: SourceRecord) => (record.citation as { type?: string }).
 /** A source record as a list row: a case or law links to its page, anything else to our copy or else where it is published. */
 function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	const link = record.original_link ?? record.citation.URL;
-	const copy = publicCopyFor(link);
+	const linked = publicCopyFor(link);
+	const copies = copiesOfRecord(record, linked);
+	// A copy that names the record opens too when the cited address does not match its own, such as an address with spaces or
+	// without "www." (Red Cliff's and Round Valley's constitutions, Nov. 27, 2026), so a row counted as saved never links out.
+	const copy = linked ?? [...copies].sort((first, second) => copyPreference(first.mediaType) - copyPreference(second.mediaType))[0];
 	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? (recordPageLink(record.key) ?? `/laws/${record.key}`) : copy ? copyPagePath(copy) : publishedAt(record, link);
-	const copies = copiesOfRecord(record, copy);
 	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key, ...(copies.length ? { copies } : {}) };
 }
 
@@ -681,25 +686,32 @@ export const collectionPath = (identifier: string) => `/stats/${identifier}`;
 
 /** Every collection with its count, in registry order, leaving out any that count nothing yet. */
 export function collectionCounts(): CollectionCount[] {
-	return collections
-		.map((collection) => {
-			const items = collection.items();
-			const held = collection.heldBack?.() ?? 0;
-			const breakdown = collection.breakdown?.(items) ?? documentBreakdown(items);
-			const withCopies = items.some((item) => item.copies?.length);
-			return {
-				identifier: collection.identifier,
-				title: collection.title,
-				group: collection.group,
-				href: collection.list ?? collectionPath(collection.identifier),
-				count: items.length,
-				...(collection.years ? { years: collection.years() } : yearSpan(items) ? { years: yearSpan(items) } : {}),
-				...(held > 0 ? { heldBack: held, heldBackReason: collection.heldBackReason } : {}),
-				...(breakdown.length > 0 ? { breakdown } : {}),
-				...(withCopies ? { copyColumns: collection.copyCounts ? ('counts' as const) : ('copy' as const) } : {})
-			};
-		})
-		.filter((collection) => collection.count > 0);
+	return collections.map(countOf).filter((collection) => collection.count > 0);
+}
+
+/** One collection with its count, for its own list page (src/routes/stats/[collection]), which needs no other. */
+export function collectionCount(identifier: string): CollectionCount | undefined {
+	const collection = collections.find((candidate) => candidate.identifier === identifier);
+	const counted = collection ? countOf(collection) : undefined;
+	return counted && counted.count > 0 ? counted : undefined;
+}
+
+function countOf(collection: (typeof collections)[number]): CollectionCount {
+	const items = collection.items();
+	const held = collection.heldBack?.() ?? 0;
+	const breakdown = collection.breakdown?.(items) ?? documentBreakdown(items);
+	const withCopies = items.some((item) => item.copies?.length);
+	return {
+		identifier: collection.identifier,
+		title: collection.title,
+		group: collection.group,
+		href: collection.list ?? collectionPath(collection.identifier),
+		count: items.length,
+		...(collection.years ? { years: collection.years() } : yearSpan(items) ? { years: yearSpan(items) } : {}),
+		...(held > 0 ? { heldBack: held, heldBackReason: collection.heldBackReason } : {}),
+		...(breakdown.length > 0 ? { breakdown } : {}),
+		...(withCopies ? { copyColumns: collection.copyCounts ? ('counts' as const) : ('copy' as const) } : {})
+	};
 }
 
 /** The collections under each heading, for the page, leaving out empty headings. */

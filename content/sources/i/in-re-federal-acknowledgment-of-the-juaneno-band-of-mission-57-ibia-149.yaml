@@ -35,11 +35,17 @@ jurisdictions:
 - level: federal
 tribes:
 - juaneno-band-of-mission-indians
+- juaneno-band-of-mission-indians-acjachemen-nation
+topics:
+- federal-recognition
 nations_in_case:
   checked: '2026-11-26'
   named:
   - nation: juaneno-band-of-mission-indians
     named_as: Juaneno Band of Mission Indians
+    role: party
+  - nation: juaneno-band-of-mission-indians-acjachemen-nation
+    named_as: Juaneno Band of Mission Indians, Acjachemen Nation
     role: party
 access:
   open: true
