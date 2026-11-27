@@ -23,6 +23,7 @@
 	// (stored as glossaryCards) turns previews off. Each file is fetched once,
 	// when first needed; without scripts there are no previews.
 	import { onMount, tick } from 'svelte';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	interface Term {
 		kind: 'term';
@@ -91,7 +92,8 @@
 						.map((entry) => [entry.id, { ...entry, kind }])
 				);
 			})
-			.catch(() => {
+			.catch((problem) => {
+				sendProblem(problem, { code: 'link-previews.load', place: key });
 				reset();
 				return new Map();
 			});

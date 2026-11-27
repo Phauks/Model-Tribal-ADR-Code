@@ -1,0 +1,50 @@
+key: vermont-statutes-title-26-section-5304
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Vt. Stat. Ann. tit. 26, § 5304
+  container-title: Vermont Statutes Annotated
+  container-title-short: Vt. Stat. Ann.
+  section: 26:5304
+  author:
+  - literal: Vermont General Assembly
+  issued:
+    date-parts:
+    - - 2017
+  URL: https://legislature.vermont.gov/statutes/section/26/103/05304
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.vermont.gov/statutes/section/26/103/05304
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Vt. Stat. Ann. tit. 26, § 5304 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Vt. Stat. Ann. tit. 26, § 5304 (2025). History: Added 2017, No. 160 (Adj. Sess.), § 1, eff. July 1, 2019; amended 2019, No. 30, § 27; 2021, No. 171 (Adj. Sess.), § 5, eff. July 1, 2022. Text read from the Vermont General Assembly''s full-chapter page for the section in the Vermont Statutes Online (legislature.vermont.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; tribe); AI reader''s verdict incidental: Notary definition excludes federally recognized tribes from foreign state. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; tribe'

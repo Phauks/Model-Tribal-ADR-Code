@@ -18,6 +18,7 @@
 		try {
 			return new URL(sponsor.link).hostname.replace(/^www\./, '');
 		} catch {
+			// expected: a link that is not an address shows no site name.
 			return null;
 		}
 	});

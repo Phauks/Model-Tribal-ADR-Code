@@ -39,7 +39,7 @@
 	async function openHide(event: MouseEvent & { currentTarget: HTMLAnchorElement }): Promise<void> {
 		event.preventDefault();
 		hideOpener = event.currentTarget;
-		const response = await fetch(`/workspace/changes/${change.id}/hiding.json`).catch(() => undefined);
+		const response = await fetch(`/workspace/changes/${change.id}/hiding.json`).catch(() => /* expected: None */ undefined);
 		if (!response?.ok) {
 			// Signed out since, or the network failed: the workspace page explains.
 			window.location.href = hideOpener.href;
@@ -112,7 +112,7 @@
 						if (result.type === 'success') {
 							hideDialog?.close();
 							// The change's page is cached for a minute: fetch it fresh into the cache, then show it.
-							await fetch(window.location.href, { cache: 'reload' }).catch(() => undefined);
+							await fetch(window.location.href, { cache: 'reload' }).catch(() => /* expected: the page is reloaded below either way. */ undefined);
 							window.location.reload();
 						} else if (result.type === 'failure') {
 							hideProblem = String(result.data?.problem ?? 'The change could not be hidden.');

@@ -112,6 +112,7 @@
 		try {
 			return new URL(link).hostname.replace(/^www\./, '');
 		} catch {
+			// expected: a link that is not an address is shown as written.
 			return link;
 		}
 	}

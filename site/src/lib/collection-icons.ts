@@ -12,6 +12,7 @@ import ClipboardList from '@lucide/svelte/icons/clipboard-list';
 import FileClock from '@lucide/svelte/icons/file-clock';
 import FileText from '@lucide/svelte/icons/file-text';
 import Files from '@lucide/svelte/icons/files';
+import Film from '@lucide/svelte/icons/film';
 import Gavel from '@lucide/svelte/icons/gavel';
 import Globe from '@lucide/svelte/icons/globe';
 import HandHeart from '@lucide/svelte/icons/hand-heart';
@@ -59,6 +60,7 @@ const collectionIcons: Record<string, Component> = {
 	'federal-acknowledgment': Stamp,
 	'repatriation-notices': HandHeart,
 	'solicitor-opinions': BookOpen,
+	'indian-affairs-films': Film,
 	'supreme-court-cases': Gavel,
 	'other-court-cases': Scale,
 	'federal-court-opinions': Gavel,

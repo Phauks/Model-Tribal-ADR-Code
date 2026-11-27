@@ -232,8 +232,9 @@
 						skyStars = file.stars;
 						drawSkySoon();
 					})
-					.catch(() => {
+					.catch((problem) => {
 						// Without the stars the globe still shows, on the plain sky.
+						sendProblem(problem, { code: 'map.stars' });
 						skyStars = [];
 						drawSkySoon();
 					});
@@ -1208,7 +1209,7 @@
 					};
 					fullScreenButton.addEventListener('click', () => {
 						if (document.fullscreenElement) void document.exitFullscreen();
-						else void (mapElement.closest<HTMLElement>('[data-map-full-screen]') ?? mapElement).requestFullscreen().catch(() => {});
+						else void (mapElement.closest<HTMLElement>('[data-map-full-screen]') ?? mapElement).requestFullscreen().catch(() => /* expected: the browser refused full screen; the map stays as it was. */ {});
 					});
 					showFullScreenState();
 					document.addEventListener('fullscreenchange', showFullScreenState);

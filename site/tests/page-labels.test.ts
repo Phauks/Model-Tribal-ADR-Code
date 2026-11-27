@@ -74,7 +74,7 @@ describe('pageDownloads', () => {
 	});
 
 	it('offers the Cite button on pages about one record, and not on lists', () => {
-		for (const path of ['/cases/worcester-v-georgia', '/supreme-court/marshall-court', '/supreme-court/justices/john-marshall', '/supreme-court/presidents/andrew-jackson', '/laws/indian-reorganization-act-1934', '/essays/peacemaking', '/foundations/sovereignty', '/biographies/little-robe', '/courts/navajo-nation-supreme-court', '/nations/federal-offices/bureau-of-indian-affairs/southwest']) {
+		for (const path of ['/cases/worcester-v-georgia', '/supreme-court/marshall-court', '/supreme-court/justices/john-marshall', '/presidents/andrew-jackson', '/laws/indian-reorganization-act-1934', '/essays/peacemaking', '/foundations/sovereignty', '/biographies/little-robe', '/courts/navajo-nation-supreme-court', '/nations/federal-offices/bureau-of-indian-affairs/southwest']) {
 			expect(pageDownloads(path).citable, path).toBe(true);
 		}
 		for (const path of ['/supreme-court', '/supreme-court/justices', '/supreme-court/presidents', '/nations/coverage', '/essays', '/essays/peacemaking/history', '/courts', '/nations/federal-offices']) {

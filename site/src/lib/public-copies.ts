@@ -68,6 +68,7 @@ export function mediaLabel(mediaType: string): string {
 	if (mediaType === 'text/html') return 'saved web page';
 	if (mediaType === 'text/plain') return 'text';
 	if (mediaType === 'image/jpeg') return 'JPEG picture';
+	if (mediaType === 'video/x-ms-wmv') return 'WMV video';
 	return 'PDF';
 }
 

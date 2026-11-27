@@ -1,0 +1,47 @@
+key: national-archives-sound-75-generala-7-city-and-interstate-driving
+kind: federal-agency-document
+citation:
+  type: song
+  title: City and Interstate Driving
+  genre: Sound recording
+  number: NAID 101905
+  archive: National Archives at College Park, Motion Pictures
+  archive_location: Record Group 75, Audio Recordings Documenting Programs Relating to Native Americans (NAID 101898), item 75-GENERALa-7
+  issued:
+    date-parts:
+    - - 1980
+      - 7
+      - 23
+  URL: https://catalog.archives.gov/id/101905
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://catalog.archives.gov/id/101905
+retrieved: '2026-11-27'
+rights:
+  status: not-assessed
+  basis: link-only
+  basis_note: Not digitized, and the National Archives marks its use status undetermined or possibly under copyright; linked at the National Archives, and the project keeps no copy.
+  redistribution: false
+jurisdictions:
+- level: federal
+topics:
+- federal-indian-policy-film
+access:
+  open: false
+  pull_from:
+  - library
+  note: Ask the National Archives at College Park, Motion Pictures (mopix@nara.gov) for a viewing or a copy, citing the National Archives Identifier.
+found_in:
+- 2026-11-27-national-archives-films
+notes: 'Indigo Book citation: City and Interstate Driving (Bureau of Indian Affairs records 1980) (sound recording), National Archives Identifier 101905, RG 75, item 75-GENERALa-7. Not digitized: the National Archives holds the recording at College Park, where it can be viewed or copied on request. Chosen as a federal Indian policy item (a Bureau driver training program (1980)) by scripts/law/national_archives_films.py; ceremony films and children''s recordings in the same series are left out (CARE principles). Not yet watched or heard in full by a person (Unverified).'
+review:
+  status: unverified
+  by: scripts/law/national_archives_films.py
+  date: '2026-11-27'
+  checks:
+  - check: listing
+    result: missing
+    detail: Only the National Archives Catalog's description was read
