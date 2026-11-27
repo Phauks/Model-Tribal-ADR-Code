@@ -36,7 +36,7 @@ The three odd citations that have a scan of the printed report were written by h
 
 ## Not added
 
-- 169 U.S. 733 (*United States and Comanche Indians v. Kemp*, 1898) and 172 U.S. 641 (*United States and Comanche Indians v. Hood*, 1898): memorandum decisions. Neither the Library of Congress, the Caselaw Access Project nor the Internet Archive has these pages, so nothing can be checked against the report. They need the printed volumes (a law library) or HathiTrust read by hand.
+- 169 U.S. 733 (*United States and Comanche Indians v. Kemp*, 1898) and 172 U.S. 641 (*United States and Comanche Indians v. Hood*, 1898): memorandum decisions. Neither the Library of Congress, the Caselaw Access Project nor the Internet Archive has these pages. Both were added on Nov. 27, 2026 from GovInfo's scans (see "Added Nov. 27, 2026" below).
 - 429 U.S. 976: not a decision. It is the order of November 29, 1976 granting certiorari in *Puyallup Tribe, Inc. v. Department of Game of Washington*, which the Court decided at 433 U.S. 165 (1977); that case already has a record.
 
 ## Copies
@@ -98,3 +98,14 @@ The first nine were written by the generator from the Library of Congress scans,
 Nine of the ten are Verified. *Bakke* stays Unverified: its judgment has two parts, and a different five Justices formed the majority on each, so Oyez counts Justices Brennan, Marshall and Blackmun in the majority and the Database counts them in the minority. The bench shown on the page follows the Database's coding (5 to 4, Justice Powell with the four Justices who joined Justice Stevens). A reader should settle how the site shows a split judgment.
 
 With these, 625 of the 628 cases on the list have records.
+
+## Added Nov. 27, 2026
+
+GovInfo's copy of each volume of the United States Reports includes the volume's back matter, and its section "Decisions without Opinions" prints the memorandum decisions the Library of Congress per-case scans leave out. Both 1898 Comanche cases are there, and their records were written by hand from those pages, with the same `review` block:
+
+- *United States and Comanche Indians v. Kemp*, 169 U.S. 733 (1898): https://www.govinfo.gov/content/pkg/USREPORTS-169/pdf/USREPORTS-169-BackMatter-2.pdf, p. 733. The report prints "Appeal from the Court of Claims. Argued December 10 and 13, 1897. Decided January 10, 1898. Judgment affirmed by a divided court." Verified.
+- *United States and Comanche Indians v. Hood*, 172 U.S. 641 (1898): https://www.govinfo.gov/content/pkg/USREPORTS-172/pdf/USREPORTS-172-BackMatter-2.pdf, pp. 641-642. The report prints "Appeal from the Court of Claims. Argued October 24 and 25, 1898. Decided November 14, 1898. Judgment affirmed by a divided court." Verified.
+
+The printed decision dates match the Database (cases 1897-223 and 1898-182), and the captions and dates were read from the page images, not only the scans' text layer. The report names no Justice, so each bench follows the Database: 4 to 4 with no Justice's vote recorded, eight Justices in *Kemp* (Justice Field had retired and Justice McKenna had not yet joined) and Justice McKenna not taking part in *Hood* (the Database gives him no vote; the report does not say). Both PDFs are filed in R2 and the capture index under govinfo/USREPORTS-169/ and govinfo/USREPORTS-172/, and are served as public copies.
+
+With these, 627 of the 628 cases on the list have records. The one left, 429 U.S. 976, is the certiorari grant in *Puyallup Tribe, Inc. v. Department of Game of Washington*, not a decision; that case has its record at 433 U.S. 165.

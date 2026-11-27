@@ -1,0 +1,135 @@
+key: united-states-and-comanche-indians-v-kemp
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States and Comanche Indians v. Kemp
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '169'
+  page: '733'
+  issued:
+    date-parts:
+    - - 1898
+      - 1
+      - 10
+  URL: https://www.govinfo.gov/content/pkg/USREPORTS-169/pdf/USREPORTS-169-BackMatter-2.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+caption:
+  printed: UNITED STATES AND COMANCHE INDIANS v. KEMP
+  source: https://www.govinfo.gov/content/pkg/USREPORTS-169/pdf/USREPORTS-169-BackMatter-2.pdf
+  checked: '2026-11-27'
+original_link: https://www.govinfo.gov/content/pkg/USREPORTS-169/pdf/USREPORTS-169-BackMatter-2.pdf
+retrieved: '2026-11-27'
+history:
+  status: live
+  last_checked: '2026-11-27'
+court_dates:
+  argued:
+  - '1897-12-10'
+  - '1897-12-13'
+  printed: Appeal from the Court of Claims. Argued December 10 and 13, 1897. Decided January 10, 1898.
+  source: https://www.govinfo.gov/content/pkg/USREPORTS-169/pdf/USREPORTS-169-BackMatter-2.pdf
+  checked: '2026-11-27'
+  note: Printed among the decisions announced without opinions at the back of volume 169 (p. 733). The report gives the judgment only, "Judgment affirmed by a divided court.", with no opinion.
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1897-1898)
+  decision_type: equally divided Court
+  vote:
+    majority: 4
+    minority: 4
+  justices:
+  - name: Melville Weston Fuller
+    vote: not recorded
+  - name: John Marshall Harlan
+    vote: not recorded
+  - name: Horace Gray
+    vote: not recorded
+  - name: David Josiah Brewer
+    vote: not recorded
+  - name: Henry Billings Brown
+    vote: not recorded
+  - name: George Shiras, Jr.
+    vote: not recorded
+  - name: Edward Douglass White
+    vote: not recorded
+  - name: Rufus Wheeler Peckham
+    vote: not recorded
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1897-223, which counts the Court as divided 4 to 4 and records no Justice's vote. Eight Justices sat, as Justice Field had retired and Justice McKenna had not yet joined.
+  checked: '2026-11-27'
+reading_links:
+  checked: '2026-11-27'
+  links:
+  - site: govinfo
+    label: GovInfo
+    access: official
+    link: https://www.govinfo.gov/content/pkg/USREPORTS-169/pdf/USREPORTS-169-BackMatter-2.pdf
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/169/733/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22169%20U.S.%20733%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=169%20U.S.%20733
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=169%20U.S.%20733
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: United States and Comanche Indians v. Kemp, 169 U.S. 733 (1898) (mem.). Official report: the decisions announced without opinions at the back of volume 169, p. 733, in GovInfo''s scan of the volume (https://www.govinfo.gov/content/pkg/USREPORTS-169/pdf/USREPORTS-169-BackMatter-2.pdf, PDF page 1); the Library of Congress has no scan of this section. An appeal by the United States and the Comanche Indians from a judgment of the Court of Claims, affirmed by an equally divided Court without opinion. The report names counsel: Mr. Attorney General, Mr. Assistant Attorney General Thompson and Mr. Charles H. Russell for appellants; Mr. William B. King and Mr. Silas Hare for appellee. Not yet read by a person.'
+tribes:
+- comanche-nation
+nations_in_case:
+  checked: '2026-11-27'
+  named:
+  - nation: comanche-nation
+    named_as: Comanche Indians
+    role: party
+    historical: true
+    note: The Comanche Indians, appellants with the United States from the Court of Claims; matched by hand to the Comanche Nation, Oklahoma.
+review:
+  status: verified
+  by: Claude, by hand from the official report (thread "Find what's missing in Supreme Court and tier 2 data")
+  date: '2026-11-27'
+  checks:
+  - check: cite
+    result: agree
+    detail: Database 169 U.S. 733 "UNITED STATES AND COMANCHE INDIANS v. KEMP"; the report prints the case on p. 733
+  - check: scan
+    result: confirmed
+    detail: GovInfo's scan of volume 169, section "Decisions without Opinions", PDF page 1, prints the page head "OCTOBER TERM, 1897. 733" and the case
+  - check: caption
+    result: confirmed
+    detail: The report prints "No. 405. United States and Comanche Indians v. Kemp." on p. 733
+  - check: printed dates
+    result: confirmed
+    detail: The report prints "Appeal from the Court of Claims. Argued December 10 and 13, 1897. Decided January 10, 1898."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1898-01-10'
+  - check: opinions
+    result: confirmed
+    detail: 'The report prints only "Judgment affirmed by a divided court."; Database writers: none'
+  - check: bench
+    result: confirmed
+    detail: No Oyez votes; the report prints that the judgment is affirmed by a divided Court and names no Justice, so no vote is recorded for any Justice; the Database's bench (no votes) is kept
