@@ -176,6 +176,16 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
   note: 'The source''s words: "Stebbins Community Association".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 986002
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Stebbins Community Association' (Stebbins)
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Stebins Community Association" among organizations under constitutions approved

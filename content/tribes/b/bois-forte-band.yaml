@@ -126,6 +126,63 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Bois Forte Band (Nett Lake)".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Bois Forte Band Of Chippewa' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Bois Forte Band Of Chippewa'.
+- program: indian-health-service-self-governance-compact
+  since: 1999
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Bois Forte Band of Chippewa Indians'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Bois Forte Band of Chippewa Indians'.
+- program: pl-102-477-plan
+  start: '2025-10-01'
+  end: '2030-09-30'
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Minnesota Chippewa Tribe, Minnesota (Bois Forte Band (Nett Lake))'; PL102_477_PartnerEnrollment, its 0 programs
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Minnesota Chippewa Tribe, Minnesota (Bois Forte Band (Nett Lake))'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1335119
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: MN, row 'Bois Forte Band, Minnesota Chippewa Tribe' (Nett Lake)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Bois Forte Band, Minnesota Chippewa Tribe'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 14017999
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'BOIS FORTE RESERVATION TRIBAL COUNCIL' (UEI KGPSFNL8BZL7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'BOIS FORTE RESERVATION TRIBAL COUNCIL'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 6174087
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'BOIS FORTE RESERVATION TRIBAL COUNCIL' (UEI KGPSFNL8BZL7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'BOIS FORTE RESERVATION TRIBAL COUNCIL'.
 governance:
 - aspect: head-of-government
   value: President

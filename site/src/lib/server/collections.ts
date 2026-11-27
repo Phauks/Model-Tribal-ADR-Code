@@ -32,6 +32,8 @@ import { landCessions, royceSheets } from './land-cessions.ts';
 import type { ResultGroup } from '../search-everything.ts';
 import { allSections } from './title-25-sections.ts';
 import { isLawRecord } from './law-records.ts';
+import { programSummaries } from './federal-programs.ts';
+import { federalProgramPage } from '../federal-programs.ts';
 
 /** The headings the collections are grouped under, in page order. */
 export const collectionGroups = ['Native nations', 'Federal law', 'Courts and cases', 'People', 'Reference'] as const;
@@ -204,6 +206,16 @@ export const collections: Collection[] = [
 	},
 	{ identifier: 'tribal-constitutions', search: { group: 'document' }, title: 'Constitutions', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['tribal-constitution'], items: sourcesOfKind(['tribal-constitution'], tribesOf) },
 	{ identifier: 'tribal-codes', search: { group: 'document' }, title: 'Codes and Laws', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['tribal-code', 'tribal-court-rule'], items: sourcesOfKind(['tribal-code', 'tribal-court-rule'], tribesOf) },
+	// The federal self-governance, self-determination and block grant programs nation pages list (Trevor, Nov. 26, 2026: "make self-governance a collection").
+	{
+		identifier: 'federal-programs',
+		search: { group: 'reference', label: 'Federal program' },
+		title: 'Self-Governance and Federal Programs',
+		group: 'Native nations',
+		detailHeader: 'Nations taking part',
+		list: '/nations/federal-programs',
+		items: () => programSummaries().map(({ program, count }) => ({ title: program.title, href: federalProgramPage(program.key), detail: count.toLocaleString('en-US') }))
+	},
 	{ identifier: 'intergovernmental-agreements', search: { group: 'document' }, title: 'Compacts and Agreements', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['intergovernmental-agreement'], items: sourcesOfKind(['intergovernmental-agreement'], tribesOf) },
 	{
 		identifier: 'oklahoma-state-tribal-agreements',

@@ -162,6 +162,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
   note: Listed as "Sac and Fox Tribe of the Mississippi".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 514213
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: IA, row 'Sac & Fox Tribe of the Mississippi, IA' (Tama)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 5300751
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SAC & FOX TRIBE OF THE MISSISSIPPI IN IOWA' (UEI EHE6C2559E34), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Sac and Fox Tribe of the Mississippi in Iowa" among organizations under constitutions

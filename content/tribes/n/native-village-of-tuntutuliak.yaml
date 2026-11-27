@@ -148,6 +148,17 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Alaska Area page
   note: Area is Alaska because the nation is an Alaska Native village; the village was not found on any of the nine Alaska Area Profile service-area lists, so no service unit is recorded.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1007063
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Tuntutuliak' (Tuntutuliak)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Tuntutuliak'.
 governance:
 - aspect: governing-body
   value: Council

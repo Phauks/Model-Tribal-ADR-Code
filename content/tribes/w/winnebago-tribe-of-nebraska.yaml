@@ -232,6 +232,50 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
   note: 'Listed as "Winnebago Tribe of Nebraska". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Winnebago Tribe of Nebraska (2018)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2018
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Great Plains Area, row 'Winnebago Tribe of Nebraska'
+- program: pl-102-477-plan
+  start: '2026-10-01'
+  end: '2031-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Native Employment Works
+  - Temporary Assistance for Needy Families
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Winnebago Tribe of Nebraska'; PL102_477_PartnerEnrollment, its 8 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2081053
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NE, row 'Winnebago Tribe' (Winnebago)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 29165119
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'WINNEBAGO TRIBE OF NEBRASKA' (UEI QHU1JXKM7D51), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Winnebago Tribe of Nebraska" among organizations under constitutions approved

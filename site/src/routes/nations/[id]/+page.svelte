@@ -107,6 +107,31 @@
 	const cessionsByRoyce = $derived(new Map(data.landCessions.map((cession) => [cession.royce, cession])));
 	const treatyMarks = $derived(new Map(data.treaties.map((treaty) => [treaty.key, treaty.citations])));
 
+	// The self-governance and federal programs table: Program, Agency, Dates,
+	// Through (only when an organization holds a program for the nation) and
+	// Latest amount (Trevor chose mockup B, Nov. 26, 2026: "just providing the
+	// value is interesting enough"). The program's markers follow its name.
+	const programColumns: TableColumn[] = $derived([
+		{ key: 'program', header: 'Program', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'agency', header: 'Agency', sortable: true, searchable: true },
+		{ key: 'dates', header: 'Dates', type: 'date', sortable: true },
+		...(data.programs.some((row) => row.through) ? [{ key: 'through', header: 'Through', sortable: true, searchable: true }] : []),
+		...(data.programs.some((row) => row.amount) ? [{ key: 'amount', header: 'Latest amount', sortable: true }] : [])
+	]);
+	const programRows: TableRow[] = $derived(
+		data.programs.map((row) => ({
+			key: row.key,
+			cells: {
+				program: { text: row.name, href: row.link },
+				agency: { text: row.agency },
+				dates: { text: row.dates, sortValue: row.datesSort },
+				through: { text: row.through ?? '' },
+				amount: { text: row.amount ?? '', sortValue: row.amountSort === undefined ? undefined : String(row.amountSort) }
+			}
+		}))
+	);
+	const programMarks = $derived(new Map(data.programs.map((row) => [row.key, row.citations])));
+
 	// The court cases that name the nation, as a party or as what the case is
 	// about (Trevor, Nov. 23, 2026). Four short columns; under the case's name,
 	// its citation and source marker, then the name the case gives the nation
@@ -417,8 +442,8 @@
 			<div class="nation-slot" data-nation-slot="jurisdiction"></div>
 		</Collapsible>
 
-		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service -->
-		{#if data.treaties.length > 0 || data.ties.length > 0 || data.enforcement.length > 0}
+		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service, self-governance and federal programs -->
+		{#if data.treaties.length > 0 || data.ties.length > 0 || data.programs.length > 0 || data.enforcement.length > 0}
 			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
 				{#if data.treaties.length > 0}
 					<h3 id="treaties-heading">Treaties</h3>
@@ -442,6 +467,26 @@
 					</DataTable>
 				{/if}
 				{#if data.ties.length > 0}<FactGroups groups={data.ties} />{/if}
+				{#if data.programs.length > 0}
+					<h3 id="federal-programs-heading">Self-governance and federal programs</h3>
+					<DataTable
+						identifier="federal-programs"
+						label="Table: self-governance and federal programs"
+						columns={programColumns}
+						rows={programRows}
+						rowName={['program', 'programs']}
+						download="{data.page.id}-federal-programs"
+					>
+						{#snippet cell(row: TableRow, column: TableColumn)}
+							{#if column.key === 'program'}
+								<span class="treaty-cell"
+									>{#if row.cells.program.href}<a href={row.cells.program.href}>{row.cells.program.text}</a
+										>{:else}{row.cells.program.text}{/if}<CitationMarks marks={programMarks.get(row.key)} /></span
+								>
+							{/if}
+						{/snippet}
+					</DataTable>
+				{/if}
 				{#if data.enforcement.length > 0}
 					<!-- The Gaming Commission's enforcement actions, as a table (Trevor, Nov. 23, 2026). -->
 					<h3 id="enforcement-heading">Gaming Commission enforcement actions</h3>

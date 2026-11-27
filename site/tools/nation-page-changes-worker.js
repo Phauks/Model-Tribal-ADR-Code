@@ -19,7 +19,7 @@
 // restricted. The list of a nation's restrictable items is for its team's
 // page alone, which reads it from the built files, so it is never served.
 
-const nationPage = /^\/nations\/(?!(?:coverage|data|federal-offices|law|letter|map|recourse|state|timeline)$)([a-z0-9-]+)(?:\/opinions)?$/;
+const nationPage = /^\/nations\/(?!(?:coverage|data|federal-offices|federal-programs|law|letter|map|recourse|state|timeline)$)([a-z0-9-]+)(?:\/opinions)?$/;
 const restrictableList = /^\/nations\/[a-z0-9-]+\/restrictable\.json$/;
 
 /** Files the site filters (src/routes/restricted-files, restrictedFiles). */
@@ -39,7 +39,7 @@ export const filteredFiles = [
 /** Pages the site draws again when something on them is restricted (src/lib/restricted-pages.ts, restrictedPageViews), and the data a move within the site asks for. */
 export const filteredPages = [
 	/^\/nations\/timeline(\/__data\.json)?$/,
-	/^\/nations\/(?!(?:coverage|data|federal-offices|law|letter|map|recourse|state|timeline)(?:\/|$))[a-z0-9-]+(\/opinions)?(\/__data\.json)?$/,
+	/^\/nations\/(?!(?:coverage|data|federal-offices|federal-programs|law|letter|map|recourse|state|timeline)(?:\/|$))[a-z0-9-]+(\/opinions)?(\/__data\.json)?$/,
 	/^\/copies\/list\/[a-z0-9-]+(\/__data\.json)?$/,
 	/^\/nations\/data\/(?!(?:build|tables)\/)[a-z0-9-]+\/(?!sources(?:\/|$))[^/]+?(\/__data\.json)?$/,
 	/^\/stats\/[a-z0-9-]+(\/__data\.json)?$/,

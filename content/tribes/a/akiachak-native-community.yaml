@@ -182,6 +182,26 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Akiachak Native Community".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 745689
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Akiachak' (Akiachak)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Akiachak'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 542825
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'AKIACHAK NATIVE COMMUNITY' (UEI VMZZCN9LCJ35), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution and By-Laws of the Akiachak Native Community (approved 1948) states it was adopted

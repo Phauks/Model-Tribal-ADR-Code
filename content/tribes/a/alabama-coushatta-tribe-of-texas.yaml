@@ -230,6 +230,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Alabama-Coushatta Tribe of Texas".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 228002
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: TX, row 'Alabama-Coushatta Tribe of Texas' (Livingston)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 2106740
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'ALABAMA COUSHATTA TRIBE OF TEXAS' (UEI X44FQGJLRAM6), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Alabama-Coushatta Tribe of Texas" among organizations under constitutions approved

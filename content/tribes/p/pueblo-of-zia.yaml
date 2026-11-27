@@ -214,6 +214,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: page text
   note: 'The source''s words: "AIHC also provides care in the Zia Pueblo and the Santa Ana Pueblo via two Field Clinics.".'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 400333
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Zia Pueblo' (Zia Pueblo)
 governance:
 - aspect: head-of-government
   value: Governor

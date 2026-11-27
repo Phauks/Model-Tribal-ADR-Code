@@ -21,7 +21,7 @@ describe('the pages of each section, for the sidebar’s second column', () => {
 
 	it('lists each section’s own pages and its long list with working addresses', async () => {
 		const nations = await sectionContents('nations');
-		expect(nations?.pages.map((item) => item.link)).toEqual(['/nations/law', '/nations/map', '/nations/timeline', '/nations/recourse', '/nations/data', '/nations/federal-offices', '/nations/coverage']);
+		expect(nations?.pages.map((item) => item.link)).toEqual(['/nations/law', '/nations/map', '/nations/timeline', '/nations/recourse', '/nations/data', '/nations/federal-offices', '/nations/federal-programs', '/nations/coverage']);
 		// "View all" beside the list opens the table of every nation.
 		expect(nations?.entries).toEqual({ noun: 'nations', items: [], list: 'nations', title: 'Native nations', viewAll: '/nations' });
 		const { withSharedLists } = await import('#lib/section-lists.ts');

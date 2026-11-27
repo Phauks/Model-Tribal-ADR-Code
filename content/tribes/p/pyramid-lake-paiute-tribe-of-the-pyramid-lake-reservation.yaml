@@ -198,6 +198,26 @@ indian_health_service:
   locator: page text
   note: 'The source''s words: "Pyramid Lake Pauite Tribe".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3239766
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NV, row 'Pyramid Lake Paiute Tribe' (Nixon)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 5637157
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'PYRAMID LAKE PAIUTE TRIBE' (UEI GARBAUBDLGZ4), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PYRAMID LAKE PAIUTE TRIBE'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Pyramid Lake Paiute Tribe, Nevada" among organizations under constitutions approved

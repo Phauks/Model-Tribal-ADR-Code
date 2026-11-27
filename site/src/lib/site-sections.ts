@@ -77,6 +77,7 @@ export const nationsPages: OutlineItem[] = [
 		]
 	},
 	{ label: 'Federal offices', link: '/nations/federal-offices' },
+	{ label: 'Self-governance and federal programs', link: '/nations/federal-programs' },
 	{ label: 'Coverage', link: '/nations/coverage' }
 ];
 

@@ -185,6 +185,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 4763806
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WI, row 'Lac Courte Oreilles Band of Lake Superior Chippewa' (Hayward,)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 11098383
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'LAC COURTE OREILLES BAND OF LAKE SUPERIOR CHIPPEWA INDIANS OF WISCONSIN' (UEI XPJZNYCBRLR6), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution and Bylaws

@@ -175,6 +175,44 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Confederated Tribes of the Colville Reservation".
+federal_programs:
+- program: pl-102-477-plan
+  start: '2023-10-01'
+  end: '2026-12-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Native Employment Works
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  - Adult Education
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Confederated Tribes of the Colville Reservation'; PL102_477_PartnerEnrollment, its 8 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 9080432
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Confederated Tribes of the Colville Reservation' (Nespelem)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 7204518
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'CONFEDERATED TRIBES OF COLVILLE RESERVATION' (UEI NU9UAKLRDDP1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CONFEDERATED TRIBES OF COLVILLE RESERVATION'.
 governance:
 - aspect: governing-body
   value: Colville Business Council

@@ -175,6 +175,32 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Iowa Tribe of Oklahoma".
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2026
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Iowa Tribe of Oklahoma'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 153460
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Iowa Tribe of Oklahoma' (Perkins)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 4135808
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'IOWA TRIBE OF OKLAHOMA' (UEI WB7KKAF3XZP1), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Iowa Tribe of Oklahoma" among organizations under constitutions approved by the
