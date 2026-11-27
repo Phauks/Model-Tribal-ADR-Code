@@ -198,7 +198,6 @@ const visits = {
 		'/workspace/rooms',
 		'/workspace/intake',
 		'/workspace/address-book',
-		'/workspace/site-text',
 		'/workspace/nonprofit',
 		'/workspace/comments',
 		'/workspace/review-requests'
