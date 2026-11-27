@@ -1,6 +1,6 @@
 key: mushoolatubbee
 name: Mushoolatubbee
-lead: Signed three treaties with the United States for the Choctaw nation, 1816–1825.
+lead: Signed four treaties with the United States for the Choctaw nation, 1816–1830.
 living: false
 names:
 - name: Mushulatubbee
@@ -11,6 +11,10 @@ names:
   note: as the Treaty with the Choctaw, 1825 prints it
   source: treaty-with-the-choctaw-1825
   where: 7 Stat. 236
+- name: Musholatubbee
+  note: as the Treaty with the Choctaw, 1830 prints it
+  source: treaty-with-the-choctaw-1830
+  where: 7 Stat. 341
 nations:
 - nation: the-choctaw-nation-of-oklahoma
   named_as: Choctaw nation
@@ -30,4 +34,8 @@ events:
   text: Signed the Treaty with the Choctaw, 1825, for the Choctaw nation.
   source: treaty-with-the-choctaw-1825
   where: 7 Stat. 236
+- when: Sept. 27, 1830
+  text: Signed the Treaty with the Choctaw, 1830, for the Choctaw nation.
+  source: treaty-with-the-choctaw-1830
+  where: 7 Stat. 341
 checked: '2026-11-26'

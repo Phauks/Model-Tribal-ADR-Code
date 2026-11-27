@@ -1,9 +1,18 @@
 key: we-she-ko-ma-quit
 name: We-she-ko-ma-quit
-lead: Signed two treaties with the United States for the Foxes, 1836.
+lead: Signed three treaties with the United States for the Foxes, 1836.
 living: false
+names:
+- name: W e-she-oa-ma-quit
+  note: as the Treaty with the Sauk and Fox Tribe, 1836 prints it
+  source: treaty-with-the-sauk-and-fox-tribe-1836
+  where: 7 Stat. 517
 cases: []
 events:
+- when: Sept. 27, 1836
+  text: Signed the Treaty with the Sauk and Fox Tribe, 1836, for the Sacs and Foxes.
+  source: treaty-with-the-sauk-and-fox-tribe-1836
+  where: 7 Stat. 517
 - when: Sept. 28, 1836
   text: Signed the Treaty with the Sauk and Foxes, 1836, for the Foxes.
   source: treaty-with-the-sauk-and-foxes-1836-sept-28-7-stat-517
@@ -12,4 +21,4 @@ events:
   text: Signed the Treaty with the Sauk and Foxes, 1836, for the Foxes.
   source: treaty-with-the-sauk-and-foxes-1836-sept-28-7-stat-520
   where: 7 Stat. 522
-checked: '2026-11-24'
+checked: '2026-11-26'

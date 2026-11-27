@@ -1,12 +1,16 @@
 key: bad-chief
 name: Bad Chief
-lead: Signed the Treaty with the Great and Little Osage, 1825, for the Great and Little Osage Tribes of Indians as chief.
+lead: Chief of the Great and Little Osage Tribes of Indians, as listed in the Treaty with the Great and Little Osage, 1825. Signed two treaties with the United States, 1815–1825.
 living: false
 names:
 - name: Ca-he-ga-wash-im-pee-she
   note: as the Treaty with the Great and Little Osage, 1825 prints it
   source: treaty-with-the-great-and-little-osage-1825
   where: 7 Stat. 270
+- name: Caygaywachepeche
+  note: as the Treaty with the Osage, 1815 prints it
+  source: treaty-with-the-osage-1815
+  where: 7 Stat. 133
 nations:
 - nation: the-osage-nation
   named_as: Great and Little Osage Tribes of Indians
@@ -14,8 +18,12 @@ nations:
   where: 7 Stat. 270
 cases: []
 events:
+- when: Sept. 12, 1815
+  text: Signed the Treaty with the Osage, 1815, for the Great and Little Osage Tribes or Nations.
+  source: treaty-with-the-osage-1815
+  where: 7 Stat. 133
 - when: Aug. 10, 1825
   text: Signed the Treaty with the Great and Little Osage, 1825, for the Great and Little Osage Tribes of Indians, listed as chief.
   source: treaty-with-the-great-and-little-osage-1825
   where: 7 Stat. 270
-checked: '2026-11-24'
+checked: '2026-11-27'

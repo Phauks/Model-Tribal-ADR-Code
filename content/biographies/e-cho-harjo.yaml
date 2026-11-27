@@ -1,7 +1,12 @@
 key: e-cho-harjo
 name: E cho Harjo
-lead: Signed two treaties with the United States for the Creeks, 1845–1856.
+lead: Signed three treaties with the United States for the Creeks, 1838–1856.
 living: false
+names:
+- name: Echo Hadjo
+  note: as the Treaty with the Creeks, 1838 prints it
+  source: treaty-with-the-creeks-1838
+  where: 7 Stat. 575
 nations:
 - nation: the-muscogee-nation
   named_as: Creeks
@@ -9,6 +14,10 @@ nations:
   where: 9 Stat. 823
 cases: []
 events:
+- when: Nov. 23, 1838
+  text: Signed the Treaty with the Creeks, 1838, for the Creek nation.
+  source: treaty-with-the-creeks-1838
+  where: 7 Stat. 575
 - when: Jan. 4, 1845
   text: Signed the Treaty with the Creeks and Seminole, 1845, for the Creeks.
   source: treaty-with-the-creeks-and-seminole-1845
@@ -17,4 +26,4 @@ events:
   text: Signed the Treaty with the Creeks, etc., 1856, for the Creek Commissioners.
   source: treaty-with-the-creeks-etc-1856
   where: 11 Stat. 705
-checked: '2026-11-24'
+checked: '2026-11-26'

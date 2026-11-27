@@ -1,6 +1,6 @@
 key: rising-fawn
 name: Rising Fawn
-lead: Signed two treaties with the United States for the Cherokee nation, 1791–1798.
+lead: Signed three treaties with the United States for the Cherokee nation, 1785–1798.
 living: false
 names:
 - name: Kenotetah
@@ -11,6 +11,10 @@ names:
   note: as the Treaty with the Cherokee, 1798 prints it
   source: treaty-with-the-cherokee-1798
   where: 7 Stat. 64
+- name: Konatota
+  note: as the Treaty with the Cherokee, 1785 prints it
+  source: treaty-with-the-cherokee-1785
+  where: 7 Stat. 20
 nations:
 - nation: cherokee-nation
   named_as: Cherokee nation
@@ -18,6 +22,10 @@ nations:
   where: 7 Stat. 42
 cases: []
 events:
+- when: Nov. 28, 1785
+  text: Signed the Treaty with the Cherokee, 1785, for the Cherokees.
+  source: treaty-with-the-cherokee-1785
+  where: 7 Stat. 20
 - when: July 2, 1791
   text: Signed the Treaty with the Cherokee, 1791, for the Cherokee nation.
   source: treaty-with-the-cherokee-1791
@@ -26,4 +34,4 @@ events:
   text: Signed the Treaty with the Cherokee, 1798, for the Cherokee nation.
   source: treaty-with-the-cherokee-1798
   where: 7 Stat. 64
-checked: '2026-11-24'
+checked: '2026-11-26'
