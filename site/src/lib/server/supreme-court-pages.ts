@@ -13,7 +13,8 @@ import { renderMarkdown } from './markdown.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
 import { associatesOf, courts, justicesFile, seatLaws, seatLawsSource, surname, type Court, type Justice } from './supreme-courts.ts';
 import type { InfoPicture } from '../info-page.ts';
-import { portraitView, type FactGroup } from './justice-pages.ts';
+import { type FactGroup } from './justice-pages.ts';
+import { pictureView } from './supreme-court-pictures.ts';
 import { decidedDay, justicePath, personForCase, personOf, presidentNamed, presidentPath } from './supreme-court-people.ts';
 
 export interface BenchRow {
@@ -85,7 +86,7 @@ export interface CourtPage {
 	endText?: string;
 	years: string;
 	facts: { label: string; text: string; marks: CitationMark[] }[];
-	/** The Chief Justice's portrait, for At a glance. */
+	/** A picture of the Court, or else of its Chief Justice, for At a glance. */
 	picture?: InfoPicture;
 	glance: FactGroup[];
 	historyHtml: string;
@@ -333,7 +334,7 @@ export function courtPage(key: string): CourtPage | null {
 		endText: court.end ? readableDate(court.end) : undefined,
 		years: `${years} (${yearsBetween(court.start, end)} years)`,
 		facts,
-		picture: portraitView(chief.portrait, chief.key, chief.name),
+		picture: pictureView(court.key) ?? pictureView(chief.key),
 		glance: [
 			{ field: 'chief', label: 'Chief Justice', items: [{ text: court.chief.name, link: justicePath(chief), citations: chiefMarks }] },
 			{ field: 'served', label: 'Served', items: [{ text: span, citations: servedMarks }] },

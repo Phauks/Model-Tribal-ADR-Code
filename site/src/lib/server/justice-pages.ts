@@ -21,14 +21,14 @@ import {
 	peopleFile,
 	personForCase,
 	personOf,
-	portraitCredit,
 	presidentNamed,
 	presidentPath,
 	type JusticePerson,
-	type Portrait,
 	type PresidentPerson
 } from './supreme-court-people.ts';
 import { courtPath, courts, justicesFile, surname, type Justice } from './supreme-courts.ts';
+import { pictureView } from './supreme-court-pictures.ts';
+import type { InfoPicture } from '../info-page.ts';
 
 interface FactItem {
 	label?: string;
@@ -45,15 +45,7 @@ export interface FactGroup {
 	items: FactItem[];
 }
 
-export interface PortraitView {
-	src: string;
-	alt: string;
-	credit: string;
-	/** The file's page on Wikimedia Commons, with its source and license. */
-	original: string;
-	width: number;
-	height: number;
-}
+export type PortraitView = InfoPicture;
 
 /** A bar on a chart: the part of one appointment shown. */
 export interface ServiceRow {
@@ -184,18 +176,6 @@ const endingWords: Record<string, string> = {
 
 function today(): string {
 	return justicesFile().checked;
-}
-
-export function portraitView(portrait: Portrait | undefined, key: string, name: string): PortraitView | undefined {
-	if (!portrait?.sha256) return undefined;
-	return {
-		src: `/supreme-court/portraits/${key}`,
-		alt: `Portrait of ${name}`,
-		credit: portraitCredit(portrait),
-		original: portrait.page,
-		width: portrait.width,
-		height: portrait.height
-	};
 }
 
 /** Every Supreme Court case on this site, with the day it was decided. */
@@ -407,7 +387,7 @@ export function justicePage(key: string): JusticePage | null {
 		key: person.key,
 		name: person.name,
 		summary: roles.join('; '),
-		portrait: portraitView(person.portrait, person.key, person.name),
+		portrait: pictureView(person.key),
 		glance,
 		rows,
 		start: appointments[0].oath,
@@ -475,7 +455,7 @@ export function presidentPage(key: string): PresidentPage | null {
 		key: president.key,
 		name: president.name,
 		summary: `President, ${presidentYears(president)}`,
-		portrait: portraitView(president.portrait, president.key, president.name),
+		portrait: pictureView(president.key),
 		glance,
 		appointees,
 		appointeeMarks,

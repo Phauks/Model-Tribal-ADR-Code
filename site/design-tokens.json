@@ -208,52 +208,52 @@
         "$description": "Borders of buttons in the image viewer (non-text minimum 3:1). 6.0:1 on viewer-background."
       },
       "timeline-treaty": {
-        "$value": "#8A4B9C",
-        "$description": "Timeline: treaties and land. Always beside its row's name and icon. 5.7:1 on paper."
+        "$value": "#9048F8",
+        "$description": "Timeline: treaties and land. Always beside its kind's icon and name. 4.5:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-document": {
         "$value": "#1A6D76",
-        "$description": "Timeline: laws and agreements. Always beside its row's name and icon. 5.8:1 on paper."
+        "$description": "Timeline: laws and agreements. Always beside its kind's icon and name. 5.8:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-case": {
         "$value": "#B4461A",
-        "$description": "Timeline: court decisions. Always beside its row's name and icon. 5.3:1 on paper."
+        "$description": "Timeline: court decisions. Always beside its kind's icon and name. 5.3:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-opinion": {
-        "$value": "#5E7D1E",
-        "$description": "Timeline: Tribal court opinions. Always beside its row's name and icon. 4.6:1 on paper."
+        "$value": "#783838",
+        "$description": "Timeline: Tribal court opinions. Always beside its kind's icon and name. 8.4:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-federal": {
         "$value": "#7A6F66",
-        "$description": "Timeline: federal law. Always beside its row's name and icon. 4.7:1 on paper."
+        "$description": "Timeline: federal law. Always beside its kind's icon and name. 4.7:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "chart-series-1": {
-        "$value": "#2A78D6",
-        "$description": "Chart slice or series 1 (blue), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#0072B2",
+        "$description": "Chart slice 1 (blue), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-2": {
-        "$value": "#EB6834",
-        "$description": "Chart slice or series 2 (orange), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#E69F00",
+        "$description": "Chart slice 2 (orange), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-3": {
-        "$value": "#1BAF7A",
-        "$description": "Chart slice or series 3 (aqua), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#009E73",
+        "$description": "Chart slice 3 (bluish green), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-4": {
-        "$value": "#EDA100",
-        "$description": "Chart slice or series 4 (yellow), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#CC79A7",
+        "$description": "Chart slice 4 (reddish purple), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-5": {
-        "$value": "#E87BA4",
-        "$description": "Chart slice or series 5 (magenta), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#D55E00",
+        "$description": "Chart slice 5 (vermilion), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-6": {
-        "$value": "#008300",
-        "$description": "Chart slice or series 6 (green), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#56B4E9",
+        "$description": "Chart slice 6 (sky blue), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-7": {
-        "$value": "#6250D6",
-        "$description": "Chart slice or series 7 (violet), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#F0E442",
+        "$description": "Chart slice 7 (yellow), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "viewer-checker-light": {
         "$value": "#FFFFFF",
@@ -470,52 +470,52 @@
         "$description": "Borders of buttons in the image viewer (non-text minimum 3:1). 6.0:1 on viewer-background."
       },
       "timeline-treaty": {
-        "$value": "#D7A6E3",
-        "$description": "Timeline: treaties and land. Always beside its row's name and icon. 8.5:1 on paper."
+        "$value": "#8090F8",
+        "$description": "Timeline: treaties and land. Always beside its kind's icon and name. 5.9:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-document": {
         "$value": "#6CCAD3",
-        "$description": "Timeline: laws and agreements. Always beside its row's name and icon. 9.0:1 on paper."
+        "$description": "Timeline: laws and agreements. Always beside its kind's icon and name. 9.0:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-case": {
         "$value": "#FF9A66",
-        "$description": "Timeline: court decisions. Always beside its row's name and icon. 8.2:1 on paper."
+        "$description": "Timeline: court decisions. Always beside its kind's icon and name. 8.2:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-opinion": {
-        "$value": "#B5D46A",
-        "$description": "Timeline: Tribal court opinions. Always beside its row's name and icon. 10.3:1 on paper."
+        "$value": "#D0F8B8",
+        "$description": "Timeline: Tribal court opinions. Always beside its kind's icon and name. 14.5:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "timeline-federal": {
-        "$value": "#9FB0B3",
-        "$description": "Timeline: federal law. Always beside its row's name and icon. 7.6:1 on paper."
+        "$value": "#A8A29C",
+        "$description": "Timeline: federal law. Always beside its kind's icon and name. 6.8:1 on paper. The five kinds must pass npm run check:color-vision."
       },
       "chart-series-1": {
-        "$value": "#3987E5",
-        "$description": "Chart slice or series 1 (blue), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#0072B2",
+        "$description": "Chart slice 1 (blue), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-2": {
-        "$value": "#D95926",
-        "$description": "Chart slice or series 2 (orange), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#E69F00",
+        "$description": "Chart slice 2 (orange), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-3": {
-        "$value": "#199E70",
-        "$description": "Chart slice or series 3 (aqua), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#009E73",
+        "$description": "Chart slice 3 (bluish green), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-4": {
-        "$value": "#C98500",
-        "$description": "Chart slice or series 4 (yellow), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#CC79A7",
+        "$description": "Chart slice 4 (reddish purple), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-5": {
-        "$value": "#D55181",
-        "$description": "Chart slice or series 5 (magenta), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#D55E00",
+        "$description": "Chart slice 5 (vermilion), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-6": {
-        "$value": "#0CA30C",
-        "$description": "Chart slice or series 6 (green), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#56B4E9",
+        "$description": "Chart slice 6 (sky blue), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "chart-series-7": {
-        "$value": "#9085E9",
-        "$description": "Chart slice or series 7 (violet), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+        "$value": "#F0E442",
+        "$description": "Chart slice 7 (yellow), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
       "viewer-checker-light": {
         "$value": "#FFFFFF",
