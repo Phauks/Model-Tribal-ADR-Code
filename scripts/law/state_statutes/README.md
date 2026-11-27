@@ -18,7 +18,7 @@ Downloads, the sections file and the batches go in the work folder (`--work`, or
 
 ## The keyword pass and the reading
 
-`core.py` holds the shared term families (STRONG and WEAK). Each adapter adds its own nations' names to WEAK and lists place names (counties, rivers, towns named for nations) to take out before WEAK matches. Readers see four pools without being told which: A, every strong hit; B, every weak-only hit; C, a sample of non-hits enacted by the same session law as a strong hit or printed within two sections of one; D, a random sample of every other section. A fifth pool, E, holds every non-hit in a chapter whose own name is Indian law (a definition in a state Indian child custody chapter names no Native term but is part of that law). A `core` or `incidental` verdict in C or D is a miss by the keyword pass: if misses exceed 5% of what was found, widen the terms and read again.
+`core.py` holds the shared term families (STRONG and WEAK). Each adapter adds its own nations' names to WEAK and lists place names (counties, rivers, towns named for nations) to take out before WEAK matches. Readers see four pools without being told which: A, every strong hit; B, every weak-only hit; C, a sample of non-hits enacted by the same session law as a strong hit or printed within two sections of one; D, a random sample of every other section. A fifth pool, E, holds every non-hit in a chapter whose own name is Indian law (a definition in a state Indian child custody chapter names no Native term but is part of that law). A chapter name counts when it has a strong term or a word in `CHAPTER_LAW` ("Indians", "Indian Antiquities", "Indigenous Affairs"), which Delaware's and North Carolina's recall samples added. A `core` or `incidental` verdict in C or D is a miss by the keyword pass: if misses exceed 5% of what was found, widen the terms and read again.
 
 The readers are good at saying no to weak hits and less good at strong ones: in the first three states they marked about one strong hit in twenty `none` when the section gives tribes a role (a seat on a council, a consultation duty). `review` lists every strong hit marked `none`; read each and settle it. Then read about 40 other verdicts at random as a spot check. After a change to the terms or the parser, `batches --extend` keeps what was read and adds only the new hits.
 
@@ -43,4 +43,9 @@ Records the project already holds under the same key (most were made by hand for
 | Oregon | `adapters/oregon.py` | Chapter pages, oregonlegislature.gov/bills_laws/ors (2025 edition) |
 | Montana | `adapters/montana.py` | Section pages, mca.legmt.gov (2025) |
 | Nevada | `adapters/nevada.py` | Chapter pages, leg.state.nv.us/nrs |
+| Delaware | `adapters/delaware.py` (cited by title: section numbers are `<title>:<section>`) | Chapter and subchapter pages, delcode.delaware.gov |
+| North Carolina | `adapters/north_carolina.py` | Whole-chapter pages, ncleg.gov; each record links to the section's own page |
+| Rhode Island | `adapters/rhode_island.py` | Section pages, webserver.rilegislature.gov/Statutes |
+| South Carolina | `adapters/south_carolina.py` | Chapter pages, scstatehouse.gov/code (no section anchors: records link to the chapter) |
+| Virginia | `adapters/virginia.py` | Section pages, law.lis.virginia.gov/vacode |
 | Oklahoma | `adapters/oklahoma.py` (read in the pilot; `run.py seed OK` turns the pilot's list into this pipeline's list) | Title PDFs, oklegislature.gov |
