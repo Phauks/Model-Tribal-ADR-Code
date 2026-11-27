@@ -109,15 +109,15 @@ export const parts = [
 	{
 		key: 'supreme-court',
 		label: 'Supreme Court',
-		hint: 'Its Justices, Presidents and Courts',
+		hint: 'Its Justices and Courts',
 		test: (page) => under(page.path, '/supreme-court'),
 		groups: [
 			{ key: 'supreme-court-justices', label: 'Justices', test: (page) => under(page.path, '/supreme-court/justices') },
-			{ key: 'supreme-court-presidents', label: 'Presidents', test: (page) => under(page.path, '/supreme-court/presidents') },
 			{ key: 'supreme-court-courts', label: 'Courts', test: () => true }
 		]
 	},
 	{ key: 'biographies', label: 'Biographies', test: (page) => under(page.path, '/biographies') },
+	{ key: 'presidents', label: 'U.S. Presidents', test: (page) => under(page.path, '/presidents') },
 	{ key: 'stories', label: 'Stories', test: (page) => under(page.path, '/stories') },
 	{ key: 'glossary', label: 'Glossary', test: (page) => under(page.path, '/glossary') },
 	{ key: 'other', label: 'Other pages', hint: 'Home, help, forms, licenses and about pages', test: () => true }
@@ -129,7 +129,7 @@ const onRequest = [
 	{ family: 'laws', prefix: '/laws/' },
 	{ family: 'biographies', prefix: '/biographies/' },
 	{ family: 'justices', prefix: '/supreme-court/justices/' },
-	{ family: 'presidents', prefix: '/supreme-court/presidents/' },
+	{ family: 'presidents', prefix: '/presidents/' },
 	{ family: 'courts', prefix: '/supreme-court/' }
 ];
 

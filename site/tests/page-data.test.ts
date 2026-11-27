@@ -21,7 +21,7 @@ describe('page data for the pages the Worker draws', () => {
 			laws: 'src/routes/laws/[key]/+page.server.ts',
 			biographies: 'src/routes/biographies/[person]/+page.server.ts',
 			justices: 'src/routes/supreme-court/justices/[justice]/+page.server.ts',
-			presidents: 'src/routes/supreme-court/presidents/[president]/+page.server.ts',
+			presidents: 'src/routes/presidents/[president]/+page.server.ts',
 			courts: 'src/routes/supreme-court/[court]/+page.server.ts'
 		};
 		expect(Object.keys(routes).sort()).toEqual([...pageDataFamilies].sort());

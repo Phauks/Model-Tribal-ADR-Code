@@ -258,7 +258,7 @@ export const navigationSections: NavigationSection[] = [
 				]
 			}
 		],
-		holds: ['/library', '/verify', '/stats/biographies', '/stats/glossary-terms', '/stats/source-copies', '/stats/forms']
+		holds: ['/library', '/verify', '/presidents', '/stats/biographies', '/stats/glossary-terms', '/stats/source-copies', '/stats/forms']
 	},
 	{
 		key: 'writing',

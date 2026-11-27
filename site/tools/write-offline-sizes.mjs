@@ -33,7 +33,7 @@ const onRequestFamilies = [
 	{ family: 'laws', prefix: '/laws/' },
 	{ family: 'biographies', prefix: '/biographies/' },
 	{ family: 'justices', prefix: '/supreme-court/justices/' },
-	{ family: 'presidents', prefix: '/supreme-court/presidents/' },
+	{ family: 'presidents', prefix: '/presidents/' },
 	{ family: 'courts', prefix: '/supreme-court/' }
 ];
 

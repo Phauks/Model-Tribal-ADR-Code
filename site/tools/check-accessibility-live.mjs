@@ -153,7 +153,7 @@ const visits = {
 		'/laws/act-1858-12-22-pueblo-land-claims-confirmed',
 		'/biographies/a-pish-ka-go-gi',
 		'/supreme-court/justices/john-marshall',
-		'/supreme-court/presidents/abraham-lincoln',
+		'/presidents/abraham-lincoln',
 		// A page's own Changes view (src/lib/server/page-changes.ts): a nation's, with its badges, and a glossary entry's.
 		'/nations/hannahville-indian-community/changes',
 		'/glossary/peacemaking/changes',

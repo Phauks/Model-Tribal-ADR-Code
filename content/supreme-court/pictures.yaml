@@ -1840,6 +1840,22 @@ pictures:
   height: 601
   sha256: c28b7fda45afb6cf494d79b1c72138131a214650749e572180e32232db9056e6
   key: supreme-court/portraits/martin-van-buren.jpg
+- subject: william-henry-harrison
+  shows: William Henry Harrison, head and shoulders, lithograph from a painting by Franquinet
+  creator: Charles Fenderich
+  date: '1841'
+  source: Library of Congress
+  source_id: cph.3a53386
+  source_link: https://www.loc.gov/item/96522278/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Lithograph published by Chas. Fenderich & Co., Washington, copyright Feb. 9, 1841, so public domain by age.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3a50000/3a53000/3a53300/3a53386v.jpg
+  media_type: image/jpeg
+  width: 1028
+  height: 1280
+  sha256: b53a56ebae10c55b8f545fec4b70b2aeb64760ba55e7a6f666e992375604ec6e
+  key: supreme-court/portraits/william-henry-harrison-b53a56ebae10.jpg
 - subject: john-tyler
   shows: John Tyler, oil portrait (official White House portrait)
   creator: George Peter Alexander Healy
@@ -1871,6 +1887,27 @@ pictures:
   height: 640
   sha256: cf180bd725d7eba185b6c10fd3a8c0b7834aa9abc55d97a73194f781a81f8705
   key: supreme-court/portraits/james-k-polk.jpg
+- subject: zachary-taylor
+  shows: Zachary Taylor, head and shoulders, facing left, in an oval mount
+  creator: Mathew B. Brady
+  date: photographed 1849, rephotographed c. 1860–1890
+  source: Library of Congress
+  source_id: ds.14461
+  source_link: https://www.loc.gov/item/96522425/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." A print of Brady''s daguerreotype of 1849, made before 1891, so public domain by age. The copy is cut to the oval of the card mount.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ds/14400/14461v.jpg
+  crop:
+  - 150
+  - 270
+  - 530
+  - 770
+  media_type: image/jpeg
+  width: 380
+  height: 500
+  sha256: 539556213db6f4cb0531ae7270d6e6274993338c52730c2009f05966edf22b01
+  key: supreme-court/portraits/zachary-taylor-539556213db6.jpg
 - subject: millard-fillmore
   shows: Millard Fillmore, seated
   creator: Brady-Handy studio
@@ -1935,6 +1972,26 @@ pictures:
   height: 619
   sha256: 81a6bd51e7f4d3953b78b304766f9f4e8292390691367a4bf33923e5a4a1e05e
   key: supreme-court/portraits/abraham-lincoln.jpg
+- subject: andrew-johnson
+  shows: Andrew Johnson, half-length, facing left
+  date: c. 1860–1875
+  source: Library of Congress
+  source_id: ppmsca.53277
+  source_link: https://www.loc.gov/item/2017660632/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." An albumen carte de visite made between 1860 and 1875 (Liljenquist Family Collection), so public domain by age. The copy is cut to the photograph, without the card mount.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ppmsca/53200/53277v.jpg
+  crop:
+  - 110
+  - 260
+  - 530
+  - 800
+  media_type: image/jpeg
+  width: 420
+  height: 540
+  sha256: dec78d06495685b0eb269c2517753f74004abf87619fc31f18e67ddeb93edaff
+  key: supreme-court/portraits/andrew-johnson-dec78d064956.jpg
 - subject: ulysses-grant
   shows: Ulysses S. Grant, seated
   creator: Brady-Handy studio
@@ -2250,6 +2307,22 @@ pictures:
   height: 598
   sha256: 652ddcf1e133497c6b8c83e83cfc7f36c5acbf2e59cd0aef400e31bceb7e5941
   key: supreme-court/portraits/gerald-ford.jpg
+- subject: jimmy-carter
+  shows: Jimmy Carter, head and shoulders, facing front, next to an American flag; official White House photograph
+  creator: Karl Schumacher
+  date: Jan. 31, 1977
+  source: Library of Congress
+  source_id: cph.3b52090
+  source_link: https://www.loc.gov/item/96522672/
+  license: Public domain
+  basis: 'Library of Congress record: "Official White House photograph" and "No known restrictions on publication." Made by a White House photographer as part of his duties, so a work of the United States government (17 U.S.C. § 105).'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/cph/3b50000/3b52000/3b52000/3b52090r.jpg
+  media_type: image/jpeg
+  width: 460
+  height: 640
+  sha256: be5d8f5b185bc32b48e95ef2086b63e6cd1bb71c36ec73aef71f9498aeea7686
+  key: supreme-court/portraits/jimmy-carter-be5d8f5b185b.jpg
 - subject: ronald-reagan
   shows: Ronald Reagan, head-and-shoulders color official portrait, 1981
   creator: White House Photographic Office

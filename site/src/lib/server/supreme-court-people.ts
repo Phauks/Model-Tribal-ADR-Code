@@ -89,7 +89,7 @@ export function justicePath(person: Pick<JusticePerson, 'key'>): string {
 }
 
 export function presidentPath(person: Pick<PresidentPerson, 'key'>): string {
-	return `/supreme-court/presidents/${person.key}`;
+	return `/presidents/${person.key}`;
 }
 
 /** The President by the name the Court's list gives. */

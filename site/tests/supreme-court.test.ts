@@ -107,7 +107,7 @@ describe('Justice and President pages', () => {
 		const wrote = ['johnson-v-mintosh', 'cherokee-nation-v-georgia', 'worcester-v-georgia'];
 		expect(page.cases.filter((item) => wrote.includes(item.key)).every((item) => item.parts[0].part === 'Opinion of the Court')).toBe(true);
 		const facts = page.glance.flatMap((group) => group.items.map((item) => ({ ...item, label: group.label })));
-		expect(facts.find((item) => item.label === "Appointed by")).toMatchObject({ text: 'John Adams', link: '/supreme-court/presidents/john-adams' });
+		expect(facts.find((item) => item.label === "Appointed by")).toMatchObject({ text: 'John Adams', link: '/presidents/john-adams' });
 		expect(facts.find((item) => item.label === "Followed by")).toMatchObject({ text: 'Roger Brooke Taney' });
 	});
 
@@ -116,6 +116,35 @@ describe('Justice and President pages', () => {
 		const page = presidentPage('john-adams')!;
 		expect(page.appointees.map((justice) => justice.name)).toEqual(['Bushrod Washington', 'Alfred Moore', 'John Marshall']);
 		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'danforth-v-wear', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia', 'mitchel-v-united-states']);
+	});
+
+	// Trevor, Nov. 27, 2026: "did Andrew Johnson really have no supreme court cases that involved native Americans?"
+	it('gives every President a page, with the cases decided in the term, not only those their appointees heard', async () => {
+		const { presidentPage, presidentKeys } = await import('#lib/server/justice-pages.ts');
+		const { presidentTerms } = await import('#lib/president-terms.ts');
+		expect(new Set(presidentKeys())).toEqual(new Set(presidentTerms.map((term) => term.key)));
+		const johnson = presidentPage('andrew-johnson')!;
+		expect(johnson.appointees).toEqual([]);
+		expect(johnson.nominees).toEqual(['He nominated Henry Stanbery on Apr. 16, 1866; the Senate took no action.']);
+		expect(johnson.decided.map((item) => item.key)).toEqual(['united-states-v-holliday', 'the-kansas-indians', 'the-new-york-indians', 'united-states-v-mayrand', 'wilson-v-wall', 'kendall-v-united-states']);
+		expect(johnson.glance.find((group) => group.field === 'in-office')?.items.map((item) => item.text)).toEqual(['Apr. 15, 1865 – Mar. 4, 1869']);
+		expect(johnson.glance.find((group) => group.field === 'before')?.items[0]).toMatchObject({ text: 'Abraham Lincoln', link: '/presidents/abraham-lincoln' });
+		expect(johnson.family.back?.link).toBe('/stats/presidents');
+		expect(johnson.outline.items.map((item) => item.link)).toEqual(['#orders-heading', '#treaties-heading', '#acts-heading', '#justices-heading', '#decided-heading', '#sources-heading']);
+	});
+
+	it("lists the orders a President signed and the treaties they proclaimed, by the proclamation's date", async () => {
+		const { presidentPage } = await import('#lib/server/justice-pages.ts');
+		const johnson = presidentPage('andrew-johnson')!;
+		expect(johnson.orders.map((order) => order.key)).toContain('executive-order-1866-02-26-niobrara-reserve');
+		expect(johnson.ordersLink).toBe('/laws/executive-orders?president=andrew-johnson');
+		// Signed Oct. 28, 1867, under Johnson, and proclaimed Aug. 19, 1868; the Fort Laramie Treaty was proclaimed Feb. 24, 1869.
+		expect(johnson.treaties.find((treaty) => treaty.key === 'treaty-with-the-cheyenne-and-arapaho-1867')).toMatchObject({ date: '1868-08-19', signed: '1867-10-28', citation: '15 Stat. 593' });
+		expect(johnson.treaties.map((treaty) => treaty.key)).toContain('treaty-with-the-sioux-and-arapaho-1868');
+		// Signed Apr. 29, 1868, under Johnson; never on Grant's page.
+		expect(presidentPage('ulysses-grant')!.treaties.map((treaty) => treaty.key)).not.toContain('treaty-with-the-sioux-and-arapaho-1868');
+		const lincoln = presidentPage('abraham-lincoln')!;
+		expect(lincoln.outline.items.map((item) => item.label)).toContain('Cases heard by Justices he appointed');
 	});
 });
 

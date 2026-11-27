@@ -203,7 +203,7 @@ export function lawPage(key: string): LawPage {
 	const order = record.kind === 'executive-order';
 	const number = order ? orderNumber(record) : undefined;
 	const president = order ? orderPresident(record) : undefined;
-	const presidentPage = president && presidentByKey(president.key) ? `/supreme-court/presidents/${president.key}` : undefined;
+	const presidentPage = president && presidentByKey(president.key) ? `/presidents/${president.key}` : undefined;
 	const nationsCited = nationsCiting(key);
 	// An agency's document or notice no nation page cites yet still names its nations in the record (tribes).
 	const nationsNamed = nationsCited.length > 0 ? nationsCited : namedNations(record.tribes ?? []);
