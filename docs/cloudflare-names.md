@@ -22,7 +22,7 @@ Cloudflare cannot rename a D1 database or an R2 bucket, so on Nov. 26, 2026 the 
 
 | Kind | Name | Old name | Binding | How it was moved |
 | --- | --- | --- | --- | --- |
-| D1 | `tribal-law-project` (`eeb27102-f50e-40ff-bebd-5347c5c055c7`) | `model-tribal-adr-code` | `database` (site, live, scanner, watch) | Copied by the Wayback Worker's temporary copy code: 127 tables, 4,800 rows and all 60 migrations matched |
+| D1 | `tribal-law-project` (`eeb27102-f50e-40ff-bebd-5347c5c055c7`) | `model-tribal-adr-code` | `database` (site, live, scanner, watch) | Copied on Cloudflare's side: 127 tables, 4,800 rows and all 60 migrations matched, then a catch-up pass for rows written during the switch |
 | D1 | `tribal-law-project-library` (`90c5f0f5-6352-459e-a946-b3f18ea97d96`) | `model-tribal-adr-code-library` | `sourceLibrary` (site) | Loaded from the change files under `_library/d1/` in the bucket, as the site's hourly run does |
 | R2 | `tribal-law-project-files` | `model-tribal-adr-code-sources` | `sourceDocuments` (site, live, scanner, wayback, watch) | R2 data migration (Super Slurper), then a second pass for files written during the switch |
 | R2 | `tribal-law-project-mail` | `model-tribal-adr-code-mail` | `mailFiles` (site, scanner) | R2 data migration for mail received during the switch |
@@ -31,9 +31,9 @@ Site code reaches them only by binding name, so the switch changed the Wrangler 
 
 The old databases and buckets stay, unused, until the lead author deletes them. Nothing should be written to them after the switch.
 
-### The temporary copy code
+### How the switch went
 
-`site/wayback/move-databases.ts` runs in the Wayback Worker's minute schedule while it has bindings to the old and new databases. A request object at `_migration/site-database/request.json` (`{"mode": "full"}` or `{"mode": "missing"}`) starts a copy of the site's database, and the result is written beside it. After the switch it reads the request from the old bucket (binding `oldSourceDocuments`), for the last "missing" pass. The file and its bindings are removed once that pass is done.
+A temporary module in the Wayback Worker (PR #541, removed afterwards) copied the site's database on Cloudflare's side and loaded the new library database from the change files. The switch (PR #546) merged at 23:43 UTC on Nov. 26. The live, scanner and Wayback Workers deployed on the new bindings at once. The site's own deploys were failing on Cloudflare's 64 MiB Worker size limit, so it stayed on the old database and bucket until the size fix (PR #566) deployed at 01:44 UTC on Nov. 27. Then a catch-up pass copied the 2,563 rows the site had written to the old database in between, and a second R2 data migration with "Skip existing" copied the files written to the old bucket.
 
 ## GitHub repository
 

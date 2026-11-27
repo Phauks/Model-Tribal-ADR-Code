@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { copiesByLink, copyDetailsShard, copyPagePath, copyPath, linkForMatching, type PublicCopy } from '../src/lib/public-copies.ts';
 import { copyDetailShardNames, copyDetails } from '../src/lib/server/copy-lists.ts';
 import { publicCopies } from '../src/lib/server/content.ts';
-import { sectionOf } from '../src/lib/site-sections.ts';
+import { navigationSectionOf } from '../src/lib/site-navigation.ts';
 import {
 	fetchOriginal,
 	hexDigest,
@@ -78,7 +78,7 @@ describe('matching a page link to a copy', () => {
 	it('gives each copy a page inside the site, in the Library section, apart from its file', () => {
 		const page = copyPagePath({ key: 'constitutions/a b/law.pdf' });
 		expect(page).toBe('/copies/view/constitutions/a%20b/law.pdf');
-		expect(sectionOf(page)?.label).toBe('Library');
+		expect(navigationSectionOf(page)?.label).toBe('Library');
 	});
 });
 

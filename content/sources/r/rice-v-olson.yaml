@@ -1,0 +1,141 @@
+key: rice-v-olson
+kind: federal-case
+citation:
+  type: legal_case
+  title: Rice v. Olson
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '324'
+  page: '786'
+  issued:
+    date-parts:
+    - - 1945
+      - 4
+      - 23
+  URL: https://www.loc.gov/item/usrep324786/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: RICE v. OLSON, WARDEN
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep324/usrep324786/usrep324786.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep324/usrep324786/usrep324786.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Hugo Lafayette Black
+    page: 786
+  - kind: dissent
+    justice: Felix Frankfurter
+    page: 792
+original_link: https://www.loc.gov/item/usrep324786/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '1945-02-01'
+  printed: Argued February 1, 1945. Decided April 23, 1945.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep324/usrep324786/usrep324786.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Stone Court
+  natural_court: Stone Court (1943-1945)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Harlan Fiske Stone
+    vote: majority
+  - name: Owen Josephus Roberts
+    vote: minority
+  - name: Hugo Lafayette Black
+    vote: majority
+    opinion: majority
+  - name: Stanley Forman Reed
+    vote: majority
+  - name: Felix Frankfurter
+    vote: minority
+    opinion: dissent
+  - name: William Orville Douglas
+    vote: majority
+  - name: Frank Murphy
+    vote: majority
+  - name: Robert Houghwout Jackson
+    vote: minority
+  - name: Wiley Blount Rutledge
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1944-043; Oyez has no votes for this case.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep324786/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/324/786/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22324%20U.S.%20786%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=324%20U.S.%20786
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=324%20U.S.%20786
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 324 U.S. 786 (1945). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep324/usrep324786/usrep324786.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1944-043), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 324 U.S. 786 "Rice v. Olson"; Database 324 U.S. 786 "RICE v. OLSON, WARDEN"
+  - check: scan
+    result: agree
+    detail: Scan has 8 pages; the report runs 786 to 793
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued February 1, 1945. Decided April 23, 1945."; scan "Argued February 1, 1945.-Decided April 23, 1945."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1945-04-23'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Black p. 786, dissent Frankfurter p. 792; Database writers: Black, Frankfurter'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

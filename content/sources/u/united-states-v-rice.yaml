@@ -1,0 +1,141 @@
+key: united-states-v-rice
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Rice
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '327'
+  page: '742'
+  issued:
+    date-parts:
+    - - 1946
+      - 4
+      - 22
+  URL: https://www.loc.gov/item/usrep327742/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: UNITED STATES v. RICE, DISTRICT JUDGE
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep327/usrep327742/usrep327742.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep327/usrep327742/usrep327742.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Harlan Fiske Stone
+    page: 744
+  - kind: dissent
+    justice: William Orville Douglas
+    page: 753
+original_link: https://www.loc.gov/item/usrep327742/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '1946-02-05'
+  printed: Argued February 5, 1946. Decided April 22, 1946.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep327/usrep327742/usrep327742.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Stone Court
+  natural_court: Stone Court (1946-1946)
+  decision_type: majority opinion
+  vote:
+    majority: 5
+    minority: 3
+  justices:
+  - name: Harlan Fiske Stone
+    vote: majority
+    opinion: majority
+  - name: Hugo Lafayette Black
+    vote: minority
+  - name: Stanley Forman Reed
+    vote: majority
+  - name: Felix Frankfurter
+    vote: majority
+  - name: William Orville Douglas
+    vote: minority
+    opinion: dissent
+  - name: Frank Murphy
+    vote: majority
+  - name: Robert Houghwout Jackson
+    vote: not recorded
+  - name: Wiley Blount Rutledge
+    vote: minority
+  - name: Harold Hitz Burton
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1945-041; Oyez has no votes for this case.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep327742/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/327/742/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22327%20U.S.%20742%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=327%20U.S.%20742
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=327%20U.S.%20742
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 327 U.S. 742 (1946). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep327/usrep327742/usrep327742.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1945-041), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 327 U.S. 742 "United States v. Rice"; Database 327 U.S. 742 "UNITED STATES v. RICE, DISTRICT JUDGE"
+  - check: scan
+    result: agree
+    detail: Scan has 14 pages; the report runs 742 to 755
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued February 5, 1946. Decided April 22, 1946."; scan "Argued February 5, 1946.-Decided April 22, 1946."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1946-04-22'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Stone p. 744, dissent Douglas p. 753; Database writers: Douglas, Stone'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

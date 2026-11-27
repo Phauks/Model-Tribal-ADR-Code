@@ -206,6 +206,8 @@ export interface NationRecord {
 	/** Ids of profiles merged into this one; their old page addresses redirect here. */
 	former_ids?: string[];
 	entity_type: string;
+	/** The entity whose entry in the federal list names this band, such as the Minnesota Chippewa Tribe for its six bands. */
+	part_of?: string;
 	names: {
 		official: string;
 		official_source?: string;

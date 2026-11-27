@@ -1,7 +1,12 @@
 key: tuckabatche-micco
 name: Tuckabatche Micco
-lead: Signed two treaties with the United States for the Creeks, 1845–1854.
+lead: Signed three treaties with the United States for the Creeks, 1845–1856.
 living: false
+names:
+- name: Tuck-a-batchee-micco
+  note: as the Treaty with the Creeks, etc., 1856 prints it
+  source: treaty-with-the-creeks-etc-1856
+  where: 11 Stat. 705
 nations:
 - nation: the-muscogee-nation
   named_as: Creeks
@@ -17,4 +22,8 @@ events:
   text: Signed the Treaty with the Creeks, 1854, for the Creek nation.
   source: treaty-with-the-creeks-1854
   where: 11 Stat. 599
-checked: '2026-11-24'
+- when: Aug. 7, 1856
+  text: Signed the Treaty with the Creeks, etc., 1856, for the Creek Commissioners.
+  source: treaty-with-the-creeks-etc-1856
+  where: 11 Stat. 705
+checked: '2026-11-26'

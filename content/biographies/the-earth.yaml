@@ -1,0 +1,33 @@
+key: the-earth
+name: The Earth
+lead: Signed two treaties with the United States for the Winnebago, 1816–1829.
+living: false
+names:
+- name: Makahka
+  note: as the Treaty with the Winnebago, 1816 prints it
+  source: treaty-with-the-winnebago
+  where: 7 Stat. 145
+- name: Maun-kaw-kaw
+  note: as the Treaty with the Winnebago, 1829 prints it
+  source: treaty-with-the-winnebago-1829
+  where: 7 Stat. 325
+nations:
+- nation: ho-chunk-nation-of-wisconsin
+  named_as: Winnebago
+  source: treaty-with-the-winnebago
+  where: 7 Stat. 145
+- nation: winnebago-tribe-of-nebraska
+  named_as: Winnebago
+  source: treaty-with-the-winnebago
+  where: 7 Stat. 145
+cases: []
+events:
+- when: June 3, 1816
+  text: Signed the Treaty with the Winnebago, 1816, for the Winnebago.
+  source: treaty-with-the-winnebago
+  where: 7 Stat. 145
+- when: Aug. 1, 1829
+  text: Signed the Treaty with the Winnebago, 1829, for the Winnebaygo nation.
+  source: treaty-with-the-winnebago-1829
+  where: 7 Stat. 325
+checked: '2026-11-26'

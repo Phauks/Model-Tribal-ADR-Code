@@ -23,6 +23,7 @@ function recordsOf(identifier: string, barIndex: number) {
 
 /** Charts that keep their bars in a set order (ages, terms, decades) rather than largest first. */
 const inOrder = new Set([
+	'nations-by-recognition-status',
 	'constitutions-by-voting-age',
 	'constitutions-by-council-term',
 	'treaties-by-decade',

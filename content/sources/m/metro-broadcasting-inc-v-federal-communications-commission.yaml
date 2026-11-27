@@ -1,0 +1,152 @@
+key: metro-broadcasting-inc-v-federal-communications-commission
+kind: federal-case
+citation:
+  type: legal_case
+  title: Metro Broadcasting, Inc. v. Federal Communications Commission
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '497'
+  page: '547'
+  issued:
+    date-parts:
+    - - 1990
+      - 6
+      - 27
+  URL: https://www.loc.gov/item/usrep497547/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: METRO BROADCASTING, INC. v. FEDERAL COMMUNICATIONS COMMISSION et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep497/usrep497547/usrep497547.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep497/usrep497547/usrep497547.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: William J. Brennan, Jr.
+    page: 552
+  - kind: concurrence
+    justice: John Paul Stevens
+    page: 601
+  - kind: dissent
+    justice: Sandra Day O'Connor
+    page: 602
+  - kind: dissent
+    justice: Anthony M. Kennedy
+    page: 631
+original_link: https://www.loc.gov/item/usrep497547/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '1990-03-28'
+  printed: Argued March 28, 1990 Decided June 27, 1990
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep497/usrep497547/usrep497547.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1988-1990)
+  decision_type: majority opinion
+  vote:
+    majority: 5
+    minority: 4
+  justices:
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+    opinion: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: William H. Rehnquist
+    vote: minority
+  - name: John Paul Stevens
+    vote: majority
+    opinion: concurrence
+  - name: Sandra Day O'Connor
+    vote: minority
+    opinion: dissent
+  - name: Antonin Scalia
+    vote: minority
+  - name: Anthony M. Kennedy
+    vote: minority
+    opinion: dissent
+  source: https://api.oyez.org/cases/1989/89-453
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep497547/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/497/547/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1989/89-453
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22497%20U.S.%20547%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=497%20U.S.%20547
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=497%20U.S.%20547
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 497 U.S. 547 (1990). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep497/usrep497547/usrep497547.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1989-136), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 497 U.S. 547 "Metro Broadcasting, Inc. v. Federal Communications Commission"; Database 497 U.S. 547 "METRO BROADCASTING, INC. v. FEDERAL COMMUNICATIONS COMMISSION et al."
+  - check: scan
+    result: agree
+    detail: Scan has 92 pages; the report runs 547 to 638
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 28, 1990 Decided June 27, 1990"; scan "Argued March 28, 1990-Decided June 27, 1990"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1990-06-27'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Brennan p. 552, concurrence Stevens p. 601, dissent O Connor p. 602, dissent Kennedy p. 631; Database writers: Brennan, Kennedy, O Connor, Stevens'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

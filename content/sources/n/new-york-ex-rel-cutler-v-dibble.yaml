@@ -1,0 +1,136 @@
+key: new-york-ex-rel-cutler-v-dibble
+kind: federal-case
+citation:
+  type: legal_case
+  title: New York ex rel. Cutler v. Dibble
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '62'
+  page: '366'
+  issued:
+    date-parts:
+    - - 1859
+      - 2
+      - 21
+  URL: https://www.loc.gov/item/usrep062366/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: The People of the State of New York, ex rel. Asa Cutler, John Underhill, Jun., and Arza Underhill, Plaintiffs in Error, v. Edgar C. Dibble, County Judge of Genesee County
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep062/usrep062366/usrep062366.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep062/usrep062366/usrep062366.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Robert Cooper Grier
+    page: 368
+original_link: https://www.loc.gov/item/usrep062366/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '1859-02-03'
+  - '1859-02-04'
+  printed: Argued Feb. 3-4, 1859; decided Feb. 21, 1859
+  source: https://www.supremecourt.gov/opinions/datesofdecisions.pdf
+  note: The report prints only the term. These dates are from the Supreme Court Library's table of decision and argument dates, which takes them from the Court's Engrossed Minutes.
+  checked: '2026-11-26'
+supreme_court:
+  court: Taney Court
+  natural_court: Taney Court (1858-1860)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Roger Brooke Taney
+    vote: majority
+  - name: John McLean
+    vote: majority
+  - name: James Moore Wayne
+    vote: majority
+  - name: John Catron
+    vote: majority
+  - name: Peter Vivian Daniel
+    vote: majority
+  - name: Samuel Nelson
+    vote: majority
+  - name: Robert Cooper Grier
+    vote: majority
+    opinion: majority
+  - name: John Archibald Campbell
+    vote: majority
+  - name: Nathan Clifford
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1858-038; Oyez has no votes for this case.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep062366/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/62/366/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2262%20U.S.%20366%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=62%20U.S.%20366
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=62%20U.S.%20366
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 62 U.S. (21 How. 366) 366 (1859). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep062/usrep062366/usrep062366.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1858-038), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 62 U.S. 366 "New York ex rel. Cutler v. Dibble"; Database 62 U.S. 366 "THE PEOPLE OF THE STATE OF NEW YORK, EX REL. ASA CUTLER, JOHN UNDERHILL, JUN., AND ARZA UNDERHILL, PLAINTIFFS IN ERROR, v. EDGAR C. DIBBLE, COUNTY JUDGE OF GENESEE COUNTY"
+  - check: scan
+    result: agree
+    detail: Scan has 6 pages; the report runs 366 to 371
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 0.95
+  - check: decided
+    result: agree
+    detail: Supreme Court Library's table (from the Court's minutes) Feb. 21, 1859; Database 1859-02-21
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Grier p. 368; Database writers: Grier'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

@@ -1,7 +1,12 @@
 key: jeremiah-slingerland
 name: Jeremiah Slingerland
-lead: Signed two treaties with the United States for the Stockbridge tribe, 1848–1856.
+lead: Signed three treaties with the United States for the Stockbridge tribe, 1839–1856.
 living: false
+names:
+- name: Jeremiah Singerland
+  note: as the Treaty with the Stockbridge and Munsee, 1839 prints it
+  source: treaty-with-the-stockbridge-and-munsee-1839
+  where: 7 Stat. 581
 nations:
 - nation: stockbridge-munsee-community
   named_as: Stockbridge tribe
@@ -9,6 +14,10 @@ nations:
   where: 9 Stat. 958
 cases: []
 events:
+- when: Sept. 3, 1839
+  text: Signed the Treaty with the Stockbridge and Munsee, 1839, for the Stockbridges.
+  source: treaty-with-the-stockbridge-and-munsee-1839
+  where: 7 Stat. 581
 - when: Nov. 24, 1848
   text: Signed the Treaty with the Stockbridge Tribe, 1848, for the Stockbridge tribe.
   source: treaty-with-the-stockbridge-tribe-1848
@@ -17,4 +26,4 @@ events:
   text: Signed the Treaty with the Stockbridge and Munsee, 1856, for the Stockbridge and Munsee tribes.
   source: treaty-with-the-stockbridge-and-munsee-1856
   where: 11 Stat. 668
-checked: '2026-11-24'
+checked: '2026-11-26'

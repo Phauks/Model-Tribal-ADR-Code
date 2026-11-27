@@ -1,6 +1,6 @@
 # Native nations' stories about making peace: a first catalog
 
-**Status:** research notes, written Nov. 21, 2026, for the peacemaking track and the essays. It lists stories, accounts and teachings about resolving disputes and making peace that Native nations, or Native institutions, have published, and says who would have to agree before any of them is reprinted. It is not a finding about any nation's law or practice, and it retells no story: where a story's content is given, it is quoted in the teller's own words. Judgments are labeled project analysis. The search method and its limits are in the session log, [2026-11-21-peacemaking-stories](../sessions/2026/2026-11-21-peacemaking-stories.md). It builds on the program survey in [2026-11-21-peacemaking-programs](2026-11-21-peacemaking-programs.md) and does not repeat it.
+**Status:** research notes, written Nov. 21, 2026, for the peacemaking track and the essays. It lists stories, accounts and teachings about resolving disputes and making peace that Native nations, or Native institutions, have published, and says who would have to agree before any of them is reprinted. It is not a finding about any nation's law or practice, and it retells no story: where a story's content is given, it is quoted in the teller's own words. Judgments are labeled project analysis. The search method and its limits are in the session log, [2026-11-21-peacemaking-stories](../sessions/2026/2026-11-21-peacemaking-stories.md). It builds on the program survey in [2026-11-21-peacemaking-programs](2026-11-21-peacemaking-programs.md) and does not repeat it. Since Nov. 27, 2026 the catalog also takes stories about law, justice and governance generally (decision record [0063](../../docs/decisions/0063-widen-stories-to-law-justice-and-governance.md); section 11).
 
 ## Contents
 
@@ -14,6 +14,7 @@
 8. Second search: more nations
 9. Traditional stories
 10. Ancestor stories
+11. Stories about law, justice and governance
 
 ## 1. Ground rules for collecting stories
 
@@ -201,6 +202,21 @@ On Nov. 22, 2026 the lead author said what he had most hoped for: traditional st
 
 **Left out on purpose.** The Cherokee Nation Language Program's "Legend of the Giant Turtles" calls the turtles sacred. Lucy Thompson's story of the people's wandering turns on the Talth's secret lodge. Parker's chapters on medicine societies and the False Faces were not used. A Cherokee Phoenix reprint of a James Mooney text was left out because it is an outside recorder's version.
 
+## 11. Stories about law, justice and governance
+
+On Nov. 27, 2026 the lead author asked that the stories include "stories relating to the law, not just dispute resolution" (decision record 0063). The first search under the wider scope went to books and articles by Native authors published before 1931, because they are in the public domain and can be shown in full (session [2026-11-27-stories-about-law](../sessions/2026/2026-11-27-stories-about-law.md)). Six records were added, each a passage chosen for what it says about law, with any part left out marked where it was. Every full text was compared word by word with a second copy and checked on the page images.
+
+| Record | Nation(s) | What it is about (project analysis) | Linked law |
+| --- | --- | --- | --- |
+| `mashpee-wampanoag-we-will-rule-ourselves-1833` | Mashpee Wampanoag Tribe | The Mashpee council's resolutions of May 21, 1833 ("we, as a tribe, will rule ourselves, and have the right to do so"), their enforcement on July 1, and the argument with the Governor's councillor over whether the state's laws bound the tribe[^apess] | None on record |
+| `nez-perce-joseph-we-never-sold-it` | Nez Perce Tribe; Colville | The laws Chief Joseph's fathers gave the people, and why his band held that the 1855 and 1863 treaties did not sell the Wallowa ("If we ever owned the land we own it still, for we never sold it")[^joseph] | Nez Perce treaties of 1855 and 1863 |
+| `sauk-black-hawk-treaty-of-1804` | Sac and Fox Nation; Sac and Fox of the Mississippi in Iowa; Sac and Fox of Missouri | A mission to cover the blood of a killing by payment that came home as a land cession; "whether our nation was properly represented in this treaty?"[^blackhawk] | Treaty with the Sauk and Foxes, 1804 |
+| `northern-paiute-the-council-tent-is-our-congress` | Pyramid Lake Paiute Tribe | How Paiute chiefs governed by council, with women and all able to speak ("The council-tent is our Congress"), and how decisions were repeated at every lodge[^hopkins] | None |
+| `odawa-blackbird-treaties-of-1836-and-1855` | Little Traverse Bay Bands of Odawa Indians | The 1836 treaty "not with the free will of the Indians," annuities never paid, and the 1855 release clause "never explained to them at the Council of Detroit"[^blackbird] | Treaties of 1836 and 1855 |
+| `dakota-zitkala-sa-blue-star-woman` | Yankton Sioux Tribe | A short story about proving membership for an allotment, the lawyers who take half, and a chief jailed for writing to Washington[^bluestar] | Allotment (event) |
+
+Leads not yet followed: Chitto Harjo's testimony at Tulsa on Nov. 23, 1906 (S. Rep. No. 59-5013, pt. 2); the Cherokee memorials to Congress of 1829 and 1830; the Indian-Pioneer Papers; Charles A. Eastman, *From the Deep Woods to Civilization* (1916); and nations' own published histories of their constitutions, courts and treaties, which would be shown under decision record 0036.
+
 [^charter-4]: [Charter, commitment 4](../../docs/charter.md#4-consultation-before-publication).
 [^charter-5]: [Charter, commitment 5](../../docs/charter.md#5-cultural-knowledge-and-restricted-material).
 [^protocols]: First Archivist Circle, *Protocols for Native American Archival Materials* (2007), [www2.nau.edu](https://www2.nau.edu/libnap-p/protocols.html) (accessed Nov. 21, 2026). Source record: `first-archivist-circle-2007-protocols`.
@@ -262,3 +278,9 @@ On Nov. 22, 2026 the lead author said what he had most hoped for: traditional st
 [^parker]: Arthur C. Parker, *Seneca Myths and Folk Tales* 309–11 (Buffalo Historical Society Publications vol. 27, 1923), [archive.org](https://archive.org/details/senecamythsfolkt00park); the winter custom is in the introduction. Source record: `parker-1923-seneca-myths-and-folk-tales`.
 [^karuk-winter]: *Nanu'ávaha Third Grade Lesson 4: Karuk Oral Tradition: Coyote's Journey*, Karuk Tribe, Sípnuuk, [sipnuuk.karuk.us](https://sipnuuk.karuk.us/digital-heritage/nanu%C3%A1vaha-third-grade-lesson-4-karuk-oral-tradition-coyotes-journey) (last visited Nov. 22, 2026). Source record: `karuk-tribe-sipnuuk-coyotes-journey-lesson`.
 [^zitkala]: Zitkala-Ša, *Old Indian Legends* 25–33, 59–74 (Ginn & Co. 1901), [archive.org](https://archive.org/details/oldindianlegends00zitkrich). Source record: `zitkala-sa-1901-old-indian-legends`.
+[^apess]: William Apes [Apess], *Indian Nullification of the Unconstitutional Laws of Massachusetts, Relative to the Marshpee Tribe* 20–21, 30–36 (Press of Jonathan Howe 1835), [archive.org](https://archive.org/details/indiannullificat00apesuoft). Source record: `apess-1835-indian-nullification`.
+[^joseph]: Young Joseph, *An Indian's Views of Indian Affairs*, 128 N. Am. Rev. 412, 415–20 (1879), [archive.org](https://archive.org/details/sim_north-american-review_1879-04_128_269). Source record: `joseph-1879-an-indians-views-of-indian-affairs`.
+[^blackhawk]: *Life of Ma-ka-tai-me-she-kia-kiak or Black Hawk* 27–29 (J. B. Patterson ed., Cincinnati 1833), [archive.org](https://archive.org/details/GR_313). Source record: `black-hawk-1833-life-of-ma-ka-tai-me-she-kia-kiak`.
+[^hopkins]: Sarah Winnemucca Hopkins, *Life Among the Piutes: Their Wrongs and Claims* 52–54 (Mrs. Horace Mann ed., 1883), [archive.org](https://archive.org/details/GR_1950). Source record: `hopkins-1883-life-among-the-piutes`.
+[^blackbird]: Andrew J. Blackbird, *History of the Ottawa and Chippewa Indians of Michigan* 50–52 (Ypsilantian Job Printing House 1887), [archive.org](https://archive.org/details/historyofottawac00blac). Source record: `blackbird-1887-history-of-the-ottawa-and-chippewa-indians-of-michigan`.
+[^bluestar]: Zitkala-Ša, *The Widespread Enigma Concerning Blue-Star Woman*, in *American Indian Stories* 159–82 (Hayworth Publishing House 1921), [archive.org](https://archive.org/details/americanindianst01zitk). Source record: `zitkala-sa-1921-american-indian-stories`.

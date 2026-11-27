@@ -28,6 +28,7 @@
 	import SiteHeader from '#lib/components/SiteHeader.svelte';
 	import SiteFooter from '#lib/components/SiteFooter.svelte';
 	import SiteSidebar from '#lib/components/SiteSidebar.svelte';
+	import SectionBar from '#lib/components/SectionBar.svelte';
 	import PrintDetails from '#lib/components/PrintDetails.svelte';
 	import OfflineNotice from '#lib/components/OfflineNotice.svelte';
 	import UpdateNotice from '#lib/components/UpdateNotice.svelte';
@@ -89,6 +90,8 @@
 	</main>
 {:else}
 	<SiteHeader contentVersion={data.versions.content} />
+	<!-- The site's six sections in a row under the masthead, on wide screens (SectionBar.svelte). -->
+	<SectionBar />
 	<PrintDetails />
 	<OfflineNotice contentVersion={data.versions.content} />
 	<UpdateNotice versions={data.versions} />
@@ -145,9 +148,9 @@
 		   first screen and the Hide sidebar button keeps its place at the bottom. */
 		.site-body {
 			display: grid;
-			/* One width on every page, so the page never moves when the sidebar
-			   changes from the sections to a section's panel (SiteSidebar.svelte). */
-			grid-template-columns: 17rem minmax(0, 1fr);
+			/* One width on every page, so the page never moves from page to page
+			   (SiteSidebar.svelte; design/navigation-models, model C). */
+			grid-template-columns: 16rem minmax(0, 1fr);
 			align-items: start;
 			min-height: 100dvh;
 		}

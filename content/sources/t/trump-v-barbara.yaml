@@ -1,0 +1,159 @@
+key: trump-v-barbara
+kind: federal-case
+citation:
+  type: legal_case
+  title: Trump v. Barbara
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '609'
+  page: '719'
+  issued:
+    date-parts:
+    - - 2026
+      - 6
+      - 30
+  URL: https://www.supremecourt.gov/opinions/25pdf/609us2r66_o7kq.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: TRUMP, PRESIDENT OF THE UNITED STATES, et al. v. BARBARA et al.
+  source: https://www.supremecourt.gov/opinions/25pdf/609us2r66_o7kq.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://www.supremecourt.gov/opinions/25pdf/609us2r66_o7kq.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: John G. Roberts, Jr.
+    page: 724
+  - kind: concurrence
+    justice: Ketanji Brown Jackson
+    page: 751
+  - kind: concurrence in the judgment and dissent in part
+    justice: Brett M. Kavanaugh
+    page: 770
+  - kind: dissent
+    justice: Clarence Thomas
+    page: 778
+  - kind: dissent
+    justice: Samuel A. Alito, Jr.
+    page: 867
+  - kind: dissent
+    justice: Neil Gorsuch
+    page: 904
+original_link: https://www.supremecourt.gov/opinions/25pdf/609us2r66_o7kq.pdf
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '2026-04-01'
+  printed: Argued April 1, 2026—Decided June 30, 2026
+  source: https://www.supremecourt.gov/opinions/25pdf/609us2r66_o7kq.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2022-)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: John G. Roberts, Jr.
+    vote: majority
+    opinion: majority
+  - name: Clarence Thomas
+    vote: minority
+    opinion: dissent
+  - name: Samuel A. Alito, Jr.
+    vote: minority
+    opinion: dissent
+  - name: Sonia Sotomayor
+    vote: majority
+  - name: Elena Kagan
+    vote: majority
+  - name: Neil Gorsuch
+    vote: minority
+    opinion: dissent
+  - name: Brett M. Kavanaugh
+    vote: majority
+    opinion: concurrence in the judgment and dissent in part
+  - name: Amy Coney Barrett
+    vote: majority
+  - name: Ketanji Brown Jackson
+    vote: majority
+    opinion: concurrence
+  source: https://www.supremecourt.gov/opinions/25pdf/609us2r66_o7kq.pdf
+  note: Read from the report's line of opinions (p. 723). Justice Kavanaugh concurred in the judgment, which affirmed, so the vote on the judgment is 6 to 3. The Supreme Court Database's latest release (2026_01) does not yet include the case, and Oyez gives no votes.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/25pdf/609us2r66_o7kq.pdf
+  - site: cornell
+    label: Cornell LII
+    access: free
+    link: https://www.law.cornell.edu/supremecourt/text/25-365
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/609/719/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2025/25-365
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22609%20U.S.%20719%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=609%20U.S.%20719
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=609%20U.S.%20719
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Indigo Book citation: Trump v. Barbara, 609 U.S. 719 (2026). Official report: the Court''s preliminary print of volume 609, part 2 (pp. 719-907): https://www.supremecourt.gov/opinions/25pdf/609us2r66_o7kq.pdf. No Native nation or person is a party. The case is listed because it affects Native people: the opinions explain the Citizenship Clause''s exception for children born members of Indian tribes, and the Court reads Elk v. Wilkins, 112 U.S. 94 (1884), as concerning "only members of Indian tribes within the United States" (p. 747 n.5, quoting United States v. Wong Kim Ark, 169 U.S. 649, 682 (1898)). Written by hand from the preliminary print; not in the Supreme Court Database''s 2026_01 release; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: Claude, by hand from the official report (thread "Add the remaining Supreme Court Native cases")
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: confirmed
+    detail: 'The preliminary print''s cover gives "Volume 609 U. S. Part 2, Pages 719–907", and its page heads print "Cite as: 609 U. S. 719 (2026)" and "TRUMP v. BARBARA"'
+  - check: caption
+    result: confirmed
+    detail: 'The report prints "TRUMP, PRESIDENT OF THE UNITED STATES, et al. v. BARBARA et al." on p. 719'
+  - check: printed dates
+    result: confirmed
+    detail: 'The report prints "No. 25–365. Argued April 1, 2026—Decided June 30, 2026" on p. 719; Oyez gives the same argument day'
+  - check: opinions
+    result: confirmed
+    detail: 'The report''s line of opinions (p. 723) and each opinion''s first page: Roberts, C. J., for the Court p. 724; Jackson, J., concurring p. 751; Kavanaugh, J., concurring in the judgment and dissenting in part p. 770; Thomas, J., dissenting (Gorsuch, J., joining) p. 778; Alito, J., dissenting p. 867; Gorsuch, J., dissenting p. 904'
+  - check: bench
+    result: confirmed
+    detail: 'The report: "Roberts, C. J., delivered the opinion of the Court, in which Sotomayor, Kagan, Barrett, and Jackson, JJ., joined"; Kavanaugh concurred in the judgment; Thomas, Alito and Gorsuch dissented'
