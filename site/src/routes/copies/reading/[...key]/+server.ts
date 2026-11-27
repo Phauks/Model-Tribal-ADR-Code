@@ -28,6 +28,7 @@ import { servedCopy } from '#lib/server/copy-list.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { copyLevel } from '#lib/server/nation-restrictions.ts';
 import { hexDigest, savedFileName } from '#lib/server/public-copy-serving.ts';
+import { reportHere } from '#lib/server/report-here.ts';
 import { textLinkPages } from '#lib/server/text-link-pages.ts';
 import type { RequestHandler } from './$types';
 
@@ -58,6 +59,7 @@ export const GET: RequestHandler = async ({ params, url, fetch }) => {
 	try {
 		words = new TextDecoder(copy.charset ?? 'utf-8').decode(bytes);
 	} catch {
+		// expected: an encoding this runtime does not know is read as UTF-8, which most of the copies are.
 		words = new TextDecoder().decode(bytes);
 	}
 	const original = copy.links.at(-1) ?? copy.links[0];
@@ -68,8 +70,9 @@ export const GET: RequestHandler = async ({ params, url, fetch }) => {
 	try {
 		const pages = await textLinkPages(citationKeys(reading.html, { codeTitle }));
 		reading.html = linkCitations(reading.html, pages, { codeTitle });
-	} catch {
-		// Without the index the text still shows, its citations plain.
+	} catch (problem) {
+		// The text still shows, its citations plain; the missing index is reported.
+		reportHere(problem, { code: 'copies.text-links', place: '/copies/reading/[...key]', path: url.pathname });
 	}
 	const caching = { 'cache-control': copy.restrict ? 'public, max-age=300' : 'public, max-age=86400' };
 	if (format === 'json') {

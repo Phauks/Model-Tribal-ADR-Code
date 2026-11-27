@@ -272,6 +272,7 @@ function safeLink(href: string, base: string | undefined): { href: string; exter
 		if (address.protocol !== 'https:' && address.protocol !== 'http:') return undefined;
 		return { href: address.href, external: true };
 	} catch {
+		// expected: a link that is not an address keeps its words, unlinked.
 		return undefined;
 	}
 }

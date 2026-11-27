@@ -17,6 +17,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import FileText from '@lucide/svelte/icons/file-text';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	interface Props {
 		/** The file's address on this site, /copies/<key>. */
@@ -112,8 +113,10 @@
 			const textLayer = new library.TextLayer({ textContentSource: page.streamTextContent(), container: layer, viewport });
 			await textLayer.render();
 			holder.classList.add('drawn');
-		} catch {
+		} catch (problem) {
+			// The page stays a blank sheet, to be drawn again when it next comes near the screen.
 			drawn.delete(number);
+			if (navigator.onLine) sendProblem(problem, { code: 'document.pdf-page', path: location.pathname, place: 'PdfViewer' });
 		}
 	}
 </script>

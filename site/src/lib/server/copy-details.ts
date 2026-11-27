@@ -6,6 +6,7 @@
  */
 import { copyDetailsPath, copyDetailsShard, type CopyDetails } from '../public-copies.ts';
 import { workerEnvironment } from './environment.ts';
+import { reportHere } from './report-here.ts';
 
 export async function copyDetailsOf(copy: { key: string; sha256: string }, url: URL, fetcher: typeof fetch): Promise<CopyDetails | undefined> {
 	const address = new URL(copyDetailsPath(copyDetailsShard(copy)), url).toString();
@@ -16,7 +17,9 @@ export async function copyDetailsOf(copy: { key: string; sha256: string }, url: 
 		if (!response.ok) return undefined;
 		const details = (await response.json()) as Record<string, CopyDetails>;
 		return details[copy.key];
-	} catch {
+	} catch (problem) {
+		// The page still shows the copy, under its file name; the missing details are reported.
+		reportHere(problem, { code: 'copies.details', place: 'copy-details', path: url.pathname });
 		return undefined;
 	}
 }

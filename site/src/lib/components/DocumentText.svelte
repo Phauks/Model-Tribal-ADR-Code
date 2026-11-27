@@ -118,7 +118,7 @@
 			const kept = Number(localStorage.getItem(sizeKey));
 			if (kept >= 0 && kept < sizes.length && localStorage.getItem(sizeKey) !== null) sizeStep = kept;
 		} catch {
-			// Without storage, the size starts at its default.
+			// expected: without storage, as in a private window, the size starts at its default.
 		}
 		// Flowing lines on a phone, where printed lines would not fit.
 		if (matchMedia('(max-width: 40rem)').matches) lines = 'flowing';
@@ -130,7 +130,7 @@
 		try {
 			localStorage.setItem(sizeKey, String(sizeStep));
 		} catch {
-			// The size still changes for this page.
+			// expected: without storage the size still changes for this page.
 		}
 	}
 
@@ -363,6 +363,7 @@
 			await navigator.clipboard.writeText(text);
 			cite.copied = true;
 		} catch {
+			// expected: a browser that refuses the clipboard leaves the citation on screen, to select and copy by hand.
 			cite.copied = false;
 		}
 	}
