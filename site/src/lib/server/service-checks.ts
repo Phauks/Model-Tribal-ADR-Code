@@ -803,7 +803,7 @@ const sourceWatch: Check = {
 	key: 'source-watch',
 	group: 'Workers',
 	name: 'Source watch',
-	target: { name: 'tribal-law-project-watch', kind: 'Worker' },
+	target: { name: 'tribal-law-project-radar', kind: 'Worker' },
 	use: 'Finding new Federal Register documents, eCFR changes and changed cited links',
 	test: 'Reads the progress file the Worker writes to tribal-law-project-files every minute.',
 	async run({ environment, now = new Date() }) {
@@ -837,7 +837,7 @@ const sourceWatchModels: Check = {
 	key: 'source-watch-models',
 	group: 'Workers',
 	name: 'Source watch models',
-	target: { name: 'tribal-law-project-watch', kind: 'Worker', part: 'Workers AI' },
+	target: { name: 'tribal-law-project-radar', kind: 'Worker', part: 'Workers AI' },
 	use: 'Sorting what the source watch finds when its rules cannot decide',
 	test: 'Reads the model, its last problem and 30 days of spending from the same progress file.',
 	async run({ environment, now = new Date() }) {
