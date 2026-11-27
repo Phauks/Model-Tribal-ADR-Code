@@ -1,0 +1,30 @@
+key: usaspending-fy2026-awards-to-tribal-governments
+kind: dataset
+citation:
+  type: dataset
+  title: Federal awards to Indian and Native American tribal governments, by recipient and awarding agency, fiscal year 2026
+  author:
+  - literal: U.S. Department of the Treasury, Bureau of the Fiscal Service, USAspending.gov
+  medium: API
+  URL: https://api.usaspending.gov/api/v2/search/spending_by_category/awarding_agency/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.usaspending.gov/search
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the United States government, not subject to copyright (17 U.S.C. § 105).
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-27-federal-awards
+notes: 'The amount each awarding agency obligated to each recipient from Oct. 1, 2025 to Sept. 30, 2026, on all of the recipient''s transactions, from the USAspending API (spending_by_category/awarding_agency, filtered by recipient and period), for the recipients USAspending lists as an Indian/Native American Tribal Government that are a nation''s own government (research/federal-awards/crosswalk.csv, from scripts/tribes/federal_awards.py). Obligations as agencies reported them; an amount can be negative where an agency took back more than it awarded. Separate bodies such as health boards, housing authorities, schools, businesses and consortia are not included. Private copy research/captures/federal-awards/.'
