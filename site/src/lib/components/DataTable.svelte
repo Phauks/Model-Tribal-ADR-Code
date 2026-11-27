@@ -114,6 +114,7 @@
 		type TableRow,
 		type TableSort
 	} from '#lib/tables/table-definition.ts';
+	import { steadyColumns, steadyRowCount } from '#lib/tables/steady-columns.ts';
 	import { copyPageLink, replaceAddressSearch } from '#lib/clipboard.ts';
 	import { FullScreen } from '#lib/full-screen.svelte.ts';
 
@@ -205,6 +206,8 @@
 	const filterKinds = $derived(new Map(filters ? columns.map((column) => [column.key, filterKindFor(column, rows)]) : []));
 	const filterColumns = $derived(filters ? visibleColumns.filter((column) => filterKinds.get(column.key) !== undefined) : []);
 	const sumColumns = $derived(visibleColumns.filter((column) => column.sum));
+	/** A long table's column widths, worked out from its rows before they are drawn, so the columns stay still while the page arrives (src/lib/tables/steady-columns.ts). */
+	const steady = $derived(rows.length >= steadyRowCount ? steadyColumns(visibleColumns, rows, new Set(filterColumns.map((column) => column.key))) : undefined);
 	const shownRows = $derived.by(() => {
 		const found = applyColumnFilters(filterRows(columns, rows, query), columnFilters).filter((row) => !leftOut.includes(row.key));
 		return sort ? sortRows(columns, found, sort) : found;
@@ -500,7 +503,7 @@
 {/if}
 
 <div class="table-scroll" role="region" aria-label={label} data-print-part="tables" {@attach keyboardScroll}>
-	<table id={identifier}>
+	<table id={identifier} class:steady-columns={steady} style:--steady-least={steady ? `${steady.least}em` : undefined}>
 		{#if caption}<caption>{caption}</caption>{/if}
 		<thead>
 			<tr>
@@ -510,6 +513,7 @@
 					<th
 						scope="col"
 						class:number={column.type === 'number'}
+						style:--column-share={steady ? `${steady.shares[visibleColumns.indexOf(column)]}%` : undefined}
 						aria-sort={sort?.key === column.key ? sort.direction : undefined}
 					>
 						{#snippet heading()}

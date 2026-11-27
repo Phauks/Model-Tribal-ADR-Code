@@ -452,6 +452,28 @@ table {
 }
 
 /*
+ * A long table's columns stay still while the page arrives
+ * (src/lib/tables/steady-columns.ts; Trevor, Nov. 27, 2026: on /nations "the
+ * table constantly reforms as it loads more data"). Fixed layout takes the
+ * widths from the header row, which carries each column's share, so rows
+ * that arrive later cannot move them; below its least width the table
+ * scrolls in its box. Widths a reader sets (columns-resized) and the
+ * measuring the resize handles do (columns-measuring) take over from these.
+ */
+table.steady-columns:not(.columns-resized, .columns-measuring) {
+	table-layout: fixed;
+	width: max(100%, var(--steady-least));
+}
+
+table.steady-columns:not(.columns-resized, .columns-measuring) > thead > tr > th {
+	width: var(--column-share);
+}
+
+table.steady-columns:not(.columns-resized, .columns-measuring) :is(th, td) {
+	overflow-wrap: break-word;
+}
+
+/*
  * Column widths readers can change (src/lib/tables/resizable-columns.ts;
  * Trevor, Nov. 23, 2026). The handle straddles the line between two header
  * cells, 24 px wide for a pointer or a finger (WCAG 2.5.8), and shows as a
@@ -516,6 +538,15 @@ main table.columns-resized :is(th, td) :is(a, code) {
 
 	table.columns-resized > colgroup[data-column-widths] {
 		display: none;
+	}
+
+	table.steady-columns {
+		table-layout: auto !important;
+		width: 100% !important;
+	}
+
+	table.steady-columns > thead > tr > th {
+		width: auto !important;
 	}
 }
 
