@@ -39,10 +39,18 @@
 			</ul>
 		</details>
 	{:else}
-		<a class="entry" class:gone={item.gone} href={item.link} aria-current={item.current ? 'page' : undefined}>
-			<span class="number">{item.number}</span>
-			<span class="name">{item.label}</span>
-		</a>
+		<!-- The section being read is named but not linked, as in the rest of the side column (Trevor, Nov. 27, 2026). -->
+		{#if item.current}
+			<span class="entry" class:gone={item.gone} aria-current="page">
+				<span class="number">{item.number}</span>
+				<span class="name">{item.label}</span>
+			</span>
+		{:else}
+			<a class="entry" class:gone={item.gone} href={item.link}>
+				<span class="number">{item.number}</span>
+				<span class="name">{item.label}</span>
+			</a>
+		{/if}
 	{/if}
 {/snippet}
 
