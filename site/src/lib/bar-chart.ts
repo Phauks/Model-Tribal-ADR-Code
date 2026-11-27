@@ -99,6 +99,22 @@ export function slicePath(slice: Pick<PieSlice, 'start' | 'end'>, radius: number
 	return `M ${radius} ${radius} L ${point(slice.start)} A ${radius} ${radius} 0 ${large} 1 ${point(slice.end)} Z`;
 }
 
+/** Slices narrower than this, in turns, carry their number just outside the pie rather than on it. */
+export const numberInsideFrom = 0.08;
+
+/**
+ * Where a slice's number goes, on a pie of radius `radius` centered on (radius, radius): on the
+ * slice when it is wide enough to hold it, else just outside the rim beside it. The number, which
+ * also leads the slice's line in the key, lets a reader match slice and key without telling
+ * colors apart (WCAG 1.4.1; the color vision write-up, Nov. 27, 2026).
+ */
+export function numberSpot(slice: Pick<PieSlice, 'start' | 'end'>, radius: number): { x: number; y: number; inside: boolean } {
+	const middle = ((slice.start + slice.end) / 2) * 2 * Math.PI;
+	const inside = slice.end - slice.start >= numberInsideFrom;
+	const distance = inside ? 0.62 * radius : 1.14 * radius;
+	return { x: radius + distance * Math.sin(middle), y: radius - distance * Math.cos(middle), inside };
+}
+
 /** A share as a percent for people: whole numbers, with "<1%" for a sliver. */
 export function shareText(share: number): string {
 	if (share > 0 && share < 0.005) return '<1%';

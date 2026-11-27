@@ -269,6 +269,8 @@ jobs:
         run: npm run check:colors
       - name: Motion timing comes only from design-tokens.json
         run: npm run check:motion
+      - name: Colors stay apart for readers with color vision deficiency
+        run: npm run check:color-vision
 
   site-browser:
     name: Website browser checks

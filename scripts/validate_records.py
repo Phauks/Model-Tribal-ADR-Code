@@ -43,7 +43,8 @@ Checks:
     names exist
   - the Supreme Court files (content/supreme-court/): each Court's chief is a
     Chief Justice in justices.yaml, every seat and appointing President there
-    is in people.yaml, and every source they name exists
+    is in people.yaml, every source they name exists, and each picture in
+    pictures.yaml is of a person in people.yaml or a Court in courts.yaml
   - (warning only) every tribe profile forum 'kind' names a method record
   - (warning only) every record pattern and data table matches at least one
     file, so a folder that is missing or renamed is not skipped in silence
@@ -104,6 +105,7 @@ RECORD_FOLDERS = [
     ("content/supreme-court/courts.yaml", "supreme-court-courts.schema.json"),
     ("content/supreme-court/justices.yaml", "supreme-court-justices.schema.json"),
     ("content/supreme-court/people.yaml", "supreme-court-people.schema.json"),
+    ("content/supreme-court/pictures.yaml", "supreme-court-pictures.schema.json"),
     ("content/search/names.yaml", "search-names.schema.json"),
     ("research/sessions/*/*.md", "research-session.schema.json"),
     ("research/outreach/*.yaml", "outreach-organization.schema.json"),
@@ -480,7 +482,7 @@ def check_table(table: Table, columns: list[str], rows: list[dict], schema: dict
                 errors.append(f"{name}: {column} names a missing source record '{row[column]}'")
 
 
-def check_supreme_court(courts: list, justices: list, people: list, sources: set, errors: list[str]) -> None:
+def check_supreme_court(courts: list, justices: list, people: list, pictures: list, sources: set, errors: list[str]) -> None:
     """Links between the files in content/supreme-court/ that the site's Court,
     Justice and President pages join (site/src/lib/server/supreme-courts.ts,
     supreme-court-people.ts), and the source records they name."""
@@ -507,6 +509,17 @@ def check_supreme_court(courts: list, justices: list, people: list, sources: set
                 errors.append(f"{path}: no one holds seat {entry.get('seat')} ({entry.get('name')} in justices.yaml)")
             if entry.get("appointed_by") not in presidents:
                 errors.append(f"{path}: no President named '{entry.get('appointed_by')}', who appointed {entry.get('name')} in justices.yaml")
+    subjects = {person.get("key") for _, record in people for group in ("justices", "presidents") for person in record.get(group, [])}
+    subjects |= {court.get("key") for _, record in courts for court in record.get("courts", [])}
+    for path, record in pictures:
+        seen: set[str] = set()
+        for picture in record.get("pictures", []):
+            subject = picture.get("subject")
+            if subject not in subjects:
+                errors.append(f"{path}: {subject}: not a person in people.yaml or a Court in courts.yaml")
+            if subject in seen:
+                errors.append(f"{path}: {subject}: more than one picture")
+            seen.add(subject)
 
 
 def check_outreach(outreach: list, errors: list[str]) -> None:
@@ -706,7 +719,7 @@ def main() -> int:
     check_outreach(records.get("outreach-organization.schema.json", []), errors)
     check_supreme_court(
         records.get("supreme-court-courts.schema.json", []), records.get("supreme-court-justices.schema.json", []),
-        records.get("supreme-court-people.schema.json", []), sources, errors,
+        records.get("supreme-court-people.schema.json", []), records.get("supreme-court-pictures.schema.json", []), sources, errors,
     )
 
     table_rows = 0
