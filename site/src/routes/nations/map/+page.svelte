@@ -746,7 +746,6 @@
 {#if tileMapWanted}
 	<div class="map-frame explorer-frame live-frame no-print" data-map-full-screen>
 		<div class="map-drawing" class:tiled={tileMapReady} class:waiting={!tileMapReady}>
-			<p class="map-loading small muted" aria-hidden="true">Loading the map…</p>
 			<div class="tile-holder">
 				<TileMap
 					bind:this={tileMap}
@@ -1188,18 +1187,6 @@
 		:global(html[data-scripts='on']) .map-drawing.waiting .drawn-map {
 			visibility: hidden;
 		}
-
-		:global(html[data-scripts='on']) .map-drawing.waiting .map-loading {
-			display: block;
-		}
-	}
-
-	.map-loading {
-		display: none;
-		position: absolute;
-		inset: var(--space-6) 0 auto;
-		margin: 0;
-		text-align: center;
 	}
 
 	.map-note {

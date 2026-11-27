@@ -1108,6 +1108,14 @@
 		attempt += 1;
 	}
 
+	/**
+	 * While the map starts, it says so in the same place and style as the failed message, with a bar that moves through the three real steps of starting (Trevor, 2026-11-27, map loading mockup A): the map program, the land areas, then drawing the first view.
+	 */
+	let loadingStep = $state(0);
+	/** Set once the map starts in the browser, so a page sent without scripts never says it is loading. */
+	let starting = $state(false);
+	const loadingSteps = $derived(['Getting the map program', given ? 'Getting the land areas' : 'Getting the nations’ land areas', 'Drawing the map']);
+
 	// The map starts when the component does, and again from the start each time the reader presses Try again.
 	$effect(() => {
 		void attempt;
@@ -1118,6 +1126,8 @@
 		let stopped = false;
 		let cleanups: (() => void)[] = [];
 		ready = false;
+		loadingStep = 0;
+		starting = true;
 		const fail = (problem: unknown, code: string, reason: 'retry' | 'device' = 'retry') => {
 			if (stopped) return;
 			stopped = true;
@@ -1136,8 +1146,17 @@
 
 		void (async () => {
 			try {
-				const [[{ default: maplibre }], data] = await Promise.all([loadTileMapLibrary(), loadData()]);
+				// Both start at once; the bar moves on as each arrives, in the order the map needs them.
+				const dataComing = loadData();
+				dataComing.catch(() => {
+					// expected: the same failure is met where the data is awaited below, which reports it; this only keeps it from counting as unhandled while the map program arrives.
+				});
+				const [{ default: maplibre }] = await loadTileMapLibrary();
+				if (stopped) return;
+				loadingStep = 1;
+				const data = await dataComing;
 				if (stopped || !container) return;
+				loadingStep = 2;
 				if (data.areas.length === 0 && oneNation && !openingBox) throw new Error('The nation has no land areas to show');
 				const style = await styleFor(data);
 				const start = camera ?? undefined;
@@ -1481,6 +1500,13 @@
 				onretry={failed === 'retry' ? tryAgain : undefined}
 			/>
 		</div>
+	{:else if starting && !ready}
+		<div class="map-loading" role="status">
+			<span class="map-spinner" aria-hidden="true"></span>
+			<p>Loading the map…</p>
+			<span class="map-progress" aria-hidden="true"><span style:width="{Math.round(((loadingStep + 0.5) / loadingSteps.length) * 100)}%"></span></span>
+			<p class="map-step">{loadingSteps[loadingStep]}</p>
+		</div>
 	{/if}
 	<!-- The base map menu (mockup 1A), opened by the Layers button in the map's corner stack. Escape closes it and returns to the button. -->
 	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
@@ -1560,6 +1586,66 @@
 	/* The box keeps the map's frame with its own dashed border, so the map's border steps aside (mockup 1, project files design/error-framework/). */
 	.tile-map.failed {
 		border-color: transparent;
+	}
+
+	/* Said in the same place and style while the map starts, over the map's own buttons and credits until it is drawn. The failed message takes its place if starting fails; the two never show together. */
+	.map-loading {
+		visibility: visible;
+		position: absolute;
+		inset: 0;
+		z-index: 4;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-3);
+		padding: var(--space-4);
+		background: var(--color-paper);
+		text-align: center;
+	}
+
+	.map-loading p {
+		margin: 0;
+		font-weight: var(--font-weight-semibold);
+	}
+
+	/* A ring with one arc in the action color, turning while the map starts; still where the reader asks for less motion. */
+	.map-spinner {
+		width: 28px;
+		height: 28px;
+		border: 3px solid var(--color-line);
+		border-top-color: var(--color-action);
+		border-radius: 50%;
+		transform: rotate(40deg);
+		animation: map-spin calc(var(--motion-duration-long) * 3) var(--motion-easing-steady) infinite;
+	}
+
+	@keyframes map-spin {
+		to {
+			transform: rotate(400deg);
+		}
+	}
+
+	.map-progress {
+		width: min(16rem, 70%);
+		height: 6px;
+		overflow: hidden;
+		border-radius: 3px;
+		background: var(--color-line);
+	}
+
+	.map-progress > span {
+		display: block;
+		height: 100%;
+		border-radius: 3px;
+		background: var(--color-ink-muted);
+		transition: width var(--motion-duration-medium) var(--motion-easing-standard);
+	}
+
+	.map-loading p.map-step {
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+		font-weight: normal;
 	}
 
 	/* A map that is full screen by itself fills the screen. */
