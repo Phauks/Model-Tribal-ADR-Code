@@ -4,6 +4,7 @@
 	// the address, offer the home page, Try again and Report, and keep the site's frame.
 	// Page not found lists pages with a similar address and has no search box.
 	import { onMount } from 'svelte';
+	import { building } from '$app/env';
 	import { page } from '$app/state';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import Copy from '@lucide/svelte/icons/copy';
@@ -18,7 +19,8 @@
 
 	const notFound = $derived(page.status === 404);
 	const shownAddress = $derived(`${page.url.host}${page.url.pathname}`);
-	const here = $derived(`${page.url.pathname}${page.url.search}`);
+	// A page being prerendered has no query, and SvelteKit throws when one is read.
+	const here = $derived(building ? page.url.pathname : `${page.url.pathname}${page.url.search}`);
 	const reference = $derived(page.error?.reference);
 	const report: ReportPreset = $derived({
 		kind: 'broken-page',

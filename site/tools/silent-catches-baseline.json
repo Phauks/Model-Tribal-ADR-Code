@@ -73,7 +73,6 @@
 	"src/lib/server/file-scans.ts": 2,
 	"src/lib/server/following-email.ts": 1,
 	"src/lib/server/limited-body.ts": 1,
-	"src/lib/server/live/essay-room.ts": 4,
 	"src/lib/server/mail/linked-files.ts": 1,
 	"src/lib/server/mail/rules.ts": 1,
 	"src/lib/server/mail/scans.ts": 2,
@@ -97,9 +96,6 @@
 	"src/lib/server/supreme-court-people.ts": 1,
 	"src/lib/server/upload-checks.ts": 1,
 	"src/lib/server/uploads.ts": 5,
-	"src/lib/server/watch/run.ts": 1,
-	"src/lib/server/watch/store.ts": 1,
-	"src/lib/server/watch/triage.ts": 1,
 	"src/lib/server/wayback.ts": 1,
 	"src/lib/server/zip-stream.ts": 2,
 	"src/lib/settings-everywhere.ts": 3,
@@ -151,9 +147,5 @@
 	"src/routes/workspace/site-text/undo/+server.ts": 1,
 	"src/routes/workspace/watch/+page.server.ts": 1,
 	"src/routes/workspace/watch/+page.svelte": 1,
-	"src/service-worker/index.ts": 21,
-	"watch/host-desk.ts": 1,
-	"watch/watchers/ecfr.ts": 1,
-	"watch/worker.ts": 1,
-	"wayback/worker.ts": 7
+	"src/service-worker/index.ts": 21
 }
