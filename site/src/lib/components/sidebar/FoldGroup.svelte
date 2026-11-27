@@ -27,7 +27,7 @@
 		open: boolean;
 		/** Whether it folds; when it does not, the heading is left out (the phone menu's sections). */
 		folds?: boolean;
-		/** A group inside another, such as a Workspace category: set in a little. */
+		/** A group inside another, such as a Workspace category: its name reads like a section's, its links like a section's pages. */
 		nested?: boolean;
 		/** A class of the list's own, for the caller's rules (such as "sections"). */
 		listClass?: string;
@@ -47,7 +47,7 @@
 			{@render after?.()}
 		</div>
 	{/if}
-	<ul class="fold-list {listClass}" id="{id}-list" aria-labelledby={folds ? `${id}-title` : undefined} hidden={folds && !open}>
+	<ul class="fold-list {listClass}" class:under-heading={folds} id="{id}-list" aria-labelledby={folds ? `${id}-title` : undefined} hidden={folds && !open}>
 		{@render children()}
 	</ul>
 </div>
@@ -59,8 +59,11 @@
 		padding: 0;
 	}
 
-	.nested {
-		margin-left: var(--space-3);
+	/* Under its heading the list is one step in, beside a guide line (the measures are in SiteSidebar.svelte). */
+	.fold-list.under-heading {
+		margin-left: var(--sidebar-line-at);
+		padding-left: calc(var(--sidebar-line-to-rows) - 1px);
+		border-left: 1px solid var(--color-line);
 	}
 
 	.group-heading {
@@ -79,6 +82,12 @@
 		cursor: pointer;
 	}
 
+	/* A group inside another, such as a Workspace category, is named like a section. */
+	.nested .group-title {
+		font-size: var(--font-size-body);
+		color: var(--color-ink);
+	}
+
 	.group-title:hover {
 		color: var(--color-ink);
 		text-decoration: underline;
@@ -95,7 +104,8 @@
 		display: block;
 	}
 
-	/* Every list's links look alike: a row of ink in semibold, like the sections. */
+	/* Every list's links look alike: a row of ink in semibold, like the sections.
+	   Under a heading they keep the caret's space, so they line up with the groups beside them. */
 	.fold-list > :global(li > a),
 	.fold-list > :global(li > .unbuilt) {
 		display: flex;
@@ -120,6 +130,19 @@
 		text-decoration: underline;
 	}
 
+	.under-heading > :global(li > a),
+	.under-heading > :global(li > .unbuilt) {
+		padding-left: calc(var(--sidebar-caret) + var(--sidebar-caret-gap));
+	}
+
+	/* A group inside another holds pages, smaller and muted like a section's own pages. */
+	.nested .fold-list > :global(li > a) {
+		min-height: 2.25rem;
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-regular);
+		color: var(--color-ink-muted);
+	}
+
 	/* The section or page being read: an orange bar and the link color. */
 	.fold-list > :global(li.current > a),
 	.fold-list > :global(li > a[aria-current='page']) {
@@ -128,6 +151,12 @@
 		background: var(--color-surface);
 		color: var(--color-link);
 		font-weight: var(--font-weight-bold);
+	}
+
+	/* Under a heading the bar lies on the guide line. */
+	.under-heading > :global(li > a[aria-current='page']) {
+		margin-left: calc(-1 * var(--sidebar-line-to-rows));
+		padding-left: calc(var(--sidebar-caret) + var(--sidebar-caret-gap) + var(--sidebar-line-to-rows) - 3px);
 	}
 
 	/* On phones each link is at least the site's touch size. */
