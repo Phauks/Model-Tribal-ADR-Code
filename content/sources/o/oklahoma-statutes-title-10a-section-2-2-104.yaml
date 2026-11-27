@@ -70,7 +70,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 2-2-104 (2026). History: Added by Laws 1995, c. 352, § 116, eff. July 1, 1995. Amended by Laws 1998, c. 268, § 6, Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 310. Found by the state statutes pilot (terms: tribal court); AI reader''s verdict incidental: Preliminary inquiry checks records of tribal courts. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

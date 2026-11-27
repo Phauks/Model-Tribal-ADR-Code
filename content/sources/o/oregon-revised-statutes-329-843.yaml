@@ -1,0 +1,61 @@
+key: oregon-revised-statutes-329-843
+kind: state-statute
+citation:
+  type: legislation
+  title: Statewide education plan for students who are American Indian or Alaska Native; advisory group; report; distribution of funds; rules
+  title-short: Or. Rev. Stat. § 329.843
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '329.843'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 2019
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors329.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors329.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-329-007
+- oregon-revised-statutes-329-095
+- oregon-revised-statutes-329-451
+- oregon-revised-statutes-329-492
+- oregon-revised-statutes-329-493
+- oregon-revised-statutes-329-756
+- oregon-revised-statutes-329-845
+- oregon-revised-statutes-329-846
+- oregon-revised-statutes-329-847
+- oregon-revised-statutes-329-849
+state_law:
+  relevance: core
+  citation: Or. Rev. Stat. § 329.843 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 329.843 (2025). History: [2019 c.122 §38; 2021 c.97 §26; 2021 c.631 §35; 2023 c.495 §§4,5; 2023 c.530 §§8,9]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: alaska native; american indian; tribal governments; indian; nation; native; tribal); AI reader''s verdict core: Statewide education plan for American Indian and Alaska Native students. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: alaska native; american indian; tribal governments; indian; nation; native; tribal'

@@ -1,0 +1,50 @@
+key: montana-code-annotated-61-5-302
+kind: state-statute
+citation:
+  type: legislation
+  title: Unlawful use of license or identification card
+  title-short: Mont. Code Ann. § 61-5-302
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 61-5-302
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1947
+  URL: https://mca.legmt.gov/bills/mca/title_0610/chapter_0050/part_0030/section_0020/0610-0050-0030-0020.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0610/chapter_0050/part_0030/section_0020/0610-0050-0030-0020.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 61-5-302 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 61-5-302 (2025). History: En. Sec. 37, Ch. 267, L. 1947; amd. Sec. 1, Ch. 70, L. 1961; R.C.M. 1947, 31-153; amd. Sec. 58, Ch. 421, L. 1979; amd. Sec. 1, Ch. 503, L. 1985; amd. Sec. 31, Ch. 443, L. 1987; amd. Sec. 2, Ch. 471, L. 1991; amd. Sec. 25, Ch. 195, L. 1993; amd. Sec. 11, Ch. 180, L. 2007. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Misdemeanor to misuse tribal identification card alongside driver licenses. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

@@ -54,7 +54,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 22, § 60.14 (2026). History: Added by Laws 2002, c. 415, § 1, eff. Nov. 1, 2002. Amended by Laws 2008, c. 66, § 1, eff. Text read from the Legislative Service Bureau''s Title 22 PDF (updated Nov. 12, 2026), page 94. Found by the state statutes pilot (terms: federally recognized tribes); AI reader''s verdict incidental: Address program designates federally recognized tribes as assisting agencies. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

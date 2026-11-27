@@ -86,7 +86,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 2373 (2026). History: Added by Laws 1971, c. 137, § 23, emerg. eff. May 11, 1971. Amended by Laws 1971, p. Laws 2023, c. 113, § 9, eff. July 1, 2023. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 1160. Found by the state statutes pilot (terms: federally recognized indian tribe; federally recognized indian tribes; indian land; indian lands); AI reader''s verdict core: Refund rules for tax-exempt Indian land and tribal members. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

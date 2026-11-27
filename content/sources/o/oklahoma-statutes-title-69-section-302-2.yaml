@@ -49,10 +49,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 69, § 302.2 (2026). History: from a list of qualified persons nominated by the Oklahoma Tribal Transportation Council. Added by Laws 1999, c. 199, § 1, emerg. eff. May 24, 1999. Text read from the Legislative Service Bureau''s Title 69 PDF (updated Nov. 12, 2026), page 36. Found by the state statutes pilot (terms: bureau of indian affairs; tribal governments); AI reader''s verdict core: Creates DOT Tribal Advisory Board with tribal member appointees. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 69, § 302.2 (2026). History: Added by Laws 1999, c. 199, § 1, emerg. eff. May 24, 1999. Text read from the Legislative Service Bureau''s Title 69 PDF (updated Nov. 12, 2026), page 36. Found by the state statutes pilot (terms: bureau of indian affairs; tribal governments); AI reader''s verdict core: Creates DOT Tribal Advisory Board with tribal member appointees. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

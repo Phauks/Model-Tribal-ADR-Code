@@ -50,10 +50,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 47, § 1110 (2026). History: Added by Laws 1985, c. 179, § 13, operative July 1, 1985. Amended by Laws 1988, c. 167, § Laws 2000, c. 371, § 173, eff. July 1, 2001; Laws 2001, c. 25, § 1, eff. July 1, 2001; Laws Laws 1991, c. 107, § 1 repealed by Laws 1991, c. 335, § 37, emerg. eff. June 15, 1991. Laws Text read from the Legislative Service Bureau''s Title 47 PDF (updated Nov. 12, 2026), page 1088. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Lien validity for vehicles registered by federally recognized tribes. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 47, § 1110 (2026). History: Added by Laws 1985, c. 179, § 13, operative July 1, 1985. Amended by Laws 1988, c. 167, § Laws 2000, c. 371, § 173, eff. July 1, 2001; Laws 2001, c. 25, § 1, eff. July 1, 2001; Laws Laws 1991, c. 107, § 1 repealed by Laws 1991, c. 335, § 37, emerg. eff. June 15, 1991. Laws. Text read from the Legislative Service Bureau''s Title 47 PDF (updated Nov. 12, 2026), page 1088. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Lien validity for vehicles registered by federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

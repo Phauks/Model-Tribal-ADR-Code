@@ -57,7 +57,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 3A, § 735 (2026). History: Added by Laws 2003, c. 58, § 36, adopted at election held on Nov. 2, 2004. Text read from the Legislative Service Bureau''s Title 3A PDF (updated Nov. 12, 2026), page 225. Found by the state statutes pilot (terms: federally recognized indian tribe; indian gaming); AI reader''s verdict core: Class III Indian gaming limited by tribal cooperative agreements. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

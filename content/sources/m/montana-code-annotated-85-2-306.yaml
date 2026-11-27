@@ -1,0 +1,50 @@
+key: montana-code-annotated-85-2-306
+kind: state-statute
+citation:
+  type: legislation
+  title: Exceptions to permit requirements
+  title-short: Mont. Code Ann. § 85-2-306
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 85-2-306
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1973
+  URL: https://mca.legmt.gov/bills/mca/title_0850/chapter_0020/part_0030/section_0060/0850-0020-0030-0060.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0850/chapter_0020/part_0030/section_0060/0850-0020-0030-0060.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 85-2-306 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 85-2-306 (2025). History: En. Sec. 16, Ch. 452, L. 1973; amd. Sec. 2, Ch. 238, L. 1974; amd. Sec. 8, Ch. 485, L. 1975; amd. Sec. 4, Ch. 416, L. 1977; amd. Sec. 1, Ch. 470, L. 1977; R.C.M. 1947, 89-880(5), (7); amd. Sec. 1, Ch. 30, L. 1981; amd. Sec. 1, Ch. 160, L. 1981; amd. Sec. 1, Ch. 357, L. 1981; amd. Sec. 8, Ch. 448, L. 1983; amd. Sec. 1, Ch. 499, L. 1985; amd. Sec. 2, Ch. 535, L. 1987; amd. Sec. 1, Ch. 432, L. 1989; amd. Sec. 13, Ch. 769, L. 1991; amd. Sec. 4, Ch. 805, L. 1991; amd. Sec. 9, Ch. 629, L. 1993; amd. Sec. 447, Ch. 418, L. 1995; amd. Sec. 1, Ch. 250, L. 1999; amd. Sec. 3, Ch. 78, L. 2001; amd. Sec. 3, Ch. 161, L. 2005; amd. Sec. 5, Ch. 213, L. 2007; amd. Sec. 1, Ch. 86, L. 2009; amd. Sec. 1, Ch. 96, L. 2011; amd. Sec. 1, Ch. 97, L. 2011; amd. Sec. 2, Ch. 421, L. 2013; amd. Sec. 8, Ch. 294, L. 2015; amd. Sec. 1, Ch. 455, L. 2015; amd. Sec. 1, Ch. 243, L. 2017; amd. Sec. 2, Ch. 264, L. 2017; amd. Sec. 1, Ch. 561, L. 2023; amd. Sec. 7, Ch. 708, L. 2025. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservation; indian; reservation); AI reader''s verdict incidental: Water permit requirements do not apply within Flathead Indian reservation. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian reservation; indian; reservation'
