@@ -1233,7 +1233,7 @@ export const load: PageServerLoad = ({ params }) => {
 	);
 	// It has no caption (Trevor, Nov. 22, 2026): the credit, and the statement
 	// that the nation does not endorse the site, go in its Sources entry,
-	// and a removal request goes through Report a problem.
+	// and a removal request goes through Request a Change.
 	// Selecting it opens it larger in the image viewer, with a download button
 	// and links to its References entry and to where it is published
 	// (src/lib/image-viewer.ts). The viewer leaves out the credit line, which

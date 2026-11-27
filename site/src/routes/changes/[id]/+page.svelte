@@ -9,14 +9,14 @@
 	import HideChangeFields from '#lib/components/changes/HideChangeFields.svelte';
 	import Modal from '#lib/components/Modal.svelte';
 	import { dateTime } from '#lib/change-dates.ts';
-	import { pageKindLabels, sizeChangeText, type ChangeView } from '#lib/page-history.ts';
+	import { pageChangesLink, pageKindLabels, sizeChangeText, type ChangeView } from '#lib/page-history.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 	const change = $derived(data.change);
 	const pageName = $derived(change.title ?? 'A page no longer on this site');
-	const historyLink = $derived(`/changes?page=${encodeURIComponent(change.address)}`);
+	const historyLink = $derived(pageChangesLink(change.address));
 
 	// The lead author can hide parts of a change from the workspace; the link shows when the signed-in hint says they can open it.
 	let canHide = $state(false);

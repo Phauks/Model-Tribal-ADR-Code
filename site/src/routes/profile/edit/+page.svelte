@@ -959,8 +959,8 @@
 	}
 
 	.file-button:focus-within {
-		outline: 3px solid var(--color-focus-ring);
-		box-shadow: 0 0 0 6px var(--color-focus);
+		outline: 3px solid var(--focus-ring);
+		outline-offset: 2px;
 	}
 
 	table.rows {

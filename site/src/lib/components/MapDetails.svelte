@@ -114,12 +114,13 @@
 						{/if}
 					{/if}
 				</div>
-			{:else if line.links || line.pictures || details.table}
+			{:else if line.links || line.pictures || line.after || details.table}
 				<!-- Links and pictures are long, so the fact's name sits beside them as in a table (historic maps mockup 2A). -->
 				<div class="row wide">
 					<span class="label">{line.label}</span>
 					<span class="value">
 						{#each line.links ?? [] as link, linkIndex (linkIndex)}{#if linkIndex > 0}{', '}{/if}{#if link.href}<a href={link.href}>{link.label}</a>{:else}{link.label}{/if}{/each}{#if line.value}{line.links?.length ? ', ' : ''}{line.value}{/if}
+						{#if line.after}<a class="after" href={line.after.href}>{line.after.label}</a>{/if}
 						{#if line.pictures}
 							<span class="pictures">
 								{#each line.pictures as picture (picture.href)}
@@ -237,6 +238,10 @@
 
 	.row.wide .value {
 		text-align: left;
+	}
+
+	.after {
+		display: block;
 	}
 
 	.pictures {

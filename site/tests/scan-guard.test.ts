@@ -295,7 +295,7 @@ const bucketCalls: Record<string, BucketUse> = {
 
 /** Every place site code reads the bytes of a file or a request body, and where they go. */
 const fileIntakes: Record<string, string> = {
-  "src/lib/server/request-form.ts readFile File.arrayBuffer":
+  "src/lib/server/request-form.ts checkFile File.arrayBuffer":
     "Files sent with requests and forms, proof for a nation team, nation page pictures, and photos sent with a problem about a printed-copy order. Stored with storeSentFile by saveRequest, saveApplication, savePicture and reportProblem.",
   "src/routes/profile/edit/+page.server.ts default File.arrayBuffer":
     "Profile pictures, sent with the profile form. Stored with storeSentFile by savePicture (profile-pictures.ts).",
@@ -314,7 +314,7 @@ const fileIntakes: Record<string, string> = {
   "src/routes/uploads/pieces/[reference]/[number]/+server.ts PUT Request.arrayBuffer":
     "Upload pieces, written into the upload’s multipart object; finishUpload puts the file in line.",
   "src/lib/server/limited-body.ts formWithin Request.body":
-    "The public request form's body, read with a size limit and only turned back into form data. Its files are then read by readFile (request-form.ts) and stored with storeSentFile by saveRequest.",
+    "The public request form's body, read with a size limit and only turned back into form data. Its files are then read by checkFile (request-form.ts) and stored with storeSentFile by saveRequest.",
   "src/lib/sha256.ts hashFile Blob.arrayBuffer":
     "Verify a file: hashes a file the reader picks, in their own browser. It is never sent or stored.",
   "src/lib/sha256.ts hashFile Blob.stream":
