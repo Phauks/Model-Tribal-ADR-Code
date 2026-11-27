@@ -31,7 +31,7 @@ The migration is already applied to the live database (`site/migrations/20261126
 4. Select the repository `Tribal-Law-Project`.
 5. On the next page, fill in:
    - **Project name:** `tribal-law-project-radar`. It must match the name in `site/watch/wrangler.jsonc` exactly, or the build fails.
-   - **Build command:** `cd .. && npm ci && npm run watch:index`
+   - **Build command:** `cd .. && npm ci`. Wrangler makes the index of known records itself before it bundles the Worker (the `build` setting in `wrangler.jsonc`, per Wrangler's [custom builds](https://developers.cloudflare.com/workers/wrangler/custom-builds/)), so a longer build command that ends in `npm run watch:index` still works.
    - **Deploy command:** `npx wrangler deploy` (usually filled in already).
    - Open **Advanced settings** and set the **Root directory** (on some screens called **Path**) to `site/watch`.
 6. Select **Deploy**. The first build takes a few minutes.
