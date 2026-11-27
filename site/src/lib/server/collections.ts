@@ -33,7 +33,7 @@ import { landCessions, royceSheets } from './land-cessions.ts';
 import { historicMapScans } from './historic-map-scans.ts';
 import type { ResultGroup } from '../search-everything.ts';
 import { allSections } from './title-25-sections.ts';
-import { isLawRecord } from './law-records.ts';
+import { isLawRecord, recordPageLink } from './law-records.ts';
 import { programSummaries } from './federal-programs.ts';
 import { federalProgramPage } from '../federal-programs.ts';
 
@@ -94,7 +94,7 @@ const typeOf = (record: SourceRecord) => (record.citation as { type?: string }).
 function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	const link = record.original_link ?? record.citation.URL;
 	const copy = publicCopyFor(link);
-	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? `/laws/${record.key}` : copy ? copyPagePath(copy) : publishedAt(record, link);
+	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? (recordPageLink(record.key) ?? `/laws/${record.key}`) : copy ? copyPagePath(copy) : publishedAt(record, link);
 	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key };
 }
 

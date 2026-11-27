@@ -18,10 +18,27 @@ function isCaseRecord(record: SourceRecord): boolean {
 	return (record.citation as { type?: string }).type === 'legal_case' && Boolean(record.citation.title);
 }
 
+/**
+ * The section of Title 25 of the Code a record of a single section is about
+ * ("5304" for 25 U.S.C. § 5304, "5329" for § 5329(c)), or nothing for any
+ * other record. Every Title 25 section has its own page (code-outline.ts),
+ * which takes in these older records.
+ */
+export function titleTwentyFiveSectionOf(record: SourceRecord): string | undefined {
+	const citation = record.citation as SourceRecord['citation'] & { section?: string };
+	const number =
+		citation['container-title'] === 'United States Code' && String(citation.volume ?? '') === '25' && citation.section
+			? String(citation.section)
+			: /^25 U\.S\.C\. §\s*(\S+?)(?:\s|$)/.exec(citation.title ?? '')?.[1];
+	return number ? /^§*\s*([0-9]+[a-z]?(?:-[0-9]+)?)/i.exec(number.replace(/–/g, '-'))?.[1]?.toLowerCase() : undefined;
+}
+
 export function recordPageLink(key: string | undefined): string | undefined {
 	const record = key ? sources().get(key) : undefined;
 	if (!record) return undefined;
 	if (isCaseRecord(record)) return `/cases/${key}`;
+	const section = titleTwentyFiveSectionOf(record);
+	if (section) return `/laws/usc-25/${section.replace(/[^0-9a-z]+/g, '-')}`;
 	if (isLawRecord(record)) return `/laws/${key}`;
 	return undefined;
 }

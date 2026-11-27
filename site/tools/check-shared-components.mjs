@@ -39,7 +39,9 @@ const allowed = new Map(
 		'src/routes/workspace/outreach/new/+page.svelte': { table: 1 },
 		'src/routes/workspace/sponsors/+page.svelte': { table: 1 },
 		// The Source watch queue: each row opens in place to the item's details and the decisions on it (mockup A, Trevor, Nov. 26, 2026), a work list rather than data to sort or download.
-		'src/routes/workspace/watch/+page.svelte': { table: 1 }
+		'src/routes/workspace/watch/+page.svelte': { table: 1 },
+		// Title 25's chapters: each row opens in place to its subchapters (design/title-25-navigation, option A), the title's table of contents rather than data to sort or download.
+		'src/routes/laws/usc-25/+page.svelte': { table: 1 }
 	}).map(([file, counts]) => [path.normalize(file), counts])
 );
 

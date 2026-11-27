@@ -97,11 +97,11 @@ describe('Title 25 of the Code and of the regulations', () => {
 		expect(part.inForce.find((section) => section.label === '§ 11.100')?.link).toBe('https://www.ecfr.gov/current/title-25/section-11.100');
 	});
 
-	it('gives an Act the sections it enacted, linking to their chapter’s page', async () => {
+	it('gives an Act the sections it enacted, linking to each section’s own page', async () => {
 		const { sectionsEnactedBy } = await import('#lib/server/title-25-sections.ts');
 		const enacted = sectionsEnactedBy('indian-reorganization-act-1934');
 		expect(enacted.map((section) => section.label)).toContain('25 U.S.C. § 5123');
-		expect(enacted.find((section) => section.label === '25 U.S.C. § 5123')?.link).toBe('/laws/usc-25-chapter-45#sec-5123');
+		expect(enacted.find((section) => section.label === '25 U.S.C. § 5123')?.link).toBe('/laws/usc-25/5123');
 	});
 
 	it('gives every Act a Title 25 section names a record, and every Act record a page', () => {
@@ -128,10 +128,47 @@ describe('A state statute section’s page', () => {
 	it('gives its state, its label and its Indigo Book citation, and links the official text', async () => {
 		const { lawPage } = await import('#lib/server/law-pages.ts');
 		const page = lawPage(tribalCourts);
+		if ('movedTo' in page) throw new Error('A state statute is not a Title 25 section.');
 		expect(page.citation).toBe('Okla. Stat. tit. 12, § 728 (2026)');
 		expect(page.fullTitle).toBe('Standards for recognizing records and proceedings of tribal courts - Reciprocity');
 		const glance = Object.fromEntries(page.glance.map((group) => [group.label, group.items.map((item) => item.text).join('; ')]));
 		expect(glance).toMatchObject({ Kind: 'State statute', State: 'Oklahoma', 'Indian law': 'Core', Enacted: 'Sept. 1, 1992' });
 		expect(page.readingHtml).toContain('href="https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=160"');
+	});
+});
+
+describe('Title 25 as an outline', () => {
+	it('gives every section its own page, with its place, status and neighbors', async () => {
+		const { sectionPage, titleTwentyFiveSectionLink } = await import('#lib/server/code-outline.ts');
+		expect(titleTwentyFiveSectionLink('5321')).toBe('/laws/usc-25/5321');
+		expect(titleTwentyFiveSectionLink('13–1')).toBe('/laws/usc-25/13-1');
+		expect(titleTwentyFiveSectionLink('99999')).toBeUndefined();
+		const page = sectionPage('5321');
+		expect(page.name).toBe('§ 5321. Self-determination contracts');
+		expect(page.status).toBe('in force');
+		expect(page.trail.map((crumb) => crumb.label)).toEqual(['U.S. Code, Title 25', 'Chapter 46', 'Subchapter I']);
+		expect(page.previous?.number).toBe('§ 5310');
+		expect(page.next?.number).toBe('§ 5322');
+		expect(page.movedFrom.map((from) => from.label)).toContain('§ 450f');
+	});
+
+	it('says where a moved section went', async () => {
+		const { sectionPage } = await import('#lib/server/code-outline.ts');
+		const page = sectionPage('450f');
+		expect(page.status).toBe('moved');
+		expect(page.movedTo).toEqual({ label: '§ 5321', link: '/laws/usc-25/5321' });
+	});
+
+	it('sends an older record of one section to the section’s page', async () => {
+		const { lawPage } = await import('#lib/server/law-pages.ts');
+		expect(lawPage('us-code-title-25-section-232')).toEqual({ movedTo: '/laws/usc-25/232' });
+		expect(lawPage('usc-25-5329-c-model-agreement-disputes')).toEqual({ movedTo: '/laws/usc-25/5329' });
+	});
+
+	it('lists a chapter’s contents under its subchapters', async () => {
+		const { contentsOf } = await import('#lib/server/code-outline.ts');
+		const groups = contentsOf('6');
+		expect(groups.map((group) => group.label)).toEqual(['Subchapter I', 'Subchapter II', 'Subchapter III']);
+		expect(groups[0].rows[1]).toMatchObject({ label: '§§ 212–215', status: 'repealed', note: 'June 25, 1948, ch. 645, §21, 62 Stat. 862' });
 	});
 });

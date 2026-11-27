@@ -59,6 +59,7 @@
 		type WorkspacePage
 	} from '#lib/workspace-menu.ts';
 	import CountBadge from './CountBadge.svelte';
+	import CodeOutline from './sidebar/CodeOutline.svelte';
 	import SidebarGroups from './sidebar/SidebarGroups.svelte';
 	import SidebarTree from './sidebar/SidebarTree.svelte';
 	import YourWork from './sidebar/YourWork.svelte';
@@ -118,7 +119,8 @@
 
 	// What the phone strip names beside "Menu".
 	const localTitle = $derived(
-		family?.title ??
+		family?.short ??
+			family?.title ??
 			shownSection?.label ??
 			(currentWorkspacePage ? 'Workspace' : undefined) ??
 			(currentAccount ? 'Your account' : undefined) ??
@@ -287,6 +289,7 @@
 				<p class="local-title">{family.title}</p>
 			{/if}
 		</div>
+		{#if family.tree}<CodeOutline tree={family.tree} {idSuffix} />{/if}
 		<ul class="local-pages">
 			{#each family.pages as item (item.link)}
 				{@const current = item.link === path}

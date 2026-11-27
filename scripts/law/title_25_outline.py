@@ -50,7 +50,8 @@ def title_case(text: str) -> str:
         elif index > 0 and lower in SMALL:
             words.append(lower)
         else:
-            words.append("-".join(part[:1].upper() + part[1:] for part in lower.split("-")))
+            # Each part of "SELF-GOVERNANCE—DEPARTMENT" starts with a capital.
+            words.append(re.sub(r"(^|[-—])([a-z])", lambda found: found.group(1) + found.group(2).upper(), lower))
     return " ".join(words)
 
 

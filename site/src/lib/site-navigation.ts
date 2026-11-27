@@ -88,7 +88,7 @@ export const navigationSections: NavigationSection[] = [
 				links: [
 					{ label: 'Treaties and agreements', link: '/stats/treaties', count: 'treaties' },
 					{ label: 'Statutes', link: '/stats/federal-statutes', count: 'federal-statutes' },
-					{ label: 'U.S. Code, Title 25', link: '/stats/united-states-code-sections', count: 'united-states-code-sections' },
+					{ label: 'U.S. Code, Title 25', link: '/laws/usc-25', count: 'united-states-code-sections' },
 					{ label: 'Executive orders', link: '/stats/executive-orders', count: 'executive-orders' }
 				]
 			},
