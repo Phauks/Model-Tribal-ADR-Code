@@ -1,14 +1,16 @@
 <script lang="ts">
-	// "Report a problem" in the masthead (site/DESIGN.md, section 6). Trevor
-	// asked on Nov. 22, 2026 that it be a button and open a dialog over the
-	// page rather than a new page, and on Nov. 23, 2026 that it be only a flag
-	// icon like the masthead's other controls, named by its label and tooltip. The dialog is the shared Modal, on one page
-	// (Trevor, Nov. 23, 2026): a dropdown for what is wrong (one choice is a
-	// missing nation), and under it the request form's questions for that
-	// choice (RequestForm.svelte, compact), with the page they were on already
-	// filled in. The form is sent in place, and the dialog shows the reference
-	// number. Without scripts the control is a link to the
-	// request page, which asks the same questions.
+	// "Request a Change" in the masthead (site/DESIGN.md, section 6), named
+	// "Report a problem" until Trevor renamed it on Nov. 27, 2026. Trevor asked
+	// on Nov. 22, 2026 that it be a button and open a dialog over the page
+	// rather than a new page, and on Nov. 23, 2026 that it be only a flag icon
+	// like the masthead's other controls, named by its label and tooltip. The
+	// dialog is the shared Modal in two columns (Trevor, Nov. 27, 2026): on the
+	// left a dropdown for what the reader would like to do (one choice is a
+	// missing nation), the page they were on already filled in and who they
+	// are; on the right what should change and any files (RequestForm.svelte,
+	// compact). The form is sent in place, and the dialog shows the reference
+	// number. Without scripts the control is a link to the request page, which
+	// asks the same questions.
 	import { onMount, tick } from 'svelte';
 	import { page } from '$app/state';
 	import type { applyAction } from '$app/forms';
@@ -22,7 +24,7 @@
 	/** The request page's address for this page, used without scripts. */
 	let { link }: { link: string } = $props();
 
-	/** The kinds of request that report a problem; Contribute has its own link in the sidebar. */
+	/** The kinds of request the dialog offers; Contribute has its own link in the sidebar. */
 	const reportKinds: RequestKind[] = ['correct', 'add-nation', 'restrict', 'remove', 'question'];
 	const kindChoices = reportKinds.map((value) => ({
 		value,
@@ -100,30 +102,33 @@
 		class="icon-button"
 		type="button"
 		aria-haspopup="dialog"
-		aria-label="Report a problem"
-		title="Report a problem"
+		aria-label="Request a Change"
+		title="Request a Change"
 		onclick={open}
 	>
 		<Flag size={24} />
 	</button>
 {:else}
-	<a class="icon-button" href={link} aria-label="Report a problem" title="Report a problem">
+	<a class="icon-button" href={link} aria-label="Request a Change" title="Request a Change">
 		<Flag size={24} />
 	</a>
 {/if}
 
 {#if scripted && !onRequestPage}
-	<Modal bind:this={modal} title="Report a problem" onclose={() => opener?.focus()}>
+	<Modal bind:this={modal} title="Request a Change" onclose={() => opener?.focus()}>
 		{#if sent}
 			<div id="report-sent" tabindex="-1">
 				<RequestSent {sent} headingLevel={3} />
 			</div>
 			<p><button class="button" type="button" onclick={() => modal?.close()}>Close</button></p>
 		{:else}
-			<div class="report-kind">
-				<Dropdown label="What is wrong?" choices={kindChoices} value={kind} onchange={choose} />
-			</div>
+			{#snippet kindChoice()}
+				<div class="field kind-choice">
+					<Dropdown label="What would you like to do?" choices={kindChoices} value={kind} onchange={choose} />
+				</div>
+			{/snippet}
 			<RequestForm
+				lead={kindChoice}
 				{kind}
 				{nationIdentifier}
 				{material}
@@ -146,9 +151,9 @@
 		color: inherit;
 	}
 
-	/* The dropdown sits at the top of the dialog, with room before the first question. */
-	.report-kind {
-		margin: calc(-1 * var(--space-4)) 0 var(--space-5);
+	/* The choice heads the left column, level with the right column's first question. */
+	.kind-choice :global(.dropdown) {
+		margin-top: 0;
 	}
 
 	#report-sent:focus-visible {
