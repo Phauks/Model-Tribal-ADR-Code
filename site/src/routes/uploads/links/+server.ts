@@ -11,7 +11,7 @@ export const POST: RequestHandler = (event) =>
 	answering(async () => {
 		const account = senderOf(event);
 		const { database } = storage(event);
-		const body = (await event.request.json().catch(() => null)) as Record<string, unknown> | null;
+		const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as Record<string, unknown> | null;
 		if (!body || typeof body !== 'object' || typeof body.link !== 'string') error(400, 'Send the link.');
 		if (!(await withinStartLimit(account.subject))) {
 			throw new UploadProblem('Too many files in a minute. Wait a minute and try again.', 429);

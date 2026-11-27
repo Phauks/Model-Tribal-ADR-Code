@@ -13,7 +13,7 @@ export const prerender = false;
 
 export const POST: RequestHandler = async (event) => {
 	const person = await requireMail(event);
-	const asked = (await event.request.json().catch(() => null)) as { filename?: unknown; size?: unknown; type?: unknown } | null;
+	const asked = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as { filename?: unknown; size?: unknown; type?: unknown } | null;
 	if (!asked || typeof asked.filename !== 'string' || typeof asked.size !== 'number') error(400, 'Say which file to send.');
 	try {
 		const started = await startLinkedFile(mailContext(), person.identifier, {

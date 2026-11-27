@@ -51,7 +51,7 @@ export const GET: RequestHandler = async (event) => {
 export const PUT: RequestHandler = async (event) => {
 	const { identifier, database, person } = await essayAccess(event, 'comment', { forData: true });
 	if (!isAdministrator(person)) error(403, 'Only the lead author changes who can open an essay.');
-	const body = (await event.request.json().catch(() => null)) as { person?: unknown; level?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as { person?: unknown; level?: unknown } | null;
 	if (typeof body?.person !== 'string' || !(accessLevels as readonly string[]).includes(body.level as string)) error(400, 'Choose a person and a level.');
 	const everyone = await essayPeople(database, identifier, { everyone: true });
 	const target = everyone.find((candidate) => candidate.identifier === body.person);
@@ -68,7 +68,7 @@ export const PUT: RequestHandler = async (event) => {
 export const POST: RequestHandler = async (event) => {
 	const { identifier, database, person, level } = await essayAccess(event, 'comment', { forData: true });
 	if (!atLeast(level, 'contribute')) error(403, 'Asking for review needs contribute access to the essay.');
-	const body = (await event.request.json().catch(() => null)) as Record<string, unknown> | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as Record<string, unknown> | null;
 	if (!body || !Array.isArray(body.reviewers) || !body.reviewers.every((reviewer) => typeof reviewer === 'string')) error(400, 'Choose who should review it.');
 	const section = body.section as { slug?: unknown; title?: unknown } | null | undefined;
 	if (section && (typeof section.slug !== 'string' || typeof section.title !== 'string' || !section.slug || !section.title.trim())) error(400, 'Choose what to review.');
@@ -95,7 +95,7 @@ export const POST: RequestHandler = async (event) => {
 
 export const PATCH: RequestHandler = async (event) => {
 	const { identifier, database, person, level } = await essayAccess(event, 'comment', { forData: true });
-	const body = (await event.request.json().catch(() => null)) as { done?: unknown; closed?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as { done?: unknown; closed?: unknown } | null;
 	const request = event.url.searchParams.get('request') ?? '';
 	if (body?.done === true) {
 		if (!(await finishReview(database, { essay: identifier, request, person: person.identifier }))) error(403, 'You were not asked to review this.');
