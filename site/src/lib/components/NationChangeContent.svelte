@@ -99,11 +99,13 @@
 		color: var(--color-ink);
 	}
 
+	/* Added words are underlined as well as shaded, as removed words are struck through, so the change reads without telling the two shades apart (WCAG 1.4.1). */
 	ins {
 		padding: 0 0.15em;
 		background: var(--color-added-background);
 		color: var(--color-ink);
-		text-decoration: none;
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
 	}
 
 	.contact-change {
