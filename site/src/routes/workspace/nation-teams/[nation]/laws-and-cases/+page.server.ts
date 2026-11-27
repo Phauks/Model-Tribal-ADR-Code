@@ -1,5 +1,6 @@
 import { fail } from '@sveltejs/kit';
 import { alwaysShownCount, readSettings, restrictionProblem, settingsChanges, tidySettings } from '#lib/nation-restrictions.ts';
+import { purgeEdgeCache } from '#lib/server/edge-cache.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { answerProject, currentSettings, restrictableList, saveByIdentifier, saveSettings, savesOf } from '#lib/server/nation-restrictions.ts';
 import { nationAndGranter } from '#lib/server/nation-team-access.ts';
@@ -57,6 +58,8 @@ export const actions: Actions = {
 		const changes = settingsChanges(before, after, list.items);
 		if (changes.length === 0) return { done: 'Nothing changed.' };
 		await saveSettings(database, nation.identifier, after, changes, formText(form, 'note', 2000), person);
+		// The search files the edge keeps leave out what nations hide; drop them so the new choice shows at once (src/lib/server/edge-cache.ts).
+		await purgeEdgeCache(['nation-restrictions']);
 		return { done: 'Saved. The site shows the change within minutes.' };
 	},
 	answer: async (event) => {

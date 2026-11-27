@@ -963,9 +963,14 @@ export async function dueMessages(database: D1Database, time: Date = new Date())
 	const cancelledSince = new Date(time.getTime() - 24 * hour).toISOString();
 	const sent = (kind: string, sequence = '0') =>
 		`NOT EXISTS (SELECT 1 FROM calendar_messages m WHERE m.registration_identifier = r.identifier AND m.kind = '${kind}' AND m.sequence = ${sequence})`;
-	const result = await database
-		.prepare(
-			`SELECT kind, sequence, registrationIdentifier FROM (
+	// D1 allows at most five SELECTs joined by UNION in one statement (a
+	// compound SELECT with more fails with "too many terms in compound
+	// SELECT"), so the seven kinds are asked in two statements.
+	type DueRow = { kind: MessageKind; sequence: number; registrationIdentifier: string };
+	const [first, second] = await Promise.all([
+		database
+			.prepare(
+				`SELECT kind, sequence, registrationIdentifier FROM (
 			   SELECT 'registered' AS kind, 0 AS sequence, r.identifier AS registrationIdentifier
 			   FROM calendar_registrations r JOIN calendar_events e ON e.identifier = r.event_identifier
 			   WHERE r.status = 'registered' AND e.status = 'published' AND e.starts_at > ?1 AND r.updated_at > ?2 AND ${sent('registered')}
@@ -983,8 +988,14 @@ export async function dueMessages(database: D1Database, time: Date = new Date())
 			   WHERE r.status = 'registered' AND r.wants_reminders = 1 AND e.status = 'published'
 			     AND e.starts_at > ?4 AND e.starts_at <= ?3
 			     AND r.registered_at <= strftime('%Y-%m-%dT%H:%M:%fZ', e.starts_at, '-1 day') AND ${sent('day-before')}
-			   UNION ALL
-			   SELECT 'starting-soon', 0, r.identifier
+			 ) LIMIT 500`
+			)
+			.bind(stamp, recent, dayAway, twoHours)
+			.all<DueRow>(),
+		database
+			.prepare(
+				`SELECT kind, sequence, registrationIdentifier FROM (
+			   SELECT 'starting-soon' AS kind, 0 AS sequence, r.identifier AS registrationIdentifier
 			   FROM calendar_registrations r JOIN calendar_events e ON e.identifier = r.event_identifier
 			   WHERE r.status = 'registered' AND r.wants_reminders = 1 AND e.status = 'published'
 			     AND e.starts_at > ?1 AND e.starts_at <= ?4 AND ${sent('starting-soon')}
@@ -998,9 +1009,11 @@ export async function dueMessages(database: D1Database, time: Date = new Date())
 			   FROM calendar_registrations r JOIN calendar_events e ON e.identifier = r.event_identifier
 			   WHERE r.status IN ${live} AND e.status = 'cancelled' AND e.starts_at > ?5 AND ${sent('cancelled')}
 			 ) LIMIT 500`
-		)
-		.bind(stamp, recent, dayAway, twoHours, cancelledSince)
-		.all<{ kind: MessageKind; sequence: number; registrationIdentifier: string }>();
+			)
+			.bind(stamp, recent, dayAway, twoHours, cancelledSince)
+			.all<DueRow>()
+	]);
+	const result = { results: [...first.results, ...second.results].slice(0, 500) };
 	const due: DueMessage[] = [];
 	const events = new Map<string, CalendarEvent>();
 	for (const row of result.results) {

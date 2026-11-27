@@ -28,7 +28,7 @@ import { passwordHash, passwordIterations } from '#lib/server/sign-in-secrets.ts
 
 /** The binding and bucket names in wrangler.jsonc. */
 const databaseBinding = 'database';
-const bucketName = 'model-tribal-adr-code-sources';
+const bucketName = 'tribal-law-project-files';
 
 export const fixturePassword = 'local fixture password';
 // Base32, 160 bits, as the site makes them (src/lib/server/two-step.ts).
@@ -87,6 +87,8 @@ function wrangler(argumentsList, { quiet = false } = {}) {
 	return execFileSync('npx', ['wrangler', ...argumentsList, '--local'], {
 		encoding: 'utf8',
 		stdio: ['ignore', quiet ? 'pipe' : 'inherit', 'inherit'],
+		// Applying every migration to a fresh copy prints a table longer than the default 1 MiB.
+		maxBuffer: 64 * 1024 * 1024,
 		env: { ...process.env, CI: process.env.CI ?? '1' }
 	});
 }

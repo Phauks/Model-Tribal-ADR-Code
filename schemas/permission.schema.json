@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/permission.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/permission.schema.json",
   "title": "Rights and permission record",
   "description": "Whether and how a source may be quoted, reproduced or redistributed, and the trail of any permission request. Embedded as the 'rights' field of a source record. Basis notes are the project's analysis, not legal advice.",
   "type": "object",

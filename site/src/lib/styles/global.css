@@ -1495,6 +1495,19 @@ sup.citation {
 		display: block;
 	}
 
+	/* A printed picture fits on one page with its caption, as in the book
+	   (figure-picture in pdf/typst/book.typ): never taller than three fifths
+	   of the page, centered with its caption under it. */
+	.essay-figure-picture img {
+		max-height: 60vh;
+		width: auto;
+		margin-inline: auto;
+	}
+
+	.essay-figure-picture figcaption {
+		text-align: center;
+	}
+
 	.essay-chart-table {
 		display: none;
 	}

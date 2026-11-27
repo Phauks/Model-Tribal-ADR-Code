@@ -109,7 +109,11 @@ export type Permission =
 	// Searching and reading the source library, the text of every document in
 	// the private bucket (decision record 0051). It holds private copies, so
 	// only the writing team: the lead author, editors, co-authors and advisors.
-	| 'search-source-library';
+	| 'search-source-library'
+	// The source watch's review page (docs/source-watch.md, "The review
+	// queue"): deciding what the watchers found. Held items there are the
+	// lead author's alone.
+	| 'review-watch';
 
 const grants: Record<Role, readonly Permission[]> = {
 	'lead-author': [
@@ -134,7 +138,8 @@ const grants: Record<Role, readonly Permission[]> = {
 		'host-video-rooms',
 		'manage-sponsors',
 		'manage-orders',
-		'search-source-library'
+		'search-source-library',
+		'review-watch'
 	],
 	editor: [
 		'read-contributors',
@@ -147,7 +152,8 @@ const grants: Record<Role, readonly Permission[]> = {
 		'review-nation-pages',
 		'manage-events',
 		'host-video-rooms',
-		'search-source-library'
+		'search-source-library',
+		'review-watch'
 	],
 	'co-author': ['read-reviews', 'comment', 'host-video-rooms', 'search-source-library'],
 	advisor: ['read-reviews', 'comment', 'sign-off', 'host-video-rooms', 'search-source-library'],

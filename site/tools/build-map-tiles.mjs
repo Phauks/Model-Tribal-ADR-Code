@@ -265,7 +265,7 @@ function bucketClient() {
 			throw new Error('Set R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and CLOUDFLARE_ACCOUNT_ID (or R2_ACCOUNT_ID).');
 		}
 		const client = new AwsClient({ accessKeyId: process.env.R2_ACCESS_KEY_ID, secretAccessKey: process.env.R2_SECRET_ACCESS_KEY, service: 's3', region: 'auto' });
-		const bucket = process.env.R2_BUCKET ?? 'model-tribal-adr-code-sources';
+		const bucket = process.env.R2_BUCKET ?? 'tribal-law-project-files';
 		return { client, base: `https://${account}.r2.cloudflarestorage.com/${bucket}` };
 	});
 }

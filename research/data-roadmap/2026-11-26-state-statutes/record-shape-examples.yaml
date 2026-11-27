@@ -1,0 +1,122 @@
+# Draft record shape for state Indian law statutes (Nov. 26, 2026). Not content: these examples are not built into the site.
+# Each document below is one record file as it would sit in content/sources/<letter>/<key>.yaml.
+# Part 1 uses only fields the source schema has today, so it validates now. Part 2 shows the three small additions the note proposes
+# (state_law.relevance, state_law.act, state_law.page), which need a schema change before records can carry them.
+---
+key: oklahoma-statutes-title-12-section-728
+kind: state-statute
+citation:
+  type: legislation
+  title: Standards for recognizing records and proceedings of tribal courts - Reciprocity
+  container-title: Oklahoma Statutes
+  container-title-short: O.S.
+  volume: '12'
+  section: '728'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1992
+      - 9
+      - 1
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=160
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=160
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: >-
+    Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)).
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+subjects: [tribal-courts, jurisdiction]
+topics: [state-indian-law, state-indian-law-core]
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: >-
+  Indigo Book citation: Okla. Stat. tit. 12, § 728 (2026). History: Added by Laws 1992, c. 384, § 1, eff. Sept. 1, 1992. Text read from the Legislative Service Bureau's
+  Title 12 PDF (updated Nov. 12, 2026), page 160. Found by the state statutes pilot (strong term "tribal courts"; reader verdict core). Unverified.
+---
+key: oklahoma-statutes-title-12-section-3402
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  container-title: Oklahoma Statutes
+  container-title-short: O.S.
+  volume: '12'
+  section: '3402'
+  author:
+  - literal: Oklahoma Legislature
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=648
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=648
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+subjects: [tribal-courts]
+topics: [state-indian-law, state-indian-law-incidental]
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: >-
+  Incidental: in the Uniform Judicial Interview of Children Act (12 O.S. § 3401, added by Laws 2026, c. 298), the definition of "State" includes a federally
+  recognized Indian tribe. Reader verdict incidental. Unverified.
+---
+# Part 2: the proposed additions, shown on an act-level record that groups the sections of one Indian law act (here the Oklahoma Indian Child Welfare Act).
+key: oklahoma-statutes-title-10-sections-40-to-40-9
+kind: state-statute
+citation:
+  type: legislation
+  title: Oklahoma Indian Child Welfare Act
+  container-title: Oklahoma Statutes
+  container-title-short: O.S.
+  volume: '10'
+  section: §§ 40–40.9
+  author:
+  - literal: Oklahoma Legislature
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os10.pdf#page=46
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os10.pdf#page=46
+retrieved: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+subjects: [family]
+topics: [state-indian-law, state-indian-law-core]
+found_in:
+- 2026-11-26-state-statutes-pilot
+state_law:                       # proposed: not in the schema yet
+  relevance: core                # core | incidental (the reader's verdict, checked by hand before Verified)
+  act: Oklahoma Indian Child Welfare Act
+  sections:                      # the section records this act groups, in code order
+  - oklahoma-statutes-title-10-section-40
+  - oklahoma-statutes-title-10-section-40-1
+  - oklahoma-statutes-title-10-section-40-2
+  page: 46                       # page of the title PDF where the act starts, for the link anchor
+notes: Example only. Ten sections, all core. Unverified.

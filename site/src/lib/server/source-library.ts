@@ -1,7 +1,7 @@
 /**
  * The source library in the workspace (decision record 0051): the text of
  * every document in the private bucket, page by page, searchable by the
- * project's writers. It lives in its own D1 database, model-tribal-adr-code-
+ * project's writers. It lives in its own D1 database, tribal-law-project-
  * library (binding sourceLibrary), loaded from the library that
  * scripts/library/build_library.py builds. Each build writes the changes since
  * the last one as SQL files in the bucket under _library/d1/, and the hourly

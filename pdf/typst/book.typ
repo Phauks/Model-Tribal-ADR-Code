@@ -322,8 +322,9 @@
 // Essay text: paragraphs after the first in a run open with an indent, and
 // lists sit in from the margin (lead author, Nov. 22, 2026: "Use proper
 // tabbing").
+#let essay-indent = 1.5em
 #let essay-body(body) = {
-  set par(first-line-indent: (amount: 1.5em, all: false), spacing: 0.7em)
+  set par(first-line-indent: (amount: essay-indent, all: false), spacing: 0.7em)
   set list(indent: 1.2em, body-indent: 0.5em)
   set enum(indent: 1.2em, body-indent: 0.5em)
   body
@@ -421,6 +422,55 @@
   [#body #if where != none { block(above: 0.8em, text(size: 0.85em, style: "italic", where)) }],
   stroke: (paint: black, thickness: 0.6pt, dash: "dotted"),
 )
+
+// An essay's picture, from its grayscale print copy (pipeline/pictures.mjs),
+// with its caption and credit centered under it in smaller type. It spans
+// the text width unless that would make it taller than three fifths of the
+// text block, and never breaks from its caption. It stands where the essay
+// puts it when it fits on the page; when it does not, it goes to the top of
+// the next page and the text runs on below this one, so no page is left half
+// empty and no picture lands ahead of the text that comes before it.
+#let picture-counter = counter("figure-picture")
+#let figure-picture-placed(settings, file, ratio, alternative, body) = context {
+  let text-height = settings.text.height * 1in
+  let text-width = settings.text.width * 1in
+  let space = 1.3em.to-absolute()
+  let picture = block(breakable: false, width: 100%, {
+    align(center, image(file, width: calc.min(text-width, text-height * 0.6 * ratio), alt: alternative))
+    block(above: 0.6em, width: 100%, {
+      set par(first-line-indent: 0em, justify: false)
+      set align(center)
+      set text(size: 0.85em)
+      body
+    })
+  })
+  let text-bottom = (settings.page.height - settings.bleed - settings.margins.bottom) * 1in
+  let number = picture-counter.get().first()
+  let anchor = query(<picture-anchor>).filter(item => item.value == number)
+  let starts = if anchor.len() > 0 { anchor.first().location().position().y } else { here().position().y }
+  let room = text-bottom - starts
+  if measure(picture, width: text-width).height + 2 * space <= room {
+    block(above: space, below: space, picture)
+  } else {
+    place(top, float: true, clearance: space, picture)
+  }
+}
+
+#let figure-picture(settings, file, ratio, alternative, body) = {
+  // Where the text before the picture ends, marked by an empty block of its
+  // own: a marker on the picture, or a bare marker, would move with the
+  // picture to the next page.
+  picture-counter.step()
+  context block(height: 0pt, above: par.spacing, below: 0pt, [#metadata(picture-counter.get().first()) <picture-anchor>])
+  figure-picture-placed(settings, file, ratio, alternative, body)
+}
+
+// The paragraph after a picture, indented like any paragraph that follows
+// another: the picture may have floated away from between them.
+#let after-picture(body) = par(first-line-indent: (amount: essay-indent, all: true), body)
+
+// A picture's credit, under its caption.
+#let picture-credit(body) = block(above: 0.4em, below: 0em, emph(body))
 
 // Who made a figure, in smaller type.
 #let figure-credit(body) = block(above: 0.5em, below: 0.5em, text(size: 0.85em, body))

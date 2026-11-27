@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/method.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/method.schema.json",
   "title": "Dispute resolution method",
   "description": "content/methods/<id>.yaml: one way of resolving or handling a dispute, from any tradition. The list of methods is open: a process nobody has recorded yet is added as a new record with status 'proposed', with no change to any schema. Other records refer to methods by id in a 'methods' list. A method is described by what it is called, where it comes from and how it works (its characteristics), so a process that fits no existing name can still be recorded and compared. See docs/decisions/0012-open-list-of-dispute-resolution-methods.md.",
   "type": "object",
