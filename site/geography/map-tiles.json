@@ -370,5 +370,35 @@
 			"https://catalog.archives.gov/id/655555952"
 		],
 		"retrieved": "2026-11-27"
+	},
+	"journeys": {
+		"set": "journeys-8b54c568d856",
+		"key": "map-tiles/journeys-8b54c568d856.pmtiles",
+		"bytes": 905208,
+		"sha256": "8b54c568d856ca291dff2b0f4ea924a285354a0fecb80acd40be934439068e13",
+		"minZoom": 0,
+		"maxZoom": 10,
+		"bounds": [
+			-124.4981,
+			26.6167,
+			-75.6392,
+			48.3781
+		],
+		"layers": [
+			"journeys",
+			"journey-places"
+		],
+		"features": 86,
+		"trailPieces": 718,
+		"removals": 85,
+		"years": [
+			1817,
+			1894
+		],
+		"sources": [
+			"https://services1.arcgis.com/gGHDlz6USftL5Pau/arcgis/rest/services/R01_NezPerceNeeMePoo_NationalHistoricTrail_Centerline/FeatureServer/0",
+			"site/geography/removals.json"
+		],
+		"retrieved": "2026-11-27"
 	}
 }
