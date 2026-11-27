@@ -1,0 +1,61 @@
+key: oklahoma-statutes-title-82-section-1141
+kind: state-statute
+citation:
+  type: legislation
+  title: Oklahoma Ports Infrastructure Revolving Fund (OPIRF)
+  title-short: Okla. Stat. tit. 82, § 1141
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '82'
+  section: '1141'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 2019
+      - 7
+      - 1
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os82.pdf#page=335
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os82.pdf#page=335
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-82-section-1020-4
+- oklahoma-statutes-title-82-section-1020-9c
+- oklahoma-statutes-title-82-section-1087-8
+- oklahoma-statutes-title-82-section-1142
+- oklahoma-statutes-title-82-section-526-1
+- oklahoma-statutes-title-82-section-614
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 82, § 1141 (2026)
+  page: 335
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 82, § 1141 (2026). History: Added by Laws 2019, c. 367, § 1, eff. July 1, 2019. Amended by Laws 2024, c. 351, § 1, eff. Text read from the Legislative Service Bureau''s Title 82 PDF (updated Nov. 12, 2026), page 335. Found by the state statutes pilot (terms: indian tribes); AI reader''s verdict incidental: Port fund projects consult Indian tribes owning Arkansas riverbed. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/oklahoma_statutes.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribes'

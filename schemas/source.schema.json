@@ -318,6 +318,21 @@
         "reading": { "$ref": "#/$defs/boxReading" }
       }
     },
+    "state_law": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relevance", "citation"],
+      "description": "For a state statute section found by a state's Indian law sweep (research/analyses/2026-11-26-state-statutes-pilot.md): how it bears on Native nations and how to cite it. Every relevant section gets a record, labeled core or incidental (Trevor, Nov. 26, 2026).",
+      "properties": {
+        "relevance": {
+          "enum": ["core", "incidental"],
+          "description": "core: the section's subject is Native nations or Indian people, such as a tribal-state compact law or a state Indian child welfare act. incidental: the section is about something else but gives a nation, tribal government, tribal court, tribal member or Indian land a specific legal role, right, duty or exemption. Set by an AI reader and Unverified until a person checks it."
+        },
+        "citation": { "type": "string", "minLength": 1, "description": "The section's citation as the Indigo Book writes it, such as \"Okla. Stat. tit. 10, § 40 (2026)\"." },
+        "act": { "type": "string", "minLength": 1, "description": "The named act the section belongs to, when it has one, such as \"Oklahoma Indian Child Welfare Act\"." },
+        "page": { "type": "integer", "minimum": 1, "description": "The page of the official title PDF where the section starts, when the official text is a PDF." }
+      }
+    },
     "reading_links": {
       "type": "object",
       "description": "Other places a reader can read this case or law, found and checked by scripts/caselaw/reading_links.py from the settings in research/reading-links/sites.yaml. The website shows them beside the citation.",
