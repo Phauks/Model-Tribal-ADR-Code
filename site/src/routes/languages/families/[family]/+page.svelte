@@ -27,7 +27,7 @@
 	<Collapsible heading="Languages" identifier="family-languages" count={data.rows.length} class="past-glance">
 		<DataTable identifier="family-languages" label="Table: languages in this family" {columns} {rows} defaultSort={{ key: 'language', direction: 'ascending' }} rowName={['language', 'languages']} searchLabel="Search languages">
 			{#snippet cell(row: TableRow, column: TableColumn)}
-				{#if column.key === 'language'}<a href={row.cells.language.href}>{row.cells.language.text}</a><CitationMarks marks={marks.get(row.key)} />{/if}
+				{#if column.key === 'language'}<span class="marked"><a href={row.cells.language.href}>{row.cells.language.text}</a><CitationMarks marks={marks.get(row.key)} /></span>{/if}
 			{/snippet}
 		</DataTable>
 	</Collapsible>
@@ -37,5 +37,23 @@
 	/* The table starts under Key facts, at the full width, as mocked. */
 	:global(.collapsible.past-glance) {
 		clear: both;
+	}
+
+	/*
+	 * A row can cite several sources, so its markers sit side by side; each is
+	 * a full 24 pixel target (WCAG 2.2, 2.5.8), as in the program cell on
+	 * nation pages, so neighbors never crowd each other.
+	 */
+	.marked :global(.note-marker) {
+		display: inline-block;
+		min-width: 24px;
+		min-height: 24px;
+		line-height: 24px;
+		text-align: center;
+		vertical-align: top;
+	}
+
+	.marked > a {
+		padding-block: 2px;
 	}
 </style>

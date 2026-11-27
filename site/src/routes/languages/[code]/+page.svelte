@@ -77,10 +77,10 @@
 				{#if column.key === 'nation'}
 					<a href={row.cells.nation.href}>{row.cells.nation.text}</a>
 				{:else if column.key === 'name'}
-					{row.cells.name.text}<CitationMarks marks={marks.get(row.key)} />
+					<span class="marked">{row.cells.name.text}<CitationMarks marks={marks.get(row.key)} /></span>
 				{:else if column.key === 'program'}
 					{@const program = programs.get(row.key)}
-					{#if program}<a href={program.link}>{program.name}</a><CitationMarks marks={program.citations} />{:else}<span class="muted">{noneIdentified.text}</span>{/if}
+					{#if program}<span class="marked"><a href={program.link}>{program.name}</a><CitationMarks marks={program.citations} /></span>{:else}<span class="muted">{noneIdentified.text}</span>{/if}
 				{/if}
 			{/snippet}
 		</DataTable>
@@ -117,7 +117,7 @@
 			{#snippet cell(row: TableRow, column: TableColumn)}
 				{#if column.key === 'work'}
 					{@const work = works.get(row.key)}
-					<a href={row.cells.work.href}>{row.cells.work.text}</a><CitationMarks marks={work?.citations} />{#if work?.author || work?.publisher}<br /><span class="muted small">{[work.author, work.publisher].filter(Boolean).join(', ')}</span>{/if}
+					<span class="marked"><a href={row.cells.work.href}>{row.cells.work.text}</a><CitationMarks marks={work?.citations} /></span>{#if work?.author || work?.publisher}<br /><span class="muted small">{[work.author, work.publisher].filter(Boolean).join(', ')}</span>{/if}
 				{/if}
 			{/snippet}
 		</DataTable>
@@ -128,5 +128,23 @@
 <style>
 	:global(.collapsible.past-glance) {
 		clear: both;
+	}
+
+	/*
+	 * A row can cite several sources, so its markers sit side by side; each is
+	 * a full 24 pixel target (WCAG 2.2, 2.5.8), as in the program cell on
+	 * nation pages, so neighbors never crowd each other.
+	 */
+	.marked :global(.note-marker) {
+		display: inline-block;
+		min-width: 24px;
+		min-height: 24px;
+		line-height: 24px;
+		text-align: center;
+		vertical-align: top;
+	}
+
+	.marked > a {
+		padding-block: 2px;
 	}
 </style>
