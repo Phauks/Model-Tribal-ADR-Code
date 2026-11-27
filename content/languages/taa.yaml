@@ -1,0 +1,50 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: taa
+name: Lower Tanana
+iso_639_3:
+  code: taa
+  reference_name: Lower Tanana
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: lowe1425
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1933
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/tanana.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Chena (Lower Tanana)
+  glottocode: chen1270
+  source: glottolog-5-4
+- name: Minto-Tolovana-Toklat-Nenana-Wood River
+  glottocode: mint1240
+  source: glottolog-5-4
+- name: Salcha-Goodpastor
+  glottocode: salc1239
+  source: glottolog-5-4
+works:
+- glottolog_reference: '165497'
+  title: Lower Tanana Athabaskan Dictionary, first preliminary draft
+  kinds:
+  - dictionary
+  author: James Kari
+  year: 1997
+  pages: 521
+  source: glottolog-5-4
+- glottolog_reference: '308076'
+  title: Minto Nenana Athabascan Noun Dictionary
+  kinds:
+  - dictionary
+  author: Michael Krauss
+  year: 1974
+  pages: 58
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -1,0 +1,47 @@
+key: wisconsin-statutes-50-065
+kind: state-statute
+citation:
+  type: legislation
+  title: Criminal history and patient abuse record search
+  title-short: Wis. Stat. § 50.065
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '50.065'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/50.065
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/50.065
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 50.065 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 50.065 (2023-24). History: 1997 a. 27, 105, 237; 1999 a. 9, 32, 56, 185, 186; 2001 a. 109; 2005 a. 25, 184, 277, 351; 2007 a. 20 s. 9121 (6) (a); 2007 a. 97, 116, 130, 153, 172; 2009 a. 276; 2011 a. 32, 35; 2013 a. 20; 2013 a. 173 s. 33; 2015 a. 366; 2017 a. 12, 283; 2021 a. 76, 209; 2021 a. 240 s. 30; 2023 a. 224; 2025 a. 24 s. 93; 2025 a. 26, 88, 129. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; bureau of indian affairs; ho-chunk; indian; nation; reservation; tribe); AI reader''s verdict incidental: Defines tribe and reservation for caregiver background checks. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; bureau of indian affairs; ho-chunk; indian; nation; reservation; tribe'

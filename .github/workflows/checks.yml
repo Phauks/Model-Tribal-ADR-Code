@@ -162,6 +162,9 @@ jobs:
       - run: pip install -r scripts/requirements.txt
       - run: python3 scripts/validate_records.py
       - run: python3 scripts/legal-help/match_nations.py --check
+      # Every script writes the capture index in key order, so filings in different pull requests rarely touch the same lines.
+      - name: Capture index in key order
+        run: python3 scripts/captures/capture_index.py --check
 
   lint:
     name: Record lint and coverage

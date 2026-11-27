@@ -1,0 +1,111 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: tfn
+name: Dena'ina
+iso_639_3:
+  code: tfn
+  reference_name: Tanaina
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: tana1289
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+iso_names:
+- name: Tanaina
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1445
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/denaina.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Lower Inlet Denaina
+  glottocode: lowe1451
+  source: glottolog-5-4
+- name: Upper Inlet Denaina
+  glottocode: uppe1473
+  source: glottolog-5-4
+works:
+- glottolog_reference: '472135'
+  title: Dena'ina Topical Dictionary (Kari)
+  kinds:
+  - dictionary
+  author: Keren Rice
+  year: 2009
+  publisher: International Journal of American Linguistics
+  pages: 113
+  source: glottolog-5-4
+- glottolog_reference: '77232'
+  title: Dena'ina topical dictionary
+  kinds:
+  - dictionary
+  author: James M. Kari
+  year: 2007
+  publisher: Alaska Native Language Center, Univ. of Alaska Fairbanks
+  pages: 366
+  source: glottolog-5-4
+- glottolog_reference: '165891'
+  title: Pete Bobby, Animals, Fish, Dictionary
+  kinds:
+  - dictionary
+  author: Priscilla (interviewer) Russell and Bobby. (speaker) Pete
+  year: 2003
+  source: glottolog-5-4
+- glottolog_reference: '165832'
+  title: Pete Bobby, Helen Dick, Animals, Dictionary
+  kinds:
+  - dictionary
+  author: Priscilla (interviewer) Russell, Pete. (speaker) Bobby and Helen. (speaker) Dick
+  year: 2003
+  source: glottolog-5-4
+- glottolog_reference: '310438'
+  title: Dena'ina Athabaskan junior dictionary
+  kinds:
+  - dictionary
+  author: Albert Wassillie
+  year: 1979
+  publisher: Summer Institute of Linguistics
+  pages: 121
+  source: glottolog-5-4
+- glottolog_reference: '21431'
+  title: Morphology and Semantics of the Tanaina Verb
+  kinds:
+  - grammar
+  author: Joan Marsha Tenenbaum
+  year: 1978
+  publisher: Columbia University
+  pages: 260
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '300682'
+  title: Dena'ina (Tanaina) Noun Dictionary
+  kinds:
+  - dictionary
+  author: James Kari
+  year: 1977
+  publisher: Alaska Native Language Center
+  pages: 361
+  source: glottolog-5-4
+- glottolog_reference: '687155'
+  title: Nondalton Tanaina Noun Dictionary
+  kinds:
+  - dictionary
+  author: Joan Marsha Tenenbaum
+  year: 1975
+  publisher: Alaska Native Language Center
+  source: glottolog-5-4
+- glottolog_reference: '312296'
+  title: Leopold Radloff's Wörterbuch der Kinai-Sprache
+  kinds:
+  - dictionary
+  author: Anton Schiefner
+  year: 1874
+  publisher: Mémoires de l'Académie impériale des sciences, VIIe Série
+  pages: 118
+  source: glottolog-5-4
+retrieved: '2026-11-27'

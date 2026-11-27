@@ -1,0 +1,63 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: clm
+name: Clallam
+iso_639_3:
+  code: clm
+  reference_name: Klallam
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: clal1241
+  level: language
+  source: glottolog-5-4
+family:
+  name: Salishan
+  glottocode: sali1255
+  source: glottolog-5-4
+iso_names:
+- name: Klallam
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2292
+  source: glottolog-5-4
+dialects:
+- name: Becher Bay Klallam
+  glottocode: bech1239
+  source: glottolog-5-4
+- name: Eastern Klallam
+  glottocode: east2823
+  source: glottolog-5-4
+- name: Western Klallam
+  glottocode: west2897
+  source: glottolog-5-4
+works:
+- glottolog_reference: '683002'
+  title: Klallam Grammar
+  kinds:
+  - grammar
+  author: Timothy Montler
+  year: 2015
+  publisher: University of Washington Press
+  pages: 419
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '314980'
+  title: Klallam Dictionary
+  kinds:
+  - dictionary
+  author: Timothy Montler
+  year: 2012
+  publisher: University of Washington Press
+  pages: 983
+  source: glottolog-5-4
+- glottolog_reference: '151945'
+  title: 'Clallam: A Study in Coast Salish Ethnolinguistics'
+  kinds:
+  - grammar
+  author: Mark Stewart Fleisher
+  year: 1976
+  publisher: Washington State University
+  pages: 331
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

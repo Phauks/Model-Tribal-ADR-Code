@@ -43,7 +43,10 @@ REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "scripts" / "constitutions"))
 from build_catalog import SMALL_WORDS, clean_title  # noqa: E402
 
-INDEX = REPO / "research" / "capture-index.csv"
+sys.path.insert(0, str(REPO / "scripts" / "captures"))
+import capture_index  # noqa: E402
+
+INDEX = capture_index.INDEX
 OVERRIDES = REPO / "research" / "capture-index-overrides.json"
 CATALOG = REPO / "research" / "constitutions" / "documents.csv"
 REPORT = REPO / "research" / "constitutions" / "copy-titles.csv"
@@ -220,10 +223,7 @@ def main() -> None:
         main_key = row["derived_from"] or row["key"]
         if main_key in titles:
             row["title"] = titles[main_key]
-    with INDEX.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
+    capture_index.write_rows(rows, fields)
     print(f"recorded {len(titles)} title overrides and updated the index")
 
 

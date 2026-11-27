@@ -1,0 +1,49 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: mhq
+name: Mandan
+iso_639_3:
+  code: mhq
+  reference_name: Mandan
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: mand1446
+  level: language
+  source: glottolog-5-4
+family:
+  name: Siouan
+  glottocode: siou1252
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/865
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '703052'
+  title: A grammar of Mandan
+  kinds:
+  - grammar
+  author: Ryan M. Kasak
+  year: 2024
+  publisher: Language Science Press
+  pages: 624
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '686674'
+  title: '"Mandan Language: Documentation, Description and Training (mhq)" NSF DEL Abstract'
+  kinds:
+  - grammar
+  author: Alyce Spotted Bear
+  year: 2010
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '580415'
+  title: A Mandan dictionary
+  kinds:
+  - dictionary
+  author: Hollow, Jr. and Robert Charles
+  year: 1970
+  publisher: University of California at Berkeley
+  pages: 496
+  source: glottolog-5-4
+retrieved: '2026-11-27'

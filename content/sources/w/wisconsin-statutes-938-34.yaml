@@ -1,0 +1,47 @@
+key: wisconsin-statutes-938-34
+kind: state-statute
+citation:
+  type: legislation
+  title: Disposition of juvenile adjudged delinquent
+  title-short: Wis. Stat. § 938.34
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '938.34'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/938.34
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/938.34
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 938.34 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 938.34 (2023-24). History: 1995 a. 77, 352, 440, 448; 1997 a. 27, 35, 36, 84, 130, 164, 183, 205; 1999 a. 9, 32, 57, 89, 185; 2001 a. 16, 59, 69, 109; 2003 a. 33, 50, 200, 321; 2005 a. 14, 253, 277, 344; 2007 a. 97, 116; 2009 a. 8, 28, 103, 137, 185, 302, 334; 2011 a. 32, 258; 2013 a. 20; 2013 a. 165 s. 115; 2013 a. 362; 2015 a. 55; 2017 a. 131, 185; 2019 a. 8 ss. 32 to 34, 71; 2021 a. 72, 76; 2021 a. 238 s. 45; 2023 a. 10, 119, 224; 2025 a. 24 s. 93; 2025 a. 48, 88; s. 35.17 correction in (15m) (a) 1. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal school; indian; tribal; tribe); AI reader''s verdict incidental: Juvenile dispositions reference Indian juveniles and tribal schools. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal school; indian; tribal; tribe'

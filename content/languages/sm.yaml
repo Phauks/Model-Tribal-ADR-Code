@@ -1,0 +1,115 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: sm
+name: Samoan
+iso_639_3:
+  code: smo
+  reference_name: Samoan
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: samo1305
+  level: language
+  source: glottolog-5-4
+family:
+  name: Austronesian
+  glottocode: aust1307
+  source: glottolog-5-4
+own_names:
+- name: Gagana fa'a Sāmoa
+  language: sm
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '162923'
+  title: Samoan Dictionary
+  kinds:
+  - dictionary
+  author: G.B. Milner
+  year: 1993
+  publisher: Polynesian Press
+  pages: 464
+  source: glottolog-5-4
+- glottolog_reference: '112512'
+  title: Samoan Reference Grammar
+  kinds:
+  - grammar
+  author: Ulrike Mosel and Even Hovdhaugen
+  year: 1992
+  publisher: Scandinavian University Press
+  pages: 841
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '75412'
+  title: A simplified dictionary of Modern Samoan
+  kinds:
+  - dictionary
+  author: R.W. Allardice
+  year: 1985
+  publisher: Polynesian Press
+  source: glottolog-5-4
+- glottolog_reference: '682830'
+  title: Samoan Dictionary
+  kinds:
+  - dictionary
+  author: G. B. Milner
+  year: 1966
+  publisher: Oxford University Press
+  source: glottolog-5-4
+- glottolog_reference: '64231'
+  title: Samoan Grammar
+  kinds:
+  - grammar
+  author: Spencer Churchward
+  year: 1951
+  publisher: Spectator
+  pages: 248
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '684741'
+  title: A grammar and dictionary of the Samoan language
+  kinds:
+  - grammar
+  - dictionary
+  author: George Pratt
+  year: 1911
+  publisher: London Missionary Society's Press
+  source: glottolog-5-4
+- glottolog_reference: '311285'
+  title: A grammar and dictionary of the Samoan language
+  kinds:
+  - grammar
+  - dictionary
+  author: George Pratt
+  year: 1893
+  publisher: London Missionary Society's Press
+  pages: 212
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '20635'
+  title: Kurze Anleitung zum Verständniß der samoanischen Sprache
+  kinds:
+  - dictionary
+  author: B. Funk
+  year: 1893
+  publisher: E.S. Mittler und sohn
+  pages: 82
+  source: glottolog-5-4
+- glottolog_reference: '121020'
+  title: Dictionnaire Samoa-Français-Anglais et Français-Samoa Anglais Précédé d'une grammaire de la langue Samoa
+  kinds:
+  - dictionary
+  author: L. Violette
+  year: 1879
+  publisher: Maisonneuve
+  pages: 468
+  source: glottolog-5-4
+- glottolog_reference: '33680'
+  title: 'Samoan Dictionary: English and Samoan, Samoan and English; with a short grammar of the Samoan Dialect'
+  kinds:
+  - dictionary
+  author: George Pratt
+  year: 1862
+  publisher: London Missionary Society's Press
+  pages: 223
+  source: glottolog-5-4
+retrieved: '2026-11-27'

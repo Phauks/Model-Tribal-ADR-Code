@@ -1,0 +1,38 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: tix
+name: Southern Tiwa
+iso_639_3:
+  code: tix
+  reference_name: Southern Tiwa
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: sout2961
+  level: language
+  source: glottolog-5-4
+family:
+  name: Kiowa-Tanoan
+  glottocode: kiow1265
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1471
+  source: glottolog-5-4
+dialects:
+- name: Isleta
+  glottocode: isle1245
+  source: glottolog-5-4
+- name: Sandia
+  glottocode: sand1277
+  source: glottolog-5-4
+works:
+- glottolog_reference: '18855'
+  title: The Language of Isleta, New Mexico
+  kinds:
+  - grammar
+  author: William L. Leap
+  year: 1970
+  publisher: Southern Methodist University
+  pages: 249
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'
