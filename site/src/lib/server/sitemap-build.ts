@@ -51,7 +51,7 @@ export const notInSitemap: Record<string, string> = {
 export const sitemapPartTests: { name: string; test: (path: string) => boolean }[] = [
 	{ name: 'nations', test: (page) => page === '/nations' || page.startsWith('/nations/') },
 	{ name: 'laws', test: (page) => page.startsWith('/laws/') },
-	{ name: 'people', test: (page) => /^\/(?:biographies|people|supreme-court\/(?:justices|presidents))(?:\/|$)/.test(page) },
+	{ name: 'people', test: (page) => /^\/(?:biographies|people|presidents|supreme-court\/justices)(?:\/|$)/.test(page) },
 	{ name: 'cases', test: (page) => /^\/(?:cases|courts|supreme-court)(?:\/|$)/.test(page) },
 	{ name: 'source-documents', test: (page) => page.startsWith('/copies/') },
 	{ name: 'pages', test: () => true }

@@ -153,7 +153,7 @@ const visits = {
 		'/laws/act-1858-12-22-pueblo-land-claims-confirmed',
 		'/biographies/a-pish-ka-go-gi',
 		'/supreme-court/justices/john-marshall',
-		'/supreme-court/presidents/abraham-lincoln',
+		'/presidents/abraham-lincoln',
 		// A browsed Federal collection (src/lib/collection-browser.ts), and an order's page with its place in the list.
 		'/laws/executive-orders',
 		'/laws/executive-order-6145',

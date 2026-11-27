@@ -105,7 +105,7 @@ describe('Biographies of Native people', () => {
 		expect(cass.treaties.every((item) => item.signedFor === 'United States')).toBe(true);
 		expect(signersOfTreaty(cass.treaties[0].key).map((person) => person.name)).toContain('Lewis Cass');
 		const jackson = biographyPage('andrew-jackson-united-states')!;
-		expect(jackson.glance.find((group) => group.field === 'office')?.items[0].link).toBe('/supreme-court/presidents/andrew-jackson');
+		expect(jackson.glance.find((group) => group.field === 'office')?.items[0].link).toBe('/presidents/andrew-jackson');
 		// The Makah sub-chief the 1855 treaty prints as Andrew Jackson keeps his own page, with no President link.
 		expect(biographyPage('andrew-jackson')!.glance.find((group) => group.field === 'office')).toBeUndefined();
 	});
