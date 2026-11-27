@@ -85,6 +85,8 @@
 	let signInButton: HTMLButtonElement | undefined = $state();
 	let signInAnswer = $state<SignInState | undefined>(undefined);
 	let codesAvailable = $state<boolean | undefined>(undefined);
+	let turnstileSiteKey = $state<string | undefined>(undefined);
+	let providers = $state<('google' | 'microsoft')[]>([]);
 	let asking: Promise<void> | undefined;
 	const onSignInPage = $derived(page.url.pathname === '/sign-in' || page.url.pathname.startsWith('/sign-in/'));
 	const returnHere = $derived(`${page.url.pathname}${page.url.search}`);
@@ -93,7 +95,9 @@
 	function askForOptions() {
 		asking ??= fetch('/sign-in/options', { headers: { accept: 'application/json' } })
 			.then((response) => (response.ok ? response.json() : { codesAvailable: false }))
-			.then((options: { codesAvailable?: boolean }) => {
+			.then((options: { codesAvailable?: boolean; turnstileSiteKey?: string | null; providers?: ('google' | 'microsoft')[] }) => {
+				turnstileSiteKey = options.turnstileSiteKey ?? undefined;
+				providers = options.providers ?? [];
 				codesAvailable = Boolean(options.codesAvailable);
 			})
 			.catch(() => {
@@ -231,6 +235,8 @@
 			<SignInForms
 				answer={signInAnswer}
 				{codesAvailable}
+				{turnstileSiteKey}
+				{providers}
 				returnTo={returnHere}
 				prefix="sign-in-panel-"
 				level={2}

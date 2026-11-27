@@ -113,6 +113,24 @@ declare global {
 		 */
 		PASSWORD_KEY?: string;
 		/**
+		 * Cloudflare Turnstile, the "are you a person?" check on public forms
+		 * (src/lib/server/turnstile.ts). The site key and host names are in
+		 * wrangler.jsonc; the secret key is a Secret in the dashboard. The check
+		 * is on only when the site key and the secret are both set.
+		 */
+		TURNSTILE_SITE_KEY?: string;
+		TURNSTILE_SECRET_KEY?: string;
+		TURNSTILE_HOSTNAMES?: string;
+		/**
+		 * Google and Microsoft sign-in (src/lib/server/outside-sign-in.ts). Each
+		 * client identifier is public, in wrangler.jsonc; each client secret is
+		 * a Secret in the dashboard. A provider is on only when both are set.
+		 */
+		GOOGLE_CLIENT_ID?: string;
+		GOOGLE_CLIENT_SECRET?: string;
+		MICROSOFT_CLIENT_ID?: string;
+		MICROSOFT_CLIENT_SECRET?: string;
+		/**
 		 * Printed copies (docs/book-orders.md). Ordering stays off unless
 		 * BOOK_ORDERS is "test" (Stripe test keys and Lulu's sandbox only) or
 		 * "live"; the keys and secrets are set in the Cloudflare dashboard.
