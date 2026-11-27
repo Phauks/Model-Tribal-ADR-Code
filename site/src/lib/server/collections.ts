@@ -27,7 +27,7 @@ import { courts as namedCourts } from './courts.ts';
 import { heldBackOpinionCount, tribalCourtOpinions } from './tribal-court-opinions.ts';
 import { storySummaries } from './stories.ts';
 import { buildFormCatalog } from './form-catalog.ts';
-import { copyPagePath, isSavedWebPage, mediaLabel, type PublicCopy } from '../public-copies.ts';
+import { copyPagePath, copyPreference, isSavedWebPage, mediaLabel, type PublicCopy } from '../public-copies.ts';
 import { isNativeNation, recognitionStatus } from './recognition-status.ts';
 import type { Holding } from '../holding.ts';
 import { dataChartList, dataChartTrail } from '../data-chart-list.ts';
@@ -239,9 +239,12 @@ const typeOf = (record: SourceRecord) => (record.citation as { type?: string }).
 /** A source record as a list row: a case or law links to its page, anything else to our copy or else where it is published. */
 function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	const link = record.original_link ?? record.citation.URL;
-	const copy = publicCopyFor(link);
+	const linked = publicCopyFor(link);
+	const copies = copiesOfRecord(record, linked);
+	// A copy that names the record opens too when the cited address does not match its own, such as an address with spaces or
+	// without "www." (Red Cliff's and Round Valley's constitutions, Nov. 27, 2026), so a row counted as saved never links out.
+	const copy = linked ?? [...copies].sort((first, second) => copyPreference(first.mediaType) - copyPreference(second.mediaType))[0];
 	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? (recordPageLink(record.key) ?? `/laws/${record.key}`) : copy ? copyPagePath(copy) : publishedAt(record, link);
-	const copies = copiesOfRecord(record, copy);
 	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key, ...(copies.length ? { copies } : {}) };
 }
 
