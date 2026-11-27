@@ -222,6 +222,33 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
   note: 'The source''s words: "Native Village of Unalakleet".'
   operator: tribal
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2021
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Native Village of Unalakleet' (Alaska Region)
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 407621
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Unalakleet' (Unalakleet)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Unalakleet'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 154926
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'NATIVE VILLAGE OF UNALAKLEET' (UEI J5NLLKLQCBJ3), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Unalakeet" among organizations under constitutions approved

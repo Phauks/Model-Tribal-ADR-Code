@@ -173,6 +173,64 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Spokane Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Spokane Tribe of Indians (2025)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2025
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Spokane Tribe of Indians'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Spokane Tribe of Indians'.
+- program: pl-102-477-plan
+  start: '2024-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - American Indian Vocational Rehabilitation Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Head Start
+  - Low Income Home Energy Assistance Program
+  - Temporary Assistance for Needy Families
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Spokane Tribe of the Spokane Reservation'; PL102_477_PartnerEnrollment, its 12 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3980691
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Spokane Tribe' (Wellpinit)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 12625620
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SPOKANE TRIBE OF THE SPOKANE RESERVATION' (UEI Q4XPD6M7TNE7), Oct. 1, 2024 to Sept. 30, 2025
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1217604
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SPOKANE TRIBE OF THE SPOKANE RESERVATION' (UEI Q4XPD6M7TNE7), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution, superseding the 1951 constitution and bylaws

@@ -196,6 +196,49 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Jamestown S’Klallam Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Jamestown S’Klallam Indian Tribe (1994)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1991
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Jamestown S'Klallam Tribe' (Northwest Region)
+- program: indian-health-service-self-governance-compact
+  since: 1994
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Jamestown S’Klallam Indian Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Jamestown S’Klallam Indian Tribe'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 580178
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Jamestown S'Klallam Tribe' (Sequim)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 4104489
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'JAMESTOWN S'KLALLAM TRIBE' (UEI MLVMMNN8LJS7), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 2385918
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'JAMESTOWN S'KLALLAM TRIBE' (UEI MLVMMNN8LJS7), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution, as amended and restated, ratified by the qualified voters

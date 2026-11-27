@@ -162,6 +162,65 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Albuquerque Area
   note: Listed as "Ohkay Owingeh Pueblo". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2012
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Ohkay Owingeh' (Southwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Ohkay Owingeh'.
+- program: pl-102-477-plan
+  start: '2025-01-01'
+  end: '2029-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Ohkay Owingeh, New Mexico'; PL102_477_PartnerEnrollment, its 4 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 768053
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Ohkay Owingeh (San Juan Pueblo)' (Ohkay Owingeh Pueblo)
+- program: tribal-transportation-self-governance-compact
+  source: ict-news-2024-08-20-potawatomi-transportation-compact
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-08-20'
+  locator: 'names ''Ohkay Owingeh'': named among the first four compacts'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Ohkay Owingeh'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 3154544
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'OHKAY OWINGEH TRIBAL COUNCIL' (UEI H1ZEEZK2D6B3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'OHKAY OWINGEH TRIBAL COUNCIL'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 388508
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'OHKAY OWINGEH TRIBAL COUNCIL' (UEI H1ZEEZK2D6B3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'OHKAY OWINGEH TRIBAL COUNCIL'.
 governance:
 - aspect: head-of-government
   value: Governor

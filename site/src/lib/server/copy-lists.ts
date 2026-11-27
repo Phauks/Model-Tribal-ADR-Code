@@ -85,6 +85,7 @@ const fixedGroups: Record<string, string> = {
 	'federal-court-opinions': 'Lower federal court opinions',
 	'gaming-commission': 'National Indian Gaming Commission documents',
 	acknowledgment: 'Federal acknowledgment documents',
+	'solicitor-opinions': 'Solicitor’s opinions',
 	'other-federal': 'Other federal documents',
 	// Published state and territorial court opinions (decision record 0060).
 	'state-court-opinions': 'State court opinions',
@@ -167,6 +168,7 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'federal-register') return 'federal-register';
 	if (copy.topic === 'nigc') return 'gaming-commission';
 	if (copy.topic === 'acknowledgment') return 'acknowledgment';
+	if (copy.topic === 'solicitor-opinions') return 'solicitor-opinions';
 	return 'other-federal';
 }
 

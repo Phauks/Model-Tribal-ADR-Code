@@ -119,6 +119,8 @@ export function mapPageHistoric() {
 	return {
 		cessionYears: cessionYears(),
 		censusYears: tileManifest.landAreasByYear.years,
+		/** The years in which a state or territory began or ended (the Newberry Library's Atlas), for the timeline's marks. */
+		borderYears: tileManifest.borders.years,
 		volume: { path: royceVolume.path, title: royceVolume.title }
 	};
 }

@@ -7,7 +7,9 @@
 # license. Nothing is copied from a copy's description page. The site builds
 # each credit line from creator, date, source, source_id and license.
 # scripts/law/supreme_court_pictures.py fills media_type, width, height,
-# sha256 and key from the downloaded copy.
+# sha256 and key from the downloaded copy. An entry with rotate or crop is
+# served as a picture the script turns or cuts from the copy (a print
+# photographed on its side, one Justice in a group photograph).
 pictures:
 - subject: john-jay
   shows: John Jay, three-quarter-length portrait in judicial robes
@@ -25,6 +27,22 @@ pictures:
   height: 621
   sha256: 8a1225032e600823ab17d32994be99ce8b3da9ec17e54211f862a1bd44aff412
   key: supreme-court/portraits/john-jay.jpg
+- subject: john-rutledge
+  shows: John Rutledge, miniature portrait in an oval, head and shoulders in right profile
+  creator: John Trumbull
+  date: c. 1791
+  source: National Portrait Gallery, Smithsonian Institution
+  source_id: NPG.97.190
+  source_link: https://npg.si.edu/object/npg_NPG.97.190
+  license: Public domain
+  basis: Oil on mahogany panel by John Trumbull (d. 1843), so the work is public domain by age. The Smithsonian's record marks the object CC0 (Smithsonian Open Access).
+  checked: '2026-11-27'
+  copy: https://ids.si.edu/ids/deliveryService?id=NPG-NPG_97_190_inex&max=800
+  media_type: image/jpeg
+  width: 669
+  height: 800
+  sha256: 3b1eb7de38a0a551decb2b19d2509476adf65e18b3d4707e746fa1fc0465d361
+  key: supreme-court/portraits/john-rutledge-3b1eb7de38a0.jpg
 - subject: oliver-ellsworth
   shows: Oliver Ellsworth, half-length, from a photograph of a painting
   creator: Anderson, New York
@@ -200,6 +218,27 @@ pictures:
   height: 640
   sha256: a23e4c38c382efce84b4aa1863a1946c1cc6773766319e1b0091f49df3d09df4
   key: supreme-court/portraits/fred-moore-vinson-a23e4c38c382.jpg
+- subject: earl-warren
+  shows: Earl Warren, Chief Justice, seated in his robe, detail of the Court's group portrait of 1958
+  creator: Warren K. Leffler
+  date: '1958'
+  source: Library of Congress
+  source_id: ppmsca.78058
+  source_link: https://www.loc.gov/pictures/item/2023630495/
+  license: Public domain
+  copy: https://tile.loc.gov/storage-services/master/pnp/ppmsca/78000/78058u.tif
+  basis: 'Library of Congress record: "No known restrictions on publication." Made for U.S. News & World Report, whose photographs the magazine gave to the Library. This is a detail of the Court''s group portrait of November 24, 1958 (the Warren Court picture). The Library''s record names only the Chief Justice; he is identified by the record and his place at the center of the front row.'
+  checked: '2026-11-27'
+  crop:
+  - 2547
+  - 1209
+  - 3233
+  - 2066
+  media_type: image/jpeg
+  width: 640
+  height: 800
+  sha256: eb14f90cea072bb3ac4638c137dbc66582e3e09a81f04c983ae7db1c586c86c7
+  key: supreme-court/portraits/earl-warren-eb14f90cea07.jpg
 - subject: warren-earl-burger
   shows: Chief Justice Warren E. Burger, official portrait in judicial robe
   creator: Robert S. Oakes
@@ -246,6 +285,58 @@ pictures:
   height: 600
   sha256: d6384b5ec63c8c3d6278554ef3da6e457a2d42c6f505ecf588e9d0f8fe14b40e
   key: supreme-court/portraits/john-g-roberts-jr.jpg
+- subject: william-cushing
+  shows: William Cushing, bust portrait in left profile, with his signature
+  creator: John Chester Buttre
+  source: Art Institute of Chicago
+  source_id: '274357'
+  source_link: https://www.artic.edu/artworks/274357
+  license: Public domain
+  basis: Etching by John Chester Buttre (d. 1893). The Art Institute of Chicago's record marks it public domain and releases its image under CC0.
+  checked: '2026-11-27'
+  copy: https://www.artic.edu/iiif/2/634786fb-6c6e-4399-53a8-a05b14a30ece/full/843,/0/default.jpg
+  media_type: image/jpeg
+  width: 843
+  height: 1098
+  sha256: 8d62f6c99194877b8cb77ae9b51c0b0edd6cfdf51cfa7aedfe2b5fc887c3e89f
+  key: supreme-court/portraits/william-cushing-8d62f6c99194.jpg
+- subject: james-wilson
+  shows: James Wilson, half length, wearing spectacles
+  creator: James Barton Longacre, after Jean Pierre Henri Elouis
+  date: c. 1825
+  source: National Portrait Gallery, Smithsonian Institution
+  source_id: NPG.77.299
+  source_link: https://npg.si.edu/object/npg_NPG.77.299
+  license: Public domain
+  basis: Sepia ink wash with watercolor by James Barton Longacre (d. 1869), so the work is public domain by age. The Smithsonian's record marks the object CC0 (Smithsonian Open Access).
+  checked: '2026-11-27'
+  copy: https://ids.si.edu/ids/deliveryService?id=NPG-NPG_77_299&max=800
+  media_type: image/jpeg
+  width: 669
+  height: 800
+  sha256: 3aa050a37b19258b0b471e15777a97e6d552bc39ff00a2d4e2091f0cfd871342
+  key: supreme-court/portraits/james-wilson-3aa050a37b19.jpg
+- subject: john-blair
+  shows: John Blair, bust portrait, facing front
+  creator: Albert Rosenthal
+  source: Art Institute of Chicago
+  source_id: '274504'
+  source_link: https://www.artic.edu/artworks/274504
+  license: Public domain
+  basis: Print by Albert Rosenthal (1863-1939), lettered "From the original in the possession of the Family". The Art Institute of Chicago's record marks it public domain and releases its image under CC0. The Institute photographed the sheet on its side, so the copy is turned upright and cut to the sheet.
+  checked: '2026-11-27'
+  copy: https://www.artic.edu/iiif/2/a140df31-e099-827d-1d65-ca3d3b64fbeb/full/843,/0/default.jpg
+  rotate: 90
+  crop:
+  - 120
+  - 120
+  - 530
+  - 765
+  media_type: image/jpeg
+  width: 410
+  height: 645
+  sha256: 6d55777f41eda394e279ce7eb87a29eae76c31549a3191eeb520246900f2c5af
+  key: supreme-court/portraits/john-blair-6d55777f41ed.jpg
 - subject: james-iredell
   shows: James Iredell, head and shoulders in profile
   creator: Charles B. J. F. de Saint-Mémin
@@ -436,6 +527,22 @@ pictures:
   height: 640
   sha256: 0ea0a1284152443d6d2c57833d4b1e3cd88866984b5ee47ca56bfe306a20696f
   key: supreme-court/portraits/john-mckinley-0ea0a1284152.jpg
+- subject: peter-vivian-daniel
+  shows: Peter V. Daniel, head and shoulders in right profile, signed "Judge P. V. Daniel, U.S.S.C."
+  creator: Mathew B. Brady; Edward and Henry T. Anthony
+  date: c. 1865
+  source: U.S. Senate Collection
+  source_id: 38.00719.001
+  source_link: https://www.senate.gov/art-artifacts/historical-images/photos-stereoviews/38_00719_001.htm
+  license: Public domain
+  basis: Carte de visite photograph by Brady, published by E. & H. T. Anthony about 1865, so it is in the public domain in the United States by age (published before 1931). The Senate's record states no restriction and leaves rights to the user.
+  checked: '2026-11-27'
+  copy: https://www.senate.gov/art-artifacts/resources/graphics/xlarge/38_00719.jpg
+  media_type: image/jpeg
+  width: 370
+  height: 610
+  sha256: 0a6e6a27bff15ff1b79686420288088d2e1ceff39878944d047765e51b447959
+  key: supreme-court/portraits/peter-vivian-daniel-0a6e6a27bff1.jpg
 - subject: samuel-nelson
   shows: Samuel Nelson, seated
   creator: Brady-Handy studio
@@ -484,6 +591,22 @@ pictures:
   height: 591
   sha256: 9ca8b4df588a1b493dfac04144193ea049b5bb5e4d3077d5f7dc4ef901887227
   key: supreme-court/portraits/robert-cooper-grier.jpg
+- subject: benjamin-robbins-curtis
+  shows: Benjamin R. Curtis, half length, facing front
+  creator: Albert Rosenthal
+  date: '1899'
+  source: Library of Congress
+  source_id: ppmsca.46390
+  source_link: https://www.loc.gov/pictures/item/2018697006/
+  license: Public domain
+  basis: 'Etching published in Philadelphia in 1899 and deposited for copyright by Albert Rosenthal (before 1931). Library of Congress record: "No known restrictions on publication."'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/service/pnp/ppmsca/46300/46390r.jpg
+  media_type: image/jpeg
+  width: 521
+  height: 640
+  sha256: 5a639f602726ab01c3027db7a7b331140d8a9fc93b1b89f4ab17fb87d4a11d72
+  key: supreme-court/portraits/benjamin-robbins-curtis-5a639f602726.jpg
 - subject: john-archibald-campbell
   shows: John A. Campbell, half-length
   creator: Brady-Handy studio
@@ -660,6 +783,22 @@ pictures:
   height: 606
   sha256: 1fdbc4e677abbb6552214bfe9300b2f60537d310b492ece256288a6463755a64
   key: supreme-court/portraits/stanley-matthews.jpg
+- subject: horace-gray
+  shows: Horace Gray, half length, in a judicial robe
+  creator: Charles Milton Bell
+  date: c. 1880
+  source: National Portrait Gallery, Smithsonian Institution
+  source_id: S/NPG.2008.68
+  source_link: https://npg.si.edu/object/npg_S_NPG.2008.68
+  license: Public domain
+  basis: Albumen silver print by C. M. Bell (d. 1893), made about 1880, so it is public domain by age. The Smithsonian's record marks the object CC0 (Smithsonian Open Access).
+  checked: '2026-11-27'
+  copy: https://ids.si.edu/ids/deliveryService?id=NPG-S_NPG_2008_68Gray-000001&max=800
+  media_type: image/jpeg
+  width: 539
+  height: 800
+  sha256: aec73c99046f31aee02e3601dfbf8bf39250eadc740e7b745b81fb406dadad71
+  key: supreme-court/portraits/horace-gray-aec73c99046f.jpg
 - subject: samuel-blatchford
   shows: Samuel Blatchford in his robe, half-length
   creator: C. M. Bell
@@ -1165,6 +1304,27 @@ pictures:
   height: 504
   sha256: 1ff3f6f914ec8bebb1fe918184c8961588943baa0144bb91a06873f0bacac8c3
   key: supreme-court/portraits/harold-hitz-burton-1ff3f6f914ec.jpg
+- subject: tom-campbell-clark
+  shows: Tom C. Clark, seated in his robe and a bow tie, detail of the Court's group portrait of 1958
+  creator: Warren K. Leffler
+  date: '1958'
+  source: Library of Congress
+  source_id: ppmsca.78058
+  source_link: https://www.loc.gov/pictures/item/2023630495/
+  license: Public domain
+  copy: https://tile.loc.gov/storage-services/master/pnp/ppmsca/78000/78058u.tif
+  basis: 'Library of Congress record: "No known restrictions on publication." Made for U.S. News & World Report, whose photographs the magazine gave to the Library. This is a detail of the Court''s group portrait of November 24, 1958 (the Warren Court picture). The Library''s record names only the Chief Justice; Tom C. Clark is identified by the Court''s seating by seniority (front row, left to right: Douglas, Black, Warren, Frankfurter, Clark) and his bow tie.'
+  checked: '2026-11-27'
+  crop:
+  - 4164
+  - 1229
+  - 4849
+  - 2086
+  media_type: image/jpeg
+  width: 639
+  height: 800
+  sha256: 3879d93f16f0c37e994f3ebc26cf78f8a9bc23f9a367499fe180a245eee0841a
+  key: supreme-court/portraits/tom-campbell-clark-3879d93f16f0.jpg
 - subject: sherman-minton
   shows: Sherman Minton at his desk in the Capitol, as a Senator
   creator: Harris & Ewing
@@ -1181,6 +1341,27 @@ pictures:
   height: 640
   sha256: 244e6eefcb5d186ce85d1ec071616ef370428ed948edfeaba497a356e0aab31d
   key: supreme-court/portraits/sherman-minton-244e6eefcb5d.jpg
+- subject: john-marshall-harlan-1899
+  shows: John M. Harlan, standing in his robe, detail of the Court's group portrait of 1958
+  creator: Warren K. Leffler
+  date: '1958'
+  source: Library of Congress
+  source_id: ppmsca.78058
+  source_link: https://www.loc.gov/pictures/item/2023630495/
+  license: Public domain
+  copy: https://tile.loc.gov/storage-services/master/pnp/ppmsca/78000/78058u.tif
+  basis: 'Library of Congress record: "No known restrictions on publication." Made for U.S. News & World Report, whose photographs the magazine gave to the Library. This is a detail of the Court''s group portrait of November 24, 1958 (the Warren Court picture). The Library''s record names only the Chief Justice; John M. Harlan is identified by the Court''s seating by seniority (back row, left to right: Whittaker, Harlan, Brennan, Stewart).'
+  checked: '2026-11-27'
+  crop:
+  - 2262
+  - 713
+  - 2804
+  - 1392
+  media_type: image/jpeg
+  width: 542
+  height: 679
+  sha256: a07edac64573daab5ebc01dc13b08fad890e0e58b443f6b338a381dcad51a8e7
+  key: supreme-court/portraits/john-marshall-harlan-1899-a07edac64573.jpg
 - subject: william-j-brennan-jr
   shows: William J. Brennan Jr. in his robe
   creator: Robert S. Oakes
@@ -1197,6 +1378,27 @@ pictures:
   height: 693
   sha256: 717e314feb665e27ddd061065188da8cb1c57935608a174bbf8244a8e44f2b2f
   key: supreme-court/portraits/william-j-brennan-jr.jpg
+- subject: charles-evans-whittaker
+  shows: Charles E. Whittaker, standing in his robe, detail of the Court's group portrait of 1958
+  creator: Warren K. Leffler
+  date: '1958'
+  source: Library of Congress
+  source_id: ppmsca.78058
+  source_link: https://www.loc.gov/pictures/item/2023630495/
+  license: Public domain
+  copy: https://tile.loc.gov/storage-services/master/pnp/ppmsca/78000/78058u.tif
+  basis: 'Library of Congress record: "No known restrictions on publication." Made for U.S. News & World Report, whose photographs the magazine gave to the Library. This is a detail of the Court''s group portrait of November 24, 1958 (the Warren Court picture). The Library''s record names only the Chief Justice; Charles E. Whittaker is identified by the Court''s seating by seniority (back row, left to right: Whittaker, Harlan, Brennan, Stewart).'
+  checked: '2026-11-27'
+  crop:
+  - 1394
+  - 769
+  - 1965
+  - 1483
+  media_type: image/jpeg
+  width: 571
+  height: 714
+  sha256: cba866a1e6f49022ab84e801d931ed3bf8e153695828024bf416c430ddd6fa1a
+  key: supreme-court/portraits/charles-evans-whittaker-cba866a1e6f4.jpg
 - subject: potter-stewart
   shows: Potter Stewart in his robe
   creator: Robert S. Oakes
@@ -1229,6 +1431,27 @@ pictures:
   height: 640
   sha256: 536aa8819b1ddf2754a7c20e8cfb4809205b50cf04f9208894bbdd417d54a19e
   key: supreme-court/portraits/byron-raymond-white-536aa8819b1d.jpg
+- subject: arthur-joseph-goldberg
+  shows: Arthur J. Goldberg, U.S. Representative to the United Nations, speaking at a lectern, United Nations, New York (detail)
+  creator: Bernard Gotfryd
+  date: between 1965 and 1968
+  source: Library of Congress
+  source_id: gtfy.06243
+  source_link: https://www.loc.gov/pictures/item/2020735784/
+  license: Public domain
+  basis: 'Library of Congress record: "No known restrictions on publication." Bernard Gotfryd photograph collection, given to the Library by the photographer in 2004. The picture is cut from the Library''s master file to show him at about half length.'
+  checked: '2026-11-27'
+  copy: https://tile.loc.gov/storage-services/master/pnp/gtfy/06200/06243u.tif
+  crop:
+  - 1400
+  - 560
+  - 3400
+  - 3060
+  media_type: image/jpeg
+  width: 640
+  height: 800
+  sha256: 2d685421a13c00c1906dfcfda138ce875357d17fe3ab4f4c0c187266ba305fe9
+  key: supreme-court/portraits/arthur-joseph-goldberg-2d685421a13c.jpg
 - subject: abe-fortas
   shows: Abe Fortas, head and shoulders, in judicial robe
   creator: Marion S. Trikosko

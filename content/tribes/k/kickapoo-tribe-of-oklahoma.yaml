@@ -160,6 +160,48 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "Kickapoo Tribe of Oklahoma". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Kickapoo Tribe of Oklahoma (1997)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Kickapoo Tribe Of Oklahoma' (Southern Plains Region)
+- program: indian-health-service-self-governance-compact
+  since: 1997
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Kickapoo Tribe of Oklahoma'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1177953
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Kickapoo Tribe of Oklahoma' (McLoud)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 4154391
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'KICKAPOO TRIBE OF OKLAHOMA' (UEI FN4EYLGWFT17), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 12945761
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'KICKAPOO TRIBE OF OKLAHOMA' (UEI FN4EYLGWFT17), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Kickapoo Tribe of Oklahoma" among organizations under constitutions approved

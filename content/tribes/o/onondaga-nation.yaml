@@ -185,6 +185,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Direct Service Tribes by IHS Area" list'
   note: Listed as "Onondaga Nation of New York".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NY, row 'Onondaga Nation' (Nedrow)
 governance:
 - aspect: governing-body
   value: Council of Chiefs

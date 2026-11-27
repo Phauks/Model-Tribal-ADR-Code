@@ -192,6 +192,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 357247
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Agua Caliente Band of Cahuilla Indians' (Palm Springs)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 53219
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'AGUA CALIENTE BAND OF CAHUILLA INDIANS' (UEI NHDLABSN8LH8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'AGUA CALIENTE BAND OF CAHUILLA INDIANS'.
 governance:
 - aspect: form
   value: Constitution and By-Laws

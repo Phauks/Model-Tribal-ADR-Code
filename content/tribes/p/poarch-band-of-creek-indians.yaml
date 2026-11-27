@@ -181,6 +181,32 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Poarch Band of Creek Indians".
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 1999
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Nashville Area, row 'Poarch Band of Creek Indians'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2254880
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AL, row 'Poarch Band of Creeks' (Atmore)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 5936281
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'POARCH BAND OF CREEK INDIANS' (UEI X3G1ZDHMASN5), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution adopted under 25 U.S.C. 476 by tribal election

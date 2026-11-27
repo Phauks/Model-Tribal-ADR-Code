@@ -198,6 +198,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Algaaciq Native Village (aka St. Mary".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 695041
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Algaaciq (St. Mary's)' (St. Mary's)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Algaaciq (St. Mary's)'.
 governance:
 - aspect: governing-body
   value: Tribal council

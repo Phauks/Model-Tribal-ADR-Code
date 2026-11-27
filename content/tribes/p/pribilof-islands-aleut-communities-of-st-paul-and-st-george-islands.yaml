@@ -172,6 +172,57 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Aleut Community of St. Paul Island".'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2014
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Aleut Community Of Saint Paul Island' (Alaska Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Aleut Community Of Saint Paul Island'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  detail: Saint George Island
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Saint George Island' (St George Island)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Saint George Island'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 191964
+  amount_kind: allocation
+  detail: Saint Paul Island
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Saint Paul Island' (St. Paul Island)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Saint Paul Island'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 4309505
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'ALEUT COMMUNITY OF SAINT PAUL ISLAND' (UEI NBAMLV2E38C8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'ALEUT COMMUNITY OF SAINT PAUL ISLAND'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 254
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'ALEUT COMMUNITY OF SAINT GEORGE ISLAND' (UEI D3UXKNAMG2N3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'ALEUT COMMUNITY OF SAINT GEORGE ISLAND'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution and Bylaws of the Aleut Community Alaska (approved 1950) states it was adopted

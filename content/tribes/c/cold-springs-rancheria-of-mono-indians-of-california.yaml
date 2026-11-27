@@ -152,6 +152,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Cold Springs Rancheria of Mono Indians of California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 547443
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Cold Springs Rancheria of Mono Indians' (Tollhouse)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 331954
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'COLD SPRINGS RANCHERIA' (UEI DAFBKJL2L4J5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'COLD SPRINGS RANCHERIA'.
 governance:
 - aspect: governing-body
   value: Cold Springs Tribal Council

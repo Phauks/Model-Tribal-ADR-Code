@@ -34,6 +34,8 @@ import { historicMapScans } from './historic-map-scans.ts';
 import type { ResultGroup } from '../search-everything.ts';
 import { allSections } from './title-25-sections.ts';
 import { isLawRecord } from './law-records.ts';
+import { programSummaries } from './federal-programs.ts';
+import { federalProgramPage } from '../federal-programs.ts';
 
 /** The headings the collections are grouped under, in page order. */
 export const collectionGroups = ['Native nations', 'Federal law', 'State law', 'Courts and cases', 'People', 'Reference'] as const;
@@ -209,6 +211,15 @@ function acknowledgmentDocuments(): CollectionItem[] {
 		.map((record) => sourceItem(record, (record.citation as { genre?: string }).genre));
 }
 
+const solicitorOffice = 'U.S. Department of the Interior, Office of the Solicitor';
+
+/** The Solicitor's opinions on Indian affairs, 1917-1974 and since 1993 (scripts/law/solicitor_opinions.py). */
+function solicitorOpinions(): CollectionItem[] {
+	return [...sources().values()]
+		.filter((record) => kindOf(record) === 'federal-agency-document' && record.citation.author?.some((author) => author.literal === solicitorOffice))
+		.map((record) => sourceItem(record, (record.citation as { number?: string }).number));
+}
+
 function nationNameOf(): (id: string) => string {
 	const names = new Map(nations().map((nation) => [nation.id, nation.names.official]));
 	return (id) => names.get(id) ?? id;
@@ -248,6 +259,16 @@ export const collections: Collection[] = [
 	},
 	{ identifier: 'tribal-constitutions', search: { group: 'document' }, title: 'Constitutions', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['tribal-constitution'], items: sourcesOfKind(['tribal-constitution'], tribesOf) },
 	{ identifier: 'tribal-codes', search: { group: 'document' }, title: 'Codes and Laws', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['tribal-code', 'tribal-court-rule'], items: sourcesOfKind(['tribal-code', 'tribal-court-rule'], tribesOf) },
+	// The federal self-governance, self-determination and block grant programs nation pages list (Trevor, Nov. 26, 2026: "make self-governance a collection").
+	{
+		identifier: 'federal-programs',
+		search: { group: 'reference', label: 'Federal program' },
+		title: 'Self-Governance and Federal Programs',
+		group: 'Native nations',
+		detailHeader: 'Nations taking part',
+		list: '/nations/federal-programs',
+		items: () => programSummaries().map(({ program, count }) => ({ title: program.title, href: federalProgramPage(program.key), detail: count.toLocaleString('en-US') }))
+	},
 	{ identifier: 'intergovernmental-agreements', search: { group: 'document' }, title: 'Compacts and Agreements', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['intergovernmental-agreement'], items: sourcesOfKind(['intergovernmental-agreement'], tribesOf) },
 	{
 		identifier: 'oklahoma-state-tribal-agreements',
@@ -276,6 +297,7 @@ export const collections: Collection[] = [
 	{ identifier: 'executive-orders', search: { group: 'law', label: 'Executive order' }, title: 'Executive Orders', group: 'Federal law', sourceKinds: ['executive-order'], items: sourcesOfKind(['executive-order']) },
 	{ identifier: 'federal-register-notices', search: { group: 'law', label: 'Federal Register notice' }, title: 'Federal Register Notices', group: 'Federal law', sourceKinds: ['federal-register-notice'], items: sourcesOfKind(['federal-register-notice']) },
 	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
+	{ identifier: 'solicitor-opinions', search: { group: 'law', label: 'Solicitor’s opinion' }, title: 'Solicitor’s Opinions', group: 'Federal law', detailHeader: 'Number', sourceKinds: ['federal-agency-document'], items: solicitorOpinions },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
 	// Royce's land cessions (1899), each opening on the Map page at its year (historic maps, 2026-11-26).
 	{

@@ -205,6 +205,16 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lumbee Tribe of North Carolina
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 29772127
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NC, row 'Lumbee Tribe of North Carolina' (Pembroke)
 governance:
 - aspect: form
   value: Constitution adopted by the Tribe

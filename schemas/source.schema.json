@@ -577,7 +577,7 @@
         "text": {
           "type": "string",
           "minLength": 1,
-          "description": "The words quoted, verbatim from the official report or the enacted text, with \"...\" only where words are left out (docs/style-guide.md): a quotation that ends where the sentence ends keeps its period and takes no trailing \"...\" (checked by scripts/library/check_box_quotes.py and scripts/lint_records.py). Markdown."
+          "description": "The words quoted, verbatim from the official report or the enacted text, marking left-out words the Indigo Book way (R8.3; docs/style-guide.md): no \"...\" at the start, where the first letter is capitalized in brackets (\"[T]he\"); \"... .\" with the sentence's own closing mark at the end of a sentence cut short; and no \"...\" after a sentence that ends (checked by scripts/library/check_box_quotes.py and scripts/lint_records.py). Markdown."
         },
         "pinpoint": {
           "type": "string",
