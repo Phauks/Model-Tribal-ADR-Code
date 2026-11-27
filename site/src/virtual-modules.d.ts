@@ -46,35 +46,17 @@ declare module 'virtual:portraits' {
 	export const portraits: { person: string; key: string; mediaType: string; sha256: string; link?: string }[];
 }
 
-declare module 'virtual:public-copies' {
-	/** The copies of public documents the Worker may serve at /copies/, listed at build time. */
-	export const publicCopies: (Pick<import('#lib/public-copies.ts').PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'> & {
-		/** For a nation's law or court opinion, the choices it follows (src/lib/nation-restrictions.ts). */
-		restrict?: import('#lib/nation-restrictions.ts').CopyRestriction;
-	})[];
-}
-
 declare module 'virtual:source-citations' {
 	/** The full citation, as HTML in the project's Indigo Book style, of each source the glossary and the story pages cite, by key. */
 	export const sourceCitations: Record<string, string>;
 }
 
 declare module 'virtual:essay-library' {
-	// The full citation of every source record is read on request instead (src/lib/server/essay-citations.ts).
+	// The full citation of every source record, the facts and parts of every case and law box and every case's name are read on request instead (src/lib/server/essay-citations.ts).
 	/** Glossary terms by id, for every entry that has a page. */
 	export const essayTerms: Record<string, string>;
-	/** The lines under each case or law box's heading, as [label, HTML] pairs. */
-	export const essayBoxFacts: { cases: Record<string, [string, string][]>; laws: Record<string, [string, string][]> };
 	/** The essays in content/essays/, the back matter in content/back-matter/ and the pages about the site in content/about/ as git held them when the site was built, by id. */
 	export const essaysInGit: Record<string, string>;
-	/** Each court case's name and decision date, by source key. */
-	export const essayCaseNames: Record<string, { title: string; date: number[] }>;
-	/** Where a case's name links when no essay has a box for it (the copy of the opinion on this site, or where it was published), by source key. */
-	export const essayCaseLinks: Record<string, string>;
-	/** Each court case's opinions and the report page each starts on, by source key (src/lib/case-opinions.ts). */
-	export const essayOpinions: Record<string, import('#lib/case-opinions.ts').OpinionEntry[]>;
-	/** The parts of each case and law box its source's record keeps, by source key (src/lib/essays/record-boxes.ts). */
-	export const essayRecordBoxes: { cases: Record<string, import('#lib/essays/record-boxes.ts').RecordBox>; laws: Record<string, import('#lib/essays/record-boxes.ts').RecordBox> };
 	/** Words the spelling check should accept: names of nations, glossary terms and court cases. */
 	export const essaySpellingWords: string[];
 }

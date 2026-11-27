@@ -203,6 +203,48 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Kootenai Tribe of Idaho". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Kootenai Tribe of Idaho (2001)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Kootenai Tribe Of Idaho' (Northwest Region)
+- program: indian-health-service-self-governance-compact
+  since: 2001
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Kootenai Tribe of Idaho'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 124862
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: ID, row 'Kootenai Tribe' (Bonners Ferry)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1008770
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'KOOTENAI TRIBE OF IDAHO' (UEI Y8E2BMZLN3S9), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 980945
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'KOOTENAI TRIBE OF IDAHO' (UEI Y8E2BMZLN3S9), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Tribal Council

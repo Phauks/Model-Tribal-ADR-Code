@@ -201,6 +201,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Burns Paiute Tribe".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 281494
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OR, row 'Burns Paiute Tribe' (Burns)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1554560
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'BURNS PAIUTE TRIBE' (UEI EK9EEUAAJ577), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Tribal Council

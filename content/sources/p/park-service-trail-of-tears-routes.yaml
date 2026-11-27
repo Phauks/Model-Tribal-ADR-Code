@@ -1,0 +1,27 @@
+key: park-service-trail-of-tears-routes
+kind: dataset
+citation:
+  type: dataset
+  title: Trail of Tears National Historic Trail, designated alignment (TRTE_NHT)
+  author:
+  - literal: National Park Service, National Trails Office
+  medium: ArcGIS feature service
+  URL: https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services/TRTE_NHT/FeatureServer/0
+  accessed:
+    date-parts: [[2026, 11, 27]]
+original_link: https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services/TRTE_NHT/FeatureServer/0
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the National Park Service, a federal agency, so not protected by copyright in the United States (17 U.S.C. § 105).
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-27-map-redesign
+notes: 'The routes Congress designated as the Trail of Tears National Historic Trail: the land and water routes of the Cherokee removal of 1837 to 1839 (Benge, Bell, Northern, Hildebrand, Taylor, Whiteley-Drane, Water, Overland Water, Roundup and Disbandment routes), drawn as 2,006 line pieces. The website draws the "Removal routes" map layer from them, joined into one line set per route (site/tools/build-historic-maps.mjs). Other nations'' removals are not in this layer. The downloaded lines are kept in the project''s bucket under historic-maps/park-service-trail-of-tears/.'

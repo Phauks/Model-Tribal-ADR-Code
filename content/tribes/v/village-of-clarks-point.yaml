@@ -208,6 +208,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
   note: 'The source''s words: "Village of Clark’s Point".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 112406
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Clarks Point' (Clarks Point)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Clarks Point'.
 governance:
 - aspect: form
   value: Constitution of the Village of Clarks Point

@@ -186,6 +186,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "San Pasqual Band of Diegueno Mission Indians of California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 445511
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'San Pasqual Band of Diegueno Mission Indians' (Valley Center)
 governance:
 - aspect: form
   value: Organized under Section 16 of the Indian Reorganization Act

@@ -165,6 +165,34 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Dry Creek Rancheria Band of Pomo Indians, California".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2014
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Dry Creek Rancheria Band Of Pomo' (Pacific Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Dry Creek Rancheria Band Of Pomo'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1316094
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Dry Creek Rancheria Band of Pomo Indians' (Geyserville)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 423665
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'DRY CREEK RANCHERIA' (UEI GJ9KJP8E3WH2), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'DRY CREEK RANCHERIA'.
 governance:
 - aspect: form
   value: Articles of Association

@@ -29,7 +29,7 @@ Cloudflare cannot rename a D1 database or an R2 bucket, so on Nov. 26, 2026 the 
 
 Site code reaches them only by binding name, so the switch changed the Wrangler files, the default bucket in the scripts and the Service checks labels, not the site's code. Migrations are applied with `npx wrangler d1 migrations apply database --remote`, which follows the binding.
 
-The old databases and buckets stay, unused, until the lead author deletes them. Nothing should be written to them after the switch.
+The old databases (`model-tribal-adr-code`, `model-tribal-adr-code-library`) and buckets (`model-tribal-adr-code-sources`, `model-tribal-adr-code-mail`) were deleted on Nov. 27, 2026, at the lead author's request, once every Worker had moved and the final copies were checked.
 
 ### How the switch went
 

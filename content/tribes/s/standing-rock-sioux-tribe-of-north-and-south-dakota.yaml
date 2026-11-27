@@ -216,6 +216,41 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Standing Rock Sioux Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: pl-102-477-plan
+  start: '2026-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Employment Works
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Standing Rock Sioux Tribe of North & South Dakota'; PL102_477_PartnerEnrollment, its 5 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 7573737
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: ND, row 'Standing Rock Sioux Tribe' (Fort Yates)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 4160330
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'STANDING ROCK SIOUX TRIBE' (UEI WM1NHUZASLP6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'STANDING ROCK SIOUX TRIBE'.
 governance:
 - aspect: form
   value: Not an Indian Reorganization Act constitution

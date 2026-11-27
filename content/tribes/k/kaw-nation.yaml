@@ -196,6 +196,77 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "Kaw Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Kaw Nation (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Kaw Nation' (Southern Plains Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Kaw Nation'.
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Kaw Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Kaw Nation'.
+- program: pl-102-477-plan
+  start: '2025-01-01'
+  end: '2027-12-31'
+  programs_included:
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Adult Education
+  - Education Line Officer
+  - Higher Education
+  - Johnson O’Malley
+  - Tribal Youth Program PA9
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Kaw Nation, Oklahoma'; PL102_477_PartnerEnrollment, its 7 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 981908
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Kaw Nation' (Kaw City)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Kaw Nation, Oklahoma'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 6240352
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'KAW NATION' (UEI EXZ8JXKFKVA8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KAW NATION'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 3989989
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'KAW NATION' (UEI EXZ8JXKFKVA8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KAW NATION'.
 governance:
 - aspect: form
   value: Constitution under Oklahoma Indian Welfare Act

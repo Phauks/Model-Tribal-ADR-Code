@@ -8,7 +8,10 @@
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import LazySourceList from '#lib/components/LazySourceList.svelte';
 	import { mapViewChoices, mapViews } from '#lib/map-views.ts';
-	import TileMap, { tileMapPlaces, type TileMapCamera } from '#lib/components/TileMap.svelte';
+	import TileMap, { storedBaseMap, storedOutlines, storedPlaceNames, tileMapPlaces, type TileMapCamera, type TileMapFeature, type TileMapLayers } from '#lib/components/TileMap.svelte';
+	import MapExplorer from '#lib/components/MapExplorer.svelte';
+	import Collapsible from '#lib/components/Collapsible.svelte';
+	import { readableDate } from '#lib/readable-date.ts';
 	import ZoomableMap from '#lib/components/ZoomableMap.svelte';
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
 	import type { LandAreaRow, ShadedViewData } from '#lib/server/nations-map.ts';
@@ -21,8 +24,7 @@
 	import MapIcon from '@lucide/svelte/icons/map';
 	import MapPin from '@lucide/svelte/icons/map-pin';
 	import ViewSwitch from '#lib/components/ViewSwitch.svelte';
-	import YearSlider from '#lib/components/YearSlider.svelte';
-	import { censusYearFor, cessionLines, readCessionsSwitch, yearSliderSetup, type CessionDetail } from '#lib/historic-map.ts';
+	import { censusYearFor, cessionLines, readCessionsSwitch, type CessionDetail } from '#lib/historic-map.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -47,23 +49,59 @@
 	let mapShape = $state<'flat' | 'globe'>('flat');
 
 	/**
-	 * The year slider under the map (Trevor, 2026-11-26, historic maps mockup A): on the Land Areas view it picks the Census year of the land areas, and with Land cessions switched on in the Layers menu, on any view, the land the United States had taken by that year. It starts at the latest Census year, so the map looks as it does today until the reader moves it.
+	 * The layers on the map (Trevor, 2026-11-26, map redesign D): today's layers and the history layers, each turned on and off from the buttons across the top of the map or the Layers list. The map opens on nations' land and states, with the offices of nations with no land area (mockup D1).
+	 */
+	let layers = $state<TileMapLayers>({ lands: true, states: true, offices: true, regions: false, borders: false, routes: false, homelands: false });
+	/** How the land is colored: '' for one color, or a shaded view's key (src/lib/shaded-map-views.ts). */
+	let colorBy = $state('');
+	const colorChoices = $derived([{ value: '', label: 'Nothing (one color)' }, ...mapViewChoices.filter((choice) => isShadedMapView(choice.value)).map((choice) => ({ ...choice, group: undefined }))]);
+	/** The base map and its switches, which the Layers list sets and every map on the site remembers. */
+	let baseMap = $state(storedBaseMap());
+	let placeNames = $state(storedPlaceNames());
+	let outlines = $state(storedOutlines());
+
+	/**
+	 * The view whose table is under the map, whose drawn copy prints, and which the Download menu offers: the land's coloring if it has one, then States, Nations' land or the regions, whichever is on first.
+	 */
+	const primary = $derived<NationsMapView>(isShadedMapView(colorBy) ? colorBy : layers.states ? 'states' : layers.lands ? 'lands' : layers.regions ? 'regions' : 'states');
+	$effect(() => {
+		const key = primary;
+		if (key !== current && key !== pending) void choose(key);
+	});
+	// The land areas' table is fetched when Nations' land is on, so a land area chosen on the map has its details.
+	$effect(() => {
+		if (layers.lands) void loadLands();
+	});
+
+	/** Turns on the layers that show a view, such as a view named in the address. */
+	function showView(key: NationsMapView): void {
+		if (isShadedMapView(key)) {
+			colorBy = key;
+			layers = { ...layers, lands: true };
+		} else if (key === 'lands') {
+			colorBy = '';
+			layers = { ...layers, lands: true, states: false };
+		} else if (key === 'regions') {
+			colorBy = '';
+			layers = { ...layers, regions: true, states: false };
+		} else {
+			colorBy = '';
+			layers = { ...layers, states: true };
+		}
+	}
+
+	/**
+	 * The timeline along the bottom of the map (map redesign D), from the first day the Newberry Library's Atlas draws (1783) to the latest Census year. It rests on Today (year undefined), so the map looks as it does today until the reader moves it; moving it back turns on the borders of the time (MapExplorer.svelte).
 	 */
 	let cessionsOn = $state(false);
 	let year = $state<number | undefined>();
-	const slider = $derived(yearSliderSetup(data.historic.cessionYears, data.historic.censusYears, cessionsOn));
-	const shownYear = $derived(year ?? slider.maximum);
-	const sliderShown = $derived(tileMapReady && (current === 'lands' || cessionsOn));
+	const lastYear = $derived(data.historic.censusYears[data.historic.censusYears.length - 1] ?? new Date().getFullYear());
+	const firstYear = 1783;
+	const shownYear = $derived(year ?? lastYear);
+	const timelineMarks = $derived([...new Set([...data.historic.borderYears, ...data.historic.cessionYears, ...data.historic.censusYears])].sort((one, other) => one - other));
 	const censusShown = $derived(censusYearFor(shownYear, data.historic.censusYears));
-	/** Whether the map shows a past year, which leaves out today's offices and dots. */
-	const pastShown = $derived(sliderShown && shownYear < slider.maximum);
-	function describeYear(value: number): string {
-		const census = censusYearFor(value, data.historic.censusYears);
-		const parts = [];
-		if (cessionsOn) parts.push(`${data.historic.cessionYears.filter((made) => made <= value).length > 0 ? 'land ceded by then' : 'no land ceded yet'}`);
-		if (current === 'lands') parts.push(census === undefined ? 'no Census land areas' : `Census land areas of ${census}`);
-		return parts.join('; ');
-	}
+	/** Whether the map shows a past year, which leaves out today's layers. */
+	const pastShown = $derived(tileMapReady && year !== undefined && year < lastYear);
 
 	/** The cessions' details, fetched the first time the reader turns them on or opens one. */
 	let cessionList = $state.raw<CessionDetail[] | undefined>();
@@ -228,7 +266,7 @@
 			const shownView = new URLSearchParams(location.search).get('view');
 			if (shownView && views.some((entry) => entry.key === shownView)) {
 				await loadView(shownView as NationsMapView);
-				current = shownView as NationsMapView;
+				showView(shownView as NationsMapView);
 			}
 			if (cession) void select(anchor);
 			return;
@@ -241,14 +279,19 @@
 		const view = anchor.startsWith('land-area-') ? 'lands' : (shadedView ?? panel?.dataset.mapView ?? named);
 		if (!view || !views.some((entry) => entry.key === view)) return;
 		await loadView(view as NationsMapView);
+		showView(view as NationsMapView);
 		current = view as NationsMapView;
 		// A state's row is in the view's by-state table.
 		if (shadedView && anchor.startsWith(`${shadedView}-state-`) && (shaded[shadedView]?.stateRows.length ?? 0) > 0) shownBy[shadedView] = 'state';
 		await tick();
 		target ??= anchor ? document.getElementById(anchor) : null;
-		// A place named in the address, such as a region's row linked from a nation's page, opens its preview.
+		// A place named in the address, such as a region's row linked from a nation's page, opens its preview; a row the address points to opens its folded table first.
 		if (anchor && previewOf(anchor)) void select(anchor);
-		else target?.scrollIntoView();
+		else if (target) {
+			const folded = target.closest<HTMLDetailsElement>('details.collapsible');
+			if (folded) folded.open = true;
+			target.scrollIntoView();
+		}
 	}
 
 	onMount(() => {
@@ -335,7 +378,46 @@
 		return index;
 	});
 
+	/** A shape chosen on a history layer (borders, removal routes, homelands), shown in the details until another place is chosen. */
+	let chosenFeature = $state<TileMapFeature | undefined>();
+	const territoryWords: Record<string, string> = { state: 'State', territory: 'Territory', 'unorganized-territory': 'Unorganized territory', district: 'District of Columbia', other: 'Claimed or shared, not U.S.' };
+	/** A date in the Newberry Library's file (18380523) as words. */
+	const dayWords = (day: number) => readableDate(`${String(day).slice(0, 4)}-${String(day).slice(4, 6)}-${String(day).slice(6, 8)}`);
+	function featurePreview(feature: TileMapFeature): Preview {
+		if (feature.kind === 'border') {
+			const state = data.stateRows.find((row) => row.name === feature.name);
+			const lines: PreviewLine[] = [{ label: `From ${dayWords(feature.from)}`, value: feature.change + (feature.citation ? ` ${feature.citation}` : '') }];
+			lines.push({ label: 'Until', value: feature.to >= 99990000 ? 'Today' : dayWords(feature.to) });
+			if (state) lines.push(nationsLine('Nations there today', state.nations));
+			lines.push({ label: 'Source', value: 'Newberry Library, Atlas of Historical County Boundaries' });
+			return { kind: `${territoryWords[feature.territory] ?? 'Territory'}${year !== undefined ? `, ${year}` : ''}`, title: feature.name, lines, table: true };
+		}
+		if (feature.kind === 'homeland') {
+			return {
+				kind: 'Homeland found by the Indian Claims Commission',
+				title: feature.named,
+				lines: [
+					{ label: 'What this is', value: 'The land the Indian Claims Commission found this nation held, in its claim against the United States. A finding, not the nation’s own account of its homeland.' },
+					{ label: 'Area on the map', value: String(feature.area) },
+					{ label: 'Source', value: 'Indian Land Areas Judicially Established, 1978 (U.S. Geological Survey, traced by the National Park Service)' }
+				],
+				table: true
+			};
+		}
+		return {
+			kind: 'Removal route',
+			title: feature.routes ? `Trail of Tears: ${feature.routes}` : 'Trail of Tears',
+			lines: [
+				{ label: 'When', value: '1837 to 1839' },
+				{ label: 'Who', value: 'The Cherokee Nation, removed from its homeland in the Southeast to Indian Territory' },
+				{ label: 'Source', value: 'National Park Service, Trail of Tears National Historic Trail' }
+			],
+			table: true
+		};
+	}
+
 	function previewOf(key: string): Preview | undefined {
+		if (key === 'feature') return chosenFeature ? featurePreview(chosenFeature) : undefined;
 		if (key.startsWith('cession-')) {
 			const cession = cessionList?.find((entry) => `cession-${entry.royce}` === key);
 			return cession ? { kind: 'Land cession', title: `Royce cession ${cession.royce}`, lines: cessionLines(cession, data.historic.volume), table: true } : undefined;
@@ -415,9 +497,19 @@
 		await detailsPanel?.focus();
 	}
 
-	/** The back arrow brings the table back where it was, and leaves the place out of the address. */
+	/** A shape on a history layer opens its details; it has no row, so it is not kept in the address. */
+	async function chooseFeature(feature: TileMapFeature): Promise<void> {
+		chosenFeature = feature;
+		preview = 'feature';
+		if (location.hash) history.replaceState(history.state, '', `${location.pathname}${location.search}`);
+		await tick();
+		await detailsPanel?.focus();
+	}
+
+	/** Closing the details leaves the place out of the address. */
 	async function closeDetails(key: NationsMapView): Promise<void> {
 		preview = undefined;
+		chosenFeature = undefined;
 		const search = new URLSearchParams(location.search);
 		search.delete('cession');
 		const query = search.size > 0 ? `?${search}` : '';
@@ -452,8 +544,52 @@
 		...goToStates.map((name) => ({ value: name, label: name, group: 'States' }))
 	]);
 	let goToPlace = $state('');
+	/** What the map's search finds: the places and states, then every nation by name (mockup D: "Find a nation, state or place"). */
+	const searchChoices = $derived([
+		...tileMapPlaces.map((place) => ({ value: `place:${place.name}`, label: place.name, group: 'Places' })),
+		...goToStates.map((name) => ({ value: `place:${name}`, label: name, group: 'States' })),
+		...[...nationIndex.values()].sort((first, second) => first.name.localeCompare(second.name, 'en')).map((nation) => ({ value: `nation:${nation.id}`, label: nation.name, group: 'Nations' }))
+	]);
+	function onSearch(value: string): void {
+		if (value.startsWith('place:')) tileMap?.showPlace(value.slice('place:'.length));
+		else if (value.startsWith('nation:')) void select(value);
+	}
 
 	let tileHolder = $state<HTMLElement | undefined>();
+
+	/** The folded table's heading under the map, and its number of rows. */
+	function tableHeading(key: NationsMapView): string {
+		if (key === 'states') return 'Nations by state';
+		if (key === 'lands') return 'Land areas';
+		if (key === 'regions') return 'Bureau of Indian Affairs regions';
+		return views.find((entry) => entry.key === key)?.label ?? '';
+	}
+	function tableCount(key: NationsMapView): number | undefined {
+		if (key === 'states') return data.stateRows.length;
+		if (key === 'regions') return data.regionRows.length;
+		if (key === 'lands') return lands?.rows.length;
+		if (isShadedMapView(key)) {
+			const body = shaded[key];
+			if (!body) return undefined;
+			return byOf(key) === 'state' ? body.stateRows.length : shadedViewDefinitions[key].rows === 'nations' ? body.nationRows.length : body.areaRows.length;
+		}
+		return undefined;
+	}
+
+	/** What the map shows, for screen readers: the layers that are on. */
+	const mapLabel = $derived(
+		[
+			layers.lands ? (isShadedMapView(colorBy) ? `Nations’ land by ${views.find((entry) => entry.key === colorBy)?.label ?? ''}` : 'Nations’ land') : '',
+			layers.states && !pastShown ? 'States by number of nations' : '',
+			layers.regions && !pastShown ? 'Bureau of Indian Affairs regions' : '',
+			layers.borders ? `Borders${year === undefined ? '' : ` in ${year}`}` : '',
+			cessionsOn ? 'Land cessions' : '',
+			layers.routes ? 'Removal routes' : '',
+			layers.homelands ? 'Homelands found by the Indian Claims Commission' : ''
+		]
+			.filter(Boolean)
+			.join(', ') || 'Base map'
+	);
 
 	/** Puts the tiled map into the view on screen. */
 	function placeTileMap(key: NationsMapView) {
@@ -532,7 +668,6 @@
 		class="map-view"
 		id="map-view-{view.key}"
 		data-map-view={view.key}
-		data-map-full-screen
 		role="region"
 		aria-labelledby={view.heading}
 		hidden={view.key !== current}
@@ -540,113 +675,103 @@
 	>
 		<h2 id={view.heading} class="view-heading">{view.label}</h2>
 		<figure class="map-figure" data-print-part="maps">
-		<!-- The view, and how it is shown, are chosen on the map itself (Trevor, 2026-11-23). -->
-		<div class="map-toolbar no-print">
-		{#if view.key === current}
-			<div class="map-view-picker">
-				<SearchableDropdown label="Map view" choices={mapViewChoices} value={pending ?? current} onchange={(key) => void choose(key)} onhighlight={prefetch} />
-			</div>
-		{/if}
-		{#if isShadedMapView(view.key) && (shaded[view.key]?.stateRows.length ?? 0) > 0}
-			{@const key = view.key}
-			<!-- The same switch the charts use for Bars, Pie and Table (Trevor, 2026-11-24, mockup 2A). -->
-			<div class="shown-by">
-				<span class="shown-by-label" aria-hidden="true">Show</span>
-				<ViewSwitch
-					label="Show {view.label} by"
-					value={byOf(key)}
-					onchange={(value) => (shownBy[key] = value)}
-					choices={[
-						{ value: 'nation', label: 'Nations', title: 'Shade each nation’s land areas and offices', icon: MapPin, showLabel: true },
-						{ value: 'state', label: 'States', title: 'Shade each state by what most of its nations have', icon: MapIcon, showLabel: true }
-					]}
-				/>
-			</div>
-		{/if}
-		{#if view.key === current && tileMapReady}
-			<!-- The states and territories are where they really are on the map, so the map goes to each by name (Trevor, 2026-11-22: every territory shown and named on its own). A menu rather than a row of buttons, so the row does not push the key out of sight (Trevor, 2026-11-23). -->
-			<!-- Every state with a nation, by name (Trevor, 2026-11-24: "any state ... zoom into that state"). -->
-			<div class="go-to">
-				<SearchableDropdown label="Go to" placeholder="Choose a place" choices={goToChoices} bind:value={goToPlace} onchange={(place) => tileMap?.showPlace(place)} />
-			</div>
-		{/if}
-		</div>
-			<div class="map-drawing" {@attach placeTileMap(view.key)} class:tiled={tileMapReady && view.key === current} class:waiting={tileMapWanted && !tileMapReady && view.key === current} data-nations-map={view.key === 'states' ? '' : undefined}>
-				<p class="map-loading small muted" aria-hidden="true">Loading the map…</p>
-				<div class="drawn-map">
-				<ZoomableMap label={view.label} maximum={view.key === 'lands' ? 16 : 8}>
-					{#if view.key === 'lands' || isShadedMapView(view.key)}
-						<!-- A fetched view's drawn copy is in the page only when it is what the reader sees: when printing, or when there is no tiled map. -->
-						{@const drawn = viewDrawings[view.key]}
-						{@const failed = drawingsFailed[view.key] || (view.key === 'lands' ? landsFailed : isShadedMapView(view.key) && shadedFailed[view.key])}
-						{#if showDrawn && drawn}
-							{@html byOf(view.key) === 'state' && drawn.stateDrawing ? drawn.stateDrawing : drawn.drawing}
-						{:else if showDrawn && failed}
-							<p class="map-status">This view could not be loaded. Check your connection and choose the view again.</p>
-						{:else if showDrawn}
-							<p class="map-status">Loading the view…</p>
-						{/if}
-						<noscript><p class="map-status">This view needs JavaScript to load its map and table.</p></noscript>
-					{:else}
-						<!-- svelte-ignore hydration_html_changed -->
-						{@html data.drawings[view.key]}
+			<!-- Where the interactive map cannot start, the drawn map takes its place, with the view picker above it. -->
+			{#if !tileMapWanted}
+				<div class="map-toolbar no-print">
+					{#if view.key === current}
+						<div class="map-view-picker">
+							<SearchableDropdown label="Map view" choices={mapViewChoices} value={pending ?? current} onchange={(key) => showView(key)} onhighlight={prefetch} />
+						</div>
 					{/if}
-				</ZoomableMap>
-				</div>
-			</div>
-			{#if view.key === current && sliderShown}
-				<div class="no-print">
-					<YearSlider bind:value={() => shownYear, (value) => (year = value)} minimum={slider.minimum} maximum={slider.maximum} stops={slider.stops} bands={slider.bands} describe={describeYear} />
+					{#if isShadedMapView(view.key) && (shaded[view.key]?.stateRows.length ?? 0) > 0}
+						{@const key = view.key}
+						<div class="shown-by">
+							<span class="shown-by-label" aria-hidden="true">Show</span>
+							<ViewSwitch
+								label="Show {view.label} by"
+								value={byOf(key)}
+								onchange={(value) => (shownBy[key] = value)}
+								choices={[
+									{ value: 'nation', label: 'Nations', title: 'Shade each nation’s land areas and offices', icon: MapPin, showLabel: true },
+									{ value: 'state', label: 'States', title: 'Shade each state by what most of its nations have', icon: MapIcon, showLabel: true }
+								]}
+							/>
+						</div>
+					{/if}
 				</div>
 			{/if}
-			<!-- The key sits under the map, where it never covers the map (Trevor, 2026-11-23, after trying it in the map's corner). The Go to menu above the map keeps the row of place buttons from pushing it out of sight. -->
-			{#if view.key === 'states' || view.key === 'lands' || (isShadedMapView(view.key) && shaded[view.key]) || (view.key === current && sliderShown)}
-				<figcaption>
+			<!-- The map is the page's main body, with its controls floating quietly on it (Trevor, 2026-11-26, map redesign D). The frame goes full screen with them. -->
+			<div class="map-frame" class:explorer-frame={tileMapWanted && view.key === current} data-map-full-screen>
+				<div class="map-drawing" {@attach placeTileMap(view.key)} class:tiled={tileMapReady && view.key === current} class:waiting={tileMapWanted && !tileMapReady && view.key === current} data-nations-map={view.key === 'states' ? '' : undefined}>
+					<p class="map-loading small muted" aria-hidden="true">Loading the map…</p>
+					<div class="drawn-map">
+					<ZoomableMap label={view.label} maximum={view.key === 'lands' ? 16 : 8}>
+						{#if view.key === 'lands' || isShadedMapView(view.key)}
+							<!-- A fetched view's drawn copy is in the page only when it is what the reader sees: when printing, or when there is no tiled map. -->
+							{@const drawn = viewDrawings[view.key]}
+							{@const failed = drawingsFailed[view.key] || (view.key === 'lands' ? landsFailed : isShadedMapView(view.key) && shadedFailed[view.key])}
+							{#if showDrawn && drawn}
+								{@html byOf(view.key) === 'state' && drawn.stateDrawing ? drawn.stateDrawing : drawn.drawing}
+							{:else if showDrawn && failed}
+								<p class="map-status">This view could not be loaded. Check your connection and choose the view again.</p>
+							{:else if showDrawn}
+								<p class="map-status">Loading the view…</p>
+							{/if}
+							<noscript><p class="map-status">This view needs JavaScript to load its map and table.</p></noscript>
+						{:else}
+							<!-- svelte-ignore hydration_html_changed -->
+							{@html data.drawings[view.key]}
+						{/if}
+					</ZoomableMap>
+					</div>
+				</div>
+				{#if view.key === current && tileMapReady}
+					<div class="explorer no-print">
+						<MapExplorer
+							bind:layers
+							bind:cessions={cessionsOn}
+							bind:colorBy
+							{colorChoices}
+							bind:baseMap
+							bind:placeNames
+							bind:outlines
+							bind:year
+							first={firstYear}
+							last={lastYear}
+							marks={timelineMarks}
+							places={searchChoices}
+							onplace={onSearch}
+							key={explorerKey}
+							details={shownPreview ? explorerDetails : undefined}
+						/>
+					</div>
+				{/if}
+			</div>
+			<!-- The drawn map's key, for print and where the interactive map cannot start; on screen the key floats on the map. -->
+			{#if view.key === 'states' || view.key === 'lands' || (isShadedMapView(view.key) && shaded[view.key])}
+				<figcaption class:print-only={tileMapReady}>
 					<ul class="legend" aria-label="Key">
 					{#if view.key === 'states'}
 						{#each data.countClasses as entry (entry.key)}
 							<li><span class="swatch count-{entry.key}" aria-hidden="true"></span>{entry.label}</li>
 						{/each}
-						{#if tileMapReady && !pastShown}{@render officeKey()}{/if}
 					{:else if isShadedMapView(view.key) && shaded[view.key]}
 						{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
 							<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
 						{/each}
-						{#if byOf(view.key) === 'nation' && !pastShown}{@render officeKey()}{/if}
-					{:else if view.key === 'lands' && (!sliderShown || censusShown !== undefined)}
+					{:else if view.key === 'lands'}
 						{#each data.landAreaGroups as group (group.key)}
-							<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}{#if pastShown}, {censusShown}{/if}</li>
+							<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
 						{/each}
-						{#if !pastShown}{@render officeKey()}{/if}
-					{/if}
-					{#if view.key === current && sliderShown && cessionsOn}
-						<li><span class="swatch cession-by" aria-hidden="true"></span>Ceded by {shownYear}</li>
-						<li><span class="swatch cession-in" aria-hidden="true"></span>Ceded in {shownYear}</li>
 					{/if}
 					</ul>
-					{#if view.key === current && sliderShown}
-						<!-- One sentence of context, naming who made the map and when (mockup 1A). -->
-						<p class="small muted historic-note">
-							{#if cessionsOn}Land cessions as Charles C. Royce mapped them for the Bureau of American Ethnology (1899), traced by the U.S. Forest Service.{/if}
-							{#if view.key === 'lands'}Census Bureau land areas begin in 1990.{/if}
-						</p>
-					{/if}
 				</figcaption>
 			{/if}
 		</figure>
-		<!-- Beside the map on wide screens, under it on narrow ones. A chosen place's details take the column, with a back arrow to the table, which stays as it was under them (Trevor, 2026-11-24, mockup 3A). -->
-		<div class="map-side">
-			{#if view.key === current && shownPreview}
-				{@const detail = shownPreview.nation ? nationDetails[shownPreview.nation] : undefined}
-				<MapDetails
-					bind:this={detailsPanel}
-					details={shownPreview}
-					image={detail?.image ? { src: detail.image.src, alt: `${detail.image.kind} of ${shownPreview.title}` } : undefined}
-					contact={detail ? [detail.website, detail.address, detail.phone, detail.email].filter((entry) => entry !== undefined) : []}
-					back={{ label: 'Table', onclick: () => void closeDetails(view.key) }}
-				/>
-			{/if}
-			<div class="map-side-table" id="map-table-{view.key}" tabindex="-1" hidden={view.key === current && shownPreview !== undefined}>
+		<!-- The table stays under the map, folded, as on the rest of the site (mockup D1). -->
+		<div class="map-below">
+			<Collapsible heading={tableHeading(view.key)} identifier="map-table-heading-{view.key}" count={tableCount(view.key)} open={false}>
+			<div class="map-side-table" id="map-table-{view.key}" tabindex="-1">
 			{#if view.key === 'states'}
 				<DataTable
 					identifier="nations-by-state"
@@ -750,25 +875,30 @@
 				/>
 			{/if}
 			</div>
+			</Collapsible>
 		</div>
 	</div>
 {/each}
 
-<!-- The one tiled map, moved into the view on screen, so changing the view keeps the map, its place and its tiles (Trevor, 2026-11-23). -->
+<!-- The one tiled map, moved into the view on screen, so changing what is shown keeps the map, its place and its tiles (Trevor, 2026-11-23). -->
 <div class="tile-map-home">
 	{#if tileMapWanted}
 		<div class="tile-holder" bind:this={tileHolder}>
 			<TileMap
 				bind:this={tileMap}
-				view={current}
-				by={byOf(current)}
-				label={byOf(current) === 'state' ? `${views.find((entry) => entry.key === current)?.label ?? ''}, by state` : (views.find((entry) => entry.key === current)?.label ?? '')}
+				view={isShadedMapView(colorBy) ? colorBy : 'lands'}
+				label={mapLabel}
 				bind:shape={mapShape}
 				bind:camera={tileMapCamera}
 				onselect={(anchor) => void select(anchor)}
-				year={sliderShown ? shownYear : undefined}
+				{year}
 				bind:cessions={cessionsOn}
 				oncession={(royce) => void select(`cession-${royce}`)}
+				layerSwitches={layers}
+				onfeature={(feature) => void chooseFeature(feature)}
+				bind:baseMap
+				bind:placeNames
+				bind:outlines
 				onready={() => (tileMapReady = true)}
 				onfail={() => {
 					tileMapWanted = false;
@@ -780,6 +910,67 @@
 	{/if}
 </div>
 <p class="visually-hidden" role="status">{tileMapProblem}</p>
+
+<!-- The key on the map lists only what is on (mockup D1). -->
+{#snippet explorerKey()}
+	<ul class="legend map-key" aria-label="Key">
+		{#if layers.lands && !(pastShown && censusShown === undefined)}
+			{#if isShadedMapView(colorBy) && shaded[colorBy]}
+				{#each shaded[colorBy]?.legend ?? [] as entry (entry.key)}
+					<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
+				{/each}
+			{:else}
+				{#each data.landAreaGroups as group (group.key)}
+					<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}{#if pastShown}, {censusShown}{/if}</li>
+				{/each}
+			{/if}
+		{/if}
+		{#if layers.states && !pastShown && !isShadedMapView(colorBy)}
+			<li><span class="swatch states-range" aria-hidden="true"></span>Nations per state: 1 to 50+</li>
+		{/if}
+		{#if layers.regions && !pastShown}
+			<li><span class="swatch region" aria-hidden="true"></span>Bureau of Indian Affairs region</li>
+		{/if}
+		{#if layers.offices && !pastShown}
+			<li><span class="swatch office" aria-hidden="true"></span>Office</li>
+		{/if}
+		{#if layers.borders}
+			<li><span class="swatch border-state" aria-hidden="true"></span>State</li>
+			{#if pastShown}
+				<li><span class="swatch border-territory" aria-hidden="true"></span>Territory</li>
+				<li><span class="swatch border-unorganized" aria-hidden="true"></span>Unorganized territory</li>
+				<li><span class="swatch border-other" aria-hidden="true"></span>Claimed or shared, not U.S.</li>
+			{/if}
+		{/if}
+		{#if cessionsOn}
+			{#if pastShown}
+				<li><span class="swatch cession-by" aria-hidden="true"></span>Ceded by {shownYear}</li>
+				<li><span class="swatch cession-in" aria-hidden="true"></span>Ceded in {shownYear}</li>
+			{:else}
+				<li><span class="swatch cession-by" aria-hidden="true"></span>Land ceded to the United States</li>
+			{/if}
+		{/if}
+		{#if layers.routes}
+			<li><span class="swatch route" aria-hidden="true"></span>Removal route, 1837 to 1839</li>
+		{/if}
+		{#if layers.homelands}
+			<li><span class="swatch homeland" aria-hidden="true"></span>Homeland found by the Indian Claims Commission</li>
+		{/if}
+	</ul>
+{/snippet}
+
+{#snippet explorerDetails()}
+	{#if shownPreview}
+		{@const detail = shownPreview.nation ? nationDetails[shownPreview.nation] : undefined}
+		<MapDetails
+			bind:this={detailsPanel}
+			details={shownPreview}
+			image={detail?.image ? { src: detail.image.src, alt: `${detail.image.kind} of ${shownPreview.title}` } : undefined}
+			contact={detail ? [detail.website, detail.address, detail.phone, detail.email].filter((entry) => entry !== undefined) : []}
+			back={{ label: 'Close', onclick: () => void closeDetails(current) }}
+		/>
+	{/if}
+{/snippet}
 
 {#snippet officeKey()}
 	<li><span class="swatch office" aria-hidden="true"></span>Office of a nation with no Census land area</li>
@@ -951,63 +1142,110 @@
 	}
 
 	/*
-	 * Trevor chose on 2026-11-22 (mockup A, project files design/map-layout/)
-	 * a smaller map pinned on the left with the table scrolling beside it, and
-	 * zooming for detail. The map is sized to fit the window's height, using
-	 * the drawing's shape (its viewBox is 975 by 883). On narrower screens the
-	 * map is pinned to the top of the window and the table scrolls under it,
-	 * when the window is tall enough to leave room for the table.
+	 * The map is the page's main body, as wide as the page's column and nearly as tall as the window, with its controls floating on it (Trevor, 2026-11-26, map redesign D). The table and References follow it, folded. Where the interactive map cannot start, the drawn map stands in its place at its own size.
 	 */
-	@media screen and (min-width: 1100px) {
-		.map-view:not([hidden]) {
-			display: grid;
-			grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-			gap: var(--space-6);
-			align-items: start;
-			margin-top: var(--space-5);
+	.map-frame {
+		container: map-frame / inline-size;
+		position: relative;
+	}
+
+	@media screen {
+		.map-frame.explorer-frame {
+			height: clamp(28rem, calc(100vh - 12rem), 50rem);
+			overflow: hidden;
+			border: 1px solid var(--color-line);
+			border-radius: var(--radius-panel);
+			background: var(--color-surface);
 		}
 
-		.map-figure {
-			position: sticky;
-			top: var(--space-3);
-			margin: 0;
+		.map-frame.explorer-frame:fullscreen {
+			height: 100%;
+			border: 0;
+			border-radius: 0;
 		}
 
-		.map-drawing {
-			max-width: min(975px, calc((100vh - 18rem) * 975 / 883));
+		.explorer-frame .map-drawing {
+			position: absolute;
+			inset: 0;
+			max-width: none;
+		}
+
+		.explorer-frame .map-drawing:not(.tiled) :global(.tile-map) {
+			inset: 0;
+		}
+
+		.explorer-frame :global(.tile-holder) {
+			height: 100%;
 		}
 	}
 
-	/* Only the map is pinned, so the picker and the key scroll away and most of a phone's screen is left for the table (mockup audit, 2026-11-23, after the pinned picker, map and key took about 85% of a phone's screen). */
-	@media screen and (max-width: 1099.98px) and (min-height: 600px) {
-		.map-figure {
-			display: contents;
-		}
+	/* The controls cover the map but let the reader reach it between them. */
+	.explorer {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+	}
 
-		.map-toolbar,
-		.map-figure figcaption {
-			margin-block: var(--space-3);
-		}
+	.explorer > :global(*) {
+		pointer-events: auto;
+	}
 
-		.map-drawing {
-			position: sticky;
-			top: 0;
-			z-index: 2;
-			max-width: min(975px, calc(42vh * 975 / 883));
-			margin-inline: auto;
-			padding-bottom: var(--space-1);
-			background: var(--color-paper);
-			/* The paper reaches the page's edges, so the table never shows beside the pinned map. */
-			box-shadow: 0 0 0 100vmax var(--color-paper);
-			clip-path: inset(0 -100vmax);
+	/* A phone's map is shorter, so the page under it shows. */
+	@media screen and (max-width: 40rem) {
+		.map-frame.explorer-frame {
+			height: clamp(26rem, calc(100vh - 10rem), 40rem);
+			margin-inline: calc(var(--space-4) * -1);
+			border-inline: 0;
+			border-radius: 0;
 		}
 	}
 
-	/* Below the narrow screens' menu bar (SiteSidebar.svelte), which also stays at the top. */
-	@media screen and (max-width: 63.99rem) and (min-height: 600px) {
-		.map-drawing {
-			top: calc(var(--layout-target-minimum) + 1px);
-		}
+	.map-below {
+		margin-top: var(--space-4);
+	}
+
+	/* On the map, the key is a short list, one row each. */
+	/* One entry a line, as in mockup D (the page's .legend, below, runs entries side by side). */
+	.legend.map-key {
+		display: grid;
+		gap: 2px;
+		margin: 0;
+	}
+
+	.swatch.states-range {
+		background: linear-gradient(90deg, var(--color-map-class-1), var(--color-map-class-4));
+	}
+
+	.swatch.region {
+		border: 2px solid var(--color-action);
+		background: transparent;
+	}
+
+	.swatch.border-state {
+		background: var(--color-map-class-1);
+	}
+
+	.swatch.border-territory {
+		background: var(--color-status-published-background);
+	}
+
+	.swatch.border-unorganized {
+		background: var(--color-surface);
+	}
+
+	.swatch.border-other {
+		background: var(--color-line);
+	}
+
+	.swatch.route {
+		height: 0;
+		border: 0;
+		border-top: 3px solid var(--color-action);
+	}
+
+	.swatch.homeland {
+		border: 2px dashed var(--color-status-draft-rule);
+		background: color-mix(in srgb, var(--color-status-draft-rule) 18%, transparent);
 	}
 
 	.map-drawing :global(.map) {
@@ -1043,10 +1281,6 @@
 	.swatch.cession-in {
 		background: color-mix(in srgb, var(--color-timeline-treaty) 75%, var(--color-paper));
 		border: 1px solid var(--color-timeline-treaty);
-	}
-	.historic-note {
-		max-width: 60ch;
-		margin: var(--space-2) 0 0;
 	}
 	.swatch.count-0 {
 		background: var(--color-map-class-0);
@@ -1257,57 +1491,4 @@
 		border: 1px solid var(--color-control-border);
 	}
 
-	/*
-	 * Full screen (Trevor, 2026-11-23): the view fills the screen, the map as large as fits, with its picker and key, and the preview and table beside it on a wide screen or under it on a narrow one.
-	 */
-	.map-view:fullscreen {
-		display: grid;
-		grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
-		gap: var(--space-5);
-		align-items: start;
-		margin: 0;
-		padding: var(--space-4);
-		overflow: auto;
-		background: var(--color-paper);
-	}
-
-	.map-view:fullscreen .map-figure {
-		position: static;
-		margin: 0;
-		padding: 0;
-		border: 0;
-	}
-
-	.map-view:fullscreen .map-drawing {
-		max-width: none;
-	}
-
-	.map-view:fullscreen .map-drawing :global(.tile-map) {
-		aspect-ratio: auto;
-		height: calc(100vh - 12rem);
-	}
-
-	.map-view:fullscreen .map-side {
-		max-height: calc(100vh - 2 * var(--space-4));
-		overflow: auto;
-	}
-
-	@media (max-width: 899.98px) {
-		.map-view:fullscreen {
-			grid-template-columns: minmax(0, 1fr);
-		}
-
-		.map-view:fullscreen .map-drawing :global(.tile-map) {
-			height: 70vh;
-		}
-
-		.map-view:fullscreen .map-side {
-			max-height: none;
-		}
-	}
-
-	/* The Go to menu, beside the view picker. */
-	.go-to {
-		min-width: 0;
-	}
 </style>

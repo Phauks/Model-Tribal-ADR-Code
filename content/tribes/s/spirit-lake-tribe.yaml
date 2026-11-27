@@ -173,6 +173,78 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
   note: 'Listed as "Spirit Lake Dakota Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Spirit Lake Tribe (2016)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2023
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Spirit Lake Tribe, North Dakota' (Great Plains Region)
+- program: indian-health-service-self-governance-compact
+  since: 2016
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Great Plains Area, row 'Spirit Lake Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Spirit Lake Tribe'.
+- program: pl-102-477-plan
+  start: '2023-10-01'
+  end: '2028-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Native Employment Works
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  - Higher Education
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Spirit Lake Tribe, North Dakota'; PL102_477_PartnerEnrollment, its 8 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 4190467
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: ND, row 'Spirit Lake Tribe' (Fort Totten)
+- program: fdpir-self-determination-demonstration
+  start: 2023-08
+  detail: Round 2
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 2 projects, 'Spirit Lake Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Spirit Lake Tribe'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 11852344
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SPIRIT LAKE TRIBE' (UEI SZYEAFV7UKK9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SPIRIT LAKE TRIBE'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 17473361
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SPIRIT LAKE TRIBE' (UEI SZYEAFV7UKK9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SPIRIT LAKE TRIBE'.
 governance:
 - aspect: form
   value: Constitution and Bylaws

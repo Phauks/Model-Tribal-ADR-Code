@@ -9,14 +9,13 @@
  * Rendered by the Worker on request, since there are thousands of copies. The
  * title and other details come from a small prebuilt file
  * (src/routes/copies/details/[shard].json); the build-time list
- * (virtual:public-copies) decides what is shown, as it decides what
+ * (src/lib/server/copy-list.ts) decides what is shown, as it decides what
  * /copies/<key> serves. A copy of a nation's law or court opinion the nation
  * chose to cite only shows its heading, citation and a link to where the
  * original is kept, without the file; one the nation chose to hide answers
  * without naming it (src/lib/nation-restrictions.ts).
  */
 import { error } from '@sveltejs/kit';
-import { publicCopies } from 'virtual:public-copies';
 import { fileName, verifyLink } from '#lib/checksums.ts';
 import {
 	copyDetailsPath,
@@ -29,14 +28,13 @@ import {
 	type CopyDetails
 } from '#lib/public-copies.ts';
 import { hiddenCopyMessage } from '#lib/nation-restrictions.ts';
+import { servedCopy } from '#lib/server/copy-list.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { copyLevel } from '#lib/server/nation-restrictions.ts';
 import { readableDate } from '#lib/readable-date.ts';
 import type { PageServerLoad } from './$types';
 
 export const prerender = false;
-
-const byKey = new Map(publicCopies.map((copy) => [copy.key, copy]));
 
 async function detailsOf(key: string, shard: string, url: URL, fetcher: typeof fetch): Promise<CopyDetails | undefined> {
 	const address = new URL(copyDetailsPath(shard), url).toString();
@@ -53,7 +51,7 @@ async function detailsOf(key: string, shard: string, url: URL, fetcher: typeof f
 }
 
 export const load: PageServerLoad = async ({ params, url, fetch, setHeaders }) => {
-	const copy = byKey.get(params.key);
+	const copy = await servedCopy(params.key);
 	if (!copy) error(404, 'This site keeps no copy at this address.');
 	const level = await copyLevel(workerEnvironment().database, copy);
 	if (level === 'hide') {

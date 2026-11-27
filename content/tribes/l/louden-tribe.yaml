@@ -235,6 +235,17 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
   note: 'The source''s words: "Galena Village (aka Louden Village)".'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 327334
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Galena (Louden Village)' (Galena)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Galena (Louden Village)'.
 governance:
 - aspect: head-of-government
   value: First Chief

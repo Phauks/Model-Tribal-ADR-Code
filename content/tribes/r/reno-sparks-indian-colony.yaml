@@ -200,6 +200,63 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
   note: 'Listed as "Reno-Sparks Indian Colony". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Reno-Sparks Indian Colony (2014)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2014
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Phoenix Area, row 'Reno-Sparks Indian Colony'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Reno-Sparks Indian Colony'.
+- program: pl-102-477-plan
+  start: '2025-07-01'
+  end: '2029-06-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  - Adult Education
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Reno-Sparks Indian Colony, Nevada'; PL102_477_PartnerEnrollment, its 9 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2438904
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NV, row 'Reno-Sparks Indian Colony' (Reno)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 328035
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'RENO-SPARKS INDIAN COLONY' (UEI J527CC1YALL9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'RENO-SPARKS INDIAN COLONY'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 10372148
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'RENO-SPARKS INDIAN COLONY' (UEI J527CC1YALL9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'RENO-SPARKS INDIAN COLONY'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Reno-Sparks Indian Colony, Nevada" among organizations under constitutions approved

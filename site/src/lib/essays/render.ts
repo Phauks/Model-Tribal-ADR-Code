@@ -24,7 +24,7 @@ import { youtubeEmbedAddress, youtubePosterAddress } from '../video-links.ts';
 import { attributionSource } from '../quote-context.ts';
 import { firstPage, opinionAt, quoteOpinionLabel, type OpinionEntry } from '../case-opinions.ts';
 import { readingLinksAfter } from '../reading-links.ts';
-import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
+import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, needlessEndEllipsis, quotationEndProblems, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
 import { escapeHtml } from '../escape-html.ts';
 import { fillBoxes, laterCaseKinds, type BoxKind } from './record-boxes.ts';
 
@@ -210,7 +210,7 @@ function caseNameForm(name: string): string {
 /** Party names too common to stand for one case. */
 const sharedParties = new Set(['united states', 'state', 'the state', 'people', 'commonwealth']);
 
-const caseNameLists = new WeakMap<EssayLibrary, Map<string, string>>();
+const caseNameLists = new WeakMap<Record<string, string>, Map<string, string>>();
 
 /**
  * Case names to source keys: each case's full name ("Worcester v.
@@ -218,7 +218,10 @@ const caseNameLists = new WeakMap<EssayLibrary, Map<string, string>>();
  * shortens it after the first mention ("Worcester", "Crow Dog").
  */
 function caseNameList(library: EssayLibrary): Map<string, string> {
-	const cached = caseNameLists.get(library);
+	// Kept for each list of names, which the library gives the same each time, so each drawing need not work it out again.
+	const titles = library.caseNames?.();
+	if (!titles) return new Map();
+	const cached = caseNameLists.get(titles);
 	if (cached) return cached;
 	const names = new Map<string, string | null>();
 	const add = (name: string, key: string) => {
@@ -226,7 +229,7 @@ function caseNameList(library: EssayLibrary): Map<string, string> {
 		if (!form || sharedParties.has(form)) return;
 		names.set(form, names.has(form) && names.get(form) !== key ? null : key);
 	};
-	const cases = Object.entries(library.caseNames?.() ?? {});
+	const cases = Object.entries(titles);
 	for (const [key, title] of cases) add(title, key);
 	const parties = new Map<string, string | null>();
 	for (const [key, title] of cases) {
@@ -238,7 +241,7 @@ function caseNameList(library: EssayLibrary): Map<string, string> {
 	}
 	for (const [form, key] of parties) if (key && !names.has(form)) add(form, key);
 	const list = new Map([...names].filter((entry): entry is [string, string] => entry[1] !== null));
-	caseNameLists.set(library, list);
+	caseNameLists.set(titles, list);
 	return list;
 }
 
@@ -596,7 +599,7 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 }
 
 /**
- * Quotations that may leave out words without saying so (missingEllipses in
+ * Quotations whose ends do not mark left-out words in the Indigo Book form (quotationEndProblems in
  * syntax.ts): each ">" passage and each quotation box, without its
  * attribution.
  */
@@ -607,8 +610,9 @@ function quotationWarnings(tokens: Token[]): string[] {
 		const first = paragraphs[0];
 		const last = paragraphs.at(-1)!;
 		const shown = (text: string) => `“${text.length > 50 ? `${text.slice(0, 50)}…` : text}”`;
-		if (missingEllipses(first).start) warnings.push(`The quotation ${shown(first)} starts mid-sentence; begin it with "... ".`);
-		if (missingEllipses(last).end) warnings.push(`The quotation ending ${shown(last.slice(-50))} stops mid-sentence; end it with " ...".`);
+		if (quotationEndProblems(first).start) warnings.push(`The quotation ${shown(first)} starts mid-sentence; drop any leading "..." and capitalize its first letter in brackets, "[T]he".`);
+		if (needlessEndEllipsis(last)) warnings.push(`The quotation ending ${shown(last.slice(-50))} ends its sentence; drop the " ..." after the period.`);
+		else if (quotationEndProblems(last).end) warnings.push(`The quotation ending ${shown(last.slice(-50))} stops mid-sentence; end it with " ... ." and the sentence's own period.`);
 	};
 	for (let index = 0; index < tokens.length; index += 1) {
 		const opening = tokens[index].type;

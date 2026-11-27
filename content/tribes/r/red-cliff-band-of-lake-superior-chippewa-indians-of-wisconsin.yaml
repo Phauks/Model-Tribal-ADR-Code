@@ -206,6 +206,34 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1737584
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WI, row 'Red Cliff Band of Lake Superior Chippewa' (Bayfield)
+- program: fdpir-self-determination-demonstration
+  start: 2021-10
+  detail: Round 1
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 1 projects, 'Red Cliff Band of Lake Superior Chippewa'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Red Cliff Band of Lake Superior Chippewa'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 5288341
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'RED CLIFF BAND OF LAKE SUPERIOR CHIPPEWA INDIANS OF WISCONSIN' (UEI PG5ZMT5QZ9K3), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Red Cliff Band of Lake Superior Chippewa Indians, Wisconsin" among organizations

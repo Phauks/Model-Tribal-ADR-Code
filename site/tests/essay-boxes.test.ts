@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { parseEssay, serializeEssay } from '#lib/essays/document.ts';
 import { renderEssay, type EssayLibrary } from '#lib/essays/render.ts';
-import { missingEllipses, referencesIn } from '#lib/essays/syntax.ts';
+import { needlessEndEllipsis, quotationEndProblems, referencesIn } from '#lib/essays/syntax.ts';
 
 const library: EssayLibrary = {
 	citation: (key) =>
@@ -42,7 +42,7 @@ Applies most of the Bill of Rights to tribal governments.
 :::
 
 ::: quotes
-> No Indian tribe in exercising powers of self-government shall ...
+> No Indian tribe in exercising powers of self-government shall ... .
 
 [@usc-25-1301, § 1302]
 :::
@@ -101,13 +101,26 @@ describe('case and law boxes', () => {
 });
 
 describe('ellipses in quotations', () => {
-	it('follows the print rule', () => {
-		expect(missingEllipses('The Cherokee nation, then, is a distinct community.')).toEqual({ start: false, end: false });
-		expect(missingEllipses('the Cherokee nation is a distinct community.')).toEqual({ start: true, end: false });
-		expect(missingEllipses('[w]e hold that')).toEqual({ start: true, end: true });
-		expect(missingEllipses('... we hold that ...')).toEqual({ start: false, end: false });
-		expect(missingEllipses('He said, "It is so."')).toEqual({ start: false, end: false });
-		expect(missingEllipses('It is so. [@worcester-v-georgia, at 561]')).toEqual({ start: false, end: false });
+	it('follows the Indigo Book form', () => {
+		expect(quotationEndProblems('The Cherokee nation, then, is a distinct community.')).toEqual({ start: false, end: false });
+		expect(quotationEndProblems('the Cherokee nation is a distinct community.')).toEqual({ start: true, end: false });
+		expect(quotationEndProblems('[T]he Cherokee nation is a distinct community.')).toEqual({ start: false, end: false });
+		expect(quotationEndProblems('[w]e hold that')).toEqual({ start: true, end: true });
+		expect(quotationEndProblems('... we hold that ...')).toEqual({ start: true, end: true });
+		expect(quotationEndProblems('[W]e hold that ... .')).toEqual({ start: false, end: false });
+		expect(quotationEndProblems('He said, "It is so."')).toEqual({ start: false, end: false });
+		expect(quotationEndProblems('It is so. [@worcester-v-georgia, at 561]')).toEqual({ start: false, end: false });
+	});
+
+	it('finds an ellipsis after a sentence that ends', () => {
+		expect(needlessEndEllipsis('resembles that of a ward to his guardian. ...')).toBe(true);
+		expect(needlessEndEllipsis('those powers "inconsistent with their status." …')).toBe(true);
+		expect(needlessEndEllipsis('resembles that of a ward to his guardian.')).toBe(false);
+		expect(needlessEndEllipsis('the laws of Georgia can have no force ...')).toBe(false);
+		expect(needlessEndEllipsis('It is so. ... [@worcester-v-georgia, at 561]')).toBe(true);
+		const rendered = renderEssay('> Their relation to the United States resembles that of a ward to his guardian. ...\n\n[@worcester-v-georgia]\n', library);
+		expect(rendered.warnings).toHaveLength(1);
+		expect(rendered.warnings[0]).toContain('ends its sentence');
 	});
 
 	it('warns about quotations cut without one, but does not refuse them', () => {
