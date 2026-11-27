@@ -291,6 +291,10 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "The project's own copies of public documents (U.S. government works and nations' governing documents), zipped for download.",
   },
+  "src/routes/search/download/+server.ts open get(key)": {
+    kind: "project-file",
+    why: "The project's own copies of the search results a reader ticked, zipped for download. Keys come only from the records built with the site and the list of copies it may serve, never from the request.",
+  },
 };
 
 /** Every place site code reads the bytes of a file or a request body, and where they go. */

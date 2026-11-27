@@ -1,0 +1,55 @@
+key: saginaw-chippewa-indian-tribe-of-michigan-v-blue-cross-blue-shield-of-michigan-2023-2
+kind: federal-case
+citation:
+  type: legal_case
+  title: Saginaw Chippewa Indian Tribe of Michigan v. Blue Cross Blue Shield of Michigan
+  authority: United States District Court for the Eastern District of Michigan
+  issued:
+    date-parts:
+    - - 2023
+      - 8
+      - 3
+  URL: https://www.courtlistener.com/opinion/9754572/saginaw-chippewa-indian-tribe-of-michigan-v-blue-cross-blue-shield-of/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9754572/saginaw-chippewa-indian-tribe-of-michigan-v-blue-cross-blue-shield-of/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- saginaw-chippewa-indian-tribe-of-michigan
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: saginaw-chippewa-indian-tribe-of-michigan
+    named_as: Saginaw Chippewa Indian Tribe of Michigan
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 1:16-cv-10317; no reporter citation yet. Decided by the United States District Court for the Eastern District of Michigan on Aug. 3, 2023. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (tribe ERISA benefits dispute with BCBS).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: tribe ERISA benefits dispute with BCBS'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

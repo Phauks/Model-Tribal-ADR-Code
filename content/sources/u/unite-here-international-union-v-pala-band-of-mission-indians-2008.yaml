@@ -1,0 +1,58 @@
+key: unite-here-international-union-v-pala-band-of-mission-indians-2008
+kind: federal-case
+citation:
+  type: legal_case
+  title: Unite Here International Union v. Pala Band of Mission Indians
+  authority: United States District Court for the Southern District of California
+  container-title: F. Supp. 2d
+  volume: '583'
+  page: '1190'
+  issued:
+    date-parts:
+    - - 2008
+      - 5
+      - 22
+  URL: https://static.case.law/f-supp-2d/583/html/1190-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp-2d/583/html/1190-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- pala-band-of-mission-indians
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: pala-band-of-mission-indians
+    named_as: Pala Band of Mission Indians
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 583 F. Supp. 2d 1190. Decided by the United States District Court for the Southern District of California on May 22, 2008. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 51, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 51
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

@@ -35,7 +35,7 @@ import { landCessions, royceSheets } from './land-cessions.ts';
 import { historicMapScans } from './historic-map-scans.ts';
 import type { ResultGroup } from '../search-everything.ts';
 import { allSections } from './title-25-sections.ts';
-import { isLawRecord } from './law-records.ts';
+import { isLawRecord, recordPageLink } from './law-records.ts';
 import { nationsInPrograms, programSummaries } from './federal-programs.ts';
 import { federalProgramPage } from '../federal-programs.ts';
 
@@ -240,7 +240,7 @@ const typeOf = (record: SourceRecord) => (record.citation as { type?: string }).
 function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	const link = record.original_link ?? record.citation.URL;
 	const copy = publicCopyFor(link);
-	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? `/laws/${record.key}` : copy ? copyPagePath(copy) : publishedAt(record, link);
+	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? (recordPageLink(record.key) ?? `/laws/${record.key}`) : copy ? copyPagePath(copy) : publishedAt(record, link);
 	const copies = copiesOfRecord(record, copy);
 	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key, ...(copies.length ? { copies } : {}) };
 }
@@ -319,11 +319,24 @@ function heldBackStateOpinions(): number {
 	return existsSync(file) ? Number((JSON.parse(readFileSync(file, 'utf8')) as { held_for_privacy_review?: number }).held_for_privacy_review ?? 0) : 0;
 }
 
-/** Court cases with a name, by the citation's authority, less the state court opinions, which are their own collection. */
+const federalOpinionTopic = 'federal-court-indian-law';
+const isFederalOpinion = (record: SourceRecord) => (record.topics ?? []).includes(federalOpinionTopic);
+
+/** Lower federal court opinions found by scripts/caselaw/state_court_opinions.py --courts federal, less those held for a privacy review. */
+const federalCourtOpinions = () =>
+	[...sources().values()].filter((record) => isFederalOpinion(record) && record.citation.title).map((record) => sourceItem(record, record.citation.authority));
+
+/** How many federal court opinions the script held for a privacy review (research/federal-court-opinions/summary.json). */
+function heldBackFederalOpinions(): number {
+	const file = path.join(repositoryRoot, 'research/federal-court-opinions/summary.json');
+	return existsSync(file) ? Number((JSON.parse(readFileSync(file, 'utf8')) as { held_for_privacy_review?: number }).held_for_privacy_review ?? 0) : 0;
+}
+
+/** Court cases with a name, by the citation's authority, less the state and federal court opinions, which are collections of their own. */
 function casesBy(test: (authority: string) => boolean): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => typeOf(record) === 'legal_case' && record.citation.title && !isStateOpinion(record) && test(record.citation.authority ?? ''))
+			.filter((record) => typeOf(record) === 'legal_case' && record.citation.title && !isStateOpinion(record) && !isFederalOpinion(record) && test(record.citation.authority ?? ''))
 			.map((record) => sourceItem(record, record.citation.authority));
 }
 
@@ -375,6 +388,23 @@ function solicitorOpinions(): CollectionItem[] {
 	return [...sources().values()]
 		.filter((record) => kindOf(record) === 'federal-agency-document' && record.citation.author?.some((author) => author.literal === solicitorOffice))
 		.map((record) => sourceItem(record, (record.citation as { number?: string }).number));
+}
+
+/**
+ * The settlements of Native nations' water rights that Congress enacted, one item each, linking to the enacting Act's page
+ * (research/water-settlements/enacted-settlements.csv, copied from the Congressional Research Service's report R44148;
+ * scripts/law/water_settlements.py). The Acts are counted among the statutes too: this list is the settlements, not the records.
+ */
+function waterRightsSettlements(): CollectionItem[] {
+	const file = path.join(repositoryRoot, 'research/water-settlements/enacted-settlements.csv');
+	if (!existsSync(file)) return [];
+	const name = nationNameOf();
+	return parseCsv(readFileSync(file, 'utf8')).map((row) => ({
+		title: row.settlement,
+		href: `/laws/public-law-${row.public_law}`,
+		year: Number(row.year) || undefined,
+		detail: row.nations.split('; ').filter(Boolean).map(name).join('; ') || undefined
+	}));
 }
 
 function nationNameOf(): (id: string) => string {
@@ -474,6 +504,14 @@ export const collections: Collection[] = [
 	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
 	{ identifier: 'solicitor-opinions', search: { group: 'law', label: 'Solicitor’s opinion' }, title: 'Solicitor’s Opinions', group: 'Federal law', detailHeader: 'Number', sourceKinds: ['federal-agency-document'], items: solicitorOpinions },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
+	{
+		identifier: 'water-rights-settlements',
+		search: { group: 'law', label: 'Water rights settlement' },
+		title: 'Indian Water Rights Settlements',
+		group: 'Federal law',
+		detailHeader: 'Nations',
+		items: waterRightsSettlements
+	},
 	{ identifier: 'congressional-hearings', search: { group: 'law', label: 'Congressional hearing' }, title: 'Congressional Hearings', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'Hearing') },
 	{ identifier: 'committee-reports', search: { group: 'law', label: 'Committee report' }, title: 'Committee Reports', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'House report' || genre === 'Senate report') },
 	{ identifier: 'committee-prints', search: { group: 'law', label: 'Committee print' }, title: 'Committee Prints', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'Committee print' || genre === 'Congressional document' || genre === 'House document' || genre === 'Senate document') },
@@ -501,6 +539,15 @@ export const collections: Collection[] = [
 		group: 'Courts and cases',
 		items: casesBy(indianAppealsBoard),
 		heldBack: heldBackBoardDecisions,
+		heldBackReason: 'held back for a privacy review'
+	},
+	{
+		identifier: 'federal-court-opinions', search: { group: 'case', label: 'Lower federal court opinion' },
+		title: 'Lower Federal Court Opinions',
+		group: 'Courts and cases',
+		detailHeader: 'Court',
+		items: federalCourtOpinions,
+		heldBack: heldBackFederalOpinions,
 		heldBackReason: 'held back for a privacy review'
 	},
 	{
