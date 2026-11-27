@@ -244,6 +244,9 @@ function drawRegions(geometry: MapGeometry, counts: Map<string, RegionCount>): s
 	);
 }
 
+/** The shade each group of land areas is drawn in, which also picks its shape and pattern: federal lands the darkest, then state reservations, then statistical areas. */
+export const landGroupShades: Record<string, number> = { federal: 4, state: 3, statistical: 2 };
+
 export function drawLandAreasMap(geometry: MapGeometry, areas: LandAreaCount[], offices: DrawnOffice[] = []): string {
 	const counts = new Map(areas.map((area) => [area.identifier, area]));
 	// Statistical areas first, so the legal areas inside them are drawn on top.
@@ -253,9 +256,13 @@ export function drawLandAreasMap(geometry: MapGeometry, areas: LandAreaCount[], 
 		if (!area) continue;
 		const group = groupOf(shape.kind);
 		const description = describeLandArea(area);
+		// Each group is drawn in a shade, and marked as the category views mark their shades (src/lib/map-shapes.ts): a small area's dot takes its group's shape, and a large area its group's pattern.
+		const mark = shapeFor(landGroupShades[group]);
 		const drawn = shape.dot
-			? titled('circle', `class="land-area land-${group} dot" cx="${shape.dot.x}" cy="${shape.dot.y}" r="3"`, description)
-			: titled('path', `class="land-area land-${group}" d="${shape.path}"`, description);
+			? mark
+				? titled('path', `class="land-area land-${group} dot shape shape-${mark}" d="${shapePath(mark, shape.dot.x, shape.dot.y, 4.2)}"`, description)
+				: titled('circle', `class="land-area land-${group} dot" cx="${shape.dot.x}" cy="${shape.dot.y}" r="3"`, description)
+			: titled('path', `class="land-area land-${group} category-${landGroupShades[group]}" d="${shape.path}"`, description);
 		layers[group].push(link(area.anchor, description, drawn));
 	}
 	return (
@@ -331,7 +338,8 @@ export function drawShadedStatesMap(geometry: MapGeometry, view: { key: string; 
 	for (const shape of geometry.states) {
 		const state = byCode.get(shape.code) ?? { code: shape.code, shade: 0, description: shape.code };
 		const description = shape.marker ? `${shape.code}, ${state.description}` : state.description;
-		const fill = `state count-${state.shade}`;
+		// The category's pattern goes over its shade (src/lib/map-shapes.ts), on the state and on a small state's marker.
+		const fill = `state count-${state.shade} category-${state.shade}`;
 		const outline = titled('path', `class="${fill}${shape.island ? ' island' : ''}" d="${shape.path}"`, description);
 		const marker = shape.marker;
 		if (!marker) {
@@ -381,7 +389,7 @@ export function drawShadedLandAreasMap(
 			? mark
 				? titled('path', `class="${fill} dot shape shape-${mark}" d="${shapePath(mark, shape.dot.x, shape.dot.y, 4.2)}"`, area.description)
 				: titled('circle', `class="${fill} dot" cx="${shape.dot.x}" cy="${shape.dot.y}" r="3"`, area.description)
-			: titled('path', `class="${fill}" d="${shape.path}"`, area.description);
+			: titled('path', `class="${fill} category-${area.shade}" d="${shape.path}"`, area.description);
 		if (area.anchor) recorded.push(link(area.anchor, area.description, drawn));
 		else unrecorded.push(`<g class="unlinked">${drawn}</g>`);
 	}
