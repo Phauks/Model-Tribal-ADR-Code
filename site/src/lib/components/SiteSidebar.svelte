@@ -98,10 +98,9 @@
 	const editing = $derived(editingOutline.current?.path === path ? editingOutline.current : undefined);
 	const publishedOutline = $derived(page.data.outline as PageOutline | undefined);
 	const outlineItems = $derived<OutlineItem[]>(editing ? editing.items : (publishedOutline?.items ?? []));
-	// Rows line up without room for carets when no heading has headings under it.
-	const outlineNests = $derived(outlineItems.some((item) => item.children?.length));
-	// An outline of the page's headings is "On this page"; one that lists other pages, such as the back matter's, is "Contents".
-	const outlineLabel = $derived(outlineItems.every((item) => item.link.startsWith('#')) ? 'On This Page' : 'Contents');
+	// An outline of the page's headings is "On this page", a name only screen readers hear (Trevor, Nov. 27, 2026: "don't need to say On This Page"); one that lists other pages, such as the back matter's, is headed "Contents".
+	const outlineOfHeadings = $derived(outlineItems.every((item) => item.link.startsWith('#')));
+	const outlineLabel = $derived(outlineOfHeadings ? 'On This Page' : 'Contents');
 
 	// What the phone strip names beside "Menu".
 	const localTitle = $derived(
@@ -315,12 +314,11 @@
 		<div class="local-head"><p class="local-title">{publishedOutline.title}</p></div>
 	{/if}
 	{#if outlineItems.length > 0}
-		<p class="local-label on-this-page" id="sidebar-on-this-page-{idSuffix}">{outlineLabel}</p>
-		<div class="headings" class:no-carets={!outlineNests}>
+		<p class="local-label on-this-page" class:visually-hidden={outlineOfHeadings} id="sidebar-on-this-page-{idSuffix}">{outlineLabel}</p>
+		<div class="headings" class:unlabeled={outlineOfHeadings}>
 			<SidebarTree
 				items={outlineItems}
 				listIdentifier="sidebar-outline-{idSuffix}"
-				flush
 				{isActive}
 				isCurrent={isCurrentHeading}
 				isOpen={isItemOpen}
@@ -426,22 +424,13 @@
 
 <style>
 	/*
-	 * Nesting, the same in every list of the column (Trevor chose option B,
-	 * design/sidebar-nesting): a row is a caret, a small gap and its text; a
-	 * list under an entry starts one step to the right of that entry, with a
-	 * thin guide line down from the entry's caret beside it. The lists use
-	 * these measures in sidebar/SidebarTree.svelte
-	 * and here.
+	 * Nesting in the page's headings (sidebar/SidebarTree.svelte): a heading
+	 * under another starts one step to the right, with no guide line
+	 * (Trevor, Nov. 27, 2026, design/nation-column-restyle).
 	 */
 	.sidebar-wide,
 	.sidebar-narrow {
-		--sidebar-caret: 1.75rem;
-		--sidebar-caret-gap: var(--space-1);
-		--sidebar-step: 1.25rem;
-		/* The guide line runs down the middle of the parent's caret. */
-		--sidebar-line-at: calc(var(--sidebar-caret) / 2);
-		/* From the guide line to where the list's rows start. */
-		--sidebar-line-to-rows: calc(var(--sidebar-step) - var(--sidebar-line-at));
+		--sidebar-step: 1rem;
 	}
 
 	summary {
@@ -581,22 +570,14 @@
 		font-style: italic;
 	}
 
-	/* The page's headings: a guide line down their left, the one being read marked on it. */
+	/* The page's headings: their text lines up with the pages above them, and the one being read is marked as a page is. */
 	.headings {
-		border-left: 1px solid var(--color-line);
 		font-size: 0.9rem;
 	}
 
-	.headings :global(.outline.flush > li > .entry) {
-		margin-left: -2px;
-	}
-
-	.headings.no-carets :global(.fold.space) {
-		display: none;
-	}
-
-	.headings.no-carets :global(.outline.flush > li > .entry > a) {
-		padding-left: var(--space-3);
+	/* With no label above them, a gap sets the headings apart from the pages. */
+	.headings.unlabeled {
+		margin-top: var(--space-4);
 	}
 
 	/* ---- Wide screens ---- */
