@@ -60,6 +60,10 @@ function sectionsFile(): SectionsFile {
 	return cache;
 }
 
+/** A section's own page (code-outline.ts), or its chapter's list for a run of sections the Code lists together. */
+const sectionLink = (chapter: string, number: string) =>
+	/ to |,/.test(number) ? `/laws/usc-25-chapter-${chapter}#contents` : `/laws/usc-25/${number.trim().toLowerCase().replace(/[^0-9a-z]+/g, '-')}`;
+
 const anchorOf = (number: string) => `sec-${number.replace(/[^0-9A-Za-z.-]+/g, '-').replace(/\./g, '-').toLowerCase()}`;
 
 function actOf(key: string | undefined): SectionRow['act'] {
@@ -78,6 +82,12 @@ function codeRows(chapter: string): SectionRow[] {
 		inForce: row.inForce,
 		act: actOf(row.act)
 	}));
+}
+
+/** What the section list knows of one section of the Code: where our copy of its chapter has it, and the Act that enacted it. */
+export function codeSectionDetails(chapter: string, number: string): { link?: string; act?: SectionRow['act'] } | undefined {
+	const row = codeRows(chapter).find((each) => each.label === `§ ${number}`);
+	return row ? { link: row.link, act: row.act } : undefined;
 }
 
 /** The sections of a Title 25 chapter's or part's record, or nothing for any other record. */
@@ -112,7 +122,7 @@ export function sectionsEnactedBy(key: string): { label: string; heading: string
 	const found = [];
 	for (const [chapter, rows] of Object.entries(sectionsFile().code)) {
 		for (const row of rows) {
-			if (row.act === key) found.push({ label: `25 U.S.C. § ${row.number}`, heading: row.heading, link: `/laws/usc-25-chapter-${chapter}#${anchorOf(row.number)}`, inForce: row.inForce });
+			if (row.act === key) found.push({ label: `25 U.S.C. § ${row.number}`, heading: row.heading, link: sectionLink(chapter, row.number), inForce: row.inForce });
 		}
 	}
 	return found;
@@ -125,7 +135,7 @@ export function allSections(kind: 'code' | 'regulations'): { title: string; href
 		return Object.entries(file.code).flatMap(([chapter, rows]) =>
 			rows
 				.filter((row) => row.inForce)
-				.map((row) => ({ title: `25 U.S.C. § ${row.number}. ${row.heading}`, href: `/laws/usc-25-chapter-${chapter}#${anchorOf(row.number)}`, detail: `Chapter ${chapter.toUpperCase()}` }))
+				.map((row) => ({ title: `25 U.S.C. § ${row.number}. ${row.heading}`, href: sectionLink(chapter, row.number), detail: `Chapter ${chapter.toUpperCase()}` }))
 		);
 	}
 	const parts = partRecordKeys();

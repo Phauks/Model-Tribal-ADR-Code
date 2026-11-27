@@ -36,6 +36,7 @@ import { isoDate, storyIsShown, storySourceKeys } from './src/lib/story-visibili
 import { directoryNameOf, sourceKindOf } from './src/lib/address-book-sync.ts';
 import { markSiteText, type SiteTextEntry } from './src/lib/site-text-markers.ts';
 import { copyRestriction } from './src/lib/nation-restrictions.ts';
+import { copyFileNames } from './src/lib/server/copy-lists.ts';
 import { installCandidates, readerToolFiles, type ManifestChunk } from './src/lib/offline-shell.ts';
 import { loadPublishedSiteText, siteTextCatalog } from './src/lib/server/site-text-build.ts';
 import { loadLiveChanges, loadRepositoryHistory } from './src/lib/server/recent-changes-build.ts';
@@ -313,15 +314,21 @@ function portraitList(): Plugin {
 
 /** Every copy the Worker may serve, worked out once for the whole build. */
 let servedCopies: Record<string, StoredCopy> | undefined;
-const servedCopiesOnce = () =>
-	(servedCopies ??= Object.fromEntries(
+const servedCopiesOnce = () => {
+	if (servedCopies) return servedCopies;
+	// The name a reader saves each file under: its title rather than the code its key ends in (src/lib/readable-file-names.ts).
+	const names = copyFileNames();
+	servedCopies = Object.fromEntries(
 		publicCopies().map((copy) => {
 			const { key, mediaType, sha256, bytes, links, charset } = copy;
 			// A nation's law or opinion carries its kind and nations, so the Worker can follow the nation's choices (src/lib/nation-restrictions.ts).
 			const restrict = copyRestriction(copy);
-			return [key, { mediaType, sha256, bytes, links, ...(charset ? { charset } : {}), ...(restrict ? { restrict } : {}) }];
+			const name = names.get(key);
+			return [key, { mediaType, sha256, bytes, links, ...(charset ? { charset } : {}), ...(name ? { name } : {}), ...(restrict ? { restrict } : {}) }];
 		})
-	));
+	);
+	return servedCopies;
+};
 let movedCopies: Record<string, string> | undefined;
 const copyMovesOnce = () => (movedCopies ??= copyMoves());
 const restrictableCopiesOnce = () => Object.entries(servedCopiesOnce()).flatMap(([key, copy]) => (copy.restrict ? [{ key, restrict: copy.restrict }] : []));

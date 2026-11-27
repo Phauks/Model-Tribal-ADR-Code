@@ -37,7 +37,21 @@ Errors from other sites' scripts, such as browser extensions, are ignored.
 
 `src/hooks.server.ts` reports every error SvelteKit did not expect (`handleError`) and gives the error page its reference. An error the site raised itself with `error(404, …)` is an answer, not a problem, and is not reported.
 
-The reader-facing error box, the Page not found and Something went wrong pages, and the Report choice in Request a Change follow the mockups Trevor approved on Nov. 27, 2026 (project files `design/error-framework/`; the Page not found page has no search box and has a Try again button). They are built in the next step of this work.
+The Page not found and Something went wrong pages (`src/routes/+error.svelte`) follow the mockups Trevor approved on Nov. 27, 2026 (project files `design/error-framework/`).
+
+- Page not found names the address and lists up to three pages with a similar address, found by searching the words of the address's last part (`src/lib/similar-pages.ts`), the server first and the search files when the server cannot answer yet. It has no search box (Trevor). Home page comes first, then Try again, which loads the address again, and Report.
+- Something went wrong says the page could not be shown, names the address, and offers Try again first, then Home page and Report, the reference with a copy button, and a search box.
+- Not allowed (403) keeps its message and offers the home page.
+
+## The error box
+
+`src/lib/components/ProblemNotice.svelte` is the one box that tells a reader a part of a page failed. It keeps the frame of what failed (style A in the mockups), says what failed in a heading with an alert icon, gives one line, and offers Try again and Report, with the reference the problem was reported under and a copy button. `size` is `section` for a part that fills the page's width, `small` for a narrow panel, and `toast` for an action that failed, at the corner with a close button.
+
+The map is the first user: `TileMap.svelte` shows the box in its own frame when it cannot start, on the Map page, a nation's page, a state's page and a treaty's page, and reports the failure (`map.webgl`, `map.load`, `map.tiles` or `map.timeout`). A browser that cannot draw maps, or a reader who is offline, gets no Try again, since it would fail the same way; offline nothing is reported.
+
+## Report
+
+Report opens Request a Change already filled in (`src/lib/report-request.ts`): the choice Report a broken page, the address without its query, and what failed with its reference in Details. A broken page needs the address but not details, and is kept as a correction whose details begin "Broken page." Without scripts, Report is a link to `/requests` with the same answers in its address.
 
 ## No silent fallbacks
 

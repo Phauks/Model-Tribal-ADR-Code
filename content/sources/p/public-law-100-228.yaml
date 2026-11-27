@@ -24,15 +24,15 @@ reading_links:
   checked: '2026-11-23'
   links:
   - site: govinfo
-    label: "GovInfo"
+    label: GovInfo
     access: official
     link: https://www.govinfo.gov/link/statute/101/1556
   - site: westlaw
-    label: "Westlaw"
+    label: Westlaw
     access: subscription
     link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=101%20Stat.%201556
   - site: lexis
-    label: "Lexis"
+    label: Lexis
     access: subscription
     link: https://advance.lexis.com/api/search?q=101%20Stat.%201556
 rights:
@@ -42,4 +42,14 @@ rights:
   redistribution: true
 found_in:
 - 2026-11-23-jurisdiction-and-federal-ties
+- 2026-11-27-water-rights-settlements
 notes: 'Indigo Book citation: Seminole Indian Land Claims Settlement Act of 1987, Pub. L. No. 100-228, 101 Stat. 1556 (1987). Status: in force. Downloaded the Statutes at Large PDF from govinfo.gov (link/statute/101/1556) and read the cited sections in the extracted text. Private copy research/captures/jurisdiction/public-law-100-228.pdf.'
+tribes:
+- seminole-tribe-of-florida
+topics:
+- water-rights-settlement
+file:
+  storage_key: jurisdiction/public-law-100-228.pdf
+  checksum: 8101d186572e96a206cd0888c5b4dfd26f3d8c9bd350e3453ee1c119511d4d59
+  media_type: application/pdf
+  bytes: 1089683

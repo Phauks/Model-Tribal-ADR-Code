@@ -1,0 +1,51 @@
+key: maine-revised-statutes-title-5-section-11052
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Me. Rev. Stat. tit. 5, § 11052
+  container-title: Maine Revised Statutes
+  container-title-short: Me. Rev. Stat.
+  volume: '5'
+  section: '11052'
+  author:
+  - literal: Maine Legislature, Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2021
+  URL: https://legislature.maine.gov/statutes/5/title5sec11052.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.maine.gov/statutes/5/title5sec11052.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Me. Rev. Stat. tit. 5, § 11052 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ME
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Me. Rev. Stat. tit. 5, § 11052 (2026). History: PL 2021, c. 681, Pt. A, §1 (NEW). PL 2025, c. 597, Pt. B, §4 (AMD). Text read from the Maine Revisor of Statutes'' page for the section (legislature.maine.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian tribe; indian; tribe); AI reader''s verdict core: Tribal-state collaboration definitions of Indian tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: federally recognized indian tribe; indian tribe; indian; tribe'

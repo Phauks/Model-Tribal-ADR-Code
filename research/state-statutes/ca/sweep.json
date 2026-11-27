@@ -1,0 +1,52 @@
+{
+  "state": "CA",
+  "code": "California Codes",
+  "edition": 2026,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 161508,
+    "live": 161508,
+    "strong": 990,
+    "weak_only": 1317
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 1270,
+    "core": 434,
+    "incidental": 836,
+    "by_pool": {
+      "A": {
+        "core": 358,
+        "incidental": 619,
+        "none": 13
+      },
+      "B": {
+        "none": 1069,
+        "incidental": 216,
+        "core": 32
+      },
+      "C": {
+        "none": 300
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 44,
+        "incidental": 1
+      }
+    },
+    "meta": {
+      "live": 161508,
+      "A": 990,
+      "B": 1317,
+      "E": 45,
+      "C": 5353,
+      "C_sample": 300,
+      "D": 153803,
+      "D_sample": 300,
+      "items": 2952,
+      "batches": 20
+    }
+  }
+}
