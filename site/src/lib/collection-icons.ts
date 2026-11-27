@@ -63,7 +63,8 @@ const collectionIcons: Record<string, Component> = {
 	'source-copies': Files,
 	charts: ChartColumn,
 	'glossary-terms': BookA,
-	forms: ClipboardList
+	forms: ClipboardList,
+	'indian-affairs-manual': BookText
 };
 
 export const collectionIcon = (identifier: string): Component => collectionIcons[identifier] ?? FileText;
