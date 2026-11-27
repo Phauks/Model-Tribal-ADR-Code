@@ -8,7 +8,7 @@
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import LazySourceList from '#lib/components/LazySourceList.svelte';
 	import { mapViewChoices, mapViews } from '#lib/map-views.ts';
-	import TileMap, { storedBaseMap, storedPlaceNames, tileMapPlaces, type TileMapCamera, type TileMapFeature, type TileMapLayers, type TileMapPadding } from '#lib/components/TileMap.svelte';
+	import TileMap, { storedBaseMap, tileMapPlaces, type TileMapCamera, type TileMapFeature, type TileMapLayers, type TileMapPadding } from '#lib/components/TileMap.svelte';
 	import MapExplorer from '#lib/components/MapExplorer.svelte';
 	import Collapsible from '#lib/components/Collapsible.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
@@ -69,7 +69,6 @@
 	]);
 	/** The base map and its switches, which the Layers list sets and every map on the site remembers. */
 	let baseMap = $state(storedBaseMap());
-	let placeNames = $state(storedPlaceNames());
 
 	/**
 	 * The view whose table is under the map, whose drawn copy prints, and which the Download menu offers: the land's coloring if it has one, then States, Nations' land or the regions, whichever is on first.
@@ -762,7 +761,6 @@
 				statesBy={statesColor}
 					onfeature={(feature) => void chooseFeature(feature)}
 					bind:baseMap
-					bind:placeNames
 					outlines={true}
 					onready={() => (tileMapReady = true)}
 					onfail={() => (tileMapReady = false)}
@@ -779,7 +777,6 @@
 					bind:statesColor
 					{statesColorChoices}
 					bind:baseMap
-					bind:placeNames
 					bind:year
 					first={firstYear}
 					last={lastYear}

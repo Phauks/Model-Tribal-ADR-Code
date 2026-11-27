@@ -280,10 +280,10 @@
 {/snippet}
 
 {#snippet detailsField()}
-	{@const question = kind === 'correct' ? 'What is wrong, and what should it say?' : kind === 'replace-name' ? 'Whose name should be replaced? Say how they appear, such as “the mother”, not their full name.' : kind === 'restrict' || kind === 'remove' ? 'What should happen to the material?' : kind === 'contribute' ? 'What would you like to offer?' : kind === 'add-nation' ? `Anything else we should know${compact ? ' (optional)' : ''}` : toTeam ? 'Your message' : 'Your question'}
+	{@const question = kind === 'correct' ? 'What is wrong, and what should it say?' : kind === 'broken-page' ? `Where did the link come from?${compact ? ' (optional)' : ''}` : kind === 'replace-name' ? 'Whose name should be replaced? Say how they appear, such as “the mother”, not their full name.' : kind === 'restrict' || kind === 'remove' ? 'What should happen to the material?' : kind === 'contribute' ? 'What would you like to offer?' : kind === 'add-nation' ? `Anything else we should know${compact ? ' (optional)' : ''}` : toTeam ? 'Your message' : 'Your question'}
 	<div class="field">
 		<!-- The dialog names the box "Details" and asks the question under it (Trevor, Nov. 27, 2026). -->
-		<label for="{prefix}details">{compact ? `Details${kind === 'add-nation' ? ' (optional)' : ''}` : question}</label>
+		<label for="{prefix}details">{compact ? `Details${kind === 'add-nation' || kind === 'broken-page' ? ' (optional)' : ''}` : question}</label>
 		{#if compact}<p class="hint" id="{prefix}details-hint">{question.replace(' (optional)', '')}</p>{/if}
 		{@render fieldError('details')}
 		<textarea

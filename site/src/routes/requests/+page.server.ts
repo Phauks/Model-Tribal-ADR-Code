@@ -14,13 +14,17 @@ export const prerender = false;
 /**
  * Pages link here with the record and field already filled in
  * (docs/requests.md, "Where the request starts"), for example
- * /requests?record=tribes/sample-nation&field=recognition.
+ * /requests?record=tribes/sample-nation&field=recognition. An error page's
+ * Report link, for a reader without scripts, sends the page's address and
+ * what to say in Details (src/lib/report-request.ts).
  */
 export const load: PageServerLoad = ({ url }) => {
 	const kind = url.searchParams.get('kind');
 	const record = (url.searchParams.get('record') ?? '').slice(0, 200);
 	const field = (url.searchParams.get('field') ?? '').slice(0, 200);
-	const material = record ? (field ? `${record} (${field})` : record) : '';
+	const address = (url.searchParams.get('address') ?? '').slice(0, 500);
+	const details = (url.searchParams.get('details') ?? '').slice(0, 2000);
+	const material = record ? (field ? `${record} (${field})` : record) : address;
 	const nationIdentifier = record.startsWith('tribes/') ? record.slice('tribes/'.length) : '';
 	// From a claimed nation page's badge: a message to the nation's team.
 	const nation = reviewSubjects.find((subject) => subject.kind === 'nation' && subject.identifier === nationIdentifier);
@@ -32,6 +36,7 @@ export const load: PageServerLoad = ({ url }) => {
 		record,
 		field,
 		material,
+		details,
 		nationIdentifier
 	};
 };
