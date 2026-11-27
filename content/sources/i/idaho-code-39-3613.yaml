@@ -1,0 +1,50 @@
+key: idaho-code-39-3613
+kind: state-statute
+citation:
+  type: legislation
+  title: Creation of basin advisory groups
+  title-short: Idaho Code § 39-3613
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 39-3613
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 1995
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title39/T39CH36/SECT39-3613
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title39/T39CH36/SECT39-3613
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 39-3613 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 39-3613 (2026). History: 39-3613, added 1995, ch. 352, sec. 1, p. 1174; am. 1997, ch. 214, sec. 1, p. 634; am. 2001, ch. 103, sec. 32, p. 277; am. 2001, ch. 371, sec. 1, p. 1296; am. 2007, ch. 90, sec. 21, p. 258. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribes; indian; reservation; tribes); AI reader''s verdict incidental: Basin advisory group seats include Indian tribes within reservations. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribes; indian; reservation; tribes'

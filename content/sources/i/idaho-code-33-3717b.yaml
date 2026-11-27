@@ -1,0 +1,50 @@
+key: idaho-code-33-3717b
+kind: state-statute
+citation:
+  type: legislation
+  title: Residency requirements
+  title-short: Idaho Code § 33-3717B
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 33-3717B
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 2005
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title33/T33CH37/SECT33-3717B
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title33/T33CH37/SECT33-3717B
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 33-3717B (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 33-3717B (2026). History: 33-3717B, added 2005, ch. 210, sec. 4, p. 627; am. 2008, ch. 66, sec. 2, p. 170; am. 2008, ch. 226, sec. 1, p. 690; am. 2009, ch. 329, sec. 1, p. 939; am. 2010, ch. 77, sec. 1, p. 126; am. 2012, ch. 21, sec. 1, p. 74; am. 2014, ch. 75, sec. 2, p. 198; am. 2016, ch. 114, sec. 1, p. 324; am. 2018, ch. 200, sec. 1, p. 451; am. 2025, ch. 257, sec. 1, p. 1124. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; native american; indian; native; tribal; tribe; tribes); AI reader''s verdict incidental: Residency rule grants resident status to certain tribal members. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; native american; indian; native; tribal; tribe; tribes'

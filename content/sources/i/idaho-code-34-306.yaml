@@ -1,0 +1,50 @@
+key: idaho-code-34-306
+kind: state-statute
+citation:
+  type: legislation
+  title: Precinct boundary requirements
+  title-short: Idaho Code § 34-306
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 34-306
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 1977
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title34/T34CH3/SECT34-306
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title34/T34CH3/SECT34-306
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 34-306 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 34-306 (2026). History: 34-306, added 1977, ch. 8, sec. 2, p. 16; am. 1989, ch. 261, sec. 1, p. 639; am. 1992, ch. 284, sec. 1, p. 876. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservation; indian; reservation); AI reader''s verdict incidental: Precinct boundaries may coincide with Indian reservation boundaries. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian reservation; indian; reservation'

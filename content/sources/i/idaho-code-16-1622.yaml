@@ -1,0 +1,50 @@
+key: idaho-code-16-1622
+kind: state-statute
+citation:
+  type: legislation
+  title: Review hearings — status hearings — annual permanency hearings
+  title-short: Idaho Code § 16-1622
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 16-1622
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 1976
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title16/T16CH16/SECT16-1622
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title16/T16CH16/SECT16-1622
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 16-1622 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 16-1622 (2026). History: (16-1622) 16-1611, added 1976, ch. 204, sec. 2, p. 739; am. 1982, ch. 186, sec. 11, p. 498; am. 1991, ch. 212, sec. 5, p. 505; am. 1996, ch. 272, sec. 9, p. 892; am. 2001, ch. 107, sec. 12, p. 364; am. and redesig. 2005, ch. 391, sec. 24, p. 1283; am. 2007, ch. 223, sec. 4, p. 672; am. 2013, ch. 287, sec. 6, p. 750; am. 2014, ch. 23, sec. 1, p. 29; am. 2016, ch. 265, sec. 6, p. 712; am. 2016, ch. 347, sec. 5, p. 1005; am. 2018, ch. 287, sec. 4, p. 679; am. 2021, ch. 281, sec. 7, p. 850; am. 2025, ch. 130, sec. 1, p. 672; am. 2025, ch. 142, sec. 1, p. 716; am. 2026, ch. 198, sec. 1, p. 860. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian; tribes); AI reader''s verdict incidental: Review hearings require Indian child inquiry and tribal membership verification efforts. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian; tribes'

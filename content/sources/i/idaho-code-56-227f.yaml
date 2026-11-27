@@ -1,0 +1,50 @@
+key: idaho-code-56-227f
+kind: state-statute
+citation:
+  type: legislation
+  title: Public assistance benefit cards — prohibited uses
+  title-short: Idaho Code § 56-227F
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 56-227F
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 2012
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title56/T56CH2/SECT56-227F
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title56/T56CH2/SECT56-227F
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 56-227F (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 56-227F (2026). History: 56-227F, added 2012, ch. 182, sec. 1, p. 484; am. 2020, ch. 318, sec. 21, p. 917; am. 2025, ch. 64, sec. 12, p. 309; am. 2026, ch. 279, sec. 7, p. 1173. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: state-tribal; tribal); AI reader''s verdict incidental: Benefit card ban references state-tribal gaming compact activities. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: state-tribal; tribal'

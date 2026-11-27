@@ -1,0 +1,47 @@
+key: idaho-code-32-303
+kind: state-statute
+citation:
+  type: legislation
+  title: By whom solemnized
+  title-short: Idaho Code § 32-303
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 32-303
+  author:
+  - literal: Idaho Legislature
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title32/T32CH3/SECT32-303
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title32/T32CH3/SECT32-303
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 32-303 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 32-303 (2026). History: (32-303) 1863, p. 613, sec. 4; R.S., sec. 2431; reen. R.C. & C.L., sec. 2622; C.S., sec. 4602; I.C.A., sec. 31-303; am. 1969, ch. 116, sec. 1, p. 374; am. 1983, ch. 18, sec. 3, p. 53; am. 1994, ch. 7, sec. 1, p. 11; am. 1997, ch. 196, sec. 1, p. 554; am. 2000, ch. 212, sec. 1, p. 572; am. 2008, ch. 46, sec. 1, p. 119. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribal; tribe); AI reader''s verdict incidental: Current tribal judge of Idaho tribe may solemnize marriages. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribal; tribe'

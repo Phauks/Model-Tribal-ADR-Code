@@ -1,0 +1,50 @@
+key: idaho-code-39-6302
+kind: state-statute
+citation:
+  type: legislation
+  title: Statement of purpose
+  title-short: Idaho Code § 39-6302
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 39-6302
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 1988
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title39/T39CH63/SECT39-6302
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title39/T39CH63/SECT39-6302
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 39-6302 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 39-6302 (2026). History: 39-6302, added 1988, ch. 341, sec. 1, p. 1013; am. 1989, ch. 136, sec. 1, p. 306; am. 1999, ch. 330, sec. 1, p. 888. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribes; indian; tribes); AI reader''s verdict incidental: Purpose clause gives full faith and credit to tribal protection orders. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribes; indian; tribes'

@@ -1,0 +1,50 @@
+key: idaho-code-33-4602
+kind: state-statute
+citation:
+  type: legislation
+  title: Advanced opportunities — rulemaking
+  title-short: Idaho Code § 33-4602
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 33-4602
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 2016
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title33/T33CH46/SECT33-4602
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title33/T33CH46/SECT33-4602
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 33-4602 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 33-4602 (2026). History: 33-4602, added 2016, ch. 166, sec. 3, p. 451; am. 2018, ch. 100, sec. 2, p. 210; am. 2019, ch. 263, sec. 1, p. 773; am. 2021, ch. 210, sec. 1, p. 577; am. 2023, ch. 174, sec. 5, p. 465; am. 2024, ch. 76, sec. 1, p. 366; am. 2024, ch. 139, sec. 1, p. 540; am. 2024, ch. 290, sec. 4, p. 987; am. 2025, ch. 139, sec. 1, p. 706. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal school; tribal schools; tribal); AI reader''s verdict incidental: Advanced opportunities funding and enrollment rules exempt or address tribal schools. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal school; tribal schools; tribal'

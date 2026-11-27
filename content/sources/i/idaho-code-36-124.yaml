@@ -1,0 +1,50 @@
+key: idaho-code-36-124
+kind: state-statute
+citation:
+  type: legislation
+  title: Reciprocal licensure agreements with Indian tribes
+  title-short: Idaho Code § 36-124
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 36-124
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 2003
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title36/T36CH1/SECT36-124
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title36/T36CH1/SECT36-124
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Idaho Code § 36-124 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 36-124 (2026). History: 36-124, added 2003, ch. 154, sec. 1, p. 441. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian tribes; indian; reservation; tribe; tribes); AI reader''s verdict core: Reciprocal hunting and fishing licensure agreements with federally recognized tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: federally recognized indian tribe; indian tribes; indian; reservation; tribe; tribes'

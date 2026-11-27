@@ -1,0 +1,50 @@
+key: idaho-code-39-8202
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Idaho Code § 39-8202
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 39-8202
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 2001
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title39/T39CH82/SECT39-8202
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title39/T39CH82/SECT39-8202
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 39-8202 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 39-8202 (2026). History: (39-8202) 39-8102, added 2001, ch. 357, sec. 1, p. 1253; am. and redesig. 2005, ch. 25, sec. 69, p. 107; am. 2017, ch. 200, sec. 1, p. 502; am. 2024, ch. 115, sec. 1, p. 495; am. 2025, ch. 94, sec. 26, p. 473; am. 2025, ch. 127, sec. 1, p. 659. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian tribe; indian; tribal; tribe); AI reader''s verdict incidental: Safe haven definitions include Indian child and tribal fire stations. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian tribe; indian; tribal; tribe'

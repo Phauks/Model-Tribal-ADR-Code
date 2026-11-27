@@ -32,6 +32,18 @@ def title_case(text: str) -> str:
                     for index, word in enumerate(words))
 
 
+PROPER = re.compile(r"\b(idaho|indians?|american|alaska|united states|coeur d[’']alene|nez perce|spokane|kootenai|shoshone|bannock|paiute|"
+                    r"fort hall|duck valley|medicaid|medicare)\b", re.I)
+
+
+def tidy(heading: str) -> str:
+    """The section pages print catchlines in any case (the site shows them in capitals), so some come out lower case or mixed
+    ("idaho residency and domicile requirements — indian reservations"). Those get sentence or title case, with proper names fixed."""
+    shouting = any(word.isupper() and len(word) > 3 for word in heading.split())
+    text = title_case(heading) if shouting else heading[:1].upper() + heading[1:]
+    return PROPER.sub(lambda m: ' '.join(part[:1].upper() + part[1:] for part in m.group(0).split(' ')).replace('D’alene', 'd’Alene').replace("D'alene", "d'Alene"), text)
+
+
 class Idaho(State):
     STATE = 'ID'
     NAME = 'Idaho'
@@ -124,7 +136,7 @@ class Idaho(State):
             # The catchline is printed in the page's own case ("Council on Indian affairs created — Appointment of members.").
             lead = re.match(r'(.{0,600}?\.)\s', body)
             if lead and re.sub(r'\W', '', lead.group(1)).lower() == re.sub(r'\W', '', heading).lower():
-                heading, body = lead.group(1).rstrip('.').strip(), body[lead.end():].strip()
+                heading, body = tidy(lead.group(1).rstrip('.').strip()), body[lead.end():].strip()
             else:
                 heading = title_case(heading)
             status = 'repealed' if GONE.match(body) and len(body) < 300 else ('reserved' if not body else 'live')

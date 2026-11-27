@@ -1,0 +1,50 @@
+key: idaho-code-36-603
+kind: state-statute
+citation:
+  type: legislation
+  title: Records
+  title-short: Idaho Code § 36-603
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 36-603
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 1976
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title36/T36CH6/SECT36-603
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title36/T36CH6/SECT36-603
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 36-603 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 36-603 (2026). History: 36-603, added 1976, ch. 95, sec. 2, p. 342; am. 1993, ch. 78, sec. 1, p. 206; am. 2000, ch. 211, sec. 20, p. 563; am. 2010, ch. 85, sec. 1, p. 164; am. 2011, ch. 252, sec. 1, p. 695; am. 2017, ch. 61, sec. 6, p. 147; am. 2017, ch. 161, sec. 2, p. 384. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native; tribal); AI reader''s verdict incidental: Tannery records accept native American tribal identifications as client identification. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; native; tribal'

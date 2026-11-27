@@ -1,0 +1,50 @@
+key: idaho-code-16-1615
+kind: state-statute
+citation:
+  type: legislation
+  title: Shelter care hearing
+  title-short: Idaho Code § 16-1615
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 16-1615
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 1976
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title16/T16CH16/SECT16-1615
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title16/T16CH16/SECT16-1615
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 16-1615 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Idaho Code § 16-1615 (2026). History: (16-1615) 16-1614, added 1976, ch. 204, sec. 2, p. 740; am. 1982, ch. 186, sec. 14, p. 499; am. 1986, ch. 121, sec. 3, p. 321; am. 1989, ch. 58, sec. 1, p. 93; am. 1989, ch. 302, sec. 5, p. 757; am. 1996, ch. 272, sec. 11, p. 893; am. 2001, ch. 107, sec. 15, p. 366; am. and redesig. 2005, ch. 391, sec. 17, p. 1278; am. 2007, ch. 223, sec. 2, p. 670; am. 2016, ch. 265, sec. 2, p. 704; am. 2025, ch. 165, sec. 4, p. 794. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian); AI reader''s verdict incidental: Shelter care hearing requires court inquiry whether child is Indian child. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian'
