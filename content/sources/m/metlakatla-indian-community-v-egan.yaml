@@ -107,6 +107,51 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=363%20U.S.%20555
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1960-05-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-270-326-327-19600518-1of4.mp3
+  catalog: https://catalog.archives.gov/id/81137842
+  duration_seconds: 3993
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-270-326-327-19600518-1of4.mp3
+    checksum: 9044c36328128e5a02d5c1522e6de4a17273bc545e4c28c94ab27b87d563ac14
+    media_type: audio/mpeg
+    bytes: 63887986
+- kind: argument
+  date: '1960-05-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-270-326-327-19600518-2of4.mp3
+  catalog: https://catalog.archives.gov/id/81137842
+  duration_seconds: 4011
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-270-326-327-19600518-2of4.mp3
+    checksum: 46d2d8d4f98c92aba90cd027724a7845117def279f17d51c851ec60c410f215e
+    media_type: audio/mpeg
+    bytes: 64171780
+- kind: argument
+  date: '1960-05-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-270-326-327-19600518-3of4.mp3
+  catalog: https://catalog.archives.gov/id/81137842
+  duration_seconds: 4149
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-270-326-327-19600518-3of4.mp3
+    checksum: 13d413c7daad0bf9636e23e9e6d2d8582e73293df47cefd8b88b9fe65c745f49
+    media_type: audio/mpeg
+    bytes: 66384874
+- kind: argument
+  date: '1960-05-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-270-326-327-19600518-4of4.mp3
+  catalog: https://catalog.archives.gov/id/81137842
+  duration_seconds: 1127
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-270-326-327-19600518-4of4.mp3
+    checksum: 7b4a43e70e37a536c0d6193f436be8596a7baf7a2545ce99c122244757f7310f
+    media_type: audio/mpeg
+    bytes: 18031176
 rights:
   status: no-permission-needed
   basis: us-government-work

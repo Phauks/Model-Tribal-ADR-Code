@@ -31,7 +31,7 @@ export class FullScreen {
 				await element.requestFullscreen();
 				return;
 			} catch {
-				// Refused: fill the window instead.
+				// expected: refused: fill the window instead.
 			}
 		}
 		this.fillingWindow = true;

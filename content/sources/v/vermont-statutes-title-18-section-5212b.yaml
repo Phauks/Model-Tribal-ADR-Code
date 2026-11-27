@@ -1,0 +1,50 @@
+key: vermont-statutes-title-18-section-5212b
+kind: state-statute
+citation:
+  type: legislation
+  title: Unmarked Burial Sites Special Fund; reporting of unmarked burial sites
+  title-short: Vt. Stat. Ann. tit. 18, § 5212b
+  container-title: Vermont Statutes Annotated
+  container-title-short: Vt. Stat. Ann.
+  section: 18:5212b
+  author:
+  - literal: Vermont General Assembly
+  issued:
+    date-parts:
+    - - 2001
+  URL: https://legislature.vermont.gov/statutes/section/18/107/05212b
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.vermont.gov/statutes/section/18/107/05212b
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Vt. Stat. Ann. tit. 18, § 5212b (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Vt. Stat. Ann. tit. 18, § 5212b (2025). History: Added 2001, No. 149 (Adj. Sess.), § 57, eff. June 27, 2002; amended 2003, No. 63, § 36, eff. June 11, 2003; 2009, No. 135 (Adj. Sess.), § 10; 2009, No. 151 (Adj. Sess.), § 1, eff. June 1, 2010; 2017, No. 74, § 28. Text read from the Vermont General Assembly''s full-chapter page for the section in the Vermont Statutes Online (legislature.vermont.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native); AI reader''s verdict core: Unmarked burial sites fund with Native American group consultation. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: native american; native'

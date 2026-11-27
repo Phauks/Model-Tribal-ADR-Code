@@ -116,6 +116,7 @@ export function parseStarredItems(stored: string | null): StarredItem[] {
 	try {
 		return readStarredItems(JSON.parse(stored));
 	} catch {
+		// expected: stored stars that are not JSON were not written by this site; there are none.
 		return [];
 	}
 }
@@ -167,6 +168,7 @@ function storage(): Storage | undefined {
 	try {
 		return window.localStorage;
 	} catch {
+		// expected: storage is blocked, as in a private window; stars last for this page only.
 		return undefined;
 	}
 }
@@ -175,6 +177,7 @@ export function loadStarred(): StarredItem[] {
 	try {
 		return parseStarredItems(storage()?.getItem(starredStorageKey) ?? null);
 	} catch {
+		// expected: storage is blocked; there are no stars to read.
 		return [];
 	}
 }
@@ -189,6 +192,7 @@ export function saveStarred(items: StarredItem[]): boolean {
 		else if (serialized === null) store.removeItem(starredStorageKey);
 		else store.setItem(starredStorageKey, serialized);
 	} catch {
+		// expected: storage refused the stars; the caller tells the reader.
 		kept = false;
 	}
 	window.dispatchEvent(new CustomEvent(starredChangeEvent));

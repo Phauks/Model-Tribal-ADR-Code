@@ -51,6 +51,7 @@ export function webLink(value: unknown): string | undefined {
 		const url = new URL(value);
 		return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : undefined;
 	} catch {
+		// expected: a value that is not a web address gets no link.
 		return undefined;
 	}
 }

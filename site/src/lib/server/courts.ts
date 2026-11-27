@@ -34,6 +34,7 @@ export const shownCaseCount = 25;
 /** The lists of every case of a court with thousands (the Statistics page's collections, collections.ts). */
 const caseLists: Record<string, string> = {
   "interior-board-of-indian-appeals": "/stats/interior-board-of-indian-appeals",
+  "indian-claims-commission": "/stats/indian-claims-commission",
 };
 
 const caseKinds: Record<string, string> = {
@@ -129,7 +130,9 @@ export function courts(): Court[] {
       named,
       named === "Interior Board of Indian Appeals"
         ? "Federal appeals board"
-        : (caseKinds[record.kind] ?? "Court"),
+        : named === "Indian Claims Commission"
+          ? "Federal claims commission"
+          : (caseKinds[record.kind] ?? "Court"),
     );
     court.records.push(record);
     court.cases.push({

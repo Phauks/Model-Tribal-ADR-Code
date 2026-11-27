@@ -397,14 +397,19 @@ export function pageRestricts(restrictions: PageRestrictions): boolean {
 	return Object.keys(restrictions.levels).length > 0;
 }
 
-/** Reads what the Worker or the page put in the page (src/lib/server/nation-page-overlay.ts), or nothing restricted. */
-export function readPageRestrictions(text: string | null | undefined): PageRestrictions {
+/**
+ * Reads what the Worker or the page put in the page (src/lib/server/nation-page-overlay.ts), or nothing restricted.
+ * Text that is not JSON goes to onFault: the site wrote it, so it is a fault (restrictionsInPage reports it).
+ */
+export function readPageRestrictions(text: string | null | undefined, onFault?: (problem: unknown) => void): PageRestrictions {
 	if (!text) return noPageRestrictions;
 	try {
 		const value = JSON.parse(text) as Partial<PageRestrictions>;
 		if (!value || typeof value.levels !== 'object' || value.levels === null) return noPageRestrictions;
 		return { ...noPageRestrictions, ...value } as PageRestrictions;
-	} catch {
+	} catch (problem) {
+		// expected: the caller reports it through onFault. What a reader sees is unchanged until Trevor decides whether a fault should hide restricted parts.
+		onFault?.(problem);
 		return noPageRestrictions;
 	}
 }

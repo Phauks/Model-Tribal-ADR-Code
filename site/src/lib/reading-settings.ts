@@ -260,6 +260,7 @@ export function parseSettings(stored: string | null): ReadingSettings {
 	try {
 		parsed = JSON.parse(stored);
 	} catch {
+		// expected: stored settings that are not JSON fall back to the defaults.
 		return settings;
 	}
 	if (typeof parsed !== 'object' || parsed === null) return settings;
@@ -298,6 +299,7 @@ function storage(): Storage | undefined {
 	try {
 		return window.localStorage;
 	} catch {
+		// expected: storage is blocked, as in a private window; settings last for this page only.
 		return undefined;
 	}
 }
@@ -306,6 +308,7 @@ export function loadSettings(): ReadingSettings {
 	try {
 		return parseSettings(storage()?.getItem(settingsStorageKey) ?? null);
 	} catch {
+		// expected: storage is blocked; the defaults apply.
 		return { ...defaultSettings };
 	}
 }
@@ -314,6 +317,7 @@ export function loadTheme(): Theme {
 	try {
 		return parseTheme(storage()?.getItem(themeStorageKey) ?? null);
 	} catch {
+		// expected: storage is blocked; the device's theme applies.
 		return 'device';
 	}
 }
@@ -356,7 +360,7 @@ export function saveSettings(settings: ReadingSettings): void {
 		if (serialized === null) storage()?.removeItem(settingsStorageKey);
 		else storage()?.setItem(settingsStorageKey, serialized);
 	} catch {
-		// Storage blocked or full: the settings still apply to this page.
+		// expected: storage blocked or full: the settings still apply to this page.
 	}
 	announceSaved();
 }
@@ -383,7 +387,7 @@ export function downloadFont(font: HeadingFont): void {
 	const facesKnown = font === 'opendyslexic' ? addOpenDyslexicFaces() : Promise.resolve();
 	void facesKnown.then(() => {
 		for (const face of ['400', 'italic 400', '600', '700', 'italic 700']) {
-			document.fonts.load(`${face} 1em "${family}"`).catch(() => {
+			document.fonts.load(`${face} 1em "${family}"`).catch(() => /* expected: offline or blocked: the next font in the token's list is used. */ {
 				// Offline or blocked: the next font in the token's list is used.
 			});
 		}
@@ -399,7 +403,7 @@ export function saveTheme(theme: Theme): void {
 		if (theme === 'device') storage()?.removeItem(themeStorageKey);
 		else storage()?.setItem(themeStorageKey, theme);
 	} catch {
-		// Storage blocked or full: the theme still applies to this page.
+		// expected: storage blocked or full: the theme still applies to this page.
 	}
 	announceSaved();
 }
