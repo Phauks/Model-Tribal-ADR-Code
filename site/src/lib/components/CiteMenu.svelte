@@ -1,19 +1,24 @@
 <script lang="ts">
 	// The masthead's Cite button, on pages about one record: a nation, a case,
-	// a Justice, a glossary term, a story (improvements report, Nov. 24, 2026,
-	// idea 2: "Stable citations to every page and record"). It opens a panel
-	// with the citation in Indigo Book form, each with a copy button, and the
-	// same citation as a file for a citation manager. A case page also gives
-	// the citation to the case itself, which is what a brief cites. The panel
-	// follows the disclosure pattern of the Download list: Escape closes it
-	// and returns to the button, and a click elsewhere closes it.
+	// a law, an essay, a Justice, a glossary term, a story (improvements report,
+	// Nov. 24, 2026, idea 2: "Stable citations to every page and record"). It
+	// opens a panel with the citation, each with a copy button, and the same
+	// citation as a file for a citation manager. A case or law page also gives
+	// the citation to the case or law itself, which is what a brief cites. The
+	// reader picks the style: the Indigo Book, Chicago, APA or MLA (Trevor,
+	// Nov. 27, 2026; src/lib/citation-styles.ts), and the choice is remembered
+	// in this browser. The panel follows the disclosure pattern of the Download
+	// list: Escape closes it and returns to the button, and a click elsewhere
+	// closes it.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
+	import { readStored, writeStored } from '#lib/browser-storage.ts';
 	import { bibtexFile, risFile, type CitationItem } from '#lib/citation-formats.ts';
+	import { citationStyles, citePage, citeRecord, defaultCitationStyle, isCitationStyle, type CitationStyle, type CitedRecord } from '#lib/citation-styles.ts';
 	import { copyRichText } from '#lib/clipboard.ts';
 	import { datedName } from '#lib/download-names.ts';
 	import { saveFile } from '#lib/save-file.ts';
-	import { pageCitation, pageDownloads } from '#lib/page-downloads.ts';
+	import { pageDownloads } from '#lib/page-downloads.ts';
 	import Check from '@lucide/svelte/icons/check';
 	import Copy from '@lucide/svelte/icons/copy';
 	import Quote from '@lucide/svelte/icons/quote';
@@ -25,7 +30,11 @@
 		html: string;
 	}
 
-	const citable = $derived(pageDownloads(page.url.pathname).citable);
+	// An essay not yet published has nothing to cite.
+	const citable = $derived(pageDownloads(page.url.pathname).citable && (page.data as { unpublished?: boolean }).unpublished !== true);
+
+	const styleKey = 'citation-style';
+	let style = $state<CitationStyle>(defaultCitationStyle);
 
 	let open = $state(false);
 	let copied = $state<string | null>(null);
@@ -55,25 +64,52 @@
 		return `${location.origin}${location.pathname}`;
 	}
 
-	// A case page cites the case first, from its record: the name in italics and the reporter citation.
-	const record = $derived.by((): Citation | undefined => {
-		const data = page.data as { name?: unknown; citation?: unknown };
-		if (!/^\/cases\/[^/]+$/.test(page.url.pathname) || typeof data.name !== 'string' || typeof data.citation !== 'string') return undefined;
-		return {
-			key: 'record',
-			heading: 'The case',
-			text: `${data.name}, ${data.citation}.`,
-			html: `<i>${escape(data.name)}</i>, ${escape(data.citation)}.`
-		};
+	// A case or law page cites the case or law first, from its record.
+	const record = $derived.by((): (CitedRecord & { heading: string }) | undefined => {
+		const data = page.data as { name?: unknown; citation?: unknown; reference?: CitedRecord['reference']; kind?: unknown };
+		if (typeof data.name !== 'string' || typeof data.citation !== 'string') return undefined;
+		if (/^\/cases\/[^/]+$/.test(page.url.pathname)) return { heading: 'The case', kind: 'case', name: data.name, citation: data.citation, reference: data.reference };
+		if (/^\/laws\/[^/]+$/.test(page.url.pathname) && data.citation) {
+			return { heading: data.kind === 'intergovernmental-agreement' ? 'The treaty' : 'The law', kind: 'law', name: data.name, citation: data.citation, lawKind: typeof data.kind === 'string' ? data.kind : undefined };
+		}
+		return undefined;
 	});
 
-	let citations = $state<Citation[]>([]);
+	/** The day an essay's publication came out, which the styles give as its date. */
+	function published(): Date | undefined {
+		const when = (page.data as { publication?: { publishedAt?: unknown } }).publication?.publishedAt;
+		if (typeof when !== 'string') return undefined;
+		const date = new Date(when);
+		return Number.isNaN(date.getTime()) ? undefined : date;
+	}
+
+	const citations = $derived.by((): Citation[] => {
+		void visited;
+		if (!open) return [];
+		const versions = page.data.versions as { content?: string } | undefined;
+		const self = citePage(style, {
+			title: pageTitle(),
+			titleIsCaseName: /^\/cases\/[^/]+$/.test(page.url.pathname),
+			siteName,
+			contentVersion: versions?.content,
+			address: address(),
+			visited,
+			published: published()
+		});
+		const own = record ? [{ key: 'record', heading: record.heading, ...citeRecord(style, record) }] : [];
+		return [...own, { key: 'page', heading: 'This page', ...self }];
+	});
 
 	function refresh(): void {
 		visited = new Date();
-		const versions = page.data.versions as { content?: string } | undefined;
-		const self = pageCitation(pageTitle(), siteName, versions?.content, address(), visited);
-		citations = [...(record ? [record] : []), { key: 'page', heading: 'This page', ...self }];
+		const kept = readStored(styleKey);
+		if (isCitationStyle(kept)) style = kept;
+	}
+
+	function choose(next: CitationStyle): void {
+		style = next;
+		copied = null;
+		writeStored(styleKey, next);
 	}
 
 	function toggle(): void {
@@ -156,6 +192,15 @@
 			<Quote size={24} />
 		</button>
 		<div class="cite-panel" id="cite-panel" hidden={!open} role="group" aria-label="Cite">
+			<fieldset class="styles">
+				<legend class="visually-hidden">Citation style</legend>
+				{#each citationStyles as option (option.key)}
+					<label class="style" title={option.title}>
+						<input type="radio" name="citation-style" value={option.key} checked={style === option.key} onchange={() => choose(option.key)} />
+						<span>{option.label}</span>
+					</label>
+				{/each}
+			</fieldset>
 			{#each citations as citation (citation.key)}
 				<section class="citation">
 					<p class="group-heading">{citation.heading}</p>
@@ -165,7 +210,7 @@
 						<button
 							type="button"
 							class="icon-button copy"
-							aria-label="Copy the citation to {citation.heading === 'The case' ? 'the case' : 'this page'}"
+							aria-label="Copy the citation to {citation.heading === 'This page' ? 'this page' : citation.heading.toLowerCase()}"
 							title="Copy"
 							onclick={() => copy(citation)}
 						>
@@ -217,6 +262,56 @@
 
 	.cite-panel[hidden] {
 		display: none;
+	}
+
+	/* The style switch looks like the site's other view switches (ViewSwitch.svelte): the chosen one in the link color, underlined. */
+	.styles {
+		display: flex;
+		gap: var(--space-1);
+		margin: 0;
+		padding: 0 var(--space-2) var(--space-1);
+		border: 0;
+		border-bottom: 1px solid var(--color-line);
+	}
+
+	.style {
+		position: relative;
+		display: flex;
+	}
+
+	.style input {
+		position: absolute;
+		inset: 0;
+		margin: 0;
+		opacity: 0;
+		cursor: pointer;
+	}
+
+	.style span {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: var(--layout-target-minimum);
+		padding: 0 var(--space-2);
+		border-radius: var(--radius-control);
+		white-space: nowrap;
+		color: var(--color-ink-muted);
+	}
+
+	.style:hover span {
+		color: var(--color-ink);
+		background: var(--color-surface);
+	}
+
+	.style input:checked + span {
+		color: var(--color-link);
+		font-weight: var(--font-weight-bold);
+		box-shadow: inset 0 -2px 0 var(--color-link);
+	}
+
+	.style input:focus-visible + span {
+		background-color: var(--color-focus);
+		color: var(--focus-text);
 	}
 
 	.citation + .citation {
