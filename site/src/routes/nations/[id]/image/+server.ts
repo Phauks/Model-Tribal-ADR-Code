@@ -40,6 +40,7 @@ async function fetchFromNation(image: ServableImage): Promise<ArrayBuffer | unde
 		if (bytes.byteLength > largestImage) return undefined;
 		return (await hexDigest(bytes)) === image.sha256 ? bytes : undefined;
 	} catch {
+		// expected: a picture that cannot be fetched, or no longer matches the reviewed copy, is not shown.
 		return undefined;
 	}
 }
