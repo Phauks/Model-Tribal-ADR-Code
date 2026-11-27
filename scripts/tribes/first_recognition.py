@@ -341,12 +341,15 @@ def nation_state(nation: dict) -> str:
 
 def candidates() -> None:
     sys.path.insert(0, str(ROOT / "scripts/tribes"))
-    import recognition_basis  # the 58 nations whose own basis is already cited
+    import recognition_basis  # the nations whose own basis is already cited
 
-    covered = set(recognition_basis.LEGISLATED) | set(recognition_basis.DETERMINED) | set(recognition_basis.ADMINISTRATIVE)
+    covered = (set(recognition_basis.LEGISLATED) | set(recognition_basis.DETERMINED) | set(recognition_basis.ADMINISTRATIVE)
+               | set(recognition_basis.JUDGED))
     data = json.loads(APPEARANCES.read_text())
     reviews_path = REVIEWS / "list-appearance-reviews.json"
     reviews = {row["nation"]: row for row in json.loads(reviews_path.read_text())} if reviews_path.exists() else {}
+    audit_path = REVIEWS / "list-appearance-audit.json"  # second review of the list-only rows
+    audit = {row["nation"]: row for row in json.loads(audit_path.read_text())} if audit_path.exists() else {}
     lists = {record["key"]: record for record in list_records()}
     treaties = treaty_records()
     parties = treaty_parties()
@@ -407,11 +410,18 @@ def candidates() -> None:
             if review:
                 if review.get("earliest_list") and review["earliest_list"] != key:
                     reasons.append(f"script said {key}; reviewer said {review['earliest_list']}")
-                    key, entry = review["earliest_list"], review.get("entry")
+                    key = review["earliest_list"]
+                if review.get("earliest_list") == key and review.get("entry"):
+                    entry = review["entry"]
                 if review.get("confidence") != "high":
                     reasons.append(f"reviewer confidence {review.get('confidence')}")
             elif method != "script":
                 reasons.append("match not yet reviewed")
+            second = audit.get(nid)
+            if second and second.get("earliest_list") != key:
+                settled = review and review.get("reviewed_by", "").startswith("Claude (AI assistant), by searching")
+                if not settled:
+                    reasons.append(f"a second reviewer, shown at most five lines per list, said {second.get('earliest_list') or 'no list'}")
             if entry and re.search(r"\b(Inc\.?|Corporation|Native Association)\b", entry):
                 reasons.append("the entry names an Alaska Native corporation or association, not the tribal government")
             if key == "bia-recognized-entities-1988" and nation_state(nation) == "AK":

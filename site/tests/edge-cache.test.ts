@@ -44,6 +44,12 @@ describe('what the edge may keep', () => {
 		expect(edgePolicy('GET', '/sitemaps/built/parts.json', ok()).control).toBe('no-store');
 	});
 
+	it('keeps the home page row of sponsors five minutes, but never a sponsor’s own pages', () => {
+		expect(edgePolicy('GET', '/sponsor/row.json', ok())).toEqual({ control: 'public, max-age=300', tags: ['sponsors'] });
+		expect(edgePolicy('GET', '/sponsor', ok()).control).toBe('no-store');
+		expect(edgePolicy('GET', '/account/sponsorship', ok()).control).toBe('no-store');
+	});
+
 	it('never keeps a signed-in, personal or changing page', () => {
 		// The private and signed-in prefixes of src/hooks.server.ts, and other pages that change between deploys.
 		const prefixes = [

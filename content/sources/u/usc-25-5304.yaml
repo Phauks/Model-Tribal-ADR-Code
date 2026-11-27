@@ -38,12 +38,16 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=25%20U.S.C.%20%C2%A7%205304
+file:
+  storage_key: united-states-code/2024/title-25-section-5304.pdf
+  checksum: 84b4c9b9676c419c70b33bca425857e9a504bbd4435eb04f18bb0850d39ed50c
+  media_type: application/pdf
+  bytes: 150914
 rights:
   status: no-permission-needed
   basis: us-government-work
   redistribution: true
 found_in:
   - 2026-11-20-terminology-sources
-notes: >-
-  Definitions for the Indian Self-Determination and Education Assistance Act
-  chapter only. Citator check not yet run.
+  - 2026-11-27-us-code-sections
+notes: Definitions for the Indian Self-Determination and Education Assistance Act chapter only. Citator check not yet run. The stored copy is 25 U.S.C. § 5304 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.

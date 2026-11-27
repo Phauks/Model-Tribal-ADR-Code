@@ -5,6 +5,7 @@
 	import DataTable from '#lib/components/DataTable.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
+	import type { Snippet } from 'svelte';
 	import Collapsible from '#lib/components/Collapsible.svelte';
 	import ContactCard from '#lib/components/ContactCard.svelte';
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
@@ -446,7 +447,6 @@
 		{#if data.treaties.length > 0 || data.ties.length > 0 || data.programs.length > 0 || data.enforcement.length > 0}
 			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
 				{#if data.treaties.length > 0}
-					<h3 id="treaties-heading">Treaties</h3>
 					<DataTable
 						identifier="treaties"
 						label="Table: treaties"
@@ -456,6 +456,7 @@
 						rowName={['treaty', 'treaties']}
 						download="{data.page.id}-treaties"
 					>
+						{#snippet heading(count: Snippet)}<h3 id="treaties-heading">Treaties {@render count()}</h3>{/snippet}
 						{#snippet cell(row: TableRow, column: TableColumn)}
 							{#if column.key === 'treaty'}
 								<span class="treaty-cell"
@@ -468,7 +469,6 @@
 				{/if}
 				{#if data.ties.length > 0}<FactGroups groups={data.ties} />{/if}
 				{#if data.programs.length > 0}
-					<h3 id="federal-programs-heading">Self-governance and federal programs</h3>
 					<DataTable
 						identifier="federal-programs"
 						label="Table: self-governance and federal programs"
@@ -477,6 +477,7 @@
 						rowName={['program', 'programs']}
 						download="{data.page.id}-federal-programs"
 					>
+						{#snippet heading(count: Snippet)}<h3 id="federal-programs-heading">Self-governance and federal programs {@render count()}</h3>{/snippet}
 						{#snippet cell(row: TableRow, column: TableColumn)}
 							{#if column.key === 'program'}
 								<span class="program-cell"
@@ -489,7 +490,6 @@
 				{/if}
 				{#if data.enforcement.length > 0}
 					<!-- The Gaming Commission's enforcement actions, as a table (Trevor, Nov. 23, 2026). -->
-					<h3 id="enforcement-heading">Gaming Commission enforcement actions</h3>
 					<DataTable
 						identifier="enforcement-actions"
 						label="Table: Gaming Commission enforcement actions"
@@ -500,6 +500,7 @@
 						filters
 						download="{data.page.id}-enforcement-actions"
 					>
+						{#snippet heading(count: Snippet)}<h3 id="enforcement-heading">Gaming Commission enforcement actions {@render count()}</h3>{/snippet}
 						{#snippet cell(row: TableRow, column: TableColumn)}
 							{#if column.key === 'document'}
 								{#if row.cells.document.href}<a href={row.cells.document.href}>{row.cells.document.text}</a>{/if}

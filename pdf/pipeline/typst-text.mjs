@@ -13,7 +13,15 @@
 const SPECIAL = /[\\#*_`$<>@[\]~/"'\-.=+(;]/g;
 
 export function escapeTypst(text) {
-  return text.replace(SPECIAL, (character) => "\\" + character);
+  return bindEllipses(text).replace(SPECIAL, (character) => "\\" + character);
+}
+
+// An ellipsis is three spaced periods (Indigo Book R8.3.1), and a line
+// must never break inside one or between it and the word before it or the
+// closing period after it ("knowledge . . . ."). No-break spaces hold it
+// together.
+export function bindEllipses(text) {
+  return text.replace(/ ?\. \. \.(?: [.?!])?/g, (ellipsis) => ellipsis.replace(/ /g, "\u00a0"));
 }
 
 // A Typst string literal, for function arguments such as link targets.

@@ -163,7 +163,7 @@ export function isAttribution(paragraph: string): boolean {
  * a quotation that begins after the start of the sentence takes no "..." and
  * capitalizes its first letter in brackets, "[W]e" (R8.3.2). `end` is true
  * when it ends in a bare "..." or does not end in ".", "?" or "!" (perhaps
- * followed by a closing quotation mark or bracket): a sentence cut short ends "... ." with the
+ * followed by a closing quotation mark or bracket): a sentence cut short ends ". . . ." with the
  * sentence's own closing mark (R8.3.5). Citations after the quoted words are
  * ignored.
  */
@@ -173,21 +173,37 @@ export function quotationEndProblems(quotation: string): { start: boolean; end: 
 		.replace(/^[\s"“‘']+/, '')
 		.trim();
 	if (!text) return { start: false, end: false };
-	const start = /^(\.\.\.|…)/.test(text) || /^[*_]*(\[[a-z]|[a-z])/.test(text);
-	const end = /(\.\.\.|…)$/.test(text) || !/[.?!][\]"”’')]*$/.test(text);
+	const start = /^(\.\.\.|…|\. \. \.)/.test(text) || /^[*_]*(\[[a-z]|[a-z])/.test(text);
+	const end = /(\.\.\.|…|(?<!\. )\. \. \.)$/.test(text) || !/[.?!][\]"”’')]*$/.test(text);
 	return { start, end };
 }
 
+/** Whether a quotation writes an ellipsis as "..." or "…" rather than three spaced periods, ". . ." (Indigo Book R8.3.1). */
+export function unspacedEllipsis(quotation: string): boolean {
+	return /\.\.\.|…/.test(quotation);
+}
+
 /**
- * Whether a quotation ends its sentence and then adds " ...", as in
- * "of a ward to his guardian. ...". Nothing is left out after a sentence's own
+ * The text with each ellipsis written ". . ." (and a closing mark after
+ * one, ". . . .") held together by no-break spaces, joined to the word
+ * before it, so a line never breaks inside it or starts with it.
+ */
+export function bindEllipses(text: string): string {
+	return text.replace(/ ?\. \. \.(?: [.?!])?/g, (ellipsis) => ellipsis.replace(/ /g, '\u00a0'));
+}
+
+/**
+ * Whether a quotation ends its sentence and then adds an ellipsis, as in
+ * "of a ward to his guardian. . . .". Nothing is left out after a sentence's own
  * period, so the ellipsis is needless (Indigo Book R8.3.7: "When omitting
  * material following a final punctuation mark, do not use an ellipsis").
  * Citations after the quoted words are ignored.
  */
 export function needlessEndEllipsis(quotation: string): boolean {
 	const text = quotation.replace(/\s*\[@[^\]]*\]\s*$/g, '').trim();
-	return /[.?!]["”’')\]]*\s*(\.\.\.|…)$/.test(text);
+	// "knowledge . . . ." is a sentence cut short, not a sentence that ended.
+	if (/[^\s.]\s+(\. \. \.|\.\.\.|…)\s+[.?!]$/.test(text)) return false;
+	return /[.?!]["”’')\]]*\s*(\.\.\.|…|\. \. \.)$/.test(text);
 }
 
 /**
@@ -203,6 +219,13 @@ export function essayMarkdown({ forEditing = false }: { forEditing?: boolean } =
 		markdown.use(container, name, { validate: (info: string) => pattern.test(info.trim()) });
 	}
 	markdown.disable('replacements');
+	if (!forEditing) {
+		markdown.core.ruler.push('bind_ellipses', (state) => {
+			for (const token of state.tokens) {
+				for (const child of token.children ?? []) if (child.type === 'text') child.content = bindEllipses(child.content);
+			}
+		});
+	}
 	markdown.inline.ruler.before('link', 'term_link', termLinkRule);
 	markdown.inline.ruler.before('link', 'citation', citationRule);
 	return markdown;

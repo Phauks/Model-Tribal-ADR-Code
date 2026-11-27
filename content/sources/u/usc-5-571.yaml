@@ -43,6 +43,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=5%20U.S.C.%20%C2%A7%20571
+file:
+  storage_key: united-states-code/2024/title-5-section-571.pdf
+  checksum: c8d5d8349d569c76cb0d6845d33467d07b8be84ff92de37224bf4769b39829b4
+  media_type: application/pdf
+  bytes: 143157
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -73,4 +78,5 @@ access:
     of Pub. L. 104-320 (S. Rep. / H.R. Rep.) on Westlaw if needed.
 found_in:
 - 2026-11-21-united-states-dispute-resolution
-notes: Read on the original page. Citator check not yet run.
+- 2026-11-27-us-code-sections
+notes: Read on the original page. Citator check not yet run. The stored copy is 5 U.S.C. § 571 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.

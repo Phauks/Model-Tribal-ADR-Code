@@ -90,6 +90,7 @@
 	import { motionDuration, motionEasing } from '#lib/motion.ts';
 	import { censusYearFor, writeCessionsSwitch } from '#lib/historic-map.ts';
 	import { loadAllNationsTileMapData, loadTileMapLibrary } from '#lib/tile-map-loading.ts';
+	import { drawGlobeSky, type GlobeSkyColors, type Star } from '#lib/globe-sky.ts';
 
 	let {
 		view,
@@ -195,8 +196,87 @@
 	$effect(() => {
 		const type = shape === 'globe' ? 'globe' : 'mercator';
 		showShape();
-		if (ready && map) map.setProjection({ type });
+		if (ready && map) {
+			map.setProjection({ type });
+			showStarCredit(map, type === 'globe');
+		}
+		drawSkySoon();
 	});
+
+	/**
+	 * The starry sky behind the globe (Trevor, 2026-11-27, mockup A), drawn on a canvas under the map by src/lib/globe-sky.ts: a night sky in both themes, its stars where the real sky is behind that side of the earth at the moment the map opened. It moves only when the reader moves the globe, and the flat map has none. The stars are fetched the first time the globe is shown.
+	 */
+	let skyCanvas: HTMLCanvasElement | undefined = $state();
+	let skyStars: Star[] | undefined;
+	let skyStarsLoading = false;
+	let skyFrame = 0;
+	const skyTime = new Date();
+
+	function drawSkySoon(): void {
+		if (skyFrame || typeof requestAnimationFrame === 'undefined') return;
+		skyFrame = requestAnimationFrame(() => {
+			skyFrame = 0;
+			drawSky();
+		});
+	}
+
+	function drawSky(): void {
+		if (!skyCanvas || !container) return;
+		const shown = ready && map !== undefined && shape === 'globe';
+		skyCanvas.hidden = !shown;
+		if (!shown || !map) return;
+		if (!skyStars) {
+			if (!skyStarsLoading) {
+				skyStarsLoading = true;
+				fetch('/map-sky/stars.json')
+					.then((response) => (response.ok ? response.json() : Promise.reject(new Error(String(response.status)))))
+					.then((file: { stars: Star[] }) => {
+						skyStars = file.stars;
+						drawSkySoon();
+					})
+					.catch(() => {
+						// Without the stars the globe still shows, on the plain sky.
+						skyStars = [];
+						drawSkySoon();
+					});
+			}
+			return;
+		}
+		const width = container.clientWidth;
+		const height = container.clientHeight;
+		const ratio = window.devicePixelRatio || 1;
+		if (skyCanvas.width !== Math.round(width * ratio) || skyCanvas.height !== Math.round(height * ratio)) {
+			skyCanvas.width = Math.round(width * ratio);
+			skyCanvas.height = Math.round(height * ratio);
+		}
+		const context = skyCanvas.getContext('2d');
+		if (!context) return;
+		context.setTransform(ratio, 0, 0, ratio, 0, 0);
+		const center = map.getCenter();
+		const colors: GlobeSkyColors = {
+			sky: token('map-sky'),
+			skyEdge: token('map-sky-edge'),
+			star: token('map-sky-star'),
+			starCool: token('map-sky-star-cool'),
+			starWarm: token('map-sky-star-warm'),
+			glow: token('map-sky-glow')
+		};
+		drawGlobeSky(context, skyStars, { width, height, longitude: center.lng, latitude: center.lat, zoom: map.getZoom(), fieldOfView: map.getVerticalFieldOfView(), time: skyTime }, colors);
+	}
+
+	/** The stars' credit, which ESA's license asks for, in the map's credit line while the globe is shown: an empty source carrying it, with a layer so MapLibre lists it. */
+	const starCredit = '<a href="https://www.cosmos.esa.int/web/hipparcos">Stars: ESA Hipparcos</a>';
+	const starCreditSource: SourceSpecification = { type: 'geojson', data: { type: 'FeatureCollection', features: [] }, attribution: starCredit };
+	const starCreditLayer: LayerSpecification = { id: 'star-credit', type: 'circle', source: 'star-credit' };
+	function showStarCredit(shown: MapLibreMap, on: boolean): void {
+		if (on && !shown.getSource('star-credit')) {
+			shown.addSource('star-credit', starCreditSource);
+			shown.addLayer(starCreditLayer);
+		} else if (!on && shown.getSource('star-credit')) {
+			shown.removeLayer('star-credit');
+			shown.removeSource('star-credit');
+		}
+	}
 
 	/** The flat-or-globe button, which names and shows the shape it switches to. */
 	let shapeButton: HTMLButtonElement | undefined;
@@ -905,9 +985,10 @@
 					cluster: !oneNation && view === 'lands',
 					clusterMaxZoom: 5,
 					clusterRadius: 40
-				}
+				},
+				...(shape === 'globe' ? { 'star-credit': starCreditSource } : {})
 			},
-			layers
+			layers: shape === 'globe' ? [...layers, starCreditLayer] : layers
 		};
 	}
 
@@ -1168,10 +1249,14 @@
 					clearTimeout(giveUp);
 					ready = true;
 					onready?.();
+					drawSkySoon();
 				});
 				map.on('error', (event) => {
 					if (!ready && /\/map-tiles\//.test(String((event.error as Error | undefined)?.message ?? ''))) fail();
 				});
+				// The sky behind the globe follows the map as it moves and resizes.
+				map.on('move', drawSkySoon);
+				map.on('resize', drawSkySoon);
 				map.on('moveend', () => {
 					if (!map) return;
 					const center = map.getCenter();
@@ -1335,6 +1420,7 @@
 					if (!map) return;
 					map.setStyle(await styleFor(data));
 					markFoundAgain();
+					drawSkySoon();
 				};
 				restyleMap = restyle;
 				const themeWatcher = new MutationObserver(() => void restyle());
@@ -1351,6 +1437,8 @@
 			stopped = true;
 			for (const cleanup of cleanups) cleanup();
 			cleanups = [];
+			if (skyFrame) cancelAnimationFrame(skyFrame);
+			skyFrame = 0;
 			map?.remove();
 			map = undefined;
 		};
@@ -1358,6 +1446,8 @@
 </script>
 
 <div class="tile-map" class:ready class:explorer bind:this={container} role="region" aria-label="Map: {label}">
+	<!-- The starry sky behind the globe, under MapLibre's canvas; only a picture, so screen readers skip it. -->
+	<canvas class="globe-sky" bind:this={skyCanvas} hidden aria-hidden="true"></canvas>
 	<!-- The base map menu (mockup 1A), opened by the Layers button in the map's corner stack. Escape closes it and returns to the button. -->
 	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 	<div
@@ -1410,6 +1500,19 @@
 		aspect-ratio: 975 / 883;
 		border: 1px solid var(--color-line);
 		background: var(--color-paper);
+	}
+
+	/* The sky behind the globe fills the map under MapLibre's canvas, which comes after it, and lets every press through to the map. */
+	.globe-sky {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+
+	.globe-sky[hidden] {
+		display: none;
 	}
 
 	/* A map that is full screen by itself fills the screen. */
