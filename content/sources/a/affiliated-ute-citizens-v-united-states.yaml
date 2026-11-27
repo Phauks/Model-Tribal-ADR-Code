@@ -152,6 +152,17 @@ argument_audio:
     checksum: eb041b7b553fda61613cad82f8e0faaa7f6d89a917426d2dc802483071d86675
     media_type: audio/mpeg
     bytes: 80392776
+argument_transcripts:
+- date: '1971-10-18'
+  docket: "70-78"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1971/70-78_10-18-1971.pdf
+  pages: 64
+  file:
+    storage_key: supreme-court-transcripts/1971/70-78_10-18-1971.pdf
+    checksum: 185075a39eac09b5157a776f61cc35d7cbdace374e0c516285c98e8184b29b8f
+    media_type: application/pdf
+    bytes: 12801978
 rights:
   status: no-permission-needed
   basis: us-government-work

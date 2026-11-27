@@ -133,6 +133,17 @@ argument_audio:
     checksum: 3adc361e3f2e0296367ab4d382d9e90fd71bff4e5a9ae106feeafe8d79762353
     media_type: audio/mpeg
     bytes: 61752567
+argument_transcripts:
+- date: '2005-10-03'
+  docket: "04-631"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2005/04-631.pdf
+  pages: 62
+  file:
+    storage_key: supreme-court-transcripts/2005/04-631.pdf
+    checksum: 2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c
+    media_type: application/pdf
+    bytes: 232658
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -125,6 +125,17 @@ argument_audio:
     checksum: 4e79478b0db5aa6291ed478481bdc91c50598cf233b66866f0849f9108ea6573
     media_type: audio/mpeg
     bytes: 208756942
+argument_transcripts:
+- date: '1983-03-23'
+  docket: "81-2147"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1982/81-2147_81-2188_03-23-1983.pdf
+  pages: 81
+  file:
+    storage_key: supreme-court-transcripts/1982/81-2147_81-2188_03-23-1983.pdf
+    checksum: 95813d124bbee4d02f26a2a2f7e6c1e2ed403892970aa904ce0c02701bc47047
+    media_type: application/pdf
+    bytes: 19893377
 rights:
   status: no-permission-needed
   basis: us-government-work

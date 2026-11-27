@@ -125,6 +125,17 @@ argument_audio:
     checksum: 5bef62c030e66cfdf63ff385c23b339f471127dd7e70dd2bfd32e5bdd8505c4b
     media_type: audio/mpeg
     bytes: 196697984
+argument_transcripts:
+- date: '1984-10-01'
+  docket: "83-1065"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1984/83-1065_83-1240_10-01-1984.pdf
+  pages: 83
+  file:
+    storage_key: supreme-court-transcripts/1984/83-1065_83-1240_10-01-1984.pdf
+    checksum: ec57185350f5cfe74c2a46a6ced74d40dfb59e7b314d7683f7904364e7eb3920
+    media_type: application/pdf
+    bytes: 18770821
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -125,6 +125,17 @@ argument_audio:
     checksum: 65e4b25abc2a525f35b8a97bcca515ffa68c324d1bc670157ba767700608eb78
     media_type: audio/mpeg
     bytes: 22667078
+argument_transcripts:
+- date: '2022-11-09'
+  docket: "21-376"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2022/21-376_1p23.pdf
+  pages: 227
+  file:
+    storage_key: supreme-court-transcripts/2022/21-376_1p23.pdf
+    checksum: 0d2a543c9e2f3ebbf7a5b0f5ebc6a7704a2ff0b510e28bfefc9c37893a58ecdd
+    media_type: application/pdf
+    bytes: 965716
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -117,6 +117,17 @@ argument_audio:
     checksum: 22a814d2f7922258b22a2b0d052fc2cbe45b0452e3cb7abd2861a32445f8137c
     media_type: audio/mpeg
     bytes: 214613804
+argument_transcripts:
+- date: '1986-03-25'
+  docket: "85-246"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1985/85-246_03-25-1986.pdf
+  pages: 45
+  file:
+    storage_key: supreme-court-transcripts/1985/85-246_03-25-1986.pdf
+    checksum: 7978ea3166e96977099519b9921a2a3919a3c61cc680d9571ea92c5a0f83f587
+    media_type: application/pdf
+    bytes: 11163052
 rights:
   status: no-permission-needed
   basis: us-government-work

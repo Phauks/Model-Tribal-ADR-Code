@@ -134,6 +134,17 @@ argument_audio:
     checksum: 89ff09944290858d33577910fc331a7a2401f8e25341e5b1eb9accd7c253d1e4
     media_type: audio/mpeg
     bytes: 219394004
+argument_transcripts:
+- date: '1986-01-14'
+  docket: "84-780"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1985/84-780_01-14-1986.pdf
+  pages: 57
+  file:
+    storage_key: supreme-court-transcripts/1985/84-780_01-14-1986.pdf
+    checksum: 044f42a61e84c248927c825483ab34a2a679f82aa9c8de5f267d9aceb899362c
+    media_type: application/pdf
+    bytes: 13539444
 rights:
   status: no-permission-needed
   basis: us-government-work

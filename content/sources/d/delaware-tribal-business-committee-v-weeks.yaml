@@ -245,6 +245,17 @@ argument_audio:
     checksum: e1b60ddbcc070bd44c4e12cf2103b4c8ef62c619441f427e2ee1fd56c2aefecd
     media_type: audio/mpeg
     bytes: 56878522
+argument_transcripts:
+- date: '1976-11-10'
+  docket: "75-1301"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1976/75-1301_75-1335_75-1495_11-10-1976.pdf
+  pages: 77
+  file:
+    storage_key: supreme-court-transcripts/1976/75-1301_75-1335_75-1495_11-10-1976.pdf
+    checksum: bfec5906241ba26420c5ba70102c04e5f1257523751cdfb0dd8c8a1259fb2720
+    media_type: application/pdf
+    bytes: 16517878
 rights:
   status: no-permission-needed
   basis: us-government-work

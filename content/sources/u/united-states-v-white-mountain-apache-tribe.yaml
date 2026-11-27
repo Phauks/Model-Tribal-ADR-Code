@@ -125,6 +125,17 @@ argument_audio:
     checksum: b6555ff273a0bfbc83be17d03edfa6391c001dd4c6d47d4361056dfcb99b3b40
     media_type: audio/mpeg
     bytes: 117401098
+argument_transcripts:
+- date: '2002-12-02'
+  docket: "01-1067"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2002/01-1067.pdf
+  pages: 60
+  file:
+    storage_key: supreme-court-transcripts/2002/01-1067.pdf
+    checksum: befe6510142eccd3b6e161301b2ae20ff2572538e610d9cd6d474169569f34c9
+    media_type: application/pdf
+    bytes: 202758
 rights:
   status: no-permission-needed
   basis: us-government-work

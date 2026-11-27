@@ -116,6 +116,17 @@ argument_audio:
     checksum: a3470a51a4c9e49c975cdc0a8ed67e5224f95e325741f305318af3c064d23dc0
     media_type: audio/mpeg
     bytes: 200866598
+argument_transcripts:
+- date: '2021-04-19'
+  docket: "20-543"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2020/20-543_hgci.pdf
+  pages: 116
+  file:
+    storage_key: supreme-court-transcripts/2020/20-543_hgci.pdf
+    checksum: d293fbb46078af1619a52cbb6f1a5589aee4db266079b33a1a3650709d04d908
+    media_type: application/pdf
+    bytes: 596573
 rights:
   status: no-permission-needed
   basis: us-government-work

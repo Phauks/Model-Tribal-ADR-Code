@@ -86,6 +86,17 @@ argument_audio:
     checksum: f3bc8c6a3af2416f646d09c62dc68e8a93363d0104e1a3fad9513fe92306b2b5
     media_type: audio/mpeg
     bytes: 118738149
+argument_transcripts:
+- date: '2001-03-19'
+  docket: "00-292"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2000/00-292.pdf
+  pages: 49
+  file:
+    storage_key: supreme-court-transcripts/2000/00-292.pdf
+    checksum: 835f9626b27eb1d0024f53884a5cdd3441ec0bffe8ad71fb7ebadcc1fd7fdecf
+    media_type: application/pdf
+    bytes: 67685
 rights:
   status: no-permission-needed
   basis: us-government-work

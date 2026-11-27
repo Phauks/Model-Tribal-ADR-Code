@@ -137,6 +137,27 @@ argument_audio:
     checksum: 0b986230fe709b32d324f89d8abe359c96628a811c70eebdd0690b30799bbf14
     media_type: audio/mpeg
     bytes: 61650362
+argument_transcripts:
+- date: '1990-03-28'
+  docket: "89-453"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1989/89-453_03-28-1990.pdf
+  pages: 58
+  file:
+    storage_key: supreme-court-transcripts/1989/89-453_03-28-1990.pdf
+    checksum: 75ca6a5189d059c14ebe2d0ca7d10537a8a20e35a5af7edf1e5ce030fe6b067d
+    media_type: application/pdf
+    bytes: 14549774
+- date: '1990-03-28'
+  docket: "89-700"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1989/89-700_03-28-1990.pdf
+  pages: 54
+  file:
+    storage_key: supreme-court-transcripts/1989/89-700_03-28-1990.pdf
+    checksum: 649f94473f228d64dc8e4a67a54927ac47374121d9954f3d33d8f9bf3bad1113
+    media_type: application/pdf
+    bytes: 13312369
 rights:
   status: no-permission-needed
   basis: us-government-work

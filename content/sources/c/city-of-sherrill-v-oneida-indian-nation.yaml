@@ -137,6 +137,17 @@ argument_audio:
     checksum: 5a22911f6a73c53ccc95ba034813ae4feebaa372f72cb141f21b91e387115005
     media_type: audio/mpeg
     bytes: 127382799
+argument_transcripts:
+- date: '2005-01-11'
+  docket: "03-855"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2004/03-855.pdf
+  pages: 50
+  file:
+    storage_key: supreme-court-transcripts/2004/03-855.pdf
+    checksum: 4342e184b148a550591a8a9a0958d37ad7ef118153c08b79fc52b9a50fa79c03
+    media_type: application/pdf
+    bytes: 218360
 rights:
   status: no-permission-needed
   basis: us-government-work

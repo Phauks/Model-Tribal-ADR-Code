@@ -160,6 +160,17 @@ argument_audio:
     checksum: 1cfc990bdb6ae35ab66f0478840efb272002b29276ce380a0381c4ddb7e26b69
     media_type: audio/mpeg
     bytes: 60408518
+argument_transcripts:
+- date: '2022-10-31'
+  docket: "20-1199"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2022/20-1199_bi7a.pdf
+  pages: 133
+  file:
+    storage_key: supreme-court-transcripts/2022/20-1199_bi7a.pdf
+    checksum: 47499ebb140529313b2a34a93621a62fce283a3cf05e8faadbbc5b73426d01b9
+    media_type: application/pdf
+    bytes: 604590
 rights:
   status: no-permission-needed
   basis: us-government-work

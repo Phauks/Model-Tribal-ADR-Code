@@ -113,6 +113,17 @@ argument_audio:
     checksum: 2172fdfef4c17875c1525ca821d5b46414dc19697d80b3adb99ea135fa4caba6
     media_type: audio/mpeg
     bytes: 202322043
+argument_transcripts:
+- date: '1986-04-22'
+  docket: "85-546"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1985/85-546_04-22-1986.pdf
+  pages: 42
+  file:
+    storage_key: supreme-court-transcripts/1985/85-546_04-22-1986.pdf
+    checksum: 0562501fd914f0abbff9794e7463786336e5079c1793d3ad2abe7fbace473249
+    media_type: application/pdf
+    bytes: 1747333
 rights:
   status: no-permission-needed
   basis: us-government-work

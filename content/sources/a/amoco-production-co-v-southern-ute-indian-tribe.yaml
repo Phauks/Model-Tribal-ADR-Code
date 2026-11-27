@@ -122,6 +122,17 @@ argument_audio:
     checksum: 4eab216d28332ceb85b33ff978275c4ae38dd054775ca70cd381e20d0faea7cd
     media_type: audio/mpeg
     bytes: 133537248
+argument_transcripts:
+- date: '1999-04-19'
+  docket: "98-830"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1998/98-830_04-19-1999.pdf
+  pages: 58
+  file:
+    storage_key: supreme-court-transcripts/1998/98-830_04-19-1999.pdf
+    checksum: c04e68829ac63e18a67ab1831ef442b6b8b2562217ad81003814e4d0318bfb2d
+    media_type: application/pdf
+    bytes: 12801413
 rights:
   status: no-permission-needed
   basis: us-government-work

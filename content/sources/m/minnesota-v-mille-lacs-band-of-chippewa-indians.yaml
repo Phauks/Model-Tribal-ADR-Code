@@ -125,6 +125,17 @@ argument_audio:
     checksum: cb17a10d78ae40274692e66eaa3fb92a8a9956abf00a252d600de137834d329d
     media_type: audio/mpeg
     bytes: 63489379
+argument_transcripts:
+- date: '1998-12-02'
+  docket: "97-1337"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1998/97-1337_12-02-1998.pdf
+  pages: 59
+  file:
+    storage_key: supreme-court-transcripts/1998/97-1337_12-02-1998.pdf
+    checksum: dda1a246b493bbb238bba5d57e4b3c94fca28950c12c42f701986d1f1cf23bad
+    media_type: application/pdf
+    bytes: 12268017
 rights:
   status: no-permission-needed
   basis: us-government-work

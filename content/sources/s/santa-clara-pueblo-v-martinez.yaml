@@ -166,6 +166,17 @@ argument_audio:
     checksum: 343b7c23ab190ebeb9fccb76630bc85623109a522f5b45d71ac8d18227114a71
     media_type: audio/mpeg
     bytes: 54930832
+argument_transcripts:
+- date: '1977-11-29'
+  docket: "76-682"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1977/76-682_11-29-1977.pdf
+  pages: 52
+  file:
+    storage_key: supreme-court-transcripts/1977/76-682_11-29-1977.pdf
+    checksum: 3d4afc8dce8b706115b181ac62b2317510a339d56d41f5e804c7a1116a9e6572
+    media_type: application/pdf
+    bytes: 12613578
 rights:
   status: no-permission-needed
   basis: us-government-work

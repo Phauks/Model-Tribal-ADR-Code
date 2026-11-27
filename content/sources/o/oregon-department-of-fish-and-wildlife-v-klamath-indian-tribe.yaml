@@ -117,6 +117,17 @@ argument_audio:
     checksum: 45149948dd9d193b7908f802b81ee8e36a47f403de7d954ebf765b8bb693c914
     media_type: audio/mpeg
     bytes: 220890715
+argument_transcripts:
+- date: '1985-02-27'
+  docket: "83-2148"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1984/83-2148_02-27-1985.pdf
+  pages: 54
+  file:
+    storage_key: supreme-court-transcripts/1984/83-2148_02-27-1985.pdf
+    checksum: b3b03ed86ae38906f589bba00fe625c5a337fa09822c2110ce35f2f3c29a5532
+    media_type: application/pdf
+    bytes: 12885522
 rights:
   status: no-permission-needed
   basis: us-government-work

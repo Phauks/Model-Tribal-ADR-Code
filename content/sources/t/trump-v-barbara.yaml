@@ -136,6 +136,17 @@ argument_audio:
     checksum: 79cd6f3efbf231b70d41bf169fceebe0a359c6427266c03da05f0276f94d9720
     media_type: audio/mpeg
     bytes: 61684931
+argument_transcripts:
+- date: '2026-04-01'
+  docket: "25-365"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2025/25-365_m648.pdf
+  pages: 161
+  file:
+    storage_key: supreme-court-transcripts/2025/25-365_m648.pdf
+    checksum: f1e784f340697b1b57b5d1d677e13f8f0094a1d724430e9c41fa445ab3c63c78
+    media_type: application/pdf
+    bytes: 820634
 rights:
   status: no-permission-needed
   basis: us-government-work

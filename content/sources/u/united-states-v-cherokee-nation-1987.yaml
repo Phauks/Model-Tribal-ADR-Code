@@ -117,6 +117,17 @@ argument_audio:
     checksum: d12731de053d9a5a2b10c0e571017cfe09181e7425494b688ac74f68ef2291aa
     media_type: audio/mpeg
     bytes: 194858546
+argument_transcripts:
+- date: '1987-02-23'
+  docket: "85-1940"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1986/85-1940_02-23-1987.pdf
+  pages: 35
+  file:
+    storage_key: supreme-court-transcripts/1986/85-1940_02-23-1987.pdf
+    checksum: eac90034462f42aee6206bb2407c34088517d6bbc3aade4314c5d085466260b7
+    media_type: application/pdf
+    bytes: 8126315
 rights:
   status: no-permission-needed
   basis: us-government-work

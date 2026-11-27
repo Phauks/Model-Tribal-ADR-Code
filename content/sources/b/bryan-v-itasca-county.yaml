@@ -166,6 +166,17 @@ argument_audio:
     checksum: ec5bd9f1a8222b8c86cc14d795a78d2ebdb48726b3a414c06faaac459f9ebc6b
     media_type: audio/mpeg
     bytes: 66897840
+argument_transcripts:
+- date: '1976-04-20'
+  docket: "75-5027"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1975/75-5027_04-20-1976.pdf
+  pages: 35
+  file:
+    storage_key: supreme-court-transcripts/1975/75-5027_04-20-1976.pdf
+    checksum: 4e01c122e8b80c87f619a262352ab441c1c3aedd09474ba769dc515f039265e5
+    media_type: application/pdf
+    bytes: 7202382
 rights:
   status: no-permission-needed
   basis: us-government-work

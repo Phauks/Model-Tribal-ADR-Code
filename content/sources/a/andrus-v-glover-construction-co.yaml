@@ -117,6 +117,17 @@ argument_audio:
     checksum: 8ed75e6119cc91a945772395f5e1ca6f6c7b6e12881658e6216484abc5f4fabd
     media_type: audio/mpeg
     bytes: 240285275
+argument_transcripts:
+- date: '1980-03-24'
+  docket: "79-48"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1979/79-48_03-24-1980.pdf
+  pages: 47
+  file:
+    storage_key: supreme-court-transcripts/1979/79-48_03-24-1980.pdf
+    checksum: 4e77dd2b9a188b63f8c9c9fb27ea065e1a317439a32829e82c33846aff0f7854
+    media_type: application/pdf
+    bytes: 10060459
 rights:
   status: no-permission-needed
   basis: us-government-work

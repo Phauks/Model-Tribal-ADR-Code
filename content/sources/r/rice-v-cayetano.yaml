@@ -119,6 +119,17 @@ argument_audio:
     checksum: a846b6727060090640928c852a4169cfca731ccda4a16f23a479943d60b515d4
     media_type: audio/mpeg
     bytes: 128011828
+argument_transcripts:
+- date: '1999-10-06'
+  docket: "98-818"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1999/98-818_10-06-1999.pdf
+  pages: 61
+  file:
+    storage_key: supreme-court-transcripts/1999/98-818_10-06-1999.pdf
+    checksum: 17381ccce210929786bc1099454a99cbb3e0af2d4758e7badedad496811b7dad
+    media_type: application/pdf
+    bytes: 13720220
 rights:
   status: no-permission-needed
   basis: us-government-work

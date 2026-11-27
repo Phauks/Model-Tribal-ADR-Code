@@ -161,6 +161,17 @@ argument_audio:
     checksum: 80d9284bc09d9cd8192c992ffdcf85004e6aa51fc9b909d6946899d5515f5a74
     media_type: audio/mpeg
     bytes: 59685536
+argument_transcripts:
+- date: '1989-11-06'
+  docket: "88-1213"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1989/88-1213_11-06-1989.pdf
+  pages: 56
+  file:
+    storage_key: supreme-court-transcripts/1989/88-1213_11-06-1989.pdf
+    checksum: 1b42535b7fc0773b60220a79b2b8783c96c1572c97725aaa65c6002331111dbc
+    media_type: application/pdf
+    bytes: 14118896
 rights:
   status: no-permission-needed
   basis: us-government-work

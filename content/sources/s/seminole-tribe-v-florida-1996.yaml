@@ -118,6 +118,17 @@ argument_audio:
     checksum: a8fabf40bcf7a36dbf96dfaa3ae412754e824e10c5c591031e79b56fea60cc87
     media_type: audio/mpeg
     bytes: 76816423
+argument_transcripts:
+- date: '1995-10-11'
+  docket: "94-12"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1995/94-12_10-11-1995.pdf
+  pages: 58
+  file:
+    storage_key: supreme-court-transcripts/1995/94-12_10-11-1995.pdf
+    checksum: 49326c9a38a056256b8585d76242196f5b93296f594afa30a5b2a0be8907fc09
+    media_type: application/pdf
+    bytes: 12882940
 rights:
   status: no-permission-needed
   basis: us-government-work

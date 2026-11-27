@@ -133,6 +133,17 @@ argument_audio:
     checksum: 0939e5403f845d723d5ce072ec9b2c73d9d7af8afc3956ff4d2423410a6dd383
     media_type: audio/mpeg
     bytes: 113569668
+argument_transcripts:
+- date: '2004-11-09'
+  docket: "02-1472"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2004/02-1472.pdf
+  pages: 61
+  file:
+    storage_key: supreme-court-transcripts/2004/02-1472.pdf
+    checksum: 1f5d778036970c8677d91be05b130b2eba5314cdbf26961092798de34505c4b0
+    media_type: application/pdf
+    bytes: 215051
 rights:
   status: no-permission-needed
   basis: us-government-work

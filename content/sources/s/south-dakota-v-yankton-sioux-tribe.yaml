@@ -117,6 +117,17 @@ argument_audio:
     checksum: 10ae1094d4151444f2858a9de3d011ade57c35ec4cc84ec64e524004aa170285
     media_type: audio/mpeg
     bytes: 175029728
+argument_transcripts:
+- date: '1997-12-08'
+  docket: "96-1581"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1997/96-1581_12-08-1997.pdf
+  pages: 58
+  file:
+    storage_key: supreme-court-transcripts/1997/96-1581_12-08-1997.pdf
+    checksum: 60b6f1eececbb668613ef6d9ada40d5cde98f07f63a69dd23abfa4d5d2e18ef6
+    media_type: application/pdf
+    bytes: 12315237
 rights:
   status: no-permission-needed
   basis: us-government-work

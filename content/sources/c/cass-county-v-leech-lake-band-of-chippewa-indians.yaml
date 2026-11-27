@@ -117,6 +117,17 @@ argument_audio:
     checksum: 8d23ea70b3c69a94a33339c818cea5547d901292abfa7587ef20cef4e793eb45
     media_type: audio/mpeg
     bytes: 116424327
+argument_transcripts:
+- date: '1998-02-24'
+  docket: "97-174"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1997/97-174_02-24-1998.pdf
+  pages: 50
+  file:
+    storage_key: supreme-court-transcripts/1997/97-174_02-24-1998.pdf
+    checksum: b1aba591502a533d9c8fa4f2c3cf5f55049c6c3b2652438e2d78ea1c19d24d54
+    media_type: application/pdf
+    bytes: 11144900
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -181,6 +181,27 @@ argument_audio:
     checksum: 00c36b1bf375d2f522d6878b569e91df27ea900f4e6c348b10fa42e7d9c6bbf9
     media_type: audio/mpeg
     bytes: 43803921
+argument_transcripts:
+- date: '1974-12-16'
+  docket: "73-1148"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1974/73-1148_12-16-1974.pdf
+  pages: 46
+  file:
+    storage_key: supreme-court-transcripts/1974/73-1148_12-16-1974.pdf
+    checksum: a6d27e7a0926572f8073c35aeb3340b7ca8a68db62db7eed63ff0d97b6dbbe2f
+    media_type: application/pdf
+    bytes: 9345715
+- date: '1974-12-16'
+  docket: "73-1500"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1974/73-1500_12-16-1974.pdf
+  pages: 36
+  file:
+    storage_key: supreme-court-transcripts/1974/73-1500_12-16-1974.pdf
+    checksum: 2cd28d80a44f80791bb4b0253f48c09d6c97aeb2f4433b39ff882d189484ddf6
+    media_type: application/pdf
+    bytes: 7283489
 rights:
   status: no-permission-needed
   basis: us-government-work

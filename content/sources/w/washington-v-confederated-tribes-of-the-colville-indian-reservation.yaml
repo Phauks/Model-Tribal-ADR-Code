@@ -129,6 +129,17 @@ argument_audio:
     checksum: fef95dd8ac9c97c4f13c011e0f65cb61171e4a59daee31b428714d91278b21e7
     media_type: audio/mpeg
     bytes: 228549817
+argument_transcripts:
+- date: '1979-10-09'
+  docket: "78-630"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1979/78-630_10-09-1979.pdf
+  pages: 60
+  file:
+    storage_key: supreme-court-transcripts/1979/78-630_10-09-1979.pdf
+    checksum: 506e39e34a440ff0c3528acd69c7401f567738df9d2c16e8ea9dc4aec52d304b
+    media_type: application/pdf
+    bytes: 11999248
 rights:
   status: no-permission-needed
   basis: us-government-work

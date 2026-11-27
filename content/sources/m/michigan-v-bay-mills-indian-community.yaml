@@ -128,6 +128,17 @@ argument_audio:
     checksum: 35742547afa63c85bfe7f4f128659f0e1a446af83d3401f5972b95cc3e020e71
     media_type: audio/mpeg
     bytes: 23175680
+argument_transcripts:
+- date: '2013-12-02'
+  docket: "12-515"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2013/12-515_4357.pdf
+  pages: 78
+  file:
+    storage_key: supreme-court-transcripts/2013/12-515_4357.pdf
+    checksum: cd35a0405857a7403dcf6a448efe89d25de472df1db3e1bfc7028c031f8f0d4c
+    media_type: application/pdf
+    bytes: 782003
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -117,6 +117,17 @@ argument_audio:
     checksum: 2855be5d89e6178036e8ac78eb561c6bac1d34f5c96fc46508cef9df550f2e5d
     media_type: audio/mpeg
     bytes: 168095365
+argument_transcripts:
+- date: '1993-03-03'
+  docket: "91-1833"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1992/91-1833_03-03-1993.pdf
+  pages: 53
+  file:
+    storage_key: supreme-court-transcripts/1992/91-1833_03-03-1993.pdf
+    checksum: bd047fc7e1c59908fb3bb2a9c3b42e73d28aeedc3568c8aa99b3a4dc1368a783
+    media_type: application/pdf
+    bytes: 11879164
 rights:
   status: no-permission-needed
   basis: us-government-work

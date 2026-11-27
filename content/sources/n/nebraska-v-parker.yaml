@@ -139,6 +139,17 @@ argument_audio:
     checksum: 10f6abe91b5a8a4337b69c1c155f775fd8d99273d709210442cfd9df7faf603f
     media_type: audio/mpeg
     bytes: 128033792
+argument_transcripts:
+- date: '2016-01-20'
+  docket: "14-1406"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2015/14-1406_22p6.pdf
+  pages: 64
+  file:
+    storage_key: supreme-court-transcripts/2015/14-1406_22p6.pdf
+    checksum: c027dea2756909bc94dbbfcbcf00bb68a3affb91bfc2924a5e1d51663857586b
+    media_type: application/pdf
+    bytes: 3072924
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -121,6 +121,17 @@ argument_audio:
     checksum: f78122e9a336fc0304878987eb7f621a8cca3befe4909fd3159a96594e2aad4d
     media_type: audio/mpeg
     bytes: 227171388
+argument_transcripts:
+- date: '1991-11-05'
+  docket: "90-408"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1991/90-408_90-577_11-05-1991.pdf
+  pages: 54
+  file:
+    storage_key: supreme-court-transcripts/1991/90-408_90-577_11-05-1991.pdf
+    checksum: 590b393321e15635e4e7b2d886aa3d96dd52275de943411992301966029583db
+    media_type: application/pdf
+    bytes: 11948185
 rights:
   status: no-permission-needed
   basis: us-government-work

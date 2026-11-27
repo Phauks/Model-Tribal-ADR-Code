@@ -127,6 +127,17 @@ argument_audio:
     checksum: 47ea1414e75116723387124a5a7e188d8464f739aa99958b994690e362a67d23
     media_type: audio/mpeg
     bytes: 166612838
+argument_transcripts:
+- date: '2018-11-27'
+  docket: "17-1107"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2018/17-1107_q86b.pdf
+  pages: 87
+  file:
+    storage_key: supreme-court-transcripts/2018/17-1107_q86b.pdf
+    checksum: e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b
+    media_type: application/pdf
+    bytes: 301611
 rights:
   status: no-permission-needed
   basis: us-government-work

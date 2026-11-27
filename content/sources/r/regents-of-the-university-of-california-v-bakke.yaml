@@ -172,6 +172,17 @@ argument_audio:
     checksum: 162fd1680ed0b4541bdbc28813b3b0b3189537c98c22dc104f891b41fc8754ea
     media_type: audio/mpeg
     bytes: 49916158
+argument_transcripts:
+- date: '1977-10-12'
+  docket: "76-811"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1977/76-811_10-12-1977.pdf
+  pages: 84
+  file:
+    storage_key: supreme-court-transcripts/1977/76-811_10-12-1977.pdf
+    checksum: 7bf3850f48d7fe380dfcaffe55c70f5e2b1596d5f7b6779418c56add26c039bc
+    media_type: application/pdf
+    bytes: 2843637
 rights:
   status: no-permission-needed
   basis: us-government-work

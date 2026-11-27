@@ -106,6 +106,17 @@ argument_audio:
     checksum: 88eaa358e7076874cf003ba29a11d29f693349abf13a151d78ece641fb906705
     media_type: audio/mpeg
     bytes: 177052650
+argument_transcripts:
+- date: '1997-01-07'
+  docket: "95-1872"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1996/95-1872_01-07-1997.pdf
+  pages: 60
+  file:
+    storage_key: supreme-court-transcripts/1996/95-1872_01-07-1997.pdf
+    checksum: 84225175431bc9569214022f8dcf486417efd15c42a8ffdd92508cc26af3b701
+    media_type: application/pdf
+    bytes: 13552841
 rights:
   status: no-permission-needed
   basis: us-government-work

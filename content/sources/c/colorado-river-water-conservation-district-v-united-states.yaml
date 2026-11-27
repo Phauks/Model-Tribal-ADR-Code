@@ -253,6 +253,17 @@ argument_audio:
     checksum: b2586b1e5229ba6eefe372b6dbb6d82ab88fc1e98bc6d50f591d69144aa931de
     media_type: audio/mpeg
     bytes: 56860550
+argument_transcripts:
+- date: '1976-01-14'
+  docket: "74-940"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1975/74-940_74-949_01-14-1976.pdf
+  pages: 50
+  file:
+    storage_key: supreme-court-transcripts/1975/74-940_74-949_01-14-1976.pdf
+    checksum: a0d76d97d7ac9099771aeaf1b2f5e2d2e507b9ddb232e9b5e06aaeae74c8909d
+    media_type: application/pdf
+    bytes: 10405203
 rights:
   status: no-permission-needed
   basis: us-government-work

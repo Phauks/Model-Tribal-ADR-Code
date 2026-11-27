@@ -141,6 +141,17 @@ argument_audio:
     checksum: 34bb58d90965e34a12069d0637cd920a0fb721566253dfe78edf929cb6496ef2
     media_type: audio/mpeg
     bytes: 35748998
+argument_transcripts:
+- date: '2018-04-18'
+  docket: "17-269"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2017/17-269_n6p1.pdf
+  pages: 86
+  file:
+    storage_key: supreme-court-transcripts/2017/17-269_n6p1.pdf
+    checksum: b9ab7f8d41e0a1e01929ef6fcb02fe1897308b5476cf8cf98d1f038da11350ec
+    media_type: application/pdf
+    bytes: 729274
 rights:
   status: no-permission-needed
   basis: us-government-work

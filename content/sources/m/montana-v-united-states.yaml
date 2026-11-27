@@ -107,6 +107,17 @@ argument_audio:
     checksum: 52487ecbfceeeaad87fc1f86f9fabae154a61fd38c549189a7b2faf17ecc79a0
     media_type: audio/mpeg
     bytes: 216637145
+argument_transcripts:
+- date: '1980-12-03'
+  docket: "79-1128"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1980/79-1128_12-03-1980.pdf
+  pages: 63
+  file:
+    storage_key: supreme-court-transcripts/1980/79-1128_12-03-1980.pdf
+    checksum: fdfb75ae796a3fee35cf93d5f0ccc3fd357c3e309ed1ace7e0778870bd541fd2
+    media_type: application/pdf
+    bytes: 16046618
 rights:
   status: no-permission-needed
   basis: us-government-work

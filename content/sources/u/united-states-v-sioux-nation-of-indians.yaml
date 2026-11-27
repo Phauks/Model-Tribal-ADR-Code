@@ -125,6 +125,17 @@ argument_audio:
     checksum: 8ed75e6119cc91a945772395f5e1ca6f6c7b6e12881658e6216484abc5f4fabd
     media_type: audio/mpeg
     bytes: 240285275
+argument_transcripts:
+- date: '1980-03-25'
+  docket: "79-639"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1979/79-639_03-25-1980.pdf
+  pages: 51
+  file:
+    storage_key: supreme-court-transcripts/1979/79-639_03-25-1980.pdf
+    checksum: 23a8b3436cf3d818fbdcf728ee0233fcd1d99ce68a5f54138ff330731c84c30b
+    media_type: application/pdf
+    bytes: 11013972
 rights:
   status: no-permission-needed
   basis: us-government-work

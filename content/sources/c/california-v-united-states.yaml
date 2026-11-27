@@ -112,6 +112,17 @@ argument_audio:
     checksum: 211bd581a33ab33e05718a0054f9f51afcb63535d42d8f338e9955f44f83d179
     media_type: audio/mpeg
     bytes: 219327966
+argument_transcripts:
+- date: '1988-11-28'
+  docket: "87-1165"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1988/87-1165_11-28-1988.pdf
+  pages: 63
+  file:
+    storage_key: supreme-court-transcripts/1988/87-1165_11-28-1988.pdf
+    checksum: bb1a7d094cadc1907e42accdab115c3fa8b03f312b277b9c785a591d2c4e894d
+    media_type: application/pdf
+    bytes: 13714352
 rights:
   status: no-permission-needed
   basis: us-government-work

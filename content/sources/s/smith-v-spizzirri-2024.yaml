@@ -103,6 +103,17 @@ argument_audio:
     checksum: 375c5c3256a3fb273abcb097028b5681eb95680ce7fd40a84d28d654efe74e1f
     media_type: audio/mpeg
     bytes: 14632838
+argument_transcripts:
+- date: '2024-04-22'
+  docket: "22-1218"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2023/22-1218_h3ci.pdf
+  pages: 52
+  file:
+    storage_key: supreme-court-transcripts/2023/22-1218_h3ci.pdf
+    checksum: 8a950433877af8b20ab809412c984d5772126dcfb8c9b6936611a92646518d8f
+    media_type: application/pdf
+    bytes: 334572
 rights:
   status: no-permission-needed
   basis: us-government-work

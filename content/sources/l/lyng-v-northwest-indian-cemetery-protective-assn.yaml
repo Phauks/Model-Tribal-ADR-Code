@@ -121,6 +121,17 @@ argument_audio:
     checksum: dac3461a960634ace974d8339226047b7b94d4738a1209730d785f5422e31d6d
     media_type: audio/mpeg
     bytes: 218899976
+argument_transcripts:
+- date: '1987-11-30'
+  docket: "86-1013"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1987/86-1013_11-30-1987.pdf
+  pages: 53
+  file:
+    storage_key: supreme-court-transcripts/1987/86-1013_11-30-1987.pdf
+    checksum: f80818ce1b37054cd598bbd90e24c8a7dad34ed79df7d565c3ff735703a08ca9
+    media_type: application/pdf
+    bytes: 12351881
 rights:
   status: no-permission-needed
   basis: us-government-work
