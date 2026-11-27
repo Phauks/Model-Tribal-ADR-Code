@@ -1,0 +1,50 @@
+key: california-vehicle-code-section-9104-5
+kind: state-statute
+citation:
+  type: legislation
+  title: Vehicle Code section 9104.5
+  title-short: Cal. Veh. Code § 9104.5
+  container-title: California Vehicle Code
+  container-title-short: Cal. Veh. Code
+  section: '9104.5'
+  author:
+  - literal: California Legislative Counsel
+  issued:
+    date-parts:
+    - - 1999
+  URL: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=VEH&sectionNum=9104.5.
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=VEH&sectionNum=9104.5.
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Cal. Veh. Code § 9104.5 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Cal. Veh. Code § 9104.5 (2026). History: Added by Stats. 1999, Ch. 911, Sec. 2. Effective January 1, 2000. Text read from the California Legislative Counsel''s database of the codes (pubinfo_2025.zip, updated Nov. 23, 2026, downloads.leginfo.legislature.ca.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian tribe; indian; tribe); AI reader''s verdict core: Registration fee exemption for tribe''s vehicles on tribal lands. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: federally recognized indian tribe; indian tribe; indian; tribe'

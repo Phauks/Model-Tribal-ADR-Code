@@ -1,0 +1,50 @@
+key: florida-statutes-627-6562
+kind: state-statute
+citation:
+  type: legislation
+  title: Dependent coverage
+  title-short: Fla. Stat. § 627.6562
+  container-title: Florida Statutes
+  container-title-short: Fla. Stat.
+  section: '627.6562'
+  author:
+  - literal: Florida Legislature
+  issued:
+    date-parts:
+    - - 1992
+  URL: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6562.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6562.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Fla. Stat. § 627.6562 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: FL
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Fla. Stat. § 627.6562 (2026). History: s. 131, ch. 92-33; s. 9, ch. 2008-32; s. 153, ch. 2014-17; s. 17, ch. 2016-194; s. 41, ch. 2017-3. Text read from the Florida Legislature''s page for the section''s chapter in the 2026 Florida Statutes (leg.state.fl.us/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian health; indian; tribal); AI reader''s verdict incidental: Indian Health Service or tribal medical program counts as qualifying coverage. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian health; indian; tribal'

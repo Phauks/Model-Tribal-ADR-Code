@@ -1,0 +1,50 @@
+key: nebraska-revised-statutes-43-247
+kind: state-statute
+citation:
+  type: legislation
+  title: Juvenile court; jurisdiction
+  title-short: Neb. Rev. Stat. § 43-247
+  container-title: Revised Statutes of Nebraska
+  container-title-short: Neb. Rev. Stat.
+  section: 43-247
+  author:
+  - literal: Nebraska Legislature
+  issued:
+    date-parts:
+    - - 1981
+  URL: https://nebraskalegislature.gov/laws/statutes.php?statute=43-247
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://nebraskalegislature.gov/laws/statutes.php?statute=43-247
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Neb. Rev. Stat. § 43-247 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NE
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Neb. Rev. Stat. § 43-247 (2026). History: Laws 1981, LB 346, § 3; Laws 1982, LB 215, § 2; Laws 1982, LB 787, § 2; Laws 1984, LB 13, § 77; Laws 1985, LB 255, § 32; Laws 1985, LB 447, § 13; Laws 1996, LB 1044, § 127; Laws 1997, LB 307, § 58; Laws 1997, LB 622, § 63; Laws 1998, LB 1041, § 22; Laws 2001, LB 23, § 1; Laws 2004, LB 1083, § 92; Laws 2006, LB 1115, § 31; Laws 2008, LB280, § 3; Laws 2008, LB1014, § 37; Laws 2013, LB255, § 9; Laws 2013, LB561, § 7; Laws 2014, LB464, § 8; Laws 2014, LB853, § 21; Laws 2015, LB265, § 4; Laws 2016, LB894, § 2; Laws 2024, LB1051, § 5. Text read from the Nebraska Legislature''s page for the section (nebraskalegislature.gov/laws) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian); AI reader''s verdict incidental: Juvenile jurisdiction over Indian child subject to ICWA. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian'

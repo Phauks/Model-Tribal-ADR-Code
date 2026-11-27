@@ -1,0 +1,51 @@
+key: maine-revised-statutes-title-34-a-section-11223
+kind: state-statute
+citation:
+  type: legislation
+  title: Duty of person establishing domicile or residence to register
+  title-short: Me. Rev. Stat. tit. 34-A, § 11223
+  container-title: Maine Revised Statutes
+  container-title-short: Me. Rev. Stat.
+  volume: 34-A
+  section: '11223'
+  author:
+  - literal: Maine Legislature, Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1999
+  URL: https://legislature.maine.gov/statutes/34-A/title34-Asec11223.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.maine.gov/statutes/34-A/title34-Asec11223.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Me. Rev. Stat. tit. 34-A, § 11223 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ME
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Me. Rev. Stat. tit. 34-A, § 11223 (2026). History: PL 1999, c. 437, §2 (NEW). PL 2003, c. 371, §11 (AMD). PL 2003, c. 711, §C22 (AMD). PL 2003, c. 711, §D2 (AFF). PL 2005, c. 423, §19 (AMD). PL 2009, c. 365, Pt. B, §16 (AMD). PL 2009, c. 365, Pt. B, §22 (AFF). Text read from the Maine Revisor of Statutes'' page for the section (legislature.maine.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Registration duty applies to persons sentenced for tribal offenses. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

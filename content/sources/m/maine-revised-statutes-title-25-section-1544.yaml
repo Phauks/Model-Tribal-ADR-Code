@@ -1,0 +1,48 @@
+key: maine-revised-statutes-title-25-section-1544
+kind: state-statute
+citation:
+  type: legislation
+  title: Uniform crime reporting
+  title-short: Me. Rev. Stat. tit. 25, § 1544
+  container-title: Maine Revised Statutes
+  container-title-short: Me. Rev. Stat.
+  volume: '25'
+  section: '1544'
+  author:
+  - literal: Maine Legislature, Office of the Revisor of Statutes
+  URL: https://legislature.maine.gov/statutes/25/title25sec1544.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.maine.gov/statutes/25/title25sec1544.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Me. Rev. Stat. tit. 25, § 1544 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ME
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Me. Rev. Stat. tit. 25, § 1544 (2026). History: PL 1975, c. 763, §7 (RPR). PL 1979, c. 578, §§6,7 (AMD). PL 1979, c. 677, §18 (AMD). PL 1983, c. 583, §26 (AMD). PL 1985, c. 779, §67 (AMD). PL 1987, c. 515, §3 (AMD). PL 1987, c. 695, §6 (AMD). PL 1991, c. 206, §1 (AMD). PL 1991, c. 206, §2 (AFF). PL 1997, c. 47, §1 (AMD). PL 2001, c. 399, §6 (AMD). PL 2019, c. 621, Pt. E, §4 (AMD). PL 2021, c. 366, §30 (AMD). PL 2021, c. 369, §2 (AMD). Text read from the Maine Revisor of Statutes'' page for the section (legislature.maine.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Tribal law enforcement agencies must submit crime reports. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

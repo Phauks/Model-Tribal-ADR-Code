@@ -1,0 +1,50 @@
+key: nebraska-revised-statutes-79-719
+kind: state-statute
+citation:
+  type: legislation
+  title: Multicultural education, defined
+  title-short: Neb. Rev. Stat. § 79-719
+  container-title: Revised Statutes of Nebraska
+  container-title-short: Neb. Rev. Stat.
+  section: 79-719
+  author:
+  - literal: Nebraska Legislature
+  issued:
+    date-parts:
+    - - 1992
+  URL: https://nebraskalegislature.gov/laws/statutes.php?statute=79-719
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://nebraskalegislature.gov/laws/statutes.php?statute=79-719
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Neb. Rev. Stat. § 79-719 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NE
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Neb. Rev. Stat. § 79-719 (2026). History: Laws 1992, LB 922, § 1; R.S.1943, (1994), § 79-4,229; Laws 1996, LB 900, § 393. Text read from the Nebraska Legislature''s page for the section (nebraskalegislature.gov/laws) on Nov. 27, 2026. Found by the state statutes sweep (terms: native americans; native); AI reader''s verdict core: Multicultural education covering Native American culture and history. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: native americans; native'

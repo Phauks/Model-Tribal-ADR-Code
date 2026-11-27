@@ -1,0 +1,50 @@
+key: nebraska-revised-statutes-2-503
+kind: state-statute
+citation:
+  type: legislation
+  title: Terms, defined
+  title-short: Neb. Rev. Stat. § 2-503
+  container-title: Revised Statutes of Nebraska
+  container-title-short: Neb. Rev. Stat.
+  section: 2-503
+  author:
+  - literal: Nebraska Legislature
+  issued:
+    date-parts:
+    - - 2019
+  URL: https://nebraskalegislature.gov/laws/statutes.php?statute=2-503
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://nebraskalegislature.gov/laws/statutes.php?statute=2-503
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Neb. Rev. Stat. § 2-503 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NE
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Neb. Rev. Stat. § 2-503 (2026). History: Laws 2019, LB657, § 3; Laws 2020, LB1152, § 1; Laws 2024, LB262, § 2. Text read from the Nebraska Legislature''s page for the section (nebraskalegislature.gov/laws) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Hemp producer licensing under USDA-approved tribal program. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

@@ -1,0 +1,50 @@
+key: nebraska-revised-statutes-82-504
+kind: state-statute
+citation:
+  type: legislation
+  title: State Archaeology Office; created; powers; State Archaeologist; qualifications
+  title-short: Neb. Rev. Stat. § 82-504
+  container-title: Revised Statutes of Nebraska
+  container-title-short: Neb. Rev. Stat.
+  section: 82-504
+  author:
+  - literal: Nebraska Legislature
+  issued:
+    date-parts:
+    - - 2005
+  URL: https://nebraskalegislature.gov/laws/statutes.php?statute=82-504
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://nebraskalegislature.gov/laws/statutes.php?statute=82-504
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Neb. Rev. Stat. § 82-504 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NE
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Neb. Rev. Stat. § 82-504 (2026). History: Laws 2005, LB 211, § 4. Text read from the Nebraska Legislature''s page for the section (nebraskalegislature.gov/laws) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian affairs; indian tribes; indian; tribes); AI reader''s verdict incidental: Archaeology office liaises with Indian tribes and Indian Affairs Commission. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian affairs; indian tribes; indian; tribes'

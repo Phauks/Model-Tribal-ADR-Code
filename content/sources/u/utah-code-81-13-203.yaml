@@ -1,0 +1,47 @@
+key: utah-code-81-13-203
+kind: state-statute
+citation:
+  type: legislation
+  title: Who may adopt -- Adoption of a minor child
+  title-short: Utah Code Ann. § 81-13-203
+  container-title: Utah Code Annotated
+  container-title-short: Utah Code Ann.
+  section: 81-13-203
+  author:
+  - literal: Utah State Legislature
+  URL: https://le.utah.gov/xcode/Title81/Chapter13/81-13-S203.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://le.utah.gov/xcode/Title81/Chapter13/81-13-S203.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Utah Code Ann. § 81-13-203 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: UT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Utah Code Ann. § 81-13-203 (2026). History: Amended by Chapter 358, 2026 General Session. Text read from the Utah Legislature''s XML file of the section''s title in the Utah Code (le.utah.gov/xcode) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian); AI reader''s verdict incidental: Adoption eligibility recognizes Indian Child Welfare Act placements. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian'

@@ -1,0 +1,51 @@
+key: maine-revised-statutes-title-38-section-418-a
+kind: state-statute
+citation:
+  type: legislation
+  title: Protection of the Penobscot River
+  title-short: Me. Rev. Stat. tit. 38, § 418-A
+  container-title: Maine Revised Statutes
+  container-title-short: Me. Rev. Stat.
+  volume: '38'
+  section: 418-A
+  author:
+  - literal: Maine Legislature, Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1981
+  URL: https://legislature.maine.gov/statutes/38/title38sec418-A.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.maine.gov/statutes/38/title38sec418-A.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Me. Rev. Stat. tit. 38, § 418-A (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ME
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Me. Rev. Stat. tit. 38, § 418-A (2026). History: PL 1981, c. 674 (NEW). PL 2019, c. 72, §1 (AMD). Text read from the Maine Revisor of Statutes'' page for the section (legislature.maine.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian nation; indian; nation; penobscot); AI reader''s verdict incidental: Findings cite Penobscot Indian Nation fishing; findings only. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian nation; indian; nation; penobscot'

@@ -1,0 +1,50 @@
+key: florida-statutes-626-2415
+kind: state-statute
+citation:
+  type: legislation
+  title: Annual report of results of life insurance examinations
+  title-short: Fla. Stat. § 626.2415
+  container-title: Florida Statutes
+  container-title-short: Fla. Stat.
+  section: '626.2415'
+  author:
+  - literal: Florida Legislature
+  issued:
+    date-parts:
+    - - 2006
+  URL: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0626/Sections/0626.2415.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0626/Sections/0626.2415.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Fla. Stat. § 626.2415 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: FL
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Fla. Stat. § 626.2415 (2026). History: s. 6, ch. 2006-184. Text read from the Florida Legislature''s page for the section''s chapter in the 2026 Florida Statutes (leg.state.fl.us/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian; native); AI reader''s verdict incidental: American Indian examinees as an examination report category. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; indian; native'

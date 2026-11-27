@@ -1,0 +1,50 @@
+key: nebraska-revised-statutes-23-362
+kind: state-statute
+citation:
+  type: legislation
+  title: Indians; support; state aid to counties; purpose; conditions; audit; certificate of county assessor; alcohol-related programs; participation by county board
+  title-short: Neb. Rev. Stat. § 23-362
+  container-title: Revised Statutes of Nebraska
+  container-title-short: Neb. Rev. Stat.
+  section: 23-362
+  author:
+  - literal: Nebraska Legislature
+  issued:
+    date-parts:
+    - - 1957
+  URL: https://nebraskalegislature.gov/laws/statutes.php?statute=23-362
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://nebraskalegislature.gov/laws/statutes.php?statute=23-362
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Neb. Rev. Stat. § 23-362 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NE
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Neb. Rev. Stat. § 23-362 (2026). History: Laws 1957, c. 69, § 1, p. 293; Laws 1961, c. 91, § 1, p. 315; Laws 1967, c. 123, § 1, p. 397; Laws 1969, c. 161, § 1, p. 735; Laws 1974, LB 131, § 1; Laws 1976, LB 871, § 1; Laws 1979, LB 584, § 1; Laws 1983, LB 607, § 1; Laws 1985, LB 263, § 1; Laws 1994, LB 1001, § 1; Laws 2011, LB337, § 1; Laws 2012, LB782, § 22. Text read from the Nebraska Legislature''s page for the section (nebraskalegislature.gov/laws) on Nov. 27, 2026. Found by the state statutes sweep (terms: indians); AI reader''s verdict core: State aid for Indians in Public Law 280 counties; trust land. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indians'

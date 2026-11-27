@@ -1,0 +1,50 @@
+key: florida-statutes-285-165
+kind: state-statute
+citation:
+  type: legislation
+  title: Water rights compact with Seminole Tribe
+  title-short: Fla. Stat. § 285.165
+  container-title: Florida Statutes
+  container-title-short: Fla. Stat.
+  section: '285.165'
+  author:
+  - literal: Florida Legislature
+  issued:
+    date-parts:
+    - - 1987
+  URL: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0200-0299/0285/Sections/0285.165.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0200-0299/0285/Sections/0285.165.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Fla. Stat. § 285.165 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: FL
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Fla. Stat. § 285.165 (2026). History: ss. 2, 3, ch. 87-292; s. 12, ch. 91-221. Text read from the Florida Legislature''s page for the section''s chapter in the 2026 Florida Statutes (leg.state.fl.us/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribe of indians; indians; reservation; seminole; tribal; tribe); AI reader''s verdict core: Water rights compact with Seminole Tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: tribe of indians; indians; reservation; seminole; tribal; tribe'

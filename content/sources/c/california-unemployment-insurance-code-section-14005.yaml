@@ -1,0 +1,47 @@
+key: california-unemployment-insurance-code-section-14005
+kind: state-statute
+citation:
+  type: legislation
+  title: Unemployment Insurance Code section 14005
+  title-short: Cal. Unemp. Ins. Code § 14005
+  container-title: California Unemployment Insurance Code
+  container-title-short: Cal. Unemp. Ins. Code
+  section: '14005'
+  author:
+  - literal: California Legislative Counsel
+  URL: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=UIC&sectionNum=14005.
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=UIC&sectionNum=14005.
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Cal. Unemp. Ins. Code § 14005 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Cal. Unemp. Ins. Code § 14005 (2026). History: Amended (as amended by Stats. 2021, Ch. 78, Sec. 14) by Stats. 2021, Ch. 223, Sec. 1. (SB 779) Effective January 1, 2022. See conditional termination clause in Section 14007. Text read from the California Legislative Counsel''s database of the codes (pubinfo_2025.zip, updated Nov. 23, 2026, downloads.leginfo.legislature.ca.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: alaska natives; native hawaiians; indians; native); AI reader''s verdict incidental: Workforce definitions include Indians, Alaska Natives as target group. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: alaska natives; native hawaiians; indians; native'

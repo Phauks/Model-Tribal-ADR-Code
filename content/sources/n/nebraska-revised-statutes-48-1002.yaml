@@ -1,0 +1,50 @@
+key: nebraska-revised-statutes-48-1002
+kind: state-statute
+citation:
+  type: legislation
+  title: Terms, defined
+  title-short: Neb. Rev. Stat. § 48-1002
+  container-title: Revised Statutes of Nebraska
+  container-title-short: Neb. Rev. Stat.
+  section: 48-1002
+  author:
+  - literal: Nebraska Legislature
+  issued:
+    date-parts:
+    - - 1963
+  URL: https://nebraskalegislature.gov/laws/statutes.php?statute=48-1002
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://nebraskalegislature.gov/laws/statutes.php?statute=48-1002
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Neb. Rev. Stat. § 48-1002 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NE
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Neb. Rev. Stat. § 48-1002 (2026). History: Laws 1963, c. 281, § 2, p. 839; Laws 1972, LB 1357, § 2; Laws 1973, LB 265, § 1; Laws 1977, LB 162, § 20; Laws 1983, LB 424, § 1; Laws 1983, LB 626, § 73; Laws 1993, LB 121, § 296; Laws 2007, LB265, § 14. Text read from the Nebraska Legislature''s page for the section (nebraskalegislature.gov/laws) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Employer definition excludes Indian tribes from age discrimination act. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

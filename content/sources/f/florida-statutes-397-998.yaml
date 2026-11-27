@@ -1,0 +1,50 @@
+key: florida-statutes-397-998
+kind: state-statute
+citation:
+  type: legislation
+  title: Drug-free communities support match grants
+  title-short: Fla. Stat. § 397.998
+  container-title: Florida Statutes
+  container-title-short: Fla. Stat.
+  section: '397.998'
+  author:
+  - literal: Florida Legislature
+  issued:
+    date-parts:
+    - - 1999
+  URL: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0300-0399/0397/Sections/0397.998.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0300-0399/0397/Sections/0397.998.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Fla. Stat. § 397.998 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: FL
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Fla. Stat. § 397.998 (2026). History: s. 17, ch. 99-396; s. 45, ch. 2013-18; s. 119, ch. 2014-19. Text read from the Florida Legislature''s page for the section''s chapter in the 2026 Florida Statutes (leg.state.fl.us/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal government; tribal); AI reader''s verdict incidental: Coalition membership must include a tribal government agency representative. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal government; tribal'

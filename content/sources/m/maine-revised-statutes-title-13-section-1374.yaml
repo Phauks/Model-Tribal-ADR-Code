@@ -1,0 +1,51 @@
+key: maine-revised-statutes-title-13-section-1374
+kind: state-statute
+citation:
+  type: legislation
+  title: Maine State Cemetery Preservation Commission
+  title-short: Me. Rev. Stat. tit. 13, § 1374
+  container-title: Maine Revised Statutes
+  container-title-short: Me. Rev. Stat.
+  volume: '13'
+  section: '1374'
+  author:
+  - literal: Maine Legislature, Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2021
+  URL: https://legislature.maine.gov/statutes/13/title13sec1374.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.maine.gov/statutes/13/title13sec1374.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Me. Rev. Stat. tit. 13, § 1374 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ME
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Me. Rev. Stat. tit. 13, § 1374 (2026). History: PL 2021, c. 584, §2 (NEW). PL 2023, c. 369, Pt. A, §4 (REV). PL 2023, c. 369, Pt. A, §5 (AFF). PL 2023, c. 677, §3 (AMD). Text read from the Maine Revisor of Statutes'' page for the section (legislature.maine.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: band of maliseet indians; federally recognized indian nation; tribal governments; houlton band; indian; indians; maliseet; mi''kmaq; motahkomikuk; nation; passamaquoddy; penobscot; sipayik; tribal; tribe); AI reader''s verdict incidental: Tribal governments may jointly appoint a commission member. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: band of maliseet indians; federally recognized indian nation; tribal governments; houlton band; indian; indians; maliseet; mi''kmaq; motahkomikuk; nation; passamaquoddy; penobscot; sipayik; tribal; tribe'

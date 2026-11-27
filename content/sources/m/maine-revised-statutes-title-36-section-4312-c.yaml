@@ -1,0 +1,51 @@
+key: maine-revised-statutes-title-36-section-4312-c
+kind: state-statute
+citation:
+  type: legislation
+  title: Wild Blueberry Commission of Maine
+  title-short: Me. Rev. Stat. tit. 36, § 4312-C
+  container-title: Maine Revised Statutes
+  container-title-short: Me. Rev. Stat.
+  volume: '36'
+  section: 4312-C
+  author:
+  - literal: Maine Legislature, Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1997
+  URL: https://legislature.maine.gov/statutes/36/title36sec4312-C.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.maine.gov/statutes/36/title36sec4312-C.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Me. Rev. Stat. tit. 36, § 4312-C (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ME
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Me. Rev. Stat. tit. 36, § 4312-C (2026). History: PL 1997, c. 511, §21 (NEW). PL 1997, c. 511, §25 (AFF). PL 2011, c. 579, §2 (AMD). PL 2011, c. 657, Pt. W, §6 (REV). PL 2019, c. 186, §§2-5 (AMD). Text read from the Maine Revisor of Statutes'' page for the section (legislature.maine.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian nation; indian; nation; tribe); AI reader''s verdict incidental: Commission grower representatives may include federally recognized tribe representatives. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian nation; indian; nation; tribe'

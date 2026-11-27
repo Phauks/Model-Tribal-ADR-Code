@@ -1,0 +1,48 @@
+key: maine-revised-statutes-title-5-section-1543
+kind: state-statute
+citation:
+  type: legislation
+  title: Disbursements; exceptions
+  title-short: Me. Rev. Stat. tit. 5, § 1543
+  container-title: Maine Revised Statutes
+  container-title-short: Me. Rev. Stat.
+  volume: '5'
+  section: '1543'
+  author:
+  - literal: Maine Legislature, Office of the Revisor of Statutes
+  URL: https://legislature.maine.gov/statutes/5/title5sec1543.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.maine.gov/statutes/5/title5sec1543.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Me. Rev. Stat. tit. 5, § 1543 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ME
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Me. Rev. Stat. tit. 5, § 1543 (2026). History: PL 1969, c. 186, §1 (AMD). PL 1973, c. 571, §§3-A (AMD). PL 1973, c. 625, §29 (AMD). PL 1979, c. 312, §3 (AMD). PL 1993, c. 410, §UU1 (AMD). PL 1993, c. 445, §1 (AMD). PL 1993, c. 477, §D1 (AMD). PL 1993, c. 477, §F1 (AFF). PL 1993, c. 680, §A9 (AMD). PL 1995, c. 462, §B2 (AMD). Text read from the Maine Revisor of Statutes'' page for the section (legislature.maine.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian); AI reader''s verdict incidental: Treasurer of Indian school committees may sign school warrants. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian'

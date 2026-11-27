@@ -1,0 +1,50 @@
+key: florida-statutes-210-05
+kind: state-statute
+citation:
+  type: legislation
+  title: Preparation and sale of stamps; discount
+  title-short: Fla. Stat. § 210.05
+  container-title: Florida Statutes
+  container-title-short: Fla. Stat.
+  section: '210.05'
+  author:
+  - literal: Florida Legislature
+  issued:
+    date-parts:
+    - - 1943
+  URL: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0200-0299/0210/Sections/0210.05.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0200-0299/0210/Sections/0210.05.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Fla. Stat. § 210.05 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: FL
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Fla. Stat. § 210.05 (2026). History: s. 3, ch. 21946, 1943; s. 3, ch. 22645, 1945; s. 1, ch. 26320, 1949; s. 1, ch. 57-255; s. 2, ch. 63-480; s. 2, ch. 68-30; ss. 16, 35, ch. 69-106; s. 1, ch. 69-221; s. 2, ch. 71-364; s. 12, ch. 72-360; s. 60, ch. 77-104; s. 8, ch. 77-421; s. 1, ch. 78-442; s. 4, ch. 79-11; ss. 2, 4, ch. 79-317; s. 2, ch. 86-123; s. 3, ch. 87-86; s. 21, ch. 90-132; s. 84, ch. 91-45; s. 1095, ch. 95-147; s. 1, ch. 2000-251; s. 9, ch. 2009-79; s. 2, ch. 2012-208. Text read from the Florida Legislature''s page for the section''s chapter in the 2026 Florida Statutes (leg.state.fl.us/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; seminole; tribe); AI reader''s verdict incidental: Cigarette stamps; sales to Seminole Tribe administered under s. 210.1801. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; seminole; tribe'
