@@ -1,0 +1,50 @@
+key: montana-code-annotated-87-5-201
+kind: state-statute
+citation:
+  type: legislation
+  title: Protection of wild birds and their nests and eggs
+  title-short: Mont. Code Ann. § 87-5-201
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 87-5-201
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1917
+  URL: https://mca.legmt.gov/bills/mca/title_0870/chapter_0050/part_0020/section_0010/0870-0050-0020-0010.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0870/chapter_0050/part_0020/section_0010/0870-0050-0020-0010.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 87-5-201 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 87-5-201 (2025). History: En. Sec. 41, Ch. 173, L. 1917; re-en. Sec. 3723, R.C.M. 1921; amd. Sec. 18, Ch. 77, L. 1923; amd. Sec. 20, Ch. 59, L. 1927; re-en. Sec. 3723, R.C.M. 1935; amd. Sec. 16, Ch. 224, L. 1947; amd. Sec. 2, Ch. 309, L. 1971; amd. Sec. 33, Ch. 511, L. 1973; amd. Sec. 38, Ch. 9, L. 1977; amd. Sec. 13, Ch. 417, L. 1977; R.C.M. 1947, 26-501; amd. Sec. 1, Ch. 301, L. 1983. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Eagle part possession exemption for tribal members religious use. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

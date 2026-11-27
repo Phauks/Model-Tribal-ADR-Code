@@ -1,0 +1,50 @@
+key: montana-code-annotated-52-3-813
+kind: state-statute
+citation:
+  type: legislation
+  title: Confidentiality
+  title-short: Mont. Code Ann. § 52-3-813
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 52-3-813
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1983
+  URL: https://mca.legmt.gov/bills/mca/title_0520/chapter_0030/part_0080/section_0130/0520-0030-0080-0130.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0520/chapter_0030/part_0080/section_0130/0520-0030-0080-0130.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 52-3-813 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 52-3-813 (2025). History: En. Sec. 6, Ch. 623, L. 1983; amd. Sec. 2, Ch. 662, L. 1985; amd. Sec. 63, Ch. 83, L. 1989; amd. Sec. 7, Ch. 198, L. 1989; Sec. 53-5-513, MCA 1989; redes. 52-3-813 by Code Commissioner, 1991; amd. Sec. 7, Ch. 167, L. 1993; amd. Sec. 4, Ch. 421, L. 1993; amd. Sec. 58, Ch. 18, L. 1995; amd. Sec. 5, Ch. 465, L. 1995; amd. Sec. 366, Ch. 546, L. 1995; amd. Sec. 6, Ch. 196, L. 1999; amd. Sec. 193, Ch. 483, L. 2001; amd. Sec. 86, Ch. 2, L. 2009; amd. Sec. 24, Ch. 12, L. 2023. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: reservation; tribal); AI reader''s verdict incidental: Vulnerable adult records may be disclosed to tribal organizations. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: reservation; tribal'

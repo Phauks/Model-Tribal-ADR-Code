@@ -67,9 +67,11 @@ def record(adapter, row: dict, session: str) -> dict:
         found = f'terms: {terms}'
     elif row.get('pool') == 'E':
         found = "no keyword; read because its chapter's name is Indian law"
+    elif row.get('pool') == 'settled':
+        found = 'no keyword; read by the session with the rest of its act'
     else:
         found = 'no keyword; found in a random reading of other sections'
-    notes.append(f"Found by {getattr(adapter, 'FOUND_BY', 'the state statutes sweep')} ({found}); {"the session's verdict" if row.get('pool') == 'E' else "AI reader's verdict"} {row['relevance']}: {row['reader_reason'].rstrip('.')}. Unverified.")
+    notes.append(f"Found by {getattr(adapter, 'FOUND_BY', 'the state statutes sweep')} ({found}); {"the session's verdict" if row.get('pool') in ('E', 'settled') else "AI reader's verdict"} {row['relevance']}: {row['reader_reason'].rstrip('.')}. Unverified.")
     state_law = {'relevance': row['relevance'], 'citation': f'{short} ({adapter.EDITION})'}
     act = adapter.act_name(row) if hasattr(adapter, 'act_name') else None
     if act:
@@ -102,7 +104,7 @@ def record(adapter, row: dict, session: str) -> dict:
             'checks': [{
                 'check': f"Indian law section: {getattr(adapter, 'CHECK_BY', "the sweep's keyword pass")} and an AI reader's verdict (core, incidental or none)",
                 'result': 'agree' if terms else 'settled',
-                'detail': f"{row['relevance']}; terms: {terms}" if terms else f"{row['relevance']}; no keyword, found by the reader alone",
+                'detail': f"{row['relevance']}; terms: {terms}" if terms else f"{row['relevance']}; no keyword, found by {'the session' if row.get('pool') == 'settled' else 'the reader'} alone",
             }],
         },
     }

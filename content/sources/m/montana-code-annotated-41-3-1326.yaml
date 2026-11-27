@@ -1,0 +1,50 @@
+key: montana-code-annotated-41-3-1326
+kind: state-statute
+citation:
+  type: legislation
+  title: Consent
+  title-short: Mont. Code Ann. § 41-3-1326
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 41-3-1326
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 2023
+  URL: https://mca.legmt.gov/bills/mca/title_0410/chapter_0030/part_0130/section_0260/0410-0030-0130-0260.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0410/chapter_0030/part_0130/section_0260/0410-0030-0130-0260.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Mont. Code Ann. § 41-3-1326 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 41-3-1326 (2025). History: En. Sec. 15, Ch. 716, L. 2023. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian); AI reader''s verdict core: Montana Indian Child Welfare Act consent and withdrawal rules. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian child; indian'

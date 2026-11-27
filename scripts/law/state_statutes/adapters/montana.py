@@ -13,6 +13,9 @@ from core import Section, clean
 
 BASE = 'https://mca.legmt.gov/bills/mca/'
 LAW = re.compile(r'Ch\. (\d+), (?:Sp\. )?L\. (\d{4})')
+# Court rules printed in the code have no section number; their pages are numbered by title, chapter, part and rule (rule 65.1 is 0651).
+RULES = {'0250-0190': 'Mont. Unif. Dist. Ct. R.', '0250-0200': 'Mont. R. Civ. P.', '0250-0210': 'Mont. R. App. P.', '0260-0100': 'Mont. R. Evid.'}
+RULE_NUMBER = re.compile(r'^(\d{4}-\d{4})-\d{4}-(\d{4})$')
 
 
 def text_of(fragment: str) -> str:
@@ -77,12 +80,22 @@ class Montana(State):
             body = re.sub(r'^' + re.escape(number) + r'\s*\.\s*', '', text)
             body = re.sub(r'^(?:\((?:Temporary|Effective[^)]*)\)\s*)?' + re.escape(heading) + r'\.?\s*', '', body) if heading else body
             status = 'repealed' if re.match(r'^(?:\(\w+\)\s*)?(?:Repealed|Renumbered|Terminated|Omitted|Transferred)\b', heading or body) else 'live'
+            # Numbers held open ("through 1-1-213 reserved"), and pages that say a number or rule has no text.
+            if re.match(r'^(?:(?:(?:through|and) \S+ )?reserved$|Not codified|\*+\s*No Montana Rules?\b)', heading, re.I) or not body.strip():
+                status = 'reserved'
             laws = LAW.findall(history_text)
             enacted = laws[0] if laws else None
             yield Section(number=number, heading=heading, text=body, url=url, title='-'.join(number.split('-')[:2]),
                           title_name=' / '.join(titles[key].title() for key in ('title', 'chapter', 'part') if key in titles),
                           history=history_text, status=status, act=f'{enacted[1]}-{enacted[0]}' if enacted else '',
                           enacted=[int(enacted[1])] if enacted else None)
+
+    def short_citation(self, number: str) -> str:
+        match = RULE_NUMBER.match(number)
+        if match and match.group(1) in RULES:
+            rule = int(match.group(2))
+            return f"{RULES[match.group(1)]} {rule // 10}{f'.{rule % 10}' if rule % 10 else ''}"
+        return f'{self.CODE_SHORT} § {number}'
 
 
 ADAPTER = Montana()
