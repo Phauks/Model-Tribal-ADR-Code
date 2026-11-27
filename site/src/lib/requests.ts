@@ -8,6 +8,7 @@ export const maximumRequestFiles = 5;
 
 export const requestKinds = [
 	'correct',
+	'broken-page',
 	'restrict',
 	'remove',
 	'replace-name',
@@ -19,6 +20,7 @@ export type RequestKind = (typeof requestKinds)[number];
 
 export const requestKindLabels: Record<RequestKind, string> = {
 	correct: 'Correct something',
+	'broken-page': 'Report a broken page',
 	restrict: 'Make something private',
 	remove: 'Delete something',
 	'replace-name': 'Replace a name with initials',
@@ -29,6 +31,7 @@ export const requestKindLabels: Record<RequestKind, string> = {
 
 export const requestKindHints: Record<RequestKind, string> = {
 	correct: 'A fact, name, spelling or citation is wrong.',
+	'broken-page': 'A link or address did not open a page, or part of a page did not work.',
 	restrict:
 		'We keep it in our private records but stop showing it, for example because it is sensitive or belongs to the community. We hide it within 7 days, then review it.',
 	remove:

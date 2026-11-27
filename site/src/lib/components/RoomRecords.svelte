@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	/**
 	 * A room's recordings, with the buttons to hide or show each, and the log
 	 * of who was let in and what each was told about recording. For the hosts,
@@ -60,8 +61,8 @@
 	);
 </script>
 
-<svelte:element this={`h${level}`}>Recordings</svelte:element>
 {#if recordings.length === 0}
+	<svelte:element this={`h${level}`}>Recordings</svelte:element>
 	<p class="muted">No recordings yet. A recording is copied into the project’s private storage within about 15 minutes of ending, then checked for viruses before anyone can watch it.</p>
 {:else}
 	<DataTable
@@ -72,6 +73,7 @@
 		rowName={['recording', 'recordings']}
 		download="recordings"
 	>
+		{#snippet heading(count: Snippet)}<svelte:element this={`h${level}`}>Recordings {@render count()}</svelte:element>{/snippet}
 		{#snippet cell(row, column)}
 			{@const recording = recordingsByKey.get(row.key)}
 			{#if recording && column.key === 'started'}

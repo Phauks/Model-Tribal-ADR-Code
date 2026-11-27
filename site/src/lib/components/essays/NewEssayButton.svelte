@@ -7,7 +7,21 @@
 	import Modal from '#lib/components/Modal.svelte';
 	import { sendJson } from '#lib/send-json.ts';
 
-	let { part, sectionLabel, size = 20, compact = false }: { part: string; sectionLabel: string; size?: number; /** Smaller, beside the section's name in the sidebar, as in the mockups. */ compact?: boolean } = $props();
+	let {
+		part,
+		sectionLabel,
+		size = 20,
+		compact = false,
+		noun = 'essay'
+	}: {
+		part: string;
+		sectionLabel: string;
+		size?: number;
+		/** Smaller, beside the section's name in the sidebar, as in the mockups. */
+		compact?: boolean;
+		/** What is started: "essay", or "post" on the News list (NewsIndex.svelte). */
+		noun?: 'essay' | 'post';
+	} = $props();
 
 	let dialog: Modal<string> | undefined = $state();
 	let title = $state('');
@@ -47,11 +61,11 @@
 	}
 </script>
 
-<button class="icon-button new-essay" class:compact type="button" aria-haspopup="dialog" title="New essay in {sectionLabel}" aria-label="New essay in {sectionLabel}" onclick={() => dialog?.open()}>
+<button class="icon-button new-essay" class:compact type="button" aria-haspopup="dialog" title="New {noun} in {sectionLabel}" aria-label="New {noun} in {sectionLabel}" onclick={() => dialog?.open()}>
 	<Plus {size} aria-hidden="true" />
 </button>
 
-<Modal bind:this={dialog} title="New essay in {sectionLabel}" fitContent>
+<Modal bind:this={dialog} title="New {noun} in {sectionLabel}" fitContent>
 	<form id="new-essay-{formIdentifier}" onsubmit={start}>
 		{#if problem}<div class="notice notice-problem" role="alert"><p>{problem}</p></div>{/if}
 		<div class="field">
@@ -82,7 +96,7 @@
 		</div>
 	</form>
 	{#snippet actions()}
-		<button class="button" type="submit" form="new-essay-{formIdentifier}" disabled={busy}>Start the essay</button>
+		<button class="button" type="submit" form="new-essay-{formIdentifier}" disabled={busy}>Start the {noun}</button>
 		<button class="button button-quiet" type="button" onclick={() => dialog?.close()}>Cancel</button>
 	{/snippet}
 </Modal>

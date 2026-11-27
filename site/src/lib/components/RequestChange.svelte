@@ -10,12 +10,15 @@
 	// are; on the right what should change and any files (RequestForm.svelte,
 	// compact). The form is sent in place, and the dialog shows the reference
 	// number. Without scripts the control is a link to the request page, which
-	// asks the same questions.
+	// asks the same questions. An error page or an error box opens it already
+	// filled in, as "Report a broken page" with the address (openReport in
+	// src/lib/report-request.ts; site/ERRORS.md).
 	import { onMount, tick } from 'svelte';
 	import { page } from '$app/state';
 	import type { applyAction } from '$app/forms';
 	import Flag from '@lucide/svelte/icons/flag';
 	import { requestKindHints, requestKindLabels, type RequestKind } from '#lib/requests.ts';
+	import { reportedAddress, reportRequestEvent, type ReportPreset } from '#lib/report-request.ts';
 	import Dropdown from './Dropdown.svelte';
 	import Modal from './Modal.svelte';
 	import RequestForm from './RequestForm.svelte';
@@ -25,7 +28,7 @@
 	let { link }: { link: string } = $props();
 
 	/** The kinds of request the dialog offers; Contribute has its own link in the sidebar. */
-	const reportKinds: RequestKind[] = ['correct', 'add-nation', 'restrict', 'remove', 'question'];
+	const reportKinds: RequestKind[] = ['correct', 'broken-page', 'add-nation', 'restrict', 'remove', 'question'];
 	const kindChoices = reportKinds.map((value) => ({
 		value,
 		label: requestKindLabels[value],
@@ -46,7 +49,13 @@
 
 	onMount(() => {
 		scripted = true;
+		const fromProblem = (event: Event) => openWith((event as CustomEvent<ReportPreset>).detail);
+		addEventListener(reportRequestEvent, fromProblem);
+		return () => removeEventListener(reportRequestEvent, fromProblem);
 	});
+
+	/** On an error page the flag reports the page as broken, with its whole address. */
+	const onErrorPage = $derived(page.status >= 400);
 
 	// The request page itself keeps the plain link: it already is the form.
 	const onRequestPage = $derived(page.url.pathname === '/requests');
@@ -55,11 +64,11 @@
 	const record = $derived(new URL(link, page.url.origin).searchParams.get('record') ?? '');
 
 	/** What the report is about: the record, or else the page's address. */
-	const material = $derived(record || `${page.url.origin}${page.url.pathname}`);
+	const material = $derived(onErrorPage ? reportedAddress(page.url) : record || reportedAddress(page.url));
 	const nationIdentifier = $derived(record.startsWith('tribes/') ? record.slice('tribes/'.length) : '');
 
 	function reset() {
-		kind = reportKinds[0];
+		kind = onErrorPage ? 'broken-page' : reportKinds[0];
 		values = {};
 		errors = {};
 		problem = undefined;
@@ -67,7 +76,15 @@
 	}
 
 	function open() {
-		if (sent) reset();
+		if (sent || (onErrorPage && Object.keys(values).length === 0)) reset();
+		modal?.open();
+	}
+
+	/** Opens the dialog with answers already filled in, keeping nothing from before. */
+	function openWith(preset: ReportPreset) {
+		reset();
+		kind = preset.kind;
+		values = { material: preset.material, ...(preset.details ? { details: preset.details } : {}) };
 		modal?.open();
 	}
 

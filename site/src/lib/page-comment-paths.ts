@@ -43,7 +43,7 @@ const withoutComments = new Set([
 ]);
 
 /** Sections whose own pages, such as /essays/<slug>, have the essays' commenting on drafts (EssayArticle.svelte); their lists and history pages take page comments. */
-const withOwnComments = new Set(['essays', 'foundations', 'back-matter']);
+const withOwnComments = new Set(['essays', 'foundations', 'back-matter', 'news']);
 
 /** The home page's name, since a page's name is its address without the slashes. */
 export const homePage = 'home';
