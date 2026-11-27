@@ -40,6 +40,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Address book', href: '/workspace/address-book' }
 	]}
+	current={contact.name}
 />
 <h1>{contact.name}</h1>
 <p class="muted">

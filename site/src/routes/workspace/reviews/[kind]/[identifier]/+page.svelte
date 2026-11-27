@@ -28,6 +28,7 @@
 			{ label: 'Workspace', href: '/workspace' },
 			{ label: 'Reviews', href: '/workspace/reviews' }
 		]}
+		current={data.subject.title}
 	/>
 {/if}
 <h1>{data.subject.title}</h1>

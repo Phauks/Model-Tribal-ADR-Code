@@ -134,7 +134,7 @@
 	<title>Source watch · Workspace · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Workspace', href: '/workspace' }]} />
+<Breadcrumbs trail={[{ label: 'Workspace', href: '/workspace' }]} current="Source watch" />
 <h1>Source watch <CountBadge count={data.views.find((view) => view.name === 'to-review')?.count ?? 0} label="to review" /></h1>
 
 <p class="watch-state">

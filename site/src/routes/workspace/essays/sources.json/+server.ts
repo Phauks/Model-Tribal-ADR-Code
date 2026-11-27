@@ -6,32 +6,19 @@
  * pages already show.
  */
 import { json } from '@sveltejs/kit';
-import { essayCitations, essaySpellingWords, essayTerms } from 'virtual:essay-library';
+import { essaySpellingWords, essayTerms } from 'virtual:essay-library';
+import { citationTexts } from '#lib/server/essay-citations.ts';
 import { requirePersonForData } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
 
 export const prerender = false;
 
-function plain(html: string): string {
-	return html
-		.replace(/ ?<span class="reading-links">[\s\S]*$/, '')
-		.replace(/<[^>]+>/g, '')
-		.replaceAll('&amp;', '&')
-		.replaceAll('&#38;', '&')
-		.replaceAll('&lt;', '<')
-		.replaceAll('&gt;', '>')
-		.replaceAll('&quot;', '"')
-		.replaceAll('&#39;', "'")
-		.replace(/\s+/g, ' ')
-		.trim();
-}
-
 let cached: { sources: [string, string][]; terms: [string, string][]; words: string[] } | undefined;
 
-export const GET: RequestHandler = (event) => {
+export const GET: RequestHandler = async (event) => {
 	requirePersonForData(event);
 	cached ??= {
-		sources: Object.entries(essayCitations).map(([key, html]) => [key, plain(html)]),
+		sources: await citationTexts(),
 		terms: Object.entries(essayTerms).sort((first, second) => first[1].localeCompare(second[1], 'en-US')),
 		words: essaySpellingWords
 	};

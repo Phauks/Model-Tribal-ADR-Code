@@ -18,6 +18,15 @@ describe('the collections the Statistics page counts', () => {
 		expect([...kinds].filter((kind) => !counted.has(kind))).toEqual([]);
 	});
 
+	it('never links a filing to the State address that has no file', () => {
+		const items = (identifier: string) => collections.find((collection) => collection.identifier === identifier)?.items() ?? [];
+		const oklahoma = items('oklahoma-state-tribal-agreements');
+		const youthServices = oklahoma.find((item) => item.key === 'oklahoma-filing-21664');
+		expect(youthServices?.title).toBe('Muskogee Youth Council: youth services agreement');
+		expect(youthServices?.href).toBeUndefined();
+		for (const item of oklahoma) expect(item.href === undefined || item.href.startsWith('/copies/view/oklahoma-secretary-of-state/')).toBe(true);
+	});
+
 	it('counts only what the site shows, and held-back items only as a number', () => {
 		const opinions = collectionCounts().find((collection) => collection.identifier === 'tribal-court-opinions');
 		expect(opinions?.count).toBeGreaterThan(0);

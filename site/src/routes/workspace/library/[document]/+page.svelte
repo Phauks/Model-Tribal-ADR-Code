@@ -48,6 +48,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Source library', href: `/workspace/library${data.query ? `?q=${encodeURIComponent(data.query)}` : ''}` }
 	]}
+	current={documentHeading(document)}
 />
 <h1>{documentHeading(document)}</h1>
 

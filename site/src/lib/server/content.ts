@@ -102,6 +102,8 @@ export interface SourceRecord {
 		URL?: string;
 	};
 	original_link?: string;
+	/** What became of the file at the source's address (schemas/source.schema.json): "removed" when it is no longer there. */
+	history?: { status?: string; last_checked?: string };
 	/** The nations a source is about, by profile id. */
 	tribes?: string[];
 	/** Free tags (schemas/source.schema.json), such as "oklahoma-state-tribal-agreement". */
