@@ -5,7 +5,7 @@ import { groupingThreshold, numberRanges, rangesText, sourceGroups } from '#lib/
 /** A page with sources cited under several parts, as a nation page cites them. */
 function page(): SourceUses {
 	const uses = new SourceUses((key) => key);
-	uses.part('At a glance');
+	uses.part('Key facts');
 	for (const key of ['list', 'directory', 'census']) uses.cite(key, { section: 'Recognition', text: key });
 	uses.part('Courts and dispute resolution');
 	for (const key of ['court-guide', 'law-library']) uses.cite(key, { section: 'Courts', text: key });
@@ -22,9 +22,9 @@ describe('Sources list groups', () => {
 	it('records the part of the page that first cites each source', () => {
 		const list = page().list;
 		expect(list.map((entry) => entry.part)).toEqual([
-			'At a glance',
-			'At a glance',
-			'At a glance',
+			'Key facts',
+			'Key facts',
+			'Key facts',
 			'Courts and dispute resolution',
 			'Courts and dispute resolution',
 			'Laws and agreements',
@@ -38,7 +38,7 @@ describe('Sources list groups', () => {
 	it('folds a long list into groups in page order, each with its number range', () => {
 		const groups = sourceGroups(page().list)!;
 		expect(groups.map((group) => [group.part, rangesText(group.ranges)])).toEqual([
-			['At a glance', '1–3'],
+			['Key facts', '1–3'],
 			['Courts and dispute resolution', '4–5'],
 			['Laws and agreements', '6–9']
 		]);

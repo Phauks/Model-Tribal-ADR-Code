@@ -304,7 +304,6 @@
 		box-sizing: border-box;
 		justify-content: center;
 		padding: 0 0.45rem 0 0.2rem;
-		border-radius: var(--radius-control);
 		cursor: pointer;
 		list-style: none;
 		user-select: none;
@@ -338,14 +337,22 @@
 		color: var(--color-link);
 	}
 
-	/* The chevron is a control of its own: it shades when the mouse is on it. */
-	summary:not(.labelled):hover {
+	/*
+	 * The name and its chevron read as one item (Trevor, Nov. 27, 2026): the
+	 * mouse anywhere on either shades the whole tab and draws the bar under
+	 * all of it, as an open menu does. They stay two stops for the Tab key and
+	 * two targets for a tap, each with its own focus ring.
+	 */
+	.section-tab:hover,
+	.section-tab:has(details[open]) {
 		background: var(--color-surface);
+		border-bottom-color: var(--color-link);
 	}
 
-	.section-name:hover {
-		text-decoration: underline;
-		text-underline-offset: 0.3em;
+	/* The section being read keeps its orange bar. */
+	.section-tab.current:hover,
+	.section-tab.current:has(details[open]) {
+		border-bottom-color: var(--color-action);
 	}
 
 	.section-name:focus-visible,

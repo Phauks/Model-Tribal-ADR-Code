@@ -171,7 +171,7 @@ A research note of Nov. 27, 2026, [Limits, models and safeguards for the Ask age
 
 ## 6. Summarize, Timeline and Top questions
 
-- **Summarize: no.** Pages already open with At a glance (under review in the thread "At a glance review"), and every fact there is cited. A generated summary would put uncited paraphrase above cited facts, the opposite of the site's citation rule. "Ask about this page" covers the need for long documents.
+- **Summarize: no.** Pages already open with Key facts (under review in the thread "Key facts review"), and every fact there is cited. A generated summary would put uncited paraphrase above cited facts, the opposite of the site's citation rule. "Ask about this page" covers the need for long documents.
 - **Timeline: no AI timeline.** Pages already draw timelines from recorded dates only (`DocumentTimeline`, the shared timeline). Dates pulled out of prose by a model would be unverified. A model could later propose missing dates into the review queue, as the source watch does, which is a separate idea parked in the roadmap.
 - **Top questions: yes, inside Ask.** Two or three suggested questions per kind of page (nation, case, law, person), written from the search logs and reviewed once, shown as buttons in the Ask panel. No model call per visit.
 

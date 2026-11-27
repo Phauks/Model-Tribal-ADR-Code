@@ -33,6 +33,8 @@ import { giftSettingChecks, giftState } from './sponsors.ts';
 import { isTestKey, stripeSettings } from './stripe.ts';
 import { latestPublication, latestRebuild } from './site-text.ts';
 import { dollars } from './watch/model-prices.ts';
+import { problemsSince, type ProblemRow } from './report.ts';
+import { isMissingTable } from '../problems.ts';
 import { readWatchProgress, watchState, watchStateWords, watchWorkerAddress, type WatchProgress } from './watch/progress.ts';
 
 export type CheckState = 'working' | 'warning' | 'problem' | 'off';
@@ -304,7 +306,7 @@ const scannerDesk: Check = {
 	}
 };
 
-type RateLimitBinding = 'requestFormLimit' | 'workspaceChangeLimit' | 'signInLimit' | 'signInNetworkLimit' | 'uploadLimit';
+type RateLimitBinding = 'requestFormLimit' | 'workspaceChangeLimit' | 'signInLimit' | 'signInNetworkLimit' | 'uploadLimit' | 'problemReportLimit';
 
 /** Each limit names how many a minute it allows and whom it counts, as site/wrangler.jsonc sets it (Trevor, Nov. 26, 2026: "rate limits should denote the limits"). */
 function rateLimitCheck(key: string, name: string, binding: RateLimitBinding, use: string, perMinute: number, counted: string): Check {
@@ -934,8 +936,48 @@ const siteTextRebuilds: Check = {
 	}
 };
 
+/** How far back the Problems check looks. */
+const problemWindowDays = 7;
+
+/**
+ * What has gone wrong lately, from the problems table the site and its
+ * Workers count every reported problem in (src/lib/server/report.ts,
+ * site/ERRORS.md). Each line names a code, where it happened, how often, when
+ * last, and the reference that finds it in Cloudflare's Workers Logs.
+ */
+const recentProblems: Check = {
+	key: 'recent-problems',
+	group: 'Problems',
+	name: 'Problems in the last 7 days',
+	target: { name: 'tribal-law-project', kind: 'D1 database', part: 'problems table' },
+	use: 'Counting the problems the site, its Workers and readers’ browsers report',
+	test: 'Lists each kind of problem reported in the last 7 days, newest first. Search Workers Logs for a reference to see the whole report.',
+	async run({ environment, now = new Date() }) {
+		let rows: ProblemRow[];
+		try {
+			rows = await problemsSince(environment.database, new Date(now.getTime() - problemWindowDays * 86_400_000));
+		} catch (problem) {
+			if (isMissingTable(problem)) return { state: 'off', summary: 'The problems table is missing.', details: [], fix: 'Apply migration 20261127T0747_add_problems.' };
+			throw problem;
+		}
+		if (rows.length === 0) return { state: 'working', summary: 'Nothing has been reported in the last 7 days.', details: [] };
+		const total = rows.reduce((sum, row) => sum + row.count, 0);
+		const details = rows.map(
+			(row) => `${row.code} (${row.source}, ${row.place}): ${row.count.toLocaleString('en-US')} since ${row.firstSeen.slice(0, 10)}, last ${row.lastSeen.slice(0, 16).replace('T', ' ')} UTC, ${row.lastReference}. ${row.lastMessage}`
+		);
+		const kinds = rows.length === 1 ? 'kind' : 'kinds';
+		return {
+			state: 'warning',
+			summary: `${rows.length} ${kinds} of problem reported ${total.toLocaleString('en-US')} ${total === 1 ? 'time' : 'times'} in the last 7 days.`,
+			details,
+			fix: 'Search Workers Logs in the Cloudflare dashboard for a reference to read the whole report.'
+		};
+	}
+};
+
 export const serviceChecks: readonly Check[] = [
 	database,
+	recentProblems,
 	sourceLibrary,
 	bucketCheck('source-documents-bucket', 'Files bucket', 'sourceDocuments', 'tribal-law-project-files', 'source documents and sent files', 'Source documents, sent files, map tiles, the library’s change files and the Workers’ progress files'),
 	bucketCheck('mail-bucket', 'Mail bucket', 'mailFiles', 'tribal-law-project-mail', 'the project inbox’s messages and attachments', 'The project inbox’s messages and attachments'),
@@ -953,6 +995,7 @@ export const serviceChecks: readonly Check[] = [
 	rateLimitCheck('sign-in-limit', 'Sign-in, by email address', 'signInLimit', 'guessing codes and passwords for one address', 5, 'email address and step'),
 	rateLimitCheck('sign-in-network-limit', 'Sign-in, by network address', 'signInNetworkLimit', 'guessing from one network address', 30, 'network address and step'),
 	rateLimitCheck('upload-limit', 'Uploads', 'uploadLimit', 'starting uploads', 600, 'account'),
+	rateLimitCheck('problem-report-limit', 'Problem reports from browsers', 'problemReportLimit', 'problem reports sent by readers’ browsers', 30, 'network address'),
 	siteAddress,
 	leadAuthor,
 	passwordKey,

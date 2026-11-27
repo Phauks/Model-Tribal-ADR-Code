@@ -9,7 +9,7 @@
 
 	The views are picked from the same searchable dropdown as the map of all
 	nations (src/lib/map-views.ts). Without scripts every view is shown, one after another. The same
-	facts are listed in words under "At a glance", so the map is never the only
+	facts are listed in words under "Key facts", so the map is never the only
 	way to them.
 -->
 <script lang="ts">
@@ -30,11 +30,10 @@
 	let chosen = $state<NationMapView | undefined>();
 	const currentKey = $derived(chosen ?? map.views[0]?.key);
 	const current = $derived(Math.max(0, map.views.findIndex((view) => view.key === currentKey)));
-	/** The Land Areas view is drawn with MapLibre over the site's tiles when the browser can (TileMap.svelte); the drawn map stays for print, offline reading and old devices. */
-	let tileMapWanted = $state(true);
-	/** Said to screen readers when the tiled map cannot start and the drawn map takes its place. */
-	let tileMapProblem = $state('');
+	/** The Land Areas view is drawn with MapLibre over the site's tiles (TileMap.svelte); the drawn map stays for print and for readers without scripts. If MapLibre cannot start, the map says so in its own frame, with Try again, rather than the drawn map taking its place (Trevor, 2026-11-27). */
+	const tileMapWanted = true;
 	let tileMapReady = $state(false);
+	let tileMapFailed = $state(false);
 
 	/**
 	 * The year slider under the tiled map, and the Land cessions switch in its Layers menu, shared with the Map page (Trevor, 2026-11-26, historic maps mockup 6): the slider picks the Census year of the land areas, and with the switch on, the land the nation's predecessors had ceded by then.
@@ -49,6 +48,7 @@
 
 	function choose(key: NationMapView): void {
 		tileMapReady = false;
+		tileMapFailed = false;
 		chosen = key;
 	}
 
@@ -106,7 +106,6 @@
 			{/each}
 		</defs>
 	</svg>
-	<p class="visually-hidden" role="status">{tileMapProblem}</p>
 
 	{#if map.views.length > 1}
 		<div class="nation-map-picker">
@@ -116,7 +115,7 @@
 
 	{#each map.views as view, index (view.key)}
 		{@const layout = view.layout}
-		{@const tiled = view.key === 'lands' && tileMapReady && index === current}
+		{@const tiled = view.key === 'lands' && (tileMapReady || tileMapFailed) && index === current}
 		<figure
 			class="nation-map-view"
 			id="nation-map-view-{view.key}"
@@ -136,9 +135,8 @@
 						onselect={(anchor) => void chooseArea(anchor)}
 						onready={() => (tileMapReady = true)}
 						onfail={() => {
-							tileMapWanted = false;
 							tileMapReady = false;
-							tileMapProblem = 'The interactive map could not be loaded, so the drawn map is shown.';
+							tileMapFailed = true;
 						}}
 					/>
 				</div>
@@ -279,7 +277,7 @@
 			display: none;
 		}
 
-		/* While the tiled map loads, the drawn map keeps its place but is not shown, so the reader never sees one map and then the other. It shows again if the tiled map cannot start, and always without scripts. */
+		/* While the tiled map loads, the drawn map keeps its place but is not shown, so the reader never sees one map and then the other. Without scripts it is the map. */
 		:global(html[data-scripts='on']) .drawing.waiting {
 			visibility: hidden;
 		}

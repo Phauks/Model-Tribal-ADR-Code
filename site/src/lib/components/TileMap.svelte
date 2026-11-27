@@ -84,7 +84,7 @@
 	// Ways to zoom and move: the + and - buttons, the keyboard once the map has focus (arrows move, + and - zoom), the scroll wheel over the map, a trackpad pinch, and two fingers on a touch screen. On a touch screen one finger still scrolls the page, and MapLibre says to use two, so the map never traps a reader scrolling past it.
 	//
 	// Small land areas get a dot until their outline is big enough to see, and nearby dots are grouped into numbered circles when zoomed out. Selecting a place goes to its row in the table.
-	import { onMount, tick } from 'svelte';
+	import { tick, untrack } from 'svelte';
 	import type { Map as MapLibreMap, StyleSpecification, LayerSpecification, SourceSpecification, ExpressionSpecification, FilterSpecification } from 'maplibre-gl';
 	import type { TileMapData } from '#lib/server/nations-map.ts';
 	import { motionDuration, motionEasing } from '#lib/motion.ts';
@@ -1097,18 +1097,37 @@
 		return [Math.min(...boxes.map((box) => box[0])), Math.min(...boxes.map((box) => box[1])), Math.max(...boxes.map((box) => box[2])), Math.max(...boxes.map((box) => box[3]))];
 	}
 
-	onMount(() => {
+	/**
+	 * When the map cannot start, it says so in its own frame, with Try again, rather than the page swapping in the drawn map (Trevor, 2026-11-27: "I would rather, map failed to load"). A device that cannot draw maps at all gets no Try again, since trying again would fail the same way.
+	 */
+	let failed = $state<'' | 'retry' | 'device'>('');
+	let attempt = $state(0);
+	function tryAgain(): void {
+		failed = '';
+		attempt += 1;
+	}
+
+	// The map starts when the component does, and again from the start each time the reader presses Try again.
+	$effect(() => {
+		void attempt;
+		return untrack(() => startMap());
+	});
+
+	function startMap(): (() => void) | undefined {
 		let stopped = false;
 		let cleanups: (() => void)[] = [];
-		const fail = () => {
+		ready = false;
+		const fail = (reason: 'retry' | 'device' = 'retry') => {
 			if (stopped) return;
 			stopped = true;
 			map?.remove();
 			map = undefined;
+			ready = false;
+			failed = reason;
 			onfail?.();
 		};
 		if (!canDrawMaps()) {
-			fail();
+			fail('device');
 			return;
 		}
 
@@ -1442,12 +1461,18 @@
 			map?.remove();
 			map = undefined;
 		};
-	});
+	}
 </script>
 
 <div class="tile-map" class:ready class:explorer bind:this={container} role="region" aria-label="Map: {label}">
 	<!-- The starry sky behind the globe, under MapLibre's canvas; only a picture, so screen readers skip it. -->
 	<canvas class="globe-sky" bind:this={skyCanvas} hidden aria-hidden="true"></canvas>
+	{#if failed}
+		<div class="map-failed" role="alert">
+			<p>{failed === 'device' ? 'This browser cannot draw the map.' : 'The map failed to load.'}</p>
+			{#if failed === 'retry'}<button type="button" class="button" onclick={tryAgain}>Try again</button>{/if}
+		</div>
+	{/if}
 	<!-- The base map menu (mockup 1A), opened by the Layers button in the map's corner stack. Escape closes it and returns to the button. -->
 	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 	<div
@@ -1496,6 +1521,7 @@
 <style>
 	.tile-map {
 		container: tile-map / inline-size;
+		position: relative;
 		width: 100%;
 		aspect-ratio: 975 / 883;
 		border: 1px solid var(--color-line);
@@ -1513,6 +1539,27 @@
 
 	.globe-sky[hidden] {
 		display: none;
+	}
+
+	/* Said in the map's own frame when it cannot start, over everything else in it, and shown even where the page keeps a map that has not loaded out of sight. */
+	.map-failed {
+		visibility: visible;
+		position: absolute;
+		inset: 0;
+		z-index: 3;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-3);
+		padding: var(--space-4);
+		background: var(--color-paper);
+		text-align: center;
+	}
+
+	.map-failed p {
+		margin: 0;
+		font-weight: var(--font-weight-semibold);
 	}
 
 	/* A map that is full screen by itself fills the screen. */
