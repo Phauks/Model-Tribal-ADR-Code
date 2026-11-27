@@ -376,8 +376,7 @@
 	}
 
 	.file:focus-visible {
-		background-color: var(--color-focus);
-		color: var(--focus-text);
+		outline-offset: -3px;
 	}
 
 	.file-name {

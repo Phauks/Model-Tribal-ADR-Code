@@ -177,6 +177,15 @@ export const navigationSections: NavigationSection[] = [
 				]
 			},
 			{
+				title: 'Congress',
+				links: [
+					{ label: 'Hearings', link: '/stats/congressional-hearings', icon: 'message-square', count: 'congressional-hearings' },
+					{ label: 'Committee Reports', link: '/stats/committee-reports', icon: 'file-text', count: 'committee-reports' },
+					{ label: 'Committee Prints', link: '/stats/committee-prints', icon: 'scroll-text', count: 'committee-prints' },
+					{ label: 'Research Service Reports', link: '/stats/congressional-research-service-reports', icon: 'library', count: 'congressional-research-service-reports' }
+				]
+			},
+			{
 				title: 'Agency Records',
 				links: [
 					{ label: 'Acknowledgment Petitions', link: '/stats/federal-acknowledgment', icon: 'file-check', count: 'federal-acknowledgment' },

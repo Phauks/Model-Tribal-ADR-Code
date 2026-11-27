@@ -119,8 +119,8 @@
 
 	{#if data.text}<SavedText file={data.text.file} isPdf={data.text.isPdf} name={data.name} identifier="law-text" />{/if}
 
-	{#if data.essays.length + data.nations.length + data.signers.length + data.enacted.length > 0}
-		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length + data.signers.length + data.enacted.length}>
+	{#if data.essays.length + data.nations.length + data.signers.length + data.enacted.length + data.legislativeHistory.length > 0}
+		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length + data.signers.length + data.enacted.length + data.legislativeHistory.length}>
 			<dl class="summary-list">
 				{#if data.enacted.length > 0}
 					<div>
@@ -134,6 +134,16 @@
 							{:else}
 								{@render enactedList()}
 							{/if}
+						</dd>
+					</div>
+				{/if}
+				{#if data.legislativeHistory.length > 0}
+					<div>
+						<dt>Legislative history</dt>
+						<dd>
+							{#each data.legislativeHistory as document (document.link)}
+								<p><a href={document.link}>{document.name}</a><span class="muted">&nbsp;› {document.detail}</span></p>
+							{/each}
 						</dd>
 					</div>
 				{/if}

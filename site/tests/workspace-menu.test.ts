@@ -37,7 +37,6 @@ describe('the workspace pages in the left sidebar', () => {
 			'sponsors',
 			'orders',
 			'nonprofit',
-			'site-text',
 			'changes',
 			'service-checks',
 			'wayback'
@@ -59,10 +58,9 @@ describe('the workspace pages in the left sidebar', () => {
 			'nation-pages',
 			'events',
 			'rooms',
-			'contributors',
-			'site-text'
+			'contributors'
 		]);
-		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'review-requests', 'comments', 'reviews', 'stubs', 'library', 'rooms', 'site-text']);
+		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'review-requests', 'comments', 'reviews', 'stubs', 'library', 'rooms']);
 		expect(names(workspacePagesFor(permissionsOf('nation-reviewer')))).toEqual(['overview', 'reviews', 'nation-uploads']);
 	});
 

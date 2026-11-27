@@ -179,3 +179,30 @@ describe('Title 25 as an outline', () => {
 		expect(groups[0].rows[1]).toMatchObject({ label: '§§ 212–215', status: 'repealed', note: 'June 25, 1948, ch. 645, §21, 62 Stat. 862' });
 	});
 });
+
+describe('A congressional document’s page and a law’s legislative history', () => {
+	it('gives every hearing, report, print and Congressional Research Service product a page', () => {
+		const documents = [...sources().values()].filter((record) => record.kind === 'congressional-document');
+		expect(documents.length).toBeGreaterThan(5000);
+		expect(documents.filter((record) => !isLawRecord(record)).map((record) => record.key)).toEqual([]);
+	});
+
+	it('names the report’s committee, Congress and the law it is the history of', async () => {
+		const { lawPage } = await import('#lib/server/law-pages.ts');
+		const page = lawPage('senate-report-100-157');
+		if ('movedTo' in page) throw new Error('A Senate report is not a Title 25 section.');
+		const facts = Object.fromEntries(page.glance.map((group) => [group.field, group.items.map((item) => item.text)]));
+		expect(facts.kind).toEqual(['Senate report']);
+		expect(facts.committee).toEqual(['Permanent Select Committee on Indian Affairs']);
+		expect(facts.congress).toEqual(['100th Congress, 1st session']);
+		expect(page.glance.find((group) => group.field === 'laws')?.items[0]).toMatchObject({ link: '/laws/public-law-100-139' });
+	});
+
+	it('lists the reports on the bill under the law’s Legislative history, oldest first', async () => {
+		const { lawPage } = await import('#lib/server/law-pages.ts');
+		const page = lawPage('public-law-100-139');
+		if ('movedTo' in page) throw new Error('A public law is not a Title 25 section.');
+		const history = page.legislativeHistory;
+		expect(history).toContainEqual({ name: 'S. Rep. No. 100-157', link: '/laws/senate-report-100-157', detail: 'Senate report, 1987' });
+	});
+});
