@@ -1062,6 +1062,31 @@ sup.citation {
 	border-top: 1px solid var(--color-line);
 }
 
+/* The later cases under a case's Treatment, by kind of treatment, each kind's count in a badge (record-boxes.ts, laterCasesMarkdown; Trevor, Nov. 27, 2026). */
+.later-cases-kind {
+	margin: var(--space-4) 0 var(--space-1);
+}
+
+.later-cases-kind .count-badge {
+	font-weight: normal;
+}
+
+ul.later-cases {
+	margin: 0 0 var(--space-3);
+	padding-left: 1.3em;
+}
+
+ul.later-cases li + li {
+	margin-top: var(--space-1);
+}
+
+/* A link that leaves the site, such as a case on case.law, ends with an arrow (as in the opinion copies, scripts/caselaw/copy_links.py). */
+a.external::after {
+	content: '\2197';
+	font-size: 0.75em;
+	margin-left: 0.1em;
+}
+
 /* A case box's topics, as tags; the index of cases by topic is built from them. */
 .essay-topics {
 	display: flex;
