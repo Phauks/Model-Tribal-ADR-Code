@@ -1,0 +1,50 @@
+key: california-food-and-agricultural-code-section-515
+kind: state-statute
+citation:
+  type: legislation
+  title: Food and Agricultural Code section 515
+  title-short: Cal. Food & Agric. Code § 515
+  container-title: California Food and Agricultural Code
+  container-title-short: Cal. Food & Agric. Code
+  section: '515'
+  author:
+  - literal: California Legislative Counsel
+  issued:
+    date-parts:
+    - - 2025
+  URL: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=FAC&sectionNum=515.
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=FAC&sectionNum=515.
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Cal. Food & Agric. Code § 515 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Cal. Food & Agric. Code § 515 (2026). History: Added by Stats. 2025, Ch. 106, Sec. 5. (AB 149) Effective September 17, 2025. Repealed as of January 1, 2030, by its own provisions. Text read from the California Legislative Counsel''s database of the codes (pubinfo_2025.zip, updated Nov. 23, 2026, downloads.leginfo.legislature.ca.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indigenous; tribes); AI reader''s verdict incidental: Pilot program eligibility includes tribes as defined. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indigenous; tribes'

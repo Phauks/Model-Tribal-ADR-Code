@@ -89,7 +89,7 @@
 >
 	{#if data.opinions.length > 0}
 		<Collapsible heading="Opinions" identifier="opinions" count={opinionCount}>
-			<DataTable identifier="opinions-{data.key}" label="Table: the newest opinions of the {data.name}" columns={opinionColumns} rows={opinionRows} rowName={['opinion', 'opinions']} count={false} tools={false}>
+			<DataTable identifier="opinions-{data.key}" label="Table: the newest opinions of the {data.name}" columns={opinionColumns} rows={opinionRows} rowName={['opinion', 'opinions']} count={false}>
 				{#snippet cell(row: TableRow, column: TableColumn)}
 					{@const opinion = opinionByKey.get(row.key)}
 					{#if opinion && column.key === 'name'}{#if opinion.path}<a href={opinion.path}><i>{opinion.name}</i></a>{:else}<i>{opinion.name}</i>{/if}{/if}
@@ -103,7 +103,7 @@
 
 	{#if data.cases.length > 0}
 		<Collapsible heading="Cases" identifier="cases" count={data.caseCount}>
-			<DataTable identifier="cases-{data.key}" label={data.cases.length < data.caseCount ? `Table: the newest cases the ${data.name} decided` : `Table: cases the ${data.name} decided`} columns={caseColumns} rows={caseRows} rowName={['case', 'cases']} count={false} tools={false}>
+			<DataTable identifier="cases-{data.key}" label={data.cases.length < data.caseCount ? `Table: the newest cases the ${data.name} decided` : `Table: cases the ${data.name} decided`} columns={caseColumns} rows={caseRows} rowName={['case', 'cases']} count={false}>
 				{#snippet cell(row: TableRow, column: TableColumn)}
 					{@const entry = caseByKey.get(row.key)}
 					{#if entry && column.key === 'name'}<a href={entry.link}><i>{entry.name}</i></a>{/if}
