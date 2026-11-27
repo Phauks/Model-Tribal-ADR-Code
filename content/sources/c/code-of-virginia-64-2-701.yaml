@@ -1,0 +1,50 @@
+key: code-of-virginia-64-2-701
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Va. Code Ann. § 64.2-701
+  container-title: Code of Virginia
+  container-title-short: Va. Code Ann.
+  section: 64.2-701
+  author:
+  - literal: Virginia General Assembly
+  issued:
+    date-parts:
+    - - 2005
+  URL: https://law.lis.virginia.gov/vacode/title64.2/chapter7/section64.2-701/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://law.lis.virginia.gov/vacode/title64.2/chapter7/section64.2-701/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Va. Code Ann. § 64.2-701 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Va. Code Ann. § 64.2-701 (2025). History: 2005, c. 935, § 55-541.03; 2012, c. 614; 2017, c. 592; 2018, c. 476; 2020, c. 768; 2025, c. 74. Text read from the Virginia Division of Legislative Systems'' page for the section in the Code of Virginia (law.lis.virginia.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Trust Code definition of State includes federally recognized Indian tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

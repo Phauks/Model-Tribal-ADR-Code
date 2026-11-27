@@ -1,0 +1,48 @@
+key: delaware-code-title-11-section-1271a
+kind: state-statute
+citation:
+  type: legislation
+  title: Criminal contempt of a domestic violence protective order, lethal violence protective order, or sexual violence protective order; class A misdemeanor; class F felony
+  title-short: Del. Code Ann. tit. 11, § 1271A
+  container-title: Delaware Code Annotated
+  container-title-short: Del. Code Ann.
+  volume: '11'
+  section: 1271A
+  author:
+  - literal: Delaware General Assembly
+  URL: https://delcode.delaware.gov/title11/c005/sc06/index.html#1271A
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://delcode.delaware.gov/title11/c005/sc06/index.html#1271A
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Del. Code Ann. tit. 11, § 1271A (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: DE
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Del. Code Ann. tit. 11, § 1271A (2025). History: 69 Del. Laws, c. 160, § 4; 70 Del. Laws, c. 186, § 1; 71 Del. Laws, c. 179, § 1; 72 Del. Laws, c. 63, § 1; 76 Del. Laws, c. 117, §§ 1-4; 80 Del. Laws, c. 373, § 2; 81 Del. Laws, c. 274, § 2; 83 Del. Laws, c. 449, § 2. Text read from the Delaware Legislative Council''s page for the section''s chapter in the Delaware Code (delcode.delaware.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian nation; indian; nation); AI reader''s verdict incidental: Contempt applies to protective orders of Indian nation courts. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian nation; indian; nation'

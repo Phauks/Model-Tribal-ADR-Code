@@ -16,6 +16,7 @@
 	import { tick } from 'svelte';
 	import { page } from '$app/state';
 	import { version } from '$app/env';
+	import { newestChange } from 'virtual:build-change';
 	import RefreshCw from '@lucide/svelte/icons/refresh-cw';
 	import { buildTime } from '#lib/offline-collections.ts';
 	import { changesByDay, changesSince, reachesBack } from '#lib/recent-changes.ts';
@@ -27,15 +28,16 @@
 	let button: HTMLButtonElement | undefined = $state();
 	let panel: HTMLDivElement | undefined = $state();
 
-	const built = buildTime(version);
+	/** What this page's build already has: its newest pull request, and when it was built. */
+	const point = { newest: newestChange ?? undefined, built: buildTime(version) };
 	const available = $derived(siteUpdates.available);
 	const contentChanged = $derived(available !== undefined && available.content !== versions.content);
 	/** Every pull request merged since the build this page runs (Trevor, Nov. 27, 2026). */
-	const changes = $derived(changesSince(available?.changes, built));
+	const changes = $derived(changesSince(available?.changes, point));
 	/** Grouped by the day they were merged, when they span more than one. */
 	const days = $derived(changesByDay(changes));
 	/** False when the list may not reach back to this page's build, so earlier changes may be missing. */
-	const complete = $derived(reachesBack(available?.changes, built));
+	const complete = $derived(reachesBack(available?.changes, point));
 	const firstListed = $derived(days.at(-1)?.label);
 	/** Whether the update changes the page being read, when both builds' fingerprints could be read. */
 	const pageChange = $derived(siteUpdates.changeTo(page.url.pathname));
@@ -222,7 +224,7 @@
 	}
 
 	.changes:focus-visible {
-		outline: 2px solid var(--color-focus-ring);
+		outline: 2px solid var(--focus-ring);
 		outline-offset: 2px;
 	}
 

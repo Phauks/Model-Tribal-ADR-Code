@@ -28,10 +28,11 @@ A nation that has claimed its page can also choose, without a request, how the s
 
 1. **What would you like to do?** Correct something; Restrict or remove something; Add a nation that is missing; Contribute (sources, review, terms, writing); Ask a question. Adding a nation follows its own steps, described [below](#adding-a-nation-that-is-missing).
 2. **Which material?** Pre-filled from the page that opened the form; more pages can be added. For a restriction, the form asks the person **not** to repeat the sensitive material, only to say where it is.
-3. **Who are you?** Name; nation; role; whether they are writing on behalf of the nation's government or one of its offices; how to reach them (email or phone). Only a way to reply is required.
-4. **Details.** What is wrong, what should change, or what they offer. Optional file upload (for example a nation's resolution or a corrected citation).
+3. **Who are you?** Name; nation; role; whether they are writing on behalf of the nation's government or one of its offices; an email address to reply to (Trevor removed the phone option on Nov. 27, 2026; requests sent earlier may hold a phone number). Only the email address is required.
+4. **Details.** What is wrong, what should change, or what they offer. Optional files, added one at a time, up to five (for example a nation's resolution or a corrected citation).
 5. **Credit and permission** (Contribute only). How they want to be credited (name, nation, role, or not at all), and whether the material may be published under the project's licenses or shared for review only. Material that is not already published (an interview, a story, an unpublished document) instead opens a filing with a signed contributor statement ([contributions.md](contributions.md)).
-6. **Confirmation.** A reference number, the date, and what happens next, also sent by email if an address was given.
+6. **Terms of Submission.** Each term on its own line, one required "I accept these terms" box, and the Submit button (Trevor, Nov. 27, 2026): the information is true to the best of the sender's knowledge; they have the right to share the files and sources they send; nothing they send is confidential or legally privileged; they have not included the name or other personal details of a child or a protected person; files and sources may be cited or published (for a restriction or removal, the material is never published); contact details are never published; and name, role and contact details are deleted 12 months after the request is resolved unless the sender asked to be credited (`requestStatements` in `site/src/lib/requests.ts`). The server refuses a request without the box ticked.
+7. **Confirmation.** A reference number, the date, and what happens next, also sent by email.
 
 ## What happens after a request
 

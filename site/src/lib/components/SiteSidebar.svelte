@@ -15,11 +15,15 @@
 	// - then "Changes to This Page", where the site records the page's changes
 	//   (Trevor, Nov. 23, 2026), and Your work while an essay is edited.
 	//
-	// The Workspace and the Account pages are places too: on their own pages
-	// the column lists them as it lists a section's pages
-	// (src/lib/personal-navigation.ts). Elsewhere they are in the section bar's
-	// Workspace tab and under the masthead's profile button, not in the column
-	// (Trevor, Nov. 27, 2026; design/sidebar-workspace-profile, option B).
+	// The Account pages are a place too: on their own pages the column lists
+	// them as it lists a section's pages (src/lib/personal-navigation.ts).
+	// Elsewhere they are under the masthead's profile button, not in the
+	// column (Trevor, Nov. 27, 2026; design/sidebar-workspace-profile,
+	// option B). The Workspace's pages are in the section bar's Workspace tab
+	// and the phone Menu sheet, so the column does not list them again, even
+	// on the Workspace's own pages (Trevor, Nov. 27, 2026: "since we have top
+	// nav for workspace, do we need left sidebar nav for it now? probably can
+	// remove").
 	//
 	// Long lists, such as every nation, are no longer in the column: the
 	// Nations menu has a box to go straight to a nation.
@@ -46,8 +50,8 @@
 	import { followActiveHeading, headingIds } from '#lib/active-heading.ts';
 	import { isUnfolded } from '#lib/outline-folding.ts';
 	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
-	import { followedPageAddress } from '#lib/page-history.ts';
-	import { personalSectionOf, workspaceSection } from '#lib/personal-navigation.ts';
+	import { followedPageAddress, pageChangesLink } from '#lib/page-history.ts';
+	import { accountSection, personalSectionOf, workspaceSection } from '#lib/personal-navigation.ts';
 	import {
 		currentNavigationLink,
 		holdingNavigationLink,
@@ -72,7 +76,9 @@
 	const search = $derived(building ? '' : page.url.search);
 	const counts = $derived(page.data.navigationCounts as NavigationCounts | undefined);
 	// The page the reader is on, when the site records its changes: "Changes to This Page" ends the column.
-	const followedPage = $derived(page.error ? undefined : followedPageAddress(path));
+	// On the page's own Changes view the link stays, marked as where the reader is (src/lib/server/page-changes.ts).
+	const changesOf = $derived(page.error ? undefined : (page.data.historyOf as string | undefined));
+	const followedPage = $derived(page.error ? undefined : (changesOf ?? followedPageAddress(path)));
 
 	// The page's title, for the phone strip on pages with nothing else to name them.
 	let pageTitle = $state<string | undefined>(undefined);
@@ -84,8 +90,9 @@
 	const access = new WorkspaceAccess();
 	const workspace = $derived(workspaceSection(access.pages));
 	const personalSection = $derived(currentSection ? undefined : personalSectionOf(path, workspace));
-	// A family takes the place of the section's pages.
-	const shownSection = $derived(family ? undefined : (currentSection ?? personalSection));
+	// A family takes the place of the section's pages. The Workspace is left to its tab.
+	const columnSection = $derived(currentSection ?? (personalSection === accountSection ? accountSection : undefined));
+	const shownSection = $derived(family ? undefined : columnSection);
 	const heldLink = $derived(shownSection ? holdingNavigationLink(shownSection, path, search) : undefined);
 
 	// The page's own headings. While an essay is edited or commented on, its
@@ -93,10 +100,9 @@
 	const editing = $derived(editingOutline.current?.path === path ? editingOutline.current : undefined);
 	const publishedOutline = $derived(page.data.outline as PageOutline | undefined);
 	const outlineItems = $derived<OutlineItem[]>(editing ? editing.items : (publishedOutline?.items ?? []));
-	// Rows line up without room for carets when no heading has headings under it.
-	const outlineNests = $derived(outlineItems.some((item) => item.children?.length));
-	// An outline of the page's headings is "On this page"; one that lists other pages, such as the back matter's, is "Contents".
-	const outlineLabel = $derived(outlineItems.every((item) => item.link.startsWith('#')) ? 'On This Page' : 'Contents');
+	// An outline of the page's headings is "On this page", a name only screen readers hear (Trevor, Nov. 27, 2026: "don't need to say On This Page"); one that lists other pages, such as the back matter's, is headed "Contents".
+	const outlineOfHeadings = $derived(outlineItems.every((item) => item.link.startsWith('#')));
+	const outlineLabel = $derived(outlineOfHeadings ? 'On This Page' : 'Contents');
 
 	// What the phone strip names beside "Menu".
 	const localTitle = $derived(
@@ -267,17 +273,28 @@
 				<p class="local-title">{family.title}</p>
 			{/if}
 		</div>
-		<ul class="local-pages">
-			{#each family.pages as item (item.link)}
-				{@const current = item.link === path}
-				<li>
-					<a class="local-link" href={item.link} aria-current={current ? 'page' : undefined}>
-						<span>{#if item.number}<span class="number">{item.number}</span>{' '}{/if}{item.label}</span>
-						{#if item.count}<CountBadge count={item.count} />{/if}
-					</a>
-				</li>
-			{/each}
-		</ul>
+		<!-- The page being read is named but not linked, since a link to it would go nowhere (Trevor, Nov. 27, 2026). A list holding only that page is left out: the title above already names it. -->
+		{#if family.pages.some((item) => item.link !== path)}
+			<ul class="local-pages">
+				{#each family.pages as item (item.link)}
+					{#if item.link === path}
+						<li>
+							<span class="local-link" aria-current="page">
+								<span>{#if item.number}<span class="number">{item.number}</span>{' '}{/if}{item.label}</span>
+								{#if item.count}<CountBadge count={item.count} />{/if}
+							</span>
+						</li>
+					{:else}
+						<li>
+							<a class="local-link" href={item.link}>
+								<span>{#if item.number}<span class="number">{item.number}</span>{' '}{/if}{item.label}</span>
+								{#if item.count}<CountBadge count={item.count} />{/if}
+							</a>
+						</li>
+					{/if}
+				{/each}
+			</ul>
+		{/if}
 	{:else if shownSection}
 		<!-- The section's pages, in the groups of its menu. -->
 		<div class="local-head">
@@ -299,12 +316,11 @@
 		<div class="local-head"><p class="local-title">{publishedOutline.title}</p></div>
 	{/if}
 	{#if outlineItems.length > 0}
-		<p class="local-label on-this-page" id="sidebar-on-this-page-{idSuffix}">{outlineLabel}</p>
-		<div class="headings" class:no-carets={!outlineNests}>
+		<p class="local-label on-this-page" class:visually-hidden={outlineOfHeadings} id="sidebar-on-this-page-{idSuffix}">{outlineLabel}</p>
+		<div class="headings" class:unlabeled={outlineOfHeadings}>
 			<SidebarTree
 				items={outlineItems}
 				listIdentifier="sidebar-outline-{idSuffix}"
-				flush
 				{isActive}
 				isCurrent={isCurrentHeading}
 				isOpen={isItemOpen}
@@ -313,8 +329,13 @@
 		</div>
 	{/if}
 	{#if followedPage}
-		<!-- Opens the history of the page the reader is on, not every page's (Trevor, Nov. 23, 2026). -->
-		<p class="page-changes"><a href="/changes?page={encodeURIComponent(followedPage)}"><FileClock size={18} aria-hidden="true" />Changes to This Page</a></p>
+		<!-- Opens the history of the page the reader is on, not every page's (Trevor, Nov. 23, 2026), in the
+		     page's own place, so this column stays (Trevor, Nov. 27, 2026, design/page-changes-in-page, option B). -->
+		<p class="page-changes">
+			<a href={pageChangesLink(followedPage)} aria-current={changesOf ? 'page' : undefined}
+				><FileClock size={18} aria-hidden="true" />Changes to This Page</a
+			>
+		</p>
 	{/if}
 {/snippet}
 
@@ -410,22 +431,13 @@
 
 <style>
 	/*
-	 * Nesting, the same in every list of the column (Trevor chose option B,
-	 * design/sidebar-nesting): a row is a caret, a small gap and its text; a
-	 * list under an entry starts one step to the right of that entry, with a
-	 * thin guide line down from the entry's caret beside it. The lists use
-	 * these measures in sidebar/SidebarTree.svelte
-	 * and here.
+	 * Nesting in the page's headings (sidebar/SidebarTree.svelte): a heading
+	 * under another starts one step to the right, with no guide line
+	 * (Trevor, Nov. 27, 2026, design/nation-column-restyle).
 	 */
 	.sidebar-wide,
 	.sidebar-narrow {
-		--sidebar-caret: 1.75rem;
-		--sidebar-caret-gap: var(--space-1);
-		--sidebar-step: 1.25rem;
-		/* The guide line runs down the middle of the parent's caret. */
-		--sidebar-line-at: calc(var(--sidebar-caret) / 2);
-		/* From the guide line to where the list's rows start. */
-		--sidebar-line-to-rows: calc(var(--sidebar-step) - var(--sidebar-line-at));
+		--sidebar-step: 1rem;
 	}
 
 	summary {
@@ -507,6 +519,15 @@
 		text-decoration: underline;
 	}
 
+	/* On the page's Changes view: marked like the page being read in the list above. */
+	.page-changes a[aria-current='page'] {
+		border-left: 3px solid var(--color-action);
+		border-radius: 0 var(--radius-control) var(--radius-control) 0;
+		padding-left: calc(var(--space-3) - 3px);
+		background: var(--color-surface);
+		font-weight: var(--font-weight-bold);
+	}
+
 	.sidebar-narrow .page-changes a {
 		min-height: var(--layout-target-minimum);
 	}
@@ -565,22 +586,14 @@
 		font-style: italic;
 	}
 
-	/* The page's headings: a guide line down their left, the one being read marked on it. */
+	/* The page's headings: their text lines up with the pages above them, and the one being read is marked as a page is. */
 	.headings {
-		border-left: 1px solid var(--color-line);
 		font-size: 0.9rem;
 	}
 
-	.headings :global(.outline.flush > li > .entry) {
-		margin-left: -2px;
-	}
-
-	.headings.no-carets :global(.fold.space) {
-		display: none;
-	}
-
-	.headings.no-carets :global(.outline.flush > li > .entry > a) {
-		padding-left: var(--space-3);
+	/* With no label above them, a gap sets the headings apart from the pages. */
+	.headings.unlabeled {
+		margin-top: var(--space-4);
 	}
 
 	/* ---- Wide screens ---- */

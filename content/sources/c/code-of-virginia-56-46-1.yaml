@@ -1,0 +1,50 @@
+key: code-of-virginia-56-46-1
+kind: state-statute
+citation:
+  type: legislation
+  title: Commission to consider environmental, economic, and improvements in service reliability factors in approving construction of electrical utility facilities; approval required for construction of certain electrical transmission lines; notice and hearings
+  title-short: Va. Code Ann. § 56-46.1
+  container-title: Code of Virginia
+  container-title-short: Va. Code Ann.
+  section: 56-46.1
+  author:
+  - literal: Virginia General Assembly
+  issued:
+    date-parts:
+    - - 1972
+  URL: https://law.lis.virginia.gov/vacode/title56/chapter1/section56-46.1/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://law.lis.virginia.gov/vacode/title56/chapter1/section56-46.1/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Va. Code Ann. § 56-46.1 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Va. Code Ann. § 56-46.1 (2025). History: 1972, c. 652; 1973, c. 307; 1974, c. 498; 1983, c. 438; 1984, cc. 287, 562; 1985, c. 282; 1991, cc. 90, 148; 1996, c. 254; 2001, c. 758; 2002, c. 483; 2007, cc. 756, 761, 776, 825; 2009, cc. 808, 854; 2011, cc. 236, 243; 2012, cc. 54, 284; 2016, cc. 192, 276; 2020, cc. 450, 958; 2021, Sp. Sess. I, c. 327; 2024, c. 830; 2026, c. 866. Text read from the Virginia Division of Legislative Systems'' page for the section in the Code of Virginia (law.lis.virginia.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal nations; tribal); AI reader''s verdict incidental: Transmission line review requires notice and participation by federally recognized Tribal Nations. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal nations; tribal'

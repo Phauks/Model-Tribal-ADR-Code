@@ -1,19 +1,26 @@
 <!--
 	@component
-	The site search in the masthead (site/DESIGN.md, section 6, "Search").
-	Trevor asked on Nov. 22, 2026 for a plain search icon that opens into the
-	search, with nothing else in the masthead moving. The icon opens a panel
-	over the page, under the masthead's right edge: a search box and, as the
-	reader types, the matches from the index built with the site
-	(src/lib/site-search.ts), grouped by kind, each group foldable. Arrow keys
-	move between the box and the results, Escape or the X closes the panel and
-	returns focus to the icon, and Enter in the box opens the search page with
-	every match. The panel searches what the search page searches, with the
-	same words (src/lib/search-everything.ts), so its counts are the search
-	page's counts; each group lists its first few and says how many more the
-	search page has. A nation with a seal its page may show has the seal beside
-	its name. The / key opens the panel from anywhere on the page
-	(SiteHeader.svelte). Without scripts the icon is a link to /search.
+	The site search, in the masthead itself (site/DESIGN.md, section 6, "Search").
+	Trevor asked on Nov. 27, 2026 for the search to sit in the masthead rather
+	than open as a panel under it, and chose design A (project files
+	design/header-search): on wide screens one search box always shows in the
+	middle of the masthead, between the site's name and the icon buttons. As
+	the reader types, the matches from the index built with the site
+	(src/lib/site-search.ts) drop down attached under the box, the
+	same width, grouped by kind, each group foldable. Arrow keys move between
+	the box and the results, Escape closes the results, the X clears the box,
+	and Enter opens the search page with every match. The results search what
+	the search page searches, with the same words (src/lib/search-everything.ts),
+	so their counts are the search page's counts; each group lists its first
+	few and says how many more the search page has. A nation with a seal its
+	page may show has the seal beside its name. The / key puts focus in the box
+	from anywhere on the page (SiteHeader.svelte).
+
+	Below 64rem there is no room for the box beside the buttons, so the masthead
+	shows the search icon instead; pressing it turns the masthead's row into the
+	search box, with a back arrow, and the results fill the screen under it.
+	Without scripts the box is a plain form that opens the search page, and the
+	icon is a link to /search.
 -->
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
@@ -21,6 +28,7 @@
 	import RecognitionBadges from './RecognitionBadges.svelte';
 	import { page } from '$app/state';
 	import { SvelteSet } from 'svelte/reactivity';
+	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import Search from '@lucide/svelte/icons/search';
 	import X from '@lucide/svelte/icons/x';
@@ -47,6 +55,10 @@
 	let input: HTMLInputElement | undefined = $state();
 	let opener: HTMLButtonElement | undefined = $state();
 	let panel: HTMLDivElement | undefined = $state();
+	let box: HTMLDivElement | undefined = $state();
+	/** The box's width, so a narrow box gets a short placeholder; and the phone bar's height, so the results start under it. */
+	let fieldWidth = $state(0);
+	let barHeight = $state(0);
 	/** Seals that failed to load, so a broken image is never shown. */
 	const failedImages = new SvelteSet<string>();
 
@@ -54,11 +66,15 @@
 		scripted = true;
 	});
 
-	// A new page closes the panel.
+	// A new page closes the results and empties the box.
 	$effect(() => {
 		void page.url.pathname;
 		expanded = false;
+		query = '';
 	});
+
+	/** The long placeholder where the box has room for it, as in the approved mockup; "Search" where it is narrow. */
+	const placeholder = $derived(fieldWidth && fieldWidth < 320 ? 'Search' : 'Search nations, laws, cases and terms');
 
 	const trimmed = $derived(query.trim());
 	const ready = $derived(entries !== undefined && records !== undefined);
@@ -103,14 +119,24 @@
 				: `${total.toLocaleString('en-US')} ${total === 1 ? 'result' : 'results'}`
 	);
 
-	/** Opens the panel with focus in the box; exported so a keyboard shortcut can call it. */
+	/** Whether the masthead shows the search icon rather than the box (below 64rem): then the box opens as a bar over the masthead. */
+	const compact = () => Boolean(opener && opener.offsetParent !== null);
+
+	/** Puts focus in the box, opening the phone bar where the masthead has only the icon; exported so the / key can call it. */
 	export async function open() {
 		expanded = true;
 		await tick();
-		// On a phone the panel is fixed just under the masthead, wherever it ends.
-		const masthead = opener?.closest('header');
-		if (masthead && panel) panel.style.setProperty('--search-panel-top', `${Math.max(masthead.getBoundingClientRect().bottom, 0) + 8}px`);
 		input?.focus();
+		input?.select();
+	}
+
+	/** Focus in the box shows the results for what it holds and starts fetching the search files. */
+	function started() {
+		if (refocusing) {
+			refocusing = false;
+			return;
+		}
+		expanded = true;
 		// The files start downloading once the server has answered the first search, so on a slow connection that
 		// answer is not held up behind them, or after a short wait when nothing is typed.
 		setTimeout(loadFiles, filesWait);
@@ -134,10 +160,29 @@
 		}
 	}
 
+	/** Set while focus is put back in the box after closing the results, so that focus does not open them again. */
+	let refocusing = false;
+
+	/**
+	 * Closes the results. The phone bar closes too, and focus goes back to the icon that opened it. On wide screens
+	 * focus goes back to the box, and when it is already there with the results closed, it leaves the box.
+	 */
 	async function close() {
+		const fromBar = compact();
+		const wasOpen = showResults;
 		expanded = false;
 		await tick();
-		opener?.focus();
+		if (fromBar) opener?.focus();
+		else if (wasOpen && document.activeElement !== input) {
+			refocusing = true;
+			input?.focus();
+		} else if (!wasOpen) input?.blur();
+	}
+
+	/** The X empties the box and keeps focus in it. */
+	function clear() {
+		query = '';
+		input?.focus();
 	}
 
 	/** The box, then each group's heading and each result, in reading order. */
@@ -160,69 +205,83 @@
 		list[next]?.focus();
 	}
 
-	// A click or focus outside the panel closes it.
+	// A click or focus outside the box and its results closes them.
 	function closeWhenLeft(event: FocusEvent) {
 		const next = event.relatedTarget as Node | null;
-		if (next && !panel?.contains(next) && next !== opener) expanded = false;
+		if (next && !box?.contains(next)) expanded = false;
 	}
 
 	function closeOnOutsideClick(event: MouseEvent) {
-		const target = event.target as Node;
-		if (expanded && !panel?.contains(target) && !opener?.contains(target)) expanded = false;
+		if (expanded && !box?.contains(event.target as Node)) expanded = false;
 	}
+
+	/** The results show under the box once there are words to show them for. */
+	const showResults = $derived(expanded && trimmed !== '' && (answer !== undefined || failed));
 </script>
 
 <svelte:document onclick={closeOnOutsideClick} />
 
-<div class="site-search">
+<!-- The box's keys and leaving it work from anywhere inside; the search box, results and buttons are the controls. -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div class="site-search" class:is-open={expanded} bind:this={box} onkeydown={onKey} onfocusout={closeWhenLeft} style:--search-bar-height="{barHeight}px">
 	{#if scripted}
 		<button
 			bind:this={opener}
-			class="icon-button"
+			class="icon-button opener"
 			type="button"
 			aria-label="Search"
 			aria-keyshortcuts="/"
 			title="Search (press /)"
 			aria-expanded={expanded}
-			aria-controls="{identifier}-panel"
+			aria-controls="{identifier}-box"
 			onclick={() => (expanded ? close() : open())}
 		>
 			<Search size={24} />
 		</button>
 	{:else}
-		<a class="icon-button" href="/search" aria-label="Search" title="Search">
+		<a class="icon-button opener" href="/search" aria-label="Search" title="Search">
 			<Search size={24} />
 		</a>
 	{/if}
 
-	{#if expanded}
-		<!-- The panel's keys and leaving it work from anywhere inside; the search box, results and buttons are the controls. -->
-		<!-- svelte-ignore a11y_no_static_element_interactions -->
-		<div bind:this={panel} class="search-panel" id="{identifier}-panel" onkeydown={onKey} onfocusout={closeWhenLeft}>
-			<form role="search" action="/search" method="get">
-				<label class="visually-hidden" for={identifier}>Search nations, laws, stories and terms</label>
-				<Search size={20} strokeWidth={1.75} aria-hidden="true" />
-				<input
-					bind:this={input}
-					id={identifier}
-					type="search"
-					name="q"
-					autocomplete="off"
-					enterkeyhint="search"
-					placeholder="Search nations, laws, stories and terms"
-					aria-describedby="{identifier}-hint"
-					bind:value={query}
-				/>
-				<button class="icon-button" type="button" aria-label="Close search" title="Close search" onclick={close}>
+	<form class="search-bar" id="{identifier}-box" role="search" action="/search" method="get" bind:offsetHeight={barHeight}>
+		{#if scripted}
+			<button class="icon-button back" type="button" aria-label="Close search" title="Close search" onclick={close}>
+				<ArrowLeft size={24} />
+			</button>
+		{/if}
+		<div class="search-field" class:has-results={showResults} bind:clientWidth={fieldWidth}>
+			<label class="visually-hidden" for={identifier}>Search nations, laws, cases and terms</label>
+			<Search size={20} strokeWidth={1.75} aria-hidden="true" />
+			<input
+				bind:this={input}
+				id={identifier}
+				type="search"
+				name="q"
+				autocomplete="off"
+				enterkeyhint="search"
+				{placeholder}
+				aria-keyshortcuts="/"
+				aria-describedby="{identifier}-hint"
+				bind:value={query}
+				onfocus={started}
+				oninput={() => (expanded = true)}
+			/>
+			{#if query}
+				<button class="icon-button clear" type="button" aria-label="Clear search" title="Clear search" onclick={clear}>
 					<X size={20} strokeWidth={1.75} />
 				</button>
-			</form>
-			<p class="visually-hidden" id="{identifier}-hint">Results appear below as you type. Use the down arrow to reach them, and Enter to see every result.</p>
-			<p class="visually-hidden" role="status">{status}</p>
+			{/if}
+		</div>
+	</form>
+	<p class="visually-hidden" id="{identifier}-hint">Results appear below as you type. Use the down arrow to reach them, and Enter to see every result.</p>
+	<p class="visually-hidden" role="status">{status}</p>
 
+	{#if showResults}
+		<div bind:this={panel} class="search-panel" id="{identifier}-panel">
 			{#if failed && !answer}
 				<p class="message">The search index could not be loaded. Press Enter to open the search page.</p>
-			{:else if trimmed && answer}
+			{:else if answer}
 				{#if total === 0}
 					<p class="message">Nothing matches “{trimmed}”. Check the spelling or try fewer words.</p>
 				{:else}
@@ -270,64 +329,134 @@
 </div>
 
 <style>
-	/* The panel is placed against this box, so opening it moves nothing else. */
+	/* The results are placed against this box, so they hang from the search box's lower edge. */
 	.site-search {
 		position: relative;
-		display: inline-flex;
+		display: flex;
+		align-items: center;
 	}
 
-	.site-search > .icon-button[aria-expanded='true'] {
-		background: color-mix(in srgb, currentColor 14%, transparent);
+	/* Wide screens: the box shows in the masthead and the icon does not. */
+	.opener {
+		display: none;
 	}
 
-	.search-panel {
-		position: absolute;
-		top: calc(100% + var(--space-2));
-		right: 0;
-		z-index: 20;
-		width: min(34rem, calc(100vw - 2 * var(--space-4)));
-		max-height: min(36rem, calc(100vh - 8rem));
-		overflow-y: auto;
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-panel);
-		background: var(--color-paper);
-		color: var(--color-ink);
-		box-shadow: 0 var(--space-2) var(--space-5) color-mix(in srgb, var(--color-ink) 22%, transparent);
-		text-align: left;
+	.search-bar {
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
+		width: 100%;
+		margin: 0;
 	}
 
-	form {
-		position: sticky;
-		top: 0;
+	.back {
+		display: none;
+		color: var(--color-band-text);
+	}
+
+	/*
+	 * The box: at rest a darker strip set into the band (closed look 2, which
+	 * Trevor chose on Nov. 27, 2026, with no / key hint; project files
+	 * design/header-search/closed-looks); with focus in it, a paper pill that
+	 * opens into the results (design A).
+	 */
+	.search-field {
 		display: flex;
 		align-items: center;
 		gap: var(--space-2);
-		margin: 0;
-		padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
-		border-bottom: 1px solid var(--color-line);
+		flex: 1 1 auto;
+		min-width: 0;
+		height: 2.5rem;
+		padding: 0 var(--space-1) 0 var(--space-3);
+		border: 1px solid transparent;
+		border-radius: 8px;
+		background: var(--color-band-inset);
+		color: var(--color-band-text);
+	}
+
+	.search-field:focus-within {
+		border-color: var(--color-paper);
+		border-radius: 1.25rem;
 		background: var(--color-paper);
 		color: var(--color-ink-muted);
+		/* The site's focus ring (F1), 2 px off the box, in the band's ring color. */
+		box-shadow:
+			0 0 0 2px var(--color-band),
+			0 0 0 5px var(--focus-ring);
+	}
+
+	/* With results under it, the box and the results are one card. */
+	.search-field.has-results {
+		border-color: var(--color-control-border);
+		border-bottom-color: var(--color-line);
+		border-radius: 1.25rem 1.25rem 0 0;
+		box-shadow: none;
 	}
 
 	input {
 		flex: 1 1 auto;
 		min-width: 0;
-		min-height: var(--layout-target-minimum);
+		width: auto;
+		height: 100%;
+		min-height: 0;
 		margin: 0;
-		padding: 0 var(--space-2);
+		padding: 0;
 		border: 0;
+		border-radius: 0;
 		background: transparent;
-		color: var(--color-ink);
+		color: inherit;
 		font: inherit;
 	}
 
+	.search-field:focus-within input {
+		color: var(--color-ink);
+	}
+
+	/* The box itself shows focus (the ring and paper above), so the input does not fill with the focus color. */
+	input:focus-visible {
+		outline: none;
+		box-shadow: none;
+		background: transparent;
+		color: var(--color-ink);
+	}
+
 	input::placeholder {
+		color: inherit;
+		opacity: 0.85;
+	}
+
+	.search-field:focus-within input::placeholder {
 		color: var(--color-ink-muted);
 		opacity: 1;
 	}
 
 	input::-webkit-search-cancel-button {
 		appearance: none;
+	}
+
+
+	.clear {
+		min-width: 2.25rem;
+		min-height: 2.25rem;
+		border-radius: 50%;
+		color: var(--color-ink-muted);
+	}
+
+	.search-panel {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		z-index: 20;
+		max-height: min(36rem, calc(100vh - 8rem));
+		overflow-y: auto;
+		border: 1px solid var(--color-control-border);
+		border-top: 0;
+		border-radius: 0 0 var(--radius-panel) var(--radius-panel);
+		background: var(--color-paper);
+		color: var(--color-ink);
+		box-shadow: 0 var(--space-2) var(--space-5) color-mix(in srgb, var(--color-ink) 22%, transparent);
+		text-align: left;
 	}
 
 	.message {
@@ -416,14 +545,51 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
-	/* On a phone the panel spans the screen under the masthead. */
-	@media (max-width: 40rem) {
+	/*
+	 * Below 64rem the masthead has no room for the box beside its buttons:
+	 * it shows the search icon, which turns the masthead's row into the box,
+	 * with a back arrow, and the results fill the screen under it.
+	 */
+	@media (max-width: 63.99rem) {
+		.opener {
+			display: inline-grid;
+		}
+
+		.site-search > .opener[aria-expanded='true'] {
+			background: color-mix(in srgb, currentColor 14%, transparent);
+		}
+
+		.search-bar {
+			display: none;
+		}
+
+		.site-search.is-open .search-bar {
+			display: flex;
+			position: fixed;
+			inset: 0 0 auto;
+			z-index: 30;
+			min-height: 3.25rem;
+			padding: var(--space-1) var(--space-2) var(--space-1) var(--space-1);
+			background: var(--color-band);
+		}
+
+		.back {
+			display: inline-grid;
+		}
+
+		.search-field.has-results {
+			border-radius: 1.25rem;
+			border-color: var(--color-paper);
+		}
+
 		.search-panel {
 			position: fixed;
-			top: var(--search-panel-top, 3.5rem);
-			left: var(--space-4);
-			right: var(--space-4);
-			width: auto;
+			top: var(--search-bar-height, 3.25rem);
+			bottom: 0;
+			max-height: none;
+			border: 0;
+			border-radius: 0;
+			box-shadow: none;
 		}
 	}
 </style>

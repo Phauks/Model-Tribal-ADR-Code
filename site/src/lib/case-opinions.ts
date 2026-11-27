@@ -52,7 +52,10 @@ export const opinionLabels: Record<string, string> = {
 	dissent: 'dissenting opinion',
 	'coauthored dissent': 'joint dissenting opinion',
 	'per curiam': 'per curiam opinion',
-	'in chambers': 'opinion in chambers'
+	'in chambers': 'opinion in chambers',
+	// Kinds the Caselaw Access Project marks in state and federal reports (scripts/caselaw/case_opinion_texts.py).
+	rehearing: 'opinion on rehearing',
+	'on the merits': 'opinion on the merits'
 };
 
 /** "Opinion of the Court", with a capital, for a heading or the start of a line. */
@@ -63,7 +66,11 @@ export function opinionTitle(kind: string): string {
 
 /** A justice's surname: "John Marshall" is "Marshall". */
 export function surname(name: string): string {
-	return name.replace(/,?\s+(?:Jr\.|Sr\.|II|III)$/, '').trim().split(/\s+/).pop() ?? name;
+	const words = name.replace(/,?\s+(?:Jr\.|Sr\.|II|III)$/, '').trim().split(/\s+/);
+	const last = words.pop() ?? name;
+	// "Willis Van Devanter" is Justice Van Devanter, not Devanter.
+	const before = words.at(-1);
+	return before && /^(?:Van|Von|De|Du)$/.test(before) ? `${before} ${last}` : last;
 }
 
 /** The first page a pinpoint names: "p. 559", "pp. 536-538" and "559 n.3" all start at 559. */

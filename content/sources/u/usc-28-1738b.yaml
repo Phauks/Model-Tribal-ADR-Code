@@ -39,6 +39,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=28%20U.S.C.%20%C2%A7%201738B
+file:
+  storage_key: united-states-code/2024/title-28-section-1738b.pdf
+  checksum: 667f8f6d0db9f85d82a0d65f7ec4fec8bc2e4af1f1da725033f0331fa6c2376d
+  media_type: application/pdf
+  bytes: 148844
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -65,12 +70,8 @@ access:
 found_in:
 - 2026-11-21-united-states-dispute-resolution
 - 2026-11-21-legal-history-and-key-cases
-notes: >-
-  Read on the original page. Citator check not yet run. Legal history session (2026-11-21):
-  Citations: Pub. L. No. 103-383, § 3(a); 108 Stat. 4064; 28 U.S.C. § 1738B. Later history:
-  Amended 1996 (Pub. L. 104-193), 1997 (Pub. L. 105-33) and 2014 (Pub. L. 113-183) per LII credit
-  line. The popular name of Pub. L. 103-383 (Full Faith and Credit for Child Support Orders Act)
-  was not confirmed on a page opened. Westlaw: KeyCite 28 U.S.C. § 1738B.
+- 2026-11-27-us-code-sections
+notes: 'Read on the original page. Citator check not yet run. Legal history session (2026-11-21): Citations: Pub. L. No. 103-383, § 3(a); 108 Stat. 4064; 28 U.S.C. § 1738B. Later history: Amended 1996 (Pub. L. 104-193), 1997 (Pub. L. 105-33) and 2014 (Pub. L. 113-183) per LII credit line. The popular name of Pub. L. 103-383 (Full Faith and Credit for Child Support Orders Act) was not confirmed on a page opened. Westlaw: KeyCite 28 U.S.C. § 1738B. The stored copy is 28 U.S.C. § 1738B from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.'
 law_box:
   summary: |-
     The federal full faith and credit statute for child support defines "State" to include "Indian country (as defined in section 1151 of title 18)" [@usc-28-1738b, (b)(9)].

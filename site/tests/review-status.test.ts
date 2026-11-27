@@ -47,7 +47,8 @@ describe('the status line on pages about a nation', () => {
 		expect(history).toContain('2 changes');
 		// Pacific time: 06:12 UTC on Nov. 23 is the evening of Nov. 22.
 		expect(history).toContain('<strong>Last changed Nov. 22, 2026.</strong> Dispute resolution was updated in a site release.');
-		expect(history).toContain('href="/changes?page=%2Fnations%2Fnavajo-nation"');
+		// The page's own Changes view, so the nation's side column stays (design/page-changes-in-page, option B).
+		expect(history).toContain('href="/nations/navajo-nation/changes"');
 
 		const unchanged = pageOverlay('navajo-nation', {}, undefined, { count: 0, latest: undefined, recordedSince: '2026-11-23T03:49:00Z' })?.slots.history ?? '';
 		expect(unchanged).toContain('No changes yet');

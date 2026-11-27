@@ -33,6 +33,10 @@ STRONG = re.compile(
 WEAK_BASE = (r"\bIndians?\b|\btribes?\b|\btribal(?:ly)?\b|\bNative\b|\bsovereign nations?\b|\bNation\b|\brestricted (?:lands?|Indian|heirs?|allottees?)\b"
              r"|\ballot(?:ted|tee|ment)s?\b|\breservations?\b|\bpueblos?\b|\brancherias?\b|\bindigenous\b")
 
+# A chapter name that is Indian law without a STRONG phrase ("Indians", "Indian Antiquities", "Commission on Indigenous Affairs",
+# "Indian Heritage and Culture", "Catawba Indian Claims Settlement"): Delaware's and North Carolina's recall samples found such chapters' unflagged sections.
+CHAPTER_LAW = re.compile(r"\b(?:Indians?(?! (?:River|Head|Creek|Lake|Hill|Trail|Fields?|Corn)\b)|Indigenous|Tribes?|Tribal)\b", re.I)
+
 
 @dataclass
 class Section:
@@ -143,7 +147,7 @@ def batches(sections: list[Section], terms: Terms, out: Path, near_sample: int, 
             for other in range(index - 2, index + 3):
                 if 0 <= other < len(live) and live[other].title == section.title and not hit(live[other]):
                     near.add(other)
-    chapter_law = lambda section: bool(STRONG.search(section.title_name))
+    chapter_law = lambda section: bool(STRONG.search(section.title_name) or CHAPTER_LAW.search(section.title_name))
     pool_a = [i for i, section in enumerate(live) if section.strong]
     pool_b = [i for i, section in enumerate(live) if section.weak and not section.strong]
     pool_e = [i for i, section in enumerate(live) if not hit(section) and chapter_law(section)]

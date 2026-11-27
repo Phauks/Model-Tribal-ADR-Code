@@ -74,6 +74,27 @@
 	{/if}
 </section>
 
+<section class="panel" aria-labelledby="home-row-heading">
+	<h2 id="home-row-heading">Home page row</h2>
+	<p>
+		<strong>In the row now: {data.homeRow.shown}</strong>
+		Level now: {data.homeRow.level ?? 'none'}. {data.homeRow.chosen ? 'They chose to be in the row.' : 'They have not chosen to be in the row.'}
+	</p>
+	<p class="hint">By level, Patrons who choose the row show by name and Benefactors by logo. Always show places them in it whatever they give, such as a sponsor who gave by check; Never show keeps them off it. Either way, only sponsors listed by name in public appear.</p>
+	<form method="post" action="?/homeRow">
+		<fieldset class="choices">
+			<legend class="visually-hidden">How they appear in the home page row</legend>
+			{#each data.homeRow.placements as placement (placement.value)}
+				<div class="choice">
+					<input type="radio" id="home-row-{placement.value}" name="placement" value={placement.value} checked={data.homeRow.placement === placement.value} />
+					<label for="home-row-{placement.value}">{placement.label}</label>
+				</div>
+			{/each}
+		</fieldset>
+		<button class="button button-quiet" type="submit">Save</button>
+	</form>
+</section>
+
 <section class="panel" aria-labelledby="details-heading">
 	<h2 id="details-heading">Details</h2>
 	<dl class="facts">
@@ -145,6 +166,27 @@
 </section>
 
 <style>
+	.choices {
+		margin: 0 0 var(--space-4);
+		padding: 0;
+		border: 0;
+	}
+
+	.choice {
+		display: flex;
+		gap: var(--space-3);
+		align-items: flex-start;
+		margin: var(--space-2) 0;
+	}
+
+	.choice input {
+		margin-top: 0.3em;
+		width: 1.25rem;
+		height: 1.25rem;
+		flex: none;
+		accent-color: var(--color-action);
+	}
+
 	.facts {
 		display: grid;
 		grid-template-columns: max-content 1fr;

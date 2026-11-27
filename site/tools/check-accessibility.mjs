@@ -182,7 +182,7 @@ async function checkPage(page, pathname) {
 	await page.emulateMedia({ colorScheme: themes[0] });
 	const response = await page.goto(base + pathname, { waitUntil: 'load' });
 	if (!response?.ok()) return [`${pathname}: not a prerendered page in the build`];
-	// Some controls (Report a problem, the map's zoom buttons) are added by the
+	// Some controls (Request a Change, the map's zoom buttons) are added by the
 	// page's script just after the load event. Wait until the page stops
 	// changing so axe-core sees them, and sees the same page in both themes.
 	await waitUntilSettled(page, { quiet: limits.settle, longest: limits.settleAtMost });

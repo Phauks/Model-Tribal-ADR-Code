@@ -463,9 +463,9 @@
 		text-decoration: underline;
 	}
 
-	.image-viewer a:focus-visible,
-	.viewer-caption :global(a:focus-visible) {
-		color: var(--focus-text);
+	/* The viewer is dark in both themes, so the focus ring takes its link color. */
+	.image-viewer {
+		--focus-ring: var(--color-viewer-link);
 	}
 
 	@media (forced-colors: active) {

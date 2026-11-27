@@ -124,7 +124,8 @@
 		display: inline-flex;
 		align-items: center;
 		gap: var(--space-1);
-		/* The same size as the page's other badges, such as who keeps the page and its history (.review-badge in global.css; Trevor, Nov. 24, 2026, found the federal badge larger than the rest). */
+		/* The same shape as the page's other badges, such as who keeps the page and its history (.review-badge in global.css; Trevor, Nov. 24, 2026, found the federal badge larger than the rest, and Nov. 27, 2026, found them out of line): the same height, padding, border and line height, at least 24 px to tap (WCAG 2.5.8). */
+		min-height: 1.5rem;
 		padding: 0 var(--space-2);
 		border: 1px solid var(--color-link);
 		border-radius: 999px;
@@ -161,9 +162,8 @@
 		color: var(--color-ink);
 	}
 
-	/* A badge that opens its explanation is a button that looks like the badge, and keeps the pill's height like the other badges, still at least 24 px to tap (WCAG 2.5.8). */
+	/* A badge that opens its explanation is a button that looks like the badge. */
 	.recognition-badge-button {
-		min-height: 1.5rem;
 		font-family: inherit;
 		cursor: pointer;
 	}
@@ -173,7 +173,7 @@
 	}
 
 	.recognition-badge-button:focus-visible {
-		outline: 3px solid var(--color-focus, var(--color-link));
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 2px;
 	}
 

@@ -624,6 +624,22 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business, Residential) of the Makah Indian Tribe, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Aug. 18, 2015, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-makah-indian-tribe-of-the-makah-indian-reservation-2015-08-18
+  confidence: high
+  verification: inferred
+  as_of: '2015-08-18'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2015
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Dec. 23, 2003 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Sept. 29, 2006.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2003-12-23'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Washington Department of Social and Health Services
@@ -680,7 +696,7 @@ land_establishment:
   confidence: high
   verification: read-in-full
   locator: 12 Stat. 939
-  note: 'The instrument reads: “the following tract of land, viz.: Commencing on ... the beach at the mouth of a small brook running into Neah Bay”. Enlarged by Exec. Orders of Oct. 26, 1872 (replaced Jan. 2, 1873) and Oct. 21, 1873.'
+  note: 'The instrument reads: “the following tract of land, viz.: Commencing on . . . the beach at the mouth of a small brook running into Neah Bay”. Enlarged by Exec. Orders of Oct. 26, 1872 (replaced Jan. 2, 1873) and Oct. 21, 1873.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

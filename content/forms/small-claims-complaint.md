@@ -110,6 +110,6 @@ These notes are not part of the form. They explain where each part came from.
 - **No papers from the defendant.** Fond du Lac says, "The Defendant is not required to file any paperwork in response to your complaint." The model's notice says the same.
 - **Dollar limit.** Fond du Lac caps claims at $5,000 and Grand Traverse Band at $7,000; Kaw and Wyandotte state no cap. The model uses `court.small_claims_limit`.
 - **Lawyers.** Fond du Lac and Grand Traverse Band bar attorneys; Fond du Lac allows unpaid family spokespersons; Kaw allows lawyers registered with its bar. The model uses `court.small_claims_representation`.
-- **Prior demand and mediation.** Fond du Lac requires a "good faith effort ... to resolve the dispute," and Grand Traverse Band asks whether the dispute could be resolved "through mediation or other means." The model asks for both.
+- **Prior demand and mediation.** Fond du Lac requires a "good faith effort . . . to resolve the dispute," and Grand Traverse Band asks whether the dispute could be resolved "through mediation or other means." The model asks for both.
 - **Who may file.** Fond du Lac requires one party to be an enrolled member and the debt to arise within the reservation; Wyandotte has a territory rule too. Those are jurisdiction rules for the court's code, so the form asks the facts only.
 - **Time limit.** Fond du Lac bars claims filed more than one year after the plaintiff knew of them. That is a code rule.

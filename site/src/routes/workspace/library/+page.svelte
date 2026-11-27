@@ -131,7 +131,7 @@
 			<p class="problem-heading"><TriangleAlert aria-hidden="true" size={18} /> The search could not finish.</p>
 			<p>
 				This is a problem on our side, not with your words. <a href={page.url.pathname + page.url.search}>Try the search again</a>. If
-				it keeps failing, use Report a problem at the top of the page.
+				it keeps failing, use Request a Change at the top of the page.
 			</p>
 		</div>
 	{/if}

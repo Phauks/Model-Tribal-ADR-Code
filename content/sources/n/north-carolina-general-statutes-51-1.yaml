@@ -1,0 +1,50 @@
+key: north-carolina-general-statutes-51-1
+kind: state-statute
+citation:
+  type: legislation
+  title: Requisites of marriage; solemnization
+  title-short: N.C. Gen. Stat. § 51-1
+  container-title: General Statutes of North Carolina
+  container-title-short: N.C. Gen. Stat.
+  section: 51-1
+  author:
+  - literal: North Carolina General Assembly
+  issued:
+    date-parts:
+    - - 1908
+  URL: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_51/GS_51-1.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_51/GS_51-1.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: N.C. Gen. Stat. § 51-1 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: N.C. Gen. Stat. § 51-1 (2025). History: 1871-2, c. 193, s. 3; Code, s. 1812; Rev., s. 2081; 1908, c. 47; 1909, c. 704, s. 2; c. 897; C.S., s. 2493; 1945, c. 839; 1965, c. 152; 1971, c. 1185, s. 26; 1977, c. 592, s. 1; 2000-58, ss. 1, 2; 2001-14, ss. 1, 2; 2001-62, ss. 1, 17; 2002-115, ss. 5, 6; 2002-159, s. 13(a); 2003-4, s. 1; 2005-56, s. 1; 2007-61, s. 1; 2009-13, s. 1; 2012-194, s. 65.4(a). Text read from the North Carolina General Assembly''s page for the section''s chapter of the General Statutes (ncleg.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian nation; indian; nation; tribe); AI reader''s verdict incidental: Marriage may be solemnized by recognized Indian Nation or Tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian nation; indian; nation; tribe'

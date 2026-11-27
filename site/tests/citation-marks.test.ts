@@ -17,6 +17,16 @@ describe('citation markers', () => {
 });
 
 describe('SourceUses markers', () => {
+	it('takes a marker off the page but keeps the fact it supported in the Sources list', () => {
+		const uses = new SourceUses((key) => key);
+		const region = uses.cite('alpha', { section: 'Region', text: 'Alaska Region' });
+		uses.cite('alpha', { section: 'Region', text: 'Alaska Regional Office' });
+		uses.unmark([region]);
+		expect(uses.cite('alpha', { section: 'Region', text: 'Agency' }).anchor).toBe('cite-1-3');
+		expect(uses.list[0].backlinks).toEqual(['cite-1-2', 'cite-1-3']);
+		expect(uses.list[0].groups[0].facts).toEqual(['Alaska Region', 'Alaska Regional Office', 'Agency']);
+	});
+
 	it('numbers sources in order and gives each marker a backlink', () => {
 		const uses = new SourceUses((key) => key);
 		const first = uses.cite('alpha', { section: 'Contacts', text: 'Phone' });
