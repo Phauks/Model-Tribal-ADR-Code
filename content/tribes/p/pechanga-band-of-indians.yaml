@@ -322,6 +322,38 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Pechanga Band of Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Mar. 25, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pechanga-band-of-indians-2022-03-25
+  confidence: high
+  verification: inferred
+  as_of: '2022-03-25'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Pechanga Band of Luiseno Mission Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Dec. 28, 2017, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pechanga-band-of-indians-2017-12-28
+  confidence: high
+  verification: inferred
+  as_of: '2017-12-28'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2017
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-implementation-plan
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state for tribal implementation plan (Clean Air Act § 110). EPA''s table: "TIP (including CAA § 175A)".'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "TIP (including CAA § 175A)"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 107(d); 126; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107(d); 126; 505(a)(2)"'
 nearby_state_courts:
 - state: CA
   county: Riverside County

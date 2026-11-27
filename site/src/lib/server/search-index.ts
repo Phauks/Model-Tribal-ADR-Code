@@ -57,6 +57,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Library', also: ['Sources', 'Research'], link: '/library' },
 	{ kind: 'page', title: 'Source documents', also: ['Copies', 'Documents', 'Primary sources'], link: '/copies' },
 	{ kind: 'page', title: 'Supreme Court', also: ['U.S. Supreme Court', 'Supreme Court cases', 'Justices', 'Courts'], link: '/supreme-court' },
+	{ kind: 'page', title: 'Supreme Court timeline', also: ['Timeline of cases', 'All Supreme Court cases', 'How the Justices voted', 'Votes'], detail: 'Every Supreme Court case on this site, oldest first, with how each Justice voted', link: '/supreme-court/timeline' },
 	{ kind: 'page', title: 'Courts', also: ['Tribal courts', 'Court directory'], link: '/courts' },
 	{ kind: 'page', title: 'People', also: ['Justices', 'Presidents', 'Biographies'], link: '/people' },
 	{ kind: 'page', title: 'Biographies', also: ['Native leaders', 'Signers', 'People'], link: '/biographies' },

@@ -1,0 +1,50 @@
+key: north-carolina-general-statutes-160a-288
+kind: state-statute
+citation:
+  type: legislation
+  title: Cooperation between law enforcement agencies
+  title-short: N.C. Gen. Stat. § 160A-288
+  container-title: General Statutes of North Carolina
+  container-title-short: N.C. Gen. Stat.
+  section: 160A-288
+  author:
+  - literal: North Carolina General Assembly
+  issued:
+    date-parts:
+    - - 1967
+  URL: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_160A/GS_160A-288.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_160A/GS_160A-288.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: N.C. Gen. Stat. § 160A-288 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: N.C. Gen. Stat. § 160A-288 (2025). History: 1967, c. 846; 1971, c. 698, s.1; c. 896, s.4; 1977, c. 534; 1981, c. 93, s. 2; 1987, c. 671, s. 4; 1989, c. 518, s. 2; 1991, c. 636, s. 3; 1991 (Reg. Sess., 1992), c. 1043, s. 6; 1997-143, s. 1; 1999-68, s. 4; 2005-231, s. 8; 2006-159, s. 4; 2009-94, s. 1; 2011-260, s. 4; 2013-360, s. 16B.4(d); 2018-87, s. 1; 2019-130, s. 1; 2026-53, s. 7(a). Text read from the North Carolina General Assembly''s page for the section''s chapter of the General Statutes (ncleg.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal police; tribal); AI reader''s verdict incidental: Law enforcement assistance head includes tribal police chief. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal police; tribal'

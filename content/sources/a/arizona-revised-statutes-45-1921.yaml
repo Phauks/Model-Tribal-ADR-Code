@@ -1,0 +1,47 @@
+key: arizona-revised-statutes-45-1921
+kind: state-statute
+citation:
+  type: legislation
+  title: Board of directors; qualification and organization; compensation
+  title-short: Ariz. Rev. Stat. Ann. § 45-1921
+  container-title: Arizona Revised Statutes
+  container-title-short: Ariz. Rev. Stat. Ann.
+  section: 45-1921
+  author:
+  - literal: Arizona State Legislature
+  URL: https://www.azleg.gov/ars/45/01921.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.azleg.gov/ars/45/01921.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Ariz. Rev. Stat. Ann. § 45-1921 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: AZ
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Ariz. Rev. Stat. Ann. § 45-1921 (2025). Text read from the Arizona State Legislature''s page for the section in the Arizona Revised Statutes (azleg.gov/ars) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; tribe); AI reader''s verdict incidental: Federally recognized Indian tribe may appoint augmentation board member. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; tribe'

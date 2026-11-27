@@ -97,11 +97,27 @@ Storage is small: the 1909 scan is 27.6 MB [3], and the traced shapes for one ed
 
 **Not recommended:** asking NHGIS for redistribution rights before the pilot. It would only cover 1980, and the 1980 Census maps are public domain and line up with the 1990 shapes we already serve (project analysis, from [14][16][17]).
 
-## 8. Care
+## 8. Pilot result: the 1909 edition
+
+Trevor approved the pilot on Nov. 27, 2026. It is done, and every shape is marked Unverified.
+
+**What was made.** `scripts/maps/oia_1909_reservations.py` lines up the 1909 scan [3] with real coordinates, picks out the brown fill, and writes `research/historic-maps/oia-1909/oia-1909-reservations.geojson` [26]. The layer has 149 features: 79 reservation shapes and 40 reservation points, plus 24 "Opened" shapes and 6 "Opened" points [26]. Each feature carries the name, a suggested nation record, and the Unverified status. The name is either read from the printed label (`name_source` "label") or taken from the nearest 1990 Census reservation when the label could not be read (`name_source` "1990 overlap") [26]. The review table, `research/reviews/2026-11-27-oia-1909-reservations.csv`, has one row per feature and one row for each of the 49 extracted patches that were left out, with the reason [26]. Those 49 are school and agency symbols, specks, legend swatches, the blue numeral "6" that someone wrote over Oklahoma after printing, the water of Pyramid Lake, and the Pueblo inset panel.
+
+**How well it lines up.** The scan was fitted to 324 printed crossings of latitude and longitude, using a polyconic projection with a cubic correction. Each crossing was also left out of the fit in turn and its position predicted from the rest. Those predictions missed by 1.8 km on average (root mean square), by 3.3 km at the 95th percentile, and by 6.2 km at worst [26]. Thirteen 1909 reservations still overlap their 1990 Census shapes by more than 80 percent each way, and on those the traced line sits a median 3.0 km from the 1990 line [26][27]. At the map's scale (about 1:5,800,000), a printed line half a millimeter wide covers about 3 km, so most of that gap is the width of the line itself (project analysis).
+
+**What the pilot could not do from this map alone.**
+
+- Some neighbors were printed as one piece of brown: Standing Rock and Cheyenne River; Pine Ridge and Rosebud; Crow Creek and Lower Brule; Crow and Northern Cheyenne; Colville and Spokane; Navajo and Moqui; Fort Apache and San Carlos; Gila River and Salt River; Omaha and Winnebago; Yankton and Santee; and the Oklahoma nations. The script splits each piece along the line halfway between the matching 2020 Census areas [28] and says so on each piece (`internal_lines`). Tracing the printed lines between them by hand would be about half a day more (project analysis).
+- The two inset panels are not placed yet. They have their own scales: one shows the Mission reservations of southern California and the Pueblo grants of New Mexico, and the other shows northeastern Oklahoma. Each could be placed from its own printed grid in about two hours (project analysis).
+- Reservations printed only as specks next to a label are mostly missing; three were added by hand. The Washington coast (Squaxin, Nisqually, Chehalis, Hoh, Quileute, Shoalwater), Kansas (Kickapoo, Iowa, Sac and Fox), Moapa, Kaibab, Shivwits, Havasupai, Camp Verde and Tuscarora still need points (project analysis, from the scan).
+
+**Mockup.** Pictures of the layer drawn on the live Map page are in the project files under `design/historic-maps/oia-1909/`. They show the layer in the History list as "Reservations on the 1909 map" (Office of Indian Affairs, 1909), with a "Show the original map" switch. They also show three key entries, a details panel for a chosen reservation, and the georeferenced scan under the tracing. Nothing is on the site until Trevor approves the mockup.
+
+## 9. Care
 
 Reservation boundaries are public, but these maps print names given by the Office of Indian Affairs, some of which nations do not use today; the layer should show the printed name as a quotation of the source, beside the nation's own name (project analysis). The National Archives' Central Map File also holds allotment maps naming individuals [25]; the national maps in this note name no individuals (project analysis, from the 1909 scan), so they need no hold. A nation may still ask to withdraw a layer about it [25].
 
-## 9. Sources
+## 10. Sources
 
 1. Library of Congress item records: 1883, https://www.loc.gov/item/2009579475/ (pixel size from `site/geography/historic-map-scans.json`); 1888, https://www.loc.gov/item/2009579476/ and 1892, https://www.loc.gov/item/2009579467/ (read Nov. 27, 2026: notes, "1 map : col. ; 53 x 84 cm," rights line "free to use and reuse," JPEG 2000 13,521 by 8,931 and 10,486 by 6,705 pixels). The Library's search and the resource page `g4051e.mf000045` refused requests that day.
 2. University of Oklahoma College of Law Digital Commons, American Indian and Alaskan Native Documents Maps and Illustrations, https://digitalcommons.law.ou.edu/maps/ (index pages read; 16 reservation maps listed; item pages 2 and 20 read for source report and Johnson's reference; file downloads returned an error page).
@@ -128,3 +144,6 @@ Reservation boundaries are public, but these maps print names given by the Offic
 23. Project test, `research/historic-maps/pre-1990-reservations/fill-test.py` in the project files, run on the National Archives 1909 scan (identifier 655555952) on Nov. 27, 2026.
 24. 17 U.S.C. § 105 (no copyright in works of the United States government).
 25. Project files: `site/tools/build-historic-maps.mjs`; `research/analyses/2026-11-26-historic-maps-of-indian-lands.md` (georeferencing estimate, allotment-map care, nation withdrawal); `docs/roadmap.md` Parked research; project memory on map decisions.
+26. Project pilot, `scripts/maps/oia_1909_reservations.py` (`check-fit`, `build`), run Nov. 27, 2026; output `research/historic-maps/oia-1909/` and `research/reviews/2026-11-27-oia-1909-reservations.csv`.
+27. U.S. Census Bureau, 1990 cartographic boundary file of American Indian reservations, https://www2.census.gov/geo/tiger/PREVGENZ/aianhh/ir/ir99_d90_shp.zip (downloaded Nov. 27, 2026).
+28. U.S. Census Bureau, 2020 cartographic boundary file of American Indian, Alaska Native and Native Hawaiian areas, including the Oklahoma Tribal Statistical Areas, https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_aiannh_500k.zip (downloaded Nov. 27, 2026).

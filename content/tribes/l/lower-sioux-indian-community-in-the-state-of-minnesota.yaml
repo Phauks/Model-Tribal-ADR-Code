@@ -708,6 +708,14 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: toxic-substances-control-act-lead-programs
+  detail: EPA has approved the nation for treatment in a similar manner as a state for lead abatement and renovation programs (Toxic Substances Control Act §§ 402, 404, 406).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "Lead Abatement"'
 jurisdiction_agreements:
 - kind: tax-agreement
   other_party: Minnesota Department of Revenue

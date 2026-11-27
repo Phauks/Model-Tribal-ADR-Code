@@ -1,0 +1,55 @@
+{
+  "state": "AK",
+  "code": "Alaska Statutes",
+  "edition": 2025,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 20235,
+    "live": 18025,
+    "strong": 164,
+    "weak_only": 211,
+    "reserved": 1614,
+    "repealed": 596
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 246,
+    "core": 74,
+    "incidental": 172,
+    "by_pool": {
+      "A": {
+        "core": 41,
+        "incidental": 121,
+        "none": 2
+      },
+      "B": {
+        "none": 148,
+        "incidental": 50,
+        "core": 13
+      },
+      "C": {
+        "none": 293,
+        "core": 6,
+        "incidental": 1
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 10
+      }
+    },
+    "meta": {
+      "live": 18025,
+      "A": 164,
+      "B": 211,
+      "E": 10,
+      "C": 497,
+      "C_sample": 300,
+      "D": 17143,
+      "D_sample": 300,
+      "items": 985,
+      "batches": 8
+    }
+  }
+}
