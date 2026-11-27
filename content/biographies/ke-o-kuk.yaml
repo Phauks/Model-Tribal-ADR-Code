@@ -1,7 +1,12 @@
 key: ke-o-kuk
 name: Ke o kuk
-lead: Signed four treaties with the United States for the Sacs, 1842–1867.
+lead: Signed four treaties with the United States for the Sacs, 1836–1867.
 living: false
+names:
+- name: Keo-kuck
+  note: as the Treaty with the Sauk and Fox Tribe, 1836 prints it
+  source: treaty-with-the-sauk-and-fox-tribe-1836
+  where: 7 Stat. 517
 nations:
 - nation: sac-and-fox-nation
   named_as: Sacs
@@ -13,6 +18,10 @@ nations:
   where: 15 Stat. 470
 cases: []
 events:
+- when: Sept. 27, 1836
+  text: Signed the Treaty with the Sauk and Fox Tribe, 1836, for the Sacs and Foxes.
+  source: treaty-with-the-sauk-and-fox-tribe-1836
+  where: 7 Stat. 517
 - when: Oct. 11, 1842
   text: Signed the Treaty with the Sauk and Foxes, 1842, for the Sacs.
   source: treaty-with-the-sauk-and-foxes-1842
@@ -29,4 +38,4 @@ events:
   text: Signed the Treaty with the Sauk and Foxes, 1867, for the Sacs and Foxes of the Mississippi.
   source: treaty-with-the-sauk-and-foxes-1867
   where: 15 Stat. 504
-checked: '2026-11-24'
+checked: '2026-11-26'

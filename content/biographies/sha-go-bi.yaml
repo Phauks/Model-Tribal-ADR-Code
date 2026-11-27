@@ -1,11 +1,20 @@
 key: sha-go-bi
 name: Sha go bi
-lead: Signed the Treaty with the Chippewa, 1842, for the Snake River as 1st chief.
+lead: 1st chief of the Snake River, as listed in the Treaty with the Chippewa, 1842. Signed two treaties with the United States, 1837–1842.
 living: false
+names:
+- name: Sha-go-bai
+  note: as the Treaty with the Chippewa, 1837 prints it
+  source: treaty-with-the-chippewa-1837-july-29
+  where: 7 Stat. 538
 cases: []
 events:
+- when: July 29, 1837
+  text: Signed the Treaty with the Chippewa, 1837, for the Snake river.
+  source: treaty-with-the-chippewa-1837-july-29
+  where: 7 Stat. 538
 - when: Oct. 4, 1842
   text: Signed the Treaty with the Chippewa, 1842, for the Snake River, listed as 1st chief.
   source: treaty-with-the-chippewa-1842
   where: 7 Stat. 593
-checked: '2026-11-24'
+checked: '2026-11-27'

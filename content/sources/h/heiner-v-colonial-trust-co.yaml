@@ -1,0 +1,137 @@
+key: heiner-v-colonial-trust-co
+kind: federal-case
+citation:
+  type: legal_case
+  title: Heiner v. Colonial Trust Co.
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '275'
+  page: '232'
+  issued:
+    date-parts:
+    - - 1927
+      - 11
+      - 21
+  URL: https://www.loc.gov/item/usrep275232/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: HEINER, COLLECTOR, v. COLONIAL TRUST COMPANY, EXECUTOR; LEWELLYN, FORMER COLLECTOR, v. COLONIAL TRUST COMPANY, EXECUTOR
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep275/usrep275232/usrep275232.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep275/usrep275232/usrep275232.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Harlan Fiske Stone
+    page: 233
+original_link: https://www.loc.gov/item/usrep275232/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '1927-10-07'
+  printed: Argued October 7, 1927. Decided November 21, 1927.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep275/usrep275232/usrep275232.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Taft Court
+  natural_court: Taft Court (1925-1930)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: William Howard Taft
+    vote: majority
+  - name: Harlan Fiske Stone
+    vote: majority
+    opinion: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: Willis Van Devanter
+    vote: majority
+  - name: James Clark McReynolds
+    vote: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: George Sutherland
+    vote: majority
+  - name: Pierce Butler
+    vote: majority
+  - name: Edward Terry Sanford
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1927-038; Oyez has no votes for this case.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep275232/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/275/232/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22275%20U.S.%20232%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=275%20U.S.%20232
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=275%20U.S.%20232
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 275 U.S. 232 (1927). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep275/usrep275232/usrep275232.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1927-038), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 275 U.S. 232 "Heiner v. Colonial Trust Co."; Database 275 U.S. 232 "HEINER, COLLECTOR, v. COLONIAL TRUST COMPANY, EXECUTOR"
+  - check: scan
+    result: agree
+    detail: Scan has 4 pages; the report runs 232 to 235
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued October 7, 1927. Decided November 21, 1927."; scan "Argued October 7,1927.-Decided November 21, 1927."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1927-11-21'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Stone p. 233; Database writers: Stone'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

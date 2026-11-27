@@ -1,15 +1,40 @@
 key: ku-waw-nay
 name: Ku-waw-nay
-lead: Signed two treaties with the United States for the Potawattimies tribe of Indians, 1834–1836.
+lead: Signed five treaties with the United States for the Potawattimies tribe of Indians, 1832–1836.
 living: false
+names:
+- name: Kee-waw-nay
+  note: as the Treaty with the Potawatomi, 1832 prints it
+  source: treaty-with-the-potawatomi-1832-oct-26
+  where: 7 Stat. 395
+- name: Kee-waw-nee
+  note: as the Treaty with the Potawatomi, 1836 prints it
+  source: treaty-with-the-potawatomi-1836-apr-22-7-stat-500
+  where: 7 Stat. 500
+- name: Ke-waw-nay
+  note: as the Treaty with the Potawatomi, 1836 prints it
+  source: treaty-with-the-potawatomi-1836-0471a
+  where: 7 Stat. 516
 cases: []
 events:
+- when: Oct. 26, 1832
+  text: Signed the Treaty with the Potawatomi, 1832, for the Pottawatimies.
+  source: treaty-with-the-potawatomi-1832-oct-26
+  where: 7 Stat. 395
 - when: Dec. 16, 1834
   text: Signed the Treaty with the Potawatomi, 1834, for the Potawattimies tribe of Indians.
   source: treaty-with-the-potawatomi-1834-dec-16
   where: 7 Stat. 469
+- when: Apr. 22, 1836
+  text: Signed the Treaty with the Potawatomi, 1836, for the Patawattimie tribe.
+  source: treaty-with-the-potawatomi-1836-apr-22-7-stat-500
+  where: 7 Stat. 500
 - when: Aug. 5, 1836
   text: Signed the Treaty with the Potawatomi, 1836, for the Potawattimie tribe.
   source: treaty-with-the-potawatomi-1836-aug-5
   where: 7 Stat. 506
-checked: '2026-11-24'
+- when: Sept. 23, 1836
+  text: Signed the Treaty with the Potawatomi, 1836, for the Potawattimies of the Wabash.
+  source: treaty-with-the-potawatomi-1836-0471a
+  where: 7 Stat. 516
+checked: '2026-11-26'
