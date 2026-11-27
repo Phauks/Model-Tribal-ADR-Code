@@ -512,7 +512,7 @@
 			</Collapsible>
 		{/if}
 
-		<!-- 7b. Stories: the nation's stories about disputes and peace, each linked
+		<!-- 7b. Stories: the nation's stories about law, justice and governance, each linked
 		     to its own page, which quotes the teller and cites the source. A
 		     restricted or withdrawn story is never listed (decision record 0029). -->
 		{#if data.stories.length > 0}

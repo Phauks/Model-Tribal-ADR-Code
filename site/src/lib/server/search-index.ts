@@ -51,7 +51,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Federal offices', also: ['Bureau of Indian Affairs', 'BIA', 'Indian Health Service', 'IHS', 'Agencies'], detail: 'Bureau of Indian Affairs regions and Indian Health Service areas', link: '/nations/federal-offices' },
 	{ kind: 'page', title: 'Data and charts', also: ['Data', 'Charts', 'Statistics'], link: '/nations/data' },
 	{ kind: 'page', title: 'Build a table', also: ['Table builder', 'Compare nations', 'Export'], link: '/nations/data/build' },
-	{ kind: 'page', title: 'Stories', also: ['Traditional stories', 'Peacemaking stories', 'Accounts', 'Teachings'], detail: 'Stories about making peace, in the words of the nations and people who tell them', link: '/stories' },
+	{ kind: 'page', title: 'Stories', also: ['Traditional stories', 'Peacemaking stories', 'Treaty stories', 'Accounts', 'Teachings'], detail: 'Stories about law, justice and governance, in the words of the nations and people who tell them', link: '/stories' },
 	{ kind: 'page', title: 'Glossary', also: ['Terms', 'Definitions'], detail: 'Defined terms, and how to use them', link: '/glossary' },
 	{ kind: 'page', title: 'Library', also: ['Sources', 'Research'], link: '/library' },
 	{ kind: 'page', title: 'Source documents', also: ['Copies', 'Documents', 'Primary sources'], link: '/copies' },
