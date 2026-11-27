@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/variable.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/variable.schema.json",
   "title": "Template variables",
   "description": "content/variables/<group>.yaml: placeholders used in provisions and forms. The book renders each as its 'model' text; a future template builder substitutes a nation's own value.",
   "type": "object",

@@ -13,7 +13,8 @@ import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { nationsNamedIn, type KnownLookup } from './known.ts';
 import { holdingFlags } from './rules.ts';
 import { candidateFromRow, candidatesWithStatus, recordModelUse, recordTriage, type StoredCandidate, type TriageStep } from './store.ts';
-import type { ModelCall, TriageAnswer, TriageProvider, TriageQuestion } from './triage.ts';
+import { costMicrodollars } from './model-prices.ts';
+import { NoAnswer, type ModelCall, type TriageAnswer, type TriageProvider, type TriageQuestion } from './triage.ts';
 import type { SensitivityFlag } from './watcher.ts';
 
 /** At most this many candidates a minute; AI Gateway allows 200 requests a minute per gateway. */
@@ -50,6 +51,13 @@ async function useOf(database: D1Database, call: ModelCall, now: Date): Promise<
 	await recordModelUse(database, { model: call.model, ...call.use, costMicrodollars: call.costMicrodollars }, now);
 }
 
+/** Records the tokens a call that gave no usable answer still used. */
+async function missedUseOf(database: D1Database, model: string, missed: NoAnswer, now: Date): Promise<void> {
+	await recordModelUse(database, { model, ...missed.use, costMicrodollars: costMicrodollars(model, missed.use) }, now);
+}
+
+const missReason = (missed: NoAnswer) => `${missed.why === 'cut-off' ? 'The model’s answer was cut off at its token limit' : 'The model gave no answer'} twice, so a person decides.`;
+
 export interface TriageReport {
 	asked: number;
 	toReview: number;
@@ -60,19 +68,25 @@ export interface TriageReport {
 }
 
 /** What the answer means for the candidate. */
-export function outcomeOf(answer: TriageAnswer, lookup: KnownLookup | null, current: StoredCandidate) {
+export function outcomeOf(answer: TriageAnswer, lookup: KnownLookup | null, current: StoredCandidate, mayClose = true) {
 	const sensitivity: SensitivityFlag[] = [...new Set([...current.sensitivity, ...answer.sensitivity])];
 	const nations = lookup ? [...new Set([...current.nations, ...nationsNamedIn(lookup, answer.nations.join('; '))])] : current.nations;
 	const feeds = answer.collection && answer.collection !== 'none' ? [answer.collection, ...current.feeds.filter((feed) => feed !== answer.collection)] : current.feeds;
 	if (answer.sensitivity.length > 0) return { status: 'held' as const, sensitivity, nations, feeds, proposed: null, relevance: answer.confidence };
-	if (!answer.relevant && answer.proposed === 'not-relevant' && answer.confidence >= closeWhenSure) {
+	if (mayClose && !answer.relevant && answer.proposed === 'not-relevant' && answer.confidence >= closeWhenSure) {
 		return { status: 'closed-by-rules' as const, sensitivity, nations, feeds, proposed: null, relevance: 1 - answer.confidence };
 	}
 	const proposed = answer.proposed === 'not-relevant' ? null : answer.proposed;
 	return { status: 'to-review' as const, sensitivity, nations, feeds, proposed, relevance: answer.relevant ? answer.confidence : 1 - answer.confidence };
 }
 
-/** Asks the models about up to `limit` waiting candidates. */
+/**
+ * Asks the models about up to `limit` waiting candidates. A model that gives
+ * no usable answer twice (./triage.ts, NoAnswer) sends that item to a person
+ * and the next item goes on; when the top model misses, the cheap model's
+ * answer stands but cannot close the item. Any other failure stops the batch
+ * and the item keeps waiting.
+ */
 export async function triageWaiting(database: D1Database, provider: TriageProvider, lookup: KnownLookup | null, now: Date, limit = candidatesEachMinute): Promise<TriageReport> {
 	const report: TriageReport = { asked: 0, toReview: 0, closed: 0, held: 0, released: 0, problem: null };
 	const waiting = await candidatesWithStatus(database, ['waiting-for-model'], limit);
@@ -84,14 +98,37 @@ export async function triageWaiting(database: D1Database, provider: TriageProvid
 			continue;
 		}
 		try {
-			const cheap = await provider.classify(questionFor(candidate));
+			let cheap: ModelCall;
+			try {
+				cheap = await provider.classify(questionFor(candidate));
+			} catch (problem) {
+				if (!(problem instanceof NoAnswer)) throw problem;
+				const model = provider.models?.cheap ?? provider.name;
+				await missedUseOf(database, model, problem, now);
+				report.asked += 1;
+				await recordTriage(database, candidate.identifier, { step: 'cheap-model', by: model, answer: 'to-review', reason: missReason(problem), at: now.toISOString() }, { status: 'to-review' }, now);
+				report.toReview += 1;
+				continue;
+			}
 			await useOf(database, cheap, now);
 			report.asked += 1;
 			let final = cheap;
 			if (cheap.answer.hard || cheap.answer.proposed === 'new-version') {
 				await recordTriage(database, candidate.identifier, step('cheap-model', cheap, now), {}, now);
-				final = await provider.decideHard(questionFor(candidate), cheap.answer);
-				await useOf(database, final, now);
+				try {
+					final = await provider.decideHard(questionFor(candidate), cheap.answer);
+					await useOf(database, final, now);
+				} catch (problem) {
+					if (!(problem instanceof NoAnswer)) throw problem;
+					const model = provider.models?.top ?? provider.name;
+					await missedUseOf(database, model, problem, now);
+					// The cheap model's answer stands, but only a person may close the item.
+					const outcome = outcomeOf(cheap.answer, lookup, candidate, false);
+					await recordTriage(database, candidate.identifier, { step: 'top-model', by: model, answer: outcome.status, reason: missReason(problem), at: now.toISOString() }, outcome, now);
+					if (outcome.status === 'to-review') report.toReview += 1;
+					if (outcome.status === 'held') report.held += 1;
+					continue;
+				}
 			}
 			const outcome = outcomeOf(final.answer, lookup, candidate);
 			await recordTriage(database, candidate.identifier, step(final === cheap ? 'cheap-model' : 'top-model', final, now), outcome, now);
@@ -129,7 +166,15 @@ export async function checkSample(database: D1Database, provider: TriageProvider
 		if (!modelMayRead(candidate)) continue;
 		const cheapStep = [...candidate.triage].reverse().find((entry) => entry.step === 'cheap-model');
 		try {
-			const top = await provider.decideHard(questionFor(candidate), null);
+			let top: ModelCall;
+			try {
+				top = await provider.decideHard(questionFor(candidate), null);
+			} catch (problem) {
+				// A sample item with no answer is skipped; the next one is checked.
+				if (!(problem instanceof NoAnswer)) throw problem;
+				await missedUseOf(database, provider.models?.top ?? provider.name, problem, now);
+				continue;
+			}
 			await useOf(database, top, now);
 			const cheapRelevant = cheapStep ? cheapStep.answer !== 'not-relevant' : true;
 			const agrees = cheapRelevant === top.answer.relevant && (!top.answer.relevant || (cheapStep?.answer.endsWith(top.answer.collection) ?? false));

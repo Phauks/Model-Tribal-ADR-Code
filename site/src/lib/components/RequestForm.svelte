@@ -9,6 +9,8 @@
 	// questions about the reader and the files folded away.
 	import { applyAction, enhance } from '$app/forms';
 	import Dropdown from '#lib/components/Dropdown.svelte';
+	import TurnstileCheck, { turnstileResetEvent } from '#lib/components/TurnstileCheck.svelte';
+	import { turnstileKey } from '#lib/turnstile-key.ts';
 	import {
 		authorityStatementLabels,
 		authorityStatements,
@@ -96,8 +98,18 @@
 	/** Sends the form without leaving the page, when the caller handles the answer. */
 	function submitInPlace(node: HTMLFormElement) {
 		if (!onresult) return;
-		return enhance(node, () => async ({ result }) => onresult?.(result));
+		return enhance(node, () => async ({ result }) => {
+			// The "are you a person?" token works once, so a form sent again needs a fresh one.
+			node.dispatchEvent(new Event(turnstileResetEvent));
+			onresult?.(result);
+		});
 	}
+
+	// Cloudflare's "are you a person?" check, when it is on (src/lib/server/turnstile.ts).
+	let siteKey = $state<string | undefined>(undefined);
+	$effect(() => {
+		void turnstileKey().then((key) => (siteKey = key));
+	});
 </script>
 
 {#snippet fieldError(name: string)}
@@ -460,6 +472,7 @@
 			Your contact details are never published. Your name, role and contact details are deleted 12
 			months after the request is resolved, unless you asked to be credited.
 		</p>
+		{#if siteKey}<TurnstileCheck {siteKey} action="request" />{/if}
 		<p><button class="button" type="submit">{toTeam ? 'Send the message' : 'Send the request'}</button></p>
 	</form>
 

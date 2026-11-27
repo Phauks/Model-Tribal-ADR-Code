@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/commentary.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/commentary.schema.json",
   "title": "Commentary (front matter)",
   "description": "YAML front matter of content/commentary/<chapter>-<section>.md. The body has three headed parts in the Restatement pattern: Comment, Illustrations, and Source Note.",
   "type": "object",

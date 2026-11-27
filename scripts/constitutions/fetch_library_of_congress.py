@@ -21,7 +21,7 @@ import time
 
 import requests
 
-USER_AGENT = "Mozilla/5.0 (compatible; model-tribal-code-research/0.1; +https://github.com/Phauks/Model-Tribal-ADR-Code)"
+USER_AGENT = "Mozilla/5.0 (compatible; model-tribal-code-research/0.1; +https://github.com/Phauks/Tribal-Law-Project)"
 
 
 def get(session, address, **options):

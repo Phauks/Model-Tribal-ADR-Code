@@ -9,6 +9,8 @@
  * device; the only part of that kept here is the optional copy in
  * account_settings.
  */
+import { connectedSignIns } from './outside-sign-in.ts';
+import { passkeysOf } from './passkeys.ts';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { parseSettings, parseTheme, serializeSettings, type ReadingSettings, type Theme } from '#lib/reading-settings.ts';
 import type { SignedInAccount } from './contributor-profiles.ts';
@@ -251,6 +253,9 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 		followedPages: follows.results,
 		emailAboutFollowedPages: followSettings ?? { email: 'daily' },
 		settingsOnEveryDevice: settingsCopy ?? null,
-		signedIn: sessions.map(({ device, createdAt, lastSeenAt, method }) => ({ device, createdAt, lastSeenAt, method }))
+		signedIn: sessions.map(({ device, createdAt, lastSeenAt, method }) => ({ device, createdAt, lastSeenAt, method })),
+		// The passkeys' names and dates; their public keys are only of use to this site.
+		passkeys: (await passkeysOf(database, account.subject)).map(({ name, device, createdAt, lastUsedAt }) => ({ name, device, createdAt, lastUsedAt })),
+		connectedSignIns: await connectedSignIns(database, account.subject)
 	};
 }
