@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { MapGeometry } from '../src/lib/map-geometry.ts';
-import { distanceToShape, shapeFor, shapeImage, shapePath, type MapShape } from '../src/lib/map-shapes.ts';
-import { drawShadedLandAreasMap } from '../src/lib/nations-map-drawing.ts';
+import { distanceToShape, patternFor, patternImage, patternImageName, patternMarkFor, patternOfImageName, shapeFor, shapeImage, shapePath, type MapShape } from '../src/lib/map-shapes.ts';
+import { drawLandAreasMap, drawShadedLandAreasMap, drawShadedStatesMap } from '../src/lib/nations-map-drawing.ts';
 
 const shapes: MapShape[] = ['triangle', 'circle', 'square', 'diamond'];
 
@@ -85,12 +85,64 @@ describe('the drawn category map', () => {
 		expect(drawing).toContain('<circle class="land-area count-0 dot" cx="20" cy="20" r="3">');
 	});
 
-	it('keeps a large area as its outline', () => {
-		expect(drawing).toContain('<path class="land-area count-2" d="M0 0L5 0L5 5Z">');
+	it("keeps a large area as its outline, marked for its category's pattern", () => {
+		expect(drawing).toContain('<path class="land-area count-2 category-2" d="M0 0L5 0L5 5Z">');
+	});
+
+	it("marks each state on the by-state map for its category's pattern", () => {
+		const states = drawShadedStatesMap({ ...geometry, states: [{ code: 'AZ', path: 'M0 0L9 0L9 9Z' }] } as unknown as MapGeometry, {
+			key: 'courts-and-peacemaking',
+			title: 'Courts',
+			states: [{ code: 'AZ', shade: 3, description: 'Arizona' }]
+		});
+		expect(states).toContain('class="state count-3 category-3"');
+	});
+
+	it("gives the Land Areas view's small areas their group's shape and large ones their group's pattern", () => {
+		const lands = drawLandAreasMap(
+			{
+				...geometry,
+				landAreas: [
+					{ identifier: 'a', kind: 'state-reservation', path: '', dot: { x: 10, y: 10 } },
+					{ identifier: 'c', kind: 'state-reservation', path: 'M0 0L5 0L5 5Z' }
+				]
+			} as unknown as MapGeometry,
+			[
+				{ identifier: 'a', name: 'A', kind: 'state-reservation', count: 1, anchor: 'a' },
+				{ identifier: 'c', name: 'C', kind: 'state-reservation', count: 1, anchor: 'c' }
+			] as never
+		);
+		expect(lands).toContain(`class="land-area land-state dot shape shape-square" d="${shapePath('square', 10, 10, 4.2)}"`);
+		expect(lands).toContain('class="land-area land-state category-3" d="M0 0L5 0L5 5Z"');
 	});
 
 	it("gives an office its nation's category shape, and keeps the ring dot for one with none", () => {
 		expect(drawing).toContain(`class="office shape shape-square count-3" d="${shapePath('square', 30, 30, 4.5)}"`);
 		expect(drawing).toContain('<circle class="office count-0" cx="40" cy="40" r="4">');
+	});
+});
+
+describe('area patterns', () => {
+	it('follows the shapes: the darkest shade solid, then stripes, dots and a grid', () => {
+		expect([4, 3, 2, 1, 0].map(patternFor)).toEqual([undefined, 'stripes', 'dots', 'grid', undefined]);
+		expect([3, 2, 1].map(patternMarkFor)).toEqual(['paper', 'ink', 'ink']);
+	});
+
+	it('makes a tile of marks in the given color, clear between them', () => {
+		for (const pattern of ['stripes', 'dots', 'grid'] as const) {
+			const image = patternImage(pattern, '#102030', 2);
+			expect(image.width).toBe(12);
+			const alphas = Array.from({ length: image.width * image.height }, (_, index) => image.data[index * 4 + 3]);
+			expect(alphas.some((alpha) => alpha === 0)).toBe(true);
+			expect(alphas.some((alpha) => alpha > 150)).toBe(true);
+			expect([image.data[0], image.data[1], image.data[2]]).toEqual([0x10, 0x20, 0x30]);
+		}
+	});
+
+	it('names each image by its pattern and color, and reads the name back', () => {
+		const name = patternImageName('dots', '#A1B2C3');
+		expect(name).toBe('area-pattern-dots-a1b2c3');
+		expect(patternOfImageName(name)).toEqual({ pattern: 'dots', color: '#a1b2c3' });
+		expect(patternOfImageName('category-circle')).toBeUndefined();
 	});
 });

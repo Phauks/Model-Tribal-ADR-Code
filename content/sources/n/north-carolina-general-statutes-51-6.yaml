@@ -1,0 +1,50 @@
+key: north-carolina-general-statutes-51-6
+kind: state-statute
+citation:
+  type: legislation
+  title: Solemnization without license unlawful
+  title-short: N.C. Gen. Stat. § 51-6
+  container-title: General Statutes of North Carolina
+  container-title-short: N.C. Gen. Stat.
+  section: 51-6
+  author:
+  - literal: North Carolina General Assembly
+  issued:
+    date-parts:
+    - - 1957
+  URL: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_51/GS_51-6.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_51/GS_51-6.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: N.C. Gen. Stat. § 51-6 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: N.C. Gen. Stat. § 51-6 (2025). History: 1871-2, c. 193, s. 4; Code, s. 1813; Rev., s. 2086; C.S., s. 2498; 1957, c. 1261; 1959, c. 338; 1967, c. 957, ss. 6, 9; 1977, c. 592, s. 2; 2001-62, s. 6. Text read from the North Carolina General Assembly''s page for the section''s chapter of the General Statutes (ncleg.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian nation; indian; nation; tribe); AI reader''s verdict incidental: Marriage solemnization; recognizes ceremonies by federally or State recognized tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian nation; indian; nation; tribe'

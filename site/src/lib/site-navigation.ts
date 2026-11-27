@@ -196,7 +196,8 @@ export const navigationSections: NavigationSection[] = [
 				links: [
 					{ label: 'Cases', link: '/stats/supreme-court-cases', icon: 'gavel', count: 'supreme-court-cases' },
 					{ label: 'Courts by Chief Justice', link: '/supreme-court', icon: 'landmark', count: 'supreme-courts' },
-					{ label: 'Justices', link: '/stats/justices', icon: 'users', count: 'justices' }
+					{ label: 'Justices', link: '/stats/justices', icon: 'users', count: 'justices' },
+					{ label: 'Timeline', link: '/supreme-court/timeline', icon: 'history' }
 				]
 			},
 			{

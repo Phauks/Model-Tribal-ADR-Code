@@ -1,0 +1,54 @@
+key: south-carolina-code-41-27-210
+kind: state-statute
+citation:
+  type: legislation
+  title: Employer
+  title-short: S.C. Code Ann. § 41-27-210
+  container-title: Code of Laws of South Carolina 1976
+  container-title-short: S.C. Code Ann.
+  section: 41-27-210
+  author:
+  - literal: South Carolina General Assembly
+  issued:
+    date-parts:
+    - - 1977
+  URL: https://www.scstatehouse.gov/code/t41c027.php
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.scstatehouse.gov/code/t41c027.php
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- south-carolina-code-41-27-235
+- south-carolina-code-41-27-260
+- south-carolina-code-41-27-265
+state_law:
+  relevance: incidental
+  citation: S.C. Code Ann. § 41-27-210 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: SC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: S.C. Code Ann. § 41-27-210 (2025). History: 1962 Code SECTION 68-12; 1952 Code SECTION 68-11; 1942 Code SECTION 7035-99; 1936 (39) 1716; 1939 (41) 487; 1940 (41) 1630; 1941 (42) 358, 369; 1945 (44) 377; 1955 (49) 480; 1961 (52) 166; 1966 (54) 2640; 1971 (57) 950; 1972 (57) 2309; 1973 (58) 248; 1977 Act No. 161 SECTION 1; 1981 Act No. 108 SECTION 1; 2002 Act No. 306, SECTION 2, eff June 5, 2002; 2010 Act No. 146, SECTION 16, eff March 30, 2010. Text read from the South Carolina Legislative Services Agency''s page for the section''s chapter of the Code of Laws (scstatehouse.gov/code) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native; tribal; tribe); AI reader''s verdict incidental: Native American tribe treated as covered employer for unemployment law. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; native; tribal; tribe'

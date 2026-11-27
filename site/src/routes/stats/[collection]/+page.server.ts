@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { collectionCounts, collections, listedCollections } from '#lib/server/collections.ts';
+import { collectionCounts, collections, holdingOf, listedCollections } from '#lib/server/collections.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 // One list for each collection the Statistics page counts, so a reader can see what makes up each number (Trevor, Nov. 24, 2026).
@@ -18,6 +18,12 @@ export const load: PageServerLoad = ({ params }) => {
 		years: counted?.years,
 		heldBack: counted?.heldBack,
 		heldBackReason: counted?.heldBackReason,
-		items: collection.items()
+		breakdown: counted?.breakdown,
+		copyColumns: counted?.copyColumns,
+		// Each item's copies go to the page as numbers only: documents, their pages and saved web pages (Trevor, Nov. 27, 2026).
+		items: collection.items().map(({ copies, ...item }) => {
+			const holding = copies ? holdingOf(copies) : undefined;
+			return holding ? { ...item, holding } : item;
+		})
 	};
 };
