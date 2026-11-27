@@ -107,6 +107,31 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=416%20U.S.%20312
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1974-02-26'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-54-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048419
+  whole_session: true
+  duration_seconds: 3462
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-54-r1.mp3
+    checksum: fc59f78da36df6e3a3ff680a2831f77b4a219c25baad192a0ebdb9495cb3880c
+    media_type: audio/mpeg
+    bytes: 55387660
+- kind: argument
+  date: '1974-02-26'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-54-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048419
+  whole_session: true
+  duration_seconds: 4264
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-54-r2.mp3
+    checksum: 4e1a7446958437c760d81563cc5be20d7a5aa48453cb5f7b0f68f5f32b9037e1
+    media_type: audio/mpeg
+    bytes: 68226948
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -64,6 +64,41 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=584%20U.S.%20497
+argument_audio:
+- kind: argument
+  date: '2017-10-02'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/16-285.mp3
+  duration_seconds: 3780
+  file:
+    storage_key: supreme-court-audio/court/2017/16-285.mp3
+    checksum: d8a079f5995717972919cf5b721e3a17156ae767780a056e6015770906c2e363
+    media_type: audio/mpeg
+    bytes: 30246868
+- kind: argument
+  date: '2017-10-02'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2046-October2_2017.mp3
+  catalog: https://catalog.archives.gov/id/183518428
+  whole_session: true
+  duration_seconds: 7727
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2046-october2_2017.mp3
+    checksum: 55be6328b448a1499817a3517db605d580bb41bd162cec5c829fa95d180aeff7
+    media_type: audio/mpeg
+    bytes: 154548518
+- kind: opinion announcement
+  date: '2018-05-21'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2092-May21_2018.mp3
+  catalog: https://catalog.archives.gov/id/183518474
+  whole_session: true
+  duration_seconds: 1607
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2092-may21_2018.mp3
+    checksum: 488526c9a3fad0117fe7e05db3752edcdfc8da538017632b6d1c43c6b3989ab7
+    media_type: audio/mpeg
+    bytes: 32133158
 rights:
   status: no-permission-needed
   basis: us-government-work

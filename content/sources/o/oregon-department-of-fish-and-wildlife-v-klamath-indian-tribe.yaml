@@ -104,6 +104,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=473%20U.S.%20753
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1985-02-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-516.mp3
+  catalog: https://catalog.archives.gov/id/118974690
+  whole_session: true
+  duration_seconds: 13806
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-516.mp3
+    checksum: 45149948dd9d193b7908f802b81ee8e36a47f403de7d954ebf765b8bb693c914
+    media_type: audio/mpeg
+    bytes: 220890715
 rights:
   status: no-permission-needed
   basis: us-government-work

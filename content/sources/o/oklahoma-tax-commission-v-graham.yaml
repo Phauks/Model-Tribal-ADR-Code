@@ -99,6 +99,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=489%20U.S.%20838
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1989-02-21'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-691.mp3
+  catalog: https://catalog.archives.gov/id/118974842
+  whole_session: true
+  duration_seconds: 13802
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-691.mp3
+    checksum: 45e0fd03f33a19db5a700c28db596dd1d4685bf00a01f12c943aa4a6c1cabe8c
+    media_type: audio/mpeg
+    bytes: 220836799
 rights:
   status: no-permission-needed
   basis: us-government-work

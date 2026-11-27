@@ -112,6 +112,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=481%20U.S.%20704
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1986-10-06'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-569.mp3
+  catalog: https://catalog.archives.gov/id/118974743
+  whole_session: true
+  duration_seconds: 13770
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-569.mp3
+    checksum: 56715e0cd913220d6d91afd39df3e3acdeb08cf38b8f95af4858ef633cf6a5e6
+    media_type: audio/mpeg
+    bytes: 220329396
 rights:
   status: no-permission-needed
   basis: us-government-work

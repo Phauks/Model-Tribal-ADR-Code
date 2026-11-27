@@ -313,6 +313,7 @@ export function isWebLink(value: unknown): value is string {
 		const url = new URL(value);
 		return url.protocol === 'https:' && url.hostname.includes('.');
 	} catch {
+		// expected: a value that is not a web address is not a link.
 		return false;
 	}
 }

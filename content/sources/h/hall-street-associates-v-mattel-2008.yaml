@@ -68,6 +68,31 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Hall_Street_Associates,_L.L.C._v._Mattel,_Inc.
+argument_audio:
+- kind: argument
+  date: '2007-11-07'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1495-November7.MP3
+  catalog: https://catalog.archives.gov/id/183517877
+  whole_session: true
+  duration_seconds: 3878
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1495-november7.mp3
+    checksum: 1009d8c3ef6e37bb9092c09146976a059da75c3ce2de589e02ab55f50adbcbf8
+    media_type: audio/mpeg
+    bytes: 62054912
+- kind: opinion announcement
+  date: '2008-03-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1523-March25.MP3
+  catalog: https://catalog.archives.gov/id/183517905
+  whole_session: true
+  duration_seconds: 7595
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1523-march25.mp3
+    checksum: 04300d7605c1a9992e19ee026c716497e7e7f3474406ad38a216928b67548eb7
+    media_type: audio/mpeg
+    bytes: 121513984
 rights:
   status: no-permission-needed
   basis: us-government-work

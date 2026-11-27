@@ -100,6 +100,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=532%20U.S.%201
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2001-01-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1169.mp3
+  catalog: https://catalog.archives.gov/id/138282814
+  whole_session: true
+  duration_seconds: 6412
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1169.mp3
+    checksum: c1a899bbc4807c7b017f56100f1d3cd838b239c8e75da193f8836dca6e6a0eb6
+    media_type: audio/mpeg
+    bytes: 102599491
 rights:
   status: no-permission-needed
   basis: us-government-work

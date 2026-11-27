@@ -93,6 +93,19 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Kiowa_Tribe_of_Oklahoma_v._Manufacturing_Technologies,_Inc.
+argument_audio:
+- kind: argument
+  date: '1998-01-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1048.mp3
+  catalog: https://catalog.archives.gov/id/138282688
+  whole_session: true
+  duration_seconds: 10652
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1048.mp3
+    checksum: 685f267aefe329a0af6f9ede9563271c12db5923668f14179b02f3f27b348514
+    media_type: audio/mpeg
+    bytes: 170428833
 rights:
   status: no-permission-needed
   basis: us-government-work

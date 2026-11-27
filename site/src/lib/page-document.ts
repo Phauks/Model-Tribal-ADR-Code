@@ -104,6 +104,7 @@ function wholeLink(href: string, base: string): string | undefined {
 	try {
 		return new URL(href, base).href;
 	} catch {
+		// expected: a link that is not an address is left out.
 		return undefined;
 	}
 }
@@ -303,7 +304,7 @@ export function pageFileName(path: string, extension: string): string {
 	try {
 		decoded = decodeURIComponent(decoded);
 	} catch {
-		// An address that does not decode keeps its own spelling.
+		// expected: an address that does not decode keeps its own spelling.
 	}
 	const name = decoded.replace(/[^\p{L}\p{N}._-]+/gu, '-').replace(/^-+|-+$/g, '');
 	return `${name || 'page'}.${extension}`;
