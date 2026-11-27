@@ -146,7 +146,7 @@ Plain settings are in `site/wrangler.jsonc` under `vars`, because plain-text var
 | `MAIL_DOMAIN` | The project's domain. Empty while email is off. |
 | `MAIL_SENDER_NAME` | The sender's name on the project's mail. |
 | `SITE_ADDRESS` | The website's address, such as `https://example.org`, for links in mail. |
-| `MAIL_SIGNING_KEY` | Secret. A long random value that signs unsubscribe and acknowledgment links. Changing it breaks links already sent. |
+| `MAIL_SIGNING_KEY` | Secret, optional. A long random value that signs the download links for big files and, once outreach is on, its unsubscribe and acknowledgment links. Receiving mail and replying work without it, and the service check counts the inbox as working without it (Trevor, Nov. 27, 2026). Changing it breaks links already sent. |
 | `OUTREACH_CARRIER` | `smtp` to switch outreach on; empty while it is off. |
 | `OUTREACH_FROM` | The address outreach comes from. |
 | `OUTREACH_REPLY_TO` | Where replies to outreach go, such as `replies@<domain>`. |

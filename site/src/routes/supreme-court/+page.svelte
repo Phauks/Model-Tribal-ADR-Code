@@ -5,6 +5,7 @@
 	Justice and every President who appointed one, each with a page.
 -->
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
@@ -72,13 +73,15 @@
 </div>
 
 <section aria-labelledby="justices">
-	<h2 id="justices">Justices <CountBadge count={data.justices.length} /></h2>
-	<DataTable identifier="justices" label="Table: Justices of the Supreme Court" columns={justiceColumns} rows={justiceRows} rowName={['Justice', 'Justices']} download="supreme-court-justices" searchLabel="Search Justices" />
+	<DataTable identifier="justices" label="Table: Justices of the Supreme Court" columns={justiceColumns} rows={justiceRows} rowName={['Justice', 'Justices']} download="supreme-court-justices" searchLabel="Search Justices">
+		{#snippet heading(count: Snippet)}<h2 id="justices">Justices {@render count()}</h2>{/snippet}
+	</DataTable>
 </section>
 
 <section aria-labelledby="presidents">
-	<h2 id="presidents">Presidents <CountBadge count={data.presidents.length} /></h2>
-	<DataTable identifier="presidents" label="Table: Presidents who appointed a Justice" columns={presidentColumns} rows={presidentRows} rowName={['President', 'Presidents']} download="supreme-court-presidents" />
+	<DataTable identifier="presidents" label="Table: Presidents who appointed a Justice" columns={presidentColumns} rows={presidentRows} rowName={['President', 'Presidents']} download="supreme-court-presidents">
+		{#snippet heading(count: Snippet)}<h2 id="presidents">Presidents {@render count()}</h2>{/snippet}
+	</DataTable>
 </section>
 
 <style>
