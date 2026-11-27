@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/outreach-plan.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/outreach-plan.schema.json",
   "title": "Outreach plan (private)",
   "description": "The private half of the outreach list: named people, suggested asks, priority and contact history, keyed to the public records in research/outreach/. The plan file itself is never committed to this repository (decision record 0012); only this schema is.",
   "type": "object",

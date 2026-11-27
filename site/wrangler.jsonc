@@ -26,6 +26,15 @@
 	"observability": {
 		"enabled": true
 	},
+	// Workers Cache: Cloudflare's edge answers a repeat request for a page
+	// every reader sees alike without running the Worker. Only the answers
+	// tools/edge-cache-worker.js marks may be kept (built record pages, map
+	// tiles, the search index); every other answer, and every signed-in or
+	// personal page, is marked no-store. Each deploy is a new version with
+	// nothing kept, so there is nothing to purge by hand (docs/edge-caching.md).
+	"cache": {
+		"enabled": true
+	},
 	// Code refers to these resources only by their binding names ("database"
 	// and "sourceDocuments"). The resource names below can change, for
 	// example when the project is renamed, without changing any code.
@@ -36,8 +45,8 @@
 	"d1_databases": [
 		{
 			"binding": "database",
-			"database_name": "model-tribal-adr-code",
-			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b",
+			"database_name": "tribal-law-project",
+			"database_id": "eeb27102-f50e-40ff-bebd-5347c5c055c7",
 			"migrations_dir": "migrations"
 		},
 		{
@@ -45,8 +54,8 @@
 			// every document in the bucket, loaded from scripts/library/ and kept
 			// up to date by the hourly run at minute 29.
 			"binding": "sourceLibrary",
-			"database_name": "model-tribal-adr-code-library",
-			"database_id": "5ee18668-8141-400f-8f90-113f631a1734"
+			"database_name": "tribal-law-project-library",
+			"database_id": "90c5f0f5-6352-459e-a946-b3f18ea97d96"
 		}
 	],
 	// Private bucket for copies of source documents. Not public: nothing in
@@ -55,7 +64,7 @@
 	"r2_buckets": [
 		{
 			"binding": "sourceDocuments",
-			"bucket_name": "model-tribal-adr-code-sources"
+			"bucket_name": "tribal-law-project-files"
 		},
 		// Private bucket for the project inbox (site/MAIL.md, "Storage"): each
 		// message whole, its HTML and its attachments, under mail/. Kept apart
@@ -63,7 +72,7 @@
 		// rules and backups, and a mistake in one cannot touch the other.
 		{
 			"binding": "mailFiles",
-			"bucket_name": "model-tribal-adr-code-mail"
+			"bucket_name": "tribal-law-project-mail"
 		}
 	],
 	// Live editing rooms, one per essay. They run in their own Worker,
@@ -146,16 +155,16 @@
 		}
 	],
 	// Cloudflare Email Service, for sign-in codes. It sends only from a domain
-	// onboarded in Email Service on this Cloudflare account; the address is
+	// onboarded in Email Service on this Cloudflare account; triballawproject.org
+	// was onboarded for sending on 2026-11-25, and the address is
 	// SIGN_IN_EMAIL_FROM below. While that is empty, the site sends no email
 	// and people sign in with a password or a link from the lead author
 	// (COLLABORATION.md, "Setting up sign-in").
 	//
 	// The second binding sends summaries of updates to pages readers follow,
-	// from UPDATE_EMAIL_FROM. That address is the switch for those emails:
-	// while it is empty, nothing is sent and readers see notices on the site
-	// only. Set it once the domain is onboarded (docs/domain-to-do.md;
-	// COLLABORATION.md, "Following pages"). SITE_ADDRESS is the site's public
+	// and the event emails, from UPDATE_EMAIL_FROM. That address is the switch
+	// for those emails: while it is empty, nothing is sent and readers see
+	// notices on the site only (COLLABORATION.md, "Following pages"). SITE_ADDRESS is the site's public
 	// address, for the links in those emails and in the project inbox's
 	// unsubscribe links. The build also reads the published site text from it
 	// (src/lib/server/site-text-build.ts), so it must be an address that answers.
@@ -167,14 +176,15 @@
 	// terms do not allow unsolicited mail.
 	"send_email": [{ "name": "signInEmail" }, { "name": "updateEmail" }, { "name": "projectEmail" }],
 	"vars": {
-		"SIGN_IN_EMAIL_FROM": "",
-		"UPDATE_EMAIL_FROM": "",
+		"SIGN_IN_EMAIL_FROM": "sign-in@triballawproject.org",
+		"UPDATE_EMAIL_FROM": "updates@triballawproject.org",
 		"SITE_ADDRESS": "https://triballawproject.org",
 		// The project inbox (site/MAIL.md, "Switching email on"). While
 		// MAIL_DOMAIN is empty, the inbox pages open but no mail is received
-		// or sent. MAIL_SIGNING_KEY and OUTREACH_SMTP_PASSWORD are Secrets set
+		// or sent. Mail reaches the inbox through Email Routing's catch-all
+		// rule, which sends every address on the domain to this Worker. MAIL_SIGNING_KEY and OUTREACH_SMTP_PASSWORD are Secrets set
 		// in the dashboard, never here.
-		"MAIL_DOMAIN": "",
+		"MAIL_DOMAIN": "triballawproject.org",
 		"MAIL_NOTICE_ADDRESS": "",
 		"MAIL_SENDER_NAME": "Tribal Law Project",
 		"OUTREACH_CARRIER": "",
@@ -208,9 +218,12 @@
 	"triggers": {
 		"crons": ["17 * * * *", "41 9 * * 1", "4,19,34,49 * * * *", "*/5 * * * *"]
 	}
-	// The queue consumer for delivery events from Cloudflare Email Service is
-	// added when email is switched on, because a deploy fails while the
-	// queue does not exist yet (site/MAIL.md, "Delivery reports").
+	,
+	// Delivery events from Cloudflare Email Service (site/MAIL.md, "Delivery
+	// reports"): the queue is subscribed to all six Email Sending events for
+	// triballawproject.org, and tools/add-mail-handlers.mjs adds the queue
+	// handler. A deploy fails while the queue named here does not exist.
+	"queues": { "consumers": [{ "queue": "tribal-law-project-mail-delivery-events", "max_batch_size": 50 }] }
 	//
 	// Some settings are made in the Cloudflare dashboard (Worker > Settings >
 	// Variables and Secrets) rather than here, because this file is public,

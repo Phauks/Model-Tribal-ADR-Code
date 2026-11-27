@@ -20,7 +20,7 @@ const frontMatterRank = (page) => {
 
 const content = (text) => `[${escapeTypst(text)}]`;
 
-export function assembleBook({ book, content: records }) {
+export function assembleBook({ book, content: records, pictures = new Map() }) {
   const sources = citationItems(records.sources);
   const glossary = new Map(records.glossary.map((entry) => [entry.id, entry]));
   const markdown = createMarkdown({ sourceKeys: new Set(Object.keys(sources)), glossaryIds: new Set(glossary.keys()) });
@@ -130,7 +130,7 @@ export function assembleBook({ book, content: records }) {
       continue;
     }
     chapterIndex += 1;
-    const writer = new ChapterWriter({ citations, glossary, printedGlossaryIds, notes, chapterIndex, sourceRecords, nationNames: records.nationNames, peopleIds: records.peopleIds, boxedKeys });
+    const writer = new ChapterWriter({ citations, glossary, printedGlossaryIds, notes, chapterIndex, sourceRecords, nationNames: records.nationNames, peopleIds: records.peopleIds, boxedKeys, pictures });
     const number = chapter.number ? content(chapter.number) : "none";
     output.push(`#chapter-opener(layout, ${number}, ${content(chapter.title)})`);
     if (chapter.glossary) {

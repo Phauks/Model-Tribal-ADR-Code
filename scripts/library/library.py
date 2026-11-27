@@ -59,7 +59,7 @@ import textwrap
 import urllib.parse
 from pathlib import Path
 
-DEFAULT_BUCKET = "model-tribal-adr-code-sources"
+DEFAULT_BUCKET = "tribal-law-project-files"
 LIBRARY_OBJECT = "_library/library.sqlite.gz"
 MANIFEST_OBJECT = "_library/manifest.json"
 SITE = "https://triballawproject.org"

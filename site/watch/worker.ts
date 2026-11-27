@@ -30,7 +30,7 @@ import { readWatchProgress, watchState, watchStateWords, writeWatchProgress, typ
 import { runWatcher, type RunDependencies, type RunReport, type RunSteps } from '../src/lib/server/watch/run.ts';
 import { isDue, nextDue } from '../src/lib/server/watch/schedule.ts';
 import { candidateCounts, latestRuns, spendSince } from '../src/lib/server/watch/store.ts';
-import { chooseTriageProvider, type TriageSettings } from '../src/lib/server/watch/triage.ts';
+import { chooseTriageProvider, chosenModels, type TriageSettings } from '../src/lib/server/watch/triage.ts';
 import { watcherIsOn } from '../src/lib/server/watch/watcher.ts';
 import { HostDesk } from './host-desk.ts';
 import builtIndex from './known-identifiers.json';
@@ -172,9 +172,9 @@ async function tick(environment: WatchEnvironment, now: Date): Promise<void> {
 		provider: provider.name,
 		ready: provider.ready === true,
 		problem: provider.ready === true ? null : provider.ready.problem,
-		gateway: environment.WATCH_GATEWAY,
-		cheapModel: environment.WATCH_CHEAP_MODEL,
-		topModel: environment.WATCH_TOP_MODEL,
+		gateway: provider.name === 'ai-gateway' ? environment.WATCH_GATEWAY : undefined,
+		cheapModel: chosenModels(environment)?.cheap,
+		topModel: chosenModels(environment)?.top,
 		lastCallAt: previous?.models.lastCallAt ?? null,
 		lastProblemAt: previous?.models.lastProblemAt ?? null,
 		lastSample: previous?.models.lastSample ?? null
@@ -307,7 +307,7 @@ ${progress?.lastError ? `<p class="error">Last problem (${escape(pacific(progres
 <h2>Watchers</h2>
 <table><thead><tr><th>Watcher</th><th>Last run</th><th>Next run</th></tr></thead><tbody>${watcherRows}</tbody></table>
 <h2>Models</h2>
-<p>${models ? (models.ready ? `Triage by ${escape(models.cheapModel ?? '')}, hard cases by ${escape(models.topModel ?? '')}, through AI Gateway ${escape(models.gateway ?? '')}.` : `Off: ${escape(models.problem ?? '')} Items the rules cannot decide go to people.`) : ''}</p>
+<p>${models ? (models.ready ? `Triage by ${escape(models.cheapModel ?? '')}, hard cases by ${escape(models.topModel ?? '')}${models.provider === 'ai-gateway' ? `, through AI Gateway ${escape(models.gateway ?? '')}` : models.provider === 'workers-ai' ? ', on Workers AI' : ''}.` : `Off: ${escape(models.problem ?? '')} Items the rules cannot decide go to people.`) : ''}</p>
 ${models?.lastSample ? `<p class="quiet">Last sample check ${escape(pacific(models.lastSample.at))}: ${models.lastSample.checked} checked, ${models.lastSample.disagreed} disagreed.</p>` : ''}
 ${spend ? `<table><thead><tr><th>Model</th><th>Calls, 30 days</th><th>Spend, 30 days</th></tr></thead><tbody>${spend}</tbody></table>` : '<p class="quiet">No model calls in the last 30 days.</p>'}
 <h2>Records index</h2>

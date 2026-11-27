@@ -112,7 +112,11 @@ const neverCached = [
 	// A quotation's paragraph depends on the words asked about, which saved pages match without (ignoreSearch).
 	'/quote-context',
 	// The data the Worker draws case, law, biography and Supreme Court pages from (src/lib/server/page-data.ts); the pages themselves are saved as they are read.
-	'/page-data'
+	'/page-data',
+	// For search engines, not readers (src/lib/sitemap.ts, src/lib/search-engines.ts).
+	'/robots.txt',
+	'/sitemap.xml',
+	'/sitemaps'
 ];
 /** Not a real address: the collections a device kept before the outline replaced them, read once and replaced by choicesKey. */
 const keptCollectionsKey = '/__kept-collections';

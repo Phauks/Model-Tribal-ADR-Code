@@ -70,7 +70,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 CAPTURE_INDEX = REPO / "research" / "capture-index.csv"
 OPINIONS_INDEX = REPO / "research" / "tribal-court-opinions" / "opinions.csv"
-DEFAULT_BUCKET = "model-tribal-adr-code-sources"
+DEFAULT_BUCKET = "tribal-law-project-files"
 LIBRARY_PREFIX = "_library/"
 LIBRARY_OBJECT = LIBRARY_PREFIX + "library.sqlite.gz"
 MANIFEST_OBJECT = LIBRARY_PREFIX + "manifest.json"
@@ -929,7 +929,7 @@ def command_index(arguments) -> None:
 # ---------------------------------------------------------------- the website's copy (D1)
 #
 # The workspace's library search (site/src/routes/workspace/library) reads a
-# copy of the library in its own D1 database, model-tribal-adr-code-library.
+# copy of the library in its own D1 database, tribal-law-project-library.
 # Each publish writes the changes since the last build as SQL files in the
 # bucket under _library/d1/; the website's hourly run applies them in order
 # (site/src/lib/server/source-library.ts). The first build, with nothing to

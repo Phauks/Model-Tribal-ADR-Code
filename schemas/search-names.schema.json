@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/search-names.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/search-names.schema.json",
   "title": "Search names",
   "description": "content/search/names.yaml: names readers search by that the records don't give, such as acronyms and popular names of one law or case (names) and names for a set of them, such as the Marshall Trilogy (groups). Each has a basis: a published source that uses the name for exactly these items. The site search adds them (site/src/lib/server/search-index.ts).",
   "type": "object",

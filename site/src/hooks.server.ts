@@ -18,12 +18,7 @@ import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
 import { needsTwoStep, permissionsOf } from '#lib/permissions.ts';
 import { workspacePagesFor } from '#lib/workspace-menu.ts';
-
-/** Pages that show private information and must never be cached or framed. */
-const privatePrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/sign-out', '/requests', '/following', '/uploads', '/orders', '/book/orders', '/book/files', '/events', '/rooms', '/sponsorship'];
-
-/** Pages that need to know who is signed in. Recent changes needs it for "Only pages I follow". */
-const signedInPrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/following', '/uploads', '/files', '/events', '/rooms', '/sponsorship/invite', '/changes'];
+import { isUnder, privatePrefixes, signedInPrefixes } from '#lib/private-pages.ts';
 
 /**
  * Files people send (src/lib/server/uploads.ts): starting a file at
@@ -71,7 +66,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	// While the site is built, links to the workspace are followed but there is
 	// no Worker and nobody is signed in.
-	if (!building && signedInPrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))) {
+	if (!building && isUnder(path, signedInPrefixes)) {
 		const environment = workerEnvironment();
 		if (environment.database) {
 			const session = await sessionAccount(environment.database, event.cookies.get(sessionCookie)).catch(
@@ -166,7 +161,7 @@ function withSecurityHeaders(given: Response, path: string): Response {
 		response.headers.set(name, value);
 	}
 	let frameAncestors = "'self'";
-	if (privatePrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))) {
+	if (isUnder(path, privatePrefixes)) {
 		response.headers.set('cache-control', 'no-store');
 		// A message's HTML is shown in a sandboxed frame on the conversation page (src/routes/workspace/inbox/messages).
 		const framedHere = /^\/workspace\/inbox\/messages\/[^/]+\/html$/.test(path);
