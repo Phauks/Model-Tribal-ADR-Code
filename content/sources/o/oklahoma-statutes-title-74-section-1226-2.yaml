@@ -86,10 +86,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1226.2 (2026). History: derived as a result of the existence of the AICCM and the surrounding from the Authority to the American Indian Cultural Center and Museum Trust Authority from the Authority or its successor, and Added by Laws 1994, c. 388, § 4, eff. Sept. 1, 1994. Amended by Laws 1996, c. 348, § 13, Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 830. Found by the state statutes pilot (terms: american indian; native american; tribal governments; tribal membership); AI reader''s verdict core: Creates Native American Cultural and Educational Authority; American Indian Cultural Center. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1226.2 (2026). History: Added by Laws 1994, c. 388, § 4, eff. Sept. 1, 1994. Amended by Laws 1996, c. 348, § 13, Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 830. Found by the state statutes pilot (terms: american indian; native american; tribal governments; tribal membership); AI reader''s verdict core: Creates Native American Cultural and Educational Authority; American Indian Cultural Center. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -78,7 +78,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 1055.1 (2026). History: Added by Laws 1986, c. 94, § 1. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1511. Found by the state statutes pilot (terms: indian); AI reader''s verdict incidental: Indian housing authority may use state communication towers. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

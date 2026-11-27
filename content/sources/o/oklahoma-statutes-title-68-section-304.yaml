@@ -83,10 +83,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 304 (2026). History: from one location to another location after an application has been filed with the Tax from the Tax Commission such license, such person or licensee shall, after becoming Added by Laws 1965, c. 195, § 2, emerg. eff. June 10, 1965. Amended by Laws 1988, c. 47, Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 170. Found by the state statutes pilot (terms: indian; tribal); AI reader''s verdict incidental: Cigarette wholesaler license conditions sell to Indian tribal entities. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 304 (2026). History: Added by Laws 1965, c. 195, § 2, emerg. eff. June 10, 1965. Amended by Laws 1988, c. 47, Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 170. Found by the state statutes pilot (terms: indian; tribal); AI reader''s verdict incidental: Cigarette wholesaler license conditions sell to Indian tribal entities. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

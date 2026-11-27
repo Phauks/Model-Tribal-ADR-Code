@@ -1,0 +1,64 @@
+key: oregon-revised-statutes-430-347
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions for ORS 430.345 to 430.380
+  title-short: Or. Rev. Stat. § 430.347
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '430.347'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 1975
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors430.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors430.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-430-221
+- oregon-revised-statutes-430-230
+- oregon-revised-statutes-430-231
+- oregon-revised-statutes-430-234
+- oregon-revised-statutes-430-235
+- oregon-revised-statutes-430-238
+- oregon-revised-statutes-430-274
+- oregon-revised-statutes-430-275
+- oregon-revised-statutes-430-388
+- oregon-revised-statutes-430-430
+- oregon-revised-statutes-430-630
+- oregon-revised-statutes-430-640
+- oregon-revised-statutes-430-662
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 430.347 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 430.347 (2025). History: [1975 c.424 §7; 1977 c.856 §5; 1987 c.53 §2; 1987 c.167 §1]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; native americans; native hawaiian; indian; native); AI reader''s verdict incidental: Minority definition includes Native Americans for minority programs. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; native americans; native hawaiian; indian; native'

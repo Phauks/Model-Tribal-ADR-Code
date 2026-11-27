@@ -48,7 +48,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 25, § 1301 (2026). History: Added by Laws 1968, c. 388, § 301. Amended by Laws 1973, c. 195, § 1, emerg. eff. May 16, Text read from the Legislative Service Bureau''s Title 25 PDF (updated Nov. 12, 2026), page 73. Found by the state statutes pilot (terms: native american); AI reader''s verdict incidental: Native American tribe excluded from employer definition. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

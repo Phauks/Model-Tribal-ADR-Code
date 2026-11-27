@@ -1,0 +1,54 @@
+key: nevada-revised-statutes-414a-110
+kind: state-statute
+citation:
+  type: legislation
+  title: 'Intrastate Mutual Aid Committee: Creation; membership; terms; Co-Chairs and Vice Chair; duties; annual evaluation of System'
+  title-short: Nev. Rev. Stat. § 414A.110
+  container-title: Nevada Revised Statutes
+  container-title-short: Nev. Rev. Stat.
+  section: 414A.110
+  author:
+  - literal: Nevada Legislature
+  issued:
+    date-parts:
+    - - 2015
+  URL: https://www.leg.state.nv.us/nrs/NRS-414A.html#NRS414ASec110
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.nv.us/nrs/NRS-414A.html#NRS414ASec110
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- nevada-revised-statutes-414a-045
+- nevada-revised-statutes-414a-120
+- nevada-revised-statutes-414a-160
+state_law:
+  relevance: incidental
+  citation: Nev. Rev. Stat. § 414A.110 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Nev. Rev. Stat. § 414A.110 (2025). History: (Added to NRS by 2015, 288; A 2025, 555, 1876). Text read from the Nevada Legislature''s chapter page for the section (leg.state.nv.us/nrs) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal governments; nation; tribal; tribe); AI reader''s verdict incidental: Mutual aid committee includes tribal government members. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal governments; nation; tribal; tribe'

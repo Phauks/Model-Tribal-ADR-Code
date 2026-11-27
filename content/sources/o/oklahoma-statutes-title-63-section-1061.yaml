@@ -10,6 +10,11 @@ citation:
   section: '1061'
   author:
   - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1982
+      - 5
+      - 28
   URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os63.pdf#page=1518
   accessed:
     date-parts:
@@ -72,10 +77,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 1061 (2026). History: from time to time amend and repeal bylaws, rules and from whom it was first procured by the authority, at the same Amended by Laws 1982, c. 305, § 2, emerg. eff. May 28, 1982. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1518. Found by the state statutes pilot (terms: indian tribe); AI reader''s verdict incidental: Housing authority carve-out for Indian authorities and tribal trust land. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 1061 (2026). History: Amended by Laws 1982, c. 305, § 2, emerg. eff. May 28, 1982. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1518. Found by the state statutes pilot (terms: indian tribe); AI reader''s verdict incidental: Housing authority carve-out for Indian authorities and tribal trust land. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

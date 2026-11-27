@@ -59,10 +59,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 21, § 1533 (2026). History: R.L. 1910, § 2691. Amended by Laws 1990, c. 320, § 4, emerg. eff. May 30, 1990; Laws Text read from the Legislative Service Bureau''s Title 21 PDF (updated Nov. 12, 2026), page 831. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: False personation covers tribal law enforcement and tribal authority. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 21, § 1533 (2026). History: R.L. 1910, § 2691. Amended by Laws 1990, c. 320, § 4, emerg. eff. May 30, 1990; Laws. Text read from the Legislative Service Bureau''s Title 21 PDF (updated Nov. 12, 2026), page 831. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: False personation covers tribal law enforcement and tribal authority. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

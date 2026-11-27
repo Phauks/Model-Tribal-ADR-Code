@@ -1,0 +1,52 @@
+key: oregon-revised-statutes-307-181
+kind: state-statute
+citation:
+  type: legislation
+  title: Land acquired or owned by Indian tribe
+  title-short: Or. Rev. Stat. § 307.181
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '307.181'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 1993
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors307.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors307.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-307-180
+state_law:
+  relevance: core
+  citation: Or. Rev. Stat. § 307.181 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 307.181 (2025). History: [1993 c.266 §2; 1995 c.748 §3; 2001 c.753 §29; 2009 c.453 §1; 2012 c.42 §§1,5; 2015 c.65 §§1,2; 2015 c.180 §§42,43; 2024 c.52 §26a]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: confederated tribes; federally recognized indian tribe; indian reservation; indian tribe; native american; tribal health; tribe of indians; burns paiute; coos; coquille; cow creek; grand ronde; indian; indians; klamath tribes; lower umpqua; native; reservation; siletz; siuslaw; tribal; tribe; tribes; umatilla; umpqua; warm springs); AI reader''s verdict core: Property tax exemption for land and improvements held by Indian tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: confederated tribes; federally recognized indian tribe; indian reservation; indian tribe; native american; tribal health; tribe of indians; burns paiute; coos; coquille; cow creek; grand ronde; indian; indians; klamath tribes; lower umpqua; native; reservation; siletz; siuslaw; tribal; tribe; tribes; umatilla; umpqua; warm springs'

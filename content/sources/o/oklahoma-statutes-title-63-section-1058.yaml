@@ -80,7 +80,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 1058 (2026). History: Added by Laws 1965, c. 251, § 8, emerg. eff. June 18, 1965. Amended by Laws 1967, c. 339, Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1516. Found by the state statutes pilot (terms: tribal government); AI reader''s verdict incidental: Indian housing authority may set commissioner per diem; tribal government. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

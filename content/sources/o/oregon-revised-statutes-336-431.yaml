@@ -1,0 +1,52 @@
+key: oregon-revised-statutes-336-431
+kind: state-statute
+citation:
+  type: legislation
+  title: Farm-to-School Grant Program to purchase Oregon food products and to fund certain educational activities; rules; administrative costs
+  title-short: Or. Rev. Stat. § 336.431
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '336.431'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 2011
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors336.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors336.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-336-680
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 336.431 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 336.431 (2025). History: [2011 c.663 §2; 2013 c.652 §1; 2015 c.840 §13; 2017 c.609 §1; 2019 c.590 §1]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribes; indian education; indian; tribes); AI reader''s verdict incidental: Farm-to-school grants eligible to federally recognized tribes and BIE schools. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribes; indian education; indian; tribes'

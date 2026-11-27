@@ -86,7 +86,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 346 (2026). History: Added by Laws 1992, c. 339, § 1, emerg. eff. May 28, 1992. Amended by Laws 2004, c. 322, Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 209. Found by the state statutes pilot (terms: federally recognized indian tribe; federally recognized indian tribes; indian country; indian tribe; indian tribes; tribal members; tribal sovereign); AI reader''s verdict core: Findings on tribal cigarette sales and state tax compacts. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

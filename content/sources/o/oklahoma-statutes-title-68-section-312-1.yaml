@@ -86,7 +86,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 312.1 (2026). History: Added by Laws 2003, c. 475, § 4, eff. Nov. 1, 2003. Amended by Laws 2005, c. 479, § 7, eff. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 184. Found by the state statutes pilot (terms: indian; tribal); AI reader''s verdict incidental: Cigarette shipment reports include shipments to Indian tribal entities. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

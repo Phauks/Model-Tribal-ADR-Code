@@ -132,7 +132,7 @@ function treaties(): CollectionItem[] {
 
 /**
  * State statute sections, each named by its citation and heading ("Okla. Stat. tit. 10, § 40: Short title"), with its state and,
- * for a section a state's Indian law sweep found, whether it is core or incidental Indian law (scripts/law/oklahoma_statutes.py).
+ * for a section a state's Indian law sweep found, whether it is core or incidental Indian law (scripts/law/state_statutes/).
  */
 function stateStatutes(): CollectionItem[] {
 	return [...sources().values()]
