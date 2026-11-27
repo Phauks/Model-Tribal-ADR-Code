@@ -1,5 +1,5 @@
 ---
-id: 2026-11-27-state-statutes-fourth-batch
+id: 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
 date: '2026-11-27'
 researchers:
 - Trevor Goldsmith
@@ -19,7 +19,7 @@ sources_added: []
 limits: 'Reader verdicts are Unverified until a person checks them (Trevor will review every state''s labels once all are in). Recall rests on samples of 300 non-hits near a strong hit and 300 other non-hits per state. Each record links to the official site and is not served (state statutes stay link only). Sections in force on Nov. 27, 2026 only. New York has its own thread.'
 ---
 
-# State statutes sweep, fourth batch: session notes
+# State statutes sweep, California, Nebraska, Utah, Maine and Florida: session notes
 
 The method is the one in the first sweep's notes (research/sessions/2026/2026-11-27-state-statutes-sweep.md) and in `scripts/law/state_statutes/README.md`, with the readers' wrapper prompt in `research/state-statutes/reader-prompt.md` (which now has a note for each of these five states) and the spot check in `scripts/law/state_statutes/spot_check.py`. Each state's results are in `research/state-statutes/<state>/`. In every state the session read each strong hit a reader marked none and settled it by the rules the earlier batches used: a race or minority category with legal effect (a reporting, eligibility or diversity definition) is incidental; a role given to the Indian Health Service or the Bureau of Indian Affairs is incidental; a county boundary traced along a reservation line, findings with no rule, a federal cost circular's title, a civics topic and the federal Food Distribution Program on Indian Reservations named among eligibility programs are none.
 
