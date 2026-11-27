@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/story.schema.json",
   "title": "Story",
-  "description": "One story, account or teaching, as a Native nation or its people tell it, with every known telling: about resolving disputes, making peace or restoring relationships, or about how a law, treaty, court case or federal policy affected the people who lived under it. A telling cites its own published source record directly, or a private contributor filing. The project never retells a story in its own words: the record quotes the telling exactly, as far as the rights allow, and otherwise points to it. Stored as content/stories/<first letter of id, or _other>/<id>.yaml (decision record 0019).",
+  "description": "One story, account or teaching, as a Native nation or its people tell it, with every known telling, about law, justice or governance: a nation's own laws, councils and courts; treaties, land and sovereignty; resolving disputes, making peace or restoring relationships; or how a law, treaty, court case or federal policy affected the people who lived under it (decision record 0063). A telling cites its own published source record directly, or a private contributor filing. The project never retells a story in its own words: the record quotes the telling exactly, as far as the rights allow, and otherwise points to it. Stored as content/stories/<first letter of id, or _other>/<id>.yaml (decision record 0019).",
   "type": "object",
   "additionalProperties": false,
   "required": ["id", "title", "nations", "kind", "tellings", "access", "found_in"],
@@ -42,7 +42,7 @@
     },
     "kind": {
       "$ref": "common.schema.json#/$defs/slug",
-      "description": "Open vocabulary. Suggested: traditional-story, historical-account (a recorded event such as a treaty or peace between peoples), teaching (a statement of values or law), court-opinion (a Tribal court opinion that tells or relies on a story), oral-history, essay, program-story (a story a peacemaking program tells about itself), other."
+      "description": "Open vocabulary. Suggested: traditional-story, historical-account (a recorded event such as a treaty, a council's act or peace between peoples), teaching (a statement of values or law), short-story (fiction by a Native author), court-opinion (a Tribal court opinion that tells or relies on a story), oral-history, essay, program-story (a story a peacemaking program tells about itself), other."
     },
     "length": {
       "type": "string",

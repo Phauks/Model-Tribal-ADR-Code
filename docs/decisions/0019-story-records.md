@@ -1,6 +1,6 @@
 # 0019. Record stories in their tellers' own words, with credit, permissions and protocols
 
-- **Status:** Accepted (lead author, Nov. 21, 2026); website display amended by [0029](0029-show-stories-while-nations-review-them.md) and [0034](0034-show-stories-in-full-where-rights-allow.md)
+- **Status:** Accepted (lead author, Nov. 21, 2026); website display amended by [0029](0029-show-stories-while-nations-review-them.md) and [0034](0034-show-stories-in-full-where-rights-allow.md); scope widened by [0063](0063-widen-stories-to-law-justice-and-governance.md)
 - **Date:** 2026-11-21
 
 ## Context
