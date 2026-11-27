@@ -9,10 +9,13 @@
 	const hasYears = $derived(data.items.some((item) => item.year));
 	// A list whose third column gives each item's years ("1801–1835") needs no Year column too; it still sorts by the first year.
 	const yearColumn = $derived(hasYears && data.detailHeader !== 'Years');
+	const recognitionOf = (item: (typeof data.items)[number]): string[] => ('recognition' in item && Array.isArray(item.recognition) ? item.recognition : []);
+	const hasRecognition = $derived(data.items.some((item) => recognitionOf(item).length > 0));
 	const columns: TableColumn[] = $derived([
 		{ key: 'title', header: 'Title', isRowHeader: true, sortable: true, searchable: true },
 		...(yearColumn ? [{ key: 'year', header: 'Year', type: 'number' as const, sortable: true, filterable: true }] : []),
-		...(data.detailHeader ? [{ key: 'detail', header: data.detailHeader, sortable: true, searchable: true }] : [])
+		...(data.detailHeader ? [{ key: 'detail', header: data.detailHeader, sortable: true, searchable: true }] : []),
+		...(hasRecognition ? [{ key: 'recognition', header: 'Recognition', sortable: true, filterable: true }] : [])
 	]);
 	const rows: TableRow[] = $derived(
 		data.items.map((item, index) => ({
@@ -20,7 +23,8 @@
 			cells: {
 				title: { text: item.title, href: item.href },
 				year: { text: item.year ? String(item.year) : '', sortValue: item.year ?? 0 },
-				detail: { text: item.detail ?? '', sortValue: data.detailHeader === 'Years' ? (item.year ?? 0) : (item.detail ?? '') }
+				detail: { text: item.detail ?? '', sortValue: data.detailHeader === 'Years' ? (item.year ?? 0) : (item.detail ?? '') },
+				recognition: { text: recognitionOf(item).join('; '), values: recognitionOf(item) }
 			}
 		}))
 	);

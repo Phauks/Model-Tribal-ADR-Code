@@ -32,6 +32,7 @@ import { landCessions, royceSheets } from './land-cessions.ts';
 import type { ResultGroup } from '../search-everything.ts';
 import { allSections } from './title-25-sections.ts';
 import { isLawRecord } from './law-records.ts';
+import { recognitionStatus, recognitionStatuses, type RecognitionStatus } from './recognition-status.ts';
 
 /** The headings the collections are grouped under, in page order. */
 export const collectionGroups = ['Native nations', 'Federal law', 'Courts and cases', 'People', 'Reference'] as const;
@@ -48,6 +49,8 @@ export interface CollectionItem {
 	detail?: string;
 	/** The source record it is, when it is one, so search can send a reader to the record's own page. */
 	key?: string;
+	/** The nations it is about, by id, so its list can be narrowed by their recognition status. */
+	nations?: string[];
 }
 
 export interface Collection {
@@ -91,7 +94,7 @@ function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	const link = record.original_link ?? record.citation.URL;
 	const copy = publicCopyFor(link);
 	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? `/laws/${record.key}` : copy ? copyPagePath(copy) : link;
-	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key };
+	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key, ...(record.tribes?.length ? { nations: record.tribes } : {}) };
 }
 
 /**
@@ -186,7 +189,7 @@ export const collections: Collection[] = [
 		items: () =>
 			nations()
 				.filter((nation) => nation.entity_type === 'native-nation')
-				.map((nation) => ({ title: nation.names.official, href: `/nations/${nation.id}`, detail: [...new Set(nation.states?.map((place) => place.state))].join(', ') || undefined }))
+				.map((nation) => ({ title: nation.names.official, href: `/nations/${nation.id}`, detail: [...new Set(nation.states?.map((place) => place.state))].join(', ') || undefined, nations: [nation.id] }))
 	},
 	{
 		identifier: 'governing-documents', search: { group: 'document' },
@@ -198,7 +201,8 @@ export const collections: Collection[] = [
 			return documentHistories().map((history) => ({
 				title: history.title,
 				href: history.nations?.[0] ? `/nations/${history.nations[0]}#document-${history.id}` : undefined,
-				detail: history.nations?.map(name).join('; ')
+				detail: history.nations?.map(name).join('; '),
+				nations: history.nations
 			}));
 		}
 	},
@@ -219,7 +223,7 @@ export const collections: Collection[] = [
 		title: 'Stories',
 		group: 'Native nations',
 		detailHeader: 'Nation',
-		items: () => storySummaries().map((story) => ({ title: story.title, href: `/stories/${story.id}`, detail: story.nations.map((nation) => nation.name).join('; ') || undefined }))
+		items: () => storySummaries().map((story) => ({ title: story.title, href: `/stories/${story.id}`, detail: story.nations.map((nation) => nation.name).join('; ') || undefined, nations: story.nations.map((nation) => nation.id) }))
 	},
 
 	// Federal law
@@ -269,7 +273,7 @@ export const collections: Collection[] = [
 		title: 'Tribal Court Opinions',
 		group: 'Courts and cases',
 		detailHeader: 'Court',
-		items: () => tribalCourtOpinions().map((opinion) => ({ title: opinion.name, href: opinion.path, year: Number(opinion.year) || undefined, detail: opinion.court })),
+		items: () => tribalCourtOpinions().map((opinion) => ({ title: opinion.name, href: opinion.path, year: Number(opinion.year) || undefined, detail: opinion.court, nations: opinion.nations })),
 		heldBack: heldBackOpinionCount,
 		heldBackReason: 'held back for a privacy review'
 	},
@@ -380,3 +384,47 @@ export function collectionsByGroup(): { group: CollectionGroup; collections: Col
 
 /** The collections that get their own list page: every one without an existing page that lists it. */
 export const listedCollections = () => collections.filter((collection) => !collection.list && collection.items().length > 0);
+
+/** Each nation's recognition status, by id, for the lists and the table below. */
+let statusCache: Map<string, RecognitionStatus> | undefined;
+export function recognitionStatusById(): Map<string, RecognitionStatus> {
+	statusCache ??= new Map(nations().flatMap((nation) => {
+		const status = recognitionStatus(nation);
+		return status ? [[nation.id, status] as const] : [];
+	}));
+	return statusCache;
+}
+
+/** The recognition statuses of the nations an item is about, in the order of recognitionStatuses. */
+export function itemStatuses(item: CollectionItem): RecognitionStatus[] {
+	const byId = recognitionStatusById();
+	const found = new Set((item.nations ?? []).map((id) => byId.get(id)).filter((status): status is RecognitionStatus => Boolean(status)));
+	return recognitionStatuses.filter((status) => found.has(status));
+}
+
+/** One row of the table of nations with records in each collection, by recognition status. */
+export interface CollectionNationCounts {
+	identifier: string;
+	title: string;
+	href: string;
+	/** How many nations of each status the collection has at least one item about. */
+	counts: Record<RecognitionStatus, number>;
+	total: number;
+}
+
+/**
+ * For each collection whose items name nations (other than the nations themselves), how many Native
+ * nations of each recognition status it holds at least one item about (Trevor, Nov. 27, 2026).
+ */
+export function nationsInCollections(): CollectionNationCounts[] {
+	const byId = recognitionStatusById();
+	return collections
+		.filter((collection) => collection.identifier !== 'native-nations')
+		.flatMap((collection) => {
+			const ids = new Set(collection.items().flatMap((item) => item.nations ?? []).filter((id) => byId.has(id)));
+			if (ids.size === 0) return [];
+			const counts = Object.fromEntries(recognitionStatuses.map((status) => [status, 0])) as Record<RecognitionStatus, number>;
+			for (const id of ids) counts[byId.get(id) as RecognitionStatus] += 1;
+			return [{ identifier: collection.identifier, title: collection.title, href: collection.list ?? collectionPath(collection.identifier), counts, total: ids.size }];
+		});
+}

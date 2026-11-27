@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { collectionCounts, collections, listedCollections } from '#lib/server/collections.ts';
+import { collectionCounts, collections, itemStatuses, listedCollections } from '#lib/server/collections.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 // One list for each collection the Statistics page counts, so a reader can see what makes up each number (Trevor, Nov. 24, 2026).
@@ -18,6 +18,7 @@ export const load: PageServerLoad = ({ params }) => {
 		years: counted?.years,
 		heldBack: counted?.heldBack,
 		heldBackReason: counted?.heldBackReason,
-		items: collection.items()
+		// Each item's nations' recognition statuses, so the list can be narrowed to, say, records about state recognized nations (Trevor, Nov. 27, 2026).
+		items: collection.items().map(({ nations, ...item }) => (nations ? { ...item, recognition: itemStatuses({ ...item, nations }) } : item))
 	};
 };
