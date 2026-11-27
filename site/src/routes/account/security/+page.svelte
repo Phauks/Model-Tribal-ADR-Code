@@ -69,7 +69,7 @@
 				headers: { 'content-type': 'application/json' },
 				body: JSON.stringify({ step: 'add', response })
 			});
-			const result: { added?: string; problem?: string; stale?: boolean } = await kept.json().catch(() => ({}));
+			const result: { added?: string; problem?: string; stale?: boolean } = await kept.json().catch(() => /* expected: an answer that is not JSON; the page says the passkey was not added. */ ({}));
 			if (result.added) {
 				added = result.added;
 				await invalidateAll();
