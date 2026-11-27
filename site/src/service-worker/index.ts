@@ -87,6 +87,7 @@ import {
 	type Fingerprints
 } from '#lib/offline-fingerprints.ts';
 import { corePages, offlinePage, scriptsIn } from '#lib/offline-shell.ts';
+import { sendProblem } from '#lib/problem-reports.ts';
 
 const cacheName = cacheNameOf(version);
 // edition.json, the fingerprints and SvelteKit's version.json say what the server has now, so
@@ -218,7 +219,7 @@ async function readBuiltPaths(): Promise<Set<string>> {
 	const cache = await caches.open(cacheName);
 	const saved = await cache.match(builtPathsKey);
 	if (saved) return new Set((await saved.json()) as string[]);
-	const response = await fetch(builtPathsAddress).catch(() => undefined);
+	const response = await fetch(builtPathsAddress).catch(() => /* expected: offline; collections show without the list of built pages until it can be read. */ undefined);
 	if (response?.ok) {
 		await cache.put(builtPathsKey, response.clone());
 		return new Set((await response.json()) as string[]);
@@ -296,7 +297,9 @@ async function thisBuildFingerprints(cache: Cache): Promise<Fingerprints | undef
 		if (fingerprints.version !== version) return undefined;
 		await cache.put(fingerprintsKey, response);
 		return fingerprints;
-	} catch {
+	} catch (problem) {
+		// Without them every kept page counts as changed; offline is only noted (sendProblem).
+		sendProblem(problem, { code: 'offline.fingerprints' });
 		return undefined;
 	}
 }
@@ -358,8 +361,9 @@ async function carryForward(cache: Cache, fingerprints: Fingerprints | undefined
 				}
 			}
 		}
-	} catch {
-		// Storage or a read failed: whatever was not carried forward is downloaded again.
+	} catch (problem) {
+		// Whatever was not carried forward is downloaded again.
+		sendProblem(problem, { code: 'offline.carry-forward' });
 	}
 	await setChangedPages(cache, [...changed]);
 }
@@ -381,7 +385,7 @@ async function carryDrawnPage(cache: Cache, oldCache: Cache, oldVersion: string,
 		before = oldCache
 			.match(fingerprintsKey)
 			.then(async (saved) => (saved ? ((await saved.json()) as Fingerprints) : undefined))
-			.catch(() => undefined);
+			.catch(() => /* expected: an old cache that cannot be read means the page is fetched again. */ undefined);
 		oldFingerprints.set(oldVersion, before);
 	}
 	if ((await before)?.onRequest?.[page] !== expected) return false;
@@ -402,6 +406,7 @@ async function changedPages(cache: Cache): Promise<string[]> {
 	try {
 		return (await saved.json()) as string[];
 	} catch {
+		// expected: a list that cannot be read means no page is waiting to change.
 		return [];
 	}
 }
@@ -430,12 +435,13 @@ async function saveChangedPages(): Promise<void> {
 				await cache.put(path, response);
 			} else left.push(path);
 		} catch {
+			// expected: offline; the page is left for the next update to fetch.
 			left.push(path);
 		}
 	}
 	await setChangedPages(cache, left);
 	// A script that cannot be saved now is saved the first time the page is read online.
-	await saveMissing(cache, scripts).catch(() => undefined);
+	await saveMissing(cache, scripts).catch(() => /* expected: a script that cannot be saved now is saved the first time the page is read online. */ undefined);
 }
 
 /**
@@ -495,8 +501,9 @@ let finishing: Promise<void> | undefined;
  */
 function finishUpdate(): Promise<void> {
 	if (self.registration.installing || self.registration.waiting) return Promise.resolve();
-	finishing ??= tidyOldCaches().catch(() => {
-		// Storage failed: the old caches are tidied the next time the worker starts.
+	finishing ??= tidyOldCaches().catch((problem) => {
+		// The old caches are tidied the next time the worker starts.
+		sendProblem(problem, { code: 'offline.tidy' });
 	});
 	return finishing;
 }
@@ -548,7 +555,7 @@ async function respond(request: Request): Promise<Response> {
 			if (await isFromThisBuild(response)) await cache.put(request, response.clone());
 			return response;
 		} catch {
-			// Offline: the saved copy below, as for any page.
+			// expected: offline: the saved copy below, as for any page.
 		}
 	}
 
@@ -559,7 +566,7 @@ async function respond(request: Request): Promise<Response> {
 			if (await isFromThisBuild(response)) await cache.put(request, response.clone());
 			return response;
 		})
-		.catch(() => undefined);
+		.catch(() => /* expected: offline; the saved copy, or the offline page, answers below. */ undefined);
 
 	if (saved) return saved;
 	const response = await refreshed;
@@ -614,6 +621,7 @@ async function readList<Item>(cache: Cache, key: string): Promise<Item[]> {
 		const list = (await saved.json()) as unknown;
 		return Array.isArray(list) ? (list as Item[]) : [];
 	} catch {
+		// expected: a list that cannot be read counts as empty.
 		return [];
 	}
 }
@@ -633,7 +641,7 @@ async function readChoices(cache: Cache): Promise<Choices> {
 			const choices = (await saved.json()) as Choices;
 			if (Array.isArray(choices.nodes) && Array.isArray(choices.pages)) return choices;
 		} catch {
-			// Unreadable: as if nothing were chosen.
+			// expected: unreadable: as if nothing were chosen.
 		}
 		return { nodes: [], pages: [] };
 	}
@@ -954,8 +962,12 @@ async function clearEverything(): Promise<void> {
 	await writeChoices(cache, { nodes: [], pages: [] });
 	await writeFlag(cache, unfinishedKey, false);
 	stillChosen.clear();
-	const built = await builtPaths().catch(() => new Set<string>());
-	const read = await catalog().catch(() => undefined);
+	// Whatever is left is still deleted below, cache by cache.
+	const built = await builtPaths().catch((problem) => {
+		sendProblem(problem, { code: 'offline.clear' });
+		return new Set<string>();
+	});
+	const read = await catalog().catch((problem) => void sendProblem(problem, { code: 'offline.clear' }));
 	const lists = read ? await allLists(read) : {};
 	const files = new Set([...built, ...Object.values(lists).flatMap((list) => list.flatMap((page) => filesOf(page)))]);
 	for (const request of await cache.keys()) {
@@ -1072,7 +1084,7 @@ async function applyDocumentChanges(changes: ChoiceChange[], tree: ReturnType<ty
 
 /** Saves the kept sets left unfinished, and the copies chosen one by one that are not saved yet. */
 async function saveKeptDocuments(): Promise<void> {
-	for (const set of await pendingSets()) await runDocumentSave(set, undefined).catch(() => undefined);
+	for (const set of await pendingSets()) await runDocumentSave(set, undefined).catch((problem) => void sendProblem(problem, { code: 'offline.documents-resume', place: set }));
 	const cache = await caches.open(documentsCacheName);
 	const wanted = await readList<string>(cache, keptCopiesKey);
 	if (wanted.length === 0) return;
@@ -1084,7 +1096,7 @@ async function saveKeptDocuments(): Promise<void> {
 	async function next(): Promise<void> {
 		const file = queue.shift();
 		if (!file) return;
-		await saveCopy(cache, file).catch(() => undefined);
+		await saveCopy(cache, file).catch(() => /* expected: a copy that cannot be saved now is tried again the next time. */ undefined);
 		return next();
 	}
 	await Promise.all(Array.from({ length: 4 }, next));
@@ -1107,6 +1119,7 @@ async function readSets(cache: Cache, key: string): Promise<DocumentSet[]> {
 	try {
 		return ((await saved.json()) as unknown[]).filter(isDocumentSet);
 	} catch {
+		// expected: a list that cannot be read counts as empty.
 		return [];
 	}
 }
@@ -1136,7 +1149,7 @@ async function documentList(cache: Cache, set: DocumentSet, fresh: boolean): Pro
 				return { title: '', files: [] };
 			}
 		} catch {
-			// Offline: fall back on the list kept last time.
+			// expected: offline: fall back on the list kept last time.
 		}
 	}
 	const saved = await cache.match(documentListKey(set));
@@ -1206,7 +1219,7 @@ async function saveDocumentSet(set: DocumentSet): Promise<void> {
 	async function next(): Promise<void> {
 		const file = queue.shift();
 		if (!file) return;
-		if (await saveCopy(cache, file).catch(() => false)) done += 1;
+		if (await saveCopy(cache, file).catch(() => /* expected: counted as failed, which the page shows the reader. */ false)) done += 1;
 		else failed += 1;
 		if (done % 5 === 0 || queue.length === 0) report();
 		return next();
@@ -1276,8 +1289,9 @@ async function removeWithdrawnDocuments(): Promise<void> {
 			if (listed.get(path) !== saved?.headers.get(fingerprintHeader)) await cache.delete(request);
 		}
 		await writeSets(cache, pendingDocumentsKey, kept);
-	} catch {
-		// Offline or storage refused: tried again with the next build.
+	} catch (problem) {
+		// Tried again with the next build; offline or full storage is only noted (sendProblem).
+		sendProblem(problem, { code: 'offline.documents-update' });
 	}
 }
 
@@ -1299,6 +1313,7 @@ async function copyPageResponse(request: Request): Promise<Response> {
 	try {
 		return await fetch(request);
 	} catch {
+		// expected: offline; the saved copy answers below, when there is one.
 		const file = `/copies/${new URL(request.url).pathname.slice(copyPagePrefix.length)}`;
 		if (await caches.has(documentsCacheName)) {
 			const saved = await (await caches.open(documentsCacheName)).match(file);

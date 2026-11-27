@@ -170,7 +170,7 @@ function withSecurityHeaders(given: Response, path: string): Response {
 	try {
 		response.headers.set('x-content-type-options', 'nosniff');
 	} catch {
-		// A response passed on as it came, such as one fetched from elsewhere, has headers that cannot change; a copy's can.
+		// expected: a response passed on as it came, such as one fetched from elsewhere, has headers that cannot change; a copy's can.
 		response = new Response(given.body, given);
 	}
 	for (const [name, value] of Object.entries(publicSecurityHeaders)) {

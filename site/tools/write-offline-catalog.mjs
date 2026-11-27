@@ -157,11 +157,19 @@ function onRequestPages() {
 	for (const { family, prefix } of onRequest) {
 		const folder = path.join(output, 'page-data', family);
 		if (!existsSync(folder)) continue;
+		// Each file holds many pages, each key's data as devalue wrote it (src/lib/page-data.ts). They are listed in
+		// the order one file for each page used to give them, by the key as written in an address.
+		/** @type {[string, string][]} */
+		const pagesInFamily = [];
 		for (const name of readdirSync(folder)) {
 			if (!name.endsWith('.json')) continue;
-			const key = decodeURIComponent(name.slice(0, -'.json'.length));
-			const file = path.join(folder, name);
-			const text = readFileSync(file, 'utf8');
+			/** @type {Record<string, string>} */
+			const pagesInFile = JSON.parse(readFileSync(path.join(folder, name), 'utf8'));
+			pagesInFamily.push(...Object.entries(pagesInFile));
+		}
+		const order = (/** @type {string} */ key) => `${encodeURIComponent(key)}.json`;
+		pagesInFamily.sort(([one], [other]) => (order(one) < order(other) ? -1 : order(one) > order(other) ? 1 : 0));
+		for (const [key, text] of pagesInFamily) {
 			/** @type {Record<string, any>} */
 			const data = parse(text);
 			const address = `${prefix}${key}`;

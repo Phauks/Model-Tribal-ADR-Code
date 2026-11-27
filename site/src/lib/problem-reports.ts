@@ -73,14 +73,15 @@ export function browserProblem(problem: unknown, where: ProblemPlace): BrowserPr
  * Sends a problem from the browser and returns the reference to show the
  * reader. Sending never throws: if it cannot go, the reader still sees the
  * reference, and the problem stays in the browser's console. A network
- * failure (isNetworkFailure) is only noted in the console, and a request
+ * failure (isNetworkFailure) or full storage is only noted in the console, and a request
  * the page cancelled itself (AbortError) not at all.
  */
 export function sendProblem(problem: unknown, where: ProblemPlace = {}): string {
 	const body = browserProblem(problem, where);
 	// A request the page cancelled itself, as when the reader moved on, is not a problem at all.
 	if (problem instanceof DOMException && problem.name === 'AbortError') return body.reference;
-	if (isNetworkFailure(problem)) {
+	// A dropped request, or storage that is full on the reader's device, is only noted.
+	if (isNetworkFailure(problem) || (problem instanceof DOMException && problem.name === 'QuotaExceededError')) {
 		console.warn(body.code, body.reference, problem);
 		return body.reference;
 	}
