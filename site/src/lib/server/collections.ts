@@ -46,6 +46,8 @@ export type CollectionGroup = (typeof collectionGroups)[number];
 /** One item a collection counts, as a row of its list. */
 export interface CollectionItem {
 	title: string;
+	/** Its citation, when it is a numbered section such as "25 U.S.C. § 5321": the list shows it in a column of its own before the name (Trevor, Nov. 27, 2026). */
+	citation?: string;
 	/** Its page on this site, or where it is published. */
 	href?: string;
 	/** The year it was made, decided or issued, when known. */

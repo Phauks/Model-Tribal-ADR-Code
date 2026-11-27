@@ -179,9 +179,13 @@ export function collectionSearch(): { entries: SearchEntry[]; reached: Set<strin
 			const copy = item.key ? savedCopyFor(sources().get(item.key)) : undefined;
 			if (copy) seen.add(copyPagePath(copy));
 			// A law by the name it is known by, such as "General Allotment Act (1887)", and also by its full title.
-			const title = item.key && link !== item.href ? recordName(item.key).name : item.title;
+			// A numbered section is found by its citation and its name together: "25 U.S.C. § 5321. Self-determination contracts".
+			const named = item.citation ? `${item.citation}. ${item.title}` : item.title;
+			const title = item.key && link !== item.href ? recordName(item.key).name : named;
+			// ...and by its name alone.
+			const also = [...(title !== named ? [named] : []), ...(item.citation ? [item.title] : [])];
 			const detail = [collection.search.label, item.detail ?? item.year].filter(Boolean).join(' · ');
-			entries.push({ kind: group as SearchKind, title, ...(title !== item.title ? { also: [item.title] } : {}), ...(detail ? { detail } : {}), link });
+			entries.push({ kind: group as SearchKind, title, ...(also.length ? { also } : {}), ...(detail ? { detail } : {}), link });
 		}
 	}
 	return { entries, reached: seen };
