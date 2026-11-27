@@ -1,0 +1,47 @@
+key: iowa-code-692-1
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions of words and phrases
+  title-short: Iowa Code § 692.1
+  container-title: Iowa Code
+  container-title-short: Iowa Code
+  section: '692.1'
+  author:
+  - literal: Iowa Legislature
+  URL: https://www.legis.iowa.gov/docs/code/692.1.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.legis.iowa.gov/docs/code/692.1.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Iowa Code § 692.1 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: IA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Iowa Code § 692.1 (2026). History: [C75, 77, §749B.1; C79, 81, §692.1; 81 Acts, ch 38, §2, 3]; 83 Acts, ch 96, §117, 159; 83 Acts, ch 113, §1; 95 Acts, ch 191, §28 – 31; 97 Acts, ch 126, §46; 2003 Acts, ch 14, §1, 5; 2005 Acts, ch 35, §31; 2006 Acts, ch 1034, §2 2023 Acts, ch 65, §1; 2023 Acts, ch 142, §1. Text read from the Iowa Legislature''s XML file for the chapter of the Iowa Code (2026 edition, legis.iowa.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; tribal sovereign; indian; tribal; tribe); AI reader''s verdict incidental: Federally recognized tribe with waiver counts as criminal justice agency. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; tribal sovereign; indian; tribal; tribe'

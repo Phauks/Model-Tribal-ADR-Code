@@ -1,0 +1,48 @@
+key: massachusetts-general-laws-chapter-38-section-6
+kind: state-statute
+citation:
+  type: legislation
+  title: Unmarked human remains; notice to office of chief medical examiner; reasonable attempt to identify; notification of commission on Indian affairs when remains suspected to be 100 years old or more
+  title-short: Mass. Gen. Laws ch. 38, § 6
+  container-title: General Laws of Massachusetts
+  container-title-short: Mass. Gen. Laws
+  chapter-number: '38'
+  section: '6'
+  author:
+  - literal: Massachusetts General Court
+  URL: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVI/Chapter38/Section6
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVI/Chapter38/Section6
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Mass. Gen. Laws ch. 38, § 6 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Mass. Gen. Laws ch. 38, § 6 (2026). Text read from the Massachusetts Legislature''s open data service for the section of the General Laws (malegislature.gov/api) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian affairs; native american; indian; native); AI reader''s verdict core: Native American remains notice and burial site determination via Indian affairs commission. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian affairs; native american; indian; native'

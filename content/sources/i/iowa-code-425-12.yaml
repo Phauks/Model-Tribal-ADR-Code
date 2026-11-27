@@ -1,0 +1,47 @@
+key: iowa-code-425-12
+kind: state-statute
+citation:
+  type: legislation
+  title: Indian land
+  title-short: Iowa Code § 425.12
+  container-title: Iowa Code
+  container-title-short: Iowa Code
+  section: '425.12'
+  author:
+  - literal: Iowa Legislature
+  URL: https://www.legis.iowa.gov/docs/code/425.12.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.legis.iowa.gov/docs/code/425.12.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Iowa Code § 425.12 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: IA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Iowa Code § 425.12 (2026). History: [C39, § 6943.153; C46, 50, 54, 58, 62, 66, 71, 73, 75, 77, 79, 81, §425.12]; 2021 Acts, ch 41, §12, 36; 2023 Acts, ch 71, §40, 48, 49. Text read from the Iowa Legislature''s XML file for the chapter of the Iowa Code (2026 edition, legis.iowa.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian land; tribal council; indian; indians; sac and fox; tribal); AI reader''s verdict core: Homestead exemption for Sac and Fox trust land in Tama. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian land; tribal council; indian; indians; sac and fox; tribal'

@@ -1,0 +1,47 @@
+key: maryland-code-education-section-16-508
+kind: state-statute
+citation:
+  type: legislation
+  title: Md. Code Ann., Educ. § 16-508
+  title-short: Md. Code Ann., Educ. § 16-508
+  container-title: Annotated Code of Maryland, Education Article
+  container-title-short: Md. Code Ann.
+  section: 16-508
+  author:
+  - literal: Maryland General Assembly
+  URL: https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=ged&section=16-508&enactments=false
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=ged&section=16-508&enactments=false
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Md. Code Ann., Educ. § 16-508 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MD
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Md. Code Ann., Educ. § 16-508 (2026). Text read from the Maryland General Assembly''s HTML file of the article of the Annotated Code of Maryland (mgaleg.maryland.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian; native); AI reader''s verdict incidental: ESOL grant eligibility includes American Indian students. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; indian; native'

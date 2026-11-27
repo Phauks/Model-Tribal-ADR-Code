@@ -1,0 +1,47 @@
+key: iowa-code-96-1a
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Iowa Code § 96.1A
+  container-title: Iowa Code
+  container-title-short: Iowa Code
+  section: 96.1A
+  author:
+  - literal: Iowa Legislature
+  URL: https://www.legis.iowa.gov/docs/code/96.1A.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.legis.iowa.gov/docs/code/96.1A.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Iowa Code § 96.1A (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: IA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Iowa Code § 96.1A (2026). History: [C39, § 1551.25; C46, 50, 54, 58, 62, 66, 71, 73, 75, 77, 79, 81, §96.19; 81 Acts, ch 19, §9; 82 Acts, ch 1030, §3 – 7, 9, ch 1126, §3]; 83 Acts, ch 101, §9; 83 Acts, ch 190, §22 – 24, 26, 27; 86 Acts, ch 1245, §525, 935; 87 Acts, ch 222, §6, 7; 89 Acts, ch 117, §2; 92 Acts, ch 1045, §4; 95 Acts, ch 43, §3; 96 Acts, ch 1121, §9 – 11; 96 Acts, ch 1186, §20 – 23; 97 Acts, ch 38, §3, 4; 2001 Acts, ch 111, §3 – 6; 2004 Acts, ch 1175, §66; 2008 Acts, ch 1032, §182, 183, 201; 2009 Acts, ch 41, §263; 2009 Acts, ch 133, §24; 2013 Acts, ch 90, §23; 2016 Acts, ch 1011, §24 – 31; 2016 Acts, ch 1073, §20; 2017 Acts, ch 54, §25; 2018 Acts, ch 1080, §7, 8; 2020 Acts, ch 1062, §22, 94; 2020 Acts, ch 1069, §4; C2021, §96.1A; 2021 Acts, ch 76, §22; 2022 Acts, ch 1021, §32, 33; 2022 Acts, ch 1032, §24; 2023 Acts, ch 19, §1861; 2025 Acts, ch 6, §18; 2025 Acts, ch 125, §1. Text read from the Iowa Legislature''s XML file for the chapter of the Iowa Code (2026 edition, legis.iowa.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: UI definitions include Indian tribe as employing unit and employer. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

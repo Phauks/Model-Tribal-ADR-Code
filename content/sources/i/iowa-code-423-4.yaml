@@ -1,0 +1,47 @@
+key: iowa-code-423-4
+kind: state-statute
+citation:
+  type: legislation
+  title: Refunds
+  title-short: Iowa Code § 423.4
+  container-title: Iowa Code
+  container-title-short: Iowa Code
+  section: '423.4'
+  author:
+  - literal: Iowa Legislature
+  URL: https://www.legis.iowa.gov/docs/code/423.4.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.legis.iowa.gov/docs/code/423.4.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Iowa Code § 423.4 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: IA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Iowa Code § 423.4 (2026). History: 2003 Acts, 1st Ex, ch 2, §97, 205 2005 Acts, ch 110, §2; 2005 Acts, ch 134, §2; 2005 Acts, ch 160, §4, 14; 2006 Acts, ch 1001, §3; 2006 Acts, ch 1136, §3; 2006 Acts, ch 1185, §128; 2007 Acts, ch 126, §69; 2007 Acts, ch 199, §2; 2008 Acts, ch 1004, §3, 7; 2008 Acts, ch 1032, §52; 2008 Acts, ch 1128, §2, 15; 2009 Acts, ch 41, §253; 2009 Acts, ch 60, §7; 2009 Acts, ch 179, §39, 198, 199, 202, 211, 212; 2010 Acts, ch 1061, §87, 181; 2011 Acts, ch 25, §143; 2011 Acts, ch 113, §59, 60; 2011 Acts, ch 131, §66, 78; 2012 Acts, ch 1098, §3; 2014 Acts, ch 1051, §1 – 5; 2014 Acts, ch 1102, §2; 2014 Acts, ch 1104, §18; 2016 Acts, ch 1106, §11; 2016 Acts, ch 1117, §4; 2018 Acts, ch 1146, §2 – 4; 2018 Acts, ch 1161, §11, 12, 15, 16, 189 – 194, 229; 2020 Acts, ch 1118, §41 – 44; 2021 Acts, ch 86, §70, 71; 2022 Acts, ch 1067, §82, 83; 2023 Acts, ch 19, §1126; 2023 Acts, ch 66, §102; 2023 Acts, ch 153, §4, 5; 2024 Acts, ch 1098, §2; 2025 Acts, ch 148, §80 – 83, 87. Text read from the Iowa Legislature''s XML file for the chapter of the Iowa Code (2026 edition, legis.iowa.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; tribal government; indian; tribal; tribe); AI reader''s verdict incidental: Sales tax refunds; tribal government listed as designated exempt entity. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; tribal government; indian; tribal; tribe'
