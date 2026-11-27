@@ -36,7 +36,7 @@ from bs4 import BeautifulSoup
 
 USER_AGENT = (
     "Mozilla/5.0 (compatible; model-tribal-code-research/0.1; "
-    "+https://github.com/Phauks/Model-Tribal-ADR-Code)"
+    "+https://github.com/Phauks/Tribal-Law-Project)"
 )
 DOCUMENT_WORDS = re.compile(
     r"constitut|by-?laws|articles\s+of\s+association|amendment|governing\s+document",

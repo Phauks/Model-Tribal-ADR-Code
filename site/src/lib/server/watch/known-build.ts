@@ -12,7 +12,7 @@
  */
 import { createHash } from 'node:crypto';
 import { captureIndexSha256s, documentHistories, nations, sources } from '../content.ts';
-import { normalizeFederalRegisterNumber, normalizeLink, shortHash, type KnownIdentifiers, type KnownSource } from './known.ts';
+import { normalizeFederalRegisterNumber, normalizeLink, regulationOfCitation, shortHash, type KnownIdentifiers, type KnownSource } from './known.ts';
 
 export function knownIdentifiersBuild(madeAt = new Date()): KnownIdentifiers {
 	const known: KnownSource[] = [];
@@ -20,6 +20,7 @@ export function knownIdentifiersBuild(madeAt = new Date()): KnownIdentifiers {
 		const withFile = record as typeof record & { file?: { checksum?: string } };
 		const link = record.original_link ?? record.citation.URL;
 		const number = record.citation.number && /federal register|fr doc/i.test(`${record.citation['container-title'] ?? ''} ${record.citation.number}`) ? normalizeFederalRegisterNumber(record.citation.number) : undefined;
+		const regulation = regulationOfCitation(record.citation as Parameters<typeof regulationOfCitation>[0]);
 		const reporter = record.citation.volume && record.citation.page && record.citation['container-title-short'] ? `${record.citation.volume} ${record.citation['container-title-short']} ${record.citation.page}` : undefined;
 		known.push({
 			key: record.key,
@@ -29,6 +30,7 @@ export function knownIdentifiersBuild(madeAt = new Date()): KnownIdentifiers {
 			...(withFile.file?.checksum ? { checksum: shortHash(withFile.file.checksum) } : {}),
 			...(number ? { federalRegisterNumber: number } : {}),
 			...(reporter ? { reporter } : {}),
+			...(regulation ? { regulation } : {}),
 			...(record.tribes?.length ? { nations: record.tribes } : {})
 		});
 	}

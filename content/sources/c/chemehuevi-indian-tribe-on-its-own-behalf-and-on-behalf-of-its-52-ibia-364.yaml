@@ -33,9 +33,14 @@ rights:
   redistribution: true
 jurisdictions:
 - level: federal
+tribes:
+- chemehuevi-indian-tribe-of-the-chemehuevi-reservation
 nations_in_case:
   checked: '2026-11-26'
-  named: []
+  named:
+  - nation: chemehuevi-indian-tribe-of-the-chemehuevi-reservation
+    named_as: Chemehuevi Indian Tribe
+    role: party
 access:
   open: true
   pull_from:

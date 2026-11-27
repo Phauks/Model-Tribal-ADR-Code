@@ -74,6 +74,7 @@ In order: title page, copyright page (Lulu requires it after the title page, wit
 - **Glossary links** `[[id]]` print the term and link to its entry in the PDF. The first link to an acronym in each chapter prints its expansion.
 - **Placeholders** `{{nation.name}}` print their model text from `content/variables/`, such as "[Name of Nation]".
 - **Page numbers** run in one sequence from the title page. Front matter pages are counted but not numbered, so no number is skipped or repeated (*Retail Distribution Guide*, p. 11).
+- **Pictures** in essays print from the website's copy of each file (`pictures.site` in `book.yaml`), made grayscale for black-and-white ink as Lulu asks ("PDF Creation Settings", Color Space guidelines) by `tools/prepare_pictures.py`, and kept under `output/pictures/` so a build at every size downloads each once. `--pictures <folder>` looks for files in a local folder first, as `<reference>/<name>`. `report.json` lists each picture with the SHA-256 of its original file, and warns when one prints below Lulu's 300 ppi ("Images should be 300 ppi resolution," same page) or could not be fetched, in which case it prints as a box with its caption. Set `PRINT_PICTURES_SITE=none` to build without the network.
 - **Records** marked `restricted` or `tribal_review_required`, and withdrawn ones, are never printed (charter; `docs/data-model.md`).
 
 Working titles for the parts and Part II chapter titles are in `book.yaml`.

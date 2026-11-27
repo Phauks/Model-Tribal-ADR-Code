@@ -5,9 +5,20 @@
  * the last issue it saw, and reports each one.
  *
  * Watched: all of Title 25 (Indians), and the parts with Indian provisions in
- * other titles, such as 42 C.F.R. part 136 (Indian Health Service) and
- * 43 C.F.R. part 4 (hearings and appeals, including the Interior Board of
- * Indian Appeals).
+ * other titles, such as 42 C.F.R. part 136 (Indian Health Service) and the
+ * Indian subparts of 43 C.F.R. part 4 (hearings and appeals). Most of part 4
+ * is about public lands, grazing, mining and royalties, so only these are
+ * watched, as the eCFR's structure for part 4 names them (read
+ * Nov. 26, 2026): subpart D, appeals to the Interior Board of Indian Appeals
+ * (§§ 4.200 to 4.340); subpart H, the White Earth Reservation Land Settlement
+ * Act (§§ 4.710 to 4.792); and subpart K, hearings on the acknowledgment of
+ * American Indian tribes (§§ 4.1001 to 4.1051). Watching all of part 4 sent
+ * sections such as the grazing hearing rules to review
+ * (research/analyses/2026-11-26-workers-ai-vs-claude-triage.md, section 7).
+ *
+ * Each section names its part, so a changed section of a part we hold is
+ * proposed as a new version of that part's record by rule (./known.ts,
+ * regulationKey), not by a model.
  *
  * The eCFR's robots.txt bars the full-text and rendering endpoints
  * (/api/versioner/v1/full/ and /api/renderer/v1/content/), checked
@@ -18,12 +29,19 @@ import { defineWatcher, type FoundItem } from '../../src/lib/server/watch/watche
 
 const base = 'https://www.ecfr.gov/api/versioner/v1';
 
-/** Each watched title, with the parts watched (none listed: the whole title). */
-export const watchedTitles: { title: number; parts: string[] }[] = [
+/** Each watched title, with the parts watched (none listed: the whole title) and, for a part, the subparts watched (none listed: all of it). */
+export const watchedTitles: { title: number; parts: string[]; subparts?: Record<string, string[]> }[] = [
 	{ title: 25, parts: [] },
 	{ title: 42, parts: ['136', '136a', '137'] },
-	{ title: 43, parts: ['4'] }
+	{ title: 43, parts: ['4'], subparts: { '4': ['D', 'H', 'K'] } }
 ];
+
+/** Whether a version is in a watched subpart. One the eCFR gives no subpart for is kept, so nothing is missed. */
+export function inWatchedSubpart(version: Pick<Version, 'title' | 'part' | 'subpart'>): boolean {
+	const watched = watchedTitles.find((entry) => entry.title === Number(version.title))?.subparts?.[version.part];
+	if (!watched || !version.subpart) return true;
+	return watched.includes(version.subpart.toUpperCase());
+}
 
 interface TitleRow {
 	number: number;
@@ -38,6 +56,7 @@ interface Version {
 	identifier: string;
 	name: string;
 	part: string;
+	subpart?: string | null;
 	substantive: boolean;
 	removed: boolean;
 	title: string;
@@ -67,7 +86,7 @@ export function itemFor(version: Version): FoundItem {
 		date: version.amendment_date,
 		link: sectionLink(version.title, version.identifier),
 		feeds: Number(version.title) === 25 ? ['regulation-sections', 'federal-regulations'] : ['federal-regulations'],
-		facts: { title: Number(version.title), part: version.part, section: version.identifier, substantive: version.substantive, removed: version.removed, issueDate: version.issue_date }
+		facts: { title: Number(version.title), part: version.part || version.identifier.split('.')[0], ...(version.subpart ? { subpart: version.subpart } : {}), section: version.identifier, substantive: version.substantive, removed: version.removed, issueDate: version.issue_date }
 	};
 }
 
@@ -111,7 +130,7 @@ export default defineWatcher({
 					throw new Error(`www.ecfr.gov answered ${answer.response.status} for title ${title}`);
 				}
 				const versions = ((await answer.response.json()) as { content_versions?: Version[] }).content_versions ?? [];
-				items.push(...versions.filter((version) => version.type === 'section').map(itemFor));
+				items.push(...versions.filter((version) => version.type === 'section' && inWatchedSubpart(version)).map(itemFor));
 			}
 			next[title] = latest;
 		}

@@ -86,6 +86,8 @@ export interface ModelCall {
 
 export interface TriageProvider {
 	name: TriageProviderName;
+	/** The models it asks, for the spend of a call that gave no answer. */
+	models?: { cheap: string; top: string };
 	/** Whether it is set up enough to be asked; when not, why. */
 	ready: true | { problem: string };
 	/** The cheap model's answer. */
@@ -155,7 +157,8 @@ const collectionsList = [
 	'tribal-codes: a nation’s codes, ordinances and court rules',
 	'intergovernmental-agreements: compacts and agreements between a nation and a state or the United States',
 	'federal-statutes',
-	'federal-regulations',
+	'federal-regulations: a regulation as a whole, or a part of the Code of Federal Regulations',
+	'regulation-sections: one section of Title 25 of the Code of Federal Regulations, such as 25 C.F.R. § 522.2',
 	'executive-orders',
 	'federal-register-notices: other Federal Register notices about Native nations’ law',
 	'supreme-court-cases',
@@ -177,9 +180,9 @@ Answer only with the classify tool. Rules:
 - collection is one identifier from this list:
 ${collectionsList.map((line) => `  - ${line}`).join('\n')}
 - nations lists the nations the item names, exactly as written in it. Do not guess nations it does not name.
-- proposed is "add" for a new item, "new-version" if it amends, extends or replaces a compact, code or constitution, "note" for a proposed rule or an item worth noting but not holding, or "not-relevant".
+- proposed is "add" for a new item, "new-version" if it amends, extends or replaces a compact, code, constitution or regulation (a changed section of a regulation part is a new version of that part), "note" for a proposed rule or an item worth noting but not holding, or "not-relevant".
 - hard is true if deciding needs a careful legal reading: whether it amends, extends or replaces a specific compact or code and which clauses changed, or whether two sources disagree.
-- sensitivity lists "child-or-family-case" if anything suggests a juvenile, child welfare, Indian Child Welfare Act, adoption, guardianship or custody matter, and "protection-order" for a protection or restraining order. Otherwise an empty list.
+- sensitivity is about particular people. List "child-or-family-case" when the item is itself a case, decision or order about a particular child or family: a juvenile, child welfare, Indian Child Welfare Act, adoption, guardianship or custody matter. List "protection-order" when the item is itself a protection or restraining order, or a case about one. A law, regulation, proposed rule, form, program description, court page or list of a code’s chapters that only names these kinds of matters is not about a particular person: do not flag it. If the item names or describes a particular child, parent or family, flag it even when it is also a rule or a page. Otherwise an empty list.
 - confidence is 0 to 1.
 - reason is one or two plain sentences, under 300 characters. Never quote more than a few words, and never write a summary of the document for publication.`;
 
@@ -195,7 +198,8 @@ const answerSchema = {
 		confidence: { type: 'number' },
 		reason: { type: 'string' }
 	},
-	required: ['relevant', 'collection', 'nations', 'proposed', 'hard', 'sensitivity', 'confidence', 'reason']
+	required: ['relevant', 'collection', 'nations', 'proposed', 'hard', 'sensitivity', 'confidence', 'reason'],
+	additionalProperties: false
 } as const;
 
 export function questionText(question: TriageQuestion, earlier: TriageAnswer | null = null): string {
@@ -213,24 +217,55 @@ export function questionText(question: TriageQuestion, earlier: TriageAnswer | n
 	return lines.filter(Boolean).join('\n');
 }
 
+/**
+ * A model call that gave no usable answer: nothing, no classify call, or an
+ * answer cut off at the token limit. It carries the tokens the call still
+ * used, so the spend shown stays true. The provider asks once more (with
+ * twice the room when the answer was cut off); a second miss sends the item
+ * to a person (./model-triage.ts). Inkling 2 Small at high reasoning gave no
+ * answer on about one call in eight in the Nov. 26, 2026 comparison, nearly
+ * always at the token limit (research/analyses/2026-11-26-workers-ai-vs-claude-triage.md,
+ * section 7).
+ */
+export class NoAnswer extends Error {
+	constructor(
+		readonly why: 'empty' | 'cut-off',
+		readonly use: TokenUse
+	) {
+		super(why === 'cut-off' ? 'The model’s answer was cut off at its token limit.' : 'The model did not answer with the classify tool.');
+	}
+}
+
+const noUse: TokenUse = { inputTokens: 0, outputTokens: 0, cacheReadTokens: 0, cacheWriteTokens: 0 };
+
+function addUse(first: TokenUse, second: TokenUse): TokenUse {
+	return {
+		inputTokens: first.inputTokens + second.inputTokens,
+		outputTokens: first.outputTokens + second.outputTokens,
+		cacheReadTokens: first.cacheReadTokens + second.cacheReadTokens,
+		cacheWriteTokens: first.cacheWriteTokens + second.cacheWriteTokens
+	};
+}
+
 /** Reads the classify tool's input out of an Anthropic Messages answer. */
 export function readAnswer(message: unknown): { answer: TriageAnswer; use: TokenUse } {
 	const body = message as {
 		content?: { type: string; name?: string; input?: unknown }[];
+		stop_reason?: string;
 		usage?: { input_tokens?: number; output_tokens?: number; cache_read_input_tokens?: number; cache_creation_input_tokens?: number };
 	};
-	const call = body.content?.find((block) => block.type === 'tool_use' && block.name === 'classify');
-	if (!call || typeof call.input !== 'object' || call.input === null) throw new Error('The model did not answer with the classify tool.');
 	const usage = body.usage ?? {};
-	return {
-		answer: tidyAnswer(call.input as Partial<TriageAnswer>),
-		use: {
-			inputTokens: usage.input_tokens ?? 0,
-			outputTokens: usage.output_tokens ?? 0,
-			cacheReadTokens: usage.cache_read_input_tokens ?? 0,
-			cacheWriteTokens: usage.cache_creation_input_tokens ?? 0
-		}
+	const use = {
+		inputTokens: usage.input_tokens ?? 0,
+		outputTokens: usage.output_tokens ?? 0,
+		cacheReadTokens: usage.cache_read_input_tokens ?? 0,
+		cacheWriteTokens: usage.cache_creation_input_tokens ?? 0
 	};
+	// A tool call cut off at the limit may hold half its input, so it is not trusted.
+	if (body.stop_reason === 'max_tokens') throw new NoAnswer('cut-off', use);
+	const call = body.content?.find((block) => block.type === 'tool_use' && block.name === 'classify');
+	if (!call || typeof call.input !== 'object' || call.input === null) throw new NoAnswer('empty', use);
+	return { answer: tidyAnswer(call.input as Partial<TriageAnswer>), use };
 }
 
 /**
@@ -241,10 +276,15 @@ export function readAnswer(message: unknown): { answer: TriageAnswer; use: Token
 export function readWorkersAnswer(message: unknown): { answer: TriageAnswer; use: TokenUse } {
 	type Call = { name?: string; arguments?: unknown; function?: { name?: string; arguments?: unknown } };
 	const body = message as {
-		choices?: { message?: { tool_calls?: Call[] } }[];
+		choices?: { message?: { tool_calls?: Call[] }; finish_reason?: string }[];
 		tool_calls?: Call[];
 		usage?: { prompt_tokens?: number; completion_tokens?: number; prompt_tokens_details?: { cached_tokens?: number } };
 	};
+	const usage = body.usage ?? {};
+	const cached = usage.prompt_tokens_details?.cached_tokens ?? 0;
+	// Chat Completions counts cached tokens inside prompt_tokens.
+	const use = { inputTokens: Math.max(0, (usage.prompt_tokens ?? 0) - cached), outputTokens: usage.completion_tokens ?? 0, cacheReadTokens: cached, cacheWriteTokens: 0 };
+	if (body.choices?.[0]?.finish_reason === 'length') throw new NoAnswer('cut-off', use);
 	const calls = body.choices?.[0]?.message?.tool_calls ?? body.tool_calls ?? [];
 	const call = calls.find((each) => (each.function?.name ?? each.name) === 'classify');
 	let input = call?.function?.arguments ?? call?.arguments;
@@ -255,14 +295,8 @@ export function readWorkersAnswer(message: unknown): { answer: TriageAnswer; use
 			input = null;
 		}
 	}
-	if (!input || typeof input !== 'object') throw new Error('The model did not answer with the classify tool.');
-	const usage = body.usage ?? {};
-	const cached = usage.prompt_tokens_details?.cached_tokens ?? 0;
-	return {
-		answer: tidyAnswer(input as Partial<TriageAnswer>),
-		// Chat Completions counts cached tokens inside prompt_tokens.
-		use: { inputTokens: Math.max(0, (usage.prompt_tokens ?? 0) - cached), outputTokens: usage.completion_tokens ?? 0, cacheReadTokens: cached, cacheWriteTokens: 0 }
-	};
+	if (!input || typeof input !== 'object') throw new NoAnswer('empty', use);
+	return { answer: tidyAnswer(input as Partial<TriageAnswer>), use };
 }
 
 /** Keeps only the answer's known fields, in range. */
@@ -281,13 +315,23 @@ function tidyAnswer(input: Partial<TriageAnswer>): TriageAnswer {
 	};
 }
 
-function messagesInput(question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number): Record<string, unknown> {
+/**
+ * The Anthropic Messages request. Claude Opus 5.5 rejects a forced tool
+ * (tool_choice "tool" or "any") with a 400, and its thinking cannot be turned
+ * off; Claude Haiku 5.5 takes a forced tool only with thinking off. So the
+ * tool is offered with tool_choice "auto" and strict: true, which keeps the
+ * call to the schema, and the instructions say to answer only with it. Both
+ * models think, and thinking counts toward max_tokens, so the limits are well
+ * above the answer's size. The effort is set, since both default to medium.
+ */
+function messagesInput(question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number, effort: 'low' | 'high'): Record<string, unknown> {
 	return {
 		max_tokens: maxTokens,
 		system: [{ type: 'text', text: triageInstructions, cache_control: { type: 'ephemeral' } }],
 		messages: [{ role: 'user', content: questionText(question, earlier) }],
-		tools: [{ name: 'classify', description: 'Record where this item belongs.', input_schema: answerSchema }],
-		tool_choice: { type: 'tool', name: 'classify' }
+		tools: [{ name: 'classify', description: 'Record where this item belongs.', input_schema: answerSchema, strict: true }],
+		tool_choice: { type: 'auto' },
+		output_config: { effort }
 	};
 }
 
@@ -305,14 +349,54 @@ function workersInput(question: TriageQuestion, earlier: TriageAnswer | null, ma
 	};
 }
 
+/** Whether a failed call was "too many requests" (HTTP 429, or Workers AI's capacity error). */
+export function tooManyRequests(problem: unknown): boolean {
+	const status = (problem as { status?: unknown } | null)?.status;
+	if (status === 429) return true;
+	const text = problem instanceof Error ? problem.message : String(problem);
+	return /\b429\b|too many requests|rate limit|capacity temporarily exceeded/i.test(text);
+}
+
+/** How long to wait before asking again after "too many requests". */
+export const waitAfterTooMany = 2000;
+
+const pause = (milliseconds: number) => new Promise<void>((resolve) => setTimeout(resolve, milliseconds));
+
+/**
+ * One model call, asked again once when it fails in a way that asking again
+ * fixes: "too many requests" after a short wait (every one in the Nov. 26,
+ * 2026 comparison went through on the retry), and an empty or cut-off answer
+ * (./NoAnswer above). A second miss is thrown for ./model-triage.ts to
+ * handle, with the tokens both calls used.
+ */
+export async function askWithRetry(read: (maxTokens: number) => Promise<{ answer: TriageAnswer; use: TokenUse }>, model: string, maxTokens: number, wait: (milliseconds: number) => Promise<void> = pause): Promise<ModelCall> {
+	let used = noUse;
+	let limit = maxTokens;
+	for (let attempt = 1; ; attempt += 1) {
+		try {
+			const { answer, use } = await read(limit);
+			const total = addUse(used, use);
+			return { answer, model, use: total, costMicrodollars: costMicrodollars(model, total) };
+		} catch (problem) {
+			if (attempt >= 2) throw problem instanceof NoAnswer ? new NoAnswer(problem.why, addUse(used, problem.use)) : problem;
+			if (problem instanceof NoAnswer) {
+				used = addUse(used, problem.use);
+				if (problem.why === 'cut-off') limit *= 2;
+			} else if (tooManyRequests(problem)) {
+				await wait(waitAfterTooMany);
+			} else {
+				throw problem;
+			}
+		}
+	}
+}
+
 function workersProvider(binding: ModelBinding, options: { cheapModel: string; topModel: string }): TriageProvider {
-	const ask = async (model: string, question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number, effort: 'low' | 'high'): Promise<ModelCall> => {
-		const message = await binding.run(model, workersInput(question, earlier, maxTokens, effort));
-		const { answer, use } = readWorkersAnswer(message);
-		return { answer, model, use, costMicrodollars: costMicrodollars(model, use) };
-	};
+	const ask = (model: string, question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number, effort: 'low' | 'high') =>
+		askWithRetry(async (limit) => readWorkersAnswer(await binding.run(model, workersInput(question, earlier, limit, effort))), model, maxTokens);
 	return {
 		name: 'workers-ai',
+		models: { cheap: options.cheapModel, top: options.topModel },
 		ready: true,
 		classify: (question) => ask(options.cheapModel, question, null, 4000, 'low'),
 		decideHard: (question, earlier) => ask(options.topModel, question, earlier, 16000, 'high')
@@ -320,15 +404,13 @@ function workersProvider(binding: ModelBinding, options: { cheapModel: string; t
 }
 
 function gatewayProvider(binding: ModelBinding, options: { gateway: string; cheapModel: string; topModel: string }): TriageProvider {
-	const ask = async (model: string, question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number): Promise<ModelCall> => {
-		const message = await binding.run(model, messagesInput(question, earlier, maxTokens), { gateway: { id: options.gateway } });
-		const { answer, use } = readAnswer(message);
-		return { answer, model, use, costMicrodollars: costMicrodollars(model, use) };
-	};
+	const ask = (model: string, question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number, effort: 'low' | 'high') =>
+		askWithRetry(async (limit) => readAnswer(await binding.run(model, messagesInput(question, earlier, limit, effort), { gateway: { id: options.gateway } })), model, maxTokens);
 	return {
 		name: 'ai-gateway',
+		models: { cheap: options.cheapModel, top: options.topModel },
 		ready: true,
-		classify: (question) => ask(options.cheapModel, question, null, 600),
-		decideHard: (question, earlier) => ask(options.topModel, question, earlier, 1200)
+		classify: (question) => ask(options.cheapModel, question, null, 4000, 'low'),
+		decideHard: (question, earlier) => ask(options.topModel, question, earlier, 16000, 'high')
 	};
 }

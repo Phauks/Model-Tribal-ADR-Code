@@ -2,7 +2,7 @@
 
 The website has its own email: inboxes in the workspace, shared or personal, where the project team reads, replies to, forwards, assigns, tags, files, sets reminders on and archives the project's mail, and an Outreach page that writes to nations from the private address book. Nothing needs Google Workspace or another hosted mailbox for everyday mail. Mail is kept in the project's own storage: each message whole in a private bucket of its own (R2), and what the pages list and search in the database (D1). The design and its reasons are in [decision record 0040](../docs/decisions/0040-project-inbox-on-cloudflare.md).
 
-Email is off until the project has a domain. While `MAIL_DOMAIN` is empty, the Inbox and Outreach pages open, but nothing is received or sent.
+The project's mail domain is `triballawproject.org` (`MAIL_DOMAIN`). While `MAIL_DOMAIN` is empty, the Inbox and Outreach pages open, but nothing is received or sent.
 
 ## Inboxes
 
@@ -55,7 +55,7 @@ Each sent message shows what the sending service reports: delivered to the other
 
 The inbox has no hidden open tracking. Tracking pictures are unreliable (Apple Mail loads them for every message, opened or not) and they watch people without asking, which does not fit the project's charter or the CARE principles. Instead an outreach batch can add a visible line, "If you would like to let us know this reached you, open this link", which records only that the person pressed the button on that page. The follow-up reminder covers the rest.
 
-Cloudflare reports delivery through a Queues event subscription.[^events] Setting it up needs a queue, and a deploy fails while the queue named in `wrangler.jsonc` does not exist, so it is added when email is switched on (step 6 below). Until then, bounces still arrive as mail and are read from there.
+Cloudflare reports delivery through a Queues event subscription.[^events] Setting it up needs a queue, and a deploy fails while the queue named in `wrangler.jsonc` does not exist, so the queue was made first (step 6 below). Bounces also arrive as mail and are read from there.
 
 ### Reading HTML mail
 
@@ -119,11 +119,11 @@ The outreach mailbox can be changed by settings alone (lead author, Nov. 23, 202
 
 ## Storage
 
-Mail has a private R2 bucket of its own, `model-tribal-adr-code-mail`, bound as `mailFiles` in `wrangler.jsonc` and in the scanner's `scanner/wrangler.jsonc`. It holds each message whole, its HTML and its attachments, under `mail/`. Nothing in it is public: the Worker serves a file only to someone on the conversation's inbox, and an attachment only after the virus check (`SCANNING.md`). The scanner reads files under `mail/` from this bucket and everything else from `sourceDocuments`.
+Mail has a private R2 bucket of its own, `tribal-law-project-mail`, bound as `mailFiles` in `wrangler.jsonc` and in the scanner's `scanner/wrangler.jsonc`. It holds each message whole, its HTML and its attachments, under `mail/`. Nothing in it is public: the Worker serves a file only to someone on the conversation's inbox, and an attachment only after the virus check (`SCANNING.md`). The scanner reads files under `mail/` from this bucket and everything else from `sourceDocuments`.
 
 Mail is kept apart from the source documents for three reasons. Access can be given to one without the other. Rules such as deleting old mail or keeping a backup copy can be set for mail alone. And a mistake in code that tidies one bucket cannot touch the other.
 
-The bucket has to exist before a deploy that binds it, or the deploy fails. Create it once in the Cloudflare dashboard (R2 > Create bucket, name `model-tribal-adr-code-mail`, no public access), or with `npx wrangler r2 bucket create model-tribal-adr-code-mail`.
+The bucket has to exist before a deploy that binds it, or the deploy fails. Create it once in the Cloudflare dashboard (R2 > Create bucket, name `tribal-law-project-mail`, no public access), or with `npx wrangler r2 bucket create tribal-law-project-mail`.
 
 ## Settings
 
@@ -146,17 +146,17 @@ The addresses are not a setting: they are the inboxes, made on the Inbox setting
 
 ## Switching email on
 
-These steps wait for the domain (`docs/domain-to-do.md`). The DNS records are added by Cloudflare when each part is switched on, because the domain's DNS is on the same Cloudflare account.
+The domain's DNS is on the same Cloudflare account, so Cloudflare adds the DNS records itself when each part is switched on. Where each step stood on 2026-11-26 is in brackets.
 
-1. **Receiving.** In the dashboard, open the domain's Email > Email Routing and enable it; Cloudflare adds its MX records (`route1`, `route2` and `route3.mx.cloudflare.net`), an SPF record with `include:_spf.mx.cloudflare.net`, and a DKIM record.[^routing] Under Routing rules, set the catch-all to "Send to a Worker" and choose `model-tribal-adr-code`. A catch-all is needed for the `unsubscribe+` addresses and lets the inbox see mail to any address on the domain.
-2. **Sending replies.** In Email Service > Email Sending, onboard the domain. Cloudflare adds the sending SPF and DKIM records on the `cf-bounce` subdomain and a DMARC record (`p=reject`) if the domain has none.[^send] The same step serves sign-in codes (`SIGN_IN_EMAIL_FROM`).
-3. **Settings.** In `wrangler.jsonc`, set `MAIL_DOMAIN`, `SITE_ADDRESS` and, if wanted, `MAIL_NOTICE_ADDRESS`, and merge that change. In the dashboard, add `MAIL_SIGNING_KEY` as a Secret (for example the output of `openssl rand -hex 32`).
-4. **The database.** Run `npm run database:migrate:remote` from `site/` (or let the next deploy's migration step do it) so migration 0013 is applied.
-5. **The outreach mailbox.** Sign up for Zoho Mail Lite with the subdomain `outreach.<domain>`, add the MX, SPF and DKIM records Zoho gives (under the subdomain, so they do not touch the root domain's Cloudflare records), and add a DMARC record for the subdomain. Turn on two-factor sign-in and make an app-specific password.[^zoho-smtp] In Zoho, forward everything that reaches the mailbox to `OUTREACH_REPLY_TO`, so a reply sent to the wrong address still lands in the inbox. Then set `OUTREACH_CARRIER` to `smtp`, the other `OUTREACH_` settings in `wrangler.jsonc`, and `OUTREACH_SMTP_PASSWORD` as a Secret.
-6. **Delivery reports.** Create a queue named `mail-delivery-events`, subscribe it to Email Sending events for the domain (all six types), and add the consumer to `wrangler.jsonc`:[^events]
+1. **Sending** [done 2026-11-25]. The domain is onboarded in Email Service > Email Sending. Cloudflare added the sending SPF and DKIM records on the `cf-bounce` subdomain (the return path) and a DMARC record with `p=reject`.[^send] Any address on the domain can send; there is no list of sender addresses to verify. The site sends sign-in codes from `sign-in@` (`SIGN_IN_EMAIL_FROM`), summaries of followed pages and event emails from `updates@` (`UPDATE_EMAIL_FROM`), and inbox replies from the address of each conversation's inbox. A new account starts with a sending limit of 200 messages a day, which the account's Email Sending page shows and Cloudflare can raise.
+2. **Receiving** [done 2026-11-26]. In the dashboard, open Compute > Email Service > Email Routing, choose **Onboard Domain** and the domain. Cloudflare adds its MX records (`route1`, `route2` and `route3.mx.cloudflare.net`), an SPF record with `include:_spf.mx.cloudflare.net`, and a DKIM record (`cf2024-1._domainkey`).[^routing] Under Routing rules, turn the catch-all rule on and set it to "Send to a Worker", `tribal-law-project-site`. A catch-all is needed for the `unsubscribe+` addresses and lets the inbox see mail to any address on the domain. After a Worker is renamed, this rule has to be pointed at the new name again.
+3. **Settings** [done in `wrangler.jsonc`]. `MAIL_DOMAIN`, `SITE_ADDRESS`, `SIGN_IN_EMAIL_FROM` and `UPDATE_EMAIL_FROM` are set. In the dashboard, add `MAIL_SIGNING_KEY` to `tribal-law-project-site` as a Secret (for example the output of `openssl rand -hex 32`). Only unsubscribe links and big files sent as links need it.
+4. **The database** [done]. The mail migrations are applied on the live database.
+5. **The outreach mailbox** [later]. Sign up for Zoho Mail Lite with the subdomain `outreach.<domain>`, add the MX, SPF and DKIM records Zoho gives (under the subdomain, so they do not touch the root domain's Cloudflare records), and add a DMARC record for the subdomain. Turn on two-factor sign-in and make an app-specific password.[^zoho-smtp] In Zoho, forward everything that reaches the mailbox to `OUTREACH_REPLY_TO`, so a reply sent to the wrong address still lands in the inbox. Then set `OUTREACH_CARRIER` to `smtp`, the other `OUTREACH_` settings in `wrangler.jsonc`, and `OUTREACH_SMTP_PASSWORD` as a Secret.
+6. **Delivery reports** [done 2026-11-26]. Create a queue named `tribal-law-project-mail-delivery-events` (Workers & Pages > Queues), subscribe it to Email Sending events for the domain (all six types: on the queue, Subscriptions > Subscribe to events), and then add the consumer to `wrangler.jsonc`:[^events]
 
    ```jsonc
-   "queues": { "consumers": [{ "queue": "mail-delivery-events", "max_batch_size": 50 }] }
+   "queues": { "consumers": [{ "queue": "tribal-law-project-mail-delivery-events", "max_batch_size": 50 }] }
    ```
 
 7. **Try it.** Write to `contact@` from a personal address and reply from the inbox. Send a one-recipient outreach batch to an address the project controls, use its unsubscribe link, and check the address appears on the do-not-email list.

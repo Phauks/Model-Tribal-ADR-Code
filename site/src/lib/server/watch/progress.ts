@@ -10,7 +10,7 @@ import type { TriageProviderName } from './triage.ts';
 
 export const progressObject = 'watch/progress.json';
 /** The watch Worker's public progress page (site/watch/README.md). */
-export const watchWorkerAddress = 'https://tribal-law-project-watch.trevordgoldsmith.workers.dev';
+export const watchWorkerAddress = 'https://tribal-law-project-radar.trevordgoldsmith.workers.dev';
 
 export interface WatcherProgress {
 	title: string;

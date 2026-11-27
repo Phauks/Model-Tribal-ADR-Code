@@ -715,9 +715,9 @@ const sourceWatch: Check = {
 		];
 		switch (state) {
 			case 'not-running':
-				return { state: 'problem', summary: `The source watch last ran ${minutesSinceTick} minutes ago; it runs every minute.`, details, fix: 'Check the tribal-law-project-watch Worker’s cron trigger and its logs in the Cloudflare dashboard.' };
+				return { state: 'problem', summary: `The source watch last ran ${minutesSinceTick} minutes ago; it runs every minute.`, details, fix: 'Check the tribal-law-project-radar Worker’s cron trigger and its logs in the Cloudflare dashboard.' };
 			case 'idle':
-				return { state: 'warning', summary: 'The source watch is running, but every watcher is off.', details, fix: 'Clear WATCH_TURN_OFF on the tribal-law-project-watch Worker.' };
+				return { state: 'warning', summary: 'The source watch is running, but every watcher is off.', details, fix: 'Clear WATCH_TURN_OFF on the tribal-law-project-radar Worker.' };
 			case 'problem':
 				return { state: 'warning', summary: progress.lastError ?? `${failing.length} watcher${failing.length === 1 ? '' : 's'} failed on the last run.`, details };
 			default:
@@ -742,11 +742,11 @@ const sourceWatchModels: Check = {
 			...(spend.length > 1 ? [`Together: ${dollars(total)} in the last 30 days.`] : []),
 			...(models.lastSample ? [`Last weekly sample check ${models.lastSample.at}: ${models.lastSample.checked} checked, ${models.lastSample.disagreed} disagreed with the cheaper model.`] : [])
 		];
-		const fix = 'Set WATCH_TRIAGE_PROVIDER to workers-ai on the tribal-law-project-watch Worker (Settings > Variables and Secrets), or remove it to use the default (site/watch/README.md, "Models").';
+		const fix = 'Set WATCH_TRIAGE_PROVIDER to workers-ai on the tribal-law-project-radar Worker (Settings > Variables and Secrets), or remove it to use the default (site/watch/README.md, "Models").';
 		if (models.provider === 'none') return { state: 'off', summary: 'Triage by model is off, so items the rules cannot decide go to people.', details, fix };
 		if (!models.ready) return { state: 'problem', summary: models.problem ?? 'The triage provider is not ready.', details, fix };
 		const recentProblem = models.lastProblemAt && now.getTime() - Date.parse(models.lastProblemAt) < 3_600_000;
-		if (recentProblem) return { state: 'problem', summary: `The models did not answer: ${models.problem ?? 'no reason given'}`, details, fix: models.provider === 'ai-gateway' ? 'Check the gateway’s logs and the credit balance in the Cloudflare dashboard (AI > AI Gateway > source-watch). Waiting items stay waiting until it answers.' : 'Check the Worker’s logs in the Cloudflare dashboard (Workers & Pages > tribal-law-project-watch > Logs). Waiting items stay waiting until the model answers.' };
+		if (recentProblem) return { state: 'problem', summary: `The models did not answer: ${models.problem ?? 'no reason given'}`, details, fix: models.provider === 'ai-gateway' ? 'Check the gateway’s logs and the credit balance in the Cloudflare dashboard (AI > AI Gateway > source-watch). Waiting items stay waiting until it answers.' : 'Check the Worker’s logs in the Cloudflare dashboard (Workers & Pages > tribal-law-project-radar > Logs). Waiting items stay waiting until the model answers.' };
 		return { state: 'working', summary: `${models.cheapModel ?? 'The cheap model'} sorts the middle band ${models.provider === 'ai-gateway' ? `through AI Gateway ${models.gateway ?? ''}` : 'on Workers AI'}${models.lastCallAt ? `; last call ${models.lastCallAt}` : '; no calls yet'}.`, details };
 	}
 };
@@ -816,8 +816,8 @@ const siteTextRebuilds: Check = {
 export const serviceChecks: readonly Check[] = [
 	database,
 	sourceLibrary,
-	bucketCheck('source-documents-bucket', 'Source documents bucket', 'sourceDocuments', 'model-tribal-adr-code-sources', 'source documents and sent files'),
-	bucketCheck('mail-bucket', 'Mail bucket', 'mailFiles', 'model-tribal-adr-code-mail', 'the project inbox’s messages and attachments'),
+	bucketCheck('source-documents-bucket', 'Source documents bucket', 'sourceDocuments', 'tribal-law-project-files', 'source documents and sent files'),
+	bucketCheck('mail-bucket', 'Mail bucket', 'mailFiles', 'tribal-law-project-mail', 'the project inbox’s messages and attachments'),
 	mapTiles,
 	siteFiles,
 	liveEditing,

@@ -1,0 +1,51 @@
+state,federally_recognized_nations,estimate_band,estimated_sections_low,estimated_sections_high,official_source,format,bulk_or_api,reached_from_cloud_2026_11_26,terms_and_copyright,difficulty_1_to_5,basis
+AL,1,light,40,120,"Alabama Legislature, ALISON (alison.legislature.state.al.us/code-of-alabama)","HTML, JavaScript app",None found,yes,Site copyright notice only,3,probed
+AK,225,heavy,400,1000,"Alaska Legislature, akleg.gov/basis/statutes.asp",HTML by title and chapter,None found,yes,None found on the page,2,probed
+AZ,19,heavy,400,1000,"Arizona Legislature, azleg.gov/arstitle/","HTML, one page per section",None found,yes,"Site copyright notice (""All Rights Reserved"") only",2,probed
+AR,0,light,40,120,LexisNexis free public site for the Arkansas Code (linked from arkleg.state.ar.us),JavaScript app,None; Public.Resource.Org holds a 2012 XML copy,shell only,Publisher-hosted under Lexis terms of use; Public.Resource.Org correspondence posted,5,probed; memory for terms
+CA,108,heavy,400,1000,"California Legislative Information, leginfo.legislature.ca.gov",HTML per section; bulk database dump,"Yes: pubinfo zip files at downloads.leginfo.legislature.ca.gov (2025 file 1.2 GB, daily updates)",site 403; bulk yes,None found on the download page,2,probed
+CO,2,medium,100,250,"Colorado General Assembly, leg.colorado.gov/laws/colorado-revised-statutes",PDF by title; Lexis free site too,None found,yes,Public.Resource.Org correspondence posted (2013); state claimed rights in the compilation (memory),3,probed; memory for terms
+CT,2,medium,100,250,"Connecticut General Assembly, cga.ct.gov/current/pub/titles.htm",HTML by chapter (memory),None known,no (TLS failure),Not checked,2,probed (failed); memory
+DE,0,light,40,120,"Delaware Code Online, delcode.delaware.gov",HTML by chapter; PDF by title,Title PDFs,yes,None found on the page,1,probed
+FL,2,measured,70,100,"Online Sunshine, leg.state.fl.us/statutes","HTML, whole-chapter pages","Yes, but a Windows viewer package (FLLawDL2026.zip, 251 MB, NXT infobase format)",yes,Site copyright notice (The Florida Legislature),2,probed; counted
+GA,0,light,40,120,LexisNexis free public site for the Official Code of Georgia Annotated (linked from legis.ga.gov),JavaScript app,None; Public.Resource.Org published the annotated code,shell only,Annotations held not copyrightable in Georgia v. Public.Resource.Org (2020); site under Lexis terms,5,probed; case
+HI,0,light,40,120,"Hawaii State Legislature, capitol.hawaii.gov/hrscurrent","HTML, one page per section (memory)",Folder listings (memory),no (403),Not checked,3,probed (failed); memory
+ID,4,medium,100,250,"Idaho Legislature, legislature.idaho.gov/statutesrules/idstat/","HTML by title, chapter and section",None found,yes,Public.Resource.Org correspondence posted (2013); state asserted copyright then (memory),2,probed; memory for terms
+IL,0,medium,100,250,"Illinois General Assembly, ilga.gov/legislation/ilcs",HTML by Act (memory),None known,no (connection reset),Not checked,3,probed (failed); memory
+IN,0,light,40,120,"Indiana General Assembly, iga.in.gov",JavaScript app; PDF of the whole code by year (memory),API with a key (memory),shell only,Not checked,3,probed; memory
+IA,1,light,40,120,"Iowa Legislature, legis.iowa.gov/law/iowaCode",PDF and RTF by chapter and section,None for the Code (the downloads page holds a Word template),yes,Site copyright notice only,2,probed
+KS,4,medium,100,250,"Kansas Office of Revisor of Statutes, ksrevisor.gov","HTML, one page per section",None found,yes,None found on the page,2,probed
+KY,0,light,40,120,"Kentucky Legislative Research Commission, apps.legislature.ky.gov/law/statutes","PDF, one file per section",None found,yes,Site copyright notice only,3,probed
+LA,4,medium,100,250,"Louisiana State Legislature, legis.la.gov","HTML, one page per section, addressed by an internal document number",None found,yes,None found on the page,3,probed
+ME,4,medium,100,250,"Maine Legislature, legislature.maine.gov/statutes","HTML and PDF by title, chapter and section",None found,yes,None found on the page,2,probed
+MD,0,light,40,120,"Maryland General Assembly, mgaleg.maryland.gov","HTML, one page per section","JSON lists for bills, not statutes",yes,None found on the page,2,probed
+MA,2,light,40,120,"Massachusetts Legislature, malegislature.gov/Laws/GeneralLaws",HTML by chapter and section,None found,yes,Site copyright notice only,2,probed
+MI,12,high,200,450,"Michigan Legislature, legislature.mi.gov",HTML by Act and section,RSS of updates to the compiled laws,yes,None found on the page,3,probed
+MN,12,high,200,450,"Minnesota Revisor of Statutes, revisor.mn.gov/statutes",HTML by chapter and section,None found,yes,"Revisor registered copyright in headings, numbering and history notes, not statute text (Copyright Office Review Board, 2017)",2,probed; document
+MS,1,light,40,120,LexisNexis free public site for the Mississippi Code,JavaScript app,None,shell only,"Publisher-hosted under Lexis terms; state claimed copyright (Public.Resource.Org correspondence, 2013)",5,probed; document
+MO,0,light,40,120,"Missouri Revisor of Statutes, revisor.mo.gov","HTML, one page per section",None found,yes,"Site copyright notice (""all rights reserved"")",2,probed
+MT,8,heavy,400,1000,"Montana Legislature, mca.legmt.gov","Static HTML by title, chapter, part and section",None found,yes,None found on the page,1,probed
+NE,4,medium,100,250,"Nebraska Legislature, nebraskalegislature.gov/laws",HTML by chapter and section; chapter pages list every section,None found,yes,Site copyright notice only,2,probed
+NV,17,high,200,450,"Nevada Legislature, leg.state.nv.us/nrs","HTML, whole-chapter pages",None found,yes,None found on the page,1,probed
+NH,0,light,40,120,"New Hampshire General Court, gc.nh.gov/rsa",HTML by chapter and section (memory),None known,no (connection reset),Not checked,2,probed (failed); memory
+NJ,0,light,40,120,"New Jersey Legislature, lis.njleg.state.nj.us",Folio gateway (dynamic HTML),Not found in this study,yes,None found on the page,4,probed
+NM,21,heavy,400,1000,"New Mexico Compilation Commission, NMOneSource (nmonesource.com)",HTML items with internal numbers,None found,yes,Official compilation published by the Commission; its terms not read in this study,3,probed
+NY,8,high,200,450,"New York State Senate, Open Legislation (legislation.nysenate.gov)","JSON API (laws, articles, sections)",Yes: REST API with a free key,yes (401 without key),None found,1,probed
+NC,2,medium,100,250,"North Carolina General Assembly, ncleg.gov","HTML and PDF, whole-chapter files",Chapter files,yes,None found on the page,1,probed
+ND,4,high,200,450,"North Dakota Legislative Branch, ndlegis.gov (Century Code)","PDF, one file per chapter",Chapter PDFs,yes,None found on the page,2,probed
+OH,0,light,40,120,"Ohio Legislative Service Commission, codes.ohio.gov","HTML, one page per section",None found,yes,None found on the page,2,probed
+OK,38,measured,381,381,"Oklahoma Legislative Service Bureau, oklegislature.gov (OSCN blocks scripts)","PDF, one file per title (89 files, 145 MB)",Title PDFs,yes (OSCN no),None on the page; official publisher is the Secretary of State (75 O.S. § 31.2),1,probed; counted
+OR,9,measured,500,600,"Oregon State Legislature, oregonlegislature.gov/bills_laws/ors","HTML, whole-chapter pages",Chapter pages,yes,State claimed copyright in 2008 and withdrew it (memory); Public.Resource.Org folder posted,1,probed; counted
+PA,0,light,40,120,"Pennsylvania General Assembly, palegis.us/statutes",HTML by title (Consolidated Statutes only),None found,yes,None found; much law is still unconsolidated (memory),4,probed; memory
+RI,1,light,40,120,"Rhode Island General Assembly, webserver.rilegislature.gov/Statutes","Static HTML by title, chapter and section",None found,yes,None found on the page,1,probed
+SC,1,light,40,120,"South Carolina Legislature, scstatehouse.gov/code","HTML, whole-title and chapter pages",None found,yes,None found on the page,1,probed
+SD,8,heavy,400,1000,"South Dakota Legislature, sdlegislature.gov/Statutes",JavaScript app over a JSON API,API (sdlegislature.gov/api/Statutes/...),yes,None found on the page,2,probed
+TN,0,light,40,120,LexisNexis free public site for the Tennessee Code,JavaScript app,None,shell only,Publisher-hosted under Lexis terms; Public.Resource.Org sued over access (2022),5,probed; document
+TX,3,medium,100,250,"Texas Legislative Council, statutes.capitol.texas.gov","JavaScript app; downloads per code in HTML, PDF and Word",Downloads page (file links not resolved by script),yes,None found on the page,2,probed
+UT,5,medium,100,250,"Utah Legislature, le.utah.gov/xcode","HTML by title, chapter and section",None found,yes,Site terms of use link,2,probed
+VT,0,light,40,120,"Vermont General Assembly, legislature.vermont.gov/statutes","HTML by title, chapter and section",None found,yes,Site copyright notice only,2,probed
+VA,7,light,40,120,"Virginia Division of Legislative Automated Systems, law.lis.virginia.gov",HTML; REST API in JSON and XML; CSV and PDF library,Yes: web services and downloads,yes,Publisher (Michie) annotations and revisor notes excluded from the site as copyrighted,1,probed
+WA,29,measured,904,1059,"Washington State Legislature, app.leg.wa.gov/rcw","HTML, whole-chapter pages; bulk file share",Yes: lawfilesext.leg.wa.gov/law/RCW (a file per section),yes,Site copyright notice only,1,probed; counted
+WV,0,light,40,120,"West Virginia Legislature, code.wvlegislature.gov",HTML (memory),None known,no (connection reset),Not checked,2,probed (failed); memory
+WI,11,high,200,450,"Wisconsin Legislature, docs.legis.wisconsin.gov/statutes",HTML and PDF by chapter (memory),None known,no (connection reset),Not checked,2,probed (failed); memory
+WY,2,medium,100,250,"Wyoming Legislature, wyoleg.gov (statutes download page)",JavaScript app; title downloads (memory),Download page (not resolved by script),shell only,Not checked,3,probed; memory
