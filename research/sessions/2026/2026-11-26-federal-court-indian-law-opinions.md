@@ -21,7 +21,7 @@ queries:
 - For cases scoring 1 to 9, whether excerpts show an Indian law case (research/federal-court-opinions/reading-instructions.md)
 - Which selected cases concern children, protected persons or estates, to hold for a privacy review
 sources_added: []
-limits: 'Cases with none of the terms were not read. The AI readers saw excerpts, not whole opinions; their judgments are in research/federal-court-opinions/readings.json, and the spot check agreed with the score for 190 of 200 cases. Nations are linked only where the caption names one that matches a nation record. Records start unverified.'
+limits: 'Cases with none of the terms were not read, and CourtListener''s copies of opinions filed since Oct. 2017 are only as complete as its sources (district court opinions mostly from GovInfo). The AI readers saw excerpts, not whole opinions; their judgments are in research/federal-court-opinions/readings.json, and the spot checks agreed with the score for 190 of 200 Project cases and 93 of 100 CourtListener cases. Nations are linked only where the caption names one that matches a nation record. Records start unverified.'
 ---
 
 # Lower federal court opinions on Indian law: session notes
@@ -30,21 +30,27 @@ The scripts and how to run them are described at the top of `scripts/caselaw/fed
 
 ## Caselaw Access Project, to 2019
 
-The scan read all 5,726 federal volumes and found 19,322 candidates with at least one Indian law term once cases sharing a citation were counted once: 5,009 scoring 10 or more and 14,313 scoring 1 to 9.
+The scan read all 5,726 federal volumes and found 19,322 candidates with at least one Indian law term: 5,009 scoring 10 or more and 14,313 scoring 1 to 9.
 
-Cases scoring 10 or more were kept by score. A reader checked a random 200 of them and agreed on 190; the 10 it rejected were read again with the borderline cases. Readers judged all 14,300 cases scoring 1 to 9 (and the 10 spot-check rejections): 5,400 were Indian law cases. Nine more that they rejected name a Native nation as a party in the caption and were kept, since the site lists the cases a nation is party to.
+Cases scoring 10 or more were kept by score, except those whose only terms are "Native" words, which were read. A reader checked a random 200 of the cases kept by score and agreed on 190; the 10 it rejected (for example *United States v. Durham*, which quotes the Indian Commerce Clause only for the Commerce Clause, and *Lobenstein v. United States*, an 1873 supply contract) were left out. Readers judged 14,300 cases (14,173 scoring 1 to 9, after cases sharing a citation were counted once, and the 127 high-scoring ones): 5,400 were Indian law cases. Nine more that they rejected name a Native nation as a party in the caption and were kept, since the site lists the cases a nation is party to.
 
-That made 10,162 cases. Of them:
+That made 10,152 cases. Of them:
 
-- 264 were already held (by citation, mostly the 150 federal cases filed with the states' reports by the state court set, and lower federal records written by hand before);
-- 619 are held for a privacy review (451 about children or protected persons, 168 estates decided in or after 1976), listed only in the project's private files, never in git;
-- 9,279 have records: 1,668 from the Ninth Circuit, 1,279 from the Eighth, 1,026 from the Tenth, 818 from the Court of Claims, 234 from the Court of Federal Claims, and the rest from the other circuits and the district courts. They run from 1795 to 2019, most of them (6,170) from 1970 on. Of them 4,222 were kept by score, 5,049 on a reader's judgment and 8 for a nation named as a party; 2,123 link at least one nation named in the caption.
+- 77 were already held (by citation);
+- 479 are held for a privacy review (cases about children or protected persons, and cases where a party is named only by initials, as federal courts do for minors and victims), listed only in the project's private files, never in git;
+- 9,596 have records: 1,712 from the Ninth Circuit, 1,304 from the Eighth, 1,055 from the Tenth, 818 from the Court of Claims, and the rest from the other circuits, the district courts and the Court of Federal Claims. They run from 1795 to 2019, most of them (7,342) from 1970 on. Of them 4,450 were kept by score, 5,137 on a reader's judgment and 9 for a nation named as a party; 2,255 link at least one nation named in the caption.
 
-Each record is `kind: federal-case` with topic `federal-court-indian-law`, listed in the collection "Lower Federal Court Opinions".
+Estate cases are shown, following Trevor's choice for the state court set (decision record 0060).
 
-## CourtListener, after 2019
+## CourtListener, after the Caselaw Access Project
 
-PENDING
+The Project's federal reporters stop between December 2017 and August 2019, so `scripts/caselaw/courtlistener_federal_opinions.py` read CourtListener's Sept. 30, 2026 bulk files for every opinion cluster filed since Oct. 1, 2017 in a federal court of appeals, district court or the Court of Federal Claims: 919,662 clusters. The opinions file (55 GB compressed, 10.9 million opinions) was downloaded whole and read in about 75 minutes; 9,254 clusters use at least one Indian law term (1,180 scoring 10 or more, 1,645 scoring 3 to 9 and 6,429 scoring 1 or 2). Most (6,452) are district court opinions CourtListener took from GovInfo, which gives no precedential status; 2,564 are published and 236 unpublished.
+
+Of the 9,254, 592 share a citation with a Project case and 55 more match one by caption and a filing date within a week (the Project's last volumes overlap CourtListener's first years), so 8,607 were added. Readers judged the 7,639 that needed reading; 2,023 were Indian law cases. A reader checked a random 100 of the 968 kept by score and agreed on 93 (*Saginaw Chippewa Indian Tribe v. Blue Cross Blue Shield*, one of the 7, was kept for its caption). That made 2,992 cases: 2,796 have records, 194 are held for a privacy review and 2 were already held. They run from October 2017 to September 2026. Their copies are built from CourtListener's opinion text (the court's own text: CourtListener's syllabus and headnote fields are left out) and credit CourtListener; their records link to the CourtListener page, and those with no reporter citation yet give the docket number instead.
+
+District court names are given in the Project's style ("United States District Court for the Eastern District of New York", not CourtListener's "District Court, E.D. New York"), so each court is listed one way.
+
+In all, the collection has 12,392 records and 673 cases held for a privacy review.
 
 ## Hosting
 
@@ -52,4 +58,4 @@ Each record's copy is the court's opinion only, built from the Project's JSON (o
 
 ## Privacy holds
 
-The held cases follow the state court set's rules (decision record 0060): cases about children, protected persons and adoptions, and estates decided in or after 1976, are not written as records and their copies are not served until a person reviews them. The list is in the project's private files under `research/federal-court-opinions/private/`.
+The held cases follow the state court set's rules (decision record 0060): cases about children, protected persons and adoptions are not written as records and their copies are not served until a person reviews them. Federal courts name minors and victims by initials, so a case with a party named only by initials (*United States v. B.N.M.*) is held too. Estate cases are shown. The list is in the project's private files under `research/federal-court-opinions/private/`.

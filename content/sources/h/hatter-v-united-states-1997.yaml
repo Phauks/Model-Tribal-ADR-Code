@@ -1,24 +1,24 @@
-key: estate-of-winton-v-amos-1917
+key: hatter-v-united-states-1997
 kind: federal-case
 citation:
   type: legal_case
-  title: Estate of Winton v. Amos
-  authority: United States Court of Claims
-  container-title: Ct. Cl.
-  volume: '52'
-  page: '90'
+  title: Hatter v. United States
+  authority: United States Court of Federal Claims
+  container-title: Fed. Cl.
+  volume: '38'
+  page: '166'
   issued:
     date-parts:
-    - - 1917
-      - 1
-      - 29
-  URL: https://static.case.law/us-ct-cl/52/html/0090-01.html
+    - - 1997
+      - 6
+      - 6
+  URL: https://static.case.law/fed-cl/38/html/0166-01.html
   accessed:
     date-parts:
     - - 2026
       - 11
       - 26
-original_link: https://static.case.law/us-ct-cl/52/html/0090-01.html
+original_link: https://static.case.law/fed-cl/38/html/0166-01.html
 retrieved: '2026-11-26'
 archives: []
 history:
@@ -38,7 +38,7 @@ topics:
 - federal-court-indian-law
 found_in:
 - 2026-11-26-federal-court-indian-law-opinions
-notes: Published at 52 Ct. Cl. 90. Decided by the United States Court of Claims on Jan. 29, 1917. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 16, at or above 10, the level kept without a reading.
+notes: Published at 38 Fed. Cl. 166. Decided by the United States Court of Federal Claims on June 6, 1997. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (Snoqualmie and Skykomish tribal claims, interest on Indian title compensation).
 review:
   status: unverified
   by: scripts/caselaw/state_court_opinions.py
@@ -46,7 +46,7 @@ review:
   checks:
   - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
     result: agree
-    detail: score 16
+    detail: 'score 2; reader: Snoqualmie and Skykomish tribal claims, interest on Indian title compensation'
   - check: Nations named in the caption, matched to nation records by name
     result: agree
     detail: 0 matched, 0 not linked

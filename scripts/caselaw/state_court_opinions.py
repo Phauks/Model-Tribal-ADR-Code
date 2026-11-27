@@ -423,7 +423,10 @@ def existing_citations(session: str = "") -> tuple[set[str], set[str], dict[str,
         citation = record.get("citation") or {}
         if citation.get("volume") and citation.get("page"):
             cites.add(f"{citation['volume']} {citation.get('container-title', '')} {citation['page']}")
-        for match in re.finditer(r"\b(\d+) ((?:[A-Z][A-Za-z.]*\s?){1,4}(?:\dd|2d|3d|4th)?) (\d+)\b", (citation.get("title") or "") + " " + str(record.get("notes") or "")):
+        # The notes are read for a record with no citation of its own; a record that has one may name other cases there
+        # (an IBIA decision's notes give the court cases that reviewed it).
+        notes = "" if citation.get("volume") and citation.get("page") else str(record.get("notes") or "")
+        for match in re.finditer(r"\b(\d+) ((?:[A-Z][A-Za-z.]*\s?){1,4}(?:\dd|2d|3d|4th)?) (\d+)\b", (citation.get("title") or "") + " " + notes):
             cites.add(" ".join(match.group(0).split()))
         if (record.get("courtlistener") or {}).get("citation"):
             cites.add(record["courtlistener"]["citation"])
