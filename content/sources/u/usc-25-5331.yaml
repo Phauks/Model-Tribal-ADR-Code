@@ -41,6 +41,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=25%20U.S.C.%20%C2%A7%205331
+file:
+  storage_key: united-states-code/2024/title-25-section-5331.pdf
+  checksum: aebc6eca73359e77c6241d5360b59ca5b3e1f4fe5cfce007b5f5414d826f171e
+  media_type: application/pdf
+  bytes: 150810
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -67,14 +72,8 @@ access:
 found_in:
 - 2026-11-21-united-states-dispute-resolution
 - 2026-11-21-legal-history-and-key-cases
-notes: >-
-  Read on the original page. Citator check not yet run. Legal history session (2026-11-21):
-  Citations: Pub. L. No. 93-638, § 110, as added by Pub. L. No. 100-472, § 206(a); 102 Stat. 2294;
-  25 U.S.C. § 5331 (formerly § 450m-1). Later history: Amended 1988 (Pub. L. 100-581), 1990 (Pub.
-  L. 101-301), 1994 (Pub. L. 103-413). The IBCA terminated in 2007; references are treated as
-  references to the Civilian Board of Contract Appeals (LII notes, citing Pub. L. 109-163, § 847).
-  25 C.F.R. Part 900 (ISDEAA regulations, including dispute provisions) not opened. Westlaw:
-  KeyCite 25 U.S.C. § 5331 and 25 C.F.R. Part 900 subpart N (not opened).
+- 2026-11-27-us-code-sections
+notes: 'Read on the original page. Citator check not yet run. Legal history session (2026-11-21): Citations: Pub. L. No. 93-638, § 110, as added by Pub. L. No. 100-472, § 206(a); 102 Stat. 2294; 25 U.S.C. § 5331 (formerly § 450m-1). Later history: Amended 1988 (Pub. L. 100-581), 1990 (Pub. L. 101-301), 1994 (Pub. L. 103-413). The IBCA terminated in 2007; references are treated as references to the Civilian Board of Contract Appeals (LII notes, citing Pub. L. 109-163, § 847). 25 C.F.R. Part 900 (ISDEAA regulations, including dispute provisions) not opened. Westlaw: KeyCite 25 U.S.C. § 5331 and 25 C.F.R. Part 900 subpart N (not opened). The stored copy is 25 U.S.C. § 5331 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.'
 law_box:
   summary: |-
     The 1988 amendments gave federal courts jurisdiction over contract claims and applied the Contract Disputes Act [@usc-25-5331]. The 1994 model agreement lets the parties send a dispute "to the adjudicatory body of the Contractor, including the tribal court of the Contractor," or "to mediation processes provided for under the laws, policies, or procedures of the Contractor," and binds the Secretary to the result with a narrow exception [@usc-25-5329-c-model-agreement-disputes].

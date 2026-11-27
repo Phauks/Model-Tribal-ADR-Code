@@ -43,6 +43,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=28%20U.S.C.%20%C2%A7%20471
+file:
+  storage_key: united-states-code/2024/title-28-sections-471-and-473.pdf
+  checksum: ffae8290f2d2f98a56af24b16fd48334e8866cd1b7c2685f5f8654fa543397c9
+  media_type: application/pdf
+  bytes: 178890
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -71,4 +76,5 @@ access:
   note: Free on LII. Pull 28 U.S.C.A. §§ 471–482 with notes on Westlaw.
 found_in:
 - 2026-11-21-united-states-dispute-resolution
-notes: Read on the original page. Citator check not yet run. Enacted 1990-12-01; the citation omits the year because the section is cited from the current code (Indigo Book R16.1.2).
+- 2026-11-27-us-code-sections
+notes: Read on the original page. Citator check not yet run. Enacted 1990-12-01; the citation omits the year because the section is cited from the current code (Indigo Book R16.1.2). The stored copy is 28 U.S.C. §§ 471, 473 from the 2024 edition of the Code on GovInfo joined from GovInfo's section PDFs (the text with its notes), saved by scripts/law/us_code_sections.py.
