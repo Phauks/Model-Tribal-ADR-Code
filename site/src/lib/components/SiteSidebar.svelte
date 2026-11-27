@@ -15,11 +15,15 @@
 	// - then "Changes to This Page", where the site records the page's changes
 	//   (Trevor, Nov. 23, 2026), and Your work while an essay is edited.
 	//
-	// The Workspace and the Account pages are places too: on their own pages
-	// the column lists them as it lists a section's pages
-	// (src/lib/personal-navigation.ts). Elsewhere they are in the section bar's
-	// Workspace tab and under the masthead's profile button, not in the column
-	// (Trevor, Nov. 27, 2026; design/sidebar-workspace-profile, option B).
+	// The Account pages are a place too: on their own pages the column lists
+	// them as it lists a section's pages (src/lib/personal-navigation.ts).
+	// Elsewhere they are under the masthead's profile button, not in the
+	// column (Trevor, Nov. 27, 2026; design/sidebar-workspace-profile,
+	// option B). The Workspace's pages are in the section bar's Workspace tab
+	// and the phone Menu sheet, so the column does not list them again, even
+	// on the Workspace's own pages (Trevor, Nov. 27, 2026: "since we have top
+	// nav for workspace, do we need left sidebar nav for it now? probably can
+	// remove").
 	//
 	// Long lists, such as every nation, are no longer in the column: the
 	// Nations menu has a box to go straight to a nation.
@@ -47,7 +51,7 @@
 	import { isUnfolded } from '#lib/outline-folding.ts';
 	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
 	import { followedPageAddress } from '#lib/page-history.ts';
-	import { personalSectionOf, workspaceSection } from '#lib/personal-navigation.ts';
+	import { accountSection, personalSectionOf, workspaceSection } from '#lib/personal-navigation.ts';
 	import {
 		currentNavigationLink,
 		holdingNavigationLink,
@@ -84,8 +88,9 @@
 	const access = new WorkspaceAccess();
 	const workspace = $derived(workspaceSection(access.pages));
 	const personalSection = $derived(currentSection ? undefined : personalSectionOf(path, workspace));
-	// A family takes the place of the section's pages.
-	const shownSection = $derived(family ? undefined : (currentSection ?? personalSection));
+	// A family takes the place of the section's pages. The Workspace is left to its tab.
+	const columnSection = $derived(currentSection ?? (personalSection === accountSection ? accountSection : undefined));
+	const shownSection = $derived(family ? undefined : columnSection);
 	const heldLink = $derived(shownSection ? holdingNavigationLink(shownSection, path, search) : undefined);
 
 	// The page's own headings. While an essay is edited or commented on, its
@@ -267,17 +272,28 @@
 				<p class="local-title">{family.title}</p>
 			{/if}
 		</div>
-		<ul class="local-pages">
-			{#each family.pages as item (item.link)}
-				{@const current = item.link === path}
-				<li>
-					<a class="local-link" href={item.link} aria-current={current ? 'page' : undefined}>
-						<span>{#if item.number}<span class="number">{item.number}</span>{' '}{/if}{item.label}</span>
-						{#if item.count}<CountBadge count={item.count} />{/if}
-					</a>
-				</li>
-			{/each}
-		</ul>
+		<!-- The page being read is named but not linked, since a link to it would go nowhere (Trevor, Nov. 27, 2026). A list holding only that page is left out: the title above already names it. -->
+		{#if family.pages.some((item) => item.link !== path)}
+			<ul class="local-pages">
+				{#each family.pages as item (item.link)}
+					{#if item.link === path}
+						<li>
+							<span class="local-link" aria-current="page">
+								<span>{#if item.number}<span class="number">{item.number}</span>{' '}{/if}{item.label}</span>
+								{#if item.count}<CountBadge count={item.count} />{/if}
+							</span>
+						</li>
+					{:else}
+						<li>
+							<a class="local-link" href={item.link}>
+								<span>{#if item.number}<span class="number">{item.number}</span>{' '}{/if}{item.label}</span>
+								{#if item.count}<CountBadge count={item.count} />{/if}
+							</a>
+						</li>
+					{/if}
+				{/each}
+			</ul>
+		{/if}
 	{:else if shownSection}
 		<!-- The section's pages, in the groups of its menu. -->
 		<div class="local-head">

@@ -1376,10 +1376,9 @@ export const load: PageServerLoad = ({ params }) => {
 		sources: sources.list
 	};
 
-	// The page's outline, for the sidebar: one entry per heading, in the page's order.
+	// The page's outline, for the sidebar: one entry per heading, in the page's order. At a glance is left out: it sits beside the opening of the page, so jumping to it only made the page jump (Trevor, Nov. 27, 2026).
 	const items: OutlineItem[] = [];
 	const hasContacts = contacts.websites.length > 0 || contacts.offices.length > 0;
-	if (glance.length > 0 || map) items.push({ label: 'At a glance', link: '#glance-heading' });
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });
 	items.push({ label: governmentHeading, link: '#government-heading' });
 	items.push({ label: 'Courts', link: '#courts-heading' });

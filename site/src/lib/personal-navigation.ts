@@ -7,8 +7,9 @@
 //   people with workspace access, and its menu lists its pages under their
 //   categories (SectionBar.svelte);
 // - the Account pages are under the profile button (AccountLink.svelte);
-// - on their own pages the side column lists them, as it lists a section's
-//   pages (SiteSidebar.svelte).
+// - on the Account pages the side column lists them, as it lists a section's
+//   pages (SiteSidebar.svelte). It does not list the Workspace's pages, which
+//   the Workspace tab already lists (Trevor, Nov. 27, 2026).
 //
 // Navigation labels are in Title Case, like the sections' (Trevor, Nov. 27,
 // 2026), so the labels here are written out rather than taken from the
