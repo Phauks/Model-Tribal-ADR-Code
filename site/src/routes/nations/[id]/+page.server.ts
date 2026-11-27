@@ -313,27 +313,21 @@ function organizationHome(fact: CitedFact & { organization: string }): string | 
 
 /**
  * The nation's recognition, one line for each status: two sources that both
- * say "Federally recognized" make one line with both markers. Under it is the
- * short form of each distinct legal basis, such as "25 C.F.R. Part 83",
- * linked to the official text; the full wording stays with the cited source.
+ * say "Federally recognized" make one line with both markers. The line
+ * names no law: its marker cites the source, and the recognition badge at
+ * the top of the page gives the legal basis with each law linked (Trevor,
+ * Nov. 27, 2026: "we don't need to say the regulation if we have the
+ * citation right there").
  */
 function recognitionItems(record: NationRecord, sources: SourceUses, label: string): FactItem[] {
-	const byLabel = new Map<string, FactItem & { citations: CitationMark[]; detailParts: CitationPart[] }>();
+	const byLabel = new Map<string, FactItem & { citations: CitationMark[] }>();
 	for (const fact of record.recognition ?? []) {
 		const view = recognitionView(fact);
-		const item = byLabel.get(view.label) ?? { text: view.label, citations: [], detailParts: [] };
+		const item = byLabel.get(view.label) ?? { text: view.label, citations: [] };
 		byLabel.set(view.label, item);
-		const short = view.short;
-		if (short && !item.detailParts.some((part) => part.text === short.text)) {
-			if (item.detailParts.length > 0) item.detailParts.push({ text: '; ' });
-			item.detailParts.push(short);
-		}
 		sources.citeFact(fact, label, view.label, item.citations);
 	}
-	return [...byLabel.values()].map((item) => ({
-		...item,
-		detailParts: item.detailParts.length > 0 ? item.detailParts : undefined
-	}));
+	return [...byLabel.values()];
 }
 
 /** The section that shows how the nation's government is set up. */
