@@ -363,7 +363,7 @@ def georeference(args):
         if added == 0 and not bad:
             break
     out = Path(args.work) / "gcps.json"
-    out.write_text(json.dumps({"lon0": lon0, "points": [{"lon": k[0], "lat": k[1], "x": float(v[0]), "y": float(v[1])} for k, v in pts.items()]}, indent=1))
+    out.write_text(json.dumps({"lon0": lon0, "points": [{"lon": k[0], "lat": k[1], "x": float(v[0]), "y": float(v[1])} for k, v in pts.items()]}, indent=1) + "\n")
     print(f"wrote {out}")
 
 
