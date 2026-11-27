@@ -29,7 +29,7 @@ declare module 'virtual:mail-nations' {
 }
 
 declare module 'virtual:section-lists' {
-	/** Every nation's name and page id, A to Z, for the Nations menu's "Go to a nation" (SectionBar.svelte). */
+	/** Every nation's name and page id, A to Z, for the pickers that choose a nation, such as on the home page and Find the law. */
 	export const nationNames: [name: string, id: string][];
 	/** How many of them are Native nations, leaving out the Native Hawaiian community and the territories' peoples. */
 	export const nationCount: number;

@@ -12,8 +12,8 @@ export function nationFamily(identifier: string, name: string, opinionCount: num
 		back: { label: 'Nations', link: '/nations' },
 		title: name,
 		pages: [
-			{ label: 'Nation page', link: `/nations/${identifier}` },
-			...(opinionCount > 0 ? [{ label: 'Court opinions', link: `/nations/${identifier}/opinions`, count: opinionCount }] : [])
+			{ label: 'Nation Page', link: `/nations/${identifier}` },
+			...(opinionCount > 0 ? [{ label: 'Court Opinions', link: `/nations/${identifier}/opinions`, count: opinionCount }] : [])
 		]
 	};
 }

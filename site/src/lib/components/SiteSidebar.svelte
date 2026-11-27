@@ -92,7 +92,7 @@
 	// Rows line up without room for carets when no heading has headings under it.
 	const outlineNests = $derived(outlineItems.some((item) => item.children?.length));
 	// An outline of the page's headings is "On this page"; one that lists other pages, such as the back matter's, is "Contents".
-	const outlineLabel = $derived(outlineItems.every((item) => item.link.startsWith('#')) ? 'On this page' : 'Contents');
+	const outlineLabel = $derived(outlineItems.every((item) => item.link.startsWith('#')) ? 'On This Page' : 'Contents');
 
 	// The workspace pages to list: from the page itself in the workspace,
 	// otherwise from the signed-in hint, read in the browser.
