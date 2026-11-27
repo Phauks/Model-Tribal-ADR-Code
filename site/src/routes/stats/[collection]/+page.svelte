@@ -33,10 +33,13 @@
 
 <div class="collection-page">
 	<Breadcrumbs trail={[{ label: 'Library', href: '/library' }, { label: 'Statistics', href: `/stats#${data.identifier}` }]} current={data.title} />
-	<h1>{data.title}</h1>
-	<p class="summary">
-		{number(data.items.length)}{#if data.years}{" · "}<span class="years">{data.years}</span>{/if}{#if data.heldBack}<span class="held">. {number(data.heldBack)} more {data.heldBackReason}.</span>{/if}
-	</p>
+	<h1 class:alone={!data.years && !data.heldBack}>{data.title}</h1>
+	<!-- No count here: the table's "Showing N of N items" already gives it (Trevor, Nov. 27, 2026). -->
+	{#if data.years || data.heldBack}
+		<p class="summary">
+			{#if data.years}<span class="years">{data.years}</span>{/if}{#if data.years && data.heldBack}{'. '}{/if}{#if data.heldBack}<span class="held">{number(data.heldBack)} more {data.heldBackReason}.</span>{/if}
+		</p>
+	{/if}
 	{#if data.related}<p class="related"><a href={data.related.href}>{data.related.label}</a></p>{/if}
 	<DataTable
 		identifier={data.identifier}
@@ -58,6 +61,10 @@
 
 	h1 {
 		margin-bottom: 0;
+	}
+
+	h1.alone {
+		margin-bottom: var(--space-4);
 	}
 
 	.summary {

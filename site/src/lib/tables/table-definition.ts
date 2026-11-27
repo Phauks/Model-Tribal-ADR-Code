@@ -36,7 +36,8 @@ export interface TableColumn {
 	/**
 	 * Readers can narrow the table to some of this column's values, ticked in
 	 * a list under the column's header. A searchable column that is not
-	 * filterable gets a "Contains" box there instead.
+	 * filterable gets the same list when its values are few enough to pick
+	 * from, and a "Contains" box when they are not (filterKindFor).
 	 */
 	filterable?: boolean;
 	/** The column starts hidden; a reader can add it from the list of columns. */
@@ -159,6 +160,39 @@ export function filterKind(column: TableColumn): 'values' | 'contains' | undefin
 	if (column.filterable) return 'values';
 	if (column.searchable) return 'contains';
 	return undefined;
+}
+
+/**
+ * The most values a column lists to tick when the page left the choice to
+ * the table, and how many values a list may have before a column where
+ * nearly every row has its own value (a docket number, a description) takes
+ * a "Contains" box instead (Trevor, Nov. 27, 2026: "a lot of the filters for
+ * tables require manual entry instead of showing the options"). A list of
+ * nation names, a few hundred long, still fits, with its "Find a value" box.
+ */
+export const tickListLimit = 600;
+const uniqueListLimit = 30;
+
+/**
+ * What kind of filter a column offers, given the rows it holds: a column
+ * marked filterable always lists its values; a searchable column lists them
+ * too when there are few enough to pick from, so readers see the options
+ * instead of guessing what to type. The column naming each row, and a column
+ * of mostly one-of-a-kind values, keeps the "Contains" box.
+ */
+export function filterKindFor(column: TableColumn, rows: TableRow[]): 'values' | 'contains' | undefined {
+	const kind = filterKind(column);
+	if (kind !== 'contains' || column.isRowHeader) return kind;
+	const distinct = new Set<string>();
+	for (const row of rows) {
+		for (const value of valuesOf(row.cells[column.key])) {
+			distinct.add(value);
+			if (distinct.size > tickListLimit) return 'contains';
+		}
+	}
+	if (distinct.size === 0) return 'contains';
+	if (distinct.size > uniqueListLimit && distinct.size > rows.length * 0.8) return 'contains';
+	return 'values';
 }
 
 /** Whether a filter narrows anything. */
@@ -300,14 +334,12 @@ export function readTableState(identifier: string, columns: TableColumn[], param
 		}
 	}
 	for (const column of columns) {
+		// A searchable column may offer either kind, depending on its rows (filterKindFor), so its link may carry either.
 		const kind = filterKind(column);
-		if (kind === 'values') {
-			const values = parameters.getAll(`${identifier}.${column.key}`).filter(Boolean);
-			if (values.length > 0) state.filters[column.key] = { values: [...new Set(values)] };
-		} else if (kind === 'contains') {
-			const contains = parameters.get(`${identifier}.${column.key}.contains`)?.trim();
-			if (contains) state.filters[column.key] = { contains };
-		}
+		if (kind === undefined) continue;
+		const values = [...new Set(parameters.getAll(`${identifier}.${column.key}`).filter(Boolean))];
+		const contains = kind === 'contains' ? parameters.get(`${identifier}.${column.key}.contains`)?.trim() : undefined;
+		if (values.length > 0 || contains) state.filters[column.key] = { ...(values.length > 0 ? { values } : {}), ...(contains ? { contains } : {}) };
 	}
 	const shown = parameters.get(`${identifier}.columns`);
 	if (shown !== null) {

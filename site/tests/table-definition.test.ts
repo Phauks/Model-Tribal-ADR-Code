@@ -6,6 +6,8 @@ import {
 	filterChoices,
 	filterIsActive,
 	filterKind,
+	filterKindFor,
+	tickListLimit,
 	shownColumnsOf,
 	filterRows,
 	readTableState,
@@ -167,6 +169,30 @@ describe('column filters', () => {
 		expect(filterKind({ key: 'a', header: 'A' })).toBeUndefined();
 		expect(filterIsActive({ values: [], contains: ' ' })).toBe(false);
 		expect(filterIsActive({ contains: 'x' })).toBe(true);
+	});
+
+	it('lists the values of a searchable column when there are few enough to pick from', () => {
+		const kind: TableColumn = { key: 'kind', header: 'Kind', searchable: true };
+		const name: TableColumn = { key: 'name', header: 'Name', searchable: true, isRowHeader: true };
+		const rowsOf = (texts: string[]): TableRow[] => texts.map((text, index) => ({ key: String(index), cells: { kind: { text }, name: { text } } }));
+		const fewKinds = rowsOf(Array.from({ length: 135 }, (_, index) => ['Petition', 'Proposed finding', 'Final determination'][index % 3]));
+		expect(filterKindFor(kind, fewKinds)).toBe('values');
+		// The column naming each row keeps "Contains", however few its values.
+		expect(filterKindFor(name, fewKinds)).toBe('contains');
+		// A small table lists even one-of-a-kind values; a long column of them, such as docket numbers, takes "Contains".
+		expect(filterKindFor(kind, rowsOf(['M-1', 'M-2', 'M-3']))).toBe('values');
+		expect(filterKindFor(kind, rowsOf(Array.from({ length: 200 }, (_, index) => `M-${index}`)))).toBe('contains');
+		// Too many values to list.
+		expect(filterKindFor(kind, rowsOf(Array.from({ length: (tickListLimit + 1) * 3 }, (_, index) => `Court ${index % (tickListLimit + 1)}`)))).toBe('contains');
+		expect(filterKindFor(kind, rowsOf(['', '']))).toBe('contains');
+		expect(filterKindFor({ key: 'kind', header: 'Kind', filterable: true }, rowsOf(Array.from({ length: 900 }, (_, index) => `${index}`)))).toBe('values');
+		expect(filterKindFor({ key: 'kind', header: 'Kind' }, fewKinds)).toBeUndefined();
+	});
+
+	it('reads ticked values and "Contains" for a searchable column, which may offer either', () => {
+		const columns: TableColumn[] = [{ key: 'kind', header: 'Kind', searchable: true }];
+		expect(readTableState('t', columns, new URLSearchParams('t.kind=Petition&t.kind=Petition&t.kind=Final'))).toEqual({ query: '', filters: { kind: { values: ['Petition', 'Final'] } } });
+		expect(readTableState('t', columns, new URLSearchParams('t.kind.contains=finding'))).toEqual({ query: '', filters: { kind: { contains: 'finding' } } });
 	});
 
 	it('writes the state into the address and reads it back', () => {
