@@ -168,6 +168,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
   note: 'The source''s words: "Native Village of Buckland".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 650761
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Buckland' (Buckland)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Buckland'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution and By-Laws of the Native Village of Buckland Alaska (approved 1950) states it

@@ -241,6 +241,32 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Nashville Area
   note: Listed as "Pamunkey Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2025
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Nashville Area, row 'Pamunkey Indian Tribe'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: VA, row 'Pamunkey Indian Tribe' (King William)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 1324320
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'PAMUNKEY INDIAN TRIBE' (UEI HVBCJ2A6BVG7), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Pamunkey Indian Tribal Government

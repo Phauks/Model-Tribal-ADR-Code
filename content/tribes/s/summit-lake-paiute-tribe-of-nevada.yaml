@@ -157,6 +157,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Phoenix Area
   note: Listed as "Summit Lake Paiute Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 228536
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NV, row 'Summit Lake Paiute Tribe' (Sparks)
 governance:
 - aspect: form
   value: Articles of Association

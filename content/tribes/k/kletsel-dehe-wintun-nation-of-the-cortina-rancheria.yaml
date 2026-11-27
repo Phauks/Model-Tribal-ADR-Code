@@ -189,6 +189,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Kletsel Dehe Band of Wintun Indians". Roster name is Kletsel Dehe Wintun Nation; Indian Health Service page uses the older name. Appears run on to the end of the preceding line on the page.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 178553
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Kletsel Dehe Wintun Nation of the Cortina Rancheria' (Williams)
 governance:
 - aspect: form
   value: Constitution and Bylaws approved under the Act of June 18, 1934

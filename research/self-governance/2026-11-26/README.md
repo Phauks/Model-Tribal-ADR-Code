@@ -1,6 +1,6 @@
 # Self-Governance Participant Lists, Nov. 26, 2026
 
-Lists gathered for the [self-governance programs study](../../analyses/2026-11-26-self-governance-programs.md). They are raw material for a later build: nothing here is on a nation page, and every row is Unverified. All are United States government works (17 U.S.C. § 105).
+Lists gathered for the [self-governance programs study](../../analyses/2026-11-26-self-governance-programs.md). Every row is Unverified. `scripts/tribes/federal_programs.py` turns them into `federal_programs` facts on the nation pages; its crosswalk of every listed name to a profile, with who decided each match, is [`../crosswalk.csv`](../crosswalk.csv), and the facts it applied are in [`../2026-11-26-batch.json`](../2026-11-26-batch.json). All are United States government works (17 U.S.C. § 105).
 
 Each file except `smaller-programs.csv` ends with two columns from a quick name match against the federally recognized nations in `content/tribes/`: `candidate_profile` (a profile id, or empty) and `match_method` (`exact` after removing case and punctuation; `loose` after also removing words such as Tribe, Band, Indians and state names; `close` for a near spelling; `none`). Loose and close matches are candidates for a person or a small model to check, not facts.
 
@@ -17,4 +17,4 @@ Each file except `smaller-programs.csv` ends with two columns from a quick name 
 | `usaspending-fy2025-14-867-hud-indian-housing-block-grants.csv` | 375 | Same, Assistance Listing 14.867 |
 | `smaller-programs.csv` | 59 | Transportation self-governance compacts (news releases), FDPIR demonstration projects ([Food and Nutrition Service](https://www.fns.usda.gov/fdpir/self-determination)) and Interior's non-BIA funding agreements for fiscal year 2024 ([89 Fed. Reg. 103858](https://govinfo.gov/content/pkg/FR-2024-12-19/pdf/2024-30252.pdf)), typed from the sources |
 
-The fetch and match were done with one-off scripts in the study session; a build should write its own script under `scripts/` that fetches these sources again.
+The fetch was done with one-off scripts in the study session. The `candidate_profile` columns are the study's first guesses; the crosswalk supersedes them.

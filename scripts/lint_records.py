@@ -34,6 +34,13 @@ Checks:
                     a profile fact that cites a version no longer in effect
                     names that version in `document_version`, so the page can
                     say so; otherwise it should cite the version in effect
+  quote-ellipsis    a case or law box quotation marks left-out words in the
+                    Indigo Book form (R8.3): no "..." at the start (the first
+                    letter is capitalized in brackets, "[T]he"), "... ." at
+                    the end of a sentence cut short, where
+                    scripts/library/check_box_quotes.py found the sentence
+                    goes on (research/quotes/box-quote-endings.json), and no
+                    "..." after a sentence that ends
   edition-citation  every source cited by content headed for an edition
                     (essays, provisions, commentary, glossary) is archived,
                     has a citator result if it is a case, statute, regulation
@@ -59,6 +66,8 @@ Requires the packages in scripts/requirements.txt.
 import argparse
 import collections
 import datetime
+import json
+import re
 import sys
 
 from record_facts import (
@@ -74,6 +83,10 @@ STRICT_STATUSES = {"stable", "adopted", "final"}
 SHOWN_PER_CHECK = 15
 # Profile sections whose entries are services a reader may want to reach.
 SERVICE_SECTIONS = ("justice_institutions", "dispute_resolution.forums")
+# Where scripts/library/check_box_quotes.py records whether each box quotation
+# that begins or ends with "..." really leaves words out there.
+QUOTE_ENDINGS_FILE = "research/quotes/box-quote-endings.json"
+ELLIPSIS = r"(?:\.\s?\.\s?\.|…)"
 
 
 class Report:
@@ -156,6 +169,41 @@ def check_sources(tree, report, changed_sources, today, grace_days):
             continue
         new = source["_file"] in changed_sources
         report.add("archive", f"{source['_file']}: no archived copy {(today - retrieved).days} days after retrieval (grace period {grace_days} days)", new)
+
+
+def check_quote_ellipses(tree, report, changed_sources):
+    """Box quotations mark left-out words in the Indigo Book form (R8.3; the
+    lead author chose it on Nov. 26, 2026; docs/style-guide.md,
+    "Quotations"): no "..." at the start, where the first letter is
+    capitalized in brackets ("[T]he"); "... ." at the end of a sentence cut
+    short, which scripts/library/check_box_quotes.py must have confirmed
+    against the text quoted; and nothing after a sentence that ends."""
+    path = tree.root / QUOTE_ENDINGS_FILE
+    endings = {}
+    if path.exists():
+        for entry in json.loads(path.read_text(encoding="utf-8")).get("quotations", []):
+            endings[(entry["record"], entry["text"])] = entry
+    rerun = "run python3 scripts/library/check_box_quotes.py --record {key} --fix --write"
+    for key, source in tree.sources.items():
+        for box in ("case_box", "law_box"):
+            for index, quote in enumerate((source.get(box) or {}).get("quotes") or []):
+                text = (quote.get("text") or "").strip()
+                where = f"{source['_file']}: {box}.quotes[{index}]"
+                new = source["_file"] in changed_sources
+                if re.match(ELLIPSIS, text):
+                    report.add("quote-ellipsis", f'{where} begins with "..."; drop it and capitalize the first letter in brackets, "[T]he" (Indigo Book R8.3.2)', new)
+                elif re.match(r"^[\s\"“‘'*_(]*[a-z]", text):
+                    report.add("quote-ellipsis", f'{where} begins with a lowercase letter; capitalize it in brackets, "[T]he" (Indigo Book R8.3.2)', new)
+                if re.search(r"[^\s.]\s+(?:\.\.\.|…)\s+[.?!]$", text):
+                    entry = endings.get((key, quote.get("text")))
+                    if entry is None:
+                        report.add("quote-ellipsis", f'{where} ends with "... ." but has not been checked against the text it quotes; {rerun.format(key=key)}', new)
+                    elif entry.get("end") == "sentence":
+                        report.add("quote-ellipsis", f'{where} ends with "... ." but the sentence ends there in {entry.get("document")}; end it with the sentence\'s own period ({rerun.format(key=key)})', new)
+                elif re.search(rf"[.?!][\"”’')\]]*\s*{ELLIPSIS}$", text):
+                    report.add("quote-ellipsis", f'{where} ends its sentence and then "..."; a quotation that ends where the sentence ends keeps the period and takes no "..." (Indigo Book R8.3.7)', new)
+                elif re.search(rf"{ELLIPSIS}$", text):
+                    report.add("quote-ellipsis", f'{where} ends with a bare "..."; a sentence cut short ends "... ." with the sentence\'s own closing mark (Indigo Book R8.3.5); {rerun.format(key=key)}', new)
 
 
 def check_documents(tree, report, changed_documents, changed_sources):
@@ -293,6 +341,7 @@ def main():
     check_profiles(tree, report, new_facts, tree.method_ids())
     check_sources(tree, report, changed_sources, arguments.today, arguments.grace_days)
     check_documents(tree, report, changed_documents, changed_sources)
+    check_quote_ellipses(tree, report, changed_sources)
     check_superseded_citations(tree, report, new_facts)
     check_edition(tree, report, arguments.edition)
     report.print()

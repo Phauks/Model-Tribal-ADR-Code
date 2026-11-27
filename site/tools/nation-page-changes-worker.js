@@ -21,7 +21,7 @@
 // nor are the sitemap's lists as built, which the sitemap is written from,
 // nor the Worker's private data files.
 
-const nationPage = /^\/nations\/(?!(?:coverage|data|federal-offices|law|letter|map|recourse|state|timeline)$)([a-z0-9-]+)(?:\/opinions)?$/;
+const nationPage = /^\/nations\/(?!(?:coverage|data|federal-offices|federal-programs|law|letter|map|recourse|state|timeline)$)([a-z0-9-]+)(?:\/opinions)?$/;
 const restrictableList = /^\/nations\/[a-z0-9-]+\/restrictable\.json$/;
 // The sitemap's pages as built (src/routes/sitemaps/built), which the Worker
 // reads to write the sitemap less what nations hid since (src/lib/sitemap.ts).
@@ -48,7 +48,7 @@ export const filteredFiles = [
 /** Pages the site draws again when something on them is restricted (src/lib/restricted-pages.ts, restrictedPageViews), and the data a move within the site asks for. */
 export const filteredPages = [
 	/^\/nations\/timeline(\/__data\.json)?$/,
-	/^\/nations\/(?!(?:coverage|data|federal-offices|law|letter|map|recourse|state|timeline)(?:\/|$))[a-z0-9-]+(\/opinions)?(\/__data\.json)?$/,
+	/^\/nations\/(?!(?:coverage|data|federal-offices|federal-programs|law|letter|map|recourse|state|timeline)(?:\/|$))[a-z0-9-]+(\/opinions)?(\/__data\.json)?$/,
 	/^\/copies\/list\/[a-z0-9-]+(\/__data\.json)?$/,
 	/^\/nations\/data\/(?!(?:build|tables)\/)[a-z0-9-]+\/(?!sources(?:\/|$))[^/]+?(\/__data\.json)?$/,
 	/^\/stats\/[a-z0-9-]+(\/__data\.json)?$/,

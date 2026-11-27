@@ -166,6 +166,16 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Yupiit of Andreafski".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 158375
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Yupiit of Andreafski' (St. Mary's)
 governance:
 - aspect: head-of-government
   value: President

@@ -194,6 +194,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
   note: 'The source''s words: "Native Village of Chignik Lagoon".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Chignik Lagoon' (Chignik Lagoon)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Chignik Lagoon'.
 governance:
 - aspect: form
   value: Adopted pursuant to inherent sovereignty

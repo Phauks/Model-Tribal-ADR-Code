@@ -24,7 +24,7 @@ import { youtubeEmbedAddress, youtubePosterAddress } from '../video-links.ts';
 import { attributionSource } from '../quote-context.ts';
 import { firstPage, opinionAt, quoteOpinionLabel, type OpinionEntry } from '../case-opinions.ts';
 import { readingLinksAfter } from '../reading-links.ts';
-import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
+import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, needlessEndEllipsis, quotationEndProblems, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
 import { escapeHtml } from '../escape-html.ts';
 import { fillBoxes, laterCaseKinds, type BoxKind } from './record-boxes.ts';
 
@@ -599,7 +599,7 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 }
 
 /**
- * Quotations that may leave out words without saying so (missingEllipses in
+ * Quotations whose ends do not mark left-out words in the Indigo Book form (quotationEndProblems in
  * syntax.ts): each ">" passage and each quotation box, without its
  * attribution.
  */
@@ -610,8 +610,9 @@ function quotationWarnings(tokens: Token[]): string[] {
 		const first = paragraphs[0];
 		const last = paragraphs.at(-1)!;
 		const shown = (text: string) => `“${text.length > 50 ? `${text.slice(0, 50)}…` : text}”`;
-		if (missingEllipses(first).start) warnings.push(`The quotation ${shown(first)} starts mid-sentence; begin it with "... ".`);
-		if (missingEllipses(last).end) warnings.push(`The quotation ending ${shown(last.slice(-50))} stops mid-sentence; end it with " ...".`);
+		if (quotationEndProblems(first).start) warnings.push(`The quotation ${shown(first)} starts mid-sentence; drop any leading "..." and capitalize its first letter in brackets, "[T]he".`);
+		if (needlessEndEllipsis(last)) warnings.push(`The quotation ending ${shown(last.slice(-50))} ends its sentence; drop the " ..." after the period.`);
+		else if (quotationEndProblems(last).end) warnings.push(`The quotation ending ${shown(last.slice(-50))} stops mid-sentence; end it with " ... ." and the sentence's own period.`);
 	};
 	for (let index = 0; index < tokens.length; index += 1) {
 		const opening = tokens[index].type;

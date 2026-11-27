@@ -218,6 +218,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: page text
   note: 'The source''s words: "Rappahannock Indian Tribe".'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 124181
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: VA, row 'Rappahannock Tribe, Inc.' (Indian Neck)
 governance:
 - aspect: head-of-government
   value: Chief

@@ -49,8 +49,10 @@
 	import FollowButton from './FollowButton.svelte';
 	import StarButton from './StarButton.svelte';
 	import SaveOfflineButton from './SaveOfflineButton.svelte';
+	import UpdateButton from './UpdateButton.svelte';
+	import type { TrackVersions } from '#lib/server/versions.ts';
 
-	let { contentVersion }: { contentVersion: string } = $props();
+	let { contentVersion, versions }: { contentVersion: string; versions: TrackVersions } = $props();
 
 	/**
 	 * "Report a problem" opens a dialog with the request form (ReportProblem),
@@ -67,7 +69,7 @@
 		const term = /^\/glossary\/([^/]+)$/.exec(path)?.[1];
 		const story = /^\/stories\/([^/]+)$/.exec(path)?.[1];
 		const record =
-			nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'coverage'
+			nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'federal-programs' && nation !== 'coverage'
 				? `tribes/${nation}`
 				: term
 					? `glossary/${term}`
@@ -133,6 +135,7 @@
 			<span class="page-controls-row no-print"><PageControls place="row" /></span>
 		</div>
 		<div class="masthead-controls no-print">
+			<UpdateButton {versions} />
 			<SiteSearch bind:this={search} />
 			<button
 				class="more-button"

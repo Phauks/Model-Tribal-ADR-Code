@@ -247,6 +247,23 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Catawba Indian Nation".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3502196
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: SC, row 'Catawba Indian Nation' (Rock Hill)
+- program: tribal-transportation-self-governance-compact
+  since: 2025
+  source: wrhi-2025-02-17-catawba-transportation-compact
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-02-17'
+  locator: 'names ''Catawba Indian Nation'': fifth compact (february 2025)'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Catawba Tribe of Indians South Carolina" among organizations under constitutions

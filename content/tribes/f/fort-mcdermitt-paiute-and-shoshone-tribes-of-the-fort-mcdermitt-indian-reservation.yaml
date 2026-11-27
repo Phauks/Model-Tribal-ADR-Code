@@ -208,6 +208,34 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
   note: 'Listed as "Fort McDermitt Paiute-Shoshone Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Fort McDermitt Paiute and Shoshone Tribe (2017)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2017
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Phoenix Area, row 'Fort McDermitt Paiute and Shoshone Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Fort McDermitt Paiute and Shoshone Tribe'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1126832
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NV, row 'Fort McDermitt Paiute and Shoshone Tribes' (McDermitt)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 2211207
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'FORT MCDERMITT PAIUTE AND SHOSHONE TRIBE' (UEI F15ZJSMBPJ81), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'FORT MCDERMITT PAIUTE AND SHOSHONE TRIBE'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Fort McDermitt Pauite and Shoshone Tribe, Nevada" among organizations under constitutions

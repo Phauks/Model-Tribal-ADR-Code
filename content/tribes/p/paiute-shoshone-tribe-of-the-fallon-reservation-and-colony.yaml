@@ -228,6 +228,26 @@ indian_health_service:
   locator: page text
   note: 'The source''s words: "Fallon Pauite-Shoshone Tribe".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2420233
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NV, row 'Fallon Paiute-Shoshone Tribe' (Fallon)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 2925899
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'FALLON PAIUTE SHOSHONE TRIBE' (UEI NJLLYD8F8N17), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'FALLON PAIUTE SHOSHONE TRIBE'.
 governance:
 - aspect: governing-body
   value: Fallon Business Council

@@ -1,0 +1,27 @@
+key: indian-land-areas-judicially-established-1978
+kind: dataset
+citation:
+  type: dataset
+  title: Indian Land Areas Judicially Established 1978
+  author:
+  - literal: National Park Service, after the U.S. Geological Survey's 1978 map for the Indian Claims Commission
+  medium: ArcGIS feature service
+  URL: https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services/Indian_Land_Areas_Judicially_Established_1978/FeatureServer/5
+  accessed:
+    date-parts: [[2026, 11, 27]]
+original_link: https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services/Indian_Land_Areas_Judicially_Established_1978/FeatureServer/5
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the National Park Service, tracing a U.S. Geological Survey map, both federal agencies, so not protected by copyright in the United States (17 U.S.C. § 105).
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-27-map-redesign
+notes: 'The 298 areas on the 1978 map of the lands the Indian Claims Commission found each nation held (its "judicially established" areas), each with the map''s area number and the nation or nations it names. These are the Commission''s findings in claims against the United States, not a nation''s own account of its homeland, and the website shows them as dashed, credited findings rather than borders (site/tools/build-historic-maps.mjs). The downloaded areas are kept in the project''s bucket under historic-maps/park-service-indian-land-areas-1978/.'

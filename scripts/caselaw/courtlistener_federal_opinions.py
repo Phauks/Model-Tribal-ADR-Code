@@ -84,11 +84,14 @@ def clusters(args: argparse.Namespace) -> None:
     court_of = {}
     for row in bulk_rows(paths["dockets"]):
         if row["id"] in dockets and row["court_id"] in courts and row["blocked"] != "t":
-            court_of[row["id"]] = (row["court_id"], row["docket_number"])
+            court_of[row["id"]] = (row["court_id"], row["docket_number"], row["case_name"] or row["case_name_short"] or row["case_name_full"])
     kept = {}
     for cluster_id, cluster in found.items():
         if cluster["docket"] in court_of:
-            court_id, number = court_of[cluster["docket"]]
+            court_id, number, docket_name = court_of[cluster["docket"]]
+            # Some clusters (most often new district court orders) carry no case name; the docket has it.
+            cluster["name"] = cluster["name"] or docket_name
+            cluster["name_full"] = cluster["name_full"] or docket_name
             cluster.update(court=court_id, court_name=court_title(courts[court_id]["full_name"]), court_short=courts[court_id]["short_name"], docket_number=number)
             kept[cluster_id] = cluster
     for row in bulk_rows(paths["citations"]):
