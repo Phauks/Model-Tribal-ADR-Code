@@ -143,6 +143,11 @@ const publicHandlers: Record<string, { handlers: string[]; reason: string }> = {
 		reason:
 			'The second step needs the waiting session that the first step set in this browser (locals.waitingSession), limits tries per account, and cancel only ends the session named by this browser’s own cookie.'
 	},
+	'src/routes/sign-in/passkey/+server.ts': {
+		handlers: ['POST'],
+		reason:
+			'Signing in with a passkey has to work signed out; it is limited per connection, the answer counts only for the single-use challenge this browser was given, and only a signature from a passkey kept for an account signs in.'
+	},
 	'src/routes/sign-out/+server.ts': {
 		handlers: ['POST'],
 		reason: 'Signing out ends only the session named by this browser’s own cookie and clears it, so there is nothing to protect.'

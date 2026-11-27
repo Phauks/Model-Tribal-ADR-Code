@@ -5,6 +5,7 @@ import { workerEnvironment } from '#lib/server/environment.ts';
 import { BodyTooLarge, formWithin } from '#lib/server/limited-body.ts';
 import { maximumFileBytes, maximumFiles, readRequestForm } from '#lib/server/request-form.ts';
 import { saveRequest } from '#lib/server/request-store.ts';
+import { checkTurnstile, turnstileActions, turnstileProblem } from '#lib/server/turnstile.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 // The form is answered by the Worker, so it cannot be built ahead of time.
@@ -66,6 +67,13 @@ export const actions: Actions = {
 				return fail(413, { problem: `The files are too large. Each file can be up to ${maximumFileBytes / 1024 / 1024} MB.` });
 			}
 			return fail(400, { problem: 'The form could not be read. Please try again.' });
+		}
+
+		// Cloudflare's "are you a person?" check, when it is on (src/lib/server/turnstile.ts).
+		const person = await checkTurnstile(environment, form, turnstileActions.request, request.headers.get('cf-connecting-ip'));
+		if (person.outcome === 'refused') {
+			console.warn(`Turnstile refused a request: ${person.reason}`);
+			return fail(403, { problem: turnstileProblem });
 		}
 
 		const result = await readRequestForm(form);

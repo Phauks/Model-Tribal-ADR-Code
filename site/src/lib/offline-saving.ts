@@ -1,19 +1,14 @@
 /**
  * The page's side of offline saving (site/DESIGN.md, section 10): asks the
- * service worker what is saved, to save or remove a collection, and to save
- * the kept collections again after an update. Each request gets its own
- * message channel, so progress and the final status come back to the caller.
+ * service worker what is saved, to apply the reader's choices (src/lib/offline-choices.ts),
+ * and to save the chosen pages again after an update. Each request gets its own
+ * message channel, so progress and the answer come back to the caller.
  */
-import type {
-	CollectionIdentifier,
-	OfflineStatus,
-	WorkerReply,
-	WorkerRequest
-} from './offline-collections.ts';
+import type { WorkerReply, WorkerRequest } from './offline-collections.ts';
+import type { ChoiceChange, ChoicesStatus, PageChoice } from './offline-choices.ts';
 import type { DocumentSet, DocumentsStatus } from './offline-documents.ts';
 
 export interface Progress {
-	collection: CollectionIdentifier;
 	done: number;
 	total: number;
 }
@@ -24,49 +19,88 @@ export function controllingWorker(): ServiceWorker | null {
 	return navigator.serviceWorker.controller;
 }
 
-/** Asks the worker; the answer is the status, or nothing when the worker says it has resumed saving. */
-function ask(request: WorkerRequest, onProgress?: (progress: Progress) => void): Promise<OfflineStatus | undefined> {
+/** Asks the worker; the first answer that is not progress settles it. */
+function ask(request: WorkerRequest, onProgress?: (progress: Progress) => void): Promise<WorkerReply> {
 	const worker = controllingWorker();
 	if (!worker) return Promise.reject(new Error('no-worker'));
 	return new Promise((resolve, reject) => {
 		const channel = new MessageChannel();
 		channel.port1.onmessage = (event: MessageEvent<WorkerReply>) => {
 			const reply = event.data;
-			if (reply.type === 'progress') onProgress?.(reply);
-			else {
-				channel.port1.close();
-				if (reply.type === 'status') resolve(reply.status);
-				else if (reply.type === 'resumed') resolve(undefined);
-				else reject(new Error(reply.type === 'failed' ? reply.message : 'unexpected-reply'));
+			if (reply.type === 'choices-progress') {
+				onProgress?.(reply);
+				return;
 			}
+			channel.port1.close();
+			if (reply.type === 'failed') reject(new Error(reply.message));
+			else resolve(reply);
 		};
 		worker.postMessage(request, [channel.port2]);
 	});
 }
 
-async function askStatus(request: WorkerRequest, onProgress?: (progress: Progress) => void): Promise<OfflineStatus> {
-	const status = await ask(request, onProgress);
-	if (!status) throw new Error('unexpected-reply');
-	return status;
+async function askStatus(request: WorkerRequest): Promise<ChoicesStatus> {
+	const reply = await ask(request);
+	if (reply.type !== 'choices') throw new Error('unexpected-reply');
+	return reply.status;
 }
 
-export function offlineStatus(): Promise<OfflineStatus> {
-	return askStatus({ type: 'offline-status' });
-}
-
-export function saveCollection(
-	collection: CollectionIdentifier,
-	onProgress?: (progress: Progress) => void
-): Promise<OfflineStatus> {
-	return askStatus({ type: 'offline-save', collection }, onProgress);
-}
-
-export function removeCollection(collection: CollectionIdentifier): Promise<OfflineStatus> {
-	return askStatus({ type: 'offline-remove', collection });
+export function choicesStatus(): Promise<ChoicesStatus> {
+	return askStatus({ type: 'choices-status' });
 }
 
 /**
- * After an update, or after an interrupted save: saves again the saved pages that changed, a few pages new to a kept collection, and the rest of a save the reader started. A kept collection that gained many pages waits for the reader (src/service-worker/index.ts, automaticTopUp). Asked on every visit, so the worker answers without the status, which would read the list of every built page (src/service-worker/index.ts); a worker from an earlier build answers with it.
+ * Applies the reader's ticks. The worker answers at once with what is chosen now; while it saves, progress comes to
+ * `onProgress`, and the status once it is done to `onDone`, or a problem to `onFailed`.
+ */
+export function applyChoices(
+	changes: ChoiceChange[],
+	callbacks: { onProgress?: (progress: Progress) => void; onDone?: (status: ChoicesStatus) => void; onFailed?: (message: string) => void } = {}
+): Promise<ChoicesStatus> {
+	const worker = controllingWorker();
+	if (!worker) return Promise.reject(new Error('no-worker'));
+	return new Promise((resolve, reject) => {
+		const channel = new MessageChannel();
+		let first = true;
+		channel.port1.onmessage = (event: MessageEvent<WorkerReply>) => {
+			const reply = event.data;
+			if (reply.type === 'choices-progress') callbacks.onProgress?.(reply);
+			else if (reply.type === 'choices') {
+				if (first) {
+					first = false;
+					resolve(reply.status);
+				} else {
+					channel.port1.close();
+					callbacks.onDone?.(reply.status);
+				}
+			} else if (reply.type === 'failed') {
+				channel.port1.close();
+				if (first) reject(new Error(reply.message));
+				else callbacks.onFailed?.(reply.message);
+			}
+		};
+		worker.postMessage({ type: 'choices-apply', changes } satisfies WorkerRequest, [channel.port2]);
+	});
+}
+
+export function clearReadPages(): Promise<ChoicesStatus> {
+	return askStatus({ type: 'choices-clear-read' });
+}
+
+/** Forgets every choice and deletes every saved page and copy. */
+export async function clearEverything(): Promise<void> {
+	await ask({ type: 'choices-clear' });
+}
+
+/** Whether the page at this address is chosen and saved. */
+export async function pageChoice(path: string): Promise<PageChoice> {
+	const reply = await ask({ type: 'page-choice', path });
+	if (reply.type !== 'page-choice') throw new Error('unexpected-reply');
+	return reply.choice;
+}
+
+/**
+ * After an update, or after an interrupted save: saves again the saved pages that changed, a few pages new to what the reader chose, and the rest of a save the reader started. Many new pages wait for the reader (src/service-worker/index.ts, automaticTopUp). Asked on every visit, so the worker answers without the status, which reads every list of the catalog.
  */
 export async function resumeSaving(onProgress?: (progress: Progress) => void): Promise<void> {
 	await ask({ type: 'offline-resume' }, onProgress);

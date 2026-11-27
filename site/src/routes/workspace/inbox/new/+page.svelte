@@ -25,6 +25,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Inbox', href: '/workspace/inbox' }
 	]}
+	current="New message"
 />
 <h1>New message</h1>
 

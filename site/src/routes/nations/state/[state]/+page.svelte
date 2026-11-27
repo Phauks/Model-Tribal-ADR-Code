@@ -12,7 +12,7 @@
 	<title>{data.state.label} · Nations · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Nations with a presence in {data.state.label}" />
 
 <h1>Nations with a presence in {data.state.label}</h1>
 <p class="small muted">

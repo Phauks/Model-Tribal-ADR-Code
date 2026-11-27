@@ -8,7 +8,7 @@
  */
 import { error } from '@sveltejs/kit';
 import { essaysInGit } from 'virtual:essay-library';
-import { renderEssay } from '../essays/render.ts';
+import { renderWithCitations } from './essay-citations.ts';
 import { essayLibrary, essayPage } from './essay-pages.ts';
 import { aboutPageAddresses } from './essays.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
@@ -29,7 +29,7 @@ export async function aboutPage(identifier: string) {
 		const status = (problem as { status?: number }).status;
 		if (status !== 404 && status !== 503) console.error(`Could not read the published ${identifier} page`, problem);
 	}
-	const rendered = renderEssay(gitText, essayLibrary);
+	const rendered = await renderWithCitations(gitText, essayLibrary);
 	return {
 		identifier,
 		part: 'about' as const,

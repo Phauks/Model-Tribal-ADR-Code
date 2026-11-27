@@ -30,7 +30,9 @@ export const workerFirstPaths = [
 	'/search/index.json',
 	'/zip/data.zip',
 	'/stats/*',
-	'/courts/*'
+	'/courts/*',
+	// The sitemap's lists as built, which only the Worker reads (src/routes/sitemaps).
+	'/sitemaps/*'
 ];
 
 /** @param {string} innerEntry the entry the build made, such as scheduled-entry.js */

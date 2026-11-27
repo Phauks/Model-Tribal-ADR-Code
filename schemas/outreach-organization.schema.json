@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/outreach-organization.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/outreach-organization.schema.json",
   "title": "Outreach organization",
   "description": "One organization, office or Native nation the project may ask for help (co-authoring, review, consultation, art). Holds only public facts: who it is, why it matters to the project, and its public institutional contact path, each with a source. Named people, suggested asks, priority and contact history are kept privately (decision record 0012). Stored as research/outreach/<id>.yaml and never published on the website.",
   "type": "object",
