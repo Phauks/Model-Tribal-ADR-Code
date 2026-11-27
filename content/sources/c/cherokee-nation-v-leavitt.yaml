@@ -104,6 +104,31 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=543%20U.S.%20631
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2004-11-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1317.mp3
+  catalog: https://catalog.archives.gov/id/183517622
+  whole_session: true
+  duration_seconds: 7975
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1317.mp3
+    checksum: 9eb775c16d66f42126e8bbae930aa89cba6ee8540611b9e1b75d2572b191e06f
+    media_type: audio/mpeg
+    bytes: 127597212
+- kind: opinion announcement
+  date: '2005-03-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1333a.mp3
+  catalog: https://catalog.archives.gov/id/183517638
+  whole_session: true
+  duration_seconds: 7098
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1333a.mp3
+    checksum: 0939e5403f845d723d5ce072ec9b2c73d9d7af8afc3956ff4d2423410a6dd383
+    media_type: audio/mpeg
+    bytes: 113569668
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -1,0 +1,50 @@
+key: connecticut-general-statutes-28-33
+kind: state-statute
+citation:
+  type: legislation
+  title: Prescription drug shortage task force. Study. Recommendations
+  title-short: Conn. Gen. Stat. § 28-33
+  container-title: General Statutes of Connecticut
+  container-title-short: Conn. Gen. Stat.
+  section: 28-33
+  author:
+  - literal: Connecticut General Assembly
+  issued:
+    date-parts:
+    - - 2025
+  URL: https://www.cga.ct.gov/2026/sup/chap_518c.htm#sec_28-33
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.cga.ct.gov/2026/sup/chap_518c.htm#sec_28-33
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Conn. Gen. Stat. § 28-33 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Conn. Gen. Stat. § 28-33 (2026). History: P.A. 25-167, S. 5. Text read from the Connecticut General Assembly''s chapter page for the section in the General Statutes of Connecticut, revised to Jan. 1, 2025, or in its 2026 Supplement (cga.ct.gov), on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribes; indian; tribes); AI reader''s verdict incidental: Drug shortage task force seats for representatives of federally recognized tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribes; indian; tribes'

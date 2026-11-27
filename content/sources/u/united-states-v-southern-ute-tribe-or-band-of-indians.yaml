@@ -104,6 +104,51 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=402%20U.S.%20159
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1971-03-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-825-70-515-19710301.mp3
+  catalog: https://catalog.archives.gov/id/81140682
+  duration_seconds: 4186
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-825-70-515-19710301.mp3
+    checksum: 8f321b6ec8f9c2139ea4169d3725e095f544d0717b201fe69c9d0b817428062e
+    media_type: audio/mpeg
+    bytes: 66983809
+- kind: argument
+  date: '1971-03-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-825-70-5161-19710301.mp3
+  catalog: https://catalog.archives.gov/id/81140682
+  duration_seconds: 3753
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-825-70-5161-19710301.mp3
+    checksum: 7343b1f06311db50fa7f2cb9763898a1fdb3826cd78869b687dee59b8765da78
+    media_type: audio/mpeg
+    bytes: 60045687
+- kind: argument
+  date: '1971-03-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-825-70-5338-19710301.mp3
+  catalog: https://catalog.archives.gov/id/81140682
+  duration_seconds: 3553
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-825-70-5338-19710301.mp3
+    checksum: d10d0731a6115d32c28578148c34e0896c72f7e6bc5cd9b8e60d8b96d80e2fee
+    media_type: audio/mpeg
+    bytes: 56849971
+- kind: argument
+  date: '1971-03-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-825-70-5714-19710301.mp3
+  catalog: https://catalog.archives.gov/id/81140682
+  duration_seconds: 3008
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-825-70-5714-19710301.mp3
+    checksum: a8c7f7b57baa97c8e64af59f565ee93a2f379138d0c30855ea4a5156e5cbcb8d
+    media_type: audio/mpeg
+    bytes: 48133014
 rights:
   status: no-permission-needed
   basis: us-government-work

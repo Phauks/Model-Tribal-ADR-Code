@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=521%20U.S.%20261
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1996-10-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1000.mp3
+  catalog: https://catalog.archives.gov/id/118975136
+  whole_session: true
+  duration_seconds: 11250
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1000.mp3
+    checksum: 8fdfd0a6db9c98399ed7f3ab0c9dfcf164756332fa1a0c83009dbc9a8bc04b78
+    media_type: audio/mpeg
+    bytes: 179998009
 rights:
   status: no-permission-needed
   basis: us-government-work

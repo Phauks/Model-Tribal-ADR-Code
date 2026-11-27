@@ -34,6 +34,7 @@ import {
 } from './offline-fingerprints.ts';
 import { controllingWorker, resumeSaving, type Progress } from './offline-saving.ts';
 import type { Change } from './recent-changes.ts';
+import { sendProblem } from './problem-reports.ts';
 
 export interface Edition {
 	build: string;
@@ -86,8 +87,9 @@ class SiteUpdates {
 		try {
 			const response = await fetch('/edition.json', { cache: 'no-store' });
 			if (response.ok) this.available = (await response.json()) as Edition;
-		} catch {
-			// Offline again: the notice still offers the update, without version numbers.
+		} catch (problem) {
+			// The notice still offers the update, without version numbers.
+			sendProblem(problem, { code: 'updates.edition' });
 		}
 		await this.#compareBuilds();
 	}
@@ -104,8 +106,9 @@ class SiteUpdates {
 			// The server may already hold a newer build than the one waiting.
 			if (this.available && waiting.version !== this.available.build) return;
 			this.#fingerprints = { reading, waiting };
-		} catch {
-			// Offline, or storage blocked.
+		} catch (problem) {
+			// The notice says nothing about the page.
+			sendProblem(problem, { code: 'updates.fingerprints' });
 		}
 	}
 
@@ -120,8 +123,9 @@ class SiteUpdates {
 			await resumeSaving((progress) => {
 				this.resaving = progress.done < progress.total ? progress : undefined;
 			});
-		} catch {
-			// Offline, or a save was cut short: it continues on a later visit.
+		} catch (problem) {
+			// It continues on a later visit.
+			sendProblem(problem, { code: 'updates.resume' });
 		} finally {
 			this.resaving = undefined;
 		}
@@ -129,7 +133,7 @@ class SiteUpdates {
 
 	/** Called when SvelteKit has seen a new build: have the browser fetch the new worker now. */
 	newBuildSeen(): void {
-		void this.#registration?.update().catch(() => undefined);
+		void this.#registration?.update().catch(() => /* expected: offline; the next check fetches the new worker. */ undefined);
 	}
 
 	async check(): Promise<void> {
@@ -141,8 +145,9 @@ class SiteUpdates {
 			await registration?.update();
 			if (registration?.installing) this.#watch(registration.installing);
 			if (registration?.waiting && controllingWorker()) await this.#found();
-		} catch {
-			// Offline: nothing to check against.
+		} catch (problem) {
+			// Nothing to check against; offline is only noted (sendProblem).
+			sendProblem(problem, { code: 'updates.check' });
 		} finally {
 			this.lastChecked = new Date();
 			this.checking = false;

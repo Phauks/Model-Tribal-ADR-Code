@@ -103,6 +103,32 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=519%20U.S.%20234
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1996-12-02'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1006.mp3
+  catalog: https://catalog.archives.gov/id/138282644
+  whole_session: true
+  duration_seconds: 10892
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1006.mp3
+    checksum: 60a4644b0191cc1d494e4bcbda8350f723bdde89289a1e295e6bcd1ba1a9aedd
+    media_type: audio/mpeg
+    bytes: 174267788
+- kind: opinion announcement
+  date: '1997-02-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1018.mp3
+  catalog: https://catalog.archives.gov/id/138282656
+  whole_session: true
+  note: "The announcement of 1997-01-21 is on a reel the National Archives dates 1997-02-18."
+  duration_seconds: 12257
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1018.mp3
+    checksum: 77bca3ee55051191de08c4b350535c783b5b6fdc75ca97abd22d707e17de4d0b
+    media_type: audio/mpeg
+    bytes: 196119948
 rights:
   status: no-permission-needed
   basis: us-government-work

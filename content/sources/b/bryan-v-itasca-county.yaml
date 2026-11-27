@@ -93,6 +93,79 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Bryan_v._Itasca_County
+argument_audio:
+- kind: argument
+  date: '1976-04-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-150-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048532
+  whole_session: true
+  duration_seconds: 84
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-150-r1.mp3
+    checksum: de50dbc2657d759731e41f7a3abea162d6366a562bc36dcd97306a942f855c52
+    media_type: audio/mpeg
+    bytes: 1341360
+- kind: argument
+  date: '1976-04-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-150-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048532
+  whole_session: true
+  duration_seconds: 374
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-150-r2.mp3
+    checksum: 761a05b5afc7991a4cb1fde25a80c7187dee736ada82facc8b4d2566f5a51894
+    media_type: audio/mpeg
+    bytes: 5991574
+- kind: argument
+  date: '1976-04-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-150-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048532
+  whole_session: true
+  duration_seconds: 3683
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-150-r3.mp3
+    checksum: a080c3f7fd9dfe4d501b185c51f5ab0f563abb1e22ee567bc4504dea4dd60fe7
+    media_type: audio/mpeg
+    bytes: 58934881
+- kind: argument
+  date: '1976-04-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-150-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048532
+  whole_session: true
+  duration_seconds: 2515
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-150-r4.mp3
+    checksum: 45e68af1f9b30135beb41aa87cb4f900a8527df2157a046a1df4145da41574dd
+    media_type: audio/mpeg
+    bytes: 40249180
+- kind: argument
+  date: '1976-04-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-150-r5.mp3
+  catalog: https://catalog.archives.gov/id/102048532
+  whole_session: true
+  duration_seconds: 3832
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-150-r5.mp3
+    checksum: 0334b86c93018e72a18e164132270022cc8841a426d4cdc6a460668c65437cc0
+    media_type: audio/mpeg
+    bytes: 61313905
+- kind: argument
+  date: '1976-04-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-150-r6.mp3
+  catalog: https://catalog.archives.gov/id/102048532
+  whole_session: true
+  duration_seconds: 4181
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-150-r6.mp3
+    checksum: ec5bd9f1a8222b8c86cc14d795a78d2ebdb48726b3a414c06faaac459f9ebc6b
+    media_type: audio/mpeg
+    bytes: 66897840
 rights:
   status: no-permission-needed
   basis: us-government-work

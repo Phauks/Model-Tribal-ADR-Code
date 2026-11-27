@@ -40,6 +40,7 @@ function fromBase64Url(text: string): string | undefined {
 		const bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
 		return new TextDecoder('utf-8', { fatal: true }).decode(bytes);
 	} catch {
+		// expected: a link whose collection does not decode is not a shared collection.
 		return undefined;
 	}
 }
@@ -84,6 +85,7 @@ export function decodeSharedCollection(fragment: string): SharedCollection | und
 	try {
 		parsed = JSON.parse(text);
 	} catch {
+		// expected: a link whose collection is not JSON is not a shared collection.
 		return undefined;
 	}
 	if (typeof parsed !== 'object' || parsed === null) return undefined;

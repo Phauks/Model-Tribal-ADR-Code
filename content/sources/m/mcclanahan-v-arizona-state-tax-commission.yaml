@@ -89,6 +89,19 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=411%20U.S.%20164
+argument_audio:
+- kind: argument
+  date: '1972-12-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-2b.mp3
+  catalog: https://catalog.archives.gov/id/102048346
+  whole_session: true
+  duration_seconds: 4136
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-2b.mp3
+    checksum: 44949c462f2bff2fcbd2bb2a90f81706a5978d6dd31d18f84c841c35df14ddef
+    media_type: audio/mpeg
+    bytes: 66182704
 rights:
   status: no-permission-needed
   basis: us-government-work

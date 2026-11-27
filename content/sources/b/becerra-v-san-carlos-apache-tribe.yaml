@@ -93,6 +93,41 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Becerra_v._San_Carlos_Apache_Tribe
+argument_audio:
+- kind: argument
+  date: '2024-03-25'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/23-250.mp3
+  duration_seconds: 5188
+  file:
+    storage_key: supreme-court-audio/court/2023/23-250.mp3
+    checksum: 1e38dff9c099da2fda2feec4aa5bffee471d5680ec5fc722d1439f65644f4d91
+    media_type: audio/mpeg
+    bytes: 41511885
+- kind: argument
+  date: '2024-03-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2023_term/267-2358.mp3
+  catalog: https://catalog.archives.gov/id/498154395
+  whole_session: true
+  duration_seconds: 8626
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2358.mp3
+    checksum: 91bcd4276d383d12f9830fd87a7d30eb835b577b669984c5c7d1d335dd848bb3
+    media_type: audio/mpeg
+    bytes: 172526438
+- kind: opinion announcement
+  date: '2024-06-06'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2023_term/267-2377.mp3
+  catalog: https://catalog.archives.gov/id/498154414
+  whole_session: true
+  duration_seconds: 1300
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2377.mp3
+    checksum: 5105d48acac94544c8b0e84e9ebc71d8f7916924b0ab26116d8db2c45e7f6332
+    media_type: audio/mpeg
+    bytes: 25994918
 rights:
   status: no-permission-needed
   basis: us-government-work

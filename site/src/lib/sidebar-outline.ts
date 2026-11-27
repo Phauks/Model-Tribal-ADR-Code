@@ -23,7 +23,7 @@ export function parseSectionChoices(text: string | null): Record<string, boolean
 			);
 		}
 	} catch {
-		// Not something this site wrote; start afresh.
+		// expected: not something this site wrote; start afresh.
 	}
 	return {};
 }

@@ -103,7 +103,7 @@ export function joinEssayRoom(identifier: string, options: JoinOptions = {}): Es
 		settle = { resolve, reject };
 	});
 	// Callers that never await it should not see an unhandled rejection.
-	whenSynced.catch(() => undefined);
+	whenSynced.catch(() => /* expected: callers that never await it should not see an unhandled rejection; those that do get it. */ undefined);
 
 	function setStatus(next: LiveStatus) {
 		status = next;

@@ -93,6 +93,31 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Seminole_Tribe_of_Florida_v._Florida
+argument_audio:
+- kind: argument
+  date: '1995-10-11'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-962.mp3
+  catalog: https://catalog.archives.gov/id/118975097
+  whole_session: true
+  duration_seconds: 11588
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-962.mp3
+    checksum: 9117c141c39157a15716f0c7bf6f33d834f4fdfaf61bd465905db05d33ad18cc
+    media_type: audio/mpeg
+    bytes: 185407653
+- kind: opinion announcement
+  date: '1996-03-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-988.mp3
+  catalog: https://catalog.archives.gov/id/118975123
+  whole_session: true
+  duration_seconds: 4801
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-988.mp3
+    checksum: a8fabf40bcf7a36dbf96dfaa3ae412754e824e10c5c591031e79b56fea60cc87
+    media_type: audio/mpeg
+    bytes: 76816423
 rights:
   status: no-permission-needed
   basis: us-government-work

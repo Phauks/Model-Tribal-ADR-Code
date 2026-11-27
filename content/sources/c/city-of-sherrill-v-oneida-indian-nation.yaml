@@ -108,6 +108,31 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=544%20U.S.%20197
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2005-01-11'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1326.mp3
+  catalog: https://catalog.archives.gov/id/183517631
+  whole_session: true
+  duration_seconds: 7205
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1326.mp3
+    checksum: 0e91d4860cd39b718667d5b5e9ef5fc33106b4a6281d72fe2139ee2aee3d7ce8
+    media_type: audio/mpeg
+    bytes: 115287896
+- kind: opinion announcement
+  date: '2005-03-29'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1338.mp3
+  catalog: https://catalog.archives.gov/id/183517644
+  whole_session: true
+  duration_seconds: 7961
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1338.mp3
+    checksum: 5a22911f6a73c53ccc95ba034813ae4feebaa372f72cb141f21b91e387115005
+    media_type: audio/mpeg
+    bytes: 127382799
 rights:
   status: no-permission-needed
   basis: us-government-work

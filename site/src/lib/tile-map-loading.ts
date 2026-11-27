@@ -35,6 +35,6 @@ export function loadAllNationsTileMapData(): Promise<TileMapData> {
 /** Starts everything the map of all nations needs, where the device can draw it. */
 export function startTileMapLoading(): void {
 	if (typeof window === 'undefined' || !navigator.onLine) return;
-	void loadTileMapLibrary().catch(() => undefined);
-	void loadAllNationsTileMapData().catch(() => undefined);
+	void loadTileMapLibrary().catch(() => /* expected: loading ahead; the map reports its own failure when it starts (map.load). */ undefined);
+	void loadAllNationsTileMapData().catch(() => /* expected: loading ahead; the map reports its own failure when it starts (map.load). */ undefined);
 }
