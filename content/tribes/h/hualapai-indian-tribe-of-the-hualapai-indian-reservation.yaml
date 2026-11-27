@@ -781,6 +781,22 @@ jurisdiction:
   verification: inferred
   as_of: '2004-07-22'
   locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Bill Williams River Water Rights Settlement Act of 2014 in 2014 (Pub. L. No. 113-223), settling the water rights of Hualapai Tribe. (Congressional Research Service, R44148, Table 1).
+  source: public-law-113-223
+  confidence: high
+  verification: inferred
+  as_of: '2014'
+  locator: Congressional Research Service, R44148, Table 1, 2014
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Hualapai Tribe Water Rights Settlement Act of 2022 in 2022 (Pub. L. No. 117-349), settling the water rights of Hualapai Tribe. It quantifies 3,414 acre-feet a year in all and authorizes about $317.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-117-349
+  confidence: high
+  verification: inferred
+  as_of: '2022'
+  locator: Congressional Research Service, R44148, Table 1, 2022
 jurisdiction_agreements:
 - kind: cross-deputization
   other_party: Arizona Department of Public Safety

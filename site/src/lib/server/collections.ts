@@ -364,6 +364,23 @@ function solicitorOpinions(): CollectionItem[] {
 		.map((record) => sourceItem(record, (record.citation as { number?: string }).number));
 }
 
+/**
+ * The settlements of Native nations' water rights that Congress enacted, one item each, linking to the enacting Act's page
+ * (research/water-settlements/enacted-settlements.csv, copied from the Congressional Research Service's report R44148;
+ * scripts/law/water_settlements.py). The Acts are counted among the statutes too: this list is the settlements, not the records.
+ */
+function waterRightsSettlements(): CollectionItem[] {
+	const file = path.join(repositoryRoot, 'research/water-settlements/enacted-settlements.csv');
+	if (!existsSync(file)) return [];
+	const name = nationNameOf();
+	return parseCsv(readFileSync(file, 'utf8')).map((row) => ({
+		title: row.settlement,
+		href: `/laws/public-law-${row.public_law}`,
+		year: Number(row.year) || undefined,
+		detail: row.nations.split('; ').filter(Boolean).map(name).join('; ') || undefined
+	}));
+}
+
 function nationNameOf(): (id: string) => string {
 	const names = new Map(nations().map((nation) => [nation.id, nation.names.official]));
 	return (id) => names.get(id) ?? id;
@@ -461,6 +478,14 @@ export const collections: Collection[] = [
 	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
 	{ identifier: 'solicitor-opinions', search: { group: 'law', label: 'Solicitor’s opinion' }, title: 'Solicitor’s Opinions', group: 'Federal law', detailHeader: 'Number', sourceKinds: ['federal-agency-document'], items: solicitorOpinions },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
+	{
+		identifier: 'water-rights-settlements',
+		search: { group: 'law', label: 'Water rights settlement' },
+		title: 'Indian Water Rights Settlements',
+		group: 'Federal law',
+		detailHeader: 'Nations',
+		items: waterRightsSettlements
+	},
 	// Royce's land cessions (1899), each opening on the Map page at its year (historic maps, 2026-11-26).
 	{
 		identifier: 'land-cessions',
