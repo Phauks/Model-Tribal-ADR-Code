@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Archive from '@lucide/svelte/icons/archive';
 	import CircleCheck from '@lucide/svelte/icons/circle-check';
 	import CircleDashed from '@lucide/svelte/icons/circle-dashed';
 	import CircleX from '@lucide/svelte/icons/circle-x';
@@ -20,6 +21,9 @@
 
 	let shown = $state<State | 'all'>('all');
 
+	/** Kinds named as Cloudflare names them, shown in code type. */
+	const codeKinds = new Set(['D1 database', 'R2 bucket', 'Worker', 'Static assets', 'Rate limit', 'Setting', 'Secret']);
+
 	const counts = $derived(Object.fromEntries(order.map((state) => [state, data.results.filter((result) => result.state === state).length])) as Record<State, number>);
 	const visible = $derived(shown === 'all' ? data.results : data.results.filter((result) => result.state === shown));
 	const groups = $derived([...new Set(visible.map((result) => result.group))]);
@@ -33,6 +37,11 @@
 	{:else if state === 'warning'}<TriangleAlert {size} aria-hidden="true" />
 	{:else if state === 'problem'}<CircleX {size} aria-hidden="true" />
 	{:else}<CircleDashed {size} aria-hidden="true" />{/if}
+{/snippet}
+
+{#snippet target(item: { name: string; kind: string; part?: string })}
+	<!-- Names a Cloudflare resource or setting in code type, an outside service in plain type. -->
+	<span class="row-target muted small">{#if codeKinds.has(item.kind)}<code class="target-name">{item.name}</code>{:else}<span class="target-name">{item.name}</span>{/if}{' · '}{item.kind}{#if item.part}{' · '}{item.part}{/if}</span>
 {/snippet}
 
 <svelte:head>
@@ -69,32 +78,61 @@
 	<Collapsible heading={group} identifier="group-{group.toLowerCase().replaceAll(' ', '-')}" count={rows.length}>
 		<ul class="rows">
 			{#each rows as result (result.key)}
-				{@const more = result.details.length > 0 || Boolean(result.fix && result.state !== 'working') || Boolean(result.binding)}
 				<li class="row state-{result.state}">
 					<details open={result.state === 'problem' || result.state === 'warning'}>
-						<summary class:plain={!more}>
+						<summary>
 							<span class="row-icon" title={stateLabels[result.state]}>{@render stateIcon(result.state, 20)}<span class="visually-hidden">{stateLabels[result.state]}:</span></span>
-							<span class="row-name">{result.name}</span>
+							<span class="row-name">
+								<span class="row-title">{result.name}</span>
+								{@render target(result.target)}
+							</span>
 							<span class="row-summary">{result.summary}</span>
 							<span class="row-time muted small">{result.milliseconds} ms</span>
 						</summary>
-						{#if more}
-							<div class="row-more small">
-								{#if result.binding}<p>Binding <code>{result.binding}</code></p>{/if}
-								{#if result.details.length > 0}
-									<ul>
-										{#each result.details as detail (detail)}<li>{detail}</li>{/each}
-									</ul>
+						<div class="row-more small">
+							<dl class="row-facts">
+								<dt>Used for</dt>
+								<dd>{result.use}</dd>
+								<dt>How it checks</dt>
+								<dd>{result.test}</dd>
+								{#if result.binding}
+									<dt>Binding</dt>
+									<dd><code>{result.binding}</code></dd>
 								{/if}
-								{#if result.fix && result.state !== 'working'}<p class="fix"><strong>What to do:</strong> {result.fix}</p>{/if}
-							</div>
-						{/if}
+							</dl>
+							{#if result.details.length > 0}
+								<ul>
+									{#each result.details as detail (detail)}<li>{detail}</li>{/each}
+								</ul>
+							{/if}
+							{#if result.fix && result.state !== 'working'}<p class="fix"><strong>What to do:</strong> {result.fix}</p>{/if}
+						</div>
 					</details>
 				</li>
 			{/each}
 		</ul>
 	</Collapsible>
 {/each}
+
+{#if shown === 'all' && data.oldResources.length > 0}
+	<Collapsible heading="Old, kept until deleted" identifier="group-old" count={data.oldResources.length} open={false}>
+		<p class="small muted old-note">The site no longer uses these, so nothing here checks them.</p>
+		<ul class="rows">
+			{#each data.oldResources as item (item.name)}
+				<li class="row state-old">
+					<div class="old-row">
+						<span class="row-icon" title="Old"><Archive size={20} aria-hidden="true" /></span>
+						<span class="row-name">
+							<span class="row-title">{item.title}</span>
+							{@render target(item)}
+						</span>
+						<span class="row-summary">Replaced by <code>{item.replacedBy}</code>.{#if item.note}{' '}{item.note}{/if}</span>
+					</div>
+				</li>
+			{/each}
+		</ul>
+	</Collapsible>
+{/if}
 
 <style>
 	.title-row {
@@ -202,31 +240,69 @@
 		border-top: 1px solid var(--color-line);
 	}
 
-	.row summary {
+	/* Each row names what it checks under its title: the bucket, database, Worker, setting or outside service (Trevor, Nov. 26, 2026). */
+	.row summary,
+	.old-row {
 		display: grid;
-		grid-template-columns: auto minmax(10rem, 14rem) 1fr auto;
+		grid-template-columns: auto minmax(14rem, 22rem) 1fr auto;
 		gap: var(--space-3);
-		align-items: baseline;
+		align-items: start;
 		padding: var(--space-2) var(--space-3);
-		cursor: pointer;
 		list-style: none;
+	}
+
+	.row summary {
+		cursor: pointer;
 	}
 
 	.row summary::-webkit-details-marker {
 		display: none;
 	}
 
-	.row summary.plain {
-		cursor: default;
-	}
-
 	.row-icon {
-		align-self: center;
 		display: inline-flex;
+		padding-top: 0.1em;
 	}
 
 	.row-name {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	.row-title {
 		font-weight: var(--font-weight-semibold);
+	}
+
+	.row-target {
+		overflow-wrap: anywhere;
+	}
+
+	.row-target .target-name {
+		color: var(--color-ink);
+	}
+
+	.row-facts {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		gap: 0 var(--space-3);
+		margin: 0 0 var(--space-1);
+	}
+
+	.row-facts dt {
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.row-facts dd {
+		margin: 0;
+	}
+
+	.old-note {
+		margin: 0 0 var(--space-2);
+	}
+
+	.state-old .row-icon {
+		color: var(--color-ink-muted);
 	}
 
 	.row-time {
@@ -273,10 +349,11 @@
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 
-		.row summary {
+		.row summary,
+		.old-row {
 			grid-template-columns: auto 1fr auto;
 			grid-template-areas: 'icon name time' '. summary summary';
-			row-gap: 0;
+			row-gap: var(--space-1);
 		}
 
 		.row-icon {
