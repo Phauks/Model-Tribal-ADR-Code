@@ -19,6 +19,14 @@ site serves for an older one; `key` records where it is. The site serves
 that copy only if its SHA-256 matches the one recorded here; if the bucket
 has none, the Worker fetches `copy` and keeps it only if it matches.
 
+An entry may also give `rotate` (90, 180 or 270 degrees clockwise) and
+`crop` (left, top, right and bottom, in pixels of the copy after any
+rotation), for a print photographed on its side or one person in a group
+photograph. The script then makes the served picture itself: it turns and
+cuts the downloaded copy, scales it to at most 800 pixels on its longer side
+and saves it as a JPEG (this needs Pillow). The Worker cannot remake such a
+picture, so the script must put it in the bucket (R2 keys required).
+
 Entries that already have a SHA-256 are skipped unless --refresh is given, so
 a run touches only new or changed pictures.
 
@@ -45,6 +53,8 @@ PICTURES = ROOT / "content" / "supreme-court" / "pictures.yaml"
 AGENT = "Tribal Law Project research script (supreme_court_pictures.py)"
 BUCKET_PREFIX = "supreme-court/portraits/"
 LARGEST = 5 * 1024 * 1024  # the Worker refuses anything larger
+LARGEST_SOURCE = 64 * 1024 * 1024  # a master file that a picture is cut from
+LONGEST_SIDE = 800  # pixels, for a picture this script makes
 
 
 def download(link: str) -> bytes:
@@ -81,6 +91,24 @@ def measure(data: bytes) -> tuple[str, int, int]:
     raise ValueError("not a JPEG or PNG")
 
 
+def made_picture(data: bytes, rotate: int, crop: list[int] | None) -> bytes:
+    """Turns and cuts a downloaded copy, scales it down and saves it as a JPEG."""
+    import io
+
+    from PIL import Image
+
+    with Image.open(io.BytesIO(data)) as source:
+        picture = source.convert("RGB")
+    if rotate:
+        picture = picture.rotate(-rotate, expand=True)
+    if crop:
+        picture = picture.crop(tuple(crop))
+    picture.thumbnail((LONGEST_SIDE, LONGEST_SIDE), Image.LANCZOS)
+    output = io.BytesIO()
+    picture.save(output, format="JPEG", quality=90, optimize=True)
+    return output.getvalue()
+
+
 def bucket_client():
     keys = (os.environ.get("R2_ACCESS_KEY_ID"), os.environ.get("R2_SECRET_ACCESS_KEY"), os.environ.get("CLOUDFLARE_ACCOUNT_ID"))
     if not all(keys):
@@ -112,6 +140,13 @@ def main() -> int:
         if entry.get("sha256") and not arguments.refresh:
             continue
         data = download(entry["copy"])
+        made = bool(entry.get("rotate") or entry.get("crop"))
+        if made:
+            if not client:
+                raise SystemExit(f"{entry['subject']}: a turned or cut picture needs R2 keys, since the Worker cannot remake it")
+            if len(data) > LARGEST_SOURCE:
+                raise SystemExit(f"{entry['subject']}: {entry['copy']} is too large to cut from")
+            data = made_picture(data, entry.get("rotate", 0), entry.get("crop"))
         if len(data) > LARGEST:
             raise SystemExit(f"{entry['subject']}: {entry['copy']} is larger than the site serves; pick a smaller copy")
         media_type, width, height = measure(data)
