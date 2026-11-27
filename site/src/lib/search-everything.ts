@@ -89,3 +89,50 @@ export function matchEverything(entries: SearchEntry[], records: SearchRecords, 
 export function countMatches(matches: SearchMatches): number {
 	return resultGroups.reduce((total, group) => total + matches[group].length, 0);
 }
+
+/** One line in the masthead's search panel, whatever group it is in. */
+export interface PanelResult {
+	title: string;
+	link: string;
+	matchedName?: string;
+	matchedGroup?: string;
+	badges?: SearchEntry['badges'];
+	image?: string;
+	detail?: string;
+}
+
+/**
+ * What the masthead's search panel shows: each group with matches, its first
+ * few results and how many it has in all, and the count of every match. The
+ * panel makes it from the files on the device (panelAnswer) or, until they
+ * arrive, has it from the server, which makes it from the same files with the
+ * same rules (src/lib/server/search-tables.ts).
+ */
+export interface PanelAnswer {
+	total: number;
+	groups: { group: ResultGroup; count: number; results: PanelResult[] }[];
+}
+
+/** A document as the panel lists it. */
+export function documentResult(row: DocumentSearchRow): PanelResult {
+	return { title: row.title, link: row.link, detail: [row.kindLabel, row.year, row.nationName].filter(Boolean).join(' · ') };
+}
+
+/** A match as the panel lists it, without its score. */
+export function panelResult(result: SearchResult): PanelResult {
+	const { title, link, matchedName, matchedGroup, badges, image, detail } = result;
+	return { title, link, matchedName, matchedGroup, badges, image, detail };
+}
+
+/** The panel's answer from the matches: the first `perGroup` of each group with matches, in the panel's order. */
+export function panelAnswer(matches: SearchMatches, perGroup: number): PanelAnswer {
+	const lists: Record<ResultGroup, PanelResult[]> = {
+		nation: matches.nation.slice(0, perGroup).map((match) => panelResult(match.result)),
+		document: matches.document.slice(0, perGroup).map(documentResult),
+		...forEntryGroups<PanelResult[]>((group) => matches[group].slice(0, perGroup).map(panelResult))
+	};
+	return {
+		total: countMatches(matches),
+		groups: resultGroups.filter((group) => matches[group].length > 0).map((group) => ({ group, count: matches[group].length, results: lists[group] }))
+	};
+}

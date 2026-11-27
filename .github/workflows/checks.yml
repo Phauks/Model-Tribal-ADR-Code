@@ -382,7 +382,7 @@ jobs:
       - name: Check the built pages, manifest and service worker
         run: npm run check:built-site
       - uses: ./.github/actions/install-chromium
-      - name: Check the sidebar in a browser (tools/check-sidebar.mjs)
+      - name: Check the section bar and side column in a browser (tools/check-sidebar.mjs)
         run: npm run check:sidebar
       - name: Check the timeline's layout buttons in a browser (tools/check-timeline.mjs)
         run: npm run check:timeline

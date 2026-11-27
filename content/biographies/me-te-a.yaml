@@ -1,13 +1,22 @@
 key: me-te-a
 name: Me-te-a
-lead: Signed three treaties with the United States for the Potawatamies, 1814–1826.
+lead: Signed four treaties with the United States for the Potawatamies, 1814–1826.
 living: false
+names:
+- name: Metea
+  note: as the Treaty with the Wyandot, etc., 1817 prints it
+  source: treaty-with-the-wyandot-etc-1817
+  where: 7 Stat. 167
 cases: []
 events:
 - when: July 22, 1814
   text: Signed the Treaty with the Wyandot, etc., 1814, for the Potawatamies.
   source: treaty-with-the-wyandot-etc-1814
   where: 7 Stat. 119
+- when: Sept. 29, 1817
+  text: Signed the Treaty with the Wyandot, etc., 1817, for the Pattawatimas.
+  source: treaty-with-the-wyandot-etc-1817
+  where: 7 Stat. 167
 - when: Oct. 2, 1818
   text: Signed the Treaty with the Potawatomi, 1818, for the Potawatamie nation of Indians.
   source: treaty-with-the-potawatomi-1818
@@ -16,4 +25,4 @@ events:
   text: Signed the Treaty with the Potawatomi, 1826, for the Potawatamie tribe.
   source: treaty-with-the-potawatomi-1826
   where: 7 Stat. 297
-checked: '2026-11-24'
+checked: '2026-11-26'

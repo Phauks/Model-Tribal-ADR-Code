@@ -19,6 +19,7 @@ import type { TableColumn, TableRow } from '../tables/table-definition.ts';
 import { nations, publicCopyFor, type CitedFact, type NationRecord } from './content.ts';
 import type { ChartRecords, RecordItem } from './data-charts.ts';
 import { SourceUses } from './source-uses.ts';
+import { federalBasis, federalBases, basisNotTraced, isNativeNation, listSection, listSections, recognitionStatus, recognitionStatuses, statusFacts, withoutFederalRecord, withoutFederalRecords } from './recognition-status.ts';
 import { courtPage, courtsWithPages } from './supreme-court-pages.ts';
 import { opinionsSourceKey, tribalCourtOpinions, type TribalCourtOpinion } from './tribal-court-opinions.ts';
 
@@ -291,6 +292,76 @@ const nationCharts: NationChart[] = [
 		)
 	},
 	{
+		identifier: 'nations-by-recognition-status',
+		description: (count) => `The ${count.toLocaleString('en-US')} Native nations on this site, each counted once: federally recognized, recognized by a state but not by the United States, or recognized by neither. A nation recognized by both counts as federally recognized. Pick a line to see the nations.`,
+		labelHeader: 'Recognition',
+		source: 'The Bureau of Indian Affairs list of recognized entities (91 Fed. Reg. 4102, Jan. 30, 2026), state laws and the Office of Federal Acknowledgment’s lists of petitioners, each cited on the nation’s page.',
+		section: 'glance-heading',
+		part: 'At a glance',
+		partsOfWhole: true,
+		inOrder: true,
+		bars: () =>
+			recognitionStatuses.map((status) => ({
+				slug: slugOf(status),
+				label: status,
+				facts: (record) => (recognitionStatus(record) === status ? statusFacts(record).map((fact) => ({ fact, text: fact.legal_basis ?? status })) : [])
+			}))
+	},
+	{
+		identifier: 'federal-recognition-by-basis',
+		description: (count) => `How the ${count.toLocaleString('en-US')} federally recognized nations came to be recognized, as far as their pages cite it. Being on the federal list is not itself a basis. Each nation counts once. Pick a line to see the nations and the law.`,
+		labelHeader: 'Basis',
+		source: 'Acts of Congress read in the Statutes at Large and final determinations of the Office of Federal Acknowledgment, each cited on the nation’s page.',
+		section: 'glance-heading',
+		part: 'At a glance',
+		partsOfWhole: true,
+		bars: () =>
+			[...federalBases, basisNotTraced].map((basis) => ({
+				slug: basis.slug,
+				label: basis.label,
+				facts: (record) => {
+					const found = federalBasis(record);
+					return found?.slug === basis.slug ? found.facts.map((fact) => ({ fact, text: fact.legal_basis ?? basis.label })) : [];
+				}
+			}))
+	},
+	{
+		identifier: 'federal-list-sections',
+		description: (count) => `The ${count.toLocaleString('en-US')} federally recognized nations, by the part of the federal list that names them. The list names the Native entities within the State of Alaska apart from the rest. Pick a line to see the nations.`,
+		labelHeader: 'Listed',
+		source: 'The Bureau of Indian Affairs list of recognized entities (91 Fed. Reg. 4102, Jan. 30, 2026).',
+		section: 'glance-heading',
+		part: 'At a glance',
+		partsOfWhole: true,
+		bars: () =>
+			listSections.map((section) => ({
+				slug: section.slug,
+				label: section.label,
+				facts: (record) =>
+					listSection(record)?.slug === section.slug
+						? (record.recognition ?? []).filter((fact) => fact.type === 'federal').slice(0, 1).map((fact) => ({ fact, text: fact.legal_basis ?? section.label }))
+						: []
+			}))
+	},
+	{
+		identifier: 'without-federal-recognition',
+		description: (count) => `What the federal record shows for the ${count.toLocaleString('en-US')} Native nations without federal recognition, whether or not a state recognizes them. Each nation counts once, under the first line that applies. Pick a line to see the nations and the records.`,
+		labelHeader: 'Federal record',
+		source: 'The Office of Federal Acknowledgment’s lists of petitioners and petitions resolved, Acts of Congress, and Census Bureau and other federal lists, each cited on the nation’s page.',
+		section: 'glance-heading',
+		part: 'At a glance',
+		partsOfWhole: true,
+		bars: () =>
+			withoutFederalRecords.map((entry) => ({
+				slug: entry.slug,
+				label: entry.label,
+				facts: (record) => {
+					const found = withoutFederalRecord(record);
+					return found?.slug === entry.slug ? found.facts.map((fact) => ({ fact, text: fact.legal_basis || (fact.petition_stage ? `Petition stage: ${String(fact.petition_stage)}` : '') || entry.label })) : [];
+				}
+			}))
+	},
+	{
 		identifier: 'nations-by-recognition',
 		description: (count) => `How the ${count.toLocaleString('en-US')} recognized or petitioning nations on this site are recognized. A nation recognized by both the United States and a state counts under each. Pick a line to see the nations.`,
 		labelHeader: 'Recognition',
@@ -322,8 +393,9 @@ const nationCharts: NationChart[] = [
 		section: 'glance-heading',
 		part: 'At a glance',
 		bars: barsByState(
-			(record) => (record.recognition ?? []).filter((fact) => fact.type === 'state').map((fact) => ({ fact, text: fact.legal_basis ?? 'State recognized' })),
-			(record) => (record.recognition ?? []).filter((fact) => fact.type === 'state' && fact.state).map((fact) => fact.state as string)
+			// Native nations only: the Native Hawaiian community is not a tribe (counted on its own tile on Statistics).
+			(record) => (isNativeNation(record) ? (record.recognition ?? []).filter((fact) => fact.type === 'state').map((fact) => ({ fact, text: fact.legal_basis ?? 'State recognized' })) : []),
+			(record) => (isNativeNation(record) ? (record.recognition ?? []).filter((fact) => fact.type === 'state' && fact.state).map((fact) => fact.state as string) : [])
 		)
 	},
 	{

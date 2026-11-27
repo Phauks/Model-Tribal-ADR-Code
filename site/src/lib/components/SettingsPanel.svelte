@@ -39,6 +39,7 @@
 		downloadFont,
 		fontChoices,
 		fontFamilyTokens,
+		headingFontChoices,
 		glossaryCardOptions,
 		loadSettings,
 		loadTheme,
@@ -52,10 +53,9 @@
 		otherCursorOptions,
 		sourceGroupOptions,
 		textSizeChoices,
-		textSpacingChoices,
 		themeChoices,
 		type Choice,
-		type Font,
+		type HeadingFont,
 		type ReadingSettings,
 		type TextAlignment,
 		type Theme
@@ -131,11 +131,11 @@
 	function change<Name extends keyof ReadingSettings>(name: Name, value: ReadingSettings[Name]) {
 		settings[name] = value;
 		saveSettings($state.snapshot(settings));
-		if (name === 'font') downloadFont(value as ReadingSettings['font']);
+		if (name === 'font' || name === 'headingFont') downloadFont(value as HeadingFont);
 	}
 
-	/** Each font choice is shown in its own typeface. */
-	function fontStyle(font: Font): string {
+	/** Each font choice is shown in its own typeface; "Same as body" in the body font. */
+	function fontStyle(font: HeadingFont): string {
 		return `font-family: var(${fontFamilyTokens[font]})`;
 	}
 
@@ -211,19 +211,19 @@
 				/>
 			</div>
 			<Dropdown
-				label="Font"
+				label="Body font"
 				choices={fontChoices}
 				value={settings.font}
 				onchange={(value) => change('font', value)}
 				choiceStyle={fontStyle}
 			/>
-			{@render choiceGroup(
-				'Text spacing',
-				'text-spacing',
-				textSpacingChoices,
-				settings.textSpacing,
-				(value) => change('textSpacing', value)
-			)}
+			<Dropdown
+				label="Heading font"
+				choices={headingFontChoices}
+				value={settings.headingFont}
+				onchange={(value) => change('headingFont', value)}
+				choiceStyle={fontStyle}
+			/>
 			<div class="setting">
 				<SymbolChoice
 					legend="Text alignment"

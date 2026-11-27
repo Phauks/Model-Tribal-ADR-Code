@@ -1,7 +1,12 @@
 key: mitaniga
 name: Mitaniga
-lead: Signed two treaties with the United States for the Great and Little Osage nation, 1818–1839.
+lead: Signed three treaties with the United States for the Great and Little Osage nation, 1818–1839.
 living: false
+names:
+- name: Mi-ta-ni-ga
+  note: as the Treaty with the Kiowa, etc., 1837 prints it
+  source: treaty-with-the-kiowa-etc-1837
+  where: 7 Stat. 535
 nations:
 - nation: the-osage-nation
   named_as: Great and Little Osage nation
@@ -13,8 +18,12 @@ events:
   text: Signed the Treaty with the Osage, 1818, for the Great and Little Osage nation.
   source: treaty-with-the-osage-1818
   where: 7 Stat. 184
+- when: May 26, 1837
+  text: Signed the Treaty with the Kiowa, etc., 1837, for the Osages.
+  source: treaty-with-the-kiowa-etc-1837
+  where: 7 Stat. 535
 - when: Jan. 11, 1839
   text: Signed the Treaty with the Osage, 1839, for the Great and Little Osage nation of Indians.
   source: treaty-with-the-osage-1839
   where: 7 Stat. 577
-checked: '2026-11-24'
+checked: '2026-11-26'

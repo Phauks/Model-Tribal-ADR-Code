@@ -1,12 +1,16 @@
 key: sun-rise
 name: Sun Rise
-lead: Signed the Treaty with the Delawares, 1860, for the Delaware tribe of Indians as assistant chief.
+lead: Assistant chief of the Delaware tribe of Indians, as listed in the Treaty with the Delawares, 1860. Signed two treaties with the United States, 1854–1860.
 living: false
 names:
 - name: Rock-a-to-wha
   note: as the Treaty with the Delawares, 1860 prints it
   source: treaty-with-the-delawares-1860
   where: 12 Stat. 1132
+- name: Kock-ka-to-wha
+  note: as the Treaty with the Delawares, 1854 prints it
+  source: treaty-with-the-delawares-1854
+  where: 10 Stat. 1051
 nations:
 - nation: delaware-tribe-of-indians
   named_as: Delaware tribe of Indians
@@ -14,8 +18,12 @@ nations:
   where: 12 Stat. 1132
 cases: []
 events:
+- when: May 6, 1854
+  text: Signed the Treaty with the Delawares, 1854, for the Delaware tribe of Indians.
+  source: treaty-with-the-delawares-1854
+  where: 10 Stat. 1051
 - when: May 30, 1860
   text: Signed the Treaty with the Delawares, 1860, for the Delaware tribe of Indians, listed as assistant chief.
   source: treaty-with-the-delawares-1860
   where: 12 Stat. 1132
-checked: '2026-11-24'
+checked: '2026-11-27'

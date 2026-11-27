@@ -2,13 +2,53 @@
 	// Cards led by what they count (Trevor, Nov. 24, 2026: no colors, the title more prominent). Each opens the list of what it counts.
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import Lock from '@lucide/svelte/icons/lock';
+	import BadgeCheck from '@lucide/svelte/icons/badge-check';
+	import CircleDashed from '@lucide/svelte/icons/circle-dashed';
+	import Landmark from '@lucide/svelte/icons/landmark';
+	import MapPin from '@lucide/svelte/icons/map-pin';
+	import Mountain from '@lucide/svelte/icons/mountain';
+	import Users from '@lucide/svelte/icons/users';
+	import type { Component } from 'svelte';
+	import BarChart from '#lib/components/BarChart.svelte';
 	import { collectionIcon, groupIcons } from '#lib/collection-icons.ts';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 	const number = (value: number) => value.toLocaleString('en-US');
+
+	// Recognition (Trevor, Nov. 27, 2026: "delineate between federally recognized, state, and non-recognized"): the same cards, then the status chart; the finer breakdowns are on Data and charts.
+	const tileIcons: Record<string, Component> = {
+		'federally-recognized': Landmark,
+		'state-recognized-only': MapPin,
+		'not-recognized': CircleDashed,
+		'alaska-native-entities': Mountain,
+		'native-hawaiian-community': Users,
+		'territorial-peoples': Users
+	};
 </script>
+
+{#snippet recognitionSection()}
+	<section id="recognition" aria-labelledby="recognition-heading">
+		<h2 id="recognition-heading"><BadgeCheck size={20} aria-hidden="true" />Recognition</h2>
+		<ul class="cards">
+			{#each data.recognition.tiles as tile (tile.identifier)}
+				{@const Icon = tileIcons[tile.identifier] ?? Users}
+				<li id={tile.identifier}>
+					<a href={tile.href}>
+						<span class="title">{tile.title}</span>
+						<span class="icon" aria-hidden="true"><Icon size={18} /></span>
+						<span class="number">{number(tile.count)}</span>
+					</a>
+					{#if tile.note}<span class="years">{tile.note}</span>{/if}
+				</li>
+			{/each}
+		</ul>
+		{#if data.recognition.chart}
+			<div class="chart"><BarChart chart={data.recognition.chart} headingLevel={3} /></div>
+		{/if}
+	</section>
+{/snippet}
 
 <svelte:head>
 	<title>Statistics · Tribal Law Project</title>
@@ -40,6 +80,7 @@
 				{/each}
 			</ul>
 		</section>
+		{#if group === 'Native nations'}{@render recognitionSection()}{/if}
 	{/each}
 </div>
 
@@ -146,6 +187,10 @@
 		line-height: 1.1;
 		font-variant-numeric: tabular-nums;
 		color: var(--color-ink-muted);
+	}
+
+	.chart {
+		margin-top: var(--space-5);
 	}
 
 	.years,
