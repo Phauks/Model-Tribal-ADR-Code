@@ -1,0 +1,52 @@
+key: state-of-maine-v-mccarthy-2020
+kind: federal-case
+citation:
+  type: legal_case
+  title: STATE OF MAINE v. MCCARTHY
+  authority: United States District Court for the District of Maine
+  issued:
+    date-parts:
+    - - 2020
+      - 1
+      - 16
+  URL: https://www.govinfo.gov/app/details/USCOURTS-med-1_14-cv-00264/USCOURTS-med-1_14-cv-00264-4
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.govinfo.gov/app/details/USCOURTS-med-1_14-cv-00264/USCOURTS-med-1_14-cv-00264-4
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-27'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 1:14-cv-00264; no reporter citation yet. Decided by the United States District Court for the District of Maine on Jan. 16, 2020. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an AI reader's judgment of excerpts of CourtListener's text that it is an Indian law case (tribal water quality standards and Maine Settlement Acts). It was held at first for a privacy review because its text uses words about children or protected persons; readings on Nov. 27, 2026 of every passage of the court's filing about children, victims or custody found no child or protected person named, so it is shown. Its copy is the court's own filing, from GovInfo's United States Courts Opinions (USCOURTS-med-1_14-cv-00264-4); CourtListener's page is https://www.courtlistener.com/opinion/9743870/state-of-maine-v-mccarthy/.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'in CourtListener''s text; reader: tribal water quality standards and Maine Settlement Acts'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked
+  - check: 'Privacy: no child or protected person named in the opinion'
+    result: agree
+    detail: two or three AI readings of every passage about children, victims or custody in GovInfo's copy, Nov. 27, 2026; released from the privacy hold

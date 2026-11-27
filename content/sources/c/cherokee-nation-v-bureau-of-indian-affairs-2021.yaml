@@ -1,0 +1,58 @@
+key: cherokee-nation-v-bureau-of-indian-affairs-2021
+kind: federal-case
+citation:
+  type: legal_case
+  title: Cherokee Nation v. Bureau of Indian Affairs
+  authority: United States District Court for the District of Columbia
+  issued:
+    date-parts:
+    - - 2021
+      - 3
+      - 31
+  URL: https://www.govinfo.gov/app/details/USCOURTS-dcd-1_19-cv-02154/USCOURTS-dcd-1_19-cv-02154-1
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.govinfo.gov/app/details/USCOURTS-dcd-1_19-cv-02154/USCOURTS-dcd-1_19-cv-02154-1
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- cherokee-nation
+nations_in_case:
+  checked: '2026-11-27'
+  named:
+  - nation: cherokee-nation
+    named_as: Cherokee Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 1:19-cv-02154; no reporter citation yet. Decided by the United States District Court for the District of Columbia on Mar. 31, 2021. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score in CourtListener's text at or above 10, the level kept without a reading. It was held at first for a privacy review because its text uses words about children or protected persons; readings on Nov. 27, 2026 of every passage of the court's filing about children, victims or custody found no child or protected person named, so it is shown. Its copy is the court's own filing, from GovInfo's United States Courts Opinions (USCOURTS-dcd-1_19-cv-02154-1); CourtListener's page is https://www.courtlistener.com/opinion/4869432/cherokee-nation-v-bureau-of-indian-affairs/.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: in CourtListener's text
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked
+  - check: 'Privacy: no child or protected person named in the opinion'
+    result: agree
+    detail: two or three AI readings of every passage about children, victims or custody in GovInfo's copy, Nov. 27, 2026; released from the privacy hold

@@ -1,0 +1,77 @@
+key: oglala-sioux-tribe-v-fleming-2018
+kind: federal-case
+citation:
+  type: legal_case
+  title: Oglala Sioux Tribe v. Fleming
+  authority: United States Court of Appeals for the Eighth Circuit
+  container-title: F.3d
+  volume: '904'
+  page: '603'
+  issued:
+    date-parts:
+    - - 2018
+      - 9
+      - 14
+  URL: https://static.case.law/f3d/904/html/0603-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://static.case.law/f3d/904/html/0603-01.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+- navajo-nation
+- oglala-sioux-tribe
+nations_in_case:
+  checked: '2026-11-27'
+  named:
+  - nation: rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+    named_as: Rosebud Sioux Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: navajo-nation
+    named_as: Navajo Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: oglala-sioux-tribe
+    named_as: Oglala Sioux Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Defendants. Cherokee Nation of Oklahoma
+    reason: More than one of today's nations shares this name (amonsoquath-tribe-of-cherokee, arkansas-cherokee, arkansas-white-river-cherokee, cherokee-choctaw-nation-of-st-francis-and-black-rivers, cherokee-indians-of-georgia-inc, cherokee-indians-of-hoke-county-inc and 42 more); which the case concerns has not been checked.
+  - named_as: American Indians
+    reason: More than one of today's nations shares this name (american-indian-council-of-mariposa-county, native-american-mohegans-inc, piedmont-american-indian-association-lower-eastern-cherokee-nation-of-south-carolina, samoan-people-of-american-samoa, southern-sierra-miwuk-nation, the-yamassee-native-american-moors-of-the-creek-nation); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 904 F.3d 603. Decided by the United States Court of Appeals for the Eighth Circuit on Sept. 14, 2018. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 19, at or above 10, the level kept without a reading. It was held at first for a privacy review because its text uses words about children or protected persons; two readings of the full opinion on Nov. 27, 2026 found no child or protected person named, so it is shown.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 19
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 3 matched, 2 not linked
+  - check: 'Privacy: no child or protected person named in the opinion'
+    result: agree
+    detail: two AI readings of the full text, Nov. 27, 2026; released from the privacy hold
