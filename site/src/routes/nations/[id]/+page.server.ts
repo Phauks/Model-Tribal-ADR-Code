@@ -603,7 +603,8 @@ const jurisdictionTopics: Record<string, string> = {
 	'tribal-law-and-order-act-enhanced-sentencing': 'Tribal Law and Order Act',
 	'indian-child-welfare-act': 'Indian Child Welfare Act',
 	'hearth-act-leasing-regulations': 'Leasing under the HEARTH Act',
-	'environmental-treatment-as-a-state': 'Environmental programs (treatment as a state)'
+	'environmental-treatment-as-a-state': 'Environmental programs (treatment as a state)',
+	'water-rights-settlement': 'Water rights settlements'
 };
 const topicOrder = Object.keys(jurisdictionTopics);
 
