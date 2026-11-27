@@ -56,7 +56,7 @@ population:
   confidence: medium
   verification: read-in-full
   as_of: '2026-11-21'
-  note: '"Our tribal population is over 5,100 and growing, with 2,700 members residing on the ... Tulalip
+  note: '"Our tribal population is over 5,100 and growing, with 2,700 members residing on the . . . Tulalip
     Indian Reservation"; About page says over 5,000'
 - count: 10969
   kind: resident-population
@@ -1112,6 +1112,14 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.54)
   note: Listed as "TULALIP TRIBES OF WASHINGTON" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on May 9, 1996 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1996-05-09'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 jurisdiction_agreements:
 - kind: cross-deputization
   other_party: Snohomish County Sheriff, Washington
@@ -1168,7 +1176,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 12 Stat. 928
-  note: 'The instrument reads: “on the north side Hwhomish Bay and the creek emptying into the same called Kwilt-seh-da”. The Dec. 23, 1873 Exec. Order (1 Kappler 925) refers to "the Snohomish or Tulalip Indian Reservation ... provided for in the third article of the treaty ... Point Elliott" [sic]. Place-name identification (Kwilt-seh-da = Tulalip Bay) is from the treaty text as reproduced; confidence medium.'
+  note: 'The instrument reads: “on the north side Hwhomish Bay and the creek emptying into the same called Kwilt-seh-da”. The Dec. 23, 1873 Exec. Order (1 Kappler 925) refers to "the Snohomish or Tulalip Indian Reservation . . . provided for in the third article of the treaty . . . Point Elliott" [sic]. Place-name identification (Kwilt-seh-da = Tulalip Bay) is from the treaty text as reproduced; confidence medium.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

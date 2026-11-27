@@ -1,0 +1,50 @@
+key: rhode-island-general-laws-16-22-36
+kind: state-statute
+citation:
+  type: legislation
+  title: Asian American, Native Hawaiian, and Pacific Islander history study
+  title-short: R.I. Gen. Laws § 16-22-36
+  container-title: General Laws of Rhode Island
+  container-title-short: R.I. Gen. Laws
+  section: 16-22-36
+  author:
+  - literal: Rhode Island General Assembly
+  issued:
+    date-parts:
+    - - 2022
+  URL: https://webserver.rilegislature.gov/Statutes/TITLE16/16-22/16-22-36.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://webserver.rilegislature.gov/Statutes/TITLE16/16-22/16-22-36.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: R.I. Gen. Laws § 16-22-36 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: RI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: R.I. Gen. Laws § 16-22-36 (2025). History: P.L. 2022, ch. 291, § 1, effective June 29, 2022; P.L. 2022, ch. 292, § 1, effective June 29, 2022. Text read from the Rhode Island General Assembly''s page for the section in the General Laws (webserver.rilegislature.gov/Statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: native hawaiian; native); AI reader''s verdict incidental: Strong-term hit a reader marked none; the session read it again: the required history unit covers Native Hawaiian history. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native hawaiian; native'

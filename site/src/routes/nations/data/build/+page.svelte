@@ -17,6 +17,7 @@
 	the shared table's Sum row.
 -->
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { onMount } from 'svelte';
 	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
@@ -296,11 +297,11 @@
 			{#if chart}
 				<BarChart {chart} />
 			{:else if cross}
-				<h2 class="result-title">{title}</h2>
-				<DataTable identifier="built" label="Table: {title}" columns={cross.columns} rows={cross.rows} download="table" />
+				<DataTable identifier="built" label="Table: {title}" columns={cross.columns} rows={cross.rows} download="table">
+					{#snippet heading(count: Snippet)}<h2 class="result-title">{title} {@render count()}</h2>{/snippet}
+				</DataTable>
 				<p class="small"><a href={dataset.sourceHref}>Source</a></p>
 			{:else if records && !settings.groupBy}
-				<h2 class="result-title">{title}</h2>
 				<DataTable
 					identifier="built"
 					label="Table: {title}"
@@ -312,7 +313,9 @@
 					filters
 					bind:shownColumns={() => shownKeys, (keys) => update({ columns: chosenColumns(dataset as BuilderDataset, keys) })}
 					bind:columnFilters={() => settings?.filters ?? {}, (filters: ColumnFilters) => update({ filters })}
-				/>
+				>
+					{#snippet heading(count: Snippet)}<h2 class="result-title">{title} {@render count()}</h2>{/snippet}
+				</DataTable>
 				<p class="small"><a href={dataset.sourceHref}>Source</a></p>
 			{/if}
 		{/key}

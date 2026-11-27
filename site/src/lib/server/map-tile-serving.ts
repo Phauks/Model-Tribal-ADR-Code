@@ -14,11 +14,13 @@ export interface TileSet {
 	key: string;
 	minZoom: number;
 	maxZoom: number;
+	/** 'webp' for a set of pictures (the 1909 map's scan), served at /map-tiles/<set>/<z>/<x>/<y>.webp; otherwise vector tiles. */
+	format?: string;
 }
 
 /** The tile sets the website serves, by the name in their address. */
 export const tileSets: ReadonlyMap<string, TileSet> = new Map(
-	[manifest.landAreas, manifest.basemap, manifest.worldBasemap, manifest.landCessions, manifest.landAreasByYear, manifest.borders, manifest.removalRoutes, manifest.homelands].map((entry) => [entry.set, entry])
+	[manifest.landAreas, manifest.basemap, manifest.worldBasemap, manifest.landCessions, manifest.landAreasByYear, manifest.borders, manifest.removalRoutes, manifest.homelands, manifest.reservations1909, manifest.scan1909].map((entry): [string, TileSet] => [entry.set, entry])
 );
 
 /**
@@ -29,10 +31,14 @@ export const tileSets: ReadonlyMap<string, TileSet> = new Map(
  * withdraws one, changes every key, so no kept tile outlives its set.
  */
 export function keptTileKey(origin: string, setName: string, z: number, x: number, y: number): string | undefined {
-	if (!tileSets.has(setName) || !isTileAddress(z, x, y)) return undefined;
+	const tileSet = tileSets.get(setName);
+	if (!tileSet || !isTileAddress(z, x, y)) return undefined;
 	const sets = [...tileSets.keys()].sort().join('+');
-	return `${origin}/map-tiles/${setName}/${z}/${x}/${y}.mvt?sets=${encodeURIComponent(sets)}`;
+	return `${origin}/map-tiles/${setName}/${z}/${x}/${y}.${tileExtension(tileSet)}?sets=${encodeURIComponent(sets)}`;
 }
+
+/** The ending of a tile set's addresses: .webp for pictures, .mvt for vector tiles. */
+export const tileExtension = (tileSet: TileSet) => (tileSet.format === 'webp' ? 'webp' : 'mvt');
 
 /** The world basemap, served in place of a basemap tile outside the United States and its territories (tools/build-map-tiles.mjs). */
 const worldFallback: ReadonlyMap<string, TileSet> = new Map([[manifest.basemap.set, manifest.worldBasemap]]);
@@ -78,6 +84,7 @@ const tileHeaders = {
 	'X-Content-Type-Options': 'nosniff',
 	'Cross-Origin-Resource-Policy': 'same-origin'
 };
+const pictureHeaders = { ...tileHeaders, 'Content-Type': 'image/webp' };
 
 /** Whether a tile address is one a map could ask for: whole numbers, and x and y inside the zoom level's grid. */
 export function isTileAddress(z: number, x: number, y: number): boolean {
@@ -87,18 +94,19 @@ export function isTileAddress(z: number, x: number, y: number): boolean {
 }
 
 /**
- * The response for /map-tiles/<set>/<z>/<x>/<y>.mvt. A tile the file does not hold (open sea, or beyond the set's zoom levels) is an empty answer (204), which MapLibre reads as "nothing to draw here", so a map never shows an error for it.
+ * The response for /map-tiles/<set>/<z>/<x>/<y>.mvt, or .webp for a set of pictures. A tile the file does not hold (open sea, or beyond the set's zoom levels) is an empty answer (204), which MapLibre reads as "nothing to draw here", so a map never shows an error for it. A set asked for with the other ending is not found.
  */
-export async function serveMapTile(bucket: R2Bucket, setName: string, z: number, x: number, y: number): Promise<Response> {
+export async function serveMapTile(bucket: R2Bucket, setName: string, z: number, x: number, y: number, extension: 'mvt' | 'webp' = 'mvt'): Promise<Response> {
 	const tileSet = tileSets.get(setName);
-	if (!tileSet || !isTileAddress(z, x, y)) return new Response('No such map tile.', { status: 404, headers: { 'Cache-Control': 'no-store' } });
-	if (z < tileSet.minZoom || z > tileSet.maxZoom) return new Response(null, { status: 204, headers: tileHeaders });
+	if (!tileSet || !isTileAddress(z, x, y) || tileExtension(tileSet) !== extension) return new Response('No such map tile.', { status: 404, headers: { 'Cache-Control': 'no-store' } });
+	const headers = extension === 'webp' ? pictureHeaders : tileHeaders;
+	if (z < tileSet.minZoom || z > tileSet.maxZoom) return new Response(null, { status: 204, headers });
 	let tile = await archiveFor(bucket, tileSet).getZxy(z, x, y);
 	// The basemap holds only the tiles around the United States and its territories; elsewhere the world basemap, cut from the same build, has the tile, so a reader can move the map anywhere without a blank (Trevor, 2026-11-24).
 	const world = worldFallback.get(setName);
 	if ((!tile || tile.data.byteLength === 0) && world && z <= world.maxZoom) tile = await archiveFor(bucket, world).getZxy(z, x, y);
-	if (!tile || tile.data.byteLength === 0) return new Response(null, { status: 204, headers: tileHeaders });
-	return new Response(tile.data, { status: 200, headers: tileHeaders });
+	if (!tile || tile.data.byteLength === 0) return new Response(null, { status: 204, headers });
+	return new Response(tile.data, { status: 200, headers });
 }
 
 /**

@@ -93,7 +93,7 @@
 	glance={data.glance}
 	sources={data.sources}
 	trail={[
-		{ label: 'Library', href: '/library' },
+		{ label: 'Courts and cases', href: '/cases' },
 		{ label: 'Supreme Court', href: '/supreme-court' }
 	]}
 >
@@ -104,7 +104,7 @@
 
 <!-- The bench chart is drawn for the full width, so its section starts below At a glance (Trevor, Nov. 26, 2026: the timelines "hit the at a glance on the right"; RecordPage.svelte). -->
 <Collapsible heading="Justices" identifier="justices" count={data.bench.length} class="clear-glance">
-	<BenchChart rows={data.bench} start={data.start} end={data.end} cases={data.cases} />
+	<BenchChart rows={data.bench} start={data.start} end={data.end} cases={data.chartCases} allLink />
 	<DataTable
 		identifier="justices-{data.key}"
 		label="Table: Justices of the {data.name}"

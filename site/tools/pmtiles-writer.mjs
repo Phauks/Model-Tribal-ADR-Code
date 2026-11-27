@@ -1,6 +1,6 @@
 // Writes a PMTiles version 3 file (https://github.com/protomaps/PMTiles/blob/main/spec/v3/spec.md) from tiles held in memory, for map tiles the site builds itself without tippecanoe (tools/build-historic-maps.mjs).
 //
-// Tiles are gzipped Mapbox Vector Tiles. Identical tiles (such as the many tiles wholly inside one large shape) are stored once and addressed by run length, as the spec allows. The directory is one root directory when it fits in the first 16 KB, as readers expect, and otherwise a root of leaf directories.
+// Tiles are gzipped Mapbox Vector Tiles, or WebP pictures stored as they are (`tileType: 'webp'`). Identical tiles (such as the many tiles wholly inside one large shape) are stored once and addressed by run length, as the spec allows. The directory is one root directory when it fits in the first 16 KB, as readers expect, and otherwise a root of leaf directories.
 
 import { createHash } from 'node:crypto';
 import { closeSync, openSync, writeSync } from 'node:fs';
@@ -61,10 +61,11 @@ function int64(buffer, offset, value) {
 /**
  * Writes the file.
  * @param {string} path
- * @param {Map<string, Uint8Array>} tiles uncompressed vector tiles keyed "z/x/y"
- * @param {{ minZoom: number, maxZoom: number, bounds: number[], metadata: object }} options
+ * @param {Map<string, Uint8Array>} tiles uncompressed vector tiles, or WebP pictures, keyed "z/x/y"
+ * @param {{ minZoom: number, maxZoom: number, bounds: number[], metadata: object, tileType?: 'mvt' | 'webp' }} options
  */
-export function writePmtiles(path, tiles, { minZoom, maxZoom, bounds, metadata }) {
+export function writePmtiles(path, tiles, { minZoom, maxZoom, bounds, metadata, tileType = 'mvt' }) {
+	const pictures = tileType === 'webp';
 	const sorted = [...tiles.entries()]
 		.map(([key, data]) => {
 			const [z, x, y] = key.split('/').map(Number);
@@ -79,7 +80,8 @@ export function writePmtiles(path, tiles, { minZoom, maxZoom, bounds, metadata }
 		const hash = createHash('sha256').update(data).digest('hex');
 		let stored = contents.get(hash);
 		if (!stored) {
-			const packed = gzipSync(data);
+			// A WebP picture is already compressed.
+			const packed = pictures ? Buffer.from(data) : gzipSync(data);
 			stored = { offset: dataLength, length: packed.length };
 			contents.set(hash, stored);
 			chunks.push(packed);
@@ -111,8 +113,8 @@ export function writePmtiles(path, tiles, { minZoom, maxZoom, bounds, metadata }
 	int64(header, 88, contents.size);
 	header.writeUInt8(1, 96); // clustered: tiles are in tile id order
 	header.writeUInt8(2, 97); // directories gzipped
-	header.writeUInt8(2, 98); // tiles gzipped
-	header.writeUInt8(1, 99); // Mapbox Vector Tiles
+	header.writeUInt8(pictures ? 1 : 2, 98); // tiles stored as they are, or gzipped
+	header.writeUInt8(pictures ? 4 : 1, 99); // WebP, or Mapbox Vector Tiles
 	header.writeUInt8(minZoom, 100);
 	header.writeUInt8(maxZoom, 101);
 	header.writeInt32LE(Math.round(bounds[0] * 1e7), 102);

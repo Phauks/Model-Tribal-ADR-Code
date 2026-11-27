@@ -127,6 +127,9 @@ function participants(key: string): { record: NationRecord; rows: ProgramRow[] }
 		.filter((entry) => entry.rows.length > 0);
 }
 
+/** How many nations take part in at least one program, for the Statistics page. */
+export const nationsInPrograms = () => nations().filter((record) => programRows(record).length > 0).length;
+
 export function programSummaries(): ProgramSummary[] {
 	return federalPrograms.map((program) => ({ program, count: participants(program.key).length }));
 }

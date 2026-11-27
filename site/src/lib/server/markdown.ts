@@ -96,17 +96,21 @@ export function savedCopyLink(source: SourceRecord | undefined): string {
 
 /**
  * The copy this site serves of a source's document: its official report,
- * else the copy of the page it was found at, else the file its record says
- * was stored for it (such as an executive order's text).
+ * else the file its record says was stored for it (such as an executive
+ * order's text or a Code section's PDF), else the copy of the page it was
+ * found at.
  */
 export function savedCopyFor(source: SourceRecord | undefined): PublicCopy | undefined {
 	if (!source) return undefined;
 	const stored = (source as SourceRecord & { file?: { checksum?: string } }).file?.checksum;
+	// The record's own stored file comes before a copy of the page its citation links: that page can be a
+	// third party's (a Cornell LII page for a Code section) or shared with another record (one treaty's page
+	// listing several), while the file is the one stored for this record (thread "Host the text of U.S. Code sections", Nov. 27, 2026).
 	return (
 		officialReportLinks(source.reading_links).map(publicCopyFor).find(Boolean) ??
+		publicCopyWithDigest(stored) ??
 		publicCopyFor(source.original_link) ??
-		publicCopyFor(source.citation.URL) ??
-		publicCopyWithDigest(stored)
+		publicCopyFor(source.citation.URL)
 	);
 }
 

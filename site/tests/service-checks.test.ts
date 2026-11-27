@@ -69,6 +69,15 @@ describe('service checks', () => {
 		}
 	});
 
+	it('counts the inbox as working without MAIL_SIGNING_KEY, which only big-file links and outreach need', async () => {
+		const env = environment({ MAIL_DOMAIN: 'example.org', projectEmail: { send: async () => ({}) } });
+		const result = await check('inbox', env);
+		expect(result.state).toBe('working');
+		expect(result.details.join(' ')).toContain('MAIL_SIGNING_KEY is not set');
+		const signed = await check('inbox', environment({ MAIL_DOMAIN: 'example.org', MAIL_SIGNING_KEY: 'k', projectEmail: { send: async () => ({}) } }));
+		expect(signed).toMatchObject({ state: 'working', details: ['Domain: example.org'] });
+	});
+
 	it('flags book ordering in test mode with a live Stripe key', async () => {
 		const result = await check(
 			'book-orders',

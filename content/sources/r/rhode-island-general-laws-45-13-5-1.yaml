@@ -1,0 +1,50 @@
+key: rhode-island-general-laws-45-13-5-1
+kind: state-statute
+citation:
+  type: legislation
+  title: General assembly appropriations in lieu of property tax from certain exempt private and state properties
+  title-short: R.I. Gen. Laws § 45-13-5.1
+  container-title: General Laws of Rhode Island
+  container-title-short: R.I. Gen. Laws
+  section: 45-13-5.1
+  author:
+  - literal: Rhode Island General Assembly
+  issued:
+    date-parts:
+    - - 1986
+  URL: https://webserver.rilegislature.gov/Statutes/TITLE45/45-13/45-13-5.1.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://webserver.rilegislature.gov/Statutes/TITLE45/45-13/45-13-5.1.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: R.I. Gen. Laws § 45-13-5.1 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: RI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: R.I. Gen. Laws § 45-13-5.1 (2025). History: P.L. 1986, ch. 466, § 1; P.L. 1987, ch. 383, § 1; P.L. 1988, ch. 129, art. 5, § 1; P.L. 1989, ch. 126, art. 57, § 1; P.L. 1990, ch. 65, art. 62, § 1; P.L. 1991, ch. 44, art. 29, § 1; P.L. 1994, ch. 70, Art. 15, § 5; P.L. 1994, ch. 70, art. 27, § 1; P.L. 1997, ch. 30, art. 26, § 1; P.L. 2001, ch. 77, art. 6, § 1; P.L. 2002, ch. 65, art. 7, § 2; P.L. 2007, ch. 73, art. 25, § 1; P.L. 2014, ch. 145, art. 2, § 2; P.L. 2014, ch. 362, § 2; P.L. 2014, ch. 379, § 2; P.L. 2025, ch. 467, § 2, effective December 31, 2025; P.L. 2025, ch. 468, § 2, effective December 31, 2025. Text read from the Rhode Island General Assembly''s page for the section in the General Laws (webserver.rilegislature.gov/Statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribe); AI reader''s verdict core: Payment in lieu of tax on Pokanoket tribal land trust. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: tribe'

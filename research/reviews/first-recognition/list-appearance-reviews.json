@@ -9,11 +9,11 @@
  },
  {
   "nation": "agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation",
-  "earliest_list": "bia-recognized-entities-1980",
-  "entry": "Agua Caliente Band of Cahuilla Indians of the Resighini Ranchería, California the Agua Caliente Indian Reservation, Cocopah Tribe of Arizona",
-  "confidence": "medium",
-  "note": "Garbled run-together line; the Agua Caliente Indian Reservation band name is recoverable. 1979 entries do not name it.",
-  "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+  "earliest_list": "bia-recognized-entities-1979",
+  "entry": "Aqua-Caliente Band of Cabuilla Indians (Palm Springs), Aqua-Caliente Indian Reservation, California",
+  "confidence": "high",
+  "note": "The 1979 list spells the name Aqua-Caliente and Cabuilla (OCR or print); the earlier answer named the Resighini entry by mistake.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "akiachak-native-community",
@@ -145,11 +145,11 @@
  },
  {
   "nation": "blue-lake-rancheria",
-  "earliest_list": "bia-recognized-entities-1979",
-  "entry": "Lake Ranchería, California",
-  "confidence": "low",
-  "note": "Entry is a truncated fragment missing the 'Blue' prefix; Lower/Upper Lake or other Lake Rancherias could match. Computed 1982 is not supported by the 1979 entry.",
-  "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+  "earliest_list": "bia-recognized-entities-1985",
+  "entry": "Blue Lake Rancheria of California",
+  "confidence": "high",
+  "note": "No list from 1979 to 1983 names Blue Lake; the earlier 1979 answer matched the Lake Rancheria entry, a different rancheria.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "bois-forte-band",
@@ -184,6 +184,14 @@
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
  },
  {
+  "nation": "california-valley-miwok-tribe",
+  "earliest_list": "bia-recognized-entities-1979",
+  "entry": "Sheep Ranch Rancheria of Me-Wuk Indians, California",
+  "confidence": "medium",
+  "note": "Sheep Ranch Rancheria is listed through 1995; the identity with today's California Valley Miwok Tribe rests on the later lists' name history, not checked here.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
+ },
+ {
   "nation": "catawba-indian-nation",
   "earliest_list": "bia-recognized-entities-1995",
   "entry": "Catawba Tribe of South Carolina",
@@ -198,6 +206,14 @@
   "confidence": "medium",
   "note": "Older name Tlingit & Haida Indians of Alaska (not in other_names); Central Council name first appears in 1988. Computed 1988 disagrees.",
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+ },
+ {
+  "nation": "chalkyitsik-village",
+  "earliest_list": "bia-recognized-entities-1982",
+  "entry": "Chalkyitsik Village.",
+  "confidence": "high",
+  "note": "The 1979 to 1981 lists name no Alaska entities (58 Fed. Reg. 54364, 54364 (1993)); the 1982 list names Chalkyitsik Village.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "cheesh-na-tribe",
@@ -216,19 +232,19 @@
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
  },
  {
-  "nation": "chickahominy-indian-tribe-eastern-division",
-  "earliest_list": "bia-recognized-entities-2018-07-23",
-  "entry": "Chickahominy Indian Tribe—Eastern Division",
-  "confidence": "high",
-  "note": "First appears on the 2018-07-23 list; computed 2026 disagrees.",
-  "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
- },
- {
   "nation": "chickahominy-indian-tribe",
   "earliest_list": "bia-recognized-entities-2018-07-23",
   "entry": "Chickahominy Indian Tribe",
   "confidence": "high",
   "note": "Same list as the Eastern Division entry; computed agrees.",
+  "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+ },
+ {
+  "nation": "chickahominy-indian-tribe-eastern-division",
+  "earliest_list": "bia-recognized-entities-2018-07-23",
+  "entry": "Chickahominy Indian Tribe—Eastern Division",
+  "confidence": "high",
+  "note": "First appears on the 2018-07-23 list; computed 2026 disagrees.",
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
  },
  {
@@ -246,6 +262,14 @@
   "confidence": "high",
   "note": "Computed agrees.",
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+ },
+ {
+  "nation": "chignik-bay-tribal-council",
+  "earliest_list": "bia-recognized-entities-1982",
+  "entry": "Chignik, Native Village of Chignik.",
+  "confidence": "medium",
+  "note": "Native Village of Chignik is the nation's former name (State of Alaska tribal contacts list, on the profile); the 1979 to 1981 lists name no Alaska entities.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "chignik-lake-village",
@@ -496,12 +520,20 @@
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
  },
  {
+  "nation": "fort-mojave-indian-tribe",
+  "earliest_list": "bia-recognized-entities-1979",
+  "entry": "Fort Mojave Tribe of Arizona",
+  "confidence": "high",
+  "note": "Named on the 1979 list as Fort Mojave Tribe of Arizona and from 1980 as Fort Mojave Indian Tribe of Arizona.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
+ },
+ {
   "nation": "fort-sill-chiricahua-warm-springs-apache-tribe",
   "earliest_list": "bia-recognized-entities-1979",
   "entry": "Fort Still Apache Tribe of Oklahoma",
   "confidence": "high",
-  "note": "Older name 'Fort Sill Apache Tribe of Oklahoma' (OCR 'Still'). Computed 1980.",
-  "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+  "note": "Fort Still is a misprint or OCR error for Fort Sill; every later list reads Fort Sill Apache Tribe of Oklahoma. A second reviewer, who did not see this line, said 1980.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "grand-portage-band",
@@ -658,10 +690,10 @@
  {
   "nation": "iqugmiut-traditional-council",
   "earliest_list": "bia-recognized-entities-1982",
-  "entry": "Russian Mission, Native Village of",
-  "confidence": "medium",
-  "note": "Former name Native Village of Russian Mission. Settled by a name search of the list texts.",
-  "reviewed_by": "Claude (AI assistant), name search of the list texts"
+  "entry": "Russian Mission, Native Village of Russian Mission (Yukon).",
+  "confidence": "high",
+  "note": "Russian Mission is the community of the Iqugmiut Traditional Council (State of Alaska place names, on the profile).",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "ivanof-bay-tribe",
@@ -713,11 +745,11 @@
  },
  {
   "nation": "karuk-tribe",
-  "earliest_list": "bia-recognized-entities-1985",
-  "entry": "Karuk Tribe of California",
+  "earliest_list": "bia-recognized-entities-1979",
+  "entry": "Karok Tribe of California",
   "confidence": "high",
-  "note": "Clean name; 1979-1983 do not name it.",
-  "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+  "note": "The lists spell the name Karok until 1983 and Karuk from 1985.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria",
@@ -894,6 +926,14 @@
   "confidence": "high",
   "note": "First clean name is 1995. The 1982-1986 lone 'Bay.' fragments are too short to count.",
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+ },
+ {
+  "nation": "lone-pine-paiute-shoshone-tribe",
+  "earliest_list": "bia-recognized-entities-1979",
+  "entry": "Paiute-Shoshone Indians of the Lone Pine Community, Lone Pine Reservation, California",
+  "confidence": "high",
+  "note": "The nation's former listed name.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "louden-tribe",
@@ -1174,6 +1214,14 @@
   "confidence": "high",
   "note": "Disagrees with computed 2026: the 1982 entry names it under the older Village of Chuathbaluk name.",
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+ },
+ {
+  "nation": "native-village-of-council",
+  "earliest_list": "bia-recognized-entities-1988",
+  "entry": "Council",
+  "confidence": "medium",
+  "note": "Named on the 1988 Alaska list without a category mark, next to Council Native Corporation; first named as Native Village of Council in 1993. No earlier list names it.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "native-village-of-deering",
@@ -1864,6 +1912,14 @@
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
  },
  {
+  "nation": "northfork-rancheria-of-mono-indians-of-california",
+  "earliest_list": "bia-recognized-entities-1985",
+  "entry": "Northfork Rancheria of Mono Indians of California",
+  "confidence": "high",
+  "note": "No list from 1979 to 1983 names Northfork; the earlier 1979 answer was the Fort Hall entry, a different nation.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
+ },
+ {
   "nation": "northway-village",
   "earliest_list": "bia-recognized-entities-1982",
   "entry": "Northway Village.",
@@ -1945,11 +2001,11 @@
  },
  {
   "nation": "orutsararmiut-traditional-native-council",
-  "earliest_list": "bia-recognized-entities-2014",
-  "entry": "Orutsararmiut Traditional Native",
-  "confidence": "high",
-  "note": "Entry is truncated on the 2014 list but matches the nation; agrees with computed_earliest.",
-  "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+  "earliest_list": "bia-recognized-entities-1982",
+  "entry": "Bethel Native Village.",
+  "confidence": "medium",
+  "note": "The 1983 list names Bethel Native Village (aka Orutsaramuit) and the 1993 list Orutsararmuit Native Village (aka Bethel), which ties the 1982 entry to this nation.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "oscarville-traditional-village",
@@ -1958,6 +2014,14 @@
   "confidence": "high",
   "note": "Truncated entry on the 1982 list; agrees with computed_earliest.",
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+ },
+ {
+  "nation": "paiute-shoshone-tribe-of-the-fallon-reservation-and-colony",
+  "earliest_list": "bia-recognized-entities-1979",
+  "entry": "Paiute-Shoshone Indians of the Fallon Reservation, Nevada",
+  "confidence": "high",
+  "note": "The earlier answer named the Bishop entry by mistake.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "pamunkey-indian-tribe",
@@ -2022,6 +2086,14 @@
   "confidence": "high",
   "note": "First appears on the 1985 list; agrees with computed_earliest. Older name \"Ukiah Rancheria\" is not in the shown entries.",
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+ },
+ {
+  "nation": "pit-river-tribe",
+  "earliest_list": "bia-recognized-entities-1982",
+  "entry": "Pit River Indian Tribe of the X-L Ranch Reservation, California.",
+  "confidence": "medium",
+  "note": "Earliest list entry naming the Pit River Tribe; its member rancherias (Big Bend, Lookout, Montgomery Creek and others) are listed separately from 1979.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "pitkas-point-traditional-council",
@@ -2176,19 +2248,19 @@
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
  },
  {
-  "nation": "sac-and-fox-nation-of-missouri-in-kansas-and-nebraska",
-  "earliest_list": "bia-recognized-entities-1979",
-  "entry": "Sac Sc Fox Tribe of the Missouri in Kansas",
-  "confidence": "high",
-  "note": "\"Sac & Fox Tribe of the Missouri in Kansas\" (OCR \"Sc\") on the 1979 list; agrees with computed_earliest.",
-  "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
- },
- {
   "nation": "sac-and-fox-nation",
   "earliest_list": "bia-recognized-entities-1979",
   "entry": "Sac Sc Fox Tribe of Oklahoma",
   "confidence": "high",
   "note": "Sac & Fox Tribe of Oklahoma (OCR \"Sc\") on the 1979 list; distinct from the Missouri nation. Agrees with computed_earliest.",
+  "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+ },
+ {
+  "nation": "sac-and-fox-nation-of-missouri-in-kansas-and-nebraska",
+  "earliest_list": "bia-recognized-entities-1979",
+  "entry": "Sac Sc Fox Tribe of the Missouri in Kansas",
+  "confidence": "high",
+  "note": "\"Sac & Fox Tribe of the Missouri in Kansas\" (OCR \"Sc\") on the 1979 list; agrees with computed_earliest.",
   "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
  },
  {
@@ -2228,8 +2300,8 @@
   "earliest_list": "bia-recognized-entities-1988",
   "entry": "Seldovia",
   "confidence": "medium",
-  "note": "Bare \"Seldovia\" on 1988 beside \"Seldovia Native Association, Inc.\"; the full name first appears on 1993.",
-  "reviewed_by": "Claude (AI assistant, smaller model), from the three closest entries per list"
+  "note": "The 1988 list names Seldovia and, separately, Seldovia Native Association, Inc.; Seldovia Village Tribe is first named in 1993.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "shageluk-native-village",
@@ -2324,8 +2396,8 @@
   "earliest_list": "bia-recognized-entities-1988",
   "entry": "Woody Island",
   "confidence": "medium",
-  "note": "Former name Woody Island; not found in the 1982-1986 texts by name search. Settled by a name search of the list texts.",
-  "reviewed_by": "Claude (AI assistant), name search of the list texts"
+  "note": "The 1988 list names Woody Island and Leisnoi, Inc. (Woody Island); the 1993 list names Lesnoi Village (aka Woody Island), the nation's former name.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "telida-village",
@@ -2350,6 +2422,14 @@
   "confidence": "medium",
   "note": "Former name Papago Tribe. Settled by a name search of the list texts.",
   "reviewed_by": "Claude (AI assistant), name search of the list texts"
+ },
+ {
+  "nation": "tolowa-dee-ni-nation",
+  "earliest_list": "bia-recognized-entities-1985",
+  "entry": "Smith River Rancheria of California",
+  "confidence": "high",
+  "note": "Smith River Rancheria is the nation's former name; the 1979 to 1983 Smith River lines are the Big Lagoon Rancheria.",
+  "reviewed_by": "Claude (AI assistant), by searching the full text of every list after the second review"
  },
  {
   "nation": "tonto-apache-tribe-of-arizona",

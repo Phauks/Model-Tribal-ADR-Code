@@ -1,0 +1,50 @@
+key: rhode-island-general-laws-20-2-2-6
+kind: state-statute
+citation:
+  type: legislation
+  title: Fees — Terms and conditions — Information required
+  title-short: R.I. Gen. Laws § 20-2.2-6
+  container-title: General Laws of Rhode Island
+  container-title-short: R.I. Gen. Laws
+  section: 20-2.2-6
+  author:
+  - literal: Rhode Island General Assembly
+  issued:
+    date-parts:
+    - - 2009
+  URL: https://webserver.rilegislature.gov/Statutes/TITLE20/20-2.2/20-2.2-6.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://webserver.rilegislature.gov/Statutes/TITLE20/20-2.2/20-2.2-6.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: R.I. Gen. Laws § 20-2.2-6 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: RI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: R.I. Gen. Laws § 20-2.2-6 (2025). History: P.L. 2009, ch. 375, § 1; P.L. 2009, ch. 379, § 1; P.L. 2026, ch. 359, § 3, effective March 1, 2027; P.L. 2026, ch. 426, § 3, effective March 1, 2027. Text read from the Rhode Island General Assembly''s page for the section in the General Laws (webserver.rilegislature.gov/Statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; tribe); AI reader''s verdict incidental: Fishing license fee waived for members of Rhode Island federally recognized tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; tribe'

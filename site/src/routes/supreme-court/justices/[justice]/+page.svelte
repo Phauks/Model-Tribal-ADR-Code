@@ -53,12 +53,12 @@
 	glance={data.glance}
 	sources={data.sources}
 	trail={[
-		{ label: 'Library', href: '/library' },
+		{ label: 'Courts and cases', href: '/cases' },
 		{ label: 'Supreme Court', href: '/supreme-court' }
 	]}
 >
 	<Collapsible heading="On the Court" identifier="service">
-		<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.cases} width={560} labelWidth={110} />
+		<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.chartCases} self={data.key} width={560} labelWidth={110} />
 	</Collapsible>
 
 	<Collapsible heading="Cases on this site" identifier="cases" count={data.cases.length}>

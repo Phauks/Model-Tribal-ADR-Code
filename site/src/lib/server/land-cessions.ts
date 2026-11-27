@@ -140,5 +140,5 @@ export function mapPageCessions() {
 
 /** What a treaty's small map needs (TileMap.svelte, historic maps mockup 7): the tile sets, and no land areas of its own. */
 export function treatyMapData() {
-	return { tiles: tileSetNames, states: {}, regions: { type: 'FeatureCollection' as const, features: [] }, areas: [], offices: [], shading: undefined };
+	return { tiles: tileSetNames, states: {}, regions: { type: 'FeatureCollection' as const, features: [] }, areas: [], nationAreas: {}, offices: [], shading: undefined };
 }
