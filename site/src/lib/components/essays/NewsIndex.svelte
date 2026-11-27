@@ -26,7 +26,7 @@
 				canStart = body?.canStart ?? false;
 				if (canStart) newEssayPlace.current = { sectionLink: '/news', part: 'news' };
 			})
-			.catch(() => undefined);
+			.catch(() => /* expected: without a staff sign-in the drafts list is left out, and the published posts still show */ undefined);
 	});
 
 	onDestroy(() => {
