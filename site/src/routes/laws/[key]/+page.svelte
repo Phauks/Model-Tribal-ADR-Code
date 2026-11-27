@@ -2,7 +2,7 @@
 	@component
 	One federal law's, treaty's or executive order's page
 	(src/lib/server/law-pages.ts), on the site's one item layout: the law's
-	kind, date and citation At a glance (with an order's number and President,
+	kind, date and citation Key facts (with an order's number and President,
 	and the nations whose pages cite it), its box's parts as sections, the
 	accounts of its impact, where to read it, the text this site keeps of it,
 	and where this site cites it.
@@ -50,7 +50,7 @@
 	<meta name="description" content="{data.name}, {data.citation}: what it did, the accounts of its impact and where to read it." />
 </svelte:head>
 
-<!-- The land a treaty ceded, drawn under At a glance (Trevor, 2026-11-26, historic maps mockup 7). With no map on the device, At a glance's Land ceded row says the same in words. -->
+<!-- The land a treaty ceded, drawn under Key facts (Trevor, 2026-11-26, historic maps mockup 7). With no map on the device, Key facts' Land ceded row says the same in words. -->
 {#snippet cededMap()}
 	{#if data.landCeded && cededMapWanted}
 		<div class="ceded-map no-print" class:ready={cededMapReady}>

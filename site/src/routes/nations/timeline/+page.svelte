@@ -11,6 +11,8 @@
 	import Search from '@lucide/svelte/icons/search';
 	import SlidersHorizontal from '@lucide/svelte/icons/sliders-horizontal';
 	import X from '@lucide/svelte/icons/x';
+	import CountBadge from '#lib/components/CountBadge.svelte';
+	import FilterSheet from '#lib/components/FilterSheet.svelte';
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { kindIcons } from '#lib/timeline-icons.ts';
@@ -181,15 +183,8 @@
 <h1>Timeline</h1>
 
 <div class="layout">
-	<div class="filters-toggle no-print">
-		<button class="button button-quiet" type="button" aria-expanded={filtersOpen} aria-controls="timeline-filters" onclick={() => (filtersOpen = !filtersOpen)}>
-			<SlidersHorizontal size={20} aria-hidden="true" />
-			<span>Filters{filterCount > 0 ? ` (${filterCount})` : ''}</span>
-		</button>
-	</div>
-
-	<form class="filters no-print" class:open={filtersOpen} id="timeline-filters" onsubmit={(event) => event.preventDefault()} aria-label="Filters">
-		<div class="filter">
+	<FilterSheet id="timeline-filters" bind:open={filtersOpen} count={filterCount}>
+		<div class="filter first">
 			<label for="timeline-nation" class="visually-hidden">Find a nation</label>
 			{#if nation}
 				<p class="chosen">
@@ -244,7 +239,7 @@
 				<label class="option"><input type="checkbox" bind:group={mentions} value={word} /> <span class="name">{word}</span></label>
 			{/each}
 		</fieldset>
-	</form>
+	</FilterSheet>
 
 	<div class="results">
 		<Timeline
@@ -262,6 +257,18 @@
 			countsInView
 		>
 			{#snippet toolbarStart()}
+				<button
+					type="button"
+					class="icon-button filters-button"
+					aria-label="Filters"
+					title="Filters"
+					aria-expanded={filtersOpen}
+					aria-controls="timeline-filters"
+					onclick={() => (filtersOpen = !filtersOpen)}
+				>
+					<SlidersHorizontal size={20} aria-hidden="true" />
+					{#if filterCount > 0}<CountBadge count={filterCount} label={filterCount === 1 ? 'filter set' : 'filters set'} />{/if}
+				</button>
 				{#each chosenEras as name (name)}
 					<span class="pill">
 						{name}
@@ -283,16 +290,12 @@
 		align-items: start;
 	}
 
-	.filters {
-		font-size: var(--font-size-small);
-	}
-
-	.filters-toggle {
+	/* On wide screens the filters are always beside the list, so the button that opens them is only for narrow ones. */
+	.filters-button {
 		display: none;
-	}
-
-	.filters-toggle .button {
-		gap: var(--space-2);
+		width: auto;
+		gap: var(--space-1);
+		padding: 0 var(--space-2);
 	}
 
 	.filter {
@@ -303,7 +306,7 @@
 		min-width: 0;
 	}
 
-	.filter:first-child {
+	.filter.first {
 		border-top: 0;
 		padding-top: 0;
 	}
@@ -408,26 +411,15 @@
 		--kind-color: var(--color-timeline-federal);
 	}
 
-	/* Filters beside the timeline when there is room, above it behind a button when there is not, as on the search page. */
+	/* Filters beside the timeline when there is room; on narrow screens behind a button in the timeline's toolbar (FilterSheet.svelte). */
 	@media (max-width: 52rem) {
 		.layout {
 			grid-template-columns: minmax(0, 1fr);
 			gap: var(--space-3);
 		}
 
-		.filters-toggle {
-			display: block;
-		}
-
-		.filters {
-			display: none;
-		}
-
-		.filters.open {
-			display: block;
-			border: 1px solid var(--color-line);
-			border-radius: var(--radius-panel);
-			padding: var(--space-3) var(--space-4);
+		.filters-button {
+			display: inline-flex;
 		}
 	}
 </style>

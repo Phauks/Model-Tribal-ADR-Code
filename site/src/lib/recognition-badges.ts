@@ -8,7 +8,7 @@
  * "Petitioning". No federal recognition gets no badge at all (Trevor: "if no
  * federal, just don't say anything"), so a nation that is only state
  * recognized shows one state badge, and one with no status shows none. The
- * full wording, with its legal basis, stays in the nation page's At a glance
+ * full wording, with its legal basis, stays in the nation page's Key facts
  * box. Each badge also carries the full wording for its tooltip and for
  * screen readers. A recognition status is a legal fact, not a judgment of a
  * nation's standing as a people.
