@@ -56,4 +56,5 @@ Records the project already holds under the same key (most were made by hand for
 | North Dakota | `adapters/north_dakota.py` (no source notes in the PDFs, so no enactment years) | Chapter PDFs, ndlegis.gov/cencode, listed with section names on the Century Code page |
 | Idaho | `adapters/idaho.py` | Section pages, legislature.idaho.gov/statutesrules/idstat, listed on each chapter's page |
 | Kansas | `adapters/kansas.py` | Section pages, ksrevisor.gov/statutes, listed on each chapter's page |
+| New York | `adapters/new_york.py` (needs `NEW_YORK_SENATE_API_KEY`, a free key the service takes in the address, never printed; section numbers are `<law id>:<section>`, cited by each law's name; no history lines) | The Senate's Open Legislation laws service, one call per law (legislation.nysenate.gov/api/3/laws); each record links to the section's page on nysenate.gov |
 | Oklahoma | `adapters/oklahoma.py` (read in the pilot; `run.py seed OK` turns the pilot's list into this pipeline's list) | Title PDFs, oklegislature.gov |

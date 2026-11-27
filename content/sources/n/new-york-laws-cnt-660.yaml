@@ -1,0 +1,47 @@
+key: new-york-laws-cnt-660
+kind: state-statute
+citation:
+  type: legislation
+  title: Services on behalf of the state
+  title-short: N.Y. County Law § 660
+  container-title: New York County Law
+  container-title-short: N.Y. County Law
+  section: '660'
+  author:
+  - literal: New York State Legislature
+  URL: https://www.nysenate.gov/legislation/laws/CNT/660
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.nysenate.gov/legislation/laws/CNT/660
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: N.Y. County Law § 660 (McKinney 2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NY
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-new-york-state-statutes
+notes: 'Indigo Book citation: N.Y. County Law § 660 (McKinney 2026). Text read from the New York State Senate''s Open Legislation laws service (legislation.nysenate.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian lands; indian); AI reader''s verdict incidental: Sheriff fees for removing persons from Indian lands. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian lands; indian'
