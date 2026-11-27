@@ -124,7 +124,9 @@
 		<span class="pdf-title">{title}</span>
 		<span class="pdf-name">{name}</span>
 	</p>
-	<div class="pdf-pages" bind:this={frame}>
+	<!-- A scrolling region the keyboard can reach and scroll. -->
+	<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+	<div class="pdf-pages" bind:this={frame} tabindex="0" role="region" aria-label="Pages of {title}">
 		{#if failed}
 			<p class="pdf-failed">This PDF could not be shown here. <a href={file} target="_blank" rel="noopener">Open the file</a>.</p>
 		{:else if sizes.length === 0}
