@@ -47,6 +47,11 @@ export interface BuilderDataset {
 	rows: BuilderValue[][];
 	/** Each row's page, in the order of rows; empty when a row has none. */
 	links: string[];
+	/**
+	 * Each name in the nation column with its nation's page, so every nation in a cell links to its page, one or
+	 * several (Trevor, Nov. 27, 2026). A name two nations share is left out, since it could be either.
+	 */
+	nationLinks?: Record<string, string>;
 	/** Where the data comes from, linked under the result. */
 	sourceHref: string;
 }
@@ -241,6 +246,15 @@ export function recordTable(dataset: BuilderDataset, settings: BuilderSettings, 
 		const cells: TableRow['cells'] = {};
 		shown.forEach((column, position) => {
 			const value = row[indexes[position]];
+			const nationLinks = column.key === dataset.nationColumn ? dataset.nationLinks : undefined;
+			if (nationLinks && value !== null && typeof value !== 'number') {
+				const names = valuesOf(value);
+				cells[column.key] =
+					names.length === 1
+						? { text: names[0], href: nationLinks[names[0]], values: Array.isArray(value) ? value : undefined }
+						: { text: names.join('; '), values: names, parts: names.map((name) => ({ text: name, href: nationLinks[name] })) };
+				return;
+			}
 			cells[column.key] = {
 				text: textOf(value),
 				sortValue: typeof value === 'number' ? value : undefined,

@@ -191,6 +191,33 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
   note: 'The source''s words: "Chilkat Indian Village (Klukwan)".'
   operator: tribal
+federal_programs:
+- program: pl-102-477-plan
+  start: '2023-10-01'
+  end: '2028-09-30'
+  programs_included:
+  - Child Care & Development Funds – Discretionary
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  - Adult Education
+  - Higher Education
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Chilkat Indian Village (Klukwan)'; PL102_477_PartnerEnrollment, its 5 programs
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Chilkat Indian Village (Klukwan)'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Chilkat (Klukwan)' (Haines)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Chilkat (Klukwan)'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Chilkat Indian Village" among organizations under constitutions approved by the

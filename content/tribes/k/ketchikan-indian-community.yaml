@@ -156,6 +156,50 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
   note: 'The source''s words: "Ketchikan Indian Corporation".'
   operator: tribal
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Ketchikan Indian Community' (Alaska Region)
+- program: indian-health-service-self-governance-compact
+  since: 1998
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Alaska Area, row 'Ketchikan Indian Corporation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Ketchikan Indian Corporation'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1868520
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Ketchikan' (Ketchikan)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Ketchikan'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 9708569
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'KETCHIKAN INDIAN COMMUNITY' (UEI NLA4XF2E97L3), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 18731544
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'KETCHIKAN INDIAN COMMUNITY' (UEI NLA4XF2E97L3), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Ketchikan Indian Corporation" among organizations under constitutions approved

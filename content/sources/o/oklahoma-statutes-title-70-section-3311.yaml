@@ -70,10 +70,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 3311 (2026). History: from the United States Citizenship and Immigration Services. laws of this state or municipal ordinances, which employs CLEET- from each of the following: Added by Laws 1965, c. 396, § 311, eff. July 1, 1965. Amended by Laws 1967, c. 6, § 1, Laws 2009, c. 131, § 1, eff. Nov. 1, 2009; Laws 2011, c. 12, § 1, eff. Nov. 1, 2011; Laws 2011, Laws 2000, c. 263, § 1 and Laws 2000, c. 316, § 2 repealed by Laws 2001, c. 5, § 50, emerg. Laws 2015, c. 281, § 1 repealed by Laws 2016, c. 210, § 44, emerg. eff. April 26, 2016. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 1748. Found by the state statutes pilot (terms: indian land; indian tribe; tribal court; tribal law enforcement; tribal police); AI reader''s verdict incidental: CLEET council seat for tribal agency; tribal court records disqualify. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 3311 (2026). History: Added by Laws 1965, c. 396, § 311, eff. July 1, 1965. Amended by Laws 1967, c. 6, § 1, Laws 2009, c. 131, § 1, eff. Nov. 1, 2009; Laws 2011, c. 12, § 1, eff. Nov. 1, 2011; Laws 2011, Laws 2000, c. 263, § 1 and Laws 2000, c. 316, § 2 repealed by Laws 2001, c. 5, § 50, emerg. Laws 2015, c. 281, § 1 repealed by Laws 2016, c. 210, § 44, emerg. eff. April 26, 2016. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 1748. Found by the state statutes pilot (terms: indian land; indian tribe; tribal court; tribal law enforcement; tribal police); AI reader''s verdict incidental: CLEET council seat for tribal agency; tribal court records disqualify. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

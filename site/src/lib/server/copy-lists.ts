@@ -32,7 +32,8 @@ export interface CopyRow {
 	key: string;
 	title: string;
 	kind: string;
-	nations: string[];
+	/** The nations the copy belongs to, each linked to its page in the list. */
+	nations: { id: string; name: string }[];
 	/** The file itself, for downloading and checking. */
 	path: string;
 	/** The copy's page on this site, for reading. */
@@ -85,6 +86,7 @@ const fixedGroups: Record<string, string> = {
 	'federal-court-opinions': 'Lower federal court opinions',
 	'gaming-commission': 'National Indian Gaming Commission documents',
 	acknowledgment: 'Federal acknowledgment documents',
+	'solicitor-opinions': 'Solicitor’s opinions',
 	'other-federal': 'Other federal documents',
 	// Published state and territorial court opinions (decision record 0060).
 	'state-court-opinions': 'State court opinions',
@@ -96,13 +98,18 @@ function nationNames(): Map<string, string> {
 	return new Map(nations().map((record) => [record.id, displayName(record.names.official)]));
 }
 
-/** The nations a copy belongs to, by name. */
-function namesOf(copy: PublicCopy, names: Map<string, string>): string[] {
+/** The nations a copy belongs to, with their names; nations with no record are left out. */
+function nationsOf(copy: PublicCopy, names: Map<string, string>): { id: string; name: string }[] {
 	const ids = copy.nations.length > 0 ? copy.nations : copy.topic === 'constitutions' ? [copy.key.split('/')[1]] : [];
 	return ids.flatMap((id) => {
 		const name = names.get(id);
-		return name ? [name] : [];
+		return name ? [{ id, name }] : [];
 	});
+}
+
+/** The nations a copy belongs to, by name. */
+function namesOf(copy: PublicCopy, names: Map<string, string>): string[] {
+	return nationsOf(copy, names).map((nation) => nation.name);
 }
 
 /** Topics whose copies belong to a nation's set for saving and downloading, not the United States set. */
@@ -131,6 +138,7 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'federal-register') return 'federal-register';
 	if (copy.topic === 'nigc') return 'gaming-commission';
 	if (copy.topic === 'acknowledgment') return 'acknowledgment';
+	if (copy.topic === 'solicitor-opinions') return 'solicitor-opinions';
 	return 'other-federal';
 }
 
@@ -149,7 +157,7 @@ function row(copy: PublicCopy, names: Map<string, string>): CopyRow {
 		key: copy.key,
 		title: copy.title,
 		kind: mediaLabel(copy.mediaType),
-		nations: namesOf(copy, names),
+		nations: nationsOf(copy, names),
 		path: copyPath(copy),
 		page: copyPagePath(copy),
 		original: copy.links.at(-1) ?? copy.links[0] ?? '',

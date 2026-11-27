@@ -1,0 +1,50 @@
+key: north-carolina-general-statutes-105-275
+kind: state-statute
+citation:
+  type: legislation
+  title: Property classified and excluded from the tax base
+  title-short: N.C. Gen. Stat. § 105-275
+  container-title: General Statutes of North Carolina
+  container-title-short: N.C. Gen. Stat.
+  section: 105-275
+  author:
+  - literal: North Carolina General Assembly
+  issued:
+    date-parts:
+    - - 1939
+  URL: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-275.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-275.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: N.C. Gen. Stat. § 105-275 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: N.C. Gen. Stat. § 105-275 (2025). History: 1939, c. 310, s. 303; 1961, c. 1169, s. 8; 1967, c. 1185; 1971, c. 806, s. 1; c. 1121, s. 3; 1973, cc. 290, 451; c. 476, s. 128; c. 484; c. 695, s. 1; c. 790, s. 1; cc. 904, 962, 1028, 1034, 1077; c. 1262, s. 23; c. 1264, s. 1; 1975, cc. 566, 755; c. 764, s. 6; 1977, c. 771, s. 4; c. 782, s. 2; c. 1001, ss. 1, 2; 1977, 2nd Sess., c. 1200, s. 4; 1979, c. 200, s. 1; 1979, 2nd Sess., c. 1092; 1981, c. 86, s. 1; 1981 (Reg. Sess., 1982), c. 1244, ss. 1, 2; 1983, c. 643, ss. 1, 2; c. 693; 1983 (Reg. Sess., 1984), c. 1060; 1985, c. 510, s. 1; c. 656, s. 37; 1985 (Reg. Sess., 1986), c. 982, s. 18; 1987, c. 356; c. 622, s. 2; c. 747, s. 8; c. 777, s. 6; c. 813, ss. 5, 6, 22; c. 850, s. 17; 1987 (Reg. Sess., 1988), c. 1041, s. 1.1; 1989, c. 148, s. 4; c. 168, s. 6; c. 705; c. 723, s. 1; c. 727, ss. 28, 29; 1991, c. 717, s. 1; 1991 (Reg. Sess., 1992), c. 975, s. 2; 1993, c. 459, s. 2; 1993 (Reg. Sess., 1994), c. 745, s. 39; 1995, c. 41, s. 2; c. 509, s. 51; 1995 (Reg. Sess., 1996), c. 646, s. 12; 1997-23, ss. 1, 3, 9; 1997-443, s. 11A.119(a); 1997-456, s. 27; 1998-55, ss. 10, 18; 1998-212, s. 29A.18(a); 1999-337, s. 35(a); 2000-2, s. 1; 2000-18, s. 1, 2000-140, ss. 71, 72(a); 2001-84, s. 3; 2001-427, s. 15(a); 2001-474, s. 8; 2002-104, s. 1; 2003-284, s. 43A.1; 2007-477, s. 1; 2007-527, s. 37; 2008-35, s. 2.1; 2008-107, s. 28.11(a); 2008-134, s. 72; 2008-144, s. 1; 2008-146, ss. 4.1, 5.1; 2008-171, ss. 7(a), (b); 2009-445, s. 21; 2010-95, s. 15; 2011-123, s. 1; 2011-274, s. 1; 2012-120, s. 1(a); 2013-259, s. 1; 2013-355, s. 3; 2013-375, s. 3(a); 2014-4, s. 18; 2015-241, s. 14.30(u); 2015-262, s. 1(a); 2016-94, s. 38.6(a); 2017-204, s. 5.4(a); 2018-98, s. 1(a); 2018-114, s. 25(a); 2021-78, s. 11(h); 2021-180, s. 42.12(c); 2023-134, s. 42.23(a). Text read from the North Carolina General Assembly''s page for the section''s chapter of the General Statutes (ncleg.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: band of cherokee indians; cherokee; eastern band; indians); AI reader''s verdict incidental: Tax exclusion includes Eastern Band Cherokee trust lands property. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: band of cherokee indians; cherokee; eastern band; indians'

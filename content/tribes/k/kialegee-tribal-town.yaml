@@ -89,6 +89,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Kialegee Tribal Town".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 489465
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Kialegee Tribal Town' (Wetumka)
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Kialegge Tribal Town" among organizations under constitutions approved by the

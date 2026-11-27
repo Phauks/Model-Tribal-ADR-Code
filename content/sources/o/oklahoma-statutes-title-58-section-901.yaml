@@ -48,7 +48,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 58, § 901 (2026). History: Laws 1915, c. 198, § 1. Text read from the Legislative Service Bureau''s Title 58 PDF (updated Nov. 12, 2026), page 142. Found by the state statutes pilot (terms: indians); AI reader''s verdict core: District courts approve deeds of full-blood Indian heirs. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

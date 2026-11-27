@@ -67,10 +67,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 1-9-108 (2026). History: from domestic abuse; and Added by Laws 2001, c. 356, § 1, emerg. eff. June 4, 2001. Amended by Laws 2009, c. 233, Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 253. Found by the state statutes pilot (terms: indian affairs); AI reader''s verdict incidental: Indian Affairs Commission named to child abuse evaluation team. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 1-9-108 (2026). History: Added by Laws 2001, c. 356, § 1, emerg. eff. June 4, 2001. Amended by Laws 2009, c. 233, Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 253. Found by the state statutes pilot (terms: indian affairs); AI reader''s verdict incidental: Indian Affairs Commission named to child abuse evaluation team. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

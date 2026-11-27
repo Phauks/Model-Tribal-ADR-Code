@@ -229,6 +229,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Confederated Tribes of the Chehalis Reservation".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1704359
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Confederated Tribes of the Chehalis Reservation' (Oakville)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 3672887
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'CONFEDERATED TRIBES OF THE CHEHALIS RESERVATION' (UEI MQNXENNHSVP8), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Business Committee

@@ -246,6 +246,70 @@ indian_health_service:
   locator: page text
   note: 'The source''s words: "Gila River Health Care Corporation".'
   operator: tribal
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1999
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Gila River Indian Community' (Western Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Gila River Indian Community'.
+- program: indian-health-service-self-governance-compact
+  since: 2003
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Phoenix Area, row 'Gila River Indian Community'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Gila River Indian Community'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 13243614
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Gila River Indian Community' (Sacaton)
+- program: fdpir-self-determination-demonstration
+  start: 2023-08
+  detail: Round 2
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 2 projects, 'Gila River Indian Community'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Gila River Indian Community'.
+- program: interior-non-bia-funding-agreement
+  agency: Bureau of Reclamation
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Bureau of Reclamation agreements, 'Gila River Indian Community of the Gila River Indian Reservation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Gila River Indian Community of the Gila River Indian Reservation'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 50438086
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'GILA RIVER INDIAN COMMUNITY' (UEI VEB2J5QVVNN9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'GILA RIVER INDIAN COMMUNITY'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 120795582
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'GILA RIVER INDIAN COMMUNITY' (UEI VEB2J5QVVNN9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'GILA RIVER INDIAN COMMUNITY'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Gila River Indian Community, Arizona) (approved 1960) states it was adopted under

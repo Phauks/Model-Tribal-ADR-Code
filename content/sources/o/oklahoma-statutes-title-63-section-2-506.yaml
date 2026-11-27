@@ -75,10 +75,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 2-506 (2026). History: laws of this state, no portion of such substance shall be released to any other person or Added by Laws 1971, c. 119, § 2-506, operative Sept. 1, 1971. Amended by Laws 1978, c. Laws 1996, c. 347, § 3, emerg. eff. June 14, 1996; Laws 1997, c. 93, § 1, emerg. eff. April 11, Laws 2004, c. 537, § 3, emerg. eff. June 9, 2004; Laws 2007, c. 248, § 4, emerg. eff. June 4, Laws 2016, c. 225, § 1, eff. Nov. 1, 2016. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1189. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: DA may return forfeiture proceeds to tribal agencies. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 2-506 (2026). History: Added by Laws 1971, c. 119, § 2-506, operative Sept. 1, 1971. Amended by Laws 1978, c. Laws 1996, c. 347, § 3, emerg. eff. June 14, 1996; Laws 1997, c. 93, § 1, emerg. eff. April 11, Laws 2004, c. 537, § 3, emerg. eff. June 9, 2004; Laws 2007, c. 248, § 4, emerg. eff. June 4, Laws 2016, c. 225, § 1, eff. Nov. 1, 2016. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1189. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: DA may return forfeiture proceeds to tribal agencies. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

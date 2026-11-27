@@ -1,0 +1,52 @@
+key: oregon-revised-statutes-271-715
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions for ORS 271.715 to 271.795
+  title-short: Or. Rev. Stat. § 271.715
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '271.715'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 1983
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors271.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors271.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-271-600
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 271.715 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 271.715 (2025). History: [1983 c.642 §1; 1985 c.160 §1; 1997 c.249 §78; 1999 c.208 §1; 2001 c.708 §12; 2001 c.907 §2; 2003 c.467 §1; 2005 c.368 §1; 2023 c.9 §12]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Indian tribe may hold conservation or scenic easement interests. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

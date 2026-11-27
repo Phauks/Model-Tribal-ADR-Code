@@ -64,7 +64,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 21, § 142A-3 (2026). History: Added by Laws 2010, c. 135, § 5, eff. Nov. 1, 2010. Amended by Laws 2014, c. 196, § 1, eff. Text read from the Legislative Service Bureau''s Title 21 PDF (updated Nov. 12, 2026), page 131. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Lethality referral may go to a tribal domestic violence program. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

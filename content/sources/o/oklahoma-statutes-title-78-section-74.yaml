@@ -51,7 +51,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 78, § 74 (2026). History: Added by Laws 1974, c. 149, § 4, emerg. eff. May 3, 1974. Amended by Laws 2016, c. 391, § Text read from the Legislative Service Bureau''s Title 78 PDF (updated Nov. 12, 2026), page 19. Found by the state statutes pilot (terms: american indian; american indians); AI reader''s verdict core: Bans misrepresented imitation American Indian arts and crafts. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

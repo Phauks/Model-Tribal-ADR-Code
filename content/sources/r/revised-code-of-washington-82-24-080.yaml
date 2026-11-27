@@ -1,0 +1,50 @@
+key: revised-code-of-washington-82-24-080
+kind: state-statute
+citation:
+  type: legislation
+  title: Legislative intent — Taxable event — Tax liability
+  title-short: Wash. Rev. Code § 82.24.080
+  container-title: Revised Code of Washington
+  container-title-short: Wash. Rev. Code
+  section: 82.24.080
+  author:
+  - literal: Washington State Legislature
+  issued:
+    date-parts:
+    - - 1935
+  URL: https://app.leg.wa.gov/RCW/default.aspx?cite=82.24.080
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://app.leg.wa.gov/RCW/default.aspx?cite=82.24.080
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Wash. Rev. Code § 82.24.080 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Wash. Rev. Code § 82.24.080 (2026). History: [2008 c 226 s 2; 1995 c 278 s 5; 1993 c 492 s 308; 1972 ex.s. c 157 s 4; 1961 c 15 s 82.24.080. Prior: 1959 c 270 s 8; prior: 1949 c 228 s 13, part; 1943 c 156 s 11, part; 1941 c 178 s 13, part; 1939 c 225 s 23, part; 1935 c 180 s 82, part; Rem. Supp. 1949 s 8370-82, part.]. Text read from the Washington State Legislature''s full-text chapter page for the section (app.leg.wa.gov/RCW) on Nov. 27, 2026. Found by the state statutes sweep (terms: confederated tribes; federally recognized indian tribe; indian reservation; colville; indian; reservation; tribal; tribe; tribes); AI reader''s verdict core: Cigarette tax collection on Indian tribal organization sales. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: confederated tribes; federally recognized indian tribe; indian reservation; colville; indian; reservation; tribal; tribe; tribes'

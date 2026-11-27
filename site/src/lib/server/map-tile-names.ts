@@ -21,5 +21,16 @@ export const tileSetNames = {
 	landCessionYears: cessionYears(),
 	/** The Census Bureau's land areas for every year it published, each shape with the years it was drawn so (tools/build-historic-maps.mjs). */
 	landAreasByYear: tileManifest.landAreasByYear.set,
-	landAreaYears: tileManifest.landAreasByYear.years
+	landAreaYears: tileManifest.landAreasByYear.years,
+	/** The Newberry Library's states and territories, 1783 to 2000, each with the dates it stood (tools/build-historic-maps.mjs). */
+	borders: tileManifest.borders.set,
+	bordersMaximumZoom: tileManifest.borders.maxZoom,
+	/** The days on which a state or territory began or ended, as years, for the timeline's marks. */
+	borderYears: tileManifest.borders.years,
+	/** The National Park Service's Trail of Tears routes. */
+	removalRoutes: tileManifest.removalRoutes.set,
+	removalRoutesMaximumZoom: tileManifest.removalRoutes.maxZoom,
+	/** The National Park Service's tracing of the 1978 map of lands the Indian Claims Commission found each nation held. */
+	homelands: tileManifest.homelands.set,
+	homelandsMaximumZoom: tileManifest.homelands.maxZoom
 };

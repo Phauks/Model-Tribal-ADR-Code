@@ -80,7 +80,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 1-103a.1 (2026). History: Added by Laws 2013, c. 229, § 44, eff. Nov. 1, 2013. Amended by Laws 2014, c. 141, § 1, eff. Laws 2024, c. 131, § 1, eff. Nov. 1, 2024. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 70. Found by the state statutes pilot (terms: american indian; federally recognized tribe; federally recognized tribes; indian health); AI reader''s verdict incidental: Advisory council includes Urban Indian Health Center and tribe members. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

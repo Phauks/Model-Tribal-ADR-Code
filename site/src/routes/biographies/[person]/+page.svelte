@@ -15,7 +15,6 @@
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
-	import StubNote from '#lib/components/StubNote.svelte';
 	import { nationVerification } from '#lib/review-status.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
@@ -133,8 +132,6 @@
 			</ul>
 		</Collapsible>
 	{/if}
-
-	{#if data.stub}<StubNote stub={data.stub} />{/if}
 </InfoPage>
 
 <style>

@@ -1,0 +1,56 @@
+key: oregon-revised-statutes-97-990
+kind: state-statute
+citation:
+  type: legislation
+  title: Penalties
+  title-short: Or. Rev. Stat. § 97.990
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '97.990'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 1977
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors097.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors097.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-97-740
+- oregon-revised-statutes-97-745
+- oregon-revised-statutes-97-750
+- oregon-revised-statutes-97-760
+- oregon-revised-statutes-97-776
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 97.990 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 97.990 (2025). History: [Subsections (5) to (7) enacted as 1977 c.183 §12; subsection (8) enacted as 1977 c.647 §4; 1979 c.420 §3; 1983 c.526 §6; 1985 c.198 §5; subsections (5) to (7) renumbered 127.990 in 1991; subsection (5)(b) of 1995 Edition enacted as 1995 c.543 §3; 2011 c.597 §156; 2015 c.651 §5]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian; native); AI reader''s verdict incidental: Court may forfeit native Indian artifacts or remains in cemetery penalties. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian; native'

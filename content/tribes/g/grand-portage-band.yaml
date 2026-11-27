@@ -118,6 +118,45 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Grand Portage Band".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1997
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Grand Portage Indian Reservation' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Grand Portage Indian Reservation'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 557891
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: MN, row 'Grand Portage Band, Minnesota Chippewa Tribe' (Grand Portage)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Grand Portage Band, Minnesota Chippewa Tribe'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 4224535
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'GRAND PORTAGE RESERVATION TRIBAL COUNCIL' (UEI SJ9XVULLH753), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'GRAND PORTAGE RESERVATION TRIBAL COUNCIL'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1307855
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'GRAND PORTAGE RESERVATION TRIBAL COUNCIL' (UEI SJ9XVULLH753), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'GRAND PORTAGE RESERVATION TRIBAL COUNCIL'.
 governance:
 - aspect: governing-body
   value: Reservation Tribal Council

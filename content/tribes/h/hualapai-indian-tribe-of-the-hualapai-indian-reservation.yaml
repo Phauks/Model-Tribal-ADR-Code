@@ -207,6 +207,43 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Phoenix Area
   note: Listed as "Hualapai Indian Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: pl-102-477-plan
+  start: '2022-10-01'
+  end: '2027-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Employment Works
+  - Job Placement and Training
+  - Adult Education
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona'; PL102_477_PartnerEnrollment, its 7 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2126364
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Hualapai Indian Tribe' (Peach Springs)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1250679
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'HUALAPAI TRIBAL COUNCIL' (UEI QSKUU9K352J1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'HUALAPAI TRIBAL COUNCIL'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Hualapai Tribe of the Hualapai Reservation, Arizona" among organizations under

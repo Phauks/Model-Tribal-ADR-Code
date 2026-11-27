@@ -43,10 +43,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 18, § 2001 (2026). History: laws of any jurisdiction other than this state; laws of this state; Added by Laws 1992, c. 148, § 2, eff. Sept. 1, 1992. Amended by Laws 1993, c. 366, § 2, eff. Text read from the Legislative Service Bureau''s Title 18 PDF (updated Nov. 12, 2026), page 604. Found by the state statutes pilot (terms: tribal government); AI reader''s verdict incidental: LLC definition of jurisdiction includes a tribal government. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 18, § 2001 (2026). History: Added by Laws 1992, c. 148, § 2, eff. Sept. 1, 1992. Amended by Laws 1993, c. 366, § 2, eff. Text read from the Legislative Service Bureau''s Title 18 PDF (updated Nov. 12, 2026), page 604. Found by the state statutes pilot (terms: tribal government); AI reader''s verdict incidental: LLC definition of jurisdiction includes a tribal government. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

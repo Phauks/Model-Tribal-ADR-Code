@@ -55,7 +55,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 43, § 601-102 (2026). History: Added by Laws 1994, c. 160, § 3, eff. Sept. 1, 1994. Amended by Laws 2015, c. 104, § 2, eff. Text read from the Legislative Service Bureau''s Title 43 PDF (updated Nov. 12, 2026), page 205. Found by the state statutes pilot (terms: indian nation); AI reader''s verdict incidental: Support enforcement definition of State includes Indian nation or tribe. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

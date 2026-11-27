@@ -46,7 +46,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 16, § 11A (2026). History: Amended by Laws 1983, c. 108, § 1, emerg. eff. May 12, 1983. Text read from the Legislative Service Bureau''s Title 16 PDF (updated Nov. 12, 2026), page 7. Found by the state statutes pilot (terms: indian); AI reader''s verdict incidental: Exempts Indian housing authority mutual help agreements from contract-for-deed rules. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

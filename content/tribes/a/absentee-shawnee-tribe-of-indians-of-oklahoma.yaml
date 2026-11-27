@@ -167,6 +167,78 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "Absentee-Shawnee Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Absentee Shawnee Tribe of Oklahoma (1994)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1991
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Absentee Shawnee Tribe' (Southern Plains Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Absentee Shawnee Tribe'.
+- program: indian-health-service-self-governance-compact
+  since: 1994
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Absentee Shawnee Tribe of Oklahoma'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Absentee Shawnee Tribe of Oklahoma'.
+- program: pl-102-477-plan
+  start: '2026-01-01'
+  end: '2030-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Title IV-B Subpart 1 – Stephanie Tubbs Jones Child Welfare Services Program
+  - Title IV-B Subpart 2 – MaryLee Allen Promoting Safe and Stable Families Program
+  - Job Placement and Training
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Absentee-Shawnee Tribe of Indians of Oklahoma'; PL102_477_PartnerEnrollment, its 8 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 4131992
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Absentee-Shawnee Tribe' (Shawnee)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Absentee-Shawnee Tribe of Indians of Oklahoma'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 11590277
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'ABSENTEE SHAWNEE TRIBE OF OKLAHOMA' (UEI Y5LLMH47V3H5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'ABSENTEE SHAWNEE TRIBE OF OKLAHOMA'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 40512638
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'ABSENTEE SHAWNEE TRIBE OF OKLAHOMA' (UEI Y5LLMH47V3H5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'ABSENTEE SHAWNEE TRIBE OF OKLAHOMA'.
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Absentee-Shawnee Tribe of Indians of Oklahoma" among organizations under constitutions
