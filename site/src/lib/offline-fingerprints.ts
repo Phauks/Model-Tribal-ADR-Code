@@ -43,6 +43,12 @@ export interface Fingerprints {
 	 * whether an update changes the page they are reading.
 	 */
 	pages: Record<string, string>;
+	/**
+	 * Every page the Worker draws on request (src/lib/server/page-data.ts), by address: the fingerprint of the page
+	 * data it is drawn from. Such a page has no built file, so a saved copy is carried to a new build when its page data
+	 * is the same in both builds and every script and style it loads is still built (src/service-worker/index.ts).
+	 */
+	onRequest?: Record<string, string>;
 }
 
 const versionMark = '\u0000build-version\u0000';
