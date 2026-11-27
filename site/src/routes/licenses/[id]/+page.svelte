@@ -1,7 +1,7 @@
 <!--
 	@component
 	The full text of one license in LICENSES/, as an info page (site/DESIGN.md,
-	"Info pages"): its identifier and the material it covers At a glance, from
+	"Info pages"): its identifier and the material it covers Key facts, from
 	the table in LICENSE.md, then the text.
 -->
 <script lang="ts">

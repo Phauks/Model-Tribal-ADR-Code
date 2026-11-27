@@ -1,0 +1,91 @@
+key: great-lakes-inter-tribal-council-inc-v-voigt-1970
+kind: federal-case
+citation:
+  type: legal_case
+  title: Great Lakes Inter-Tribal Council, Inc. v. Voigt
+  authority: United States District Court for the Western District of Wisconsin
+  container-title: F. Supp.
+  volume: '309'
+  page: '60'
+  issued:
+    date-parts:
+    - - 1970
+      - 1
+      - 26
+  URL: https://static.case.law/f-supp/309/html/0060-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp/309/html/0060-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation
+- red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin
+- st-croix-chippewa-indians-of-wisconsin
+- sokaogon-chippewa-community
+- forest-county-potawatomi-community
+- stockbridge-munsee-community
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation
+    named_as: Bad River Band of Lake Superior Chippewa Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin
+    named_as: Red Cliff Band of Lake Superior Chippewa Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: st-croix-chippewa-indians-of-wisconsin
+    named_as: St. Croix Chippewa Indians of Wisconsin
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: sokaogon-chippewa-community
+    named_as: Sokaogon Chippewa Community of Wisconsin
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: forest-county-potawatomi-community
+    named_as: Forest County Potawatomi Community of Wisconsin
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: stockbridge-munsee-community
+    named_as: Stockbridge-Munsee Community of Wisconsin
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  not_linked:
+  - named_as: Oneida Tribe of Indians
+    reason: More than one of today's nations shares this name (oneida-indian-nation, oneida-nation); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 309 F. Supp. 60. Decided by the United States District Court for the Western District of Wisconsin on Jan. 26, 1970. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 11, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 11
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 6 matched, 1 not linked

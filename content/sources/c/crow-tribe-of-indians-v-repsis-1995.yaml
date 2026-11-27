@@ -1,0 +1,83 @@
+key: crow-tribe-of-indians-v-repsis-1995
+kind: federal-case
+citation:
+  type: legal_case
+  title: Crow Tribe of Indians v. Repsis
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.3d
+  volume: '73'
+  page: '982'
+  issued:
+    date-parts:
+    - - 1995
+      - 12
+      - 26
+  URL: https://static.case.law/f3d/73/html/0982-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/73/html/0982-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- shoshone-bannock-tribes-of-the-fort-hall-reservation
+- northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+- oglala-sioux-tribe
+- eastern-shoshone-tribe-of-the-wind-river-reservation
+- crow-tribe-of-montana
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: shoshone-bannock-tribes-of-the-fort-hall-reservation
+    named_as: Shoshone-Bannock Tribes
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+    named_as: Northern Cheyenne Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: oglala-sioux-tribe
+    named_as: Oglala Sioux Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: eastern-shoshone-tribe-of-the-wind-river-reservation
+    named_as: Eastern Shoshone Tribe of the Wind River Reservation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: crow-tribe-of-montana
+    named_as: Crow Tribe
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Northern Arapahoe Tribe
+    reason: More than one of today's nations shares this name (carolinian-people-of-the-northern-mariana-islands, koi-nation-of-northern-california, northern-arapaho-tribe-of-the-wind-river-reservation, northern-band-of-mono-yokuts, northern-cherokee-nation-of-the-old-louisiana-territory, northern-cherokee-tribe-of-indians-of-missouri-and-arkansas and 5 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 73 F.3d 982. Decided by the United States Court of Appeals for the Tenth Circuit on Dec. 26, 1995. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 9; an AI reader read excerpts and judged it an Indian law case (treaty hunting rights of Crow Tribe).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 9; reader: treaty hunting rights of Crow Tribe'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 5 matched, 1 not linked

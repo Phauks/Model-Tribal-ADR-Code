@@ -46,7 +46,7 @@ export const statementSections = ['recognition', 'law', 'jurisdiction'] as const
 export type StatementSection = (typeof statementSections)[number];
 
 export const statementSectionLabels: Record<StatementSection, string> = {
-	recognition: 'Recognition (in “At a glance”)',
+	recognition: 'Recognition (in “Key facts”)',
 	law: 'Laws and agreements',
 	jurisdiction: 'Jurisdiction'
 };

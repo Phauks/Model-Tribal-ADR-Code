@@ -1,0 +1,63 @@
+key: cherokee-nation-of-oklahoma-v-norton-2002-n-d-okla
+kind: federal-case
+citation:
+  type: legal_case
+  title: Cherokee Nation of Oklahoma v. Norton
+  authority: United States District Court for the Northern District of Oklahoma
+  container-title: F. Supp. 2d
+  volume: '241'
+  page: '1368'
+  issued:
+    date-parts:
+    - - 2002
+      - 12
+      - 20
+  URL: https://static.case.law/f-supp-2d/241/html/1368-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp-2d/241/html/1368-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- delaware-tribe-of-indians
+- cherokee-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: delaware-tribe-of-indians
+    named_as: Delaware Tribe of Indians
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: cherokee-nation
+    named_as: Cherokee Nation of Oklahoma
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 241 F. Supp. 2d 1368. Decided by the United States District Court for the Northern District of Oklahoma on Dec. 20, 2002. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 23, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 23
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 2 matched, 0 not linked
