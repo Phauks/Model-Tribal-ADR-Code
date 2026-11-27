@@ -1,0 +1,61 @@
+key: southern-ute-indian-tribe-v-amoco-production-co-1994
+kind: federal-case
+citation:
+  type: legal_case
+  title: Southern Ute Indian Tribe v. Amoco Production Co.
+  authority: United States District Court for the District of Colorado
+  container-title: F. Supp.
+  volume: '863'
+  page: '1389'
+  issued:
+    date-parts:
+    - - 1994
+      - 9
+      - 13
+  URL: https://static.case.law/f-supp/863/html/1389-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp/863/html/1389-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- southern-ute-indian-tribe-of-the-southern-ute-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: southern-ute-indian-tribe-of-the-southern-ute-reservation
+    named_as: Southern Ute Indian Tribe
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Southern Ute Indian Reservation
+    reason: More than one of today's nations shares this name (american-indian-council-of-mariposa-county, cherokee-nation-west-of-missouri-and-arkansas, san-juan-southern-paiute-tribe-of-arizona, southern-cherokee-indian-tribe, southern-cherokee-nation-of-kentucky, southern-cherokee-treaty-tribe and 4 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 863 F. Supp. 1389. Decided by the United States District Court for the District of Colorado on Sept. 13, 1994. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 35, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 35
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 1 not linked

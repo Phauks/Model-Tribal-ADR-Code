@@ -1,0 +1,52 @@
+key: united-states-v-sandoval-2020
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Sandoval
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.3d
+  volume: '959'
+  page: '1243'
+  issued:
+    date-parts:
+    - - 2020
+      - 5
+      - 22
+  URL: https://www.courtlistener.com/opinion/4755899/united-states-v-sandoval/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/4755899/united-states-v-sandoval/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 959 F.3d 1243. Decided by the United States Court of Appeals for the Tenth Circuit on May 22, 2020. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (assault in Indian country, tribal court convictions (18 U.S.C. 1153)).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: assault in Indian country, tribal court convictions (18 U.S.C. 1153)'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked
