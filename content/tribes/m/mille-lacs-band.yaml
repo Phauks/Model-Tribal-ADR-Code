@@ -550,6 +550,14 @@ jurisdiction:
   as_of: '2026-05-26'
   locator: 91 FR 30694 (Tribe column of the designated agent table)
   note: 'Listed as: Minnesota Chippewa Tribe - Mille Lacs Band. Added on 2026-11-23: the second data gap review found this band''s own row in the notice (page image p-027; the govinfo PDF has no text layer for the table), and the Minnesota Chippewa Tribe profile already lists the six band rows (research/reviews/2026-11-22-second-gap-review.md). Verification is inferred because the name was read from a page image, not matched in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Minnesota Department of Human Services
