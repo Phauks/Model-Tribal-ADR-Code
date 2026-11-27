@@ -168,7 +168,7 @@ describe('Title 25 as an outline', () => {
 
 	it('shows the official text kept for a section’s older record', async () => {
 		const { sectionPageData } = await import('#lib/server/law-pages.ts');
-		expect(sectionPageData('1911').text).toMatchObject({ isPdf: true });
+		expect(sectionPageData('1911').text).toMatchObject({ shown: 'pdf', extension: '.pdf', codeTitle: '25' });
 		expect(sectionPageData('5321').text).toBeUndefined();
 	});
 

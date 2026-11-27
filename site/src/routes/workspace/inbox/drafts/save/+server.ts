@@ -11,7 +11,7 @@ export const prerender = false;
 
 export const POST: RequestHandler = async (event) => {
 	const person = await requireMail(event);
-	const body = (await event.request.json().catch(() => null)) as { identifier?: unknown; thread?: unknown; fields?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as { identifier?: unknown; thread?: unknown; fields?: unknown } | null;
 	if (!body || typeof body !== 'object') error(400, 'Send the draft to save.');
 	try {
 		const saved = await saveDraft(mailContext(), person.identifier, {

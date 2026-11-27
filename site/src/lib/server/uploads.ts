@@ -48,6 +48,7 @@ import { accessTo } from './access.ts';
 import { fileScans, forgetScan, mayServe, releaseByHand, requestScan, scanAgain, type FileScan } from './file-scans.ts';
 import { activityStatement } from './activity-log.ts';
 import { newIdentifier, newRequestReference, now } from './identifiers.ts';
+import { report } from './report.ts';
 import type { SignedInPerson } from './people.ts';
 import {
 	checkFileType,
@@ -467,7 +468,7 @@ async function refuseFile(
 		await bucket
 			.resumeMultipartUpload(upload.original_key, upload.multipart_identifier)
 			.abort()
-			.catch(() => undefined);
+			.catch(() => /* expected: R2 removes an unfinished multipart upload after seven days */ undefined);
 	}
 	const at = now();
 	await database.batch([
@@ -791,7 +792,7 @@ async function deleteBytes(database: D1Database, bucket: R2Bucket, upload: Uploa
 		await bucket
 			.resumeMultipartUpload(upload.original_key, upload.multipart_identifier)
 			.abort()
-			.catch(() => undefined);
+			.catch(() => /* expected: R2 removes an unfinished multipart upload after seven days */ undefined);
 	}
 	const keys = scannedKeys(upload);
 	if (keys.length > 0) await bucket.delete(keys);
@@ -826,14 +827,20 @@ async function putInLineForScan(database: D1Database, upload: UploadRow, keys: r
 export async function scansOf(database: D1Database, upload: UploadRow): Promise<(FileScan | null)[]> {
 	const keys = scannedKeys(upload);
 	if (keys.length === 0) return [];
-	const found = await fileScans(database, keys).catch(() => new Map<string, FileScan>());
+	const found = await fileScans(database, keys).catch((problem: unknown) => unreadScans(problem));
 	return keys.map((key) => found.get(key) ?? null);
 }
 
 /** The scan of one stored copy, or null when there is none (or the scans cannot be read): held. */
 export async function scanOfKey(database: D1Database, key: string): Promise<FileScan | null> {
-	const found = await fileScans(database, [key]).catch(() => new Map<string, FileScan>());
+	const found = await fileScans(database, [key]).catch((problem: unknown) => unreadScans(problem));
 	return found.get(key) ?? null;
+}
+
+/** Scans that cannot be read count as none, so the copies are held; the failure is reported. */
+function unreadScans(problem: unknown): Map<string, FileScan> {
+	report(problem, { code: 'uploads.scans', place: 'uploads' });
+	return new Map();
 }
 
 /**
@@ -1006,6 +1013,7 @@ async function readNote(bucket: R2Bucket, key: string): Promise<Record<string, u
 		const value: unknown = JSON.parse(await object.text());
 		return value && typeof value === 'object' ? (value as Record<string, unknown>) : null;
 	} catch {
+		// expected: a damaged note reads as none.
 		return null;
 	}
 }
