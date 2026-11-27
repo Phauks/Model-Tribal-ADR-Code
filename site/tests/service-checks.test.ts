@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { runServiceChecks, serviceChecks, trySmtpSignIn, type CheckSocket } from '../src/lib/server/service-checks.ts';
+import { oldResources, runServiceChecks, serviceChecks, trySmtpSignIn, type CheckSocket } from '../src/lib/server/service-checks.ts';
 import { testDatabase } from './database.ts';
 
 const migrationFiles = readdirSync(path.resolve(import.meta.dirname, '../migrations'))
@@ -172,6 +172,62 @@ describe('service checks', () => {
 		const env = environment({ sourceDocuments: { list: async () => { throw new Error('bucket gone'); } } });
 		const result = await check('source-documents-bucket', env);
 		expect(result).toMatchObject({ state: 'problem', summary: 'The check failed: bucket gone' });
+	});
+
+	it('names what every check looks at, what it is for and how it checks', () => {
+		for (const item of serviceChecks) {
+			expect(item.target.name, item.key).not.toBe('');
+			expect(item.target.kind, item.key).not.toBe('');
+			expect(item.use, item.key).not.toBe('');
+			expect(item.test, item.key).not.toBe('');
+		}
+	});
+
+	it('names the same databases, buckets, Workers and limits as the Wrangler files', async () => {
+		const site = readJsonc(path.resolve(import.meta.dirname, '../wrangler.jsonc')) as {
+			name: string;
+			d1_databases: { binding: string; database_name: string }[];
+			r2_buckets: { binding: string; bucket_name: string }[];
+			durable_objects: { bindings: { name: string; script_name: string }[] };
+			services: { binding: string; service: string }[];
+			ratelimits: { name: string; simple: { limit: number; period: number } }[];
+		};
+		const byBinding = new Map<string, string>([
+			...site.d1_databases.map((entry) => [entry.binding, entry.database_name] as [string, string]),
+			...site.r2_buckets.map((entry) => [entry.binding, entry.bucket_name] as [string, string]),
+			...site.durable_objects.bindings.map((entry) => [entry.name, entry.script_name] as [string, string]),
+			...site.services.map((entry) => [entry.binding, entry.service] as [string, string])
+		]);
+		for (const item of serviceChecks) {
+			if (item.binding && byBinding.has(item.binding)) expect(item.target.name, item.key).toBe(byBinding.get(item.binding));
+		}
+		const limits = new Map(site.ratelimits.map((entry) => [entry.name, entry]));
+		const limiter = { limit: async () => ({ success: true }) };
+		const limited = environment(Object.fromEntries([...limits.keys()].map((name) => [name, limiter])));
+		for (const item of serviceChecks.filter((check) => check.target.kind === 'Rate limit')) {
+			const limit = limits.get(item.target.name);
+			expect(limit?.simple.period, item.key).toBe(60);
+			// The row says the limit wrangler.jsonc sets.
+			const [result] = await runServiceChecks({ environment: limited, fetcher: noNetwork, migrationFiles }, item.key);
+			expect(result.summary, item.key).toMatch(new RegExp(`^Allows ${limit?.simple.limit.toLocaleString('en-US')} a minute for each `));
+		}
+		// Checks without a binding name a database, bucket or Worker by hand.
+		const workerNames = ['live', 'scanner', 'wayback', 'watch'].map((folder) => (readJsonc(path.resolve(import.meta.dirname, `../${folder}/wrangler.jsonc`)) as { name: string }).name);
+		const known = new Set([site.name, ...byBinding.values(), ...workerNames]);
+		for (const item of serviceChecks.filter((check) => ['D1 database', 'R2 bucket', 'Worker', 'Static assets'].includes(check.target.kind))) {
+			expect(known.has(item.target.name), `${item.key}: ${item.target.name}`).toBe(true);
+		}
+		// The old ones are not the ones in use.
+		for (const old of oldResources) {
+			expect(known.has(old.name), old.name).toBe(false);
+			expect(known.has(old.replacedBy), old.replacedBy).toBe(true);
+		}
+	});
+
+	it('shows PASSWORD_KEY as not used by choice when it is not set', async () => {
+		const result = await check('password-key', environment());
+		expect(result.state).toBe('off');
+		expect(result.fix).toBeUndefined();
 	});
 
 	it('has a check of its own for every binding in wrangler.jsonc', () => {
