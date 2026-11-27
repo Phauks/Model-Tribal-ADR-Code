@@ -76,3 +76,15 @@ nations_in_case:
   - nation: navajo-nation
     named_as: Navajo
     role: subject
+case_box:
+  later_cases:
+    checked: 2026-11-22
+    source: westlaw/tsosie-v-united-states-1987.pdf
+    list:
+    - treatment: Not followed as dicta
+      name: Richard v. United States
+      citation: 98 Fed. Cl. 278 (Fed. Cl. 2011)
+      link: https://case.law/caselaw/?reporter=fed-cl&volume=98&case=0278-01
+    - treatment: Distinguished
+      name: Cheyenne & Arapaho Tribes v. United States
+      citation: 151 Fed. Cl. 511 (Fed. Cl. 2020)
