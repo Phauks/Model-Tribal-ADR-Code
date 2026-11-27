@@ -886,6 +886,11 @@
 			padding-top: 0;
 		}
 
+		/* The case bar stays under the search row, which stays at the top here too. */
+		.case-bar {
+			top: calc(var(--masthead-stuck, 0px) + var(--layout-target-minimum) + 1px + var(--layout-target-minimum) + 2 * var(--space-2) + 1px + var(--space-1));
+		}
+
 		.body {
 			grid-template-columns: minmax(0, 1fr);
 		}
