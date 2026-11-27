@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7235 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7235 (entry "Cahto Indian Tribe of the Laytonville Rancheria, California")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Cahto Indian Tribe of the Laytonville Rancheria, California." The entry is matched to the nation by name.
 states:
 - state: CA
   presence: government-office

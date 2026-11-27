@@ -1,0 +1,67 @@
+key: cherokee-nation-v-mckesson-corp-in-re-nat-l-prescription-opiate-litig-2018
+kind: federal-case
+citation:
+  type: legal_case
+  title: Cherokee Nation v. McKesson Corp. (In re Nat'l Prescription Opiate Litig.)
+  authority: United States District Court for the Northern District of Ohio
+  container-title: F. Supp. 3d
+  volume: '327'
+  page: '1064'
+  issued:
+    date-parts:
+    - - 2018
+      - 9
+      - 4
+  URL: https://static.case.law/f-supp-3d/327/html/1064-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp-3d/327/html/1064-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- cherokee-nation
+- lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: cherokee-nation
+    named_as: Cherokee Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin
+    named_as: OP-45695 Lac Courte Oreilles Band
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  not_linked:
+  - named_as: Lake Superior Chippewa Indians
+    reason: More than one of today's nations shares this name (bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation, lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin, lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin, lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan, lake-superior-chippewa-of-marquette-inc, red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin and 1 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 327 F. Supp. 3d 1064. Decided by the United States District Court for the Northern District of Ohio on Sept. 4, 2018. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 9; an AI reader read excerpts and judged it an Indian law case (tribal lawsuit in opioid MDL and injunction against tribal suit).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 9; reader: tribal lawsuit in opioid MDL and injunction against tribal suit'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 2 matched, 1 not linked

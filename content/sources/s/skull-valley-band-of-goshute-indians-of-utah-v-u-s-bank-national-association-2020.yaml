@@ -1,0 +1,62 @@
+key: skull-valley-band-of-goshute-indians-of-utah-v-u-s-bank-national-association-2020
+kind: federal-case
+citation:
+  type: legal_case
+  title: Skull Valley Band of Goshute Indians of Utah v. U.S. Bank National Association
+  authority: United States District Court for the Southern District of New York
+  issued:
+    date-parts:
+    - - 2020
+      - 12
+      - 21
+  URL: https://www.courtlistener.com/opinion/9861878/skull-valley-band-of-goshute-indians-of-utah-v-us-bank-national/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9861878/skull-valley-band-of-goshute-indians-of-utah-v-us-bank-national/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- skull-valley-band-of-goshute-indians-of-utah
+- elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: skull-valley-band-of-goshute-indians-of-utah
+    named_as: Skull Valley Band of Goshute Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria
+    named_as: U.S. Bank Nation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 1:20-cv-01704; no reporter citation yet. Decided by the United States District Court for the Southern District of New York on Dec. 21, 2020. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 6; an AI reader read excerpts and judged it an Indian law case (federally recognized tribe as plaintiff, tribal government status under tax code).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 6; reader: federally recognized tribe as plaintiff, tribal government status under tax code'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 2 matched, 0 not linked

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Proclamation of Austin Wiley, Superintendent of Indian Affairs for California, Aug. 21, 1864 (under Act of Apr. 8, 1864, 13 Stat. 39), 1 Kappler 815
+  since: '1864-08-21'
+  source: proclamation-1864-08-21-hoopa-valley-reservation
+  confidence: medium
+  verification: read-in-full
+  as_of: '1864-08-21'
+  locator: 1 Kappler 815
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Hoopa Valley Reservation, California.
 states:
 - state: CA
   presence: government-office

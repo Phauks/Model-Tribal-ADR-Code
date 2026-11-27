@@ -101,10 +101,14 @@ export async function restrictedPageAnswer(event: RequestEvent): Promise<Respons
 	const path = event.url.pathname.slice(restrictedPagePrefix.length) || '/';
 	const environment = workerEnvironment();
 	const page = await restrictedPage(path, environment.ASSETS, environment.database, event.url.origin);
-	if (!page?.changed) {
-		if (!environment.ASSETS) return new Response('Not found', { status: 404 });
+	if (!page?.changed && environment.ASSETS) {
 		const address = new URL(`${path}${event.isDataRequest ? '/__data.json' : ''}`, event.url);
-		return environment.ASSETS.fetch(new Request(address, { headers: event.request.headers }));
+		const built = await environment.ASSETS.fetch(new Request(address, { headers: event.request.headers }));
+		if (built.status !== 404) return built;
+		// No page was built at this address, such as a mistyped nation. The
+		// built files answer a miss with an empty body, which a reader saw as
+		// a blank page (Nov. 27, 2026), so the request goes on to the page
+		// below, which answers with the site's own Page not found page.
 	}
 	event.url.pathname = path;
 	return undefined;

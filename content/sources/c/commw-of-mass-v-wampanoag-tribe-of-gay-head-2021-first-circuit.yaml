@@ -1,0 +1,55 @@
+key: commw-of-mass-v-wampanoag-tribe-of-gay-head-2021-first-circuit
+kind: federal-case
+citation:
+  type: legal_case
+  title: Commw. of Mass. v. Wampanoag Tribe of Gay Head
+  authority: United States Court of Appeals for the First Circuit
+  issued:
+    date-parts:
+    - - 2021
+      - 3
+      - 1
+  URL: https://www.courtlistener.com/opinion/4860127/commw-of-mass-v-wampanoag-tribe-of-gay-head/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/4860127/commw-of-mass-v-wampanoag-tribe-of-gay-head/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- wampanoag-tribe-of-gay-head
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: wampanoag-tribe-of-gay-head
+    named_as: Wampanoag Tribe of Gay Head
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 19-1661E; no reporter citation yet. Decided by the United States Court of Appeals for the First Circuit on Mar. 1, 2021. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (state suit against Wampanoag Tribe of Gay Head, tribal gaming).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: state suit against Wampanoag Tribe of Gay Head, tribal gaming'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

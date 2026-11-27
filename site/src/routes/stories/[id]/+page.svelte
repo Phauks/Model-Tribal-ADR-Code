@@ -22,7 +22,7 @@
 	const nationNames = $derived(story.nations.map((nation) => nation.name).join(', '));
 	/** The titles in the nation's language, under the title. */
 	const names = $derived(story.titlesInLanguage.map((title) => ({ name: title.text, language: title.language, citations: title.citations })));
-	/** The story's key facts, for At a glance (site/DESIGN.md, "Record pages"). */
+	/** The story's key facts, for Key facts (site/DESIGN.md, "Record pages"). */
 	const glanceFacts = $derived(
 		[
 			{
@@ -58,7 +58,7 @@
 
 <!--
 	An info page (site/DESIGN.md, "Info pages"): the story itself leads the
-	main column, in the teller's words, and its key facts sit in At a glance.
+	main column, in the teller's words, and its key facts sit in Key facts.
 -->
 <InfoPage title={story.title} {names} glance={glanceFacts} sources={story.sources} trail={[{ label: 'Stories', href: '/stories' }]}>
 	{#snippet status()}

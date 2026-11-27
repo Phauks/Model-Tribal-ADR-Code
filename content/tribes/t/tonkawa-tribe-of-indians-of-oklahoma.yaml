@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Comanche, Aionai, Anadarko, Caddo, etc., May 15, 1846, 9 Stat. 844
+  since: '1846-05-15'
+  source: treaty-with-the-comanche-aionai-anadarko-caddo-etc-1846
+  confidence: medium
+  verification: inferred
+  as_of: '1846-05-15'
+  locator: p. 554 (Treaty with the Comanche, Aionai, Anadarko, Caddo, etc., 1846; Kappler header "May 15, 1846. | 9 Stat., 844. | Proclamation, Mar. 8, 1847.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Tonkawa; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 4 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office

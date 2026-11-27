@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Chippewa-Red Lake and Pembina Bands, Oct. 2, 1863, 13 Stat. 667
+  since: '1863-10-02'
+  source: treaty-with-the-chippewa-red-lake-and-pembina-bands-1863
+  confidence: medium
+  verification: inferred
+  as_of: '1863-10-02'
+  locator: p. 853 (Treaty with the Chippewa-Red Lake and Pembina Bands, 1863; Kappler header "Oct. 2, 1863.| 13 Stats., 667.| Ratified Mar. 1, 1864.| Proclaimed May 5, 1864.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Pembina; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: ND
   presence: government-office
