@@ -276,11 +276,16 @@ const isApprovedNationLaw = (record: SourceRecord) => (record.topics ?? []).incl
 function approvedNationLaws(): CollectionItem[] {
 	return [...sources().values()].filter(isApprovedNationLaw).map((record) => sourceItem(record, [(record.citation as { genre?: string }).genre, tribesOf(record)].filter(Boolean).join(': ') || undefined));
 }
-/** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection, Oklahoma's register and the approved nations' laws. */
+const historicLawTopic = 'historic-nation-laws';
+const isHistoricNationLaw = (record: SourceRecord) => (record.topics ?? []).includes(historicLawTopic);
+function historicNationLaws(): CollectionItem[] {
+	return [...sources().values()].filter(isHistoricNationLaw).map((record) => sourceItem(record, tribesOf(record)));
+}
+/** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection, Oklahoma's register, the approved nations' laws and the nations' historic laws. */
 function sourcesOfKind(kinds: string[], detail?: (record: SourceRecord) => string | undefined): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record) && !isApprovedNationLaw(record))
+			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record) && !isApprovedNationLaw(record) && !isHistoricNationLaw(record))
 			.map((record) => sourceItem(record, detail?.(record)));
 }
 
@@ -482,6 +487,15 @@ export const collections: Collection[] = [
 		detailHeader: 'Kind and nation',
 		sourceKinds: ['tribal-code', 'federal-agency-document'],
 		items: approvedNationLaws
+	},
+	{
+		identifier: 'historic-nation-laws',
+		search: { group: 'document' },
+		title: 'Nations’ Historic Laws',
+		group: 'Native nations',
+		detailHeader: 'Nation',
+		sourceKinds: ['tribal-code', 'tribal-constitution', 'other'],
+		items: historicNationLaws
 	},
 	{
 		identifier: 'stories', search: { group: 'story' },
