@@ -1,4 +1,4 @@
-"""Record each Supreme Court Justice's life and each appointing President, with a portrait of each.
+"""Record each Supreme Court Justice's life and each appointing President.
 
 Builds content/supreme-court/people.yaml from:
 
@@ -10,19 +10,12 @@ Builds content/supreme-court/people.yaml from:
   service, each Supreme Court nomination and confirmation, and the party of
   the appointing President;
 - the Library of Congress, "Presidents of the United States: Chronological
-  List" (guides.loc.gov), for the years each President served;
-- Wikidata, only to find each person's portrait on Wikimedia Commons (by the
-  Directory's id for Justices), and Wikimedia Commons for each portrait's
-  maker, source and license. Only portraits Commons marks public domain or
-  under a Creative Commons license that allows reuse are kept, with the
-  attribution the license asks for.
+  List" (guides.loc.gov), for the years each President served.
 
-Each kept portrait is downloaded once, at one of Commons' standard thumbnail
-widths near 480 pixels (Wikimedia asks automated clients not to fetch
-original files in bulk), and uploaded to the R2 bucket under
-supreme-court/portraits/ when R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and
-CLOUDFLARE_ACCOUNT_ID are set. The site serves that copy only if its SHA-256
-matches the one recorded here; the Commons page records the original.
+Pictures of each person are not taken from here: each is checked by hand
+against the record of the library, archive or museum that holds the original
+and kept in content/supreme-court/pictures.yaml
+(scripts/law/supreme_court_pictures.py).
 
 Run from the repository root:
 
@@ -34,16 +27,12 @@ from __future__ import annotations
 import argparse
 import csv
 import datetime
-import hashlib
 import html
 import io
-import json
-import os
 import pathlib
 import re
 import sys
 import time
-import urllib.parse
 import urllib.request
 
 import yaml
@@ -54,11 +43,7 @@ OUTPUT = ROOT / "content" / "supreme-court" / "people.yaml"
 DIRECTORY = "https://www.fjc.gov/sites/default/files/history/"
 PRESIDENT_LIST = "https://guides.loc.gov/presidents-portraits/chronological"
 INAUGURATIONS = "https://www.inaugural.senate.gov/past-inaugural-ceremonies/"
-WIKIDATA = "https://query.wikidata.org/sparql"
-COMMONS = "https://commons.wikimedia.org/w/api.php"
 AGENT = "model-tribal-adr-code research script (supreme_court_people.py)"
-DISPLAY_WIDTH = 480
-BUCKET_PREFIX = "supreme-court/portraits/"
 STATES = {
     "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", "CO": "Colorado",
     "CT": "Connecticut", "DE": "Delaware", "DC": "District of Columbia", "FL": "Florida", "GA": "Georgia",
@@ -71,20 +56,14 @@ STATES = {
     "TN": "Tennessee", "TX": "Texas", "UT": "Utah", "VT": "Vermont", "VA": "Virginia", "WA": "Washington",
     "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming",
 }
-# Licenses that allow the site to show a portrait, by Commons' short name.
-FREE_LICENSE = re.compile(r"^(?:Public domain|PD\b.*|CC0|CC BY(?:-SA)? \d\.\d.*|CC BY(?:-SA)?)$", re.I)
 
 
-def fetch(url: str, cache: pathlib.Path | None, name: str | None = None, data: bytes | None = None, binary: bool = False):
+def fetch(url: str, cache: pathlib.Path | None, name: str | None = None) -> str:
     if cache and name and (cache / name).exists():
-        content = (cache / name).read_bytes()
-        return content if binary else content.decode("utf-8-sig")
-    if binary:
-        # Wikimedia asks automated clients to go slowly; one file every few seconds.
-        time.sleep(6)
+        return (cache / name).read_bytes().decode("utf-8-sig")
     for attempt in range(4):
         try:
-            request = urllib.request.Request(url, data=data, headers={"User-Agent": AGENT, "Accept": "application/sparql-results+json, */*"})
+            request = urllib.request.Request(url, headers={"User-Agent": AGENT})
             with urllib.request.urlopen(request, timeout=180) as response:
                 content = response.read()
             break
@@ -96,7 +75,7 @@ def fetch(url: str, cache: pathlib.Path | None, name: str | None = None, data: b
     if cache and name:
         cache.mkdir(parents=True, exist_ok=True)
         (cache / name).write_bytes(content)
-    return content if binary else content.decode("utf-8-sig")
+    return content.decode("utf-8-sig")
 
 
 def csv_rows(name: str, cache: pathlib.Path | None) -> list[dict[str, str]]:
@@ -129,110 +108,6 @@ def place(city: str, state: str) -> str | None:
 
 def plain(markup: str) -> str:
     return clean(html.unescape(re.sub(r"<[^>]+>", " ", markup or "")))
-
-
-def commons_info(files: list[str], cache: pathlib.Path | None) -> dict[str, dict]:
-    """Commons metadata for each file: license, maker, credit, the display copy's address."""
-    found: dict[str, dict] = {}
-    for start in range(0, len(files), 40):
-        batch = files[start : start + 40]
-        query = urllib.parse.urlencode({
-            "action": "query", "format": "json", "prop": "imageinfo",
-            "iiprop": "url|extmetadata|size|mime|sha1", "iiurlwidth": DISPLAY_WIDTH,
-            "titles": "|".join("File:" + name for name in batch),
-        })
-        data = json.loads(fetch(f"{COMMONS}?{query}", cache, f"commons-{hashlib.sha1(query.encode()).hexdigest()[:12]}.json"))
-        normalized = {entry["to"]: entry["from"] for entry in data["query"].get("normalized", [])}
-        for page in data["query"]["pages"].values():
-            if "imageinfo" not in page:
-                continue
-            title = page["title"]
-            requested = normalized.get(title, title).removeprefix("File:")
-            info = page["imageinfo"][0]
-            meta = {key: plain(str(value.get("value", ""))) for key, value in info.get("extmetadata", {}).items()}
-            if info.get("thumburl", info["url"]).split("?")[0] == info["url"].split("?")[0]:
-                # A file narrower than the display width: Commons offers the original, which Wikimedia asks
-                # automated clients not to fetch in bulk, so take its largest standard thumbnail instead.
-                standard = next((size for size in (330, 250, 120) if size < info["width"]), None)
-                if standard:
-                    path = info["url"].split("?")[0].split("/wikipedia/commons/", 1)[1]
-                    name = path.rsplit("/", 1)[1]
-                    info["thumburl"] = f"https://thumb.wikimedia.org/wikipedia/commons/thumb/{path}/{standard}px-{name}"
-                    info["thumbwidth"] = standard
-                    info["thumbheight"] = round(info["height"] * standard / info["width"])
-            found[requested] = {
-                "file": title.removeprefix("File:"),
-                "page": info["descriptionurl"],
-                "original": info["url"].split("?")[0],
-                "display": info.get("thumburl", info["url"]).split("?")[0],
-                "media_type": info["mime"],
-                "width": info.get("thumbwidth", info["width"]),
-                "height": info.get("thumbheight", info["height"]),
-                "license": meta.get("LicenseShortName", ""),
-                "license_link": meta.get("LicenseUrl") or None,
-                "attribution_required": meta.get("AttributionRequired", "").lower() == "true",
-                "artist": meta.get("Artist") or None,
-                "credit": meta.get("Credit") or None,
-                "date": re.sub(r"date QS:.*$", "", meta.get("DateTimeOriginal", "")).strip() or None,
-            }
-    return found
-
-
-def portrait_entry(info: dict | None, key: str, folder: pathlib.Path | None) -> dict | None:
-    if not info or not FREE_LICENSE.match(info["license"]):
-        return None
-    if info["media_type"] not in ("image/jpeg", "image/png"):
-        return None
-    extension = ".png" if info["media_type"] == "image/png" else ".jpg"
-    entry = {
-        "file": info["file"],
-        "page": info["page"],
-        "artist": info["artist"],
-        "credit": info["credit"],
-        "date": info["date"],
-        "license": info["license"],
-        "license_link": info["license_link"],
-        "attribution_required": info["attribution_required"],
-        "media_type": info["media_type"],
-        "width": info["width"],
-        "height": info["height"],
-        "key": BUCKET_PREFIX + key + extension,
-        "display_link": info["display"],
-    }
-    if folder:
-        try:
-            display = fetch(info["display"], folder, key + extension, binary=True)
-        except Exception as problem:  # still refused after the retries: leave it for the next run
-            print(f"could not download the portrait for {key}: {problem}", file=sys.stderr)
-            return None
-        entry["sha256"] = hashlib.sha256(display).hexdigest()
-    return {name: value for name, value in entry.items() if value not in (None, "")}
-
-
-def upload(people: list[dict], folder: pathlib.Path) -> int:
-    keys = (os.environ.get("R2_ACCESS_KEY_ID"), os.environ.get("R2_SECRET_ACCESS_KEY"), os.environ.get("CLOUDFLARE_ACCOUNT_ID"))
-    if not all(keys):
-        print("no R2 keys: portraits kept locally only", file=sys.stderr)
-        return 0
-    import boto3
-
-    client = boto3.client(
-        "s3", endpoint_url=f"https://{keys[2]}.r2.cloudflarestorage.com",
-        aws_access_key_id=keys[0], aws_secret_access_key=keys[1], region_name="auto",
-    )
-    bucket = os.environ.get("R2_BUCKET", "tribal-law-project-files")
-    count = 0
-    for person in people:
-        portrait = person.get("portrait")
-        if not portrait:
-            continue
-        name = pathlib.Path(portrait["key"]).name
-        client.put_object(
-            Bucket=bucket, Key=portrait["key"], Body=(folder / name).read_bytes(), ContentType=portrait["media_type"],
-            Metadata={"source": portrait["page"], "license": portrait["license"]},
-        )
-        count += 1
-    return count
 
 
 def president_years(cache: pathlib.Path | None) -> dict[str, list[list[int]]]:
@@ -301,7 +176,6 @@ def same_president(court_name: str, other: str) -> bool:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--cache", type=pathlib.Path, help="keep downloads here and reuse them")
-    parser.add_argument("--portraits", type=pathlib.Path, help="download portraits here (and upload them to R2)")
     arguments = parser.parse_args()
     cache = arguments.cache
 
@@ -390,17 +264,6 @@ def main() -> int:
             "other_federal_service": [{k: v for k, v in entry.items() if v} for entry in other_service],
         })
 
-    # Portraits of the Justices: Wikidata items by the Directory's id, then Commons.
-    sparql = 'SELECT ?item ?directory ?image WHERE { ?item wdt:P2736 ?directory . ?item wdt:P18 ?image . }'
-    found = json.loads(fetch(WIKIDATA, cache, "wikidata-judges.json", urllib.parse.urlencode({"query": sparql, "format": "json"}).encode()))
-    images_by_directory: dict[str, str] = {}
-    for row in found["results"]["bindings"]:
-        images_by_directory.setdefault(row["directory"]["value"], urllib.parse.unquote(row["image"]["value"].rsplit("/", 1)[1]))
-
-    def directory_id(entry: dict) -> str:
-        last, given = entry["directory_name"].split(", ", 1)
-        return slug(f"{last} {given}".replace(",", " "))
-
     # Presidents, in the order they first appointed a Justice.
     years = president_years(cache)
     sworn, sworn_on = latest_inauguration(cache)
@@ -423,32 +286,9 @@ def main() -> int:
             entry["serving_since"] = sworn_on
         presidents.append(entry)
 
-    sparql = 'SELECT ?item ?itemLabel ?image WHERE { ?item p:P39/ps:P39 wd:Q11696 . ?item wdt:P18 ?image . SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }'
-    found = json.loads(fetch(WIKIDATA, cache, "wikidata-presidents.json", urllib.parse.urlencode({"query": sparql, "format": "json"}).encode()))
-    president_images: dict[str, str] = {}
-    for row in found["results"]["bindings"]:
-        label = row["itemLabel"]["value"]
-        for president in presidents:
-            if same_president(president["name"], label):
-                president_images.setdefault(president["key"], urllib.parse.unquote(row["image"]["value"].rsplit("/", 1)[1]))
-
-    wanted = {justice["key"]: images_by_directory.get(directory_id(justice)) for justice in justices}
-    wanted.update({president["key"]: president_images.get(president["key"]) for president in presidents})
-    info = commons_info(sorted({name for name in wanted.values() if name}), cache)
-    folder = arguments.portraits
-    missing = []
-    for entry in [*justices, *presidents]:
-        portrait = portrait_entry(info.get(wanted.get(entry["key"]) or ""), entry["key"], folder)
-        if portrait:
-            entry["portrait"] = portrait
-        else:
-            missing.append(entry["name"])
-    if missing:
-        print(f"no reusable portrait for: {', '.join(missing)}", file=sys.stderr)
-
     header = (
         "# Generated by scripts/law/supreme_court_people.py from the Federal Judicial Center's Biographical Directory,\n"
-        "# the Library of Congress list of Presidents, and Wikimedia Commons (portraits). Do not edit by hand.\n"
+        "# the Library of Congress list of Presidents and the inaugural committee's list of ceremonies. Do not edit by hand.\n"
     )
     document = {
         "sources": {
@@ -461,9 +301,7 @@ def main() -> int:
         "presidents": presidents,
     }
     OUTPUT.write_text(header + yaml.safe_dump(document, sort_keys=False, allow_unicode=True, width=1000), encoding="utf-8")
-    print(f"{len(justices)} Justices, {len(presidents)} Presidents; {len(justices) + len(presidents) - len(missing)} portraits", file=sys.stderr)
-    if folder:
-        print(f"uploaded {upload([*justices, *presidents], folder)} files to R2", file=sys.stderr)
+    print(f"{len(justices)} Justices, {len(presidents)} Presidents", file=sys.stderr)
     return 0
 
 

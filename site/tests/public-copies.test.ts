@@ -129,6 +129,15 @@ describe('filling the bucket', () => {
 		expect(await fetchOriginal(copy, network({ [copy.links[0]]: changed }))).toBeUndefined();
 		expect((await fetchOriginal(copy, network({ [copy.links[1]]: pdf })))?.source).toBe(copy.links[1]);
 	});
+
+	it('gives up on a government site that does not answer', async () => {
+		// A site that never answers, as www.govinfo.gov did on Nov. 27, 2026, until the request is called off.
+		const silent = ((_link: string, init?: RequestInit) =>
+			new Promise<Response>((_resolve, reject) => init?.signal?.addEventListener('abort', () => reject(init.signal?.reason)))) as typeof fetch;
+		const started = Date.now();
+		expect(await fetchOriginal(copy, silent, 50)).toBeUndefined();
+		expect(Date.now() - started).toBeLessThan(2_000);
+	});
 });
 
 describe('serving a copy', () => {

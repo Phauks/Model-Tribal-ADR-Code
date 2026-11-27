@@ -177,7 +177,7 @@
 	/>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Timeline" />
 <h1>Timeline</h1>
 
 <div class="layout">
