@@ -19,6 +19,7 @@
 	import StubBadge from '#lib/components/StubBadge.svelte';
 	import StubNote from '#lib/components/StubNote.svelte';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
+	import { glancePanelMinimum } from '#lib/info-page.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -32,6 +33,8 @@
 			: [])
 	]);
 	const nationPageLinks = $derived(new Set(data.nationPages.map((nation) => nation.link)));
+	// At a glance only with enough facts; one or two follow the citation instead (src/lib/info-page.ts).
+	const lineFacts = $derived(data.facts.length < glancePanelMinimum ? data.facts : []);
 	const citedCount = $derived(data.essays.length + data.nationPages.length + (data.court ? 1 : 0) + (data.decidedBy ? 1 : 0));
 </script>
 
@@ -42,10 +45,15 @@
 
 <Breadcrumbs {trail} />
 
-<RecordPage glance={data.facts.length > 0 ? glance : undefined}>
+<RecordPage glance={data.facts.length >= glancePanelMinimum ? glance : undefined}>
 	{#snippet title()}<h1><i>{data.name}</i></h1>{/snippet}
 	{#snippet introduction()}
-		{#if data.citation}<p class="lead case-citation">{data.citation}</p>{/if}
+		<!-- One or two facts, too few for At a glance, follow the citation (src/lib/info-page.ts). -->
+		{#if data.citation || lineFacts.length > 0}<p class="lead case-citation">
+				{data.citation}{#each lineFacts as [label, html], index (label)}<span class="lead-facts"
+						>{data.citation || index > 0 ? ' · ' : ''}{label}{' '}<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the case's own record (case-facts.ts) -->{@html html}</span
+					>{/each}
+			</p>{/if}
 		{#if data.topics.length > 0 || data.unverified || data.stub}<div class="badge-line">{#if data.stub}<StubBadge stub={data.stub} />{/if}{#if data.unverified}<span class="review-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />Unverified</span>{/if}{#if data.topics.length > 0}<TopicBadges topics={data.topics.map((text) => ({ text }))} />{/if}</div>{/if}
 	{/snippet}
 
@@ -150,7 +158,7 @@
 </RecordPage>
 
 {#snippet glance()}
-	<GlancePanel>
+	<GlancePanel facts={data.facts.length}>
 		<dl class="summary-list glance-facts">
 			{#each data.facts as [label, html] (label)}
 				<div>
@@ -164,6 +172,10 @@
 {/snippet}
 
 <style>
+	.lead-facts {
+		color: var(--color-ink-muted);
+	}
+
 	.case-citation {
 		margin-top: calc(-1 * var(--space-2));
 	}
