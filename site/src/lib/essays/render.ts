@@ -24,7 +24,7 @@ import { youtubeEmbedAddress, youtubePosterAddress } from '../video-links.ts';
 import { attributionSource } from '../quote-context.ts';
 import { firstPage, opinionAt, quoteOpinionLabel, type OpinionEntry } from '../case-opinions.ts';
 import { readingLinksAfter } from '../reading-links.ts';
-import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, needlessEndEllipsis, quotationEndProblems, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
+import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, needlessEndEllipsis, quotationEndProblems, unspacedEllipsis, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
 import { escapeHtml } from '../escape-html.ts';
 import { fillBoxes, laterCaseKinds, type BoxKind } from './record-boxes.ts';
 
@@ -610,9 +610,10 @@ function quotationWarnings(tokens: Token[]): string[] {
 		const first = paragraphs[0];
 		const last = paragraphs.at(-1)!;
 		const shown = (text: string) => `“${text.length > 50 ? `${text.slice(0, 50)}…` : text}”`;
-		if (quotationEndProblems(first).start) warnings.push(`The quotation ${shown(first)} starts mid-sentence; drop any leading "..." and capitalize its first letter in brackets, "[T]he".`);
-		if (needlessEndEllipsis(last)) warnings.push(`The quotation ending ${shown(last.slice(-50))} ends its sentence; drop the " ..." after the period.`);
-		else if (quotationEndProblems(last).end) warnings.push(`The quotation ending ${shown(last.slice(-50))} stops mid-sentence; end it with " ... ." and the sentence's own period.`);
+		if (quotationEndProblems(first).start) warnings.push(`The quotation ${shown(first)} starts mid-sentence; drop any leading ellipsis and capitalize its first letter in brackets, "[T]he".`);
+		if (needlessEndEllipsis(last)) warnings.push(`The quotation ending ${shown(last.slice(-50))} ends its sentence; drop the ellipsis after the period.`);
+		else if (quotationEndProblems(last).end) warnings.push(`The quotation ending ${shown(last.slice(-50))} stops mid-sentence; end it with " . . . ." and the sentence's own period.`);
+		if (paragraphs.some(unspacedEllipsis)) warnings.push(`The quotation ${shown(first)} writes an ellipsis as "..."; write it as three spaced periods, ". . .".`);
 	};
 	for (let index = 0; index < tokens.length; index += 1) {
 		const opening = tokens[index].type;

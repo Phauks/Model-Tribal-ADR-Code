@@ -47,6 +47,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Teton, etc., Sioux, June 22, 1825, 7 Stat. 250
+  since: '1825-06-22'
+  source: treaty-with-the-teton-etc-sioux-1825
+  confidence: low
+  verification: inferred
+  as_of: '1825-06-22'
+  locator: p. 227 (Treaty with the Teton, etc., Sioux, 1825; Kappler header "June 22, 1825. | 7 Stat., 250. | Proclamation, Feb. 6, 1826.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Yanktonai; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 4 nations' profiles link this treaty.
 states:
 - state: MT
   presence: government-office
@@ -705,6 +715,22 @@ jurisdiction:
   verification: read-in-full
   locator: Mont. Code Ann. § 2-1-302(1)-(2); § 2-1-303
   note: Procedure only; the research found no proclamation under it for any other tribe. Under § 2-1-303 the State assumes jurisdiction 60 days after the proclamation. Enacted as 1963 Mont. Laws ch. 81 (section history lines).
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Aug. 29, 1996 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Apr. 25, 2000.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1996-08-29'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: safe-drinking-water-act-underground-injection
+  detail: EPA has approved the nation for treatment in a similar manner as a state for underground injection control (Safe Drinking Water Act § 1425).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "UIC Program"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Montana Department of Public Health and Human Services
@@ -910,7 +936,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 25 Stat. 113, art. (Fort Peck Reservation boundary)
-  note: 'The instrument reads: “the separate reservation for the Indians now attached to and receiving rations at the, Fort Peck Agency, Montana, shall be bounded as follows”. Agreement (Dec. 28, 1886) ratified by Congress; it carves the separate Fort Peck reservation out of the larger Gros Ventre, Piegan, Blood, Blackfeet and River Crow reservation created by Exec. Order of July 5, 1873 (1 Kappler 855-856), which does not name the Assiniboine or Sioux. The act names "Indians now attached to ... Fort Peck Agency," not the Assiniboine and Sioux Tribes by name.'
+  note: 'The instrument reads: “the separate reservation for the Indians now attached to and receiving rations at the, Fort Peck Agency, Montana, shall be bounded as follows”. Agreement (Dec. 28, 1886) ratified by Congress; it carves the separate Fort Peck reservation out of the larger Gros Ventre, Piegan, Blood, Blackfeet and River Crow reservation created by Exec. Order of July 5, 1873 (1 Kappler 855-856), which does not name the Assiniboine or Sioux. The act names "Indians now attached to . . . Fort Peck Agency," not the Assiniboine and Sioux Tribes by name.'
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

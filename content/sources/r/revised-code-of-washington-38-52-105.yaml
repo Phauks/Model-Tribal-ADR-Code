@@ -1,0 +1,50 @@
+key: revised-code-of-washington-38-52-105
+kind: state-statute
+citation:
+  type: legislation
+  title: Disaster response account
+  title-short: Wash. Rev. Code § 38.52.105
+  container-title: Revised Code of Washington
+  container-title-short: Wash. Rev. Code
+  section: 38.52.105
+  author:
+  - literal: Washington State Legislature
+  issued:
+    date-parts:
+    - - 1997
+  URL: https://app.leg.wa.gov/RCW/default.aspx?cite=38.52.105
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://app.leg.wa.gov/RCW/default.aspx?cite=38.52.105
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wash. Rev. Code § 38.52.105 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Wash. Rev. Code § 38.52.105 (2026). History: [2024 c 172 s 4; 2022 c 157 s 10; 2021 c 334 s 963; 2020 c 7 s 6; 2019 c 415 s 956; 2017 3rd sp.s. c 1 s 962; 2016 sp.s. c 36 s 918; 2010 2nd sp.s. c 1 s 901; 2010 1st sp.s. c 37 s 919; 2005 c 422 s 2; 2002 c 371 s 903; 1997 c 251 s 1.]. Text read from the Washington State Legislature''s full-text chapter page for the section (app.leg.wa.gov/RCW) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized tribes; tribes); AI reader''s verdict incidental: Disaster account may fund federally recognized tribes'' responses. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized tribes; tribes'

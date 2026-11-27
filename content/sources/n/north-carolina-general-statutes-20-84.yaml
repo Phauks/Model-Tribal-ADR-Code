@@ -1,0 +1,50 @@
+key: north-carolina-general-statutes-20-84
+kind: state-statute
+citation:
+  type: legislation
+  title: Permanent registration plates; State Highway Patrol
+  title-short: N.C. Gen. Stat. § 20-84
+  container-title: General Statutes of North Carolina
+  container-title-short: N.C. Gen. Stat.
+  section: 20-84
+  author:
+  - literal: North Carolina General Assembly
+  issued:
+    date-parts:
+    - - 1937
+  URL: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_20/GS_20-84.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_20/GS_20-84.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: N.C. Gen. Stat. § 20-84 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: N.C. Gen. Stat. § 20-84 (2025). History: 1937, c. 407, s. 48; 1939, c. 275; 1949, c. 583, s. 1; 1951, c. 388; 1953, c. 1264; 1955, cc. 368, 382; 1967, c. 284; 1969, c. 800; 1971, c. 460, s. 1; 1975, c. 548; c. 716, s. 5; 1977, c. 370, s. 1; 1979, c. 801, s. 9; 1981 (Reg. Sess., 1982), c. 1159; 1983, c. 593, ss. 1, 2; 1987 (Reg. Sess., 1988), c. 885; 1991 (Reg. Sess., 1992), c. 1030, s. 11; 1997-443, s. 11A.118(a); 1999-220, s. 3; 2000-159, s. 7; 2012-159, s. 1; 2014-101, s. 6.6(a); 2014-108, s. 3(a); 2015-241, s. 29.40(r); 2016-94, s. 35.16; 2024-57, s. 3E.2(g). Text read from the North Carolina General Assembly''s page for the section''s chapter of the General Statutes (ncleg.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized tribe; tribe); AI reader''s verdict incidental: Permanent plates for vehicles owned by federally recognized tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized tribe; tribe'

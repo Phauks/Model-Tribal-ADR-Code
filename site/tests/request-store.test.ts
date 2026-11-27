@@ -36,7 +36,7 @@ beforeEach(async () => {
 
 async function save(fields: Record<string, string | File>): Promise<string> {
 	const data = new FormData();
-	for (const [name, value] of Object.entries(fields)) data.append(name, value);
+	for (const [name, value] of Object.entries({ acceptStatements: 'yes', ...fields })) data.append(name, value);
 	const result = await readRequestForm(data);
 	if (!result.ok) throw new Error(JSON.stringify(result.errors));
 	return saveRequest(database, bucket, result.request);
@@ -64,7 +64,7 @@ describe('request store', () => {
 	});
 
 	it('records when a request is acknowledged and when material is hidden', async () => {
-		const reference = await save({ kind: 'remove', contact: 'x', details: 'Withdraw it', material: 'tribes/sample' });
+		const reference = await save({ kind: 'remove', contact: 'person@example.org', details: 'Withdraw it', material: 'tribes/sample' });
 		let found = (await requestByReference(database, reference))!;
 		await changeStatus(database, found.request, 'hidden-pending-review', 'Hidden by pull request', editor);
 		found = (await requestByReference(database, reference))!;

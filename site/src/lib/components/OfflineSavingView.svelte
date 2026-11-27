@@ -258,7 +258,7 @@
 	}
 
 	.filter:focus-within {
-		outline: 2px solid var(--color-focus-ring);
+		outline: 2px solid var(--focus-ring);
 		outline-offset: 2px;
 	}
 

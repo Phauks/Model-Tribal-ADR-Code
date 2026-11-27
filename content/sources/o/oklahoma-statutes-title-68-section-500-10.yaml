@@ -86,7 +86,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 500.10 (2026). History: Added by Laws 1996, c. 345, § 10, eff. Oct. 1, 1996. Amended by Laws 1999, c. 164, § 38, Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 297. Found by the state statutes pilot (terms: federally recognized indian tribe; federally recognized indian tribes; indian country; indian reservation); AI reader''s verdict incidental: Motor fuel tax exemptions include tribes and tribal member sales. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

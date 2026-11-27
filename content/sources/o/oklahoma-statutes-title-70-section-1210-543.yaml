@@ -73,7 +73,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 1210.543 (2026). History: Added by Laws 2008, c. 439, § 8, eff. July 1, 2008. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 1454. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Full state intervention may let a federally recognized tribe oversee district. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

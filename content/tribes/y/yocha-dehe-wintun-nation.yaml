@@ -18,6 +18,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Yocha Dehe Wintun Nation, California (approved by the Secretary of the Interior Mar. 18, 1976)
+  since: '1976-03-18'
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: 1976 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -534,6 +547,14 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Yocha Dehe Wintun Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Aug. 20, 2024, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-yocha-dehe-wintun-nation-2024-08-20
+  confidence: high
+  verification: inferred
+  as_of: '2024-08-20'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2024
 nearby_state_courts:
 - state: CA
   county: Yolo County

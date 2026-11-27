@@ -78,7 +78,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 2-1101 (2026). History: Added by Laws 2021, c. 90, § 3, emerg. eff. April 20, 2021. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1228. Found by the state statutes pilot (terms: tribal governments); AI reader''s verdict incidental: Lists tribal governments as authorized harm-reduction service providers. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

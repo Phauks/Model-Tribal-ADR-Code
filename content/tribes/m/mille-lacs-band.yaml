@@ -20,10 +20,17 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
-  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe,
-    Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations:
-    Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band;
-    White Earth Band).'
+  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe, Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band).'
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Chippewa, Aug. 5, 1826, 7 Stat. 290
+  since: '1826-08-05'
+  source: treaty-with-the-chippewa-1826
+  confidence: medium
+  verification: inferred
+  as_of: '1826-08-05'
+  locator: p. 268 (Treaty with the Chippewa, 1826; Kappler header "Aug. 5, 1826. | 7 Stat., 290. | Proclamation, Feb. 7, 1827.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Sandy Lake; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 7 nations' profiles link this treaty.
 states:
 - state: MN
   presence: land
@@ -550,6 +557,14 @@ jurisdiction:
   as_of: '2026-05-26'
   locator: 91 FR 30694 (Tribe column of the designated agent table)
   note: 'Listed as: Minnesota Chippewa Tribe - Mille Lacs Band. Added on 2026-11-23: the second data gap review found this band''s own row in the notice (page image p-027; the govinfo PDF has no text layer for the table), and the Minnesota Chippewa Tribe profile already lists the six band rows (research/reviews/2026-11-22-second-gap-review.md). Verification is inferred because the name was read from a page image, not matched in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Minnesota Department of Human Services

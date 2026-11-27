@@ -72,6 +72,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of June 14, 1879, 1 Kappler 806
+  since: '1879-06-14'
+  source: executive-order-1879-06-14-pima-maricopa-salt-river
+  confidence: medium
+  verification: read-in-full
+  as_of: '1879-06-14'
+  locator: 1 Kappler 806
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Salt River lands (Pima and Maricopa Reserve), Arizona.
 states:
 - state: AZ
   presence: government-office
@@ -913,6 +923,22 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Apr. 13, 2023 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2023-04-13'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 106; 107(d); 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 106; 107(d); 505(a)(2)"'
 court_practice:
 - kind: filing-fees
   title: Court (Filing Fees)

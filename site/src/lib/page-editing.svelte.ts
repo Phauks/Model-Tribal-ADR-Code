@@ -48,7 +48,8 @@ export interface PageControls {
 	drafts?: { shown: boolean; set: (shown: boolean) => void } | null;
 	/** Links for a page edited elsewhere, such as a nation's page. */
 	links?: readonly PageLink[];
-	history?: { title: string; href: string } | null;
+	/** A link to the page's history, or a button that opens it in place (the site text's list). */
+	history?: { title: string; href?: string; onclick?: () => void } | null;
 	publish?: PagePublish | null;
 	/** How many comment threads are open on the page, shown on the Commenting button. */
 	openComments?: number;
@@ -65,6 +66,16 @@ export function currentPageControls(): PageControls | null {
 	const fallback = fallbacks.length > 1 ? joinFallbacks(fallbacks) : fallbacks[0];
 	if (own && fallback) return joinPageControls(own, fallback);
 	return own ?? fallback ?? null;
+}
+
+/**
+ * Whether the page has commenting of its own, such as an essay's on its
+ * draft (EssayArticle.svelte, also on About, Sponsor and Using AI); the
+ * page's comments (PageComments.svelte) then stay out, as the masthead does
+ * (joinPageControls).
+ */
+export function pageHasOwnCommenting(): boolean {
+	return offers.some((offer) => !offer.fallback && offer.controls.modes.includes('commenting'));
 }
 
 /**

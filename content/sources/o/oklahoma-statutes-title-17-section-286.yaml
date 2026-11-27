@@ -52,7 +52,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 17, § 286 (2026). History: Added by Laws 2005, c. 161, § 1, emerg. eff. May 11, 2005. Amended by Laws 2008, c. 80, § Text read from the Legislative Service Bureau''s Title 17 PDF (updated Nov. 12, 2026), page 230. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Lists tribal environmental requirements applicable to generation facilities; excerpt cut. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

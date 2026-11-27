@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the San Pasqual Band of Diegueno Mission Indians of California (approved by the Secretary of the Interior Jan. 14, 1971)
+  since: '1971-01-14'
+  source: constitution-san-pasqual-band-of-diegueno-mission-indians-of-california-1971-text
+  document_version:
+    document: san-pasqual-band-of-diegueno-mission-indians-of-california-constitution
+    version: 1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-01-14'
+  locator: 1971 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -508,6 +521,14 @@ jurisdiction:
     images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has
     no text layer for the table); verification level unchanged because the name was not matched word for
     word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the San Pasqual Band of Diegueno Mission, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 5, 2020, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-san-pasqual-band-of-diegueno-mission-indians-of-california-2020-11-05
+  confidence: high
+  verification: inferred
+  as_of: '2020-11-05'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2020
 court_practice:
 - kind: bar-admission
   title: Southern California Tribal Bar Association admission application

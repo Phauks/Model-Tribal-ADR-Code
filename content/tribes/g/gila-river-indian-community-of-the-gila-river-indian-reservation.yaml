@@ -27,6 +27,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Act of Feb. 28, 1859, ch. 66, § 4, 11 Stat. 388, 401
+  since: '1859-02-28'
+  source: act-1859-02-28-pima-maricopa-reservation
+  confidence: medium
+  verification: read-in-full
+  as_of: '1859-02-28'
+  locator: 11 Stat. 401
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Gila River (Pima and Maricopa) Reservation, Arizona.
 states:
 - state: AZ
   presence: government-office
@@ -859,6 +869,62 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business, Solar) of the Gila River Indian Community, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 20, 2015, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-gila-river-indian-community-of-the-gila-river-indian-reserva-2015-11-20
+  confidence: high
+  verification: inferred
+  as_of: '2015-11-20'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2015
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Oct. 30, 2018 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2018-10-30'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-implementation-plan
+  detail: EPA has approved the nation for treatment in a similar manner as a state for tribal implementation plan (Clean Air Act § 110).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "TIP ; NSPS; NESHAP; Operating Permit Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-new-source-standards
+  detail: EPA has approved the nation for treatment in a similar manner as a state for new source performance standards (Clean Air Act § 111).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "TIP ; NSPS; NESHAP; Operating Permit Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-hazardous-air-pollutants
+  detail: EPA has approved the nation for treatment in a similar manner as a state for hazardous air pollutant standards (Clean Air Act § 112).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "TIP ; NSPS; NESHAP; Operating Permit Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-operating-permits
+  detail: EPA has approved the nation for treatment in a similar manner as a state for operating permits (Clean Air Act title V).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "TIP ; NSPS; NESHAP; Operating Permit Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 107(d); 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107(d); 505(a)(2)"'
 court_practice:
 - kind: court-rules
   title: Res. GR-97-13 Rules of Criminal Procedures
@@ -916,7 +982,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 11 Stat. 401
-  note: 'The instrument reads: “authorized and required to set apart the tract ... or tracts of land aforesaid as a reservation for the confederated bands of ... Pimas and Maricopas”. Congress directed the President to set apart the surveyed Gila River tracts as a reservation (not exceeding 100 square miles); Kappler lists the Gila River Reserve as "established by act of February 28, 1859 (11 Stat., 401), and Executive orders" (1 Kappler 804, 805). The act is a mandate to the President; I have not found a separate order recording the original set-aside, so the act is treated as the original instrument. Enlarged by EOs beginning Aug. 31, 1876.'
+  note: 'The instrument reads: “authorized and required to set apart the tract . . . or tracts of land aforesaid as a reservation for the confederated bands of . . . Pimas and Maricopas”. Congress directed the President to set apart the surveyed Gila River tracts as a reservation (not exceeding 100 square miles); Kappler lists the Gila River Reserve as "established by act of February 28, 1859 (11 Stat., 401), and Executive orders" (1 Kappler 804, 805). The act is a mandate to the President; I have not found a separate order recording the original set-aside, so the act is treated as the original instrument. Enlarged by EOs beginning Aug. 31, 1876.'
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes

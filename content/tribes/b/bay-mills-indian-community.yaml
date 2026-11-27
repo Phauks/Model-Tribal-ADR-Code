@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Ottawa, etc., Mar. 28, 1836, 7 Stat. 491
+  since: '1836-03-28'
+  source: treaty-with-the-ottawa-etc-1836
+  confidence: medium
+  verification: inferred
+  as_of: '1836-03-28'
+  locator: p. 450 (Treaty with the Ottawa, etc., 1836; Kappler header "Mar. 28, 1836. | 7 Stat., 491. | Proclamation, May 27, 1836.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Chippewa; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 6 nations' profiles link this treaty.
 states:
 - state: MI
   presence: government-office
@@ -833,6 +843,14 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business, Residential) of the Bay Mills Indian Community, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 12, 2024, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-bay-mills-indian-community-2024-11-12
+  confidence: high
+  verification: inferred
+  as_of: '2024-11-12'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2024
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Michigan Department of Human Services

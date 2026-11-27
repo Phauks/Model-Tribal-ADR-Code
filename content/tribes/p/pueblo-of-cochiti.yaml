@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Act of Dec. 22, 1858, ch. 5, 11 Stat. 374
+  since: '1858-12-22'
+  source: act-1858-12-22-pueblo-land-claims-confirmed
+  confidence: medium
+  verification: read-in-full
+  as_of: '1858-12-22'
+  locator: 11 Stat. 374
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Pueblo of Cochiti land grant, New Mexico.
 states:
 - state: NM
   presence: government-office
@@ -328,7 +338,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 11 Stat. 374
-  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as ... G, Pueblo of Cochiti in the county of Santa Ana ... be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
+  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as . . . G, Pueblo of Cochiti in the county of Santa Ana . . . be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

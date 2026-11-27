@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Act of Dec. 22, 1858, ch. 5, 11 Stat. 374
+  since: '1858-12-22'
+  source: act-1858-12-22-pueblo-land-claims-confirmed
+  confidence: medium
+  verification: read-in-full
+  as_of: '1858-12-22'
+  locator: 11 Stat. 374
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the San Juan Pueblo (Ohkay Owingeh) land grant, New Mexico.
 states:
 - state: NM
   presence: government-office
@@ -429,6 +439,22 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural, Business, Residential, Wind and Solar Resource) of the Ohkay Owingeh, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Jan. 4, 2016, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-ohkay-owingeh-2016-01-04
+  confidence: high
+  verification: inferred
+  as_of: '2016-01-04'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2016
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on May 12, 1993 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Sept. 16, 1993.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1993-05-12'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: filing-fees
   title: Ohkay Owingeh Court Fees and Costs Schedule
@@ -470,7 +496,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 11 Stat. 374
-  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as ... C, Pueblo of San Juan in the county of Rio Ariba ... be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
+  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as . . . C, Pueblo of San Juan in the county of Rio Ariba . . . be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

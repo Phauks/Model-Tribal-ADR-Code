@@ -1,0 +1,50 @@
+key: montana-code-annotated-23-5-112
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Mont. Code Ann. § 23-5-112
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 23-5-112
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1949
+  URL: https://mca.legmt.gov/bills/mca/title_0230/chapter_0050/part_0010/section_0120/0230-0050-0010-0120.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0230/chapter_0050/part_0010/section_0120/0230-0050-0010-0120.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 23-5-112 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 23-5-112 (2025). History: En. Secs. 2, 3, Ch. 197, L. 1949; Secs. 94-2429, 94-2431, R.C.M. 1947; redes. 94-8-429, 94-8-430 by Sec. 29, Ch. 513, L. 1973; amd. Secs. 24, 25, Ch. 508, L. 1977; R.C.M. 1947, 94-8-429, 94-8-430; amd. Sec. 3, Ch. 642, L. 1989; Sec. 23-5-101, MCA 1987; redes. 23-5-112 by Code Commissioner, 1989; amd. Sec. 1, Ch. 473, L. 1991; amd. Sec. 8, Ch. 523, L. 1991; amd. Sec. 1, Ch. 647, L. 1991; amd. Sec. 3, Ch. 398, L. 1993; amd. Sec. 2, Ch. 626, L. 1993; amd. Sec. 78, Ch. 546, L. 1995; amd. Sec. 1, Ch. 13, L. 1997; amd. Sec. 1, Ch. 252, L. 1997; amd. Sec. 7, Ch. 134, L. 2005; amd. Sec. 1, Ch. 201, L. 2005; amd. Sec. 1, Ch. 101, L. 2007; amd. Sec. 5, Ch. 379, L. 2007; amd. Sec. 1, Ch. 429, L. 2007; amd. Sec. 1, Ch. 355, L. 2009; amd. Sec. 1, Ch. 66, L. 2011; amd. Sec. 1, Ch. 61, L. 2015; amd. Sec. 1, Ch. 276, L. 2017; amd. Sec. 2, Ch. 57, L. 2019; amd. Sec. 2, Ch. 284, L. 2019; amd. Sec. 1, Ch. 180, L. 2021; amd. Sec. 1, Ch. 259, L. 2021; amd. Sec. 1, Ch. 234, L. 2025; amd. Sec. 1, Ch. 626, L. 2025. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian gaming; indian lands; indian); AI reader''s verdict incidental: Gambling definitions carve out Indian lands class II and III gaming. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian gaming; indian lands; indian'

@@ -1,0 +1,73 @@
+key: oregon-revised-statutes-109-330
+kind: state-statute
+citation:
+  type: legislation
+  title: Notice when parent does not consent; notice when child has no living parent and no guardian or next of kin qualified to appear
+  title-short: Or. Rev. Stat. § 109.330
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '109.330'
+  author:
+  - literal: Oregon Legislative Assembly
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors109.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors109.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-109-092
+- oregon-revised-statutes-109-096
+- oregon-revised-statutes-109-098
+- oregon-revised-statutes-109-266
+- oregon-revised-statutes-109-270
+- oregon-revised-statutes-109-274
+- oregon-revised-statutes-109-276
+- oregon-revised-statutes-109-278
+- oregon-revised-statutes-109-285
+- oregon-revised-statutes-109-287
+- oregon-revised-statutes-109-289
+- oregon-revised-statutes-109-301
+- oregon-revised-statutes-109-302
+- oregon-revised-statutes-109-322
+- oregon-revised-statutes-109-323
+- oregon-revised-statutes-109-324
+- oregon-revised-statutes-109-326
+- oregon-revised-statutes-109-350
+- oregon-revised-statutes-109-382
+- oregon-revised-statutes-109-383
+- oregon-revised-statutes-109-385
+- oregon-revised-statutes-109-430
+- oregon-revised-statutes-109-460
+- oregon-revised-statutes-109-704
+- oregon-revised-statutes-109-711
+state_law:
+  relevance: core
+  citation: Or. Rev. Stat. § 109.330 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 109.330 (2025). Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: bureau of indian affairs; indian child; indian; tribe); AI reader''s verdict core: Adoption notice rules for Indian child, tribes and custodians. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: bureau of indian affairs; indian child; indian; tribe'

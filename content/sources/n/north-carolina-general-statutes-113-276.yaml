@@ -1,0 +1,50 @@
+key: north-carolina-general-statutes-113-276
+kind: state-statute
+citation:
+  type: legislation
+  title: Exemptions and exceptions to license and permit requirements
+  title-short: N.C. Gen. Stat. § 113-276
+  container-title: General Statutes of North Carolina
+  container-title-short: N.C. Gen. Stat.
+  section: 113-276
+  author:
+  - literal: North Carolina General Assembly
+  issued:
+    date-parts:
+    - - 1929
+  URL: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_113/GS_113-276.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_113/GS_113-276.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: N.C. Gen. Stat. § 113-276 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: N.C. Gen. Stat. § 113-276 (2025). History: 1929, c. 335, ss. 1, 10; 1935, c. 486, s. 12; 1937, c. 45, s. 1; 1945, c. 567, ss. 1, 6; c. 617; 1949, c. 1203, s. 1; 1951, c. 1112, s. 2; 1957, c. 849, s. 1; 1959, c. 304; 1961, cc. 312, 329; c. 834, s. 1; 1963, c. 170; 1965, c. 957, s. 2; 1967, cc. 127, 654, 790; 1969, c. 1030; c. 1042, ss. 1-5; 1971, c. 242; c. 282, s. 1; c. 705, ss. 1, 2; c. 1231, s. 1; 1973, c. 1262, s. 18; 1975, c. 197, ss. 1-4; 1977, c. 191, s. 1; c. 658; 1979, c. 830, s. 1; 1987, c. 827, s. 98; 1993 (Reg. Sess., 1994), c. 684, ss. 6, 8, 9; 1999-456, ss. 29, 30; 2005-285, s. 1; 2005-438, s. 2; 2005-455, ss. 1.11, 1.12, 1.13, 1.14; 2009-25, s. 1; 2009-248, s. 1; 2011-401, s. 3.15; 2013-63, s. 4; 2013-283, s. 14; 2018-90, s. 3; 2019-204, ss. 6(o), 12; 2021-88, s. 10; 2021-160, ss. 5(a), 8A; 2022-62, s. 57. Text read from the North Carolina General Assembly''s page for the section''s chapter of the General Statutes (ncleg.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; tribal land; cherokee; eastern band; indian; indians; tribal; tribe); AI reader''s verdict incidental: Wildlife license exemptions include tribal members hunting on tribal land. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; tribal land; cherokee; eastern band; indian; indians; tribal; tribe'

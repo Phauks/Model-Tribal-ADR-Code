@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Act of Dec. 22, 1858, ch. 5, 11 Stat. 374
+  since: '1858-12-22'
+  source: act-1858-12-22-pueblo-land-claims-confirmed
+  confidence: medium
+  verification: read-in-full
+  as_of: '1858-12-22'
+  locator: 11 Stat. 374
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Pueblo of Sandia land grant, New Mexico.
 states:
 - state: NM
   presence: government-office
@@ -455,6 +465,22 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Pueblo of Sandia, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Mar. 14, 2013, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pueblo-of-sandia-2013-03-14
+  confidence: high
+  verification: inferred
+  as_of: '2013-03-14'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2013
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Dec. 24, 1992 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Aug. 10, 1993.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1992-12-24'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 nearby_state_courts:
 - state: NM
   county: Sandoval County
@@ -484,7 +510,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 11 Stat. 374
-  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as ... P, Pueblo of Sandia in the county of Bernalillo ... be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
+  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as . . . P, Pueblo of Sandia in the county of Bernalillo . . . be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

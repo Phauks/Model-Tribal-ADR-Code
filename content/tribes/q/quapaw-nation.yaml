@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Quapaw, Aug. 24, 1818, 7 Stat. 176
+  since: '1818-08-24'
+  source: treaty-with-the-quapaw-1818
+  confidence: medium
+  verification: inferred
+  as_of: '1818-08-24'
+  locator: p. 160 (Treaty with the Quapaw, 1818; Kappler header "Aug. 24, 1818. | 7 Stat., 176. | Proclamation Jan. 5, 1819 [1818].")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Quapaw; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OK
   presence: government-office
@@ -590,6 +600,14 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.53)
   note: Listed as "QUAPAW NATION" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 107(d)(3); 126; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107(d)(3); 126; 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services

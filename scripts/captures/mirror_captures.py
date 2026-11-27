@@ -97,6 +97,9 @@ TOPIC_RIGHTS = {
                              "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
     "federal-court-opinions": ("A federal court's opinion, from the Caselaw Access Project (released without restriction, 2024) or CourtListener's bulk files (Free Law Project, public domain mark): "
                                "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
+    "supreme-court-opinions": ("The opinions of the Supreme Court of the United States in a case, as the Caselaw Access Project (released without restriction, 2024) "
+                               "read them from the United States Reports: works of the United States government, no copyright (17 U.S.C. § 105); "
+                               "the reporter's syllabus and statement of the case left out; the Library of Congress scan of the report is the official copy."),
 }
 DEFAULT_RIGHTS = "Private research copy; not redistributed."
 
@@ -120,6 +123,26 @@ PUBLISHER_RIGHTS = ("Tribal law as compiled by a commercial code publisher: priv
 NATIONAL_INDIAN_LAW_LIBRARY = ("narf.org/nill/", "nill.narf.org/")
 LIBRARY_RIGHTS = ("Copy taken from the National Indian Law Library: private research copy, "
                   "not served until the nation consents; pages link to NILL (decision record 0043).")
+
+
+# Saved web pages of sites that publish other people's law with their own
+# pages around it (Trevor Goldsmith's standing rule: third-party copyrighted
+# works stay private). The law in them may have no copyright, but the page is
+# the site's: the Legal Information Institute at Cornell Law School, the
+# National Center on Restorative Justice and the Oklahoma State University
+# Tribal Treaties Database (whose executive order texts are served on their
+# own, under executive-orders/). Fixed on 2026-11-27, when 191 such pages were
+# marked for serving. A PDF or text taken from one of them is not affected.
+THIRD_PARTY_PAGES = ("law.cornell.edu/", "ncorj.org/", "treaties.okstate.edu/")
+THIRD_PARTY_RIGHTS = ("A page of another site that publishes the law (Cornell's Legal Information Institute, "
+                      "the National Center on Restorative Justice or Oklahoma State University's Tribal Treaties Database): "
+                      "the page is that site's work; private research copy, not served. Pages link to the original.")
+
+
+def third_party_page(media_type: str, link: str) -> bool:
+    """Whether a saved web page is another site's page around the law (THIRD_PARTY_PAGES)."""
+    return media_type == "text/html" and any(
+        re.match(r"^https?://(www\.)?" + re.escape(site), address) for address in link.split() for site in THIRD_PARTY_PAGES)
 
 
 # Files under govinfo/ come from GovInfo, the Government Publishing Office's
@@ -408,6 +431,8 @@ def build_index(args) -> None:
         policy = nation_law_policy(topic, link) if parent is None and "redistribution" not in extra else None
         if policy:
             redistributable, rights = policy
+        if third_party_page(media, link) and "redistribution" not in extra:
+            redistributable, rights = "no", THIRD_PARTY_RIGHTS
         rows.append({
             "key": key, "bytes": item["bytes"], "sha256": item["sha256"], "media_type": media,
             "topic": topic, "title": (title or "")[:300],
@@ -441,6 +466,25 @@ def write_index(rows: list[dict]) -> None:
         writer.writerows(orphans)
     total = sum(int(r["bytes"]) for r in rows)
     print(f"{len(rows)} files, {total / 1e9:.2f} GB; {len(orphans)} main files with no citing record.")
+    count_new_pages(rows)
+
+
+# The captures folder of this run, when the command names one, so new PDFs can be counted from their local copies.
+LOCAL_CAPTURES: list[Path] = []
+
+
+def count_new_pages(rows: list[dict]) -> None:
+    """
+    Count the pages of newly filed PDFs the website may serve (research/copy-pages.csv), so the Statistics page gives
+    their pages without anyone re-running scripts/library/count_pages.py (Nov. 27, 2026). Never stops a filing: a
+    file it cannot read yet is counted on the next index write or upload.
+    """
+    sys.path.insert(0, str(REPO / "scripts" / "library"))
+    try:
+        import count_pages  # noqa: PLC0415
+        count_pages.count_new(rows, LOCAL_CAPTURES)
+    except Exception as error:  # noqa: BLE001  (counting pages must never stop a filing)
+        print(f"Page counts not updated ({error}); run scripts/library/count_pages.py.", file=sys.stderr)
 
 
 # ---------------------------------------------------------------- bucket
@@ -535,6 +579,7 @@ def upload(args) -> None:
         if done % 200 == 0:
             print(f"  uploaded {done}...", file=sys.stderr)
     print(f"uploaded {done}, already there {skipped}, of {len(rows)}")
+    count_new_pages(rows)
 
 
 def verify(args) -> None:
@@ -651,6 +696,7 @@ def main() -> None:
             p.add_argument("--work", help="folder for the downloaded files (default: a temporary folder)")
             p.add_argument("--obtained", default=f"hand pull by {HAND_PULLER}, sent through the website")
     args = parser.parse_args()
+    LOCAL_CAPTURES.append(Path(args.captures))
     if args.command == "intake":
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         import intake_uploads

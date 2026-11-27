@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Santa Ynez Band of Chumash Mission Indians of the Santa Ynez Reservation, California (approved by the Secretary of the Interior Feb. 7, 1964)
+  since: '1964-02-07'
+  source: constitution-santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-1964-text
+  document_version:
+    document: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-constitution
+    version: 1964-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1964-02-07'
+  locator: 1964 articles of association, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -509,6 +522,14 @@ jurisdiction:
     names were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image
     (the govinfo PDF has no text layer for the table); verification level unchanged because the name was
     not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business, Residential) of the Santa Ynez Band of Chumash Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Oct. 9, 2020, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-2020-10-09
+  confidence: high
+  verification: inferred
+  as_of: '2020-10-09'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2020
 nearby_state_courts:
 - state: CA
   county: Santa Barbara County

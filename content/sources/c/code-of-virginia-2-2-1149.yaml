@@ -1,0 +1,50 @@
+key: code-of-virginia-2-2-1149
+kind: state-statute
+citation:
+  type: legislation
+  title: Department to review proposed acquisitions of real property; approval by the Governor; exceptions
+  title-short: Va. Code Ann. § 2.2-1149
+  container-title: Code of Virginia
+  container-title-short: Va. Code Ann.
+  section: 2.2-1149
+  author:
+  - literal: Virginia General Assembly
+  issued:
+    date-parts:
+    - - 1984
+  URL: https://law.lis.virginia.gov/vacode/title2.2/chapter11/section2.2-1149/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://law.lis.virginia.gov/vacode/title2.2/chapter11/section2.2-1149/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Va. Code Ann. § 2.2-1149 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Va. Code Ann. § 2.2-1149 (2025). History: 1984, c. 641, § 2.1-504.2; 1994, c. 474; 2000, c. 748; 2001, c. 844; 2005, cc. 933, 945; 2011, c. 525; 2016, c. 425; 2017, c. 348. Text read from the Virginia Division of Legislative Systems'' page for the section in the Code of Virginia (law.lis.virginia.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; reservation; tribe); AI reader''s verdict incidental: State land acquisition; exception for land held in trust for tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; reservation; tribe'

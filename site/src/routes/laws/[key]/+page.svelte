@@ -14,7 +14,6 @@
 	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
 	import SavedText from '#lib/components/SavedText.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
-	import StubNote from '#lib/components/StubNote.svelte';
 	import TileMap from '#lib/components/TileMap.svelte';
 	import type { PageProps } from './$types';
 
@@ -69,7 +68,7 @@
 	{/if}
 {/snippet}
 
-<InfoPage title={data.name} lead={data.citation} glance={data.glance} panels={data.landCeded ? cededMap : undefined} sources={data.sources} trail={[{ label: 'Library', href: '/library' }]} status={data.stub ? stubStatus : undefined}>
+<InfoPage title={data.name} lead={data.citation} glance={data.glance} panels={data.landCeded ? cededMap : undefined} sources={data.sources} trail={[data.kind === 'state-statute' ? { label: 'Library', href: '/library' } : { label: 'Federal law', href: '/laws' }]} status={data.stub ? stubStatus : undefined}>
 	{#if data.fullTitle}<p class="full-title muted">{data.fullTitle}</p>{/if}
 
 	<RecordBoxSections sections={data.boxSections} />
@@ -105,8 +104,8 @@
 
 	{#if data.text}<SavedText file={data.text.file} isPdf={data.text.isPdf} name={data.name} identifier="law-text" />{/if}
 
-	{#if data.essays.length + data.nations.length + data.signers.length + data.enacted.length > 0}
-		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length + data.signers.length + data.enacted.length}>
+	{#if data.essays.length + data.nations.length + data.signers.length + data.enacted.length + data.legislativeHistory.length > 0}
+		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length + data.signers.length + data.enacted.length + data.legislativeHistory.length}>
 			<dl class="summary-list">
 				{#if data.enacted.length > 0}
 					<div>
@@ -120,6 +119,16 @@
 							{:else}
 								{@render enactedList()}
 							{/if}
+						</dd>
+					</div>
+				{/if}
+				{#if data.legislativeHistory.length > 0}
+					<div>
+						<dt>Legislative history</dt>
+						<dd>
+							{#each data.legislativeHistory as document (document.link)}
+								<p><a href={document.link}>{document.name}</a><span class="muted">&nbsp;› {document.detail}</span></p>
+							{/each}
 						</dd>
 					</div>
 				{/if}
@@ -161,8 +170,6 @@
 			</dl>
 		</Collapsible>
 	{/if}
-
-	{#if data.stub}<StubNote stub={data.stub} />{/if}
 </InfoPage>
 
 {#snippet stubStatus()}{#if data.stub}<StubBadge stub={data.stub} />{/if}{/snippet}
@@ -197,8 +204,11 @@
 		scroll-margin-top: 4.5rem;
 	}
 
-	.section-list dt:target,
-	.section-list dt:target + dd {
+	/* Shaded for a moment, then not (src/lib/arrival-highlight.ts); without scripts, while the address points to it. */
+	:global(:root:not([data-scripts='on'])) .section-list dt:target,
+	:global(:root:not([data-scripts='on'])) .section-list dt:target + dd,
+	.section-list dt:global([data-arrived]),
+	.section-list dt:global([data-arrived]) + dd {
 		background: var(--color-surface-raised);
 	}
 

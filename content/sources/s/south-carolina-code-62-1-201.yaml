@@ -1,0 +1,50 @@
+key: south-carolina-code-62-1-201
+kind: state-statute
+citation:
+  type: legislation
+  title: General definitions
+  title-short: S.C. Code Ann. § 62-1-201
+  container-title: Code of Laws of South Carolina 1976
+  container-title-short: S.C. Code Ann.
+  section: 62-1-201
+  author:
+  - literal: South Carolina General Assembly
+  issued:
+    date-parts:
+    - - 1986
+  URL: https://www.scstatehouse.gov/code/t62c001.php
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.scstatehouse.gov/code/t62c001.php
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: S.C. Code Ann. § 62-1-201 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: SC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: S.C. Code Ann. § 62-1-201 (2025). History: 1986 Act No. 539, SECTION 1; 1987 Act No. 171, SECTIONS 1, 2; 1990 Act No. 521, SECTIONS 2-7; 1997 Act No. 152, SECTION 2; 2010 Act No. 244, SECTION 1, eff June 7, 2010; 2013 Act No. 100, SECTION 1, eff January 1, 2014; 2016 Act No. 278 (S.777), SECTION 2, eff June 9, 2016; 2022 Act No. 128 (H.3821), SECTION 2, eff April 4, 2022. Text read from the South Carolina Legislative Services Agency''s page for the section''s chapter of the Code of Laws (scstatehouse.gov/code) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; tribe); AI reader''s verdict incidental: Probate definition of State includes federally recognized Indian tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; tribe'

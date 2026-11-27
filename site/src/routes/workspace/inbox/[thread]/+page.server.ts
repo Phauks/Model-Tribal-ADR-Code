@@ -51,7 +51,9 @@ export const load: PageServerLoad = async (event) => {
 	const context = mailContext();
 	const thread = await getThread(context, event.params.thread, person.identifier);
 	if (!thread) error(404, 'This conversation is not in the inbox.');
-	if (thread.unread) await markRead(context, person.identifier, thread.identifier, true);
+	// Opening an unread conversation reads it, so the page asks the left column's unread counts to reload (+page.svelte).
+	const markedRead = thread.unread;
+	if (markedRead) await markRead(context, person.identifier, thread.identifier, true);
 
 	// The reply box answers one message: the one a Reply, Reply all or Forward button named (?compose=…&message=…), else the latest one received.
 	// A draft the person saved here opens instead, unless a button asked for something else.
@@ -65,8 +67,8 @@ export const load: PageServerLoad = async (event) => {
 				seesAddressBook: can(person, 'manage-address-book')
 			})
 		: null;
-	// From the conversation's own inbox's address, unless the writer picks another of theirs (src/lib/server/mail/inboxes.ts).
-	const addresses = await replyAddresses(context, person.identifier, thread.inboxIdentifier);
+	// From the inbox address the conversation is with (info@ for mail to info@), unless the writer picks another of theirs (src/lib/server/mail/inboxes.ts).
+	const addresses = await replyAddresses(context, person.identifier, thread.inboxIdentifier, thread.projectAddress);
 	const people = await threadPeople(context, thread.identifier);
 	const nation = card?.contact?.nationIdentifier ? mailNations.find((item) => item.identifier === card.contact!.nationIdentifier) : undefined;
 	const sender = card ? { ...card, nation: nation ? { name: nation.name, page: nation.page } : null } : null;
@@ -75,6 +77,7 @@ export const load: PageServerLoad = async (event) => {
 		const target = finished.find((message) => message.identifier === fields.message) ?? null;
 		return {
 			thread,
+			markedRead,
 			people,
 			addresses: addresses.sendable,
 			compose: {
@@ -113,6 +116,7 @@ export const load: PageServerLoad = async (event) => {
 		: { to: thread.counterpartAddress ?? '', cc: '', subject: thread.subject, quote: '' };
 	return {
 		thread,
+		markedRead,
 		people,
 		addresses: addresses.sendable,
 		compose: {

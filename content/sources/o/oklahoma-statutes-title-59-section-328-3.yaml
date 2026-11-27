@@ -48,10 +48,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 59, § 328.3 (2026). History: from exposed tooth surfaces, utilizing a slow speed hand piece with a prophy/polishing cup Added by Laws 1970, c. 173, § 3, eff. July 1, 1970. Amended by Laws 1998, c. 377, § 1, eff. Text read from the Legislative Service Bureau''s Title 59 PDF (updated Nov. 12, 2026), page 217. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Treatment facility definition includes tribal public health facilities. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 59, § 328.3 (2026). History: Added by Laws 1970, c. 173, § 3, eff. July 1, 1970. Amended by Laws 1998, c. 377, § 1, eff. Text read from the Legislative Service Bureau''s Title 59 PDF (updated Nov. 12, 2026), page 217. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Treatment facility definition includes tribal public health facilities. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

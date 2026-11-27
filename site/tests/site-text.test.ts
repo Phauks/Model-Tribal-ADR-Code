@@ -5,13 +5,16 @@ import { loadPublishedSiteText } from '#lib/server/site-text-build.ts';
 import {
 	checkMissedRebuild,
 	drafts,
+	goneEdits,
 	history,
+	letGo,
 	pieceStates,
 	publish,
 	publishedSiteText,
 	requestRebuild,
 	saveVersion,
-	undoLatestPublication
+	undoLatestPublication,
+	waitingCount
 } from '#lib/server/site-text.ts';
 import { testDatabase } from './database.ts';
 
@@ -82,6 +85,33 @@ describe('site text', () => {
 		await save(label, 'One');
 		await expect(database.prepare("UPDATE site_text_versions SET words = 'x'").run()).rejects.toThrow();
 		await expect(database.prepare('DELETE FROM site_text_versions').run()).rejects.toThrow();
+	});
+});
+
+describe('edits to text no longer on the site', () => {
+	// After a code change rewords the label, the catalog no longer has its name.
+	const reworded = new Map([[heading.key, heading]]);
+
+	it('lists them with the page and the old built-in words, and leaves them out of the waiting count', async () => {
+		await save(label, 'Identified Native Nations');
+		await publish(database, 'lead');
+		await save(heading, 'Fund more');
+		await save(label, 'Nations so far');
+		const states = await pieceStates(database);
+		expect(waitingCount(states, catalog)).toBe(2);
+		expect(waitingCount(states, reworded)).toBe(1);
+		expect(await goneEdits(database, states, reworded)).toEqual([
+			{ key: label.key, page: '/sponsor', sourceFile: label.file, words: 'Nations so far', builtInWords: label.words }
+		]);
+	});
+
+	it('lets one go, and refuses text still on the site', async () => {
+		await save(label, 'Identified Native Nations');
+		await publish(database, 'lead');
+		await letGo(database, label.key, 'lead', reworded);
+		expect(await goneEdits(database, await pieceStates(database), reworded)).toEqual([]);
+		await expect(letGo(database, heading.key, 'lead', reworded)).rejects.toThrow('still on the site');
+		await expect(letGo(database, label.key, 'lead', reworded)).rejects.toThrow('no such edit');
 	});
 });
 

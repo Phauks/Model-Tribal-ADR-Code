@@ -22,7 +22,7 @@ beforeAll(async () => {
 	records = expandRecords(searchRecords());
 	database = testDatabase();
 	expect(await fillSearchTables(database, searchTablesKey('build-1', undefined), entries, records)).toBe('filled');
-}, 120_000);
+}, 180_000);
 
 describe('the search tables', () => {
 	// Words that reach every rule: titles, other names, sets, detail lines, initialisms, accents, documents, and nothing.

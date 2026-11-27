@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Sauk and Foxes, etc., July 15, 1830, 7 Stat. 328
+  since: '1830-07-15'
+  source: treaty-with-the-sauk-and-foxes-etc-1830
+  confidence: medium
+  verification: inferred
+  as_of: '1830-07-15'
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Sisseton; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 14 nations' profiles link this treaty.
 states:
 - state: SD
   presence: government-office
@@ -1173,7 +1183,7 @@ land_establishment:
   confidence: high
   verification: read-in-full
   locator: 15 Stat. 506
-  note: 'The instrument reads: “shall be set apart for the members of said bands who have heretofore surrendered to the authorities of the government ... the following described lands as a perma nent reservation”. Art. IV set apart a separate reservation (Devils Lake, now Spirit Lake) for other members and the Cuthead Yanktonai; that is not the roster nation here.'
+  note: 'The instrument reads: “shall be set apart for the members of said bands who have heretofore surrendered to the authorities of the government . . . the following described lands as a perma nent reservation”. Art. IV set apart a separate reservation (Devils Lake, now Spirit Lake) for other members and the Cuthead Yanktonai; that is not the roster nation here.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

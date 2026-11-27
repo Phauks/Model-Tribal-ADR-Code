@@ -2,7 +2,7 @@ import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { bestMatch, quoteIn } from '../src/lib/essays/comment-anchors.ts';
 import { commentThreads } from '../src/lib/essays/comments.ts';
-import { pagePath } from '../src/lib/page-comment-paths.ts';
+import { pageAddress, pagePath } from '../src/lib/page-comment-paths.ts';
 import {
 	addPageComment,
 	assignPageThread,
@@ -20,12 +20,35 @@ describe('which pages take comments', () => {
 	it('names a page by its path, and leaves out the workspace, accounts and essays', () => {
 		expect(pagePath('/laws/indian-removal-act-1830/')).toBe('laws/indian-removal-act-1830');
 		expect(pagePath('/nations/cherokee-nation?comment=x#government')).toBe('nations/cherokee-nation');
-		expect(pagePath('/')).toBeNull();
 		expect(pagePath('/workspace/comments')).toBeNull();
 		expect(pagePath('/essays/i-legal-history-timeline')).toBeNull();
 		expect(pagePath('/laws/../workspace')).toBeNull();
 		expect(pagePath('/Laws/Bad Name')).toBeNull();
 		expect(pageNation('nations/cherokee-nation')).toBe('cherokee-nation');
+	});
+
+	it('takes comments on every other page, the home page, lists, search and source documents included', () => {
+		expect(pagePath('/')).toBe('home');
+		expect(pageAddress('home')).toBe('/');
+		expect(pageAddress('laws/x')).toBe('/laws/x');
+		expect(pagePath('/search?q=removal')).toBe('search');
+		expect(pagePath('/essays')).toBe('essays');
+		expect(pagePath('/foundations/i-x/history')).toBe('foundations/i-x/history');
+		expect(pagePath('/copies/view/govinfo/STATUTE-100/STATUTE-100-Pg849.pdf')).toBe('copies/view/govinfo/STATUTE-100/STATUTE-100-Pg849.pdf');
+		expect(pagePath('/verify?sha256=abc')).toBe('verify');
+		expect(pagePath('/offline')).toBe('offline');
+		expect(pagePath('/nations/map')).toBe('nations/map');
+		expect(pagePath('/stats/cases')).toBe('stats/cases');
+	});
+
+	it('leaves out private pages, addresses with a secret and video calls', () => {
+		expect(pagePath('/uploads')).toBeNull();
+		expect(pagePath('/orders/O-1')).toBeNull();
+		expect(pagePath('/mail/unsubscribe/secret')).toBeNull();
+		expect(pagePath('/sponsorship/invite/secret')).toBeNull();
+		expect(pagePath('/rooms/r')).toBeNull();
+		expect(pagePath('/events/council/room')).toBeNull();
+		expect(pagePath('/events/council')).toBe('events/council');
 		expect(pageNation('laws/x')).toBeNull();
 	});
 });

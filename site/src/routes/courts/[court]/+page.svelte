@@ -14,7 +14,6 @@
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
-	import StubNote from '#lib/components/StubNote.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
 	import { nationVerification } from '#lib/review-status.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -83,7 +82,7 @@
 	glance={data.glance}
 	sources={data.sources}
 	trail={[
-		{ label: 'Library', href: '/library' },
+		{ label: 'Courts and cases', href: '/cases' },
 		{ label: 'Courts', href: '/courts' }
 	]}
 	{status}
@@ -123,8 +122,6 @@
 			</ul>
 		</Collapsible>
 	{/if}
-
-	<StubNote stub={data.stub} />
 </InfoPage>
 
 {#snippet status()}

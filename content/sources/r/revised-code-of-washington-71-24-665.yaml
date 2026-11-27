@@ -1,0 +1,50 @@
+key: revised-code-of-washington-71-24-665
+kind: state-statute
+citation:
+  type: legislation
+  title: Psychiatric treatment, evaluation, and bed utilization for American Indians and Alaska Natives — Report by authority
+  title-short: Wash. Rev. Code § 71.24.665
+  container-title: Revised Code of Washington
+  container-title-short: Wash. Rev. Code
+  section: 71.24.665
+  author:
+  - literal: Washington State Legislature
+  issued:
+    date-parts:
+    - - 2020
+  URL: https://app.leg.wa.gov/RCW/default.aspx?cite=71.24.665
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://app.leg.wa.gov/RCW/default.aspx?cite=71.24.665
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Wash. Rev. Code § 71.24.665 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Wash. Rev. Code § 71.24.665 (2026). History: [2020 c 256 s 307.]. Text read from the Washington State Legislature''s full-text chapter page for the section (app.leg.wa.gov/RCW) on Nov. 27, 2026. Found by the state statutes sweep (terms: alaska natives; american indian; american indians; indian health; indian; indians; tribes); AI reader''s verdict core: Annual psychiatric bed report for American Indians and Alaska Natives. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: alaska natives; american indian; american indians; indian health; indian; indians; tribes'

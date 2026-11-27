@@ -1,0 +1,54 @@
+key: oregon-revised-statutes-146-015
+kind: state-statute
+citation:
+  type: legislation
+  title: State Medical Examiner Advisory Board; appointment of Chief Medical Examiner; rules
+  title-short: Or. Rev. Stat. § 146.015
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '146.015'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 1973
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors146.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors146.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-146-003
+- oregon-revised-statutes-146-100
+- oregon-revised-statutes-146-102
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 146.015 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 146.015 (2025). History: [1973 c.408 §2; 1995 c.744 §9; 2011 c.28 §1; 2017 c.151 §4]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribes; indian; tribes); AI reader''s verdict incidental: Medical examiner board includes a member of a federally recognized Oregon tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribes; indian; tribes'

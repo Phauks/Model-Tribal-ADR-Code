@@ -38,6 +38,8 @@ function essay(text, chapter) {
 test("text is escaped so Typst prints it exactly", () => {
   assert.equal(escapeTypst("a -- b ... c #d $e *f* _g_ <h> @i [j] ~k /l"), "a \\-\\- b \\.\\.\\. c \\#d \\$e \\*f\\* \\_g\\_ \\<h\\> \\@i \\[j\\] \\~k \\/l");
   assert.equal(escapeTypst("1. (2)"), "1\\. \\(2)");
+  assert.equal(escapeTypst("shall . . . be"), "shall\u00a0\\.\u00a0\\.\u00a0\\. be");
+  assert.equal(escapeTypst("knowledge . . . ."), "knowledge\u00a0\\.\u00a0\\.\u00a0\\.\u00a0\\.");
 });
 
 test("subsection labels stay as written, not as a copyright sign", () => {

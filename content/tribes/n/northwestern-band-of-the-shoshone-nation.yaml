@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Shoshoni-Northwestern Bands, July 30, 1863, 13 Stat. 663
+  since: '1863-07-30'
+  source: treaty-with-the-shoshoni-northwestern-bands-1863
+  confidence: medium
+  verification: inferred
+  as_of: '1863-07-30'
+  locator: p. 850 (Treaty with the Shoshoni-Northwestern Bands, 1863; Kappler header "July 30, 1863. | 13 Stats., 663. | Ratified Mar. 7, 1864 | Proclaimed Jan. 17, 1865.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Northwestern Shoshoni; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: UT
   presence: government-office
@@ -55,7 +65,7 @@ population:
   confidence: medium
   verification: read-in-full
   as_of: 1995-01
-  note: '"In January 1995, tribal enrollment ... numbered 454 members"; old figure'
+  note: '"In January 1995, tribal enrollment . . . numbered 454 members"; old figure'
 - count: 0
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -261,6 +271,14 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 107(d)(3); 112 (r)(7)(B)(iii); 126; 169B; 176A; 184; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107(d)(3); 112 (r)(7)(B)(iii); 126; 169B; 176A; 184; 505(a)(2)"'
 nearby_state_courts:
 - state: UT
   county: Box Elder County

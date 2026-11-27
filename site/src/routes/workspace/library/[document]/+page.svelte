@@ -153,7 +153,7 @@
 	}
 
 	.passage.highlight {
-		border-top-color: var(--color-focus);
+		border-top-color: var(--color-link);
 		border-top-width: 3px;
 	}
 

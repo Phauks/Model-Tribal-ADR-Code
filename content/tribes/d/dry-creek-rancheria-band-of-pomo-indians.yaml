@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Dry Creek Rancheria Band of Pomo Indians, California (approved by the Secretary of the Interior Aug. 29, 1977)
+  since: '1977-08-29'
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  locator: 1977 articles of association, as amended (text 1), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -570,6 +583,30 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Amended & Restated Business Leasing Ordinance) of the Dry Creek Rancheria Band of Pomo Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Oct. 31, 2025, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-dry-creek-rancheria-band-of-pomo-indians-2025-10-31
+  confidence: high
+  verification: inferred
+  as_of: '2025-10-31'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2026
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Dry Creek Rancheria Band of Pomo Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Apr. 4, 2014, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-dry-creek-rancheria-band-of-pomo-indians-2014-04-04
+  confidence: high
+  verification: inferred
+  as_of: '2014-04-04'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2014
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Oct. 17, 2011 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2011-10-17'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: court-rules
   title: Rules of Court (Certified copy)

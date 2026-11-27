@@ -12,6 +12,80 @@
  * singles out dispute resolution.
  */
 
+/** The icons the menus use, by their Lucide names. */
+export const navigationIconNames = [
+	'activity',
+	'archive',
+	'bell',
+	'book-a',
+	'book-marked',
+	'book-open',
+	'book-user',
+	'briefcase',
+	'building',
+	'building-2',
+	'calendar',
+	'calendar-clock',
+	'chart-column',
+	'chart-pie',
+	'clipboard-list',
+	'contact',
+	'copyright',
+	'database',
+	'dices',
+	'eye-off',
+	'file-check',
+	'file-code',
+	'file-diff',
+	'file-pen',
+	'file-search',
+	'file-text',
+	'flag',
+	'folder',
+	'folder-input',
+	'gauge',
+	'gavel',
+	'hand-coins',
+	'hand-heart',
+	'handshake',
+	'heart',
+	'history',
+	'inbox',
+	'info',
+	'key-round',
+	'landmark',
+	'layers',
+	'library',
+	'life-buoy',
+	'list',
+	'list-ordered',
+	'mail',
+	'map',
+	'map-pinned',
+	'message-square',
+	'newspaper',
+	'notebook-pen',
+	'pen-line',
+	'pen-tool',
+	'radar',
+	'receipt',
+	'scale',
+	'scroll',
+	'scroll-text',
+	'send',
+	'shield-check',
+	'shopping-bag',
+	'signature',
+	'star',
+	'text-cursor-input',
+	'upload',
+	'user-round',
+	'users',
+	'video',
+] as const;
+
+export type NavigationIconName = (typeof navigationIconNames)[number];
+
 /** One link in a section's menu. */
 export type NavigationLink = {
 	label: string;
@@ -23,6 +97,8 @@ export type NavigationLink = {
 	count?: string;
 	/** Not published yet: named, not linked. */
 	soon?: boolean;
+	/** The icon beside the link in the menu: a Lucide icon's name (navigation-icons.ts). */
+	icon: NavigationIconName;
 };
 
 export type NavigationGroup = { title: string; links: NavigationLink[] };
@@ -30,8 +106,15 @@ export type NavigationGroup = { title: string; links: NavigationLink[] };
 export type NavigationSection = {
 	key: string;
 	label: string;
-	/** The section's own page, where it has one. */
+	/**
+	 * The section's own page, which its name in the section bar and the phone
+	 * Menu sheet links to (Trevor, Nov. 27, 2026: no "All of …" link; every
+	 * section has a home). Each of the six sections has one; the Workspace
+	 * has one only when the reader's role opens its Overview.
+	 */
 	home?: string;
+	/** The section's name in sentence case, as its own page's title and the breadcrumbs give it. */
+	title?: string;
 	groups: NavigationGroup[];
 	/**
 	 * The addresses that belong to the section besides its links: a path and
@@ -50,30 +133,30 @@ export const navigationSections: NavigationSection[] = [
 			{
 				title: 'Find',
 				links: [
-					{ label: 'Directory', link: '/nations', count: 'native-nations' },
-					{ label: 'Map', link: '/nations/map' },
-					{ label: 'Find the law', link: '/nations/law' },
-					{ label: 'Find recourse', link: '/nations/recourse' }
+					{ label: 'Directory', link: '/nations', icon: 'list', count: 'native-nations' },
+					{ label: 'Map', link: '/nations/map', icon: 'map' },
+					{ label: 'Find the Law', link: '/nations/law', icon: 'scale' },
+					{ label: 'Find Recourse', link: '/nations/recourse', icon: 'life-buoy' }
 				]
 			},
 			{
 				title: 'Explore',
 				links: [
-					{ label: 'Timeline', link: '/nations/timeline' },
-					{ label: 'Data and charts', link: '/nations/data', count: 'charts' },
-					{ label: 'Federal offices', link: '/nations/federal-offices' },
-					{ label: 'Self-governance and federal programs', link: '/nations/federal-programs' },
-					{ label: 'Coverage', link: '/nations/coverage' }
+					{ label: 'Timeline', link: '/nations/timeline', icon: 'history' },
+					{ label: 'Data and Charts', link: '/nations/data', icon: 'chart-column', count: 'charts' },
+					{ label: 'Federal Offices', link: '/nations/federal-offices', icon: 'landmark' },
+					{ label: 'Self-Governance and Federal Programs', link: '/nations/federal-programs', icon: 'handshake' },
+					{ label: 'Coverage', link: '/nations/coverage', icon: 'gauge' }
 				]
 			},
 			{
-				title: 'Nations’ own law',
+				title: 'Nations’ Own Law',
 				links: [
-					{ label: 'Constitutions', link: '/stats/tribal-constitutions', count: 'tribal-constitutions' },
-					{ label: 'Codes and laws', link: '/stats/tribal-codes', count: 'tribal-codes' },
-					{ label: 'Compacts and agreements', link: '/stats/intergovernmental-agreements', count: 'intergovernmental-agreements' },
-					{ label: 'Oklahoma state-tribal agreements', link: '/stats/oklahoma-state-tribal-agreements', count: 'oklahoma-state-tribal-agreements' },
-					{ label: 'Governing document histories', link: '/stats/governing-documents', count: 'governing-documents' }
+					{ label: 'Constitutions', link: '/stats/tribal-constitutions', icon: 'scroll-text', count: 'tribal-constitutions' },
+					{ label: 'Codes and Laws', link: '/stats/tribal-codes', icon: 'book-open', count: 'tribal-codes' },
+					{ label: 'Compacts and Agreements', link: '/stats/intergovernmental-agreements', icon: 'handshake', count: 'intergovernmental-agreements' },
+					{ label: 'Oklahoma State-Tribal Agreements', link: '/stats/oklahoma-state-tribal-agreements', icon: 'signature', count: 'oklahoma-state-tribal-agreements' },
+					{ label: 'Governing Document Histories', link: '/stats/governing-documents', icon: 'layers', count: 'governing-documents' }
 				]
 			}
 		],
@@ -81,31 +164,42 @@ export const navigationSections: NavigationSection[] = [
 	},
 	{
 		key: 'federal-law',
-		label: 'Federal law',
+		label: 'Federal Law',
+		title: 'Federal law',
+		home: '/laws',
 		groups: [
 			{
 				title: 'Laws',
 				links: [
-					{ label: 'Treaties and agreements', link: '/stats/treaties', count: 'treaties' },
-					{ label: 'Statutes', link: '/stats/federal-statutes', count: 'federal-statutes' },
-					{ label: 'U.S. Code, Title 25', link: '/stats/united-states-code-sections', count: 'united-states-code-sections' },
-					{ label: 'Executive orders', link: '/stats/executive-orders', count: 'executive-orders' }
+					{ label: 'Treaties and Agreements', link: '/stats/treaties', icon: 'scroll', count: 'treaties' },
+					{ label: 'Statutes', link: '/stats/federal-statutes', icon: 'book-marked', count: 'federal-statutes' },
+					{ label: 'U.S. Code, Title 25', link: '/stats/united-states-code-sections', icon: 'library', count: 'united-states-code-sections' },
+					{ label: 'Executive Orders', link: '/stats/executive-orders', icon: 'pen-line', count: 'executive-orders' }
 				]
 			},
 			{
-				title: 'Regulations and notices',
+				title: 'Regulations and Notices',
 				links: [
-					{ label: 'Regulations', link: '/stats/federal-regulations', count: 'federal-regulations' },
-					{ label: '25 C.F.R. sections', link: '/stats/regulation-sections', count: 'regulation-sections' },
-					{ label: 'Federal Register notices', link: '/stats/federal-register-notices', count: 'federal-register-notices' }
+					{ label: 'Regulations', link: '/stats/federal-regulations', icon: 'clipboard-list', count: 'federal-regulations' },
+					{ label: '25 C.F.R. Sections', link: '/stats/regulation-sections', icon: 'list-ordered', count: 'regulation-sections' },
+					{ label: 'Federal Register Notices', link: '/stats/federal-register-notices', icon: 'newspaper', count: 'federal-register-notices' }
 				]
 			},
 			{
-				title: 'Agency records',
+				title: 'Congress',
 				links: [
-					{ label: 'Acknowledgment petitions', link: '/stats/federal-acknowledgment', count: 'federal-acknowledgment' },
-					{ label: 'Gaming Commission', link: '/stats/national-indian-gaming-commission', count: 'national-indian-gaming-commission' },
-					{ label: 'Land cessions', link: '/stats/land-cessions', count: 'land-cessions' }
+					{ label: 'Hearings', link: '/stats/congressional-hearings', icon: 'message-square', count: 'congressional-hearings' },
+					{ label: 'Committee Reports', link: '/stats/committee-reports', icon: 'file-text', count: 'committee-reports' },
+					{ label: 'Committee Prints', link: '/stats/committee-prints', icon: 'scroll-text', count: 'committee-prints' },
+					{ label: 'Research Service Reports', link: '/stats/congressional-research-service-reports', icon: 'library', count: 'congressional-research-service-reports' }
+				]
+			},
+			{
+				title: 'Agency Records',
+				links: [
+					{ label: 'Acknowledgment Petitions', link: '/stats/federal-acknowledgment', icon: 'file-check', count: 'federal-acknowledgment' },
+					{ label: 'Gaming Commission', link: '/stats/national-indian-gaming-commission', icon: 'dices', count: 'national-indian-gaming-commission' },
+					{ label: 'Land Cessions', link: '/stats/land-cessions', icon: 'map-pinned', count: 'land-cessions' }
 				]
 			}
 		],
@@ -113,28 +207,31 @@ export const navigationSections: NavigationSection[] = [
 	},
 	{
 		key: 'courts-and-cases',
-		label: 'Courts and cases',
+		label: 'Courts and Cases',
+		title: 'Courts and cases',
+		home: '/cases',
 		groups: [
 			{
 				title: 'U.S. Supreme Court',
 				links: [
-					{ label: 'Cases', link: '/stats/supreme-court-cases', count: 'supreme-court-cases' },
-					{ label: 'Courts by Chief Justice', link: '/supreme-court', count: 'supreme-courts' },
-					{ label: 'Justices', link: '/stats/justices', count: 'justices' }
+					{ label: 'Cases', link: '/stats/supreme-court-cases', icon: 'gavel', count: 'supreme-court-cases' },
+					{ label: 'Courts by Chief Justice', link: '/supreme-court', icon: 'landmark', count: 'supreme-courts' },
+					{ label: 'Justices', link: '/stats/justices', icon: 'users', count: 'justices' },
+					{ label: 'Timeline', link: '/supreme-court/timeline', icon: 'history' }
 				]
 			},
 			{
-				title: 'Other courts',
+				title: 'Other Courts',
 				links: [
-					{ label: 'Tribal court opinions', link: '/stats/tribal-court-opinions', count: 'tribal-court-opinions' },
-					{ label: 'State court opinions', link: '/stats/state-court-opinions', count: 'state-court-opinions' },
-					{ label: 'Interior Board of Indian Appeals', link: '/stats/interior-board-of-indian-appeals', count: 'interior-board-of-indian-appeals' },
-					{ label: 'Other court cases', link: '/stats/other-court-cases', count: 'other-court-cases' }
+					{ label: 'Tribal Court Opinions', link: '/stats/tribal-court-opinions', icon: 'file-text', count: 'tribal-court-opinions' },
+					{ label: 'State Court Opinions', link: '/stats/state-court-opinions', icon: 'building-2', count: 'state-court-opinions' },
+					{ label: 'Interior Board of Indian Appeals', link: '/stats/interior-board-of-indian-appeals', icon: 'scale', count: 'interior-board-of-indian-appeals' },
+					{ label: 'Other Court Cases', link: '/stats/other-court-cases', icon: 'folder', count: 'other-court-cases' }
 				]
 			},
 			{
 				title: 'Directory',
-				links: [{ label: 'Courts', link: '/courts', count: 'courts' }]
+				links: [{ label: 'Courts', link: '/courts', icon: 'building', count: 'courts' }]
 			}
 		],
 		holds: ['/cases', '/stats/supreme-courts', '/stats/courts']
@@ -147,26 +244,28 @@ export const navigationSections: NavigationSection[] = [
 			{
 				title: 'Reference',
 				links: [
-					{ label: 'Glossary', link: '/glossary', count: 'glossary-terms' },
-					{ label: 'Biographies', link: '/biographies', count: 'biographies' },
-					{ label: 'U.S. Presidents', link: '/stats/presidents', count: 'presidents' },
-					{ label: 'Historic maps', link: '/stats/historic-maps', count: 'historic-maps' }
+					{ label: 'Glossary', link: '/glossary', icon: 'book-a', count: 'glossary-terms' },
+					{ label: 'Biographies', link: '/biographies', icon: 'user-round', count: 'biographies' },
+					{ label: 'U.S. Presidents', link: '/stats/presidents', icon: 'users', count: 'presidents' },
+					{ label: 'Historic Maps', link: '/stats/historic-maps', icon: 'map', count: 'historic-maps' },
+					// The reader's own starred pages, kept on this device, so readers who are not signed in still find them (they are in the account menu too).
+					{ label: 'Starred Pages', link: '/starred', icon: 'star' }
 				]
 			},
 			{
 				title: 'Files',
 				links: [
-					{ label: 'Source documents', link: '/copies', count: 'source-copies' },
-					{ label: 'Data sets', link: '/downloads' },
-					{ label: 'Forms', link: '/forms', count: 'forms' }
+					{ label: 'Source Documents', link: '/copies', icon: 'file-text', count: 'source-copies' },
+					{ label: 'Data Sets', link: '/downloads', icon: 'database' },
+					{ label: 'Forms', link: '/forms', icon: 'file-pen', count: 'forms' }
 				]
 			},
 			{
-				title: 'About the collection',
+				title: 'About the Collection',
 				links: [
-					{ label: 'Statistics', link: '/stats' },
-					{ label: 'Licenses by material', link: '/licenses' },
-					{ label: 'Back matter', link: '/back-matter' }
+					{ label: 'Statistics', link: '/stats', icon: 'chart-pie' },
+					{ label: 'Licenses by Material', link: '/licenses', icon: 'copyright' },
+					{ label: 'Back Matter', link: '/back-matter', icon: 'book-open' }
 				]
 			}
 		],
@@ -175,20 +274,21 @@ export const navigationSections: NavigationSection[] = [
 	{
 		key: 'writing',
 		label: 'Writing',
+		home: '/writing',
 		groups: [
 			{
 				title: 'Published',
 				links: [
-					{ label: 'Foundations', link: '/foundations' },
-					{ label: 'Essays', link: '/essays' },
-					{ label: 'Methods and stories', link: '/stories', count: 'stories' }
+					{ label: 'Foundations', link: '/foundations', icon: 'layers' },
+					{ label: 'Essays', link: '/essays', icon: 'pen-tool' },
+					{ label: 'Methods and Stories', link: '/stories', icon: 'notebook-pen', count: 'stories' }
 				]
 			},
 			{
-				title: 'Being written',
+				title: 'Being Written',
 				links: [
-					{ label: 'Model code', link: '/code', soon: true },
-					{ label: 'Peacemaking', link: '/peacemaking', soon: true }
+					{ label: 'Model Code', link: '/code', icon: 'file-code', soon: true },
+					{ label: 'Peacemaking', link: '/peacemaking', icon: 'handshake', soon: true }
 				]
 			}
 		],
@@ -200,19 +300,21 @@ export const navigationSections: NavigationSection[] = [
 		home: '/about',
 		groups: [
 			{
-				title: 'The project',
+				title: 'The Project',
 				links: [
-					{ label: 'About the project', link: '/about' },
-					{ label: 'Timeline to public review', link: '/about/timeline' },
-					{ label: 'Events', link: '/events' }
+					{ label: 'About the Project', link: '/about', icon: 'info' },
+					{ label: 'Timeline to Public Review', link: '/about/timeline', icon: 'calendar-clock' },
+					{ label: 'Events', link: '/events', icon: 'calendar' },
+					// Every change to the site's pages, like a wiki's (site/COLLABORATION.md, "Recent changes"); it left the side column on Nov. 27, 2026.
+					{ label: 'Recent Changes', link: '/changes', icon: 'history' }
 				]
 			},
 			{
-				title: 'Take part',
+				title: 'Take Part',
 				links: [
-					{ label: 'Contribute', link: '/requests?kind=contribute' },
-					{ label: 'Sponsorship', link: '/sponsor' },
-					{ label: 'Store', link: '/store' }
+					{ label: 'Contribute', link: '/requests?kind=contribute', icon: 'hand-heart' },
+					{ label: 'Sponsorship', link: '/sponsor', icon: 'heart' },
+					{ label: 'Store', link: '/store', icon: 'shopping-bag' }
 				]
 			}
 		],

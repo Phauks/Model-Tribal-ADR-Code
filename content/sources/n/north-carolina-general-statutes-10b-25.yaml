@@ -1,0 +1,47 @@
+key: north-carolina-general-statutes-10b-25
+kind: state-statute
+citation:
+  type: legislation
+  title: (For expiration - see note) Emergency video notarization
+  title-short: N.C. Gen. Stat. § 10B-25
+  container-title: General Statutes of North Carolina
+  container-title-short: N.C. Gen. Stat.
+  section: 10B-25
+  author:
+  - literal: North Carolina General Assembly
+  URL: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_10B/GS_10B-25.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_10B/GS_10B-25.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: N.C. Gen. Stat. § 10B-25 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: N.C. Gen. Stat. § 10B-25 (2025). History: 2020-3, s. 4.1(c); 2020-74, s. 27(b); 2020-80, s. 2.9(b); 2021-3, s. 2.10(a); 2022-54, s. 3(b); 2023-57, s. 1(a); 2024-47, s. 2(a); 2025-33, s. 9(a); 2026-52, s. 7-A(a). Text read from the North Carolina General Assembly''s page for the section''s chapter of the General Statutes (ncleg.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal government; tribal); AI reader''s verdict incidental: Emergency video notary ID may be tribal government issued document. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal government; tribal'

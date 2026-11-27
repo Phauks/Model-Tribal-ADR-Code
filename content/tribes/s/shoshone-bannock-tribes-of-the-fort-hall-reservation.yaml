@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of June 14, 1867, 1 Kappler 837
+  since: '1867-06-14'
+  source: executive-order-1867-06-14-southern-and-northern-idaho-reservations
+  confidence: medium
+  verification: read-in-full
+  as_of: '1867-06-14'
+  locator: 1 Kappler 837
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Fort Hall Reserve (southern Idaho reservation for the Boise and Bruneau Shoshones and Bannocks).
 states:
 - state: ID
   presence: government-office
@@ -689,6 +699,22 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Sept. 5, 2008 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2008-09-05'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 106; 107(c)-(e); 110(a)(2)(D); 126; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 106; 107(c)-(e); 110(a)(2)(D); 126; 505(a)(2)"'
 nearby_state_courts:
 - state: ID
   county: Bingham County
@@ -750,7 +776,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 1 Kappler 837
-  note: 'The instrument reads: “Let the lands be set apart as reservations for the Indians within named, as recommended by the Acting Secretary of the Interior.”. The recommendation printed with the order describes the southern reservation as "The Boise and Bruneau bands of Shoshones and Bannock Reservation ... comprehending Fort Hall" (1 Kappler 836). The July 30, 1869 order (1 Kappler 839) designated this tract as the Bannock reservation under the Treaty of July 3, 1868; Kappler: "This reservation is included in the executive order of June 14, 1867" (1 Kappler 838). Fort Hall boundaries later changed by treaty and acts.'
+  note: 'The instrument reads: “Let the lands be set apart as reservations for the Indians within named, as recommended by the Acting Secretary of the Interior.”. The recommendation printed with the order describes the southern reservation as "The Boise and Bruneau bands of Shoshones and Bannock Reservation . . . comprehending Fort Hall" (1 Kappler 836). The July 30, 1869 order (1 Kappler 839) designated this tract as the Bannock reservation under the Treaty of July 3, 1868; Kappler: "This reservation is included in the executive order of June 14, 1867" (1 Kappler 838). Fort Hall boundaries later changed by treaty and acts.'
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

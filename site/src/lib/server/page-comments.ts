@@ -10,7 +10,7 @@
  * counts the nation's team (src/lib/permissions.ts, documentAccess); on any
  * other page, the person's role default, so advisors and co-authors comment
  * and editors and the lead author may also mark any thread done. Everyone
- * else keeps the flag to report a problem. Each comment, each thread marked
+ * else keeps the flag to request a change. Each comment, each thread marked
  * done or reopened, and each assignment is recorded in the activity log in
  * the same batch.
  */
@@ -20,7 +20,7 @@ import { grantsOf } from './access.ts';
 import { placeAsGrant, type TeamLevel } from '../nation-teams.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import { commentsForYou, latestAssignment, readAsks, readAssignee, type AssignTo, type CommentForYou } from './essay-comments.ts';
-import { pagePath } from '../page-comment-paths.ts';
+import { pageAddress, pagePath } from '../page-comment-paths.ts';
 import { askSentence, commentHelpers, type CommentAsk, type EssayComment } from '../essays/comments.ts';
 import {
 	atLeast,
@@ -311,7 +311,7 @@ export async function pageCommentsForYou(database: D1Database, person: Grantee &
 			lastName: row.lastName,
 			lastBody: row.lastBody,
 			lastAt: row.lastAt,
-			link: `/${row.path}?comment=${encodeURIComponent(row.thread)}`
+			link: `${pageAddress(row.path)}?comment=${encodeURIComponent(row.thread)}`
 		}));
 }
 

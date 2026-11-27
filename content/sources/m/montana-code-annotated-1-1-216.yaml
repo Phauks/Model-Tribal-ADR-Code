@@ -1,0 +1,50 @@
+key: montana-code-annotated-1-1-216
+kind: state-statute
+citation:
+  type: legislation
+  title: Legal holidays and business days
+  title-short: Mont. Code Ann. § 1-1-216
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 1-1-216
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1921
+  URL: https://mca.legmt.gov/bills/mca/title_0010/chapter_0010/part_0020/section_0160/0010-0010-0020-0160.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0010/chapter_0010/part_0020/section_0160/0010-0010-0020-0160.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 1-1-216 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 1-1-216 (2025). History: En. Sec. 10, Pol. C. 1895; re-en. Sec. 10, Rev. C. 1907; amd. Sec. 1, Ch. 21, L. 1921; re-en. Sec. 10, R.C.M. 1921; Cal. Pol. C. Secs. 10-11; re-en. Sec. 10, R.C.M. 1935; amd. Sec. 1, Ch. 209, L. 1955; amd. Sec. 1, Ch. 6, L. 1965; amd. Sec. 1, Ch. 89, L. 1969; amd. Sec. 6, Ch. 32, L. 1971; amd. Sec. 1, Ch. 16, L. 1974; R.C.M. 1947, 19-107(part); amd. Sec. 1, Ch. 431, L. 1987; amd. Sec. 1, Ch. 17, L. 1991; amd. Sec. 1, Ch. 131, L. 2013; amd. Sec. 1, Ch. 561, L. 2025. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indigenous); AI reader''s verdict incidental: Indigenous Peoples'' Day established as a legal holiday. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indigenous'

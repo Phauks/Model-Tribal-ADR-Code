@@ -182,9 +182,8 @@
 
 	/* The box the next digit goes into shows the site's focus style. */
 	.box.active {
-		outline: 3px solid var(--color-focus-ring);
-		outline-offset: 0;
-		box-shadow: 0 0 0 3px var(--color-focus);
+		outline: 3px solid var(--focus-ring);
+		outline-offset: 2px;
 	}
 
 	.caret {

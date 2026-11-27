@@ -50,7 +50,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 69, § 1201.2 (2026). History: Laws 1975, c. 80, § 3, emerg. eff. April 24, 1975. Text read from the Legislative Service Bureau''s Title 69 PDF (updated Nov. 12, 2026), page 126. Found by the state statutes pilot (terms: indian lands); AI reader''s verdict incidental: Savings clause preserving Indian treaties and Indian land acts. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

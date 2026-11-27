@@ -1,0 +1,50 @@
+key: minnesota-statutes-254b-052
+kind: state-statute
+citation:
+  type: legislation
+  title: Peer Recovery Support Services Requirements
+  title-short: Minn. Stat. § 254B.052
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 254B.052
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2024
+  URL: https://www.revisor.mn.gov/statutes/cite/254B.052
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/254B.052
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 254B.052 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 254B.052 (2026). History: 2024 c 125 art 3 s 9; 2024 c 127 art 48 s 9; 1Sp2025 c 9 art 4 s 35,55; 2026 c 95 art 5 s 22,23; 2026 c 121 art 6 s 34. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribally); AI reader''s verdict incidental: Tribally licensed SUD programs named as valid treatment plan source. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribally'

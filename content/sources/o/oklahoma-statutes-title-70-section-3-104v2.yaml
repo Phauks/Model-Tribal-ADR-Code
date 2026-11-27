@@ -70,10 +70,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 3-104v2 (2026). History: from the State Board of Education but will be accredited only if from or on behalf of any participant in any such workshop from monies appropriated to the State Board of Education for the Added by Laws 1971, c. 281, § 3-104, eff. July 2, 1971. Amended Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 155. Found by the state statutes pilot (terms: indian education); AI reader''s verdict incidental: State Board budget functions include Indian education. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 3-104v2 (2026). History: Added by Laws 1971, c. 281, § 3-104, eff. July 2, 1971. Amended. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 155. Found by the state statutes pilot (terms: indian education); AI reader''s verdict incidental: State Board budget functions include Indian education. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

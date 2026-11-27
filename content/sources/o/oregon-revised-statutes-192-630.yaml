@@ -1,0 +1,56 @@
+key: oregon-revised-statutes-192-630
+kind: state-statute
+citation:
+  type: legislation
+  title: Meetings of governing body to be open to public; location of meetings; accommodation for person with disability; interpreters
+  title-short: Or. Rev. Stat. § 192.630
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '192.630'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 1973
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors192.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors192.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-192-001
+- oregon-revised-statutes-192-005
+- oregon-revised-statutes-192-105
+- oregon-revised-statutes-192-130
+- oregon-revised-statutes-192-345
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 192.630 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 192.630 (2025). History: [1973 c.172 §3; 1979 c.644 §2; 1989 c.1019 §1; 1995 c.626 §1; 2003 c.14 §95; 2005 c.663 §12; 2007 c.70 §52; 2007 c.100 §21; 2009 c.595 §173; 2017 c.482 §1; 2019 c.286 §1; 2021 c.367 §12]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian country; indian tribe; indian tribes; indian; tribe; tribes); AI reader''s verdict incidental: Meeting location may be within Indian country; joint meetings with tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian country; indian tribe; indian tribes; indian; tribe; tribes'

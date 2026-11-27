@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Kiowa, etc., May 26, 1837, 7 Stat. 533
+  since: '1837-05-26'
+  source: treaty-with-the-kiowa-etc-1837
+  confidence: medium
+  verification: inferred
+  as_of: '1837-05-26'
+  locator: p. 489 (Treaty with the Kiowa, etc., 1837; Kappler header "May 26, 1837. | 7 Stat., 533. | Proclamation, Feb. 21, 1838.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Kiowa; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 4 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office

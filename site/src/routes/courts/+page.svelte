@@ -7,7 +7,7 @@
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
-	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
+	import { listCell, type TableColumn, type TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -24,7 +24,7 @@
 			cells: {
 				name: { text: court.name, href: `/courts/${court.key}` },
 				kind: { text: court.kind },
-				nations: { text: court.nations },
+				nations: listCell(court.nations.map((nation) => ({ text: nation.name, href: `/nations/${nation.id}` }))),
 				opinions: { text: court.opinions ? court.opinions.toLocaleString('en-US') : '', sortValue: court.opinions },
 				cases: { text: court.cases ? String(court.cases) : '', sortValue: court.cases }
 			}
@@ -37,7 +37,7 @@
 	<meta name="description" content="The Tribal, federal, state and territorial courts whose opinions or cases are on this site." />
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Library', href: '/library' }]} current="Courts" />
+<Breadcrumbs trail={[{ label: 'Courts and cases', href: '/cases' }]} current="Courts" />
 
 <h1>Courts <CountBadge count={data.courts.length} /></h1>
 <p>The Supreme Court of the United States has <a href="/supreme-court">its own pages</a>.</p>

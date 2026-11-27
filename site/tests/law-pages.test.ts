@@ -115,9 +115,10 @@ describe('A state statute section’s page', () => {
 	const tribalCourts = 'oklahoma-statutes-title-12-section-728';
 
 	it('every Oklahoma section the state statutes pilot found has one, labeled core or incidental', () => {
-		const oklahoma = [...sources().values()].filter((record) => record.kind === 'state-statute' && record.state_law);
+		const statutes = [...sources().values()].filter((record) => record.kind === 'state-statute' && record.state_law);
+		expect(statutes.filter((record) => !isLawRecord(record))).toEqual([]);
+		const oklahoma = statutes.filter((record) => ((record as typeof record & { jurisdictions?: { state?: string }[] }).jurisdictions ?? []).some((place) => place.state === 'OK'));
 		expect(oklahoma.length).toBe(381);
-		expect(oklahoma.filter((record) => !isLawRecord(record))).toEqual([]);
 		expect(oklahoma.filter((record) => record.state_law!.relevance === 'core').length).toBe(101);
 	});
 
@@ -133,5 +134,29 @@ describe('A state statute section’s page', () => {
 		const glance = Object.fromEntries(page.glance.map((group) => [group.label, group.items.map((item) => item.text).join('; ')]));
 		expect(glance).toMatchObject({ Kind: 'State statute', State: 'Oklahoma', 'Indian law': 'Core', Enacted: 'Sept. 1, 1992' });
 		expect(page.readingHtml).toContain('href="https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=160"');
+	});
+});
+
+describe('A congressional document’s page and a law’s legislative history', () => {
+	it('gives every hearing, report, print and Congressional Research Service product a page', () => {
+		const documents = [...sources().values()].filter((record) => record.kind === 'congressional-document');
+		expect(documents.length).toBeGreaterThan(5000);
+		expect(documents.filter((record) => !isLawRecord(record)).map((record) => record.key)).toEqual([]);
+	});
+
+	it('names the report’s committee, Congress and the law it is the history of', async () => {
+		const { lawPage } = await import('#lib/server/law-pages.ts');
+		const page = lawPage('senate-report-100-157');
+		const facts = Object.fromEntries(page.glance.map((group) => [group.field, group.items.map((item) => item.text)]));
+		expect(facts.kind).toEqual(['Senate report']);
+		expect(facts.committee).toEqual(['Permanent Select Committee on Indian Affairs']);
+		expect(facts.congress).toEqual(['100th Congress, 1st session']);
+		expect(page.glance.find((group) => group.field === 'laws')?.items[0]).toMatchObject({ link: '/laws/public-law-100-139' });
+	});
+
+	it('lists the reports on the bill under the law’s Legislative history, oldest first', async () => {
+		const { lawPage } = await import('#lib/server/law-pages.ts');
+		const history = lawPage('public-law-100-139').legislativeHistory;
+		expect(history).toContainEqual({ name: 'S. Rep. No. 100-157', link: '/laws/senate-report-100-157', detail: 'Senate report, 1987' });
 	});
 });

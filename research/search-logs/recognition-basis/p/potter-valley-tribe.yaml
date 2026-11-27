@@ -1,7 +1,7 @@
 profile: content/tribes/p/potter-valley-tribe.yaml
 topic: recognition-basis
-status: partly-searched
-last_searched: '2026-11-23'
+status: found
+last_searched: '2026-11-27'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -19,4 +19,11 @@ searches:
   query: Final determinations for federal acknowledgment already cited in the nation's profile from the Office of Federal Acknowledgment lists; their Federal Register dates and titles
   outcome: not-found
   reason: No Act of Congress or final determination naming this nation in the places searched.
-next_steps: 'Not searched yet: court judgments that restored terminated California rancherias (for example Tillie Hardwick v. United States, N.D. Cal. 1983, and Scotts Valley Band v. United States, N.D. Cal. 1991), administrative recognitions before the 1978 acknowledgment regulations, Acts outside Title 25 chapters 14 and 19, and, for nations recognized through treaties or the Indian Reorganization Act, the instrument that first organized the government. Until then the Bureau of Indian Affairs list is the document cited.'
+- date: '2026-11-27'
+  searched_by: Claude (AI assistant)
+  method: by-hand
+  place_kind: federal-register
+  address: https://api.govinfo.gov/search
+  query: GovInfo full-text search of the Federal Register for "Tillie Hardwick"; the notice found was read on its page images
+  outcome: found
+  reason: 'Cited: Tillie Hardwick v. United States, No. C-79-1910-SW (N.D. Cal. Dec. 22, 1983) (order restoring the rancheria), noted in Geographic Composition of the Health Service Delivery Areas (HSDA) Established by Regulations of the Indian Health Service, 53 Fed. Reg. 32460, 32462, 32463 & n.3 (Aug. 25, 1988).'

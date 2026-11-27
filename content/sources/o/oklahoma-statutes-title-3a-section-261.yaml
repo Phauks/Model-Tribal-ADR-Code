@@ -57,7 +57,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 3A, § 261 (2026). History: Added by Laws 2004, c. 316, § 2, State Question No. 712, Legislative Referendum No. 335, Text read from the Legislative Service Bureau''s Title 3A PDF (updated Nov. 12, 2026), page 66. Found by the state statutes pilot (terms: state-tribal); AI reader''s verdict core: Short title of State-Tribal Gaming Act. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

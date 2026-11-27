@@ -50,10 +50,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 47, § 6-205.2 (2026). History: from any state, when the conviction becomes final, Service Oklahoma shall disqualify the Added by Laws 1990, c. 219, § 33, eff. April 1, 1992. Amended by Laws 1991, c. 309, § 4, eff. Laws 2002, c. 169, § 1, eff. Oct. 1, 2002; Laws 2003, c. 392, § 15, eff. July 1, 2003; Laws Text read from the Legislative Service Bureau''s Title 47 PDF (updated Nov. 12, 2026), page 328. Found by the state statutes pilot (terms: federally recognized indian tribe; tribal court); AI reader''s verdict incidental: Defines tribe and qualified tribal courts for driving disqualification. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 47, § 6-205.2 (2026). History: Added by Laws 1990, c. 219, § 33, eff. April 1, 1992. Amended by Laws 1991, c. 309, § 4, eff. Laws 2002, c. 169, § 1, eff. Oct. 1, 2002; Laws 2003, c. 392, § 15, eff. July 1, 2003; Laws. Text read from the Legislative Service Bureau''s Title 47 PDF (updated Nov. 12, 2026), page 328. Found by the state statutes pilot (terms: federally recognized indian tribe; tribal court); AI reader''s verdict incidental: Defines tribe and qualified tribal courts for driving disqualification. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

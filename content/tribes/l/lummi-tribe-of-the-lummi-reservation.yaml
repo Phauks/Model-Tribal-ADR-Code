@@ -27,6 +27,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty of Point Elliott, Jan. 22, 1855, 12 Stat. 927
+  since: '1855-01-22'
+  source: treaty-with-the-dwamish-suquamish-etc-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-01-22'
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Lummi; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 11 nations' profiles link this treaty.
 states:
 - state: WA
   presence: government-office
@@ -813,6 +823,22 @@ jurisdiction:
   as_of: '2024'
   locator: Appendix D (PDF p.52)
   note: Listed as "LUMMI INDIAN BUSINESS COUNCIL".
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Lummi Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 9, 2017, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-lummi-tribe-of-the-lummi-reservation-2017-11-09
+  confidence: high
+  verification: inferred
+  as_of: '2017-11-09'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2017
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Mar. 5, 2007 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Sept. 30, 2008.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2007-03-05'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Washington Department of Social and Health Services

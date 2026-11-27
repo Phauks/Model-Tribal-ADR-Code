@@ -47,7 +47,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 19, § 421.1 (2026). History: Added by Laws 1982, c. 222, § 1, operative Oct. 1, 1982. Amended by Laws 1984, c. 71, § 2; Laws 1988, c. 145, § 2, emerg. eff. April 27, 1988; Laws 1989, c. 286, § 2, operative July 1, Laws 2002, c. 214, § 1, eff. Nov. 1, 2002; Laws 2004, c. 99, § 2, eff. Nov. 1, 2004; Laws 2008, Text read from the Legislative Service Bureau''s Title 19 PDF (updated Nov. 12, 2026), page 242. Found by the state statutes pilot (terms: tribal government); AI reader''s verdict incidental: County may sell or trade equipment with tribal governmental entities. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

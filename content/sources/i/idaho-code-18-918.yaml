@@ -1,0 +1,50 @@
+key: idaho-code-18-918
+kind: state-statute
+citation:
+  type: legislation
+  title: Domestic violence
+  title-short: Idaho Code § 18-918
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 18-918
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 1993
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title18/T18CH9/SECT18-918
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title18/T18CH9/SECT18-918
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 18-918 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Idaho Code § 18-918 (2026). History: 18-918, added 1993, ch. 344, sec. 1, p. 1283; am. 1995, ch. 223, sec. 1, p. 770; am. 1996, ch. 228, sec. 1, p. 742; am. 1998, ch. 309, sec. 1, p. 1026; am. 1998, ch. 420, sec. 1, p. 1324; am. 2000, ch. 358, sec. 1, p. 1193; am. 2003, ch. 237, sec. 1, p. 607; am. 2004, ch. 118, sec. 1, p. 393; am. 2005, ch. 158, sec. 1, p. 488; am. 2009, ch. 80, sec. 3, p. 226; am. 2018, ch. 123, sec. 1, p. 260; am. 2024, ch. 163, sec. 1, p. 620; am. 2024, ch. 261, sec. 1, p. 908. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribes; indian; tribes); AI reader''s verdict incidental: Federally recognized tribes may provide domestic violence treatment, exempt from evaluator separation. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribes; indian; tribes'

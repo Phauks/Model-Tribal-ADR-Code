@@ -1,0 +1,44 @@
+key: epa-actions-on-tribal-water-quality-standards
+kind: web-page
+citation:
+  type: webpage
+  title: EPA Actions on Tribal Water Quality Standards and Contacts
+  author:
+  - literal: U.S. Environmental Protection Agency
+  issued:
+    date-parts:
+    - - 2026
+      - 10
+      - 6
+  URL: https://www.epa.gov/wqs-tech/epa-actions-tribal-water-quality-standards-and-contacts
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.epa.gov/wqs-tech/epa-actions-tribal-water-quality-standards-and-contacts
+retrieved: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the United States government, not subject to copyright (17 U.S.C. § 105).
+  redistribution: true
+jurisdictions:
+- level: federal
+topics:
+- approved-nation-laws
+access:
+  open: true
+  pull_from:
+  - free-web
+found_in:
+- 2026-11-27-approved-nation-laws
+notes: EPA's table of each Tribe found eligible to administer a water quality standards program, with the date of the finding and of EPA's first approval of the Tribe's standards, linking a page for each Tribe that lists its standards in effect for Clean Water Act purposes. Page last updated Oct. 6, 2026. Read by scripts/law/approved_nation_laws.py (Unverified).
+review:
+  status: unverified
+  by: scripts/law/approved_nation_laws.py
+  date: '2026-11-27'
+  checks:
+  - check: listing
+    result: missing
+    detail: Read by script only
