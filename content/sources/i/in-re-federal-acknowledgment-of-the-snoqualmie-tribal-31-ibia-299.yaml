@@ -33,9 +33,16 @@ rights:
   redistribution: true
 jurisdictions:
 - level: federal
+tribes:
+- snoqualmie-indian-tribe
+topics:
+- federal-recognition
 nations_in_case:
   checked: '2026-11-26'
-  named: []
+  named:
+  - nation: snoqualmie-indian-tribe
+    named_as: Snoqualmie Tribal Organization
+    role: party
 access:
   open: true
   pull_from:
