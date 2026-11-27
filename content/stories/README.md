@@ -1,6 +1,6 @@
 # Stories
 
-One record per story, account or teaching about resolving disputes, making peace or restoring relationships, as a Native nation or its people tell it (decision record [0019](../../docs/decisions/0019-story-records.md); schema [`story.schema.json`](../../schemas/story.schema.json)).
+One record per story, account or teaching about law, justice or governance, as a Native nation or its people tell it: a nation's laws, councils and courts; treaties, land and sovereignty; resolving disputes and making peace; and how federal law affected the people who lived under it (decision records [0019](../../docs/decisions/0019-story-records.md) and [0063](../../docs/decisions/0063-widen-stories-to-law-justice-and-governance.md); schema [`story.schema.json`](../../schemas/story.schema.json)).
 
 - Path: `stories/<first letter of id, or _other>/<id>.yaml`.
 - The project never retells a story. A record quotes the telling exactly, in short excerpts (50 words or fewer) with a pinpoint, where the rights allow; otherwise it keeps the words privately and records only the pinpoint and a fingerprint. Each telling cites its own source record in `content/sources/`, or a private contributor filing.

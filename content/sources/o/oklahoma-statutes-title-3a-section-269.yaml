@@ -1,0 +1,65 @@
+key: oklahoma-statutes-title-3a-section-269
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Okla. Stat. tit. 3A, § 269
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: 3A
+  section: '269'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 2004
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os3A.pdf#page=86
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os3A.pdf#page=86
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-3a-section-261
+- oklahoma-statutes-title-3a-section-262
+- oklahoma-statutes-title-3a-section-262-1
+- oklahoma-statutes-title-3a-section-263
+- oklahoma-statutes-title-3a-section-268
+- oklahoma-statutes-title-3a-section-280
+- oklahoma-statutes-title-3a-section-280-1
+- oklahoma-statutes-title-3a-section-282
+- oklahoma-statutes-title-3a-section-415
+- oklahoma-statutes-title-3a-section-426
+- oklahoma-statutes-title-3a-section-709
+- oklahoma-statutes-title-3a-section-735
+state_law:
+  relevance: core
+  citation: Okla. Stat. tit. 3A, § 269 (2026)
+  page: 86
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 3A, § 269 (2026). History: Added by Laws 2004, c. 316, § 10, State Question No. 712, Legislative Referendum No. 335, Text read from the Legislative Service Bureau''s Title 3A PDF (updated Nov. 12, 2026), page 86. Found by the state statutes pilot (terms: indian tribe; tribal-state); AI reader''s verdict core: Bingo act definitions of tribal-state compact and tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/oklahoma_statutes.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian tribe; tribal-state'

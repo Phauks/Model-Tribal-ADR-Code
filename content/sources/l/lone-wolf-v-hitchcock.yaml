@@ -159,11 +159,31 @@ case_box:
   - text: "When, therefore, treaties were entered into between the United States and a tribe of Indians it was never doubted that the power to abrogate existed in Congress ..."
     pinpoint: "p. 566"
   treatment: |-
-    Later decisions recognize that it has been abrogated in part, among them *Littlewolf v. Lujan*, 877 F.2d 1058 (D.C. Cir. 1989), and *Pueblo of Jemez v. United States* (D.N.M. 2020). [@lone-wolf-v-hitchcock]
-
     *Haaland v. Brackeen* (2023) still cites *Lone Wolf* for the breadth of congressional power, and separate opinions in that case criticize it. [@haaland-v-brackeen]
   reading:
     title: "*Lone Wolf v. Hitchcock* (1903)"
     text: |-
       The high-water mark of "plenary power," including Congress's asserted power to abrogate treaties.
+  later_cases:
+    checked: 2026-11-20
+    source: westlaw/lone-wolf-v-hitchcock-1903-westlaw.pdf
+    list:
+    - treatment: Abrogation recognized
+      name: Littlewolf v. Lujan
+      citation: 877 F.2d 1058 (D.C. Cir. 1989)
+      case: littlewolf-v-lujan-1989
+    - treatment: Abrogation recognized
+      name: Pueblo of Jemez v. United States
+      citation: 483 F. Supp. 3d 1024 (D.N.M. 2020)
+    - treatment: Distinguished
+      name: United States v. Mille Lac Band of Chippewa Indians
+      citation: 229 U.S. 498 (1913)
+      case: united-states-v-mille-lac-band-of-chippewa-indians
+    - treatment: Distinguished
+      name: Sioux Nation of Indians v. United States
+      citation: 601 F.2d 1157 (Ct. Cl. 1979)
+      link: https://case.law/caselaw/?reporter=f2d&volume=601&case=1157-01
+    - treatment: Distinguished
+      name: Oneida Nation v. Village of Hobart
+      citation: 968 F.3d 664 (7th Cir. 2020)
 subjects: [treaties, land, government]

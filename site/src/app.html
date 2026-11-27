@@ -26,7 +26,7 @@
 					[
 						'textSize',
 						'font',
-						'textSpacing',
+						'headingFont',
 						'textAlignment',
 						'lineWidth',
 						'contrast',
@@ -40,8 +40,8 @@
 						var value = settings && settings[name];
 						if (typeof value === 'string' && /^[a-z0-9.-]+$/.test(value)) root.dataset[name] = value;
 					});
-					// OpenDyslexic's faces are a style sheet of their own (openDyslexicStylesheet in src/lib/reading-settings.ts), added here for a reader who picked the font, so the first paint already knows them, as it did when every page loaded them.
-					if (root.dataset.font === 'opendyslexic') {
+					// OpenDyslexic's faces are a style sheet of their own (openDyslexicStylesheet in src/lib/reading-settings.ts), added here for a reader who picked the font for the body or the headings, so the first paint already knows them, as it did when every page loaded them.
+					if (root.dataset.font === 'opendyslexic' || root.dataset.headingFont === 'opendyslexic') {
 						var faces = document.createElement('link');
 						faces.id = 'opendyslexic-faces';
 						faces.rel = 'stylesheet';

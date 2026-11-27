@@ -22,7 +22,8 @@ import { readingLinksHtml } from '../reading-links.ts';
 import { signersOfTreaty } from './biographies.ts';
 import { boxSections, citationLine, type BoxSection, essaysCiting, type CaseMention } from './case-pages.ts';
 import { nations, sources, type SourceRecord } from './content.ts';
-import { displayName } from '../nation-labels.ts';
+import { displayName, stateName } from '../nation-labels.ts';
+import { escapeHtml } from '../escape-html.ts';
 import type { FactGroup } from './justice-pages.ts';
 import { accountsOf, type AccountEntry } from './impact-accounts.ts';
 import { isoOf, nationsCiting, orderNumber, orderPresident, type LawNation } from './law-facts.ts';
@@ -80,7 +81,8 @@ const kindLabels: Record<string, string> = {
 	'federal-register-notice': 'Federal Register notice',
 	'federal-agency-document': 'Federal agency document',
 	'executive-order': 'Executive order',
-	'intergovernmental-agreement': 'Treaty'
+	'intergovernmental-agreement': 'Treaty',
+	'state-statute': 'State statute'
 };
 
 const dateLabels: Record<string, string> = {
@@ -89,8 +91,12 @@ const dateLabels: Record<string, string> = {
 	'federal-register-notice': 'Published',
 	'federal-agency-document': 'Issued',
 	'executive-order': 'Signed',
-	'intergovernmental-agreement': 'Signed'
+	'intergovernmental-agreement': 'Signed',
+	'state-statute': 'Enacted'
 };
+
+/** How a state statute section bears on Native nations (schemas/source.schema.json, state_law.relevance). */
+const relevanceLabels: Record<string, string> = { core: 'Core', incidental: 'Incidental' };
 
 /** Every federal law, treaty and order with a record, the laws that get a page. */
 export function lawKeys(): string[] {
@@ -99,6 +105,7 @@ export function lawKeys(): string[] {
 
 /** The citation the record's notes give ("Indigo Book citation: …" or "Citations: …"), else one built from its parts. */
 function lawCitation(record: SourceRecord): string {
+	if (record.state_law?.citation) return record.state_law.citation;
 	const notes = (record as SourceRecord & { notes?: string }).notes ?? '';
 	// The citation ends at the end of its sentence, not at an abbreviation inside it ("Exec. Order", "Pub. L.", "tit. II", "Charles J. Kappler").
 	const written = /(?:Indigo Book citation|Citations):\s*(.+?)(?:(?<!\b(?:Exec|Pub|Fed|Cong|Sess|Doc|Rep|Proc|Res|Sec|No|Jr|tits?|div|Con|Stat|Reg|Rec|Ord|Admin|Dept|Comm|[A-Z]))\.\s+[A-Z]|\.?$)/.exec(notes)?.[1];
@@ -118,6 +125,12 @@ function namedNations(ids: string[]): { id: string; name: string }[] {
 		const nation = byId.get(id);
 		return nation ? [{ id, name: displayName(nation.names.official) }] : [];
 	});
+}
+
+/** The states a state statute's record names in its jurisdictions, by name. */
+function stateNamesOf(record: SourceRecord): string[] {
+	const jurisdictions = (record as SourceRecord & { jurisdictions?: { level?: string; state?: string }[] }).jurisdictions ?? [];
+	return [...new Set(jurisdictions.filter((entry) => entry.level === 'state' && entry.state).map((entry) => stateName(entry.state!)))];
 }
 
 /** The most nations At a glance names one by one. */
@@ -146,6 +159,9 @@ export function lawPage(key: string): LawPage {
 	const glance: FactGroup[] = [
 		// An agency's document says which kind it is, such as "Indian lands opinion" (scripts/law/nigc_documents.py).
 		{ field: 'kind', label: 'Kind', items: [{ text: (record.citation as { genre?: string }).genre ?? kindLabels[record.kind] ?? record.kind }] },
+		{ field: 'state', label: 'State', items: record.kind === 'state-statute' ? stateNamesOf(record).map((text) => ({ text })) : [] },
+		{ field: 'indian-law', label: 'Indian law', items: record.state_law ? [{ text: relevanceLabels[record.state_law.relevance] ?? record.state_law.relevance }] : [] },
+		{ field: 'act', label: 'Act', items: record.state_law?.act ? [{ text: record.state_law.act }] : [] },
 		{ field: 'agency', label: 'Agency', items: record.kind === 'federal-agency-document' ? (record.citation.author ?? []).flatMap((author) => (author.literal ? [{ text: author.literal }] : [])) : [] },
 		{ field: 'number', label: 'Number', items: number ? [{ text: number }] : [] },
 		// A chapter of the Code is dated by the edition it was read from, not enacted on one day.
@@ -181,7 +197,9 @@ export function lawPage(key: string): LawPage {
 					: nationsNamed.map((nation) => ({ text: nation.name, link: `/nations/${nation.id}` }))
 		}
 	].filter((group) => group.items.length > 0);
-	const saved = savedCopyLink(record);
+	// A state statute is linked, not served (decision record 0060): with no saved copy, its official text is the first place to read it.
+	const official = record.kind === 'state-statute' && record.original_link ? `<a href="${escapeHtml(record.original_link)}">${escapeHtml(record.citation.author?.[0]?.literal ?? 'Official text')}</a>` : '';
+	const saved = savedCopyLink(record) || official;
 	const copy = savedCopyFor(record);
 	const title = record.citation.title;
 	const accounts = accountsOf({ record: key });

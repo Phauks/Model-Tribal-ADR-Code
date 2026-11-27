@@ -18,7 +18,7 @@
 - [ ] Every new factual claim has a source record and citation key
 - [ ] Every new web source has an archived snapshot and a retrieval date
 - [ ] Rights status is recorded for every quotation beyond a short passage
-- [ ] Nothing restricted or community-held is added without written approval
+- [ ] Nothing unpublished that is restricted or community-held is added without written approval
 - [ ] A research session file is added or updated, if research was done
 
 ## Style

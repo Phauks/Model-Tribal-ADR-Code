@@ -40,6 +40,8 @@ export interface RecordBox {
 	summary?: string;
 	quotes?: BoxQuote[];
 	treatment?: string;
+	/** The later cases that treated the case negatively, listed under Treatment (laterCasesMarkdown). */
+	later_cases?: LaterCases;
 	topics?: string[];
 	/**
 	 * A short, neutral reading of the entry's place in the law, shown as an
@@ -48,6 +50,84 @@ export interface RecordBox {
 	 * with little writing between them). The case's own page does not show it.
 	 */
 	reading?: BoxReading;
+}
+
+/**
+ * The later cases that treated a case negatively, by kind of treatment
+ * (Trevor, Nov. 27, 2026: name the cases rather than count them). Written by
+ * scripts/caselaw/later_cases.py from a hand-pulled Westlaw print's Negative
+ * Treatment list.
+ */
+export interface LaterCases {
+	checked: string;
+	source: string;
+	list: LaterCase[];
+}
+
+export interface LaterCase {
+	/** "Declined to extend", "Distinguished". */
+	treatment: string;
+	/** The case's name, shown in italics. */
+	name: string;
+	/** The rest of its Indigo Book citation: "474 B.R. 687 (B.A.P. 8th Cir. 2012)". */
+	citation: string;
+	/** This project's record of the case: its page. */
+	case?: string;
+	/** An opinion copy this site serves. */
+	copy?: string;
+	/** The case on case.law. */
+	link?: string;
+}
+
+/** The kinds of treatment in the order a list shows them, most serious first (schemas/source.schema.json). */
+export const laterCaseKinds = [
+	'Overruling recognized',
+	'Abrogation recognized',
+	'Superseded by statute',
+	'Called into doubt by statute',
+	'Called into doubt',
+	'Limitation of holding recognized',
+	'Modification recognized',
+	'Declined to follow',
+	'Not followed as dicta',
+	'Disagreement recognized',
+	'Declined to extend',
+	'Followed with reservations',
+	'Distinguished'
+];
+
+function escapeMarkdown(text: string): string {
+	return text.replace(/([\\`*_[\]])/g, '\\$1');
+}
+
+/** Where a later case can be read: its page here, the copy this site serves, or case.law. */
+export function laterCaseLink(item: LaterCase): string | undefined {
+	if (item.case) return `/cases/${item.case}`;
+	if (item.copy) return `/copies/view/${item.copy.split('/').map(encodeURIComponent).join('/')}`;
+	return item.link;
+}
+
+/**
+ * The later cases as Markdown: each kind of treatment as a bold line with
+ * its count, "**Distinguished** (6)", then its cases, one Indigo Book
+ * citation to a line, each linked where it can be read. `links: false`
+ * leaves the links out (the print book).
+ */
+export function laterCasesMarkdown(box: RecordBox | undefined, { links = true }: { links?: boolean } = {}): string {
+	const list = box?.later_cases?.list ?? [];
+	if (!list.length) return '';
+	const kinds = [...new Set(list.map((item) => item.treatment))].sort((one, other) => laterCaseKinds.indexOf(one) - laterCaseKinds.indexOf(other));
+	return kinds
+		.map((kind) => {
+			const items = list.filter((item) => item.treatment === kind);
+			const lines = items.map((item) => {
+				const cited = `*${escapeMarkdown(item.name)}*, ${escapeMarkdown(item.citation)}`;
+				const link = links ? laterCaseLink(item) : undefined;
+				return `- ${link ? `[${cited}](${link})` : cited}`;
+			});
+			return `**${kind}** (${items.length})\n\n${lines.join('\n')}`;
+		})
+		.join('\n\n');
 }
 
 /** A box's reading: the Analysis block's title and its text, in the essay syntax's Markdown. */
@@ -62,11 +142,17 @@ export function quoteAttribution(key: string, quote: BoxQuote): string {
 	return quote.parenthetical ? `${citation} (${quote.parenthetical})` : citation;
 }
 
-/** One part of a box in the essay syntax ("::: holding" ... ":::"), or nothing when the record has no such part. */
-export function boxPartMarkdown(key: string, box: RecordBox, part: BoxPart): string {
+/**
+ * One part of a box in the essay syntax ("::: holding" ... ":::"), or nothing
+ * when the record has no such part. Treatment ends with the later cases
+ * (laterCasesMarkdown) unless `laterCases` is false: the case's page shows
+ * them outside the part's editable words.
+ */
+export function boxPartMarkdown(key: string, box: RecordBox, part: BoxPart, { laterCases = true }: { laterCases?: boolean } = {}): string {
 	let inner: string | undefined;
 	if (part === 'quotes') inner = box.quotes?.length ? box.quotes.map((quote) => `> ${quote.text}\n\n${quoteAttribution(key, quote)}`).join('\n\n') : undefined;
 	else if (part === 'topics') inner = box.topics?.length ? box.topics.join('; ') : undefined;
+	else if (part === 'treatment') inner = [box.treatment?.trim(), laterCases ? laterCasesMarkdown(box) : ''].filter(Boolean).join('\n\n') || undefined;
 	else inner = box[part]?.trim() || undefined;
 	return inner ? `::: ${part}\n${inner}\n:::` : '';
 }
