@@ -86,10 +86,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1226.4 (2026). History: from revenues, including the revenues accruing to the trust fund from time to time be amended. Added by Laws 1994, c. 388, § 6, eff. Sept. 1, 1994. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 841. Found by the state statutes pilot (terms: native american); AI reader''s verdict core: Native American cultural center and education authority powers. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1226.4 (2026). History: Added by Laws 1994, c. 388, § 6, eff. Sept. 1, 1994. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 841. Found by the state statutes pilot (terms: native american); AI reader''s verdict core: Native American cultural center and education authority powers. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

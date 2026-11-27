@@ -54,10 +54,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 3A, § 263 (2026). History: derived from one-half (1/2) of the Operational Expenses Revolving Fund Retention from one-half (1/2) of the Operational Expenses Revolving Fund Retention Percentage shall Added by Laws 2004, c. 316, § 4, State Question No. 712, Legislative Referendum No. 335, Text read from the Legislative Service Bureau''s Title 3A PDF (updated Nov. 12, 2026), page 71. Found by the state statutes pilot (terms: state-tribal; tribal gaming); AI reader''s verdict core: State-Tribal Gaming Act revenue distributions to tribes. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 3A, § 263 (2026). History: Added by Laws 2004, c. 316, § 4, State Question No. 712, Legislative Referendum No. 335, Text read from the Legislative Service Bureau''s Title 3A PDF (updated Nov. 12, 2026), page 71. Found by the state statutes pilot (terms: state-tribal; tribal gaming); AI reader''s verdict core: State-Tribal Gaming Act revenue distributions to tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

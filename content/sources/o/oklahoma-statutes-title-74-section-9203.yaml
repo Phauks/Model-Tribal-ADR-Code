@@ -89,7 +89,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 9203 (2026). History: Added by Laws 2020, c. 165, § 3, emerg. eff. May 22, 2020. Amended by Laws 2020, c. 167, Renumbered from § 139.202 of Title 17 by Laws 2022, c. 229, § 13, emerg. eff. May 6, 2022. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 1430. Found by the state statutes pilot (terms: tribal; tribe); AI reader''s verdict incidental: Broadband council seat reserved for a tribal leader. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

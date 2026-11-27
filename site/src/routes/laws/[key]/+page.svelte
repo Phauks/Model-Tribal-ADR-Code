@@ -14,7 +14,6 @@
 	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
 	import SavedText from '#lib/components/SavedText.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
-	import StubNote from '#lib/components/StubNote.svelte';
 	import TileMap from '#lib/components/TileMap.svelte';
 	import type { PageProps } from './$types';
 
@@ -161,8 +160,6 @@
 			</dl>
 		</Collapsible>
 	{/if}
-
-	{#if data.stub}<StubNote stub={data.stub} />{/if}
 </InfoPage>
 
 {#snippet stubStatus()}{#if data.stub}<StubBadge stub={data.stub} />{/if}{/snippet}
@@ -197,8 +194,11 @@
 		scroll-margin-top: 4.5rem;
 	}
 
-	.section-list dt:target,
-	.section-list dt:target + dd {
+	/* Shaded for a moment, then not (src/lib/arrival-highlight.ts); without scripts, while the address points to it. */
+	:global(:root:not([data-scripts='on'])) .section-list dt:target,
+	:global(:root:not([data-scripts='on'])) .section-list dt:target + dd,
+	.section-list dt:global([data-arrived]),
+	.section-list dt:global([data-arrived]) + dd {
 		background: var(--color-surface-raised);
 	}
 

@@ -1,0 +1,54 @@
+key: oregon-revised-statutes-419a-116
+kind: state-statute
+citation:
+  type: legislation
+  title: Findings and recommendations; judicial review
+  title-short: Or. Rev. Stat. § 419A.116
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: 419A.116
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 1993
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors419A.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors419A.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-419a-004
+- oregon-revised-statutes-419a-252
+- oregon-revised-statutes-419a-289
+state_law:
+  relevance: core
+  citation: Or. Rev. Stat. § 419A.116 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 419A.116 (2025). History: [1993 c.33 §31; 2001 c.686 §20; 2003 c.396 §22; 2007 c.611 §3; 2015 c.254 §2; 2020 s.s.1 c.14 §52; 2021 c.398 §53a]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian); AI reader''s verdict core: Review board findings on Indian child active efforts and family breakup. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian child; indian'

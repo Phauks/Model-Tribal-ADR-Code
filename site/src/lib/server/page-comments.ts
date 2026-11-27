@@ -20,7 +20,7 @@ import { grantsOf } from './access.ts';
 import { placeAsGrant, type TeamLevel } from '../nation-teams.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import { commentsForYou, latestAssignment, readAsks, readAssignee, type AssignTo, type CommentForYou } from './essay-comments.ts';
-import { pagePath } from '../page-comment-paths.ts';
+import { pageAddress, pagePath } from '../page-comment-paths.ts';
 import { askSentence, commentHelpers, type CommentAsk, type EssayComment } from '../essays/comments.ts';
 import {
 	atLeast,
@@ -311,7 +311,7 @@ export async function pageCommentsForYou(database: D1Database, person: Grantee &
 			lastName: row.lastName,
 			lastBody: row.lastBody,
 			lastAt: row.lastAt,
-			link: `/${row.path}?comment=${encodeURIComponent(row.thread)}`
+			link: `${pageAddress(row.path)}?comment=${encodeURIComponent(row.thread)}`
 		}));
 }
 

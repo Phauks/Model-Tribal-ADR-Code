@@ -62,7 +62,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 21, § 99a (2026). History: Added by Laws 1997, c. 43, § 3, emerg. eff. April 7, 1997. Amended by Laws 2013, c. 249, § Text read from the Legislative Service Bureau''s Title 21 PDF (updated Nov. 12, 2026), page 99. Found by the state statutes pilot (terms: american indian; bureau of indian affairs; federally recognized indian tribe; indian country; tribal law enforcement); AI reader''s verdict incidental: Gives tribal and BIA officers state police powers in Indian country. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

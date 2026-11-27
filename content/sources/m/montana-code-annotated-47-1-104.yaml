@@ -1,0 +1,50 @@
+key: montana-code-annotated-47-1-104
+kind: state-statute
+citation:
+  type: legislation
+  title: Statewide system -- structure and scope of services -- assignment of counsel at public expense
+  title-short: Mont. Code Ann. § 47-1-104
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 47-1-104
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 2005
+  URL: https://mca.legmt.gov/bills/mca/title_0470/chapter_0010/part_0010/section_0040/0470-0010-0010-0040.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0470/chapter_0010/part_0010/section_0040/0470-0010-0010-0040.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 47-1-104 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 47-1-104 (2025). History: En. Sec. 4, Ch. 449, L. 2005; amd. Sec. 3, Ch. 24, L. 2011; amd. Sec. 11, Ch. 307, L. 2011; amd. Sec. 13, Ch. 307, L. 2013; amd. Sec. 21, Ch. 358, L. 2017; amd. Sec. 53, Ch. 716, L. 2023; amd. Sec. 5, Ch. 228, L. 2025; amd. Sec. 1, Ch. 690, L. 2025. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian); AI reader''s verdict incidental: Public defender counsel for parents under ICWA-governed removal proceedings. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian'

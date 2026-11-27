@@ -52,7 +52,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 20, § 1601.1 (2026). History: Added by Laws 1997, c. 61, § 2, eff. Nov. 1, 1997. Text read from the Legislative Service Bureau''s Title 20 PDF (updated Nov. 12, 2026), page 773. Found by the state statutes pilot (terms: native americans); AI reader''s verdict incidental: Certification act defines Tribe as recognized tribal government. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

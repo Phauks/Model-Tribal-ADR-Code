@@ -50,10 +50,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 53, § 361 (2026). History: Amended by Laws 1985, c. 268, § 1, eff. Nov. 1, 1985. Renumbered from Title 70, § 3309 by Laws 1985, c. 268, § 2, eff. Nov. 1, Text read from the Legislative Service Bureau''s Title 53 PDF (updated Nov. 12, 2026), page 43. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: Archaeology law also protects American Indian paintings and burial sites. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 53, § 361 (2026). History: Amended by Laws 1985, c. 268, § 1, eff. Nov. 1, 1985. Renumbered. Text read from the Legislative Service Bureau''s Title 53 PDF (updated Nov. 12, 2026), page 43. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: Archaeology law also protects American Indian paintings and burial sites. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

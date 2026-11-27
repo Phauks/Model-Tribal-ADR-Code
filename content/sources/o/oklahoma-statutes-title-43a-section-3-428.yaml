@@ -50,7 +50,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 43A, § 3-428 (2026). History: Added by Laws 1978, c. 64, § 10. Amended by Laws 1986, c. 103, § 47, eff. Nov. 1, 1986. Renumbered from § 2127 of Title 63 by Laws 1986, c. 103, § 104, eff. Nov. 1, 1986. Amended by Laws 1990, c. 51, § 84, emerg. eff. April 9, 1990; Laws 2005, c. 150, § 20, Text read from the Legislative Service Bureau''s Title 43A PDF (updated Nov. 12, 2026), page 111. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Program subject to authority of tribal governing body. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

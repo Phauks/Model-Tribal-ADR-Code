@@ -47,7 +47,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 2, § 3-402 (2026). History: Added by Laws 2018, c. 64, § 2, emerg. eff. April 23, 2018. Amended by Laws 2019, c. 91, § Text read from the Legislative Service Bureau''s Title 2 PDF (updated Nov. 12, 2026), page 174. Found by the state statutes pilot (terms: tribal government); AI reader''s verdict incidental: Hemp key participant definition carves out and includes tribal entities. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

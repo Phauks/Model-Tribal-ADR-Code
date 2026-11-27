@@ -1,0 +1,53 @@
+key: nevada-revised-statutes-372-805
+kind: state-statute
+citation:
+  type: legislation
+  title: 'Indian reservations and colonies: Restriction on collection of tax by Department'
+  title-short: Nev. Rev. Stat. § 372.805
+  container-title: Nevada Revised Statutes
+  container-title-short: Nev. Rev. Stat.
+  section: '372.805'
+  author:
+  - literal: Nevada Legislature
+  issued:
+    date-parts:
+    - - 1989
+  URL: https://www.leg.state.nv.us/nrs/NRS-372.html#NRS372Sec805
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.nv.us/nrs/NRS-372.html#NRS372Sec805
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- nevada-revised-statutes-372-800
+- nevada-revised-statutes-372-810
+state_law:
+  relevance: core
+  citation: Nev. Rev. Stat. § 372.805 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Nev. Rev. Stat. § 372.805 (2025). History: (Added to NRS by 1989, 1109). Text read from the Nevada Legislature''s chapter page for the section (leg.state.nv.us/nrs) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservation; indian reservations; indian; reservation; reservations; tribal); AI reader''s verdict core: Sales tax collection barred on Indian reservations with tribal tax. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian reservation; indian reservations; indian; reservation; reservations; tribal'

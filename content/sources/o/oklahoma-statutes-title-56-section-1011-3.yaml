@@ -51,7 +51,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 56, § 1011.3 (2026). History: Added by Laws 2006, c. 315, § 3, emerg. eff. June 9, 2006. Amended by Laws 2008, c. 412, Text read from the Legislative Service Bureau''s Title 56 PDF (updated Nov. 12, 2026), page 258. Found by the state statutes pilot (terms: alaska native; american indian; indian health); AI reader''s verdict incidental: Program must protect American Indian beneficiaries at IHS and tribal facilities. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

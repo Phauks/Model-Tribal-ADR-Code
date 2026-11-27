@@ -46,7 +46,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 11, § 36-113 (2026). History: Added by Laws 1977, c. 256, § 36-113, eff. July 1, 1978. Amended by Laws 1982, c. 123, § 1, Text read from the Legislative Service Bureau''s Title 11 PDF (updated Nov. 12, 2026), page 364. Found by the state statutes pilot (terms: tribal government); AI reader''s verdict incidental: Federally recognized tribal government may maintain municipal streets by agreement. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -122,6 +122,26 @@ LIBRARY_RIGHTS = ("Copy taken from the National Indian Law Library: private rese
                   "not served until the nation consents; pages link to NILL (decision record 0043).")
 
 
+# Saved web pages of sites that publish other people's law with their own
+# pages around it (Trevor Goldsmith's standing rule: third-party copyrighted
+# works stay private). The law in them may have no copyright, but the page is
+# the site's: the Legal Information Institute at Cornell Law School, the
+# National Center on Restorative Justice and the Oklahoma State University
+# Tribal Treaties Database (whose executive order texts are served on their
+# own, under executive-orders/). Fixed on 2026-11-27, when 191 such pages were
+# marked for serving. A PDF or text taken from one of them is not affected.
+THIRD_PARTY_PAGES = ("law.cornell.edu/", "ncorj.org/", "treaties.okstate.edu/")
+THIRD_PARTY_RIGHTS = ("A page of another site that publishes the law (Cornell's Legal Information Institute, "
+                      "the National Center on Restorative Justice or Oklahoma State University's Tribal Treaties Database): "
+                      "the page is that site's work; private research copy, not served. Pages link to the original.")
+
+
+def third_party_page(media_type: str, link: str) -> bool:
+    """Whether a saved web page is another site's page around the law (THIRD_PARTY_PAGES)."""
+    return media_type == "text/html" and any(
+        re.match(r"^https?://(www\.)?" + re.escape(site), address) for address in link.split() for site in THIRD_PARTY_PAGES)
+
+
 # Files under govinfo/ come from GovInfo, the Government Publishing Office's
 # site: federal statutes and Federal Register documents, works of the United
 # States government with no copyright (17 U.S.C. 105), whatever the rights
@@ -408,6 +428,8 @@ def build_index(args) -> None:
         policy = nation_law_policy(topic, link) if parent is None and "redistribution" not in extra else None
         if policy:
             redistributable, rights = policy
+        if third_party_page(media, link) and "redistribution" not in extra:
+            redistributable, rights = "no", THIRD_PARTY_RIGHTS
         rows.append({
             "key": key, "bytes": item["bytes"], "sha256": item["sha256"], "media_type": media,
             "topic": topic, "title": (title or "")[:300],

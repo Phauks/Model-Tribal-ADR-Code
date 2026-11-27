@@ -86,10 +86,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1226.17 (2026). History: from the fund shall be made upon warrants issued by the State Treasurer against claims Added by Laws 1997, c. 308, § 6, eff. Sept. 1, 1997. Amended by Laws 2012, c. 304, § 935; Laws 2018, c. 170, § 2, eff. July 1, 2018. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 851. Found by the state statutes pilot (terms: native american; tribal government); AI reader''s verdict core: Fund for Native American Cultural and Educational Authority. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1226.17 (2026). History: Added by Laws 1997, c. 308, § 6, eff. Sept. 1, 1997. Amended by Laws 2012, c. 304, § 935; Laws 2018, c. 170, § 2, eff. July 1, 2018. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 851. Found by the state statutes pilot (terms: native american; tribal government); AI reader''s verdict core: Fund for Native American Cultural and Educational Authority. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

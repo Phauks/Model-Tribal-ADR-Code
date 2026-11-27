@@ -74,7 +74,8 @@ describe('personal inboxes', () => {
 		await withRosa(context);
 		await createInbox(context, 'lead', { localPart: 'Rosa', name: 'Rosa', kind: 'personal', ownerIdentifier: 'rosa' });
 		const arrived = await arrive(context, 'rosa@example.org', 'Just for Rosa');
-		expect(arrived).toMatchObject({ notify: false, answerable: false });
+		// Its owner hears about it as they chose, but the team's away message does not answer it.
+		expect(arrived).toMatchObject({ notify: true, answerable: false });
 		expect(await getThread(context, arrived.threadIdentifier, 'rosa')).not.toBeNull();
 		expect(await getThread(context, arrived.threadIdentifier, 'lead')).toBeNull();
 		expect((await listThreads(context, { view: 'inbox', personIdentifier: 'lead' })).threads).toHaveLength(0);
@@ -170,7 +171,7 @@ describe('shared inboxes', () => {
 
 	it('refuse addresses that clash, are reserved, or are not addresses', async () => {
 		const context = await testContext(clock);
-		await expect(createInbox(context, 'lead', { localPart: 'Contact', name: 'Again', kind: 'shared' })).rejects.toThrow('already an inbox');
+		await expect(createInbox(context, 'lead', { localPart: 'Contact', name: 'Again', kind: 'shared' })).rejects.toThrow('already an address of the Contact inbox');
 		await expect(createInbox(context, 'lead', { localPart: 'unsubscribe', name: 'No', kind: 'shared' })).rejects.toThrow('kept for the inbox');
 		await expect(createInbox(context, 'lead', { localPart: 'two words', name: 'No', kind: 'shared' })).rejects.toThrow('Use letters');
 		await expect(createInbox(context, 'lead', { localPart: 'someone', name: 'No', kind: 'personal', ownerIdentifier: 'nobody' })).rejects.toThrow('Choose someone');

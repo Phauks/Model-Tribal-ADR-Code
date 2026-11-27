@@ -29,7 +29,7 @@ declare module 'virtual:mail-nations' {
 }
 
 declare module 'virtual:section-lists' {
-	/** Every nation's name and page id, A to Z, for the Nations menu's "Go to a nation" (SectionBar.svelte). */
+	/** Every nation's name and page id, A to Z, for the pickers that choose a nation, such as on the home page and Find the law. */
 	export const nationNames: [name: string, id: string][];
 	/** How many of them are Native nations, leaving out the Native Hawaiian community and the territories' peoples. */
 	export const nationCount: number;
@@ -42,7 +42,8 @@ declare module 'virtual:nation-images' {
 
 declare module 'virtual:portraits' {
 	/** The pictures of Justices, Presidents and Courts the Worker may serve, listed at build time. */
-	export const portraits: { person: string; key: string; mediaType: string; sha256: string; link: string }[];
+	/** link is left out for a picture turned or cut from its copy, which only the bucket holds. */
+	export const portraits: { person: string; key: string; mediaType: string; sha256: string; link?: string }[];
 }
 
 declare module 'virtual:source-citations' {

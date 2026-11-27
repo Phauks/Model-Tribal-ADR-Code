@@ -1,5 +1,6 @@
 <script lang="ts" module>
 	import { isShadedMapView, type ShadedMapView } from '#lib/shaded-map-views.ts';
+	import { patternImage, patternImageName, patternOfImageName, shapeImage, shapeImageName, shapeOfShade, type MapShape } from '#lib/map-shapes.ts';
 	import { readStored, writeStored } from '#lib/browser-storage.ts';
 
 	/** The views of the map on /nations/map; each is a set of layers over the same basemap. The shaded views color the land areas by a fact about their nations (src/lib/shaded-map-views.ts). */
@@ -311,6 +312,12 @@
 		return matchMedia('(prefers-color-scheme: dark)').matches;
 	}
 
+	/** The size, in screen pixels, the category shapes' images are made at; each layer scales them to its own size. */
+	const shapeImageSize = 6;
+	/** Each category shade's shape image, the darkest by default as for the dots' shades. */
+	const shapeImageOfShade = ['match', ['get', 'shade'], 1, shapeImageName('triangle'), 2, shapeImageName('circle'), 3, shapeImageName('square'), shapeImageName('diamond')] as unknown as ExpressionSpecification;
+	const shapeByImageName = new Map(Object.values(shapeOfShade).map((shape): [string, MapShape] => [shapeImageName(shape), shape]));
+
 	/** Dots fade in for areas too small to see as shapes at each zoom, and out once their outline is big enough. */
 	const dotOpacity: ExpressionSpecification = [
 		'interpolate',
@@ -372,6 +379,15 @@
 		];
 		const pointShade: ExpressionSpecification = ['match', ['get', 'group'], 'federal', colors.classes[4], 'state', colors.classes[3], colors.classes[2]];
 		const hovered = (color: ExpressionSpecification | string): ExpressionSpecification => ['case', ['boolean', ['feature-state', 'hover'], false], colors.focus, color];
+		/** Each category's pattern over its areas' shade (src/lib/map-shapes.ts): stripes, dots and a grid, the darkest shade solid, so no area rests on its shade alone. `shadeOf` gives each area's shade, 0 to 4. */
+		const patternOver = (id: string, from: { source: string; 'source-layer'?: string; filter?: FilterSpecification }, shadeOf: ExpressionSpecification): LayerSpecification => ({
+			id,
+			type: 'fill',
+			source: from.source,
+			...(from['source-layer'] ? { 'source-layer': from['source-layer'] } : {}),
+			filter: ['all', ...(from.filter ? [from.filter] : []), ['match', shadeOf, [1, 2, 3], true, false]] as FilterSpecification,
+			paint: { 'fill-pattern': ['match', shadeOf, 3, patternImageName('stripes', colors.paper), 2, patternImageName('dots', colors.ink), patternImageName('grid', colors.ink)] as unknown as ExpressionSpecification }
+		});
 
 		// An earlier year than the latest Census year shows the Census Bureau's land areas as they were drawn that year, and none before its first (historic maps mockup A). The dots and names are from the 2020 Census, so they are left out before it.
 		const censusYears = data.tiles.landAreaYears;
@@ -466,6 +482,8 @@
 				? ['match', ['get', 'code'], ...entries.flatMap(([code, state]) => [code, colors.classes[state.shade]]), colors.classes[0]]
 				: colors.classes[0]) as unknown as ExpressionSpecification;
 			fills.push({ id: 'states', type: 'fill', source: 'places', 'source-layer': 'states', paint: { 'fill-color': hovered(byStateShade), 'fill-opacity': 0.85 } });
+			const stateShadeNumber = (entries.length > 0 ? ['match', ['get', 'code'], ...entries.flatMap(([code, state]) => [code, state.shade]), 0] : ['literal', 0]) as unknown as ExpressionSpecification;
+			fills.push(patternOver('states-patterns', { source: 'places', 'source-layer': 'states' }, stateShadeNumber));
 			tops.push({ id: 'states-lines', type: 'line', source: 'places', 'source-layer': 'states', paint: { 'line-color': colors.line, 'line-width': 0.8 } });
 		};
 		/** A shaded view's land areas, each in its category's shade. */
@@ -478,21 +496,18 @@
 				: colors.classes[0]) as unknown as ExpressionSpecification;
 			const dotShade = ['match', ['get', 'shade'], 1, colors.classes[1], 2, colors.classes[2], 3, colors.classes[3], colors.classes[4]] as unknown as ExpressionSpecification;
 			fills.push({ id: 'land-areas', type: 'fill', source: 'places', 'source-layer': 'land-areas', paint: { 'fill-color': hovered(areaShade), 'fill-opacity': 0.85 } });
+			const areaShadeNumber = (entries.length > 0 ? ['match', ['to-string', ['get', 'code']], ...entries.flatMap(([code, area]) => [code, area.shade]), 0] : ['literal', 0]) as unknown as ExpressionSpecification;
+			fills.push(patternOver('land-areas-patterns', { source: 'places', 'source-layer': 'land-areas' }, areaShadeNumber));
 			tops.push(
 				{ id: 'land-areas-lines', type: 'line', source: 'places', 'source-layer': 'land-areas', paint: { 'line-color': colors.line, 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.4] } },
+				// Each small area's dot takes its category's shape as well as its shade (src/lib/map-shapes.ts), so no reader has to tell the shades apart.
 				{
 					id: 'area-dots',
-					type: 'circle',
+					type: 'symbol',
 					source: 'area-points',
 					filter: ['>', ['get', 'shade'], 0],
-					paint: {
-						'circle-color': hovered(dotShade),
-						'circle-radius': 5,
-						'circle-stroke-color': colors.ink,
-						'circle-stroke-width': 1,
-						'circle-opacity': dotOpacity,
-						'circle-stroke-opacity': dotOpacity
-					}
+					layout: { 'icon-image': shapeImageOfShade, 'icon-size': 5 / shapeImageSize, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+					paint: { 'icon-color': hovered(dotShade), 'icon-halo-color': colors.ink, 'icon-halo-width': 1, 'icon-opacity': dotOpacity }
 				},
 				{
 					id: 'area-names',
@@ -530,6 +545,7 @@
 			];
 			const onlyTheseAreas: { filter?: FilterSpecification } = filters.length === 0 ? {} : { filter: filters.length === 1 ? filters[0] : (['all', ...filters] as FilterSpecification) };
 			fills.push({ id: 'land-areas', type: 'fill', source: landSource, 'source-layer': 'land-areas', ...onlyTheseAreas, paint: { 'fill-color': hovered(groupShade), 'fill-opacity': 0.55 } });
+			fills.push(patternOver('land-areas-patterns', { source: landSource, 'source-layer': 'land-areas', ...onlyTheseAreas }, ['match', ['get', 'kind'], 'federal-reservation-or-trust-land', 4, 'state-reservation', 3, 2]));
 			tops.push(
 				{ id: 'land-areas-lines', type: 'line', source: landSource, 'source-layer': 'land-areas', ...onlyTheseAreas, paint: { 'line-color': colors.classes[4], 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.6] } },
 				{
@@ -553,19 +569,14 @@
 					layout: { 'text-field': ['get', 'point_count_abbreviated'], 'text-font': ['Noto Sans Medium'], 'text-size': 12, 'text-allow-overlap': true },
 					paint: { 'text-color': colors.actionText }
 				},
+				// Each small area's dot takes its group's shape: federal lands the darkest shade's diamond, state reservations the square, statistical areas the circle (src/lib/map-shapes.ts).
 				{
 					id: 'area-dots',
-					type: 'circle',
+					type: 'symbol',
 					source: 'area-points',
 					filter: ['!', ['has', 'point_count']],
-					paint: {
-						'circle-color': hovered(pointShade),
-						'circle-radius': 5,
-						'circle-stroke-color': colors.paper,
-						'circle-stroke-width': 1.5,
-						'circle-opacity': dotOpacity,
-						'circle-stroke-opacity': dotOpacity
-					}
+					layout: { 'icon-image': ['match', ['get', 'group'], 'federal', shapeImageName('diamond'), 'state', shapeImageName('square'), shapeImageName('circle')], 'icon-size': 5 / shapeImageSize, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+					paint: { 'icon-color': hovered(pointShade), 'icon-halo-color': colors.ink, 'icon-halo-width': 1, 'icon-opacity': dotOpacity }
 				},
 				{
 					id: 'area-names',
@@ -590,13 +601,18 @@
 		/** Nations with no Census land area, marked at their offices with a dark ring. */
 		const addOffices = () => {
 			const officeShade = ['match', ['get', 'shade'], 1, colors.classes[1], 2, colors.classes[2], 3, colors.classes[3], 4, colors.classes[4], colors.classes[0]] as unknown as ExpressionSpecification;
+			// On a category view an office with a category takes its category's shape too, and one with none stays a ringed circle.
+			const officeDots: LayerSpecification = isShadedMapView(view)
+				? {
+						id: 'office-dots',
+						type: 'symbol',
+						source: 'offices',
+						layout: { 'icon-image': ['match', ['get', 'shade'], 0, shapeImageName('circle'), shapeImageOfShade], 'icon-size': 5.5 / shapeImageSize, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+						paint: { 'icon-color': hovered(officeShade), 'icon-halo-color': colors.ink, 'icon-halo-width': 2 }
+					}
+				: { id: 'office-dots', type: 'circle', source: 'offices', paint: { 'circle-color': hovered(officeShade), 'circle-radius': 5.5, 'circle-stroke-color': colors.ink, 'circle-stroke-width': 2 } };
 			tops.push(
-				{
-					id: 'office-dots',
-					type: 'circle',
-					source: 'offices',
-					paint: { 'circle-color': hovered(officeShade), 'circle-radius': 5.5, 'circle-stroke-color': colors.ink, 'circle-stroke-width': 2 }
-				},
+				officeDots,
 				{
 					id: 'office-names',
 					type: 'symbol',
@@ -659,7 +675,7 @@
 				}
 			);
 		}
-		const landAreaLayers = new Set(['land-areas', 'land-areas-lines']);
+		const landAreaLayers = new Set(['land-areas', 'land-areas-patterns', 'land-areas-lines']);
 		const dotLayers = new Set(['area-groups', 'area-group-counts', 'area-dots', 'area-names']);
 		// The offices mark nations with no land area today, so they go with today's map too.
 		const officeLayers = new Set(['office-dots', 'office-names']);
@@ -672,7 +688,7 @@
 
 		// On a picture base map the shades let the picture show through, and land areas are outlined in a light orange that reads on photos (mockup 1A). The reader can also turn the land area outlines off, and on a picture keep or drop the place names and roads.
 		const picture = baseMap !== 'map';
-		const landLayers = new Set(['land-areas', 'land-areas-lines']);
+		const landLayers = new Set(['land-areas', 'land-areas-patterns', 'land-areas-lines']);
 		const shownFills = fills.filter((layer) => outlines || !landLayers.has(layer.id));
 		const shownTops = tops.filter((layer) => outlines || !landLayers.has(layer.id));
 		if (picture) {
@@ -932,6 +948,15 @@
 				});
 				map.touchZoomRotate.disableRotation();
 				map.keyboard.disableRotation();
+				// The category shapes are drawn here as distance fields, once per style, when a layer first asks for one; MapLibre colors them by category and rings them in ink.
+				const loaded = map;
+				loaded.on('styleimagemissing', (event: { id: string }) => {
+					if (loaded.hasImage(event.id)) return;
+					const shape = shapeByImageName.get(event.id);
+					if (shape) loaded.addImage(event.id, shapeImage(shape, shapeImageSize, 1), { sdf: true, pixelRatio: 1 });
+					const pattern = patternOfImageName(event.id);
+					if (pattern) loaded.addImage(event.id, patternImage(pattern.pattern, pattern.color, 2), { pixelRatio: 2 });
+				});
 				// The credit line, then the buttons, all in the bottom-right corner (Trevor, 2026-11-23). MapLibre stacks each later bottom control above the earlier ones, so the credit line is added first and the zoom buttons last, on top.
 				map.addControl(new maplibre.AttributionControl({ compact: false }), 'bottom-right');
 				// Full screen, where the browser allows it (Trevor, 2026-11-23). On the map page the whole view goes full screen, its picker, key, preview and table with it, from the element marked data-map-full-screen; elsewhere the map alone does.

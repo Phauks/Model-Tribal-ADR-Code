@@ -83,10 +83,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 402-3 (2026). History: Added by Laws 2004, c. 322, § 10, eff. Dec. 1, 2004 (State Question No. 713, Legislative Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 249. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Tobacco tax; tribal compact in-lieu payments apportioned. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 402-3 (2026). History: Added by Laws 2004, c. 322, § 10, eff. Dec. 1, 2004 (State Question No. 713, Legislative. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 249. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Tobacco tax; tribal compact in-lieu payments apportioned. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

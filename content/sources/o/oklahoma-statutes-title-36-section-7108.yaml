@@ -50,7 +50,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 36, § 7108 (2026). History: Added by Laws 1953, p. 17, § 8, emerg. eff. May 19, 1953. Amended by Laws 1995, c. 82, § Laws 2010, c. 58, § 33, eff. July 1, 2010. Text read from the Legislative Service Bureau''s Title 36 PDF (updated Nov. 12, 2026), page 1671. Found by the state statutes pilot (terms: tribal land); AI reader''s verdict incidental: Cemetery care exemption covers Indian tribal cemeteries on tribal land. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
