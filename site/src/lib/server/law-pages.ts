@@ -21,7 +21,7 @@
  * A section with nothing in it is left out.
  */
 import { error } from '@sveltejs/kit';
-import { copyPath } from '../public-copies.ts';
+import type { DocumentFile } from '../document-text.ts';
 import { readingLinksHtml } from '../reading-links.ts';
 import { signersOfTreaty } from './biographies.ts';
 import { boxSections, citationLine, type BoxSection, essaysCiting, type CaseMention } from './case-pages.ts';
@@ -33,7 +33,8 @@ import { accountsOf, type AccountEntry } from './impact-accounts.ts';
 import { isoOf, nationsCiting, orderNumber, orderPresident, type LawNation } from './law-facts.ts';
 import { isLawRecord, recordName } from './law-records.ts';
 import { boundsOfCessions, cessionsOfTreaty, treatyMapData } from './land-cessions.ts';
-import { savedCopyFor, savedCopyLink } from './markdown.ts';
+import { savedCopyFor } from './markdown.ts';
+import { recordDocument, whereToRead } from './record-document.ts';
 import { presidentByKey } from './supreme-court-people.ts';
 import { partialDate } from './stories.ts';
 import type { SourceEntry } from './source-uses.ts';
@@ -59,10 +60,12 @@ export interface LawPage {
 	essays: CaseMention[];
 	/** The nations whose pages cite the law, with what each page says it did there, such as the land it set aside. */
 	nations: LawNation[];
-	/** The law's text as this site keeps it, shown in a frame on the page. */
-	text?: LawText;
+	/** The copy of the law's text this site keeps, for the Text card (DocumentText.svelte); none when it keeps none. */
+	text?: DocumentFile;
+	/** For an executive order, its President's page, so the order's signature links there. */
+	signers: { name: string; link: string }[];
 	/** The people with a biography on this site who signed the treaty. */
-	signers: { name: string; link: string; detail?: string }[];
+	treatySigners: { name: string; link: string; detail?: string }[];
 	/** A Title 25 chapter's or part's sections. */
 	sections?: SectionList;
 	/** The Title 25 sections the Act enacted. */
@@ -74,13 +77,6 @@ export interface LawPage {
 	landCeded?: { royce: string[]; bounds: [number, number, number, number]; map: ReturnType<typeof treatyMapData> };
 	/** Set when the law has no box and no accounts of its impact: a stub (src/lib/stubs.ts). */
 	stub?: Stub;
-}
-
-
-export interface LawText {
-	/** The file itself, for the frame; "Where to read it" links the copy's own page. */
-	file: string;
-	isPdf: boolean;
 }
 
 const kindLabels: Record<string, string> = {
@@ -253,8 +249,10 @@ export function lawPage(key: string): LawPage {
 	].filter((group) => group.items.length > 0);
 	// A state statute is linked, not served (decision record 0060): with no saved copy, its official text is the first place to read it.
 	const official = record.kind === 'state-statute' && record.original_link ? `<a href="${escapeHtml(record.original_link)}">${escapeHtml(record.citation.author?.[0]?.literal ?? 'Official text')}</a>` : '';
-	const saved = savedCopyLink(record) || official;
 	const copy = savedCopyFor(record);
+	const text = recordDocument(record, named.name, copy);
+	// Where to read it: the original publisher first; our copy is in the Text card, and a state statute's official text when the site keeps none.
+	const where = whereToRead(record, text ? '' : official);
 	const title = record.citation.title;
 	const accounts = accountsOf({ record: key });
 	const sections = sectionsOf(key);
@@ -268,12 +266,14 @@ export function lawPage(key: string): LawPage {
 		boxSections: box.sections,
 		topics: box.topics,
 		accounts,
-		readingHtml: readingLinksHtml(record.reading_links, saved).replace(/<button[\s\S]*?<\/button>/, ''),
-		readingCount: (record.reading_links?.links.length ?? 0) + (saved ? 1 : 0),
+		readingHtml: readingLinksHtml(where.readingLinks, where.first).replace(/<button[\s\S]*?<\/button>/, ''),
+		readingCount: where.count,
 		essays: essaysCiting(key, named.name),
 		nations: nationsCited,
-		text: copy ? { file: copyPath(copy), isPdf: copy.mediaType === 'application/pdf' } : undefined,
-		signers: named.what === 'Treaty' ? signersOfTreaty(key) : [],
+		text,
+		// Who signed it with a page here, so a signature in its text links: an order's President, a treaty's signers.
+		signers: [...(president && presidentPage ? [{ name: president.name, link: presidentPage }] : []), ...(named.what === 'Treaty' ? signersOfTreaty(key).map(({ name, link }) => ({ name, link })) : [])],
+		treatySigners: named.what === 'Treaty' ? signersOfTreaty(key) : [],
 		sections,
 		enacted: record.kind === 'federal-statute' ? sectionsEnactedBy(key) : [],
 		legislativeHistory: record.kind === 'federal-statute' ? legislativeHistoryOf(key) : [],

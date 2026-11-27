@@ -81,6 +81,13 @@ export const essayRecordFiles: SpreadFiles = { name: 'essay-records', count: 512
 /** Every court case's name and date, which an essay needs whole to link the case names in its text. */
 export const essayCaseNamesFile = 'essay-case-names';
 
+/**
+ * The pages a citation inside a document's text links to, by the key the
+ * linker finds it by, such as "case:309 us 506" or "usc:25:5321"
+ * (src/lib/server/text-link-index.ts): about 2 MB, in files of about 30 KB.
+ */
+export const textLinkFiles: SpreadFiles = { name: 'text-links', count: 64 };
+
 /** Spreads records over a set's files, as the build writes them. */
 export function spreadRecords<T>(set: SpreadFiles, records: Record<string, T>): Record<string, T>[] {
 	const files: Record<string, T>[] = Array.from({ length: set.count }, () => ({}));
