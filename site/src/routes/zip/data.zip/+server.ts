@@ -13,6 +13,7 @@ import { datedFileName } from '#lib/download-names.ts';
 import { citationDate } from '#lib/page-downloads.ts';
 import { nations, storyRecords } from '#lib/server/content.ts';
 import { isoDate, shownExcerpts, shownFullText, shownTellings, storyIsShown } from '#lib/story-visibility.ts';
+import { verifierReadme, verifyPowerShell, verifyPowerShellName, verifyShell, verifyShellName } from '#lib/zip-verifiers.ts';
 import type { RequestHandler } from './$types';
 
 export const prerender = true;
@@ -64,6 +65,8 @@ export const GET: RequestHandler = async ({ fetch }) => {
 			'',
 			'SHA256SUMS.txt gives the SHA-256 of every file here, in the form sha256sum -c reads, and Verify File on the website (/verify) checks this ZIP file itself.',
 			'',
+			verifierReadme('/verify on the website'),
+			'',
 			'Material a nation has asked the project to restrict is never included. This file cannot be changed after you download it, so check the website for the current version.',
 			''
 		].join('\r\n')
@@ -75,6 +78,9 @@ export const GET: RequestHandler = async ({ fetch }) => {
 		sums.push(`${Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('')}  ${name}\n`);
 	}
 	files['SHA256SUMS.txt'] = strToU8(sums.join(''));
+	// Scripts that check every file against SHA256SUMS.txt; not listed in it (src/lib/zip-verifiers.ts).
+	files[verifyShellName] = strToU8(verifyShell);
+	files[verifyPowerShellName] = strToU8(verifyPowerShell);
 	return new Response(zipSync(files, { level: 6 }) as Uint8Array<ArrayBuffer>, {
 		headers: { 'content-type': 'application/zip', 'content-disposition': `attachment; filename="${datedFileName('/zip/data.zip', built)}"` }
 	});
