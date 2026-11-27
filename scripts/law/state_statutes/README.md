@@ -48,4 +48,6 @@ Records the project already holds under the same key (most were made by hand for
 | Rhode Island | `adapters/rhode_island.py` | Section pages, webserver.rilegislature.gov/Statutes |
 | South Carolina | `adapters/south_carolina.py` | Chapter pages, scstatehouse.gov/code (no section anchors: records link to the chapter) |
 | Virginia | `adapters/virginia.py` | Section pages, law.lis.virginia.gov/vacode |
+| Alaska | `adapters/alaska.py` (no history lines in the print view; readers are told that Alaska Native Claims Settlement Act corporations count as Native) | Print view of each title, akleg.gov/basis/statutes.asp |
+| Arizona | `adapters/arizona.py` (no history lines) | Section pages, azleg.gov/ars, listed on each title's page |
 | Oklahoma | `adapters/oklahoma.py` (read in the pilot; `run.py seed OK` turns the pilot's list into this pipeline's list) | Title PDFs, oklegislature.gov |
