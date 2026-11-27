@@ -55,7 +55,11 @@ export const edgeCacheRules = [
 	// The search on the server (src/routes/search/query): one answer per
 	// search typed, the same for every reader and drawn from the same files,
 	// so it is kept and purged as they are.
-	{ pattern: /^\/search\/query$/, seconds: 300, tags: ['nation-restrictions'], statuses: [200] }
+	{ pattern: /^\/search\/query$/, seconds: 300, tags: ['nation-restrictions'], statuses: [200] },
+	// The sponsors in the home page's rolling row (src/routes/sponsor/row.json):
+	// the same for every reader, without amounts. A new sponsor, logo or choice
+	// shows within five minutes.
+	{ pattern: /^\/sponsor\/row\.json$/, seconds: 300, tags: ['sponsors'], statuses: [200] }
 ];
 
 export const edgeHeader = 'cloudflare-cdn-cache-control';
