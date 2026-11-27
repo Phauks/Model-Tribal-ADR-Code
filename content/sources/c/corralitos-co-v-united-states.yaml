@@ -1,0 +1,137 @@
+key: corralitos-co-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Corralitos Co. v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '178'
+  page: '280'
+  issued:
+    date-parts:
+    - - 1900
+      - 5
+      - 28
+  URL: https://www.loc.gov/item/usrep178280/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: CORRALITOS COMPANY v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep178/usrep178280/usrep178280.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep178/usrep178280/usrep178280.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Rufus Wheeler Peckham
+    page: 281
+original_link: https://www.loc.gov/item/usrep178280/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  submitted:
+  - '1900-04-24'
+  printed: Submitted April 24, 1900. Decided May 28, 1900.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep178/usrep178280/usrep178280.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1898-1902)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: Horace Gray
+    vote: majority
+  - name: David Josiah Brewer
+    vote: majority
+  - name: Henry Billings Brown
+    vote: majority
+  - name: George Shiras, Jr.
+    vote: majority
+  - name: Rufus Wheeler Peckham
+    vote: majority
+    opinion: majority
+  - name: Joseph McKenna
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1899-061; Oyez has no votes for this case.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep178280/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/178/280/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22178%20U.S.%20280%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=178%20U.S.%20280
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=178%20U.S.%20280
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 178 U.S. 280 (1900). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep178/usrep178280/usrep178280.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1899-061), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 178 U.S. 280 "Corralitos Co. v. United States"; Database 178 U.S. 280 "CORRALITOS COMPANY v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 10 pages; the report runs 280 to 289
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Submitted April 24, 1900. Decided May 28, 1900."; scan "Submitted April 24, 1900.- Decided Bray 28, 1900."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1900-05-28'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Peckham p. 281; Database writers: Peckham'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

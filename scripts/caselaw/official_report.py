@@ -98,6 +98,12 @@ def page_map(pages: list[str], first: int, last: int | None) -> tuple[list[int |
             offset -= 1
             notes.append(f"scan page {index + 1} is not a report page")
             continue
+        if index and not numbers and not RUNNING_HEAD.search(text[:300]) and len(re.findall(r"\b[a-z]{3,}\b", text)) < 15:
+            # an inserted map or plate: no page number, no running head and hardly a word of prose
+            mapping.append(None)
+            offset -= 1
+            notes.append(f"scan page {index + 1} is not a report page (a map or plate)")
+            continue
         if numbers and expected not in numbers:
             # follow a new count only when the next page agrees with it
             for number in numbers:
@@ -147,6 +153,7 @@ HEADING_KINDS = [
     (r"concurring in part and dissenting in part", "concurrence in part and dissent in part"),
     (r"concurring in part and concurring in the judgment|concurring in part and in the judgment", "concurrence in part and in the judgment"),
     (r"concurring in part and concurring in the result", "concurrence in part and in the result"),
+    (r"concurring in the judgment,? and dissenting in part", "concurrence in the judgment and dissent in part"),
     (r"dissenting in part", "dissent in part"),
     (r"concurring in the judgment", "special concurrence"),
     (r"concurring in the result", "concurrence in the result"),
@@ -298,9 +305,11 @@ KIND_CUES = {
     "judgment": ("judgment", "plurality"),
     "opinion": ("judgment", "plurality", "majority", "special concurrence", "concurrence", "dissent"),
     "dissenting": ("dissent", "dissent in part", "concurrence in part and dissent in part",
-                   "concurrence in part, concurrence in the judgment in part, and dissent in part"),
+                   "concurrence in part, concurrence in the judgment in part, and dissent in part",
+                   "concurrence in the judgment and dissent in part"),
     "concurring": ("concurrence", "special concurrence", "concurrence in the result", "concurrence in part and in the judgment",
-                   "concurrence in part and dissent in part", "concurrence in part, concurrence in the judgment in part, and dissent in part"),
+                   "concurrence in part and dissent in part", "concurrence in part, concurrence in the judgment in part, and dissent in part",
+                   "concurrence in the judgment and dissent in part"),
     "per curiam": ("per curiam",),
 }
 
