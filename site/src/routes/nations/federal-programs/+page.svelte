@@ -20,7 +20,7 @@
 	<title>Self-governance and federal programs · Nations · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Self-governance and federal programs" />
 
 <h1>Self-governance and federal programs</h1>
 
