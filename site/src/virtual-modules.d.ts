@@ -41,7 +41,7 @@ declare module 'virtual:nation-images' {
 }
 
 declare module 'virtual:portraits' {
-	/** The portraits of Justices and Presidents the Worker may serve, listed at build time. */
+	/** The pictures of Justices, Presidents and Courts the Worker may serve, listed at build time. */
 	export const portraits: { person: string; key: string; mediaType: string; sha256: string; link: string }[];
 }
 
