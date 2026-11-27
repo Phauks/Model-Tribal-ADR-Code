@@ -33,9 +33,16 @@ rights:
   redistribution: true
 jurisdictions:
 - level: federal
+tribes:
+- mowa-band-of-choctaw-indians
+topics:
+- federal-recognition
 nations_in_case:
   checked: '2026-11-26'
-  named: []
+  named:
+  - nation: mowa-band-of-choctaw-indians
+    named_as: Mobile-Washington County Band of Choctaw Indians of South Alabama
+    role: party
 access:
   open: true
   pull_from:
