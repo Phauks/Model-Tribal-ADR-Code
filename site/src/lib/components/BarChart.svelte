@@ -44,7 +44,7 @@
 	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
 	import Table from '@lucide/svelte/icons/table';
 	import X from '@lucide/svelte/icons/x';
-	import { chartTable, pieSlices, scaleTop, shareText, slicePath, type BarChartData } from '#lib/bar-chart.ts';
+	import { chartTable, numberSpot, pieSlices, scaleTop, shareText, slicePath, type BarChartData } from '#lib/bar-chart.ts';
 	import TableDownload from '#lib/components/TableDownload.svelte';
 	import DataTable from './DataTable.svelte';
 	import ViewSwitch from './ViewSwitch.svelte';
@@ -77,6 +77,8 @@
 	const slices = $derived(pieSlices(kept));
 	const percent = (value: number) => `${(value / scale.top) * 100}%`;
 	const pieRadius = 100;
+	/** Room around the pie for the numbers of narrow slices, which sit just outside the rim. */
+	const piePadding = 24;
 
 	/** The chart filling the screen (Trevor, Nov. 23, 2026), with the browser's full screen where it has one, or filling the window where it does not, as on an iPhone. */
 	let figure = $state<HTMLElement | undefined>();
@@ -185,7 +187,7 @@
 	</div>
 	{#if chart.partsOfWhole && interactive && shownAs === 'pie'}
 		<div class="pie-view">
-			<svg class="pie" viewBox="0 0 {pieRadius * 2} {pieRadius * 2}" role="img" aria-labelledby="{chart.identifier}-title">
+			<svg class="pie" viewBox="{-piePadding} {-piePadding} {(pieRadius + piePadding) * 2} {(pieRadius + piePadding) * 2}" role="img" aria-labelledby="{chart.identifier}-title">
 				{#each slices as slice (slice.label)}
 					{@const title = `${slice.label}: ${slice.value.toLocaleString('en-US')} (${shareText(slice.share)})`}
 					{#if slice.href}
@@ -196,11 +198,17 @@
 						<path d={slicePath(slice, pieRadius)} class="slice series-{slice.series}" class:lit={lit === slice.label} class:dim={lit !== undefined && lit !== slice.label} role="presentation" onpointerenter={() => (lit = slice.label)} onpointerleave={() => (lit = undefined)}><title>{title}</title></path>
 					{/if}
 				{/each}
+				<circle class="pie-outline" cx={pieRadius} cy={pieRadius} r={pieRadius} />
+				{#each slices as slice, index (slice.label)}
+					{@const spot = numberSpot(slice, pieRadius)}
+					<text class="slice-number" class:inside={spot.inside} x={spot.x} y={spot.y} aria-hidden="true">{index + 1}</text>
+				{/each}
 			</svg>
 			<ol class="pie-key">
-				{#each slices as slice (slice.label)}
+				{#each slices as slice, index (slice.label)}
 					<li class:lit={lit === slice.label} onpointerenter={() => (lit = slice.label)} onpointerleave={() => (lit = undefined)}>
 						<span class="swatch series-{slice.series}" aria-hidden="true"></span>
+						<span class="key-number" aria-hidden="true">{index + 1}</span>
 						<span class="key-label">
 							{#if slice.href}<a href={slice.href} onfocus={() => (lit = slice.label)} onblur={() => (lit = undefined)}>{slice.label}</a>{:else}{slice.label}{#if slice.folded > 1}{" "}<span class="small muted">(in the table)</span>{/if}{/if}
 						</span>
@@ -400,7 +408,11 @@
 		cursor: pointer;
 	}
 
-	/* The pie: slices in the chart palette's fixed order, parted by a thin line of the panel's color, with a key giving each name, number and share. */
+	/*
+	 * The pie: slices in the chart palette's fixed order (Okabe-Ito, tested by npm run check:color-vision), parted by a thin line of
+	 * the panel's color and ringed by a muted outline so pale slices stand off the panel. Each slice carries a number, on it or just
+	 * outside a narrow one, and the same number leads its line in the key, so no reader has to match colors (WCAG 1.4.1).
+	 */
 	.pie-view {
 		display: flex;
 		flex-wrap: wrap;
@@ -408,8 +420,9 @@
 		gap: var(--space-5);
 	}
 
+	/* The pie itself stays 16rem across; the rest is the room for outside numbers (piePadding on each side of a radius of 100). */
 	.pie {
-		width: min(100%, 16rem);
+		width: min(100%, calc(16rem * 248 / 200));
 		height: auto;
 		flex-shrink: 0;
 	}
@@ -426,6 +439,31 @@
 
 	.slice.lit {
 		stroke: var(--color-ink);
+	}
+
+	.pie-outline {
+		fill: none;
+		stroke: var(--color-ink-muted);
+		stroke-width: 1.5;
+		pointer-events: none;
+	}
+
+	.slice-number {
+		fill: var(--color-ink);
+		font-size: 15px;
+		font-weight: var(--font-weight-bold);
+		text-anchor: middle;
+		dominant-baseline: central;
+		font-variant-numeric: tabular-nums;
+		pointer-events: none;
+	}
+
+	/* On a slice, a halo of the panel's color keeps the number readable on any slice color. */
+	.slice-number.inside {
+		stroke: var(--color-surface-raised);
+		stroke-width: 4px;
+		stroke-linejoin: round;
+		paint-order: stroke;
 	}
 
 	.series-1 { fill: var(--color-chart-series-1); background: var(--color-chart-series-1); }
@@ -446,7 +484,7 @@
 
 	.pie-key li {
 		display: grid;
-		grid-template-columns: 1rem minmax(0, 1fr) auto 3rem 1.75rem;
+		grid-template-columns: 1rem 1.1rem minmax(0, 1fr) auto 3rem 1.75rem;
 		gap: var(--space-2);
 		align-items: center;
 		min-height: 1.9rem;
@@ -467,6 +505,12 @@
 		height: 1rem;
 		border-radius: 3px;
 		print-color-adjust: exact;
+	}
+
+	.key-number {
+		font-weight: var(--font-weight-bold);
+		text-align: right;
+		font-variant-numeric: tabular-nums;
 	}
 
 	.key-value,
