@@ -40,6 +40,7 @@ import { peopleInCase } from './biographies.ts';
 import { accountsOf, type AccountEntry } from './impact-accounts.ts';
 import { courtName, courtPagePath, isSupremeCourt } from '../court-pages.ts';
 import type { Stub } from '../stubs.ts';
+import type { CitedRecord } from '../citation-styles.ts';
 import { caseCourtName, citationLine } from './record-citations.ts';
 
 export { caseCourtName, citationLine };
@@ -77,6 +78,8 @@ export interface CasePage {
 	key: string;
 	name: string;
 	citation: string;
+	/** The parts of the record's citation the Cite panel rearranges for MLA (src/lib/citation-styles.ts). */
+	reference: CitedRecord['reference'];
 	caption?: string;
 	facts: [string, string][];
 	topics: string[];
@@ -285,6 +288,18 @@ function textOf(record: SourceRecord): CasePage['text'] {
 	return copy && copy.sha256 === stored ? { file: copyPath(copy), isPdf: copy.mediaType === 'application/pdf' } : undefined;
 }
 
+/** The court, reporter, volume, first page and date of a case's citation, for the Cite panel. */
+function citedParts(record: SourceRecord): CitedRecord['reference'] {
+	const { volume, page, issued } = record.citation;
+	return {
+		authority: caseCourtName(record),
+		'container-title': record.citation['container-title'],
+		volume: volume === undefined ? undefined : String(volume),
+		page: page === undefined ? undefined : String(page),
+		issued: issued?.['date-parts'] ? { 'date-parts': issued['date-parts'] } : undefined
+	};
+}
+
 export function casePage(key: string): CasePage {
 	const record = sources().get(key) as (SourceRecord & CaseRecordParts) | undefined;
 	if (!record || (record.citation as { type?: string }).type !== 'legal_case' || !record.citation.title) error(404, 'No case has this address.');
@@ -301,6 +316,7 @@ export function casePage(key: string): CasePage {
 		key,
 		name,
 		citation: citationLine(record),
+		reference: citedParts(record),
 		caption: record.caption?.printed,
 		// The nations have their own section, with how the case names each.
 		facts: (essayLibrary.facts?.('case', key) ?? []).filter(([label]) => !/^(Nations?|Peoples?|Nations and peoples)$/.test(label)),

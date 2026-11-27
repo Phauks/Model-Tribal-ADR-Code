@@ -339,7 +339,7 @@ export interface CourtListing {
   key: string;
   name: string;
   kind: string;
-  nations: string;
+  nations: { id: string; name: string }[];
   opinions: number;
   cases: number;
 }
@@ -349,7 +349,7 @@ export function courtListings(): CourtListing[] {
     key: court.key,
     name: court.name,
     kind: court.kind,
-    nations: court.nations.map((nation) => nation.name).join("; "),
+    nations: court.nations,
     opinions: court.opinions.length,
     cases: court.cases.length,
   }));

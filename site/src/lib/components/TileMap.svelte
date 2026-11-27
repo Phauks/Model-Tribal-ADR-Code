@@ -1,5 +1,6 @@
 <script lang="ts" module>
 	import { isShadedMapView, type ShadedMapView } from '#lib/shaded-map-views.ts';
+	import { shapeImage, shapeImageName, shapeOfShade, type MapShape } from '#lib/map-shapes.ts';
 	import { readStored, writeStored } from '#lib/browser-storage.ts';
 
 	/** The views of the map on /nations/map; each is a set of layers over the same basemap. The shaded views color the land areas by a fact about their nations (src/lib/shaded-map-views.ts). */
@@ -311,6 +312,12 @@
 		return matchMedia('(prefers-color-scheme: dark)').matches;
 	}
 
+	/** The size, in screen pixels, the category shapes' images are made at; each layer scales them to its own size. */
+	const shapeImageSize = 6;
+	/** Each category shade's shape image, the darkest by default as for the dots' shades. */
+	const shapeImageOfShade = ['match', ['get', 'shade'], 1, shapeImageName('triangle'), 2, shapeImageName('circle'), 3, shapeImageName('square'), shapeImageName('diamond')] as unknown as ExpressionSpecification;
+	const shapeByImageName = new Map(Object.values(shapeOfShade).map((shape): [string, MapShape] => [shapeImageName(shape), shape]));
+
 	/** Dots fade in for areas too small to see as shapes at each zoom, and out once their outline is big enough. */
 	const dotOpacity: ExpressionSpecification = [
 		'interpolate',
@@ -480,19 +487,14 @@
 			fills.push({ id: 'land-areas', type: 'fill', source: 'places', 'source-layer': 'land-areas', paint: { 'fill-color': hovered(areaShade), 'fill-opacity': 0.85 } });
 			tops.push(
 				{ id: 'land-areas-lines', type: 'line', source: 'places', 'source-layer': 'land-areas', paint: { 'line-color': colors.line, 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.4] } },
+				// Each small area's dot takes its category's shape as well as its shade (src/lib/map-shapes.ts), so no reader has to tell the shades apart.
 				{
 					id: 'area-dots',
-					type: 'circle',
+					type: 'symbol',
 					source: 'area-points',
 					filter: ['>', ['get', 'shade'], 0],
-					paint: {
-						'circle-color': hovered(dotShade),
-						'circle-radius': 5,
-						'circle-stroke-color': colors.ink,
-						'circle-stroke-width': 1,
-						'circle-opacity': dotOpacity,
-						'circle-stroke-opacity': dotOpacity
-					}
+					layout: { 'icon-image': shapeImageOfShade, 'icon-size': 5 / shapeImageSize, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+					paint: { 'icon-color': hovered(dotShade), 'icon-halo-color': colors.ink, 'icon-halo-width': 1, 'icon-opacity': dotOpacity }
 				},
 				{
 					id: 'area-names',
@@ -590,13 +592,18 @@
 		/** Nations with no Census land area, marked at their offices with a dark ring. */
 		const addOffices = () => {
 			const officeShade = ['match', ['get', 'shade'], 1, colors.classes[1], 2, colors.classes[2], 3, colors.classes[3], 4, colors.classes[4], colors.classes[0]] as unknown as ExpressionSpecification;
+			// On a category view an office with a category takes its category's shape too, and one with none stays a ringed circle.
+			const officeDots: LayerSpecification = isShadedMapView(view)
+				? {
+						id: 'office-dots',
+						type: 'symbol',
+						source: 'offices',
+						layout: { 'icon-image': ['match', ['get', 'shade'], 0, shapeImageName('circle'), shapeImageOfShade], 'icon-size': 5.5 / shapeImageSize, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+						paint: { 'icon-color': hovered(officeShade), 'icon-halo-color': colors.ink, 'icon-halo-width': 2 }
+					}
+				: { id: 'office-dots', type: 'circle', source: 'offices', paint: { 'circle-color': hovered(officeShade), 'circle-radius': 5.5, 'circle-stroke-color': colors.ink, 'circle-stroke-width': 2 } };
 			tops.push(
-				{
-					id: 'office-dots',
-					type: 'circle',
-					source: 'offices',
-					paint: { 'circle-color': hovered(officeShade), 'circle-radius': 5.5, 'circle-stroke-color': colors.ink, 'circle-stroke-width': 2 }
-				},
+				officeDots,
 				{
 					id: 'office-names',
 					type: 'symbol',
@@ -932,6 +939,12 @@
 				});
 				map.touchZoomRotate.disableRotation();
 				map.keyboard.disableRotation();
+				// The category shapes are drawn here as distance fields, once per style, when a layer first asks for one; MapLibre colors them by category and rings them in ink.
+				const loaded = map;
+				loaded.on('styleimagemissing', (event: { id: string }) => {
+					const shape = shapeByImageName.get(event.id);
+					if (shape && !loaded.hasImage(event.id)) loaded.addImage(event.id, shapeImage(shape, shapeImageSize, 1), { sdf: true, pixelRatio: 1 });
+				});
 				// The credit line, then the buttons, all in the bottom-right corner (Trevor, 2026-11-23). MapLibre stacks each later bottom control above the earlier ones, so the credit line is added first and the zoom buttons last, on top.
 				map.addControl(new maplibre.AttributionControl({ compact: false }), 'bottom-right');
 				// Full screen, where the browser allows it (Trevor, 2026-11-23). On the map page the whole view goes full screen, its picker, key, preview and table with it, from the element marked data-map-full-screen; elsewhere the map alone does.

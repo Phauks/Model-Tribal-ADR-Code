@@ -7,7 +7,7 @@
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
-	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
+	import { listCell, type TableColumn, type TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -24,7 +24,7 @@
 			cells: {
 				name: { text: court.name, href: `/courts/${court.key}` },
 				kind: { text: court.kind },
-				nations: { text: court.nations },
+				nations: listCell(court.nations.map((nation) => ({ text: nation.name, href: `/nations/${nation.id}` }))),
 				opinions: { text: court.opinions ? court.opinions.toLocaleString('en-US') : '', sortValue: court.opinions },
 				cases: { text: court.cases ? String(court.cases) : '', sortValue: court.cases }
 			}

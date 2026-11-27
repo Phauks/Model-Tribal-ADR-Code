@@ -58,6 +58,28 @@ export interface TableCell {
 	 * cell listing "Arizona, New Mexico" matches the filters for both states.
 	 */
 	values?: string[];
+	/**
+	 * A cell that lists several things, each with its own page, such as the
+	 * nations a person signed treaties for: each part is drawn with its own
+	 * link, in order, between semicolons. `text` still holds the whole list,
+	 * for sorting, searching and the downloads (Trevor, Nov. 27, 2026: a
+	 * signer's three nations in one cell did not link).
+	 */
+	parts?: TableCellPart[];
+}
+
+export interface TableCellPart {
+	text: string;
+	href?: string;
+}
+
+/**
+ * A cell listing several linked things between semicolons: the parts, the
+ * whole text, and each part's text as a filter value.
+ */
+export function listCell(parts: TableCellPart[]): TableCell {
+	if (parts.length === 1) return { text: parts[0].text, href: parts[0].href, values: [parts[0].text] };
+	return { text: parts.map((part) => part.text).join('; '), values: parts.map((part) => part.text), parts };
 }
 
 export interface TableRow {
@@ -334,7 +356,7 @@ export interface DownloadCell {
  */
 export function downloadCells(allColumns: TableColumn[], rows: TableRow[], origin = ''): { header: string[]; lines: DownloadCell[][] } {
 	const columns = allColumns.filter((column) => !column.keepOutOfDownload);
-	const linked = columns.filter((column) => rows.some((row) => row.cells[column.key]?.href));
+	const linked = columns.filter((column) => rows.some((row) => row.cells[column.key]?.href || row.cells[column.key]?.parts?.some((part) => part.href)));
 	const header: string[] = [];
 	for (const column of columns) {
 		header.push(column.header);
@@ -344,8 +366,9 @@ export function downloadCells(allColumns: TableColumn[], rows: TableRow[], origi
 		const fields: DownloadCell[] = [];
 		for (const column of columns) {
 			const cell = row.cells[column.key];
-			const href = cell?.href ?? '';
-			const link = href.startsWith('/') ? `${origin}${href}` : href;
+			const whole = (href: string) => (href.startsWith('/') ? `${origin}${href}` : href);
+			// A cell of several linked parts keeps each address, in order, between semicolons.
+			const link = cell?.href ? whole(cell.href) : (cell?.parts ?? []).map((part) => (part.href ? whole(part.href) : '')).filter(Boolean).join('; ');
 			fields.push(link ? { text: cell?.text ?? '', link } : { text: cell?.text ?? '' });
 			if (linked.includes(column)) fields.push({ text: link });
 		}
