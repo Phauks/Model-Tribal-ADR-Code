@@ -15,13 +15,13 @@
       "type": "string",
       "enum": [
         "tribal-code", "tribal-constitution", "tribal-court-rule", "tribal-case",
-        "federal-statute", "federal-regulation", "federal-register-notice", "federal-agency-document", "federal-case", "executive-order",
+        "federal-statute", "federal-regulation", "federal-register-notice", "federal-agency-document", "congressional-document", "federal-case", "executive-order",
         "state-statute", "state-regulation", "state-case",
         "territorial-statute", "territorial-regulation", "territorial-case",
         "court-rule", "intergovernmental-agreement", "uniform-act", "model-law", "restatement",
         "book", "book-chapter", "journal-article", "journal", "report", "web-page", "dataset", "interview", "other"
       ],
-      "description": "court-rule: rules of any court, including local rules. federal-agency-document: a federal agency's own published document other than a regulation or Federal Register notice, such as a National Indian Gaming Commission opinion, enforcement action or bulletin; citation.genre names which. intergovernmental-agreement: a compact or agreement between governments, such as a tribal-state gaming compact. journal: a periodical as a whole, cited as a place to search."
+      "description": "court-rule: rules of any court, including local rules. congressional-document: a document of Congress other than a statute: a committee hearing, a House or Senate report, a committee print, or a Congressional Research Service product; citation.genre names which, and legislative holds its Congress, committees, bills and the laws it is the history of. federal-agency-document: a federal agency's own published document other than a regulation or Federal Register notice, such as a National Indian Gaming Commission opinion, enforcement action or bulletin; citation.genre names which. intergovernmental-agreement: a compact or agreement between governments, such as a tribal-state gaming compact. journal: a periodical as a whole, cited as a place to search."
     },
     "citation": {
       "type": "object",
@@ -346,6 +346,23 @@
           "description": "Amendments, court readings, repeal. Paragraphs are separated by a blank line."
         },
         "reading": { "$ref": "#/$defs/boxReading" }
+      }
+    },
+    "legislative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chamber"],
+      "description": "For a congressional-document: where in Congress it comes from and what it is about, from GovInfo's and Congress.gov's own data (scripts/law/congressional_documents.py, scripts/law/crs_reports.py). A law's page lists, under Legislative history, the documents that name it in laws.",
+      "properties": {
+        "chamber": { "enum": ["house", "senate", "joint", "congress"], "description": "The chamber whose document it is; congress for a joint committee's print or a Congressional Research Service product." },
+        "congress": { "type": "integer", "minimum": 1, "description": "The Congress, such as 100 for the 100th Congress (1987-1988)." },
+        "session": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "committees": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true, "description": "The committees and subcommittees that held the hearing or wrote the report, as GovInfo names them." },
+        "bills": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true, "description": "The bills it is on, such as \"S. 1234 (100th Cong.)\"." },
+        "laws": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/slug" }, "uniqueItems": true, "description": "Keys of the federal statute records it is part of the legislative history of (a report on the bill that became the law), or, for a Congressional Research Service product, the laws Congress.gov relates it to." },
+        "held": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/calendarDate" }, "description": "The days a hearing was held." },
+        "govinfo_package": { "type": "string", "pattern": "^[A-Z]+-[A-Za-z0-9_.-]+$", "description": "The document's package on GovInfo, such as CRPT-118srpt12 or SERIALSET-13736_00_00-009-0157-0000." },
+        "crs_status": { "enum": ["active", "archived"], "description": "For a Congressional Research Service product: whether Congress.gov lists it as current or archived." }
       }
     },
     "state_law": {

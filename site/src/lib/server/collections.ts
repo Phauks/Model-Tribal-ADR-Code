@@ -196,6 +196,19 @@ function acknowledgmentDocuments(): CollectionItem[] {
 		.map((record) => sourceItem(record, (record.citation as { genre?: string }).genre));
 }
 
+const genreOf = (record: SourceRecord) => (record.citation as { genre?: string }).genre ?? '';
+
+/**
+ * Congress's own documents on Indian affairs, by genre (scripts/law/congressional_documents.py and scripts/law/crs_reports.py):
+ * each listed with its first committee, or for a Congressional Research Service product, the kind of product.
+ */
+function congressionalDocuments(test: (genre: string) => boolean): () => CollectionItem[] {
+	return () =>
+		[...sources().values()]
+			.filter((record) => kindOf(record) === 'congressional-document' && test(genreOf(record)))
+			.map((record) => sourceItem(record, genreOf(record).startsWith('CRS') ? genreOf(record) : record.legislative?.committees?.[0] ?? genreOf(record)));
+}
+
 function nationNameOf(): (id: string) => string {
 	const names = new Map(nations().map((nation) => [nation.id, nation.names.official]));
 	return (id) => names.get(id) ?? id;
@@ -264,6 +277,10 @@ export const collections: Collection[] = [
 	{ identifier: 'federal-register-notices', search: { group: 'law', label: 'Federal Register notice' }, title: 'Federal Register Notices', group: 'Federal law', sourceKinds: ['federal-register-notice'], items: sourcesOfKind(['federal-register-notice']) },
 	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
+	{ identifier: 'congressional-hearings', search: { group: 'law', label: 'Congressional hearing' }, title: 'Congressional Hearings', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'Hearing') },
+	{ identifier: 'committee-reports', search: { group: 'law', label: 'Committee report' }, title: 'Committee Reports', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'House report' || genre === 'Senate report') },
+	{ identifier: 'committee-prints', search: { group: 'law', label: 'Committee print' }, title: 'Committee Prints', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'Committee print' || genre === 'Congressional document' || genre === 'House document' || genre === 'Senate document') },
+	{ identifier: 'congressional-research-service-reports', search: { group: 'law', label: 'Congressional Research Service product' }, title: 'Congressional Research Service Reports', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre.startsWith('CRS')) },
 	// Royce's land cessions (1899), each opening on the Map page at its year (historic maps, 2026-11-26).
 	{
 		identifier: 'land-cessions',

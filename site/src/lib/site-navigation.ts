@@ -100,6 +100,15 @@ export const navigationSections: NavigationSection[] = [
 				]
 			},
 			{
+				title: 'Congress',
+				links: [
+					{ label: 'Hearings', link: '/stats/congressional-hearings', count: 'congressional-hearings' },
+					{ label: 'Committee reports', link: '/stats/committee-reports', count: 'committee-reports' },
+					{ label: 'Committee prints', link: '/stats/committee-prints', count: 'committee-prints' },
+					{ label: 'Research Service reports', link: '/stats/congressional-research-service-reports', count: 'congressional-research-service-reports' }
+				]
+			},
+			{
 				title: 'Agency records',
 				links: [
 					{ label: 'Acknowledgment petitions', link: '/stats/federal-acknowledgment', count: 'federal-acknowledgment' },

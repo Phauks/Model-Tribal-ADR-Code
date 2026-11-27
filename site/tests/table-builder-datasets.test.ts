@@ -16,7 +16,7 @@ const column = (dataset: BuilderDataset, key: string) => dataset.columns.findInd
 
 describe('the datasets', () => {
 	it('offers each dataset in menu order, with its size', () => {
-		expect(builderDatasetIdentifiers).toEqual(['nations', 'provisions', 'courts', 'compacts', 'constitutions', 'opinions', 'treaties', 'agreements']);
+		expect(builderDatasetIdentifiers).toEqual(['nations', 'provisions', 'courts', 'compacts', 'constitutions', 'opinions', 'treaties', 'agreements', 'census-areas']);
 		expect(builderDatasetSummaries()).toEqual(datasets.map((dataset) => ({ identifier: dataset.identifier, title: dataset.title, rowCount: dataset.rows.length })));
 	});
 
@@ -127,5 +127,19 @@ describe('builtChart', () => {
 		expect(() => builtChart('/nations/data/build?data=no-such-dataset')).toThrow(/known dataset/);
 		expect(() => builtChart('/nations/map?view=gaming')).toThrow(/known dataset/);
 		expect(() => builtChart('/nations/data/build')).toThrow(/known dataset/);
+	});
+});
+
+describe('the Census areas dataset', () => {
+	it('gives each Native area its American Community Survey figures and links it to the nations whose pages name it', () => {
+		const dataset = builderDataset('census-areas')!;
+		const name = column(dataset, 'name');
+		const row = dataset.rows.findIndex((cells) => cells[name] === 'Bay Mills Reservation and Off-Reservation Trust Land');
+		expect(row).toBeGreaterThanOrEqual(0);
+		expect(dataset.rows[row][column(dataset, 'states')]).toEqual(['Michigan']);
+		expect(dataset.rows[row][column(dataset, 'kind')]).toBe('Reservation');
+		expect(dataset.rows[row][column(dataset, 'population')]).toBeGreaterThan(0);
+		expect(dataset.links[row]).toBe('/nations/bay-mills-indian-community');
+		expect(dataset.rows.length).toBeGreaterThan(600);
 	});
 });

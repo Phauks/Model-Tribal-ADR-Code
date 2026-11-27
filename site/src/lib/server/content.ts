@@ -119,6 +119,8 @@ export interface SourceRecord {
 	law_box?: RecordBox;
 	/** A state statute section's Indian law label and citation (schemas/source.schema.json). */
 	state_law?: { relevance: 'core' | 'incidental'; citation: string; act?: string; page?: number };
+	/** A congressional document's Congress, committees, bills and the laws it is the history of (schemas/source.schema.json). */
+	legislative?: { chamber: string; congress?: number; session?: number; committees?: string[]; bills?: string[]; laws?: string[]; held?: string[]; govinfo_package?: string; crs_status?: string };
 }
 
 let sourceCache: Map<string, SourceRecord> | undefined;
