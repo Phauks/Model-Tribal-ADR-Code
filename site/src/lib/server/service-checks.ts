@@ -44,7 +44,31 @@ export const checkStateLabels: Record<CheckState, string> = {
 	off: 'Not set up'
 };
 
-export interface CheckResult {
+/**
+ * The thing a check looks at, named as it is in the Cloudflare dashboard or
+ * by the outside service, so the page says which bucket, database or Worker
+ * a row is about (Trevor, Nov. 26, 2026: "we show 6 storage locations, but i
+ * am not entirely sure which one each refers to").
+ */
+export interface CheckTarget {
+	/** As the dashboard or the service names it, such as tribal-law-project-files. */
+	name: string;
+	/** A short word for its kind, such as R2 bucket, D1 database or Worker. */
+	kind: string;
+	/** The part of it the check looks at, such as a folder or a table, or a limit. */
+	part?: string;
+}
+
+/** What a check is about, shown on every row whatever its outcome. */
+interface CheckDescription {
+	target: CheckTarget;
+	/** What the site uses it for. */
+	use: string;
+	/** What the check does, in a sentence. */
+	test: string;
+}
+
+export interface CheckResult extends CheckDescription {
 	key: string;
 	group: string;
 	name: string;
@@ -78,9 +102,9 @@ export interface CheckContext {
 	timeoutMilliseconds?: number;
 }
 
-type Outcome = Omit<CheckResult, 'key' | 'group' | 'name' | 'binding' | 'milliseconds'>;
+type Outcome = Omit<CheckResult, 'key' | 'group' | 'name' | 'binding' | 'milliseconds' | keyof CheckDescription>;
 
-interface Check {
+interface Check extends CheckDescription {
 	key: string;
 	group: string;
 	name: string;
@@ -118,6 +142,9 @@ const database: Check = {
 	group: 'Storage',
 	name: 'Main database',
 	binding: 'database',
+	target: { name: 'tribal-law-project', kind: 'D1 database' },
+	use: 'Accounts, essays, records, the workspace and everything else the site writes',
+	test: 'Runs a one-line query, then compares the migrations the database has applied with the migration files in this build.',
 	async run({ environment, migrationFiles }) {
 		if (!environment.database) return { state: 'problem', summary: 'The database binding is missing.', details: [], fix: 'Add the D1 binding "database" in site/wrangler.jsonc.' };
 		await environment.database.prepare('SELECT 1').first();
@@ -153,6 +180,9 @@ const sourceLibrary: Check = {
 	group: 'Storage',
 	name: 'Source library database',
 	binding: 'sourceLibrary',
+	target: { name: 'tribal-law-project-library', kind: 'D1 database' },
+	use: 'The searchable text of the source library’s documents and pages',
+	test: 'Counts the documents and pages.',
 	async run({ environment }) {
 		const library = environment.sourceLibrary;
 		if (!library) return { state: 'problem', summary: 'The sourceLibrary binding is missing, so the library search finds nothing.', details: [], fix: 'Add the D1 binding "sourceLibrary" in site/wrangler.jsonc.' };
@@ -172,17 +202,20 @@ const sourceLibrary: Check = {
 
 type BucketBinding = 'sourceDocuments' | 'mailFiles';
 
-function bucketCheck(key: string, name: string, binding: BucketBinding, bucketName: string, use: string): Check {
+function bucketCheck(key: string, name: string, binding: BucketBinding, bucketName: string, use: string, keeps: string): Check {
 	return {
 		key,
 		group: 'Storage',
 		name,
 		binding,
+		target: { name: bucketName, kind: 'R2 bucket' },
+		use: keeps,
+		test: 'Lists one file. Nothing is read or written.',
 		async run({ environment }) {
 			const bucket = environment[binding];
 			if (!bucket) return { state: 'problem', summary: `The ${binding} binding is missing, so ${use} cannot be read or kept.`, details: [], fix: `Add the R2 binding "${binding}" for ${bucketName} in site/wrangler.jsonc.` };
 			const listed = await bucket.list({ limit: 1 });
-			return { state: 'working', summary: `The private bucket ${bucketName} answers${listed.objects.length === 0 ? ', and is empty' : ''}.`, details: [] };
+			return { state: 'working', summary: `The bucket answers${listed.objects.length === 0 ? ', and is empty' : ''}.`, details: [] };
 		}
 	};
 }
@@ -191,6 +224,9 @@ const mapTiles: Check = {
 	key: 'map-tiles',
 	group: 'Storage',
 	name: 'Map tiles',
+	target: { name: 'tribal-law-project-files', kind: 'R2 bucket', part: 'map-tiles/' },
+	use: 'The map’s land areas, states and base map, served from the site’s own copy',
+	test: 'Looks up each tile file the site expects (geography/map-tiles.json) without downloading it.',
 	async run({ environment }) {
 		const bucket = environment.sourceDocuments;
 		if (!bucket) return { state: 'problem', summary: 'The sourceDocuments binding is missing, so the map has no tiles.', details: [] };
@@ -213,6 +249,9 @@ const siteFiles: Check = {
 	group: 'Storage',
 	name: 'Built pages and files',
 	binding: 'ASSETS',
+	target: { name: 'tribal-law-project-site', kind: 'Static assets' },
+	use: 'The built pages, scripts, fonts and pictures, which ZIP downloads and saved copies read',
+	test: 'Asks the site’s own built files for robots.txt.',
 	async run({ environment }) {
 		if (!environment.ASSETS) return { state: 'warning', summary: 'The ASSETS binding is missing, so the ZIP downloads and saved copies cannot read the built files.', details: [], fix: 'It is set by @sveltejs/adapter-cloudflare when the site is built; check the build.' };
 		const response = await environment.ASSETS.fetch('https://assets.local/robots.txt');
@@ -228,6 +267,9 @@ const liveEditing: Check = {
 	group: 'Workers',
 	name: 'Live editing rooms',
 	binding: 'essayRooms',
+	target: { name: 'tribal-law-project-live', kind: 'Worker', part: 'EssayRoom' },
+	use: 'Live co-editing of essays',
+	test: 'Sends a plain request to a test room of its own, which the Worker should refuse with 426. Nobody is joined to a room.',
 	async run({ environment }) {
 		const rooms = environment.essayRooms;
 		if (!rooms) return { state: 'warning', summary: 'The essayRooms binding is missing, so essays open without live co-editing.', details: [], fix: 'Deploy the live Worker (site/live) and keep the binding in site/wrangler.jsonc.' };
@@ -247,6 +289,9 @@ const scannerDesk: Check = {
 	group: 'Workers',
 	name: 'Malware scanner wake-up',
 	binding: 'scanDesks',
+	target: { name: 'tribal-law-project-scanner', kind: 'Worker', part: 'ScanDesk' },
+	use: 'Waking the malware scanner as soon as a file is sent',
+	test: 'Sends the same wake-up a sent file sends, which does nothing when no file is waiting.',
 	async run({ environment }) {
 		const desks = environment.scanDesks;
 		if (!desks) return { state: 'warning', summary: 'The scanDesks binding is missing, so sent files wait for the scanner’s next minute round.', details: [], fix: 'Deploy the scanner Worker (site/scanner) and keep the binding in site/wrangler.jsonc.' };
@@ -261,20 +306,23 @@ const scannerDesk: Check = {
 
 type RateLimitBinding = 'requestFormLimit' | 'workspaceChangeLimit' | 'signInLimit' | 'signInNetworkLimit' | 'uploadLimit';
 
-function rateLimitCheck(key: string, name: string, binding: RateLimitBinding, use: string): Check {
+function rateLimitCheck(key: string, name: string, binding: RateLimitBinding, use: string, limit: string): Check {
 	return {
 		key,
 		group: 'Rate limits',
 		name,
 		binding,
+		target: { name: binding, kind: 'Rate limit', part: limit },
+		use: `Slowing down ${use}`,
+		test: 'Spends one request under a key nobody else uses, so no person is counted.',
 		async run({ environment }) {
 			const limit = environment[binding];
 			if (!limit) return { state: 'warning', summary: `The ${binding} binding is missing, so ${use} is not slowed down.`, details: [], fix: 'Check the ratelimits list in site/wrangler.jsonc.' };
 			// A key nobody else uses, so the check never counts against a person.
 			const { success } = await limit.limit({ key: 'service-check' });
 			return success
-				? { state: 'working', summary: `Bound (${binding}).`, details: [] }
-				: { state: 'warning', summary: `Bound (${binding}), but the check itself was turned away. Check again in a minute.`, details: [] };
+				? { state: 'working', summary: 'Bound, and the test request went through.', details: [] }
+				: { state: 'warning', summary: 'Bound, but the test request was turned away. Check again in a minute.', details: [] };
 		}
 	};
 }
@@ -285,6 +333,9 @@ function emailCheck(key: string, name: string, binding: 'signInEmail' | 'updateE
 		group: 'Email',
 		name,
 		binding,
+		target: { name: 'Cloudflare Email Service', kind: 'Email', part: from },
+		use: `Sending ${use}`,
+		test: `Checks that ${from} is set and the ${binding} binding is there. Nothing is sent.`,
 		async run({ environment }) {
 			const address = environment[from];
 			if (!address) return { state: 'off', summary: `Off: ${from} is empty, so ${use} are not sent.`, details: [], fix: 'Waits on the project domain (docs/domain-to-do.md). Then onboard it in Cloudflare Email Service and set the address in site/wrangler.jsonc.' };
@@ -298,6 +349,9 @@ const siteAddress: Check = {
 	key: 'site-address',
 	group: 'Settings',
 	name: 'Public address',
+	target: { name: 'SITE_ADDRESS', kind: 'Setting' },
+	use: 'Links in emails and the address Lulu and Stripe send updates to',
+	test: 'Reads the setting and flags a workers.dev address.',
 	async run({ environment }) {
 		const address = environment.SITE_ADDRESS;
 		if (!address) return { state: 'problem', summary: 'SITE_ADDRESS is empty, so links in emails cannot be made.', details: [], fix: 'Set it in site/wrangler.jsonc.' };
@@ -310,6 +364,9 @@ const leadAuthor: Check = {
 	key: 'lead-author',
 	group: 'Settings',
 	name: 'First lead author',
+	target: { name: 'LEAD_AUTHOR_EMAIL', kind: 'Secret' },
+	use: 'Making the first lead author’s account',
+	test: 'Checks that it is set. The value is never shown.',
 	async run({ environment }) {
 		return environment.LEAD_AUTHOR_EMAIL
 			? { state: 'working', summary: 'LEAD_AUTHOR_EMAIL is set (not shown).', details: [] }
@@ -321,9 +378,13 @@ const passwordKey: Check = {
 	key: 'password-key',
 	group: 'Settings',
 	name: 'Password key',
+	target: { name: 'PASSWORD_KEY', kind: 'Secret' },
+	use: 'An optional secret key added to password hashes and authenticator secrets',
+	test: 'Checks whether it is set and, if so, that it is at least 32 characters long. The value is never shown.',
 	async run({ environment }) {
 		const key = environment.PASSWORD_KEY;
-		if (!key) return { state: 'warning', summary: 'PASSWORD_KEY is not set, so password hashes have no secret key added.', details: [], fix: `Add it as a Secret (at least 32 random characters) in the ${settingsPlace}. Once set, never change or remove it.` };
+		// Trevor chose on Nov. 26, 2026 not to use one, so as not to have to keep track of it: unset is a choice, not a fault.
+		if (!key) return { state: 'off', summary: 'Not used, by choice: passwords and authenticator secrets are kept without an added secret key.', details: [] };
 		if (key.length < 32) return { state: 'warning', summary: `PASSWORD_KEY is set (not shown) but shorter than 32 characters.`, details: [], fix: 'It cannot be changed without breaking existing passwords; ask before replacing it.' };
 		return { state: 'working', summary: 'PASSWORD_KEY is set (not shown).', details: [] };
 	}
@@ -333,6 +394,9 @@ const bookOrders: Check = {
 	key: 'book-orders',
 	group: 'Payments',
 	name: 'Book ordering switch',
+	target: { name: 'BOOK_ORDERS', kind: 'Setting' },
+	use: 'Opening book orders, in test or live mode',
+	test: 'Reads the mode and checks that the Lulu and Stripe settings are in the same mode.',
 	async run({ environment }) {
 		const mode = environment.BOOK_ORDERS;
 		if (mode !== 'test' && mode !== 'live') return { state: 'off', summary: 'Off: BOOK_ORDERS is neither "test" nor "live", so nobody can order a copy.', details: [], fix: 'Set BOOK_ORDERS to "test" with Lulu sandbox and Stripe test keys first (docs/book-orders.md).' };
@@ -364,6 +428,9 @@ const lulu: Check = {
 	key: 'lulu',
 	group: 'Payments',
 	name: 'Lulu Print API',
+	target: { name: 'Lulu', kind: 'Outside service', part: 'sandbox or production, as LULU_ENVIRONMENT says' },
+	use: 'Printing and shipping ordered books',
+	test: 'Signs in with the client key and reads the webhook list. Nothing is ordered.',
 	async run({ environment, fetcher }) {
 		const settings = luluSettings(environment);
 		if (!settings) {
@@ -396,6 +463,9 @@ const stripe: Check = {
 	key: 'stripe',
 	group: 'Payments',
 	name: 'Stripe',
+	target: { name: 'Stripe', kind: 'Outside service', part: 'STRIPE_SECRET_KEY' },
+	use: 'Taking payment for book orders',
+	test: 'Reads the balance and the webhook list with the key. Nothing is charged.',
 	async run({ environment, fetcher }) {
 		const settings = stripeSettings(environment);
 		if (!settings) {
@@ -495,6 +565,9 @@ const outreach: Check = {
 	key: 'outreach',
 	group: 'Email',
 	name: 'Outreach mailbox (Zoho)',
+	target: { name: 'Zoho Mail', kind: 'Outside service', part: 'SMTP' },
+	use: 'Sending outreach letters from the project’s own mailbox',
+	test: 'Signs in to the mail server and quits without sending anything.',
 	async run({ environment, openSocket }) {
 		const host = text(environment, 'OUTREACH_SMTP_HOST');
 		const password = text(environment, 'OUTREACH_SMTP_PASSWORD');
@@ -526,6 +599,9 @@ const inbox: Check = {
 	group: 'Email',
 	name: 'Project inbox',
 	binding: 'projectEmail',
+	target: { name: 'Cloudflare Email Routing', kind: 'Email', part: 'MAIL_DOMAIN' },
+	use: 'Receiving mail at the project’s domain and sending replies from the workspace',
+	test: 'Checks the domain setting, the projectEmail binding and MAIL_SIGNING_KEY. Nothing is sent.',
 	async run({ environment }) {
 		const domain = text(environment, 'MAIL_DOMAIN');
 		if (!domain) return { state: 'off', summary: 'Off: MAIL_DOMAIN is empty.', details: [], fix: 'Waits on the project domain and the inbox (site/MAIL.md, "Switching email on").' };
@@ -540,6 +616,9 @@ const scanner: Check = {
 	key: 'scanner',
 	group: 'Workers',
 	name: 'Malware scanner queue',
+	target: { name: 'tribal-law-project', kind: 'D1 database', part: 'file_scans table' },
+	use: 'Holding sent files until the malware scanner clears them',
+	test: 'Counts files by scan status, flags any that waited over 30 minutes, and reads the age of the last scan’s virus signatures.',
 	async run({ environment, now = new Date() }) {
 		let rows: { status: string; count: number; oldest: string | null }[];
 		try {
@@ -589,6 +668,9 @@ const sponsorGifts: Check = {
 	key: 'sponsor-gifts',
 	group: 'Payments',
 	name: 'Sponsor gifts',
+	target: { name: 'Stripe', kind: 'Outside service', part: 'SPONSOR_GIFTS' },
+	use: 'Taking sponsors’ gifts',
+	test: 'Checks the gift settings, then that Stripe’s webhook for /sponsorship/payment-webhook is enabled. Nothing is charged.',
 	async run({ environment, fetcher }) {
 		const settings = giftSettingChecks(environment);
 		const mode = environment.SPONSOR_GIFTS;
@@ -610,6 +692,9 @@ const videoRooms: Check = {
 	key: 'video-rooms',
 	group: 'Outside services',
 	name: 'Video rooms',
+	target: { name: 'Cloudflare RealtimeKit', kind: 'Outside service', part: 'VIDEO_ROOM_TOKEN' },
+	use: 'Video rooms for events',
+	test: 'Reads the app’s meeting count with the token. No meeting is made.',
 	async run({ environment, fetcher }) {
 		const settings = videoRoomSettings(environment);
 		if (!settings) return { state: 'off', summary: 'Off: VIDEO_ROOM_TOKEN is not set, so events have no video room.', details: [], fix: `Add an API token with the Realtime permission as the Secret VIDEO_ROOM_TOKEN in the ${settingsPlace} (COLLABORATION.md, "The video room").` };
@@ -626,11 +711,25 @@ const imageryNames: Record<MapImageryName, string> = {
 	contours: 'Contour lines'
 };
 
+const imageryUses: Record<MapImageryName, string> = {
+	satellite: 'The satellite base map',
+	terrain: 'The terrain base map',
+	contours: 'The contour lines layer'
+};
+
+function imageryServiceName(name: MapImageryName): string {
+	const source = mapImagery[name];
+	return source.kind === 'tiles' ? source.service : (new URL(source.address).pathname.split('/').at(-3) ?? source.address);
+}
+
 function imageryCheck(name: MapImageryName): Check {
 	return {
 		key: `map-imagery-${name}`,
 		group: 'Outside services',
 		name: imageryNames[name],
+		target: { name: 'The National Map (U.S. Geological Survey)', kind: 'Outside service', part: imageryServiceName(name) },
+		use: imageryUses[name],
+		test: mapImagery[name].kind === 'drawn' ? 'Asks for the service’s description, since drawing a picture can take longer than the check waits.' : 'Asks for the one picture of the whole world, at zoom 0.',
 		async run({ fetcher }) {
 			const source = mapImagery[name];
 			const details = [`U.S. Geological Survey, The National Map: ${source.kind === 'tiles' ? source.service : new URL(source.address).pathname.split('/').at(-3)}`];
@@ -657,6 +756,9 @@ const waybackCaptures: Check = {
 	group: 'Workers',
 	name: 'Wayback captures',
 	binding: 'waybackWorker',
+	target: { name: 'tribal-law-project-wayback', kind: 'Worker' },
+	use: 'Saving cited links to the Internet Archive’s Wayback Machine',
+	test: 'Asks the Worker for its progress: when it last ran, what it saved and what failed.',
 	async run({ environment }) {
 		const read = await readWaybackStatus(environment.waybackWorker);
 		if ('problem' in read) {
@@ -699,6 +801,9 @@ const sourceWatch: Check = {
 	key: 'source-watch',
 	group: 'Workers',
 	name: 'Source watch',
+	target: { name: 'tribal-law-project-watch', kind: 'Worker' },
+	use: 'Finding new Federal Register documents, eCFR changes and changed cited links',
+	test: 'Reads the progress file the Worker writes to tribal-law-project-files every minute.',
 	async run({ environment, now = new Date() }) {
 		const progress = await watchProgress(environment);
 		if (progress && 'problem' in progress) return { state: 'problem', summary: progress.problem, details: [] };
@@ -730,6 +835,9 @@ const sourceWatchModels: Check = {
 	key: 'source-watch-models',
 	group: 'Workers',
 	name: 'Source watch models',
+	target: { name: 'tribal-law-project-watch', kind: 'Worker', part: 'Workers AI' },
+	use: 'Sorting what the source watch finds when its rules cannot decide',
+	test: 'Reads the model, its last problem and 30 days of spending from the same progress file.',
 	async run({ environment, now = new Date() }) {
 		const progress = await watchProgress(environment);
 		if (progress && 'problem' in progress) return { state: 'problem', summary: progress.problem, details: [] };
@@ -755,6 +863,9 @@ const breachedPasswords: Check = {
 	key: 'breached-passwords',
 	group: 'Outside services',
 	name: 'Breached password list',
+	target: { name: 'Have I Been Pwned', kind: 'Outside service', part: 'api.pwnedpasswords.com' },
+	use: 'Turning away passwords known from data breaches',
+	test: 'Asks for the hashes starting 00000, which is nobody’s password.',
 	async run({ fetcher }) {
 		// The first five characters of a hash, as the site sends for a new password; "00000" is nobody's password.
 		const response = await fetcher(`${pwnedPasswordsRange}00000`, { headers: { 'add-padding': 'true', 'user-agent': 'model-tribal-adr-code-password-check' } });
@@ -770,6 +881,9 @@ function directoryCheck(key: string, name: string, keeper: string, link: string)
 		key,
 		group: 'Outside services',
 		name,
+		target: { name: keeper.replace(/^The /, ''), kind: 'Outside service', part: new URL(link).hostname },
+		use: 'The weekly check of the address book against official contacts',
+		test: 'Asks for the number of entries.',
 		async run({ fetcher }) {
 			const query = new URLSearchParams({ where: '1=1', returnCountOnly: 'true', f: 'json' });
 			const response = await fetcher(`${link}/query?${query}`);
@@ -789,6 +903,9 @@ const siteTextRebuilds: Check = {
 	key: 'site-text',
 	group: 'Workers',
 	name: 'Site text rebuilds',
+	target: { name: 'tribal-law-project-site', kind: 'Worker', part: 'deploy hook' },
+	use: 'Rebuilding the site when site text is published',
+	test: 'Checks that SITE_REBUILD_HOOK_URL is set and reads the outcome of the last rebuild request. It does not start a rebuild.',
 	async run({ environment }) {
 		const fix = `Create a deploy hook for the website (Workers & Pages > tribal-law-project-site > Settings > Builds > Deploy Hooks) and save its address as the secret SITE_REBUILD_HOOK_URL (${settingsPlace}).`;
 		let publication: number;
@@ -816,8 +933,8 @@ const siteTextRebuilds: Check = {
 export const serviceChecks: readonly Check[] = [
 	database,
 	sourceLibrary,
-	bucketCheck('source-documents-bucket', 'Source documents bucket', 'sourceDocuments', 'tribal-law-project-files', 'source documents and sent files'),
-	bucketCheck('mail-bucket', 'Mail bucket', 'mailFiles', 'tribal-law-project-mail', 'the project inbox’s messages and attachments'),
+	bucketCheck('source-documents-bucket', 'Files bucket', 'sourceDocuments', 'tribal-law-project-files', 'source documents and sent files', 'Source documents, sent files, map tiles, the library’s change files and the Workers’ progress files'),
+	bucketCheck('mail-bucket', 'Mail bucket', 'mailFiles', 'tribal-law-project-mail', 'the project inbox’s messages and attachments', 'The project inbox’s messages and attachments'),
 	mapTiles,
 	siteFiles,
 	liveEditing,
@@ -827,11 +944,11 @@ export const serviceChecks: readonly Check[] = [
 	sourceWatch,
 	sourceWatchModels,
 	siteTextRebuilds,
-	rateLimitCheck('request-form-limit', 'Request form', 'requestFormLimit', 'the request form'),
-	rateLimitCheck('workspace-change-limit', 'Workspace changes', 'workspaceChangeLimit', 'making changes in the workspace'),
-	rateLimitCheck('sign-in-limit', 'Sign-in, by email address', 'signInLimit', 'guessing codes and passwords for one address'),
-	rateLimitCheck('sign-in-network-limit', 'Sign-in, by network address', 'signInNetworkLimit', 'guessing from one network address'),
-	rateLimitCheck('upload-limit', 'Uploads', 'uploadLimit', 'starting uploads'),
+	rateLimitCheck('request-form-limit', 'Request form', 'requestFormLimit', 'the request form', '5 a minute'),
+	rateLimitCheck('workspace-change-limit', 'Workspace changes', 'workspaceChangeLimit', 'making changes in the workspace', '30 a minute'),
+	rateLimitCheck('sign-in-limit', 'Sign-in, by email address', 'signInLimit', 'guessing codes and passwords for one address', '5 a minute'),
+	rateLimitCheck('sign-in-network-limit', 'Sign-in, by network address', 'signInNetworkLimit', 'guessing from one network address', '30 a minute'),
+	rateLimitCheck('upload-limit', 'Uploads', 'uploadLimit', 'starting uploads', '600 a minute'),
 	siteAddress,
 	leadAuthor,
 	passwordKey,
@@ -850,6 +967,19 @@ export const serviceChecks: readonly Check[] = [
 	lulu,
 	stripe,
 	sponsorGifts
+];
+
+/**
+ * The databases and buckets the site used before the Nov. 26, 2026 move to
+ * new ones under the new names (docs/cloudflare-names.md). The site has no
+ * binding to them, so nothing checks them; the page lists them so their names
+ * are not mistaken for the ones in use. Remove each once it is deleted.
+ */
+export const oldResources: readonly (CheckTarget & { title: string; replacedBy: string; note?: string })[] = [
+	{ name: 'model-tribal-adr-code', kind: 'D1 database', title: 'Old main database', replacedBy: 'tribal-law-project', note: 'Only the Wayback Worker’s temporary copy code still reads it.' },
+	{ name: 'model-tribal-adr-code-library', kind: 'D1 database', title: 'Old source library database', replacedBy: 'tribal-law-project-library' },
+	{ name: 'model-tribal-adr-code-sources', kind: 'R2 bucket', title: 'Old files bucket', replacedBy: 'tribal-law-project-files', note: 'Only the Wayback Worker’s temporary copy code still reads it.' },
+	{ name: 'model-tribal-adr-code-mail', kind: 'R2 bucket', title: 'Old mail bucket', replacedBy: 'tribal-law-project-mail' }
 ];
 
 /** Runs every check at once; one that throws or runs too long counts as not working, without stopping the rest. */
@@ -871,7 +1001,17 @@ export async function runServiceChecks(context: CheckContext, only?: string): Pr
 			} finally {
 				clearTimeout(timer);
 			}
-			return { key: check.key, group: check.group, name: check.name, ...(check.binding ? { binding: check.binding } : {}), ...outcome, milliseconds: Date.now() - started };
+			return {
+				key: check.key,
+				group: check.group,
+				name: check.name,
+				...(check.binding ? { binding: check.binding } : {}),
+				target: check.target,
+				use: check.use,
+				test: check.test,
+				...outcome,
+				milliseconds: Date.now() - started
+			};
 		})
 	);
 }
