@@ -112,6 +112,7 @@ const notSearched: Record<string, string> = {
 	'/essays/[slug]': 'whether an essay is published lives in the database, which the build cannot read; Essays lists them',
 	'/foundations/[slug]': 'as essays',
 	'/back-matter/[slug]': 'as essays',
+	'/news/[slug]': 'as essays; News lists them',
 	'/contributors/[slug]': 'contributors choose whether to be listed, in the database; Contributors lists them',
 	'/sponsors/[slug]': 'sponsors are kept in the database; Sponsorship lists them',
 	'/events/[slug]': 'events are kept in the database; Events lists them',

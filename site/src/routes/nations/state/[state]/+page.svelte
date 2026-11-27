@@ -25,7 +25,6 @@
 
 {#each data.groups as group (group.entityType)}
 	<section aria-labelledby="group-{group.entityType}">
-		<h2 id="group-{group.entityType}">{group.label}</h2>
-		<NationTable {group} identifier="nations-{data.state.key}-{group.entityType}" />
+		<NationTable {group} identifier="nations-{data.state.key}-{group.entityType}" headingLevel={2} headingIdentifier="group-{group.entityType}" />
 	</section>
 {/each}

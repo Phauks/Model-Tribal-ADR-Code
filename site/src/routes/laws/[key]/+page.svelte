@@ -15,6 +15,8 @@
 	import SavedText from '#lib/components/SavedText.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
 	import TileMap from '#lib/components/TileMap.svelte';
+	import CodeContents from '#lib/components/code/CodeContents.svelte';
+	import CodePager from '#lib/components/code/CodePager.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -69,8 +71,21 @@
 	{/if}
 {/snippet}
 
-<InfoPage title={data.name} lead={data.citation} glance={data.glance} panels={data.landCeded ? cededMap : undefined} sources={data.sources} trail={[data.kind === 'state-statute' ? { label: 'Library', href: '/library' } : { label: 'Federal law', href: '/laws' }]} status={data.stub ? stubStatus : undefined}>
+<InfoPage title={data.name} lead={data.citation} glance={data.glance} panels={data.landCeded ? cededMap : undefined} sources={data.sources} trail={data.trail ?? [data.kind === 'state-statute' ? { label: 'Library', href: '/library' } : { label: 'Federal law', href: '/laws' }]} crumb={data.chapter ? data.name.split('.')[0] : undefined} status={data.stub ? stubStatus : undefined}>
 	{#if data.fullTitle}<p class="full-title muted">{data.fullTitle}</p>{/if}
+
+	{#if data.chapter}
+		<!-- A chapter of Title 25: the chapters before and after, then its contents (src/lib/server/code-outline.ts; design/title-25-navigation, option A). -->
+		{@const subchapters = data.chapter.contents.filter((group) => group.label && !group.part).length}
+		<p class="chapter-counts muted">
+			{#if subchapters > 0}<span>{subchapters} subchapters</span>{/if}
+			<span>{data.chapter.inForce.toLocaleString('en-US')} sections in force{#if data.chapter.notInForce > 0}, {data.chapter.notInForce.toLocaleString('en-US')} repealed, moved or omitted{/if}</span>
+		</p>
+		<CodePager previous={data.chapter.previous} next={data.chapter.next} look="line" line="heading" />
+		<Collapsible heading="Contents" identifier="contents" count={data.chapter.inForce}>
+			<CodeContents groups={data.chapter.contents} />
+		</Collapsible>
+	{/if}
 
 	<RecordBoxSections sections={data.boxSections} />
 
@@ -171,6 +186,8 @@
 			</dl>
 		</Collapsible>
 	{/if}
+
+	{#if data.chapter}<CodePager previous={data.chapter.previous} next={data.chapter.next} />{/if}
 </InfoPage>
 
 {#snippet stubStatus()}{#if data.stub}<StubBadge stub={data.stub} />{/if}{/snippet}
@@ -189,6 +206,13 @@
 
 	.full-title {
 		margin-top: 0;
+	}
+
+	.chapter-counts {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 0.9rem;
+		margin: 0 0 1rem;
 	}
 
 	.law-reading :global(.reading-list) {
