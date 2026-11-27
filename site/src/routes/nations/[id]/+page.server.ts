@@ -44,6 +44,7 @@ import { displayName, humanize, regionAnchor, presenceNote, reviewStatusLabels, 
 import { legalHelpCitation, legalHelpFor, legalHelpHeading } from '#lib/server/legal-help.ts';
 import { formatSource } from '#lib/server/markdown.ts';
 import { recordPageLink } from '#lib/server/law-records.ts';
+import { agencyRows, awardsDates, awardsFiscalYear, awardsSource, dollars, nationAwards, recipientPage } from '#lib/server/federal-awards.ts';
 import { builderAreaName, surveyFigures, surveyPeople, surveyRows, surveySource, surveyYears } from '#lib/server/census-areas.ts';
 import { builderPath } from '#lib/table-builder.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -304,8 +305,40 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 				cited(sources, 'Member of', fact, { text: fact.organization, link: organizationHome(fact) })
 			)
 		),
+		...awardsGroups(record, sources),
 		...censusGroups(record, sources)
 	];
+}
+
+/**
+ * The federal awards to the nation's government in the latest complete fiscal
+ * year (Trevor chose mockup A on Nov. 27, 2026; project files
+ * design/federal-awards/; src/lib/server/federal-awards.ts), just above the
+ * Census area, in the same wide layout: the total, linked to the recipient's
+ * page on USAspending.gov when the government reports under one UEI number,
+ * with the fiscal year's dates under it, then the largest agencies and the
+ * rest in one row, so the rows add up to the total. One marker, on the last
+ * row, covers the group. A nation with no awards to its government has none,
+ * nor one whose awards net to nothing or less (an agency took back more than
+ * it awarded in the year).
+ */
+function awardsGroups(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const awards = nationAwards().get(record.id);
+	if (!awards || Math.round(awards.total) <= 0) return [];
+	const label = 'Federal awards';
+	const total = dollars(awards.total);
+	const rows: FactItem[] = agencyRows(awards.agencies);
+	const citations: CitationMark[] = [];
+	const ueis = awards.recipients.map((recipient) => recipient.uei).join(' and ');
+	sources.cite(awardsSource, { section: label, text: `${total} in fiscal year ${awardsFiscalYear}`, where: `recipient UEI ${ueis}` }, citations);
+	if (rows.length > 0) rows[rows.length - 1] = { ...rows[rows.length - 1], citations };
+	const lead: FactItem = {
+		text: total,
+		link: awards.recipients.length === 1 ? recipientPage(awards.recipients[0].recipientId) : undefined,
+		note: awardsDates,
+		...(rows.length === 0 ? { citations } : {})
+	};
+	return [{ field: 'federal-awards', label, wide: true, items: [lead, ...rows] }];
 }
 
 /** Where in the survey's file an area's figures are, for the References list. */
@@ -570,7 +603,8 @@ const jurisdictionTopics: Record<string, string> = {
 	'tribal-law-and-order-act-enhanced-sentencing': 'Tribal Law and Order Act',
 	'indian-child-welfare-act': 'Indian Child Welfare Act',
 	'hearth-act-leasing-regulations': 'Leasing under the HEARTH Act',
-	'environmental-treatment-as-a-state': 'Environmental programs (treatment as a state)'
+	'environmental-treatment-as-a-state': 'Environmental programs (treatment as a state)',
+	'water-rights-settlement': 'Water rights settlements'
 };
 const topicOrder = Object.keys(jurisdictionTopics);
 

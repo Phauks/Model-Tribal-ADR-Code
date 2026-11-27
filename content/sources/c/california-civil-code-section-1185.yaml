@@ -1,0 +1,47 @@
+key: california-civil-code-section-1185
+kind: state-statute
+citation:
+  type: legislation
+  title: Civil Code section 1185
+  title-short: Cal. Civ. Code § 1185
+  container-title: California Civil Code
+  container-title-short: Cal. Civ. Code
+  section: '1185'
+  author:
+  - literal: California Legislative Counsel
+  URL: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1185.
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1185.
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Cal. Civ. Code § 1185 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Cal. Civ. Code § 1185 (2026). History: Amended by Stats. 2016, Ch. 762, Sec. 1.5. (AB 2566) Effective January 1, 2017. Text read from the California Legislative Counsel''s database of the codes (pubinfo_2025.zip, updated Nov. 23, 2026, downloads.leginfo.legislature.ca.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal government; tribal); AI reader''s verdict incidental: Acknowledgment ID may be tribal government identification card. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal government; tribal'

@@ -7,7 +7,8 @@
 /** Where each family's built page data lives: /page-data/<family>/<key>.json. */
 export const pageDataPrefix = '/page-data';
 
-export const pageDataFamilies = ['cases', 'laws', 'biographies', 'justices', 'presidents', 'courts'] as const;
+/** `sections`: each section of Title 25 of the Code, at /laws/usc-25/<section> (src/lib/server/code-outline.ts). */
+export const pageDataFamilies = ['cases', 'laws', 'sections', 'biographies', 'justices', 'presidents', 'courts'] as const;
 
 export type PageDataFamily = (typeof pageDataFamilies)[number];
 

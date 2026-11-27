@@ -42,7 +42,8 @@ export function stubList(): StubListing[] {
 	}
 	for (const key of lawKeys()) {
 		const page = lawPage(key);
-		if (!page.stub) continue;
+		// A record of a single Title 25 section lives on the section's page now.
+		if ('movedTo' in page || !page.stub) continue;
 		const pages = page.essays.length;
 		list.push({ kind: 'law', name: page.name, link: `/laws/${key}`, made: 'short', mentions: pages, mentionsText: pages > 0 ? plural(pages, 'page', 'pages') : '', record: page.stub.record });
 	}

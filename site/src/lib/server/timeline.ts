@@ -174,7 +174,7 @@ function lawEntry(record: SourceRecord, context: boolean): TimelineEntry | undef
 		title,
 		citation: lawCitation(record, title) || undefined,
 		// The law's own page (law-pages.ts), else its text.
-		link: isLawRecord(record) ? `/laws/${record.key}` : recordLink(record),
+		link: isLawRecord(record) ? (recordPageLink(record.key) ?? `/laws/${record.key}`) : recordLink(record),
 		nations: record.tribes,
 		context: context || undefined
 	};
