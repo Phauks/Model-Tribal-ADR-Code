@@ -7,8 +7,8 @@
 	// them, Escape closes the list and returns to the button, and a click
 	// elsewhere closes it. Each item names what it gives, its format and one
 	// line on what it is for. What a page offers is in
-	// src/lib/page-downloads.ts. Without scripts the button is a link to the
-	// Downloads page.
+	// src/lib/page-downloads.ts. Without scripts, and until the page's script
+	// has started, the button is a link to the Downloads page.
 	//
 	// Trevor asked on Nov. 23, 2026 that downloads be better separated. The
 	// list is in labeled groups: this page itself, then the page's files by
@@ -33,6 +33,7 @@
 	import MapIcon from '@lucide/svelte/icons/map';
 	import LibraryBig from '@lucide/svelte/icons/library-big';
 	import { saveFile } from '#lib/save-file.ts';
+	import { onMount } from 'svelte';
 
 	let { onpdf }: { onpdf: () => void } = $props();
 
@@ -47,6 +48,18 @@
 		contact: ContactRound,
 		map: MapIcon
 	};
+
+	// The button is drawn only once this component is running, as Report a
+	// problem's is (ReportProblem.svelte). The page shows its controls before
+	// its script has loaded, and a button drawn then did nothing when pressed:
+	// the accessibility check of the Worker's pages pressed it in that moment
+	// and failed on Nov. 27, 2026, and a reader on a slow connection would
+	// have found it dead too. Until then the link to the Downloads page,
+	// with the same icon in the same place, works.
+	let scripted = $state(false);
+	onMount(() => {
+		scripted = true;
+	});
 
 	let open = $state(false);
 	let message = $state('');
@@ -144,13 +157,14 @@
 
 <svelte:document onclick={closeOnOutside} />
 
-<a class="icon-button download-button without-scripts" href="/downloads" aria-label="Data sets" title="Data sets">
+{#if !scripted}
+<a class="icon-button download-button" href="/downloads" aria-label="Data sets" title="Data sets">
 	<Download size={24} />
 </a>
-
+{:else}
 <!-- Escape and leaving the menu close it from anywhere inside; the button and links are the controls. -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<div class="download needs-scripts" bind:this={container} onfocusout={closeOnOutside} {onkeydown}>
+<div class="download" bind:this={container} onfocusout={closeOnOutside} {onkeydown}>
 	<button
 		bind:this={button}
 		class="icon-button download-button"
@@ -236,15 +250,11 @@
 	</div>
 	<p class="visually-hidden" role="status">{message}</p>
 </div>
+{/if}
 
 <style>
 	.download {
 		position: relative;
-	}
-
-	/* Without scripts the list cannot open, so the icon links to the Data sets page. */
-	:global(:root[data-scripts='on']) .without-scripts {
-		display: none;
 	}
 
 	.download-button,
