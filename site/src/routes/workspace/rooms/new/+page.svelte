@@ -17,6 +17,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Video rooms', href: '/workspace/rooms' }
 	]}
+	current="Plan a room"
 />
 <h1>Plan a room</h1>
 <p>For an interview, choose a private room, then send the person an invite link from the room’s page.</p>

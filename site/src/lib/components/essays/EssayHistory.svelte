@@ -25,6 +25,7 @@
 		{ label: section, href: sectionLink },
 		{ label: title, href: path }
 	]}
+	current="Versions of {title}"
 />
 
 <div class="reading">

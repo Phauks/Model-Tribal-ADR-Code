@@ -23,6 +23,7 @@
 		{ label: 'Recent changes', href: '/changes' },
 		{ label: `History of ${pageName}`, href: `/changes?page=${encodeURIComponent(data.to.address)}` }
 	]}
+	current="Compare two versions of {pageName}"
 />
 
 <h1>Compare two versions of {pageName}</h1>

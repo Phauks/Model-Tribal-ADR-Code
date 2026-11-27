@@ -26,9 +26,11 @@
 	// "the Navajo Nation", as a nation's name reads in a sentence.
 	const nationNames = $derived(data.nations.map((nation) => (/^the /i.test(nation.name) ? nation.name : `the ${nation.name}`)).join(' and '));
 	const lead = $derived.by(() => {
+		// Each count with its years, which At a glance no longer repeats (src/lib/server/courts.ts).
+		const years = (span: { from: string; to: string } | undefined) => (span ? ` (${span.from === span.to ? span.from : `${span.from}–${span.to}`})` : '');
 		const counts = [
-			opinionCount > 0 ? `${opinionCount.toLocaleString('en-US')} ${opinionCount === 1 ? 'opinion' : 'opinions'}` : '',
-			data.caseCount > 0 ? `${data.caseCount.toLocaleString('en-US')} ${data.caseCount === 1 ? 'case' : 'cases'}` : ''
+			opinionCount > 0 ? `${opinionCount.toLocaleString('en-US')} ${opinionCount === 1 ? 'opinion' : 'opinions'}${years(data.opinionYears)}` : '',
+			data.caseCount > 0 ? `${data.caseCount.toLocaleString('en-US')} ${data.caseCount === 1 ? 'case' : 'cases'}${years(data.caseYears)}` : ''
 		].filter(Boolean);
 		const named = counts.length > 0 ? `, named in ${counts.join(' and ')} on this site` : '';
 		const what = data.nations.length > 0 ? `A Tribal court of ${nationNames}` : `A ${data.kind.toLocaleLowerCase('en-US')}`;

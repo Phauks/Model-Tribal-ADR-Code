@@ -677,7 +677,8 @@
 	{#if down}
 		<p class="key small muted" aria-hidden="true">
 			{#each visibleKinds as kind (kind)}
-				<span class="kind-{kind}"><span class="key-ring"></span>{kindLabels[kind]}</span>
+				{@const Icon = icons[kind]}
+				<span class="kind-{kind}"><span class="key-icon"><Icon size={16} aria-hidden="true" /></span>{kindLabels[kind]}</span>
 			{/each}
 			<span><span class="key-ring partial"></span>Year or month only</span>
 			{#if entries.some((entry) => entry.context)}
@@ -710,6 +711,10 @@
 			onclick={jumpTo}
 			onkeydown={railKey}
 		>
+			{#each railLanes as kind, lane (kind)}
+				{@const Icon = icons[kind]}
+				<span class="rail-lane-icon kind-{kind}" style:--lane={lane} aria-hidden="true"><Icon size={12} strokeWidth={2.25} /></span>
+			{/each}
 			{#each railTicks as year}
 				<span class="rail-tick" style:top="{railYear(year)}px">{year}</span>
 			{/each}
@@ -869,6 +874,12 @@
 
 	.key-ring.partial {
 		border-style: dashed;
+	}
+
+	/* Each kind in the key shows its icon, the same one its entries carry, so the key reads without telling colors apart (WCAG 1.4.1). */
+	.key-icon {
+		display: inline-flex;
+		color: var(--kind-color);
 	}
 
 	@media (max-width: 30rem) {
@@ -1415,6 +1426,15 @@
 		background: var(--kind-color);
 	}
 
+	/* Each lane of the rail is headed by its kind's icon, above the rail, so the lanes are told apart by more than color. */
+	.rail-lane-icon {
+		position: absolute;
+		top: -1.125rem;
+		left: calc(2.75rem + var(--lane) * 0.875rem + 0.3125rem - 6px);
+		display: flex;
+		color: var(--kind-color);
+	}
+
 	.rail-window {
 		position: absolute;
 		left: -0.35rem;
@@ -1449,6 +1469,11 @@
 		.rail-mark {
 			left: calc(0.2rem + var(--lane) * 0.3rem);
 			width: 0.25rem;
+		}
+
+		/* A phone's rail is too narrow for the lane icons; the key above names each kind with its icon. */
+		.rail-lane-icon {
+			display: none;
 		}
 
 		.down .entries:not(.nested)::before {
