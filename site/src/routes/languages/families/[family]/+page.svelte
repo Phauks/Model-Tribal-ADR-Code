@@ -32,3 +32,10 @@
 		</DataTable>
 	</Collapsible>
 </InfoPage>
+
+<style>
+	/* The table starts under Key facts, at the full width, as mocked. */
+	:global(.collapsible.past-glance) {
+		clear: both;
+	}
+</style>
