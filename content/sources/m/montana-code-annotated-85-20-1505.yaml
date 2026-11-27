@@ -1,0 +1,50 @@
+key: montana-code-annotated-85-20-1505
+kind: state-statute
+citation:
+  type: legislation
+  title: Blackfeet Tribe water rights compact infrastructure account -- use
+  title-short: Mont. Code Ann. § 85-20-1505
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 85-20-1505
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 2007
+  URL: https://mca.legmt.gov/bills/mca/title_0850/chapter_0200/part_0150/section_0050/0850-0200-0150-0050.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0850/chapter_0200/part_0150/section_0050/0850-0200-0150-0050.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Mont. Code Ann. § 85-20-1505 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 85-20-1505 (2025). History: En. Sec. 3, Ch. 489, L. 2007; amd. Sec. 2, Ch. 204, L. 2009; amd. Sec. 3, Ch. 147, L. 2011. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservation; blackfeet; indian; reservation; tribe); AI reader''s verdict core: Blackfeet Tribe water rights compact infrastructure account. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian reservation; blackfeet; indian; reservation; tribe'

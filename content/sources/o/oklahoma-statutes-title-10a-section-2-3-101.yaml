@@ -65,10 +65,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 2-3-101 (2026). History: from being held in any jail certified by the State Department of Health, police station or Added by Laws 1982, c. 312, § 18, operative Oct. 1, 1982. Amended by Laws 1984, c. 219, § Laws 1994, c. 2, § 3, emerg. eff. March 2, 1994; Laws 1994, c. 290, § 35, eff. July 1, 1994; Laws 1995, c. 352, § 149, eff. July 1, 1995. Renumbered from § 1107.1 of Title 10 by Laws Laws 1997, c. 15, § 1, eff. Nov. 1, 1997; Laws 2002, c. 473, § 7, eff. Nov. 1, 2002; Laws 2003, Renumbered from § 7304-1.1 of Title 10 by Laws 2009, c. 234, § 185, emerg. eff. May 21, Laws 2002, c. 327, § 31 repealed by Laws 2003, c. 3, Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 361. Found by the state statutes pilot (terms: indian child; indian tribe); AI reader''s verdict incidental: Eligible Indian child may use juvenile detention facility. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 2-3-101 (2026). History: Added by Laws 1982, c. 312, § 18, operative Oct. 1, 1982. Amended by Laws 1984, c. 219, § Laws 1994, c. 2, § 3, emerg. eff. March 2, 1994; Laws 1994, c. 290, § 35, eff. July 1, 1994; Laws 1995, c. 352, § 149, eff. July 1, 1995. Renumbered from § 1107.1 of Title 10 by Laws Laws 1997, c. 15, § 1, eff. Nov. 1, 1997; Laws 2002, c. 473, § 7, eff. Nov. 1, 2002; Laws 2003, Renumbered from § 7304-1.1 of Title 10 by Laws 2009, c. 234, § 185, emerg. eff. May 21, Laws 2002, c. 327, § 31 repealed by Laws 2003, c. 3, § 10, emerg. eff. March 19, 2003. Laws. Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 361. Found by the state statutes pilot (terms: indian child; indian tribe); AI reader''s verdict incidental: Eligible Indian child may use juvenile detention facility. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

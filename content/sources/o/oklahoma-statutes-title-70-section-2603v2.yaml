@@ -70,10 +70,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 2603v2 (2026). History: Added by Laws 1992, c. 353, § 3, eff. July 1, 1992. Amended by Laws 1994, c. 153, § 2, Laws 2008, c. 409, § 1, emerg. eff. June 3, 2008; Laws 2009, c. 2, § 32, emerg. eff. March 12, Laws 2008, c. 350, § 2 repealed by Laws 2009, c. 2, § 33, emerg. eff. March 12, 2009. Laws Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 1643. Found by the state statutes pilot (terms: federally recognized indian tribe; indian child); AI reader''s verdict incidental: Higher learning eligibility covers children adopted from federally recognized tribe custody. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 2603v2 (2026). History: Added by Laws 1992, c. 353, § 3, eff. July 1, 1992. Amended by Laws 1994, c. 153, § 2, Laws 2008, c. 409, § 1, emerg. eff. June 3, 2008; Laws 2009, c. 2, § 32, emerg. eff. March 12, Laws 2008, c. 350, § 2 repealed by Laws 2009, c. 2, § 33, emerg. eff. March 12, 2009. Laws. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 1643. Found by the state statutes pilot (terms: federally recognized indian tribe; indian child); AI reader''s verdict incidental: Higher learning eligibility covers children adopted from federally recognized tribe custody. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

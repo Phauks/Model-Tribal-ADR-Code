@@ -77,10 +77,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 5061.1 (2026). History: from the I/T/U Shared Savings Program provided for in this section to participating I/T/U Added by Laws 2021, c. 568, § 1, eff. July 1, 2021. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 2040. Found by the state statutes pilot (terms: alaska native; alaska natives; american indian; american indians; indian health); AI reader''s verdict core: Shared savings for Indian Health Service and tribal facility services. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 5061.1 (2026). History: Added by Laws 2021, c. 568, § 1, eff. July 1, 2021. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 2040. Found by the state statutes pilot (terms: alaska native; alaska natives; american indian; american indians; indian health); AI reader''s verdict core: Shared savings for Indian Health Service and tribal facility services. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

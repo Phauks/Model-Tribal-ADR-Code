@@ -42,7 +42,18 @@ export interface PublicCopy {
 	namesReplaced?: boolean;
 	/** The records the copy belongs to, such as the source record of the case it reports, by key. */
 	records: string[];
+	/**
+	 * A saved web page's character encoding when it is not UTF-8, such as
+	 * windows-1252 (research/copy-charsets.csv). Every other saved page is
+	 * served as UTF-8.
+	 */
+	charset?: string;
+	/** How many pages a PDF has (research/copy-pages.csv), when counted. */
+	pages?: number;
 }
+
+/** A saved web page, counted apart from documents (Trevor, Nov. 27, 2026: "denote documents and pages separately"). */
+export const isSavedWebPage = (copy: Pick<PublicCopy, 'mediaType'>) => copy.mediaType === 'text/html';
 
 /**
  * Media types the Worker serves as copies. A saved web page is served in a
@@ -147,13 +158,29 @@ export function linkForMatching(link: string): string | undefined {
 	return address.href;
 }
 
-/** Looks up copies by any of the addresses they were published at. */
+/**
+ * Which kind of copy a link opens when the site keeps more than one of the
+ * same document, lowest first: the published PDF, then a transcription of its
+ * text, then a scanned picture, and last a saved web page, which carries the
+ * other site's menus and layout around the text. Trevor found the saved
+ * Oklahoma State University page of the 1873 Mescalero Apache order hard to
+ * read (Nov. 27, 2026) when the order's plain text was also on the site.
+ */
+export function copyPreference(mediaType: string): number {
+	const order = ['application/pdf', 'text/plain', 'image/jpeg', 'text/html'];
+	const place = order.indexOf(mediaType);
+	return place === -1 ? order.length : place;
+}
+
+/** Looks up copies by any of the addresses they were published at, the preferred kind of copy first (copyPreference). */
 export function copiesByLink(copies: PublicCopy[]): Map<string, PublicCopy> {
 	const byLink = new Map<string, PublicCopy>();
 	for (const copy of copies) {
 		for (const link of copy.links) {
 			const matching = linkForMatching(link);
-			if (matching && !byLink.has(matching)) byLink.set(matching, copy);
+			if (!matching) continue;
+			const held = byLink.get(matching);
+			if (!held || copyPreference(copy.mediaType) < copyPreference(held.mediaType)) byLink.set(matching, copy);
 		}
 	}
 	return byLink;

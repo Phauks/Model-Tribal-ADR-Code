@@ -257,6 +257,48 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
   note: 'Listed as "Washoe Tribe of Nevada and California". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Washoe Tribe of Nevada and California (2003)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2007
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Washoe Tribe Of Nevada And California' (Western Region)
+- program: indian-health-service-self-governance-compact
+  since: 2003
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Phoenix Area, row 'Washoe Tribe of Nevada and California'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2573409
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NV, row 'Washoe Tribe' (Gardnerville)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 2288850
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'WASHOE TRIBE OF NEVADA & CALIFORNIA' (UEI WKKQPNRS2NV9), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 6671931
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'WASHOE TRIBE OF NEVADA & CALIFORNIA' (UEI WKKQPNRS2NV9), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Washoe Tribe, Nevada" among organizations under constitutions approved by the

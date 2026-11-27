@@ -221,6 +221,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Wampanoag Tribe of Gay Head".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2000
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Wampanoag Tribe Of Gay Head (Aquinnah)' (Eastern Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Wampanoag Tribe Of Gay Head (Aquinnah)'.
+- program: indian-health-service-self-governance-compact
+  since: 2001
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Nashville Area, row 'Wampanoag Tribe of Gay Head (Aquinnah)'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Wampanoag Tribe of Gay Head (Aquinnah)'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 637527
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MA, row 'Wampanoag Tribe of Gay Head (Aquinnah)' (Chilmark)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1525840
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'WAMPANOAG TRIBE OF GAY HEAD AQUINNAH' (UEI MXKHMPDPVCG8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'WAMPANOAG TRIBE OF GAY HEAD AQUINNAH'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 1957874
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'WAMPANOAG TRIBE OF GAY HEAD AQUINNAH' (UEI MXKHMPDPVCG8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'WAMPANOAG TRIBE OF GAY HEAD AQUINNAH'.
 governance:
 - aspect: form
   value: Non-IRA constitution

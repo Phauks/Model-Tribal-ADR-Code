@@ -70,10 +70,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 3-168 (2026). History: from the Information Services Division of the Office of Added by Laws 2013, c. 356, § 1, eff. July 1, 2013. Amended by Laws 2015, c. 33, § 1, eff. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 268. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: Student data system includes American Indian heritage and tribal affiliation. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 3-168 (2026). History: Added by Laws 2013, c. 356, § 1, eff. July 1, 2013. Amended by Laws 2015, c. 33, § 1, eff. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 268. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: Student data system includes American Indian heritage and tribal affiliation. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

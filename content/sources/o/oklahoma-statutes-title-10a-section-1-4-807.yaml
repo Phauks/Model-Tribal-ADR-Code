@@ -70,7 +70,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 1-4-807 (2026). History: Added by Laws 1981, c. 289, § 1, eff. Oct. 1, 1981. Amended by Laws 1983, c. 113, § 2, eff. Laws 1995, c. 352, § 33, eff. July 1, 1995. Renumbered from § 1116.1 of Title 10 by Laws Laws 1997, c. 389, § 6, eff. Nov. 1, 1997; Laws 1998, c. 421, § 19, emerg. eff. June 11, 1998; Laws 2000, c. 374, § 19, eff. July 1, 2000; Laws 2002, c. 237, § 2, emerg. eff. May 9, 2002; Laws 2004, c. 452, § 2, eff. Nov. 1, 2004; Laws 2007, c. 196, § 2, eff. July 1, 2007; Laws 2009, Renumbered from § 7003-5.6 of Title 10 by Laws 2009, c. 233, § 253, emerg. eff. May 21, Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 153. Found by the state statutes pilot (terms: tribe; tribes); AI reader''s verdict incidental: Child review hearing reports go to relevant tribe. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

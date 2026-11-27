@@ -194,6 +194,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
   note: 'The source''s words: "Native Village of Koyuk".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 388687
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Koyuk' (Koyuk)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Koyuk'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution (Native Village of Koyuk) (approved 1946) states it was adopted under Act of June

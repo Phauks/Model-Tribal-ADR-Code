@@ -67,10 +67,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 2-2-101 (2026). History: Added by Laws 1995, c. 352, § 114, eff. July 1, 1995. Amended by Laws 1996, c. 247, § 18, Laws 2009, c. 234, § 40, emerg. eff. May 21, 2009. Renumbered from § 7303-1.1 of Title 10 Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 298. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: Intake must notify tribe if child may have tribal lineage. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 2-2-101 (2026). History: Added by Laws 1995, c. 352, § 114, eff. July 1, 1995. Amended by Laws 1996, c. 247, § 18, Laws 2009, c. 234, § 40, emerg. eff. May 21, 2009. Renumbered from § 7303-1.1 of Title 10. Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 298. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: Intake must notify tribe if child may have tribal lineage. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

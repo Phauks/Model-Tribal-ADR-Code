@@ -54,7 +54,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 27A, § 3-3-114 (2026). History: Added by Laws 1998, c. 271, § 3, eff. July 1, 1998. Amended by Laws 2019, c. 308, § 1, eff. Text read from the Legislative Service Bureau''s Title 27A PDF (updated Nov. 12, 2026), page 405. Found by the state statutes pilot (terms: indian tribe); AI reader''s verdict incidental: Cost-share eligible persons include legally recognized Indian tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

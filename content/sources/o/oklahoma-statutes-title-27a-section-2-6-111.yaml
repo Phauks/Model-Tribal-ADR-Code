@@ -54,7 +54,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 27A, § 2-6-111 (2026). History: Added by Laws 2019, c. 349, § 1, eff. Nov. 1, 2019. Text read from the Legislative Service Bureau''s Title 27A PDF (updated Nov. 12, 2026), page 150. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: DEQ may cooperate with tribal agencies on groundwater moratorium. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

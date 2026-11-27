@@ -208,6 +208,54 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: pl-102-477-plan
+  start: '2022-10-01'
+  end: '2026-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Native Employment Works
+  - Temporary Assistance for Needy Families
+  - Job Placement and Training
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota'; PL102_477_PartnerEnrollment, its 7 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 5524093
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: SD, row 'Sisseton-Wahpeton Oyate' (Agency Village)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 5659699
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SISSETON WAHPETON OYATE' (UEI EGWDMLF51RW7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SISSETON WAHPETON OYATE'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 238401
+  amount_kind: obligations
+  through: Sisseton-Wahpeton Housing Authority
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SISSETON-WAHPETON HOUSING AUTHORITY' (UEI TNNJRX6537Y3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SISSETON-WAHPETON HOUSING AUTHORITY'.
 governance:
 - aspect: form
   value: Revised Constitution and Bylaws

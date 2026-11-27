@@ -174,6 +174,37 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Puyallup Tribe of Indians".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 6930533
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Puyallup Tribe' (Tacoma)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 5210879
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'PUYALLUP TRIBE OF INDIANS' (UEI K3P8QSSCSJC4), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PUYALLUP TRIBE OF INDIANS'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 17540489
+  amount_kind: obligations
+  through: Puyallup Tribal Health Authority
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'PUYALLUP TRIBAL HEALTH AUTHORITY' (UEI N9XLV9935GG8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PUYALLUP TRIBAL HEALTH AUTHORITY'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Puyallup Tribe, Washington" among organizations under constitutions approved

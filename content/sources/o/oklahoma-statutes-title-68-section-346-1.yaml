@@ -84,7 +84,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 346.1 (2026). History: Added by Laws 2023, 1st Ex. Sess., c. 52, § 1. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 211. Found by the state statutes pilot (terms: federally recognized indian tribes; state-tribal; tribal governments; tribal nations; tribal-state); AI reader''s verdict core: Tribal-state agreements and cooperation with federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

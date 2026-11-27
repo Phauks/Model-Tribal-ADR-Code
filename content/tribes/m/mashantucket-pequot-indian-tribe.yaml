@@ -163,6 +163,34 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Mashantucket Pequot Tribal Nation".
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2023
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Nashville Area, row 'Mashantucket Pequot Tribal Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Mashantucket Pequot Tribal Nation'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CT, row 'Mashantucket Pequot Indian Tribe' (Mashantucket)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 2520907
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'MASHANTUCKET PEQUOT TRIBAL NATION' (UEI VKELG69WZM38), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'MASHANTUCKET PEQUOT TRIBAL NATION'.
 governance:
 - aspect: form
   value: Constitution and By-Laws

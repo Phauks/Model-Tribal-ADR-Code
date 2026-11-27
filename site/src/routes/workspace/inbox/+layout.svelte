@@ -187,8 +187,9 @@
 				<p class="empty small muted">No tags yet.</p>
 			{/if}
 
-			{#if data.canManage}
-				<ul class="nav-list tools">
+			<!-- Everyone on an inbox opens Inbox settings for their own alerts; the rest of it, rules and folders are for whoever manages mail. -->
+			<ul class="nav-list tools">
+				{#if data.canManage}
 					<li>
 						<a href="{base}/rules" aria-current={page.url.pathname.startsWith(`${base}/rules`) ? 'page' : undefined}>
 							<ListFilter size={18} aria-hidden="true" /><span class="name">Auto-sort rules</span>
@@ -199,13 +200,13 @@
 							<FolderCog size={18} aria-hidden="true" /><span class="name">Folders and tags</span>
 						</a>
 					</li>
-					<li>
-						<a href="{base}/settings" aria-current={page.url.pathname === `${base}/settings` ? 'page' : undefined}>
-							<Settings size={18} aria-hidden="true" /><span class="name">Inbox settings</span>
-						</a>
-					</li>
-				</ul>
-			{/if}
+				{/if}
+				<li>
+					<a href="{base}/settings" aria-current={page.url.pathname === `${base}/settings` ? 'page' : undefined}>
+						<Settings size={18} aria-hidden="true" /><span class="name">Inbox settings</span>
+					</a>
+				</li>
+			</ul>
 		</nav>
 	</details>
 

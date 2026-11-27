@@ -9,7 +9,13 @@
  * here first (`mayOpenThread`, `reachableInboxes`), so nobody can open mail
  * from an inbox they are not on, even with its link.
  *
- * The tables are in migrations/20261123T1757_add_mail_inboxes.sql.
+ * An inbox can have more addresses than its main one (info@ and hello@
+ * beside contact@). Mail to any of them files into the inbox, and a reply
+ * goes from the address the mail was sent to. Each person on an inbox
+ * chooses their own new-mail alerts for it (src/lib/server/mail/alerts.ts).
+ *
+ * The tables are in migrations/20261123T1757_add_mail_inboxes.sql and
+ * migrations/20261127T0342_add_mail_inbox_addresses_and_alerts.sql.
  */
 import { actionStatement, currentTime, type MailContext } from './context.ts';
 
@@ -22,15 +28,23 @@ export interface Inbox {
 	localPart: string;
 	/** The whole address, such as contact@example.org, or null while email is off. */
 	address: string | null;
+	/** Its extra addresses' local parts, such as "info" and "hello", in the order they were added. */
+	aliases: string[];
+	/** Every whole address of the inbox, the main one first; empty while email is off. */
+	addresses: string[];
 	name: string;
 	kind: InboxKind;
 	ownerIdentifier: string | null;
 	catchAll: boolean;
 }
 
+/** How someone hears about an inbox's new mail: at once, in a daily summary, or not at all. */
+export const alertLevels = ['now', 'daily', 'none'] as const;
+export type AlertLevel = (typeof alertLevels)[number];
+
 export interface ManagedInbox extends Inbox {
 	ownerName: string | null;
-	members: { identifier: string; name: string }[];
+	members: { identifier: string; name: string; alerts: AlertLevel }[];
 	conversationCount: number;
 	unread: number;
 }
@@ -50,11 +64,14 @@ export const inboxRoles = ['lead-author', 'editor', 'co-author', 'advisor'] as c
 /** Local parts the inbox needs for itself. */
 const reservedLocalParts = new Set(['unsubscribe']);
 
-function inboxFromRow(context: MailContext, row: InboxRow): Inbox {
+function inboxFromRow(context: MailContext, row: InboxRow, aliases: string[] = []): Inbox {
+	const domain = context.settings.domain;
 	return {
 		identifier: row.identifier,
 		localPart: row.local_part,
-		address: context.settings.domain ? `${row.local_part}@${context.settings.domain}` : null,
+		address: domain ? `${row.local_part}@${domain}` : null,
+		aliases,
+		addresses: domain ? [row.local_part, ...aliases].map((localPart) => `${localPart}@${domain}`) : [],
 		name: row.name,
 		kind: row.kind,
 		ownerIdentifier: row.owner_identifier,
@@ -66,10 +83,31 @@ const inboxColumns = 'i.identifier, i.local_part, i.name, i.kind, i.owner_identi
 // Shared inboxes first, then personal ones; the catch-all first of all.
 const inboxOrder = `ORDER BY i.catch_all DESC, i.kind = 'personal', i.name COLLATE NOCASE`;
 
+/** Every inbox's extra addresses, by inbox. */
+async function aliasesByInbox(context: MailContext, inboxIdentifier?: string): Promise<Map<string, string[]>> {
+	const statement = inboxIdentifier
+		? context.database.prepare('SELECT inbox_identifier, local_part FROM mail_inbox_addresses WHERE inbox_identifier = ? ORDER BY added_at, local_part').bind(inboxIdentifier)
+		: context.database.prepare('SELECT inbox_identifier, local_part FROM mail_inbox_addresses ORDER BY added_at, local_part');
+	const { results } = await statement.all<{ inbox_identifier: string; local_part: string }>();
+	const byInbox = new Map<string, string[]>();
+	for (const row of results) byInbox.set(row.inbox_identifier, [...(byInbox.get(row.inbox_identifier) ?? []), row.local_part]);
+	return byInbox;
+}
+
+async function inboxesFromRows(context: MailContext, rows: InboxRow[]): Promise<Inbox[]> {
+	if (rows.length === 0) return [];
+	const aliases = await aliasesByInbox(context, rows.length === 1 ? rows[0].identifier : undefined);
+	return rows.map((row) => inboxFromRow(context, row, aliases.get(row.identifier) ?? []));
+}
+
+async function inboxFromOptionalRow(context: MailContext, row: InboxRow | null): Promise<Inbox | null> {
+	return row ? (await inboxesFromRows(context, [row]))[0] : null;
+}
+
 /** Every inbox. */
 export async function listInboxes(context: MailContext): Promise<Inbox[]> {
 	const { results } = await context.database.prepare(`SELECT ${inboxColumns} FROM mail_inboxes i ${inboxOrder}`).all<InboxRow>();
-	return results.map((row) => inboxFromRow(context, row));
+	return inboxesFromRows(context, results);
 }
 
 /** The inboxes one person is on. */
@@ -81,7 +119,7 @@ export async function reachableInboxes(context: MailContext, personIdentifier: s
 		)
 		.bind(personIdentifier)
 		.all<InboxRow>();
-	return results.map((row) => inboxFromRow(context, row));
+	return inboxesFromRows(context, results);
 }
 
 /**
@@ -108,7 +146,7 @@ export async function hasAnyInbox(context: Pick<MailContext, 'database'>, person
 /** The catch-all inbox. There is always one; the migration makes it and it cannot be deleted. */
 export async function catchAllInbox(context: MailContext): Promise<Inbox | null> {
 	const row = await context.database.prepare(`SELECT ${inboxColumns} FROM mail_inboxes i WHERE i.catch_all = 1`).first<InboxRow>();
-	return row ? inboxFromRow(context, row) : null;
+	return inboxFromOptionalRow(context, row);
 }
 
 /** The part of an address an inbox goes by: before the @ and any "+tag", in lower case. */
@@ -118,12 +156,35 @@ function localPartOf(address: string): { localPart: string; domain: string } | n
 	return { localPart: match[1].split('+')[0], domain: match[2] };
 }
 
-/** The inbox that has this address, if any. "trevor+news@" is Trevor's. */
-export async function inboxForAddress(context: MailContext, address: string): Promise<Inbox | null> {
+/** The project address's local part ("trevor" for Trevor+News@example.org), or null for an address that is not the project's. */
+function projectLocalPart(context: MailContext, address: string): string | null {
 	const parts = localPartOf(address);
-	if (!parts || !context.settings.domain || parts.domain !== context.settings.domain) return null;
-	const row = await context.database.prepare(`SELECT ${inboxColumns} FROM mail_inboxes i WHERE i.local_part = ?`).bind(parts.localPart).first<InboxRow>();
-	return row ? inboxFromRow(context, row) : null;
+	return parts && context.settings.domain && parts.domain === context.settings.domain ? parts.localPart : null;
+}
+
+/** The inbox that has this address, as its main address or an extra one, if any. "trevor+news@" is Trevor's. */
+export async function inboxForAddress(context: MailContext, address: string): Promise<Inbox | null> {
+	const localPart = projectLocalPart(context, address);
+	if (!localPart) return null;
+	const row = await context.database
+		.prepare(
+			`SELECT ${inboxColumns} FROM mail_inboxes i
+			 WHERE i.local_part = ?1 OR i.identifier = (SELECT inbox_identifier FROM mail_inbox_addresses WHERE local_part = ?1)`
+		)
+		.bind(localPart)
+		.first<InboxRow>();
+	return inboxFromOptionalRow(context, row);
+}
+
+/**
+ * The address a reply in an inbox goes from: the one of the inbox's
+ * addresses the mail was sent to (info@ for mail to info@), or else the
+ * inbox's main address.
+ */
+export function replyFrom(context: MailContext, inbox: Inbox, projectAddress: string | null): string | null {
+	const localPart = projectAddress ? projectLocalPart(context, projectAddress) : null;
+	const matched = localPart ? inbox.addresses.find((address) => address.startsWith(`${localPart}@`)) : undefined;
+	return matched ?? inbox.address;
 }
 
 /** Where mail to an address goes: its own inbox, or else the catch-all. */
@@ -137,16 +198,21 @@ export async function inboxForArrival(context: MailContext, address: string | nu
  */
 export async function sendingAddresses(context: MailContext, personIdentifier: string | null): Promise<string[]> {
 	const inboxes = personIdentifier ? await reachableInboxes(context, personIdentifier) : await listInboxes(context);
-	return inboxes.flatMap((inbox) => (inbox.address ? [inbox.address] : []));
+	return inboxes.flatMap((inbox) => inbox.addresses);
 }
 
-/** The address a conversation's own replies come from: its inbox's address. */
+/**
+ * A conversation's inbox, with `address` set to the address its own replies
+ * come from: the inbox address the conversation is with (an extra address
+ * such as info@ when the mail went there), or else the inbox's main address.
+ */
 export async function threadInboxAddress(context: MailContext, threadIdentifier: string): Promise<Inbox | null> {
 	const row = await context.database
-		.prepare(`SELECT ${inboxColumns} FROM mail_threads t JOIN mail_inboxes i ON i.identifier = t.inbox_identifier WHERE t.identifier = ?`)
+		.prepare(`SELECT ${inboxColumns}, t.project_address FROM mail_threads t JOIN mail_inboxes i ON i.identifier = t.inbox_identifier WHERE t.identifier = ?`)
 		.bind(threadIdentifier)
-		.first<InboxRow>();
-	return row ? inboxFromRow(context, row) : null;
+		.first<InboxRow & { project_address: string | null }>();
+	const inbox = await inboxFromOptionalRow(context, row);
+	return inbox && row ? { ...inbox, address: replyFrom(context, inbox, row.project_address) } : null;
 }
 
 // ---------------------------------------------------------------------------
@@ -165,10 +231,10 @@ export async function inboxesForManaging(context: MailContext): Promise<ManagedI
 			.all<{ identifier: string; name: string }>(),
 		context.database
 			.prepare(
-				`SELECT m.inbox_identifier, p.identifier, p.display_name AS name FROM mail_inbox_members m
+				`SELECT m.inbox_identifier, p.identifier, p.display_name AS name, m.alerts FROM mail_inbox_members m
 				 JOIN people p ON p.identifier = m.person_identifier ORDER BY p.display_name COLLATE NOCASE`
 			)
-			.all<{ inbox_identifier: string; identifier: string; name: string }>(),
+			.all<{ inbox_identifier: string; identifier: string; name: string; alerts: AlertLevel }>(),
 		context.database
 			.prepare('SELECT inbox_identifier, COUNT(*) AS count, SUM(unread) AS unread FROM mail_threads WHERE inbox_identifier IS NOT NULL GROUP BY inbox_identifier')
 			.all<{ inbox_identifier: string; count: number; unread: number }>()
@@ -176,7 +242,7 @@ export async function inboxesForManaging(context: MailContext): Promise<ManagedI
 	return inboxes.map((inbox) => ({
 		...inbox,
 		ownerName: owners.results.find((row) => row.identifier === inbox.identifier)?.name ?? null,
-		members: members.results.filter((row) => row.inbox_identifier === inbox.identifier).map(({ identifier, name }) => ({ identifier, name })),
+		members: members.results.filter((row) => row.inbox_identifier === inbox.identifier).map(({ identifier, name, alerts }) => ({ identifier, name, alerts })),
 		conversationCount: counts.results.find((row) => row.inbox_identifier === inbox.identifier)?.count ?? 0,
 		unread: counts.results.find((row) => row.inbox_identifier === inbox.identifier)?.unread ?? 0
 	}));
@@ -221,8 +287,7 @@ export async function createInbox(
 ): Promise<string> {
 	const localPart = cleanLocalPart(input.localPart);
 	const name = cleanName(input.name);
-	const clash = await context.database.prepare('SELECT 1 AS found FROM mail_inboxes WHERE local_part = ?').bind(localPart).first();
-	if (clash) throw new InboxError(`There is already an inbox for ${localPart}@.`);
+	await refuseTakenAddress(context, localPart);
 	const owner = input.kind === 'personal' ? (input.ownerIdentifier ?? null) : null;
 	if (input.kind === 'personal') {
 		if (!owner) throw new InboxError('Choose whose inbox it is.');
@@ -245,6 +310,18 @@ export async function createInbox(
 	return identifier;
 }
 
+/** Refuses an address that is already an inbox's, as its main address or an extra one. */
+async function refuseTakenAddress(context: MailContext, localPart: string): Promise<void> {
+	const taken = await context.database
+		.prepare(
+			`SELECT i.name FROM mail_inboxes i
+			 WHERE i.local_part = ?1 OR i.identifier = (SELECT inbox_identifier FROM mail_inbox_addresses WHERE local_part = ?1)`
+		)
+		.bind(localPart)
+		.first<{ name: string }>();
+	if (taken) throw new InboxError(`${localPart}@ is already an address of the ${taken.name} inbox.`);
+}
+
 async function inboxRow(context: MailContext, inboxIdentifier: string): Promise<InboxRow> {
 	const row = await context.database.prepare(`SELECT ${inboxColumns} FROM mail_inboxes i WHERE i.identifier = ?`).bind(inboxIdentifier).first<InboxRow>();
 	if (!row) throw new InboxError('That inbox is gone.');
@@ -259,6 +336,54 @@ export async function renameInbox(context: MailContext, personIdentifier: string
 		context.database.prepare('UPDATE mail_inboxes SET name = ?, updated_at = ? WHERE identifier = ?').bind(clean, at, inboxIdentifier),
 		actionStatement(context, { personIdentifier, action: 'Renamed an inbox', note: `${row.local_part}@: ${clean}` })
 	]);
+}
+
+/** Gives an inbox another address. Mail to it files into the inbox, and replies to that mail go from it. */
+export async function addInboxAddress(context: MailContext, personIdentifier: string, inboxIdentifier: string, value: string): Promise<string> {
+	const row = await inboxRow(context, inboxIdentifier);
+	const localPart = cleanLocalPart(value);
+	await refuseTakenAddress(context, localPart);
+	const at = currentTime(context).toISOString();
+	await context.database.batch([
+		context.database.prepare('INSERT INTO mail_inbox_addresses (local_part, inbox_identifier, added_at) VALUES (?, ?, ?)').bind(localPart, inboxIdentifier, at),
+		actionStatement(context, { personIdentifier, action: 'Gave an inbox another address', note: `${localPart}@ for ${row.local_part}@` })
+	]);
+	return localPart;
+}
+
+/**
+ * Takes an extra address off an inbox. Mail to it then goes to the inbox
+ * that gets other mail. The main address stays: deleting the inbox is the
+ * way to give it up.
+ */
+export async function removeInboxAddress(context: MailContext, personIdentifier: string, inboxIdentifier: string, value: string): Promise<void> {
+	const row = await inboxRow(context, inboxIdentifier);
+	const localPart = value.trim().toLowerCase().replace(/@.*$/, '');
+	if (localPart === row.local_part) throw new InboxError(`${localPart}@ is the inbox’s main address. Delete the inbox to give it up.`);
+	const result = await context.database.batch([
+		context.database.prepare('DELETE FROM mail_inbox_addresses WHERE inbox_identifier = ? AND local_part = ?').bind(inboxIdentifier, localPart),
+		actionStatement(context, { personIdentifier, action: 'Took an address off an inbox', note: `${localPart}@ from ${row.local_part}@` })
+	]);
+	if (((result[0] as { meta?: { changes?: number } }).meta?.changes ?? 0) === 0) throw new InboxError(`${localPart}@ is not an address of this inbox.`);
+}
+
+/**
+ * Sets how one person hears about one inbox's new mail. Only they set it,
+ * and only for an inbox they are on. Choosing the daily summary starts its
+ * day now, so the first one comes about a day later.
+ */
+export async function setInboxAlerts(context: MailContext, personIdentifier: string, inboxIdentifier: string, level: string): Promise<AlertLevel> {
+	if (!(alertLevels as readonly string[]).includes(level)) throw new InboxError('Choose at once, a daily summary or no alerts.');
+	const at = currentTime(context).toISOString();
+	const result = await context.database
+		.prepare(
+			`UPDATE mail_inbox_members SET alerts = ?1, summarized_at = CASE WHEN ?1 = 'daily' AND alerts <> 'daily' THEN ?2 ELSE summarized_at END
+			 WHERE inbox_identifier = ?3 AND person_identifier = ?4`
+		)
+		.bind(level, at, inboxIdentifier, personIdentifier)
+		.run();
+	if ((result.meta.changes ?? 0) === 0) throw new InboxError('You are not on that inbox.');
+	return level as AlertLevel;
 }
 
 /** Puts someone on a shared inbox. A personal inbox is only ever its owner's. */
@@ -325,6 +450,7 @@ export async function deleteInbox(context: MailContext, personIdentifier: string
 		);
 	}
 	await context.database.batch([
+		context.database.prepare('DELETE FROM mail_inbox_addresses WHERE inbox_identifier = ?').bind(inboxIdentifier),
 		context.database.prepare('DELETE FROM mail_inboxes WHERE identifier = ?').bind(inboxIdentifier),
 		actionStatement(context, { personIdentifier, action: 'Deleted an inbox', note: `${row.local_part}@` })
 	]);
@@ -343,14 +469,20 @@ export async function threadPeople(context: MailContext, threadIdentifier: strin
 	return results;
 }
 
-/** What the reply box needs: the addresses the person may send from, every inbox's address (for Reply all), and the one to start with. */
-export async function replyAddresses(context: MailContext, personIdentifier: string, inboxIdentifier: string | null) {
+/**
+ * What the reply box needs: the addresses the person may send from, every
+ * inbox's addresses (for Reply all), and the one to start with: the inbox
+ * address the conversation is with, such as info@, or else the inbox's main
+ * address.
+ */
+export async function replyAddresses(context: MailContext, personIdentifier: string, inboxIdentifier: string | null, projectAddress: string | null = null) {
 	const [all, mine] = await Promise.all([listInboxes(context), reachableInboxes(context, personIdentifier)]);
-	const sendable = mine.flatMap((inbox) => (inbox.address ? [inbox.address] : []));
-	const own = mine.find((inbox) => inbox.identifier === inboxIdentifier)?.address ?? null;
+	const sendable = mine.flatMap((inbox) => inbox.addresses);
+	const inbox = mine.find((item) => item.identifier === inboxIdentifier);
+	const own = inbox ? replyFrom(context, inbox, projectAddress) : null;
 	return {
 		sendable,
-		projectAddresses: all.flatMap((inbox) => (inbox.address ? [inbox.address] : [])),
+		projectAddresses: all.flatMap((item) => item.addresses),
 		from: own ?? sendable[0] ?? ''
 	};
 }

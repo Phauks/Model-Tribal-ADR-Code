@@ -36,7 +36,7 @@ export default defineWatcher({
 	identifier: 'cited-links',
 	title: 'Cited links',
 	tier: 1,
-	feeds: ['source-copies', 'governing-documents', 'tribal-constitutions', 'tribal-codes', 'intergovernmental-agreements', 'treaties', 'federal-statutes', 'nation:official_images', 'nation:nearby_state_courts', 'nation:treaties', 'nation:governing_documents'],
+	feeds: ['source-copies', 'saved-web-pages', 'governing-documents', 'tribal-constitutions', 'tribal-codes', 'intergovernmental-agreements', 'treaties', 'federal-statutes', 'nation:official_images', 'nation:nearby_state_courts', 'nation:treaties', 'nation:governing_documents'],
 	driver: 'page',
 	schedule: '*/10 * * * *',
 	// Any host a source record links to; each still goes through its own host desk.

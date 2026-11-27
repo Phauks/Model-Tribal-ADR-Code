@@ -71,10 +71,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 10, § 7503-2.4 (2026). History: laws of the foreign country or in violation of international law or treaty Added by Laws 1997, c. 366, § 12, eff. Nov. 1, 1997. Amended by Laws 1998, c. 415, § 11, Text read from the Legislative Service Bureau''s Title 10 PDF (updated Nov. 12, 2026), page 372. Found by the state statutes pilot (terms: indian tribe); AI reader''s verdict incidental: Adoption consent must state whether member of Indian tribe. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 10, § 7503-2.4 (2026). History: Added by Laws 1997, c. 366, § 12, eff. Nov. 1, 1997. Amended by Laws 1998, c. 415, § 11, Text read from the Legislative Service Bureau''s Title 10 PDF (updated Nov. 12, 2026), page 372. Found by the state statutes pilot (terms: indian tribe); AI reader''s verdict incidental: Adoption consent must state whether member of Indian tribe. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

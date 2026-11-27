@@ -1,0 +1,50 @@
+key: oregon-revised-statutes-8-125
+kind: state-statute
+citation:
+  type: legislation
+  title: Duties to assist Chief Justice and other courts
+  title-short: Or. Rev. Stat. § 8.125
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '8.125'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 1981
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors008.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors008.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 8.125 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 8.125 (2025). History: [1981 s.s. c.1 §15; 1985 c.308 §1; 1991 c.790 §19; 1995 c.244 §1; 1999 c.787 §2; 2001 c.779 §5; 2011 c.224 §6; 2011 c.595 §106; 2023 c.35 §9; 2025 c.88 §2]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Records retention standards name tribal cultural purposes; legal effect. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

@@ -202,6 +202,48 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Phoenix Area
   note: Listed as "Ak-Chin Indian Community". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2004
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Ak-Chin Indian Community' (Western Region)
+- program: indian-health-service-self-governance-compact
+  since: 2019
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Phoenix Area, row 'Ak-Chin Indian Community'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 843306
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Ak-Chin Indian Community' (Maricopa)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 2502222
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'AK-CHIN INDIAN COMMUNITY' (UEI UKQHPB2M4YA6), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 540049
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'AK-CHIN INDIAN COMMUNITY' (UEI UKQHPB2M4YA6), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Articles of Association

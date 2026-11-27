@@ -337,13 +337,15 @@ def index(args) -> None:
         elif result["outcome"] == "uploaded" and result["key"] not in by_key:
             entry = entries[result["record"]]
             links = [result["link"]] + ([result["final_link"]] if normalized(result["final_link"]) != normalized(result["link"]) else [])
+            third_party = mirror_captures.third_party_page(result["media_type"], " ".join(links))
             row = {
                 "key": result["key"], "bytes": result["bytes"], "sha256": result["sha256"],
                 "media_type": result["media_type"], "topic": TOPIC, "title": entry["title"], "nations": "",
                 "obtained": f"downloaded from the original link by scripts/captures/copy_cited_pages.py, {result['date']}",
                 "link": " ".join(links), "captured": result["date"], "records": result["record"],
                 "record_kinds": "source", "listed_in": "", "catalog": "", "derived_from": "",
-                "rights": entry["rights"], "redistribution": "yes" if entry["rights"].endswith("redistribution true.") else "no",
+                "rights": mirror_captures.THIRD_PARTY_RIGHTS if third_party else entry["rights"],
+                "redistribution": "yes" if entry["rights"].endswith("redistribution true.") and not third_party else "no",
                 "keep_local": "no", "orphan": "no",
             }
             rows.append(row)

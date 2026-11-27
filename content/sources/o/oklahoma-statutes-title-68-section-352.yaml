@@ -83,10 +83,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 352 (2026). History: from a payment in lieu of excise taxes on cigarettes pursuant to a compact entered into by Added by Laws 1992, c. 339, § 7, eff. Jan. 1, 1993. Amended by Laws 2004, c. 322, § 9, eff. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 221. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict core: Cigarette tax revenue from tribal compact payments deposited to General Revenue. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 352 (2026). History: Added by Laws 1992, c. 339, § 7, eff. Jan. 1, 1993. Amended by Laws 2004, c. 322, § 9, eff. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 221. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict core: Cigarette tax revenue from tribal compact payments deposited to General Revenue. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -24,7 +24,7 @@ import { blockedPattern } from './senders.ts';
 import { suppress } from './suppressions.ts';
 import { readToken, unsubscribeAddressToken } from './tokens.ts';
 
-/** The header the inbox's own "new mail" notices carry, so they never start a loop. */
+/** The header the inbox's own new-mail alerts carry, so they never start a loop. */
 export const noticeHeader = 'X-Project-Inbox-Notice';
 
 export interface ArrivingMail {
@@ -40,8 +40,11 @@ export type ArrivalResult =
 			outcome: 'filed';
 			threadIdentifier: string;
 			messageIdentifier: string;
+			/** The inbox it was filed in. */
+			inboxIdentifier: string;
 			spam: boolean;
 			automatic: boolean;
+			/** Whether it is mail people should hear about: the new-mail alerts of the inbox's people (src/lib/server/mail/alerts.ts). */
 			notify: boolean;
 			/**
 			 * Whether a person wrote it to the project, so the away message may
@@ -282,7 +285,7 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 			.bind(ownMessageIdentifier, inbox.identifier)
 			.first<{ identifier: string; thread_identifier: string }>();
 		if (already) {
-			return { outcome: 'filed', threadIdentifier: already.thread_identifier, messageIdentifier: already.identifier, spam: false, automatic: false, notify: false, answerable: false, sortedBy: [] };
+			return { outcome: 'filed', threadIdentifier: already.thread_identifier, messageIdentifier: already.identifier, inboxIdentifier: inbox.identifier, spam: false, automatic: false, notify: false, answerable: false, sortedBy: [] };
 		}
 	}
 	const identifier = crypto.randomUUID();
@@ -463,19 +466,19 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 					})
 				);
 
-	// A rule that marked the mail read or filed it away also means no "new mail" notice for it.
+	// A rule that marked the mail read or filed it away also means no new-mail alert for it.
 	const quietened =
 		sortedBy.length > 0 &&
 		(await context.database
 			.prepare(`SELECT 1 AS found FROM mail_threads WHERE identifier = ? AND (unread = 0 OR folder IN ('archive', 'trash', 'spam'))`)
 			.bind(threadIdentifier)
 			.first()) !== null;
-	// The "new mail" notice is about the team's mail, so a personal inbox's mail does not send it.
-	const notify = !spam && !automatic && !quietened && !personal && (await noticeDue(context, at));
+	// Each person on the inbox, a personal inbox's owner included, hears about it as they chose (src/lib/server/mail/alerts.ts).
+	const notify = !spam && !automatic && !quietened;
 	const fromList = header(email, 'list-id') !== null || header(email, 'list-unsubscribe') !== null;
 	// The away message is the team's, so it answers mail to shared inboxes only.
 	const answerable = !spam && !automatic && !fromList && !personal && !isProjectAddress(settings, from.email);
-	return { outcome: 'filed', threadIdentifier, messageIdentifier: identifier, spam: spam !== null, automatic, notify, answerable, sortedBy };
+	return { outcome: 'filed', threadIdentifier, messageIdentifier: identifier, inboxIdentifier: inbox.identifier, spam: spam !== null, automatic, notify, answerable, sortedBy };
 }
 
 /** Marks the message a delivery report is about, and puts a permanently failed address on the do-not-email list. */
@@ -521,19 +524,4 @@ async function applyDeliveryReport(context: MailContext, report: DeliveryReport,
 	if (report.status === 'bounced') {
 		for (const recipient of report.recipients) await suppress(context, recipient, 'hard-bounce', { source: 'delivery report' });
 	}
-}
-
-/**
- * Whether to send the "new mail" notice now: at most one every 30 minutes,
- * so a busy day sends a few notices, not one per message.
- */
-export async function noticeDue(context: MailContext, at: Date): Promise<boolean> {
-	if (!context.settings.noticeAddress || isProjectAddress(context.settings, context.settings.noticeAddress)) return false;
-	const last = await context.database.prepare(`SELECT value FROM mail_state WHERE key = 'last-notice-at'`).first<{ value: string }>();
-	if (last && at.getTime() - new Date(last.value).getTime() < 30 * 60_000) return false;
-	await context.database
-		.prepare(`INSERT INTO mail_state (key, value) VALUES ('last-notice-at', ?1) ON CONFLICT (key) DO UPDATE SET value = ?1`)
-		.bind(at.toISOString())
-		.run();
-	return true;
 }

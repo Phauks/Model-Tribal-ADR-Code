@@ -45,10 +45,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 36, § 1115 (2026). History: Added by Laws 1957, p. 259, § 1115, operative July 1, 1957. Amended by Laws 1959, p. Laws 1969, c. 82, § 1, emerg. eff. March 18, 1969; Laws 1970, c. 288, § 1, emerg. eff. April Text read from the Legislative Service Bureau''s Title 36 PDF (updated Nov. 12, 2026), page 284. Found by the state statutes pilot (terms: federally recognized indian tribes; indian country); AI reader''s verdict incidental: Premium tax exemption for policies on tribal risks in Indian Country. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 36, § 1115 (2026). History: Added by Laws 1957, p. 259, § 1115, operative July 1, 1957. Amended by Laws 1959, p. Laws 1969, c. 82, § 1, emerg. eff. March 18, 1969; Laws 1970, c. 288, § 1, emerg. eff. April. Text read from the Legislative Service Bureau''s Title 36 PDF (updated Nov. 12, 2026), page 284. Found by the state statutes pilot (terms: federally recognized indian tribes; indian country); AI reader''s verdict incidental: Premium tax exemption for policies on tribal risks in Indian Country. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

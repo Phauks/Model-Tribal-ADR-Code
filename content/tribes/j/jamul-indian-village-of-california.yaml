@@ -157,6 +157,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Jamul Indian Village of California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Jamul Indian Village' (Jamul)
 governance:
 - aspect: form
   value: Constitution adopted April 1, 2017

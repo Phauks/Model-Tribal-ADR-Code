@@ -5,7 +5,8 @@
 // every pair.
 //
 // Color is never the only cue on the site (site/DESIGN.md, "Color vision"):
-// pie slices carry numbers and the timeline's kinds carry icons. This check
+// pie slices carry numbers, the timeline's kinds carry icons and the Justice
+// timelines' votes are dots and crosses. This check
 // keeps the colors themselves apart too, so a later palette change has to
 // pass a measured test rather than a claim.
 //
@@ -25,7 +26,8 @@ const sets = [
 		name: 'Chart slices',
 		tokens: ['chart-series-1', 'chart-series-2', 'chart-series-3', 'chart-series-4', 'chart-series-5', 'chart-series-6', 'chart-series-7']
 	},
-	{ name: 'Timeline kinds', tokens: ['timeline-treaty', 'timeline-document', 'timeline-case', 'timeline-opinion', 'timeline-federal'] }
+	{ name: 'Timeline kinds', tokens: ['timeline-treaty', 'timeline-document', 'timeline-case', 'timeline-opinion', 'timeline-federal'] },
+	{ name: 'Justice votes', tokens: ['vote-majority', 'vote-dissent'] }
 ];
 
 /**

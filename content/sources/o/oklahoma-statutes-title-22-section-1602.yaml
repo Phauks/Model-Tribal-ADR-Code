@@ -51,10 +51,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 22, § 1602 (2026). History: from a list of three names submitted by the Board of Governors of the Added by Laws 2001, c. 284, § 2, eff. July 1, 2001. Amended by Laws 2005, c. 348, § 17, eff. Text read from the Legislative Service Bureau''s Title 22 PDF (updated Nov. 12, 2026), page 636. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: DV review board seat for American Indian survivor, tribal coalition nominates. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 22, § 1602 (2026). History: Added by Laws 2001, c. 284, § 2, eff. July 1, 2001. Amended by Laws 2005, c. 348, § 17, eff. Text read from the Legislative Service Bureau''s Title 22 PDF (updated Nov. 12, 2026), page 636. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: DV review board seat for American Indian survivor, tribal coalition nominates. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

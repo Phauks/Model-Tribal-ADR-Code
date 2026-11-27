@@ -228,6 +228,52 @@ indian_health_service:
   locator: page text
   note: 'The source''s words: "Jemez Health Center – Tribal".'
   operator: tribal
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2014
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Pueblo Of Jemez' (Southwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Pueblo Of Jemez'.
+- program: indian-health-service-self-governance-compact
+  since: 2011
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Albuquerque Area, row 'Pueblo of Jemez'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Pueblo of Jemez'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 805951
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Jemez Pueblo' (Jemez Pueblo)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 3422403
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'PUEBLO OF JEMEZ' (UEI VPNNXLA8QKV6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PUEBLO OF JEMEZ'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 13268362
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'PUEBLO OF JEMEZ' (UEI VPNNXLA8QKV6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PUEBLO OF JEMEZ'.
 governance:
 - aspect: governing-body
   value: Tribal Council

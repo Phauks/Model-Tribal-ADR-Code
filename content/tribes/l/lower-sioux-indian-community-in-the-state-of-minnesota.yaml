@@ -195,6 +195,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Lower Sioux Indian Community in the State of Minnesota".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 469697
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MN, row 'Lower Sioux Indian Community' (Morton)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 2816150
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'LOWER SIOUX INDIAN COMMUNITY IN THE STATE OF MINNESOTA' (UEI XNZKFEJ5DA89), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Lower Sioux Tribe in the State of Minnesota" among organizations under constitutions

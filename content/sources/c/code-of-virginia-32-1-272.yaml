@@ -1,0 +1,50 @@
+key: code-of-virginia-32-1-272
+kind: state-statute
+citation:
+  type: legislation
+  title: Certified copies of vital records; other copies
+  title-short: Va. Code Ann. § 32.1-272
+  container-title: Code of Virginia
+  container-title-short: Va. Code Ann.
+  section: 32.1-272
+  author:
+  - literal: Virginia General Assembly
+  issued:
+    date-parts:
+    - - 1954
+  URL: https://law.lis.virginia.gov/vacode/title32.1/chapter7/section32.1-272/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://law.lis.virginia.gov/vacode/title32.1/chapter7/section32.1-272/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Va. Code Ann. § 32.1-272 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Va. Code Ann. § 32.1-272 (2025). History: Code 1950, § 32-353.27; 1950, pp. 484, 485; 1954, c. 429; 1956, c. 412; 1958, c. 296; 1960, c. 451; 1966, c. 353; 1972, c. 500; 1979, c. 711; 1983, c. 240; 1994, c. 373; 1997, c. 470; 1999, c. 600; 2005, c. 448; 2013, c. 534; 2021, Sp. Sess. I, c. 237; 2025, c. 181. Text read from the Virginia Division of Legislative Systems'' page for the section in the Code of Virginia (law.lis.virginia.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; native american; indian; native); AI reader''s verdict incidental: Fee-free corrected birth record copy for American Indians. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; native american; indian; native'

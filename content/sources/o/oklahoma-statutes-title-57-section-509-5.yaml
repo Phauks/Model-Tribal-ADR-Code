@@ -48,7 +48,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 57, § 509.5 (2026). History: Added by Laws 1989, c. 303, § 13, operative July 1, 1989. Text read from the Legislative Service Bureau''s Title 57 PDF (updated Nov. 12, 2026), page 130. Found by the state statutes pilot (terms: indian country; indian tribes); AI reader''s verdict core: State civil and criminal jurisdiction over Indian Country inmate work centers. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

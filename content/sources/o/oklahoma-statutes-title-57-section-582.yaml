@@ -47,10 +47,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 57, § 582 (2026). History: laws listed in subsection A of this section. Added by Laws 1989, c. 212, § 2, eff. Nov. 1, 1989. Amended by Laws 1993, c. 166, § 4, eff. Laws 2002, c. 20, § 2, emerg. eff. Feb. 28, 2002; Laws 2002, c. 460, § 34, eff. Nov. 1, 2002; Laws 2005, c. 123, § 1, eff. Nov. 1, 2005; Laws 2007, c. 261, § 22, eff. Nov. 1, 2007; Laws Text read from the Legislative Service Bureau''s Title 57 PDF (updated Nov. 12, 2026), page 244. Found by the state statutes pilot (terms: tribal court); AI reader''s verdict incidental: Sex offender registration covers convictions from Indian tribal courts. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 57, § 582 (2026). History: Added by Laws 1989, c. 212, § 2, eff. Nov. 1, 1989. Amended by Laws 1993, c. 166, § 4, eff. Laws 2002, c. 20, § 2, emerg. eff. Feb. 28, 2002; Laws 2002, c. 460, § 34, eff. Nov. 1, 2002; Laws 2005, c. 123, § 1, eff. Nov. 1, 2005; Laws 2007, c. 261, § 22, eff. Nov. 1, 2007; Laws. Text read from the Legislative Service Bureau''s Title 57 PDF (updated Nov. 12, 2026), page 244. Found by the state statutes pilot (terms: tribal court); AI reader''s verdict incidental: Sex offender registration covers convictions from Indian tribal courts. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

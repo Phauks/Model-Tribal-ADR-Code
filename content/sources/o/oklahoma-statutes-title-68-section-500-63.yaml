@@ -83,10 +83,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 500.63 (2026). History: from the tribe shall not be eligible to also participate under Added by Laws 1996, c. 345, § 63, eff. Oct. 1, 1996. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 344. Found by the state statutes pilot (terms: federally recognized indian tribes; indian country; indian tribe; indian tribes; tribal government; tribal land; tribal members; tribal membership); AI reader''s verdict core: Motor fuel sales by Indian tribes; tribal tax issues. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 500.63 (2026). History: Added by Laws 1996, c. 345, § 63, eff. Oct. 1, 1996. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 344. Found by the state statutes pilot (terms: federally recognized indian tribes; indian country; indian tribe; indian tribes; tribal government; tribal land; tribal members; tribal membership); AI reader''s verdict core: Motor fuel sales by Indian tribes; tribal tax issues. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -83,10 +83,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 1008 (2026). History: Laws 1963, c. 365, § 2, emerg. eff. June 22, 1963. Renumbered from § 10-1008 by Laws 1965, c. 215, § 2. Amended by Laws 1968, Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 442. Found by the state statutes pilot (terms: indian lands); AI reader''s verdict core: Tax refunds on production from restricted Indian lands. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 1008 (2026). History: Laws 1963, c. 365, § 2, emerg. eff. June 22, 1963. Renumbered. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 442. Found by the state statutes pilot (terms: indian lands); AI reader''s verdict core: Tax refunds on production from restricted Indian lands. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -1,0 +1,50 @@
+key: montana-code-annotated-1-1-510
+kind: state-statute
+citation:
+  type: legislation
+  title: English as official and primary language of state and local governments
+  title-short: Mont. Code Ann. § 1-1-510
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 1-1-510
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1995
+  URL: https://mca.legmt.gov/bills/mca/title_0010/chapter_0010/part_0050/section_0100/0010-0010-0050-0100.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0010/chapter_0010/part_0050/section_0100/0010-0010-0050-0100.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 1-1-510 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 1-1-510 (2025). History: En. Sec. 1, Ch. 319, L. 1995. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; tribal government; native; tribal; tribe); AI reader''s verdict incidental: Tribal government exempt from language limits; tribe-school instruction. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; tribal government; native; tribal; tribe'

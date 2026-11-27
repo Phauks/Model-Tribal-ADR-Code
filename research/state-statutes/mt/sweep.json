@@ -1,0 +1,53 @@
+{
+  "state": "MT",
+  "code": "Montana Code Annotated",
+  "edition": 2025,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 44433,
+    "live": 30077,
+    "strong": 444,
+    "weak_only": 349,
+    "repealed": 11387,
+    "reserved": 2969
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 583,
+    "core": 155,
+    "incidental": 428,
+    "by_pool": {
+      "A": {
+        "core": 127,
+        "incidental": 317
+      },
+      "B": {
+        "incidental": 111,
+        "none": 222,
+        "core": 16
+      },
+      "C": {
+        "none": 297,
+        "core": 3
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 3
+      }
+    },
+    "meta": {
+      "live": 30077,
+      "A": 444,
+      "B": 349,
+      "E": 3,
+      "C": 2479,
+      "C_sample": 300,
+      "D": 26802,
+      "D_sample": 300,
+      "items": 1396,
+      "batches": 10
+    }
+  }
+}
