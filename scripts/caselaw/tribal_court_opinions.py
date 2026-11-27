@@ -162,6 +162,8 @@ PAGE_STYLE = (
     "main{padding-bottom:3rem}.head-matter{margin:1.5rem 0;font-style:italic}.opinion{margin-top:1.5rem}"
     "@media (prefers-color-scheme:dark){body{background:#151413;color:#ece7e1}header h1{color:#7cc4cc}"
     "header{border-color:#4a443e}a{color:#7cc4cc}.notice{background:#23201d;border-color:#7cc4cc}}"
+    # Links that leave the site carry a small arrow (copy_links.py); page numbers stay small.
+    "a.external::after{content:\"\\2197\";font-size:.75em;margin-left:.1em}.page-label{font-size:.8em;text-decoration:none}"
 )
 
 
@@ -174,11 +176,13 @@ def readable(date: str) -> str:
     return f"{day:%B} {day.day}, {day.year}"
 
 
-def opinion_page(case: dict, fragment: str, key: str, source_link: str, redactor: Redactor | None = None) -> bytes:
+def opinion_page(case: dict, fragment: str, key: str, source_link: str, redactor: Redactor | None = None, links=None) -> bytes:
     """A standalone page for one opinion. Built the same way each run, so its SHA-256 only changes with the source.
 
     With a redactor (scripts/caselaw/redaction.py), protected people's names are replaced: in brackets in the
-    text, without brackets in the heading. The page then says so and does not link to the unredacted original."""
+    text, without brackets in the heading. The page then says so and does not link to the unredacted original.
+
+    With links (copy_links.CitationLinks), the citations of a page that is not redacted link to this site's pages, or to case.law, as that module says."""
     citations = ", ".join(c["cite"] for c in case.get("citations", []))
     name = case.get("name_abbreviation") or case.get("name") or "Opinion"
     court = case["court"]["name"]
@@ -187,19 +191,23 @@ def opinion_page(case: dict, fragment: str, key: str, source_link: str, redactor
     body = re.sub(r'\s+data-(blocks|firstpage|lastpage|case-id)="[^"]*"', "", body)
     redacted = redactor is not None and bool(redactor.replacements)
     if redacted:
+        # A redacted page keeps no citation links: the redactor takes them out, since their addresses can carry
+        # other words (scripts/caselaw/redaction.py), and linking first would change what it replaces.
         name = redactor.caption(name, case.get("name") or "")
         body = redactor.html(body)
+    elif links is not None:
+        body = links.rewrite(body, key)
     removal = "/requests?kind=remove&record=copies/" + key
     title = f"{name}, {citations} ({court} {date[:4]})" if citations else f"{name} ({court} {date[:4]})"
     if redacted:
         source = ("<p>Text from the Caselaw Access Project, Harvard Law School Library, with the publisher's headnotes removed. "
-                  f"The nation can have this copy taken down: <a href=\"{html.escape(removal)}\">Ask to remove it</a>.</p>\n"
+                  f"The nation can have this copy taken down: <a href=\"{html.escape(removal)}\" target=\"_top\">Ask to remove it</a>.</p>\n"
                   f"<p class=\"notice\">{REDACTED_NOTICE} "
-                  f"<a href=\"{html.escape(NAME_REQUEST + key)}\">Ask to replace a name</a>.</p>\n")
+                  f"<a href=\"{html.escape(NAME_REQUEST + key)}\" target=\"_top\">Ask to replace a name</a>.</p>\n")
     else:
         source = ("<p>Text from the Caselaw Access Project, Harvard Law School Library, with the publisher's headnotes removed. "
-                  f"<a href=\"{html.escape(source_link)}\">Original</a>. "
-                  f"The nation can have this copy taken down: <a href=\"{html.escape(removal)}\">Ask to remove it</a>.</p>\n")
+                  f"<a class=\"external\" href=\"{html.escape(source_link)}\" target=\"_blank\" rel=\"noopener\">Original</a>. "
+                  f"The nation can have this copy taken down: <a href=\"{html.escape(removal)}\" target=\"_top\">Ask to remove it</a>.</p>\n")
     return (
         "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n"
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"

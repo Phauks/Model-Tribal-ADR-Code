@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { parseEssay, serializeEssay } from '#lib/essays/document.ts';
 import { renderEssay, type EssayLibrary } from '#lib/essays/render.ts';
-import { missingEllipses, referencesIn } from '#lib/essays/syntax.ts';
+import { missingEllipses, needlessEndEllipsis, referencesIn } from '#lib/essays/syntax.ts';
 
 const library: EssayLibrary = {
 	citation: (key) =>
@@ -108,6 +108,17 @@ describe('ellipses in quotations', () => {
 		expect(missingEllipses('... we hold that ...')).toEqual({ start: false, end: false });
 		expect(missingEllipses('He said, "It is so."')).toEqual({ start: false, end: false });
 		expect(missingEllipses('It is so. [@worcester-v-georgia, at 561]')).toEqual({ start: false, end: false });
+	});
+
+	it('finds an ellipsis after a sentence that ends', () => {
+		expect(needlessEndEllipsis('resembles that of a ward to his guardian. ...')).toBe(true);
+		expect(needlessEndEllipsis('those powers "inconsistent with their status." …')).toBe(true);
+		expect(needlessEndEllipsis('resembles that of a ward to his guardian.')).toBe(false);
+		expect(needlessEndEllipsis('the laws of Georgia can have no force ...')).toBe(false);
+		expect(needlessEndEllipsis('It is so. ... [@worcester-v-georgia, at 561]')).toBe(true);
+		const rendered = renderEssay('> Their relation to the United States resembles that of a ward to his guardian. ...\n\n[@worcester-v-georgia]\n', library);
+		expect(rendered.warnings).toHaveLength(1);
+		expect(rendered.warnings[0]).toContain('ends its sentence');
 	});
 
 	it('warns about quotations cut without one, but does not refuse them', () => {

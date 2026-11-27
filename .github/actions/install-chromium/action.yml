@@ -1,0 +1,46 @@
+# Installs the Chromium headless shell that site/'s Playwright uses, and the
+# system packages it needs, for the browser and accessibility checks. Run it
+# after `npm ci` in site/.
+#
+# The browser is kept in the Actions cache, keyed by the Playwright version,
+# so most runs download nothing from Playwright's servers. Both the download
+# and apt are tried up to three times, so one failed request does not fail
+# the job.
+name: Install Chromium for Playwright
+description: Restores or downloads Playwright's Chromium headless shell and installs any missing system packages.
+runs:
+  using: composite
+  steps:
+    - name: Find the Playwright version
+      id: version
+      shell: bash
+      working-directory: site
+      run: echo "playwright=$(node -p "require('playwright/package.json').version")" >> "$GITHUB_OUTPUT"
+    - name: Restore the browser from the cache
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/ms-playwright
+        key: playwright-chromium-headless-shell-${{ runner.os }}-${{ runner.arch }}-${{ steps.version.outputs.playwright }}
+    - name: Download the browser if the cache did not have it
+      shell: bash
+      working-directory: site
+      run: |
+        for attempt in 1 2 3; do
+          npx playwright install --only-shell chromium && exit 0
+          echo "Download attempt $attempt failed; trying again in $((attempt * 15)) s."
+          sleep $((attempt * 15))
+        done
+        exit 1
+    # GitHub's Ubuntu runners lack nine of the fonts Playwright installs
+    # (Chinese, Japanese, Thai and others), so this step always runs apt; it
+    # takes about 20 seconds and is tried again if a mirror fails.
+    - name: Install the system packages the browser needs
+      shell: bash
+      working-directory: site
+      run: |
+        for attempt in 1 2 3; do
+          npx playwright install-deps chromium && exit 0
+          echo "apt attempt $attempt failed; trying again in $((attempt * 15)) s."
+          sleep $((attempt * 15))
+        done
+        exit 1

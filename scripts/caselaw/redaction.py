@@ -16,8 +16,13 @@ replaced when the pages are built. Each entry, keyed by the opinion's copy key:
                   "court_initials": "", "variants": ["...", ...]}],
       "keep": ["names of people who keep their name but share a protected surname"],
       "details": [{"text": "DOB 04/08/1997", "kind": "birth_date"}],
+      "labels": {"form in lower case": "the label it takes"},
       "reviewed": "2026-11-24"
     }
+
+"labels" is optional: it settles the label of a form two people share, which is
+otherwise its initial alone. It keeps pages filed before Nov. 27, 2026 as they
+were filed, when that choice depended on Python's hash seed.
 
 In the opinion's text every substitution is in brackets ("[J.D.]", Indigo Book
 R8.2.3). In captions, titles and citations the initials go without brackets.
@@ -143,24 +148,32 @@ class Redactor:
         self.entry = entry
         self.people = people_of(entry)
         self.keep = sorted({k.strip() for k in entry.get("keep", []) if k and k.strip()}, key=len, reverse=True)
+        # Names match without regard to case ("Doe", "DOE"), so the forms are gathered the same way: a form two
+        # people share in any capitalization is one form, and the build gives the same page on every run (the
+        # forms used to be kept apart by case, and which label won then depended on Python's hash seed).
         by_text: dict[str, set[str]] = {}
+        spelled: dict[str, str] = {}
         for person in self.people:
-            for variant in set(person.variants) | set(generated_variants(person)):
+            for variant in sorted(set(person.variants) | set(generated_variants(person))):
                 if same_designation(variant, person.label):
                     continue  # the court's own designation stays as the court wrote it
-                by_text.setdefault(normalize(variant), set()).add(person.label)
+                text = normalize(variant)
+                by_text.setdefault(text.lower(), set()).add(person.label)
+                spelled.setdefault(text.lower(), text)
         replacements = []
-        for text, labels in by_text.items():
+        for lowered, labels in sorted(by_text.items()):
+            text = spelled[lowered]
             if not text or self._is_kept(text):
                 continue
-            # A surname shared by two protected people: its initial alone ("[T.]").
+            # A surname shared by two protected people: its initial alone ("[T.]"), unless the entry names the label.
             label = next(iter(labels)) if len(labels) == 1 else plain(text)[:1].upper() + "."
+            label = (entry.get("labels") or {}).get(lowered, label)
             replacements.append(Replacement(text, label, " " not in text))
         for detail in entry.get("details", []):
             text = normalize(detail.get("text", ""))
             if text:
                 replacements.append(Replacement(text, DETAIL_WORDS.get(detail.get("kind", ""), "detail removed"), False, True))
-        self.replacements = sorted(replacements, key=lambda r: len(r.text), reverse=True)
+        self.replacements = sorted(replacements, key=lambda r: (-len(r.text), r.text.lower()))
         self.lookup = {r.text.lower(): r for r in self.replacements}
         self.pattern = compile_alternation([r.text for r in self.replacements])
         self.keep_pattern = compile_alternation(self.keep)
