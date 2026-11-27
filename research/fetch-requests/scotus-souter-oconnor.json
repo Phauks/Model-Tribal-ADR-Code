@@ -3,24 +3,28 @@
  "workers": 2,
  "items": [
   {
-   "id": "court-souter-formal",
-   "url": "https://web.archive.org/web/2020id_/https://www.supremecourt.gov/about/justice_pictures/Souter_7807-DHS-Formal.jpg"
+   "id": "schs-2002-oconnor",
+   "url": "https://web.archive.org/web/2002id_/http://www.supremecourthistory.org:80/02_history/subs_current/images_b/004.html"
   },
   {
-   "id": "court-oconnor-color",
-   "url": "https://web.archive.org/web/2020id_/https://www.supremecourt.gov/about/justice_pictures/OConnorColor.jpg"
+   "id": "schs-2002-souter",
+   "url": "https://web.archive.org/web/20080501083805id_/http://www.supremecourthistory.org:80/02_history/subs_current/images_b/007.html"
   },
   {
-   "id": "court-oconnor-2015",
-   "url": "https://web.archive.org/web/2015id_/http://www.supremecourt.gov/about/justice_pictures/SOConnor.jpg"
+   "id": "schs-2011-oconnor",
+   "url": "https://web.archive.org/web/20110820104946id_/http://www.supremecourthistory.org/history-of-the-court/associate-justices/sandra-day-oconnor-1981-2006/"
   },
   {
-   "id": "court-souter-2015",
-   "url": "https://web.archive.org/web/2015id_/http://www.supremecourt.gov/about/justice_pictures/DSouter.jpg"
+   "id": "schs-2011-souter",
+   "url": "https://web.archive.org/web/20110912105754id_/http://www.supremecourthistory.org:80/history-of-the-court/associate-justices/david-souter-1990-2009/"
   },
   {
-   "id": "cdx-schs-souter-oconnor",
-   "url": "https://web.archive.org/cdx/search/cdx?url=supremecourthistory.org/&matchType=prefix&fl=original,timestamp,statuscode&collapse=urlkey&filter=statuscode:200&filter=original:.*(souter|connor).*&limit=500"
+   "id": "schs-2009-current-souter",
+   "url": "https://web.archive.org/web/20090504032606id_/http://www.supremecourthistory.org:80/history/supremecourthistory_history_current_souter.htm"
+  },
+  {
+   "id": "cdx-schs-current-oconnor",
+   "url": "https://web.archive.org/cdx/search/cdx?url=supremecourthistory.org/&matchType=prefix&fl=original,timestamp,statuscode&collapse=urlkey&filter=statuscode:200&filter=original:.*(subs_current|current_).*&limit=300"
   }
  ]
 }
