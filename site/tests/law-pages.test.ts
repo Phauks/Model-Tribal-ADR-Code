@@ -8,6 +8,8 @@ import { mediaLabel, servedMediaTypes } from '#lib/public-copies.ts';
 
 vi.mock('virtual:source-citations', () => ({ sourceCitations: {} }));
 vi.mock('virtual:essay-library', () => ({ essaysInGit: {}, essayBoxFacts: { cases: {}, laws: {} } }));
+vi.mock('$app/env', () => ({ version: 'test-build' }));
+vi.mock('cloudflare:workers', () => ({ env: {}, waitUntil: () => undefined }));
 
 const jemez = 'executive-order-1906-12-19-537';
 
@@ -106,5 +108,30 @@ describe('Title 25 of the Code and of the regulations', () => {
 		const acts = [...sources().values()].filter((record) => (record as { found_in?: string[] }).found_in?.includes('2026-11-26-title-25-acts'));
 		expect(acts.length).toBeGreaterThan(250);
 		expect(acts.filter((record) => !isLawRecord(record)).map((record) => record.key)).toEqual([]);
+	});
+});
+
+describe('A state statute section’s page', () => {
+	const tribalCourts = 'oklahoma-statutes-title-12-section-728';
+
+	it('every Oklahoma section the state statutes pilot found has one, labeled core or incidental', () => {
+		const oklahoma = [...sources().values()].filter((record) => record.kind === 'state-statute' && record.state_law);
+		expect(oklahoma.length).toBe(381);
+		expect(oklahoma.filter((record) => !isLawRecord(record))).toEqual([]);
+		expect(oklahoma.filter((record) => record.state_law!.relevance === 'core').length).toBe(101);
+	});
+
+	it('is named by its citation, with no year after it', () => {
+		expect(recordName(tribalCourts).name).toBe('Okla. Stat. tit. 12, § 728');
+	});
+
+	it('gives its state, its label and its Indigo Book citation, and links the official text', async () => {
+		const { lawPage } = await import('#lib/server/law-pages.ts');
+		const page = lawPage(tribalCourts);
+		expect(page.citation).toBe('Okla. Stat. tit. 12, § 728 (2026)');
+		expect(page.fullTitle).toBe('Standards for recognizing records and proceedings of tribal courts - Reciprocity');
+		const glance = Object.fromEntries(page.glance.map((group) => [group.label, group.items.map((item) => item.text).join('; ')]));
+		expect(glance).toMatchObject({ Kind: 'State statute', State: 'Oklahoma', 'Indian law': 'Core', Enacted: 'Sept. 1, 1992' });
+		expect(page.readingHtml).toContain('href="https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=160"');
 	});
 });
