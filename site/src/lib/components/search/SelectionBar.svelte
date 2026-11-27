@@ -67,7 +67,7 @@
 			const kept = localStorage.getItem(storageKey);
 			if (kept) saved = { ...readSelectionOptions(JSON.parse(kept)), name: '' };
 		} catch {
-			// Choices are remembered only where the browser keeps them.
+			// expected: storage is blocked in private windows, or the kept text is not JSON; the usual choices stand.
 		}
 	});
 
@@ -123,7 +123,7 @@
 			try {
 				localStorage.setItem(storageKey, JSON.stringify(saved));
 			} catch {
-				// Not kept; the choices still apply to this download.
+				// expected: storage is blocked in private windows; the choices still apply to this download.
 			}
 		}
 		form.submit();

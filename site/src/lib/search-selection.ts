@@ -165,6 +165,7 @@ export function publisherName(path: string): string {
 	try {
 		return decodeURIComponent(last);
 	} catch {
+		// expected: a name with a stray % is used as written.
 		return last;
 	}
 }
@@ -257,6 +258,7 @@ export function readSelectionRequest(text: string): SelectionRequest | undefined
 	try {
 		value = JSON.parse(text);
 	} catch {
+		// expected: a request that is not JSON chose nothing, and the download answers 400.
 		return undefined;
 	}
 	if (!value || typeof value !== 'object') return undefined;

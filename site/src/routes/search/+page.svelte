@@ -42,6 +42,7 @@
 	} from '#lib/search-records.ts';
 	import { entryGroups, forEntryGroups, matchEverything, resultGroupLabels, resultGroups, type ResultGroup } from '#lib/search-everything.ts';
 	import { extensionOf, fileOf, sizeText, type SearchFiles } from '#lib/search-selection.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 	import { offerSidebarTools } from '#lib/sidebar-tools.svelte.ts';
 	import { loadSearchIndex, prepareSearchIndex, type SearchEntry, type SearchResult } from '#lib/site-search.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -94,9 +95,16 @@
 
 	onMount(async () => {
 		void fetch('/search/files.json')
-			.then((response) => (response.ok ? (response.json() as Promise<SearchFiles>) : undefined))
-			.then((list) => (files = list ?? {}))
-			.catch(() => (files = {}));
+			.then((response) => {
+				if (!response.ok) throw new Error(`Reading /search/files.json failed: ${response.status}`);
+				return response.json() as Promise<SearchFiles>;
+			})
+			.then((list) => (files = list))
+			.catch((problem) => {
+				// Results still show and can be ticked; their files are listed by link.
+				files = {};
+				sendProblem(problem, { code: 'search.files', path: location.pathname });
+			});
 		try {
 			const [index, recordsFile] = await Promise.all([loadSearchIndex(), loadSearchRecords()]);
 			await prepareSearchIndex(index);

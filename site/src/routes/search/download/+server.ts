@@ -110,7 +110,7 @@ function disposition(name: string): string {
 }
 
 export const POST: RequestHandler = async ({ request, fetch, url }) => {
-	const form = await request.formData().catch(() => undefined);
+	const form = await request.formData().catch(() => /* expected: a body that is not a form chose nothing, answered 400 below */ undefined);
 	const text = form?.get('selection');
 	const selection = typeof text === 'string' ? readSelectionRequest(text) : undefined;
 	if (!selection) error(400, 'Choose at least one search result to download.');
