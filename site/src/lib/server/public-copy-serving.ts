@@ -87,6 +87,9 @@ function fileName(copy: ServableCopy): string {
 	return (copy.key.split('/').at(-1) ?? 'document.pdf').replace(/[^A-Za-z0-9._-]/g, '_');
 }
 
+/** What a saved web page may still do, in its frame or opened on its own: follow a link the reader clicks. */
+export const copySandbox = 'allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox';
+
 function copyHeaders(copy: ServableCopy, etag?: string): Headers {
 	const headers = new Headers({
 		// Plain text says it is UTF-8, so a transcription's accented letters and dashes show as written.
@@ -100,7 +103,8 @@ function copyHeaders(copy: ServableCopy, etag?: string): Headers {
 	});
 	if (copy.mediaType === 'text/html') {
 		// A saved web page runs nothing and loads nothing: its text and layout show, its scripts, frames and images do not.
-		headers.set('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'; sandbox");
+		// Its links still work when a reader clicks one, in the window or a new tab (the opinion copies' citations).
+		headers.set('Content-Security-Policy', `default-src 'none'; style-src 'unsafe-inline'; sandbox ${copySandbox}`);
 	}
 	if (etag) headers.set('ETag', etag);
 	return headers;
