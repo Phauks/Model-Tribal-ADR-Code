@@ -56,6 +56,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Glossary', also: ['Terms', 'Definitions'], detail: 'Defined terms, and how to use them', link: '/glossary' },
 	{ kind: 'page', title: 'Federal law', also: ['Federal Indian law', 'Treaties', 'Statutes', 'Regulations', 'Executive orders'], detail: 'Treaties, statutes, the U.S. Code, executive orders, regulations and agency records', link: '/laws' },
 	{ kind: 'page', title: 'Courts and cases', also: ['Cases', 'Court opinions', 'Case law'], detail: 'Supreme Court cases, tribal, state and other courts\' opinions, and the courts', link: '/cases' },
+	{ kind: 'page', title: 'Title 25. Indians', also: ['U.S. Code, Title 25', 'United States Code', '25 U.S.C.', 'Federal Indian law statutes'], detail: 'Title 25 of the United States Code, by chapter, subchapter and section', link: '/laws/usc-25' },
 	{ kind: 'page', title: 'Library', also: ['Sources', 'Research'], link: '/library' },
 	{ kind: 'page', title: 'Writing', also: ['Essays', 'Foundations', 'Model code', 'Peacemaking code'], detail: 'Foundations, essays, methods and stories, and the codes being written', link: '/writing' },
 	{ kind: 'page', title: 'Source documents', also: ['Copies', 'Documents', 'Primary sources'], link: '/copies' },

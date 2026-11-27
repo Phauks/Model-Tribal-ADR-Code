@@ -173,7 +173,7 @@ export const navigationSections: NavigationSection[] = [
 				links: [
 					{ label: 'Treaties and Agreements', link: '/stats/treaties', icon: 'scroll', count: 'treaties' },
 					{ label: 'Statutes', link: '/stats/federal-statutes', icon: 'book-marked', count: 'federal-statutes' },
-					{ label: 'U.S. Code, Title 25', link: '/stats/united-states-code-sections', icon: 'library', count: 'united-states-code-sections' },
+					{ label: 'U.S. Code, Title 25', link: '/laws/usc-25', icon: 'library', count: 'united-states-code-sections' },
 					{ label: 'Executive Orders', link: '/stats/executive-orders', icon: 'pen-line', count: 'executive-orders' }
 				]
 			},
