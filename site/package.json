@@ -23,6 +23,7 @@
 		"test": "vitest run",
 		"check:colors": "node tools/check-colors-come-from-tokens.mjs",
 		"check:motion": "node tools/check-motion-comes-from-tokens.mjs",
+		"check:color-vision": "node tools/check-color-vision.mjs",
 		"check:shared-components": "node tools/check-shared-components.mjs",
 		"check:built-site": "node tools/check-built-site.mjs",
 		"check:accessibility": "node tools/check-accessibility.mjs",
