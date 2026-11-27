@@ -2,12 +2,15 @@
 	// The masthead's Cite button, on pages about one record: a nation, a case,
 	// a law, an essay, a Justice, a glossary term, a story (improvements report,
 	// Nov. 24, 2026, idea 2: "Stable citations to every page and record"). It
-	// opens a panel with the citation, each with a copy button, and the same
-	// citation as a file for a citation manager. A case or law page also gives
-	// the citation to the case or law itself, which is what a brief cites. The
-	// reader picks the style: the Indigo Book, Chicago, APA or MLA (Trevor,
-	// Nov. 27, 2026; src/lib/citation-styles.ts), and the choice is remembered
-	// in this browser. The panel follows the disclosure pattern of the Download
+	// opens a dropdown with the page's citation in the style the reader picks
+	// in a rounded switch: the Indigo Book, Chicago, APA or MLA (Trevor, Nov.
+	// 27, 2026, mockup B1 in project files design/citation-styles/
+	// rounded-switch/; the forms are in src/lib/citation-styles.ts). The choice
+	// is remembered in this browser. A case or law page first gives the
+	// citation to the case or law itself, which is what a brief cites. Each
+	// citation has a copy button. The download icon beside the switch shows the
+	// page's citation as a file for a citation manager in place of the
+	// citations. The dropdown follows the disclosure pattern of the Download
 	// list: Escape closes it and returns to the button, and a click elsewhere
 	// closes it.
 	import { page } from '$app/state';
@@ -21,7 +24,9 @@
 	import { pageDownloads } from '#lib/page-downloads.ts';
 	import Check from '@lucide/svelte/icons/check';
 	import Copy from '@lucide/svelte/icons/copy';
+	import Download from '@lucide/svelte/icons/download';
 	import Quote from '@lucide/svelte/icons/quote';
+	import RoundedSwitch from './RoundedSwitch.svelte';
 
 	interface Citation {
 		key: string;
@@ -34,8 +39,9 @@
 	const citable = $derived(pageDownloads(page.url.pathname).citable && (page.data as { unpublished?: boolean }).unpublished !== true);
 
 	const styleKey = 'citation-style';
+	const styleOptions = citationStyles.map((option) => ({ id: option.key, label: option.label, title: option.title }));
 	let style = $state<CitationStyle>(defaultCitationStyle);
-
+	let showFiles = $state(false);
 	let open = $state(false);
 	let copied = $state<string | null>(null);
 	let message = $state('');
@@ -51,10 +57,6 @@
 		message = '';
 	});
 
-	function escape(value: string): string {
-		return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
-	}
-
 	function pageTitle(): string {
 		const heading = document.querySelector('#main-content h1')?.textContent?.replace(/\s+/g, ' ').trim();
 		return heading || document.title.split(' · ')[0];
@@ -67,9 +69,9 @@
 	// A case or law page cites the case or law first, from its record.
 	const record = $derived.by((): (CitedRecord & { heading: string }) | undefined => {
 		const data = page.data as { name?: unknown; citation?: unknown; reference?: CitedRecord['reference']; kind?: unknown };
-		if (typeof data.name !== 'string' || typeof data.citation !== 'string') return undefined;
+		if (typeof data.name !== 'string' || typeof data.citation !== 'string' || !data.citation) return undefined;
 		if (/^\/cases\/[^/]+$/.test(page.url.pathname)) return { heading: 'The case', kind: 'case', name: data.name, citation: data.citation, reference: data.reference };
-		if (/^\/laws\/[^/]+$/.test(page.url.pathname) && data.citation) {
+		if (/^\/laws\/[^/]+$/.test(page.url.pathname)) {
 			return { heading: data.kind === 'intergovernmental-agreement' ? 'The treaty' : 'The law', kind: 'law', name: data.name, citation: data.citation, lawKind: typeof data.kind === 'string' ? data.kind : undefined };
 		}
 		return undefined;
@@ -96,26 +98,25 @@
 			visited,
 			published: published()
 		});
-		const own = record ? [{ key: 'record', heading: record.heading, ...citeRecord(style, record) }] : [];
-		return [...own, { key: 'page', heading: 'This page', ...self }];
+		const own = record ? [{ key: `record-${style}`, heading: record.heading, ...citeRecord(style, record) }] : [];
+		return [...own, { key: `page-${style}`, heading: 'This page', ...self }];
 	});
 
-	function refresh(): void {
-		visited = new Date();
-		const kept = readStored(styleKey);
-		if (isCitationStyle(kept)) style = kept;
-	}
-
-	function choose(next: CitationStyle): void {
-		style = next;
-		copied = null;
-		writeStored(styleKey, next);
-	}
-
 	function toggle(): void {
-		if (!open) refresh();
+		if (!open) {
+			visited = new Date();
+			const kept = readStored(styleKey);
+			if (isCitationStyle(kept)) style = kept;
+			showFiles = false;
+		}
 		open = !open;
 		message = '';
+	}
+
+	function chooseStyle(next: CitationStyle): void {
+		showFiles = false;
+		copied = null;
+		writeStored(styleKey, next);
 	}
 
 	function close(returnFocus = false): void {
@@ -172,6 +173,12 @@
 					: [JSON.stringify([item], null, 2), 'application/vnd.citationstyles.csl+json'];
 		saveFile(new Blob([contents], { type }), datedName(`${item.id}-citation.${extension}`, new Date()));
 	}
+
+	const files = [
+		{ extension: 'ris', programs: 'EndNote, Mendeley, Zotero' },
+		{ extension: 'bib', programs: 'LaTeX, BibDesk' },
+		{ extension: 'json', programs: 'Zotero, Pandoc' }
+	] as const;
 </script>
 
 <svelte:document onclick={closeOnOutside} />
@@ -192,37 +199,53 @@
 			<Quote size={24} />
 		</button>
 		<div class="cite-panel" id="cite-panel" hidden={!open} role="group" aria-label="Cite">
-			<fieldset class="styles">
-				<legend class="visually-hidden">Citation style</legend>
-				{#each citationStyles as option (option.key)}
-					<label class="style" title={option.title}>
-						<input type="radio" name="citation-style" value={option.key} checked={style === option.key} onchange={() => choose(option.key)} />
-						<span>{option.label}</span>
-					</label>
-				{/each}
-			</fieldset>
-			{#each citations as citation (citation.key)}
-				<section class="citation">
-					<p class="group-heading">{citation.heading}</p>
-					<div class="citation-row">
-						<!-- The citation is built here from the page's own title and address, so its HTML is ours. -->
-						<p class="citation-text">{@html citation.html}</p>
-						<button
-							type="button"
-							class="icon-button copy"
-							aria-label="Copy the citation to {citation.heading === 'This page' ? 'this page' : citation.heading.toLowerCase()}"
-							title="Copy"
-							onclick={() => copy(citation)}
-						>
-							{#if copied === citation.key}<Check size={20} />{:else}<Copy size={20} />{/if}
-						</button>
-					</div>
-				</section>
-			{/each}
-			<div class="formats">
-				<button type="button" class="format" onclick={() => save('ris')} title="RIS: EndNote, Mendeley, Zotero">.ris</button>
-				<button type="button" class="format" onclick={() => save('bib')} title="BibTeX: LaTeX">.bib</button>
-				<button type="button" class="format" onclick={() => save('json')} title="CSL JSON: Zotero">.json</button>
+			<div class="controls">
+				<RoundedSwitch options={styleOptions} bind:selected={style} label="Citation style" panel="cite-citations" onchange={chooseStyle} />
+				<button
+					type="button"
+					class="icon-button files-button"
+					aria-pressed={showFiles}
+					aria-controls="cite-citations"
+					aria-label="Files for a citation manager"
+					title="Files for a citation manager"
+					onclick={() => (showFiles = !showFiles)}
+				>
+					<Download size={20} />
+				</button>
+			</div>
+			<div class="citations" id="cite-citations" role="tabpanel" aria-label={showFiles ? 'Files for a citation manager' : 'Citations'}>
+				{#if showFiles}
+					<p class="files-hint">This page’s citation as a file to import.</p>
+					<ul class="files">
+						{#each files as file (file.extension)}
+							<li>
+								<button type="button" class="file" onclick={() => save(file.extension)}>
+									<span class="file-name">.{file.extension}</span>
+									<span class="file-programs">{file.programs}</span>
+								</button>
+							</li>
+						{/each}
+					</ul>
+				{:else}
+					{#each citations as citation (citation.key)}
+						<section class="citation">
+							<p class="group-heading">{citation.heading}</p>
+							<div class="citation-row">
+								<!-- The citation is built here from the page's own title and address, so its HTML is ours. -->
+								<p class="citation-text">{@html citation.html}</p>
+								<button
+									type="button"
+									class="icon-button copy"
+									aria-label="Copy the citation to {citation.heading === 'This page' ? 'this page' : citation.heading.toLowerCase()}"
+									title="Copy"
+									onclick={() => copy(citation)}
+								>
+									{#if copied === citation.key}<Check size={20} />{:else}<Copy size={20} />{/if}
+								</button>
+							</div>
+						</section>
+					{/each}
+				{/if}
 			</div>
 		</div>
 		<p class="visually-hidden" role="status">{message}</p>
@@ -250,7 +273,6 @@
 		top: calc(100% + var(--space-2));
 		z-index: 20;
 		width: min(var(--layout-popover), calc(100vw - 2 * var(--space-3)));
-		padding: var(--space-2) 0 var(--space-3);
 		background: var(--color-surface-raised);
 		color: var(--color-ink);
 		border: 1px solid var(--color-control-border);
@@ -264,64 +286,37 @@
 		display: none;
 	}
 
-	/* The style switch looks like the site's other view switches (ViewSwitch.svelte): the chosen one in the link color, underlined. */
-	.styles {
+	/* The switch and, at the right, the files. */
+	.controls {
 		display: flex;
-		gap: var(--space-1);
-		margin: 0;
-		padding: 0 var(--space-2) var(--space-1);
-		border: 0;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-2);
+		padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4);
 		border-bottom: 1px solid var(--color-line);
 	}
 
-	.style {
-		position: relative;
-		display: flex;
-	}
-
-	.style input {
-		position: absolute;
-		inset: 0;
-		margin: 0;
-		opacity: 0;
-		cursor: pointer;
-	}
-
-	.style span {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-2);
-		border-radius: var(--radius-control);
-		white-space: nowrap;
-		color: var(--color-ink-muted);
-	}
-
-	.style:hover span {
+	.files-button {
+		flex: none;
 		color: var(--color-ink);
+	}
+
+	.files-button[aria-pressed='true'] {
 		background: var(--color-surface);
+		box-shadow: inset 0 -2px 0 var(--color-action);
 	}
 
-	.style input:checked + span {
-		color: var(--color-link);
-		font-weight: var(--font-weight-bold);
-		box-shadow: inset 0 -2px 0 var(--color-link);
-	}
-
-	.style input:focus-visible + span {
-		background-color: var(--color-focus);
-		color: var(--focus-text);
+	.citations {
+		padding: var(--space-2) 0;
 	}
 
 	.citation + .citation {
-		margin-top: var(--space-1);
 		border-top: 1px solid var(--color-line);
 	}
 
 	.group-heading {
 		margin: 0;
-		padding: var(--space-3) var(--space-4) var(--space-1);
+		padding: var(--space-3) var(--space-4) 0;
 		font-size: var(--font-size-small);
 		font-weight: var(--font-weight-semibold);
 		color: var(--color-ink-muted);
@@ -331,7 +326,7 @@
 		display: flex;
 		align-items: flex-start;
 		gap: var(--space-2);
-		padding: 0 var(--space-2) 0 var(--space-4);
+		padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
 	}
 
 	.citation-text {
@@ -345,38 +340,54 @@
 		color: var(--color-ink);
 	}
 
-	.formats {
-		display: flex;
-		gap: var(--space-2);
-		padding: var(--space-3) var(--space-4) 0;
-		border-top: 1px solid var(--color-line);
-		margin-top: var(--space-2);
+	.files-hint {
+		margin: var(--space-3) var(--space-4) var(--space-2);
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
 	}
 
-	.format {
-		display: inline-flex;
+	.files {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+		margin: 0;
+		padding: 0 var(--space-4) var(--space-2);
+		list-style: none;
+	}
+
+	.file {
+		display: flex;
 		align-items: center;
-		justify-content: center;
+		gap: var(--space-3);
+		width: 100%;
 		min-height: var(--layout-target-minimum);
-		min-width: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
+		padding: var(--space-2) var(--space-3);
 		border: 1px solid var(--color-control-border);
 		border-radius: var(--radius-control);
 		background: var(--color-surface-raised);
 		color: var(--color-ink);
 		font: inherit;
-		font-size: var(--font-size-small);
+		text-align: left;
 		cursor: pointer;
 	}
 
-	.format:hover {
+	.file:hover {
 		background: var(--color-surface);
-		text-decoration: underline;
 	}
 
-	.format:focus-visible {
+	.file:focus-visible {
 		background-color: var(--color-focus);
 		color: var(--focus-text);
+	}
+
+	.file-name {
+		min-width: 3.5rem;
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.file-programs {
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
 	}
 
 	@media (max-width: 40rem) {
