@@ -202,15 +202,27 @@ const fixedGroups: Record<string, string> = {
 };
 
 /**
- * Court opinion lists longer than pageSize rows (decision record 0060), and the Serial Set's 5,575 documents
- * (scripts/law/serial_set.py, in the order of their volumes' serial numbers), are split into parts, in the
+ * Court opinion lists longer than pageSize rows (decision record 0060), the Serial Set's 5,575 documents
+ * (scripts/law/serial_set.py, in the order of their volumes' serial numbers) and the Federal Register's documents
+ * are split into parts, in the
  * order of the copies' keys (source, reporter, volume): the first part keeps the list's address and
  * the others add "-2", "-3" and so on. One page of thousands of rows is too big for a Worker asset
  * and for the accessibility check, which gives up on a page after 90 seconds.
  */
-const pagedGroups = new Set(['federal-court-opinions', 'state-court-opinions', 'serial-set']);
+const pagedGroups = new Set(['federal-court-opinions', 'state-court-opinions', 'serial-set', 'federal-register']);
 const pageSize = 2500;
 let pageCache: Map<string, { slug: string; parts: number }> | undefined;
+
+/**
+ * The paged list a copy belongs to, if any: its topic's, or the Federal Register's for the documents GovInfo keeps
+ * under FR- packages, which share that list with the Federal Register's own (about 4,400 rows by Nov. 27, 2026, when
+ * the one page took the accessibility check over its 90 seconds).
+ */
+function pagedGroupOf(copy: PublicCopy): string | undefined {
+	if (pagedGroups.has(copy.topic)) return copy.topic;
+	if (copy.topic === 'govinfo' && /^FR-/.test(copy.key.split('/')[1] ?? '')) return 'federal-register';
+	return undefined;
+}
 
 /** The list each paged copy is in, by key. */
 function pages(): Map<string, { slug: string; parts: number }> {
@@ -218,7 +230,7 @@ function pages(): Map<string, { slug: string; parts: number }> {
 	const cache = new Map<string, { slug: string; parts: number }>();
 	for (const group of pagedGroups) {
 		const keys = publicCopies()
-			.filter((copy) => copy.topic === group)
+			.filter((copy) => pagedGroupOf(copy) === group)
 			.map((copy) => copy.key)
 			.sort();
 		const parts = Math.max(1, Math.ceil(keys.length / pageSize));
@@ -266,7 +278,8 @@ const opinionPrefix = 'opinions-';
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
 	if (copy.topic === 'ibia-decisions') return boardGroup(copy);
-	if (pagedGroups.has(copy.topic)) return pages().get(copy.key)?.slug ?? copy.topic;
+	const paged = pagedGroupOf(copy);
+	if (paged) return pages().get(copy.key)?.slug ?? paged;
 	// The Supreme Court's opinions as text, split by opinion, beside the scans of the United States Reports (scripts/caselaw/case_opinion_texts.py).
 	if (copy.topic === 'supreme-court-opinions') return 'supreme-court';
 	if (copy.topic === 'indian-claims-commission') return claimsGroup(copy);
@@ -280,9 +293,7 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'govinfo' && /^(STATUTE|PLAW)-/.test(file)) return 'statutes';
 	// The Library of Congress keeps both the Statutes at Large and the United States Reports.
 	if (copy.topic === 'tile.loc.gov') return copy.key.includes('/usrep/') ? 'supreme-court' : 'statutes';
-	if (copy.topic === 'govinfo' && /^FR-/.test(copy.key.split('/')[1] ?? '')) return 'federal-register';
 	// The tier 2 collections each have a list of their own; together they were too long for one page.
-	if (copy.topic === 'federal-register') return 'federal-register';
 	if (copy.topic === 'nigc') return 'gaming-commission';
 	if (copy.topic === 'acknowledgment') return 'acknowledgment';
 	if (copy.topic === 'repatriation-notices') return repatriationGroup(copy);
