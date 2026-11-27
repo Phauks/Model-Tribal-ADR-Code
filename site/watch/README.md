@@ -28,7 +28,7 @@ The migration is already applied to the live database (`site/migrations/20261126
 1. Open the Cloudflare dashboard at dash.cloudflare.com and go to **Workers & Pages**.
 2. Select **Create application**.
 3. Under importing a repository, select **GitHub**. If Cloudflare asks, sign in to GitHub and allow it this repository, as for the other Workers.
-4. Select the repository `Model-Tribal-ADR-Code`.
+4. Select the repository `Tribal-Law-Project`.
 5. On the next page, fill in:
    - **Project name:** `tribal-law-project-watch`. It must match the name in `site/watch/wrangler.jsonc` exactly, or the build fails.
    - **Build command:** `cd .. && npm ci && npm run watch:index`

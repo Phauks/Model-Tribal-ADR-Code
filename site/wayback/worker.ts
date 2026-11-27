@@ -67,7 +67,7 @@ interface Progress {
 	pauseReason?: string;
 }
 
-const QUEUE_LINK = 'https://raw.githubusercontent.com/Phauks/Model-Tribal-ADR-Code/main/research/wayback-queue.tsv';
+const QUEUE_LINK = 'https://raw.githubusercontent.com/Phauks/Tribal-Law-Project/main/research/wayback-queue.tsv';
 const PROGRESS_OBJECT = 'wayback/progress.json';
 const MARKS_OBJECT = 'wayback/marks.json';
 const SAVE_SERVICE = 'https://web.archive.org/save';

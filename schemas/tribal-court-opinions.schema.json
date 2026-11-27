@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/tribal-court-opinions.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/tribal-court-opinions.schema.json",
   "title": "Tribal court opinion (table row)",
   "description": "One row of research/tribal-court-opinions/opinions.csv: a tribal court opinion in a Caselaw Access Project reporter, with the private copy the site serves as its own page (decision record 0047). Built by scripts/caselaw/tribal_court_opinions.py from the reporters, courts and topics in research/tribal-court-opinions/sources.yaml; the site reads it (site/src/lib/server/tribal-court-opinions.ts). Every cell is text and an empty cell is left out before checking, so 'required' means the cell may not be empty.",
   "type": "object",

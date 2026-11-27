@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/common.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/common.schema.json",
   "title": "Shared definitions",
   "description": "Types reused by every record schema. All text is UTF-8 in Unicode Normalization Form C; scripts/check_text.py enforces that, because JSON Schema cannot.",
   "$defs": {

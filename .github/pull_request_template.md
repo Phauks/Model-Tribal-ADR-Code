@@ -23,7 +23,7 @@
 
 ## Style
 
-- [ ] Terms follow the [terminology guide](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/terminology.md) and the [style guide](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/style-guide.md); first uses are linked with `[[id]]`
+- [ ] Terms follow the [terminology guide](https://github.com/Phauks/Tribal-Law-Project/blob/main/docs/terminology.md) and the [style guide](https://github.com/Phauks/Tribal-Law-Project/blob/main/docs/style-guide.md); first uses are linked with `[[id]]`
 - [ ] Identifiers in code and data are spelled out
 - [ ] The `checks` workflow passes (text encoding, records and links)
 

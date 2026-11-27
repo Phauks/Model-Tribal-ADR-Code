@@ -35,4 +35,8 @@ The old databases and buckets stay, unused, until the lead author deletes them. 
 
 `site/wayback/move-databases.ts` runs in the Wayback Worker's minute schedule while it has bindings to the old and new databases. A request object at `_migration/site-database/request.json` (`{"mode": "full"}` or `{"mode": "missing"}`) starts a copy of the site's database, and the result is written beside it. After the switch it reads the request from the old bucket (binding `oldSourceDocuments`), for the last "missing" pass. The file and its bindings are removed once that pass is done.
 
+## GitHub repository
+
+The lead author renamed the repository from `Phauks/Model-Tribal-ADR-Code` to `Phauks/Tribal-Law-Project` on Nov. 26, 2026. GitHub redirects the old address. The Workers Builds connections are tied to the repository's id, not its name, so all five Workers kept building from `main` after the rename. Links in the site, the schemas' `$id`s, the issue and pull request templates and the citation style name the new repository. Decision records and research notes keep the name they were written with.
+
 Names that are not Cloudflare resources (the npm package names, User-Agent strings, download file names, the token keys of the scheduled run and the mail run, and the authenticator key label) keep `model-tribal-adr-code`. Changing the token keys or the authenticator label would break saved settings and set-up authenticator apps.
