@@ -31,6 +31,7 @@ export const notWatched: NotWatched[] = [
 	{ feed: 'tribal-court-opinions', kind: 'planned', reason: 'consented-courts, phase 3: only nations that publish their opinions and agree, with initials and privacy holds first (decision record 0057). Its list of courts starts empty.' },
 	{ feed: 'oklahoma-state-tribal-agreements', kind: 'planned', reason: 'oklahoma-register (the Oklahoma Secretary of State’s register data file, json/dataTribal.json, compared by file number; scripts/agreements/oklahoma_register.py reads it today), phase 2.' },
 	{ feed: 'federal-programs', kind: 'derived', reason: 'Built from the nation profiles’ federal_programs facts.' },
+	{ feed: 'approved-nation-laws', kind: 'planned', reason: 'interior-and-epa-lists (the Bureau of Indian Affairs’ approved HEARTH Act regulations page and EPA’s treatment-as-a-state and tribal water quality standards pages, compared by link), phase 2; scripts/law/approved_nation_laws.py rebuilds the collection meanwhile.' },
 	{ feed: 'state-statutes', kind: 'planned', reason: 'One watcher per state legislature’s code site, re-running the state statutes sweep on each new edition (research/analyses/2026-11-26-state-statutes-pilot.md, section 7); scripts/law/state_statutes/run.py rebuilds each state meanwhile.' },
 	{ feed: 'supreme-courts', kind: 'derived', reason: 'Built from the Justices.' },
 	{ feed: 'courts', kind: 'planned', reason: 'nation-sites (court pages) in phase 3, and courtlistener (new court names) in phase 2.' },

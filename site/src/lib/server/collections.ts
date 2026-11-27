@@ -266,11 +266,21 @@ const oklahomaTopic = 'oklahoma-state-tribal-agreement';
 const isOklahomaFiling = (record: SourceRecord) => (record.topics ?? []).includes(oklahomaTopic);
 const oklahomaAgreements = () => [...sources().values()].filter(isOklahomaFiling);
 
-/** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection, and Oklahoma's register. */
+/**
+ * Native nations' laws a federal agency approved: leasing regulations under the HEARTH Act, water quality standards, and EPA's
+ * decisions that a nation may run an environmental program as a state would (scripts/law/approved_nation_laws.py), a collection
+ * of their own, so they are not counted again among the codes and laws. EPA's two list pages the nation-page facts cite are left out.
+ */
+const approvedLawTopic = 'approved-nation-laws';
+const isApprovedNationLaw = (record: SourceRecord) => (record.topics ?? []).includes(approvedLawTopic) && kindOf(record) !== 'web-page';
+function approvedNationLaws(): CollectionItem[] {
+	return [...sources().values()].filter(isApprovedNationLaw).map((record) => sourceItem(record, [(record.citation as { genre?: string }).genre, tribesOf(record)].filter(Boolean).join(': ') || undefined));
+}
+/** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection, Oklahoma's register and the approved nations' laws. */
 function sourcesOfKind(kinds: string[], detail?: (record: SourceRecord) => string | undefined): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record))
+			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record) && !isApprovedNationLaw(record))
 			.map((record) => sourceItem(record, detail?.(record)));
 }
 
@@ -420,6 +430,15 @@ export const collections: Collection[] = [
 		detailHeader: 'Nation',
 		sourceKinds: ['intergovernmental-agreement'],
 		items: () => oklahomaAgreements().map((record) => sourceItem(record, tribesOf(record)))
+	},
+	{
+		identifier: 'approved-nation-laws',
+		search: { group: 'document' },
+		title: 'Nations’ Laws Approved by Federal Agencies',
+		group: 'Native nations',
+		detailHeader: 'Kind and nation',
+		sourceKinds: ['tribal-code', 'federal-agency-document'],
+		items: approvedNationLaws
 	},
 	{
 		identifier: 'stories', search: { group: 'story' },

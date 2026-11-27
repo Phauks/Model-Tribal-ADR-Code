@@ -133,7 +133,9 @@ const jurisdictionSubjects: Record<string, LawSubject[]> = {
 	'state-jurisdiction-statute': ['criminal', 'courts'],
 	'violence-against-women-act-special-tribal-criminal-jurisdiction': ['criminal'],
 	'tribal-law-and-order-act-enhanced-sentencing': ['criminal'],
-	'indian-child-welfare-act': ['family']
+	'indian-child-welfare-act': ['family'],
+	'hearth-act-leasing-regulations': ['land', 'business'],
+	'environmental-treatment-as-a-state': ['land', 'government']
 };
 
 const jurisdictionNames: Record<string, string> = {
@@ -141,7 +143,9 @@ const jurisdictionNames: Record<string, string> = {
 	'state-jurisdiction-statute': 'State jurisdiction under other federal laws',
 	'violence-against-women-act-special-tribal-criminal-jurisdiction': 'Violence Against Women Act jurisdiction',
 	'tribal-law-and-order-act-enhanced-sentencing': 'Tribal Law and Order Act sentencing',
-	'indian-child-welfare-act': 'Indian Child Welfare Act'
+	'indian-child-welfare-act': 'Indian Child Welfare Act',
+	'hearth-act-leasing-regulations': 'Leasing under the HEARTH Act',
+	'environmental-treatment-as-a-state': 'Environmental treatment as a state'
 };
 
 const agreementSubjects: Record<string, LawSubject[]> = {
