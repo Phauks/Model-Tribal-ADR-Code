@@ -1,0 +1,50 @@
+key: minnesota-statutes-136a-246
+kind: state-statute
+citation:
+  type: legislation
+  title: Dual Training Competency Grants
+  title-short: Minn. Stat. § 136A.246
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 136A.246
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2015
+  URL: https://www.revisor.mn.gov/statutes/cite/136A.246
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/136A.246
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 136A.246 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 136A.246 (2026). History: 2015 c 69 art 3 s 11; 2016 c 86 s 1; 2016 c 189 art 1 s 18,19; 1Sp2017 c 5 art 10 s 7; 1Sp2021 c 2 art 2 s 16 -24; 2023 c 41 art 2 s 21 -24; 1Sp2025 c 5 art 2 s 27; 2026 c 116 s 20. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian); AI reader''s verdict incidental: Grant criterion counts American Indian employee recruitment. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; indian'

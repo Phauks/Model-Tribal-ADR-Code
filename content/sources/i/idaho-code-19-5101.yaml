@@ -1,0 +1,50 @@
+key: idaho-code-19-5101
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Idaho Code § 19-5101
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 19-5101
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 1981
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title19/T19CH51/SECT19-5101
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title19/T19CH51/SECT19-5101
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 19-5101 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Idaho Code § 19-5101 (2026). History: 19-5101, added 1981, ch. 307, sec. 2, p. 629; am. 1992, ch. 248, sec. 1, p. 730; am. 1997, ch. 84, sec. 1, p. 200; am. 2008, ch. 88, sec. 3, p. 244; am. 2017, ch. 181, sec. 1, p. 412. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; tribe); AI reader''s verdict incidental: Tribal police officers deputized count as peace officers. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; tribe'
