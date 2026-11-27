@@ -8,6 +8,7 @@ import { error } from '@sveltejs/kit';
 import { stringify } from 'devalue';
 import { pageDataFamilies, type PageDataFamily } from '#lib/page-data.ts';
 import { biographies, biographyPage } from '#lib/server/biographies.ts';
+import { browseCollection, browseKeys } from '#lib/server/browse-collections.ts';
 import { caseKeys, casePage } from '#lib/server/case-pages.ts';
 import { sectionKeys } from '#lib/server/code-outline.ts';
 import { justiceKeys, justicePage, presidentKeys, presidentPage } from '#lib/server/justice-pages.ts';
@@ -20,6 +21,7 @@ export const prerender = true;
 const families: Record<PageDataFamily, { keys: () => string[]; page: (key: string) => unknown }> = {
 	cases: { keys: caseKeys, page: casePage },
 	laws: { keys: lawKeys, page: lawPage },
+	collections: { keys: browseKeys, page: browseCollection },
 	sections: { keys: sectionKeys, page: sectionPageData },
 	biographies: { keys: () => biographies().map((person) => person.key), page: biographyPage },
 	justices: { keys: justiceKeys, page: justicePage },

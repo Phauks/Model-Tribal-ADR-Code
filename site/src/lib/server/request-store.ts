@@ -178,8 +178,8 @@ export async function saveRequest(
 	} catch (problem) {
 		// Leave no orphaned uploads behind if the request could not be saved.
 		if (uploaded.length > 0) {
-			await bucket.delete(uploaded).catch(() => undefined);
-			for (const key of uploaded) await forgetScan(database, key).catch(() => undefined);
+			await bucket.delete(uploaded).catch(() => /* expected: the original problem is thrown; a file left behind is held unscanned and never served */ undefined);
+			for (const key of uploaded) await forgetScan(database, key).catch(() => /* expected: the original problem is thrown; a leftover scan row names a file that no longer exists */ undefined);
 		}
 		throw problem;
 	}

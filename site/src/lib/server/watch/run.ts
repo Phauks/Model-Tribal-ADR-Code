@@ -11,6 +11,8 @@
  */
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { readSettings, restrictsAnything } from '../../nation-restrictions.ts';
+import { isMissingTable } from '../../problems.ts';
+import { report } from '../report.ts';
 import { storeCapture } from './capture.ts';
 import { bucketPageTexts } from './drivers/page.ts';
 import { lookupFor, matchKnown, nationsNamedIn, type KnownIdentifiers, type KnownLookup, type MatchInput } from './known.ts';
@@ -57,8 +59,10 @@ export async function restrictedNations(database: D1Database): Promise<Set<strin
 			)
 			.all<{ nation_identifier: string; settings: string }>();
 		return new Set(results.filter((row) => restrictsAnything(readSettings(JSON.parse(row.settings)))).map((row) => row.nation_identifier));
-	} catch {
-		// Without the table (a fresh database), no nation restricts anything yet.
+	} catch (problem) {
+		// Without the table (a fresh database), no nation restricts anything yet. Any other
+		// failure is reported; whether it should hold every item instead is Trevor's to decide.
+		if (!isMissingTable(problem)) report(problem, { code: 'radar.restrictions', source: 'radar', place: 'workflow:WatchRun', database });
 		return new Set();
 	}
 }

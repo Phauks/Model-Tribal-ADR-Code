@@ -1,0 +1,47 @@
+key: wisconsin-statutes-86-19
+kind: state-statute
+citation:
+  type: legislation
+  title: Highway signs, regulation, prohibition
+  title-short: Wis. Stat. § 86.19
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '86.19'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/86.19
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/86.19
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Wis. Stat. § 86.19 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 86.19 (2023-24). History: 1975 c. 169; 1977 c. 29 s. 1654 (8) (c); 1977 c. 188; 1983 a. 92; 1987 a. 137 s. 6; 1987 a. 205; 1993 a. 246; 1999 a. 9; 1999 a. 150 s. 672; 2015 a. 51, 55, 213, 270; 2017 a. 59, 232; 2019 a. 20; 2021 a. 202; 2023 a. 74; 2025 a. 156. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian reservation; tribal nation; indian; nation; oneida; reservation; tribal; tribe); AI reader''s verdict core: Tribal nation welcome signs on reservation highways. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: american indian; indian reservation; tribal nation; indian; nation; oneida; reservation; tribal; tribe'

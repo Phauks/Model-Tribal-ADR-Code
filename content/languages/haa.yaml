@@ -1,0 +1,64 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: haa
+name: Han
+iso_639_3:
+  code: haa
+  reference_name: Hän
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: hann1241
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+iso_names:
+- name: Hän
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2092
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/han.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Dawson Han
+  glottocode: daws1234
+  source: glottolog-5-4
+- name: Eagle Han
+  glottocode: eagl1234
+  source: glottolog-5-4
+works:
+- glottolog_reference: '556958'
+  title: 'Hän Athabaskan dictionary: Dialect of Eagle, Alaska'
+  kinds:
+  - dictionary
+  author: Louise Paul
+  year: 2012
+  pages: 136
+  source: glottolog-5-4
+- glottolog_reference: '310960'
+  title: 'Han Gwich''in Athapaskan: Noun Dictionary'
+  kinds:
+  - dictionary
+  author: John Ritter
+  year: 1978
+  pages: 82
+  source: glottolog-5-4
+- glottolog_reference: '303482'
+  title: The Han Gwitchin language (Eagle dialect)
+  kinds:
+  - dictionary
+  author: John Ritter
+  year: 1977
+  pages: 150
+  source: glottolog-5-4
+- glottolog_reference: '165631'
+  title: Louise Paul, Han Dictionary Check 1
+  kinds:
+  - dictionary
+  author: Louise. (speaker) Paul
+  source: glottolog-5-4
+retrieved: '2026-11-27'

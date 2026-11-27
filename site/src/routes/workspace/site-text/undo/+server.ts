@@ -18,7 +18,7 @@ export const POST: RequestHandler = async (event) => {
 	const person = requirePersonForData(event);
 	const { database } = storage(event);
 	await requireDocumentLevel(event, database, siteTextSubject, 'full');
-	const body = (await event.request.json().catch(() => null)) as { publication?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON names no publication, which is refused just below with 409 */ null)) as { publication?: unknown } | null;
 	if (body?.publication !== (await latestPublication(database))) error(409, 'Someone published since this list opened. Open it again and try again.');
 	const number = await undoLatestPublication(database, person.identifier, catalogByKey());
 	if (number === null) error(400, 'Nothing has been published.');

@@ -18,7 +18,7 @@
 	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
-	import SavedText from '#lib/components/SavedText.svelte';
+	import DocumentText from '#lib/components/DocumentText.svelte';
 	import CodePager from '#lib/components/code/CodePager.svelte';
 	import StatusTag from '#lib/components/code/StatusTag.svelte';
 	import type { PageProps } from './$types';
@@ -60,20 +60,19 @@
 		<p class="moved-from muted">Formerly {#each data.movedFrom as from, index (from.label)}{#if index > 0}, {/if}{#if from.link}<a href={from.link}>{from.label}</a>{:else}{from.label}{/if}{/each}.</p>
 	{/if}
 
-	{#if data.text}
-		<!-- The section's official text, kept from its older record; the shared document text component takes this place too. -->
-		<SavedText file={data.text.file} isPdf={data.text.isPdf} name={data.name} identifier="text" />
-	{:else if inForce}
-		<Collapsible heading="Text" identifier="text">
-			<!-- The shared document text component takes this place (thread "Standardize how document text is shown"). -->
-			<div class="text-slot">
-				<p>
-					Read § {data.slug.replace(/-/g, '–')} in
-					{#if data.reading}<a href={data.reading}>our copy of chapter {data.chapter.number}</a> or{/if}
-					<a href={data.official}>GovInfo</a>, from the {data.edition} edition{#if data.currentThrough}, current through {longDate(data.currentThrough)}{/if}.
-				</p>
-			</div>
-		</Collapsible>
+	{#if data.text || inForce}
+		<!-- The section's official text, kept from its older record, in the same Text card as every law's page; without it, where to read the section. -->
+		<DocumentText file={data.text} identifier="text" name={data.name}>
+			{#snippet fallback()}
+				<div class="text-slot">
+					<p>
+						Read § {data.slug.replace(/-/g, '–')} in
+						{#if data.reading}<a href={data.reading}>our copy of chapter {data.chapter.number}</a> or{/if}
+						<a href={data.official}>GovInfo</a>, from the {data.edition} edition{#if data.currentThrough}, current through {longDate(data.currentThrough)}{/if}.
+					</p>
+				</div>
+			{/snippet}
+		</DocumentText>
 	{/if}
 
 	{#each kept as record (record.key)}

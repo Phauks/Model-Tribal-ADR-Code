@@ -1,0 +1,59 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ono
+name: Onondaga
+iso_639_3:
+  code: ono
+  reference_name: Onondaga
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: onon1246
+  level: language
+  source: glottolog-5-4
+family:
+  name: Iroquoian
+  glottocode: iroq1247
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1922
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '557902'
+  title: A Reference Grammar of the Onondaga Language
+  kinds:
+  - grammar
+  author: Hanni Woodbury
+  year: 2018
+  publisher: University of Toronto Press
+  pages: 501
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '64212'
+  title: Onondaga - English / English - Onondaga dictionary
+  kinds:
+  - dictionary
+  author: Hanni Woodbury
+  year: 2003
+  publisher: University of Toronto Press
+  pages: 1563
+  source: glottolog-5-4
+- glottolog_reference: '552979'
+  title: 'Onondaga noun incorporation: some notes on the interdependence of syntax and semantics'
+  kinds:
+  - grammar
+  author: H. Woodbury
+  year: 1975
+  publisher: Yale University
+  pages: 11
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '688684'
+  title: Zeisberger's Indian Dictionary
+  kinds:
+  - dictionary
+  author: David Zeisberger
+  year: 1887
+  publisher: John Wilson and Son
+  source: glottolog-5-4
+retrieved: '2026-11-27'

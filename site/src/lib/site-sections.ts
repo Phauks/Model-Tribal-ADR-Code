@@ -40,6 +40,8 @@ export type PageOutline = {
  * (Trevor, Nov. 27, 2026, design/navigation-models/mockups/C-desktop-nation.png).
  */
 export type PageFamily = {
+	/** A browsed collection's find box and filters, in place of a list of pages (src/lib/collection-browser.ts). */
+	filters?: import('./collection-browser.ts').FilterColumn;
 	/** A code's outline in place of a flat list of pages, such as a Title 25 chapter's subchapters and sections (src/lib/code-outline.ts). */
 	tree?: import('./code-outline.ts').CodeTree;
 	/** The family's name, such as the nation's name. */

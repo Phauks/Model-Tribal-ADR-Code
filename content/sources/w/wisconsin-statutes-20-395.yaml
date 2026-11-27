@@ -1,0 +1,47 @@
+key: wisconsin-statutes-20-395
+kind: state-statute
+citation:
+  type: legislation
+  title: Transportation, department of
+  title-short: Wis. Stat. § 20.395
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '20.395'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/20.395
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/20.395
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 20.395 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 20.395 (2023-24). History: 1971 c. 40 s. 93; 1971 c. 42, 107; 1971 c. 125 ss. 122 to 137, 522 (1); 1971 c. 197, 211, 215, 307; 1973 c. 90, 142, 243, 333, 336; 1975 c. 39; 1975 c. 163 s. 16; 1975 c. 200, 224, 270, 288, 340, 422; 1977 c. 29, 377, 418; 1979 c. 34 ss. 322e to 420, 574, 575; 1979 c. 221; 1981 c. 20 ss. 238 to 300, 2202 (51) (c), (e); 1981 c. 165, 234; 1981 c. 314 s. 146; 1981 c. 347 s. 80; 1981 c. 362; 1983 a. 27 ss. 270g to 315, 2202 (20); 1983 a. 243; 1985 a. 29 ss. 357 to 402, 3202 (51) (a); 1985 a. 65, 76, 341; 1987 a. 27, 137, 349, 369, 399, 403; 1989 a. 31, 56; 1991 a. 39, 104, 239, 269; 1993 a. 16, 285, 354, 437; 1995 a. 27, 113, 201, 338, 445; 1997 a. 27, 35, 135, 237, 255; 1999 a. 9, 109, 146, 167, 185; 2001 a. 16, 104, 109; 2003 a. 33, 64, 139, 220, 320; 2005 a. 25, 319, 335; 2007 a. 20, 42; 2009 a. 28, 224, 226, 276; 2011 a. 32, 257; 2011 a. 260 s. 80; 2013 a. 20, 49, 125, 165, 266; 2015 a. 55, 137; 2015 a. 195 s. 82; 2015 a. 227, 296, 328; 2017 a. 58; 2017 a. 59 ss. 359nm to 363, 372, 373; 2017 a. 194, 249; 2017 a. 365 s. 110; 2017 a. 368; 2019 a. 9, 50; Bartlett v. Evers, 2020 WI 68, ¶¶ 4, 9, 393 Wis. 2d 172, 945 N.W.2d 685, 19-1376; 2021 a. 58; 2021 a. 240 s. 30; 2021 a. 244; 2023 a. 19, 122; 2025 a. 15. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; allotment; indian; tribal; tribes); AI reader''s verdict incidental: Transportation appropriation; tribal elderly transportation grants to tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; allotment; indian; tribal; tribes'

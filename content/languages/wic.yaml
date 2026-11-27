@@ -1,0 +1,38 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: wic
+name: Wichita
+iso_639_3:
+  code: wic
+  reference_name: Wichita
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: wich1260
+  level: language
+  source: glottolog-5-4
+family:
+  name: Caddoan
+  glottocode: cadd1255
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1003
+  source: glottolog-5-4
+dialects:
+- name: Tawakoni
+  glottocode: tawa1277
+  source: glottolog-5-4
+- name: Waco
+  glottocode: waco1239
+  source: glottolog-5-4
+works:
+- glottolog_reference: '19119'
+  title: Wichita Grammar
+  kinds:
+  - grammar
+  author: David S. Rood
+  year: 1976
+  publisher: Garland
+  pages: 329
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

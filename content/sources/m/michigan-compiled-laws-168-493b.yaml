@@ -1,0 +1,50 @@
+key: michigan-compiled-laws-168-493b
+kind: state-statute
+citation:
+  type: legislation
+  title: Automatic voter registration agencies; transmission of voter registration information; procedure and schedule; Medicaid application; submission requests by tribal nations; memorandum of understanding; release from incarceration; procedures for processing electronic records
+  title-short: Mich. Comp. Laws § 168.493b
+  container-title: Michigan Compiled Laws
+  container-title-short: Mich. Comp. Laws
+  section: 168.493b
+  author:
+  - literal: Michigan Legislature
+  issued:
+    date-parts:
+    - - 2023
+  URL: https://legislature.mi.gov/Laws/MCL?objectName=mcl-168.493b
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.mi.gov/Laws/MCL?objectName=mcl-168.493b
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mich. Comp. Laws § 168.493b (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Mich. Comp. Laws § 168.493b (2026). History: Add. 2023, Act 268, Eff. June 30, 2025. Text read from the Michigan Legislature''s page for the section''s chapter of the Michigan Compiled Laws (legislature.mi.gov), complete through Public Act 114 of 2026, on Nov. 27, 2026. Found by the state statutes sweep (terms: indian nation; tribal members; tribal nations; indian; nation; tribal; tribe); AI reader''s verdict incidental: Tribal nations may submit tribal member voter registration information. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian nation; tribal members; tribal nations; indian; nation; tribal; tribe'

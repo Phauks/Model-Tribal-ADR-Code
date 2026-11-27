@@ -1,0 +1,76 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: mic
+name: Mi'kmaq
+iso_639_3:
+  code: mic
+  reference_name: Mi'kmaq
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: mikm1235
+  level: language
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+iso_names:
+- name: Micmac
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1923
+  source: glottolog-5-4
+dialects:
+- name: Northern Micmac
+  glottocode: nort2962
+  source: glottolog-5-4
+- name: Southern Micmac
+  glottocode: sout2979
+  source: glottolog-5-4
+works:
+- glottolog_reference: '653889'
+  title: Mi’gmaq-Mi’kmaq online dictionary
+  kinds:
+  - dictionary
+  author: Sean Haberlin, Eunice Metallic, Diane Mitchell, Watson Williams, Joe Wilmot and Dave Ziegler
+  year: 1997
+  publisher: Mi’gmaq Online
+  source: glottolog-5-4
+- glottolog_reference: '570406'
+  title: Micmac dictionary
+  kinds:
+  - dictionary
+  author: Albert D. DeBlois
+  year: 1996
+  publisher: Canadian Museum of Civilization
+  pages: 221
+  source: glottolog-5-4
+- glottolog_reference: '51401'
+  title: Micmac lexicon
+  kinds:
+  - dictionary
+  author: Albert D. DeBlois and Alphonse Metallic
+  year: 1984
+  publisher: National Museums of Canada
+  pages: 392
+  source: glottolog-5-4
+- glottolog_reference: '106513'
+  title: Micmac teaching grammar
+  kinds:
+  - grammar
+  author: Gilles L. Delisle and Manny Metallic
+  year: 1976
+  publisher: Thunderbird Press
+  pages: 576
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '312620'
+  title: A dictionary of the language of the Micmac Indians
+  kinds:
+  - dictionary
+  author: Silas Rand
+  year: 1888
+  publisher: Nova Scotia Printing Company
+  pages: 305
+  source: glottolog-5-4
+retrieved: '2026-11-27'

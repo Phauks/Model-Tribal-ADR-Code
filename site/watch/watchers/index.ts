@@ -48,6 +48,8 @@ export const notWatched: NotWatched[] = [
 	{ feed: 'charts', kind: 'derived', reason: 'Rebuilt from records; the census watcher will feed their inputs.' },
 	{ feed: 'glossary-terms', kind: 'never', reason: 'Definitions come only from Black’s Law Dictionary, 12th ed. (project rule).' },
 	{ feed: 'forms', kind: 'never', reason: 'The project’s own forms.' },
+	{ feed: 'languages', kind: 'planned', reason: 'glottolog (a new Glottolog release on Zenodo) and the ISO 639-3 change requests, yearly; scripts/languages/build_registry.py rebuilds the registry meanwhile.' },
+	{ feed: 'language-families', kind: 'derived', reason: 'Built from the languages.' },
 	{ feed: 'land-cessions', kind: 'never', reason: 'Royce’s schedule (1899) and the Forest Service’s tracing of it are fixed; scripts/maps/land_cessions.py relinks them as treaty and nation records change.' },
 	{ feed: 'historic-maps', kind: 'never', reason: 'Royce’s 1899 map sheets do not change.' },
 
@@ -63,6 +65,7 @@ export const notWatched: NotWatched[] = [
 	{ feed: 'nation:contacts', kind: 'planned', reason: 'leaders-directory (by hand: it answers scripts with 403) and nation-sites, phase 3. Office details only (decision record 0051).' },
 	{ feed: 'nation:tribal_insignia_database_entries', kind: 'never', reason: 'The USPTO insignia database changes rarely; entries are checked by hand when a page is reviewed.' },
 	{ feed: 'nation:languages', kind: 'never', reason: 'Changes are rare and come from nations.' },
+	{ feed: 'nation:language_programs', kind: 'planned', reason: 'nation-sites (language program pages), phase 3; the language programs pass (research/analyses/2026-11-27-language-resources.md) fills them meanwhile.' },
 	{ feed: 'nation:federal_administration', kind: 'planned', reason: 'interior-pages (Bureau of Indian Affairs regions and agencies), phase 2.' },
 	{ feed: 'nation:indian_health_service', kind: 'planned', reason: 'indian-health-service, by hand: ihs.gov did not answer the cloud on Nov. 24 and 26, 2026.' },
 	{ feed: 'nation:federal_programs', kind: 'planned', reason: 'self-governance-lists (the Office of Self-Governance and Indian Health Service lists, the 477 Plan Directory services and USAspending, yearly) and HUD’s housing block grant allocations each spring, phase 2; scripts/tribes/federal_programs.py rebuilds the facts meanwhile.' },
