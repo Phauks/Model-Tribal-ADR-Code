@@ -50,6 +50,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Find recourse', also: ['Recourse', 'Remedies', 'Dispute resolution', 'Peacemaking'], detail: 'Where a dispute can be heard, by nation and method', link: '/nations/recourse' },
 	{ kind: 'page', title: 'Federal offices', also: ['Bureau of Indian Affairs', 'BIA', 'Indian Health Service', 'IHS', 'Agencies'], detail: 'Bureau of Indian Affairs regions and Indian Health Service areas', link: '/nations/federal-offices' },
 	{ kind: 'page', title: 'Self-governance and federal programs', also: ['Self-governance', 'Self-determination', '638 contracts', 'Compacts', 'ISDEAA', '477 plans', 'Indian Housing Block Grants'], detail: 'Federal programs that nations run themselves, and who takes part', link: '/nations/federal-programs' },
+	{ kind: 'page', title: 'Languages', also: ['Heritage languages', 'Native languages', 'Language families', 'ISO 639-3', 'Glottolog'], detail: 'The languages nations name, with their codes, dialects, grammars and dictionaries', link: '/languages' },
 	{ kind: 'page', title: 'Data and charts', also: ['Data', 'Charts', 'Statistics'], link: '/nations/data' },
 	{ kind: 'page', title: 'Build a table', also: ['Table builder', 'Compare nations', 'Export'], link: '/nations/data/build' },
 	{ kind: 'page', title: 'Stories', also: ['Traditional stories', 'Peacemaking stories', 'Treaty stories', 'Accounts', 'Teachings'], detail: 'Stories about law, justice and governance, in the words of the nations and people who tell them', link: '/stories' },
@@ -180,9 +181,13 @@ export function collectionSearch(): { entries: SearchEntry[]; reached: Set<strin
 			const copy = item.key ? savedCopyFor(sources().get(item.key)) : undefined;
 			if (copy) seen.add(copyPagePath(copy));
 			// A law by the name it is known by, such as "General Allotment Act (1887)", and also by its full title.
-			const title = item.key && link !== item.href ? recordName(item.key).name : item.title;
+			// A numbered section is found by its citation and its name together: "25 U.S.C. § 5321. Self-determination contracts".
+			const named = item.citation ? `${item.citation}. ${item.title}` : item.title;
+			const title = item.key && link !== item.href ? recordName(item.key).name : named;
+			// ...and by its name alone.
+			const also = [...(title !== named ? [named] : []), ...(item.citation ? [item.title] : [])];
 			const detail = [collection.search.label, item.detail ?? item.year].filter(Boolean).join(' · ');
-			entries.push({ kind: group as SearchKind, title, ...(title !== item.title ? { also: [item.title] } : {}), ...(detail ? { detail } : {}), link });
+			entries.push({ kind: group as SearchKind, title, ...(also.length ? { also } : {}), ...(detail ? { detail } : {}), link });
 		}
 	}
 	return { entries, reached: seen };

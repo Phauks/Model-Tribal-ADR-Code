@@ -1,0 +1,31 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: poo
+name: Central Pomo
+iso_639_3:
+  code: poo
+  reference_name: Central Pomo
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: cent2138
+  level: language
+  source: glottolog-5-4
+family:
+  name: Pomoan
+  glottocode: pomo1273
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1532
+  source: glottolog-5-4
+dialects:
+- name: Hopland
+  glottocode: hopl1239
+  source: glottolog-5-4
+- name: Point Arena
+  glottocode: poin1246
+  source: glottolog-5-4
+- name: Ukiah
+  glottocode: ukia1238
+  source: glottolog-5-4
+works: []
+retrieved: '2026-11-27'

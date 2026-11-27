@@ -1,0 +1,42 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: kyh
+name: Karuk
+iso_639_3:
+  code: kyh
+  reference_name: Karok
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: karo1304
+  level: language
+  source: glottolog-5-4
+family: null
+iso_names:
+- name: Karok
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2297
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '65973'
+  title: The Karok Language
+  kinds:
+  - grammar
+  author: William Bright
+  year: 1957
+  publisher: University of California Press
+  pages: 468
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '20972'
+  title: A Grammar of the Karok Language
+  kinds:
+  - grammar
+  author: William O. Bright
+  year: 1955
+  publisher: University of California at Berkeley
+  pages: 276
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

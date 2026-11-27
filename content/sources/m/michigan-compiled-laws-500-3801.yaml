@@ -1,0 +1,50 @@
+key: michigan-compiled-laws-500-3801
+kind: state-statute
+citation:
+  type: legislation
+  title: Chapter; definitions
+  title-short: Mich. Comp. Laws § 500.3801
+  container-title: Michigan Compiled Laws
+  container-title-short: Mich. Comp. Laws
+  section: '500.3801'
+  author:
+  - literal: Michigan Legislature
+  issued:
+    date-parts:
+    - - 1992
+  URL: https://legislature.mi.gov/Laws/MCL?objectName=mcl-500.3801
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.mi.gov/Laws/MCL?objectName=mcl-500.3801
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mich. Comp. Laws § 500.3801 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Mich. Comp. Laws § 500.3801 (2026). History: Add. 1992, Act 84, Imd. Eff. June 2, 1992; Am. 2002, Act 304, Imd. Eff. May 10, 2002; Am. 2006, Act 462, Imd. Eff. Dec. 20, 2006; Am. 2009, Act 220, Imd. Eff. Jan. 5, 2010; Am. 2018, Act 429, Eff. Mar. 20, 2019. Text read from the Michigan Legislature''s page for the section''s chapter of the Michigan Compiled Laws (legislature.mi.gov), complete through Public Act 114 of 2026, on Nov. 27, 2026. Found by the state statutes sweep (terms: indian health; indian; tribal); AI reader''s verdict incidental: Health plan definition includes Indian Health Service and tribal programs. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian health; indian; tribal'

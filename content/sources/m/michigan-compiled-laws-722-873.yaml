@@ -1,0 +1,50 @@
+key: michigan-compiled-laws-722-873
+kind: state-statute
+citation:
+  type: legislation
+  title: Guardianship assistance; eligibility
+  title-short: Mich. Comp. Laws § 722.873
+  container-title: Michigan Compiled Laws
+  container-title-short: Mich. Comp. Laws
+  section: '722.873'
+  author:
+  - literal: Michigan Legislature
+  issued:
+    date-parts:
+    - - 2008
+  URL: https://legislature.mi.gov/Laws/MCL?objectName=mcl-722.873
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.mi.gov/Laws/MCL?objectName=mcl-722.873
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mich. Comp. Laws § 722.873 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Mich. Comp. Laws § 722.873 (2026). History: 2008, Act 260, Imd. Eff. Aug. 4, 2008; Am. 2009, Act 15, Imd. Eff. Apr. 9, 2009; Am. 2015, Act 227, Imd. Eff. Dec. 17, 2015; Am. 2023, Act 69, Imd. Eff. July 12, 2023. Text read from the Michigan Legislature''s page for the section''s chapter of the Michigan Compiled Laws (legislature.mi.gov), complete through Public Act 114 of 2026, on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal court; tribal); AI reader''s verdict incidental: Guardianship eligibility counts tribal court removal determinations. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal court; tribal'

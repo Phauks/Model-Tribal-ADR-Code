@@ -1,0 +1,41 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: lmw
+name: Lake Miwok
+iso_639_3:
+  code: lmw
+  reference_name: Lake Miwok
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: lake1258
+  level: language
+  source: glottolog-5-4
+family:
+  name: Miwok-Costanoan
+  glottocode: miwo1274
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1147
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '108123'
+  title: Lake Miwok dictionary
+  kinds:
+  - dictionary
+  author: Catherine A. Callaghan
+  year: 1965
+  publisher: University of California Press
+  pages: 287
+  source: glottolog-5-4
+- glottolog_reference: '108126'
+  title: A Grammar of the Lake Miwok Language
+  kinds:
+  - grammar
+  author: Catherine Callaghan
+  year: 1963
+  publisher: University of California at Berkeley
+  pages: 268
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -1,0 +1,57 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: pot
+name: Potawatomi
+iso_639_3:
+  code: pot
+  reference_name: Potawatomi
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: pota1247
+  level: language
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/121
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '704071'
+  title: Potawatomi Dictionary
+  kinds:
+  - dictionary
+  author: Justin Neely
+  year: 2019
+  source: glottolog-5-4
+- glottolog_reference: '574302'
+  title: 'How the Potawatomi Language Lives: A Grammar of Potawatomi'
+  kinds:
+  - grammar
+  author: Hunter Thompson Lockwood
+  year: 2017
+  publisher: University of Wisconsin at Madison
+  pages: 290
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '729530'
+  title: Ézhebmadzimgek gdebodwéwadmi zheshmomenan [How our Potawatomi language lives] Potawatomi Dictionary
+  kinds:
+  - dictionary
+  author: Forest County Potawatomi
+  year: 2014
+  publisher: Forest County Potawatomi
+  source: glottolog-5-4
+- glottolog_reference: '37152'
+  title: The Potawatomi Language
+  kinds:
+  - grammar
+  author: Charles Francis Hockett
+  year: 1939
+  publisher: Yale University
+  pages: 166
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -1,0 +1,60 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: tew
+name: Rio Grande Tewa
+iso_639_3:
+  code: tew
+  reference_name: Tewa (USA)
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: tewa1260
+  level: language
+  source: glottolog-5-4
+family:
+  name: Kiowa-Tanoan
+  glottocode: kiow1265
+  source: glottolog-5-4
+iso_names:
+- name: Tewa (USA)
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/5881
+  source: glottolog-5-4
+dialects:
+- name: Nambe
+  glottocode: namb1296
+  source: glottolog-5-4
+- name: Pojoaque
+  glottocode: pojo1241
+  source: glottolog-5-4
+- name: San Ildefonso
+  glottocode: sani1273
+  source: glottolog-5-4
+- name: San Juan (USA)
+  glottocode: sanj1276
+  source: glottolog-5-4
+- name: Santa Clara
+  glottocode: sant1421
+  source: glottolog-5-4
+- name: Tesuque
+  glottocode: tesu1245
+  source: glottolog-5-4
+works:
+- glottolog_reference: '682310'
+  title: San Juan Pueblo Téwa Dictionary
+  kinds:
+  - dictionary
+  author: Esther Martinez
+  year: 1983
+  publisher: Bishop Publishing Co
+  source: glottolog-5-4
+- glottolog_reference: '325093'
+  title: San Juan Pueblo Téwa Dictionary
+  kinds:
+  - dictionary
+  author: Esther Martinez
+  year: 1982
+  publisher: SJP Bilingual Program
+  pages: 168
+  source: glottolog-5-4
+retrieved: '2026-11-27'

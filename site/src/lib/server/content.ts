@@ -98,6 +98,8 @@ export interface SourceRecord {
 		volume?: string;
 		page?: string;
 		number?: string;
+		/** The kind of document, such as "Proposed Finding", "Public comment" or "Petitioner's document". */
+		genre?: string;
 		issued?: { 'date-parts'?: number[][] };
 		URL?: string;
 	};
@@ -241,6 +243,8 @@ export interface NationRecord {
 	})[];
 	official_images?: (CitedFact & OfficialImageRecord)[];
 	languages?: (CitedFact & { name?: string })[];
+	/** The nation's own language program, where one is on record (src/lib/server/languages.ts). */
+	language_programs?: (CitedFact & { name: string; link: string; run_by?: string })[];
 	population?: (CitedFact & { count?: number; kind?: string })[];
 	federal_administration?: CitedFact & {
 		bureau_of_indian_affairs_region?: string;
@@ -582,11 +586,16 @@ let withheldDigests: Set<string> | undefined;
  * Whether a copy belongs to material the site does not publish: a nation whose
  * record is restricted or still waits for the nation's approval, or a document
  * history marked restricted or held for review. A nation's constitution is
- * filed under constitutions/<nation id>/, so the key names its nation too.
+ * filed under constitutions/<nation id>/, so the key names its nation too,
+ * except under constitutions/_unmatched/, where the collection script filed
+ * the scans it could not first place with a nation; their index row names the
+ * nation a reviewer found (13 such scans were hidden until Nov. 27, 2026).
  */
+const unplacedConstitutions = '_unmatched';
 function isWithheld(copy: PublicCopy): boolean {
 	const named = [...copy.nations];
-	if (copy.topic === 'constitutions') named.push(copy.key.split('/')[1] ?? '');
+	const folder = copy.key.split('/')[1] ?? '';
+	if (copy.topic === 'constitutions' && folder !== unplacedConstitutions) named.push(folder);
 	if (named.length === 0) return false;
 	publishedNations ??= new Set(nations().map((record) => record.id));
 	const published = publishedNations;

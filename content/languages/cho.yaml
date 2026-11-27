@@ -1,0 +1,71 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: cho
+name: Choctaw
+iso_639_3:
+  code: cho
+  reference_name: Choctaw
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: choc1276
+  level: language
+  source: glottolog-5-4
+family:
+  name: Muskogean
+  glottocode: musk1252
+  source: glottolog-5-4
+own_names:
+- name: Chahta'
+  language: cho
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1692
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '697253'
+  title: 'Chahtwa anumpa tosholi himona: New Choctaw dictionary'
+  kinds:
+  - dictionary
+  author: Choctaw Nation of Oklahoma
+  year: 2016
+  publisher: Cochtaw Print Services
+  source: glottolog-5-4
+- glottolog_reference: '723390'
+  title: Choctaw Clause Structure
+  kinds:
+  - grammar
+  author: William D. Davies
+  year: 1981
+  publisher: University of California at San Diego
+  pages: 494
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '151376'
+  title: The Elements of Choctaw
+  kinds:
+  - grammar
+  author: Thurston Dale Nicklas
+  year: 1974
+  publisher: University of Michigan
+  pages: 273
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '14528'
+  title: A Dictionary of the Choctaw Language
+  kinds:
+  - dictionary
+  author: Cyrus Byington
+  year: 1915
+  publisher: Smithsonian Institution
+  pages: 611
+  source: glottolog-5-4
+- glottolog_reference: '142298'
+  title: 'A dictionary of the Choctaw language. Washington, D.C.: U.S. Government Printing Office. Watkins, Ben (1892). Complete Choctaw definer, English with Choctaw definition. Van Buren, Ark.: J. W. Baldwin. Wright, Allen (1880). Chahta leksikon: A Choctaw in English definition. St'
+  kinds:
+  - dictionary
+  author: Cyrus Byington
+  year: 1915
+  publisher: Presbyterian Publishing Company
+  source: glottolog-5-4
+retrieved: '2026-11-27'

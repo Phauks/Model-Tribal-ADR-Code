@@ -36,6 +36,9 @@ jurisdictions:
 tribes:
 - paucatuck-eastern-pequot-indians-of-connecticut
 - eastern-pequot-tribal-nation
+- eastern-pequot-indians-of-connecticut
+topics:
+- federal-recognition
 nations_in_case:
   checked: '2026-11-26'
   named:
@@ -44,6 +47,9 @@ nations_in_case:
     role: party
   - nation: eastern-pequot-tribal-nation
     named_as: Paucatuck Eastern Pequot Indians
+    role: party
+  - nation: eastern-pequot-indians-of-connecticut
+    named_as: Eastern Pequot Indians of Connecticut and the Paucatuck Eastern Pequot Indians of Connecticut
     role: party
 access:
   open: true

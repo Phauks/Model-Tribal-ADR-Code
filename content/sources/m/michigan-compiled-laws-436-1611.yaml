@@ -1,0 +1,50 @@
+key: michigan-compiled-laws-436-1611
+kind: state-statute
+citation:
+  type: legislation
+  title: Refund or credit of tax paid on wine, mixed spirit drink, or beer; conditions; time limitation; form and contents of claim; supporting evidence; removal or destruction of damaged wine, beer, or mixed spirit drink; applicability of section; rebate of tax paid on wine or mixed spirit drink
+  title-short: Mich. Comp. Laws § 436.1611
+  container-title: Michigan Compiled Laws
+  container-title-short: Mich. Comp. Laws
+  section: '436.1611'
+  author:
+  - literal: Michigan Legislature
+  issued:
+    date-parts:
+    - - 1998
+  URL: https://legislature.mi.gov/Laws/MCL?objectName=mcl-436.1611
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.mi.gov/Laws/MCL?objectName=mcl-436.1611
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mich. Comp. Laws § 436.1611 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Mich. Comp. Laws § 436.1611 (2026). History: 1998, Act 58, Imd. Eff. Apr. 14, 1998. Text read from the Michigan Legislature''s page for the section''s chapter of the Michigan Compiled Laws (legislature.mi.gov), complete through Public Act 114 of 2026, on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservation; indian; reservation); AI reader''s verdict incidental: Liquor tax refund available for sales to Indian reservation. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian reservation; indian; reservation'

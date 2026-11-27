@@ -1,0 +1,47 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: tun
+name: Tunica
+iso_639_3:
+  code: tun
+  reference_name: Tunica
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: tuni1252
+  level: language
+  source: glottolog-5-4
+family: null
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/8969
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '26951'
+  title: Tunica dictionary
+  kinds:
+  - dictionary
+  author: Mary R. Haas
+  year: 1953
+  publisher: University of California Press
+  pages: 175
+  source: glottolog-5-4
+- glottolog_reference: '154327'
+  title: Tunica
+  kinds:
+  - grammar
+  author: Mary R. Haas
+  year: 1941
+  publisher: J. J. Augustin Publisher
+  pages: 143
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '312301'
+  title: A Grammar of the Tunica Language
+  kinds:
+  - grammar
+  author: Mary Rosamond Swadesh Haas
+  year: 1935
+  publisher: Yale University
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

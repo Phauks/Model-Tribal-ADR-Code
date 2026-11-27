@@ -1,0 +1,50 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: sjw
+name: Shawnee
+iso_639_3:
+  code: sjw
+  reference_name: Shawnee
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: shaw1249
+  level: language
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1517
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '143756'
+  title: Shawnee grammar
+  kinds:
+  - grammar
+  author: Kenneth R. Andrews
+  year: 1998
+  publisher: Lincom Europa
+  pages: 240
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '143752'
+  title: Shawnee Grammar
+  kinds:
+  - grammar
+  author: Kenneth Ralph Andrews
+  year: 1994
+  publisher: University of South Carolina
+  pages: 232
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '699485'
+  title: Shawnee stems and the Jacob P. Dunn Miami dictionary. Part 1-5
+  kinds:
+  - dictionary
+  author: Charles F. Voegelin
+  year: 1940
+  publisher: Indiana Historical Society
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -1,0 +1,41 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: wam
+name: Wampanoag
+iso_639_3:
+  code: wam
+  reference_name: Wampanoag
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: wamp1249
+  level: language
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/10009
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '184031'
+  title: The Syntax of the Conjunct and Independent Orders in Wampanoag
+  kinds:
+  - grammar
+  author: Norvin W. Richards
+  year: 2004
+  publisher: International Journal of American Linguistics
+  pages: 42
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '87847'
+  title: Natick-English Dictionary
+  kinds:
+  - dictionary
+  author: James Hammond Trumbull
+  year: 1903
+  publisher: Government Printer
+  pages: 347
+  source: glottolog-5-4
+retrieved: '2026-11-27'

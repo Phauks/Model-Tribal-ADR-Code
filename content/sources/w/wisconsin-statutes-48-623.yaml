@@ -1,0 +1,47 @@
+key: wisconsin-statutes-48-623
+kind: state-statute
+citation:
+  type: legislation
+  title: Subsidized guardianships
+  title-short: Wis. Stat. § 48.623
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '48.623'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/48.623
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/48.623
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 48.623 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 48.623 (2023-24). History: 2011 a. 32 ss. 1332n, 1332q to 1332u, 1332w; Stats. 2011 s. 48.623; 2013 a. 20; 2015 a. 55, 129, 143; 2017 a. 365 s. 110; 2019 a. 9; 2021 a. 132; 2023 a. 19; 2025 a. 129. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian tribe; indian tribes; tribal court; tribal courts; indian; tribal; tribe; tribes); AI reader''s verdict incidental: Subsidized guardianship payments may be made by Indian tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian tribe; indian tribes; tribal court; tribal courts; indian; tribal; tribe; tribes'
