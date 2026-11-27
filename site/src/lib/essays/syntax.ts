@@ -177,6 +177,18 @@ export function missingEllipses(quotation: string): { start: boolean; end: boole
 }
 
 /**
+ * Whether a quotation ends its sentence and then adds " ...", as in
+ * "of a ward to his guardian. ...". Nothing is left out after a sentence's own
+ * period, so the ellipsis is needless (Indigo Book R8.3.7: "When omitting
+ * material following a final punctuation mark, do not use an ellipsis").
+ * Citations after the quoted words are ignored.
+ */
+export function needlessEndEllipsis(quotation: string): boolean {
+	const text = quotation.replace(/\s*\[@[^\]]*\]\s*$/g, '').trim();
+	return /[.?!]["”’')\]]*\s*(\.\.\.|…)$/.test(text);
+}
+
+/**
  * A reader for essays. `forEditing` keeps straight quotes as typed, so the
  * editor never changes the source's quotation marks; the pages turn them
  * curly when they render, as the print build does. The "replacements" rule

@@ -532,7 +532,7 @@
         "text": {
           "type": "string",
           "minLength": 1,
-          "description": "The words quoted, verbatim from the official report or the enacted text, with \"...\" where words are left out (docs/style-guide.md). Markdown."
+          "description": "The words quoted, verbatim from the official report or the enacted text, with \"...\" only where words are left out (docs/style-guide.md): a quotation that ends where the sentence ends keeps its period and takes no trailing \"...\" (checked by scripts/library/check_box_quotes.py and scripts/lint_records.py). Markdown."
         },
         "pinpoint": {
           "type": "string",
