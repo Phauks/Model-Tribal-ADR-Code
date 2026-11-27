@@ -31,7 +31,11 @@ export const dataChartList = [
 	{ identifier: 'public-law-280-status', title: 'Public Law 280' },
 	{ identifier: 'expanded-jurisdiction', title: 'Expanded tribal jurisdiction' },
 	{ identifier: 'agreements-by-kind', title: 'Agreements with states' },
+	{ identifier: 'nations-by-recognition-status', title: 'Native nations by recognition status' },
 	{ identifier: 'nations-by-recognition', title: 'Nations by recognition' },
+	{ identifier: 'federal-recognition-by-basis', title: 'How federal recognition came about' },
+	{ identifier: 'federal-list-sections', title: 'Federally recognized nations, Alaska and the contiguous 48 states' },
+	{ identifier: 'without-federal-recognition', title: 'Nations without federal recognition: the federal record' },
 	{ identifier: 'federally-recognized-by-state', title: 'Federally recognized nations by state' },
 	{ identifier: 'state-recognized-by-state', title: 'State-recognized nations by state' },
 	{ identifier: 'nations-by-bureau-region', title: 'Nations by Bureau of Indian Affairs region' },
@@ -89,7 +93,7 @@ export const dataTopicList: { identifier: string; title: string; description: st
 		identifier: 'recognition-and-federal-services',
 		title: 'Recognition and federal services',
 		description: 'How nations are recognized, and the federal regions and areas that serve them.',
-		charts: ['nations-by-recognition', 'federally-recognized-by-state', 'state-recognized-by-state', 'nations-by-bureau-region', 'nations-by-health-service-area']
+		charts: ['nations-by-recognition-status', 'nations-by-recognition', 'federal-recognition-by-basis', 'federal-list-sections', 'without-federal-recognition', 'federally-recognized-by-state', 'state-recognized-by-state', 'nations-by-bureau-region', 'nations-by-health-service-area']
 	},
 	{
 		identifier: 'treaties-and-land',
