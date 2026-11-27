@@ -12,6 +12,7 @@ import ClipboardList from '@lucide/svelte/icons/clipboard-list';
 import FileClock from '@lucide/svelte/icons/file-clock';
 import FileText from '@lucide/svelte/icons/file-text';
 import Files from '@lucide/svelte/icons/files';
+import Film from '@lucide/svelte/icons/film';
 import Gavel from '@lucide/svelte/icons/gavel';
 import Globe from '@lucide/svelte/icons/globe';
 import Handshake from '@lucide/svelte/icons/handshake';
@@ -54,6 +55,7 @@ const collectionIcons: Record<string, Component> = {
 	'national-indian-gaming-commission': Dices,
 	'federal-acknowledgment': Stamp,
 	'solicitor-opinions': BookOpen,
+	'indian-affairs-films': Film,
 	'supreme-court-cases': Gavel,
 	'other-court-cases': Scale,
 	'state-court-opinions': Gavel,

@@ -1,0 +1,50 @@
+key: national-archives-film-75-26-a-new-frontier
+kind: federal-agency-document
+citation:
+  type: motion_picture
+  title: A New Frontier
+  author:
+  - literal: U.S. Department of the Interior, Office of Indian Affairs
+  genre: Motion picture
+  number: NAID 5701097
+  archive: National Archives at College Park, Motion Pictures
+  archive_location: Record Group 75, Moving Images Documenting the Life and Culture of North American Indians (NAID 12678), item 75.26
+  URL: https://catalog.archives.gov/id/5701097
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://catalog.archives.gov/id/5701097
+retrieved: '2026-11-27'
+file:
+  storage_key: national-archives-films/75-26.wmv
+  checksum: 73d166f16b4c2279f232ea4f44fa8258e308ea8db3631a3be13a2114da1a225c
+  media_type: video/x-ms-wmv
+  bytes: 148891679
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A film made by a federal agency, which the screen names, and so a work of the United States government, not subject to copyright (17 U.S.C. § 105).
+  redistribution: true
+tribes:
+- colorado-river-indian-tribes-of-the-colorado-river-indian-reservation
+jurisdictions:
+- level: federal
+topics:
+- federal-indian-policy-film
+access:
+  open: true
+  pull_from:
+  - free-web
+found_in:
+- 2026-11-27-national-archives-films
+notes: 'Indigo Book citation: A New Frontier (U.S. Department of the Interior, Office of Indian Affairs n.d.) (motion picture), National Archives Identifier 5701097, RG 75, item 75.26. Digitized by the National Archives; the project''s copy is its file, unchanged (148,891,679 bytes, SHA-256 73d166f16b4c2279f232ea4f44fa8258e308ea8db3631a3be13a2114da1a225c). The screen names its maker: "U.S. Department of Interior Presents ... An Indian Service Film". Thirty frames read across the film show maps of the Colorado River Indian Reservation in Arizona, irrigation and land clearing, farming, building and the reservation hospital. Chosen as a federal Indian policy item (an Indian Service film on the Colorado River Indian Reservation) by scripts/law/national_archives_films.py; ceremony films and children''s recordings in the same series are left out (CARE principles). Not yet watched or heard in full by a person (Unverified).'
+review:
+  status: unverified
+  by: scripts/law/national_archives_films.py
+  date: '2026-11-27'
+  checks:
+  - check: listing
+    result: missing
+    detail: Only the National Archives Catalog's description was read and 30 frames of the film

@@ -135,6 +135,8 @@ const fixedGroups: Record<string, string> = {
 	...Object.fromEntries(congressLists.map((list) => [list.slug, list.title])),
 	'congressional-research-service': 'Congressional Research Service reports',
 	'solicitor-opinions': 'Solicitor’s opinions',
+	// Films are large; a list of their own keeps them out of the documents' offline sets.
+	'indian-affairs-films': 'Indian Affairs films',
 	'other-federal': 'Other federal documents',
 	// Published state and territorial court opinions (decision record 0060).
 	'state-court-opinions': 'State court opinions',
@@ -191,6 +193,7 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'congress') return congressGroup(copy);
 	if (copy.topic === 'crs') return 'congressional-research-service';
 	if (copy.topic === 'solicitor-opinions') return 'solicitor-opinions';
+	if (copy.topic === 'national-archives-films') return 'indian-affairs-films';
 	return 'other-federal';
 }
 
