@@ -1,0 +1,50 @@
+key: hawaii-revised-statutes-302a-630
+kind: state-statute
+citation:
+  type: legislation
+  title: '[Teachers; additional benefits or credits.]'
+  title-short: Haw. Rev. Stat. § 302A-630
+  container-title: Hawaii Revised Statutes
+  container-title-short: Haw. Rev. Stat.
+  section: 302A-630
+  author:
+  - literal: Hawaii State Legislature
+  issued:
+    date-parts:
+    - - 1996
+  URL: https://data.capitol.hawaii.gov/hrscurrent/Vol05_Ch0261-0319/HRS0302A/HRS_0302A-0630.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://data.capitol.hawaii.gov/hrscurrent/Vol05_Ch0261-0319/HRS0302A/HRS_0302A-0630.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Haw. Rev. Stat. § 302A-630 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: HI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Haw. Rev. Stat. § 302A-630 (2025). History: L 1996, c 89, pt of §2; am L 2004, c 133, §3. Text read from the Hawaii State Legislature''s page for the section in the Hawaii Revised Statutes (data.capitol.hawaii.gov/hrscurrent) on Nov. 27, 2026. Found by the state statutes sweep (terms: hawaiian); AI reader''s verdict core: Benefits for teachers in Hawaiian language medium education. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Native Hawaiian or Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: hawaiian'

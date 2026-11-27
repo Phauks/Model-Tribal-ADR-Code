@@ -1,0 +1,50 @@
+key: hawaii-revised-statutes-6e-2
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Haw. Rev. Stat. § 6E-2
+  container-title: Hawaii Revised Statutes
+  container-title-short: Haw. Rev. Stat.
+  section: 6E-2
+  author:
+  - literal: Hawaii State Legislature
+  issued:
+    date-parts:
+    - - 1976
+  URL: https://data.capitol.hawaii.gov/hrscurrent/Vol01_Ch0001-0042F/HRS0006E/HRS_0006E-0002.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://data.capitol.hawaii.gov/hrscurrent/Vol01_Ch0001-0042F/HRS0006E/HRS_0006E-0002.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Haw. Rev. Stat. § 6E-2 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: HI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Haw. Rev. Stat. § 6E-2 (2025). History: L 1976, c 104, pt of §2; am L 1985, c 108, §1; am L 1990, c 306, §4; am L 1992, c 113, §1; am L 1996, c 97, §3; am L 2005, c 128, §2; am L 2006, c 45, §1; am L 2013, c 85, §1; am L 2014, c 96, §2; am L 2025, c 160, §2 and c 293, §1. Text read from the Hawaii State Legislature''s page for the section in the Hawaii Revised Statutes (data.capitol.hawaii.gov/hrscurrent) on Nov. 27, 2026. Found by the state statutes sweep (terms: heiau; nation; office of hawaiian affairs); AI reader''s verdict incidental: Application must document OHA consultation for high-effect historic properties. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Native Hawaiian or Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: heiau; nation; office of hawaiian affairs'
