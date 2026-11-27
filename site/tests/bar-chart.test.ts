@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { chartTable, pieSlices, scaleTop, shareText, slicePath } from '../src/lib/bar-chart.ts';
+import { chartTable, numberSpot, pieSlices, scaleTop, shareText, slicePath } from '../src/lib/bar-chart.ts';
 import { dataChartList, dataTopicList } from '../src/lib/data-chart-list.ts';
 import { chartRecordEntries, chartRecords, dataCharts } from '../src/lib/server/data-charts.ts';
 
@@ -181,5 +181,22 @@ describe('dataCharts pies (repository data)', () => {
 			'tribal-opinions-by-decade',
 			'opinions-on-dispute-resolution-by-decade'
 		]);
+	});
+});
+
+describe('numberSpot', () => {
+	it('puts a wide slice\'s number on the slice, along its middle', () => {
+		// A slice from the top to a quarter turn: its middle points up and to the right.
+		const spot = numberSpot({ start: 0, end: 0.25 }, 100);
+		expect(spot.inside).toBe(true);
+		expect(spot.x).toBeCloseTo(100 + 62 * Math.SQRT1_2, 5);
+		expect(spot.y).toBeCloseTo(100 - 62 * Math.SQRT1_2, 5);
+	});
+
+	it('puts a narrow slice\'s number just outside the rim', () => {
+		const spot = numberSpot({ start: 0.49, end: 0.51 }, 100);
+		expect(spot.inside).toBe(false);
+		expect(spot.x).toBeCloseTo(100, 5);
+		expect(spot.y).toBeCloseTo(214, 5);
 	});
 });
