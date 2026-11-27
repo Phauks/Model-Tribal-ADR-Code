@@ -112,6 +112,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=447%20U.S.%20134
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1979-10-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-285.mp3
+  catalog: https://catalog.archives.gov/id/102048667
+  whole_session: true
+  duration_seconds: 14284
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-285.mp3
+    checksum: fef95dd8ac9c97c4f13c011e0f65cb61171e4a59daee31b428714d91278b21e7
+    media_type: audio/mpeg
+    bytes: 228549817
 rights:
   status: no-permission-needed
   basis: us-government-work

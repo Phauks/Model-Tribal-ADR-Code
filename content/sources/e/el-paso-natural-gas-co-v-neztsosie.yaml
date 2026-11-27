@@ -100,6 +100,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=526%20U.S.%20473
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1999-03-02'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1096.mp3
+  catalog: https://catalog.archives.gov/id/138282737
+  whole_session: true
+  duration_seconds: 8206
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1096.mp3
+    checksum: fdcd30bdf0b0892113f25d85b77e6b64d324b535915c5d026b6c34b064c25622
+    media_type: audio/mpeg
+    bytes: 131298659
 rights:
   status: no-permission-needed
   basis: us-government-work

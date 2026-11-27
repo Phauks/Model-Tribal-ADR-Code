@@ -90,6 +90,19 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=480%20U.S.%209
+argument_audio:
+- kind: argument
+  date: '1986-12-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-580.mp3
+  catalog: https://catalog.archives.gov/id/118974753
+  whole_session: true
+  duration_seconds: 13665
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-580.mp3
+    checksum: 1b71c27147bde058ae76bdfb85783e1ffae138ca7a2fca670777d42c220fb71b
+    media_type: audio/mpeg
+    bytes: 218642931
 rights:
   status: no-permission-needed
   basis: us-government-work

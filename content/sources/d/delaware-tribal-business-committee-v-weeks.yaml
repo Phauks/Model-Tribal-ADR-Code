@@ -108,6 +108,139 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=430%20U.S.%2073
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1976-11-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-167-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048549
+  whole_session: true
+  duration_seconds: 90
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-167-r1.mp3
+    checksum: 109b8c9a1e17132fb97bfb6a2cf336090c2890d47b60886fed001c38dbb24b7f
+    media_type: audio/mpeg
+    bytes: 1446268
+- kind: argument
+  date: '1976-11-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-167-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048549
+  whole_session: true
+  duration_seconds: 3746
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-167-r2.mp3
+    checksum: b2e6c31b4a758936340ea9b8b4528426f077683b08bedefc2e26a38464f73e88
+    media_type: audio/mpeg
+    bytes: 59942163
+- kind: argument
+  date: '1976-11-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-167-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048549
+  whole_session: true
+  duration_seconds: 1827
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-167-r3.mp3
+    checksum: 9518478577cc0832c7b817be3b6b6c579e7ac9b8ea3e2805f683812284234d36
+    media_type: audio/mpeg
+    bytes: 29239717
+- kind: argument
+  date: '1976-11-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-167-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048549
+  whole_session: true
+  duration_seconds: 4198
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-167-r4.mp3
+    checksum: c8b7a1a4cbefa468b91c018afaf4f15f3035883ffeb7bcb2737218933e15e285
+    media_type: audio/mpeg
+    bytes: 67163244
+- kind: argument
+  date: '1976-11-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-167-r5.mp3
+  catalog: https://catalog.archives.gov/id/102048549
+  whole_session: true
+  duration_seconds: 4173
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-167-r5.mp3
+    checksum: 01e2f027120f25c106c76a9c6ce36a430717534398360de70217de86392a781a
+    media_type: audio/mpeg
+    bytes: 66765765
+- kind: opinion announcement
+  date: '1977-02-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-181-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048563
+  whole_session: true
+  duration_seconds: 177
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-181-r1.mp3
+    checksum: ffb81334b58db1a82e491c0ab3e64f4e15ae2f05436781a192fa0e406848e5ec
+    media_type: audio/mpeg
+    bytes: 2830966
+- kind: opinion announcement
+  date: '1977-02-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-181-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048563
+  whole_session: true
+  duration_seconds: 378
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-181-r2.mp3
+    checksum: 90df1253ea5180803f49a5af1f6d823a18c85dadf42746676257482d2ad03c66
+    media_type: audio/mpeg
+    bytes: 6053850
+- kind: opinion announcement
+  date: '1977-02-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-181-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048563
+  whole_session: true
+  duration_seconds: 3407
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-181-r3.mp3
+    checksum: 9de1cc9010a5d86f3bd4733a3e9ad4ccb2216492df11136d099297c592ea10c3
+    media_type: audio/mpeg
+    bytes: 54514127
+- kind: opinion announcement
+  date: '1977-02-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-181-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048563
+  whole_session: true
+  duration_seconds: 2655
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-181-r4.mp3
+    checksum: 52dfefd95a3fc84864630934d15be81b01eba76a63828ddbf006dfaef1493498
+    media_type: audio/mpeg
+    bytes: 42476485
+- kind: opinion announcement
+  date: '1977-02-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-181-r5.mp3
+  catalog: https://catalog.archives.gov/id/102048563
+  whole_session: true
+  duration_seconds: 3062
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-181-r5.mp3
+    checksum: 0435de19e45e27857bb3c2fef76e63244bb94a9c8b72a287a2e3afab0cf66b90
+    media_type: audio/mpeg
+    bytes: 48997066
+- kind: opinion announcement
+  date: '1977-02-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-181-r6.mp3
+  catalog: https://catalog.archives.gov/id/102048563
+  whole_session: true
+  duration_seconds: 3555
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-181-r6.mp3
+    checksum: e1b60ddbcc070bd44c4e12cf2103b4c8ef62c619441f427e2ee1fd56c2aefecd
+    media_type: audio/mpeg
+    bytes: 56878522
 rights:
   status: no-permission-needed
   basis: us-government-work

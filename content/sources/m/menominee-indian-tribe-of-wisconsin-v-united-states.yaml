@@ -106,6 +106,41 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=577%20U.S.%20250
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2015-12-01'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/14-510.mp3
+  duration_seconds: 2493
+  file:
+    storage_key: supreme-court-audio/court/2015/14-510.mp3
+    checksum: 9d57b08b44bb1b54f7660d583e992dc992aecb6764d4f3dd4df859a5ea565a37
+    media_type: audio/mpeg
+    bytes: 19955108
+- kind: argument
+  date: '2015-12-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1947-December1_2015.MP3
+  catalog: https://catalog.archives.gov/id/183518329
+  whole_session: true
+  duration_seconds: 6748
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1947-december1_2015.mp3
+    checksum: 33022223384ce94746498c83e9b173de71c636dda934a69931f4058dcf69bb2a
+    media_type: audio/mpeg
+    bytes: 107973632
+- kind: opinion announcement
+  date: '2016-01-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1976-January25_2016Non-Argument.mp3
+  catalog: https://catalog.archives.gov/id/183518358
+  whole_session: true
+  duration_seconds: 1128
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1976-january25_2016non-argument.mp3
+    checksum: 3102a09dd31087016d5266feb06db7b332bc4f6cda1bd2b459aa1139a1f74801
+    media_type: audio/mpeg
+    bytes: 18045729
 rights:
   status: no-permission-needed
   basis: us-government-work

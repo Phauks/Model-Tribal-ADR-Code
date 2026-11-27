@@ -100,6 +100,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=465%20U.S.%20463
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1983-12-07'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-465.mp3
+  catalog: https://catalog.archives.gov/id/102048841
+  whole_session: true
+  duration_seconds: 13073
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-465.mp3
+    checksum: 52be35ac84f28ccdf91b8cb07769c32e50d483f647db47e118f2d95542aff0df
+    media_type: audio/mpeg
+    bytes: 209177827
 rights:
   status: no-permission-needed
   basis: us-government-work

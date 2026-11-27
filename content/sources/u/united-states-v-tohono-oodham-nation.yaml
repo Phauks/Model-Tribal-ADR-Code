@@ -108,6 +108,41 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=563%20U.S.%20307
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2010-11-01'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/09-846.mp3
+  duration_seconds: 3600
+  file:
+    storage_key: supreme-court-audio/court/2010/09-846.mp3
+    checksum: 1f685094421f509b448ab19bae4fdc5b5893eee331af0a4d6110159a08ee6707
+    media_type: audio/mpeg
+    bytes: 28809764
+- kind: argument
+  date: '2010-11-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1660-November1_2010.MP3
+  catalog: https://catalog.archives.gov/id/183518042
+  whole_session: true
+  duration_seconds: 7562
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1660-november1_2010.mp3
+    checksum: 6a6bccb0f303e39aaf82ca2ba0aeeaadc55e379eed3e9c478e0f5b5ee41df370
+    media_type: audio/mpeg
+    bytes: 120986624
+- kind: opinion announcement
+  date: '2011-04-26'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1693-April26_2011.MP3
+  catalog: https://catalog.archives.gov/id/183518075
+  whole_session: true
+  duration_seconds: 4611
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1693-april26_2011.mp3
+    checksum: 18cc69e7f5e20ad069176bf60881a68fd10d9b14b5be906dc1323781fc8dafdf
+    media_type: audio/mpeg
+    bytes: 73776640
 rights:
   status: no-permission-needed
   basis: us-government-work

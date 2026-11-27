@@ -100,6 +100,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=471%20U.S.%20195
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1985-02-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-514.mp3
+  catalog: https://catalog.archives.gov/id/118974688
+  whole_session: true
+  duration_seconds: 13543
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-514.mp3
+    checksum: 28f09c02fe726aa8736008c6a5da33b54bc06d8e8ce703dc7dbfaed8679db12f
+    media_type: audio/mpeg
+    bytes: 216688972
 rights:
   status: no-permission-needed
   basis: us-government-work
