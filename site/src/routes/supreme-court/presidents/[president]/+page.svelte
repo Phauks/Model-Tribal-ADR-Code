@@ -80,7 +80,7 @@
 	]}
 >
 	<Collapsible heading="Justices appointed" identifier="justices" count={data.appointees.length}>
-		<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.cases} width={560} labelWidth={110} />
+		<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.chartCases} width={560} labelWidth={110} allLink />
 		<DataTable
 			identifier="justices-{data.key}"
 			label="Table: Justices appointed by {data.name}"
