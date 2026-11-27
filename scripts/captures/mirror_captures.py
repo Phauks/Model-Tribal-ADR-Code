@@ -153,6 +153,15 @@ GOVERNMENT_TOPICS = {"govinfo"}
 GOVERNMENT_RIGHTS = "Work of the United States government; no copyright (17 U.S.C. § 105). Served on the website (decision record 0031)."
 
 
+def spaces_encoded(link: str) -> str:
+    """The link column with each address's own spaces written as %20. The
+    column separates addresses with spaces, so an address such as Red Cliff's
+    "https://www.redcliff-nsn.gov/Document Center/..." was read as pieces and
+    matched no source record (fixed on 2026-11-27); a space that starts a new
+    address is kept."""
+    return re.sub(r" +(?!https?://)", "%20", link.strip())
+
+
 def nation_law_policy(topic: str, link: str) -> tuple[str, str] | None:
     """(redistribution, rights) for a federal document or a nation's constitution or law; None for other topics."""
     if topic in GOVERNMENT_TOPICS:
@@ -428,6 +437,7 @@ def build_index(args) -> None:
         media = mimetypes.guess_type(key)[0] or ("text/plain" if key.endswith(".raw") else "application/octet-stream")
         orphan = not ({"source", "document-history", "story", "tribe-profile"} & kinds)
         link = " ".join(extra["link"]) if isinstance(extra.get("link"), list) else (extra.get("link") or cat.get("link") or prev.get("link") or "")
+        link = spaces_encoded(link)
         policy = nation_law_policy(topic, link) if parent is None and "redistribution" not in extra else None
         if policy:
             redistributable, rights = policy
