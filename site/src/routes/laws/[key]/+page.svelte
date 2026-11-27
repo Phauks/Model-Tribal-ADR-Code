@@ -23,10 +23,6 @@
 
 	let { data }: PageProps = $props();
 
-	let cededMapReady = $state(false);
-	/** If the map cannot start it says so in its frame, with Try again (Trevor, 2026-11-27), so the frame shows then too. */
-	let cededMapFailed = $state(false);
-
 	// An order's trail runs through its collection and the list it was found in, and ends with its number (mockup C2-order).
 	const browsed = $derived(data.browsed);
 	const trail = $derived(
@@ -67,7 +63,8 @@
 <!-- The land a treaty ceded, drawn under Key facts (Trevor, 2026-11-26, historic maps mockup 7). Key facts' Land ceded row says the same in words. -->
 {#snippet cededMap()}
 	{#if data.landCeded}
-		<div class="ceded-map no-print" class:ready={cededMapReady || cededMapFailed}>
+		<!-- The frame shows from the start: while the map starts it says it is loading, and if it cannot start it says so, with Try again (Trevor, 2026-11-27). -->
+		<div class="ceded-map no-print">
 			<TileMap
 				view="lands"
 				label="Land ceded by {data.name}"
@@ -75,8 +72,6 @@
 				opening={data.landCeded.bounds}
 				cessionsShown={data.landCeded.royce}
 				cessionsAlways
-				onready={() => (cededMapReady = true)}
-				onfail={() => (cededMapFailed = true)}
 			/>
 		</div>
 	{/if}
@@ -221,10 +216,9 @@
 		margin-top: var(--space-3);
 	}
 
-	.ceded-map:not(.ready) {
-		visibility: hidden;
-		height: 0;
-		overflow: hidden;
+	/* The ceded land is drawn only by the tiled map, which needs scripts; without them Key facts' Land ceded row says it in words. */
+	:global(html:not([data-scripts='on'])) .ceded-map {
+		display: none;
 	}
 
 	.full-title {
