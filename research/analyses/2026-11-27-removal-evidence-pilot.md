@@ -2,6 +2,8 @@
 
 **Status:** research pilot, written Nov. 27, 2026, after Trevor said the removals data "feels somewhat weak" and that "we will need strong evidence to showcase how tribes or peoples were forced to move." Nothing on the site changed. Two research subagents gathered the evidence; I re-matched every quotation by script against the text they fetched (all matched, allowing for line-end hyphens in scans, except the one marked below). The full records are in `research/historic-maps/removals/evidence.json`. Every item is Unverified until a person reads it in the source.
 
+**Update (Nov. 27, 2026):** the standard now covers all 55 journeys; see [2026-11-27-removal-evidence-all-journeys.md](2026-11-27-removal-evidence-all-journeys.md).
+
 ## 1. The standard
 
 Until now each removal stage rested on one quotation from the treaty or statute that ordered it. That shows the United States ordered a move; it does not show the move happened or that it was forced. The pilot tests a three-part standard for each journey:
