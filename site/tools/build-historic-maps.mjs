@@ -543,7 +543,9 @@ async function build() {
 	if (only === 'all' || only === 'land-areas') manifest.landAreasByYear = await buildLandAreasByYear(work);
 	if (only === 'all' || only === '1909') {
 		manifest.reservations1909 = buildReservations1909(work);
-		manifest.scan1909 = buildScan1909(work);
+		// The scan changes only when it is warped again: without its warped tiles in the work folder, the scan already in the bucket stays.
+		if (existsSync(join(work, 'oia-1909', 'scan-tiles'))) manifest.scan1909 = buildScan1909(work);
+		else console.log(`No warped scan in ${join(work, 'oia-1909', 'scan-tiles')}; keeping ${manifest.scan1909.key}.`);
 	}
 	if (only === 'all' || only === 'layers') {
 		manifest.borders = await buildBorders(work);
@@ -576,10 +578,13 @@ async function upload() {
 		[join(work, 'homelands.pmtiles'), manifest.homelands.key, 'application/vnd.pmtiles'],
 		...layerSources(work).map((entry) => [entry.path, entry.key, entry.mediaType])
 	];
+	// The scan and its tiles are left out when they are not in the work folder (only the tracing was rebuilt).
 	const map1909 = [
 		[join(work, 'reservations-1909.pmtiles'), manifest.reservations1909.key, 'application/vnd.pmtiles'],
-		[join(work, 'scan-1909.pmtiles'), manifest.scan1909.key, 'application/vnd.pmtiles'],
-		[join(work, 'oia-1909', 'oia-1909.jpg'), scan1909Key, 'image/jpeg']
+		...[
+			[join(work, 'scan-1909.pmtiles'), manifest.scan1909.key, 'application/vnd.pmtiles'],
+			[join(work, 'oia-1909', 'oia-1909.jpg'), scan1909Key, 'image/jpeg']
+		].filter(([path]) => existsSync(path))
 	];
 	const only = option('only', 'all');
 	const files = only === '1909' ? map1909 : only === 'layers' ? layers : [

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Find, select and file the published state court opinions on Indian law.
+"""Find, select and file the published state and federal court opinions on Indian law.
 
 Tier 3 of the project's data coverage (docs/data-roadmap.md; research note
 research/analyses/2026-11-26-tier-2-and-3-data-sources.md, section 3.1). The
@@ -37,11 +37,20 @@ Subcommands, in the order they are run:
            and added to research/capture-index.csv. Counts go to
            research/state-court-opinions/summary.json and records.csv.
 
+With --courts federal, excerpts and write work on the lower federal courts' opinions
+instead (data tier 2): scripts/caselaw/federal_indian_law_cases.py scans the eleven
+federal reporters and its prepare step lays the results out in this script's --work
+layout. Federal records are kind federal-case, topic federal-court-indian-law, their
+counts go to research/federal-court-opinions/, and their copies are filed under
+federal-court-opinions/ in R2.
+
 Run from the repository root:
 
     python3 scripts/caselaw/state_court_opinions.py scan --work DIR [--jobs 8]
     python3 scripts/caselaw/state_court_opinions.py excerpts --work DIR --auto 10 --batches 8
     python3 scripts/caselaw/state_court_opinions.py write --work DIR --auto 10 --private DIR --show-estates --file
+    python3 scripts/caselaw/state_court_opinions.py --courts federal excerpts --work DIR --auto 10 --read-from 1 --batches 30
+    python3 scripts/caselaw/state_court_opinions.py --courts federal write --work DIR --auto 10 --private DIR --show-estates --file
 """
 
 from __future__ import annotations
@@ -171,6 +180,8 @@ SENSITIVE_TEXT = re.compile(
     r"Indian Child Welfare Act|\bICWA\b|termination of (?:the )?parental rights|\badoption\b|child custody|"
     r"protective order|order of protection|protection order|juvenile court|youth court", re.I)
 
+INITIALS_PARTY = re.compile(r"^\s*(?:In re |Matter of |Doe, )?(?:[A-Z]\.\s?){1,4}(?:-?[A-Z]\.\s?)*(?:,? (?:Jr|Sr)\.?)?(?:,? et al\.?)?\s*$")
+
 
 def sensitivity(case: dict) -> str:
     """Why a case is held for a privacy review, or "" when it is not."""
@@ -181,6 +192,11 @@ def sensitivity(case: dict) -> str:
             return "child or protected person"
         # An estate case that is also about a child (an adoption, a minor heir's guardianship) is held as a child case.
         return "child or protected person" if len(SENSITIVE_TEXT.findall(case_text(case))) >= 3 else "estate"
+    # A party the court names only by initials (United States v. B.N.M., L.B. v. United States) is most often a
+    # minor or a victim the court has already shielded; the opinion's text may still say more.
+    for name in (case.get("name_abbreviation"), case.get("name")):
+        if any(INITIALS_PARTY.match(side) for side in re.split(r"\bv\.?\s", name or "")):
+            return "child or protected person"
     hits = SENSITIVE_TEXT.findall(case_text(case))
     return "child or protected person" if len(hits) >= 3 else ""
 
@@ -217,22 +233,80 @@ def snippets(text: str, limit: int = 5, width: int = 220) -> list[str]:
     return chosen
 
 
+def only_native(row: dict) -> bool:
+    """True when every term hit is "Native American" and the like, which the study found mostly in affirmative action cases."""
+    return all(count == 0 for key, count in row["hits"].items() if key != "native")
+
+
+def needs_reading(row: dict, auto: int, read_from: int) -> bool:
+    """A case below the score kept without a reading, or one whose only hits are "Native American" and the like, however many."""
+    return read_from <= row["score"] < auto or (row["score"] >= auto and only_native(row))
+
+
 def excerpts(args: argparse.Namespace) -> None:
-    """Write the reading batches: one short excerpt per candidate case scoring 3 to 9, for an AI reader."""
+    """Write the reading batches: one short excerpt per candidate case scoring from --read-from to below --auto, for an AI reader."""
     work = Path(args.work)
-    rows = [row for row in candidates(work) if KEEP_FULL <= row["score"] < args.auto]
+    rows = [row for row in candidates(work) if needs_reading(row, args.auto, args.read_from)]
     out = work / "reading"
     out.mkdir(exist_ok=True)
+    first = 1
+    if args.unread:
+        # Only cases no reader has answered yet (candidates added later, such as CourtListener's), in new batches after the last.
+        answered = {answer["id"] for path in out.glob("out-*.json") for answer in json.loads(path.read_text())}
+        rows = [row for row in rows if row["id"] not in answered]
+        first = 1 + max((int(path.stem.split("-")[1]) for path in out.glob("in-*.json")), default=0)
     items = []
     for row in rows:
         case = json.loads((work / "cases" / row["reporter"] / row["volume"] / row["file"]).read_text())
         items.append({"id": row["id"], "name": row["name"], "court": row["court"], "date": row["date"],
-                      "excerpts": snippets(case_text(case))})
+                      "excerpts": snippets(case_text(case), args.snippets, args.width)})
+    items.sort(key=lambda item: item["id"])  # mixes scores and reporters, so each batch is like the others
     size = -(-len(items) // args.batches)
     for index in range(args.batches):
         part = items[index * size:(index + 1) * size]
-        (out / f"in-{index + 1}.json").write_text(json.dumps(part, indent=0, ensure_ascii=False))
-    print(f"{len(items)} cases to read in {args.batches} batches")
+        (out / f"in-{first + index}.json").write_text(json.dumps(part, indent=0, ensure_ascii=False))
+    print(f"{len(items)} cases to read in batches {first} to {first + args.batches - 1}")
+
+
+# A Native nation or Native organization named as a party, for cases a reader did not keep.
+NATIVE_PARTY = re.compile(r"\b(?:Tribes?|Band|Nation|Pueblo|Rancheria|Indian Community|Native Village|Native Association|Indian Health Board|Tribal)\b")
+
+
+def select(args: argparse.Namespace) -> None:
+    """Write --work/selected.json from the scores and the readers' answers (reading/out-N.json), and the readings, without case names, to the data folder."""
+    work = Path(args.work)
+    readings = {}
+    for path in sorted((work / "reading").glob("out-*.json")):
+        for answer in json.loads(path.read_text()):
+            readings[answer["id"]] = answer
+    # The spot checks of cases kept by score (reading/check-out.json, and check-<name>-out.json for later
+    # sets): a case judged not Indian law is left out, unless the caption names a Native nation as a party.
+    rejected = {answer["id"] for path in (work / "reading").glob("check*out.json")
+                for answer in json.loads(path.read_text()) if answer.get("indian_law") is False}
+    selected, missing = [], 0
+    for row in candidates(work):
+        if row["score"] >= args.auto and not only_native(row):
+            if row["id"] not in rejected:
+                selected.append({"id": row["id"], "how": "score"})
+            elif NATIVE_PARTY.search(row["name"] or ""):
+                selected.append({"id": row["id"], "how": "caption"})
+            continue
+        answer = readings.get(row["id"])
+        if needs_reading(row, args.auto, args.read_from) and answer is None:
+            missing += 1
+        if answer and answer.get("indian_law") is True:
+            selected.append({"id": row["id"], "how": "reader", "topic": answer.get("topic", "")})
+        elif row["score"] >= args.read_from and NATIVE_PARTY.search(row["name"] or ""):
+            selected.append({"id": row["id"], "how": "caption"})
+    if missing:
+        sys.exit(f"{missing} cases to read have no answer yet")
+    (work / "selected.json").write_text(json.dumps(selected, indent=1))
+    data = FEDERAL_DATA if args.courts == "federal" else DATA
+    data.mkdir(parents=True, exist_ok=True)
+    (data / "readings.json").write_text(json.dumps([{"id": key, "indian_law": value.get("indian_law"), "topic": value.get("topic", ""), "sure": value.get("sure")}
+                                                    for key, value in sorted(readings.items(), key=lambda item: str(item[0]))], indent=0) + "\n")
+    counts = {how: sum(1 for row in selected if row["how"] == how) for how in ("score", "reader", "caption")}
+    print(len(selected), "selected", counts)
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -242,6 +316,9 @@ SESSION = "2026-11-26-state-court-indian-law-opinions"
 TODAY = "2026-11-26"
 TOPIC = "state-court-indian-law"
 FEDERAL_TOPIC = "federal-court-indian-law"
+# --courts federal: the lower federal courts' opinions (data tier 2), from scripts/caselaw/federal_indian_law_cases.py.
+FEDERAL_DATA = ROOT / "research" / "federal-court-opinions"
+FEDERAL_SESSION = "2026-11-26-federal-court-indian-law-opinions"
 # Federal courts whose reports the Project files with the states' (the District of Columbia's, mostly); their cases are federal.
 FEDERAL_COURT = re.compile(r"^United States |^Supreme Court of the District of Columbia$|^Court of Appeals of the District of Columbia$")
 # The copies' own topics, so they are never listed as Tribal court opinions, which use "caselaw-access-project".
@@ -284,11 +361,18 @@ def readable(date: str) -> str:
     return str(parts[0])
 
 
-def copy_key(row: dict) -> str:
-    return f"{CAPTURE_TOPIC}/{row['reporter']}/{row['volume']}/{row['file'].removesuffix('.json')}.html"
+def copy_key(row: dict, topic: str = CAPTURE_TOPIC) -> str:
+    return f"{topic}/{row['reporter']}/{row['volume']}/{row['file'].removesuffix('.json')}.html"
+
+
+def from_courtlistener(row: dict) -> bool:
+    """Opinions after the Caselaw Access Project ends, from CourtListener's bulk files (scripts/caselaw/courtlistener_federal_opinions.py)."""
+    return row["reporter"] == "courtlistener"
 
 
 def source_link(row: dict) -> str:
+    if from_courtlistener(row):
+        return row["link"]
     return f"{STATIC}/{row['reporter']}/{row['volume']}/html/{row['file'].removesuffix('.json')}.html"
 
 
@@ -300,12 +384,12 @@ def opinions_html(fragment: str) -> list[str]:
     return [re.sub(r"\s*<a class=\"bracketnum\"[^>]*>.*?</a>\s*", " ", article, flags=re.S) for article in articles]
 
 
-def opinion_page(case: dict, key: str, link: str, fragment: str | None = None, links=None) -> bytes:
+def opinion_page(case: dict, key: str, link: str, fragment: str | None = None, links=None, courtlistener: bool = False) -> bytes:
     """The court's opinions only (no head matter, where the publishers' headnotes and synopses are), as one page.
 
     With the Project's HTML of the case (fragment), the opinions keep its page numbers, footnotes and citations, and with
     links (copy_links.CitationLinks) the citations link to this site's pages or to case.law. Without it, the opinions are
-    built from the JSON text, as plain paragraphs."""
+    built from the JSON text, as plain paragraphs (as CourtListener's opinions always are; courtlistener credits it)."""
     import html  # noqa: PLC0415
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from tribal_court_opinions import PAGE_STYLE  # noqa: PLC0415
@@ -328,29 +412,40 @@ def opinion_page(case: dict, key: str, link: str, fragment: str | None = None, l
         f"<title>{html.escape(title)}</title>\n<style>{PAGE_STYLE}</style>\n</head>\n<body>\n<header>\n"
         f"<h1>{html.escape(name)}</h1>\n"
         f"<p>{html.escape(citations)}{' · ' if citations else ''}{html.escape(court)}{', decided ' + readable(date) if date else ''}</p>\n"
-        "<p>The court's opinion, from the Caselaw Access Project, Harvard Law School Library, without the publisher's headnotes and synopsis. "
+        + ("<p>The court's opinion, from CourtListener, Free Law Project. " if courtlistener else
+           "<p>The court's opinion, from the Caselaw Access Project, Harvard Law School Library, without the publisher's headnotes and synopsis. ") +
         f"<a class=\"external\" href=\"{html.escape(link)}\" target=\"_blank\" rel=\"noopener\">Original</a>. <a href=\"{html.escape(removal)}\" target=\"_top\">Ask to remove it</a>.</p>\n"
         "</header>\n<main>\n" + "\n".join(parts) + "\n</main>\n</body>\n</html>\n"
     ).encode("utf-8")
 
 
-def existing_citations() -> tuple[set[str], set[str]]:
-    """Keys and "volume reporter page" citations of the source records the project already has."""
-    keys, cites = set(), set()
+def existing_citations(session: str = "") -> tuple[set[str], set[str], dict[str, Path]]:
+    """Keys and "volume reporter page" citations of the source records the project already has, less
+    those an earlier run of this session wrote, which are returned by original link so a rerun
+    rewrites them under the same keys."""
+    keys, cites, ours = set(), set(), {}
     for path in SOURCES.rglob("*.yaml"):
-        keys.add(path.stem)
         text = path.read_text(encoding="utf-8")
+        if session and session in text and "type: legal_case" in text:
+            record = yaml.safe_load(text)
+            if session in (record.get("found_in") or []):
+                ours[record["original_link"]] = path
+                continue
+        keys.add(path.stem)
         if "type: legal_case" not in text:
             continue
         record = yaml.safe_load(text)
         citation = record.get("citation") or {}
         if citation.get("volume") and citation.get("page"):
             cites.add(f"{citation['volume']} {citation.get('container-title', '')} {citation['page']}")
-        for match in re.finditer(r"\b(\d+) ((?:[A-Z][A-Za-z.]*\s?){1,4}(?:\dd|2d|3d|4th)?) (\d+)\b", (citation.get("title") or "") + " " + str(record.get("notes") or "")):
+        # The notes are read for a record with no citation of its own; a record that has one may name other cases there
+        # (an IBIA decision's notes give the court cases that reviewed it).
+        notes = "" if citation.get("volume") and citation.get("page") else str(record.get("notes") or "")
+        for match in re.finditer(r"\b(\d+) ((?:[A-Z][A-Za-z.]*\s?){1,4}(?:\dd|2d|3d|4th)?) (\d+)\b", (citation.get("title") or "") + " " + notes):
             cites.add(" ".join(match.group(0).split()))
         if (record.get("courtlistener") or {}).get("citation"):
             cites.add(record["courtlistener"]["citation"])
-    return keys, cites
+    return keys, cites, ours
 
 
 def write(args: argparse.Namespace) -> None:
@@ -360,12 +455,19 @@ def write(args: argparse.Namespace) -> None:
     import os  # noqa: PLC0415
     import tempfile  # noqa: PLC0415
     work = Path(args.work)
+    federal = args.courts == "federal"
+    data, session = (FEDERAL_DATA, FEDERAL_SESSION) if federal else (DATA, SESSION)
     selected = {row["id"]: row for row in json.loads((work / "selected.json").read_text())}
     rows = [row for row in candidates(work) if row["id"] in selected]
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from supreme_court_native_cases import Nations  # noqa: PLC0415
     nations = Nations()
-    keys, cites = existing_citations()
+    sys.path.insert(0, str(ROOT / "scripts" / "law"))
+    from nation_names import NationNames  # noqa: PLC0415
+    names = NationNames()
+    keys, cites, ours = existing_citations(session)
+    keys |= {path.stem for path in ours.values()}  # an earlier run's keys stay with their cases
+    rewritten: set[Path] = set()
     if args.file:
         sys.path.insert(0, str(ROOT / "scripts" / "captures"))
         import mirror_captures  # noqa: PLC0415
@@ -400,10 +502,12 @@ def write(args: argparse.Namespace) -> None:
         year = (row["date"] or "0000")[:4]
         base = f"{slug(case.get('name_abbreviation') or 'case')}-{year}"
         key = base
-        if key in keys:
+        if source_link(row) in ours:
+            key = ours[source_link(row)].stem
+        elif key in keys:
             key = f"{base}-{slug((case.get('court') or {}).get('name_abbreviation') or row['reporter'])}"
         number = 2
-        while key in keys:
+        while key in keys and source_link(row) not in ours:
             key = f"{base}-{number}"
             number += 1
         keys.add(key)
@@ -411,6 +515,13 @@ def write(args: argparse.Namespace) -> None:
         jurisdiction = (case.get("jurisdiction") or {}).get("name_long") or ""
         territorial = "Terr" in jurisdiction or "Territory" in (row["court"] or "")
         named, not_linked = nations.propose(case.get("name") or case.get("name_abbreviation") or "")
+        if federal:
+            # The tier 2 scripts' shared matcher (scripts/law/nation_names.py) also knows each nation's other names and the Gaming Commission's.
+            for nation, named_as in names.named(case.get("name_abbreviation") or case.get("name") or ""):
+                if nation not in {n["nation"] for n in named}:
+                    named.append({"nation": nation, "named_as": named_as, "role": "party",
+                                  "note": "Matched by the script to a name the nation record gives; not yet checked."})
+                    not_linked = [n for n in not_linked if named_as.lower() not in n["named_as"].lower() and n["named_as"].lower() not in named_as.lower()]
         date_parts = [int(part) for part in (row["date"] or year).split("-") if part]
         link = source_link(row)
         citation = {"type": "legal_case", "title": case.get("name_abbreviation"), "authority": (case.get("court") or {}).get("name")}
@@ -433,9 +544,11 @@ def write(args: argparse.Namespace) -> None:
             "nations_in_case": {"checked": TODAY, "named": named, **({"not_linked": not_linked} if not_linked else {})},
             "jurisdictions": [{"level": "territory" if territorial else "state", **({"state": STATES[jurisdiction]} if jurisdiction in STATES else {})}],
             "topics": [TOPIC],
-            "found_in": [SESSION],
-            "notes": (f"Published at {'; '.join(cite_list)}. Decided by the {citation['authority']}" + (f" on {readable(row['date'])}" if row["date"] else "")
-                      + f". Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with {how}."),
+            "found_in": [session],
+            "notes": ((f"Published at {'; '.join(cite_list)}. " if cite_list else f"Docket {case.get('docket_number') or 'number not given'}; no reporter citation yet. ")
+                      + f"Decided by the {citation['authority']}" + (f" on {readable(row['date'])}" if row["date"] else "")
+                      + (". Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files" if from_courtlistener(row)
+                         else ". Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes") + f", with {how}."),
             "review": {"status": "unverified", "by": "scripts/caselaw/state_court_opinions.py", "date": TODAY, "checks": [
                 {"check": "Indian law case: the term score and, below the score kept without a reading, an AI reader's judgment of excerpts",
                  "result": "agree", "detail": f"score {row['score']}" + (f"; reader: {choice.get('topic', '')}" if choice["how"] == "reader" else "; kept because a party is a Native nation or organization" if choice["how"] == "caption" else "")},
@@ -444,17 +557,30 @@ def write(args: argparse.Namespace) -> None:
         }
         if record["jurisdictions"][0]["level"] == "territory":
             record["jurisdictions"][0] = {"level": "other", "note": "Indian Territory" if "Indian Territory" in court_name else jurisdiction or "Territorial court"}
-        if FEDERAL_COURT.search(court_name):
+        if federal or FEDERAL_COURT.search(court_name):
             record.update(kind="federal-case", jurisdictions=[{"level": "federal"}], topics=[FEDERAL_TOPIC])
         path = SOURCES / (key[0] if "a" <= key[0] <= "z" else "_other") / f"{key}.yaml"
+        path.parent.mkdir(exist_ok=True)  # no record had begun with x before
         path.write_text(dump(record), encoding="utf-8")
+        rewritten.add(path)
         written += 1
         public_rows.append({"key": key, "citation": "; ".join(cite_list), "court": row["court"], "date": row["date"], "score": row["score"], "how": choice["how"]})
         if args.file:
-            capture = copy_key(row)
-            data = opinion_page(case, capture, link, get(link).decode("utf-8"), citation_links)
-            pages.append((capture, data, record, row))
+            capture = copy_key(row, FEDERAL_CAPTURE_TOPIC if federal else CAPTURE_TOPIC)
+            # State copies keep the Project's HTML (page numbers, footnotes, citation links); the federal set's are still
+            # built from the JSON text, as CourtListener's always are.
+            fragment = None if federal or from_courtlistener(row) else get(link).decode("utf-8")
+            page = opinion_page(case, capture, link, fragment, citation_links, courtlistener=from_courtlistener(row))
+            pages.append((capture, page, record, row))
+    stale = {path.stem for path in ours.values() if path not in rewritten}
+    for path in ours.values():
+        if path not in rewritten:
+            path.unlink()  # no longer selected, or now held for a privacy review
     if args.file:
+        if stale:
+            index = [row for row in index if row["records"] not in stale]
+            by_key = {row["key"]: row for row in index}
+
         def upload(item):
             capture, data, record, row = item
             digest = hashlib.sha256(data).hexdigest()
@@ -470,7 +596,7 @@ def write(args: argparse.Namespace) -> None:
             topic = FEDERAL_CAPTURE_TOPIC if record["kind"] == "federal-case" else CAPTURE_TOPIC
             new.update(key=capture, bytes=len(data), sha256=digest, media_type="text/html", topic=topic,
                        title=record["citation"]["title"], nations=";".join(record.get("tribes", [])),
-                       obtained=f"built from the Caselaw Access Project's files, {TODAY}", link=record["original_link"], captured=TODAY,
+                       obtained=f"built from {'CourtListener' if from_courtlistener(row) else 'the Caselaw Access Project'}'s files, {TODAY}", link=record["original_link"], captured=TODAY,
                        records=record["key"], record_kinds="source", rights=mirror_captures.TOPIC_RIGHTS[topic], redistribution="yes", keep_local="no", orphan="no")
             for field in ("redistribution", "rights"):
                 if overrides.get(capture, {}).get(field):
@@ -484,14 +610,14 @@ def write(args: argparse.Namespace) -> None:
                     index.append(new)
                     by_key[capture] = new
         mirror_captures.write_index(index)
-    DATA.mkdir(parents=True, exist_ok=True)
-    with open(DATA / "records.csv", "w", newline="", encoding="utf-8") as handle:
+    data.mkdir(parents=True, exist_ok=True)
+    with open(data / "records.csv", "w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, ["key", "citation", "court", "date", "score", "how"])
         writer.writeheader()
         writer.writerows(public_rows)
     summary = {"written": written, "already_held": skipped, "held_for_privacy_review": held,
                "held_by_reason": {reason: sum(1 for r in private_rows if r["reason"] == reason) for reason in sorted({r["reason"] for r in private_rows})}}
-    (DATA / "summary.json").write_text(json.dumps(summary, indent=1) + "\n", encoding="utf-8")
+    (data / "summary.json").write_text(json.dumps(summary, indent=1) + "\n", encoding="utf-8")
     private = Path(args.private)
     private.mkdir(parents=True, exist_ok=True)
     with open(private / "held-for-privacy-review.csv", "w", newline="", encoding="utf-8") as handle:
@@ -503,6 +629,7 @@ def write(args: argparse.Namespace) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--courts", choices=["state", "federal"], default="state", help="state and territorial courts (tier 3) or the lower federal courts (tier 2)")
     sub = parser.add_subparsers(dest="command", required=True)
     p = sub.add_parser("scan")
     p.add_argument("--work", required=True)
@@ -511,6 +638,14 @@ def main() -> None:
     p.add_argument("--work", required=True)
     p.add_argument("--auto", type=int, default=10, help="score from which a case is kept without a reading")
     p.add_argument("--batches", type=int, default=8)
+    p.add_argument("--read-from", type=int, default=KEEP_FULL, help="lowest score read (the federal run reads every candidate, from 1)")
+    p.add_argument("--snippets", type=int, default=5, help="passages per case")
+    p.add_argument("--width", type=int, default=220, help="characters on each side of a term")
+    p.add_argument("--unread", action="store_true", help="only cases with no reader's answer yet, in new batches numbered after the last")
+    p = sub.add_parser("select")
+    p.add_argument("--work", required=True)
+    p.add_argument("--auto", type=int, default=10)
+    p.add_argument("--read-from", type=int, default=KEEP_FULL)
     p = sub.add_parser("write")
     p.add_argument("--work", required=True)
     p.add_argument("--auto", type=int, default=10)
@@ -519,7 +654,7 @@ def main() -> None:
     p.add_argument("--estates-from", type=int, default=0, help="hold estate cases decided in this year or later (0: hold every estate case)")
     p.add_argument("--file", action="store_true", help="also file each opinion page in the bucket and the capture index")
     args = parser.parse_args()
-    {"scan": scan, "excerpts": excerpts, "write": write}[args.command](args)
+    {"scan": scan, "excerpts": excerpts, "select": select, "write": write}[args.command](args)
 
 
 if __name__ == "__main__":

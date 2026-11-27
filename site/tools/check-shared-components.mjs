@@ -37,8 +37,12 @@ const allowed = new Map(
 		'src/routes/workspace/nation-teams/[nation]/laws-and-cases/+page.svelte': { table: 2 },
 		// A short summary beside a form, and the list of settings that let sponsors give.
 		'src/routes/workspace/sponsors/+page.svelte': { table: 1 },
+		// A nation's Census areas in Key facts: two short columns in a narrow panel, as in the approved mockup (Trevor, Nov. 27, 2026, design/census-key-facts); all their figures sort and download in the table builder it links to.
+		'src/lib/components/FactGroups.svelte': { table: 1 },
 		// The Source watch queue: each row opens in place to the item's details and the decisions on it (mockup A, Trevor, Nov. 26, 2026), a work list rather than data to sort or download.
-		'src/routes/workspace/watch/+page.svelte': { table: 1 }
+		'src/routes/workspace/watch/+page.svelte': { table: 1 },
+		// Title 25's chapters: each row opens in place to its subchapters (design/title-25-navigation, option A), the title's table of contents rather than data to sort or download.
+		'src/routes/laws/usc-25/+page.svelte': { table: 1 }
 	}).map(([file, counts]) => [path.normalize(file), counts])
 );
 

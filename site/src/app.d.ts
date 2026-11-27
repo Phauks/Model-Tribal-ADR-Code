@@ -9,7 +9,14 @@ import type { SignedInPerson } from '#lib/server/people.ts';
 
 declare global {
 	namespace App {
-		// interface Error {}
+		interface Error {
+			/**
+			 * The reference of a reported problem, such as P-4F7K-92QD, shown on
+			 * the error page so a reader's report can be matched to the log
+			 * (src/lib/server/report.ts, site/ERRORS.md).
+			 */
+			reference?: string;
+		}
 		interface Locals {
 			/** The signed-in person, set by src/hooks.server.ts on pages the Worker renders. */
 			person: SignedInPerson | undefined;
@@ -58,6 +65,8 @@ declare global {
 		signInNetworkLimit?: RateLimit;
 		/** Files one account can start sending in a minute (src/routes/uploads/pieces). */
 		uploadLimit?: RateLimit;
+		/** Problems one network address's browsers can report in a minute (src/routes/problems, site/ERRORS.md). */
+		problemReportLimit?: RateLimit;
 		/** The live editing rooms, one per essay, in the tribal-law-project-live Worker (src/lib/server/live-editing.ts). */
 		essayRooms?: DurableObjectNamespace;
 		/** The virus scanner's desk, in tribal-law-project-scanner (src/lib/server/scanner-wake.ts). */

@@ -22,12 +22,7 @@
 
 {#each data.groups as group (group.entityType)}
 	<section aria-labelledby="group-{group.entityType}">
-		{#if data.groups.length > 1 || group.entityType !== 'native-nation'}
-			<h2 id="group-{group.entityType}">{group.label}</h2>
-		{:else}
-			<h2 id="group-{group.entityType}" class="visually-hidden">{group.label}</h2>
-		{/if}
-		<NationTable {group} identifier="nations-{data.letter.key}-{group.entityType}" />
+		<NationTable {group} identifier="nations-{data.letter.key}-{group.entityType}" headingLevel={2} headingIdentifier="group-{group.entityType}" />
 	</section>
 {/each}
 

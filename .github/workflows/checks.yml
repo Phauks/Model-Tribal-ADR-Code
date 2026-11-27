@@ -228,6 +228,9 @@ jobs:
       # Reads only the source, so it runs before the build and fails fast.
       - name: Pick-one fields and data tables use the shared components
         run: npm run check:shared-components
+      # Reads only the source. Fails when a file drops more errors silently than tools/silent-catches-baseline.json allows (site/ERRORS.md).
+      - name: No new silent catches
+        run: npm run check:silent-catches
       - name: Build
         run: npm run build
       - name: Check that the Worker fits Cloudflare's size limits, with room to spare (tools/check-worker-size.mjs)

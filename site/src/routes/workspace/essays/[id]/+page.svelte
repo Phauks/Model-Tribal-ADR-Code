@@ -7,7 +7,7 @@
 	let { data, form }: PageProps = $props();
 
 	// The essay's section, such as Essays or Foundations, now that Workspace › Essays is gone.
-	const essayParts: Record<string, { label: string; link: string }> = { foundations: { label: 'Foundations', link: '/foundations' }, essays: { label: 'Essays', link: '/essays' } };
+	const essayParts: Record<string, { label: string; link: string }> = { foundations: { label: 'Foundations', link: '/foundations' }, essays: { label: 'Essays', link: '/essays' }, news: { label: 'News', link: '/news' } };
 	const section = $derived(essayParts[data.page.split('/')[1]]);
 
 	const originLabels = { editor: 'Saved', git: 'Brought in from git', restore: 'Restored' } as const;

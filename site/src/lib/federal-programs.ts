@@ -24,7 +24,7 @@ export interface FederalProgram {
 	official: { text: string; link: string };
 	/** What the nation takes over, one or two sentences. */
 	lead: string;
-	/** Self-governance compacts are named in At a glance by the department's short name. */
+	/** Self-governance compacts are named in Key facts by the department's short name. */
 	glance?: string;
 }
 

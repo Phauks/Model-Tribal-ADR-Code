@@ -39,6 +39,7 @@ export function draftOf(form: FormData, replyChoices: readonly string[]): BatchD
 	try {
 		startsAt = startsLocal ? zonedTimeToUtc(startsLocal, zone) : null;
 	} catch {
+		// expected: the date and time box sends only times this reads; anything else is kept as no start time.
 		startsAt = null;
 	}
 	const replyTo = read(form, 'replyTo', 200)?.trim().toLowerCase() ?? '';

@@ -1,0 +1,59 @@
+key: big-sandy-rancheria-enters-v-rob-bonta-2021
+kind: federal-case
+citation:
+  type: legal_case
+  title: Big Sandy Rancheria Enters. v. Rob Bonta
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.4th
+  volume: '1'
+  page: '710'
+  issued:
+    date-parts:
+    - - 2021
+      - 6
+      - 16
+  URL: https://www.courtlistener.com/opinion/4892310/big-sandy-rancheria-enters-v-rob-bonta/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/4892310/big-sandy-rancheria-enters-v-rob-bonta/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- big-sandy-rancheria-of-western-mono-indians-of-california
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: big-sandy-rancheria-of-western-mono-indians-of-california
+    named_as: Big Sandy Rancheria
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 1 F.4th 710. Decided by the United States Court of Appeals for the Ninth Circuit on June 16, 2021. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 157, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 157
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

@@ -5,7 +5,7 @@
 	wiki info page for all items"). It puts together the parts every item page
 	shares, so a person, a court, a case or an office reads alike: the
 	breadcrumbs, the title with any other names and a one-line lead, a status
-	badge, At a glance (a picture with its credit, then the key facts, each
+	badge, Key facts (a picture with its credit, then the key facts, each
 	with its source markers), the page's own sections, and References.
 
 	It builds on RecordPage, which lays the parts out (site/DESIGN.md, "Record
@@ -35,10 +35,12 @@
 		lead?: string;
 		names?: InfoName[];
 		trail?: { label: string; href: string }[];
+		/** The page's name at the end of the trail, when shorter than its title, such as "§ 5321". */
+		crumb?: string;
 		picture?: InfoPicture;
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any -- FactGroups' own type
 		glance?: any[];
-		/** Short panels under At a glance, such as contacts. */
+		/** Short panels under Key facts, such as contacts. */
 		panels?: Snippet;
 		/** A status badge beside the title, such as "Unverified". */
 		status?: Snippet;
@@ -47,10 +49,10 @@
 		children?: Snippet;
 	}
 
-	let { title: titleText, lead, names = [], trail, picture, glance = [], panels, status, sources = [], children }: Props = $props();
+	let { title: titleText, lead, names = [], trail, crumb, picture, glance = [], panels, status, sources = [], children }: Props = $props();
 	// The panel's picture snippet shares the prop's name.
 	const pictureView = $derived(picture);
-	// At a glance only where it earns its place (src/lib/info-page.ts): without
+	// Key facts only where it earns its place (src/lib/info-page.ts): without
 	// the facts the title and lead already say, and as a panel only with enough
 	// facts or a picture or panel; one or two facts join the lead line.
 	const facts = $derived(withoutRepeats(glance, [titleText, lead, ...names.map((other) => other.name)]));
@@ -60,7 +62,7 @@
 	const factsAfterLead = $derived(lead !== undefined && !/[.!?]$/.test(lead.trim()));
 </script>
 
-{#if trail}<Breadcrumbs {trail} current={titleText} />{/if}
+{#if trail}<Breadcrumbs {trail} current={crumb ?? titleText} />{/if}
 
 <RecordPage glance={hasGlance ? glancePart : undefined} sources={sources.length > 0 ? sourcesPart : undefined}>
 	{#snippet title()}<h1>{titleText}</h1>{/snippet}

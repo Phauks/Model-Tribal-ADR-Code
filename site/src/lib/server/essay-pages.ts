@@ -243,7 +243,12 @@ export function cacheForReaders(event: { cookies: Pick<Cookies, 'get'>; setHeade
 	event.setHeaders({ 'cache-control': 'public, max-age=60' });
 }
 
-export async function essayPage(part: EssayPart, slug: string, publicationNumber?: number) {
+/**
+ * An essay's page. News posts leave out the credit lines under each heading
+ * (`credits: false`): a post names its author once, under the title
+ * (src/lib/server/news-posts.ts).
+ */
+export async function essayPage(part: EssayPart, slug: string, publicationNumber?: number, { credits = true }: { credits?: boolean } = {}) {
 	const identifier = identifierFromPath(part, slug);
 	const { database, bucket } = storageForPages();
 	// Text merged in git since the build is saved as a draft version; readers see it once published.
@@ -277,7 +282,7 @@ export async function essayPage(part: EssayPart, slug: string, publicationNumber
 	const row = publicationNumber === undefined ? listed[0] : listed.find((candidate) => candidate.number === publicationNumber);
 	if (!row?.object_key || !row.sha256) error(404, 'No publication of this essay has this number.');
 	const rendered = await renderedVersion(bucket, { object_key: row.object_key, sha256: row.sha256 });
-	const html = await withCredits(database, bucket, identifier, row.version_number, rendered.html);
+	const html = credits ? await withCredits(database, bucket, identifier, row.version_number, rendered.html) : rendered.html;
 	return {
 		identifier,
 		part,

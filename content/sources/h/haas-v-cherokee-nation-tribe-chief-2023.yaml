@@ -1,0 +1,52 @@
+key: haas-v-cherokee-nation-tribe-chief-2023
+kind: federal-case
+citation:
+  type: legal_case
+  title: Haas v. Cherokee Nation Tribe Chief
+  authority: United States District Court for the Northern District of Oklahoma
+  issued:
+    date-parts:
+    - - 2023
+      - 3
+      - 14
+  URL: https://www.courtlistener.com/opinion/9920515/haas-v-cherokee-nation-tribe-chief/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9920515/haas-v-cherokee-nation-tribe-chief/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+  not_linked:
+  - named_as: Cherokee Nation Tribe
+    reason: More than one of today's nations shares this name (amonsoquath-tribe-of-cherokee, arkansas-cherokee, arkansas-white-river-cherokee, cherokee-choctaw-nation-of-st-francis-and-black-rivers, cherokee-indians-of-georgia-inc, cherokee-indians-of-hoke-county-inc and 42 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 4:23-cv-00090; no reporter citation yet. Decided by the United States District Court for the Northern District of Oklahoma on Mar. 14, 2023. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 12, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 12
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 0 matched, 1 not linked

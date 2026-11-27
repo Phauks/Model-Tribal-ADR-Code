@@ -1,0 +1,59 @@
+key: the-grand-traverse-band-of-ottawa-and-chippewa-indians-and-its-employee-welfare-2022
+kind: federal-case
+citation:
+  type: legal_case
+  title: The Grand Traverse Band of Ottawa and Chippewa Indians, and Its Employee Welfare Plan v. Blue Cross and Blue Shield of Michigan
+  authority: United States District Court for the Eastern District of Michigan
+  issued:
+    date-parts:
+    - - 2022
+      - 8
+      - 3
+  URL: https://www.courtlistener.com/opinion/9752359/the-grand-traverse-band-of-ottawa-and-chippewa-indians-and-its-employee/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9752359/the-grand-traverse-band-of-ottawa-and-chippewa-indians-and-its-employee/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- grand-traverse-band-of-ottawa-and-chippewa-indians
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: grand-traverse-band-of-ottawa-and-chippewa-indians
+    named_as: Grand Traverse Band of Ottawa
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  not_linked:
+  - named_as: Chippewa Indians
+    reason: More than one of today's nations shares this name (bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation, burt-lake-band-of-ottawa-and-chippewa-indians, chippewa-cree-indians-of-the-rocky-boys-reservation, christian-pembina-chippewa-indians, grand-traverse-band-of-ottawa-and-chippewa-indians, kah-bay-kah-nong and 15 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 5:14-cv-11349; no reporter citation yet. Decided by the United States District Court for the Eastern District of Michigan on Aug. 3, 2022. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 5; an AI reader read excerpts and judged it an Indian law case (tribe ERISA benefits dispute with BCBS, Indian Health Service contract care).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 5; reader: tribe ERISA benefits dispute with BCBS, Indian Health Service contract care'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 1 not linked
