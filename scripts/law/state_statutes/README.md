@@ -8,7 +8,8 @@ One pipeline finds the Indian law sections in a state's code and writes a link-o
 python3 scripts/law/state_statutes/run.py fetch WA      # download the official code into the work folder
 python3 scripts/law/state_statutes/run.py parse WA      # split into sections, run the keyword pass
 python3 scripts/law/state_statutes/run.py batches WA    # blind reading batches
-# readers answer each batch (research/state-statutes/reading-instructions.md)
+# readers answer each batch (research/state-statutes/reader-prompt.md wraps reading-instructions.md)
+python3 scripts/law/state_statutes/spot_check.py WA     # every batch answered? then 40 random verdicts to read
 python3 scripts/law/state_statutes/run.py review WA     # strong hits a reader marked none: read each again, settle in settled.json
 python3 scripts/law/state_statutes/run.py merge WA      # the state's list of Indian law sections
 python3 scripts/law/state_statutes/run.py write WA      # the records, in content/sources/
@@ -20,7 +21,7 @@ Downloads, the sections file and the batches go in the work folder (`--work`, or
 
 `core.py` holds the shared term families (STRONG and WEAK). Each adapter adds its own nations' names to WEAK and lists place names (counties, rivers, towns named for nations) to take out before WEAK matches. Readers see four pools without being told which: A, every strong hit; B, every weak-only hit; C, a sample of non-hits enacted by the same session law as a strong hit or printed within two sections of one; D, a random sample of every other section. A fifth pool, E, holds every non-hit in a chapter whose own name is Indian law (a definition in a state Indian child custody chapter names no Native term but is part of that law). A chapter name counts when it has a strong term or a word in `CHAPTER_LAW` ("Indians", "Indian Antiquities", "Indigenous Affairs"), which Delaware's and North Carolina's recall samples added. A `core` or `incidental` verdict in C or D is a miss by the keyword pass: if misses exceed 5% of what was found, widen the terms and read again.
 
-The readers are good at saying no to weak hits and less good at strong ones: in the first three states they marked about one strong hit in twenty `none` when the section gives tribes a role (a seat on a council, a consultation duty). `review` lists every strong hit marked `none`; read each and settle it. Then read about 40 other verdicts at random as a spot check. After a change to the terms or the parser, `batches --extend` keeps what was read and adds only the new hits.
+The readers are good at saying no to weak hits and less good at strong ones: in the first three states they marked about one strong hit in twenty `none` when the section gives tribes a role (a seat on a council, a consultation duty). `review` lists every strong hit marked `none`; read each and settle it. Then read about 40 other verdicts at random as a spot check (`spot_check.py`, which first checks that every batch line has an answer; `--misses` lists the recall samples' yes verdicts). After a change to the terms or the parser, `batches --extend` keeps what was read and adds only the new hits.
 
 ## Adding a state
 
@@ -50,4 +51,9 @@ Records the project already holds under the same key (most were made by hand for
 | Virginia | `adapters/virginia.py` | Section pages, law.lis.virginia.gov/vacode |
 | Alaska | `adapters/alaska.py` (no history lines in the print view; readers are told that Alaska Native Claims Settlement Act corporations count as Native) | Print view of each title, akleg.gov/basis/statutes.asp |
 | Arizona | `adapters/arizona.py` (no history lines) | Section pages, azleg.gov/ars, listed on each title's page |
+| South Dakota | `adapters/south_dakota.py` | The Legislature's statutes service, one call per chapter (sdlegislature.gov/api/Statutes) |
+| Minnesota | `adapters/minnesota.py` (the Revisor prints catchlines in capitals; the adapter gives them title case) | Full-text chapter pages, revisor.mn.gov/statutes |
+| North Dakota | `adapters/north_dakota.py` (no source notes in the PDFs, so no enactment years) | Chapter PDFs, ndlegis.gov/cencode, listed with section names on the Century Code page |
+| Idaho | `adapters/idaho.py` | Section pages, legislature.idaho.gov/statutesrules/idstat, listed on each chapter's page |
+| Kansas | `adapters/kansas.py` | Section pages, ksrevisor.gov/statutes, listed on each chapter's page |
 | Oklahoma | `adapters/oklahoma.py` (read in the pilot; `run.py seed OK` turns the pilot's list into this pipeline's list) | Title PDFs, oklegislature.gov |

@@ -12,6 +12,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria, California (approved by the Secretary of the Interior Oct. 17, 1941), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1941-10-17'
+  source: university-of-oklahoma-indian-reorganization-act-wincons
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text
+  confidence: medium
+  verification: inferred
+  as_of: '1941-10-17'
+  locator: 1941 constitution and bylaws (1941-10-17), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: CA
   presence: government-office

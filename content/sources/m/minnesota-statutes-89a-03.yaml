@@ -1,0 +1,50 @@
+key: minnesota-statutes-89a-03
+kind: state-statute
+citation:
+  type: legislation
+  title: Minnesota Forest Resources Council
+  title-short: Minn. Stat. § 89A.03
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 89A.03
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1995
+  URL: https://www.revisor.mn.gov/statutes/cite/89A.03
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/89A.03
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 89A.03 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 89A.03 (2026). History: 1995 c 220 s 80,141,142; 1995 c 263 s 12; 1996 c 351 s 1; 1998 c 401 s 30; 1999 c 231 s 116,191; 1Sp2001 c 2 s 151; 2002 c 379 art 1 s 108; 2014 c 286 art 8 s 8; 2014 c 289 s 32,33; 2023 c 60 art 4 s 35. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian affairs; indian); AI reader''s verdict incidental: Forest Resources Council includes Indian Affairs Council appointee. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian affairs; indian'

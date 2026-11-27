@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 58 Fed. Reg. 54364, 54367 (Oct. 21, 1993)
+  since: '1993-10-21'
+  source: bia-recognized-entities-1993
+  confidence: medium
+  verification: bulk-import
+  as_of: '1993-10-21'
+  locator: 58 Fed. Reg. 54367 (entry "Lytton Ranchería of California")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Lytton Ranchería of California." The entry is matched to the nation by name.
 states:
 - state: CA
   presence: government-office

@@ -1,7 +1,7 @@
 <!--
 	@component
 	A page's one or two key facts as a line of words, where they are too few
-	for an At a glance panel (src/lib/info-page.ts, glancePanelMinimum): "Decided
+	for an Key facts panel (src/lib/info-page.ts, glancePanelMinimum): "Decided
 	May 10, 1921" after a case's citation, or "Nation Comanche Nation ·
 	Treaties signed …" under a person's lead. Each fact keeps its links and
 	source markers, as in FactGroups, and a short note such as a person's role

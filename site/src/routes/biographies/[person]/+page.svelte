@@ -2,7 +2,7 @@
 	@component
 	One Native person in the cases or in a nation's history (Trevor, Nov. 24,
 	2026), or one who signed treaties for the United States (Nov. 26), on the site's one item layout (InfoPage): the picture and key facts
-	At a glance, the cases the person took part in or is named in, the
+	Key facts, the cases the person took part in or is named in, the
 	treaties the person signed, each linked to its page and to the copy of its
 	text the site keeps, and the events of the person's life the sources
 	record, each with its source.

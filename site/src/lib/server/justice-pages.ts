@@ -308,7 +308,7 @@ export function justicePage(key: string): JusticePage | null {
 	const appointments = appointmentsOf(person);
 	const glance: FactGroup[] = [];
 
-	sourceUses.part('At a glance');
+	sourceUses.part('Key facts');
 	for (const appointment of appointments) {
 		const details = person.appointments.find((entry) => entry.seat === appointment.seat);
 		const items: FactItem[] = [];
@@ -355,7 +355,7 @@ export function justicePage(key: string): JusticePage | null {
 
 	const lifeMarks = (text: string): CitationMark[] => {
 		const marks: CitationMark[] = [];
-		sourceUses.cite(biographySource, { section: 'At a glance', text }, marks);
+		sourceUses.cite(biographySource, { section: 'Key facts', text }, marks);
 		return marks;
 	};
 	if (person.born.date || person.born.place) {
