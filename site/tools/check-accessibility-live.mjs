@@ -103,14 +103,14 @@ const openers = {
 		await mastheadButton(page, 'Sign in');
 		await page.locator('#sign-in-panel form').first().waitFor({ state: 'visible' });
 	},
-	async 'all sections'(page) {
-		await page.locator('.sidebar-wide .pages-column button.back').click();
-		await page.locator('.sidebar-wide .sections-column').waitFor({ state: 'visible' });
+	async 'section menu'(page) {
+		await page.locator('.section-bar summary').first().click();
+		await page.locator('.section-bar details[open] .menu-panel').waitFor({ state: 'visible' });
 	},
 	async 'phone menu'(page) {
 		await page.setViewportSize(phone);
-		await page.locator('.sidebar-narrow summary').click();
-		await page.locator('.sidebar-narrow[open] > nav').waitFor({ state: 'visible' });
+		await page.locator('.sidebar-narrow .menu-sheet > summary').click();
+		await page.locator('.sidebar-narrow .menu-sheet[open] > nav').waitFor({ state: 'visible' });
 	},
 	async 'phone more'(page) {
 		await page.setViewportSize(phone);
@@ -134,7 +134,7 @@ const headerStates = ['search', 'page settings', 'settings', 'settings dropdown'
 /** Each visitor's pages: an address, or an address and the open states to check it in. */
 const visits = {
 	signedOut: [
-		['/glossary', [...headerStates, 'sign-in panel', 'all sections', 'phone menu', 'phone more']],
+		['/glossary', [...headerStates, 'sign-in panel', 'section menu', 'phone menu', 'phone more']],
 		['/nations/hannahville-indian-community', ['follow']],
 		['/supreme-court/burger-court', ['column filter']],
 		// One page of each family the Worker draws from built data (src/lib/server/page-data.ts); the prerendered check no longer sees them.
