@@ -183,7 +183,7 @@ describe('service checks', () => {
 		}
 	});
 
-	it('names the same databases, buckets, Workers and limits as the Wrangler files', () => {
+	it('names the same databases, buckets, Workers and limits as the Wrangler files', async () => {
 		const site = readJsonc(path.resolve(import.meta.dirname, '../wrangler.jsonc')) as {
 			name: string;
 			d1_databases: { binding: string; database_name: string }[];
@@ -202,10 +202,14 @@ describe('service checks', () => {
 			if (item.binding && byBinding.has(item.binding)) expect(item.target.name, item.key).toBe(byBinding.get(item.binding));
 		}
 		const limits = new Map(site.ratelimits.map((entry) => [entry.name, entry]));
+		const limiter = { limit: async () => ({ success: true }) };
+		const limited = environment(Object.fromEntries([...limits.keys()].map((name) => [name, limiter])));
 		for (const item of serviceChecks.filter((check) => check.target.kind === 'Rate limit')) {
 			const limit = limits.get(item.target.name);
 			expect(limit?.simple.period, item.key).toBe(60);
-			expect(item.target.part, item.key).toBe(`${limit?.simple.limit} a minute`);
+			// The row says the limit wrangler.jsonc sets.
+			const [result] = await runServiceChecks({ environment: limited, fetcher: noNetwork, migrationFiles }, item.key);
+			expect(result.summary, item.key).toMatch(new RegExp(`^Allows ${limit?.simple.limit.toLocaleString('en-US')} a minute for each `));
 		}
 		// Checks without a binding name a database, bucket or Worker by hand.
 		const workerNames = ['live', 'scanner', 'wayback', 'watch'].map((folder) => (readJsonc(path.resolve(import.meta.dirname, `../${folder}/wrangler.jsonc`)) as { name: string }).name);

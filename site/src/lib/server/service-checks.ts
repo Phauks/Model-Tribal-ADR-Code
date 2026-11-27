@@ -306,23 +306,25 @@ const scannerDesk: Check = {
 
 type RateLimitBinding = 'requestFormLimit' | 'workspaceChangeLimit' | 'signInLimit' | 'signInNetworkLimit' | 'uploadLimit';
 
-function rateLimitCheck(key: string, name: string, binding: RateLimitBinding, use: string, limit: string): Check {
+/** Each limit names how many a minute it allows and whom it counts, as site/wrangler.jsonc sets it (Trevor, Nov. 26, 2026: "rate limits should denote the limits"). */
+function rateLimitCheck(key: string, name: string, binding: RateLimitBinding, use: string, perMinute: number, counted: string): Check {
+	const allows = `${perMinute.toLocaleString('en-US')} a minute for each ${counted}`;
 	return {
 		key,
 		group: 'Rate limits',
 		name,
 		binding,
-		target: { name: binding, kind: 'Rate limit', part: limit },
+		target: { name: binding, kind: 'Rate limit' },
 		use: `Slowing down ${use}`,
 		test: 'Spends one request under a key nobody else uses, so no person is counted.',
 		async run({ environment }) {
 			const limit = environment[binding];
-			if (!limit) return { state: 'warning', summary: `The ${binding} binding is missing, so ${use} is not slowed down.`, details: [], fix: 'Check the ratelimits list in site/wrangler.jsonc.' };
+			if (!limit) return { state: 'warning', summary: `The ${binding} binding is missing, so nothing slows down ${use}.`, details: [], fix: 'Check the ratelimits list in site/wrangler.jsonc.' };
 			// A key nobody else uses, so the check never counts against a person.
 			const { success } = await limit.limit({ key: 'service-check' });
 			return success
-				? { state: 'working', summary: 'Bound, and the test request went through.', details: [] }
-				: { state: 'warning', summary: 'Bound, but the test request was turned away. Check again in a minute.', details: [] };
+				? { state: 'working', summary: `Allows ${allows}. The test request went through.`, details: [] }
+				: { state: 'warning', summary: `Allows ${allows}, but the test request was turned away. Check again in a minute.`, details: [] };
 		}
 	};
 }
@@ -944,11 +946,11 @@ export const serviceChecks: readonly Check[] = [
 	sourceWatch,
 	sourceWatchModels,
 	siteTextRebuilds,
-	rateLimitCheck('request-form-limit', 'Request form', 'requestFormLimit', 'the request form', '5 a minute'),
-	rateLimitCheck('workspace-change-limit', 'Workspace changes', 'workspaceChangeLimit', 'making changes in the workspace', '30 a minute'),
-	rateLimitCheck('sign-in-limit', 'Sign-in, by email address', 'signInLimit', 'guessing codes and passwords for one address', '5 a minute'),
-	rateLimitCheck('sign-in-network-limit', 'Sign-in, by network address', 'signInNetworkLimit', 'guessing from one network address', '30 a minute'),
-	rateLimitCheck('upload-limit', 'Uploads', 'uploadLimit', 'starting uploads', '600 a minute'),
+	rateLimitCheck('request-form-limit', 'Request and order forms', 'requestFormLimit', 'the request form, self-help forms and book quotes and orders', 5, 'network address'),
+	rateLimitCheck('workspace-change-limit', 'Workspace changes', 'workspaceChangeLimit', 'making changes in the workspace and following pages', 30, 'person'),
+	rateLimitCheck('sign-in-limit', 'Sign-in, by email address', 'signInLimit', 'guessing codes and passwords for one address', 5, 'email address and step'),
+	rateLimitCheck('sign-in-network-limit', 'Sign-in, by network address', 'signInNetworkLimit', 'guessing from one network address', 30, 'network address and step'),
+	rateLimitCheck('upload-limit', 'Uploads', 'uploadLimit', 'starting uploads', 600, 'account'),
 	siteAddress,
 	leadAuthor,
 	passwordKey,
