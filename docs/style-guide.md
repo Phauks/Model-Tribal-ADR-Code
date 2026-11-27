@@ -31,7 +31,7 @@ The project follows the federal plain language guidance as a model, though it do
 - **No possessive framing.** Write "Native nations in Nevada," not "Nevada's Native nations."[^ngc-guide]
 - **Do not conflate** a nation with its reservation or its businesses: "Don't conflate Native nations with reservations or casinos."[^ngc-guide]
 - **No stereotypes or borrowed sacred terms.** Avoid stock phrases the Smithsonian lists as stereotypes, such as "Indian Princess," "Low man on the totem pole" and "sitting Indian style."[^nmai]
-- **Restricted knowledge stays out.** Do not describe ceremonial, restricted or community-held knowledge without the community's written approval ([charter, commitment 5](charter.md#5-cultural-knowledge-and-restricted-material)).
+- **Restricted knowledge stays out.** Do not describe unpublished ceremonial, restricted or community-held knowledge without the community's written approval; published public-domain texts follow [decision record 0064](decisions/0064-take-in-public-domain-myths-and-religious-texts.md) ([charter, commitment 5](charter.md#5-cultural-knowledge-and-restricted-material)).
 - **Diacritics and spelling.** Reproduce names and words in Native languages exactly as the nation writes them, including diacritics such as the ʻokina in Hawaiʻi (project choice).
 
 ## 4. Model provisions
@@ -129,7 +129,7 @@ Before opening a pull request with written content, check that:
 - [ ] each factual claim cites a source, and project analysis is labeled (in reader-facing essays, in an Analysis box, with cases in case boxes as section 5.1 sets out);
 - [ ] nations are named as they name themselves, in the present tense for living practice;
 - [ ] provisions use must, must not and may, name the actor, and use template variables for nation-specific words;
-- [ ] nothing restricted or community-held is included without written approval;
+- [ ] nothing unpublished that is restricted or community-held is included without written approval;
 - [ ] sentence lengths vary, and sentences end on their point;
 - [ ] no watch-list word, unsourced claim of significance, vague attribution or reflexive "not X but Y" remains without a reason;
 - [ ] every fact, quotation and citation in AI-assisted text was checked against the source itself;

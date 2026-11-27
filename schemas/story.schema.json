@@ -258,7 +258,7 @@
         "authority": {
           "type": "string",
           "enum": ["nation-government", "nation-court", "nation-cultural-office", "nation-press", "nation-newspaper", "native-organization", "co-published-with-nation", "member-author", "contributor", "outside-recorder"],
-          "description": "Whose voice this telling is. The nation's own channels come first. outside-recorder (an anthropologist, journalist or government writer) is kept only when important, and never as the only telling of a story the nation tells itself."
+          "description": "Whose voice this telling is. The nation's own channels come first. outside-recorder (an anthropologist, missionary, journalist or government writer) is shown with that label; under decision record 0064 a public-domain outside recording may be the only telling held, until the nation offers its own."
         },
         "language": { "$ref": "common.schema.json#/$defs/languageTag" },
         "verification": { "$ref": "common.schema.json#/$defs/verification" },
