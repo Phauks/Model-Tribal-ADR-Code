@@ -144,17 +144,8 @@ export function caseKeys(): string[] {
 	return [...sources().values()].filter((record) => (record.citation as { type?: string }).type === 'legal_case' && record.citation.title).map((record) => record.key);
 }
 
-function caseBox(text: string, key: string): { inner: string; at: number; kind: string } | undefined {
-	const match = new RegExp(`^:{4,}[ \\t]*(case|law)[ \\t]+${key}[ \\t]*\\n([\\s\\S]*?)^:{4,}[ \\t]*$`, 'm').exec(text);
-	return match ? { inner: match[2], at: match.index, kind: match[1] } : undefined;
-}
-
 function headingBefore(text: string, at: number): string {
 	return [...text.slice(0, at).matchAll(/^#{2,3}\s+(.+)$/gm)].at(-1)?.[1]?.trim() ?? '';
-}
-
-function escapeRegExp(text: string): string {
-	return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 /** One part of a record's box, as one of the page's folding sections (RecordBoxSections.svelte). */
@@ -283,32 +274,53 @@ function caseNations(record: SourceRecord & CaseRecordParts): { nations: CaseNat
 	return { nations };
 }
 
-let essayTexts: { text: string; path: string }[] | undefined;
+interface EssayAsRead {
+	text: string;
+	path: string;
+	/** Where each record's box starts, and whether it is a case or law box: the first box for each key. */
+	boxes: Map<string, { at: number; kind: string }>;
+	/** Where each key is first cited, as [@key] or [@key, …]. */
+	cited: Map<string, number>;
+}
+
+let essayTexts: EssayAsRead[] | undefined;
 
 /**
  * Each essay as read, with each box it places filled from the record, so a
- * case cited inside another case's box counts. Worked out once per build,
- * since every case and law page asks.
+ * case cited inside another case's box counts, and with its boxes and
+ * citations listed by key. Worked out once per build, since every case and
+ * law page asks: searching every essay again for each of some 40,000 pages
+ * took most of the build.
  */
-function essaysAsRead(): { text: string; path: string }[] {
+function essaysAsRead(): EssayAsRead[] {
 	essayTexts ??= Object.entries(essaysInGit).map(([identifier, written]) => {
 		const text = withRecordBoxes(written);
-		return { text, path: essayPath(identifier, partOf(identifier, splitFrontMatter(text).frontMatter)) };
+		const boxes = new Map<string, { at: number; kind: string }>();
+		// A box counts only when a closing fence follows it.
+		const lastClose = Math.max(-1, ...[...text.matchAll(/^:{4,}[ \t]*$/gm)].map((match) => match.index));
+		for (const match of text.matchAll(/^:{4,}[ \t]*(case|law)[ \t]+(\S+)[ \t]*\n/gm)) {
+			if (lastClose >= match.index + match[0].length && !boxes.has(match[2])) boxes.set(match[2], { at: match.index, kind: match[1] });
+		}
+		const cited = new Map<string, number>();
+		for (const match of text.matchAll(/\[@([^\]\s,;]+)(?=[\],])/g)) if (!cited.has(match[1])) cited.set(match[1], match.index);
+		return { text, path: essayPath(identifier, partOf(identifier, splitFrontMatter(text).frontMatter)), boxes, cited };
 	});
 	return essayTexts;
 }
 
 export function essaysCiting(key: string, title: string): CaseMention[] {
 	const found: CaseMention[] = [];
-	const mention = new RegExp(`\\[@${escapeRegExp(key)}[\\],]|\\*${escapeRegExp(title)}\\*`);
-	for (const { text, path } of essaysAsRead()) {
-		const box = caseBox(text, key);
+	for (const { text, path, boxes, cited } of essaysAsRead()) {
+		const box = boxes.get(key);
 		if (box) {
 			found.push({ title: titleOf(text), link: `${path}#${box.kind}-${key}`, where: headingBefore(text, box.at) });
 			continue;
 		}
-		const at = text.search(mention);
-		if (at >= 0) found.push({ title: titleOf(text), link: path, where: headingBefore(text, at) });
+		const places = [cited.get(key) ?? -1, text.indexOf(`*${title}*`)].filter((at) => at >= 0);
+		if (places.length > 0) {
+			const at = Math.min(...places);
+			found.push({ title: titleOf(text), link: path, where: headingBefore(text, at) });
+		}
 	}
 	return found.sort((one, other) => one.title.localeCompare(other.title));
 }
