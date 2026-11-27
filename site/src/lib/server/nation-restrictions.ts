@@ -192,7 +192,7 @@ export async function answerProject(database: D1Database, save: RestrictionSave,
 	]);
 }
 
-/** A copy as the Worker's list has it (virtual:public-copies): its key and, for a nation's law or opinion, its kind and nations. */
+/** A copy as the Worker's list has it (src/lib/server/copy-list.ts): its key and, for a nation's law or opinion, its kind and nations. */
 type CopyFacts = { key: string; restrict?: CopyRestriction };
 
 const levelOrder: RestrictionLevel[] = ['show', 'cite', 'hide'];
@@ -247,7 +247,7 @@ export async function nationPageRestrictions(
 	database: D1Database | undefined,
 	nationIdentifier: string,
 	loadList: () => Promise<RestrictableList>,
-	copies: ReadonlyMap<string, CopyFacts>
+	loadCopies: () => Promise<ReadonlyMap<string, CopyFacts>>
 ): Promise<PageRestrictions> {
 	if (!database) return noPageRestrictions;
 	try {
@@ -259,6 +259,7 @@ export async function nationPageRestrictions(
 	}
 	const list = await loadList();
 	if (list.items.length === 0) return noPageRestrictions;
+	const copies = await loadCopies();
 	const copyOf = (item: RestrictableItem) => (item.id.startsWith('copy:') ? copies.get(item.id.slice('copy:'.length)) : undefined);
 	const others = list.items.flatMap((item) => copyOf(item)?.restrict?.nations ?? []);
 	let settings: Map<string, RestrictionSettings>;
@@ -286,7 +287,7 @@ export async function nationPageRestrictions(
  * Works out the level of every item any nation restricts, the strictest of
  * the nations it belongs to winning, from each nation's setting in force,
  * each restricting nation's list of items (built with the site) and the
- * copies the site serves (virtual:public-copies), for the files made at
+ * copies of nations' laws and opinions the site serves (src/lib/server/copy-list.ts), for the files made at
  * build time (src/lib/server/site-restrictions.ts).
  */
 export async function gatherRestrictions(

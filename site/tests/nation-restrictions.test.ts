@@ -162,14 +162,14 @@ describe('saving a nation’s choices', () => {
 			database,
 			cherokee,
 			async () => ({ nation: cherokee, items: [{ id: `copy:${shared.key}`, kind: 'opinions', title: 'Shared' }, { id: `copy:${own.key}`, kind: 'opinions', title: 'Own' }] }),
-			new Map([shared, own].map((copy) => [copy.key, copy]))
+			async () => new Map([shared, own].map((copy) => [copy.key, copy]))
 		);
 		expect(page.levels).toEqual({ [`copy:${shared.key}`]: 'hide', [`copy:${own.key}`]: 'cite' });
 	});
 
 	it('does not read the list of items while no nation has chosen anything', async () => {
 		let read = false;
-		const page = await nationPageRestrictions(database, cherokee, async () => ((read = true), { nation: cherokee, items }), new Map());
+		const page = await nationPageRestrictions(database, cherokee, async () => ((read = true), { nation: cherokee, items }), async () => new Map());
 		expect(read).toBe(false);
 		expect(page.levels).toEqual({});
 	});
@@ -213,5 +213,13 @@ describe('what the Worker sends to the site first', () => {
 		const list = await ask('/nations/cherokee-nation/restrictable.json');
 		expect(list.response.status).toBe(404);
 		expect(list.seen).toEqual([]);
+	});
+
+	it('never serves the Worker’s private data files, such as the list of every copy', async () => {
+		for (const path of ['/page-data/private/copies/17.json', '/page-data/private/essay-case-names.json']) {
+			const answer = await ask(path);
+			expect(answer.response.status).toBe(404);
+			expect(answer.seen).toEqual([]);
+		}
 	});
 });
