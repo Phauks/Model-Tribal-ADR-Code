@@ -36,9 +36,9 @@ runs:
       shell: bash
       working-directory: site
       run: |
-        # --dry-run checks the installed packages and prints the apt command
-        # only when something is missing.
-        plan=$(npx playwright install-deps --dry-run chromium)
+        # --dry-run checks the installed packages. It says so when none is
+        # missing, and otherwise prints the apt command and may exit non-zero.
+        plan=$(npx playwright install-deps --dry-run chromium 2>&1) || true
         echo "$plan"
         if grep -q 'All system dependencies are installed' <<< "$plan"; then exit 0; fi
         for attempt in 1 2 3; do
