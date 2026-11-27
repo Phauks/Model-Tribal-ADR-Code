@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import { applicationStatusLabels, proofRouteLabels } from '#lib/nation-teams.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -50,8 +51,8 @@
 </p>
 
 <section aria-labelledby="requests-heading">
-	<h2 id="requests-heading">Requests to join a team</h2>
 	{#if open.length === 0}
+		<h2 id="requests-heading">Requests to join a team</h2>
 		<p>No requests are waiting.</p>
 	{:else}
 		<DataTable
@@ -62,6 +63,7 @@
 			defaultSort={{ key: 'sent', direction: 'ascending' }}
 			rowName={['request', 'requests']}
 		>
+			{#snippet heading(count: Snippet)}<h2 id="requests-heading">Requests to join a team {@render count()}</h2>{/snippet}
 			{#snippet cell(row)}
 				{@const application = applications.get(row.key)}
 				{#if application}{application.displayName}<br /><span class="small muted">{application.office}</span>{/if}

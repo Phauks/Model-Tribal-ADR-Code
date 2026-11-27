@@ -17,21 +17,24 @@
 	import TileMap from '#lib/components/TileMap.svelte';
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
+	import CodeContents from '#lib/components/code/CodeContents.svelte';
+	import CodePager from '#lib/components/code/CodePager.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
-	let cededMapWanted = $state(true);
 	let cededMapReady = $state(false);
+	/** If the map cannot start it says so in its frame, with Try again (Trevor, 2026-11-27), so the frame shows then too. */
+	let cededMapFailed = $state(false);
 
 	// An order's trail runs through its collection and the list it was found in, and ends with its number (mockup C2-order).
 	const browsed = $derived(data.browsed);
 	const trail = $derived(
 		browsed
 			? [{ label: browsed.section.label, href: browsed.section.href }, { label: browsed.collection.crumb, href: browsed.collection.path }, ...(browsed.place.focus ? [browsed.place.focus] : [])]
-			: [data.kind === 'state-statute' ? { label: 'Library', href: '/library' } : { label: 'Federal law', href: '/laws' }]
+			: (data.trail ?? [data.kind === 'state-statute' ? { label: 'Library', href: '/library' } : { label: 'Federal law', href: '/laws' }])
 	);
-	const crumb = $derived(browsed ? (/No\. [\w-]+/.exec(data.citation)?.[0] ?? data.name) : undefined);
+	const crumb = $derived(browsed ? (/No\. [\w-]+/.exec(data.citation)?.[0] ?? data.name) : data.chapter ? data.name.split('.')[0] : undefined);
 
 	/** Past this many, the nation pages wait behind a summary line. */
 	const longList = 12;
@@ -61,10 +64,10 @@
 	<meta name="description" content="{data.name}, {data.citation}: what it did, the accounts of its impact and where to read it." />
 </svelte:head>
 
-<!-- The land a treaty ceded, drawn under Key facts (Trevor, 2026-11-26, historic maps mockup 7). With no map on the device, Key facts' Land ceded row says the same in words. -->
+<!-- The land a treaty ceded, drawn under Key facts (Trevor, 2026-11-26, historic maps mockup 7). Key facts' Land ceded row says the same in words. -->
 {#snippet cededMap()}
-	{#if data.landCeded && cededMapWanted}
-		<div class="ceded-map no-print" class:ready={cededMapReady}>
+	{#if data.landCeded}
+		<div class="ceded-map no-print" class:ready={cededMapReady || cededMapFailed}>
 			<TileMap
 				view="lands"
 				label="Land ceded by {data.name}"
@@ -73,7 +76,7 @@
 				cessionsShown={data.landCeded.royce}
 				cessionsAlways
 				onready={() => (cededMapReady = true)}
-				onfail={() => (cededMapWanted = false)}
+				onfail={() => (cededMapFailed = true)}
 			/>
 		</div>
 	{/if}
@@ -81,6 +84,19 @@
 
 <InfoPage title={data.name} lead={data.citation} glance={data.glance} panels={data.landCeded ? cededMap : undefined} sources={data.sources} {trail} {crumb} pager={browsed ? pager : undefined} status={data.stub ? stubStatus : undefined}>
 	{#if data.fullTitle}<p class="full-title muted">{data.fullTitle}</p>{/if}
+
+	{#if data.chapter}
+		<!-- A chapter of Title 25: the chapters before and after, then its contents (src/lib/server/code-outline.ts; design/title-25-navigation, option A). -->
+		{@const subchapters = data.chapter.contents.filter((group) => group.label && !group.part).length}
+		<p class="chapter-counts muted">
+			{#if subchapters > 0}<span>{subchapters} subchapters</span>{/if}
+			<span>{data.chapter.inForce.toLocaleString('en-US')} sections in force{#if data.chapter.notInForce > 0}, {data.chapter.notInForce.toLocaleString('en-US')} repealed, moved or omitted{/if}</span>
+		</p>
+		<CodePager previous={data.chapter.previous} next={data.chapter.next} look="line" line="heading" />
+		<Collapsible heading="Contents" identifier="contents" count={data.chapter.inForce}>
+			<CodeContents groups={data.chapter.contents} />
+		</Collapsible>
+	{/if}
 
 	<RecordBoxSections sections={data.boxSections} />
 
@@ -181,6 +197,8 @@
 			</dl>
 		</Collapsible>
 	{/if}
+
+	{#if data.chapter}<CodePager previous={data.chapter.previous} next={data.chapter.next} />{/if}
 </InfoPage>
 
 <!-- The orders before and after this one in its list, and its place there (mockup C2-order). -->
@@ -197,7 +215,7 @@
 {#snippet stubStatus()}{#if data.stub}<StubBadge stub={data.stub} />{/if}{/snippet}
 
 <style>
-	/* The map takes its place once it has drawn, so a device that cannot draw it never shows an empty frame. */
+	/* The map takes its place once it has drawn, or once it says it could not load, so the page never shows an empty frame. */
 	.ceded-map {
 		margin-top: var(--space-3);
 	}
@@ -210,6 +228,13 @@
 
 	.full-title {
 		margin-top: 0;
+	}
+
+	.chapter-counts {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 0.9rem;
+		margin: 0 0 1rem;
 	}
 
 	.law-reading :global(.reading-list) {

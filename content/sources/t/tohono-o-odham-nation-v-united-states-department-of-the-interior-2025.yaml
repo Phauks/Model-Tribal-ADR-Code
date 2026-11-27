@@ -1,0 +1,59 @@
+key: tohono-o-odham-nation-v-united-states-department-of-the-interior-2025
+kind: federal-case
+citation:
+  type: legal_case
+  title: Tohono O'Odham Nation v. United States Department of the Interior
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.4th
+  volume: '138'
+  page: '1189'
+  issued:
+    date-parts:
+    - - 2025
+      - 5
+      - 27
+  URL: https://www.courtlistener.com/opinion/10592967/tohono-oodham-nation-v-united-states-department-of-the-interior/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/10592967/tohono-oodham-nation-v-united-states-department-of-the-interior/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- tohono-oodham-nation-of-arizona
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: tohono-oodham-nation-of-arizona
+    named_as: Tohono O'Odham Nation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 138 F.4th 1189. Decided by the United States Court of Appeals for the Ninth Circuit on May 27, 2025. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 5; an AI reader read excerpts and judged it an Indian law case (NHPA traditional cultural property, tribal cultural sites).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 5; reader: NHPA traditional cultural property, tribal cultural sites'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

@@ -1,6 +1,7 @@
+import { redirect } from '@sveltejs/kit';
 import { browseCollectionOfKind } from '#lib/browse-identifiers.ts';
 import { crumbOf, itemFilterColumn, itemPlace, type BrowseCollection, type ItemPlace } from '#lib/collection-browser.ts';
-import type { LawPage } from '#lib/server/law-pages.ts';
+import type { LawMoved, LawPage } from '#lib/server/law-pages.ts';
 import { builtPageData } from '#lib/server/page-data.ts';
 import type { PageFamily } from '#lib/site-sections.ts';
 import type { PageServerLoad } from './$types';
@@ -17,7 +18,10 @@ export interface LawPlace {
 }
 
 export const load: PageServerLoad = async ({ params, url }) => {
-	const law = await builtPageData<LawPage>('laws', params.key, url);
+	const data = await builtPageData<LawPage | LawMoved>('laws', params.key, url);
+	// A record of a single Title 25 section: every section has its own page now (src/lib/server/code-outline.ts).
+	if ('movedTo' in data) redirect(308, data.movedTo);
+	const law: LawPage = data;
 	const identifier = browseCollectionOfKind(law.kind);
 	if (!identifier) return { ...law, browsed: undefined };
 	// An executive order's page follows the list the reader came from, or its President's orders (Trevor, Nov. 27, 2026, mockup C2-order).

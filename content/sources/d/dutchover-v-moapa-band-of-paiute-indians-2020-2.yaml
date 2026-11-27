@@ -1,0 +1,56 @@
+key: dutchover-v-moapa-band-of-paiute-indians-2020-2
+kind: federal-case
+citation:
+  type: legal_case
+  title: Dutchover v. Moapa Band of Paiute Indians
+  authority: United States District Court for the District of Nevada
+  issued:
+    date-parts:
+    - - 2020
+      - 5
+      - 29
+  URL: https://www.courtlistener.com/opinion/9822505/dutchover-v-moapa-band-of-paiute-indians/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9822505/dutchover-v-moapa-band-of-paiute-indians/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation
+    named_as: Moapa Band of Paiute Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 2:19-cv-01905; no reporter citation yet. Decided by the United States District Court for the District of Nevada on May 29, 2020. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (service of process on Moapa Band of Paiute Indians and tribal lands).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: service of process on Moapa Band of Paiute Indians and tribal lands'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

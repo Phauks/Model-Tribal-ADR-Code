@@ -35,7 +35,7 @@
 		lead?: string;
 		names?: InfoName[];
 		trail?: { label: string; href: string }[];
-		/** The page's own name at the end of the trail, when shorter than its title, such as "No. 6145". */
+		/** The page's name at the end of the trail, when shorter than its title, such as "§ 5321". */
 		crumb?: string;
 		picture?: InfoPicture;
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any -- FactGroups' own type
