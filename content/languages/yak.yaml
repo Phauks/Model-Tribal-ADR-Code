@@ -1,0 +1,57 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: yak
+name: Northwest Sahaptin
+iso_639_3:
+  code: yak
+  reference_name: Yakama
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: yaki1237
+  level: language
+  source: glottolog-5-4
+family:
+  name: Sahaptian
+  glottocode: saha1239
+  source: glottolog-5-4
+iso_names:
+- name: Yakama
+  source: iso-639-3-code-tables
+dialects:
+- name: Klikitat
+  glottocode: klik1240
+  source: glottolog-5-4
+- name: Nuclear Yakima
+  glottocode: nucl1237
+  source: glottolog-5-4
+works:
+- glottolog_reference: '51883'
+  title: A grammar of Yakima Ichishkíin/Sahaptin
+  kinds:
+  - grammar
+  author: Joana Worth Jansen
+  year: 2010
+  publisher: University of Oregon
+  pages: 529
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '324669'
+  title: 'Ichishkíin Sínwit: Yakama/Yakima Sahaptin dictionary'
+  kinds:
+  - dictionary
+  author: Virginia Beavert and Sharon Hargus
+  year: 2009
+  publisher: Heritage University
+  pages: 492
+  source: glottolog-5-4
+- glottolog_reference: '85136'
+  title: A Sketch of Northern Sahaptin Grammar
+  kinds:
+  - grammar
+  author: Melville Jacobs
+  year: 1931
+  publisher: University of Washington
+  pages: 208
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -1,0 +1,139 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: eya
+name: Eyak
+iso_639_3:
+  code: eya
+  reference_name: Eyak
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: eyak1241
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/507
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/eyak.php
+  source: alaska-native-language-center-languages
+dialects: []
+works:
+- glottolog_reference: '657595'
+  title: A grammar of Eyak
+  kinds:
+  - grammar
+  author: Michael Krauss, Gary Holton and Kevin Baetscher
+  year: 2024
+  publisher: DeGruyter Mouton
+  pages: 1200
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '664053'
+  title: Eyak grammar
+  kinds:
+  - grammar
+  author: Michael Krauss
+  year: 2023
+  pages: 1194
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '556126'
+  title: Eyak grammar
+  kinds:
+  - grammar
+  author: Michael E. Krauss
+  year: 2015
+  pages: 689
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '556125'
+  title: Eyak dictionary
+  kinds:
+  - dictionary
+  author: Michael E. Krauss
+  year: 2012
+  pages: 323
+  source: glottolog-5-4
+- glottolog_reference: '165487'
+  title: Eyak Grammar drafts
+  kinds:
+  - grammar
+  author: Michael E Krauss
+  year: 2009
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '174477'
+  title: Handbook of North American Indians, Eyak chapter
+  kinds:
+  - grammar
+  author: de Laguna, Frederica and 1906-2004
+  year: 1990
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '168541'
+  title: Michael Krauss and Sophie Borodkin; Grammar Review
+  kinds:
+  - grammar
+  author: Michael E. (compiler) Krauss and Sophie (speaker) Borodkin
+  year: 1988
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '164839'
+  title: Dictionary paper
+  kinds:
+  - dictionary
+  author: Michael E Krauss
+  year: 1980
+  source: glottolog-5-4
+- glottolog_reference: '680728'
+  title: Eyak Dictionary
+  kinds:
+  - dictionary
+  author: Michael Krauss
+  year: 1980
+  publisher: University of Alaska
+  source: glottolog-5-4
+- glottolog_reference: '164843'
+  title: Eyak Dictionary Revisions and Drafts
+  kinds:
+  - dictionary
+  author: Michael E Krauss
+  year: 1980
+  source: glottolog-5-4
+- glottolog_reference: '174478'
+  title: Eyak article, written for Handbook of North American Indians
+  kinds:
+  - grammar
+  year: 1974
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '164835'
+  title: Eyak dictionary
+  kinds:
+  - dictionary
+  author: Michael E. Krauss
+  year: 1970
+  publisher: Univ. of Alaska
+  source: glottolog-5-4
+- glottolog_reference: '26857'
+  title: Eyak Dictionary
+  kinds:
+  - dictionary
+  author: Michael E. Drauss
+  year: 1963
+  publisher: University of Alaska and Massachusetts Institute of Technology
+  source: glottolog-5-4
+- glottolog_reference: '316881'
+  title: Eyak dictionary
+  kinds:
+  - dictionary
+  author: Michael E. Krauss
+  year: 1963
+  publisher: University of Alaska and Massachusetts Institute of Technology
+  pages: 2948
+  source: glottolog-5-4
+retrieved: '2026-11-27'

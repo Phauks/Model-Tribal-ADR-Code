@@ -33,9 +33,16 @@ rights:
   redistribution: true
 jurisdictions:
 - level: federal
+tribes:
+- schaghticoke-tribal-nation
+topics:
+- federal-recognition
 nations_in_case:
   checked: '2026-11-26'
-  named: []
+  named:
+  - nation: schaghticoke-tribal-nation
+    named_as: Schaghticoke Tribal Nation
+    role: party
 access:
   open: true
   pull_from:

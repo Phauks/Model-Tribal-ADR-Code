@@ -1,0 +1,38 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: spo
+name: Spokane
+iso_639_3:
+  code: spo
+  reference_name: Spokane
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: spok1245
+  level: language
+  source: glottolog-5-4
+family:
+  name: Salishan
+  glottocode: sali1255
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '163082'
+  title: Spokane dictionary
+  kinds:
+  - dictionary
+  author: Barry F. Carlson and Pauline Flett
+  year: 1989
+  publisher: Dept. of Anthropology, University of Montana
+  pages: 306
+  source: glottolog-5-4
+- glottolog_reference: '151117'
+  title: 'A grammar in Spokan: a Salish language of eastern Washington'
+  kinds:
+  - grammar
+  author: Barry F. Carlson
+  year: 1972
+  publisher: UMI
+  pages: 164
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -45,7 +45,7 @@ export const GET: RequestHandler = async (event) => {
 
 export const POST: RequestHandler = async (event) => {
 	const { identifier, database, bucket, person } = await essayAccess(event, 'full', { forData: true });
-	const body = (await event.request.json().catch(() => null)) as Record<string, unknown> | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as Record<string, unknown> | null;
 	if (!body) error(400, 'Send the section, the person and the role.');
 	const { slug, title, person: credited, role, action } = body;
 	if (typeof slug !== 'string' || !slugPattern.test(slug) || slug.length > 90) error(400, 'Name the section by its heading.');

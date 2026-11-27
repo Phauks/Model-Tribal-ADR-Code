@@ -1,0 +1,28 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: cow
+name: Cowlitz
+iso_639_3:
+  code: cow
+  reference_name: Cowlitz
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: cowl1242
+  level: language
+  source: glottolog-5-4
+family:
+  name: Salishan
+  glottocode: sali1255
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '21716'
+  title: Cowlitz dictionary and grammatical sketch
+  kinds:
+  - dictionary
+  author: Marvin Dale Kinkade
+  year: 2004
+  publisher: Linguistics Laboratory, University of Montana
+  pages: 341
+  source: glottolog-5-4
+retrieved: '2026-11-27'

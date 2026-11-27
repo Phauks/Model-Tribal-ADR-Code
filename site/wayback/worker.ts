@@ -18,10 +18,15 @@
 //
 // Save Page Now 2 API: https://docs.google.com/document/d/1Nsv52MvSjbLb2PCpHlat0gkzw0EvtSgpKHu4mk0MnrA
 
-import type { R2Bucket } from '@cloudflare/workers-types/index.ts';
+import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
+import { messageOf as message } from '../src/lib/problems.ts';
+import { report } from '../src/lib/server/report.ts';
+import { reported } from '../src/lib/server/reported.ts';
 
 interface Env {
 	sourceDocuments: R2Bucket;
+	// The site's database, where problems are counted and each run is recorded (site/ERRORS.md, "Worker runs").
+	database?: D1Database;
 	// Worker secrets, set on this Worker in the Cloudflare dashboard (site/WAYBACK.md).
 	ARCHIVE_ORG_ACCESS_KEY?: string;
 	ARCHIVE_ORG_SECRET_KEY?: string;
@@ -140,6 +145,7 @@ function hostOf(link: string): string {
 	try {
 		return new URL(link).hostname.replace(/^www\./, '');
 	} catch {
+		// expected: a link that is not a web address has no host, and matches none.
 		return '';
 	}
 }
@@ -186,10 +192,6 @@ function requestsInLast(progress: Progress, now: Date, minutes: number): number 
 function pause(progress: Progress, now: Date, minutes: number, reason: string): void {
 	progress.pausedUntil = new Date(now.getTime() + minutes * 60_000).toISOString();
 	progress.pauseReason = reason;
-}
-
-function message(problem: unknown): string {
-	return problem instanceof Error ? problem.message : String(problem);
 }
 
 async function readProgress(env: Env): Promise<Progress> {
@@ -244,7 +246,8 @@ async function latestCapture(link: string, onlyPages = false): Promise<Capture |
 		if (response.status === 429 || response.status >= 500) throw new IndexBusy(`the capture index answered HTTP ${response.status}`);
 		return null;
 	}
-	const rows = ((await response.json().catch(() => [])) as string[][]).filter((row) => /^\d{14}$/.test(row[0] ?? ''));
+	// expected: the index answers an empty body, which is not JSON, when it holds no capture.
+	const rows = ((await response.json().catch(() => /* expected: no capture */ [])) as string[][]).filter((row) => /^\d{14}$/.test(row[0] ?? ''));
 	const newest = rows.at(-1);
 	if (!newest || hostOf(newest[1]) !== hostOf(link)) return null;
 	const [stamp, original] = newest;
@@ -262,7 +265,7 @@ async function takeExistingCapture(entry: Entry, answer: string, now: Date): Pro
 	try {
 		capture = await latestCapture(entry.link);
 	} catch {
-		// No answer from the index: looked up again tomorrow.
+		// expected: no answer from the index; the link is looked up again tomorrow.
 	}
 	entry.job = undefined;
 	entry.asked = undefined;
@@ -356,7 +359,7 @@ async function askForSave(entry: Entry, signIn: string, now: Date, progress: Pro
 	try {
 		path = new URL(entry.link).pathname;
 	} catch {
-		// Save Page Now answers a link it cannot read.
+		// expected: Save Page Now answers a link it cannot read.
 	}
 	if (/\.pdf$/i.test(path)) body.set('force_get', '1');
 	if (onHosts(hostOf(entry.link), STATIC_PAGE_HOSTS)) body.set('js_behavior_timeout', '0');
@@ -386,6 +389,7 @@ async function askForSave(entry: Entry, signIn: string, now: Date, progress: Pro
 	try {
 		answer = await response.json();
 	} catch {
+		// expected: the failure is kept on the link, shown on the progress page, and tried again.
 		markFailed(entry, `save answered HTTP ${response.status}`, now);
 		return true;
 	}
@@ -449,6 +453,7 @@ async function freeSessions(signIn: string, progress: Progress, now: Date): Prom
 		progress.sessions = { available: answer.available, processing: typeof answer.processing === 'number' ? answer.processing : 0, at: now.toISOString() };
 		return answer.available;
 	} catch {
+		// expected: without the count, saves go on at the usual rate.
 		return null;
 	}
 }
@@ -462,7 +467,13 @@ async function work(env: Env): Promise<void> {
 	const deadline = now.getTime() + RUN_BUDGET_MILLISECONDS;
 	const progress = await readProgress(env);
 	progress.lastRun = now.toISOString();
+	// Each problem is reported (site/ERRORS.md) and kept for the progress page.
 	const problems: string[] = [];
+	const counting: Promise<unknown>[] = [];
+	const note = (problem: unknown, code: string, words = message(problem)) => {
+		report(problem, { code, source: 'wayback', place: 'scheduled', database: env.database, keep: (write) => counting.push(write) });
+		problems.push(words);
+	};
 	try {
 		if (!progress.queue.length || hoursSince(progress.queueRead, now) * 60 >= MINUTES_BETWEEN_QUEUE_READS) {
 			try {
@@ -470,7 +481,7 @@ async function work(env: Env): Promise<void> {
 				progress.queueRead = now.toISOString();
 			} catch (problem) {
 				// Keep working from the list read last time.
-				problems.push(message(problem));
+				note(problem, 'wayback.queue');
 			}
 		}
 		const marks = await readMarks(env);
@@ -489,7 +500,7 @@ async function work(env: Env): Promise<void> {
 			try {
 				await checkJob(entry, signIn, now);
 			} catch {
-				// No answer this minute; the job is checked again next minute.
+				// expected: no answer this minute; the job is checked again next minute.
 			}
 		});
 
@@ -536,7 +547,7 @@ async function work(env: Env): Promise<void> {
 					if (await takeOlderCapture(entry, now)) capturedLinks.set(entry.link, entry.capture!);
 				} catch (problem) {
 					progress.lookupsPausedUntil = new Date(now.getTime() + MINUTES_LOOKUPS_PAUSE * 60_000).toISOString();
-					problems.push(`${message(problem)}; lookups stop for ${MINUTES_LOOKUPS_PAUSE} minutes`);
+					note(problem, 'wayback.lookups', `${message(problem)}; lookups stop for ${MINUTES_LOOKUPS_PAUSE} minutes`);
 				}
 			});
 		}
@@ -591,15 +602,16 @@ async function work(env: Env): Promise<void> {
 			}
 		}
 	} catch (problem) {
-		problems.push(message(problem));
-		if (/archive\.org keys/.test(message(problem))) progress.keysRefused = now.toISOString();
+		const keys = /archive\.org keys/.test(message(problem));
+		note(problem, keys ? 'wayback.keys' : 'wayback.run');
+		if (keys) progress.keysRefused = now.toISOString();
 	}
 	if (!problems.some((problem) => /archive\.org keys/.test(problem))) progress.keysRefused = undefined;
 	if (problems.length) {
 		progress.lastError = problems.join('; ');
 		progress.lastErrorAt = now.toISOString();
 	}
-	await writeProgress(env, progress);
+	await Promise.all([writeProgress(env, progress), ...counting]);
 }
 
 type WorkerState = 'not-running' | 'keys-refused' | 'paused-daily-limit' | 'saving' | 'waiting-to-retry' | 'idle';
@@ -795,9 +807,10 @@ ${rows(status.recentProblems.map((item) => ({ key: item.key, link: item.link, no
 </html>`;
 }
 
-export default {
-	async scheduled(_event: ScheduledController, env: Env, context: ExecutionContext): Promise<void> {
-		context.waitUntil(work(env));
+// Reported and recorded (site/ERRORS.md, "Worker runs"). The run is waited for, so its row says whether it finished.
+export default reported('wayback', {
+	async scheduled(_event: ScheduledController, env: Env): Promise<void> {
+		await work(env);
 	},
 
 	async fetch(request: Request, env: Env): Promise<Response> {
@@ -828,4 +841,4 @@ export default {
 			.map(([key, entry]) => ({ key, original_link: entry.link, problem: entry.problem, tries: entry.tries ?? 0 }));
 		return Response.json({ captures, problems }, { headers: { 'Cache-Control': 'no-store' } });
 	}
-} satisfies ExportedHandler<Env>;
+}) satisfies ExportedHandler<Env>;

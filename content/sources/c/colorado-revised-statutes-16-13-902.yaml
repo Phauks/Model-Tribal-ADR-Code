@@ -1,0 +1,58 @@
+key: colorado-revised-statutes-16-13-902
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Colo. Rev. Stat. § 16-13-902
+  container-title: Colorado Revised Statutes
+  container-title-short: Colo. Rev. Stat.
+  section: 16-13-902
+  author:
+  - literal: Colorado Office of Legislative Legal Services
+  issued:
+    date-parts:
+    - - 1999
+  URL: https://olls.info/crs/crs2026-title-16.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://olls.info/crs/crs2026-title-16.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- colorado-revised-statutes-16-2-5-106
+- colorado-revised-statutes-16-2-5-107
+- colorado-revised-statutes-16-2-7-103
+- colorado-revised-statutes-16-22-103
+- colorado-revised-statutes-16-3-701
+- colorado-revised-statutes-16-3-702
+- colorado-revised-statutes-16-3-703
+state_law:
+  relevance: incidental
+  citation: Colo. Rev. Stat. § 16-13-902 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CO
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Colo. Rev. Stat. § 16-13-902 (2026). History: Source: L. 99: Entire part added, p. 1152, § 17, effective July 1. L. 2006: (5) amended, p. 1311, § 2, effective May 30. L. 2011: (5) amended, (HB 11-1278), ch. 224, p. 959, § 1, effective May 27. Text read from the Colorado Office of Legislative Legal Services'' 2026 download of the Colorado Revised Statutes (content.leg.colorado.gov, 2026 CRS Titles for Download) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Tribal conviction jurisdiction counts toward sexually violent predator equivalence. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

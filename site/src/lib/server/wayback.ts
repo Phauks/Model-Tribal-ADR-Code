@@ -65,6 +65,7 @@ function hostOf(link: string): string {
 	try {
 		return new URL(link).hostname.replace(/^www\./, '');
 	} catch {
+		// expected: a link that is not a web address has no host.
 		return '';
 	}
 }

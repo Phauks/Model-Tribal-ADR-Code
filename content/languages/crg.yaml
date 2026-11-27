@@ -1,0 +1,34 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: crg
+name: Heritage Michif
+iso_639_3:
+  code: crg
+  reference_name: Michif
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: mich1243
+  level: language
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+iso_names:
+- name: Michif
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1755
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '29998'
+  title: 'The Michif dictionary: Turtle Mountain Chippewa Cree'
+  kinds:
+  - dictionary
+  author: Patline Laverdure and Ida Rose Allard
+  year: 1983
+  publisher: Pemmican
+  pages: 368
+  source: glottolog-5-4
+retrieved: '2026-11-27'

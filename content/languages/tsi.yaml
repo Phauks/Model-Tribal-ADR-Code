@@ -1,0 +1,150 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: tsi
+name: Southern-Coastal Tsimshian
+iso_639_3:
+  code: tsi
+  reference_name: Tsimshian
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: nucl1649
+  level: language
+  source: glottolog-5-4
+family:
+  name: Tsimshian
+  glottocode: tsim1258
+  source: glottolog-5-4
+iso_names:
+- name: Tsimshian
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/3040
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/tsimshian.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Coast Tsimshian
+  glottocode: coas1300
+  source: glottolog-5-4
+- name: Southern Tsimshian
+  glottocode: sout2962
+  source: glottolog-5-4
+works:
+- glottolog_reference: '590497'
+  title: Sm’algyax Living Legacy Talking Dictionary
+  kinds:
+  - dictionary
+  year: 2017
+  source: glottolog-5-4
+- glottolog_reference: '168620'
+  title: Final Report on Dictionary of Proto-Tsimshianic Roots
+  kinds:
+  - dictionary
+  author: Marie-Lucie Tarpent
+  year: 2011
+  source: glottolog-5-4
+- glottolog_reference: '166355'
+  title: Interim Report on Dictionary of Proto-Tsimshianic roots
+  kinds:
+  - dictionary
+  author: Marie-Lucie Tarpent
+  year: 2010
+  source: glottolog-5-4
+- glottolog_reference: '98745'
+  title: 'Sm''algyax: A Reference Grammar for the Coast Tsimshian Language'
+  kinds:
+  - dictionary
+  author: John A. Dunn
+  year: 1995
+  publisher: University of Washington Press
+  pages: 145
+  source: glottolog-5-4
+- glottolog_reference: '173123'
+  title: Review of] A practical dictionary of the Coast Tsimshian language, by John Asher Dunn
+  kinds:
+  - dictionary
+  author: Carol A Eastman
+  year: 1982
+  source: glottolog-5-4
+- glottolog_reference: '173110'
+  title: Hartley Bay dictionary project
+  kinds:
+  - dictionary
+  author: Margaret Seguin
+  year: 1980
+  source: glottolog-5-4
+- glottolog_reference: '321721'
+  title: A practical dictionary of the Coast Tsimshian language
+  kinds:
+  - dictionary
+  author: John Asher Dunn
+  year: 1978
+  publisher: National Museums of Canada
+  pages: 155
+  source: glottolog-5-4
+- glottolog_reference: '172013'
+  title: Course materials for Basic Nisgha
+  kinds:
+  - grammar
+  author: John Corsiglia and others
+  year: 1978
+  pages: 350
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '171886'
+  title: A practical dictionary of the Coast Tsimshian language
+  kinds:
+  - dictionary
+  author: John Asher Dunn
+  year: 1977
+  source: glottolog-5-4
+- glottolog_reference: '172010'
+  title: Gitxsan-English Dictionary
+  kinds:
+  - dictionary
+  author: Robin Thistle-Walker
+  year: 1977
+  source: glottolog-5-4
+- glottolog_reference: '171898'
+  title: A Short Practical Dictionary of the Gitksan Language
+  kinds:
+  - dictionary
+  author: Lonnie Hindle and Bruce J Rigsby
+  year: 1972
+  source: glottolog-5-4
+- glottolog_reference: '171897'
+  title: Keys to the Gitksan Alphabet and dictionary corrections
+  kinds:
+  - dictionary
+  author: Lonnie Hindle
+  year: 1972
+  source: glottolog-5-4
+- glottolog_reference: '303940'
+  title: Die Sprache der Zimshīan-Indianer in Nordwest-America
+  kinds:
+  - grammar
+  - dictionary
+  author: Albrecht C. Graf von der Schulenburg
+  year: 1894
+  publisher: Richard Sattler
+  pages: 190
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '171756'
+  title: Church Manual, Metlakatla
+  kinds:
+  - grammar
+  author: William Duncan
+  year: 1880
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '83135'
+  title: Dictionary of Indian tongues, containing most of the words and terms used in the Tshimpsean, Hydah, and Chinook, with their meaning or equivalent in the English language
+  kinds:
+  - dictionary
+  year: 1862
+  publisher: Hibben & Carswell
+  pages: 23
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -1,0 +1,218 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ipk
+name: Alaskan Inupiaq
+iso_639_3:
+  code: ipk
+  reference_name: Inupiaq
+  scope: macrolanguage
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: inup1234
+  level: family
+  source: glottolog-5-4
+family:
+  name: Eskimo-Aleut
+  glottocode: eski1264
+  source: glottolog-5-4
+iso_names:
+- name: Inupiaq
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2369
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/inupiaq.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: North Alaskan Inupiatun
+  glottocode: nort2943
+  source: glottolog-5-4
+- name: Seward Alaska Inupiatun
+  glottocode: nort2945
+  source: glottolog-5-4
+works:
+- glottolog_reference: '310009'
+  title: North Slope Iñupiaq to English Dictionary
+  kinds:
+  - dictionary
+  author: Edna Ahgeak (compiler) MacLean
+  year: 2011
+  source: glottolog-5-4
+- glottolog_reference: '304018'
+  title: North Slope Iñupiaq Dictionary [draft
+  kinds:
+  - dictionary
+  author: Edna Ahgeak MacLean
+  year: 2010
+  source: glottolog-5-4
+- glottolog_reference: '165156'
+  title: Kaplan – Eskimo dictionary
+  kinds:
+  - dictionary
+  author: Lawrence D Kaplan
+  year: 1998
+  source: glottolog-5-4
+- glottolog_reference: '305649'
+  title: North Slope Iñupiaq Grammar, First Year
+  kinds:
+  - grammar
+  author: Edna Ahgeak MacLean
+  year: 1993
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '165160'
+  title: 'Review Notes for North Slope Inupiaq Grammar: First Year'
+  kinds:
+  - grammar
+  author: James. (compiler) Nageak
+  year: 1991
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '165295'
+  title: Kaplan – Qawiaraq Inupiaq Literacy Manual
+  kinds:
+  - grammar
+  author: Lawrence D Kaplan
+  year: 1986
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '165142'
+  title: MacLean – notations used in the Inupiaq dictionary
+  kinds:
+  - dictionary
+  author: Edna Ahgeak MacLean
+  year: 1985
+  source: glottolog-5-4
+- glottolog_reference: '165218'
+  title: Kaplan – Point Hope dictionary
+  kinds:
+  - dictionary
+  author: Lawrence D. (compiler) Kaplan
+  year: 1983
+  source: glottolog-5-4
+- glottolog_reference: '309417'
+  title: Abridged Iñupiaq and English Dictionary (microfiche)
+  kinds:
+  - dictionary
+  author: Edna Ahgeak MacLean
+  year: 1981
+  source: glottolog-5-4
+- glottolog_reference: '165288'
+  title: Kaplan – North Slope Inupiaq Literacy Manual
+  kinds:
+  - grammar
+  author: Lawrence D Kaplan
+  year: 1981
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '165280'
+  title: Kaplan – Kobuk Inupiaq Literacy Manual
+  kinds:
+  - grammar
+  author: Lawrence D Kaplan
+  year: 1980
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '165283'
+  title: Kaplan – Qawiaraq dictionary [draft
+  kinds:
+  - dictionary
+  author: Lawrence D. (compiler) Kaplan
+  year: 1980
+  source: glottolog-5-4
+- glottolog_reference: '165128'
+  title: Beginning North Slope Inupiaq Grammar
+  kinds:
+  - grammar
+  author: Edna Ahgeak MacLean
+  year: 1979
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '165308'
+  title: Collis – syntax questionnaire
+  kinds:
+  - grammar
+  author: Dermot Ronán F. (compiler) Collis
+  year: 1978
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '165258'
+  title: Grammar notes
+  kinds:
+  - grammar
+  author: Marie Greist
+  year: 1977
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '165249'
+  title: Seiler – dictionary
+  kinds:
+  - dictionary
+  author: Wolf (compiler) Seiler
+  year: 1976
+  source: glottolog-5-4
+- glottolog_reference: '165166'
+  title: Rausch – course notes
+  kinds:
+  - grammar
+  year: 1971
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '165064'
+  title: English-Innuit Dictionary
+  kinds:
+  - dictionary
+  author: Bellarmine. Lafortune and Thomas Cunningham
+  year: 1915
+  source: glottolog-5-4
+- glottolog_reference: '307596'
+  title: Abridged Iñupiaq and English Dictionary
+  kinds:
+  - dictionary
+  author: Edna Ahgeak MacLean
+  source: glottolog-5-4
+- glottolog_reference: '165094'
+  title: Alphabetized Inupiaq dictionary
+  kinds:
+  - dictionary
+  source: glottolog-5-4
+- glottolog_reference: '165325'
+  title: Asicksick – dictionary
+  kinds:
+  - dictionary
+  source: glottolog-5-4
+- glottolog_reference: '308532'
+  title: Asicksick – dictionary
+  kinds:
+  - dictionary
+  source: glottolog-5-4
+- glottolog_reference: '164906'
+  title: Eskimo Dictionary – Ee-La-Glup-Kin
+  kinds:
+  - dictionary
+  author: Thomas. (compiler) Cunningham
+  source: glottolog-5-4
+- glottolog_reference: '165112'
+  title: Inupiaq dictionary Slips
+  kinds:
+  - dictionary
+  source: glottolog-5-4
+- glottolog_reference: '165192'
+  title: Kaplan – King Island dictionary
+  kinds:
+  - dictionary
+  author: Lawrence D. (compiler) Kaplan
+  source: glottolog-5-4
+- glottolog_reference: '165281'
+  title: Kaplan – Qawiaraq dictionary [draft
+  kinds:
+  - dictionary
+  author: Lawrence D. (compiler) Kaplan
+  source: glottolog-5-4
+- glottolog_reference: '165248'
+  title: Seiler – Kobuk dictionary
+  kinds:
+  - dictionary
+  author: Wolf (compiler) Seiler
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -93,6 +93,7 @@ function parsed<Value>(text: string, fallback: Value): Value {
 	try {
 		return JSON.parse(text) as Value;
 	} catch {
+		// expected: a stored field that is not JSON is read as the caller's fallback.
 		return fallback;
 	}
 }

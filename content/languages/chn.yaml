@@ -1,0 +1,66 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: chn
+name: Creolized Grand Ronde Chinook Jargon
+iso_639_3:
+  code: chn
+  reference_name: Chinook jargon
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: chin1272
+  level: language
+  source: glottolog-5-4
+family:
+  name: Chinookan
+  glottocode: chin1490
+  source: glottolog-5-4
+iso_names:
+- name: Chinook jargon
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/4167
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '563693'
+  title: Pocket dictionary of the Chinook jargon
+  kinds:
+  - dictionary
+  author: None Anonymus
+  year: 1898
+  publisher: Downing & Clarke
+  source: glottolog-5-4
+- glottolog_reference: '124603'
+  title: An International Idiom. A Manual of the Oregon Trade Language or Chinook Jargon.
+  kinds:
+  - grammar
+  author: Horatio Hale
+  year: 1890
+  publisher: Whittaker Co
+  pages: 63
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '563991'
+  title: A dictionary of the Chinook jargon, or, Indian trade language of the North Pacific coast
+  kinds:
+  - dictionary
+  author: Francis Norbert Blanchet
+  year: 1878
+  publisher: Hibben
+  source: glottolog-5-4
+- glottolog_reference: '564525'
+  title: Chinook dictionary, catechism, prayers and hymns
+  kinds:
+  - dictionary
+  author: Modeste Demers
+  year: 1871
+  publisher: N.A.
+  source: glottolog-5-4
+- glottolog_reference: '102427'
+  title: Dictionary of the Chinook jargon
+  kinds:
+  - dictionary
+  publisher: Hibben
+  pages: 31
+  source: glottolog-5-4
+retrieved: '2026-11-27'

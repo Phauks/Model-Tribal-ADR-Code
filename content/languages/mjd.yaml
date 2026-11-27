@@ -1,0 +1,32 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: mjd
+name: Northwest Maidu
+iso_639_3:
+  code: mjd
+  reference_name: Northwest Maidu
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: nort2951
+  level: language
+  source: glottolog-5-4
+family:
+  name: Maiduan
+  glottocode: maid1262
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2290
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '88191'
+  title: Konkow Grammar
+  kinds:
+  - grammar
+  author: Russell Ultan
+  year: 1967
+  publisher: University of California at Berkeley
+  pages: 199
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

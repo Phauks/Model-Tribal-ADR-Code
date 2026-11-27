@@ -151,6 +151,14 @@ def read_text(document, capture_dir):
 
 
 def title_of(text, page_title):
+    # The printed heading first (fix_copy_titles.heading_of): the first line
+    # naming a constitution is often a sentence of a corporate charter, or only
+    # the first line of a heading that runs over several (2026-11-27).
+    from fix_copy_titles import heading_of  # noqa: PLC0415  (imports build_catalog, which is slow to load)
+
+    heading = heading_of(text)
+    if heading:
+        return heading
     for line in text.splitlines()[:80]:
         clean = " ".join(line.split())
         if 8 <= len(clean) <= 160 and re.search(r"constitution|by-?laws|articles of association|amendment", clean, re.I):

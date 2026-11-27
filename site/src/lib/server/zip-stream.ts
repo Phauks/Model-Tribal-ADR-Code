@@ -21,7 +21,7 @@ export function zipStream(entries: AsyncIterable<ZipEntry> | Iterable<ZipEntry>)
 		let failure: unknown;
 		const zip = new Zip((error, chunk) => {
 			if (error) failure = error;
-			else void writer.write(chunk).catch(() => undefined);
+			else void writer.write(chunk).catch(() => /* expected: a write fails only once the download is cancelled, which ends the loop below */ undefined);
 		});
 		try {
 			for await (const entry of entries) {
@@ -48,7 +48,7 @@ export function zipStream(entries: AsyncIterable<ZipEntry> | Iterable<ZipEntry>)
 			zip.end();
 			await writer.close();
 		} catch (error) {
-			await writer.abort(error).catch(() => undefined);
+			await writer.abort(error).catch(() => /* expected: the stream is already closed or cancelled */ undefined);
 		}
 	})();
 	return readable;

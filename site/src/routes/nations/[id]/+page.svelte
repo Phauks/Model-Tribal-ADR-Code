@@ -156,6 +156,26 @@
 		}))
 	);
 	const casesByKey = $derived(new Map(data.cases.map((entry) => [entry.key, entry])));
+	// The documents of the nation's federal acknowledgment petition (Trevor,
+	// Nov. 27, 2026: "if petitioning, we should show petitioning documents"),
+	// in the same three short columns as the cases table: under each
+	// document's name, its citation and source marker.
+	const petitionColumns: TableColumn[] = [
+		{ key: 'year', header: 'Year', type: 'date', sortable: true },
+		{ key: 'name', header: 'Document', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'from', header: 'From', sortable: true, searchable: true }
+	];
+	const petitionRows: TableRow[] = $derived(
+		data.petition.map((entry) => ({
+			key: entry.key,
+			cells: {
+				year: { text: entry.issued?.slice(0, 4) ?? '', sortValue: entry.issued },
+				name: { text: [entry.name, entry.citation].filter(Boolean).join(', '), sortValue: entry.name, href: entry.link },
+				from: { text: entry.from }
+			}
+		}))
+	);
+	const petitionByKey = $derived(new Map(data.petition.map((entry) => [entry.key, entry])));
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
@@ -445,7 +465,7 @@
 		</Collapsible>
 
 		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service, self-governance and federal programs -->
-		{#if data.treaties.length > 0 || data.ties.length > 0 || data.programs.length > 0 || data.enforcement.length > 0}
+		{#if data.treaties.length > 0 || data.ties.length > 0 || data.petition.length > 0 || data.programs.length > 0 || data.enforcement.length > 0}
 			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
 				{#if data.treaties.length > 0}
 					<DataTable
@@ -469,6 +489,27 @@
 					</DataTable>
 				{/if}
 				{#if data.ties.length > 0}<FactGroups groups={data.ties} />{/if}
+				{#if data.petition.length > 0}
+					<DataTable
+						identifier="petition-documents"
+						label="Table: acknowledgment petition documents"
+						columns={petitionColumns}
+						rows={petitionRows}
+						defaultSort={{ key: 'year', direction: 'ascending' }}
+						rowName={['document', 'documents']}
+						download="{data.page.id}-petition-documents"
+					>
+						{#snippet heading(count: Snippet)}<h3 id="petition-documents-heading">Petition documents {@render count()}</h3>{/snippet}
+						{#snippet cell(row: TableRow, column: TableColumn)}
+							{@const entry = petitionByKey.get(row.key)}
+							{#if entry && column.key === 'name'}
+								<span class="case-name">{#if entry.link}<a href={entry.link}>{entry.name}</a>{:else}{entry.name}{/if}</span>
+								<span class="case-detail small muted">{#if entry.citation}{entry.citation}{/if}<CitationMarks marks={entry.citations} /></span>
+								<span class="case-detail case-phone small muted">{entry.from}</span>
+							{/if}
+						{/snippet}
+					</DataTable>
+				{/if}
 				{#if data.programs.length > 0}
 					<DataTable
 						identifier="federal-programs"
@@ -699,7 +740,9 @@
 			display: block;
 		}
 		:global(#nation-cases th:nth-child(n + 3)),
-		:global(#nation-cases td:nth-child(n + 3)) {
+		:global(#nation-cases td:nth-child(n + 3)),
+		:global(#petition-documents th:nth-child(n + 3)),
+		:global(#petition-documents td:nth-child(n + 3)) {
 			display: none;
 		}
 	}

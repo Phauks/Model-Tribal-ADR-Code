@@ -70,6 +70,7 @@ function readRow(row: RequestRow): ReviewRequest {
 	try {
 		reviewers = (JSON.parse(row.reviewers ?? '[]') as Reviewer[]).sort((first, second) => first.personName.localeCompare(second.personName));
 	} catch {
+		// expected: the reviewers come from json_group_array, so only a damaged row lands here, and it shows none.
 		reviewers = [];
 	}
 	return { ...row, reviewers };

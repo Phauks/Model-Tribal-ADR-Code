@@ -1,0 +1,41 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: cro
+name: Crow
+iso_639_3:
+  code: cro
+  reference_name: Crow
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: crow1244
+  level: language
+  source: glottolog-5-4
+family:
+  name: Siouan
+  glottocode: siou1252
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2008
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '141365'
+  title: 'A Grammar of Crow: Apsáalooke Aliláau'
+  kinds:
+  - grammar
+  author: Randolph Graczyk
+  year: 2007
+  publisher: University of Nebraska Press
+  pages: 472
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '16731'
+  title: Dictionary of the Crow language
+  kinds:
+  - dictionary
+  author: George Reed
+  year: 1975
+  publisher: Massachusetts Institute of Technology
+  pages: 97
+  source: glottolog-5-4
+retrieved: '2026-11-27'
