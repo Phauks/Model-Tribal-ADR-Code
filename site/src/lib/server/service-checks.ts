@@ -978,9 +978,9 @@ export const serviceChecks: readonly Check[] = [
  * are not mistaken for the ones in use. Remove each once it is deleted.
  */
 export const oldResources: readonly (CheckTarget & { title: string; replacedBy: string; note?: string })[] = [
-	{ name: 'model-tribal-adr-code', kind: 'D1 database', title: 'Old main database', replacedBy: 'tribal-law-project', note: 'Only the Wayback Worker’s temporary copy code still reads it.' },
+	{ name: 'model-tribal-adr-code', kind: 'D1 database', title: 'Old main database', replacedBy: 'tribal-law-project' },
 	{ name: 'model-tribal-adr-code-library', kind: 'D1 database', title: 'Old source library database', replacedBy: 'tribal-law-project-library' },
-	{ name: 'model-tribal-adr-code-sources', kind: 'R2 bucket', title: 'Old files bucket', replacedBy: 'tribal-law-project-files', note: 'Only the Wayback Worker’s temporary copy code still reads it.' },
+	{ name: 'model-tribal-adr-code-sources', kind: 'R2 bucket', title: 'Old files bucket', replacedBy: 'tribal-law-project-files' },
 	{ name: 'model-tribal-adr-code-mail', kind: 'R2 bucket', title: 'Old mail bucket', replacedBy: 'tribal-law-project-mail' }
 ];
 
