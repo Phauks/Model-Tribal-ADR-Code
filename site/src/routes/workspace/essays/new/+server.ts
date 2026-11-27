@@ -29,7 +29,7 @@ export const POST: RequestHandler = async (event) => {
 	const fullIdentifier = part === 'foundations' && !identifier.startsWith('i-') ? `i-${identifier}` : identifier;
 	if (!isEssayIdentifier(fullIdentifier)) error(400, 'The address uses lower-case letters, numbers and hyphens, such as "why-consent-matters".');
 	if (await latestVersion(database, fullIdentifier)) error(400, 'An essay with this address exists already.');
-	const frontMatter = [`title: ${JSON.stringify(title)}`, part === 'foundations' ? 'part: i' : part === 'back-matter' ? 'part: back-matter' : '', 'status: draft']
+	const frontMatter = [`title: ${JSON.stringify(title)}`, part === 'foundations' ? 'part: i' : part === 'back-matter' ? 'part: back-matter' : part === 'news' ? 'part: news' : '', 'status: draft']
 		.filter(Boolean)
 		.join('\n');
 	await saveVersion(database, bucket, {
