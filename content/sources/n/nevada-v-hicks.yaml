@@ -107,6 +107,17 @@ argument_audio:
     checksum: 8198b3c78cd00adb9a30ed2e3cdff277265a973cde2102c0c9f0276625d30ff2
     media_type: audio/mpeg
     bytes: 127241947
+argument_transcripts:
+- date: '2001-03-21'
+  docket: "99-1994"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2000/99-1994.pdf
+  pages: 55
+  file:
+    storage_key: supreme-court-transcripts/2000/99-1994.pdf
+    checksum: 88cd13ca678cf10441ad8ef36434ffc1c82c872a61d3985897566eeb7e11d18f
+    media_type: application/pdf
+    bytes: 74680
 rights:
   status: no-permission-needed
   basis: us-government-work

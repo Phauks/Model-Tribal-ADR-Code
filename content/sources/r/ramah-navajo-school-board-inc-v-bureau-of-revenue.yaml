@@ -157,6 +157,17 @@ argument_audio:
     checksum: 05657db06336b77658871a0d88bed8ac5310642227997b346fb7bfc4493d4af2
     media_type: audio/mpeg
     bytes: 54191463
+argument_transcripts:
+- date: '1982-04-28'
+  docket: "80-2162"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1981/80-2162_04-28-1982.pdf
+  pages: 45
+  file:
+    storage_key: supreme-court-transcripts/1981/80-2162_04-28-1982.pdf
+    checksum: 35b0d8138b94156de72aaff60e29397807c264f9c58b4f3e3d633e435e599dbb
+    media_type: application/pdf
+    bytes: 11147110
 rights:
   status: no-permission-needed
   basis: us-government-work

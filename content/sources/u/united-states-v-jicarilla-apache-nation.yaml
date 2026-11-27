@@ -144,6 +144,17 @@ argument_audio:
     checksum: ea5ab2bfcb70011aab7f5bd49baec799b7c23f8e86ba645b8154215018755185
     media_type: audio/mpeg
     bytes: 18672128
+argument_transcripts:
+- date: '2011-04-20'
+  docket: "10-382"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2010/10-382.pdf
+  pages: 63
+  file:
+    storage_key: supreme-court-transcripts/2010/10-382.pdf
+    checksum: 008085e34084593a8a9316824038e49172a9d76ead319edc54bd11658ad9b132
+    media_type: application/pdf
+    bytes: 504563
 rights:
   status: no-permission-needed
   basis: us-government-work

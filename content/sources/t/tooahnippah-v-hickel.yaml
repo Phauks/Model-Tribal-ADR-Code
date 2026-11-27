@@ -130,6 +130,17 @@ argument_audio:
     checksum: 11e75e6629b558746cea2360f460cfd2ad9010e66ff4cda38b2a3cfb85d32dfb
     media_type: audio/mpeg
     bytes: 17095365
+argument_transcripts:
+- date: '1970-01-14'
+  docket: "300"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1969/69-300_01-14-1970.pdf
+  pages: 59
+  file:
+    storage_key: supreme-court-transcripts/1969/69-300_01-14-1970.pdf
+    checksum: 066c0f1857698f9b7c3b39dd12851b8b98ee127a54895b977301fd13efd467ff
+    media_type: application/pdf
+    bytes: 15336143
 rights:
   status: no-permission-needed
   basis: us-government-work

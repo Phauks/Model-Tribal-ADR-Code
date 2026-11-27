@@ -151,6 +151,17 @@ argument_audio:
     checksum: d5b08a87f10c0905c9784d81f02f6b62a8733aa3fc9699aa258cebdb7069fa59
     media_type: audio/mpeg
     bytes: 103097318
+argument_transcripts:
+- date: '2018-10-30'
+  docket: "16-1498"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2018/16-1498_7mio.pdf
+  pages: 90
+  file:
+    storage_key: supreme-court-transcripts/2018/16-1498_7mio.pdf
+    checksum: 9c373ba6a477ae5ea996f2814a66fb2be0f6ce61284e4d7180c5c7739c816273
+    media_type: application/pdf
+    bytes: 776363
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -133,6 +133,17 @@ argument_audio:
     checksum: 6fa448f35a48ea1ec5875a80a55e36841df03760183af45a083c109712603bcd
     media_type: audio/mpeg
     bytes: 121483305
+argument_transcripts:
+- date: '2003-04-01'
+  docket: "02-241"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2002/02-241.pdf
+  pages: 57
+  file:
+    storage_key: supreme-court-transcripts/2002/02-241.pdf
+    checksum: bec43eaf2ca32bef2b6a2c8929538a58f21fbe561d348debb2f26ab886326f61
+    media_type: application/pdf
+    bytes: 180783
 rights:
   status: no-permission-needed
   basis: us-government-work

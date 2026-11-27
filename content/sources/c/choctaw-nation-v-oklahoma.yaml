@@ -168,6 +168,37 @@ argument_audio:
     checksum: d0c04bc32de794f2bd65b2ade0e0c8f4d0135a535cd36be95f4a63a587894781
     media_type: audio/mpeg
     bytes: 41683486
+argument_transcripts:
+- date: '1969-10-22'
+  docket: "41"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1969/69-41_69-59_10-22-1969.pdf
+  pages: 35
+  file:
+    storage_key: supreme-court-transcripts/1969/69-41_69-59_10-22-1969.pdf
+    checksum: 9147d4b2e01de9d984213e8a49c5e5f30019150920c697e44d16267c3e9c9b0b
+    media_type: application/pdf
+    bytes: 9235868
+- date: '1969-10-23'
+  docket: "41"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1969/69-41_69-59_10-23-1969.pdf
+  pages: 57
+  file:
+    storage_key: supreme-court-transcripts/1969/69-41_69-59_10-23-1969.pdf
+    checksum: 2937912c27009975458e23c79d256e38413adf3ff11e9c14350f7255f448d8b3
+    media_type: application/pdf
+    bytes: 14515582
+- date: '1970-03-05'
+  docket: "41"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1969/69-41_69-59_03-05-1970.pdf
+  pages: 62
+  file:
+    storage_key: supreme-court-transcripts/1969/69-41_69-59_03-05-1970.pdf
+    checksum: 36a08a862d2eee6f8e8182840c86697dfa11dba435026767413a5b342aa28053
+    media_type: application/pdf
+    bytes: 15419047
 rights:
   status: no-permission-needed
   basis: us-government-work

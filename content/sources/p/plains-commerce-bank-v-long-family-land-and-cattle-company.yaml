@@ -115,6 +115,17 @@ argument_audio:
     checksum: c25f10c4fde26e93230b2ff75ecf43210126e40258e01b66c13fccd8b02d21f2
     media_type: audio/mpeg
     bytes: 24869376
+argument_transcripts:
+- date: '2008-04-14'
+  docket: "07-411"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2007/07-411.pdf
+  pages: 69
+  file:
+    storage_key: supreme-court-transcripts/2007/07-411.pdf
+    checksum: 97cb8455cccbec8c1c7263026318a83665230169ccee5fce77f669c086068d03
+    media_type: application/pdf
+    bytes: 309130
 rights:
   status: no-permission-needed
   basis: us-government-work

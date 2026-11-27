@@ -141,6 +141,17 @@ argument_audio:
     checksum: 3102a09dd31087016d5266feb06db7b332bc4f6cda1bd2b459aa1139a1f74801
     media_type: audio/mpeg
     bytes: 18045729
+argument_transcripts:
+- date: '2015-12-01'
+  docket: "14-510"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2015/14-510_p86b.pdf
+  pages: 45
+  file:
+    storage_key: supreme-court-transcripts/2015/14-510_p86b.pdf
+    checksum: 53ae6bf6bbdd9dab026b0709c182a29cc3f017de4ca937031732e8fc94155709
+    media_type: application/pdf
+    bytes: 696255
 rights:
   status: no-permission-needed
   basis: us-government-work

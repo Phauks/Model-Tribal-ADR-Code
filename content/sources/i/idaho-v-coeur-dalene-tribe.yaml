@@ -125,6 +125,17 @@ argument_audio:
     checksum: 8fdfd0a6db9c98399ed7f3ab0c9dfcf164756332fa1a0c83009dbc9a8bc04b78
     media_type: audio/mpeg
     bytes: 179998009
+argument_transcripts:
+- date: '1996-10-16'
+  docket: "94-1474"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1996/94-1474_10-16-1996.pdf
+  pages: 54
+  file:
+    storage_key: supreme-court-transcripts/1996/94-1474_10-16-1996.pdf
+    checksum: a25c1826e7a2f3d441317288d41e456b2a7d6fe64131049ae892e2d1ca293d89
+    media_type: application/pdf
+    bytes: 11965351
 rights:
   status: no-permission-needed
   basis: us-government-work

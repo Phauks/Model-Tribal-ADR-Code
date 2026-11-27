@@ -117,6 +117,17 @@ argument_audio:
     checksum: 12992601979ab9a56a9b1200619a46f4efdb3fdad9142b778da135508773c971
     media_type: audio/mpeg
     bytes: 182487372
+argument_transcripts:
+- date: '1994-03-23'
+  docket: "93-377"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1993/93-377_03-23-1994.pdf
+  pages: 54
+  file:
+    storage_key: supreme-court-transcripts/1993/93-377_03-23-1994.pdf
+    checksum: 658f5058e8bd1f6a5b1f1bb37d99518598cf5c564b70b730f645adb452cdc8a3
+    media_type: application/pdf
+    bytes: 11792755
 rights:
   status: no-permission-needed
   basis: us-government-work

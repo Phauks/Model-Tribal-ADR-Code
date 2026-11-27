@@ -185,6 +185,17 @@ argument_audio:
     checksum: 6b9aab5ce4e2cafd9cffd51bda7912527d7525b55c0d6008876451a5a6294010
     media_type: audio/mpeg
     bytes: 61528316
+argument_transcripts:
+- date: '1975-01-13'
+  docket: "73-1380"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1974/73-1380_73-1666_73-1667_01-13-1975.pdf
+  pages: 55
+  file:
+    storage_key: supreme-court-transcripts/1974/73-1380_73-1666_73-1667_01-13-1975.pdf
+    checksum: 0b566aac4e56d93579f823a14983845938cb20da56698bdebb0755209f2dfe5b
+    media_type: application/pdf
+    bytes: 11070726
 rights:
   status: no-permission-needed
   basis: us-government-work

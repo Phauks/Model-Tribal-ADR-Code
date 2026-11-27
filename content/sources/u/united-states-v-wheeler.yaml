@@ -154,6 +154,17 @@ argument_audio:
     checksum: b3f30e5338b7d57aedaa155a65c100d0be84a4dd940887c5ff770156bdc52ad6
     media_type: audio/mpeg
     bytes: 50418127
+argument_transcripts:
+- date: '1978-01-11'
+  docket: "76-1629"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1977/76-1629_01-11-1978.pdf
+  pages: 52
+  file:
+    storage_key: supreme-court-transcripts/1977/76-1629_01-11-1978.pdf
+    checksum: 02cfaf4d7e827dd936a9a5878cf5d279b8d8b98e62d65c13549ad6453d9ef0b7
+    media_type: application/pdf
+    bytes: 11342991
 rights:
   status: no-permission-needed
   basis: us-government-work

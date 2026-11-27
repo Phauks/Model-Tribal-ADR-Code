@@ -121,6 +121,17 @@ argument_audio:
     checksum: 14d27f7476c82d51b96fdeb9147c6c1ae2c877f4fb2d5fcacd546a9d5c5b0bcb
     media_type: audio/mpeg
     bytes: 221490905
+argument_transcripts:
+- date: '1979-12-03'
+  docket: "78-1756"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1979/78-1756_12-03-1979.pdf
+  pages: 45
+  file:
+    storage_key: supreme-court-transcripts/1979/78-1756_12-03-1979.pdf
+    checksum: 045d20be1c5dee55c1498a3483675278f8e4e7a91c81a996463205354049eb63
+    media_type: application/pdf
+    bytes: 9014484
 rights:
   status: no-permission-needed
   basis: us-government-work

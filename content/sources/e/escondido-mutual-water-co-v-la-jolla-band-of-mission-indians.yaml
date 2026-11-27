@@ -117,6 +117,17 @@ argument_audio:
     checksum: 339628dd73c40b34e01c7b3b457c20be66542ea55f609e3a66b5939e42a51f65
     media_type: audio/mpeg
     bytes: 235929723
+argument_transcripts:
+- date: '1984-03-26'
+  docket: "82-2056"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1983/82-2056_03-26-1984.pdf
+  pages: 52
+  file:
+    storage_key: supreme-court-transcripts/1983/82-2056_03-26-1984.pdf
+    checksum: 17acbf59e473fd55706457c0573c36c9eb74d2abe9d02500d98b0bd34bc9056d
+    media_type: application/pdf
+    bytes: 11853857
 rights:
   status: no-permission-needed
   basis: us-government-work

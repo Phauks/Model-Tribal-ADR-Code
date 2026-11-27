@@ -123,6 +123,17 @@ argument_audio:
     checksum: e27ebe8e214dd4d7295d7fee1a4d2df50b9afba6a543649a2fa1618c5883515f
     media_type: audio/mpeg
     bytes: 23763216
+argument_transcripts:
+- date: '2016-04-19'
+  docket: "15-420"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2015/15-420_3ea4.pdf
+  pages: 52
+  file:
+    storage_key: supreme-court-transcripts/2015/15-420_3ea4.pdf
+    checksum: 6ca687216c02f8fb1d542df49e523680d65194df141a8d07c15ab078f08cec57
+    media_type: application/pdf
+    bytes: 856810
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -93,6 +93,17 @@ argument_audio:
     checksum: 04300d7605c1a9992e19ee026c716497e7e7f3474406ad38a216928b67548eb7
     media_type: audio/mpeg
     bytes: 121513984
+argument_transcripts:
+- date: '2007-11-07'
+  docket: "06-989"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2007/06-989.pdf
+  pages: 80
+  file:
+    storage_key: supreme-court-transcripts/2007/06-989.pdf
+    checksum: 50300a32c43e5adb254d0a93c68992d52416b36348f56c8fce834a427e05aec3
+    media_type: application/pdf
+    bytes: 283300
 rights:
   status: no-permission-needed
   basis: us-government-work

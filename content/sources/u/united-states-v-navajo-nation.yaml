@@ -121,6 +121,17 @@ argument_audio:
     checksum: b6555ff273a0bfbc83be17d03edfa6391c001dd4c6d47d4361056dfcb99b3b40
     media_type: audio/mpeg
     bytes: 117401098
+argument_transcripts:
+- date: '2002-12-02'
+  docket: "01-1375"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2002/01-1375.pdf
+  pages: 56
+  file:
+    storage_key: supreme-court-transcripts/2002/01-1375.pdf
+    checksum: cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0
+    media_type: application/pdf
+    bytes: 185351
 rights:
   status: no-permission-needed
   basis: us-government-work

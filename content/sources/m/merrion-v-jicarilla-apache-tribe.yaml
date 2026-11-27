@@ -119,6 +119,27 @@ argument_audio:
     checksum: 773e44a2d1a98b0740bcfd1728fc225cf78d213f9db85baea0ed9450503945ce
     media_type: audio/mpeg
     bytes: 222351065
+argument_transcripts:
+- date: '1981-03-30'
+  docket: "80-11"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1980/80-11_80-15_03-30-1981.pdf
+  pages: 47
+  file:
+    storage_key: supreme-court-transcripts/1980/80-11_80-15_03-30-1981.pdf
+    checksum: d86bdcf4fc806b592dd62ccbcb789b919a88c8408b76562dd985066f741c0aee
+    media_type: application/pdf
+    bytes: 11484149
+- date: '1981-11-04'
+  docket: "80-11"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1981/80-11_80-15_11-04-1981.pdf
+  pages: 49
+  file:
+    storage_key: supreme-court-transcripts/1981/80-11_80-15_11-04-1981.pdf
+    checksum: e65ded7613cdddbbdc7aa810863af9a0d54a03d75a46ae441b16af5ef821abab
+    media_type: application/pdf
+    bytes: 11004187
 rights:
   status: no-permission-needed
   basis: us-government-work

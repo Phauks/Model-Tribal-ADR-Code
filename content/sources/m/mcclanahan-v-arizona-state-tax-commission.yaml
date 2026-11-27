@@ -102,6 +102,17 @@ argument_audio:
     checksum: 44949c462f2bff2fcbd2bb2a90f81706a5978d6dd31d18f84c841c35df14ddef
     media_type: audio/mpeg
     bytes: 66182704
+argument_transcripts:
+- date: '1972-12-12'
+  docket: "71-834"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1972/71-834_12-12-1972.pdf
+  pages: 49
+  file:
+    storage_key: supreme-court-transcripts/1972/71-834_12-12-1972.pdf
+    checksum: b1f18709ceef68d3a9bfb97a82082f04831926f7bcb8ce0af702ef22333e9c41
+    media_type: application/pdf
+    bytes: 9186544
 rights:
   status: no-permission-needed
   basis: us-government-work

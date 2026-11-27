@@ -121,6 +121,17 @@ argument_audio:
     checksum: 4ce5fc55db82d14127743249586c45400413aad32686012e9da8c40f0f8af6b7
     media_type: audio/mpeg
     bytes: 130265881
+argument_transcripts:
+- date: '2004-01-14'
+  docket: "02-626"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2003/02-626.pdf
+  pages: 56
+  file:
+    storage_key: supreme-court-transcripts/2003/02-626.pdf
+    checksum: 5ea82670f14b4829bdaaf4f108a4b8f9608958db13e10b2347d7790885064d3a
+    media_type: application/pdf
+    bytes: 187456
 rights:
   status: no-permission-needed
   basis: us-government-work

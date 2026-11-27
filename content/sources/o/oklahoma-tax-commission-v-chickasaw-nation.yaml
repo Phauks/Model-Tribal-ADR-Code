@@ -121,6 +121,17 @@ argument_audio:
     checksum: 4c1995f75b021e70dde63f55c77da7a75e487cd7130b3094101c549577ac6b5c
     media_type: audio/mpeg
     bytes: 234129990
+argument_transcripts:
+- date: '1995-04-24'
+  docket: "94-771"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1994/94-771_04-24-1995.pdf
+  pages: 63
+  file:
+    storage_key: supreme-court-transcripts/1994/94-771_04-24-1995.pdf
+    checksum: cd6ee779d9cdbeff8efb3b083b8d142aa5a1392ee16a04e552395712e4e10358
+    media_type: application/pdf
+    bytes: 13864259
 rights:
   status: no-permission-needed
   basis: us-government-work

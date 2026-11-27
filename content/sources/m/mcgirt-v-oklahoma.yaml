@@ -85,6 +85,17 @@ argument_audio:
     checksum: c548d253d92d5e17e3cab7bf5593f07de3a8ae30da4f70d6743e2b7918757b07
     media_type: audio/mpeg
     bytes: 44046858
+argument_transcripts:
+- date: '2020-05-11'
+  docket: "18-9526"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2019/18-9526_n758.pdf
+  pages: 102
+  file:
+    storage_key: supreme-court-transcripts/2019/18-9526_n758.pdf
+    checksum: 986bd87eeef2ec78028be62131a7abcfcb06d46bb906783d147e58e861d7a098
+    media_type: application/pdf
+    bytes: 477837
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -169,6 +169,17 @@ argument_audio:
     checksum: 24c48d4f32b89a098782e6c4d599d5312215b2baba9108ebb5da43ea683490ca
     media_type: audio/mpeg
     bytes: 58923594
+argument_transcripts:
+- date: '1973-10-10'
+  docket: "72-481"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1973/72-481_72-746_10-10-1973.pdf
+  pages: 49
+  file:
+    storage_key: supreme-court-transcripts/1973/72-481_72-746_10-10-1973.pdf
+    checksum: cd06d6900363ffa7a22352ca703702a767b8c5a29799cadccceaf686d0d8bfc6
+    media_type: application/pdf
+    bytes: 10033912
 rights:
   status: no-permission-needed
   basis: us-government-work

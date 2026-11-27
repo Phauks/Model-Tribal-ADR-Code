@@ -106,6 +106,17 @@ argument_audio:
     checksum: 21c2ea96b0d8ca279c6c0ff9ec9243deb2eb9fd802e08fe00d8b15bdcfb26436
     media_type: audio/mpeg
     bytes: 208354030
+argument_transcripts:
+- date: '1986-12-09'
+  docket: "85-1708"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1986/85-1708_12-09-1986.pdf
+  pages: 61
+  file:
+    storage_key: supreme-court-transcripts/1986/85-1708_12-09-1986.pdf
+    checksum: 87001331582790f23790f4e332dbc86961fe4f27fed9d9164e00273c1efe0e1c
+    media_type: application/pdf
+    bytes: 13371123
 rights:
   status: no-permission-needed
   basis: us-government-work

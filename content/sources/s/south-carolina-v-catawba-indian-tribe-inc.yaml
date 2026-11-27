@@ -121,6 +121,17 @@ argument_audio:
     checksum: fc3894bd0946a731d7fddfb98f93e3376474fc7cbb17316e6b6cfa9edee2e007
     media_type: audio/mpeg
     bytes: 228065403
+argument_transcripts:
+- date: '1985-12-12'
+  docket: "84-782"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1985/84-782_12-12-1985.pdf
+  pages: 46
+  file:
+    storage_key: supreme-court-transcripts/1985/84-782_12-12-1985.pdf
+    checksum: 20f01e562a24c41f2d6bd0e7c0a550eb317ecd23e74f7d68fd82fd189742692d
+    media_type: application/pdf
+    bytes: 10795708
 rights:
   status: no-permission-needed
   basis: us-government-work

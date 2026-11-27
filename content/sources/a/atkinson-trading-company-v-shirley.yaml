@@ -106,6 +106,17 @@ argument_audio:
     checksum: 5401c01ede8907c72259ac1b03ffb5f4bc084c18ee323332fabbc223852e8075
     media_type: audio/mpeg
     bytes: 115134923
+argument_transcripts:
+- date: '2001-03-27'
+  docket: "00-454"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2000/00-454.pdf
+  pages: 50
+  file:
+    storage_key: supreme-court-transcripts/2000/00-454.pdf
+    checksum: 001cfe4a41fec10906d0ae51f6cab65e8a10be50add196fb7b287fb4d38b4517
+    media_type: application/pdf
+    bytes: 79374
 rights:
   status: no-permission-needed
   basis: us-government-work

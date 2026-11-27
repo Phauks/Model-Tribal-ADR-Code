@@ -138,6 +138,17 @@ argument_audio:
     checksum: fab654a3b16deaba06a00504602cd240c78b3c21c05c71f91258ee35fdc27db4
     media_type: audio/mpeg
     bytes: 52853993
+argument_transcripts:
+- date: '1989-11-29'
+  docket: "88-6546"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1989/88-6546_11-29-1989.pdf
+  pages: 52
+  file:
+    storage_key: supreme-court-transcripts/1989/88-6546_11-29-1989.pdf
+    checksum: 2028d9f2927d2e7b83108126ead656416dacfc1641bcb245bc75e4ef0f385011
+    media_type: application/pdf
+    bytes: 12722103
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -157,6 +157,17 @@ argument_audio:
     checksum: 144a87d92c10eca83fb9b4571bc99e98fdc4f553bda636143d123adc4bd420ab
     media_type: audio/mpeg
     bytes: 26052777
+argument_transcripts:
+- date: '1973-03-27'
+  docket: "72-5323"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1972/72-5323_03-27-1973.pdf
+  pages: 56
+  file:
+    storage_key: supreme-court-transcripts/1972/72-5323_03-27-1973.pdf
+    checksum: 61d5f5b68aba2611c044fda403653de05095d4f34ef00a4e3a1564f5b0f81468
+    media_type: application/pdf
+    bytes: 11933546
 rights:
   status: no-permission-needed
   basis: us-government-work

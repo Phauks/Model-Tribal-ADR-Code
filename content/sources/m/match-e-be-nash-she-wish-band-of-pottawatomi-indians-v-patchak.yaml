@@ -142,6 +142,17 @@ argument_audio:
     checksum: e986dd47bc2c816e856a55b07e56417c53f1c2841e4a34796d91a8f0c5b570e5
     media_type: audio/mpeg
     bytes: 24145920
+argument_transcripts:
+- date: '2012-04-24'
+  docket: "11-246"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2011/11-246.pdf
+  pages: 71
+  file:
+    storage_key: supreme-court-transcripts/2011/11-246.pdf
+    checksum: 509e5d5c7d275b51e036a8ff637042752b09e57dee9845ad608820040264c11f
+    media_type: application/pdf
+    bytes: 332041
 rights:
   status: no-permission-needed
   basis: us-government-work

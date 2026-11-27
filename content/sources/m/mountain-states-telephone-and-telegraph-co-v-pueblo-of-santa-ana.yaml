@@ -117,6 +117,17 @@ argument_audio:
     checksum: be1dcf776d901316807baa50d1d5e6edb973b61a70e384e1c63d5981f3803a0c
     media_type: audio/mpeg
     bytes: 220459799
+argument_transcripts:
+- date: '1985-02-20'
+  docket: "84-262"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1984/84-262_02-20-1985.pdf
+  pages: 50
+  file:
+    storage_key: supreme-court-transcripts/1984/84-262_02-20-1985.pdf
+    checksum: 9f9ac024265d5ce8adc9fda3292eb18f4d054ea0545934e4c2d0aa6b770b21dc
+    media_type: application/pdf
+    bytes: 12571414
 rights:
   status: no-permission-needed
   basis: us-government-work

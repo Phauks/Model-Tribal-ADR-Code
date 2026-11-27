@@ -106,6 +106,17 @@ argument_audio:
     checksum: 530bcecc00f9df18f8d907a245d431e76d73e9602ce8c0af893bc93cc3a0c1b9
     media_type: audio/mpeg
     bytes: 228547728
+argument_transcripts:
+- date: '1980-01-14'
+  docket: "78-1177"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1979/78-1177_01-14-1980.pdf
+  pages: 65
+  file:
+    storage_key: supreme-court-transcripts/1979/78-1177_01-14-1980.pdf
+    checksum: 5e2d8de45c2e7ab71974ebfd74362341652ac7279b9664963f62fe95e01eeb44
+    media_type: application/pdf
+    bytes: 13378475
 rights:
   status: no-permission-needed
   basis: us-government-work

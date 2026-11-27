@@ -153,6 +153,17 @@ argument_audio:
     checksum: a8c7f7b57baa97c8e64af59f565ee93a2f379138d0c30855ea4a5156e5cbcb8d
     media_type: audio/mpeg
     bytes: 48133014
+argument_transcripts:
+- date: '1971-03-01'
+  docket: "515"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1970/70-515_03-01-1971.pdf
+  pages: 42
+  file:
+    storage_key: supreme-court-transcripts/1970/70-515_03-01-1971.pdf
+    checksum: 5544e571a64b34ff5f7de10a534bccb84e795cb92bee4f3896ac465ccbfecb07
+    media_type: application/pdf
+    bytes: 10298889
 rights:
   status: no-permission-needed
   basis: us-government-work

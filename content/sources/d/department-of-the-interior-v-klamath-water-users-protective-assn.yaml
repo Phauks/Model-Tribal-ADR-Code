@@ -117,6 +117,17 @@ argument_audio:
     checksum: c1a899bbc4807c7b017f56100f1d3cd838b239c8e75da193f8836dca6e6a0eb6
     media_type: audio/mpeg
     bytes: 102599491
+argument_transcripts:
+- date: '2001-01-10'
+  docket: "99-1871"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2000/99-1871.pdf
+  pages: 40
+  file:
+    storage_key: supreme-court-transcripts/2000/99-1871.pdf
+    checksum: 1f011f40d1b9400bdceaa14c42d735d01ee2877b9e808993033f29b8e8064c21
+    media_type: application/pdf
+    bytes: 50386
 rights:
   status: no-permission-needed
   basis: us-government-work

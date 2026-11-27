@@ -129,6 +129,17 @@ argument_audio:
     checksum: 7652f6a97ea84d261cafc6155b86ccdc2c803cf9bac594e384ac009bb97a1d0d
     media_type: audio/mpeg
     bytes: 209455770
+argument_transcripts:
+- date: '1985-11-06'
+  docket: "84-1340"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1985/84-1340_11-06-1985.pdf
+  pages: 47
+  file:
+    storage_key: supreme-court-transcripts/1985/84-1340_11-06-1985.pdf
+    checksum: 6531cc3de1dd71147d3d7dd1d543f76122469cf94edd41dcce66e169ab41e31a
+    media_type: application/pdf
+    bytes: 12050987
 rights:
   status: no-permission-needed
   basis: us-government-work

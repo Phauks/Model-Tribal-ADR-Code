@@ -178,6 +178,17 @@ argument_audio:
     checksum: b5df3380eabdd4b85e16db97963865340b9b4026f54efdb22572c03aab9aee31
     media_type: audio/mpeg
     bytes: 13277436
+argument_transcripts:
+- date: '1974-04-24'
+  docket: "73-362"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1973/73-362_73-364_04-24-1974.pdf
+  pages: 56
+  file:
+    storage_key: supreme-court-transcripts/1973/73-362_73-364_04-24-1974.pdf
+    checksum: 3bdd5c5b80ad147c753dff09169e3f37d4f6784f7b4bf64a26b4f3fab5305e8b
+    media_type: application/pdf
+    bytes: 10544593
 rights:
   status: no-permission-needed
   basis: us-government-work

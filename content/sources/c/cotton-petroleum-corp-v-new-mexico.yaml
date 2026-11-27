@@ -121,6 +121,17 @@ argument_audio:
     checksum: cae6c59e9ca0db794baaf42387f421cd0e1ada8f931d650a9e619843b5224a3a
     media_type: audio/mpeg
     bytes: 213228270
+argument_transcripts:
+- date: '1988-11-30'
+  docket: "87-1327"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1988/87-1327_11-30-1988.pdf
+  pages: 52
+  file:
+    storage_key: supreme-court-transcripts/1988/87-1327_11-30-1988.pdf
+    checksum: af4ea51fd2486f068e19b85b407501cc1a1d81c019fe42338f1d4121403a390b
+    media_type: application/pdf
+    bytes: 11662888
 rights:
   status: no-permission-needed
   basis: us-government-work

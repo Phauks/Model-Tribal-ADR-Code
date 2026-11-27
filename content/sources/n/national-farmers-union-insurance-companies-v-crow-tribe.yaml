@@ -186,6 +186,17 @@ argument_audio:
     checksum: f41ca5b7ecbbf914a70e0a20ce2b8262573fb7707e0011babcde2f594f1bd4d0
     media_type: audio/mpeg
     bytes: 23845536
+argument_transcripts:
+- date: '1985-04-16'
+  docket: "84-320"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1984/84-320_04-16-1985.pdf
+  pages: 52
+  file:
+    storage_key: supreme-court-transcripts/1984/84-320_04-16-1985.pdf
+    checksum: a78be0d3723dcffe81ce90fc122c8d4d0e21cce8ab2e503456f7e0a25e101f87
+    media_type: application/pdf
+    bytes: 12064253
 rights:
   status: no-permission-needed
   basis: us-government-work

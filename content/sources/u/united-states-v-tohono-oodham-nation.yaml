@@ -147,6 +147,17 @@ argument_audio:
     checksum: 18cc69e7f5e20ad069176bf60881a68fd10d9b14b5be906dc1323781fc8dafdf
     media_type: audio/mpeg
     bytes: 73776640
+argument_transcripts:
+- date: '2010-11-01'
+  docket: "09-846"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2010/09-846.pdf
+  pages: 61
+  file:
+    storage_key: supreme-court-transcripts/2010/09-846.pdf
+    checksum: 166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70
+    media_type: application/pdf
+    bytes: 302450
 rights:
   status: no-permission-needed
   basis: us-government-work

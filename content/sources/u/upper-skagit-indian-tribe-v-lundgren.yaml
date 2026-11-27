@@ -149,6 +149,17 @@ argument_audio:
     checksum: 488526c9a3fad0117fe7e05db3752edcdfc8da538017632b6d1c43c6b3989ab7
     media_type: audio/mpeg
     bytes: 32133158
+argument_transcripts:
+- date: '2018-03-21'
+  docket: "17-387"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2017/17-387_097c.pdf
+  pages: 69
+  file:
+    storage_key: supreme-court-transcripts/2017/17-387_097c.pdf
+    checksum: bcac7070eab16f0879fb1a5f8b8c6466b5006886a104699371b4f53549b05789
+    media_type: application/pdf
+    bytes: 237071
 rights:
   status: no-permission-needed
   basis: us-government-work

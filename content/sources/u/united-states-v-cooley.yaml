@@ -108,6 +108,17 @@ argument_audio:
     checksum: fcab95103db30c4698efb0aba9d7c4b0885a7abb536615a6738c8638217a49a1
     media_type: audio/mpeg
     bytes: 83751398
+argument_transcripts:
+- date: '2021-03-23'
+  docket: "19-1414"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2020/19-1414_p86b.pdf
+  pages: 75
+  file:
+    storage_key: supreme-court-transcripts/2020/19-1414_p86b.pdf
+    checksum: 0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47
+    media_type: application/pdf
+    bytes: 377327
 rights:
   status: no-permission-needed
   basis: us-government-work

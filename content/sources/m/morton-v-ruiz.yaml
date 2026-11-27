@@ -310,6 +310,27 @@ argument_audio:
     checksum: 7f0db5a64c3632f4af3a54ad020c659764f5f99bbbc5facbad3a97ac888b7677
     media_type: audio/mpeg
     bytes: 54895304
+argument_transcripts:
+- date: '1973-11-05'
+  docket: "72-1052"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1973/72-1052_11-05-1973.pdf
+  pages: 12
+  file:
+    storage_key: supreme-court-transcripts/1973/72-1052_11-05-1973.pdf
+    checksum: 0bfd77d097e042cc05c5bc767bbd1b0fe45263fd61918f5f36f9c8ed78ffdc90
+    media_type: application/pdf
+    bytes: 2323375
+- date: '1973-11-06'
+  docket: "72-1052"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1973/72-1052_11-06-1973.pdf
+  pages: 34
+  file:
+    storage_key: supreme-court-transcripts/1973/72-1052_11-06-1973.pdf
+    checksum: ee607b04832fb3fdf7eaa3305b30a2b997d2512f041ad999a6838dc09bf3f7de
+    media_type: application/pdf
+    bytes: 6636693
 rights:
   status: no-permission-needed
   basis: us-government-work

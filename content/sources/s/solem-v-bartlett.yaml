@@ -117,6 +117,17 @@ argument_audio:
     checksum: 52be35ac84f28ccdf91b8cb07769c32e50d483f647db47e118f2d95542aff0df
     media_type: audio/mpeg
     bytes: 209177827
+argument_transcripts:
+- date: '1983-12-07'
+  docket: "82-1253"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1983/82-1253_12-07-1983.pdf
+  pages: 47
+  file:
+    storage_key: supreme-court-transcripts/1983/82-1253_12-07-1983.pdf
+    checksum: e42239b98286ef9267523e13dcaba73206ea42c5013c886a3e76caec0fd57243
+    media_type: application/pdf
+    bytes: 11995406
 rights:
   status: no-permission-needed
   basis: us-government-work

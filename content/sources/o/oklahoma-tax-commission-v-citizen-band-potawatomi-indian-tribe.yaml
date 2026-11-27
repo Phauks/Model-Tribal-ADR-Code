@@ -102,6 +102,17 @@ argument_audio:
     checksum: c833b198736e823af8b02228224eb6a173ea16ff2f5a74e4c315dea66b1c586d
     media_type: audio/mpeg
     bytes: 211290611
+argument_transcripts:
+- date: '1991-01-07'
+  docket: "89-1322"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1990/89-1322_01-07-1991.pdf
+  pages: 44
+  file:
+    storage_key: supreme-court-transcripts/1990/89-1322_01-07-1991.pdf
+    checksum: a7c53fc97ca7b301f40376f22b134cf0e784d655e5cd3d2d86749ad3e0026f6b
+    media_type: application/pdf
+    bytes: 10885471
 rights:
   status: no-permission-needed
   basis: us-government-work

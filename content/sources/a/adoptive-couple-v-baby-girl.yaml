@@ -155,6 +155,17 @@ argument_audio:
     checksum: 1c2a555b62a25f9ccdf5bd36aefa1c3994969a7782b78e3e8b593591cc27ef4b
     media_type: audio/mpeg
     bytes: 26299904
+argument_transcripts:
+- date: '2013-04-16'
+  docket: "12-399"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2012/12-399_53k8.pdf
+  pages: 77
+  file:
+    storage_key: supreme-court-transcripts/2012/12-399_53k8.pdf
+    checksum: f91364025ccd27e98ff436b070a1453ac58ccee159d3b2a7aec73b204bd73031
+    media_type: application/pdf
+    bytes: 411434
 rights:
   status: no-permission-needed
   basis: us-government-work
