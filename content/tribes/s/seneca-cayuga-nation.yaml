@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Wyandot, etc., July 22, 1814, 7 Stat. 118
+  since: '1814-07-22'
+  source: treaty-with-the-wyandot-etc-1814
+  confidence: medium
+  verification: inferred
+  as_of: '1814-07-22'
+  locator: p. 105 (Treaty with the Wyandot, etc., 1814; Kappler header "July 22, 1814. | 7 Stat., 118. | Ratified, Dec. 13, 1814. | Proclaimed Dec. 21, 1814.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Seneka; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 18 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Act of Mar. 3, 1865, ch. 127, 13 Stat. 541, 559
+  since: '1865-03-03'
+  source: act-1865-03-03-colorado-river-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1865-03-03'
+  locator: 13 Stat. 559
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Colorado River Reservation (Arizona), lands west of a line from Half-Way Bend to Corner Rock.
 states:
 - state: AZ
   presence: government-office

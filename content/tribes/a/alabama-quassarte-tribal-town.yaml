@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Alabama-Quassarte Tribal Town (approved by the Secretary of the Interior Nov. 17, 1938), under the Oklahoma Indian Welfare Act, ch. 831, § 3, 49 Stat. 1967, 1967 (1936)
+  since: '1938-11-17'
+  source: university-of-oklahoma-indian-reorganization-act-alaquassarte
+  document_version:
+    document: alabama-quassarte-tribal-town-constitution
+    version: 1938-text
+  confidence: medium
+  verification: inferred
+  as_of: '1938-11-17'
+  locator: 1938 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: OK
   presence: government-office
