@@ -1,0 +1,52 @@
+{
+  "state": "NY",
+  "code": "Consolidated Laws of New York",
+  "edition": "McKinney 2026",
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 40160,
+    "live": 40124,
+    "strong": 265,
+    "weak_only": 518,
+    "repealed": 36
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 369,
+    "core": 150,
+    "incidental": 219,
+    "by_pool": {
+      "A": {
+        "incidental": 182,
+        "core": 80,
+        "none": 3
+      },
+      "B": {
+        "none": 418,
+        "incidental": 37,
+        "core": 63
+      },
+      "C": {
+        "none": 300
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 7
+      }
+    },
+    "meta": {
+      "live": 40124,
+      "A": 265,
+      "B": 518,
+      "E": 7,
+      "C": 593,
+      "C_sample": 300,
+      "D": 38741,
+      "D_sample": 300,
+      "items": 1390,
+      "batches": 10
+    }
+  }
+}
