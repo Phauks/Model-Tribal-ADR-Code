@@ -31,6 +31,7 @@ async function fetchReviewedCopy(link: string, sha256: string): Promise<ArrayBuf
 		if (bytes.byteLength > largestImage) return undefined;
 		return (await hexDigest(bytes)) === sha256 ? bytes : undefined;
 	} catch {
+		// expected: a portrait that cannot be fetched, or no longer matches the reviewed copy, is not shown.
 		return undefined;
 	}
 }
