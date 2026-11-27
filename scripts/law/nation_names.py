@@ -23,6 +23,9 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 SUFFIX = r"(?:tribe|tribes|nation|band|indians|indian|community|rancheria|pueblo|reservation)"
 STOP = {"the", "of", "and"}
+# A name made only of these words ("the Tribes", the Confederated Salish and Kootenai Tribes' own word for themselves) names no one nation in another text.
+GENERIC = {"tribe", "tribes", "tribal", "nation", "nations", "band", "bands", "indian", "indians", "native", "people", "peoples", "community", "communities",
+           "village", "villages", "pueblo", "pueblos", "rancheria", "reservation", "confederated", "american", "alaska"}
 STATES = ("Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|"
           "Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|"
           "New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|"
@@ -70,7 +73,7 @@ class NationNames:
 
     def _add(self, name: str, nation: str) -> None:
         key = normal(name)
-        if len(key.split()) >= 1 and len(key) > 4:
+        if len(key.split()) >= 1 and len(key) > 4 and not set(key.split()) <= GENERIC:
             self.by_name.setdefault(key, set()).add(nation)
 
     def named(self, text: str) -> list[tuple[str, str]]:
