@@ -4,8 +4,14 @@
 import { readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
 
-/** Every page under `output` (the build's client folder), sorted, skipping _app. */
+/**
+ * Every page under `output` (the build's client folder), sorted, skipping _app.
+ * @param {string} output
+ * @param {string} [folder]
+ * @returns {string[]}
+ */
 export function pagePaths(output, folder = output) {
+	/** @type {string[]} */
 	const found = [];
 	for (const name of readdirSync(folder)) {
 		const full = path.join(folder, name);

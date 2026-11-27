@@ -39,6 +39,7 @@ const everyPage = ['site/tools/accessibility-rules.mjs', 'site/tools/check-acces
  * is the record's file name. Folders not listed are covered by the sample and
  * the nightly run.
  */
+/** @type {Record<string, string[]>} */
 const recordPages = {
 	tribes: ['/nations/*'],
 	glossary: ['/glossary/*'],
@@ -56,7 +57,10 @@ const mostRecords = 100;
 const mostPagesPerRoute = 150;
 const largestPagesPerRoute = 10;
 
-/** The route pattern of a folder under site/src/routes: groups dropped, parameters as "*". */
+/**
+ * The route pattern of a folder under site/src/routes: groups dropped, parameters as "*".
+ * @param {string} folder
+ */
 function routePattern(folder) {
 	const segments = folder
 		.split('/')
@@ -65,9 +69,15 @@ function routePattern(folder) {
 	return `/${segments.join('/')}`;
 }
 
-/** The scope for a list of changed files. */
+/**
+ * The scope for a list of changed files.
+ * @param {string[]} files
+ * @returns {string}
+ */
 export function scopeFor(files) {
+	/** @type {Set<string>} */
 	const additions = new Set();
+	/** @type {Map<string, Set<string>>} */
 	const records = new Map();
 	for (const file of files) {
 		if (everyPage.includes(file)) return 'all';
@@ -84,7 +94,7 @@ export function scopeFor(files) {
 		const content = /^content\/([^/]+)\/(?:.*\/)?([^/]+)\.(?:ya?ml|md)$/.exec(file);
 		if (content && recordPages[content[1]]) {
 			if (!records.has(content[1])) records.set(content[1], new Set());
-			records.get(content[1]).add(content[2]);
+			records.get(content[1])?.add(content[2]);
 		}
 	}
 	for (const [folder, names] of records) {
@@ -96,7 +106,12 @@ export function scopeFor(files) {
 	return ['sample', ...[...additions].sort()].join(' ');
 }
 
-/** Whether a page matches a route pattern, exactly or (for a tree) anywhere under it. */
+/**
+ * Whether a page matches a route pattern, exactly or (for a tree) anywhere under it.
+ * @param {string} page
+ * @param {string} pattern
+ * @param {{ tree?: boolean }} [options]
+ */
 function matches(page, pattern, { tree = false } = {}) {
 	const want = pattern.split('/').filter(Boolean);
 	const have = page.split('/').filter(Boolean);
@@ -108,20 +123,30 @@ function matches(page, pattern, { tree = false } = {}) {
 	return tree ? true : have.length === want.length;
 }
 
-/** The folder a page sits in, or the page itself for a top-level page. */
+/**
+ * The folder a page sits in, or the page itself for a top-level page.
+ * @param {string} page
+ */
 function folderOf(page) {
 	const cut = page.lastIndexOf('/');
 	return cut <= 0 ? page : page.slice(0, cut);
 }
 
-/** The pages a scope covers, from the built pages under `output`. */
+/**
+ * The pages a scope covers, from the built pages under `output`.
+ * @param {string} scope
+ * @param {string} output
+ * @returns {string[]}
+ */
 export function pagesFor(scope, output) {
 	const all = pagePaths(output);
 	const [kind, ...additions] = scope.trim().split(/\s+/);
 	if (kind === 'all') return all;
 	if (kind !== 'sample') throw new Error(`Unknown accessibility scope "${scope}"`);
 
+	/** @type {Map<string, number>} */
 	const sizes = new Map();
+	/** @param {string} page */
 	const size = (page) => {
 		if (!sizes.has(page)) {
 			let found = 0;
@@ -135,16 +160,19 @@ export function pagesFor(scope, output) {
 			}
 			sizes.set(page, found);
 		}
-		return sizes.get(page);
+		return sizes.get(page) ?? 0;
 	};
+	/** @param {string[]} pages @param {number} count */
 	const largest = (pages, count) => [...pages].sort((a, b) => size(b) - size(a)).slice(0, count);
 
+	/** @type {Set<string>} */
 	const chosen = new Set();
+	/** @type {Map<string, string[]>} */
 	const folders = new Map();
 	for (const page of all) {
 		const folder = folderOf(page);
 		if (!folders.has(folder)) folders.set(folder, []);
-		folders.get(folder).push(page);
+		folders.get(folder)?.push(page);
 	}
 	for (const pages of folders.values()) {
 		if (pages.length <= 4) {
@@ -177,6 +205,7 @@ export function pagesFor(scope, output) {
 	return all.filter((page) => chosen.has(page));
 }
 
+/** @param {string} name */
 function argument(name) {
 	const index = process.argv.indexOf(name);
 	return index > -1 ? process.argv[index + 1] : undefined;
