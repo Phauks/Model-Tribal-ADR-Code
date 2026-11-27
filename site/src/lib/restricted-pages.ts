@@ -29,7 +29,7 @@ type Data = Record<string, unknown>;
 /** The pages drawn again, by their address. */
 export const restrictedPageViews = [
 	{ view: 'timeline', pattern: /^\/nations\/timeline$/ },
-	{ view: 'nation', pattern: /^\/nations\/(?!(?:coverage|data|federal-offices|law|letter|map|recourse|state|timeline)$)([a-z0-9-]+)$/ },
+	{ view: 'nation', pattern: /^\/nations\/(?!(?:coverage|data|federal-offices|federal-programs|law|letter|map|recourse|state|timeline)$)([a-z0-9-]+)$/ },
 	{ view: 'opinions', pattern: /^\/nations\/([a-z0-9-]+)\/opinions$/ },
 	{ view: 'copies', pattern: /^\/copies\/list\/([a-z0-9-]+)$/ },
 	{ view: 'chart-bar', pattern: /^\/nations\/data\/(?!(?:build|tables)\/)([a-z0-9-]+)\/(?!sources$)([^/]+)$/ },

@@ -207,6 +207,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Peoria Tribe of Indians of Oklahoma".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1922353
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Peoria Tribe' (Miami)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 146962
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'PEORIA TRIBE OF INDIANS OF OKLAHOMA' (UEI W1MBR397G6U5), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Peoria Tribe of Indians of Oklahoma" among organizations under constitutions

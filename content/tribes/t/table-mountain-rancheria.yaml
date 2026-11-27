@@ -127,6 +127,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Table Mountain Rancheria".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Table Mountain Rancheria' (Friant)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 171308
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'TABLE MOUNTAIN RANCHERIA' (UEI JG2LZMQ671B7), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution

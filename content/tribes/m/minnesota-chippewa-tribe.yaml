@@ -182,6 +182,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band". The Minnesota Chippewa Tribe itself is not listed; Indian Health Service lists its constituent bands (Bois Forte, Fond du Lac, Grand Portage, Leech Lake, Mille Lacs, White Earth) under Bemidji Area Minnesota Tribal Health Programs. Area inferred from the constituent bands.
+federal_programs:
+- program: interior-non-bia-funding-agreement
+  agency: National Park Service (Grand Portage National Monument; listed as "Grand Portage Band of Lake Superior Chippewa Indians")
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, National Park Service agreements, 'Minnesota Chippewa Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Minnesota Chippewa Tribe'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Minnesota Chippewa Tribe" among organizations under constitutions approved by

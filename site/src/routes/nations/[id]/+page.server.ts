@@ -37,6 +37,8 @@ import { issuedDate, nationTimeline, timelineHeading } from '#lib/server/timelin
 import { casePreviewList } from '#lib/server/case-previews.ts';
 import { courtAbbreviation } from '#lib/server/case-citations.ts';
 import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
+import { federalProgramPage } from '#lib/federal-programs.ts';
+import { programRows, selfGovernanceGlance } from '#lib/server/federal-programs.ts';
 import { displayName, humanize, regionAnchor, presenceNote, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import { legalHelpCitation, legalHelpFor, legalHelpHeading } from '#lib/server/legal-help.ts';
 import { formatSource } from '#lib/server/markdown.ts';
@@ -201,6 +203,7 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const recognitionLabel = 'Recognition';
 	const regionLabel = 'Bureau of Indian Affairs region';
 	const languagesLabel = 'Heritage languages';
+	const selfGovernanceLabel = 'Self-governance';
 	const administration = record.federal_administration;
 	return [
 		...group('recognition', recognitionLabel, recognitionItems(record, sources, recognitionLabel)),
@@ -229,6 +232,22 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 							: [])
 					]
 				: []
+		),
+		...group(
+			'federal_programs',
+			selfGovernanceLabel,
+			// One line, "Interior (1991), Indian Health Service (1994)", as in the approved mockup.
+			((entries) => {
+				if (entries.length === 0) return [];
+				const text = entries.map((entry) => entry.text).join(', ');
+				const citations: CitationMark[] = [];
+				for (const entry of entries) {
+					// The participant lists say who takes part and since when; a funding list is cited only where no participant list names the nation.
+					const listed = entry.facts.filter((fact) => fact.amount === undefined);
+					for (const fact of listed.length > 0 ? listed : entry.facts) sources.citeFact(fact, selfGovernanceLabel, entry.text, citations);
+				}
+				return [{ text, citations }];
+			})(selfGovernanceGlance(programRows(record)))
 		),
 		...group(
 			'languages',
@@ -652,6 +671,47 @@ function treatyRows(record: NationRecord, sources: SourceUses): TreatyRow[] {
 				citations
 			};
 		});
+}
+
+/** One federal program, a row of the "Self-governance and federal programs" table on the nation page. */
+interface FederalProgramRow {
+	key: string;
+	name: string;
+	link?: string;
+	agency: string;
+	dates: string;
+	datesSort: string;
+	through?: string;
+	amount?: string;
+	amountSort?: number;
+	citations: CitationMark[];
+}
+
+/**
+ * The nation's federal self-governance, self-determination and block grant
+ * programs, one row per program with its agency, dates, the organization that
+ * holds it for the nation and the latest amount, each with the markers of
+ * every fact behind it (Trevor chose mockup B, with the amounts, Nov. 26,
+ * 2026). After the section's other facts, before the enforcement actions.
+ */
+function federalProgramRows(record: NationRecord, sources: SourceUses): FederalProgramRow[] {
+	const section = 'Treaties and federal ties';
+	return programRows(record).map((row) => {
+		const citations: CitationMark[] = [];
+		for (const fact of row.facts) sources.citeFact(fact, section, row.through ? `${row.name}, through ${row.through}` : row.name, citations);
+		return {
+			key: row.key,
+			name: row.name,
+			link: federalProgramPage(row.program.key),
+			agency: row.agency,
+			dates: row.dates,
+			datesSort: row.datesSort,
+			through: row.through,
+			amount: row.amount,
+			amountSort: row.amountSort,
+			citations
+		};
+	});
 }
 
 /** One National Indian Gaming Commission enforcement action, a row of its table on the nation page. */
@@ -1120,6 +1180,7 @@ export const load: PageServerLoad = ({ params }) => {
 			treaties: [],
 			landCessions: [] as ReturnType<typeof nationLandCessions>,
 			ties: [],
+			programs: [] as FederalProgramRow[],
 			enforcement: [],
 			stories: [],
 			timeline: undefined,
@@ -1260,6 +1321,7 @@ export const load: PageServerLoad = ({ params }) => {
 	sources.part('Treaties and federal ties');
 	const treaties = treatyRows(record, sources);
 	const ties = federalTies(record, sources);
+	const programs = federalProgramRows(record, sources);
 	const enforcement = enforcementActions(record, sources);
 	sources.part('Land cessions');
 	const landCessions = nationLandCessions(record.id, sources);
@@ -1305,6 +1367,7 @@ export const load: PageServerLoad = ({ params }) => {
 		treaties,
 		landCessions,
 		ties,
+		programs,
 		enforcement,
 		timeline: hasTimeline ? timeline : undefined,
 		stories,
@@ -1330,7 +1393,7 @@ export const load: PageServerLoad = ({ params }) => {
 		children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
-	if (treaties.length > 0 || ties.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
+	if (treaties.length > 0 || ties.length > 0 || programs.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
 	if (landCessions.length > 0) items.push({ label: 'Land cessions', link: '#cessions-heading' });
 	if (hasTimeline) items.push({ label: timelineHeading, link: '#timeline-heading' });
 	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });

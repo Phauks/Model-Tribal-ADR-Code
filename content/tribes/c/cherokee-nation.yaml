@@ -174,6 +174,99 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "Cherokee Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Cherokee Nation (1994)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1991
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Cherokee Nation' (Eastern Oklahoma Region)
+- program: indian-health-service-self-governance-compact
+  since: 1994
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Cherokee Nation'
+- program: pl-102-477-plan
+  start: '2026-10-01'
+  end: '2030-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Family Violence Prevention and Services/Domestic Violence Shelter and Supportive Services Supplemental – American Rescue Plan Act of 2021
+  - Low Income Home Energy Assistance Program
+  - Job Placement and Training
+  - Living Language Grant Program
+  - Adult Education
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Cherokee Nation'; PL102_477_PartnerEnrollment, its 10 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 53133436
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Cherokee Nation' (Tahlequah)
+- program: tribal-transportation-self-governance-compact
+  since: 2022
+  source: ict-news-2024-08-20-potawatomi-transportation-compact
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-08-20'
+  locator: 'names ''Cherokee Nation'': first compact under the program (2022)'
+- program: fdpir-self-determination-demonstration
+  start: 2023-08
+  detail: Round 2
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 2 projects, 'Cherokee Nation'
+- program: interior-non-bia-funding-agreement
+  agency: Bureau of Trust Fund Administration
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Bureau of Trust Fund Administration agreements, 'Cherokee Nation'
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Cherokee Nation'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 151634250
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'CHEROKEE NATION' (UEI TBAHL1WANLF3), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 334230071
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'CHEROKEE NATION' (UEI TBAHL1WANLF3), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution of the Cherokee Nation

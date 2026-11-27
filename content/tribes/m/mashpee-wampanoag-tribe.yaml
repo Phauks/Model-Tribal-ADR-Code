@@ -220,6 +220,31 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Federal Direct Care Service Facilities". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: pl-102-477-plan
+  start: '2025-01-01'
+  end: '2027-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Community Service Block Grant
+  - Low Income Home Energy Assistance Program
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Mashpee Wampanoag Tribe'; PL102_477_PartnerEnrollment, its 5 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1851946
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MA, row 'Mashpee Wampanoag Tribe' (Mashpee)
 governance:
 - aspect: head-of-government
   value: Chairperson

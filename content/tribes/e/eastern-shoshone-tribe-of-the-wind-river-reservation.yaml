@@ -188,6 +188,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Billings Area
   note: Listed as "Shoshone Business Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2024
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Billings Area, row 'Eastern Shoshone Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Eastern Shoshone Tribe'.
+- program: pl-102-477-plan
+  start: '2024-10-01'
+  end: '2027-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Native Employment Works
+  - Temporary Assistance for Needy Families
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Eastern Shoshone Tribe of the Wind River Reservation, Wyoming'; PL102_477_PartnerEnrollment, its 8 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2117376
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WY, row 'Eastern Shoshone Tribe of the Wind River Reservation' (Fort Washakie)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 11703900
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'EASTERN SHOSHONE TRIBE' (UEI N3B4T5VW6A35), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'EASTERN SHOSHONE TRIBE'.
 governance:
 - aspect: form
   value: Constitution and By-laws

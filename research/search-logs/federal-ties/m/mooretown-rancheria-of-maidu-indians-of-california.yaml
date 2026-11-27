@@ -1,7 +1,7 @@
 profile: content/tribes/m/mooretown-rancheria-of-maidu-indians-of-california.yaml
 topic: federal-ties
 status: found
-last_searched: '2026-11-23'
+last_searched: '2026-11-26'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -29,3 +29,13 @@ searches:
   query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
   outcome: found
   reason: Recorded 1 indian lands opinions.
+- date: '2026-11-26'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: research/self-governance/crosswalk.csv
+  query: 'Self-governance and federal program participant lists (scripts/tribes/federal_programs.py): Office of Self-Governance list (July 24, 2024); Indian Health Service self-governance list (July 1, 2025); 477 Plan Directory; HUD housing block grant allocations (fiscal year 2026); transportation compacts, FDPIR projects or Interior funding agreements; USAspending, Assistance Listing 15.022 (fiscal year 2025); USAspending, Assistance Listing 93.210 (fiscal year 2025); USAspending, Assistance Listing 93.441 (fiscal year 2025)'
+  outcome: found
+  reason: 'Named on: HUD housing block grant allocations (fiscal year 2026).'
+  records:
+  - research/self-governance/crosswalk.csv#mooretown-rancheria-of-maidu-indians-of-california

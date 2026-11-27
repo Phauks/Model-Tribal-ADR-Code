@@ -239,6 +239,69 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Confederated Tribes of the Umatilla Indian Reservation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Confederated Tribes of the Umatilla Indian Reservation (2005)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2006
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Confederated Tribes Of The Umatilla Reservation' (Northwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Confederated Tribes Of The Umatilla Reservation'.
+- program: indian-health-service-self-governance-compact
+  since: 2005
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Confederated Tribes of the Umatilla Indian Reservation'
+- program: pl-102-477-plan
+  start: '2024-01-01'
+  end: '2026-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Job Placement and Training
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Confederated Tribes of the Umatilla Indian Reservation'; PL102_477_PartnerEnrollment, its 3 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2750453
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OR, row 'Confederated Tribes of the Umatilla Indian Reservation' (Pendleton)
+- program: fdpir-self-determination-demonstration
+  start: 2023-08
+  detail: Round 2
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 2 projects, 'Confederated Tribes of the Umatilla Indian Reservation'
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Confederated Tribes of the Umatilla Indian Reservation'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 16896972
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'CONFEDERATED TRIBES OF THE UMATILLA INDIAN RESERVATION' (UEI MX2KEMW2J5Z3), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Umatilla Reservation in Oregon) (approved 1949) states it was adopted under Act

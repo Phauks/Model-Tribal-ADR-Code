@@ -184,6 +184,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: 'Listed as "Susanville Indian Rancheria, California". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Susanville Indian Rancheria (2007)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2015
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Susanville Indian Rancheria' (Pacific Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Susanville Indian Rancheria'.
+- program: indian-health-service-self-governance-compact
+  since: 2007
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: California Area, row 'Susanville Indian Rancheria'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Susanville Indian Rancheria'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1212490
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Susanville Indian Rancheria' (Susanville)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 867229
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SUSANVILLE INDIAN RANCHERIA' (UEI KN7QGGLN5R61), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SUSANVILLE INDIAN RANCHERIA'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 4372538
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SUSANVILLE INDIAN RANCHERIA' (UEI KN7QGGLN5R61), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SUSANVILLE INDIAN RANCHERIA'.
 governance:
 - aspect: form
   value: Charter under Indian Reorganization Act of 1934
