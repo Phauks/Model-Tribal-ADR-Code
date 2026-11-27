@@ -15,7 +15,7 @@
 	"packageManager": "npm@12.2.3",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && node tools/write-offline-sizes.mjs && node tools/write-checksums.mjs && node tools/add-scheduled-run.mjs && node tools/add-nation-page-changes.mjs && node tools/add-mail-handlers.mjs && node tools/add-edge-cache.mjs",
+		"build": "vite build && node tools/write-offline-sizes.mjs && node tools/write-offline-catalog.mjs && node tools/write-checksums.mjs && node tools/add-scheduled-run.mjs && node tools/add-nation-page-changes.mjs && node tools/add-mail-handlers.mjs && node tools/add-edge-cache.mjs",
 		"preview": "npm run build && wrangler dev",
 		"deploy": "npm run build && wrangler deploy",
 		"prepare": "svelte-kit sync || echo ''",
@@ -28,6 +28,7 @@
 		"check:accessibility": "node tools/check-accessibility.mjs",
 		"check:accessibility:live": "node tools/check-accessibility-live.mjs",
 		"check:built-worker": "node tools/check-built-worker.mjs",
+		"check:worker-size": "node tools/check-worker-size.mjs",
 		"check:sidebar": "node tools/check-sidebar.mjs",
 		"check:timeline": "node tools/check-timeline.mjs",
 		"check:wide-tables": "node tools/check-wide-tables.mjs",

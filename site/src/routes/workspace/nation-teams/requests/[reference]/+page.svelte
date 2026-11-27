@@ -30,6 +30,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Nation teams', href: '/workspace/nation-teams' }
 	]}
+	current="Request {application.reference}"
 />
 <h1>Request {application.reference}</h1>
 

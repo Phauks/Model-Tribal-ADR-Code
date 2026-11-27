@@ -19,6 +19,7 @@
 		{ label: 'Inbox', href: '/workspace/inbox' },
 		{ label: 'Auto-sort rules', href: '/workspace/inbox/rules' }
 	]}
+	current={data.rule.name}
 />
 <h1>{data.rule.name}</h1>
 
