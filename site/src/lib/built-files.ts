@@ -19,6 +19,7 @@
  *
  * Shared by the build (in Node) and the Worker, so it must stay plain.
  */
+import { fileNumber } from './file-number.ts';
 import { pageDataPrefix } from './page-data.ts';
 
 /** Where the Worker's private files are kept. */
@@ -27,15 +28,7 @@ export const privateDataPrefix = `${pageDataPrefix}/private`;
 /** Where the build leaves the same data for itself and the development server, relative to site/. */
 export const builtDataFolder = '.svelte-kit/built-data';
 
-/** Which of `count` files holds a key: a 32-bit FNV-1a hash of the key, taken modulo the number of files. */
-export function fileNumber(key: string, count: number): number {
-	let hash = 0x811c9dc5;
-	for (let index = 0; index < key.length; index++) {
-		hash ^= key.charCodeAt(index);
-		hash = Math.imul(hash, 0x01000193) >>> 0;
-	}
-	return hash % count;
-}
+export { fileNumber };
 
 /** A set of records spread over files by key. */
 export interface SpreadFiles {
