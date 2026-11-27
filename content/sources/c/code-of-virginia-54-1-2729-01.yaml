@@ -1,0 +1,50 @@
+key: code-of-virginia-54-1-2729-01
+kind: state-statute
+citation:
+  type: legislation
+  title: Practice of dental assistants
+  title-short: Va. Code Ann. § 54.1-2729.01
+  container-title: Code of Virginia
+  container-title-short: Va. Code Ann.
+  section: 54.1-2729.01
+  author:
+  - literal: Virginia General Assembly
+  issued:
+    date-parts:
+    - - 2008
+  URL: https://law.lis.virginia.gov/vacode/title54.1/chapter27/section54.1-2729.01/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://law.lis.virginia.gov/vacode/title54.1/chapter27/section54.1-2729.01/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Va. Code Ann. § 54.1-2729.01 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Va. Code Ann. § 54.1-2729.01 (2025). History: 2008, cc. 84, 264; 2026, cc. 439, 440. Text read from the Virginia Division of Legislative Systems'' page for the section in the Code of Virginia (law.lis.virginia.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian health; indian); AI reader''s verdict incidental: Strong-term hit a reader marked none; the session read it again: training through an Indian Health Service program qualifies a dental assistant. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian health; indian'

@@ -1,0 +1,50 @@
+key: north-carolina-general-statutes-157-68
+kind: state-statute
+citation:
+  type: legislation
+  title: Commissioners of Authority
+  title-short: N.C. Gen. Stat. § 157-68
+  container-title: General Statutes of North Carolina
+  container-title-short: N.C. Gen. Stat.
+  section: 157-68
+  author:
+  - literal: North Carolina General Assembly
+  issued:
+    date-parts:
+    - - 1977
+  URL: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_157/GS_157-68.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_157/GS_157-68.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: N.C. Gen. Stat. § 157-68 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: N.C. Gen. Stat. § 157-68 (2025). History: 1977, c. 1112, s. 3; 1987 (Reg. Sess., 1988), c. 1014; 1998-155, s. 2; 2001-318, s. 2. Text read from the North Carolina General Assembly''s page for the section''s chapter of the General Statutes (ncleg.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian affairs; indian; indians); AI reader''s verdict core: Indian Housing Authority commissioners selected via Indian Commission. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian affairs; indian; indians'

@@ -38,7 +38,7 @@ import { markSiteText, type SiteTextEntry } from './src/lib/site-text-markers.ts
 import { copyRestriction } from './src/lib/nation-restrictions.ts';
 import { installCandidates, readerToolFiles, type ManifestChunk } from './src/lib/offline-shell.ts';
 import { loadPublishedSiteText, siteTextCatalog } from './src/lib/server/site-text-build.ts';
-import { loadLiveChanges } from './src/lib/server/recent-changes-build.ts';
+import { loadLiveChanges, loadRepositoryHistory } from './src/lib/server/recent-changes-build.ts';
 import { publishedRecordText, recordTextCatalog, usePublishedRecordText } from './src/lib/server/record-text-build.ts';
 
 const designTokensPath = fileURLToPath(new URL('./design-tokens.json', import.meta.url));
@@ -48,6 +48,7 @@ const siteFolder = fileURLToPath(new URL('.', import.meta.url));
 // once before anything is built.
 const publishedSiteText = await loadPublishedSiteText(siteFolder);
 const liveChanges = await loadLiveChanges(siteFolder);
+const repositoryHistory = loadRepositoryHistory();
 const publishedSiteTextWords = new Map(Object.entries(publishedSiteText.texts));
 // The parts of case and law boxes that can be edited the same way ("Record
 // text"). Their catalog is read from the records before any published words
@@ -508,11 +509,16 @@ const resolvedBuildModule = `\0${buildModule}`;
  *
  * Also the pull requests merged most recently, which /edition.json serves
  * so the update card can list what an update brings
- * (src/lib/recent-changes.ts): those git names, joined with those the live
- * site already lists, since Cloudflare's shallow clone names only the
- * latest (src/lib/server/recent-changes-build.ts).
+ * (src/lib/recent-changes.ts): those git names, those the repository's
+ * history names (Cloudflare's shallow clone names only the latest, and it
+ * skips builds a newer push overtakes), and those the live site already
+ * lists (src/lib/server/recent-changes-build.ts). Changes the live site
+ * lists that are newer than this build's own are left out, so a rebuild of
+ * an older commit does not claim them.
  */
-function recentChanges(): Change[] {
+let builtChanges: { own: Change[]; all: Change[] } | undefined;
+function recentChanges(): { own: Change[]; all: Change[] } {
+	if (builtChanges) return builtChanges;
 	let fromGit: Change[] = [];
 	try {
 		const log = execFileSync('git', ['log', '--first-parent', '-n', String(keptChanges), '--format=%cI%x09%s', 'HEAD'], {
@@ -521,9 +527,13 @@ function recentChanges(): Change[] {
 		});
 		fromGit = parseGitLog(log);
 	} catch {
-		// No git: only what the live site lists.
+		// No git: only the repository's history and what the live site lists.
 	}
-	return mergeChanges([fromGit, liveChanges]);
+	const own = mergeChanges([fromGit, parseGitLog(repositoryHistory)]);
+	const end = own[0] ? Date.parse(own[0].merged) : Infinity;
+	const carried = liveChanges.filter((change) => Date.parse(change.merged) <= end);
+	builtChanges = { own, all: mergeChanges([own, carried]) };
+	return builtChanges;
 }
 
 const sponsorshipCountsModule = 'virtual:sponsorship-counts';
@@ -637,18 +647,33 @@ const siteTextMarkers = {
 	}
 };
 
+/**
+ * The newest pull request this build has, for the reader's page
+ * (virtual:build-change), so the update card lists what a waiting update
+ * adds to it (src/lib/recent-changes.ts, changesSince). It is a separate
+ * module so the page does not carry the whole list.
+ */
+const buildChangeModule = 'virtual:build-change';
+const resolvedBuildChangeModule = `\0${buildChangeModule}`;
+
 function buildInformation(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:build',
 		resolveId(identifier) {
-			return identifier === buildModule ? resolvedBuildModule : undefined;
+			if (identifier === buildModule) return resolvedBuildModule;
+			if (identifier === buildChangeModule) return resolvedBuildChangeModule;
+			return undefined;
 		},
 		load(identifier) {
+			if (identifier === resolvedBuildChangeModule) {
+				const newest = recentChanges().own[0];
+				return `export const newestChange = ${JSON.stringify(newest ? { number: newest.number, merged: newest.merged } : null)};`;
+			}
 			if (identifier !== resolvedBuildModule) return undefined;
 			const commit = process.env.WORKERS_CI_COMMIT_SHA ?? process.env.GITHUB_SHA ?? '';
 			return [
 				`export const buildCommit = ${JSON.stringify(commit.slice(0, 40))};`,
-				`export const recentChanges = ${JSON.stringify(recentChanges())};`
+				`export const recentChanges = ${JSON.stringify(recentChanges().all)};`
 			].join('\n');
 		}
 	};

@@ -1,0 +1,50 @@
+key: code-of-virginia-10-1-659
+kind: state-statute
+citation:
+  type: legislation
+  title: Flood protection programs; coordination
+  title-short: Va. Code Ann. § 10.1-659
+  container-title: Code of Virginia
+  container-title-short: Va. Code Ann.
+  section: 10.1-659
+  author:
+  - literal: Virginia General Assembly
+  issued:
+    date-parts:
+    - - 1989
+  URL: https://law.lis.virginia.gov/vacode/title10.1/chapter6/section10.1-659/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://law.lis.virginia.gov/vacode/title10.1/chapter6/section10.1-659/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Va. Code Ann. § 10.1-659 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Va. Code Ann. § 10.1-659 (2025). History: 1989, cc. 468, 497; 2012, cc. 785, 819; 2013, cc. 756, 793; 2020, cc. 493, 958; 2021, Sp. Sess. I, c. 532; 2022, cc. 494, 495; 2024, cc. 13, 753. Text read from the Virginia Division of Legislative Systems'' page for the section in the Code of Virginia (law.lis.virginia.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal nations; indigenous; tribal); AI reader''s verdict incidental: Flood committee invites and engages federally recognized Tribal Nations. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal nations; indigenous; tribal'

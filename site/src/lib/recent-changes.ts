@@ -10,7 +10,11 @@
  * /edition.json and carries its changes forward
  * (src/lib/server/recent-changes-build.ts), so the list grows with every
  * deploy and the card can list every change since the reader's build, as
- * Trevor asked on Nov. 27, 2026.
+ * Trevor asked on Nov. 27, 2026. Cloudflare skips builds that a newer push
+ * overtakes, so the build also reads the whole history from GitHub; and each
+ * build records the newest pull request it has, so the card counts from
+ * that rather than from the build's clock, after Trevor saw update notices
+ * that listed nothing (Nov. 27, 2026).
  *
  * This module must work in the browser and in Node (for tests and for
  * vite.config.ts).
@@ -79,10 +83,40 @@ export function mergeChanges(lists: Change[][], limit = keptChanges): Change[] {
 		.slice(0, limit);
 }
 
-/** The changes merged after a build was made, newest first. */
-export function changesSince(changes: Change[] | undefined, built: Date | undefined): Change[] {
-	if (!changes || !built) return [];
-	return changes.filter((change) => Date.parse(change.merged) > built.getTime());
+/**
+ * What a reader's build already has: the newest pull request it was built
+ * from (virtual:build-change), and when it was built. Builds made before the
+ * newest change was recorded give only the time.
+ */
+export interface BuildPoint {
+	newest?: Pick<Change, 'number' | 'merged'>;
+	built?: Date;
+}
+
+/**
+ * The time a build's changes end: when its newest pull request was merged,
+ * or, failing that, when it was built. The build's own time is not enough on
+ * its own: Cloudflare builds the commit that was pushed, but takes the time
+ * a minute or so later, so a pull request merged in between is in neither
+ * build's time window and the card listed nothing (Nov. 27, 2026).
+ */
+function endOf(point: BuildPoint): number | undefined {
+	const time = point.newest ? Date.parse(point.newest.merged) : point.built?.getTime();
+	return time === undefined || Number.isNaN(time) ? undefined : time;
+}
+
+/**
+ * The changes a build lacks, newest first. When the list names the build's
+ * newest pull request, everything above it; otherwise everything merged
+ * after the build's changes end.
+ */
+export function changesSince(changes: Change[] | undefined, point: BuildPoint): Change[] {
+	if (!changes) return [];
+	const index = point.newest ? changes.findIndex((change) => change.number === point.newest?.number) : -1;
+	if (index >= 0) return changes.slice(0, index);
+	const end = endOf(point);
+	if (end === undefined) return [];
+	return changes.filter((change) => Date.parse(change.merged) > end);
 }
 
 /**
@@ -90,9 +124,12 @@ export function changesSince(changes: Change[] | undefined, built: Date | undefi
  * it are all there. When every listed change is newer than the build, older
  * ones may have fallen off the end of the list.
  */
-export function reachesBack(changes: Change[] | undefined, built: Date | undefined): boolean {
-	if (!changes || !built) return false;
-	return changes.some((change) => Date.parse(change.merged) <= built.getTime());
+export function reachesBack(changes: Change[] | undefined, point: BuildPoint): boolean {
+	if (!changes) return false;
+	if (point.newest && changes.some((change) => change.number === point.newest?.number)) return true;
+	const end = endOf(point);
+	if (end === undefined) return false;
+	return changes.some((change) => Date.parse(change.merged) <= end);
 }
 
 export interface ChangeDay {

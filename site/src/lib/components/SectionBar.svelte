@@ -14,20 +14,41 @@
 	// a time and they work without JavaScript. A menu also closes on Escape, on
 	// a click outside it and when a link is followed. Phones list the same
 	// sections in the Menu sheet (SiteSidebar.svelte).
+	//
+	// For people with workspace access, a seventh tab, Workspace, sits at the
+	// row's right end, set apart by a rule, and its menu lists the workspace
+	// pages their role opens under their categories (Trevor chose this on
+	// Nov. 27, 2026: design/sidebar-workspace-profile, option B;
+	// src/lib/personal-navigation.ts). Pages built ahead of time show it once
+	// their script reads the signed-in hint.
 	import { building } from '$app/env';
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import Briefcase from '@lucide/svelte/icons/briefcase';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import { navigationIcons } from '#lib/navigation-icons.ts';
-	import { currentNavigationLink, navigationSectionOf, navigationSections, type NavigationCounts } from '#lib/site-navigation.ts';
+	import { isWorkspacePath, workspaceSection } from '#lib/personal-navigation.ts';
+	import {
+		currentNavigationLink,
+		holdingNavigationLink,
+		navigationSectionOf,
+		navigationSections,
+		type NavigationCounts,
+		type NavigationSection
+	} from '#lib/site-navigation.ts';
+	import { WorkspaceAccess } from '#lib/workspace-access.svelte.ts';
 	import CountBadge from './CountBadge.svelte';
 
 	const path = $derived(page.url.pathname);
 	// Pages built ahead of time cannot read the query while being built.
 	const search = $derived(building ? '' : page.url.search);
-	const currentSection = $derived(navigationSectionOf(path));
-	const currentLink = $derived(currentNavigationLink(currentSection, path, search));
+	const access = new WorkspaceAccess();
+	const workspace = $derived(workspaceSection(access.pages));
+	const currentSection = $derived(navigationSectionOf(path) ?? (workspace && isWorkspacePath(path) ? workspace : undefined));
+	const currentLink = $derived(
+		currentSection === workspace && workspace ? holdingNavigationLink(workspace, path, search) : currentNavigationLink(currentSection, path, search)
+	);
 	const counts = $derived(page.data.navigationCounts as NavigationCounts | undefined);
 
 	// How long the mouse rests on a section before its menu opens, so a menu
@@ -124,55 +145,63 @@
 
 <svelte:window onkeydown={closeOnEscape} onclick={closeOnClickOutside} />
 
+{#snippet menu(section: NavigationSection)}
+	{@const current = section === currentSection}
+	<details class="section-menu" name="section-menu" data-key={section.key}>
+		<summary
+			class:current
+			onpointerenter={(event) => pointerEntered(event, event.currentTarget.parentElement as HTMLDetailsElement)}
+			onclick={(event) => summaryClicked(event, event.currentTarget.parentElement as HTMLDetailsElement)}
+		>
+			{#if section === workspace}<Briefcase size={18} aria-hidden="true" />{/if}
+			{section.label}
+			{#if current}<span class="visually-hidden">(the section you are in)</span>{/if}
+			<ChevronDown size={16} aria-hidden="true" />
+		</summary>
+		<div class="menu-panel">
+			<div class="menu-columns page-width" class:workspace-columns={section === workspace}>
+				{#each section.groups as group (group.title)}
+					<div class="menu-group">
+						<h2 class="group-title">{group.title}</h2>
+						<ul>
+							{#each group.links as item (item.link)}
+								{@const Icon = navigationIcons[item.icon]}
+								<li>
+									{#if item.soon}
+										<span class="menu-link soon"
+											><Icon size={18} aria-hidden="true" /><span class="menu-label">{item.label} <span class="soon-note">soon</span></span></span
+										>
+									{:else}
+										<a class="menu-link" href={item.link} aria-current={item === currentLink ? 'page' : undefined}
+											><Icon size={18} aria-hidden="true" /><span class="menu-label">{item.label}</span
+											>{#if item.count && counts?.[item.count]}<CountBadge count={counts[item.count]} />{/if}</a
+										>
+									{/if}
+								</li>
+							{/each}
+						</ul>
+					</div>
+				{/each}
+				{#if section.home}
+					<div class="menu-side">
+						<a class="section-home" href={section.home}
+							>{section === workspace ? 'Workspace Overview' : `All of ${section.label}`} <ArrowRight size={18} aria-hidden="true" /></a
+						>
+					</div>
+				{/if}
+			</div>
+		</div>
+	</details>
+{/snippet}
+
 <nav class="section-bar no-print" aria-label="Sections" bind:this={bar} onpointerleave={pointerLeftBar} onpointerenter={pointerEnteredBar}>
 	<ul class="page-width sections">
 		{#each navigationSections as section (section.key)}
-			{@const current = section === currentSection}
-			<li>
-				<details class="section-menu" name="section-menu" data-key={section.key}>
-					<summary
-						class:current
-						onpointerenter={(event) => pointerEntered(event, event.currentTarget.parentElement as HTMLDetailsElement)}
-						onclick={(event) => summaryClicked(event, event.currentTarget.parentElement as HTMLDetailsElement)}
-					>
-						{section.label}
-						{#if current}<span class="visually-hidden">(the section you are in)</span>{/if}
-						<ChevronDown size={16} aria-hidden="true" />
-					</summary>
-					<div class="menu-panel">
-						<div class="menu-columns page-width">
-							{#each section.groups as group (group.title)}
-								<div class="menu-group">
-									<h2 class="group-title">{group.title}</h2>
-									<ul>
-										{#each group.links as item (item.link)}
-											{@const Icon = navigationIcons[item.icon]}
-											<li>
-												{#if item.soon}
-													<span class="menu-link soon"
-														><Icon size={18} aria-hidden="true" /><span class="menu-label">{item.label} <span class="soon-note">soon</span></span></span
-													>
-												{:else}
-													<a class="menu-link" href={item.link} aria-current={item === currentLink ? 'page' : undefined}
-														><Icon size={18} aria-hidden="true" /><span class="menu-label">{item.label}</span
-														>{#if item.count && counts?.[item.count]}<CountBadge count={counts[item.count]} />{/if}</a
-													>
-												{/if}
-											</li>
-										{/each}
-									</ul>
-								</div>
-							{/each}
-							{#if section.home}
-								<div class="menu-side">
-									<a class="section-home" href={section.home}>All of {section.label} <ArrowRight size={18} aria-hidden="true" /></a>
-								</div>
-							{/if}
-						</div>
-					</div>
-				</details>
-			</li>
+			<li>{@render menu(section)}</li>
 		{/each}
+		{#if workspace}
+			<li class="personal">{@render menu(workspace)}</li>
+		{/if}
 	</ul>
 </nav>
 
@@ -203,6 +232,21 @@
 
 	.sections > li {
 		display: flex;
+	}
+
+	/* The Workspace, for people with access, at the row's right end, set apart by a rule (design/sidebar-workspace-profile, option B). */
+	.sections > li.personal {
+		margin-left: auto;
+		padding-left: var(--space-3);
+		border-left: 1px solid var(--color-line);
+	}
+
+	.personal summary {
+		gap: var(--space-2);
+	}
+
+	.personal summary > :global(svg:first-child) {
+		color: inherit;
 	}
 
 	summary {
@@ -266,6 +310,18 @@
 		display: flex;
 		gap: var(--space-5);
 		padding: var(--space-5) var(--space-5) 1.75rem;
+	}
+
+	/* The Workspace's eight categories sit in rows of four, beside the Overview box. */
+	.workspace-columns {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr)) 17rem;
+		gap: var(--space-5) var(--space-6);
+	}
+
+	.workspace-columns .menu-side {
+		grid-column: 5;
+		grid-row: 1;
 	}
 
 	/* Each group takes room by the length of its links, so long names wrap least. */
