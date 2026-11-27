@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Utah, Dec. 30, 1849, 9 Stat. 984
+  since: '1849-12-30'
+  source: treaty-with-the-utah-1849
+  confidence: medium
+  verification: inferred
+  as_of: '1849-12-30'
+  locator: p. 585 (Treaty with the Utah, 1849; Kappler header "Dec. 30, 1849. | 9 Stats., 984. | Ratified, Sept. 9, 1850. | Proclaimed, Sept. 9, 1850.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Utah; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 3 nations' profiles link this treaty.
 states:
 - state: CO
   presence: government-office

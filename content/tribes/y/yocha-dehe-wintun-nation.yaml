@@ -18,6 +18,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Yocha Dehe Wintun Nation, California (approved by the Secretary of the Interior Mar. 18, 1976)
+  since: '1976-03-18'
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: 1976 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office

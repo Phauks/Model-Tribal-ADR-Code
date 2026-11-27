@@ -21,6 +21,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Native Village of Tatitlek (approved by the Secretary of the Interior May 23, 1939), under the Act of May 1, 1936, ch. 254, § 1, 49 Stat. 1250, 1250
+  since: '1939-05-23'
+  source: university-of-oklahoma-indian-reorganization-act-tatcons
+  document_version:
+    document: native-village-of-tatitlek-constitution
+    version: 1939-text
+  confidence: medium
+  verification: inferred
+  as_of: '1939-05-23'
+  locator: 1939 constitution and bylaws (University of Oklahoma copy), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AK
   presence: government-office

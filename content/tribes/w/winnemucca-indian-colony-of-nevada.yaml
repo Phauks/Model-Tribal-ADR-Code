@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order No. 2639
+  since: '1917-06-18'
+  source: executive-order-1917-06-18-2639
+  confidence: medium
+  verification: read-in-full
+  as_of: '1917-06-18'
+  locator: 4 Kappler 1028
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Winnemucca Colony, Nevada (NE 1/4 sec. 32, T. 36 N., R. 38 E.).
 states:
 - state: NV
   presence: government-office

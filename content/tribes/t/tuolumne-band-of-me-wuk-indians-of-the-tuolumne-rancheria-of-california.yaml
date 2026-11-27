@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California (approved by the Secretary of the Interior Jan. 15, 1936), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1936-01-15'
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-1936-text
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 1936-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: 1936 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office

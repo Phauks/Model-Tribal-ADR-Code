@@ -41,6 +41,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Act of Sept. 7, 1916, ch. 452, 39 Stat. 739
+  since: '1916-09-07'
+  source: act-1916-09-07-rocky-boys-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1916-09-07'
+  locator: 39 Stat. 739
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Rocky Boy's Reservation (about 56,035 acres of the former Fort Assinniboine Military Reservation), Montana.
 states:
 - state: MT
   presence: government-office
