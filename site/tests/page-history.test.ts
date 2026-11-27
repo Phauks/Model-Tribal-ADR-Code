@@ -7,6 +7,8 @@ import {
 	filterQuery,
 	followedPageAddress,
 	pageAddressOfFile,
+	pageChangesLink,
+	pageOfChangesView,
 	parseChangeIdentifier,
 	readFilters,
 	sizeChangeText,
@@ -159,6 +161,19 @@ describe('shared rules', () => {
 		expect(followedPageAddress('/about')).toBe('/about');
 		for (const listing of ['/nations', '/nations/map', '/nations/recourse', '/nations/letter/a', '/changes', '/workspace/changes', '/', '/search']) {
 			expect(followedPageAddress(listing)).toBeUndefined();
+		}
+	});
+
+	it('lists a page’s changes in the page’s own place, keeping its side column', () => {
+		expect(pageChangesLink('/nations/karuk-tribe')).toBe('/nations/karuk-tribe/changes');
+		expect(pageChangesLink('/glossary/mediation')).toBe('/glossary/mediation/changes');
+		expect(pageChangesLink('/licenses')).toBe('/licenses/changes');
+		// Anything else, such as an address the site does not follow, stays on Recent changes.
+		expect(pageChangesLink('/code/section-1')).toBe('/changes?page=%2Fcode%2Fsection-1');
+		expect(pageOfChangesView('/nations/karuk-tribe/changes')).toBe('/nations/karuk-tribe');
+		expect(pageOfChangesView('/about/changes/')).toBe('/about');
+		for (const path of ['/changes', '/nations/changes', '/nations/map/changes', '/nations/karuk-tribe', '/workspace/changes', '/a/b/c/changes']) {
+			expect(pageOfChangesView(path)).toBeUndefined();
 		}
 	});
 

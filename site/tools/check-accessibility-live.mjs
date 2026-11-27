@@ -154,6 +154,9 @@ const visits = {
 		'/biographies/a-pish-ka-go-gi',
 		'/supreme-court/justices/john-marshall',
 		'/supreme-court/presidents/abraham-lincoln',
+		// A page's own Changes view (src/lib/server/page-changes.ts): a nation's, with its badges, and a glossary entry's.
+		'/nations/hannahville-indian-community/changes',
+		'/glossary/peacemaking/changes',
 		'/sign-in',
 		'/sign-in/forgot',
 		['/requests', ['sign-in panel']],
