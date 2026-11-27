@@ -12,7 +12,6 @@ vi.mock('virtual:essay-library', () => ({
 	essayBoxFacts: { laws: {}, cases: {} },
 	essayCaseLinks: {},
 	essayCaseNames: {},
-	essayCitations: {},
 	essayOpinions: {},
 	essayTerms: {},
 	essaysInGit: { 'ii-beta': 'From git.\n', 'i-zeta': 'Only in git.\n' }
