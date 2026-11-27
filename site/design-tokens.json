@@ -171,6 +171,30 @@
         "$value": "#0F4C54",
         "$description": "Map: 100 or more nations."
       },
+      "map-sky": {
+        "$value": "#122630",
+        "$description": "Map: the night sky behind the globe, near the earth. Dark in both themes, so the stars show (Trevor, 2026-11-27, mockup A)."
+      },
+      "map-sky-edge": {
+        "$value": "#08131A",
+        "$description": "Map: the night sky behind the globe, at the map's edges."
+      },
+      "map-sky-star": {
+        "$value": "#FFF8EE",
+        "$description": "Map: a white star in the sky behind the globe, the same in both themes. Drawn faint to full by the star's brightness."
+      },
+      "map-sky-star-cool": {
+        "$value": "#D6E2FF",
+        "$description": "Map: a hot, blue-white star (B-V under 0.2) in the sky behind the globe."
+      },
+      "map-sky-star-warm": {
+        "$value": "#FFE2C0",
+        "$description": "Map: a cool, orange-white star (B-V over 1.0) in the sky behind the globe."
+      },
+      "map-sky-glow": {
+        "$value": "#8FD3DA",
+        "$description": "Map: the thin glow at the earth's edge on the globe, drawn at 38 percent and fading out."
+      },
       "scrollbar-thumb": {
         "$value": "#3F7F86",
         "$description": "Scrollbar thumb, the part a reader drags. 4.0:1 on the scrollbar track and 4.4:1 on paper (non-text minimum 3:1)."
@@ -444,6 +468,30 @@
       "map-class-4": {
         "$value": "#B5E8EC",
         "$description": "Map: 100 or more nations."
+      },
+      "map-sky": {
+        "$value": "#10232A",
+        "$description": "Map: the night sky behind the globe, near the earth. Dark in both themes, so the stars show (Trevor, 2026-11-27, mockup A)."
+      },
+      "map-sky-edge": {
+        "$value": "#070F13",
+        "$description": "Map: the night sky behind the globe, at the map's edges."
+      },
+      "map-sky-star": {
+        "$value": "#FFF8EE",
+        "$description": "Map: a white star in the sky behind the globe, the same in both themes. Drawn faint to full by the star's brightness."
+      },
+      "map-sky-star-cool": {
+        "$value": "#D6E2FF",
+        "$description": "Map: a hot, blue-white star (B-V under 0.2) in the sky behind the globe."
+      },
+      "map-sky-star-warm": {
+        "$value": "#FFE2C0",
+        "$description": "Map: a cool, orange-white star (B-V over 1.0) in the sky behind the globe."
+      },
+      "map-sky-glow": {
+        "$value": "#8FD3DA",
+        "$description": "Map: the thin glow at the earth's edge on the globe, drawn at 38 percent and fading out."
       },
       "scrollbar-thumb": {
         "$value": "#5A979E",

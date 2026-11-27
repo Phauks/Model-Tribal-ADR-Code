@@ -38,6 +38,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=25%20U.S.C.%20%C2%A7%205130
+file:
+  storage_key: united-states-code/2024/title-25-section-5130.pdf
+  checksum: 2735d8bb19f59a976d3c63e7c26af9fc1a3e875ac30e91fdae685abbb6b0ac06
+  media_type: application/pdf
+  bytes: 134586
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -45,14 +50,8 @@ rights:
 found_in:
   - 2026-11-20-terminology-sources
   - 2026-11-21-legal-history-and-key-cases
-notes: >-
-  Definitions for the Federally Recognized Indian Tribe List Act. Read on the Legal Information
-  Institute's site; citator check not yet run. Legal history session (2026-11-21): Citations: Pub.
-  L. No. 103-454, tit. I; 108 Stat. 4791; 25 U.S.C. §§ 5130–5131 (formerly §§ 479a, 479a-1). Also
-  read: https://www.law.cornell.edu/uscode/text/25/5131. Later history: List published annually in
-  the Federal Register; the Lumbee Fairness Act (2025) uses the list as its definition of
-  'federally recognized Indian tribe'. Current list year/count not verified. Westlaw: KeyCite 25
-  U.S.C. § 5131; pull the current Federal Register list.
+  - 2026-11-27-us-code-sections
+notes: 'Definitions for the Federally Recognized Indian Tribe List Act. Read on the Legal Information Institute''s site; citator check not yet run. Legal history session (2026-11-21): Citations: Pub. L. No. 103-454, tit. I; 108 Stat. 4791; 25 U.S.C. §§ 5130–5131 (formerly §§ 479a, 479a-1). Also read: https://www.law.cornell.edu/uscode/text/25/5131. Later history: List published annually in the Federal Register; the Lumbee Fairness Act (2025) uses the list as its definition of ''federally recognized Indian tribe''. Current list year/count not verified. Westlaw: KeyCite 25 U.S.C. § 5131; pull the current Federal Register list. The stored copy is 25 U.S.C. § 5130 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.'
 law_box:
   summary: |-
     Requires an annual list of recognized nations and states that recognition may come from an Act of Congress, the Part 83 process or a court decision [@usc-25-5130, sec. 103(3)].

@@ -874,9 +874,9 @@ sup.citation {
 }
 
 /*
- * The facts each source supports wait behind "Show what each source
- * supports" (SourceList.svelte). Without scripts that button cannot work, so
- * the facts show; on paper they always print.
+ * The facts each source supports wait behind the "Expand all" button on the
+ * References heading row (SourceList.svelte). Without scripts that button
+ * cannot work, so the facts show; on paper they always print.
  */
 @media screen {
 	:root[data-scripts='on'] .notes:not(.showing-facts) .source-uses {
