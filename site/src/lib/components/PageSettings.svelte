@@ -256,10 +256,8 @@
 	}
 
 	.more-settings:focus-visible {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: -3px;
-		background: var(--color-focus);
-		color: var(--focus-text);
 	}
 
 	/* Where the window is tall enough for the whole panel, the font list can hang below it rather than scroll it. */

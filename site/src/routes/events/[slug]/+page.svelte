@@ -334,7 +334,7 @@
 	}
 
 	.ticket input:focus-visible + label {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 2px;
 	}
 

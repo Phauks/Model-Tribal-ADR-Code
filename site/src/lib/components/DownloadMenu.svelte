@@ -353,8 +353,7 @@
 
 	.row:focus-visible,
 	.format:focus-visible {
-		background-color: var(--color-focus);
-		color: var(--focus-text);
+		outline-offset: -3px;
 	}
 
 	.row:focus-visible .choice-hint {

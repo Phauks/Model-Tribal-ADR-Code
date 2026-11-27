@@ -173,7 +173,7 @@
 	}
 
 	.recognition-badge-button:focus-visible {
-		outline: 3px solid var(--color-focus, var(--color-link));
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 2px;
 	}
 

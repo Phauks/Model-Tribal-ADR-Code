@@ -7,7 +7,7 @@ import { error, json } from '@sveltejs/kit';
 import { siteTextSubject } from '#lib/permissions.ts';
 import { accessTo } from '#lib/server/access.ts';
 import { recordPiece } from '#lib/server/record-text.ts';
-import { pieceStates } from '#lib/server/site-text.ts';
+import { pieceStates, waitingCount } from '#lib/server/site-text.ts';
 import { catalogByKey } from '#lib/server/site-text-catalog.ts';
 import { requirePersonForData, storage } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
@@ -44,6 +44,6 @@ export const POST: RequestHandler = async (event) => {
 			})
 		)
 	).flat();
-	const waiting = [...states.values()].filter((state) => state.draft).length;
+	const waiting = waitingCount(states, catalog);
 	return json({ level: access.level, pieces, waiting }, { headers: { 'cache-control': 'no-store' } });
 };
