@@ -1,0 +1,48 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: akz
+name: Alabama
+iso_639_3:
+  code: akz
+  reference_name: Alabama
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: alab1237
+  level: language
+  source: glottolog-5-4
+family:
+  name: Muskogean
+  glottocode: musk1252
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/670
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '694041'
+  title: Alabama-English Dictionary
+  kinds:
+  - dictionary
+  author: Cora Sylestine, Heather K. Hardy and Timothy Montler
+  year: 1993
+  source: glottolog-5-4
+- glottolog_reference: '146851'
+  title: Dictionary of the Alabama language
+  kinds:
+  - dictionary
+  author: Cora Sylestine, Heather K. Hardy and Timothy Montler
+  year: 1993
+  publisher: University of Texas Press
+  pages: 715
+  source: glottolog-5-4
+- glottolog_reference: '88422'
+  title: The Language of the Alabama Indians
+  kinds:
+  - grammar
+  author: Karen Jacque Lupardus
+  year: 1982
+  publisher: University of Kansas
+  pages: 297
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

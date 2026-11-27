@@ -1,0 +1,37 @@
+key: glottolog-5-4
+kind: dataset
+citation:
+  type: dataset
+  title: Glottolog 5.4
+  author:
+  - family: Hammarström
+    given: Harald
+  - family: Forkel
+    given: Robert
+  - family: Haspelmath
+    given: Martin
+  - family: Bank
+    given: Sebastian
+  publisher: Max Planck Institute for Evolutionary Anthropology
+  medium: Glottolog database 5.4 as CLDF (Zenodo record 24101243), and the languoid pages at glottolog.org
+  URL: https://glottolog.org/
+  DOI: 10.5281/zenodo.24101243
+  issued:
+    date-parts: [[2026, 11, 10]]
+  accessed:
+    date-parts: [[2026, 11, 27]]
+original_link: https://glottolog.org/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: open-license
+  basis_note: Glottolog is published under the Creative Commons Attribution 4.0 International License (Glottolog home page footer; LICENSE in the CLDF release). The language pages give the attribution with every fact taken from it.
+  license: CC-BY-4.0
+  redistribution: true
+found_in:
+- 2026-11-27-language-pages
+notes: 'The catalog of the world''s languages, families and dialects, with a bibliography of descriptions. The language registry (content/languages/, scripts/languages/build_registry.py) takes from it each language''s Glottocode, family, dialects, the name Lexvo gives the language in the language itself, the Endangered Languages Project link, and the grammars and dictionaries Glottolog lists for the language. The CLDF release is at https://zenodo.org/records/24101243.'

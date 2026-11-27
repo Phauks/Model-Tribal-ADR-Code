@@ -1,0 +1,74 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: mia
+name: Miami
+iso_639_3:
+  code: mia
+  reference_name: Miami
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: miam1252
+  level: language
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1924
+  source: glottolog-5-4
+dialects:
+- name: Nuclear Miami
+  glottocode: nucl1653
+  source: glottolog-5-4
+- name: Peoria
+  glottocode: peor1238
+  source: glottolog-5-4
+works:
+- glottolog_reference: '459762'
+  title: Carl Masthay (ed.), Kaskaskia Illinois-to-French Dictionary
+  kinds:
+  - dictionary
+  author: Wolf Dietrich
+  year: 2011
+  publisher: Walter de Gruyter GmbH \& Co. KG
+  pages: 783
+  source: glottolog-5-4
+- glottolog_reference: '39437'
+  title: 'Miami-Peoria dictionary: myaamia neehi peewaalia kaloosioni mahsinaakani'
+  kinds:
+  - dictionary
+  author: Daryl Baldwin and David J. Costa
+  year: 2005
+  publisher: Miami Tribe of Oklahoma
+  pages: 216
+  source: glottolog-5-4
+- glottolog_reference: '437715'
+  title: 'Masthay, Carl (ed.): Kaskaskia Illinois-to-French Dictionary. Published by the author. Creve Coeur (Saint Louis), Missouri 2002. X, 757 Seiten.'
+  kinds:
+  - dictionary
+  author: Franz Josef Hausmann
+  year: 2004
+  publisher: Walter de Gruyter
+  pages: 382
+  source: glottolog-5-4
+- glottolog_reference: '75256'
+  title: The Miami-Illinois Language
+  kinds:
+  - grammar
+  author: David J. Costa
+  year: 2003
+  publisher: University of Nebraska Press
+  pages: 587
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '302088'
+  title: Kaskaskia Illinois-to-French Dictionary
+  kinds:
+  - dictionary
+  author: Carl Masthay
+  year: 2002
+  publisher: Carl Masthay
+  pages: 767
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -54,6 +54,7 @@ export const navigationIconNames = [
 	'info',
 	'key-round',
 	'landmark',
+	'languages',
 	'layers',
 	'library',
 	'life-buoy',
@@ -146,6 +147,7 @@ export const navigationSections: NavigationSection[] = [
 					{ label: 'Data and Charts', link: '/nations/data', icon: 'chart-column', count: 'charts' },
 					{ label: 'Federal Offices', link: '/nations/federal-offices', icon: 'landmark' },
 					{ label: 'Self-Governance and Federal Programs', link: '/nations/federal-programs', icon: 'handshake' },
+					{ label: 'Languages', link: '/languages', icon: 'languages', count: 'languages' },
 					{ label: 'Coverage', link: '/nations/coverage', icon: 'gauge' }
 				]
 			},
@@ -160,7 +162,7 @@ export const navigationSections: NavigationSection[] = [
 				]
 			}
 		],
-		holds: ['/nations', '/stats/native-nations', '/stats/charts']
+		holds: ['/nations', '/languages', '/stats/native-nations', '/stats/charts', '/stats/languages', '/stats/language-families']
 	},
 	{
 		key: 'federal-law',

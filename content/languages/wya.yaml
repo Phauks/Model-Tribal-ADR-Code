@@ -1,0 +1,122 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: wya
+name: Huron-Wyandot
+iso_639_3:
+  code: wyn
+  reference_name: Wyandot
+  scope: individual
+  source: iso-639-3-code-tables
+  retired_code:
+    code: wya
+    effective: '2022-01-20'
+    remedy: Split into Wyandot [wyn] and Wendat [wdt]
+glottolog:
+  glottocode: wyan1247
+  level: language
+  source: glottolog-5-4
+family:
+  name: Iroquoian
+  glottocode: iroq1247
+  source: glottolog-5-4
+iso_names:
+- name: Wyandot
+  source: iso-639-3-code-tables
+dialects:
+- name: Petun-Wyandot
+  glottocode: petu1234
+  source: glottolog-5-4
+- name: Wendat
+  glottocode: wend1234
+  source: glottolog-5-4
+works:
+- glottolog_reference: '664787'
+  title: 'The elaboration of verbal structure: Wendat (Huron) verb morphology'
+  kinds:
+  - grammar
+  author: Megan Elizabeth Lukaniec
+  year: 2018
+  publisher: University of California at Santa Barbara
+  pages: 374
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '319999'
+  title: The first French-Huron dictionary by Father Jean de Brebeuf and his Jesuit Brethren
+  kinds:
+  - dictionary
+  author: John Steckley
+  year: 2010
+  publisher: The Edwin Mellen Press
+  pages: 246
+  source: glottolog-5-4
+- glottolog_reference: '64529'
+  title: A Huron-English/English-Huron dictionary (listing both words and noun and verb roots)
+  kinds:
+  - dictionary
+  author: John Steckley
+  year: 2007
+  publisher: Edwin Mellen Press
+  pages: 392
+  source: glottolog-5-4
+- glottolog_reference: '50664'
+  title: A Grammar and Dictionary of Wyandot
+  kinds:
+  - grammar
+  - dictionary
+  author: Craig Alexander Kopris
+  year: 2001
+  publisher: State University of New York at Buffalo
+  pages: 262
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '404839'
+  title: '"Je suis un peu au fait du dictionnaire huron: je comprends leurs façons de parler métaphoriques": metaphores amérindiennes en français et en anglais'
+  kinds:
+  - dictionary
+  author: Peter W. Halford
+  year: 2000
+  publisher: De Gruyter
+  pages: 164
+  source: glottolog-5-4
+- glottolog_reference: '183493'
+  title: Gabriel Sagards Dictionary of the Huron Tongue (1632)
+  kinds:
+  - dictionary
+  author: Rüdiger Schreyer
+  year: 1999
+  pages: 116
+  source: glottolog-5-4
+- glottolog_reference: '683682'
+  title: Gabriel Sagard‘s Dictionary of the Huron Tongue (1632)
+  kinds:
+  - dictionary
+  author: Elke Nowak
+  year: 1999
+  source: glottolog-5-4
+- glottolog_reference: '67646'
+  title: 'Le verbe huron: étude morphologique d''après une description grammaticale de la seconde moitié du XVIIe siècle'
+  kinds:
+  - grammar
+  author: P. L. Lagarde
+  year: 1980
+  publisher: Lagarde
+  pages: 222
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '569859'
+  title: French-Huron dictionary and vocabulary
+  kinds:
+  - dictionary
+  author: Pierre Joseph Marie Chaumonot
+  year: 1640
+  pages: 268
+  source: glottolog-5-4
+- glottolog_reference: '96778'
+  title: Dictionnaire de la langve Hvronne
+  kinds:
+  - dictionary
+  author: Gabriel Sagard
+  year: 1632
+  publisher: Denys Moreav
+  pages: 158
+  source: glottolog-5-4
+retrieved: '2026-11-27'

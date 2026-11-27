@@ -1,0 +1,31 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: qun
+name: Quinault
+iso_639_3:
+  code: qun
+  reference_name: Quinault
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: quin1251
+  level: language
+  source: glottolog-5-4
+family:
+  name: Salishan
+  glottocode: sali1255
+  source: glottolog-5-4
+dialects:
+- name: Lower Chehalis (Quinault)
+  glottocode: lowe1426
+  source: glottolog-5-4
+works:
+- glottolog_reference: '132892'
+  title: The Quinault dictionary
+  kinds:
+  - dictionary
+  author: Ruth Modrow
+  year: 1971
+  publisher: Quinault Indian Tribe of Washington
+  pages: 386
+  source: glottolog-5-4
+retrieved: '2026-11-27'

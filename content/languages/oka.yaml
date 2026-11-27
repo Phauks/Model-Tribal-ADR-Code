@@ -1,0 +1,53 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: oka
+name: Okanagan
+iso_639_3:
+  code: oka
+  reference_name: Okanagan
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: okan1243
+  level: language
+  source: glottolog-5-4
+family:
+  name: Salishan
+  glottocode: sali1255
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1919
+  source: glottolog-5-4
+dialects:
+- name: Colville
+  glottocode: colv1241
+  source: glottolog-5-4
+- name: Lakes Okanagan
+  glottocode: lake1256
+  source: glottolog-5-4
+- name: Sanpoil
+  glottocode: sanp1257
+  source: glottolog-5-4
+- name: Southern Okanogan
+  glottocode: sout2963
+  source: glottolog-5-4
+works:
+- glottolog_reference: '65805'
+  title: Colville-Okanagan dictionary
+  kinds:
+  - dictionary
+  author: Anthony Mattina
+  year: 1987
+  publisher: Dept. of Anthropology, University of Montana
+  pages: 354
+  source: glottolog-5-4
+- glottolog_reference: '42933'
+  title: Colville grammatical structure
+  kinds:
+  - grammar
+  author: Anthony Mattina
+  year: 1973
+  publisher: University of Hawai'i at Mānoa
+  pages: 184
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -162,6 +162,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: Language Revitalization Program page on the Southern Pomo language.
+language_programs:
+- name: Language Revitalization Program
+  link: https://drycreekrancheria.com/language-revitalization/
+  run_by: nation
+  source: drycreekrancheria-language-revitalization
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: page heading
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

@@ -1,0 +1,219 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: koy
+name: Koyukon
+iso_639_3:
+  code: koy
+  reference_name: Koyukon
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: koyu1237
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1939
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/koyukon.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Central Koyukon
+  glottocode: cent2374
+  source: glottolog-5-4
+- name: Lower Koyukon
+  glottocode: lowe1453
+  source: glottolog-5-4
+- name: Upper Koyukon
+  glottocode: uppe1474
+  source: glottolog-5-4
+works:
+- glottolog_reference: '166268'
+  title: Eliza Jones Koyukon dictionary papers
+  kinds:
+  - dictionary
+  author: James (annotator) Kari, Michael E. (annotator) Krauss and Eliza Jones
+  year: 2000
+  source: glottolog-5-4
+- glottolog_reference: '128402'
+  title: Koyukon Athabaskan dictionary
+  kinds:
+  - dictionary
+  author: Jules Jetté and Eliza Jones
+  year: 2000
+  publisher: Alaska Native Language Center
+  pages: 1118
+  source: glottolog-5-4
+- glottolog_reference: '89593'
+  title: 'The semantics of temporal categorization: the aspectual system of Koyukon Athabaskan'
+  kinds:
+  - grammar
+  author: Melissa Axelrod
+  year: 1990
+  publisher: University of Colorado at Boulder
+  pages: 485
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '318758'
+  title: 'Han zaadlitl''ee: Yukon Koyukuk School District Koyukon language curriculum; Koyukon, Scope and sequence'
+  kinds:
+  - grammar
+  author: Chad Thompson, Melissa Axelrod and Eliza Jones
+  year: 1983
+  publisher: Yukon Koyukuk School District
+  pages: 265
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '170338'
+  title: Catherine Attla, Annotation for Dictionary Project
+  kinds:
+  - dictionary
+  author: Catherine. (speaker) Attla
+  year: 1981
+  source: glottolog-5-4
+- glottolog_reference: '168300'
+  title: Koyukon Dictionary lexical file slips
+  kinds:
+  - dictionary
+  author: Eliza Jones and James Kari
+  year: 1980
+  source: glottolog-5-4
+- glottolog_reference: '172956'
+  title: Junior Dictionary for Central Koyukon Athabaskan
+  kinds:
+  - dictionary
+  author: Eliza Jones
+  year: 1978
+  pages: 203
+  source: glottolog-5-4
+- glottolog_reference: '172973'
+  title: Materials for Koyukon dictionary
+  kinds:
+  - dictionary
+  author: Eliza Jones and James Kari
+  year: 1978
+  source: glottolog-5-4
+- glottolog_reference: '173002'
+  title: The Phonology and Morphology of the Central Outer Koyukon Athapaskan Language
+  kinds:
+  - grammar
+  author: Mary V. Kroul
+  year: 1975
+  publisher: University of Wisconsin
+  pages: 250
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '172936'
+  title: Transcript of language laboratory tapes for Koyukon course, University of Alaska, 1974
+  kinds:
+  - grammar
+  author: Eliza Jones
+  year: 1974
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '669434'
+  title: Dinaak'a Our language
+  kinds:
+  - dictionary
+  author: David C. Henry, Marie D. Hunter, Eliza Jones and others
+  year: 1973
+  pages: 211
+  source: glottolog-5-4
+- glottolog_reference: '167665'
+  title: Drafts of Koyukon Topical Dictionary
+  kinds:
+  - dictionary
+  author: David C. Henry and Eliza Jones
+  year: 1973
+  source: glottolog-5-4
+- glottolog_reference: '166297'
+  title: 'Curriculum: Eliza Jones'' Instructed Classes; Syllabus and Course Work; UAF'
+  kinds:
+  - grammar
+  author: Eliza Jones and Frances Randall
+  year: 1970
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '172843'
+  title: Sources of Comparative Athabaskan Forms used in Dictionary and Comparison of Alphabets
+  kinds:
+  - dictionary
+  author: Jules Jetté
+  year: 1923
+  source: glottolog-5-4
+- glottolog_reference: '318923'
+  title: Grammar of the Ten'a Language
+  kinds:
+  - grammar
+  author: Jules Jetté
+  year: 1905
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '172815'
+  title: Ten'a Grammar
+  kinds:
+  - grammar
+  author: Jules Jetté
+  year: 1904
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '172849'
+  title: Dictionary by categories
+  kinds:
+  - dictionary
+  author: John Lucchesi
+  year: 1901
+  source: glottolog-5-4
+- glottolog_reference: '172851'
+  title: English-Koyukon dictionary
+  kinds:
+  - dictionary
+  author: Joseph Perron
+  year: 1900
+  source: glottolog-5-4
+- glottolog_reference: '172792'
+  title: Koyukon Dictionary
+  kinds:
+  - dictionary
+  author: Jules Jetté
+  year: 1900
+  source: glottolog-5-4
+- glottolog_reference: '172788'
+  title: Koyukon verb stem dictionary with paradigms
+  kinds:
+  - dictionary
+  author: Joseph M Cataldo
+  year: 1900
+  source: glottolog-5-4
+- glottolog_reference: '172738'
+  title: Koyukon dictionary
+  kinds:
+  - dictionary
+  author: Paschal Tosi
+  year: 1895
+  source: glottolog-5-4
+- glottolog_reference: '172743'
+  title: English-Koyukon Dictionary
+  kinds:
+  - dictionary
+  author: William Judge
+  year: 1894
+  source: glottolog-5-4
+- glottolog_reference: '172749'
+  title: English-Indian Dictionary
+  kinds:
+  - dictionary
+  author: Aloysius Ragaru
+  year: 1892
+  source: glottolog-5-4
+- glottolog_reference: '172750'
+  title: English-Indian Dictionary–Verbs
+  kinds:
+  - dictionary
+  author: Aloysius Ragaru
+  year: 1892
+  source: glottolog-5-4
+retrieved: '2026-11-27'

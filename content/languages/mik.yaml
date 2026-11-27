@@ -1,0 +1,38 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: mik
+name: Mikasuki
+iso_639_3:
+  code: mik
+  reference_name: Mikasuki
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: mika1239
+  level: language
+  source: glottolog-5-4
+family:
+  name: Muskogean
+  glottocode: musk1252
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1666
+  source: glottolog-5-4
+dialects:
+- name: Hitchiti
+  glottocode: hitc1239
+  source: glottolog-5-4
+- name: Nuclear Mikasuki
+  glottocode: nucl1245
+  source: glottolog-5-4
+works:
+- glottolog_reference: '25464'
+  title: A Phonology and Morphology of Mikasuki
+  kinds:
+  - grammar
+  author: Mary Tyler Derrick-Mescua
+  year: 1980
+  publisher: University of Florida
+  pages: 489
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

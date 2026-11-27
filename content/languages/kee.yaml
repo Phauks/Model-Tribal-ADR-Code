@@ -1,0 +1,47 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: kee
+name: Eastern Keres
+iso_639_3:
+  code: kee
+  reference_name: Eastern Keres
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: east1472
+  level: language
+  source: glottolog-5-4
+family:
+  name: Keresan
+  glottocode: kere1287
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/6511
+  source: glottolog-5-4
+dialects:
+- name: Cochiti
+  glottocode: coch1273
+  source: glottolog-5-4
+- name: San Felipe
+  glottocode: sanf1260
+  source: glottolog-5-4
+- name: Santa Ana
+  glottocode: sant1426
+  source: glottolog-5-4
+- name: Santo Domingo
+  glottocode: sant1425
+  source: glottolog-5-4
+- name: Zia (United States)
+  glottocode: ziaa1251
+  source: glottolog-5-4
+works:
+- glottolog_reference: '59538'
+  title: Grammatical Structure of Santa Ana Keresan
+  kinds:
+  - grammar
+  author: Irvine Elwin Davis
+  year: 1960
+  publisher: University of New Mexico
+  pages: 193
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

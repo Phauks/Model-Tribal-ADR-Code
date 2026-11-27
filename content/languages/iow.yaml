@@ -1,0 +1,64 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: iow
+name: Iowa-Oto
+iso_639_3:
+  code: iow
+  reference_name: Iowa-Oto
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: iowa1245
+  level: language
+  source: glottolog-5-4
+family:
+  name: Siouan
+  glottocode: siou1252
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1691
+  source: glottolog-5-4
+dialects:
+- name: Iowa
+  glottocode: iowa1246
+  source: glottolog-5-4
+- name: Missouria
+  glottocode: miss1249
+  source: glottolog-5-4
+- name: Oto
+  glottocode: otoo1241
+  source: glottolog-5-4
+works:
+- glottolog_reference: '618298'
+  title: 'Baxoje, Jiwere-Nyutaji, Maunke Iche Wawagaxe: Ioway, Otoe-Missouria Language to English dictionary'
+  kinds:
+  - dictionary
+  author: Jimm G. Goodtracks
+  year: 1992
+  publisher: Center for the Study of Native Languages of the Plains and Southwest
+  source: glottolog-5-4
+- glottolog_reference: '557681'
+  title: Baxoje-Jiwere-Nyut'aji – Ma'unke = Iowa-Otoe-Missouria language to English
+  kinds:
+  - dictionary
+  author: Jimm G. Good Tracks
+  year: 1992
+  publisher: Lawrence
+  source: glottolog-5-4
+- glottolog_reference: '135468'
+  title: Jiwele-Baxoje Wan'shige Ukenye Ich'e Otoe - Iowa Indian Language Books I and II
+  kinds:
+  - grammar
+  author: Lila Wistrand-Robinson
+  year: 1977
+  publisher: Christian Children's Fund
+  pages: 242
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '650431'
+  title: An Iowa/Otoe-English dictionary
+  kinds:
+  - dictionary
+  author: Lila Wistrand-Robinson
+  year: 1972
+  source: glottolog-5-4
+retrieved: '2026-11-27'
