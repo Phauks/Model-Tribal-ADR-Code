@@ -1,16 +1,24 @@
 key: the-white-thunder
 name: the White Thunder
-lead: Signed the Treaty with the Chippewa, 1854, for the La Pointe Band as 2d chief.
+lead: 2d chief of the La Pointe Band, as listed in the Treaty with the Chippewa, 1854. Signed two treaties with the United States, 1837–1854.
 living: false
 names:
 - name: Waw-baw-ne-me-ke
   note: as the Treaty with the Chippewa, 1854 prints it
   source: treaty-with-the-chippewa-1854
   where: 10 Stat. 1112
+- name: Wa-be-ne-me
+  note: as the Treaty with the Chippewa, 1837 prints it
+  source: treaty-with-the-chippewa-1837-july-29
+  where: 7 Stat. 537
 cases: []
 events:
+- when: July 29, 1837
+  text: Signed the Treaty with the Chippewa, 1837, for the Lac De Flambeau.
+  source: treaty-with-the-chippewa-1837-july-29
+  where: 7 Stat. 537
 - when: Sept. 30, 1854
   text: Signed the Treaty with the Chippewa, 1854, for the La Pointe Band, listed as 2d chief.
   source: treaty-with-the-chippewa-1854
   where: 10 Stat. 1112
-checked: '2026-11-24'
+checked: '2026-11-27'

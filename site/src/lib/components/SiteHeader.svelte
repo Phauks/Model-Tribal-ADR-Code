@@ -4,19 +4,19 @@
 	// spaced row of icon buttons (search, Report a problem as a flag, Star,
 	// Follow, Print, Download, Settings), then sign-in or the account
 	// menu at the far right (Trevor, Nov. 23, 2026). Contribute left the
-	// masthead for the sidebar's list of sections, so the row holds only the
-	// buttons (Trevor, Nov. 24, 2026; src/lib/site-sections.ts). Star and
+	// masthead for the About menu, so the row holds only the buttons (Trevor,
+	// Nov. 24, 2026; src/lib/site-navigation.ts). Star and
 	// Follow show only where the page can be starred or followed; Star, Print
 	// and Download act on the page the reader is on, and Download opens a list
 	// of what the page offers (DownloadMenu.svelte). The site's sections are in
-	// the sidebar (SiteSidebar.svelte), so the masthead has no menu row. The
+	// a row under the masthead (SectionBar.svelte, drawn by the root layout). The
 	// content version shows only on paper; on screen it is in the footer.
 	// The Settings cog opens a small Page settings panel under it, which holds
 	// the theme, so the theme button left the row (Trevor, Nov. 26, 2026;
 	// PageSettings.svelte).
 	//
 	// On wide screens a hamburger button near the page's left edge, before the
-	// name, hides and shows the sidebar, so a hidden sidebar leaves nothing
+	// name, hides and shows the side column (SiteSidebar.svelte), so a hidden sidebar leaves nothing
 	// behind on the page (Trevor, Nov. 23, 2026; sidebar/sidebar-visibility.svelte.ts).
 	// It needs scripts; without them the sidebar always shows.
 	//
@@ -49,8 +49,10 @@
 	import FollowButton from './FollowButton.svelte';
 	import StarButton from './StarButton.svelte';
 	import SaveOfflineButton from './SaveOfflineButton.svelte';
+	import UpdateButton from './UpdateButton.svelte';
+	import type { TrackVersions } from '#lib/server/versions.ts';
 
-	let { contentVersion }: { contentVersion: string } = $props();
+	let { contentVersion, versions }: { contentVersion: string; versions: TrackVersions } = $props();
 
 	/**
 	 * "Report a problem" opens a dialog with the request form (ReportProblem),
@@ -133,6 +135,7 @@
 			<span class="page-controls-row no-print"><PageControls place="row" /></span>
 		</div>
 		<div class="masthead-controls no-print">
+			<UpdateButton {versions} />
 			<SiteSearch bind:this={search} />
 			<button
 				class="more-button"

@@ -100,19 +100,6 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "The Wayback Worker's own progress record, written from what the Wayback Machine answered; it holds only links and dates.",
   },
-  // TEMPORARY: the move to the tribal-law-project databases (wayback/move-databases.ts).
-  "wayback/move-databases.ts copyOnRequest get(prefix + 'request.json')": {
-    kind: "project-file",
-    why: "A request to copy the site database, written by the project's own session; only its mode is read.",
-  },
-  "wayback/move-databases.ts copyOnRequest put(prefix + 'running.json')": {
-    kind: "project-file",
-    why: "A marker that a copy is running, holding only the mode and a time.",
-  },
-  "wayback/move-databases.ts copyOnRequest put(prefix + `result-${started.replaceAll(':', '')}.json`)": {
-    kind: "project-file",
-    why: "The copy's result: table names and row counts, never row contents.",
-  },
   // The source watch (docs/source-watch.md): files it fetches from public
   // sources are kept privately and put in line for the scan by storeCapture;
   // the rest are records the watch Worker or the site writes itself.
@@ -280,11 +267,11 @@ const bucketCalls: Record<string, BucketUse> = {
   },
   "src/routes/supreme-court/portraits/[person]/+server.ts GET get(portrait.key)": {
     kind: "project-file",
-    why: "Justices' and Presidents' portraits the project chose from Wikimedia Commons, each served only if it matches the SHA-256 recorded in content/supreme-court/people.yaml.",
+    why: "Pictures of Justices, Presidents and Courts the project checked by hand, each served only if it matches the SHA-256 recorded in content/supreme-court/pictures.yaml.",
   },
   "src/routes/supreme-court/portraits/[person]/+server.ts GET put(portrait.key)": {
     kind: "project-file",
-    why: "Justices' and Presidents' portraits the project chose from Wikimedia Commons, kept only if the fetched copy matches the SHA-256 recorded in content/supreme-court/people.yaml.",
+    why: "Pictures of Justices, Presidents and Courts the project checked by hand, kept only if the fetched copy matches the SHA-256 recorded in content/supreme-court/pictures.yaml.",
   },
   "src/lib/server/source-library.ts applyLibraryChanges get(`${changesPrefix}latest.json`)":
     {

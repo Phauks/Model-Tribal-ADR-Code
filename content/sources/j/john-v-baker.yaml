@@ -93,8 +93,6 @@ case_box:
     pinpoint: "pp. 748-749"
   - text: "We therefore hold that, as a general rule, our courts should respect tribal court decisions under the comity doctrine."
     pinpoint: "p. 763"
-  treatment: |-
-    The Supreme Court of Alaska declined to extend it in *Starr v. George* (Alaska 2008). [@john-v-baker]
   topics:
   - "Dispute resolution and arbitration"
   - "Recognition of Tribal judgments (comity)"
@@ -104,4 +102,20 @@ case_box:
     title: "*John v. Baker* (1999)"
     text: |-
       The leading authority that Alaska Native Tribal courts operate on membership-based jurisdiction even without Indian country, and that state courts extend comity to them.
+  later_cases:
+    checked: 2026-11-20
+    source: westlaw/john-v-baker-1999-westlaw.txt
+    list:
+    - treatment: Declined to extend
+      name: Starr v. George
+      citation: 175 P.3d 50 (Alaska 2008)
+      link: https://case.law/caselaw/?reporter=p3d&volume=175&case=0050-01
+    - treatment: Distinguished
+      name: Malabed v. North Slope Borough
+      citation: 70 P.3d 416 (Alaska 2003)
+      link: https://case.law/caselaw/?reporter=p3d&volume=70&case=0416-01
+    - treatment: Distinguished
+      name: Healy Lake Village v. Mt. McKinley Bank
+      citation: 322 P.3d 866 (Alaska 2014)
+      link: https://case.law/caselaw/?reporter=p3d&volume=322&case=0866-01
 subjects: [tribal-courts, family, jurisdiction]

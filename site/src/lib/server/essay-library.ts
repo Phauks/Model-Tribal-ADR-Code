@@ -217,3 +217,38 @@ export function everyRecordBox(records: SourceRecord[] = [...sources().values()]
 	}
 	return { cases, laws };
 }
+
+/**
+ * What essays draw a case or law box from, by its source's key, as the
+ * build writes it for the Worker (src/lib/built-files.ts, essayRecordFiles):
+ * the lines under each box's heading, a case's own page, its opinions and
+ * the parts its record keeps.
+ */
+export interface EssayRecord {
+	caseFacts?: FactLine[];
+	lawFacts?: FactLine[];
+	link?: string;
+	opinions?: OpinionEntry[];
+	caseBox?: RecordBox;
+	lawBox?: RecordBox;
+}
+
+/** Gathers each key's facts, link, opinions and box parts into one record. */
+export function essayRecords(parts: {
+	facts: { cases: Record<string, FactLine[]>; laws: Record<string, FactLine[]> };
+	links: Record<string, string>;
+	opinions: Record<string, OpinionEntry[]>;
+	boxes: { cases: Record<string, RecordBox>; laws: Record<string, RecordBox> };
+}): Record<string, EssayRecord> {
+	const records: Record<string, EssayRecord> = {};
+	const add = <Field extends keyof EssayRecord>(field: Field, values: Record<string, EssayRecord[Field]>) => {
+		for (const [key, value] of Object.entries(values)) (records[key] ??= {})[field] = value;
+	};
+	add('caseFacts', parts.facts.cases);
+	add('lawFacts', parts.facts.laws);
+	add('link', parts.links);
+	add('opinions', parts.opinions);
+	add('caseBox', parts.boxes.cases);
+	add('lawBox', parts.boxes.laws);
+	return records;
+}

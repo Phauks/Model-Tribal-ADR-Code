@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
 	defaultSettings,
 	fonts,
+	headingFonts,
 	openDyslexicStylesheet,
 	parseSettings,
 	parseTheme,
@@ -43,7 +44,7 @@ describe('reading settings', () => {
 		expect(settingsAttributes(defaultSettings)).toEqual({
 			textSize: undefined,
 			font: undefined,
-			textSpacing: undefined,
+			headingFont: undefined,
 			textAlignment: undefined,
 			contrast: undefined,
 			noteDisplay: undefined,
@@ -51,7 +52,7 @@ describe('reading settings', () => {
 			glossaryCards: undefined,
 			motion: undefined
 		});
-		expect(settingsAttributes({ ...defaultSettings, textSpacing: 'wide' }).textSpacing).toBe('wide');
+		expect(settingsAttributes({ ...defaultSettings, headingFont: 'serif' }).headingFont).toBe('serif');
 	});
 
 	it('reads a stored theme, and anything else means the device decides', () => {
@@ -102,6 +103,18 @@ describe('global.css', () => {
 			expect(tokens.font.family[font]).toBeDefined();
 		}
 	});
+
+	it('has a heading font rule for every font, and headings follow the body font by default', () => {
+		expect(styles).toContain('--font-family-heading: var(--font-family-reading);');
+		expect(styles).toMatch(/h5,\nh6 \{\n\tfont-family: var\(--font-family-heading\);/);
+		for (const font of headingFonts.filter((name) => name !== defaultSettings.headingFont)) {
+			expect(styles).toContain(`[data-heading-font='${font}'] {\n\t--font-family-heading: var(--font-family-${font});`);
+		}
+	});
+
+	it('has no text spacing setting of its own; readers bring their own (WCAG 2.2, 1.4.12)', () => {
+		expect(styles).not.toContain('data-text-spacing');
+	});
 });
 
 describe('OpenDyslexic, loaded only when a reader picks it', () => {
@@ -125,6 +138,7 @@ describe('OpenDyslexic, loaded only when a reader picks it', () => {
 
 	it('is added before the first paint for a reader who picked it', () => {
 		const template = readFileSync('src/app.html', 'utf8');
+		expect(template).toContain("root.dataset.font === 'opendyslexic' || root.dataset.headingFont === 'opendyslexic'");
 		expect(template).toContain(`faces.href = '${openDyslexicStylesheet}';`);
 		expect(template).toContain("faces.id = 'opendyslexic-faces';");
 		expect(readFileSync('src/lib/reading-settings.ts', 'utf8')).toContain("const openDyslexicElementIdentifier = 'opendyslexic-faces';");

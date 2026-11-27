@@ -1,16 +1,29 @@
 key: buffalo-hump
 name: Buffalo Hump
-lead: Signed the Treaty with the Comanche and Kiowa, 1865, for the Camanche as chief.
+lead: Chief of the Camanche, as listed in the Treaty with the Comanche and Kiowa, 1865. Signed two treaties with the United States, 1846–1865.
 living: false
 names:
 - name: Pocha-naw-quoip
   note: as the Treaty with the Comanche and Kiowa, 1865 prints it
   source: treaty-with-the-comanche-and-kiowa-1865
   where: 14 Stat. 720
+- name: Po-che-na-qua-heip
+  note: as the Treaty with the Comanche, Aionai, Anadarko, Caddo, etc., 1846 prints it
+  source: treaty-with-the-comanche-aionai-anadarko-caddo-etc-1846
+  where: 9 Stat. 847
+nations:
+- nation: comanche-nation
+  named_as: Comanches
+  source: treaty-with-the-comanche-aionai-anadarko-caddo-etc-1846
+  where: 9 Stat. 847
 cases: []
 events:
+- when: May 15, 1846
+  text: Signed the Treaty with the Comanche, Aionai, Anadarko, Caddo, etc., 1846, for the Comanches.
+  source: treaty-with-the-comanche-aionai-anadarko-caddo-etc-1846
+  where: 9 Stat. 847
 - when: Oct. 18, 1865
   text: Signed the Treaty with the Comanche and Kiowa, 1865, for the Camanche, listed as chief.
   source: treaty-with-the-comanche-and-kiowa-1865
   where: 14 Stat. 720
-checked: '2026-11-24'
+checked: '2026-11-27'

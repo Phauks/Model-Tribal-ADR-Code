@@ -1,0 +1,55 @@
+key: oklahoma-statutes-title-30-section-4-403
+kind: state-statute
+citation:
+  type: legislation
+  title: Compensation for attorneys, guardians ad litem and persons conducting evaluations
+  title-short: Okla. Stat. tit. 30, § 4-403
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '30'
+  section: 4-403
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1923
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os30.pdf#page=109
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os30.pdf#page=109
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-30-section-2-117
+- oklahoma-statutes-title-30-section-3-302
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 30, § 4-403 (2026)
+  page: 109
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 30, § 4-403 (2026). History: Added by Laws 1923-24, c. 84, p. 101, § 5. Amended by Laws 1988, c. 329, § 89, eff. Dec. 1, Amended by Laws 1990, c. 323, § 64, operative July 1, 1990; Laws 2000, c. 144, § 1, emerg. Text read from the Legislative Service Bureau''s Title 30 PDF (updated Nov. 12, 2026), page 109. Found by the state statutes pilot (terms: indian tribe); AI reader''s verdict incidental: Restricted Indian tribe contingent-fee approvals exempt from guardianship act. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/oklahoma_statutes.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe'

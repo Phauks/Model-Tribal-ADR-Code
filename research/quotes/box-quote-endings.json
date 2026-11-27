@@ -1,0 +1,375 @@
+{
+ "about": "For each case or law box quotation that begins or ends with \"...\", whether the quoted sentence goes on past that end in the document it quotes ('continues') or starts or stops there ('sentence'). Written by scripts/library/check_box_quotes.py --write; read by scripts/lint_records.py (check quote-ellipsis).",
+ "quotations": [
+  {
+   "record": "atkinson-trading-company-v-shirley",
+   "text": "... a nonmember's actual or potential receipt of tribal police, fire, and medical services does not create the requisite connection.",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep532/usrep532645/usrep532645.pdf",
+   "page": "11",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "att-corporation-v-coeur-dalene-tribe",
+   "text": "... federal courts may not readjudicate questions — whether of federal, state or tribal law — already resolved in tribal court absent a finding that the tribal court lacked jurisdiction or that its judgment be denied comity for some other valid reason.",
+   "document": "cited-pages/a/att-corporation-v-coeur-dalene-tribe.html",
+   "page": "",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "bryan-v-itasca-county",
+   "text": "... are to be liberally construed, doubtful expressions being resolved in favor of the Indians.",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep426/usrep426373/usrep426373.pdf",
+   "page": "20",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "bryan-v-itasca-county",
+   "text": "... nothing in its legislative history remotely suggests that Congress meant the Act's extension of civil jurisdiction to the States should result in the undermining or destruction of such tribal governments as did exist ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep426/usrep426373/usrep426373.pdf",
+   "page": "16",
+   "start": "continues",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "c-and-l-enterprises-v-citizen-band-potawatomi-2001",
+   "text": "... the contract specifically authorizes judicial enforcement of the resolution arrived at through arbitration.",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep532/usrep532411/usrep532411.pdf",
+   "page": "12",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "california-v-cabazon-band-of-mission-indians",
+   "text": "... if the intent of a state law is generally to prohibit certain conduct, it falls within Pub. L. 280's grant of criminal jurisdiction, but if the state law generally permits the conduct at issue, subject to regulation, it must be classified as civil/regulatory ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep480/usrep480202/usrep480202.pdf",
+   "page": "8",
+   "start": "continues",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "cherokee-nation-v-georgia",
+   "text": "... an Indian tribe or nation within the United States is not a foreign state in the sense of the constitution, and cannot maintain an action in the courts of the United States.",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep030/usrep030001/usrep030001.pdf",
+   "page": "20",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "downes-v-bidwell-1901",
+   "text": "... foreign to the United States in a domestic sense, because the island had not been incorporated into the United States, but was merely appurtenant thereto as a possession.",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep182/usrep182244/usrep182244.pdf",
+   "page": "98",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "duro-v-reina",
+   "text": "... the retained sovereignty of the tribe as a political and social organization to govern its own affairs does not include the authority to impose criminal sanctions against a citizen outside its own membership.",
+   "document": "cited-pages/d/duro-v-reina.html",
+   "page": "",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "elk-v-wilkins",
+   "text": "Indians born within the territorial limits of the United States, members of, and owing immediate allegiance to, one of the Indian tribes (an alien, though dependent, power), although in a geographical sense born in the United States, are no more \"born in the United States and subject to the jurisdiction thereof,\" within the meaning of the first section of the Fourteenth Amendment, than the children 'of subjects of any foreign government born within the domain of that government ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep112/usrep112094/usrep112094.pdf",
+   "page": "9",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "ex-parte-crow-dog",
+   "text": "... that of self-government, the regulation by themselves of their own domestic affairs ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep109/usrep109556/usrep109556.pdf",
+   "page": "13",
+   "start": "continues",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "ex-parte-crow-dog",
+   "text": "It tries them, not by their peers, nor by the customs of their people, nor the law of their land, but by superiors of a different race ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep109/usrep109556/usrep109556.pdf",
+   "page": "16",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "johnson-v-mintosh",
+   "text": "... discovery gave title to the government by whose subjects, or by whose authority, it was made, against all other European governments, which title might be consummated by possession.",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep021/usrep021543/usrep021543.pdf",
+   "page": "31",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "johnson-v-mintosh",
+   "text": "They were admitted to be the rightful occupants of the soil, with a legal as well as just claim to retain possession of it, and to use it according to their own discretion; but their rights to complete sovereignty, as independent nations, were necessarily diminished ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep021/usrep021543/usrep021543.pdf",
+   "page": "32",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "lac-du-flambeau-band-v-coughlin",
+   "text": "Federally recognized tribes undeniably fit that description ...",
+   "document": "cited-pages/l/lac-du-flambeau-band-v-coughlin.html",
+   "page": "",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "lewis-v-clarke",
+   "text": "... in a suit brought against a tribal employee in his individual capacity, the employee, not the tribe, is the real party in interest and the tribe's sovereign immunity is not implicated.",
+   "document": "cited-pages/l/lewis-v-clarke.html",
+   "page": "",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "lone-wolf-v-hitchcock",
+   "text": "When, therefore, treaties were entered into between the United States and a tribe of Indians it was never doubted that the power to abrogate existed in Congress ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep187/usrep187553/usrep187553.pdf",
+   "page": "14",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "merrion-v-jicarilla-apache-tribe",
+   "text": "To presume that a sovereign forever waives the right to exercise one of its sovereign powers unless it expressly reserves the right to exercise that power in a commercial agreement turns the concept of sovereignty on its head ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep455/usrep455130/usrep455130.pdf",
+   "page": "19",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "michigan-v-bay-mills-indian-community",
+   "text": "... it is fundamentally Congress’s job, not ours, to determine whether or how to limit tribal immunity.",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep572/usrep572782/usrep572782.pdf",
+   "page": "19",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "michigan-v-bay-mills-indian-community",
+   "text": "... the State need only bargain for a waiver of immunity.",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep572/usrep572782/usrep572782.pdf",
+   "page": "15",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "montana-v-united-states",
+   "text": "... exercise of tribal power beyond what is necessary to protect tribal self-government or to control internal relations is inconsistent with the dependent status of the tribes, and so cannot survive without express congressional delegation.",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep450/usrep450544/usrep450544.pdf",
+   "page": "21",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "morton-v-mancari",
+   "text": "The preference, as applied, is granted to Indians not as a discrete racial group, but, rather, as members of quasi-sovereign tribal entities ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep417/usrep417535/usrep417535.pdf",
+   "page": "20",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority",
+   "text": "... we believe that explicit language broadly relegating dispute resolution to arbitration constitutes a waiver of tribal sovereign immunity, whereas language that is ambiguous rather than definite, cryptic rather than explicit, or precatory rather than mandatory, usually will not achieve that end.",
+   "document": "cited-pages/n/ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority.html",
+   "page": "",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "oklahoma-v-castro-huerta",
+   "text": "... the Federal Government and the State have concurrent jurisdiction to prosecute crimes committed by non-Indians against Indians in Indian country.",
+   "document": "supremecourt.gov/opinions/21pdf/597us2r64_5436.pdf",
+   "page": "6",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "smith-v-hopland-band-of-pomo-indians",
+   "text": "... entered into a contract with Smith that clearly and explicitly waived the Tribe's sovereign immunity.",
+   "document": "westlaw/smith-v-hopland-band-2002-westlaw.pdf",
+   "page": "8",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "strate-v-a-1-contractors",
+   "text": "Opening the Tribal Court for her optional use is not necessary to protect tribal self-government ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep520/usrep520438/usrep520438.pdf",
+   "page": "22",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "talton-v-mayes",
+   "text": "... as the powers of local self government enjoyed by the Cherokee nation existed prior to the Constitution, they are not operated upon by the Fifth Amendment ...",
+   "document": "cited-pages/t/talton-v-mayes.html",
+   "page": "",
+   "start": "continues",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "united-states-v-lara",
+   "text": "... the Constitution authorizes Congress to permit tribes, as an exercise of their inherent tribal authority, to prosecute nonmember Indians.",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep541/usrep541193/usrep541193.pdf",
+   "page": "18",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "united-states-v-sandoval",
+   "text": "... it is not meant by this that Congress may bring a community or body of people within the range of this power by arbitrarily calling them an Indian tribe ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep231/usrep231028/usrep231028.pdf",
+   "page": "19",
+   "start": "continues",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "united-states-v-sandoval",
+   "text": "... the power and the duty of exercising a fostering care and protection over all dependent Indian communities within its borders ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep231/usrep231028/usrep231028.pdf",
+   "page": "19",
+   "start": "continues",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "united-states-v-wheeler",
+   "text": "... the power to punish offenses against tribal law committed by Tribe members, which was part of the Navajos' primeval sovereignty, has never been taken away from them ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep435/usrep435313/usrep435313.pdf",
+   "page": "16",
+   "start": "continues",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "united-states-v-winans",
+   "text": "... a reservation of those not granted.",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep198/usrep198371/usrep198371.pdf",
+   "page": "11",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "united-states-v-winans",
+   "text": "... the treaty was not a grant of rights to the Indians, but a grant of rights from them ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep198/usrep198371/usrep198371.pdf",
+   "page": "11",
+   "start": "continues",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "wabol-v-villacrusis-1990",
+   "text": "... a solemn and binding undertaking memorialized in the Trusteeship Agreement.",
+   "document": "westlaw/wabol-v-villacrusis-1990.pdf",
+   "page": "11",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "white-mountain-apache-tribe-v-bracker",
+   "text": "... particularized inquiry into the nature of the state, federal, and tribal interests at stake ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep448/usrep448136/usrep448136.pdf",
+   "page": "10",
+   "start": "continues",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "wilson-v-marchington-1997",
+   "text": "... federal courts must neither recognize nor enforce tribal judgments if: (1) the tribal court did not have both personal and subject matter jurisdiction; or (2) the defendant was not afforded due process of law.",
+   "document": "westlaw/wilson-v-marchington-1997-federal-reporter.pdf",
+   "page": "6",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "wilson-v-marchington-1997",
+   "text": "... the existence of both personal and subject matter jurisdiction is a necessary predicate for federal court recognition and enforcement of a tribal judgment.",
+   "document": "westlaw/wilson-v-marchington-1997-federal-reporter.pdf",
+   "page": "7",
+   "start": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "winters-v-united-states",
+   "text": "... command of all their beneficial use ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep207/usrep207564/usrep207564.pdf",
+   "page": "13",
+   "start": "continues",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "worcester-v-georgia",
+   "text": "The Cherokee nation, then, is a distinct community occupying its own territory, with boundaries accurately described, in which the laws of Georgia can have no force ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep031/usrep031515/usrep031515.pdf",
+   "page": "47",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  },
+  {
+   "record": "worcester-v-georgia",
+   "text": "The Indian nations had always been considered as distinct, independent political communities, retaining their original natural rights, as the undisputed possessors of the soil, from time immemorial ...",
+   "document": "tile.loc.gov/storage-services/service/ll/usrep/usrep031/usrep031515/usrep031515.pdf",
+   "page": "5",
+   "end": "continues",
+   "how": "library",
+   "checked": "2026-11-27"
+  }
+ ]
+}

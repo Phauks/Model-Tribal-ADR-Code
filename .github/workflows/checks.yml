@@ -1,4 +1,5 @@
-# Checks every pull request and every push to main. Uses no secrets.
+# Checks every pull request and every push to main, and runs every check in
+# full each night. Uses no secrets.
 #
 # It can also be started by hand or by another workflow (workflow_dispatch).
 # The archive workflow's catch-up job uses that: pull requests opened by the
@@ -16,6 +17,10 @@ on:
   pull_request:
   push:
     branches: [main]
+  # The full accessibility sweep and the book at every trim size, which pull
+  # requests and pushes run only in part. 10:00 UTC is 2 AM Pacific standard time.
+  schedule:
+    - cron: "0 10 * * *"
   workflow_dispatch:
 
 permissions:
@@ -29,7 +34,9 @@ concurrency:
 
 jobs:
   # Decides which of the slow jobs a pull request needs, from the files it
-  # changes. Pushes to main and started runs always run everything.
+  # changes. Pushes to main, the nightly run and started runs run every job;
+  # the accessibility check's pages are picked the same way for a pull
+  # request and a push, and only the nightly and started runs check them all.
   changes:
     name: What changed
     runs-on: ubuntu-latest
@@ -38,6 +45,7 @@ jobs:
       every_size: ${{ steps.decide.outputs.every_size }}
       print: ${{ steps.decide.outputs.print }}
       scan_engine: ${{ steps.decide.outputs.scan_engine }}
+      accessibility: ${{ steps.decide.outputs.accessibility }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -45,12 +53,21 @@ jobs:
       - id: decide
         env:
           BASE: ${{ github.event.pull_request.base.sha }}
+          BEFORE: ${{ github.event_name == 'push' && github.event.before || '' }}
         run: |
           if [ -z "$BASE" ]; then
             echo "site=true" >> "$GITHUB_OUTPUT"
             echo "every_size=true" >> "$GITHUB_OUTPUT"
             echo "scan_engine=true" >> "$GITHUB_OUTPUT"
             echo "print=true" >> "$GITHUB_OUTPUT"
+            # A push checks the pages its commits can change, like a pull
+            # request; the nightly run and started runs check every page.
+            scope=all
+            if [ -n "$BEFORE" ] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+              scope=$(git diff --name-only "$BEFORE" HEAD | node site/tools/accessibility-scope.mjs)
+            fi
+            echo "Accessibility scope: $scope"
+            echo "accessibility=$scope" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           files=$(git diff --name-only "$BASE"...HEAD)
@@ -69,7 +86,7 @@ jobs:
               docs/*) ;;
               scripts/captures/*) site=true ;;
               scripts/*) ;;
-              .github/workflows/checks.yml) site=true ;;
+              .github/workflows/checks.yml|.github/actions/install-chromium/*) site=true ;;
               .github/*) ;;
               pdf/styles/*) site=true ;;
               pdf/*) ;;
@@ -84,10 +101,16 @@ jobs:
           # or this workflow changes.
           scan_engine=false
           if grep -q -e '^site/scanner/engine/' -e '^\.github/workflows/checks\.yml$' <<< "$files"; then scan_engine=true; fi
-          # The print edition reads nothing in site/, so a pull request that
-          # changes only site/ skips the print build.
+          # The print edition reads only pdf/ and content/
+          # (pdf/pipeline/configuration.mjs), so a pull request that changes
+          # neither skips the print build.
           print=false
-          if grep -q -v '^site/' <<< "$files"; then print=true; fi
+          if grep -q -e '^pdf/' -e '^content/' -e '^\.node-version$' -e '^\.github/workflows/checks\.yml$' <<< "$files"; then print=true; fi
+          # The prerendered pages the accessibility check opens
+          # (site/tools/accessibility-scope.mjs).
+          accessibility=$(node site/tools/accessibility-scope.mjs <<< "$files")
+          echo "Accessibility scope: $accessibility"
+          echo "accessibility=$accessibility" >> "$GITHUB_OUTPUT"
           echo "site=$site" >> "$GITHUB_OUTPUT"
           echo "every_size=$every_size" >> "$GITHUB_OUTPUT"
           echo "scan_engine=$scan_engine" >> "$GITHUB_OUTPUT"
@@ -174,16 +197,19 @@ jobs:
           if-no-files-found: ignore
 
   site-build:
-    # Builds the site once and hands the built pages to the browser checks
-    # and the four accessibility jobs, which used to build it again each.
+    # Builds the site once and hands the built pages and Worker to the
+    # browser and accessibility jobs, which used to build it again each.
     name: Website build
     needs: changes
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
-    # A normal run takes 15 to 20 minutes, most of it the build; this stops a
+    # A normal run takes about 7 minutes, most of it the build; this stops a
     # stuck one long before GitHub's six-hour limit, so the merge queue is not
     # held up.
     timeout-minutes: 40
+    outputs:
+      accessibility_shards: ${{ steps.pick.outputs.shards }}
+      accessibility_shard_count: ${{ steps.pick.outputs.shard_count }}
     defaults:
       run:
         working-directory: site
@@ -209,25 +235,79 @@ jobs:
       - name: Check that the patched Worker starts and its handlers answer (tools/check-built-worker.mjs)
         timeout-minutes: 5
         run: npm run check:built-worker
+      # The pages the accessibility jobs open (tools/accessibility-scope.mjs)
+      # and how many jobs share them: one job for every 300 pages, at most
+      # six. A job checks about 330 pages in 5 minutes.
+      - name: Pick the pages for the accessibility check
+        id: pick
+        env:
+          SCOPE: ${{ needs.changes.outputs.accessibility || 'all' }}
+        run: |
+          echo "Scope: $SCOPE"
+          count=$(node tools/accessibility-scope.mjs --pick "$SCOPE" --out .svelte-kit/accessibility-pages.txt)
+          shard_count=$(( (count + 299) / 300 ))
+          if [ "$shard_count" -lt 1 ]; then shard_count=1; fi
+          if [ "$shard_count" -gt 6 ]; then shard_count=6; fi
+          shards=$(seq -s, 1 "$shard_count")
+          echo "$count pages, in $shard_count job(s)." | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "shard_count=$shard_count" >> "$GITHUB_OUTPUT"
+          echo "shards=[$shards]" >> "$GITHUB_OUTPUT"
       # The browser checks read only the built pages in
       # .svelte-kit/cloudflare/client. One compressed file uploads far faster
-      # than its twelve thousand files one by one.
-      - name: Pack the built pages
-        run: tar --zstd -cf "$RUNNER_TEMP/built-pages.tar.zst" .svelte-kit/cloudflare/client
+      # than its twelve thousand files one by one. The rest of the built
+      # Worker goes in a second, small file for the Worker pages' check.
+      - name: Pack the built pages and the built Worker
+        run: |
+          tar --zstd -cf "$RUNNER_TEMP/built-pages.tar.zst" .svelte-kit/cloudflare/client .svelte-kit/accessibility-pages.txt
+          # .wrangler/deploy/config.json is how `wrangler dev` finds the built Worker's configuration.
+          tar --zstd -cf "$RUNNER_TEMP/built-worker.tar.zst" --exclude=.svelte-kit/cloudflare/client .svelte-kit/cloudflare .wrangler/deploy
       - uses: actions/upload-artifact@v4
         with:
           name: built-pages
           path: ${{ runner.temp }}/built-pages.tar.zst
           compression-level: 0
           retention-days: 1
-      # After the upload, so the browser and accessibility jobs can start.
-      # The pages the Worker answers, signed out and as the local fixture
-      # accounts, and the menus and dialogs while open, on a local database
-      # (tools/seed-local-database.mjs). The prerendered pages are the
-      # accessibility jobs' below. It needs the whole built Worker, not only
-      # the built pages, so it runs here.
-      - name: Install Chromium for the Worker pages' accessibility check
-        run: npx playwright install --with-deps --only-shell chromium
+      - uses: actions/upload-artifact@v4
+        with:
+          name: built-worker
+          path: ${{ runner.temp }}/built-worker.tar.zst
+          compression-level: 0
+          retention-days: 1
+
+  site-live-accessibility:
+    # The pages the Worker answers, signed out and as the local fixture
+    # accounts, and the menus and dialogs while open, on a local database
+    # (tools/seed-local-database.mjs). The prerendered pages are the
+    # accessibility jobs' below. It used to run at the end of the build job,
+    # which held the browser and accessibility jobs back by three minutes.
+    name: Accessibility of the Worker's pages
+    needs: [changes, site-build]
+    if: needs.changes.outputs.site == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Install the npm named in package.json
+        run: npm install --global "$(node -p "require('./package.json').packageManager")"
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: built-*
+          merge-multiple: true
+          path: ${{ runner.temp }}
+      - name: Unpack the built pages and the built Worker
+        run: |
+          tar --zstd -xf "$RUNNER_TEMP/built-pages.tar.zst"
+          tar --zstd -xf "$RUNNER_TEMP/built-worker.tar.zst"
+      - uses: ./.github/actions/install-chromium
       - name: Accessibility check of the Worker's pages and open menus (tools/check-accessibility-live.mjs)
         timeout-minutes: 10
         run: npm run check:accessibility:live
@@ -269,6 +349,8 @@ jobs:
         run: npm run check:colors
       - name: Motion timing comes only from design-tokens.json
         run: npm run check:motion
+      - name: Colors stay apart for readers with color vision deficiency
+        run: npm run check:color-vision
 
   site-browser:
     name: Website browser checks
@@ -299,9 +381,8 @@ jobs:
         run: tar --zstd -xf "$RUNNER_TEMP/built-pages.tar.zst"
       - name: Check the built pages, manifest and service worker
         run: npm run check:built-site
-      - name: Install Chromium for the browser checks
-        run: npx playwright install --with-deps --only-shell chromium
-      - name: Check the sidebar in a browser (tools/check-sidebar.mjs)
+      - uses: ./.github/actions/install-chromium
+      - name: Check the section bar and side column in a browser (tools/check-sidebar.mjs)
         run: npm run check:sidebar
       - name: Check the timeline's layout buttons in a browser (tools/check-timeline.mjs)
         run: npm run check:timeline
@@ -311,11 +392,12 @@ jobs:
         run: npm run check:table-tools
 
   accessibility:
-    # Every page in both themes, split between six jobs that run at once.
-    # Each checks its pages (about 13 minutes) from the one build above. With
-    # four jobs, each took 19 minutes once the law pages were added (#491),
-    # too close to the step's 20-minute limit.
-    name: Accessibility ${{ matrix.shard }}/6
+    # The prerendered pages in both themes, split between up to six jobs that
+    # run at once. A pull request or a push checks the pages it can change
+    # and a sample of every kind of page (tools/accessibility-scope.mjs),
+    # usually in one or two jobs; the nightly run checks every page in six,
+    # about 5 minutes each.
+    name: Accessibility ${{ matrix.shard }}/${{ needs.site-build.outputs.accessibility_shard_count }}
     needs: [changes, site-build]
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
@@ -323,7 +405,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1, 2, 3, 4, 5, 6]
+        shard: ${{ fromJSON(needs.site-build.outputs.accessibility_shards || '[1]') }}
     defaults:
       run:
         working-directory: site
@@ -345,13 +427,15 @@ jobs:
           path: ${{ runner.temp }}
       - name: Unpack the built pages
         run: tar --zstd -xf "$RUNNER_TEMP/built-pages.tar.zst"
-      - name: Install Chromium for the accessibility check
-        run: npx playwright install --with-deps --only-shell chromium
+      - uses: ./.github/actions/install-chromium
       - name: Accessibility check (axe-core, this shard's pages, both themes)
         # The script limits each page and stops itself when nothing finishes for
         # five minutes; this is the last guard if the browser itself stalls.
         timeout-minutes: 20
-        run: npm run check:accessibility -- --shard ${{ matrix.shard }}/6
+        run: >-
+          npm run check:accessibility --
+          --pages-file .svelte-kit/accessibility-pages.txt
+          --shard ${{ matrix.shard }}/${{ needs.site-build.outputs.accessibility_shard_count }}
 
   print:
     name: Print build
@@ -464,7 +548,7 @@ jobs:
   all-checks:
     name: All checks
     if: always()
-    needs: [changes, text, migrations, records, lint, prose, site-build, site, site-browser, accessibility, print, scan-engine]
+    needs: [changes, text, migrations, records, lint, prose, site-build, site-live-accessibility, site, site-browser, accessibility, print, scan-engine]
     runs-on: ubuntu-latest
     permissions:
       statuses: write

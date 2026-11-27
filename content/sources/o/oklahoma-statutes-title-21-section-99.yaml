@@ -1,0 +1,70 @@
+key: oklahoma-statutes-title-21-section-99
+kind: state-statute
+citation:
+  type: legislation
+  title: Peace officers
+  title-short: Okla. Stat. tit. 21, § 99
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '21'
+  section: '99'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1910
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os21.pdf#page=99
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os21.pdf#page=99
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-21-section-1111
+- oklahoma-statutes-title-21-section-1111-1
+- oklahoma-statutes-title-21-section-1123
+- oklahoma-statutes-title-21-section-1125
+- oklahoma-statutes-title-21-section-1168-2
+- oklahoma-statutes-title-21-section-1168-4
+- oklahoma-statutes-title-21-section-1168-5
+- oklahoma-statutes-title-21-section-1168-7
+- oklahoma-statutes-title-21-section-142a-3
+- oklahoma-statutes-title-21-section-142c
+- oklahoma-statutes-title-21-section-1533
+- oklahoma-statutes-title-21-section-1533-1
+- oklahoma-statutes-title-21-section-1836
+- oklahoma-statutes-title-21-section-548
+- oklahoma-statutes-title-21-section-648
+- oklahoma-statutes-title-21-section-941
+- oklahoma-statutes-title-21-section-99a
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 21, § 99 (2026)
+  page: 99
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 21, § 99 (2026). History: R.L. 1910, § 2826. Amended by Laws 1995, c. 240, § 3, emerg. eff. May 24, 1995; Laws Text read from the Legislative Service Bureau''s Title 21 PDF (updated Nov. 12, 2026), page 99. Found by the state statutes pilot (terms: bureau of indian affairs; tribal law enforcement); AI reader''s verdict incidental: Tribal law enforcement officers count as peace officers. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/oklahoma_statutes.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: bureau of indian affairs; tribal law enforcement'

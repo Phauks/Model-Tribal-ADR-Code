@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { chartTable, pieSlices, scaleTop, shareText, slicePath } from '../src/lib/bar-chart.ts';
+import { chartTable, numberSpot, pieSlices, scaleTop, shareText, slicePath } from '../src/lib/bar-chart.ts';
 import { dataChartList, dataTopicList } from '../src/lib/data-chart-list.ts';
 import { chartRecordEntries, chartRecords, dataCharts } from '../src/lib/server/data-charts.ts';
 
@@ -58,7 +58,9 @@ describe('dataCharts (repository data)', () => {
 		'supreme-court-cases-by-court',
 		'supreme-court-cases-by-vote',
 		'tribal-opinions-by-decade',
-		'opinions-on-dispute-resolution-by-decade'
+		'opinions-on-dispute-resolution-by-decade',
+		// Federal, state only, not recognized: the order Trevor named them in (Nov. 27, 2026).
+		'nations-by-recognition-status'
 	]);
 
 	it('builds every chart with bars, largest first unless they follow an order of their own', () => {
@@ -174,6 +176,10 @@ describe('dataCharts pies (repository data)', () => {
 			'compacts-by-decision',
 			'compacts-by-period',
 			'compacts-by-state',
+			'nations-by-recognition-status',
+			'federal-recognition-by-basis',
+			'federal-list-sections',
+			'without-federal-recognition',
 			'nations-by-bureau-region',
 			'treaties-by-decade',
 			'supreme-court-cases-by-court',
@@ -181,5 +187,22 @@ describe('dataCharts pies (repository data)', () => {
 			'tribal-opinions-by-decade',
 			'opinions-on-dispute-resolution-by-decade'
 		]);
+	});
+});
+
+describe('numberSpot', () => {
+	it('puts a wide slice\'s number on the slice, along its middle', () => {
+		// A slice from the top to a quarter turn: its middle points up and to the right.
+		const spot = numberSpot({ start: 0, end: 0.25 }, 100);
+		expect(spot.inside).toBe(true);
+		expect(spot.x).toBeCloseTo(100 + 62 * Math.SQRT1_2, 5);
+		expect(spot.y).toBeCloseTo(100 - 62 * Math.SQRT1_2, 5);
+	});
+
+	it('puts a narrow slice\'s number just outside the rim', () => {
+		const spot = numberSpot({ start: 0.49, end: 0.51 }, 100);
+		expect(spot.inside).toBe(false);
+		expect(spot.x).toBeCloseTo(100, 5);
+		expect(spot.y).toBeCloseTo(214, 5);
 	});
 });

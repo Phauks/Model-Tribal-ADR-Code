@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { sources } from '#lib/server/content.ts';
 import { courtPage, courtsWithPages } from '#lib/server/supreme-court-pages.ts';
 import { associatesOf, courtPath, courts } from '#lib/server/supreme-courts.ts';
+import { pictureCredit, pictureOf, pictureView, servablePortraits } from '#lib/server/supreme-court-pictures.ts';
 
 describe('Supreme Court pages', () => {
 	it('names each Court for its Chief Justice, oldest first', () => {
@@ -32,7 +33,7 @@ describe('Supreme Court pages', () => {
 			[{ text: 'William Johnson', link: '/supreme-court/justices/william-johnson' }, { text: ' took the seat of ' }, { text: 'Alfred Moore', link: '/supreme-court/justices/alfred-moore' }, { text: '.' }]
 		]);
 		expect(page.changes.at(-1)?.events[0].find((part) => part.link)?.link).toBe('/supreme-court/justices/john-marshall');
-		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
+		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'danforth-v-wear', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia', 'mitchel-v-united-states', 'united-states-v-fernandez']);
 		expect(page.sources.map((source) => source.key)).toContain('supreme-court-historical-society-marshall-court');
 	});
 
@@ -102,7 +103,7 @@ describe('Justice and President pages', () => {
 		const page = justicePage('john-marshall')!;
 		expect(page.summary).toBe('Chief Justice, 1801–1835');
 		// The Marshall Court cases on the site, oldest first, including those written by script from the Supreme Court Database (2026-11-24).
-		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
+		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'danforth-v-wear', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia', 'mitchel-v-united-states']);
 		const wrote = ['johnson-v-mintosh', 'cherokee-nation-v-georgia', 'worcester-v-georgia'];
 		expect(page.cases.filter((item) => wrote.includes(item.key)).every((item) => item.parts[0].part === 'Opinion of the Court')).toBe(true);
 		const facts = page.glance.flatMap((group) => group.items.map((item) => ({ ...item, label: group.label })));
@@ -114,6 +115,27 @@ describe('Justice and President pages', () => {
 		const { presidentPage } = await import('#lib/server/justice-pages.ts');
 		const page = presidentPage('john-adams')!;
 		expect(page.appointees.map((justice) => justice.name)).toEqual(['Bushrod Washington', 'Alfred Moore', 'John Marshall']);
-		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
+		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'danforth-v-wear', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia', 'mitchel-v-united-states']);
+	});
+});
+
+describe('pictures on the Supreme Court pages', () => {
+	it('writes each credit from the checked record: maker, date, source and number, license', () => {
+		expect(pictureCredit(pictureOf('salmon-portland-chase')!)).toBe(
+			"Brady's National Photographic Portrait Galleries, c. 1860–1865. Library of Congress, cwpb.05620. Public domain."
+		);
+		expect(pictureView('salmon-portland-chase')?.original).toBe('https://www.loc.gov/item/2018666381/');
+	});
+
+	it('never carries Wikimedia Commons template text into a credit', () => {
+		for (const { person } of servablePortraits()) {
+			const credit = pictureCredit(pictureOf(person)!);
+			expect(credit, person).not.toMatch(/Commons|copyright tag|This tag|This image is available|Unknown (author|source)/i);
+		}
+	});
+
+	it("shows a Court's group photograph where it has one, and otherwise its Chief Justice", () => {
+		expect(courtPage('taft-court')?.picture?.src).toBe('/supreme-court/portraits/taft-court');
+		expect(courtPage('marshall-court')?.picture?.src).toBe('/supreme-court/portraits/john-marshall');
 	});
 });

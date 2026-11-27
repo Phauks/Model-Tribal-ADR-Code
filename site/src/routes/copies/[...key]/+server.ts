@@ -1,7 +1,7 @@
 /**
  * Serves a copy of a public document, such as a Statutes at Large page, from
  * the private sourceDocuments bucket (src/lib/public-copies.ts). Only copies
- * on the build-time list are served; any other key is "not found", whatever
+ * on the build-time list (src/lib/server/copy-list.ts) are served; any other key is "not found", whatever
  * the bucket holds. A copy of a nation's law or court opinion is not served
  * when the nation has chosen "Cite only" or "Hide" for it
  * (src/lib/nation-restrictions.ts): "Cite only" sends the reader to the
@@ -9,9 +9,9 @@
  * without naming it.
  */
 import { error, redirect } from '@sveltejs/kit';
-import { publicCopies } from 'virtual:public-copies';
 import { hiddenCopyMessage } from '#lib/nation-restrictions.ts';
 import { copyPagePath } from '#lib/public-copies.ts';
+import { servedCopy } from '#lib/server/copy-list.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { copyLevel } from '#lib/server/nation-restrictions.ts';
 import { servePublicCopy } from '#lib/server/public-copy-serving.ts';
@@ -19,10 +19,8 @@ import type { RequestHandler } from './$types';
 
 export const prerender = false;
 
-const byKey = new Map(publicCopies.map((copy) => [copy.key, copy]));
-
 export const GET: RequestHandler = async ({ params, request, setHeaders }) => {
-	const copy = byKey.get(params.key);
+	const copy = await servedCopy(params.key);
 	if (!copy) error(404, 'This site keeps no copy at this address.');
 	const environment = workerEnvironment();
 	const level = await copyLevel(environment.database, copy);

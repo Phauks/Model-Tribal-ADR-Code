@@ -18,6 +18,15 @@ export type ServableCopy = Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'by
 /** Larger files are left at their original address; reading one would strain the Worker. */
 export const largestFill = 64 * 1024 * 1024;
 
+/**
+ * How long the Worker waits for a government site, in milliseconds, before
+ * sending the reader to the original address instead. On Nov. 27, 2026
+ * www.govinfo.gov stopped answering at all, and a law page whose Statutes at
+ * Large copy was not in the bucket yet never finished loading: its embedded
+ * copy waited on the Worker, which waited on govinfo.gov.
+ */
+export const fillWaitAtMost = 8_000;
+
 /** The Worker fetches copies only from United States government sites, over https. */
 export function mayFetchFrom(link: string): boolean {
 	if (!URL.canParse(link)) return false;
@@ -48,13 +57,18 @@ export function isIndexedFile(object: R2Object, copy: ServableCopy): boolean {
 /** The document from its government address, or undefined unless it matches the indexed file. */
 export async function fetchOriginal(
 	copy: ServableCopy,
-	fetcher: typeof fetch = fetch
+	fetcher: typeof fetch = fetch,
+	waitAtMost = fillWaitAtMost
 ): Promise<{ bytes: ArrayBuffer; source: string } | undefined> {
 	if (copy.bytes > largestFill) return undefined;
+	// One limit for every address together, so a reader waits at most this long however many there are.
+	const signal = AbortSignal.timeout(waitAtMost);
 	for (const link of copy.links.filter(mayFetchFrom)) {
+		if (signal.aborted) break;
 		try {
 			const response = await fetcher(link, {
 				redirect: 'follow',
+				signal,
 				headers: { 'User-Agent': 'model-tribal-adr-code website (public document copy)' }
 			});
 			if (!response.ok) continue;

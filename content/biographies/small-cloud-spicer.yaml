@@ -1,7 +1,12 @@
 key: small-cloud-spicer
 name: Small Cloud Spicer
-lead: Signed two treaties with the United States for the Senecas, 1831–1832.
+lead: Signed three treaties with the United States for the Senecas, 1831–1835.
 living: false
+names:
+- name: Small Grout Spicer
+  note: as the Treaty with the Comanche, etc., 1835 prints it
+  source: treaty-with-the-comanche-etc-1835
+  where: 7 Stat. 477
 cases: []
 events:
 - when: Feb. 28, 1831
@@ -12,4 +17,8 @@ events:
   text: Signed the Treaty with the Seneca and Shawnee, 1832, for the Seneca Chiefs.
   source: treaty-with-the-seneca-and-shawnee-1832
   where: 7 Stat. 413
-checked: '2026-11-24'
+- when: Aug. 24, 1835
+  text: Signed the Treaty with the Comanche, etc., 1835, for the Senecas.
+  source: treaty-with-the-comanche-etc-1835
+  where: 7 Stat. 477
+checked: '2026-11-26'
