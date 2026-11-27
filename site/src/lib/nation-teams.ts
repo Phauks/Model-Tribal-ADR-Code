@@ -184,6 +184,7 @@ export function readParts(stored: string | null): PagePart[] | null {
 		if (!Array.isArray(parsed)) return null;
 		return pageParts.filter((part) => parsed.includes(part));
 	} catch {
+		// expected: stored parts that are not JSON mean the whole page.
 		return null;
 	}
 }

@@ -379,6 +379,7 @@ export function zonedTimeToUtc(local: string, timeZone: string): string | null {
 		// Twice, so a time near a daylight saving change settles on the right offset.
 		for (let step = 0; step < 2; step += 1) guess = wall - zoneOffsetMinutes(new Date(guess), timeZone) * 60_000;
 	} catch {
+		// expected: a time zone the browser does not know gives no time (null), which the caller checks.
 		return null;
 	}
 	return new Date(guess).toISOString();

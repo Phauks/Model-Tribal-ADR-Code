@@ -14,7 +14,7 @@ export interface SendProgress {
 }
 
 async function answer<T>(response: Response, fallback: string): Promise<T> {
-	const body = (await response.json().catch(() => null)) as (T & { message?: string }) | null;
+	const body = (await response.json().catch(() => /* expected: an answer that is not JSON throws below with the fallback message, which the dialog shows. */ null)) as (T & { message?: string }) | null;
 	if (!response.ok) throw new Error(body?.message || fallback);
 	if (!body) throw new Error(fallback);
 	return body;
@@ -43,7 +43,7 @@ export async function sendFigureFile(
 		const piece = file.slice((number - 1) * started.pieceBytes, number * started.pieceBytes);
 		// A refused file answers 422 with the reason, such as a file that is not a picture, video or recording.
 		const response = await fetch(`/uploads/pieces/${started.reference}/${number}`, { method: 'PUT', body: piece, signal });
-		const outcome = (await response.json().catch(() => null)) as { accepted?: boolean; reason?: string; message?: string } | null;
+		const outcome = (await response.json().catch(() => /* expected: an answer that is not JSON throws below with the fallback message, which the dialog shows. */ null)) as { accepted?: boolean; reason?: string; message?: string } | null;
 		if (!response.ok || !outcome?.accepted) {
 			throw new Error(outcome?.reason || outcome?.message || 'A piece of the file did not arrive. Try again.');
 		}
