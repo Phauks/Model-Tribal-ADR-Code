@@ -1,0 +1,54 @@
+key: oregon-revised-statutes-244-060
+kind: state-statute
+citation:
+  type: legislation
+  title: Form of statement of economic interest; contents
+  title-short: Or. Rev. Stat. § 244.060
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '244.060'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 1974
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors244.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors244.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-244-020
+- oregon-revised-statutes-244-045
+- oregon-revised-statutes-244-100
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 244.060 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 244.060 (2025). History: [1974 c.72 §5; 1975 c.543 §4; 1987 c.566 §11; 1991 c.770 §7; 1993 c.743 §12; 2003 c.14 §116; 2007 c.877 §19; 2009 c.68 §6; 2015 c.620 §5; 2023 c.392 §1]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribe); AI reader''s verdict incidental: Ethics statement must list expenses paid by a tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribe'

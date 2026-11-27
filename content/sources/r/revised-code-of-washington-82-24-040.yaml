@@ -1,0 +1,50 @@
+key: revised-code-of-washington-82-24-040
+kind: state-statute
+citation:
+  type: legislation
+  title: Duty of wholesaler
+  title-short: Wash. Rev. Code § 82.24.040
+  container-title: Revised Code of Washington
+  container-title-short: Wash. Rev. Code
+  section: 82.24.040
+  author:
+  - literal: Washington State Legislature
+  issued:
+    date-parts:
+    - - 1935
+  URL: https://app.leg.wa.gov/RCW/default.aspx?cite=82.24.040
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://app.leg.wa.gov/RCW/default.aspx?cite=82.24.040
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wash. Rev. Code § 82.24.040 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Wash. Rev. Code § 82.24.040 (2026). History: [2003 c 114 s 3; 1995 c 278 s 3; 1990 c 216 s 2; 1969 ex.s. c 214 s 1; 1961 c 15 s 82.24.040. Prior: 1959 c 270 s 4; prior: 1949 c 228 s 13, part; 1943 c 156 s 11, part; 1941 c 178 s 13, part; 1939 c 225 s 23, part; 1935 c 180 s 82, part; Rem. Supp. 1949 s 8370-82, part.]. Text read from the Washington State Legislature''s full-text chapter page for the section (app.leg.wa.gov/RCW) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian; tribal); AI reader''s verdict incidental: Wholesaler may sell untaxed cigarettes to Indian tribal organizations. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian; tribal'

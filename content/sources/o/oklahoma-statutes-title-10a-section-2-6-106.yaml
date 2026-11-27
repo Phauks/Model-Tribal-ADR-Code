@@ -70,7 +70,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 2-6-106 (2026). History: Added by Laws 1995, c. 352, § 181, eff. July 1, 1995. Amended by Laws 1996, c. 211, § 7, Laws 2015, c. 54, § 7, emerg. eff. April 10, 2015. Laws 2014, c. 197, § 1 repealed by Laws 2015, c. 54, § 8, emerg. eff. April 10, 2015. Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 419. Found by the state statutes pilot (terms: federally recognized indian tribe; tribal court); AI reader''s verdict incidental: Juvenile records disclosure to tribal courts and federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

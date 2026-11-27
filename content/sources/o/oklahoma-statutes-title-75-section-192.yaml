@@ -46,7 +46,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 75, § 192 (2026). History: Added by Laws 2012, c. 293, § 1, emerg. eff. May 25, 2012. Amended by Laws 2020, c. 44, § Text read from the Legislative Service Bureau''s Title 75 PDF (updated Nov. 12, 2026), page 25. Found by the state statutes pilot (terms: indian tribes); AI reader''s verdict incidental: Savings clause preserving rights of Indian tribes and nations. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

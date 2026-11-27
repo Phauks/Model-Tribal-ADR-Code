@@ -67,10 +67,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 2-6-105 (2026). History: Added by Laws 1995, c. 352, § 180, eff. July 1, 1995. Amended by Laws 1996, c. 211, § 6, Laws 2009, c. 234, § 96, emerg. eff. May 21, 2009. Renumbered from § 7307-1.4 of Title 10 Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 417. Found by the state statutes pilot (terms: federally recognized indian tribe; indian child; indian tribe; indian tribes; tribal court); AI reader''s verdict incidental: Federally recognized tribe and tribal judges may inspect juvenile records. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 2-6-105 (2026). History: Added by Laws 1995, c. 352, § 180, eff. July 1, 1995. Amended by Laws 1996, c. 211, § 6, Laws 2009, c. 234, § 96, emerg. eff. May 21, 2009. Renumbered from § 7307-1.4 of Title 10. Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 417. Found by the state statutes pilot (terms: federally recognized indian tribe; indian child; indian tribe; indian tribes; tribal court); AI reader''s verdict incidental: Federally recognized tribe and tribal judges may inspect juvenile records. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

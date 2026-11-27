@@ -52,7 +52,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 43A, § 2-403 (2026). History: Added by Laws 2026, c. 367, § 1, eff. July 1, 2026. Text read from the Legislative Service Bureau''s Title 43A PDF (updated Nov. 12, 2026), page 68. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Naloxone immunity extends to tribal entities as persons. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

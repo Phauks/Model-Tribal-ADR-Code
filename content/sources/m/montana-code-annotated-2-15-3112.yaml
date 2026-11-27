@@ -1,0 +1,50 @@
+key: montana-code-annotated-2-15-3112
+kind: state-statute
+citation:
+  type: legislation
+  title: Livestock loss mitigation program -- definitions
+  title-short: Mont. Code Ann. § 2-15-3112
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 2-15-3112
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 2007
+  URL: https://mca.legmt.gov/bills/mca/title_0020/chapter_0150/part_0310/section_0120/0020-0150-0310-0120.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0020/chapter_0150/part_0310/section_0120/0020-0150-0310-0120.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 2-15-3112 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 2-15-3112 (2025). History: En. Sec. 3, Ch. 261, L. 2007; amd. Sec. 1, Ch. 14, L. 2009; amd. Sec. 3, Ch. 229, L. 2011; amd. Sec. 3, Ch. 172, L. 2013; amd. Sec. 3, Ch. 76, L. 2017; amd. Sec. 1, Ch. 306, L. 2019; amd. Sec. 1, Ch. 36, L. 2021; amd. Sec. 1, Ch. 38, L. 2021; amd. Sec. 1, Ch. 427, L. 2023; amd. Sec. 1, Ch. 312, L. 2025; amd. Sec. 3, Ch. 649, L. 2025. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Tribal members and entities exempt from per capita fee requirement. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

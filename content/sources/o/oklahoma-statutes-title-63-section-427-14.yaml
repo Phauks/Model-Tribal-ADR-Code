@@ -75,10 +75,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 427.14 (2026). History: from the Oklahoma State Bureau of Narcotics and Dangerous Drugs Added by Laws 2019, c. 11, § 14. Amended by Laws 2019, c. 509, § 6; Laws 2020, c. 161, § Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1335. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Applicants may use tribal ID card approved by DPS. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 427.14 (2026). History: Added by Laws 2019, c. 11, § 14. Amended by Laws 2019, c. 509, § 6; Laws 2020, c. 161, § Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1335. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Applicants may use tribal ID card approved by DPS. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

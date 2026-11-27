@@ -53,7 +53,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 12, § 3251 (2026). History: Added by Laws 2021, c. 184, § 2, eff. Nov. 1, 2021. Text read from the Legislative Service Bureau''s Title 12 PDF (updated Nov. 12, 2026), page 633. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Federally recognized tribe counts as a State for subpoenas. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

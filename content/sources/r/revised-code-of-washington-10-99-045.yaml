@@ -1,0 +1,50 @@
+key: revised-code-of-washington-10-99-045
+kind: state-statute
+citation:
+  type: legislation
+  title: Appearances by defendant — Defendant's history — No-contact order
+  title-short: Wash. Rev. Code § 10.99.045
+  container-title: Revised Code of Washington
+  container-title-short: Wash. Rev. Code
+  section: 10.99.045
+  author:
+  - literal: Washington State Legislature
+  issued:
+    date-parts:
+    - - 1981
+  URL: https://app.leg.wa.gov/RCW/default.aspx?cite=10.99.045
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://app.leg.wa.gov/RCW/default.aspx?cite=10.99.045
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wash. Rev. Code § 10.99.045 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Wash. Rev. Code § 10.99.045 (2026). History: [2021 c 215 s 77; 2010 c 274 s 301; 2000 c 119 s 19; 1998 c 55 s 2; 1994 sp.s. c 7 s 450; 1984 c 263 s 23; 1983 c 232 s 8; 1981 c 145 s 7.]. Text read from the Washington State Legislature''s full-text chapter page for the section (app.leg.wa.gov/RCW) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal jurisdiction; tribal); AI reader''s verdict incidental: Court reviews defendant''s tribal jurisdiction criminal history. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal jurisdiction; tribal'

@@ -769,9 +769,20 @@ sup.citation {
  * The marker or source a link has just gone to is highlighted, so the eye
  * finds it. It arrives marked in the fill-in yellow, which fades to the
  * resting highlight; with motion reduced it shows the resting highlight at once.
+ * With scripts on, the highlight goes a few seconds later, or when the reader
+ * clicks or taps elsewhere (src/lib/arrival-highlight.ts; Trevor, Nov. 27,
+ * 2026: the highlight "would not go away"). Without scripts the browser's
+ * :target shows it until the address changes.
  */
-.note-marker:target,
-.source-list > li:target {
+/* Only the entry fades out; a marker's own fill is also its focus fill, which must show at once. */
+.source-list > li {
+	transition: background-color var(--motion-duration-medium) var(--motion-easing-exit);
+}
+
+:root:not([data-scripts='on']) .note-marker:target,
+:root:not([data-scripts='on']) .source-list > li:target,
+.note-marker[data-arrived],
+.source-list > li[data-arrived] {
 	background: var(--color-notice-background);
 	outline: 2px solid var(--color-focus-ring);
 	outline-offset: 1px;
@@ -2337,10 +2348,7 @@ details > .nation-edit-link {
 	}
 }
 
-/*
- * A stub (src/lib/stubs.ts): the "Stub" badge beside the title, and the note
- * at the page's end, where Wikipedia puts its stub template.
- */
+/* A stub (src/lib/stubs.ts): the "Stub" badge beside the title, whose panel has the links to expand the page. */
 .status-badges {
 	display: flex;
 	flex-wrap: wrap;
@@ -2356,30 +2364,10 @@ details > .nation-edit-link {
 	color: var(--color-link);
 }
 
-.stub-note {
-	display: flex;
-	align-items: flex-start;
-	gap: var(--space-3);
-	margin: var(--space-5) 0 var(--space-2);
-	padding: var(--space-3) var(--space-4);
-	border: 1px dashed var(--color-line);
-	border-radius: var(--radius-control);
-}
-
-.stub-note p {
-	margin: 0;
-}
-
-.stub-note .stub-mark {
-	flex: none;
-	margin-top: 3px;
-}
-
-.stub-note .stub-actions {
+.status-panel .stub-actions {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--space-2) var(--space-4);
-	margin-top: var(--space-2);
 }
 
 /* Topics, methods and other short tags as badges (src/lib/components/TopicBadges.svelte; Trevor, Nov. 23, 2026). */

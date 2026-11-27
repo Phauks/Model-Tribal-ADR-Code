@@ -48,7 +48,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 36, § 607 (2026). History: Added by Laws 1957, p. 231, § 607, operative July 1, 1957. Amended by Laws 2013, c. 82, § Text read from the Legislative Service Bureau''s Title 36 PDF (updated Nov. 12, 2026), page 137. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: Tribe-owned insurers may apply and get specific exemption. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

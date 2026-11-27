@@ -84,10 +84,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 500.2 (2026). History: Laws Enforcement Commission, the Oklahoma Department of Agriculture, Food, and Added by Laws 1972, c. 123, § 2, operative July 1, 1972. Amended by Laws 1978, c. 177, § Laws 1986, c. 301, § 33, operative July 1, 1986; Laws 1989, c. 351, § 2, eff. Nov. 1, 1989; Laws 1990, c. 175, § 1, emerg. eff. May 3, 1990; Laws 1991, c. 216, § 17, operative July 1, Laws 1993, c. 360, § 14, eff. July 1, 1993; Laws 1995, c. 128, § 2, eff. July 1, 1995; Laws Laws 1995, c. 36, § 25 repealed by Laws 1995, c. 358, § 12, emerg. eff. June 9, 1995. Laws Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 537. Found by the state statutes pilot (terms: native american); AI reader''s verdict incidental: State travel; Native American Cultural and Educational Authority contracting power. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 500.2 (2026). History: Laws Enforcement Commission, the Oklahoma Department of Agriculture, Food, and Added by Laws 1972, c. 123, § 2, operative July 1, 1972. Amended by Laws 1978, c. 177, § Laws 1986, c. 301, § 33, operative July 1, 1986; Laws 1989, c. 351, § 2, eff. Nov. 1, 1989; Laws 1990, c. 175, § 1, emerg. eff. May 3, 1990; Laws 1991, c. 216, § 17, operative July 1, Laws 1993, c. 360, § 14, eff. July 1, 1993; Laws 1995, c. 128, § 2, eff. July 1, 1995; Laws Laws 1995, c. 36, § 25 repealed by Laws 1995, c. 358, § 12, emerg. eff. June 9, 1995. Laws. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 537. Found by the state statutes pilot (terms: native american); AI reader''s verdict incidental: State travel; Native American Cultural and Educational Authority contracting power. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

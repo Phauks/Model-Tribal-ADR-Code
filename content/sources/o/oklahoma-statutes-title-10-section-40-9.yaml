@@ -72,7 +72,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10, § 40.9 (2026). History: Added by Laws 1982, c. 107, § 10, emerg. eff. April 6, 1982. Text read from the Legislative Service Bureau''s Title 10 PDF (updated Nov. 12, 2026), page 51. Found by the state statutes pilot (terms: indian child); AI reader''s verdict core: Foster and adoptive records of Indian children available to tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -55,7 +55,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 47, § 1135.1v2 (2026). History: Added by Laws 2004, c. 504, § 10, eff. July 1, 2004. Amended by Laws 2007, c. 272, § 1, eff. Laws 2024, c. 452, § 77, emerg. eff. June 14, 2024; Laws 2025, c. 171, § 48, eff. July 1, 2026. Text read from the Legislative Service Bureau''s Title 47 PDF (updated Nov. 12, 2026), page 1184. Found by the state statutes pilot (terms: indian tribe; native american); AI reader''s verdict incidental: Special plate categories include Indian tribal association plates. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

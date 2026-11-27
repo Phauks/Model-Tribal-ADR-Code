@@ -1,0 +1,64 @@
+key: nevada-revised-statutes-381-009
+kind: state-statute
+citation:
+  type: legislation
+  title: Acquisition or repatriation of abandoned property held by institution
+  title-short: Nev. Rev. Stat. § 381.009
+  container-title: Nevada Revised Statutes
+  container-title-short: Nev. Rev. Stat.
+  section: '381.009'
+  author:
+  - literal: Nevada Legislature
+  issued:
+    date-parts:
+    - - 1985
+  URL: https://www.leg.state.nv.us/nrs/NRS-381.html#NRS381Sec009
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.nv.us/nrs/NRS-381.html#NRS381Sec009
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- nevada-revised-statutes-381-001
+- nevada-revised-statutes-381-002
+- nevada-revised-statutes-381-0066
+- nevada-revised-statutes-381-0067
+- nevada-revised-statutes-381-0068
+- nevada-revised-statutes-381-0069
+- nevada-revised-statutes-381-195
+- nevada-revised-statutes-381-1957
+- nevada-revised-statutes-381-196
+- nevada-revised-statutes-381-207
+- nevada-revised-statutes-381-215
+- nevada-revised-statutes-381-223
+- nevada-revised-statutes-381-225
+state_law:
+  relevance: core
+  citation: Nev. Rev. Stat. § 381.009 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Nev. Rev. Stat. § 381.009 (2025). History: (Added to NRS by 1985, 134; A 1993, 1587; 2001, 932, 1648; 2017, 3538). Text read from the Nevada Legislature''s chapter page for the section (leg.state.nv.us/nrs) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; native; tribe); AI reader''s verdict core: Repatriation of abandoned Native human remains and cultural items. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian tribe; indian; native; tribe'

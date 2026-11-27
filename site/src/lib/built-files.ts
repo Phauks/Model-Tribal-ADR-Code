@@ -66,6 +66,13 @@ export const copyFiles: SpreadFiles = { name: 'copies', count: 256 };
 export const restrictableCopiesFile = 'restrictable-copies';
 
 /**
+ * Saved web pages whose reading page opens another copy of the same document,
+ * a PDF or a text, by key (src/lib/server/content.ts, copyMoves): a few
+ * dozen, by Nov. 27, 2026.
+ */
+export const copyMovesFile = 'copy-moves';
+
+/**
  * What essays draw case and law boxes from, by record (src/lib/server/essay-library.ts):
  * each box's facts and parts, a case's page and its opinions.
  */

@@ -70,10 +70,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 3-132 (2026). History: Added by Laws 1999, c. 320, § 7, eff. July 1, 1999. Amended by Laws 2000, c. 232, § 5, eff. Laws 2013, c. 212, § 1, eff. Sept. 1, 2013; Laws 2015, c. 170, § 1; Laws 2016, c. 27, § 1, eff. Laws 2015, c. 205, § 1 repealed by Laws 2016, c. 210, § 42, emerg. eff. April 26, 2016. Laws Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 214. Found by the state statutes pilot (terms: bureau of indian affairs; federally recognized indian tribe); AI reader''s verdict incidental: Tribes may sponsor charter schools under specified conditions. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 3-132 (2026). History: Added by Laws 1999, c. 320, § 7, eff. July 1, 1999. Amended by Laws 2000, c. 232, § 5, eff. Laws 2013, c. 212, § 1, eff. Sept. 1, 2013; Laws 2015, c. 170, § 1; Laws 2016, c. 27, § 1, eff. Laws 2015, c. 205, § 1 repealed by Laws 2016, c. 210, § 42, emerg. eff. April 26, 2016. Laws. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 214. Found by the state statutes pilot (terms: bureau of indian affairs; federally recognized indian tribe); AI reader''s verdict incidental: Tribes may sponsor charter schools under specified conditions. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
