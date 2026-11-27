@@ -5,7 +5,7 @@
 	// Nov. 23, 2026 for this page to reflect how the site keeps files and which files it may share.
 	const rows: { what: string; where: string; saved: boolean; why: string }[] = [
 		{
-			what: 'Pages of this site: nations, tables, charts, Find recourse, stories, the glossary, essays',
+			what: 'Pages of this site: nations, laws, cases, biographies, tables, charts, Find recourse, stories, the glossary, essays',
 			where: 'Saved',
 			saved: true,
 			why: 'Written or gathered by the project.'
@@ -42,9 +42,9 @@
 		},
 		{
 			what: 'Nations’ constitutions, laws and court opinions we hold',
-			where: 'Saved, one nation at a time',
+			where: 'Saved, if you choose',
 			saved: true,
-			why: 'A removed document also leaves your device the next time you are online. All of them together come to several gigabytes, so each nation’s page has its own button.'
+			why: 'A removed document also leaves your device the next time you are online. All of them together come to several gigabytes, so you choose them nation by nation.'
 		},
 		{
 			what: 'Documents held by the National Indian Law Library',
@@ -85,10 +85,10 @@
 
 <div class="reading">
 	<h1>Read offline</h1>
-	<p class="lead">
-		This site can be installed on a phone or computer and read without a connection. Most of it can
-		be saved on your device. A few things stay online, and this page says which and why.
-	</p>
+	<p class="lead">Save parts of this site on this device to read them without a connection. Pages you open are saved as you read them.</p>
+</div>
+<OfflineSaving layout="page" headingLevel={2} />
+<div class="reading after">
 	<h2>Install the site</h2>
 	<p>
 		In most browsers, open the browser’s menu and choose “Install” or “Add to Home Screen.” The site
@@ -105,14 +105,6 @@
 		device yet. Connect to the internet and open it once to save it. The request form and sign-in are
 		never saved, because they need a connection to send anything.
 	</p>
-	<h2>Save more now</h2>
-	<p>
-		You can save whole parts of the site, the United States documents we hold, and, from each
-		nation’s page, that nation’s constitutions, laws and court opinions.
-	</p>
-	<OfflineSaving headingLevel={3} />
-	<p class="muted">The same choices are under Settings, in “This device.”</p>
-
 	<h2 id="what-stays-online">What can be saved, and what stays online</h2>
 	<p>We save only what we are allowed to share. Everything else is a link to where it is kept.</p>
 	<div class="table-scroll">
@@ -152,6 +144,10 @@
 </div>
 
 <style>
+	.after {
+		margin-top: var(--space-6);
+	}
+
 	.table-scroll {
 		overflow-x: auto;
 		margin: 0 0 var(--space-5);

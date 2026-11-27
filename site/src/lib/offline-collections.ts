@@ -1,11 +1,13 @@
 /**
- * The parts of the site a reader can save for offline reading in one step
- * (site/DESIGN.md, section 10), and the messages the page and the service
- * worker exchange about them. Shared by src/service-worker/index.ts and
+ * The messages the page and the service worker exchange about saving for
+ * offline reading (site/DESIGN.md, section 10), and the collections a device
+ * kept before the outline of src/lib/offline-choices.ts replaced them, which
+ * the worker reads once to carry a reader's choice over. Shared by src/service-worker/index.ts and
  * src/lib/offline-saving.ts, so it must not use the page or the worker's
  * own globals.
  */
 
+import type { ChoiceChange, ChoicesStatus, PageChoice } from './offline-choices.ts';
 import type { DocumentSet, DocumentsStatus } from './offline-documents.ts';
 
 export type CollectionIdentifier = 'nations' | 'cases' | 'stories' | 'glossary' | 'other';
@@ -59,39 +61,28 @@ export function collectionOf(path: string): CollectionIdentifier {
 	return 'other';
 }
 
-export interface CollectionStatus {
-	id: CollectionIdentifier;
-	/** Pages in this build. */
-	total: number;
-	/** Pages saved on this device. */
-	saved: number;
-	/** Bytes the saved pages take, counted from the saved files. */
-	bytes: number;
-	/** The reader asked to keep the whole collection, so updates save it again. */
-	kept: boolean;
-}
-
-export interface OfflineStatus {
-	/** The build the saved copies come from, for example "0.0.1+1795229308081". */
-	version: string;
-	collections: CollectionStatus[];
-}
-
 export type WorkerRequest =
 	| { type: 'skip-waiting' }
 	| { type: 'documents-status'; sets: DocumentSet[] }
 	| { type: 'documents-save'; set: DocumentSet }
 	| { type: 'documents-remove'; set: DocumentSet }
-	| { type: 'offline-status' }
-	| { type: 'offline-save'; collection: CollectionIdentifier }
-	| { type: 'offline-remove'; collection: CollectionIdentifier }
+	/** What is saved, for the Read offline page and Settings (src/lib/offline-choices.ts). */
+	| { type: 'choices-status' }
+	/** The reader's ticks: the worker answers with the status at once, then progress while it saves. */
+	| { type: 'choices-apply'; changes: ChoiceChange[] }
+	| { type: 'choices-clear-read' }
+	/** Forgets every choice and deletes every saved page and copy (Settings > Your data). */
+	| { type: 'choices-clear' }
+	| { type: 'page-choice'; path: string }
 	| { type: 'offline-resume' };
 
 export type WorkerReply =
-	| { type: 'status'; status: OfflineStatus }
-	/** The kept collections were saved again after an update (offline-resume); the page needs no status then. */
+	| { type: 'choices'; status: ChoicesStatus }
+	| { type: 'choices-progress'; done: number; total: number }
+	| { type: 'page-choice'; choice: PageChoice }
+	| { type: 'cleared' }
+	/** The chosen pages were saved again after an update (offline-resume); the page needs no status then. */
 	| { type: 'resumed' }
-	| { type: 'progress'; collection: CollectionIdentifier; done: number; total: number }
 	| { type: 'documents'; status: DocumentsStatus }
 	| { type: 'documents-progress'; set: DocumentSet; done: number; total: number }
 	| { type: 'failed'; message: string };

@@ -18,7 +18,7 @@
 </svelte:head>
 
 <div class="coverage-page">
-	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Coverage" />
 	<h1>Coverage</h1>
 	<p class="lead">Which sections of each nation’s page say None Identified. <a href="/requests?kind=contribute">Contribute</a></p>
 	<BarChart chart={data.chart} />

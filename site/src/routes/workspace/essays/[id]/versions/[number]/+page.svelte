@@ -17,6 +17,7 @@
 		{ label: 'Essays', href: '/workspace/essays' },
 		{ label: data.title, href: `/workspace/essays/${data.identifier}` }
 	]}
+	current={data.title}
 />
 
 <div class="notice" role="note">

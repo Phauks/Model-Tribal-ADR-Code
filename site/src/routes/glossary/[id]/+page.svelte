@@ -13,12 +13,12 @@
 
 	let { data }: PageProps = $props();
 	const entry = $derived(data.entry);
+	// The breadcrumbs lead to the list of terms, so At a glance keeps only facts about the term (Trevor, Nov. 26, 2026; src/lib/info-page.ts).
 	const glance = $derived(
 		[
 			{ field: 'status', label: 'Status', items: [{ text: statusLabels[entry.status] ?? entry.status }] },
 			{ field: 'basis', label: 'Basis', items: entry.basis ? [{ text: basisLabels[entry.basis] ?? entry.basis }] : [] },
-			{ field: 'code', label: 'Model code', items: entry.codeDefinition ? [{ text: `Defined in ${entry.codeDefinition}` }] : [] },
-			{ field: 'glossary', label: 'Glossary', items: [{ text: `${entry.term} among all the terms`, link: `/glossary#${entry.id}` }] }
+			{ field: 'code', label: 'Model code', items: entry.codeDefinition ? [{ text: `Defined in ${entry.codeDefinition}` }] : [] }
 		].filter((group) => group.items.length > 0)
 	);
 </script>

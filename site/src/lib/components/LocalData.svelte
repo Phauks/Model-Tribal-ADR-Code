@@ -11,8 +11,7 @@
 	import Upload from '@lucide/svelte/icons/upload';
 	import { tick } from 'svelte';
 	import { forgetSidebarChoices } from './sidebar/sidebar-state.svelte.ts';
-	import { collections } from '#lib/offline-collections.ts';
-	import { controllingWorker, documentsStatus, offlineStatus, removeCollection, removeDocuments } from '#lib/offline-saving.ts';
+	import { choicesStatus, clearEverything, controllingWorker } from '#lib/offline-saving.ts';
 	import { defaultPrintOptions, loadPrintOptions, savePrintOptions } from '#lib/print-options.ts';
 	import { buildReaderData, parseReaderData, readerDataFileName, readerDataSizeLimit, type ReaderData } from '#lib/reader-data.ts';
 	import { loadSettings, loadTheme, saveSettings, saveTheme } from '#lib/reading-settings.ts';
@@ -66,12 +65,12 @@
 	const dateFormat = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' });
 
 	async function exportData(): Promise<void> {
-		let savedParts: ReaderData['savedParts'] = [];
+		let saved = { parts: [] as string[], pages: [] as string[] };
 		if (controllingWorker()) {
-			const status = await offlineStatus().catch(() => undefined);
-			savedParts = status?.collections.filter((item) => item.kept).map((item) => item.id) ?? [];
+			const status = await choicesStatus().catch(() => undefined);
+			if (status) saved = { parts: status.choices.nodes, pages: status.choices.pages };
 		}
-		const data = buildReaderData(loadSettings(), loadTheme(), loadPrintOptions(), savedParts, loadStarred());
+		const data = buildReaderData(loadSettings(), loadTheme(), loadPrintOptions(), saved, loadStarred());
 		const fileName = readerDataFileName();
 		saveFile(new Blob([`${JSON.stringify(data, null, '\t')}\n`], { type: 'application/json' }), fileName);
 		message = `Exported to ${fileName}.`;
@@ -105,10 +104,10 @@
 		if (importing.starred.length > 0) saveStarred(starred);
 		const starredMessage =
 			starredAdded > 0 ? ` Added ${starredAdded === 1 ? 'one starred page' : `${starredAdded} starred pages`} to yours.` : '';
-		const parts = collections.filter((collection) => importing?.savedParts.includes(collection.id)).map((collection) => collection.label);
+		const chosen = importing.savedParts.length + importing.savedPages.length;
 		message =
-			parts.length > 0
-				? `Imported.${starredMessage} The file lists ${listed(parts)} as saved for offline reading; save ${parts.length === 1 ? 'it' : 'them'} above to have ${parts.length === 1 ? 'it' : 'them'} on this device too.`
+			chosen > 0
+				? `Imported.${starredMessage} The file lists ${chosen === 1 ? 'one part or page' : `${chosen} parts and pages`} saved for offline reading; choose ${chosen === 1 ? 'it' : 'them'} on the Read offline page to have ${chosen === 1 ? 'it' : 'them'} on this device too.`
 				: `Imported your settings, theme and print choices.${starredMessage}`;
 		importing = undefined;
 		onimported?.();
@@ -138,15 +137,8 @@
 		if (chosen.includes('starred')) saveStarred([]);
 		if (chosen.includes('pages')) {
 			if (controllingWorker()) {
-				for (const collection of collections) {
-					await removeCollection(collection.id).catch(() => notDone.push(collection.label));
-				}
 				// Saved copies of documents go too (src/lib/offline-documents.ts).
-				try {
-					for (const { set } of (await documentsStatus()).sets) await removeDocuments(set);
-				} catch {
-					notDone.push('saved documents');
-				}
+				await clearEverything().catch(() => notDone.push('saved pages'));
 			} else {
 				notDone.push('saved pages');
 			}
