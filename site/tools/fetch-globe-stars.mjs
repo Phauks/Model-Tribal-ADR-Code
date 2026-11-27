@@ -55,5 +55,5 @@ const file = {
 	stars
 };
 mkdirSync('static/map-sky', { recursive: true });
-writeFileSync('static/map-sky/stars.json', JSON.stringify(file));
+writeFileSync('static/map-sky/stars.json', `${JSON.stringify(file)}\n`);
 console.log(`Wrote ${stars.length} stars brighter than magnitude ${faintest} to static/map-sky/stars.json.`);
