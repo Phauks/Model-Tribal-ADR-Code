@@ -40,8 +40,6 @@ export type PageOutline = {
  * (Trevor, Nov. 27, 2026, design/navigation-models/mockups/C-desktop-nation.png).
  */
 export type PageFamily = {
-	/** Back up to the section, such as "‹ Nations". */
-	back?: { label: string; link: string };
 	/** The family's name, such as the nation's name. */
 	title: string;
 	/** The family's own page, when its name links to one. */
