@@ -16,6 +16,9 @@ import yaml
 
 from core import ROOT, read_list
 
+sys.path.insert(0, str(ROOT / 'scripts'))
+from record_facts import normalized_link  # noqa: E402
+
 SOURCES = ROOT / 'content/sources'
 SCRIPT = 'scripts/law/state_statutes/run.py'
 
@@ -110,18 +113,46 @@ def record(adapter, row: dict, session: str) -> dict:
     }
 
 
+def page_of(link: str) -> str:
+    return normalized_link(link) or link.split('#')[0]
+
+
+def others_at(records: list[dict]) -> dict[str, set[str]]:
+    """Source records this script does not write (a chapter's record, or a section held as it was) at the addresses of `records`,
+    by the address scripts/lint_records.py compares."""
+    pages = {page_of(entry['original_link']) for entry in records}
+    hosts = {page.split('/')[0] for page in pages}
+    ours = {entry['key'] for entry in records}
+    found = defaultdict(set)
+    for path in SOURCES.glob('*/*.yaml'):
+        if path.stem in ours:
+            continue
+        text = path.read_text()
+        if not any(host in text for host in hosts):
+            continue
+        source = yaml.safe_load(text) or {}
+        for link in (source.get('original_link'), (source.get('citation') or {}).get('URL')):
+            if isinstance(link, str) and page_of(link) in pages:
+                found[page_of(link)].add(source.get('key') or path.stem)
+    return found
+
+
 def share_links(records: list[dict]) -> None:
-    """Sections printed on one official page (a whole-chapter page) are different documents at one address: each lists the others
-    in `shares_link_with`, after `history`, as scripts/lint_records.py asks."""
-    by_page = defaultdict(list)
+    """Sections printed on one official page (a whole-chapter page) are different documents at one address: each lists the others,
+    and any other record at that address, in `shares_link_with`, after `history`, as scripts/lint_records.py asks."""
+    by_page = defaultdict(set)
     for entry in records:
-        by_page[entry['original_link'].split('#')[0]].append(entry['key'])
+        by_page[page_of(entry['original_link'])].add(entry['key'])
+    for page, keys in others_at(records).items():
+        by_page[page] |= keys
     for entry in records:
-        others = sorted(key for key in by_page[entry['original_link'].split('#')[0]] if key != entry['key'])
+        others = sorted(key for key in by_page[page_of(entry['original_link'])] if key != entry['key'])
         if not others:
             continue
         ordered = {}
         for name, value in entry.items():
+            if name == 'shares_link_with':
+                continue
             ordered[name] = value
             if name == 'history':
                 ordered['shares_link_with'] = others

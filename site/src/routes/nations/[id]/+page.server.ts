@@ -407,7 +407,9 @@ const jurisdictionTopics: Record<string, string> = {
 	'state-jurisdiction-statute': 'State jurisdiction under other federal laws',
 	'violence-against-women-act-special-tribal-criminal-jurisdiction': 'Violence Against Women Act',
 	'tribal-law-and-order-act-enhanced-sentencing': 'Tribal Law and Order Act',
-	'indian-child-welfare-act': 'Indian Child Welfare Act'
+	'indian-child-welfare-act': 'Indian Child Welfare Act',
+	'hearth-act-leasing-regulations': 'Leasing under the HEARTH Act',
+	'environmental-treatment-as-a-state': 'Environmental programs (treatment as a state)'
 };
 const topicOrder = Object.keys(jurisdictionTopics);
 

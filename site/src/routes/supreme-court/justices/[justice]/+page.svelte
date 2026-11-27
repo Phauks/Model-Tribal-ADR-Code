@@ -58,7 +58,7 @@
 	]}
 >
 	<Collapsible heading="On the Court" identifier="service">
-		<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.cases} width={560} labelWidth={110} />
+		<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.chartCases} self={data.key} width={560} labelWidth={110} />
 	</Collapsible>
 
 	<Collapsible heading="Cases on this site" identifier="cases" count={data.cases.length}>

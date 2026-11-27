@@ -68,8 +68,13 @@ async function mastheadButton(page, name) {
 /** The open states each page can be checked in, by name. */
 const openers = {
 	async search(page) {
-		await mastheadButton(page, 'Search');
-		await page.locator('.search-panel input[type="search"]').waitFor({ state: 'visible' });
+		// Wide screens show the search box in the masthead; narrower ones show the icon that opens it as a bar.
+		const icon = page.locator('.masthead .site-search > button[aria-label="Search"]');
+		if (await icon.isVisible()) await icon.click();
+		const box = page.locator('.masthead input[type="search"]');
+		await box.click();
+		await box.fill('navajo');
+		await page.locator('.search-panel').waitFor({ state: 'visible' });
 	},
 	async 'page settings'(page) {
 		await mastheadButton(page, 'Settings');

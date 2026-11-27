@@ -48,7 +48,12 @@ export interface PublicCopy {
 	 * served as UTF-8.
 	 */
 	charset?: string;
+	/** How many pages a PDF has (research/copy-pages.csv), when counted. */
+	pages?: number;
 }
+
+/** A saved web page, counted apart from documents (Trevor, Nov. 27, 2026: "denote documents and pages separately"). */
+export const isSavedWebPage = (copy: Pick<PublicCopy, 'mediaType'>) => copy.mediaType === 'text/html';
 
 /**
  * Media types the Worker serves as copies. A saved web page is served in a
