@@ -69,7 +69,7 @@ def record(adapter, row: dict, session: str) -> dict:
     if terms:
         found = f'terms: {terms}'
     elif row.get('pool') == 'E':
-        found = "no keyword; read because its chapter's name is Indian law"
+        found = f"no keyword; read because its chapter's name is {getattr(adapter, 'LAW_NAME', 'Indian law')}"
     elif row.get('pool') == 'settled':
         found = 'no keyword; read by the session with the rest of its act'
     else:
@@ -105,7 +105,7 @@ def record(adapter, row: dict, session: str) -> dict:
             'by': SCRIPT,
             'date': adapter.RETRIEVED,
             'checks': [{
-                'check': f"Indian law section: {getattr(adapter, 'CHECK_BY', "the sweep's keyword pass")} and an AI reader's verdict (core, incidental or none)",
+                'check': f"{getattr(adapter, 'LAW_NAME', 'Indian law')[0].upper()}{getattr(adapter, 'LAW_NAME', 'Indian law')[1:]} section: {getattr(adapter, 'CHECK_BY', "the sweep's keyword pass")} and an AI reader's verdict (core, incidental or none)",
                 'result': 'agree' if terms else 'settled',
                 'detail': f"{row['relevance']}; terms: {terms}" if terms else f"{row['relevance']}; no keyword, found by {'the session' if row.get('pool') == 'settled' else 'the reader'} alone",
             }],

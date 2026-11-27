@@ -1,0 +1,50 @@
+key: hawaii-revised-statutes-225p-3
+kind: state-statute
+citation:
+  type: legislation
+  title: Hawaii climate change mitigation and adaptation commission; general functions, duties, and powers
+  title-short: Haw. Rev. Stat. § 225P-3
+  container-title: Hawaii Revised Statutes
+  container-title-short: Haw. Rev. Stat.
+  section: 225P-3
+  author:
+  - literal: Hawaii State Legislature
+  issued:
+    date-parts:
+    - - 2014
+  URL: https://data.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0225P/HRS_0225P-0003.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://data.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0225P/HRS_0225P-0003.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Haw. Rev. Stat. § 225P-3 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: HI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Haw. Rev. Stat. § 225P-3 (2025). History: L 2014, c 83, pt of §2; am L 2017, c 32, §5; am L 2021, c 153, §8; am L 2025, c 236, §18. Text read from the Hawaii State Legislature''s page for the section in the Hawaii Revised Statutes (data.capitol.hawaii.gov/hrscurrent) on Nov. 27, 2026. Found by the state statutes sweep (terms: hawaiian; office of hawaiian affairs); AI reader''s verdict incidental: Climate commission seats for Office of Hawaiian Affairs and Hawaiian Homes Commission. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Native Hawaiian or Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: hawaiian; office of hawaiian affairs'

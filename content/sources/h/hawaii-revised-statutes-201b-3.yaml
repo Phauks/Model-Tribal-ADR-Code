@@ -1,0 +1,50 @@
+key: hawaii-revised-statutes-201b-3
+kind: state-statute
+citation:
+  type: legislation
+  title: Powers, generally
+  title-short: Haw. Rev. Stat. § 201B-3
+  container-title: Hawaii Revised Statutes
+  container-title-short: Haw. Rev. Stat.
+  section: 201B-3
+  author:
+  - literal: Hawaii State Legislature
+  issued:
+    date-parts:
+    - - 1998
+  URL: https://data.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0201B/HRS_0201B-0003.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://data.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0201B/HRS_0201B-0003.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Haw. Rev. Stat. § 201B-3 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: HI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Haw. Rev. Stat. § 201B-3 (2025). History: L 1998, c 156, pt of §2; am L 2002, c 38, §1, c 143, §3, c 148, §20, and c 253, §7; am L 2003, c 3, §4; am L 2004, c 9, §1; am L 2005, c 235, §5; am L 2007, c 201, §2; am L Sp 2009, c 5, §5; am L 2010, c 102, §1; am L 2014, c 131, §1; am L Sp 2021, c 1, §19; am L 2024, c 225, §3; am L 2025, c 132, §4. Text read from the Hawaii State Legislature''s page for the section in the Hawaii Revised Statutes (data.capitol.hawaii.gov/hrscurrent) on Nov. 27, 2026. Found by the state statutes sweep (terms: allotted; hawaiian); AI reader''s verdict incidental: Tourism authority duties include supporting Hawaiian language and cultural practitioners. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Native Hawaiian or Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: allotted; hawaiian'

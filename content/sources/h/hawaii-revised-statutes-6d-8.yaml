@@ -1,0 +1,50 @@
+key: hawaii-revised-statutes-6d-8
+kind: state-statute
+citation:
+  type: legislation
+  title: Burial discovery
+  title-short: Haw. Rev. Stat. § 6D-8
+  container-title: Hawaii Revised Statutes
+  container-title-short: Haw. Rev. Stat.
+  section: 6D-8
+  author:
+  - literal: Hawaii State Legislature
+  issued:
+    date-parts:
+    - - 2002
+  URL: https://data.capitol.hawaii.gov/hrscurrent/Vol01_Ch0001-0042F/HRS0006D/HRS_0006D-0008.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://data.capitol.hawaii.gov/hrscurrent/Vol01_Ch0001-0042F/HRS0006D/HRS_0006D-0008.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Haw. Rev. Stat. § 6D-8 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: HI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Haw. Rev. Stat. § 6D-8 (2025). History: L 2002, c 241, pt of §2. Text read from the Hawaii State Legislature''s page for the section in the Hawaii Revised Statutes (data.capitol.hawaii.gov/hrscurrent) on Nov. 27, 2026. Found by the state statutes sweep (no keyword; found in a random reading of other sections); AI reader''s verdict core: Cave burial discovery; reporting under iwi kupuna procedures. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Native Hawaiian or Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: settled
+    detail: core; no keyword, found by the reader alone

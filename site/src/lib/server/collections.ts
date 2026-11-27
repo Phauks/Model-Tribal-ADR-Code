@@ -376,6 +376,15 @@ function gamingCommissionDocuments(): CollectionItem[] {
 		.map((record) => sourceItem(record, (record.citation as { genre?: string }).genre ?? 'Commission final decision'));
 }
 
+const manualGenre = 'Indian Affairs Manual chapter';
+
+/** The chapters of the Indian Affairs Manual, Indian Affairs' own policy for its offices (scripts/law/indian_affairs_manual.py). */
+function indianAffairsManual(): CollectionItem[] {
+	return [...sources().values()]
+		.filter((record) => kindOf(record) === 'federal-agency-document' && (record.citation as { genre?: string }).genre === manualGenre)
+		.map((record) => sourceItem(record, (record.citation as { section?: string }).section));
+}
+
 const acknowledgmentOffice = 'U.S. Department of the Interior, Office of Federal Acknowledgment';
 
 /** The Department's documents in each federal acknowledgment petition: proposed findings, final determinations and the rest (scripts/law/acknowledgment_petitions.py). */
@@ -609,6 +618,7 @@ export const collections: Collection[] = [
 		detailHeader: 'Named in Royce’s schedule',
 		items: () => landCessions().map((cession) => ({ title: `Royce cession ${cession.royce}`, href: `/nations/map?cession=${cession.royce}`, year: cession.dates[0] ? Number(cession.dates[0].slice(0, 4)) : undefined, detail: cession.schedule }))
 	},
+	{ identifier: 'indian-affairs-manual', search: { group: 'law', label: 'Indian Affairs Manual chapter' }, title: 'Indian Affairs Manual', group: 'Federal law', detailHeader: 'Part', sourceKinds: ['federal-agency-document'], items: indianAffairsManual },
 
 	// State law
 	{ identifier: 'state-statutes', search: { group: 'law', label: 'State statute' }, title: 'State Statutes', group: 'State law', detailHeader: 'State', sourceKinds: ['state-statute'], items: stateStatutes, breakdown: stateBreakdown },

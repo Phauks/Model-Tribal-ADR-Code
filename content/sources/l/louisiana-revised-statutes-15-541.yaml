@@ -1,0 +1,50 @@
+key: louisiana-revised-statutes-15-541
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: La. Stat. Ann. § 15:541
+  container-title: Louisiana Revised Statutes
+  container-title-short: La. Stat. Ann.
+  section: 15:541
+  author:
+  - literal: Louisiana State Legislature
+  issued:
+    date-parts:
+    - - 1992
+  URL: https://legis.la.gov/Legis/Law.aspx?d=79160
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legis.la.gov/Legis/Law.aspx?d=79160
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: La. Stat. Ann. § 15:541 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: LA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: La. Stat. Ann. § 15:541 (2026). History: Acts 1992, No. 388, §1, eff. June 18, 1992; Acts 1997, No. 1147, §1, eff. July 14, 1997; Acts 1999, No. 594, §1; Acts 2001, No. 1206, §1; Acts 2003, No. 215, §1; Acts 2003, No. 574, §1; Acts 2003, No. 690, §2; Acts 2004, No. 147, §1; Acts 2004, No. 888, §2; Acts 2006, No. 186, §2, eff. June 2, 2006; Acts 2006, No. 204, §1; Acts 2007, No. 460, §2, eff. Jan. 1, 2008; Acts 2008, No. 273, §1; Acts 2008, No. 462, §1, eff. June 25, 2008; Acts 2008, No. 672, §§1, 5; Acts 2008, No. 816, §§1, 2; Acts 2010, No. 387, §2; Acts 2010, No. 400, §1; Acts 2011, No. 67, §3; Acts 2011, No. 223, §1; Acts 2012, No. 50, §1; Acts 2012, No. 446, §2; Acts 2012, No. 536, §1, eff. June 5, 2012; Acts 2014, No. 522, §1; Acts 2014, No. 564, §2; Acts 2014, No. 602, §5, eff. June 12, 2014; Acts 2014, No. 811, §7, eff. June 23, 2014; Acts 2015, No. 184, §2; Acts 2015, No. 256, §2; Acts 2016, No. 269, §2; Acts 2016, No. 560, §1; Acts 2017, No. 307, §1; Acts 2018, No. 485, §2, eff. May 25, 2018; Acts 2025, No. 230, §2; Acts 2025, No. 261, §2; Acts 2026, No. 151, §2; Acts 2026, No. 361, §2; Acts 2026, No. 424, §2; Acts 2026, No. 838, §1. Text read from the Louisiana State Legislature''s page for the section (legis.la.gov/Legis/Law.aspx) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal court; tribal); AI reader''s verdict incidental: Sex offender registry counts tribal court convictions as qualifying offenses. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal court; tribal'
