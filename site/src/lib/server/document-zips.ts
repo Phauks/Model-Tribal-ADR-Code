@@ -10,6 +10,7 @@ import { strToU8 } from 'fflate';
 import type { DocumentSetList } from '../offline-documents.ts';
 import { safeName, zipStream, type ZipEntry } from './zip-stream.ts';
 import { csvLine, type CsvOptions } from '#lib/csv.ts';
+import { verifierReadme, verifyPowerShell, verifyPowerShellName, verifyShell, verifyShellName } from '#lib/zip-verifiers.ts';
 
 /** documents.csv has always ended its lines with a carriage return and line feed but quoted only fields that hold a line feed, so it keeps those rules. */
 const onlyLineFeedsQuoted: CsvOptions = { quoteCarriageReturns: false };
@@ -32,6 +33,8 @@ export function documentsReadme(title: string, siteAddress: string, made: string
 		'These are the website’s own copies of documents it cites and is allowed to share: works of the United States government, and nations’ constitutions, laws and court opinions. documents.csv lists each file with its title, the address it was published at and its SHA-256.',
 		'',
 		`To check that a file is the one the website published, unchanged, choose it on Verify File at ${siteAddress}/verify, or compare its SHA-256 with documents.csv. SHA256SUMS.txt lists them in the form sha256sum -c reads (on Windows, Get-FileHash file.pdf; on a Mac, shasum -a 256 file.pdf; on Linux, sha256sum file.pdf).`,
+		'',
+		verifierReadme(`${siteAddress}/verify`),
 		'',
 		'This file cannot be changed after you download it. If a nation has asked for a document to be removed, the website no longer offers it: check the website for the current list, and please delete a removed document from your copy.',
 		''
@@ -70,6 +73,9 @@ export function documentsZip(
 		yield { name: 'documents.csv', open: async () => strToU8(`${rows.join('\r\n')}\r\n`) };
 		// The form sha256sum -c reads, so the files can be checked in one step.
 		yield { name: 'SHA256SUMS.txt', open: async () => strToU8(sums.map((line) => `${line}\n`).join('')) };
+		// Scripts that check every file against SHA256SUMS.txt (src/lib/zip-verifiers.ts).
+		yield { name: verifyShellName, open: async () => strToU8(verifyShell) };
+		yield { name: verifyPowerShellName, open: async () => strToU8(verifyPowerShell) };
 	}
 	return zipStream(entries());
 }
