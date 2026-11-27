@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import adapter from '@sveltejs/adapter-cloudflare';
@@ -10,6 +10,7 @@ import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
+import { citationFileCount, citationFileNumber, citationFilePath, citationTextsPath, plainCitation } from './src/lib/essay-citation-files.ts';
 import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, everyOpinionList, everyRecordBox, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
 import { caseLinks } from './src/lib/server/case-previews.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
@@ -371,23 +372,55 @@ function sourceCitations(): Plugin {
 const essayLibraryModule = 'virtual:essay-library';
 const resolvedEssayLibraryModule = `\0${essayLibraryModule}`;
 
+/** Every source's full citation, worked out once for the whole build (about 25 seconds for 22,000 sources). */
+let everyCitation: Record<string, string> | undefined;
+const citationsOnce = () => (everyCitation ??= everyFullCitation());
+let citationsFileWritten = false;
+
 /**
  * What the Worker needs to render essays, which live in the private bucket
- * and are rendered on request (docs/editing.md): the full citation of every
- * source record, so an essay can cite any of them; the glossary terms; and
- * the essays as git holds them, which the workspace can bring into the
- * bucket as a new version (src/lib/server/essay-library.ts).
+ * and are rendered on request (docs/editing.md): the glossary terms, the
+ * facts and parts of case and law boxes, and the essays as git holds them,
+ * which the workspace can bring into the bucket as a new version
+ * (src/lib/server/essay-library.ts).
+ *
+ * The full citation of every source record is not in the module: about 51 MB
+ * by Nov. 26, 2026, it took the Worker past Cloudflare's 64 MiB limit
+ * (src/lib/essay-citation-files.ts). The build writes the citations instead
+ * as static files under /page-data/essay-citations/, which the Worker reads
+ * when it draws a page, and as one file in .svelte-kit/ for the pages built
+ * ahead of time (src/lib/server/essay-citations.ts).
  */
 function essayLibrary(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:essay-library',
+		buildStart() {
+			// For the pages built ahead of time and the development server, which read every citation from here.
+			if (citationsFileWritten) return;
+			citationsFileWritten = true;
+			const file = path.join(siteFolder, '.svelte-kit', 'essay-citations.json');
+			mkdirSync(path.dirname(file), { recursive: true });
+			writeFileSync(file, JSON.stringify(citationsOnce()));
+		},
+		generateBundle() {
+			if (this.environment.name !== 'client') return;
+			const files: Record<string, string>[] = Array.from({ length: citationFileCount }, () => ({}));
+			const texts: [string, string][] = [];
+			for (const [key, html] of Object.entries(citationsOnce())) {
+				files[citationFileNumber(key)][key] = html;
+				texts.push([key, plainCitation(html)]);
+			}
+			files.forEach((citations, number) => {
+				this.emitFile({ type: 'asset', fileName: citationFilePath(number).slice(1), source: JSON.stringify(citations) });
+			});
+			this.emitFile({ type: 'asset', fileName: citationTextsPath.slice(1), source: JSON.stringify(texts) });
+		},
 		resolveId(identifier) {
 			return identifier === essayLibraryModule ? resolvedEssayLibraryModule : undefined;
 		},
 		load(identifier) {
 			if (identifier !== resolvedEssayLibraryModule) return undefined;
 			return [
-				`export const essayCitations = ${JSON.stringify(everyFullCitation())};`,
 				`export const essayTerms = ${JSON.stringify(glossaryTerms())};`,
 				`export const essayBoxFacts = ${JSON.stringify(everyBoxFact())};`,
 				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`,

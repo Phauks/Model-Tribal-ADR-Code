@@ -8,7 +8,7 @@ import { testDatabase } from './database.ts';
 
 const bindings = vi.hoisted(() => ({}) as Record<string, unknown>);
 vi.mock('cloudflare:workers', () => ({ env: bindings, waitUntil: () => undefined }));
-vi.mock('$app/env', () => ({ version: 'test-build' }));
+vi.mock('$app/env', () => ({ version: 'test-build', building: false, dev: false }));
 vi.mock('virtual:essay-library', () => ({
 	essayBoxFacts: { cases: {}, laws: {} },
 	essayCaseLinks: {},
@@ -16,7 +16,6 @@ vi.mock('virtual:essay-library', () => ({
 		'worcester-v-georgia': { title: 'Worcester v. Georgia', date: [1832, 3, 3] },
 		'cherokee-nation-v-georgia': { title: 'Cherokee Nation v. Georgia', date: [1831, 3, 18] }
 	},
-	essayCitations: {},
 	essayOpinions: {},
 	essayTerms: {},
 	// Nothing in git, so the pages are built only from what each test saves.

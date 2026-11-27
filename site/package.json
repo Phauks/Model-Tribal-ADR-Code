@@ -28,6 +28,7 @@
 		"check:accessibility": "node tools/check-accessibility.mjs",
 		"check:accessibility:live": "node tools/check-accessibility-live.mjs",
 		"check:built-worker": "node tools/check-built-worker.mjs",
+		"check:worker-size": "node tools/check-worker-size.mjs",
 		"check:sidebar": "node tools/check-sidebar.mjs",
 		"check:timeline": "node tools/check-timeline.mjs",
 		"check:wide-tables": "node tools/check-wide-tables.mjs",
