@@ -465,28 +465,6 @@
         "checked": { "$ref": "common.schema.json#/$defs/calendarDate" }
       }
     },
-    "argument_audio": {
-      "type": "array",
-      "minItems": 1,
-      "description": "Sound recordings of the case in court: its oral arguments and, for the Supreme Court, the announcement of its opinion. Each names who holds the recording and links to their own file; file is the project's stored copy. A recording of a held opinion is never listed on a public record. The courts of appeals recordings come from scripts/caselaw/appeals_argument_audio.py.",
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["kind", "date", "source", "link"],
-        "properties": {
-          "kind": { "enum": ["argument", "opinion announcement"] },
-          "date": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "The day the recording was made." },
-          "source": { "type": "string", "description": "Who holds the recording, such as \"Supreme Court of the United States\", \"United States Court of Appeals for the Ninth Circuit\" or \"National Archives\"." },
-          "link": { "type": "string", "format": "uri", "description": "The source's own address for the recording." },
-          "catalog": { "type": "string", "format": "uri", "description": "The archive catalog entry for the recording, where there is one." },
-          "whole_session": { "type": "boolean", "description": "True when the file is a whole day's reel with other cases in it." },
-          "note": { "type": "string", "description": "What the reader should know, such as a date discrepancy between sources." },
-          "duration_seconds": { "type": "integer", "minimum": 0 },
-          "held": { "type": "boolean", "description": "True when the recording is kept private." },
-          "file": { "$ref": "#/properties/file" }
-        }
-      }
-    },
     "rights": { "$ref": "permission.schema.json" },
     "contribution": {
       "type": "object",
