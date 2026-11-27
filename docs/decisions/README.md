@@ -68,6 +68,7 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0060](0060-serve-state-agreements-and-state-court-opinions.md) | Serve copies of Oklahoma's filed state-tribal agreements and of published state court opinions | Accepted |
 | [0061](0061-keep-public-worker-answers-at-the-edge.md) | Keep the Worker's public answers at Cloudflare's edge, and nothing personal | Accepted |
 | [0062](0062-add-passkeys-outside-sign-in-and-a-person-check.md) | Add passkeys, Google and Microsoft sign-in, and Cloudflare Turnstile on public forms | Accepted |
+| [0064](0064-check-facts-against-their-sources-and-answer-from-our-records.md) | Check each fact against the source it cites, and answer visitors' questions only from our records | Accepted |
 | [0066](0066-show-case-opinions-in-full-on-the-case-page.md) | Show a case's opinions in full on its page, read from the copy the site serves | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

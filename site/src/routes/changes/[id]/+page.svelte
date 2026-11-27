@@ -66,6 +66,7 @@
 		{ label: 'Recent changes', href: '/changes' },
 		{ label: `History of ${pageName}`, href: historyLink }
 	]}
+	current="Change to {pageName}"
 />
 
 <h1>

@@ -18,6 +18,7 @@
 		{ label: 'Recent changes', href: '/changes' },
 		{ label: `History of ${pageName}`, href: `/changes?page=${encodeURIComponent(change.address)}` }
 	]}
+	current="As of {dateTime(change.madeAt)}"
 />
 
 <p class="notice">

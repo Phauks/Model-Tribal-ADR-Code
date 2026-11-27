@@ -27,6 +27,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Contributors', href: '/workspace/contributors' }
 	]}
+	current={fullName(profile.answers) || '(no name given)'}
 />
 <h1>{fullName(profile.answers) || '(no name given)'}</h1>
 

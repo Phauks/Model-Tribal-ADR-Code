@@ -71,6 +71,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Outreach', href: '/workspace/outreach' }
 	]}
+	current={batch.name}
 />
 <h1>{batch.name}</h1>
 

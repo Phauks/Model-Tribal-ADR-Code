@@ -33,6 +33,7 @@
 			{ label: 'Source documents', href: '/copies' },
 			...(details ? [{ label: details.list.title, href: `/copies/list/${details.list.slug}` }] : [])
 		]}
+		current={data.title}
 	/>
 	<h1>
 		{#if italic}<i>{data.title}</i>{:else}{data.title}{/if}

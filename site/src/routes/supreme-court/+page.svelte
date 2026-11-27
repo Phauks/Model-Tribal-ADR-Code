@@ -56,7 +56,7 @@
 	<title>Supreme Court · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Library', href: '/library' }]} />
+<Breadcrumbs trail={[{ label: 'Library', href: '/library' }]} current="Supreme Court of the United States" />
 
 <div class="reading">
 	<h1>Supreme Court of the United States</h1>

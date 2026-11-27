@@ -25,7 +25,7 @@
 </svelte:head>
 
 <div class="timeline-page">
-	<Breadcrumbs trail={[{ label: 'About', href: '/about' }]} />
+	<Breadcrumbs trail={[{ label: 'About', href: '/about' }]} current={data.title} />
 	<h1>{data.title}</h1>
 	<div class="lead reading">{@html data.introductionHtml}</div>
 

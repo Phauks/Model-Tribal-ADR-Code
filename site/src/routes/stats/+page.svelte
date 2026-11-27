@@ -16,7 +16,7 @@
 </svelte:head>
 
 <div class="stats-page">
-	<Breadcrumbs trail={[{ label: 'Library', href: '/library' }]} />
+	<Breadcrumbs trail={[{ label: 'Library', href: '/library' }]} current="Statistics" />
 	<h1>Statistics</h1>
 	<p class="counted">Counted {readableDate(data.built)}</p>
 	{#each data.groups as { group, collections } (group)}

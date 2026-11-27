@@ -223,7 +223,7 @@
 
 <!-- The page's controls are in the masthead, so in every mode the page starts as it does for readers. -->
 {#if section && sectionLink}
-	<Breadcrumbs trail={[{ label: section, href: sectionLink }]} />
+	<Breadcrumbs trail={[{ label: section, href: sectionLink }]} current={shownTitle} />
 {/if}
 
 <article class="reading essay">
