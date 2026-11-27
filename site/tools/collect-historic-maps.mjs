@@ -1,7 +1,7 @@
 // Collects the rest of steps A and B of the historic maps study (research/analyses/2026-11-26-historic-maps-of-indian-lands.md; Trevor, 2026-11-26: "lets get A, and B"), beside what tools/build-historic-maps.mjs already holds (Royce's sheets, the Forest Service's cessions, the Census years):
 //
 // - A: the Bureau of Indian Affairs' land area representations (its national land areas, its Oklahoma Tribal Statistical Areas and its supplemental areas), saved as GeoJSON. They are today's areas only; the Bureau publishes no past years.
-// - B: the Library of Congress's scans of historic maps of Indian lands, the rows marked "keep" in research/reviews/2026-11-26-historic-maps-library-of-congress.csv. Each is kept as the Library's JPEG 2000 file and as a JPEG (with a thumbnail) the site's image viewer can show. geography/historic-map-scans.json lists them with their bucket keys, sizes and SHA-256, and their source records are content/sources/*/<record>.yaml.
+// - B: the Library of Congress's scans of historic maps of Indian lands, the rows marked "keep" in research/reviews/2026-11-26-historic-maps-library-of-congress.csv. Each is kept as the Library's JPEG 2000 file and as a JPEG (with a thumbnail) the site's image viewer can show. geography/historic-map-scans.json lists them with their bucket keys, sizes and SHA-256 (geography/historic-map-scans-served.json is the short list the website reads), and their source records are content/sources/*/<record>.yaml.
 //
 // Commands, from site/:
 //   node tools/collect-historic-maps.mjs fetch [--work folder]    downloads the Bureau's areas, then each kept map's record and scans from the Library (slowly: the Library turns away fast robots)
@@ -18,6 +18,7 @@ import { basename, join } from 'node:path';
 
 const root = new URL('../../', import.meta.url);
 const scansPath = new URL('site/geography/historic-map-scans.json', root);
+const servedPath = new URL('site/geography/historic-map-scans-served.json', root);
 const listPath = new URL('research/reviews/2026-11-26-historic-maps-library-of-congress.csv', root);
 const indexPath = new URL('research/capture-index.csv', root);
 const sourcesFolder = new URL('content/sources/', root);
@@ -235,6 +236,11 @@ function buildScans(work) {
 		maps
 	};
 	writeFileSync(scansPath, `${JSON.stringify(result, null, '\t')}\n`);
+	// The website reads only the served maps, with only the facts it shows, so the Worker stays small.
+	const served = maps
+		.filter((map) => map.serve)
+		.map((map) => ({ record: map.record, item: map.item, title: map.title, year: map.year, images: map.images.map((image) => ({ image: image.image.key, thumbnail: image.thumbnail.key })) }));
+	writeFileSync(servedPath, `${JSON.stringify({ description: 'The served maps in geography/historic-map-scans.json, with only what the website shows. Written by tools/collect-historic-maps.mjs.', maps: served }, null, '\t')}\n`);
 	console.log(`Wrote ${maps.length} maps (${maps.reduce((sum, map) => sum + map.images.length, 0)} images) to geography/historic-map-scans.json.`);
 	writeRecords(maps);
 }
