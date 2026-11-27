@@ -52,7 +52,7 @@
 	const hasGlance = $derived(picture !== undefined || glance.length > 0 || panels !== undefined);
 </script>
 
-{#if trail}<Breadcrumbs {trail} />{/if}
+{#if trail}<Breadcrumbs {trail} current={titleText} />{/if}
 
 <RecordPage glance={hasGlance ? glancePart : undefined} sources={sources.length > 0 ? sourcesPart : undefined}>
 	{#snippet title()}<h1>{titleText}</h1>{/snippet}

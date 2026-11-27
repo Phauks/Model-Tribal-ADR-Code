@@ -12,7 +12,7 @@
 </svelte:head>
 
 <div class="data-page">
-	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }, { label: 'Data and charts', href: '/nations/data' }]} />
+	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }, { label: 'Data and charts', href: '/nations/data' }]} current={data.topic.title} />
 	<h1>{data.topic.title}</h1>
 	<p class="lead">{data.topic.description}</p>
 	{#each data.charts as chart (chart.identifier)}

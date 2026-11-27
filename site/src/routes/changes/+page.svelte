@@ -224,7 +224,7 @@
 {/snippet}
 
 {#if history}
-	<Breadcrumbs trail={[{ label: 'Recent changes', href: '/changes' }]} />
+	<Breadcrumbs trail={[{ label: 'Recent changes', href: '/changes' }]} current="{historyShowsWording ? 'History of' : 'Changes to'} {historyName}" />
 	<h1>{historyShowsWording ? 'History of' : 'Changes to'} {historyName}</h1>
 	<!-- Says plainly that the list is one page's, with the way back to every page's (Trevor, Nov. 23, 2026). -->
 	<p class="showing">

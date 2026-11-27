@@ -519,7 +519,7 @@
 	</noscript>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Map of Native Nations" />
 
 <div class="reading">
 	<h1>Map of Native Nations</h1>

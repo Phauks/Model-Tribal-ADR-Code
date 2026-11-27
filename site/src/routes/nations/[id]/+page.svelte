@@ -165,7 +165,7 @@
 <!-- For someone on the nation's team: Edit, History and Your nation's team in the masthead (decision record 0041). -->
 {#if !page.withdrawn}<NationPageControls nation={page.id} />{/if}
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current={page.officialName} />
 
 <!--
 	A record page (site/DESIGN.md, "Record pages", "Nation pages"): the text on

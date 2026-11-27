@@ -40,7 +40,7 @@
 	<meta name="description" content="{data.name}, {data.citation}: what the court decided, its opinions, the nations it names and where to read it." />
 </svelte:head>
 
-<Breadcrumbs {trail} />
+<Breadcrumbs {trail} current={data.name} />
 
 <RecordPage glance={data.facts.length > 0 ? glance : undefined}>
 	{#snippet title()}<h1><i>{data.name}</i></h1>{/snippet}
