@@ -38,3 +38,11 @@ The six offices published 3,734 documents from Jan. 18, 1994 to Nov. 18, 2026: 3
 ## Next
 
 A person reads the reservation proclamations, liquor ordinances and land acquisitions first, and links each to the nation and the land it concerns where the title does not name them.
+
+## The Indian Health Service (Nov. 27, 2026)
+
+The first run left out the Indian Health Service. Thread "Close the tier 2 data gaps" added it to the script's offices and ran `fetch --offices indian-health-service`: 767 documents from Feb. 10, 1994 to Nov. 18, 2026 (728 notices, 15 proposed rules, 11 rules, 7 corrections and 6 uncategorized documents). 753 got a new record, 747 of them with a stored PDF (6 have no PDF on GovInfo). The other 14 were joint documents of the Indian Health Service and the Bureau of Indian Affairs that already had a record, and now name both offices. Each document's offices now come from the API's own list of agencies, so a run for one office keeps a joint document's other authors. 48 of the new records name a nation by its name.
+
+## The word "Tribes" (Nov. 27, 2026)
+
+The Confederated Salish and Kootenai Tribes of the Flathead Reservation call themselves "the Tribes", and the shared matcher took that as one of their names, so every title or abstract that said "Tribes" was tied to them. `scripts/law/nation_names.py` now sets aside a name made only of words such as Tribe, Nation and Indians (the same guard as the Solicitor's opinions work), and `scripts/law/fix_tribes_word_matches.py` read the words each record was matched on again (the title and abstract from the Federal Register API; the IBIA decision's or NIGC document's title). Of 566 records that named the nation, 14 name it by its own words and keep it; 552 lost the false match (536 Federal Register documents, 13 IBIA decisions and 3 NIGC documents). 414 of them now name no nation, and 138 keep the other nations they named.

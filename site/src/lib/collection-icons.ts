@@ -75,7 +75,8 @@ const collectionIcons: Record<string, Component> = {
 	'saved-web-pages': Globe,
 	charts: ChartColumn,
 	'glossary-terms': BookA,
-	forms: ClipboardList
+	forms: ClipboardList,
+	'indian-affairs-manual': BookText
 };
 
 export const collectionIcon = (identifier: string): Component => collectionIcons[identifier] ?? FileText;
