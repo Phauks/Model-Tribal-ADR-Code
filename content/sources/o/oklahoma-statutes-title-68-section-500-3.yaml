@@ -83,10 +83,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 500.3 (2026). History: from one licensed supplier or licensed permissive supplier to another licensed supplier or Added by Laws 1996, c. 345, § 3, eff. Oct. 1, 1996. Amended by Laws 2006, c. 327, § 2, eff. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 276. Found by the state statutes pilot (terms: bureau of indian affairs; federally recognized indian tribe; indian allotments; indian country; indian reservation; indian tribe); AI reader''s verdict incidental: Motor fuel code defines Indian country, which affects tax treatment. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 500.3 (2026). History: Added by Laws 1996, c. 345, § 3, eff. Oct. 1, 1996. Amended by Laws 2006, c. 327, § 2, eff. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 276. Found by the state statutes pilot (terms: bureau of indian affairs; federally recognized indian tribe; indian allotments; indian country; indian reservation; indian tribe); AI reader''s verdict incidental: Motor fuel code defines Indian country, which affects tax treatment. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -86,10 +86,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 5003.10d (2026). History: from agencies which provide programs and services related to workforce, education and from office for failure to attend three consecutive Council meetings. The chair of the Added by Laws 2006, c. 236, § 1, emerg. eff. June 6, 2006. Amended by Laws 2015, c. 188, Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 1148. Found by the state statutes pilot (terms: native american); AI reader''s verdict incidental: Workforce board membership includes a Native American Liaison seat. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 5003.10d (2026). History: Added by Laws 2006, c. 236, § 1, emerg. eff. June 6, 2006. Amended by Laws 2015, c. 188, Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 1148. Found by the state statutes pilot (terms: native american); AI reader''s verdict incidental: Workforce board membership includes a Native American Liaison seat. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

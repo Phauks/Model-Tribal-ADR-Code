@@ -16,6 +16,7 @@
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
 	import type { LandAreaRow, ShadedViewData } from '#lib/server/nations-map.ts';
 	import { isShadedMapView, shadedMapViews, shadedViewDefinitions, type ShadedMapView } from '#lib/shaded-map-views.ts';
+	import { shapeFor, shapePath } from '#lib/map-shapes.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import { byStateColumns, byStateRows, categoryColumns, categoryRows, landAreaColumns, landAreaRows as buildLandAreaRows, mapTableFile, nationColumns, nationRows, regionColumns, regionRows as buildRegionRows, stateColumns, stateRows as buildStateRows } from '#lib/map-tables.ts';
 	import { mapTableOnScreen } from '#lib/map-table-on-screen.svelte.ts';
@@ -757,7 +758,7 @@
 						{/each}
 					{:else if isShadedMapView(view.key) && shaded[view.key]}
 						{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
-							<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
+							<li>{@render categorySwatch(entry.shade)}{entry.label}</li>
 						{/each}
 					{:else if view.key === 'lands'}
 						{#each data.landAreaGroups as group (group.key)}
@@ -917,7 +918,7 @@
 		{#if layers.lands && !(pastShown && censusShown === undefined)}
 			{#if isShadedMapView(colorBy) && shaded[colorBy]}
 				{#each shaded[colorBy]?.legend ?? [] as entry (entry.key)}
-					<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
+					<li>{@render categorySwatch(entry.shade)}{entry.label}</li>
 				{/each}
 			{:else}
 				{#each data.landAreaGroups as group (group.key)}
@@ -969,6 +970,16 @@
 			contact={detail ? [detail.website, detail.address, detail.phone, detail.email].filter((entry) => entry !== undefined) : []}
 			back={{ label: 'Close', onclick: () => void closeDetails(current) }}
 		/>
+	{/if}
+{/snippet}
+
+<!-- A category's key mark: its shape in its shade, as on the map (src/lib/map-shapes.ts), or a plain swatch for no fact recorded. -->
+{#snippet categorySwatch(shade: number)}
+	{@const shape = shapeFor(shade)}
+	{#if shape}
+		<svg class="shape-swatch" viewBox="0 0 20 20" aria-hidden="true"><path d={shapePath(shape, 10, 10, 6)} style:fill="var(--color-map-class-{shade})" /></svg>
+	{:else}
+		<span class="swatch count-{shade}" aria-hidden="true"></span>
 	{/if}
 {/snippet}
 
@@ -1354,6 +1365,27 @@
 	.map-drawing :global(.land-area.dot) {
 		stroke: var(--color-paper);
 		stroke-width: calc(0.8px * var(--map-unzoom, 1));
+	}
+	/* A category's shape (src/lib/map-shapes.ts) keeps its size on screen as the drawing zooms, as the dots do, and is ringed in ink, as on the tiled map. */
+	.map-drawing :global(.land-area.dot.shape),
+	.map-drawing :global(.office.shape) {
+		transform-box: fill-box;
+		transform-origin: center;
+		scale: var(--map-unzoom, 1);
+		stroke: var(--color-ink);
+		stroke-width: 1px;
+	}
+	.map-drawing :global(.office.shape) {
+		stroke-width: 1.5px;
+	}
+	.shape-swatch {
+		flex: none;
+		width: 1.25rem;
+		height: 1.25rem;
+	}
+	.shape-swatch path {
+		stroke: var(--color-ink);
+		stroke-width: 1.2;
 	}
 	.map-drawing :global(a:hover .land-area),
 	.map-drawing :global(a:focus .land-area) {

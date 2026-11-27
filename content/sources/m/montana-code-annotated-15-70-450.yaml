@@ -1,0 +1,50 @@
+key: montana-code-annotated-15-70-450
+kind: state-statute
+citation:
+  type: legislation
+  title: Cooperative agreement -- motor fuels taxes
+  title-short: Mont. Code Ann. § 15-70-450
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 15-70-450
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1991
+  URL: https://mca.legmt.gov/bills/mca/title_0150/chapter_0700/part_0040/section_0500/0150-0700-0040-0500.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0150/chapter_0700/part_0040/section_0500/0150-0700-0040-0500.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Mont. Code Ann. § 15-70-450 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 15-70-450 (2025). History: En. Sec. 1, Ch. 772, L. 1991; amd. Sec. 5, Ch. 772, L. 1991; amd. Sec. 5, Ch. 625, L. 1993; amd. Sec. 40, Ch. 19, L. 1999; Sec. 15-70-234, MCA 2013; redes. 15-70-450 by Sec. 41, Ch. 220, L. 2015; amd. Sec. 15, Ch. 163, L. 2019; amd. Sec. 36, Ch. 261, L. 2021; amd. Sec. 2, Ch. 460, L. 2025. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservations; indian tribe; indian; reservations; tribe); AI reader''s verdict core: Motor fuels tax cooperative agreements with Indian tribes on reservations. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian reservations; indian tribe; indian; reservations; tribe'

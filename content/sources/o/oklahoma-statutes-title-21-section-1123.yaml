@@ -64,7 +64,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 21, § 1123 (2026). History: Added by Laws 1945, p. 95, § 1, emerg. eff. May 5, 1945. Amended by Laws 1947, p. 232, § Laws 2022, c. 260, § 4, eff. Nov. 1, 2022; Laws 2024, c. 59, § 33, eff. Nov. 1, 2024; Laws Laws 2025, c. 486, § 38 repealed by Laws 2026, c. 12, § 45, emerg. eff. April 13, 2026. Text read from the Legislative Service Bureau''s Title 21 PDF (updated Nov. 12, 2026), page 600. Found by the state statutes pilot (terms: tribal court); AI reader''s verdict incidental: Aggravated sexual battery covers children in tribal court custody. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

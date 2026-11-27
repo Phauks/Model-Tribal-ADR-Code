@@ -1,0 +1,50 @@
+key: montana-code-annotated-33-22-140
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Mont. Code Ann. § 33-22-140
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 33-22-140
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1997
+  URL: https://mca.legmt.gov/bills/mca/title_0330/chapter_0220/part_0010/section_0400/0330-0220-0010-0400.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0330/chapter_0220/part_0010/section_0400/0330-0220-0010-0400.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 33-22-140 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 33-22-140 (2025). History: En. Sec. 33, Ch. 416, L. 1997; amd. Sec. 42, Ch. 472, L. 1999; amd. Sec. 45, Ch. 130, L. 2005; amd. Sec. 27, Ch. 469, L. 2005; amd. Sec. 5, Ch. 356, L. 2007; amd. Sec. 19, Ch. 63, L. 2015; amd. Sec. 9, Ch. 262, L. 2021. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian health; indian; tribal); AI reader''s verdict incidental: Indian health service or tribal organization programs count as creditable coverage. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian health; indian; tribal'

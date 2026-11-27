@@ -71,7 +71,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 24-119 (2026). History: Amended by Laws 1982, c. 326, § 6; Laws 1991, c. 233, § 2, eff. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 1079. Found by the state statutes pilot (terms: native americans); AI reader''s verdict incidental: History coverage rules must recognize Native American contributions. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

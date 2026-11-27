@@ -1,0 +1,52 @@
+key: oregon-revised-statutes-338-075
+kind: state-statute
+citation:
+  type: legislation
+  title: Review of school district board decision; sponsorship by State Board of Education; judicial review
+  title-short: Or. Rev. Stat. § 338.075
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: '338.075'
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 1999
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors338.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors338.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-338-035
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 338.075 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 338.075 (2025). History: [1999 c.200 §9; 2001 c.376 §1; 2005 c.209 §28; 2011 c.695 §6; 2011 c.718 §§28,29; 2012 c.91 §§4,5; 2013 c.265 §§5,6; 2018 c.72 §9; 2025 c.452 §4]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; reservation; tribe); AI reader''s verdict incidental: Federally recognized tribe charter school applicants get special procedures. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; reservation; tribe'

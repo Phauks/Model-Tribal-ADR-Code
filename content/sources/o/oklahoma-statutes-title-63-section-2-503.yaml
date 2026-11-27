@@ -75,10 +75,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 2-503 (2026). History: derived from the sale of such item forfeited due to nonpayment of a fine imposed pursuant Added by Laws 1971, c. 119, § 2-503, operative Sept. 1, 1971. Amended by Laws 1978, c. Laws 1986, c. 291, § 1, eff. Nov. 1, 1986; Laws 1987, c. 136, § 5, eff. Nov. 1, 1987; Laws Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1173. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Bureau may forfeit with tribal law enforcement agencies. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 2-503 (2026). History: Added by Laws 1971, c. 119, § 2-503, operative Sept. 1, 1971. Amended by Laws 1978, c. Laws 1986, c. 291, § 1, eff. Nov. 1, 1986; Laws 1987, c. 136, § 5, eff. Nov. 1, 1987; Laws. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1173. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Bureau may forfeit with tribal law enforcement agencies. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

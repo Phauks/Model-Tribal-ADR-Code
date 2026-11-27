@@ -185,7 +185,6 @@
 		// rule, which sends every address on the domain to this Worker. MAIL_SIGNING_KEY and OUTREACH_SMTP_PASSWORD are Secrets set
 		// in the dashboard, never here.
 		"MAIL_DOMAIN": "triballawproject.org",
-		"MAIL_NOTICE_ADDRESS": "",
 		"MAIL_SENDER_NAME": "Tribal Law Project",
 		"OUTREACH_CARRIER": "",
 		"OUTREACH_FROM": "",

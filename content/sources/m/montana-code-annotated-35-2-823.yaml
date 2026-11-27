@@ -1,0 +1,50 @@
+key: montana-code-annotated-35-2-823
+kind: state-statute
+citation:
+  type: legislation
+  title: Amended certificate of authority
+  title-short: Mont. Code Ann. § 35-2-823
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 35-2-823
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1991
+  URL: https://mca.legmt.gov/bills/mca/title_0350/chapter_0020/part_0080/section_0230/0350-0020-0080-0230.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0350/chapter_0020/part_0080/section_0230/0350-0020-0080-0230.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 35-2-823 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 35-2-823 (2025). History: En. Sec. 150, Ch. 411, L. 1991; amd. Sec. 46, Ch. 240, L. 2007; amd. Sec. 12, Ch. 280, L. 2015. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribe); AI reader''s verdict incidental: Lists tribe as a jurisdiction of incorporation for amended certificates. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribe'

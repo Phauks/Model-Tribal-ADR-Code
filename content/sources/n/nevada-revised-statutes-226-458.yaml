@@ -1,0 +1,54 @@
+key: nevada-revised-statutes-226-458
+kind: state-statute
+citation:
+  type: legislation
+  title: Creation and administration of Program
+  title-short: Nev. Rev. Stat. § 226.458
+  container-title: Nevada Revised Statutes
+  container-title-short: Nev. Rev. Stat.
+  section: '226.458'
+  author:
+  - literal: Nevada Legislature
+  issued:
+    date-parts:
+    - - 2023
+  URL: https://www.leg.state.nv.us/nrs/NRS-226.html#NRS226Sec458
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.nv.us/nrs/NRS-226.html#NRS226Sec458
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- nevada-revised-statutes-226-460
+- nevada-revised-statutes-226-748
+- nevada-revised-statutes-226-778
+state_law:
+  relevance: incidental
+  citation: Nev. Rev. Stat. § 226.458 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Nev. Rev. Stat. § 226.458 (2025). History: (Added to NRS by 2023, 1767; A 2025, 1578). Text read from the Nevada Legislature''s chapter page for the section (leg.state.nv.us/nrs) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal governments; tribal); AI reader''s verdict incidental: Health loan repayment program lists tribal governments as eligible entities; excerpt cut. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal governments; tribal'

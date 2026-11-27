@@ -48,10 +48,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 82, § 1087.8 (2026). History: Laws 1972, c. 228, § 8, emerg. eff. April 7, 1972. Renumbered from Title 2, § 1408 by Laws 1982, c. 67, § 5. Text read from the Legislative Service Bureau''s Title 82 PDF (updated Nov. 12, 2026), page 308. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: Weather modification exemption for American Indian cultural ceremonies. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 82, § 1087.8 (2026). History: Laws 1972, c. 228, § 8, emerg. eff. April 7, 1972. Renumbered. Text read from the Legislative Service Bureau''s Title 82 PDF (updated Nov. 12, 2026), page 308. Found by the state statutes pilot (terms: american indian); AI reader''s verdict incidental: Weather modification exemption for American Indian cultural ceremonies. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

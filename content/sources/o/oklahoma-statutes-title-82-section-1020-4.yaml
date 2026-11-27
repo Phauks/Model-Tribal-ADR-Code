@@ -53,7 +53,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 82, § 1020.4 (2026). History: Added by Laws 1972, c. 248, § 4, eff. July 1, 1973. Amended by Laws 1993, c. 164, § 9, Text read from the Legislative Service Bureau''s Title 82 PDF (updated Nov. 12, 2026), page 209. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Water Board authorized to cooperate with tribal agencies. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

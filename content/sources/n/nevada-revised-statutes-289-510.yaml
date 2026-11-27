@@ -1,0 +1,52 @@
+key: nevada-revised-statutes-289-510
+kind: state-statute
+citation:
+  type: legislation
+  title: 'Peace Officers’ Standards and Training Commission: Powers and duties; regulations; construction of section'
+  title-short: Nev. Rev. Stat. § 289.510
+  container-title: Nevada Revised Statutes
+  container-title-short: Nev. Rev. Stat.
+  section: '289.510'
+  author:
+  - literal: Nevada Legislature
+  issued:
+    date-parts:
+    - - 1999
+  URL: https://www.leg.state.nv.us/nrs/NRS-289.html#NRS289Sec510
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.nv.us/nrs/NRS-289.html#NRS289Sec510
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- nevada-revised-statutes-289-152
+state_law:
+  relevance: incidental
+  citation: Nev. Rev. Stat. § 289.510 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Nev. Rev. Stat. § 289.510 (2025). History: (Added to NRS by 1999, 2421; A 2001, 1730; 2009, 2449; 2015, 831; 2019, 1009, 3495, 4462; 2021, 551, 574, 950; 2023, 839, 2546; 2025, 2592). Text read from the Nevada Legislature''s chapter page for the section (leg.state.nv.us/nrs) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Training commission may contract with an Indian tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

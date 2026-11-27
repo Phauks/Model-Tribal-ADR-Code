@@ -70,7 +70,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 2-3-103 (2026). History: Added by Laws 1968, c. 282, § 108, eff. Jan. 13, 1969. Amended by Laws 1969, c. 273, § 1, Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 369. Found by the state statutes pilot (terms: federally recognized tribe); AI reader''s verdict incidental: Juvenile detention contracts may be made with federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

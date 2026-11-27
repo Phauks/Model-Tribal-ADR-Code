@@ -86,7 +86,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 500.13 (2026). History: Added by Laws 1996, c. 345, § 13, eff. Oct. 1, 1996. Amended by Laws 1999, c. 164, § 39, Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 301. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Tax-exempt motor fuel sales to federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

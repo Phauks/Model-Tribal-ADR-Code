@@ -1,24 +1,8 @@
 /**
- * Small helpers for the site's navigation: the "Go to a nation" box in the
- * Nations menu (SectionBar.svelte) and the groups the reader opened or shut
- * in the side column (SiteSidebar.svelte), worked out without the browser so
- * they can be tested.
+ * A small helper for the site's navigation: the groups the reader opened or
+ * shut in the side column (SiteSidebar.svelte), worked out without the
+ * browser so it can be tested.
  */
-import type { OutlineItem } from './site-sections.ts';
-
-/** The entries whose names hold every word of the filter, ignoring case and accents. */
-export function filterEntries(items: OutlineItem[], filter: string): OutlineItem[] {
-	const words = fold(filter).split(/\s+/).filter(Boolean);
-	if (words.length === 0) return items;
-	return items.filter((item) => {
-		const name = fold(item.label);
-		return words.every((word) => name.includes(word));
-	});
-}
-
-function fold(text: string): string {
-	return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('en-US');
-}
 
 /** The storage key for the groups the reader opened or shut, such as the Workspace, kept from page to page. */
 export const sectionChoicesKey = 'sidebar-open-sections';

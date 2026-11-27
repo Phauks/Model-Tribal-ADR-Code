@@ -12,6 +12,7 @@ import {
 	rowsToCsv,
 	writeTableState,
 	foldForSearch,
+	listCell,
 	problemsIn,
 	sortRows,
 	type TableColumn,
@@ -245,5 +246,38 @@ describe('the Sum row and the columns shown', () => {
 		expect(defaultColumnKeys(numberColumns)).toEqual(['label', 'value']);
 		expect(shownColumnsOf(numberColumns, undefined).map((column) => column.key)).toEqual(['label', 'value']);
 		expect(shownColumnsOf(numberColumns, ['note']).map((column) => column.key)).toEqual(['label', 'note']);
+	});
+});
+
+describe('a cell listing several linked things', () => {
+	const columns: TableColumn[] = [
+		{ key: 'name', header: 'Name' },
+		{ key: 'nation', header: 'Nation', filterable: true }
+	];
+	const rows: TableRow[] = [
+		{
+			key: 'aish-ke-baw-gosh',
+			cells: {
+				name: { text: 'Aish-ke-baw-gosh' },
+				nation: listCell([
+					{ text: 'Grand Traverse Band', href: '/nations/grand-traverse' },
+					{ text: 'Little River Band', href: '/nations/little-river' }
+				])
+			}
+		},
+		{ key: 'one', cells: { name: { text: 'One' }, nation: listCell([{ text: 'Little River Band', href: '/nations/little-river' }]) } }
+	];
+
+	it('keeps each part with its own link, the whole list as text, and each part as a filter value', () => {
+		expect(rows[0].cells.nation).toMatchObject({ text: 'Grand Traverse Band; Little River Band', values: ['Grand Traverse Band', 'Little River Band'] });
+		expect(rows[0].cells.nation.parts?.map((part) => part.href)).toEqual(['/nations/grand-traverse', '/nations/little-river']);
+		expect(rows[1].cells.nation).toEqual({ text: 'Little River Band', href: '/nations/little-river', values: ['Little River Band'] });
+		expect(filterChoices(columns[1], rows).map((choice) => choice.value)).toEqual(['Grand Traverse Band', 'Little River Band']);
+	});
+
+	it('downloads every part’s address in the link column', () => {
+		const csv = rowsToCsv(columns, rows, 'https://example.org');
+		expect(csv).toContain('https://example.org/nations/grand-traverse; https://example.org/nations/little-river');
+		expect(csv.split('\r\n')[0]).toBe('Name,Nation,Nation (link)');
 	});
 });
