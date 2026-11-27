@@ -172,8 +172,8 @@
 		left: var(--space-3);
 		top: -10rem;
 		padding: var(--space-2) var(--space-3);
-		background: var(--color-focus);
-		color: var(--focus-text);
+		background: var(--color-paper);
+		color: var(--color-link);
 		z-index: 10;
 	}
 
@@ -369,11 +369,6 @@
 
 		.more-button:hover {
 			background: color-mix(in srgb, currentColor 14%, transparent);
-		}
-
-		.more-button:focus-visible {
-			background-color: var(--color-focus);
-			color: var(--focus-text);
 		}
 
 		.page-controls-row {

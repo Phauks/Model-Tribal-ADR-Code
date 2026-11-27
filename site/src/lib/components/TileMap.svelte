@@ -1340,7 +1340,7 @@
 	}
 
 	.tile-map :global(.maplibregl-canvas:focus-visible) {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: -3px;
 	}
 
@@ -1415,7 +1415,7 @@
 	}
 
 	.layers-base:has(input:focus-visible) {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 1px;
 	}
 
@@ -1453,8 +1453,8 @@
 
 	/* The Layers button is marked while its menu is open. */
 	.tile-map :global(.map-layers button[aria-expanded='true']) {
-		background: var(--color-focus);
-		color: var(--focus-text, var(--color-ink));
+		background: var(--color-selection);
+		color: var(--color-ink);
 	}
 
 	/* MapLibre's control icons are dark; in the dark theme they are turned light. */

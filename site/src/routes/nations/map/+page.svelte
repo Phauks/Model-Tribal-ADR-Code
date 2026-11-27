@@ -1359,7 +1359,7 @@
 	}
 	.map-drawing :global(a:hover .office),
 	.map-drawing :global(a:focus .office) {
-		fill: var(--color-focus);
+		fill: var(--color-map-highlight);
 	}
 	.swatch.office {
 		border: 2px solid var(--color-ink);
@@ -1414,7 +1414,7 @@
 	}
 	.map-drawing :global(a:hover .land-area),
 	.map-drawing :global(a:focus .land-area) {
-		fill: var(--color-focus);
+		fill: var(--color-map-highlight);
 	}
 
 	.map-drawing :global(.region) {
@@ -1425,7 +1425,7 @@
 	.map-drawing :global(a:focus .state),
 	.map-drawing :global(a:hover .region),
 	.map-drawing :global(a:focus .region) {
-		fill: var(--color-focus);
+		fill: var(--color-map-highlight);
 	}
 
 	/* Small islands are only a few map units across, so on hover their outline
@@ -1433,7 +1433,7 @@
 	   darkens, so that the place itself visibly lights up. */
 	.map-drawing :global(a:hover .island),
 	.map-drawing :global(a:focus .island) {
-		stroke: var(--color-focus);
+		stroke: var(--color-map-highlight);
 		stroke-width: calc(3px * var(--map-unzoom, 1));
 	}
 	.map-drawing :global(a:hover .marker-line),

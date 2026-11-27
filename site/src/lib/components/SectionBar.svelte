@@ -216,9 +216,20 @@
 			display: block;
 			position: relative;
 			z-index: 8;
-			background: var(--color-paper);
+			background: var(--color-section-bar);
 			border-bottom: 1px solid var(--color-line);
 		}
+	}
+
+	/*
+	 * The bar and its open menu are one surface (palette C, chosen by Trevor on
+	 * Nov. 27, 2026; design/header-nav-colors): the page's paper in light, the
+	 * panels' surface in dark. The side box, a row under the mouse and the
+	 * count badges take the next step up.
+	 */
+	.section-bar {
+		--color-surface: var(--color-section-bar-raised);
+		--color-surface-raised: var(--color-section-bar);
 	}
 
 	.sections {
@@ -286,10 +297,8 @@
 	}
 
 	summary:focus-visible {
-		outline: 3px solid var(--color-focus-ring);
-		outline-offset: -3px;
-		background: var(--color-focus);
-		color: var(--focus-text);
+		outline-offset: -5px;
+		border-radius: var(--radius-control);
 	}
 
 	/* The menu: the whole width under the row, its groups side by side. */
@@ -300,10 +309,10 @@
 		top: 100%;
 		max-height: calc(100dvh - 8rem);
 		overflow-y: auto;
-		background: var(--color-surface-raised);
+		background: var(--color-section-bar);
 		border-top: 1px solid var(--color-line);
 		border-bottom: 1px solid var(--color-line);
-		box-shadow: 0 18px 36px -18px color-mix(in srgb, var(--color-ink) 35%, transparent);
+		box-shadow: 0 18px 36px -18px var(--color-menu-shadow);
 	}
 
 	.menu-columns {
@@ -371,13 +380,6 @@
 	a.menu-link:hover {
 		background: var(--color-surface);
 		color: var(--color-link);
-	}
-
-	a.menu-link:focus-visible {
-		outline: 3px solid var(--color-focus-ring);
-		outline-offset: -3px;
-		background: var(--color-focus);
-		color: var(--focus-text);
 	}
 
 	/* The page being read. */

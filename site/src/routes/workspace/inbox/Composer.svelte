@@ -703,8 +703,8 @@
 		position: relative;
 	}
 	.attach:focus-within {
-		outline: 3px solid var(--color-focus-ring);
-		background: var(--color-focus);
+		outline: 3px solid var(--focus-ring);
+		outline-offset: 2px;
 	}
 	.attach input {
 		position: absolute;
