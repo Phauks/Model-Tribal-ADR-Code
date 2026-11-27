@@ -1432,21 +1432,26 @@ pictures:
   sha256: 536aa8819b1ddf2754a7c20e8cfb4809205b50cf04f9208894bbdd417d54a19e
   key: supreme-court/portraits/byron-raymond-white-536aa8819b1d.jpg
 - subject: arthur-joseph-goldberg
-  shows: Arthur J. Goldberg, U.S. Representative to the United Nations, speaking at a lectern, United Nations, New York
+  shows: Arthur J. Goldberg, U.S. Representative to the United Nations, speaking at a lectern, United Nations, New York (detail)
   creator: Bernard Gotfryd
   date: between 1965 and 1968
   source: Library of Congress
   source_id: gtfy.06243
   source_link: https://www.loc.gov/pictures/item/2020735784/
   license: Public domain
-  basis: 'Library of Congress record: "No known restrictions on publication." Bernard Gotfryd photograph collection, given to the Library by the photographer in 2004.'
+  basis: 'Library of Congress record: "No known restrictions on publication." Bernard Gotfryd photograph collection, given to the Library by the photographer in 2004. The picture is cut from the Library''s master file to show him at about half length.'
   checked: '2026-11-27'
-  copy: https://tile.loc.gov/storage-services/service/pnp/gtfy/06200/06243r.jpg
+  copy: https://tile.loc.gov/storage-services/master/pnp/gtfy/06200/06243u.tif
+  crop:
+  - 1400
+  - 560
+  - 3400
+  - 3060
   media_type: image/jpeg
   width: 640
-  height: 437
-  sha256: 27fa7aacc30dad146569e547b2ce4e5d7d6b21ee4b0d53217dd46e1b168da0a2
-  key: supreme-court/portraits/arthur-joseph-goldberg-27fa7aacc30d.jpg
+  height: 800
+  sha256: 2d685421a13c00c1906dfcfda138ce875357d17fe3ab4f4c0c187266ba305fe9
+  key: supreme-court/portraits/arthur-joseph-goldberg-2d685421a13c.jpg
 - subject: abe-fortas
   shows: Abe Fortas, head and shoulders, in judicial robe
   creator: Marion S. Trikosko
