@@ -78,7 +78,7 @@
 			>
 				{#snippet cell(row: TableRow, column: TableColumn)}
 					{#if column.key === 'nation'}
-						<a href={row.cells.nation.href}>{row.cells.nation.text}</a><CitationMarks marks={marks.get(row.key)} />
+						<span class="program-cell"><a href={row.cells.nation.href}>{row.cells.nation.text}</a><CitationMarks marks={marks.get(row.key)} /></span>
 					{/if}
 				{/snippet}
 			</DataTable>
@@ -89,6 +89,24 @@
 </InfoPage>
 
 <style>
+	/*
+	 * A program's row can cite several sources, so its markers sit side by
+	 * side; each is a full 24 pixel target (WCAG 2.2, 2.5.8), as in the
+	 * records table on the chart pages, so neighbors never crowd each other.
+	 */
+	.program-cell :global(.note-marker) {
+		display: inline-block;
+		min-width: 24px;
+		min-height: 24px;
+		line-height: 24px;
+		text-align: center;
+		vertical-align: top;
+	}
+
+	.program-cell > a {
+		padding-block: 2px;
+	}
+
 	/* The table of nations is wide, so it starts under At a glance rather than squeezed beside it. */
 	:global(.collapsible.past-glance) {
 		clear: both;

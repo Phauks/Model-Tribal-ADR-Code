@@ -479,7 +479,7 @@
 					>
 						{#snippet cell(row: TableRow, column: TableColumn)}
 							{#if column.key === 'program'}
-								<span class="treaty-cell"
+								<span class="program-cell"
 									>{#if row.cells.program.href}<a href={row.cells.program.href}>{row.cells.program.text}</a
 										>{:else}{row.cells.program.text}{/if}<CitationMarks marks={programMarks.get(row.key)} /></span
 								>
@@ -711,6 +711,24 @@
 	}
 
 	.treaty-cell > a {
+		padding-block: 2px;
+	}
+
+	/*
+	 * A program's row can cite several sources, so its markers sit side by
+	 * side; each is a full 24 pixel target (WCAG 2.2, 2.5.8), as in the
+	 * records table on the chart pages, so neighbors never crowd each other.
+	 */
+	.program-cell :global(.note-marker) {
+		display: inline-block;
+		min-width: 24px;
+		min-height: 24px;
+		line-height: 24px;
+		text-align: center;
+		vertical-align: top;
+	}
+
+	.program-cell > a {
 		padding-block: 2px;
 	}
 
