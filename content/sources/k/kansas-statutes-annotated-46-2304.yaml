@@ -1,0 +1,50 @@
+key: kansas-statutes-annotated-46-2304
+kind: state-statute
+citation:
+  type: legislation
+  title: Severability
+  title-short: Kan. Stat. Ann. § 46-2304
+  container-title: Kansas Statutes Annotated
+  container-title-short: Kan. Stat. Ann.
+  section: 46-2304
+  author:
+  - literal: Kansas Office of Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1993
+  URL: https://ksrevisor.gov/statutes/chapters/ch46/046_023_0004.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://ksrevisor.gov/statutes/chapters/ch46/046_023_0004.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Kan. Stat. Ann. § 46-2304 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KS
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Kan. Stat. Ann. § 46-2304 (2025). History: L. 1993, ch. 4, § 4; March 4. Text read from the Kansas Revisor of Statutes'' page for the section in the Kansas Statutes Annotated (ksrevisor.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (no keyword; read because its chapter''s name is Indian law); the session''s verdict core: Severability clause of state-tribal relations act. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: settled
+    detail: core; no keyword, found by the reader alone

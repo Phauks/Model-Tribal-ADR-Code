@@ -1,0 +1,50 @@
+key: kansas-statutes-annotated-12-5363
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Kan. Stat. Ann. § 12-5363
+  container-title: Kansas Statutes Annotated
+  container-title-short: Kan. Stat. Ann.
+  section: 12-5363
+  author:
+  - literal: Kansas Office of Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2011
+  URL: https://ksrevisor.gov/statutes/chapters/ch12/012_053_0063.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://ksrevisor.gov/statutes/chapters/ch12/012_053_0063.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Kan. Stat. Ann. § 12-5363 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KS
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Kan. Stat. Ann. § 12-5363 (2025). History: L. 2011, ch. 84, § 2; L. 2012, ch. 21, § 1; L. 2014, ch. 6, § 1; L. 2019, ch. 39, § 1; L. 2024, ch. 53, § 11; L. 2025, ch. 34, § 2; April 10. Text read from the Kansas Revisor of Statutes'' page for the section in the Kansas Statutes Annotated (ksrevisor.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal governments; tribal); AI reader''s verdict incidental: 911 definition lists tribal governments as possible PSAP operators. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal governments; tribal'

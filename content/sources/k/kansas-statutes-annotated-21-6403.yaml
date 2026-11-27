@@ -1,0 +1,50 @@
+key: kansas-statutes-annotated-21-6403
+kind: state-statute
+citation:
+  type: legislation
+  title: Gambling; definitions
+  title-short: Kan. Stat. Ann. § 21-6403
+  container-title: Kansas Statutes Annotated
+  container-title-short: Kan. Stat. Ann.
+  section: 21-6403
+  author:
+  - literal: Kansas Office of Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2010
+  URL: https://ksrevisor.gov/statutes/chapters/ch21/021_064_0003.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://ksrevisor.gov/statutes/chapters/ch21/021_064_0003.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Kan. Stat. Ann. § 21-6403 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KS
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Kan. Stat. Ann. § 21-6403 (2025). History: L. 2010, ch. 136, § 214; L. 2015, ch. 62, § 19; L. 2022, ch. 91, § 20; July 1. Text read from the Kansas Revisor of Statutes'' page for the section in the Kansas Statutes Annotated (ksrevisor.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal gaming; tribal); AI reader''s verdict incidental: Gambling definitions carve out tribal gaming from crimes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal gaming; tribal'

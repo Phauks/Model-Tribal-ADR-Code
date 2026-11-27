@@ -49,7 +49,7 @@ class Kansas(State):
 
             def sections_of(path):
                 page = self.get(SITE + path).decode('utf-8', 'replace')
-                name = re.search(r'<h2>\s*(.*?)\s*</h2>', page, re.S)
+                name = re.search(r'<h2>\s*(Chapter .*?)\s*</h2>', page, re.S)
                 chapter_name = text_of(name.group(1)) if name else ''
                 rows, article = [], ''
                 for match in re.finditer(r'class="collapsed"[^>]*>\s*(Article .*?)\s*</a>|<li>\s*([0-9a-z-]+)\s*<a href="([^"]+)">\s*(.*?)\s*</a>', page, re.S):

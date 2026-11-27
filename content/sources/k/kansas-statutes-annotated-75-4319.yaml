@@ -1,0 +1,50 @@
+key: kansas-statutes-annotated-75-4319
+kind: state-statute
+citation:
+  type: legislation
+  title: Closed or executive meetings; conditions; authorized subjects for discussion; binding action prohibited; certain documents identified in meetings not subject to disclosure
+  title-short: Kan. Stat. Ann. § 75-4319
+  container-title: Kansas Statutes Annotated
+  container-title-short: Kan. Stat. Ann.
+  section: 75-4319
+  author:
+  - literal: Kansas Office of Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1972
+  URL: https://ksrevisor.gov/statutes/chapters/ch75/075_043_0019.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://ksrevisor.gov/statutes/chapters/ch75/075_043_0019.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Kan. Stat. Ann. § 75-4319 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KS
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Kan. Stat. Ann. § 75-4319 (2025). History: L. 1972, ch. 319, § 3; L. 1977, ch. 301, § 3; L. 1981, ch. 344, § 1; L. 1988, ch. 315, § 4; L. 1992, ch. 318, § 9; L. 1993, ch. 286, § 75; L. 1994, ch. 254, § 3; L. 1996, ch. 256, § 23; L. 1999, ch. 96, § 2; L. 2001, ch. 190, § 2; L. 2004, ch. 177, § 2; L. 2005, ch. 126, § 4; L. 2007, ch. 177, § 16; L. 2009, ch. 132, § 14; L. 2012, ch. 16, § 33; L. 2015, ch. 68, § 16; L. 2017, ch. 73, § 4; L. 2025, ch. 107, § 8; July 1. Text read from the Kansas Revisor of Statutes'' page for the section in the Kansas Statutes Annotated (ksrevisor.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal-state; tribal); AI reader''s verdict incidental: Open meetings closed sessions include tribal-state gaming compact matters. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal-state; tribal'
