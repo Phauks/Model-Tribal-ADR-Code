@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada (approved by the Secretary of the Interior Nov. 13, 1936), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1936-11-13'
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  confidence: medium
+  verification: inferred
+  as_of: '1936-11-13'
+  locator: 1936 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: NV
   presence: government-office

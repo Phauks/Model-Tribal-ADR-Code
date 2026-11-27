@@ -397,12 +397,22 @@
 {#snippet phoneSection(section: NavigationSection)}
 	{@const current = section === (currentSection ?? personalSection)}
 	{@const sectionLink = currentNavigationLink(section, path, search)}
-	<li class:personal={section === workspace}>
+	<li class:personal={section === workspace} class:linked={!!section.home}>
+		<!-- The name goes to the section's own page; the chevron beside it opens the section's groups (Trevor, Nov. 27, 2026: no "All of …" link). -->
+		{#if section.home}
+			<a class="phone-name" class:current href={section.home} aria-current={section.home === path ? 'page' : current ? 'true' : undefined}
+				><span class:personal-label={section === workspace}>{#if section === workspace}<Briefcase size={20} aria-hidden="true" />{/if}{section.label}</span></a
+			>
+		{/if}
 		<details name="phone-section" open={current}>
-			<summary class:current>
-				<span class:personal-label={section === workspace}
-					>{#if section === workspace}<Briefcase size={20} aria-hidden="true" />{/if}{section.label}{#if current}<span class="visually-hidden"> (the section you are in)</span>{/if}</span
-				>
+			<summary class:current={current && !section.home} class:toggle={!!section.home}>
+				{#if section.home}
+					<span class="visually-hidden">{section.label} pages</span>
+				{:else}
+					<span class:personal-label={section === workspace}
+						>{#if section === workspace}<Briefcase size={20} aria-hidden="true" />{/if}{section.label}{#if current}<span class="visually-hidden"> (the section you are in)</span>{/if}</span
+					>
+				{/if}
 				<ChevronDown size={20} aria-hidden="true" />
 			</summary>
 			<div class="phone-groups">
@@ -421,9 +431,6 @@
 						{/each}
 					</ul>
 				{/each}
-				{#if section.home}
-					<p class="phone-home"><a href={section.home}>{section === workspace ? 'Overview' : `All of ${section.label}`}</a></p>
-				{/if}
 			</div>
 		</details>
 	</li>
@@ -776,8 +783,44 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
-	.phone-sections summary.current {
+	.phone-sections summary.current,
+	.phone-name.current {
 		border-left-color: var(--color-action);
+	}
+
+	/* A section with a page of its own: its name is a link across the row, and its chevron, at the row's right end, opens its groups. */
+	.phone-sections > li.linked {
+		position: relative;
+	}
+
+	.phone-name {
+		display: flex;
+		align-items: center;
+		min-height: 3.5rem;
+		padding: 0 calc(3.5rem + var(--space-2)) 0 var(--space-4);
+		border-left: 4px solid transparent;
+		color: var(--color-ink);
+		font-size: var(--font-size-lead);
+		font-weight: var(--font-weight-semibold);
+		text-decoration: none;
+	}
+
+	.phone-name:focus-visible,
+	.phone-sections summary.toggle:focus-visible {
+		outline: 3px solid var(--focus-ring);
+		outline-offset: -3px;
+	}
+
+	.phone-sections summary.toggle {
+		position: absolute;
+		top: 0;
+		right: 0;
+		justify-content: center;
+		width: 3.5rem;
+		height: 3.5rem;
+		min-height: 0;
+		padding: 0;
+		border-left: 1px solid var(--color-line);
 	}
 
 	.phone-sections summary > :global(svg) {
@@ -808,8 +851,7 @@
 		min-height: var(--layout-target-minimum);
 	}
 
-	.phone-groups a,
-	.phone-home a {
+	.phone-groups a {
 		color: var(--color-link);
 		font-weight: var(--font-weight-semibold);
 	}
@@ -817,10 +859,6 @@
 	.phone-groups a[aria-current='page'] {
 		color: var(--color-ink);
 		font-weight: var(--font-weight-bold);
-	}
-
-	.phone-home {
-		margin: var(--space-2) 0 0;
 	}
 
 	/* The Workspace comes after the six sections, set apart by a wider rule, as in mockups/B-phone-menu-light.png. */

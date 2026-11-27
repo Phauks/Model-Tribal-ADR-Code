@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Eastern Shoshoni, July 2, 1863, 18 Stat. 685
+  since: '1863-07-02'
+  source: treaty-with-the-eastern-shoshoni-1863
+  confidence: medium
+  verification: inferred
+  as_of: '1863-07-02'
+  locator: p. 848 (Treaty with the Eastern Shoshoni, 1863; Kappler header "July 2, 1863. | 18 Stats., 685. | Ratified Mar. 7, 1864. | Proclaimed June 7, 1869.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Eastern Shoshoni; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: WY
   presence: government-office

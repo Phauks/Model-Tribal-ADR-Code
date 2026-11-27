@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Shoshoni-Northwestern Bands, July 30, 1863, 13 Stat. 663
+  since: '1863-07-30'
+  source: treaty-with-the-shoshoni-northwestern-bands-1863
+  confidence: medium
+  verification: inferred
+  as_of: '1863-07-30'
+  locator: p. 850 (Treaty with the Shoshoni-Northwestern Bands, 1863; Kappler header "July 30, 1863. | 13 Stats., 663. | Ratified Mar. 7, 1864 | Proclaimed Jan. 17, 1865.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Northwestern Shoshoni; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: UT
   presence: government-office

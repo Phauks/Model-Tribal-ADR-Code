@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Teton, etc., Sioux, June 22, 1825, 7 Stat. 250
+  since: '1825-06-22'
+  source: treaty-with-the-teton-etc-sioux-1825
+  confidence: medium
+  verification: inferred
+  as_of: '1825-06-22'
+  locator: p. 227 (Treaty with the Teton, etc., Sioux, 1825; Kappler header "June 22, 1825. | 7 Stat., 250. | Proclamation, Feb. 6, 1826.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Yanktonai; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 4 nations' profiles link this treaty.
 states:
 - state: ND
   presence: government-office
