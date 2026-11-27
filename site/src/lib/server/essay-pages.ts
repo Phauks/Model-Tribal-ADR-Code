@@ -154,7 +154,7 @@ export async function renderedVersion(bucket: R2Bucket, row: { object_key: strin
 	const cache = (globalThis as { caches?: { default?: Cache } }).caches?.default;
 	const cacheKey = `https://essay-cache.invalid/${encodeURIComponent(siteBuild)}/${row.sha256}`;
 	if (cache) {
-		const cached = await cache.match(cacheKey).catch(() => undefined);
+		const cached = await cache.match(cacheKey).catch(() => /* expected: the cache is optional; a miss renders the essay again */ undefined);
 		if (cached) return (await cached.json()) as RenderedEssay;
 	}
 	const text = await readVersionText(bucket, row);
@@ -163,7 +163,7 @@ export async function renderedVersion(bucket: R2Bucket, row: { object_key: strin
 	if (cache) {
 		await cache
 			.put(cacheKey, new Response(JSON.stringify(rendered), { headers: { 'Cache-Control': 'max-age=31536000' } }))
-			.catch(() => undefined);
+			.catch(() => /* expected: the cache is optional; the page is rendered again next time */ undefined);
 	}
 	return rendered;
 }

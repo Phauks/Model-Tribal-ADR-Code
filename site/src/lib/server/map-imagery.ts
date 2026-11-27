@@ -69,6 +69,7 @@ export async function serveMapImagery(name: string, z: number, x: number, y: num
 	try {
 		upstream = await fetcher(imageryAddress(name, z, x, y), { cf: { cacheEverything: true, cacheTtl: month } } as RequestInit);
 	} catch {
+		// expected: the picture service did not answer; failed() answers 502 and the map shows a gap.
 		return failed();
 	}
 	if (upstream.status === 404) return new Response(null, { status: 204, headers: { 'Cache-Control': `public, max-age=${day}` } });

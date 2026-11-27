@@ -8,6 +8,8 @@ import { requireMail } from '#lib/server/mail/inbox-access.ts';
 import { stuckArrivals, tryStuckArrivalsAgain } from '#lib/server/mail/arrivals.ts';
 import { can } from '#lib/permissions.ts';
 import { requirePermission } from '#lib/server/workspace.ts';
+import { isMissingTable } from '#lib/problems.ts';
+import { reportHere } from '#lib/server/report-here.ts';
 
 // The project inbox (site/MAIL.md): one page of conversations in a view, a
 // folder the lead author made, or a tag, with search, and what the
@@ -27,7 +29,10 @@ export const load: PageServerLoad = async (event) => {
 	const inbox = event.url.searchParams.get('inbox');
 	const list = await listThreads(context, { view, personIdentifier: person.identifier, folder, tag, search, inbox, page });
 	// Mail that could not be filed after every try (site/MAIL.md, "When something fails"), for whoever manages mail.
-	const stuck = can(person, 'manage-mail') ? await stuckArrivals(context).catch(() => []) : [];
+	const stuck = can(person, 'manage-mail') ? await stuckArrivals(context).catch((problem: unknown) => {
+				if (!isMissingTable(problem)) reportHere(problem, { code: 'mail.stuck', place: '/workspace/inbox' });
+				return [];
+			}) : [];
 	return { view, folder, tag, search, inbox, page, ...list, stuck };
 };
 

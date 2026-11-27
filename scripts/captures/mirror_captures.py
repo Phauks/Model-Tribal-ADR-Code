@@ -64,18 +64,17 @@ import shutil
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import capture_index  # noqa: E402  (same folder; written so that a script loading this file by path finds it too)
+
 REPO = Path(__file__).resolve().parents[2]
-INDEX_CSV = REPO / "research" / "capture-index.csv"
+INDEX_CSV = capture_index.INDEX
 ORPHANS_CSV = REPO / "research" / "capture-orphans.csv"
 DEFAULT_BUCKET = "tribal-law-project-files"
 TEXT_SUFFIXES = (".txt", ".json", ".raw")
 HAND_PULLER = "Trevor Goldsmith"
 
-FIELDS = [
-    "key", "bytes", "sha256", "media_type", "topic", "title", "nations",
-    "obtained", "link", "captured", "records", "record_kinds", "listed_in",
-    "catalog", "derived_from", "rights", "redistribution", "keep_local", "orphan",
-]
+FIELDS = capture_index.FIELDS
 
 # Rights notes used when no source record states the rights. Project analysis
 # from the data model's permission statuses and decision records 0004 and 0017.
@@ -462,12 +461,8 @@ def build_index(args) -> None:
 
 
 def write_index(rows: list[dict]) -> None:
-    """Write the index (CSV and JSON) and the orphans list."""
-    INDEX_CSV.parent.mkdir(parents=True, exist_ok=True)
-    with INDEX_CSV.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
+    """Write the index and the orphans list, both in key order (scripts/captures/capture_index.py)."""
+    rows = capture_index.write_rows(rows)
     orphans = [r for r in rows if r["orphan"] == "yes" and not r["derived_from"]]
     with ORPHANS_CSV.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=["key", "topic", "title", "link", "catalog", "listed_in", "nations"],
@@ -552,8 +547,7 @@ def index_row(*, key: str, size: int, digest: str, media: str, topic: str, title
 
 
 def load_index() -> list[dict]:
-    with INDEX_CSV.open(encoding="utf-8") as handle:
-        return list(csv.DictReader(handle))
+    return capture_index.read_rows()
 
 
 def remote_state(s3, bucket: str, key: str):

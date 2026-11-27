@@ -12,7 +12,7 @@
 	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
-	import SavedText from '#lib/components/SavedText.svelte';
+	import DocumentText from '#lib/components/DocumentText.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
 	import TileMap from '#lib/components/TileMap.svelte';
 	import CodeContents from '#lib/components/code/CodeContents.svelte';
@@ -91,6 +91,9 @@
 
 	<ImpactAccounts accounts={data.accounts} />
 
+	<!-- The copy of the text this site keeps, in the one card every document page shows (DocumentText.svelte); "None Identified" without one. -->
+	<DocumentText file={data.text} identifier="law-text" name={data.name} citation={data.citation} signers={data.signers} />
+
 	{#if data.readingHtml}
 		<Collapsible heading="Where to read it" identifier="where-to-read" count={data.readingCount}>
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the law's own record -->
@@ -118,10 +121,8 @@
 		</Collapsible>
 	{/if}
 
-	{#if data.text}<SavedText file={data.text.file} isPdf={data.text.isPdf} name={data.name} identifier="law-text" />{/if}
-
-	{#if data.essays.length + data.nations.length + data.signers.length + data.enacted.length + data.legislativeHistory.length > 0}
-		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length + data.signers.length + data.enacted.length + data.legislativeHistory.length}>
+	{#if data.essays.length + data.nations.length + data.treatySigners.length + data.enacted.length + data.legislativeHistory.length > 0}
+		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length + data.treatySigners.length + data.enacted.length + data.legislativeHistory.length}>
 			<dl class="summary-list">
 				{#if data.enacted.length > 0}
 					<div>
@@ -173,11 +174,11 @@
 						</dd>
 					</div>
 				{/if}
-				{#if data.signers.length > 0}
+				{#if data.treatySigners.length > 0}
 					<div>
 						<dt>Signers</dt>
 						<dd>
-							{#each data.signers as signer (signer.link)}
+							{#each data.treatySigners as signer (signer.link)}
 								<p><a href={signer.link}>{signer.name}</a>{#if signer.detail}<span class="muted">, for {signer.detail}</span>{/if}</p>
 							{/each}
 						</dd>

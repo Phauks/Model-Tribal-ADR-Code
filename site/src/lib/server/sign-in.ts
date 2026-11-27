@@ -37,6 +37,7 @@ export function safeReturnPath(candidate: string | null | undefined): string {
 		if (parsed.origin !== 'https://site.invalid') return '/workspace';
 		return `${parsed.pathname}${parsed.search}`;
 	} catch {
+		// expected: an address that cannot be read goes to the workspace.
 		return '/workspace';
 	}
 }

@@ -20,6 +20,8 @@ import type { FileScan } from '../file-scans.ts';
 import { ScanFaultError, type ScanProvider } from './scan-port.ts';
 import { TooLargeForProviderError } from './providers.ts';
 import { computeVerdict, projectScanPolicy, type ScanPolicy } from './verdict.ts';
+import { messageOf } from '../../problems.ts';
+import { report } from '../report.ts';
 
 /** After this many tries without an answer a file is marked failed, for a person to look at. */
 export const maximumAttempts = 8;
@@ -129,7 +131,9 @@ async function scanOne(setup: DeskSetup, due: { objectKey: string; attempts: num
 	} catch (problem) {
 		if (problem instanceof TooLargeForProviderError) outcome = { status: 'cannot-scan', reason: 'too-large' };
 		else {
-			const message = problem instanceof Error ? problem.message : String(problem);
+			const message = messageOf(problem);
+			// The engine being asleep or unreachable is a fault the file's row shows; anything else is also reported.
+			if (!(problem instanceof ScanFaultError)) report(problem, { code: 'scanner.scan', source: 'scanner', place: 'alarm:ScanDesk', database: setup.database });
 			outcome = { status: 'retry', reason: (problem instanceof ScanFaultError ? message : `Unexpected: ${message}`).slice(0, 500) };
 		}
 	}
@@ -210,7 +214,9 @@ export interface DeskState {
 export class DeskObject {
 	constructor(
 		private readonly state: DeskState,
-		private readonly setup: () => DeskSetup
+		private readonly setup: () => DeskSetup,
+		/** Reports a round that failed (src/lib/server/report.ts); the scanner Worker adds its database, so the round is counted too. */
+		private readonly reportProblem: (problem: unknown) => void = (problem) => report(problem, { code: 'scanner.round', source: 'scanner', place: 'alarm:ScanDesk' })
 	) {}
 
 	/** Any request wakes the desk: it sets its alarm for now, unless one is due sooner. */
@@ -233,7 +239,7 @@ export class DeskObject {
 		} catch (problem) {
 			// The database or bucket did not answer. Try again in a minute rather
 			// than lean on the platform's own alarm retries, which stop after six.
-			console.error('Scan desk round failed', problem);
+			this.reportProblem(problem);
 			await this.state.storage.setAlarm(Date.now() + 60_000);
 			return;
 		}

@@ -3,6 +3,8 @@ import { hasAnyInbox } from '#lib/server/mail/inboxes.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { requirePerson } from '#lib/server/workspace.ts';
 import type { LayoutServerLoad } from './$types';
+import { isMissingTable } from '#lib/problems.ts';
+import { reportHere } from '#lib/server/report-here.ts';
 
 // Private pages, answered by the Worker for the signed-in person.
 export const prerender = false;
@@ -15,7 +17,12 @@ export const load: LayoutServerLoad = async (event) => {
 	// minutes between a deploy and its migration, only hides the link.
 	if (!permissions.has('read-mail')) {
 		const { database } = workerEnvironment();
-		const onAnInbox = database ? await hasAnyInbox({ database }, person.identifier).catch(() => false) : false;
+		const onAnInbox = database
+			? await hasAnyInbox({ database }, person.identifier).catch((problem: unknown) => {
+					if (!isMissingTable(problem)) reportHere(problem, { code: 'workspace.inboxes', place: '/workspace' });
+					return false;
+				})
+			: false;
 		if (onAnInbox) permissions.add('read-mail');
 	}
 	return { person, permissions: [...permissions] };

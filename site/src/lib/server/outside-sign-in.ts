@@ -75,14 +75,14 @@ const servers: Record<Provider, oauth.AuthorizationServer> = {
  * in full against it, as for Google.
  */
 async function microsoftServerFor(response: Response): Promise<oauth.AuthorizationServer> {
-	const body: { id_token?: unknown } = await response.clone().json().catch(() => ({}));
+	const body: { id_token?: unknown } = await response.clone().json().catch(() => /* expected: an answer that is not JSON has no token, and the check below refuses it */ ({}));
 	let tenant = 'unknown';
 	if (typeof body.id_token === 'string') {
 		try {
 			const payload = JSON.parse(new TextDecoder().decode(fromBase64Url(body.id_token.split('.')[1] ?? '')));
 			if (typeof payload.tid === 'string' && /^[0-9a-f-]{36}$/i.test(payload.tid)) tenant = payload.tid.toLowerCase();
 		} catch {
-			// Left as "unknown", so the check below refuses it.
+			// expected: left as "unknown", so the check below refuses it.
 		}
 	}
 	return { ...servers.microsoft, issuer: microsoftIssuer(tenant) };

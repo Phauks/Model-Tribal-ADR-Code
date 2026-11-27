@@ -13,6 +13,7 @@ Different parts of this repository are licensed differently, because each part h
 | Icons (third-party, unmodified) | Lucide, installed as `@lucide/svelte` for the website and `lucide-static` for the print edition | ISC License, and the MIT License for icons drawn from Feather | [LICENSES/Lucide.txt](LICENSES/Lucide.txt) |
 | GitHub mark (third-party, unmodified) | `site/src/lib/components/GithubMark.svelte`, copied from Primer Octicons 19.42.0 (`mark-github-16`) for links that go to GitHub | MIT License, copyright GitHub Inc. | [LICENSES/Octicons.txt](LICENSES/Octicons.txt) |
 | Fonts (third-party, unmodified) | `pdf/fonts/` | SIL Open Font License 1.1<!-- repository-only --> ([pdf/fonts/README.md](pdf/fonts/README.md))<!-- /repository-only --> | [LICENSES/OFL-1.1.txt](LICENSES/OFL-1.1.txt) |
+| PDF viewer (third-party) | pdf.js, installed as `pdfjs-dist` for the website's PDF viewer (`site/src/lib/components/PdfViewer.svelte`), whose text-layer styles are adapted from pdf.js's `web/pdf_viewer.css`; copyright Mozilla Foundation | Apache License 2.0 | [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt) |
 | Website fonts (third-party, unmodified) | Installed from npm for `site/`: Atkinson Hyperlegible Next, Noto Sans, Noto Sans Cherokee, Osage and Canadian Aboriginal, Noto Serif and OpenDyslexic (Reserved Font Name "OpenDyslexic"), as `@fontsource/*` packages; each font file carries its own copyright and license notice | SIL Open Font License 1.1 | [LICENSES/OFL-1.1.txt](LICENSES/OFL-1.1.txt) |
 
 ## Material these licenses do not cover
