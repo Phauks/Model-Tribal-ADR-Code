@@ -98,6 +98,8 @@ export interface SourceRecord {
 		volume?: string;
 		page?: string;
 		number?: string;
+		/** The kind of document, such as "Proposed Finding", "Public comment" or "Petitioner's document". */
+		genre?: string;
 		issued?: { 'date-parts'?: number[][] };
 		URL?: string;
 	};
