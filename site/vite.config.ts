@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import adapter from '@sveltejs/adapter-cloudflare';
@@ -8,15 +8,16 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, type Plugin } from 'vite';
 import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
-import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
+import { keptChanges, mergeChanges, parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
+import { citationFileCount, citationFileNumber, citationFilePath, citationTextsPath, plainCitation } from './src/lib/essay-citation-files.ts';
 import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, everyOpinionList, everyRecordBox, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
 import { caseLinks } from './src/lib/server/case-previews.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
 import { nationIndexRows } from './src/lib/server/nation-index.ts';
 import { followableBuild } from './src/lib/server/followable-build.ts';
 import { historyBuild } from './src/lib/server/page-history-build.ts';
-import { servablePortraits } from './src/lib/server/supreme-court-people.ts';
+import { servablePortraits } from './src/lib/server/supreme-court-pictures.ts';
 import {
 	essaysForReview,
 	glossary,
@@ -34,6 +35,7 @@ import { markSiteText, type SiteTextEntry } from './src/lib/site-text-markers.ts
 import { copyRestriction } from './src/lib/nation-restrictions.ts';
 import { installCandidates, readerToolFiles, type ManifestChunk } from './src/lib/offline-shell.ts';
 import { loadPublishedSiteText, siteTextCatalog } from './src/lib/server/site-text-build.ts';
+import { loadLiveChanges } from './src/lib/server/recent-changes-build.ts';
 import { publishedRecordText, recordTextCatalog, usePublishedRecordText } from './src/lib/server/record-text-build.ts';
 
 const designTokensPath = fileURLToPath(new URL('./design-tokens.json', import.meta.url));
@@ -42,6 +44,7 @@ const siteFolder = fileURLToPath(new URL('.', import.meta.url));
 // The site's wording as published from the website (docs/site-text.md), read
 // once before anything is built.
 const publishedSiteText = await loadPublishedSiteText(siteFolder);
+const liveChanges = await loadLiveChanges(siteFolder);
 const publishedSiteTextWords = new Map(Object.entries(publishedSiteText.texts));
 // The parts of case and law boxes that can be edited the same way ("Record
 // text"). Their catalog is read from the records before any published words
@@ -286,10 +289,10 @@ const portraitsModule = 'virtual:portraits';
 const resolvedPortraitsModule = `\0${portraitsModule}`;
 
 /**
- * Lists the portraits of Justices and Presidents the Worker may serve
+ * Lists the pictures of Justices, Presidents and Courts the Worker may serve
  * (src/routes/supreme-court/portraits), as a small module bundled into the
- * Worker: only portraits whose license allows showing them, each with the
- * SHA-256 of the reviewed copy.
+ * Worker: only pictures checked by hand (content/supreme-court/pictures.yaml),
+ * each with the SHA-256 of the reviewed copy.
  */
 function portraitList(): Plugin {
 	return {
@@ -371,23 +374,55 @@ function sourceCitations(): Plugin {
 const essayLibraryModule = 'virtual:essay-library';
 const resolvedEssayLibraryModule = `\0${essayLibraryModule}`;
 
+/** Every source's full citation, worked out once for the whole build (about 25 seconds for 22,000 sources). */
+let everyCitation: Record<string, string> | undefined;
+const citationsOnce = () => (everyCitation ??= everyFullCitation());
+let citationsFileWritten = false;
+
 /**
  * What the Worker needs to render essays, which live in the private bucket
- * and are rendered on request (docs/editing.md): the full citation of every
- * source record, so an essay can cite any of them; the glossary terms; and
- * the essays as git holds them, which the workspace can bring into the
- * bucket as a new version (src/lib/server/essay-library.ts).
+ * and are rendered on request (docs/editing.md): the glossary terms, the
+ * facts and parts of case and law boxes, and the essays as git holds them,
+ * which the workspace can bring into the bucket as a new version
+ * (src/lib/server/essay-library.ts).
+ *
+ * The full citation of every source record is not in the module: about 51 MB
+ * by Nov. 26, 2026, it took the Worker past Cloudflare's 64 MiB limit
+ * (src/lib/essay-citation-files.ts). The build writes the citations instead
+ * as static files under /page-data/essay-citations/, which the Worker reads
+ * when it draws a page, and as one file in .svelte-kit/ for the pages built
+ * ahead of time (src/lib/server/essay-citations.ts).
  */
 function essayLibrary(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:essay-library',
+		buildStart() {
+			// For the pages built ahead of time and the development server, which read every citation from here.
+			if (citationsFileWritten) return;
+			citationsFileWritten = true;
+			const file = path.join(siteFolder, '.svelte-kit', 'essay-citations.json');
+			mkdirSync(path.dirname(file), { recursive: true });
+			writeFileSync(file, JSON.stringify(citationsOnce()));
+		},
+		generateBundle() {
+			if (this.environment.name !== 'client') return;
+			const files: Record<string, string>[] = Array.from({ length: citationFileCount }, () => ({}));
+			const texts: [string, string][] = [];
+			for (const [key, html] of Object.entries(citationsOnce())) {
+				files[citationFileNumber(key)][key] = html;
+				texts.push([key, plainCitation(html)]);
+			}
+			files.forEach((citations, number) => {
+				this.emitFile({ type: 'asset', fileName: citationFilePath(number).slice(1), source: JSON.stringify(citations) });
+			});
+			this.emitFile({ type: 'asset', fileName: citationTextsPath.slice(1), source: JSON.stringify(texts) });
+		},
 		resolveId(identifier) {
 			return identifier === essayLibraryModule ? resolvedEssayLibraryModule : undefined;
 		},
 		load(identifier) {
 			if (identifier !== resolvedEssayLibraryModule) return undefined;
 			return [
-				`export const essayCitations = ${JSON.stringify(everyFullCitation())};`,
 				`export const essayTerms = ${JSON.stringify(glossaryTerms())};`,
 				`export const essayBoxFacts = ${JSON.stringify(everyBoxFact())};`,
 				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`,
@@ -432,20 +467,24 @@ const resolvedBuildModule = `\0${buildModule}`;
  * WORKERS_CI_COMMIT_SHA; a build on a computer has none. A review in the
  * workspace records it, so a sign-off names the exact text it approved.
  *
- * Also the pull requests merged most recently, read from git, which
- * /edition.json serves so the update card can list what an update brings
- * (src/lib/recent-changes.ts). A shallow clone gives fewer; no git gives none.
+ * Also the pull requests merged most recently, which /edition.json serves
+ * so the update card can list what an update brings
+ * (src/lib/recent-changes.ts): those git names, joined with those the live
+ * site already lists, since Cloudflare's shallow clone names only the
+ * latest (src/lib/server/recent-changes-build.ts).
  */
 function recentChanges(): Change[] {
+	let fromGit: Change[] = [];
 	try {
-		const log = execFileSync('git', ['log', '--first-parent', '-n', '60', '--format=%cI%x09%s', 'HEAD'], {
+		const log = execFileSync('git', ['log', '--first-parent', '-n', String(keptChanges), '--format=%cI%x09%s', 'HEAD'], {
 			encoding: 'utf8',
 			stdio: ['ignore', 'pipe', 'ignore']
 		});
-		return parseGitLog(log);
+		fromGit = parseGitLog(log);
 	} catch {
-		return [];
+		// No git: only what the live site lists.
 	}
+	return mergeChanges([fromGit, liveChanges]);
 }
 
 const sponsorshipCountsModule = 'virtual:sponsorship-counts';

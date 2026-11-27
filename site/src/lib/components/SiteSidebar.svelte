@@ -457,6 +457,26 @@
 </details>
 
 <style>
+	/*
+	 * Nesting, the same in every list of the sidebar (Trevor chose option B,
+	 * design/sidebar-nesting): a row is a caret, a small gap and its text; a
+	 * list under an entry starts one step to the right of that entry, so its
+	 * text starts one step to the right of the entry's text, with a thin guide
+	 * line down from the entry's caret beside it. Rows without a caret keep
+	 * its space, so they line up with rows that have one. The lists use these
+	 * measures in sidebar/FoldGroup.svelte, sidebar/SidebarTree.svelte and here.
+	 */
+	.sidebar-wide,
+	.sidebar-narrow {
+		--sidebar-caret: 1.75rem;
+		--sidebar-caret-gap: var(--space-1);
+		--sidebar-step: 1.25rem;
+		/* The guide line runs down the middle of the parent's caret. */
+		--sidebar-line-at: calc(var(--sidebar-caret) / 2);
+		/* From the guide line to where the list's rows start. */
+		--sidebar-line-to-rows: calc(var(--sidebar-step) - var(--sidebar-line-at));
+	}
+
 	/* ---- The sections ---- */
 	/* Their heading and links are the shared folding group's (sidebar/FoldGroup.svelte). */
 
@@ -510,24 +530,28 @@
 		font-weight: var(--font-weight-bold);
 	}
 
-	/* A section's own pages: smaller and muted, under its name. */
+	/* A section's own pages: one step in, beside a guide line, smaller and muted. */
 	.section-pages {
 		list-style: none;
-		margin: 0 0 var(--space-1) 1.75rem;
-		padding: 0;
+		margin: 0 0 var(--space-1) var(--sidebar-line-at);
+		padding: 0 0 0 calc(var(--sidebar-line-to-rows) - 1px);
+		border-left: 1px solid var(--color-line);
 	}
 
 	.section-pages a {
 		display: flex;
 		align-items: center;
 		min-height: 2.25rem;
-		padding: 0 var(--space-3) 0 var(--space-1);
+		padding: 0 var(--space-3) 0 calc(var(--sidebar-caret) + var(--sidebar-caret-gap));
 		color: var(--color-ink-muted);
 		font-size: var(--font-size-small);
 		text-decoration: none;
 	}
 
+	/* The page being read: its orange bar lies on the guide line. */
 	.section-pages a[aria-current='page'] {
+		margin-left: calc(-1 * var(--sidebar-line-to-rows));
+		padding-left: calc(var(--sidebar-caret) + var(--sidebar-caret-gap) + var(--sidebar-line-to-rows) - 3px);
 		border-left: 3px solid var(--color-action);
 		background: var(--color-surface);
 		color: var(--color-link);
