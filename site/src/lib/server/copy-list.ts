@@ -20,10 +20,11 @@ import { privateFile, privateSpreadReader } from './built-files.ts';
 
 /**
  * A copy as the Worker serves it: its key, type, hash, size and original
- * addresses, a saved web page's encoding when it is not UTF-8, and for a
- * nation's law or court opinion, the choices it follows.
+ * addresses, a saved web page's encoding when it is not UTF-8, the name it
+ * is saved under (src/lib/readable-file-names.ts), and for a nation's law or
+ * court opinion, the choices it follows.
  */
-export type ServedCopy = Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links' | 'charset'> & { restrict?: CopyRestriction };
+export type ServedCopy = Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links' | 'charset'> & { name?: string; restrict?: CopyRestriction };
 
 /** A copy as its file keeps it, under its key. */
 export type StoredCopy = Omit<ServedCopy, 'key'>;

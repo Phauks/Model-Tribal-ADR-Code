@@ -1,0 +1,50 @@
+key: florida-statutes-260-016
+kind: state-statute
+citation:
+  type: legislation
+  title: General powers of the department
+  title-short: Fla. Stat. § 260.016
+  container-title: Florida Statutes
+  container-title-short: Fla. Stat.
+  section: '260.016'
+  author:
+  - literal: Florida Legislature
+  issued:
+    date-parts:
+    - - 1979
+  URL: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0200-0299/0260/Sections/0260.016.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0200-0299/0260/Sections/0260.016.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Fla. Stat. § 260.016 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: FL
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Fla. Stat. § 260.016 (2026). History: s. 6, ch. 79-110; ss. 5, 8, ch. 87-328; s. 6, ch. 88-303; s. 5, ch. 91-62; s. 5, ch. 91-429; s. 13, ch. 96-389; s. 8, ch. 98-336; s. 36, ch. 99-13; s. 26, ch. 99-247; s. 31, ch. 2000-197; s. 17, ch. 2003-6; s. 1, ch. 2003-31; s. 14, ch. 2003-394; s. 8, ch. 2005-87; s. 34, ch. 2007-5; s. 36, ch. 2016-233; s. 3, ch. 2023-20. Text read from the Florida Legislature''s page for the section''s chapter in the 2026 Florida Statutes (leg.state.fl.us/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Greenways grants may pass through to recognized tribal units. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'
