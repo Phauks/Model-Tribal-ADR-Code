@@ -1,0 +1,47 @@
+key: wisconsin-statutes-341-26
+kind: state-statute
+citation:
+  type: legislation
+  title: Special registration fees for certain vehicles
+  title-short: Wis. Stat. § 341.26
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '341.26'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/341.26
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/341.26
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 341.26 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 341.26 (2023-24). History: 1971 c. 164 s. 83; 1971 c. 250; 1973 c. 200, 325, 333; 1975 c. 429; 1977 c. 23; 1977 c. 29 ss. 1431 to 1434, 1654 (7) (a); 1977 c. 145, 292, 418, 447; 1979 c. 32 ss. 69, 92 (1); 1979 c. 221; 1981 c. 20; 1983 a. 152, 175, 180, 192, 227, 270, 538; 1985 a. 120, 187; 1987 a. 106, 154, 216; 1987 a. 312 s. 17; 1987 a. 399, 403; 1989 a. 31; 1991 a. 39, 316; 1993 a. 64, 350; 1995 a. 338; 1997 a. 27, 237; 1999 a. 9, 80, 85, 142, 159; 2003 a. 321; 2005 a. 22, 143. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian tribe; indian; tribe); AI reader''s verdict incidental: Vehicle registration fee applies to federally recognized tribe vehicles. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian tribe; indian; tribe'

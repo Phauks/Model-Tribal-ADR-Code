@@ -1,0 +1,47 @@
+key: wisconsin-statutes-54-625
+kind: state-statute
+citation:
+  type: legislation
+  title: Transfer of guardianship funds of a Menominee
+  title-short: Wis. Stat. § 54.625
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '54.625'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/54.625
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/54.625
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Wis. Stat. § 54.625 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 54.625 (2023-24). History: 1971 c. 41 s. 8; Stats. 1971 s. 880.195; 1977 c. 449; 1995 a. 27; 2005 a. 387 s. 408; Stats. 2005 s. 54.625. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; menominee; tribe); AI reader''s verdict core: Guardianship funds transfer for enrolled Menominee Indian tribe members. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian tribe; indian; menominee; tribe'
