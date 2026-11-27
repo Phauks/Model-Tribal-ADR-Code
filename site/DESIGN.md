@@ -275,7 +275,7 @@ Each change applies at once and is kept in the browser's local storage on that d
 - *The module.* `src/lib/motion.ts` is the only place a script starts movement. It holds Svelte transitions (`fade`, `rise` and `slide`), `animate:move` for lists, a Web Animations helper, `glide` for numbers CSS cannot animate (such as the map's `viewBox`) and the page cross-fade. Every helper reads the tokens, and every one returns a duration of 0 when motion is reduced.
 - *The check.* `tools/check-motion-comes-from-tokens.mjs` (`npm run check:motion`, run in continuous integration) fails on a time or easing written into a transition or animation. It also fails on a script animation started outside the module.
 
-Motion happens only in answer to something the reader does, never on page load or to draw attention. Nothing moves when the device asks for less motion[^mdn-reduced-motion] or the reader picks Reduce motion in Settings. Then every token duration is 0, and a site-wide rule turns off any transition or animation left. Paper shows only end states, because printing finishes every animation first.
+Motion happens only in answer to something the reader does, never on page load or to draw attention, with one exception: the rolling row of sponsors on the home page, which Trevor asked for on Nov. 27, 2026 (below). Nothing moves when the device asks for less motion[^mdn-reduced-motion] or the reader picks Reduce motion in Settings. Then every token duration is 0, and a site-wide rule turns off any transition or animation left. Paper shows only end states, because printing finishes every animation first.
 
 Where motion is used:
 
@@ -285,6 +285,7 @@ Where motion is used:
 - The source or note a link goes to arrives marked in the fill-in yellow, which fades to the resting highlight. The highlight goes about 4 seconds after arrival, or as soon as the reader clicks or taps elsewhere (Trevor, Nov. 27, 2026: it "would not go away"; `src/lib/arrival-highlight.ts`). Without scripts the browser's `:target` keeps it until the address changes.
 - Pages cross-fade through View Transitions. Changes within one page, such as a new search, do not fade.
 - Folding arrows turn at the short duration.
+- The row of sponsors at the bottom of the home page rolls to the left at an even speed, the roll duration for each sponsor's tile with the steady easing, only when the tiles are too many to fit (`src/lib/components/SponsorRow.svelte`; docs/sponsorship.md, "The home page row"). It stops while the pointer is over it or a tile has focus, and a Pause button stops it until pressed again, as WCAG 2.2 success criterion 2.2.2 asks of anything that moves by itself for more than five seconds.[^wcag-222] With Reduce motion it never moves, and the tiles wrap onto more lines instead.
 
 Charts, when built, are the one place an animation library might be weighed again, loaded only on those pages.
 
@@ -468,7 +469,7 @@ The floor is WCAG 2.2 level AA (project choice). The GOV.UK Design System, whose
 | 2.5.8 Target size (minimum)[^wcag-258] | 44 px controls, above the 24 px minimum |
 | 3.3.7 Redundant entry and 3.3.8 Accessible authentication | The request flow never asks twice; future sign-in uses an emailed link or a passkey, with no puzzle |
 
-Also: a "Skip to main content" link; one `h1` per page and headings in order; landmarks (`header`, `nav` with labels, `main`, `aside`, `footer`); a visible yellow focus with an ink ring; motion only in answer to an action, and none when `prefers-reduced-motion` is set or the reader picks Reduce motion (see Motion in section 6);[^mdn-reduced-motion] every page readable and every form usable without scripts.
+Also: a "Skip to main content" link; one `h1` per page and headings in order; landmarks (`header`, `nav` with labels, `main`, `aside`, `footer`); a visible yellow focus with an ink ring; motion only in answer to an action, except the home page's row of sponsors, which can be paused, and none when `prefers-reduced-motion` is set or the reader picks Reduce motion (see Motion in section 6);[^mdn-reduced-motion] every page readable and every form usable without scripts.
 
 **Testing.** Automated checks with axe-core run on every built page in continuous integration, in both themes. Automated tools find only part of the problems, so each template is also checked by hand with a keyboard, with screen readers (NVDA with Firefox, VoiceOver with Safari), at 200 percent and 400 percent zoom, and in Windows high contrast mode (project choice). An accessibility statement is published at `/about/accessibility`.
 
@@ -579,6 +580,7 @@ The interface follows the style guide's voice: plain verbs, sentence case, "they
 [^web-features-scrollbar-color]: W3C WebDX Community Group, *Web features explorer: scrollbar-color*, [web-platform-dx.github.io](https://web-platform-dx.github.io/web-features-explorer/features/scrollbar-color/); Apple, *Safari 26.2 Release Notes*, [developer.apple.com](https://developer.apple.com/documentation/safari-release-notes/safari-26_2-release-notes).
 [^chrome-scrollbar-styling]: Chrome for Developers, *Scrollbar styling*, [developer.chrome.com](https://developer.chrome.com/docs/css-ui/scrollbar-styling).
 [^mdn-color-scheme]: MDN Web Docs, *prefers-color-scheme*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme).
+[^wcag-222]: W3C, *Understanding Success Criterion 2.2.2: Pause, Stop, Hide*, [w3.org/WAI/WCAG22/Understanding/pause-stop-hide](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html).
 [^mdn-reduced-motion]: MDN Web Docs, *prefers-reduced-motion*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion).
 [^webdev-caching]: web.dev, *Learn PWA: Caching*, [web.dev/learn/pwa/caching](https://web.dev/learn/pwa/caching).
 [^mdn-caching]: MDN Web Docs, *Caching (Progressive web apps)*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Caching).

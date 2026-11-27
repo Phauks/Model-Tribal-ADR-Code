@@ -18,6 +18,7 @@ The site has three kinds of answers.
   | `/search/index.json`, `/search/records.json` | 5 minutes | `nation-restrictions` |
   | `/search/query` (the search on the server, one answer per search) | 5 minutes | `nation-restrictions` |
   | `/sitemap.xml`, `/sitemaps/<part>.xml` ([sitemap.md](sitemap.md)) | 1 hour | `nation-restrictions` |
+  | `/sponsor/row.json` (the home page's row of sponsors, [sponsorship.md](sponsorship.md#the-home-page-row)) | 5 minutes | `sponsors` |
 
   "Kept for" is the longest; a deploy ends it sooner (see "Purging"). Only answers that went well are kept (200, and 204 for an empty map tile).
 - **Everything else the Worker answers** is marked `no-store` for the edge: the workspace, sign-in, accounts, profiles, uploads, orders, events, rooms, sponsorship, recent changes, nation pages, essays, the inbox, and every other page. An answer is never kept, even on the list, if it sets a cookie, says `private` or `no-store`, or varies on everything.

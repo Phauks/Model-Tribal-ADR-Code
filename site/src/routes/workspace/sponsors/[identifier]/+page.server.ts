@@ -4,17 +4,22 @@ import {
 	giftState,
 	giftsOf,
 	historyOf,
+	logosReady,
 	managersOf,
 	openInvitations,
 	publicMode,
 	publicStatus,
 	setHiddenByProject,
+	setHomeRowPlacement,
 	sponsorByIdentifier,
 	stripeCustomerFor
 } from '#lib/server/sponsors.ts';
 import { customerExists, monthlyGifts } from '#lib/server/stripe.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
-import { dollars, earmarkLabels, isEarmark, listingLabels } from '#lib/sponsorship.ts';
+import { currentLevel, rowTile } from '#lib/server/sponsor-row.ts';
+import { levelAmounts } from '#lib/server/sponsorship-levels.ts';
+import { levelNames } from '#lib/sponsorship-levels.ts';
+import { dollars, earmarkLabels, homeRowPlacementLabels, homeRowPlacements, isEarmark, isHomeRowPlacement, listingLabels } from '#lib/sponsorship.ts';
 import type { Actions, PageServerLoad, RequestEvent } from './$types';
 
 // One sponsor, for the lead author to find what is wrong (docs/sponsorship.md,
@@ -32,12 +37,17 @@ export const load: PageServerLoad = async (event) => {
 	const { database, sponsor } = await loadSponsor(event);
 	const state = giftState(workerEnvironment());
 	const mode = publicMode(state);
-	const [managers, invitations, gifts, history] = await Promise.all([
+	const [managers, invitations, gifts, history, amounts, ready] = await Promise.all([
 		managersOf(database, sponsor.identifier),
 		openInvitations(database, sponsor.identifier),
 		giftsOf(database, sponsor.identifier),
-		historyOf(database, sponsor.identifier, 100)
+		historyOf(database, sponsor.identifier, 100),
+		levelAmounts(database),
+		logosReady(database, [sponsor])
 	]);
+	const shownGifts = gifts.filter((gift) => gift.mode === mode);
+	const level = currentLevel(shownGifts, amounts);
+	const tile = rowTile(sponsor, shownGifts.length > 0, level, Boolean(sponsor.logoKey && ready.has(sponsor.logoKey)));
 	return {
 		sponsor: {
 			identifier: sponsor.identifier,
@@ -61,6 +71,13 @@ export const load: PageServerLoad = async (event) => {
 		),
 		publicMode: mode,
 		giftsOpen: state.open,
+		homeRow: {
+			placement: sponsor.homeRowPlacement,
+			placements: homeRowPlacements.map((placement) => ({ value: placement, label: homeRowPlacementLabels[placement] })),
+			chosen: sponsor.homeRowChosen,
+			level: level ? levelNames[level] : null,
+			shown: tile ? (tile.logo ? 'Yes, by logo.' : 'Yes, by name.') : 'No.'
+		},
 		managers,
 		invitations,
 		gifts: gifts.map((gift) => ({
@@ -94,6 +111,18 @@ export const actions: Actions = {
 		return {
 			done: 'Back on the public pages, if their listing and gifts allow it.'
 		};
+	},
+
+	/** Places the sponsor in the home page row, keeps them off it, or leaves it to their level and choice. */
+	homeRow: async (event) => {
+		const { person, database, sponsor } = await loadSponsor(event);
+		const placement = (await event.request.formData()).get('placement');
+		if (!isHomeRowPlacement(placement)) return fail(400, { problem: 'Choose how the sponsor appears in the home page row.' });
+		await setHomeRowPlacement(database, sponsor, placement, {
+			account: null,
+			name: `The project (${person.displayName})`
+		});
+		return { done: 'Saved. The home page row shows the change within five minutes.' };
 	},
 
 	/** Asks Stripe about the sponsor's customer and monthly gifts, as the sponsor's page would. */
