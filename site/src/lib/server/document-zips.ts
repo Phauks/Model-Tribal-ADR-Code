@@ -47,8 +47,9 @@ export function documentsZip(
 	const used = new Set<string>();
 	const sums: string[] = [];
 	const rows: string[] = [csvLine(['file', 'title', 'published_at', 'copy_on_website', 'bytes', 'sha256', 'in_this_zip'], onlyLineFeedsQuoted)];
-	function nameFor(key: string): string {
-		const base = safeName(key.split('/').at(-1) ?? 'file');
+	// Each file is named for its title, as when it is downloaded on its own (src/lib/readable-file-names.ts); a list built before names were added keeps the key's own name.
+	function nameFor(key: string, readable: string): string {
+		const base = safeName(readable || (key.split('/').at(-1) ?? 'file'));
 		let name = `documents/${base}`;
 		for (let number = 2; used.has(name); number += 1) name = `documents/${number}-${base}`;
 		used.add(name);
@@ -56,9 +57,9 @@ export function documentsZip(
 	}
 	async function* entries(): AsyncGenerator<ZipEntry> {
 		yield { name: 'README.txt', open: async () => strToU8(readme) };
-		for (const [path, bytes, sha256, title = '', original = ''] of list.files) {
+		for (const [path, bytes, sha256, title = '', original = '', readable = ''] of list.files) {
 			const key = keyOfCopyPath(path);
-			const name = nameFor(key);
+			const name = nameFor(key, readable);
 			const object = served.has(key) ? await bucket.get(key) : null;
 			rows.push(
 				csvLine([name.replace(/^documents\//, ''), title, original, path, bytes, sha256, object ? 'yes' : 'no'], onlyLineFeedsQuoted)

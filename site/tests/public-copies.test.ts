@@ -151,6 +151,14 @@ describe('serving a copy', () => {
 		expect(put).toEqual([]);
 	});
 
+	it('names the file by its title, not the code in its key', async () => {
+		const { bucket } = memoryBucket({ [copy.key]: { bytes: pdf, sha256 } });
+		const named = { ...copy, name: 'Peacemaker Court - Alabama-Coushatta Tribe of Texas.pdf' };
+		const response = await servePublicCopy(new Request('https://site.test/copies/x'), named, bucket, network({}));
+		expect(response.headers.get('content-disposition')).toBe('inline; filename="Peacemaker Court - Alabama-Coushatta Tribe of Texas.pdf"');
+		expect(await response.text()).toBe('%PDF-1.4 a statute page');
+	});
+
 	it('answers "not modified" when the reader has the current copy', async () => {
 		const { bucket } = memoryBucket({ [copy.key]: { bytes: pdf, sha256 } });
 		const request = new Request('https://site.test/copies/x', { headers: { 'If-None-Match': '"etag-1"' } });

@@ -16,6 +16,7 @@ import {
 	type PublicCopy
 } from '../public-copies.ts';
 import type { DocumentFile, DocumentSetList, DocumentSetSummary } from '../offline-documents.ts';
+import { readableFileNames } from '../readable-file-names.ts';
 import { formatCaptureDate } from './markdown.ts';
 import { nations, publicCopies, sources, type SourceRecord } from './content.ts';
 import { citationTexts } from './essay-library.ts';
@@ -253,6 +254,27 @@ export function allCopyRows(): CopyRow[] {
 
 export { groupTitle };
 
+let fileNameCache: Map<string, string> | undefined;
+
+/**
+ * The name each copy is saved under, by key (src/lib/readable-file-names.ts): its title, and its
+ * nation where the title does not name it, rather than the code many keys end in.
+ */
+export function copyFileNames(): Map<string, string> {
+	if (fileNameCache) return fileNameCache;
+	const names = nationNames();
+	const opinions = new Map(tribalCourtOpinions().map((opinion) => [opinion.key, opinion]));
+	fileNameCache = readableFileNames(
+		publicCopies().map((copy) => ({
+			key: copy.key,
+			title: opinions.get(copy.key)?.name || copy.title,
+			links: copy.links,
+			nations: namesOf(copy, names)
+		}))
+	);
+	return fileNameCache;
+}
+
 let detailCache: Map<string, Record<string, CopyDetails>> | undefined;
 
 /**
@@ -345,6 +367,7 @@ export function offlineSets(): { federal: DocumentSetList; nations: Map<string, 
 
 function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, DocumentSetList> } {
 	const names = nationNames();
+	const fileNames = copyFileNames();
 	const federal: DocumentFile[] = [];
 	const byNation = new Map<string, DocumentFile[]>();
 	for (const copy of publicCopies()) {
@@ -353,7 +376,8 @@ function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, Do
 			copy.bytes,
 			copy.sha256,
 			copy.title,
-			copy.links.at(-1) ?? copy.links[0] ?? ''
+			copy.links.at(-1) ?? copy.links[0] ?? '',
+			fileNames.get(copy.key) ?? ''
 		];
 		// A nation's set holds its constitutions, its laws and its courts' opinions (decision record
 		// 0047); everything else the site holds is a United States document.
