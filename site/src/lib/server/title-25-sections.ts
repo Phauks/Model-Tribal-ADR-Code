@@ -129,19 +129,20 @@ export function sectionsEnactedBy(key: string): { label: string; heading: string
 }
 
 /** Every section, for the Statistics page: the Code's sections in force and the regulations' sections. */
-export function allSections(kind: 'code' | 'regulations'): { title: string; href: string; detail: string }[] {
+export function allSections(kind: 'code' | 'regulations'): { citation: string; title: string; href: string; detail: string }[] {
 	const file = sectionsFile();
 	if (kind === 'code') {
 		return Object.entries(file.code).flatMap(([chapter, rows]) =>
 			rows
 				.filter((row) => row.inForce)
-				.map((row) => ({ title: `25 U.S.C. § ${row.number}. ${row.heading}`, href: sectionLink(chapter, row.number), detail: `Chapter ${chapter.toUpperCase()}` }))
+				.map((row) => ({ citation: `25 U.S.C. § ${row.number}`, title: row.heading, href: sectionLink(chapter, row.number), detail: `Chapter ${chapter.toUpperCase()}` }))
 		);
 	}
 	const parts = partRecordKeys();
 	return Object.entries(file.regulations).flatMap(([part, rows]) =>
 		rows.map((row) => ({
-			title: `25 C.F.R. § ${row.number}. ${row.heading}`,
+			citation: `25 C.F.R. § ${row.number}`,
+			title: row.heading,
 			href: parts.has(part) ? `/laws/${parts.get(part)}#${anchorOf(row.number)}` : `https://www.ecfr.gov/current/title-25/section-${row.number}`,
 			detail: `Part ${part}`
 		}))

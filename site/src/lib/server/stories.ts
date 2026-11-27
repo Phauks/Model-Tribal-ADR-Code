@@ -169,14 +169,23 @@ function today(): string {
 	return isoDate(new Date());
 }
 
-/** The stories the site shows, by title. */
+let shownToday: { date: string; records: StoryRecord[]; stories: StoryRecord[] } | undefined;
+
+/**
+ * The stories the site shows, by title. Sorted once a day: every case and law
+ * page asks (impact-accounts.ts), and sorting them again for each took a
+ * sixth of the build.
+ */
 export function publishedStories(): StoryRecord[] {
 	const date = today();
-	return storyRecords()
-		.filter((record) => storyIsShown(record, date))
-		.sort((first, second) =>
-			plainTitle(first.title).localeCompare(plainTitle(second.title), 'en', { sensitivity: 'base' })
-		);
+	const records = storyRecords();
+	if (shownToday?.date !== date || shownToday.records !== records) {
+		const stories = records
+			.filter((record) => storyIsShown(record, date))
+			.sort((first, second) => plainTitle(first.title).localeCompare(plainTitle(second.title), 'en', { sensitivity: 'base' }));
+		shownToday = { date, records, stories };
+	}
+	return [...shownToday.stories];
 }
 
 /** A title without the brackets that mark a description the project wrote, for sorting. */

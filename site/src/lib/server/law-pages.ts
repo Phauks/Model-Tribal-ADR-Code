@@ -245,7 +245,7 @@ function lawContent(key: string): LawPage {
 	const cededBounds = boundsOfCessions(ceded);
 	const glance: FactGroup[] = [
 		// An agency's document says which kind it is, such as "Indian lands opinion" (scripts/law/nigc_documents.py).
-		{ field: 'kind', label: 'Kind', items: [{ text: (record.citation as { genre?: string }).genre ?? kindLabels[record.kind] ?? record.kind }] },
+		{ field: 'kind', label: 'Type', items: [{ text: (record.citation as { genre?: string }).genre ?? kindLabels[record.kind] ?? record.kind }] },
 		{ field: 'state', label: 'State', items: record.kind === 'state-statute' ? stateNamesOf(record).map((text) => ({ text })) : [] },
 		{ field: 'indian-law', label: 'Indian law', items: record.state_law ? [{ text: relevanceLabels[record.state_law.relevance] ?? record.state_law.relevance }] : [] },
 		{ field: 'act', label: 'Act', items: record.state_law?.act ? [{ text: record.state_law.act }] : [] },
