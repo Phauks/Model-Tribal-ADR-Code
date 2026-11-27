@@ -133,7 +133,7 @@ describe('A state statute section’s page', () => {
 		expect(page.citation).toBe('Okla. Stat. tit. 12, § 728 (2026)');
 		expect(page.fullTitle).toBe('Standards for recognizing records and proceedings of tribal courts - Reciprocity');
 		const glance = Object.fromEntries(page.glance.map((group) => [group.label, group.items.map((item) => item.text).join('; ')]));
-		expect(glance).toMatchObject({ Kind: 'State statute', State: 'Oklahoma', 'Indian law': 'Core', Enacted: 'Sept. 1, 1992' });
+		expect(glance).toMatchObject({ Type: 'State statute', State: 'Oklahoma', 'Indian law': 'Core', Enacted: 'Sept. 1, 1992' });
 		expect(page.readingHtml).toContain('href="https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os12.pdf#page=160"');
 	});
 });
