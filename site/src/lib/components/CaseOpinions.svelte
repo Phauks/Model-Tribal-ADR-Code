@@ -26,9 +26,11 @@
 		opinions: CaseOpinion[];
 		/** The page of the served copy that holds the text, for a reader the text could not be read for. */
 		copyPage?: string;
+		/** Inside the document text card, which gives the section and its heading (DocumentText.svelte). */
+		bare?: boolean;
 	}
 
-	let { caseKey, opinions, copyPage }: Props = $props();
+	let { caseKey, opinions, copyPage, bare = false }: Props = $props();
 
 	/** Opinions longer than this show their first part, with a button for the rest. */
 	const longOpinion = 600;
@@ -81,7 +83,7 @@
 	}
 </script>
 
-<Collapsible heading="Opinions" identifier="opinions" count={opinions.length}>
+{#snippet folds()}
 	<div class="case-opinions" bind:this={section}>
 		{#each opinions as opinion, index (index)}
 			{@const summaryLine = [pages(opinion), opinion.words ? `${opinion.words.toLocaleString('en-US')} words` : ''].filter(Boolean).join(' · ')}
@@ -115,7 +117,15 @@
 			</details>
 		{/each}
 	</div>
-</Collapsible>
+{/snippet}
+
+{#if bare}
+	{@render folds()}
+{:else}
+	<Collapsible heading="Opinions" identifier="opinions" count={opinions.length}>
+		{@render folds()}
+	</Collapsible>
+{/if}
 
 <style>
 	.opinion-fold {
