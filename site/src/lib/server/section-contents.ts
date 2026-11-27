@@ -1,69 +1,36 @@
 /**
- * The pages inside each section of the site, for the sidebar's second column
- * (SiteSidebar.svelte). The first column lists only the sections; the second
- * lists the pages of the section being read, and its long list, such as the
- * nations or the glossary's terms, with a filter (Trevor, Nov. 23, 2026). The
- * root layout sends the section's contents with each page, so nothing loads.
- *
- * Most lists are known when the site is built. The essays are published from
- * the database, and their pages are rendered by the Worker, which reads them.
+ * The pages a page belongs with, for the side column (SiteSidebar.svelte).
+ * Trevor chose on Nov. 27, 2026 to keep the side column to where the reader
+ * is (design/navigation-models, model C): the pages of the section, or of the
+ * family a page belongs to, then the page's own headings. A nation's pages
+ * give their family themselves (src/routes/nations/[id]); the essays of
+ * Foundations and of Essays are read from the database, so the root layout
+ * sends them with each of their pages and nothing loads afterwards.
  */
-import { libraryOutline } from '#lib/library-pages.ts';
-import type { SectionContents } from '#lib/sidebar-outline.ts';
-import { aboutPages, eventsPages, nationsPages, sponsorPages, storePages, type OutlineItem } from '#lib/site-sections.ts';
-import { publishedGlossary } from './glossary-entries.ts';
-import { storySummaries } from './stories.ts';
+import type { PageFamily } from '#lib/site-sections.ts';
 
-const byLabel = (first: OutlineItem, second: OutlineItem) => first.label.localeCompare(second.label, 'en-US');
+/** The sections whose essays are read from the database, with the name their pages use. */
+const essayParts = { foundations: 'Foundations', essays: 'Essays' } as const;
+type EssayPart = keyof typeof essayParts;
 
-/** The contents of each section built with the site, by the section's name (its address without the slash). */
-const builtContents: Record<string, () => SectionContents> = {
-	nations: () => ({
-		pages: nationsPages,
-		// The nations come from a module the browser keeps (src/lib/section-lists.ts).
-		// "View all" opens the one table of every nation (Trevor, Nov. 23, 2026).
-		entries: { noun: 'nations', items: [], list: 'nations', title: 'Native nations', viewAll: '/nations' }
-	}),
-	stories: () => ({
-		pages: [{ label: 'All stories', link: '/stories' }],
-		entries: {
-			noun: 'stories',
-			items: storySummaries()
-				.map((story) => ({ label: story.title, link: `/stories/${story.id}` }))
-				.sort(byLabel)
-		}
-	}),
-	glossary: () => ({
-		pages: [],
-		entries: {
-			noun: 'terms',
-			items: publishedGlossary()
-				.map((record) => ({ label: record.term, link: `/glossary/${record.id}` }))
-				.sort(byLabel)
-		}
-	}),
-	library: () => ({ pages: libraryOutline() }),
-	events: () => ({ pages: eventsPages }),
-	// The Sponsorship levels page sits under Sponsorship (docs/sponsorship.md, "Levels").
-	sponsor: () => ({ pages: sponsorPages }),
-	store: () => ({ pages: storePages }),
-	about: () => ({ pages: aboutPages })
-};
+/** The family of essays a path belongs to, if any. */
+export function familyOf(path: string): EssayPart | undefined {
+	const part = path.split('/')[1];
+	return Object.hasOwn(essayParts, part) ? (part as EssayPart) : undefined;
+}
 
-/** The sections whose essays are read from the database. */
-const essayParts = { foundations: 'foundations', essays: 'essays' } as const;
+/** The essays of a part, in their order, for the side column. */
+export async function familyContents(part: EssayPart): Promise<PageFamily | undefined> {
+	const contents = await sectionContents(part);
+	if (!contents) return undefined;
+	return { title: essayParts[part], link: `/${part}`, pages: contents.pages.map(({ children: _children, ...item }) => item) };
+}
 
-/** The sections whose contents are known when the site is built. */
-export const builtSections = Object.keys(builtContents);
-
-/** A section's contents, or undefined for a section without any. */
-export async function sectionContents(section: string): Promise<SectionContents | undefined> {
-	if (Object.hasOwn(builtContents, section)) return builtContents[section]();
-	if (Object.hasOwn(essayParts, section)) {
-		// Loaded only here, so pages outside the essays do not load the essay pages.
-		const { essayIndex } = await import('./essay-pages.ts');
-		const index = await essayIndex(essayParts[section as keyof typeof essayParts]);
-		return { pages: index.outline.items };
-	}
-	return undefined;
+/** The essays of Foundations or Essays, as the essay index lists them. */
+export async function sectionContents(section: string): Promise<{ pages: PageFamily['pages'] } | undefined> {
+	if (!Object.hasOwn(essayParts, section)) return undefined;
+	// Loaded only here, so pages outside the essays do not load the essay pages.
+	const { essayIndex } = await import('./essay-pages.ts');
+	const index = await essayIndex(section as EssayPart);
+	return { pages: index.outline.items };
 }

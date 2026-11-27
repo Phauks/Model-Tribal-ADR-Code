@@ -1,0 +1,27 @@
+key: bia-land-area-representations
+kind: dataset
+citation:
+  type: dataset
+  title: American Indian and Alaska Native Land Area Representations (AIAN-LAR), with the Tribal Statistical Areas and supplemental areas
+  author:
+  - literal: Bureau of Indian Affairs, Office of Trust Services, Division of Land Titles and Records, Branch of Geospatial Support
+  medium: ArcGIS map services
+  URL: https://biamaps.geoplatform.gov/server/rest/services/DivLTR
+  accessed:
+    date-parts: [[2026, 11, 26]]
+original_link: https://biamaps.geoplatform.gov/server/rest/services/DivLTR
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the Bureau of Indian Affairs, a federal agency, so not protected by copyright in the United States (17 U.S.C. § 105). The Bureau says "These data are public information and may be used by various organizations."
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-26-historic-maps-collection
+notes: 'Three layers from the Bureau''s Division of Land Titles and Records: the national land area representations (reservations and associated trust, restricted fee and mixed ownership land, from the Bureau''s land title records), the Oklahoma Tribal Statistical Areas drawn from 1867-1870 descriptions, and the supplemental areas. They show today''s areas only; the Bureau publishes no past years. The Bureau calls them "strictly for illustrative and reference purposes" and says "No legal inference can or should be made from the information in this GIS Dataset." Kept in the project''s bucket under historic-maps/bia-land-areas/ as GeoJSON (site/tools/collect-historic-maps.mjs); not yet drawn on the website''s map.'

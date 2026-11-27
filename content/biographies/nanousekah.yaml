@@ -1,7 +1,12 @@
 key: nanousekah
 name: Nanousekah
-lead: Signed two treaties with the United States for the Putawatimies, 1809.
+lead: Signed three treaties with the United States for the Putawatimies, 1809–1818.
 living: false
+names:
+- name: Nanouseka
+  note: as the Treaty with the Potawatomi, 1818 prints it
+  source: treaty-with-the-potawatomi-1818
+  where: 7 Stat. 186
 cases: []
 events:
 - when: Sept. 30, 1809
@@ -12,4 +17,8 @@ events:
   text: Signed the Treaty with the Delawares, etc., 1809, for the Putawatimies.
   source: treaty-with-the-delawares-etc-1809
   where: 7 Stat. 115
-checked: '2026-11-24'
+- when: Oct. 2, 1818
+  text: Signed the Treaty with the Potawatomi, 1818, for the Potawatamie nation of Indians.
+  source: treaty-with-the-potawatomi-1818
+  where: 7 Stat. 186
+checked: '2026-11-26'

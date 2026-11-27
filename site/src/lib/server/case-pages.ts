@@ -20,11 +20,11 @@
  * nothing in it is left out.
  */
 import { error } from '@sveltejs/kit';
-import { essayBoxFacts, essaysInGit } from 'virtual:essay-library';
+import { essaysInGit } from 'virtual:essay-library';
 import { renderEssay } from '../essays/render.ts';
 import { markRecordText } from '../record-text.ts';
 import { splitFrontMatter } from '../essays/syntax.ts';
-import { boxPartMarkdown, type RecordBox } from '../essays/record-boxes.ts';
+import { boxPartMarkdown, laterCasesMarkdown, type RecordBox } from '../essays/record-boxes.ts';
 import { essayLibrary, withRecordBoxes } from './essay-pages.ts';
 import { essayPath, partOf, titleOf } from './essays.ts';
 import { nationNamesAndKinds, publicCopyFor, sources, type SourceRecord } from './content.ts';
@@ -165,11 +165,13 @@ export function boxSections(key: string, title: string, box: RecordBox | undefin
 	const topics = box?.topics ?? [];
 	let markdown = '';
 	const counts: Record<string, number> = {};
+	// The later cases go under Treatment, after its words and outside them, so editing the words in place leaves the list alone.
+	const laterCases = laterCasesMarkdown(box);
 	for (const [part, heading] of parts) {
-		const written = box ? boxPartMarkdown(key, box, part) : '';
-		if (!written) continue;
+		const written = box ? boxPartMarkdown(key, box, part, { laterCases: false }) : '';
+		if (!written && !(part === 'treatment' && laterCases)) continue;
 		if (part === 'quotes') counts.quotes = box!.quotes!.length;
-		if (part === 'treatment') counts.treatment = box!.treatment!.split(/\n\s*\n/).filter((paragraph) => paragraph.trim()).length;
+		if (part === 'treatment') counts.treatment = (box!.treatment ?? '').split(/\n\s*\n/).filter((paragraph) => paragraph.trim()).length + (box!.later_cases?.list.length ?? 0);
 		markdown += `## ${heading}\n\n${written}\n\n`;
 	}
 	if (!markdown) return { sections: [], topics, sources: [] };
@@ -177,12 +179,16 @@ export function boxSections(key: string, title: string, box: RecordBox | undefin
 	// Each prose part carries its name, so it can be edited in place (docs/site-text.md, "Record text").
 	const html = markRecordText(rendered.html.replace(/<h1[^>]*>[\s\S]*?<\/h1>\n?/, ''), key);
 	const headings = [...html.matchAll(/<h2 id="([^"]+)">([^<]+)<\/h2>\n?/g)];
-	const sections = headings.map((match, index) => ({
-		id: match[1],
-		heading: match[2].trim(),
-		...(counts[match[1]] !== undefined ? { count: counts[match[1]] } : {}),
-		html: html.slice(match.index + match[0].length, headings[index + 1]?.index ?? html.length).trim()
-	}));
+	const laterHtml = laterCases ? `<div class="later-cases-block">\n${renderEssay(laterCases, essayLibrary).html}</div>` : '';
+	const sections = headings.map((match, index) => {
+		const part = html.slice(match.index + match[0].length, headings[index + 1]?.index ?? html.length).trim();
+		return {
+			id: match[1],
+			heading: match[2].trim(),
+			...(counts[match[1]] !== undefined ? { count: counts[match[1]] } : {}),
+			html: match[1] === 'treatment' && laterHtml ? `${part}\n${laterHtml}` : part
+		};
+	});
 	return { sections, topics, sources: rendered.sources };
 }
 
@@ -297,7 +303,7 @@ export function casePage(key: string): CasePage {
 		citation: citationLine(record),
 		caption: record.caption?.printed,
 		// The nations have their own section, with how the case names each.
-		facts: (essayBoxFacts.cases[key] ?? []).filter(([label]) => !/^(Nations?|Peoples?|Nations and peoples)$/.test(label)),
+		facts: (essayLibrary.facts?.('case', key) ?? []).filter(([label]) => !/^(Nations?|Peoples?|Nations and peoples)$/.test(label)),
 		topics: box.topics,
 		boxSections: box.sections,
 		opinions: caseOpinions(record),

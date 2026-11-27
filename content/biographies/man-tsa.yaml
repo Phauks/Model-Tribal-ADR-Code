@@ -1,7 +1,12 @@
 key: man-tsa
 name: Man tsa
-lead: Signed the Treaty with the Osage, 1808, for the Great and Little Osage nation of Indians as little chief.
+lead: Little chief of the Great and Little Osage nation of Indians, as listed in the Treaty with the Osage, 1808. Signed two treaties with the United States, 1808–1815.
 living: false
+names:
+- name: Mansa
+  note: as the Treaty with the Osage, 1815 prints it
+  source: treaty-with-the-osage-1815
+  where: 7 Stat. 133
 nations:
 - nation: the-osage-nation
   named_as: Great and Little Osage nation of Indians
@@ -13,4 +18,8 @@ events:
   text: Signed the Treaty with the Osage, 1808, for the Great and Little Osage nation of Indians, listed as little chief.
   source: treaty-with-the-osage-1808
   where: 7 Stat. 110
-checked: '2026-11-24'
+- when: Sept. 12, 1815
+  text: Signed the Treaty with the Osage, 1815, for the Great and Little Osage Tribes or Nations.
+  source: treaty-with-the-osage-1815
+  where: 7 Stat. 133
+checked: '2026-11-27'

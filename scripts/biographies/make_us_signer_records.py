@@ -142,7 +142,7 @@ for group in sorted(people, key=lambda g: min(s['year'] for s in g)):
     span = f"{years[0]}" if len(years) == 1 else f"{years[0]}–{years[-1]}"
     count = len(events)
     if count == 1:
-        lead = f"Signed the {treaties[group[0]['key']]['title']} for the United States."
+        lead = f"Signed the {treaties[group[0]['key']]['title']}, for the United States."
     else:
         lead = f"Signed {WORDS.get(count, count)} treaties with Native nations for the United States, {span}."
     record = {'key': key, 'name': name, 'lead': lead, 'living': False}

@@ -1,11 +1,20 @@
 key: glass
 name: Glass
-lead: Signed the Treaty with the Western Cherokee, 1833, for the Cheerokee nation as president.
+lead: President of the Cheerokee nation, as listed in the Treaty with the Western Cherokee, 1833. Signed two treaties with the United States, 1805–1833.
 living: false
+nations:
+- nation: cherokee-nation
+  named_as: Cherokees
+  source: treaty-with-the-cherokee-1805-oct-25
+  where: 7 Stat. 94
 cases: []
 events:
+- when: Oct. 25, 1805
+  text: Signed the Treaty with the Cherokee, 1805, for the Cherokees.
+  source: treaty-with-the-cherokee-1805-oct-25
+  where: 7 Stat. 94
 - when: Feb. 14, 1833
   text: Signed the Treaty with the Western Cherokee, 1833, for the Cheerokee nation, listed as president.
   source: treaty-with-the-western-cherokee-1833
   where: 7 Stat. 416
-checked: '2026-11-24'
+checked: '2026-11-27'

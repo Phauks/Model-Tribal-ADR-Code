@@ -41,6 +41,20 @@ export async function waitUntilSettled(page, { quiet = 250, longest = 3_000 } = 
 }
 
 /**
+ * Lays out every part of the page, as it is laid out once a reader scrolls to it. Long lists such as
+ * the timeline's rows use `content-visibility: auto`, so the browser skips the rows off screen until
+ * they come near it (src/lib/components/Timeline.svelte). axe-core measures elements wherever they
+ * are, and on a skipped row it found the citation markers' targets too small and took minutes on the
+ * full timeline (Nov. 27, 2026), though each row is drawn the same as any other once on screen. A
+ * constructed style sheet is used because the Content Security Policy refuses a <style> element.
+ */
+function drawEverything() {
+	const sheet = new CSSStyleSheet();
+	sheet.replaceSync('* { content-visibility: visible !important; }');
+	document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
+}
+
+/**
  * Runs axe-core on the page as it is now, in each theme, and returns what it
  * found: the theme, the rule, its help text and the elements, each as its
  * CSS selector. The site's dark theme follows the device setting through CSS
@@ -51,6 +65,7 @@ export async function axeViolations(page) {
 	// Run axe from the testing side rather than as a <script> in the page: the site's
 	// Content Security Policy refuses inline scripts it has no hash for (decision record 0055).
 	if (!(await page.evaluate(() => 'axe' in window))) await page.evaluate(axeSource);
+	await page.evaluate(drawEverything);
 	const found = [];
 	for (const theme of themes) {
 		await page.emulateMedia({ colorScheme: theme });

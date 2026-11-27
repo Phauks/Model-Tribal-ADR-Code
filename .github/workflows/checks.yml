@@ -303,7 +303,7 @@ jobs:
         run: npm run check:built-site
       - name: Install Chromium for the browser checks
         run: npx playwright install --with-deps --only-shell chromium
-      - name: Check the sidebar in a browser (tools/check-sidebar.mjs)
+      - name: Check the section bar and side column in a browser (tools/check-sidebar.mjs)
         run: npm run check:sidebar
       - name: Check the timeline's layout buttons in a browser (tools/check-timeline.mjs)
         run: npm run check:timeline

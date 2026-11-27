@@ -127,6 +127,7 @@ const opinionKinds: Record<string, { column: OpinionColumn; qualifier?: string; 
 		column: 'dissenting',
 		qualifier: 'concurring in part and in the judgment in part'
 	},
+	'concurrence in the judgment and dissent in part': { column: 'concurring', qualifier: 'in the judgment, dissenting in part' },
 	dissent: { column: 'dissenting' },
 	'dissent in part': { column: 'dissenting', qualifier: 'in part' },
 	'in chambers': { column: 'court', qualifier: 'in chambers' },

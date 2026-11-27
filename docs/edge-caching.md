@@ -16,6 +16,7 @@ The site has three kinds of answers.
   | `/map-tiles/<set>/<z>/<x>/<y>.mvt`, `/map-tiles/imagery/<name>/<z>/<x>/<y>` | 30 days | `map-tiles` |
   | `/map-tiles/assets/…` (the map's fonts and icons) | 7 days | `map-tiles` |
   | `/search/index.json`, `/search/records.json` | 5 minutes | `nation-restrictions` |
+  | `/search/query` (the search on the server, one answer per search) | 5 minutes | `nation-restrictions` |
   | `/sitemap.xml`, `/sitemaps/<part>.xml` ([sitemap.md](sitemap.md)) | 1 hour | `nation-restrictions` |
 
   "Kept for" is the longest; a deploy ends it sooner (see "Purging"). Only answers that went well are kept (200, and 204 for an empty map tile).

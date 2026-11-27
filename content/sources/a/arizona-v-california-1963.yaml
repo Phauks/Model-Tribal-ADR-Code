@@ -1,0 +1,157 @@
+key: arizona-v-california-1963
+kind: federal-case
+citation:
+  type: legal_case
+  title: Arizona v. California
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '373'
+  page: '546'
+  issued:
+    date-parts:
+    - - 1963
+      - 6
+      - 3
+  URL: https://www.loc.gov/item/usrep373546/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: ARIZONA v. CALIFORNIA et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep373/usrep373546/usrep373546.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep373/usrep373546/usrep373546.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Hugo Lafayette Black
+    page: 550
+  - kind: dissent in part
+    justice: John Marshall Harlan
+    page: 603
+    scan_page: 62
+  - kind: dissent
+    justice: William Orville Douglas
+    page: 627
+    scan_page: 86
+original_link: https://www.loc.gov/item/usrep373546/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '1962-01-08'
+  - '1962-01-09'
+  - '1962-01-10'
+  - '1962-01-11'
+  reargued:
+  - '1962-11-13'
+  - '1962-11-14'
+  printed: Argued January 8-11, 1962.—Restored to calendar for reargument June 4, 1962.—Reargued November 13-14, 1962. Decided June 3, 1963.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep373/usrep373546/usrep373546.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Warren Court
+  natural_court: Warren Court (1962-1965)
+  decision_type: majority opinion
+  vote:
+    majority: 5
+    minority: 3
+  justices:
+  - name: Earl Warren
+    vote: not recorded
+  - name: John Marshall Harlan
+    vote: minority
+    opinion: dissent
+  - name: Hugo Lafayette Black
+    vote: majority
+    opinion: majority
+  - name: William Orville Douglas
+    vote: minority
+    opinion: dissent
+  - name: Tom Campbell Clark
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Potter Stewart
+    vote: minority
+  - name: Byron Raymond White
+    vote: majority
+  - name: Arthur Joseph Goldberg
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1962-127; Oyez has no votes for this case.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep373546/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/373/546/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1961/8-orig
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22373%20U.S.%20546%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=373%20U.S.%20546
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=373%20U.S.%20546
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 373 U.S. 546 (1963). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep373/usrep373546/usrep373546.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1962-127), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 373 U.S. 546 "Arizona v. California"; Database 373 U.S. 546 "ARIZONA v. CALIFORNIA et al."
+  - check: scan
+    result: confirmed
+    detail: 'Scan has 105 pages; the report runs 546 to 646. Confirmed: the scan''s pages are the report''s pp. 546-646 (101 of 101 pages show their page number or running head); scan page 58 is not a report page; scan page 59 is not a report page (a map or plate); scan page 60 is not a report page (a map or plate); scan page 61 is not a report page'
+  - check: caption
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.85. Confirmed: the report prints the caption "ARIZONA v. CALIFORNIA et al." on p. 546 (fresh OCR, 0.96)'
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 8-11, 1962.—Restored to calendar for reargument June 4, 1962.—Reargued November 13-14, 1962. Decided June 3, 1963."; scan "Argued January 8-11, 1962.-Restored to calendar for reargument June 4, 1962.-Reargued November 13-14, 1962.-Decided June 3, 1963."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1963-06-03'
+  - check: opinions
+    result: confirmed
+    detail: 'Report: majority Black p. 550, dissent in part Harlan p. 603, dissent Douglas p. 627; Database writers: Black, Douglas, Harlan; scan pages [(603, 607), (627, 631)]. Confirmed: the report prints (read from the page images) p. 550: "MR. JUSTICE BLACK delivered the opinion of the Court."; p. 603: "MR. JUSTICE HARLAN, whom MR. JUSTICE DOUGLAS and MR. JUSTICE STEWART join, dissenting in part."; p. 627: "MR. JUSTICE DOUGLAS, dissenting." (the scan has two blank leaves and two map pages after p. 602)'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

@@ -9,5 +9,5 @@
 		"strict": true,
 		"types": ["@cloudflare/workers-types"]
 	},
-	"include": ["worker.ts", "move-databases.ts"]
+	"include": ["worker.ts"]
 }

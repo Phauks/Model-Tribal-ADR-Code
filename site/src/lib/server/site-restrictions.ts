@@ -13,9 +13,9 @@
  * out of view.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { publicCopies } from 'virtual:public-copies';
 import { readSettings, type RestrictionSettings } from '../nation-restrictions.ts';
 import type { SiteRestrictions } from '../restricted-files.ts';
+import { restrictableCopies } from './copy-list.ts';
 import { gatherRestrictions, restrictableList } from './nation-restrictions.ts';
 
 type Assets = { fetch: (input: string) => Promise<Response> };
@@ -65,7 +65,7 @@ export async function siteRestrictions(database: D1Database | undefined, assets:
 	if (cached?.stamp !== stamp) {
 		const url = new URL(origin);
 		const value = allSettings(database)
-			.then((settings) => gatherRestrictions(settings, (nation) => restrictableList(nation, url, fetch, assets), publicCopies, stamp))
+			.then(async (settings) => gatherRestrictions(settings, (nation) => restrictableList(nation, url, fetch, assets), await restrictableCopies(), stamp))
 			.catch((problem) => {
 				console.error('Nation restrictions could not be gathered', problem);
 				cached = undefined;

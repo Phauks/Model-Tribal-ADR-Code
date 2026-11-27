@@ -113,6 +113,8 @@ const neverCached = [
 	'/quote-context',
 	// The data the Worker draws case, law, biography and Supreme Court pages from (src/lib/server/page-data.ts); the pages themselves are saved as they are read.
 	'/page-data',
+	// The search on the server (src/routes/search/query): its answer depends on the words asked, which saved pages match without (ignoreSearch), and offline the files on the device answer instead.
+	'/search/query',
 	// For search engines, not readers (src/lib/sitemap.ts, src/lib/search-engines.ts).
 	'/robots.txt',
 	'/sitemap.xml',

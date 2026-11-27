@@ -147,12 +147,42 @@ case_box:
     pinpoint: "p. 20"
   treatment: |-
     The "domestic dependent nations" language is quoted throughout modern decisions, e.g., *Michigan v. Bay Mills Indian Community* (2014). [@michigan-v-bay-mills-indian-community]
-
-    Later courts have declined to extend it twice and distinguished it six times. [@cherokee-nation-v-georgia]
   topics:
   - "Sovereign immunity"
   reading:
     title: "*Cherokee Nation v. Georgia* (1831)"
     text: |-
       Source of the "domestic dependent nations" and trust ("ward") framing that still shapes federal-court access for Native nations and the trust relationship.
+  later_cases:
+    checked: 2026-11-20
+    source: westlaw/cherokee-nation-v-georgia-1831-westlaw.pdf
+    list:
+    - treatment: Declined to extend
+      name: In re Whitaker
+      citation: 474 B.R. 687 (B.A.P. 8th Cir. 2012)
+      link: https://case.law/caselaw/?reporter=br&volume=474&case=0687-01
+    - treatment: Declined to extend
+      name: Unnamed Mother v. United States
+      citation: 2025 WL 2390227 (D.N.M. Aug. 18, 2025)
+    - treatment: Distinguished
+      name: United States v. Texas
+      citation: 143 U.S. 621 (1892)
+      link: https://case.law/caselaw/?reporter=us&volume=143&case=0621-01
+    - treatment: Distinguished
+      name: Zivotofsky ex rel. Zivotofsky v. Secretary of State
+      citation: 725 F.3d 197 (D.C. Cir. 2013)
+      link: https://case.law/caselaw/?reporter=f3d&volume=725&case=0197-01
+    - treatment: Distinguished
+      name: Collard v Western Australia (No 4)
+      citation: 2013 WL 6909517 (Sup. Ct. W. Austl. Dec. 19, 2013)
+    - treatment: Distinguished
+      name: Zivotofsky ex rel. Zivotofsky v. Kerry
+      citation: 576 U.S. 1 (2015)
+      link: https://case.law/caselaw/?reporter=s-ct&volume=135&case=2076-01
+    - treatment: Distinguished
+      name: Puerto Rico v. Sanchez Valle
+      citation: 579 U.S. 59 (2016)
+    - treatment: Distinguished
+      name: G.F.F. v. Trump
+      citation: 781 F. Supp. 3d 195 (S.D.N.Y. 2025)
 subjects: [government, trust]
