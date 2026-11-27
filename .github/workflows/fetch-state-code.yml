@@ -27,15 +27,17 @@ jobs:
           python-version: "3.12"
       - name: Download the Wisconsin Statutes
         run: |
+          sudo apt-get update -q && sudo apt-get install -y -q poppler-utils
           pip install pyyaml
           python3 scripts/law/state_statutes/run.py fetch WI --work out
           ls out/wi/raw | head
-          ls out/wi/raw/chapters | wc -l
+          ls out/wi/raw/pdf | wc -l
+          ls out/wi/raw/text | wc -l
           du -sh out/wi/raw
       - name: Commit the compressed download to this branch
         run: |
           mkdir -p tmp-state-code
-          tar -C out/wi -cJf tmp-state-code/wi-raw.tar.xz raw
+          tar -C out/wi -cJf tmp-state-code/wi-raw.tar.xz raw/text raw/index-statutes-prefaces-toc.html raw/index-statutes-statutes.html
           ls -la tmp-state-code
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"

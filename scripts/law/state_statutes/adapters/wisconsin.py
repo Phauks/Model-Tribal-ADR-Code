@@ -1,9 +1,11 @@
-"""Wisconsin: the Wisconsin Statutes, read from the Legislative Reference Bureau's whole-chapter pages (docs.legis.wisconsin.gov/statutes/statutes/<chapter>),
-listed on the statutes' table of contents. The site refuses connections from cloud sessions, so the download runs on GitHub
+"""Wisconsin: the Wisconsin Statutes, read from the Legislative Reference Bureau's whole-chapter PDFs (docs.legis.wisconsin.gov/document/statutes/<chapter>.pdf),
+for the chapters listed on the statutes' table of contents. The chapter web pages show only the first few sections and load the rest as the reader scrolls,
+so the PDF is the one copy of a whole chapter. The site refuses connections from cloud sessions, so the download runs on GitHub
 (.github/workflows/fetch-state-code.yml) and the session parses what it brings back."""
 from __future__ import annotations
 
 import re
+import subprocess
 from pathlib import Path
 from typing import Iterator
 
@@ -45,9 +47,12 @@ class Wisconsin(State):
             page = path.read_text(errors='replace')
             chapters += re.findall(r'href="/document/statutes/(\d+[a-z]?)"', page)
         chapters = list(dict.fromkeys(chapters))
-        # Each chapter has a page on the site and a plain HTML version (<chapter>.html); both are kept until the parser picks one.
-        failed = self.download_all([(f'{SITE}/document/statutes/{chapter}', raw / 'chapters' / f'{chapter}.page.html') for chapter in chapters]
-                                   + [(f'{SITE}/document/statutes/{chapter}.html', raw / 'chapters' / f'{chapter}.html') for chapter in chapters])
+        failed = self.download_all([(f'{SITE}/document/statutes/{chapter}.pdf', raw / 'pdf' / f'{chapter}.pdf') for chapter in chapters])
+        (raw / 'text').mkdir(exist_ok=True)
+        for pdf in sorted((raw / 'pdf').glob('*.pdf')):
+            text = raw / 'text' / f'{pdf.stem}.txt'
+            if not text.exists():
+                text.write_text(subprocess.run(['pdftotext', '-layout', '-enc', 'UTF-8', str(pdf), '-'], capture_output=True, text=True).stdout)
         print(f'WI: {len(chapters)} chapters, {len(failed)} failed', *failed[:10])
 
     def parse(self, raw: Path) -> Iterator[Section]:
