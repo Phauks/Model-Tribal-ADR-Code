@@ -217,6 +217,40 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Mississippi Band of Choctaw Indians".
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Nashville Area, row 'Mississippi Band of Choctaw Indians'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 5806281
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MS, row 'Mississippi Band of Choctaw Indians' (Choctaw)
+- program: fdpir-self-determination-demonstration
+  start: 2021-10
+  detail: Round 1
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 1 projects, 'Mississippi Band of Choctaw Indians'
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 52358528
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'MISSISSIPPI BAND OF CHOCTAW INDIANS' (UEI WZTDGUNAJ5V3), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Mississippi Band of Choctaw Indians" among organizations under constitutions

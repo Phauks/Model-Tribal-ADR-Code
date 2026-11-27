@@ -127,6 +127,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Cahto Tribe of the Laytonville Rancheria Cahuilla Band of Indians".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 562494
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Cahto Tribe of the Laytonville Rancheria' (Laytonville)
 governance:
 - aspect: form
   value: Articles of Association

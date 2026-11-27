@@ -171,6 +171,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
   note: 'The source''s words: "Chinik Eskimo Community (aka Golovin)".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 205703
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Chinik (Golovin)' (Golovin)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Chinik (Golovin)'.
 governance:
 - aspect: head-of-government
   value: President

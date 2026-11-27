@@ -165,6 +165,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Round Valley Indian Tribes, Round Valley Reservation, California".
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2020
+  through: Round Valley Indian Tribes – Round Valley Indian Health Center, Inc.
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: California Area, row 'Round Valley Indian Tribes – Round Valley Indian Health Center, Inc.'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Round Valley Indian Tribes – Round Valley Indian Health Center, Inc.'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 5575634
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Round Valley Indian Tribes' (Covelo)
 governance:
 - aspect: governing-body
   value: Round Valley Tribal Council

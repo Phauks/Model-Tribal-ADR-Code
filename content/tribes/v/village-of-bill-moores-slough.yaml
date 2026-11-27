@@ -147,6 +147,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Village of Bill Moore’s Slough".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Bill Moore's Slough' (Kotlik)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Bill Moore's Slough'.
 governance:
 - aspect: form
   value: Constitution of the People of the Village of Bill Moore's Slough

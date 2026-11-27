@@ -211,6 +211,42 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Miami Tribe of Oklahoma".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2000
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Miami Of Oklahoma' (Eastern Oklahoma Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Miami Of Oklahoma'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 248784
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Miami Tribe' (Miami)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 963022
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'MIAMI TRIBE OF OKLAHOMA' (UEI KAALY96KJ6N1), Oct. 1, 2024 to Sept. 30, 2025
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 118911
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'MIAMI TRIBE OF OKLAHOMA' (UEI KAALY96KJ6N1), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Miami Tribe of Oklahoma" among organizations under constitutions approved by

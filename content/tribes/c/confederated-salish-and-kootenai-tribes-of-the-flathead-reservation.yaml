@@ -270,6 +270,85 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Self-Governance Tribes list by Area
   note: 'Listed as "Confederated Salish and Kootenai Tribes of the Flathead Nation". Also listed under the same Area in: indian-health-service-billings-careers-brochure. Also on the Indian Health Service Self-Governance Tribes list (Confederated Salish and Kootenai Tribes of the Flathead Nation (1993)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1994
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Confederated Salish & Kootenai Tribes' (Northwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Confederated Salish & Kootenai Tribes'.
+- program: indian-health-service-self-governance-compact
+  since: 1993
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Billings Area, row 'Confederated Salish and Kootenai Tribes of the Flathead Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Confederated Salish and Kootenai Tribes of the Flathead Nation'.
+- program: pl-102-477-plan
+  start: '2022-10-01'
+  end: '2027-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Community Service Block Grant
+  - Native Employment Works
+  - Temporary Assistance for Needy Families
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Confederated Salish and Kootenai Tribes of the Flathead Reservation'; PL102_477_PartnerEnrollment, its 9 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 7585312
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MT, row 'Confederated Salish and Kootenai Tribes' (Pablo)
+- program: interior-non-bia-funding-agreement
+  agency: Bureau of Trust Fund Administration
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Bureau of Trust Fund Administration agreements, 'Confederated Salish and Kootenai Tribes of the Flathead Reservation'
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Confederated Salish and Kootenai Tribes of the Flathead Reservation'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 23799873
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'CONFEDERATED SALISH AND KOOTENAI TRIBES OF THE FLATHEAD RESERVATION' (UEI C7XULC6EFUF8), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 28459070
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'CONFEDERATED SALISH AND KOOTENAI TRIBES OF THE FLATHEAD RESERVATION' (UEI C7XULC6EFUF8), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Confederated Salish and Kootenai Tribes of the Flathead Reservation, Montana"

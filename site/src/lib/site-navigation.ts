@@ -114,6 +114,7 @@ export const navigationSections: NavigationSection[] = [
 					{ label: 'Timeline', link: '/nations/timeline', icon: 'history' },
 					{ label: 'Data and Charts', link: '/nations/data', icon: 'chart-column', count: 'charts' },
 					{ label: 'Federal Offices', link: '/nations/federal-offices', icon: 'landmark' },
+					{ label: 'Self-Governance and Federal Programs', link: '/nations/federal-programs', icon: 'handshake' },
 					{ label: 'Coverage', link: '/nations/coverage', icon: 'gauge' }
 				]
 			},

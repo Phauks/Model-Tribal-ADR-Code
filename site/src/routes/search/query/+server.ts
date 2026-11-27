@@ -5,12 +5,13 @@
  * group's first few results and how many each has, the same for every reader,
  * leaving out what nations chose to hide. When the tables are not ready for
  * this build and these restrictions, the answer is 503 and the panel waits for
- * the files; the tables are filled after answering.
+ * the files; the tables are filled after answering. A search that finds them
+ * ready takes one trip to the database.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { json } from '@sveltejs/kit';
 import { afterResponse, workerEnvironment } from '#lib/server/environment.ts';
-import { fillSearchTables, querySearchTables, searchTablesKey, searchTablesReady } from '#lib/server/search-tables.ts';
+import { answerWhenReady, fillSearchTables, searchTablesKey } from '#lib/server/search-tables.ts';
 import { siteRestrictions } from '#lib/server/site-restrictions.ts';
 import { filterSearchIndex, filterSearchRecords, type SiteRestrictions } from '#lib/restricted-files.ts';
 import { expandRecords, type SearchRecordsFile } from '#lib/search-records.ts';
@@ -43,6 +44,17 @@ async function fill(database: D1Database, assets: Assets, origin: string, key: s
 	await fillSearchTables(database, key, entries, expandRecords(recordsFile));
 }
 
+/**
+ * Fills the tables for the restrictions in force. Restrictions that could not
+ * be gathered, or that changed while being gathered, fill nothing, so the
+ * search waits for the files rather than finding what a nation hid.
+ */
+async function fillWhenGathered(database: D1Database, assets: Assets, origin: string, version: string, stamp: string | undefined): Promise<void> {
+	const restrictions = await siteRestrictions(database, assets, origin);
+	if (restrictions?.stamp !== stamp) return;
+	await fill(database, assets, origin, searchTablesKey(version, stamp), restrictions);
+}
+
 export const GET: RequestHandler = async ({ url }) => {
 	const query = (url.searchParams.get('q') ?? '').slice(0, longestQuery);
 	const environment = workerEnvironment();
@@ -53,13 +65,11 @@ export const GET: RequestHandler = async ({ url }) => {
 		const built = await assets.fetch(new Request(new URL('/search/index.json', url.origin), { method: 'HEAD' }));
 		const version = built.headers.get('etag');
 		if (!built.ok || !version) return notReady();
-		const restrictions = await siteRestrictions(database, assets, url.origin);
-		const key = searchTablesKey(version, restrictions?.stamp);
-		if (!(await searchTablesReady(database, key))) {
-			afterResponse(fill(database, assets, url.origin, key, restrictions));
-			return notReady();
-		}
-		return json(await querySearchTables(database, query, perGroup), { headers: { 'cache-control': 'public, max-age=0, must-revalidate' } });
+		// One trip to the database: the restrictions' stamp, the tables' key and the search together.
+		const outcome = await answerWhenReady(database, version, query, perGroup);
+		if (outcome.ready) return json(outcome.answer, { headers: { 'cache-control': 'public, max-age=0, must-revalidate' } });
+		afterResponse(fillWhenGathered(database, assets, url.origin, version, outcome.stamp));
+		return notReady();
 	} catch (problem) {
 		// Tables not made yet (a migration not applied) or the database busy: the panel waits for the files.
 		console.error('The site search on the server could not answer', problem);

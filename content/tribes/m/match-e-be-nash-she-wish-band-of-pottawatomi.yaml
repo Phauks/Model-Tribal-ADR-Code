@@ -239,6 +239,50 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Match-e-be-nash-she-wish Band of Pottawatomi Indians of Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians of Michigan (Gun Lake Tribe) (2018)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2018
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Match-E-Be-Nash-She-Wish Band Of Pottawatomi Indians (Aka Gun Lake Tribe)' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Match-E-Be-Nash-She-Wish Band Of Pottawatomi Indians (Aka Gun Lake Tribe)'.
+- program: indian-health-service-self-governance-compact
+  since: 2018
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians of Michigan (Gun Lake Tribe)'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians of Michigan (Gun Lake Tribe)'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 337167
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MI, row 'Match-e-be-nash-she-wish Band of Pottawatomi Indians' (Dorr)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 3802186
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'MATCH-E-BE-NASH-SHE-WISH BAND OF POTTAWATOMI' (UEI FEN3G1SWZ7B9), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 1666011
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'MATCH-E-BE-NASH-SHE-WISH BAND OF POTTAWATOMI' (UEI FEN3G1SWZ7B9), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Gun Lake Tribal Council

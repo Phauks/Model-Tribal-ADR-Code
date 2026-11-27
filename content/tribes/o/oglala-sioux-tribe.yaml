@@ -194,6 +194,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Great Plains Area
   note: Listed as "Oglala Sioux Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 17417723
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: SD, row 'Oglala Sioux Tribe' (Pine Ridge)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 12989696
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'OGLALA SIOUX TRIBE OF PINE RIDGE INDIAN RESERVATION' (UEI X6G6W4LBZKD5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'OGLALA SIOUX TRIBE OF PINE RIDGE INDIAN RESERVATION'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Oglala Sioux Tribe of the Pine Ridge Reservation, South Dakota" among organizations
