@@ -1,9 +1,7 @@
 // The pages the Library section gathers (docs/outline.md, "The website"). They
 // keep their own addresses, so links to them from the footer, the Download menu
-// and other pages still work; the Library page lists them and the sidebar opens
-// the Library section into them on any of these pages.
-import type { OutlineItem } from '#lib/site-sections.ts';
-
+// and other pages still work; the Library page lists them, and the Library
+// menu and side column list them too (src/lib/site-navigation.ts).
 export type LibraryPage = { label: string; link: string; description: string };
 
 export const libraryPages: LibraryPage[] = [
@@ -50,11 +48,3 @@ export const libraryPages: LibraryPage[] = [
 		description: 'What you may copy and share from this site, and on what terms, for each kind of material.'
 	}
 ];
-
-/**
- * The Library's outline in the sidebar: its pages in order. A page can open its
- * own entry into the pages under it, as the Back matter index does.
- */
-export function libraryOutline(children: Record<string, OutlineItem[]> = {}): OutlineItem[] {
-	return libraryPages.map(({ label, link }) => ({ label, link, ...(children[link]?.length ? { children: children[link] } : {}) }));
-}

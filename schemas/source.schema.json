@@ -216,6 +216,7 @@
                   "concurrence in part and dissent in part",
                   "concurrence in part, concurrence in the judgment in part, and dissent in part",
                   "concurrence in part, concurrence in the result in part, and dissent in part",
+                  "concurrence in the judgment and dissent in part",
                   "dissent",
                   "dissent in part",
                   "per curiam"
@@ -288,7 +289,36 @@
           },
           "description": "The topics the index of cases by topic lists the case under, as shown: \"Sovereign immunity\" (site/src/lib/essays/case-topics.ts)."
         },
-        "reading": { "$ref": "#/$defs/boxReading" }
+        "reading": { "$ref": "#/$defs/boxReading" },
+        "later_cases": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["checked", "source", "list"],
+          "description": "The later cases that treated this one negatively, each by kind of treatment, shown under Treatment on the case's page, in the essays and in the print book (site/src/lib/essays/record-boxes.ts, pdf/pipeline/record-boxes.mjs). Written by scripts/caselaw/later_cases.py from the Negative Treatment list of a hand-pulled Westlaw print (Trevor, Nov. 27, 2026: name the cases rather than count them).",
+          "properties": {
+            "checked": { "type": "string", "format": "date", "description": "The day the print was delivered." },
+            "source": { "type": "string", "minLength": 1, "description": "The print's key in the private captures." },
+            "list": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["treatment", "name", "citation"],
+                "properties": {
+                  "treatment": {
+                    "enum": ["Overruling recognized", "Abrogation recognized", "Superseded by statute", "Called into doubt by statute", "Called into doubt", "Limitation of holding recognized", "Modification recognized", "Declined to follow", "Not followed as dicta", "Disagreement recognized", "Declined to extend", "Followed with reservations", "Distinguished"]
+                  },
+                  "name": { "type": "string", "minLength": 1, "description": "The case's name, shown in italics." },
+                  "citation": { "type": "string", "minLength": 1, "description": "The rest of its Indigo Book citation: \"474 B.R. 687 (B.A.P. 8th Cir. 2012)\"." },
+                  "case": { "type": "string", "minLength": 1, "description": "The key of this project's record of the case (its page, /cases/<key>)." },
+                  "copy": { "type": "string", "minLength": 1, "description": "The key of the opinion copy this site serves (/copies/view/<key>)." },
+                  "link": { "type": "string", "format": "uri", "description": "The case on case.law." }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "law_box": {

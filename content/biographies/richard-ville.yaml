@@ -1,6 +1,6 @@
 key: richard-ville
 name: Richard Ville
-lead: Signed two treaties with the United States for the Miamis and Eel-River, 1795–1818.
+lead: Signed three treaties with the United States for the Miamis and Eel-River, 1795–1840.
 living: false
 names:
 - name: Pee-jee-wa
@@ -11,6 +11,10 @@ names:
   note: as the Treaty with the Miami, 1818 prints it
   source: treaty-with-the-miami-1818
   where: 7 Stat. 192
+- name: Peshe-a-wauh
+  note: as the Treaty with the Miami, 1840 prints it
+  source: treaty-with-the-miami-1840
+  where: 7 Stat. 584
 nations:
 - nation: miami-tribe-of-oklahoma
   named_as: Miamis and Eel-River
@@ -26,4 +30,8 @@ events:
   text: Signed the Treaty with the Miami, 1818, for the Miami nation of Indians.
   source: treaty-with-the-miami-1818
   where: 7 Stat. 192
-checked: '2026-11-24'
+- when: Nov. 28, 1840
+  text: Signed the Treaty with the Miami, 1840, for the Miami tribe of Indians.
+  source: treaty-with-the-miami-1840
+  where: 7 Stat. 584
+checked: '2026-11-26'

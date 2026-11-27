@@ -35,13 +35,6 @@ class Statement {
 	}
 }
 
-/** An empty stand-in, with no migrations applied. */
-export function emptyTestDatabase(): D1Database {
-	const database = new DatabaseSync(':memory:');
-	database.exec('PRAGMA foreign_keys = ON');
-	return shimFor(database);
-}
-
 export function testDatabase(): D1Database {
 	const database = new DatabaseSync(':memory:');
 	database.exec('PRAGMA foreign_keys = ON');

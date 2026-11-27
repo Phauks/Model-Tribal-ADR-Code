@@ -35,7 +35,7 @@
 		type SearchRecords
 	} from '#lib/search-records.ts';
 	import { entryGroups, forEntryGroups, matchEverything, resultGroupLabels, resultGroups, type ResultGroup } from '#lib/search-everything.ts';
-	import { loadSearchIndex, type SearchEntry, type SearchResult } from '#lib/site-search.ts';
+	import { loadSearchIndex, prepareSearchIndex, type SearchEntry, type SearchResult } from '#lib/site-search.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 
 	type Show = 'all' | ResultGroup;
@@ -72,7 +72,9 @@
 
 	onMount(async () => {
 		try {
-			[entries, records] = await Promise.all([loadSearchIndex(), loadSearchRecords()]);
+			const [index, recordsFile] = await Promise.all([loadSearchIndex(), loadSearchRecords()]);
+			await prepareSearchIndex(index);
+			[entries, records] = [index, recordsFile];
 		} catch {
 			failed = true;
 		}

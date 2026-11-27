@@ -1,0 +1,148 @@
+key: greater-new-orleans-broadcasting-assn-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Greater New Orleans Broadcasting Ass'n v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '527'
+  page: '173'
+  issued:
+    date-parts:
+    - - 1999
+      - 6
+      - 14
+  URL: https://www.loc.gov/item/usrep527173/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: GREATER NEW ORLEANS BROADCASTING ASSOCIATION, INC., et al. v. UNITED STATES et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep527/usrep527173/usrep527173.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep527/usrep527173/usrep527173.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: John Paul Stevens
+    page: 176
+  - kind: concurrence
+    justice: William H. Rehnquist
+    page: 196
+  - kind: special concurrence
+    justice: Clarence Thomas
+    page: 197
+original_link: https://www.loc.gov/item/usrep527173/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '1999-04-27'
+  printed: Argued April 27, 1999 — Decided June 14, 1999
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep527/usrep527173/usrep527173.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1994-2005)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: William H. Rehnquist
+    vote: majority
+    opinion: concurrence
+  - name: John Paul Stevens
+    vote: majority
+    opinion: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+  - name: David H. Souter
+    vote: majority
+  - name: Clarence Thomas
+    vote: majority
+    opinion: special concurrence
+  - name: Ruth Bader Ginsburg
+    vote: majority
+  - name: Stephen G. Breyer
+    vote: majority
+  source: https://api.oyez.org/cases/1998/98-387
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep527173/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/527/173/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1998/98-387
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22527%20U.S.%20173%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=527%20U.S.%20173
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=527%20U.S.%20173
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 527 U.S. 173 (1999). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep527/usrep527173/usrep527173.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1998-072), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 527 U.S. 173 "Greater New Orleans Broadcasting Ass'n v. United States"; Database 527 U.S. 173 "GREATER NEW ORLEANS BROADCASTING ASSOCIATION, INC., ETC., et al. v. UNITED STATES et al."
+  - check: scan
+    result: agree
+    detail: Scan has 25 pages; the report runs 173 to 197
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued April 27, 1999 — Decided June 14, 1999"; scan "Argued April 27, 1999-Decided June 14, 1999"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1999-06-14'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Stevens p. 176, concurrence Rehnquist p. 196, special concurrence Thomas p. 197; Database writers: Rehnquist, Stevens, Thomas'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

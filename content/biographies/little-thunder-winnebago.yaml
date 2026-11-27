@@ -1,6 +1,6 @@
 key: little-thunder-winnebago
 name: Little Thunder
-lead: Signed two treaties with the United States for the Winnebago nation, 1837–1855.
+lead: Signed three treaties with the United States for the Winnebago nation, 1837–1855.
 living: false
 names:
 - name: Wa-kun-cha-nic-kab
@@ -11,6 +11,10 @@ names:
   note: as the Treaty with the Winnebago, 1855 prints it
   source: treaty-with-the-winnebago-1855
   where: 10 Stat. 1175
+- name: Waw-kon-chaw-ho-no-kaw
+  note: as the Treaty with the Winnebago, 1846 prints it
+  source: treaty-with-the-winnebago-1846
+  where: 9 Stat. 879
 nations:
 - nation: ho-chunk-nation-of-wisconsin
   named_as: Winnebago nation
@@ -26,8 +30,12 @@ events:
   text: Signed the Treaty with the Winnebago, 1837, for the Winnebago nation.
   source: treaty-with-the-winnebago-1837
   where: 7 Stat. 544
+- when: Oct. 13, 1846
+  text: Signed the Treaty with the Winnebago, 1846, for the Winnebago Tribe of Indians.
+  source: treaty-with-the-winnebago-1846
+  where: 9 Stat. 879
 - when: Feb. 27, 1855
   text: Signed the Treaty with the Winnebago, 1855, for the Winnebago tribe of Indians.
   source: treaty-with-the-winnebago-1855
   where: 10 Stat. 1175
-checked: '2026-11-24'
+checked: '2026-11-26'
