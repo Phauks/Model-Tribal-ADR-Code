@@ -93,6 +93,19 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Mississippi_Band_of_Choctaw_Indians_v._Holyfield
+argument_audio:
+- kind: argument
+  date: '1989-01-11'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-687.mp3
+  catalog: https://catalog.archives.gov/id/118974839
+  whole_session: true
+  duration_seconds: 12981
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-687.mp3
+    checksum: a767acf71d8c1ec591f8a0822be69db5ea7ad8b55665b76d74cc25d7bdbeb632
+    media_type: audio/mpeg
+    bytes: 207705357
 rights:
   status: no-permission-needed
   basis: us-government-work

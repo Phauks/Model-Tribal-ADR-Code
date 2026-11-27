@@ -104,6 +104,29 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=351%20U.S.%201
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1956-01-19'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-024-134-19560119-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81136668
+  duration_seconds: 5235
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-024-134-19560119-1of2.mp3
+    checksum: 5f885e5b567a4008168503abd1d2c87bd37d123ad2eed227b5fe3ca31551043c
+    media_type: audio/mpeg
+    bytes: 83754421
+- kind: argument
+  date: '1956-01-19'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-024-134-19560119-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81136668
+  duration_seconds: 1531
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-024-134-19560119-2of2.mp3
+    checksum: a318346ef9efcfae537c727bbbc26feddace4e6d2e1ae723c40051ab74c632e5
+    media_type: audio/mpeg
+    bytes: 24490317
 rights:
   status: no-permission-needed
   basis: us-government-work

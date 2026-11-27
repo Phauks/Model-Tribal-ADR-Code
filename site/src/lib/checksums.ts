@@ -12,6 +12,7 @@
  * The ZIPs of documents are put together when they are asked for, so they have no hash of their
  * own; each one lists the SHA-256 of every file inside it.
  */
+import { sendProblem } from './problem-reports.ts';
 
 export const checksumsAddress = '/checksums.json';
 export const checksumsTextAddress = '/checksums.txt';
@@ -41,7 +42,10 @@ function load(address: string): Promise<ChecksumManifest | undefined> {
 	if (!manifest) {
 		manifest = fetch(address)
 			.then((response) => (response.ok ? (response.json() as Promise<ChecksumManifest>) : undefined))
-			.catch(() => undefined);
+			.catch((problem) => {
+				sendProblem(problem, { code: 'checksums.manifest', place: address });
+				return undefined;
+			});
 		loaded.set(address, manifest);
 		// A failed read is tried again next time, perhaps once the reader is back online.
 		void manifest.then((value) => value ?? loaded.delete(address));
@@ -80,6 +84,7 @@ export function fileName(path: string): string {
 	try {
 		return decodeURIComponent(last);
 	} catch {
+		// expected: a name that does not decode is used as typed.
 		return last;
 	}
 }

@@ -65,7 +65,8 @@ RIGHTS = {"status": "no-permission-needed", "basis": "us-government-work",
           "redistribution": True}
 MONTHS = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."]
 SMALL = {"a", "an", "and", "as", "at", "by", "for", "from", "in", "of", "on", "or", "the", "to", "with", "under"}
-GONE = re.compile(r"^(Repealed|Transferred|Omitted|Renumbered|Vacant|Reserved)\b", re.I)
+# "Repealed. Pub. L. ...", "Omitted", "Repealed or Transferred. ..."; not a heading in force such as "Vacant military posts or barracks for schools" (25 U.S.C. § 276).
+GONE = re.compile(r"^(Repealed|Transferred|Omitted|Renumbered|Vacant|Reserved)\b(?=\.|$| or )", re.I)
 
 
 def dump(value) -> str:

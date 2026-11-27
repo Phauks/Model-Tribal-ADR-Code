@@ -185,6 +185,7 @@ export function safeWebLink(value: string): string | undefined {
 		if (url.protocol !== 'https:' || url.username || url.password) return undefined;
 		return url.href;
 	} catch {
+		// expected: a value that is not a web address gets no link.
 		return undefined;
 	}
 }

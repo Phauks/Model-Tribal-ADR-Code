@@ -35,7 +35,7 @@ export function watchFigureFiles(
 		const address = media.getAttribute('src');
 		if (!address?.startsWith('/files/')) return;
 		seen.add(media);
-		const answer = await fetch(address, { method: 'HEAD' }).catch(() => null);
+		const answer = await fetch(address, { method: 'HEAD' }).catch(() => /* expected: the site could not be reached; the figure is shown as missing, and the server reports its own failures. */ null);
 		onProblem(media, answer?.status === 409 ? 'checking' : 'missing');
 	};
 	const failed = (event: Event) => {

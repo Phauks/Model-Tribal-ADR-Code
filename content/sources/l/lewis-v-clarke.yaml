@@ -90,6 +90,41 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Lewis_v._Clarke
+argument_audio:
+- kind: argument
+  date: '2017-01-09'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/15-1500.mp3
+  duration_seconds: 3371
+  file:
+    storage_key: supreme-court-audio/court/2016/15-1500.mp3
+    checksum: e2fdff97ec918b04f0c161bb188b4653bc663ae36e013abc8759349fc47fcb3b
+    media_type: audio/mpeg
+    bytes: 26971732
+- kind: argument
+  date: '2017-01-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2009-January9_2017.mp3
+  catalog: https://catalog.archives.gov/id/183518391
+  whole_session: true
+  duration_seconds: 7125
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2009-january9_2017.mp3
+    checksum: 7f8ef36a2cc42e0b3dda3001b554619403ed0c3130a891086b9846603da192e7
+    media_type: audio/mpeg
+    bytes: 142500998
+- kind: opinion announcement
+  date: '2017-04-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2030-April25_2017.mp3
+  catalog: https://catalog.archives.gov/id/183518412
+  whole_session: true
+  duration_seconds: 6949
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2030-april25_2017.mp3
+    checksum: 169bb0ac634a3c5dd6ed3966e84943b73a36ed1ba2cefc665b0db4e4d62ba1b0
+    media_type: audio/mpeg
+    bytes: 138979238
 rights:
   status: no-permission-needed
   basis: us-government-work

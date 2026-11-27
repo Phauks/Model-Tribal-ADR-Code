@@ -103,6 +103,51 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=406%20U.S.%20128
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1971-10-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-840-71-45-19711018.mp3
+  catalog: https://catalog.archives.gov/id/81140753
+  duration_seconds: 4645
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-840-71-45-19711018.mp3
+    checksum: 0e5dbe169ef441d9a5e6f385c1afedf09b3ae676d068818160ef317a70411aa9
+    media_type: audio/mpeg
+    bytes: 74319411
+- kind: argument
+  date: '1971-10-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-840-71-54-19711018.mp3
+  catalog: https://catalog.archives.gov/id/81140753
+  duration_seconds: 1011
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-840-71-54-19711018.mp3
+    checksum: 011820b00a77d36a9d7f8b35a450c0d1706a98f9bafafcca8dc56964e223fb01
+    media_type: audio/mpeg
+    bytes: 16170839
+- kind: argument
+  date: '1971-10-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-840-71-71-19711018.mp3
+  catalog: https://catalog.archives.gov/id/81140753
+  duration_seconds: 3534
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-840-71-71-19711018.mp3
+    checksum: 0a9e46e63ee3a92210c7621ceffe6cfac793b9baf42533a103674d9343bdd354
+    media_type: audio/mpeg
+    bytes: 56541517
+- kind: argument
+  date: '1971-10-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-840-71-78-19711018.mp3
+  catalog: https://catalog.archives.gov/id/81140753
+  duration_seconds: 5025
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-840-71-78-19711018.mp3
+    checksum: eb041b7b553fda61613cad82f8e0faaa7f6d89a917426d2dc802483071d86675
+    media_type: audio/mpeg
+    bytes: 80392776
 rights:
   status: no-permission-needed
   basis: us-government-work

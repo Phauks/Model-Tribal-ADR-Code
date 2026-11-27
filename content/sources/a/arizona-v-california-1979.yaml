@@ -94,6 +94,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=439%20U.S.%20419
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1978-10-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-244.mp3
+  catalog: https://catalog.archives.gov/id/102048628
+  whole_session: true
+  duration_seconds: 14479
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-244.mp3
+    checksum: 9779aa14365671400235c70f4bc5ea387d480e9ac15320c04fe5930c40347c52
+    media_type: audio/mpeg
+    bytes: 231674062
 rights:
   status: no-permission-needed
   basis: us-government-work

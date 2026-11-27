@@ -100,6 +100,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=476%20U.S.%20734
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1986-03-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-557.mp3
+  catalog: https://catalog.archives.gov/id/118974732
+  whole_session: true
+  duration_seconds: 13413
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-557.mp3
+    checksum: 22a814d2f7922258b22a2b0d052fc2cbe45b0452e3cb7abd2861a32445f8137c
+    media_type: audio/mpeg
+    bytes: 214613804
 rights:
   status: no-permission-needed
   basis: us-government-work

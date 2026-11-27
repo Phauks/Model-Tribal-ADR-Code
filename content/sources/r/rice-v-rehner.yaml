@@ -104,6 +104,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=463%20U.S.%20713
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1983-03-21'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-435.mp3
+  catalog: https://catalog.archives.gov/id/102048812
+  whole_session: true
+  duration_seconds: 14540
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-435.mp3
+    checksum: f3a6cd100d7d8483a89baa25f99bf52f621181c78c68ee0e6f1bf9cd6f36d0bb
+    media_type: audio/mpeg
+    bytes: 232639130
 rights:
   status: no-permission-needed
   basis: us-government-work
