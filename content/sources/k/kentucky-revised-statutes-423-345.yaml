@@ -1,0 +1,50 @@
+key: kentucky-revised-statutes-423-345
+kind: state-statute
+citation:
+  type: legislation
+  title: Effect of notarial act performed in another state, under authority of tribe, or under authority of federal law
+  title-short: Ky. Rev. Stat. Ann. § 423.345
+  container-title: Kentucky Revised Statutes
+  container-title-short: Ky. Rev. Stat. Ann.
+  section: '423.345'
+  author:
+  - literal: Kentucky Legislative Research Commission
+  issued:
+    date-parts:
+    - - 2019
+  URL: https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=54086
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=54086
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Ky. Rev. Stat. Ann. § 423.345 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KY
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Ky. Rev. Stat. Ann. § 423.345 (2026). History: Amended 2023 Ky. Acts ch. 156, sec. 1, effective June 29, 2023. -- Created 2019 Ky. Acts ch. 86, sec. 10, effective January 1, 2020. Text read from the Kentucky Legislative Research Commission''s PDF of the section (apps.legislature.ky.gov/law/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; tribe); AI reader''s verdict incidental: Notarial acts under federally recognized tribe authority given state effect. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; tribe'
