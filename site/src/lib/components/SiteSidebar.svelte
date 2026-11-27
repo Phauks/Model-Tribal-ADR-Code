@@ -521,7 +521,7 @@
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: var(--space-2);
+		gap: 0; /* The badge keeps its own space from the label. */
 		min-height: 2.25rem;
 		margin-left: calc(-1 * var(--space-3) + 3px);
 		padding: 0.2rem var(--space-3) 0.2rem calc(var(--space-3) - 3px);
@@ -800,7 +800,7 @@
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: var(--space-2);
+		gap: var(--space-1) 0;
 		min-height: var(--layout-target-minimum);
 	}
 

@@ -263,7 +263,7 @@
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: var(--space-2);
+		gap: var(--space-1) 0; /* The badge keeps its own space from the link. */
 		margin: 0 0 0.55rem;
 	}
 
