@@ -1,7 +1,6 @@
 import { building } from '$app/env';
 import { trackVersions } from '#lib/server/versions.ts';
 import { colorsOf } from '#lib/server/design-tokens.ts';
-import { navigationCounts } from '#lib/server/navigation-counts.ts';
 import { familyContents, familyOf } from '#lib/server/section-contents.ts';
 import type { LayoutServerLoad } from './$types';
 
@@ -17,7 +16,8 @@ export const load: LayoutServerLoad = async ({ url }) => ({
 	family: await currentFamily(url.pathname),
 	// The counts beside the section menus' links, counted only while the site
 	// is built (src/lib/server/navigation-counts.ts).
-	navigationCounts: building ? navigationCounts() : undefined,
+	// Loaded only then, so the Worker never reads the collections to draw a page.
+	navigationCounts: building ? (await import('#lib/server/navigation-counts.ts')).navigationCounts() : undefined,
 	themeColor: {
 		light: colorsOf('light').paper,
 		dark: colorsOf('dark').paper

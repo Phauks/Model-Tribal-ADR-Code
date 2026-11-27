@@ -47,7 +47,13 @@ const phone = { width: 390, height: 844 };
 const allowed = [
 	// The small "Document access" link in each row sits 2 px above the row's
 	// "Remove access" button. Making it a 24 px target moves the buttons.
-	{ where: '/workspace/people as leadAuthor', rule: 'target-size', reason: 'link and button stacked in the Actions column' }
+	{ where: '/workspace/people as leadAuthor', rule: 'target-size', reason: 'link and button stacked in the Actions column' },
+	// The open search panel drops from the masthead over the right of the
+	// section bar (SectionBar.svelte), so axe measures the sections under it
+	// as partly covered. They are behind the panel, which closes on a click
+	// outside it, not beside it.
+	{ where: '/glossary as signedOut › search', rule: 'target-size', reason: 'sections behind the open search panel' },
+	{ where: '/workspace as leadAuthor › search', rule: 'target-size', reason: 'sections behind the open search panel' }
 ];
 
 /* Opening menus and dialogs ------------------------------------------------ */
