@@ -216,7 +216,17 @@ const { statements, tokens } = fixtureSessions(signedIn);
 executeLocally(statements);
 
 const worker = await startLocalWorker();
-const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+// The browser reaches no other host: every request to one goes to a proxy
+// that is not there and fails at once. Blocking them with context.route()
+// alone is not enough, because Playwright routes a request's first address
+// and not where it is redirected. A copy the local bucket lacks is answered
+// with a redirect to its government address, so the law page's embedded
+// Statutes at Large copy loaded www.govinfo.gov, and when govinfo.gov stopped
+// answering on Nov. 27, 2026 the page's load never finished.
+const browser = await chromium.launch({
+	...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}),
+	proxy: { server: 'http://127.0.0.1:9', bypass: '127.0.0.1' }
+});
 const problems = [];
 const accepted = [];
 let checked = 0;

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/supreme-court-pictures.schema.json",
+  "title": "Supreme Court pictures",
+  "description": "content/supreme-court/pictures.yaml: the pictures on the Supreme Court pages, one for each Justice and appointing President (people.yaml) and one for each Court that has its own (courts.yaml). Each entry is written by hand from the record of the library, archive or museum that holds the original; nothing is copied from a copy's description page. scripts/law/supreme_court_pictures.py fills media_type, width, height, sha256 and key from the downloaded copy. The site writes each credit line from creator, date, source, source_id and license (site/src/lib/server/supreme-court-pictures.ts). scripts/validate_records.py checks that each subject is a person in people.yaml or a Court in courts.yaml.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["pictures"],
+  "properties": {
+    "pictures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["subject", "shows", "source", "source_link", "license", "basis", "checked", "copy", "media_type", "width", "height", "sha256", "key"],
+        "properties": {
+          "subject": { "$ref": "common.schema.json#/$defs/slug", "description": "A person's key in people.yaml or a Court's key in courts.yaml." },
+          "shows": { "type": "string", "minLength": 1, "description": "What the picture shows, for its alt text: \"Salmon P. Chase, head and shoulders\"." },
+          "creator": { "type": "string", "minLength": 1, "description": "Who made it, as the source names them. Left out when the source names no one." },
+          "date": { "type": "string", "minLength": 1, "description": "When it was made, as the source gives it: \"1832\", \"c. 1860–1865\"." },
+          "source": { "type": "string", "minLength": 1, "description": "The library, archive or museum that holds the original: \"Library of Congress\"." },
+          "source_id": { "type": "string", "minLength": 1, "description": "The source's number for it: \"cwpb.05620\", \"NPG.67.2\"." },
+          "source_link": { "$ref": "common.schema.json#/$defs/link", "description": "The source's record of it, which the credit line links to." },
+          "license": {
+            "type": "string",
+            "pattern": "^(Public domain|CC0 1\\.0|CC BY [0-9]\\.[0-9]|CC BY-SA [0-9]\\.[0-9])$",
+            "description": "Public domain, or an open license by its short name."
+          },
+          "license_link": { "$ref": "common.schema.json#/$defs/link" },
+          "basis": { "type": "string", "minLength": 1, "description": "Why it is in the public domain or may be shown, and what the source's record says about rights." },
+          "checked": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "When the entry was checked against the source's record." },
+          "copy": {
+            "type": "string",
+            "pattern": "^https://(upload\\.wikimedia\\.org|thumb\\.wikimedia\\.org|tile\\.loc\\.gov|www\\.supremecourt\\.gov)/",
+            "description": "The file downloaded and served: the source's own copy, or a copy of it at Wikimedia Commons at the size the site shows."
+          },
+          "media_type": { "type": "string", "enum": ["image/jpeg", "image/png"] },
+          "width": { "type": "integer", "minimum": 1 },
+          "height": { "type": "integer", "minimum": 1 },
+          "sha256": { "$ref": "common.schema.json#/$defs/sha256" },
+          "key": {
+            "type": "string",
+            "pattern": "^supreme-court/portraits/[a-z0-9]+(-[a-z0-9]+)*\\.(jpg|png)$",
+            "description": "The private bucket's copy the site serves."
+          }
+        }
+      }
+    }
+  }
+}
