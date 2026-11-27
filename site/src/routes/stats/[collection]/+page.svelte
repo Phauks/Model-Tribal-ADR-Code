@@ -26,8 +26,13 @@
 	const holdings = $derived(data.items.map((item) => ('holding' in item ? (item.holding as Holding) : undefined)));
 	const copyText = (holding: Holding | undefined) =>
 		!holding ? 'Without a copy' : holding.documents ? (holding.pages ? `Document, ${number(holding.pages)} ${holding.pages === 1 ? 'page' : 'pages'}` : 'Document') : 'Saved web page';
+	// A list of numbered sections gives each section's citation a column of its own, in the Code's order (Trevor, Nov. 27, 2026).
+	const hasCitations = $derived(data.items.some((item) => item.citation));
+	// Numbers sort as numbers, so § 13 comes before § 13-1 and § 450f before § 5321.
+	const inCodeOrder = (citation: string) => citation.replace(/\d+/g, (digits) => digits.padStart(6, '0'));
 	const columns: TableColumn[] = $derived([
-		{ key: 'title', header: 'Title', isRowHeader: true, sortable: true, searchable: true },
+		...(hasCitations ? [{ key: 'citation', header: 'Section', sortable: true, searchable: true }] : []),
+		{ key: 'title', header: hasCitations ? 'Name' : 'Title', isRowHeader: true, sortable: true, searchable: true },
 		...(yearColumn ? [{ key: 'year', header: 'Year', type: 'number' as const, sortable: true, filterable: true }] : []),
 		...(data.detailHeader ? [{ key: 'detail', header: data.detailHeader, sortable: true, searchable: true }] : []),
 		...(data.copyColumns === 'copy' ? [{ key: 'copy', header: 'Copy', sortable: true, filterable: true }] : []),
@@ -44,6 +49,7 @@
 		data.items.map((item, index) => ({
 			key: String(index),
 			cells: {
+				citation: { text: item.citation ?? '', sortValue: inCodeOrder(item.citation ?? '') },
 				title: { text: item.title, href: item.href },
 				year: { text: item.year ? String(item.year) : '', sortValue: item.year ?? 0 },
 				detail: { text: item.detail ?? '', sortValue: data.detailHeader === 'Years' ? (item.year ?? 0) : (item.detail ?? '') },
@@ -79,7 +85,7 @@
 		filters
 		shareable
 		download={data.identifier}
-		defaultSort={yearColumn ? { key: 'year', direction: 'ascending' } : hasYears ? { key: 'detail', direction: 'ascending' } : { key: 'title', direction: 'ascending' }}
+		defaultSort={hasCitations ? { key: 'citation', direction: 'ascending' } : yearColumn ? { key: 'year', direction: 'ascending' } : hasYears ? { key: 'detail', direction: 'ascending' } : { key: 'title', direction: 'ascending' }}
 		rowName={['item', 'items']}
 	/>
 </div>
