@@ -213,7 +213,7 @@ export function boxSections(key: string, title: string, box: RecordBox | undefin
  * page. Without that block, the writers the bench names, unlinked.
  */
 export function caseOpinions(record: SourceRecord & CaseRecordParts): CaseOpinion[] {
-	// The Justices' pages, as the bench in At a glance links them (case-facts.ts).
+	// The Justices' pages, as the bench in Key facts links them (case-facts.ts).
 	const decided = decidedDay(record.citation.issued);
 	const writerLink = (name: string) => (record.supreme_court ? justiceLinkFor(name, decided, record.key) : undefined);
 	const list = record.opinions?.list;

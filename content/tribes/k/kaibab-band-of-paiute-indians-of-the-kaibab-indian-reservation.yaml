@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order No. 2667
+  since: '1917-07-17'
+  source: executive-order-1917-07-17-2667
+  confidence: medium
+  verification: read-in-full
+  as_of: '1917-07-17'
+  locator: 4 Kappler 1003
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Kaibab Indian Reservation, Arizona.
 states:
 - state: AZ
   presence: government-office

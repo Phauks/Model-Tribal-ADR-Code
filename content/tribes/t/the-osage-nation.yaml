@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Osage, Nov. 10, 1808, 7 Stat. 107
+  since: '1808-11-10'
+  source: treaty-with-the-osage-1808
+  confidence: medium
+  verification: inferred
+  as_of: '1808-11-10'
+  locator: p. 95 (Treaty with the Osage, 1808; Kappler header "Nov. 10, 1808. | 7 Stat., 107. | Ratified Apr. 28, 1810.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Great Osage; Little Osage; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OK
   presence: government-office

@@ -29,7 +29,8 @@
 	import Collapsible from './Collapsible.svelte';
 
 	// Trevor asked on Nov. 22, 2026 that the section carry no sentence explaining it.
-	let { sources }: { sources: SourceEntry[] } = $props();
+	// The section starts closed on every page (Trevor, Nov. 27, 2026); a marker, a link back or "Expand all" opens it.
+	let { sources, open = false }: { sources: SourceEntry[]; open?: boolean } = $props();
 
 	const groups = $derived(sourceGroups(sources));
 	let showFacts = $state(false);
@@ -128,7 +129,7 @@
 {#if sources.length > 0}
 	<div class="notes" class:showing-facts={showFacts} data-print-part="sources">
 		<!-- "References", not "Sources", so it never clashes with a story's "Source" (Trevor, Nov. 23, 2026). -->
-		<Collapsible heading="References" identifier="sources-heading" count={sources.length}>
+		<Collapsible heading="References" identifier="sources-heading" count={sources.length} {open}>
 			{#snippet actions()}
 				<!-- One control for the whole list, an icon like the other heading-row buttons (Trevor, Nov. 27, 2026). -->
 				<button

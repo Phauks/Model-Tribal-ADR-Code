@@ -297,7 +297,7 @@ const nationCharts: NationChart[] = [
 		labelHeader: 'Recognition',
 		source: 'The Bureau of Indian Affairs list of recognized entities (91 Fed. Reg. 4102, Jan. 30, 2026), state laws and the Office of Federal Acknowledgment’s lists of petitioners, each cited on the nation’s page.',
 		section: 'glance-heading',
-		part: 'At a glance',
+		part: 'Key facts',
 		partsOfWhole: true,
 		inOrder: true,
 		bars: () =>
@@ -313,7 +313,7 @@ const nationCharts: NationChart[] = [
 		labelHeader: 'Basis',
 		source: 'Acts of Congress read in the Statutes at Large and final determinations of the Office of Federal Acknowledgment, each cited on the nation’s page.',
 		section: 'glance-heading',
-		part: 'At a glance',
+		part: 'Key facts',
 		partsOfWhole: true,
 		bars: () =>
 			[...federalBases, basisNotTraced].map((basis) => ({
@@ -331,7 +331,7 @@ const nationCharts: NationChart[] = [
 		labelHeader: 'Listed',
 		source: 'The Bureau of Indian Affairs list of recognized entities (91 Fed. Reg. 4102, Jan. 30, 2026).',
 		section: 'glance-heading',
-		part: 'At a glance',
+		part: 'Key facts',
 		partsOfWhole: true,
 		bars: () =>
 			listSections.map((section) => ({
@@ -349,7 +349,7 @@ const nationCharts: NationChart[] = [
 		labelHeader: 'Federal record',
 		source: 'The Office of Federal Acknowledgment’s lists of petitioners and petitions resolved, Acts of Congress, and Census Bureau and other federal lists, each cited on the nation’s page.',
 		section: 'glance-heading',
-		part: 'At a glance',
+		part: 'Key facts',
 		partsOfWhole: true,
 		bars: () =>
 			withoutFederalRecords.map((entry) => ({
@@ -367,7 +367,7 @@ const nationCharts: NationChart[] = [
 		labelHeader: 'Recognition',
 		source: 'The Bureau of Indian Affairs list of recognized entities (91 Fed. Reg. 4102, Jan. 30, 2026), state laws and the Office of Federal Acknowledgment’s list of petitioners, each cited on the nation’s page.',
 		section: 'glance-heading',
-		part: 'At a glance',
+		part: 'Key facts',
 		bars: barsByValue(
 			(record) => (record.recognition ?? []).filter((fact) => fact.type in recognitionWords),
 			(fact) => fact.type,
@@ -381,7 +381,7 @@ const nationCharts: NationChart[] = [
 		labelHeader: 'State',
 		source: 'The Bureau of Indian Affairs list of recognized entities (91 Fed. Reg. 4102, Jan. 30, 2026) and the states listed on each nation’s page.',
 		section: 'glance-heading',
-		part: 'At a glance',
+		part: 'Key facts',
 		shown: 15,
 		bars: barsByState((record) => (record.recognition ?? []).filter((fact) => fact.type === 'federal').map((fact) => ({ fact, text: fact.legal_basis ?? 'Federally recognized' })))
 	},
@@ -391,7 +391,7 @@ const nationCharts: NationChart[] = [
 		labelHeader: 'State',
 		source: 'State laws, resolutions and commissions that recognize Native nations, each cited on the nation’s page.',
 		section: 'glance-heading',
-		part: 'At a glance',
+		part: 'Key facts',
 		bars: barsByState(
 			// Native nations only: the Native Hawaiian community is not a tribe (counted on its own tile on Statistics).
 			(record) => (isNativeNation(record) ? (record.recognition ?? []).filter((fact) => fact.type === 'state').map((fact) => ({ fact, text: fact.legal_basis ?? 'State recognized' })) : []),
@@ -404,7 +404,7 @@ const nationCharts: NationChart[] = [
 		labelHeader: 'Region',
 		source: 'Bureau of Indian Affairs Tribal Leaders Directory, Nov. 2026.',
 		section: 'glance-heading',
-		part: 'At a glance',
+		part: 'Key facts',
 		partsOfWhole: true,
 		bars: barsByValue(
 			(record) => (record.federal_administration ? [record.federal_administration] : []),

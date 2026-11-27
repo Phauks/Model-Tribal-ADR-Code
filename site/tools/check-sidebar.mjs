@@ -92,7 +92,7 @@ const column = '.sidebar-wide .local-column';
 	const current = page.locator(`${column} .local-link[aria-current='page']`);
 	check((await current.textContent()).trim() === 'Nation Page', `The nation page is not marked as current: ${await current.textContent()}`);
 	check((await current.evaluate((element) => element.tagName)) !== 'A' && (await page.locator(`${column} a[href='/nations/navajo-nation']`).count()) === 0, 'The column links the nation page to itself');
-	check((await page.locator(`${column} a[href='#glance-heading']`).count()) === 0, 'The column lists At a glance');
+	check((await page.locator(`${column} a[href='#glance-heading']`).count()) === 0, 'The column lists Key facts');
 	check(await page.locator(`${column} .local-link[href='/nations/navajo-nation/opinions'] .count-badge`).isVisible(), 'Court opinions has no count');
 	check((await page.locator(`${column} .headings a[href^='#']`).count()) > 5, 'The column does not list the page’s headings');
 	check((await page.locator(`${column} a[href^='/nations/hopi']`).count()) === 0, 'The column still lists other nations');
