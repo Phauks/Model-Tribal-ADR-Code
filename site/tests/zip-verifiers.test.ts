@@ -38,7 +38,8 @@ describe('the scripts that check a ZIP download', () => {
 		const folder = unpacked();
 		const passed = run(folder);
 		expect(passed.status).toBe(0);
-		expect(passed.output).toContain('documents/one file.pdf: OK');
+		// Newer GNU coreutils quote a name with a space in it ('documents/one file.pdf': OK); older ones and shasum do not.
+		expect(passed.output).toMatch(/'?documents\/one file\.pdf'?: OK/);
 		appendFileSync(join(folder, 'documents', 'one file.pdf'), 'x');
 		const failed = run(folder);
 		expect(failed.status).not.toBe(0);
