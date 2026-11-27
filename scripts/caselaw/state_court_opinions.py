@@ -295,7 +295,9 @@ def source_link(row: dict) -> str:
 def opinions_html(fragment: str) -> list[str]:
     """The court's opinions from the Project's HTML of a case: each <article class="opinion">, without the head matter and layout data."""
     articles = re.findall(r"<article class=\"opinion\"[^>]*>.*?</article>", fragment, re.S)
-    return [re.sub(r"\s+data-(?:blocks|firstpage|lastpage|case-id)=(?:'[^']*'|\"[^\"]*\")", "", article) for article in articles]
+    articles = [re.sub(r"\s+data-(?:blocks|firstpage|lastpage|case-id)=(?:'[^']*'|\"[^\"]*\")", "", article) for article in articles]
+    # The publisher's key numbers ("[1]") point to its headnotes, which are left out, so they go too (as in the JSON text).
+    return [re.sub(r"\s*<a class=\"bracketnum\"[^>]*>.*?</a>\s*", " ", article, flags=re.S) for article in articles]
 
 
 def opinion_page(case: dict, key: str, link: str, fragment: str | None = None, links=None) -> bytes:
