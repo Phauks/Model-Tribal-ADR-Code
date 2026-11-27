@@ -187,7 +187,7 @@ def batches(sections: list[Section], terms: Terms, out: Path, near_sample: int, 
     else:
         meta = {'live': len(live), 'A': len(pool_a), 'B': len(pool_b), 'E': len(pool_e), 'C': len(near), 'C_sample': len(pool_c),
                 'D': len(pool_d), 'D_sample': len(pool_d_sample), 'items': len(items), 'batches': count}
-    (out / 'pool-key.json').write_text(json.dumps({'meta': meta, 'key': key, 'cite': cite}, indent=0))
+    (out / 'pool-key.json').write_text(json.dumps({'meta': meta, 'key': key, 'cite': cite}, indent=0) + '\n')
     return {**meta, 'new_items': len(items)}
 
 
