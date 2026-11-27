@@ -81,8 +81,10 @@ const column = '.sidebar-wide .local-column';
 	check((await page.locator(`${bar} summary.current`).textContent()).includes('Nations'), 'The section bar does not mark Nations');
 	check(await page.locator(`${column} .back-link[href='/nations']`).isVisible(), 'The column has no way back to Nations');
 	check((await page.locator(`${column} .local-title`).textContent()).trim() === 'Navajo Nation', 'The column does not name the nation');
-	const current = await page.locator(`${column} .local-link[aria-current='page']`).getAttribute('href');
-	check(current === '/nations/navajo-nation', `The nation page is not marked as current: ${current}`);
+	const current = page.locator(`${column} .local-link[aria-current='page']`);
+	check((await current.textContent()).trim() === 'Nation Page', `The nation page is not marked as current: ${await current.textContent()}`);
+	check((await current.evaluate((element) => element.tagName)) !== 'A' && (await page.locator(`${column} a[href='/nations/navajo-nation']`).count()) === 0, 'The column links the nation page to itself');
+	check((await page.locator(`${column} a[href='#glance-heading']`).count()) === 0, 'The column lists At a glance');
 	check(await page.locator(`${column} .local-link[href='/nations/navajo-nation/opinions'] .count-badge`).isVisible(), 'Court opinions has no count');
 	check((await page.locator(`${column} .headings a[href^='#']`).count()) > 5, 'The column does not list the page’s headings');
 	check((await page.locator(`${column} a[href^='/nations/hopi']`).count()) === 0, 'The column still lists other nations');
@@ -95,8 +97,9 @@ const column = '.sidebar-wide .local-column';
 {
 	const { context, page } = await newPage();
 	await page.goto(`${base}/nations/navajo-nation/opinions`, { waitUntil: 'networkidle' });
-	const current = await page.locator(`${column} .local-link[aria-current='page']`).getAttribute('href');
-	check(current === '/nations/navajo-nation/opinions', `The opinions page is not marked in the nation's pages: ${current}`);
+	const current = page.locator(`${column} .local-link[aria-current='page']`);
+	check((await current.textContent()).includes('Court Opinions') && (await current.evaluate((element) => element.tagName)) !== 'A', `The opinions page is not marked, unlinked, in the nation's pages: ${await current.textContent()}`);
+	check(await page.locator(`${column} a.local-link[href='/nations/navajo-nation']`).isVisible(), 'The opinions page does not link back to the nation page');
 	await context.close();
 }
 
