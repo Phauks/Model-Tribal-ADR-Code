@@ -31,8 +31,20 @@
           "checked": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "When the entry was checked against the source's record." },
           "copy": {
             "type": "string",
-            "pattern": "^https://(upload\\.wikimedia\\.org|thumb\\.wikimedia\\.org|tile\\.loc\\.gov|www\\.supremecourt\\.gov)/",
-            "description": "The file downloaded and served: the source's own copy, or a copy of it at Wikimedia Commons at the size the site shows."
+            "pattern": "^https://(upload\\.wikimedia\\.org|thumb\\.wikimedia\\.org|tile\\.loc\\.gov|www\\.supremecourt\\.gov|ids\\.si\\.edu|www\\.artic\\.edu|www\\.senate\\.gov)/",
+            "description": "The file downloaded: the source's own copy, or a copy of it at Wikimedia Commons at the size the site shows. Served as it is, unless rotate or crop is given."
+          },
+          "rotate": {
+            "type": "integer",
+            "enum": [90, 180, 270],
+            "description": "Degrees clockwise to turn the copy before it is served, for a print photographed on its side."
+          },
+          "crop": {
+            "type": "array",
+            "items": { "type": "integer", "minimum": 0 },
+            "minItems": 4,
+            "maxItems": 4,
+            "description": "Left, top, right and bottom, in pixels of the copy after any rotation: the part served, for one person in a group photograph. scripts/law/supreme_court_pictures.py makes the served picture and puts it in the bucket; the Worker cannot remake it from the copy."
           },
           "media_type": { "type": "string", "enum": ["image/jpeg", "image/png"] },
           "width": { "type": "integer", "minimum": 1 },
