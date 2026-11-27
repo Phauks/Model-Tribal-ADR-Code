@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { pageChangesLink } from '#lib/page-history.ts';
 	import { courtPagePath } from '#lib/court-pages.ts';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
@@ -243,7 +244,7 @@
 						>
 						<div class="status-panel">
 							<p class="muted">Nation pages show when they changed and which parts, never earlier wording.</p>
-							<p><a href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">See all changes to this page</a></p>
+							<p><a href={pageChangesLink(`/nations/${page.id}`)}>See all changes to this page</a></p>
 						</div>
 					</details>
 				</span>
