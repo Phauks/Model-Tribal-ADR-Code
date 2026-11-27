@@ -1,0 +1,50 @@
+key: minnesota-statutes-259-52
+kind: state-statute
+citation:
+  type: legislation
+  title: Fathers' Adoption Registry
+  title-short: Minn. Stat. § 259.52
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: '259.52'
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1997
+  URL: https://www.revisor.mn.gov/statutes/cite/259.52
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/259.52
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 259.52 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 259.52 (2026). History: 1997 c 218 s 9; 1998 c 354 s 1 -7; 1998 c 382 art 2 s 4 -14; 1999 c 122 s 1 -6; 1999 c 139 art 4 s 2; 2008 c 361 art 6 s 8; 2009 c 101 art 2 s 109; 2009 c 163 art 2 s 3,4; 2012 c 216 art 6 s 13; 2024 c 127 art 59 s 54,55. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian child; indian tribe; indian; tribal; tribe); AI reader''s verdict incidental: Subd. 13 applies ICWA and Tribal paternity acknowledgments in adoption. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; indian child; indian tribe; indian; tribal; tribe'

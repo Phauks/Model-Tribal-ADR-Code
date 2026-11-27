@@ -186,7 +186,7 @@ export function withScrollingTables(html: string): string {
 
 /**
  * A license text with its hard line breaks inside paragraphs taken out, so it
- * wraps to the column it sits in, beside At a glance on a license's page,
+ * wraps to the column it sits in, beside Key facts on a license's page,
  * rather than breaking twice. Blank lines, indented lines, list items, lines in
  * capitals that read as headings and a new sentence after a full stop keep
  * their own line.

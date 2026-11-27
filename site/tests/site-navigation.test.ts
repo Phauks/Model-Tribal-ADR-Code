@@ -29,6 +29,16 @@ describe('the six sections in the bar under the masthead', () => {
 		}
 	});
 
+	it('gives every section a home page of its own, which its name links to (Trevor, Nov. 27, 2026)', () => {
+		expect(navigationSections.map((candidate) => candidate.home)).toEqual(['/nations', '/laws', '/cases', '/library', '/writing', '/about']);
+		for (const candidate of navigationSections) {
+			expect(existsSync(`src/routes${candidate.home}/+page.svelte`), `${candidate.label}: ${candidate.home}`).toBe(true);
+		}
+		expect(sectionOf('/laws')).toBe('Federal Law');
+		expect(sectionOf('/cases')).toBe('Courts and Cases');
+		expect(sectionOf('/writing')).toBe('Writing');
+	});
+
 	it('finds the section of a page from its address, the longest match winning', () => {
 		expect(sectionOf('/nations')).toBe('Nations');
 		expect(sectionOf('/nations/navajo-nation')).toBe('Nations');
@@ -67,7 +77,6 @@ describe('the six sections in the bar under the masthead', () => {
 describe('a nation’s own pages in the side column', () => {
 	it('lists the nation page, and its court opinions only when it has some', () => {
 		expect(nationFamily('navajo-nation', 'Navajo Nation', 949)).toEqual({
-			back: { label: 'Nations', link: '/nations' },
 			title: 'Navajo Nation',
 			pages: [
 				{ label: 'Nation Page', link: '/nations/navajo-nation' },

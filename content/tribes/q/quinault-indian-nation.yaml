@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Quinaielt, etc., July 1, 1855, 12 Stat. 971
+  since: '1855-07-01'
+  source: treaty-with-the-quinaielt-etc-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-07-01'
+  locator: p. 719 (Treaty with the Quinaielt, etc., 1855; Kappler header "July 1, 1855. Jan. 25, 1856. | 12 Stats., 971. | Ratified Mar. 8, 1859. | Proclaimed, Apr. 11, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Quinault; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: WA
   presence: government-office

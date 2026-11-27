@@ -31,7 +31,6 @@ export type WorkspacePageName =
 	| 'service-checks'
 	| 'wayback'
 	| 'watch'
-	| 'site-text'
 	| 'sponsors'
 	| 'orders'
 	| 'activity';
@@ -103,7 +102,6 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'orders', label: 'Orders', link: '/workspace/orders', category: 'Money', needs: 'manage-orders' },
 	{ name: 'nonprofit', label: 'Nonprofit', link: '/workspace/nonprofit', category: 'Money', needs: 'manage-nonprofit' },
 	// The site's own wording, edited on its pages (docs/site-text.md); the page checks the person's level.
-	{ name: 'site-text', label: 'Site text', link: '/workspace/site-text', category: 'Site', needs: 'comment' },
 	{ name: 'changes', label: 'Hidden changes', link: '/workspace/changes', category: 'Site', needs: 'hide-changes' },
 	{ name: 'service-checks', label: 'Service checks', link: '/workspace/service-checks', category: 'Site', needs: 'check-services' },
 	// Links the Wayback Worker could not save (site/WAYBACK.md): the lead author marks them or sends a copy.

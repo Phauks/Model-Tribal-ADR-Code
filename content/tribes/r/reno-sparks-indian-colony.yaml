@@ -34,6 +34,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Reno-Sparks Indian Colony, Nevada (approved by the Secretary of the Interior Nov. 14, 1935), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1935-11-14'
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  confidence: medium
+  verification: inferred
+  as_of: '1935-11-14'
+  locator: 1935 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: NV
   presence: government-office

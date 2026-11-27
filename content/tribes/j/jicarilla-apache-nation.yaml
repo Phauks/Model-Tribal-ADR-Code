@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Mar. 25, 1874, 1 Kappler 874
+  since: '1874-03-25'
+  source: executive-order-1874-03-25-jicarilla-apache-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1874-03-25'
+  locator: 1 Kappler 874
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Jicarilla Apache Reserve (Colorado line to the Navajo reservation), New Mexico.
 states:
 - state: NM
   presence: government-office

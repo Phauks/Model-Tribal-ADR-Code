@@ -64,7 +64,7 @@
 </InfoPage>
 
 <style>
-	/* The table of nations is wide, so it starts under At a glance rather than squeezed beside it; the service units, a list, run beside it. */
+	/* The table of nations is wide, so it starts under Key facts rather than squeezed beside it; the service units, a list, run beside it. */
 	:global(.collapsible.past-glance) {
 		clear: both;
 	}

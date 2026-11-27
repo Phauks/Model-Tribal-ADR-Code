@@ -35,7 +35,7 @@ WEAK_BASE = (r"\bIndians?\b|\btribes?\b|\btribal(?:ly)?\b|\bNative\b|\bsovereign
 
 # A chapter name that is Indian law without a STRONG phrase ("Indians", "Indian Antiquities", "Commission on Indigenous Affairs",
 # "Indian Heritage and Culture", "Catawba Indian Claims Settlement"): Delaware's and North Carolina's recall samples found such chapters' unflagged sections.
-CHAPTER_LAW = re.compile(r"\b(?:Indians?(?! (?:River|Head|Creek|Lake|Hill|Trail|Fields?|Corn)\b)|Indigenous|Tribes?|Tribal)\b", re.I)
+CHAPTER_LAW = re.compile(r"\b(?:Indians?(?! (?:River|Head|Creek|Lake|Hill|Trail|Fields?|Corn)\b)|Indigenous|Tribes?|Tribal(?:ly)?)\b", re.I)
 
 
 @dataclass
