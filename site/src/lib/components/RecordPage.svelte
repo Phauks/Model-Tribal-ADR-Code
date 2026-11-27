@@ -14,6 +14,9 @@
 	- `children`: the record's sections.
 	- `sources`: the Sources list. Optional.
 
+	A section drawn for the full width, such as a wide chart, takes the class
+	`clear-glance` and starts below the glance column.
+
 	When the page's column has room for both, the record's sections are held to
 	the reading measure on the left and the glance column sits on the right,
 	its top level with the line under the title. Otherwise the glance column
@@ -210,6 +213,16 @@
 
 		.has-glance :global(:is(.record-details, .record-sources) :is(.notice, .panel, .timeline, figure, hr, .source-group, .source-list > li)) {
 			display: flow-root;
+		}
+
+		/*
+		 * A section drawn for the full width, such as a Court's chart of its
+		 * Justices, starts below the glance column instead of shrinking beside
+		 * it (Trevor, Nov. 26, 2026: the timelines "hit the at a glance on the
+		 * right"). The section takes the class clear-glance.
+		 */
+		.has-glance :global(.record-details .clear-glance) {
+			clear: right;
 		}
 	}
 
