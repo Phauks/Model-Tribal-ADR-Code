@@ -1,0 +1,50 @@
+key: minnesota-statutes-116l-19
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Minn. Stat. § 116L.19
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 116L.19
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1985
+  URL: https://www.revisor.mn.gov/statutes/cite/116L.19
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/116L.19
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 116L.19 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 116L.19 (2026). History: 1Sp1985 c 14 art 9 s 38; 1987 c 403 art 2 s 128; 1988 c 689 art 2 s 219; 1989 c 282 art 5 s 121,122; 1990 c 568 art 4 s 61; 1994 c 483 s 1; 1994 c 488 s 8; 1997 c 66 s 1; 1997 c 85 art 4 s 24,25; 1999 c 107 s 66; 1999 c 159 s 117,118; 2000 c 343 s 4; 2001 c 79 s 2; 1Sp2003 c 14 art 1 s 106; 2004 c 206 s 39,52; 2004 c 257 s 9; 2005 c 56 s 1; 1Sp2019 c 9 art 1 s 42; 2020 c 91 s 4; 1Sp2025 c 9 art 9 s 6. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; indians; nation; reservation; tribe); AI reader''s verdict incidental: Defines Indian Tribe as eligible for employment and training services. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; indians; nation; reservation; tribe'

@@ -1,0 +1,50 @@
+key: minnesota-statutes-16d-02
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Minn. Stat. § 16D.02
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 16D.02
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1994
+  URL: https://www.revisor.mn.gov/statutes/cite/16D.02
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/16D.02
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 16D.02 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 16D.02 (2026). History: 1994 c 632 art 3 s 36; 1995 c 254 art 5 s 3,4; 1996 c 390 s 14,15; 1998 c 366 s 29; 1999 c 159 s 3; 2008 c 366 art 16 s 1,2; 2014 c 308 art 9 s 1,2; 2024 c 80 art 8 s 68. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Debt collection rules name Indian Tribe as possible debtor. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

@@ -1,0 +1,50 @@
+key: minnesota-statutes-124d-385
+kind: state-statute
+citation:
+  type: legislation
+  title: Minnesota Commission on National and Community Service
+  title-short: Minn. Stat. § 124D.385
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 124D.385
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1993
+  URL: https://www.revisor.mn.gov/statutes/cite/124D.385
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/124D.385
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 124D.385 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 124D.385 (2026). History: 1993 c 146 art 5 s 5; 1994 c 483 s 1; 1994 c 647 art 4 s 4; 1995 c 131 s 2,3; 1995 c 212 art 3 s 59; 1Sp1995 c 3 art 4 s 30,31; art 16 s 13; 1996 c 305 art 1 s 30; 1Sp1997 c 4 art 3 s 10; 2000 c 254 s 50; 2002 c 220 art 10 s 32; 2002 c 334 s 1,2; 2003 c 130 s 12; 2004 c 286 s 1; 1Sp2011 c 11 art 2 s 35. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribes; indian; tribes); AI reader''s verdict incidental: Governor appoints a voting member from Indian Tribes to commission. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribes; indian; tribes'

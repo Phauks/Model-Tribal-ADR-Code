@@ -42,7 +42,7 @@ class NorthDakota(State):
         index = raw / 'index.html'
         if not index.exists():
             index.write_bytes(self.get(INDEX))
-        pdfs = list(dict.fromkeys(re.findall(r'href="(/cencode/t[0-9a-z.]+\.pdf)', index.read_text(errors='replace'))))
+        pdfs = list(dict.fromkeys(re.findall(r'href="(/cencode/t[0-9a-z.-]+\.pdf)', index.read_text(errors='replace'))))
         failed = self.download_all((SITE + pdf, raw / 'pdfs' / pdf.rsplit('/', 1)[1]) for pdf in pdfs)
         print(f'ND: {len(pdfs)} chapter PDFs, {len(failed)} failed', *failed[:10])
 

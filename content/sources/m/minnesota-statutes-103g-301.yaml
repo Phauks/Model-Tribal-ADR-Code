@@ -1,0 +1,50 @@
+key: minnesota-statutes-103g-301
+kind: state-statute
+citation:
+  type: legislation
+  title: General Permit; Application Procedures
+  title-short: Minn. Stat. § 103G.301
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 103G.301
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1990
+  URL: https://www.revisor.mn.gov/statutes/cite/103G.301
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/103G.301
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 103G.301 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 103G.301 (2026). History: 1990 c 391 art 7 s 34; 1991 c 298 art 4 s 1; 1993 c 186 s 7; 1995 c 218 s 13; 1996 c 305 art 3 s 10,11; 1999 c 250 art 3 s 9; 2001 c 160 s 4; 2005 c 138 s 5; 1Sp2005 c 1 art 2 s 122; 2007 c 57 art 1 s 135; 2009 c 37 art 1 s 35,36; 2010 c 361 art 4 s 56; 1Sp2011 c 2 art 4 s 15; 2012 c 272 s 52 -55; 1Sp2015 c 4 art 4 s 98; 1Sp2019 c 4 art 3 s 89; 2023 c 60 art 4 s 92 -94; 2024 c 116 art 3 s 49; 1Sp2025 c 1 art 4 s 16. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; federally recognized indian tribes; tribal governments; indian; reservation; tribal; tribe; tribes); AI reader''s verdict incidental: Permit application must be served on federally recognized tribe''s chair. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; federally recognized indian tribes; tribal governments; indian; reservation; tribal; tribe; tribes'

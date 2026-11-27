@@ -1,0 +1,50 @@
+key: minnesota-statutes-403-113
+kind: state-statute
+citation:
+  type: legislation
+  title: Enhanced 911 Service Costs; Fee
+  title-short: Minn. Stat. § 403.113
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: '403.113'
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1994
+  URL: https://www.revisor.mn.gov/statutes/cite/403.113
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/403.113
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 403.113 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 403.113 (2026). History: 1994 c 616 s 9; 1997 c 202 art 3 s 22 -25; 2002 c 372 s 20; 1Sp2003 c 1 art 2 s 109; 2005 c 136 art 10 s 15; 2006 c 260 art 6 s 11,12. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservation; indian; reservation); AI reader''s verdict incidental: 911 fee distribution includes Red Lake Indian Reservation PSAP. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian reservation; indian; reservation'

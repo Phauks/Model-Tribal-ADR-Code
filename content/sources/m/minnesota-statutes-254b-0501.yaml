@@ -1,0 +1,50 @@
+key: minnesota-statutes-254b-0501
+kind: state-statute
+citation:
+  type: legislation
+  title: Vendor Eligibility
+  title-short: Minn. Stat. § 254B.0501
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 254B.0501
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1986
+  URL: https://www.revisor.mn.gov/statutes/cite/254B.0501
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/254B.0501
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 254B.0501 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 254B.0501 (2026). History: 1986 c 394 s 12; 1987 c 299 s 14; 1987 c 333 s 22; 1988 c 532 s 11; 1991 c 292 art 4 s 15; 1994 c 529 s 6; 1995 c 207 art 3 s 14; art 8 s 32; 1999 c 245 art 5 s 18; 2009 c 79 art 7 s 10; 2010 c 303 s 3; 1Sp2010 c 1 art 19 s 13; 2011 c 86 s 8; 2014 c 262 art 3 s 10; 1Sp2017 c 6 art 8 s 58; 1Sp2019 c 9 art 2 s 104,105; art 6 s 47; 1Sp2020 c 2 art 5 s 34; 2021 c 30 art 13 s 83; 2022 c 98 art 4 s 51; 2023 c 50 art 3 s 6; 2023 c 61 art 4 s 9; 2023 c 70 art 9 s 24; 2024 c 79 art 4 s 12; 2024 c 108 art 4 s 22; 2024 c 125 art 3 s 7; 2024 c 127 art 48 s 7; 2025 c 38 art 4 s 31; 1Sp2025 c 9 art 4 s 31,55; 2026 c 95 art 5 s 18. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; tribal government; indian; indigenous; tribal); AI reader''s verdict incidental: Substance use vendor eligibility; Tribal government-licensed programs are eligible vendors. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; tribal government; indian; indigenous; tribal'

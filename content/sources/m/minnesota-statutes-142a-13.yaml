@@ -1,0 +1,50 @@
+key: minnesota-statutes-142a-13
+kind: state-statute
+citation:
+  type: legislation
+  title: Electronic Benefit Transfer Card
+  title-short: Minn. Stat. § 142A.13
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 142A.13
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1997
+  URL: https://www.revisor.mn.gov/statutes/cite/142A.13
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/142A.13
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 142A.13 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 142A.13 (2026). History: 1997 c 85 art 5 s 19; 1Sp2011 c 9 art 1 s 33; 2012 c 247 art 3 s 30; 2013 c 108 art 3 s 42; 2024 c 80 art 1 s 35,96; art 6 s 4; art 7 s 12; art 8 s 70; 2024 c 115 art 16 s 34,43. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal-state; tribal); AI reader''s verdict incidental: EBT gambling bar covers casinos under Tribal-state compacts. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal-state; tribal'

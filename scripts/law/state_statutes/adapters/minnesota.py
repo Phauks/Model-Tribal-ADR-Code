@@ -14,7 +14,8 @@ from core import Section, clean
 
 BASE = 'https://www.revisor.mn.gov/statutes/'
 LAW = re.compile(r'(\d{4}) c (\d+)')
-SMALL = {'a', 'an', 'and', 'as', 'at', 'by', 'for', 'from', 'in', 'into', 'of', 'on', 'or', 'the', 'to', 'with', 'upon', 'under', 'nor'}
+SMALL = {'a', 'an', 'and', 'as', 'at', 'by', 'for', 'from', 'in', 'into', 'of', 'on', 'or', 'the', 'to', 'with', 'upon', 'under', 'nor', 'du'}
+ACRONYMS = {'mfip', 'hiv', 'aids', 'snap', 'cca', 'atv', 'atvs', 'tanf', 'ems', 'psap', 'icwa', 'dwi', 'pca', 'hmo', 'gps', 'ii', 'iii', 'iv', 'u.s.', 'mmiw', 'mmir', 'cdbg', 'wic', 'esst', 'ppe'}
 START = re.compile(r'<div class="(section|sr|sr_by_subd)" id="stat\.([^"]+)">')
 
 
@@ -28,7 +29,9 @@ def title_case(text: str) -> str:
     out = []
     for index, word in enumerate(words):
         bare = word.strip('();,:.')
-        if index and bare in SMALL and not out[-1].endswith((';', ':')):
+        if bare in ACRONYMS:
+            out.append(word.upper())
+        elif index and bare in SMALL and not out[-1].endswith((';', ':')):
             out.append(word)
         else:
             out.append(re.sub(r"[a-z]", lambda m: m.group(0).upper(), word, count=1))

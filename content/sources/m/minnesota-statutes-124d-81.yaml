@@ -1,0 +1,50 @@
+key: minnesota-statutes-124d-81
+kind: state-statute
+citation:
+  type: legislation
+  title: American Indian Education Aid
+  title-short: Minn. Stat. § 124D.81
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 124D.81
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1977
+  URL: https://www.revisor.mn.gov/statutes/cite/124D.81
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/124D.81
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Minn. Stat. § 124D.81 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 124D.81 (2026). History: 1977 c 312 s 10; 1979 c 334 art 3 s 16; 1980 c 609 art 3 s 10 -12; 1981 c 358 art 3 s 19; 1983 c 314 art 3 s 12; 1987 c 398 art 3 s 26; 1993 c 224 art 13 s 50; art 14 s 13; 1998 c 397 art 2 s 156 -161,164; art 11 s 3; 1998 c 398 art 5 s 55; 2000 c 254 s 32; 1Sp2001 c 6 art 2 s 42 -46; 2003 c 130 s 12; 1Sp2005 c 5 art 2 s 69; 1Sp2015 c 3 art 2 s 57; 2023 c 55 art 4 s 18; 2024 c 115 art 4 s 2. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian education; indian; tribal); AI reader''s verdict core: American Indian education aid for districts and Tribal schools. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: american indian; indian education; indian; tribal'

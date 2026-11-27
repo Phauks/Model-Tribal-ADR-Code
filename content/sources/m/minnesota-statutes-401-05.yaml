@@ -1,0 +1,50 @@
+key: minnesota-statutes-401-05
+kind: state-statute
+citation:
+  type: legislation
+  title: Fiscal Powers
+  title-short: Minn. Stat. § 401.05
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: '401.05'
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1973
+  URL: https://www.revisor.mn.gov/statutes/cite/401.05
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/401.05
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 401.05 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 401.05 (2026). History: 1973 c 354 s 5; 1992 c 511 art 9 s 14; 2002 c 379 art 1 s 81; 1Sp2003 c 4 s 1; 2013 c 143 art 14 s 63; 2023 c 52 art 17 s 20. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal governments; tribal nations; tribal); AI reader''s verdict incidental: Community corrections funding section applies to Tribal Nations. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal governments; tribal nations; tribal'

@@ -1,0 +1,50 @@
+key: minnesota-statutes-116l-665
+kind: state-statute
+citation:
+  type: legislation
+  title: Workforce Development Board
+  title-short: Minn. Stat. § 116L.665
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 116L.665
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1995
+  URL: https://www.revisor.mn.gov/statutes/cite/116L.665
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/116L.665
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 116L.665 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 116L.665 (2026). History: 1995 c 131 s 1; 1Sp1995 c 3 art 16 s 13; 1996 c 395 s 18; 1Sp1997 c 4 art 3 s 19; 1998 c 397 art 11 s 3; 1998 c 398 art 3 s 9,10; 2001 c 79 s 4; 1Sp2001 c 4 art 2 s 24; 2003 c 130 s 12; 1Sp2003 c 4 s 1; 2004 c 206 s 46,52; 2005 c 163 s 55; 2007 c 13 art 3 s 11; 2010 c 347 art 1 s 7 -9; 2011 c 74 s 1; 2013 c 48 s 1; 2014 c 239 art 2 s 2; 2017 c 94 art 6 s 10; 2024 c 80 art 8 s 5; 1Sp2025 c 6 art 4 s 13. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian affairs; indian); AI reader''s verdict incidental: Workforce board includes Minnesota Indian Affairs Council representative. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian affairs; indian'

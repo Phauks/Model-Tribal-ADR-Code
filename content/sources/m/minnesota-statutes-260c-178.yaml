@@ -1,0 +1,50 @@
+key: minnesota-statutes-260c-178
+kind: state-statute
+citation:
+  type: legislation
+  title: Emergency Removal Hearing
+  title-short: Minn. Stat. § 260C.178
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 260C.178
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1999
+  URL: https://www.revisor.mn.gov/statutes/cite/260C.178
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/260C.178
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 260C.178 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 260C.178 (2026). History: 1999 c 139 art 3 s 19; art 4 s 2; 1999 c 245 art 8 s 52,53; 2000 c 260 s 38; 2001 c 178 art 1 s 13,14,44; 2005 c 159 art 2 s 15; 2008 c 361 art 6 s 32; 2009 c 163 art 2 s 27,28; 2010 c 269 art 4 s 4; 2012 c 216 art 4 s 11,12; art 6 s 13; 2013 c 125 art 1 s 57; 2015 c 78 art 1 s 30; 1Sp2019 c 9 art 1 s 25; 1Sp2020 c 2 art 8 s 121; 2022 c 98 art 8 s 10; 2024 c 80 art 8 s 24; 2024 c 115 art 17 s 51; art 18 s 33; 2025 c 20 s 218; 1Sp2025 c 3 art 10 s 17. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian; tribal); AI reader''s verdict incidental: Juvenile removal hearing includes Indian child active efforts and placement preferences. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian; tribal'

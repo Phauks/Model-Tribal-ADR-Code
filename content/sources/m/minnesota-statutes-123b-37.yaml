@@ -1,0 +1,50 @@
+key: minnesota-statutes-123b-37
+kind: state-statute
+citation:
+  type: legislation
+  title: Prohibited Fees
+  title-short: Minn. Stat. § 123B.37
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 123B.37
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1974
+  URL: https://www.revisor.mn.gov/statutes/cite/123B.37
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/123B.37
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 123B.37 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Minn. Stat. § 123B.37 (2026). History: 1974 c 561 s 4; 1976 c 271 s 20; 1988 c 718 art 2 s 2; 1991 c 130 s 37; 1992 c 499 art 12 s 29; 1Sp1995 c 3 art 9 s 5; 1996 c 412 art 2 s 5; 1998 c 397 art 1 s 51,58; art 11 s 3; 1Sp2001 c 6 art 1 s 7; 2024 c 109 art 2 s 23. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Fee prohibition applies to Tribal contract schools. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'
