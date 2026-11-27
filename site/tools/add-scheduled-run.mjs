@@ -29,10 +29,11 @@ export const scheduledTokenHeader = 'x-scheduled-run';
 // (src/lib/server/source-library.ts). /site-text/scheduled asks for a rebuild
 // when published site text has not reached the pages (docs/site-text.md).
 // /activity-log/scheduled checks the activity log's whole seal chain and records how far it is intact (src/lib/server/activity-seals.ts).
+// /mail/scheduled sends the inbox's daily summaries of new mail that are due (src/lib/server/mail/alerts.ts).
 // The weekly one checks the private address book against the federal and
 // Alaska directories and the nation pages (src/lib/server/address-book.ts).
 export const scheduledPaths = {
-	'17 * * * *': ['/following/scheduled', '/library/scheduled', '/site-text/scheduled', '/activity-log/scheduled'],
+	'17 * * * *': ['/following/scheduled', '/library/scheduled', '/site-text/scheduled', '/activity-log/scheduled', '/mail/scheduled'],
 	'41 9 * * 1': '/address-book/scheduled',
 	'4,19,34,49 * * * *': '/events/scheduled'
 };

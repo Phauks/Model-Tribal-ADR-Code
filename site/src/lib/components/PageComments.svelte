@@ -1,6 +1,7 @@
 <!--
-	Commenting on every page that is not an essay, such as a law, a case or a
-	nation (docs/editing.md, "Comments on other pages"; mockups
+	Commenting on every page that is not an essay, such as a law, a case, a
+	nation, a list, a chart or the home page (docs/editing.md, "Comments on
+	other pages"; src/lib/page-comment-paths.ts says which pages; mockups
 	design/page-comments, Nov. 26, 2026). For a person with comment access or
 	above on the page (src/lib/server/page-comments.ts), the masthead offers
 	Commenting beside Reading and Editing, with the number of open comments.
@@ -18,9 +19,10 @@
 	import SearchCheck from '@lucide/svelte/icons/search-check';
 	import { onMount, tick } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
+	import { page } from '$app/state';
 	import EssayComments from '#lib/components/essays/EssayComments.svelte';
 	import { commentAsks, type CommentAsk, type CommentDraft, type EssayComment } from '#lib/essays/comments.ts';
-	import { offerPageControls, type PageMode } from '#lib/page-editing.svelte.ts';
+	import { offerPageControls, pageHasOwnCommenting, type PageMode } from '#lib/page-editing.svelte.ts';
 	import { findOnPage, pageText, quoteOfRange, type PageText } from '#lib/page-comment-anchors.ts';
 	import { pagePath } from '#lib/page-comment-paths.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
@@ -54,11 +56,14 @@
 	let text: PageText | null = null;
 	let ranges = new Map<string, Range>();
 
-	const commenting = $derived(mode === 'commenting' && level !== 'no-access');
+	// A page with commenting of its own, such as an essay on About, keeps it (joinPageControls).
+	const commenting = $derived(mode === 'commenting' && level !== 'no-access' && !pageHasOwnCommenting());
 	const openCount = $derived(comments.filter((comment) => comment.threadIdentifier === null && !comment.resolvedAt).length);
 	const nation = $derived(path?.startsWith('nations/') ?? false);
 
 	function pathHere(): string | null {
+		// A "Page not found" or other error is not a page of the site, so it takes no comments.
+		if (page.error) return null;
 		return pagePath(location.pathname);
 	}
 

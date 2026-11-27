@@ -3,7 +3,7 @@
 	import CopyHash from '#lib/components/CopyHash.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import { fileName, verifyLink } from '#lib/checksums.ts';
-	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
+	import { listCell, type TableColumn, type TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -23,7 +23,7 @@
 			key: copy.key,
 			cells: {
 				title: { text: `${copy.title} (${copy.kind})`, href: copy.page },
-				nations: { text: copy.nations.join('; ') },
+				nations: listCell(copy.nations.map((nation) => ({ text: nation.name, href: `/nations/${nation.id}` }))),
 				// A redacted opinion has no link to its original, which still has the names in it.
 				original: copy.original ? { text: new URL(copy.original).hostname, href: copy.original } : { text: 'Caselaw Access Project' },
 				captured: { text: copy.capturedText, sortValue: copy.captured },

@@ -5,7 +5,9 @@
  * (content/supreme-court/pictures.yaml). The bucket's copy must match the
  * SHA-256 recorded when the picture was reviewed; if the bucket has no
  * matching copy, the Worker fetches the copy it was reviewed from and keeps it
- * only if it matches.
+ * only if it matches. A picture turned or cut from its copy (a print
+ * photographed on its side, one Justice in a group photograph) has no link to
+ * fetch, so only the bucket's copy is served.
  */
 import { error } from '@sveltejs/kit';
 import { portraits } from 'virtual:portraits';
@@ -45,6 +47,7 @@ export const GET: RequestHandler = async ({ params }) => {
 		if ((await hexDigest(storedBytes)) === portrait.sha256) bytes = storedBytes;
 	}
 	if (!bytes) {
+		if (!portrait.link) error(404, 'No picture is shown for this page.');
 		bytes = await fetchReviewedCopy(portrait.link, portrait.sha256);
 		if (!bytes) error(404, 'No picture is shown for this page.');
 		await bucket?.put(portrait.key, bytes, {
