@@ -28,6 +28,7 @@
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import { readStored, writeStored } from '#lib/browser-storage.ts';
 	import { sendJson } from '#lib/send-json.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	type Level = 'no-access' | 'comment' | 'contribute' | 'full';
 
@@ -81,9 +82,9 @@
 			return;
 		}
 		const asked = path;
-		const response = await fetch(`/workspace/page-comments?page=${encodeURIComponent(asked)}`).catch(() => null);
+		const response = await fetch(`/workspace/page-comments?page=${encodeURIComponent(asked)}`).catch(() => /* expected: offline; the comments are left out, and the server reports its own failures. */ null);
 		if (asked !== path) return;
-		const answer = response?.ok ? ((await response.json().catch(() => null)) as { level: Level; comments?: EssayComment[]; you?: string; mayResolveAny?: boolean } | null) : null;
+		const answer = response?.ok ? ((await response.json().catch((problem) => void sendProblem(problem, { code: 'page-comments.load' }))) as { level: Level; comments?: EssayComment[]; you?: string; mayResolveAny?: boolean } | null) : null;
 		level = answer?.level ?? 'no-access';
 		comments = answer?.comments ?? [];
 		you = answer?.you ?? null;

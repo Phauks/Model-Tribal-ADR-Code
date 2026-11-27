@@ -17,6 +17,7 @@
 	import { loadSettings, loadTheme, saveSettings, saveTheme } from '#lib/reading-settings.ts';
 	import { loadStarred, mergeStarred, saveStarred } from '#lib/starred-items.ts';
 	import { saveFile } from '#lib/save-file.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	type Part = 'settings' | 'print' | 'starred' | 'pages';
 
@@ -67,7 +68,11 @@
 	async function exportData(): Promise<void> {
 		let saved = { parts: [] as string[], pages: [] as string[] };
 		if (controllingWorker()) {
-			const status = await choicesStatus().catch(() => undefined);
+			const status = await choicesStatus().catch((problem) => {
+				// The file is still saved, without the saved pages.
+				sendProblem(problem, { code: 'local-data.saved-pages' });
+				return undefined;
+			});
 			if (status) saved = { parts: status.choices.nodes, pages: status.choices.pages };
 		}
 		const data = buildReaderData(loadSettings(), loadTheme(), loadPrintOptions(), saved, loadStarred());
@@ -138,7 +143,7 @@
 		if (chosen.includes('pages')) {
 			if (controllingWorker()) {
 				// Saved copies of documents go too (src/lib/offline-documents.ts).
-				await clearEverything().catch(() => notDone.push('saved pages'));
+				await clearEverything().catch(() => /* expected: the reader is told the saved pages were not cleared. */ notDone.push('saved pages'));
 			} else {
 				notDone.push('saved pages');
 			}

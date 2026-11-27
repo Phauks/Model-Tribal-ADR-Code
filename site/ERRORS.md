@@ -49,7 +49,7 @@ The site Worker's own scheduled runs are not recorded in `worker_runs` yet. Each
 
 Errors from other sites' scripts, such as browser extensions, are ignored.
 
-Browser code that falls back when something fails (a list it could not load, an answer it could not read) sends the problem itself with `sendProblem` and a code such as `nations.names`, then shows its fallback. A request the network dropped, or any problem while the reader is offline (`isNetworkFailure`), is only noted in the console: it says nothing about the site, and an error status from the site is reported by the site where it happens.
+Browser code that falls back when something fails (a list it could not load, an answer it could not read) sends the problem itself with `sendProblem` and a code such as `nations.names`, then shows its fallback. A request the network dropped, or any problem while the reader is offline (`isNetworkFailure`), is only noted in the console, and a request the page cancelled itself is not noted at all: neither says anything about the site, and an error status from the site is reported by the site where it happens.
 
 ## Error pages
 

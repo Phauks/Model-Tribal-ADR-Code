@@ -13,6 +13,7 @@
 	import { atLeastTeamLevel, pageParts, type PagePart, type TeamLevel } from '#lib/nation-teams.ts';
 	import { offerPageControls, type PageLink } from '#lib/page-editing.svelte.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let { nation }: { nation: string } = $props();
 
@@ -32,8 +33,9 @@
 			.then((answer: { place: typeof place }) => {
 				if (current) place = answer.place;
 			})
-			.catch(() => {
-				// Offline or signed out: the page is shown as to any reader.
+			.catch((problem) => {
+				// The page is shown as to any reader.
+				sendProblem(problem, { code: 'nations.team-place' });
 			});
 		return () => {
 			current = false;

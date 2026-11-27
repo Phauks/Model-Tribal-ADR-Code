@@ -6,6 +6,7 @@
 	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import { formatBytes } from '#lib/offline-collections.ts';
 	import { nationSet, type DocumentSetStatus } from '#lib/offline-documents.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 	import {
 		controllingWorker,
 		documentsStatus,
@@ -35,7 +36,8 @@
 		if (!controllingWorker()) return;
 		try {
 			saved = (await documentsStatus([set])).sets.find((item) => item.set === set);
-		} catch {
+		} catch (problem) {
+			sendProblem(problem, { code: 'offline.documents-status' });
 			saved = undefined;
 		}
 	}
@@ -56,7 +58,7 @@
 
 	async function remove(): Promise<void> {
 		problem = undefined;
-		saved = (await removeDocuments(set).catch(() => undefined))?.sets.find((item) => item.set === set);
+		saved = (await removeDocuments(set).catch((problem) => void sendProblem(problem, { code: 'offline.documents-remove' })))?.sets.find((item) => item.set === set);
 		await refresh();
 	}
 
