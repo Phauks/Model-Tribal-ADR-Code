@@ -30,6 +30,15 @@
 			"bucket_name": "tribal-law-project-files"
 		}
 	],
+	// The site's database, only to count problems and record each run (site/ERRORS.md, "Worker runs").
+	"d1_databases": [
+		{
+			"binding": "database",
+			"database_name": "tribal-law-project",
+			"database_id": "eeb27102-f50e-40ff-bebd-5347c5c055c7",
+			"migrations_dir": "../migrations"
+		}
+	],
 	// ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY are Worker secrets (Settings >
 	// Variables and Secrets), made at https://archive.org/account/s3.php. Only this
 	// Worker uses them, so they are not in the account's Secrets Store.

@@ -249,7 +249,7 @@ test("every source record in content/ prints a full and a short form", () => {
   const { sources } = loadContent(path.join(REPOSITORY_DIRECTORY, "content"));
   const items = citationItems(sources);
   for (const key of Object.keys(items)) {
-    const printed = notes([[{ key }], [{ key: "book" }], [{ key }]], { ...items, book: ITEMS.book });
+    const printed = notes([[{ key }], [{ key: "book" }], [{ key }]], { [key]: items[key], book: ITEMS.book });
     for (const text of [printed[0], printed[2]]) {
       assert.ok(text.replace(/[.\s]/g, "").length > 0, `${key} printed "${text}"`);
       assert.doesNotMatch(text, /STYLE ERROR/);

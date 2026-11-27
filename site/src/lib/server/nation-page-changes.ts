@@ -65,6 +65,7 @@ export function fromStored(row: StoredChange): ChangeRow {
 	try {
 		raw = JSON.parse(row.content);
 	} catch {
+		// expected: a damaged stored change opens empty.
 		raw = emptyContent(row.kind);
 	}
 	return { ...row, content: readContent(row.kind, raw).content };
@@ -303,6 +304,7 @@ export async function picturesEverNamed(database: D1Database, nationIdentifier: 
 		try {
 			raw = JSON.parse(row.content);
 		} catch {
+			// expected: a damaged stored change adds no pictures.
 			continue;
 		}
 		for (const picture of readContent('pictures', raw).content.pictures) pictures.set(picture.identifier, picture);

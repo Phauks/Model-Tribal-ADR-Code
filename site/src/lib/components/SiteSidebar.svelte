@@ -56,6 +56,7 @@
 	import { WorkspaceAccess } from '#lib/workspace-access.svelte.ts';
 	import { sidebarTools } from '#lib/sidebar-tools.svelte.ts';
 	import CountBadge from './CountBadge.svelte';
+	import CodeOutline from './sidebar/CodeOutline.svelte';
 	import SidebarTree from './sidebar/SidebarTree.svelte';
 	import YourWork from './sidebar/YourWork.svelte';
 	import { SidebarState } from './sidebar/sidebar-state.svelte.ts';
@@ -97,7 +98,8 @@
 
 	// What the phone strip names beside "Menu".
 	const localTitle = $derived(
-		family?.title ??
+		family?.short ??
+			family?.title ??
 			publishedOutline?.title ??
 			(path === '/' ? 'Home' : (pageTitle ?? ''))
 	);
@@ -254,6 +256,7 @@
 				<p class="local-title">{family.title}</p>
 			{/if}
 		</div>
+		{#if family.tree}<CodeOutline tree={family.tree} {idSuffix} />{/if}
 		<!-- The page being read is named but not linked, since a link to it would go nowhere (Trevor, Nov. 27, 2026). A list holding only that page is left out: the title above already names it. -->
 		{#if family.pages.some((item) => item.link !== path)}
 			<ul class="local-pages">

@@ -292,6 +292,7 @@ export function readWorkersAnswer(message: unknown): { answer: TriageAnswer; use
 		try {
 			input = JSON.parse(input);
 		} catch {
+			// expected: arguments that are not JSON count as no answer, which is handled just below.
 			input = null;
 		}
 	}

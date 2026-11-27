@@ -56,6 +56,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Glossary', also: ['Terms', 'Definitions'], detail: 'Defined terms, and how to use them', link: '/glossary' },
 	{ kind: 'page', title: 'Federal law', also: ['Federal Indian law', 'Treaties', 'Statutes', 'Regulations', 'Executive orders'], detail: 'Treaties, statutes, the U.S. Code, executive orders, regulations and agency records', link: '/laws' },
 	{ kind: 'page', title: 'Courts and cases', also: ['Cases', 'Court opinions', 'Case law'], detail: 'Supreme Court cases, tribal, state and other courts\' opinions, and the courts', link: '/cases' },
+	{ kind: 'page', title: 'Title 25. Indians', also: ['U.S. Code, Title 25', 'United States Code', '25 U.S.C.', 'Federal Indian law statutes'], detail: 'Title 25 of the United States Code, by chapter, subchapter and section', link: '/laws/usc-25' },
 	{ kind: 'page', title: 'Library', also: ['Sources', 'Research'], link: '/library' },
 	{ kind: 'page', title: 'Writing', also: ['Essays', 'Foundations', 'Model code', 'Peacemaking code'], detail: 'Foundations, essays, methods and stories, and the codes being written', link: '/writing' },
 	{ kind: 'page', title: 'Source documents', also: ['Copies', 'Documents', 'Primary sources'], link: '/copies' },
@@ -69,6 +70,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Foundations', link: '/foundations' },
 	{ kind: 'page', title: 'Essays', also: ['Legal history', 'Chapters'], link: '/essays' },
 	{ kind: 'page', title: 'Back matter', also: ['Cases by topic'], link: '/back-matter' },
+	{ kind: 'page', title: 'News', also: ['Posts', 'Announcements', 'Updates'], detail: 'Posts from the project', link: '/news' },
 	{ kind: 'page', title: 'Contributors', also: ['Authors', 'Credits'], link: '/contributors' },
 	{ kind: 'page', title: 'Data sets', also: ['Downloads', 'Book', 'PDF', 'EPUB', 'Data'], detail: 'The book and the data behind this site', link: '/downloads' },
 	{ kind: 'page', title: 'Order a printed copy', also: ['Book', 'Print', 'Buy'], link: '/book' },
@@ -178,9 +180,13 @@ export function collectionSearch(): { entries: SearchEntry[]; reached: Set<strin
 			const copy = item.key ? savedCopyFor(sources().get(item.key)) : undefined;
 			if (copy) seen.add(copyPagePath(copy));
 			// A law by the name it is known by, such as "General Allotment Act (1887)", and also by its full title.
-			const title = item.key && link !== item.href ? recordName(item.key).name : item.title;
+			// A numbered section is found by its citation and its name together: "25 U.S.C. § 5321. Self-determination contracts".
+			const named = item.citation ? `${item.citation}. ${item.title}` : item.title;
+			const title = item.key && link !== item.href ? recordName(item.key).name : named;
+			// ...and by its name alone.
+			const also = [...(title !== named ? [named] : []), ...(item.citation ? [item.title] : [])];
 			const detail = [collection.search.label, item.detail ?? item.year].filter(Boolean).join(' · ');
-			entries.push({ kind: group as SearchKind, title, ...(title !== item.title ? { also: [item.title] } : {}), ...(detail ? { detail } : {}), link });
+			entries.push({ kind: group as SearchKind, title, ...(also.length ? { also } : {}), ...(detail ? { detail } : {}), link });
 		}
 	}
 	return { entries, reached: seen };

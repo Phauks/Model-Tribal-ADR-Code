@@ -8,6 +8,7 @@ import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import { isAdministrator } from '#lib/permissions.ts';
 import { watcherNamed } from '../../../../watch/watchers/index.ts';
 import type { Actions, PageServerLoad } from './$types';
+import { reportHere } from '#lib/server/report-here.ts';
 
 // What the source watch found (docs/source-watch.md, "The review queue"),
 // laid out as mockup A, which Trevor chose on Nov. 26, 2026: one table whose
@@ -30,7 +31,11 @@ export const load: PageServerLoad = async (event) => {
 	const isLeadAuthor = isAdministrator(person);
 	const view = readView(event.url.searchParams.get('view'), isLeadAuthor);
 	const filters = readFilters(event.url.searchParams);
-	const [list, progress] = await Promise.all([reviewList(database, view, filters), readWatchProgress(bucket).catch(() => null)]);
+	const [list, progress] = await Promise.all([reviewList(database, view, filters), readWatchProgress(bucket).catch((problem: unknown) => {
+			// The page shows the list without the Worker's progress; the failure is reported.
+			reportHere(problem, { code: 'radar.progress', place: '/workspace/watch' });
+			return null;
+		})]);
 	const scans = await fileScans(database, list.items.map((item) => item.captureKey).filter((key): key is string => Boolean(key)));
 	const state = watchState(progress, new Date());
 	const label = (kind: string, value: string) => {

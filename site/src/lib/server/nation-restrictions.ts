@@ -27,6 +27,7 @@ import {
 import type { SiteRestrictions } from '../restricted-files.ts';
 import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
+import { report } from './report.ts';
 import type { SignedInPerson } from './people.ts';
 
 export interface RestrictionSave {
@@ -70,7 +71,9 @@ const tables = `nation_restriction_changes
 function parse(text: string): unknown {
 	try {
 		return JSON.parse(text);
-	} catch {
+	} catch (problem) {
+		// The site writes these itself, so damage is a problem worth knowing about. What a damaged row means is unchanged until Trevor decides whether restrictions should fail closed.
+		report(problem, { code: 'nation-restrictions.read', place: 'nation-restrictions' });
 		return undefined;
 	}
 }
@@ -336,7 +339,9 @@ export async function restrictableList(nationIdentifier: string, url: URL, fetch
 		const response = assets ? await assets.fetch(address) : await fetcher(address);
 		if (!response.ok) return { nation: nationIdentifier, items: [] };
 		return (await response.json()) as RestrictableList;
-	} catch {
+	} catch (problem) {
+		// Reported; the empty list (restrictions fail open) stays until Trevor decides whether a failure should hide the pages instead.
+		report(problem, { code: 'nation-restrictions.list', place: 'restrictableList', path: `/nations/${nationIdentifier}/restrictable.json` });
 		return { nation: nationIdentifier, items: [] };
 	}
 }
