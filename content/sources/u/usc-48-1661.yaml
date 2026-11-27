@@ -38,6 +38,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=48%20U.S.C.%20%C2%A7%201661
+file:
+  storage_key: united-states-code/2024/title-48-section-1661.pdf
+  checksum: 2b9551de84e0e9fd16d3d7e3b631a15d2576ea6f7f20bb90405bc66696d0d9ff
+  media_type: application/pdf
+  bytes: 146894
 rights:
   status: no-permission-needed
   basis: government-edict
@@ -49,4 +54,5 @@ topics:
 - territories
 found_in:
 - 2026-11-22-foundations-sources
-notes: Read on Cornell LII on Nov. 22, 2026. Act of Feb. 20, 1929, ch. 281, 45 Stat. 1253, as amended May 22, 1929, ch. 6, 46 Stat. 4. The statute ratifies the cessions "as of April 10, 1900, and July 16, 1904," while the instruments printed in Foreign Relations of the United States are dated April 17, 1900 and July 14, 1904; both dates are reported, not reconciled.
+- 2026-11-27-us-code-sections
+notes: Read on Cornell LII on Nov. 22, 2026. Act of Feb. 20, 1929, ch. 281, 45 Stat. 1253, as amended May 22, 1929, ch. 6, 46 Stat. 4. The statute ratifies the cessions "as of April 10, 1900, and July 16, 1904," while the instruments printed in Foreign Relations of the United States are dated April 17, 1900 and July 14, 1904; both dates are reported, not reconciled. The stored copy is 48 U.S.C. § 1661 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.

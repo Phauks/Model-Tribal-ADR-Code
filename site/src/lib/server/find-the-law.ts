@@ -44,6 +44,7 @@ import { SourceUses } from './source-uses.ts';
 import { caseCitation, issuedDate, lawCitation } from './timeline.ts';
 import { recordPageLink } from './law-records.ts';
 import { opinionsOf } from './tribal-court-opinions.ts';
+import { savedCopyFor } from './markdown.ts';
 
 /** provisions.csv subject_area -> subject. "other" has none. */
 const provisionSubjects: Record<string, LawSubject[]> = {
@@ -212,7 +213,7 @@ function humanize(slug: string): string {
 /** A source record's own address: this site's copy when it keeps one, else where it was published. */
 function recordLink(record: SourceRecord | undefined): string | undefined {
 	if (!record) return undefined;
-	const copy = publicCopyFor(record.original_link) ?? publicCopyFor(record.citation.URL);
+	const copy = savedCopyFor(record);
 	if (copy) return copyPagePath(copy);
 	return webLink(record.original_link) ?? webLink(record.citation.URL);
 }

@@ -11,12 +11,18 @@ from there; any other file is downloaded from the bucket, counted and thrown
 away. Files already in the CSV are not counted again, so the script is safe to
 re-run after new files are added to the capture index.
 
+New files are counted without anyone running this: every script that files
+captures writes the index through mirror_captures.write_index, which calls
+count_new below, and mirror_captures.py upload calls it again once the files
+are in the bucket (Nov. 27, 2026). Running this by hand is only needed to
+rebuild the whole file.
+
 Only PDFs have pages here: a saved web page or a plain text file has no
 printed pages, and a JPEG picture is counted as a picture, not a page.
 
 Credentials come from the environment, never from a file in the repository:
 R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, and CLOUDFLARE_ACCOUNT_ID (or
-R2_ACCOUNT_ID). Needs boto3 and pymupdf (pip install boto3 pymupdf).
+R2_ACCOUNT_ID). Needs boto3 and pypdf (scripts/requirements.txt), or pymupdf.
 
 Usage:
   python3 scripts/library/count_pages.py [--workers 16] [--no-library]
@@ -27,6 +33,8 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import csv
+import importlib.util
+import os
 import sqlite3
 import sys
 import tempfile
@@ -41,14 +49,19 @@ OUTPUT = ROOT / "research" / "copy-pages.csv"
 PDF = "application/pdf"
 
 
-def wanted_files() -> dict[str, str]:
-    """Every PDF the capture index allows the website to serve, by SHA-256, with one key it is stored at."""
+def served_pdfs(rows) -> dict[str, str]:
+    """Every PDF in these capture index rows that the website may serve, by SHA-256, with one key it is stored at."""
     files: dict[str, str] = {}
-    with CAPTURE_INDEX.open(newline="", encoding="utf-8") as handle:
-        for row in csv.DictReader(handle):
-            if row["media_type"] == PDF and row["redistribution"] == "yes" and len(row["sha256"]) == 64:
-                files.setdefault(row["sha256"].lower(), row["key"])
+    for row in rows:
+        if row["media_type"] == PDF and row["redistribution"] == "yes" and len(row["sha256"]) == 64:
+            files.setdefault(row["sha256"].lower(), row["key"])
     return files
+
+
+def wanted_files() -> dict[str, str]:
+    """Every PDF the capture index allows the website to serve."""
+    with CAPTURE_INDEX.open(newline="", encoding="utf-8") as handle:
+        return served_pdfs(csv.DictReader(handle))
 
 
 def read_existing() -> dict[str, int]:
@@ -69,18 +82,75 @@ def from_library(missing: set[str]) -> dict[str, int]:
     return counts
 
 
-def count_one(client, key: str) -> int | None:
-    import pymupdf
+def pages_in(path: Path, key: str) -> int | None:
+    """How many pages a PDF has, by pypdf or else pymupdf; nothing for a file neither can open."""
+    try:
+        from pypdf import PdfReader
 
+        return len(PdfReader(str(path), strict=False).pages)
+    except ImportError:
+        pass
+    except Exception:  # pypdf could not read it; pymupdf may
+        pass
+    try:
+        import pymupdf
+
+        with pymupdf.open(str(path)) as document:
+            return document.page_count
+    except Exception as error:  # a damaged file is reported and left uncounted
+        print(f"  could not open {key}: {error}", file=sys.stderr)
+        return None
+
+
+def count_one(client, key: str) -> int | None:
     with tempfile.NamedTemporaryFile(suffix=".pdf") as handle:
         client.download_fileobj(library.bucket_name(), key, handle)
         handle.flush()
-        try:
-            with pymupdf.open(handle.name) as document:
-                return document.page_count
-        except Exception as error:  # a damaged file is reported and left uncounted
-            print(f"  could not open {key}: {error}", file=sys.stderr)
-            return None
+        return pages_in(Path(handle.name), key)
+
+
+def have_credentials() -> bool:
+    return bool((os.environ.get("R2_ACCOUNT_ID") or os.environ.get("CLOUDFLARE_ACCOUNT_ID"))
+                and os.environ.get("R2_ACCESS_KEY_ID") and os.environ.get("R2_SECRET_ACCESS_KEY"))
+
+
+def count_new(rows, local_roots=()) -> None:
+    """
+    Count the pages of the served PDFs in these capture index rows that research/copy-pages.csv lacks, from a local
+    copy under one of local_roots when there is one, or else from the bucket, and add them to the file. Called each
+    time the index is written (scripts/captures/mirror_captures.py write_index), so new PDFs are counted as they are
+    filed. A file it cannot reach yet (filed locally, not yet uploaded) is counted on the next write or upload.
+    """
+    files = served_pdfs(rows)
+    counts = read_existing()
+    missing = sorted(set(files) - set(counts))
+    if not missing:
+        return
+    added = 0
+    left = []
+    for sha256 in missing:
+        local = next((Path(root) / files[sha256] for root in local_roots if (Path(root) / files[sha256]).is_file()), None)
+        pages = pages_in(local, files[sha256]) if local else None
+        if pages:
+            counts[sha256] = pages
+            added += 1
+        else:
+            left.append(sha256)
+    if left and have_credentials() and importlib.util.find_spec("boto3"):
+        client = library.bucket_client()
+        for sha256 in list(left):
+            try:
+                pages = count_one(client, files[sha256])
+            except Exception:  # not in the bucket yet
+                pages = None
+            if pages:
+                counts[sha256] = pages
+                added += 1
+                left.remove(sha256)
+    if added:
+        write(counts)
+    print(f"Page counts: {added} new PDFs counted" + (f"; {len(left)} not reachable yet, counted on the next index write or upload." if left else "."),
+          file=sys.stderr)
 
 
 def write(counts: dict[str, int]) -> None:

@@ -97,6 +97,9 @@ TOPIC_RIGHTS = {
                              "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
     "federal-court-opinions": ("A federal court's published opinion, from the Caselaw Access Project (released without restriction, 2024): "
                                "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
+    "supreme-court-opinions": ("The opinions of the Supreme Court of the United States in a case, as the Caselaw Access Project (released without restriction, 2024) "
+                               "read them from the United States Reports: works of the United States government, no copyright (17 U.S.C. § 105); "
+                               "the reporter's syllabus and statement of the case left out; the Library of Congress scan of the report is the official copy."),
 }
 DEFAULT_RIGHTS = "Private research copy; not redistributed."
 
@@ -463,6 +466,25 @@ def write_index(rows: list[dict]) -> None:
         writer.writerows(orphans)
     total = sum(int(r["bytes"]) for r in rows)
     print(f"{len(rows)} files, {total / 1e9:.2f} GB; {len(orphans)} main files with no citing record.")
+    count_new_pages(rows)
+
+
+# The captures folder of this run, when the command names one, so new PDFs can be counted from their local copies.
+LOCAL_CAPTURES: list[Path] = []
+
+
+def count_new_pages(rows: list[dict]) -> None:
+    """
+    Count the pages of newly filed PDFs the website may serve (research/copy-pages.csv), so the Statistics page gives
+    their pages without anyone re-running scripts/library/count_pages.py (Nov. 27, 2026). Never stops a filing: a
+    file it cannot read yet is counted on the next index write or upload.
+    """
+    sys.path.insert(0, str(REPO / "scripts" / "library"))
+    try:
+        import count_pages  # noqa: PLC0415
+        count_pages.count_new(rows, LOCAL_CAPTURES)
+    except Exception as error:  # noqa: BLE001  (counting pages must never stop a filing)
+        print(f"Page counts not updated ({error}); run scripts/library/count_pages.py.", file=sys.stderr)
 
 
 # ---------------------------------------------------------------- bucket
@@ -557,6 +579,7 @@ def upload(args) -> None:
         if done % 200 == 0:
             print(f"  uploaded {done}...", file=sys.stderr)
     print(f"uploaded {done}, already there {skipped}, of {len(rows)}")
+    count_new_pages(rows)
 
 
 def verify(args) -> None:
@@ -673,6 +696,7 @@ def main() -> None:
             p.add_argument("--work", help="folder for the downloaded files (default: a temporary folder)")
             p.add_argument("--obtained", default=f"hand pull by {HAND_PULLER}, sent through the website")
     args = parser.parse_args()
+    LOCAL_CAPTURES.append(Path(args.captures))
     if args.command == "intake":
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         import intake_uploads

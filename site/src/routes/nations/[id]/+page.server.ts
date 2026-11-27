@@ -135,6 +135,33 @@ function group(field: string, label: string, items: FactItem[], note?: string): 
 	return items.length > 0 ? [{ field, label, items, ...(note ? { note } : {}) }] : [];
 }
 
+/** The sources a line's markers point to, and where in each, as one key. */
+function markKey(marks: CitationMark[] | undefined): string {
+	return [...(marks ?? [])]
+		.map((mark) => `${mark.number}@${mark.where ?? ''}`)
+		.sort()
+		.join(' ');
+}
+
+/**
+ * One marker for lines that share their sources: when the lines next to each
+ * other in a group cite the same sources at the same places, such as a Bureau
+ * of Indian Affairs region and its agency from one list, only the last of
+ * them shows the markers, as a paragraph's citation covers the whole of it
+ * (Trevor, Nov. 27, 2026). A line cited elsewhere in the source keeps its own.
+ */
+function shareMarks(groups: FactGroup[], sources: SourceUses): FactGroup[] {
+	return groups.map((group) => {
+		const items = group.items.map((item, index) => {
+			const next = group.items[index + 1];
+			if (!next || !item.citations?.length || markKey(item.citations) !== markKey(next.citations)) return item;
+			sources.unmark(item.citations);
+			return { ...item, citations: undefined };
+		});
+		return { ...group, items };
+	});
+}
+
 /** Shows a fact with the marker of its source, and records the source under the group's label. */
 function cited(sources: SourceUses, section: string, fact: CitedFact, item: FactItem): FactItem {
 	const citations = item.citations ?? [];
@@ -221,7 +248,6 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 						...(administration.bureau_of_indian_affairs_agency
 							? [
 									cited(sources, regionLabel, administration, {
-										label: 'Agency',
 										text: administration.bureau_of_indian_affairs_agency,
 										link: bureauRegionPage(
 											administration.bureau_of_indian_affairs_region,
@@ -354,13 +380,15 @@ function governmentFacts(
 		}
 		for (const [aspect, label] of Object.entries(definition.aspects)) {
 			for (const fact of facts.filter((candidate) => candidate.aspect === aspect)) {
-				const fromDirectory = !fact.document_version && !fact.quote;
-				const itemLabel = fromDirectory && label ? `${label} in the federal directory` : label;
-				const shown = [itemLabel, fact.value].filter(Boolean).join(': ');
-				const citations: CitationMark[] = [];
+				// The citation says where a value comes from, such as the
+				// federal directory or the constitution, so the label never
+				// does; two sources giving the same value share one line.
+				const shown = [label, fact.value].filter(Boolean).join(': ');
 				const sourceText = fact.quote ? `${shown}. “${fact.quote}”` : shown;
+				const same = items.find((item) => item.label === label && item.text === fact.value);
+				const citations: CitationMark[] = same?.citations ?? [];
 				sources.citeFact(fact, definition.label, sourceText, citations);
-				items.push({ label: itemLabel, text: fact.value, citations });
+				if (!same) items.push({ label, text: fact.value, citations });
 				const version = fact.document_version as { document: string; version: string } | undefined;
 				if (version && !read.has(`${version.document}/${version.version}`)) {
 					const document = documents.find((candidate) => candidate.id === version.document);
@@ -789,7 +817,7 @@ function healthItems(record: NationRecord, sources: SourceUses, section: string)
 				: fact.operator === 'indian-health-service'
 					? 'run by the Indian Health Service'
 					: undefined;
-		items.push(cited(sources, section, fact, { label: 'Service unit or program', text: fact.service_unit, detail: runBy }));
+		items.push(cited(sources, section, fact, { text: fact.service_unit, detail: runBy }));
 	}
 	for (const fact of facts) {
 		if (!fact.operator || fact.service_unit) continue;
@@ -797,7 +825,7 @@ function healthItems(record: NationRecord, sources: SourceUses, section: string)
 			fact.operator === 'tribal'
 				? 'Run by the nation or a Tribal organization'
 				: 'Run by the Indian Health Service (a Direct Service Tribe)';
-		items.push(cited(sources, section, fact, { label: 'Health services', text }));
+		items.push(cited(sources, section, fact, { text }));
 	}
 	return items;
 }
@@ -1286,25 +1314,28 @@ export const load: PageServerLoad = ({ params }) => {
 	// Sources are numbered in the order the page first cites them, which is
 	// the order the page shows them: At a glance comes right after the title.
 	const names = [page.listedName, page.officialName];
-	const glance = atAGlance(record, sources);
+	const glance = shareMarks(atAGlance(record, sources), sources);
 	sources.part(contactsHeading);
 	const contacts = contactCard(record, sources);
 	sources.part('Map');
 	const map = nationMap(record, sources);
 	const histories = nationDocumentHistories(record.id);
 	sources.part(governmentHeading);
-	const government = governmentFacts(
-		record,
-		sources,
-		histories.map((history) => ({
-			id: history.id,
-			heading: documentHeading(history.title, names),
-			versions: history.versions.map((version) => ({ id: version.id, label: labelOf(version, version.id) }))
-		}))
+	const government = shareMarks(
+		governmentFacts(
+			record,
+			sources,
+			histories.map((history) => ({
+				id: history.id,
+				heading: documentHeading(history.title, names),
+				versions: history.versions.map((version) => ({ id: version.id, label: labelOf(version, version.id) }))
+			}))
+		),
+		sources
 	);
 	sources.part('Courts');
 	const courts = courtsAndDisputeResolution(record, sources);
-	const practice = courtPractice(record, sources);
+	const practice = shareMarks(courtPractice(record, sources), sources);
 	sources.part(legalHelpHeading);
 	const legalHelp = legalHelpFor(record.id, sources, ownLegalAid(record, sources));
 	sources.part(opinionsHeading);
@@ -1318,12 +1349,12 @@ export const load: PageServerLoad = ({ params }) => {
 		return { ...documentHistoryView(history, sources, names), heading };
 	});
 	sources.part(lawHeading, documentsLabel);
-	const law = [...publishedLaw(record, sources, documents), ...missingLaw(record, documents)];
+	const law = shareMarks([...publishedLaw(record, sources, documents), ...missingLaw(record, documents)], sources);
 	sources.part('Jurisdiction');
-	const jurisdiction = jurisdictionFacts(record, sources);
+	const jurisdiction = shareMarks(jurisdictionFacts(record, sources), sources);
 	sources.part('Treaties and federal ties');
 	const treaties = treatyRows(record, sources);
-	const ties = federalTies(record, sources);
+	const ties = shareMarks(federalTies(record, sources), sources);
 	const programs = federalProgramRows(record, sources);
 	const enforcement = enforcementActions(record, sources);
 	sources.part('Land cessions');
