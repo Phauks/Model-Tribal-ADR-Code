@@ -9,7 +9,7 @@
  */
 import { actionStatement, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { receiveMail, type ArrivalResult } from './inbound.ts';
-import { sendNewMailNotice } from './outbound.ts';
+import { sendArrivalAlerts } from './alerts.ts';
 import { sendAwayReply } from './writing.ts';
 
 /** Where an arriving message waits until it is filed. */
@@ -56,10 +56,10 @@ export async function dropArrival(context: MailContext, key: string): Promise<vo
 	await context.database.prepare('DELETE FROM mail_arrival_problems WHERE object_key = ?').bind(key).run();
 }
 
-/** What follows a filed message: the "new mail" notice and the away message. A failure of either is logged; the message is filed. */
+/** What follows a filed message: the new-mail alerts and the away message. A failure of either is logged; the message is filed. */
 export async function afterArrival(context: MailContext, carriers: MailCarriers, result: ArrivalResult | null): Promise<void> {
 	if (result?.outcome !== 'filed') return;
-	if (result.notify) await sendNewMailNotice(context, carriers).catch((problem) => console.error('The new-mail notice failed', problem));
+	if (result.notify) await sendArrivalAlerts(context, carriers, result.inboxIdentifier).catch((problem) => console.error('The new-mail alerts failed', problem));
 	if (result.answerable) await sendAwayReply(context, carriers, result).catch((problem) => console.error('The away message failed', problem));
 }
 
