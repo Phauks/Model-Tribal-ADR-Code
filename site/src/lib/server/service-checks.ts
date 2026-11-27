@@ -603,13 +603,15 @@ const inbox: Check = {
 	binding: 'projectEmail',
 	target: { name: 'Cloudflare Email Routing', kind: 'Email', part: 'MAIL_DOMAIN' },
 	use: 'Receiving mail at the project’s domain and sending replies from the workspace',
-	test: 'Checks the domain setting, the projectEmail binding and MAIL_SIGNING_KEY. Nothing is sent.',
+	test: 'Checks the domain setting and the projectEmail binding, and notes whether MAIL_SIGNING_KEY is set. Nothing is sent.',
 	async run({ environment }) {
 		const domain = text(environment, 'MAIL_DOMAIN');
 		if (!domain) return { state: 'off', summary: 'Off: MAIL_DOMAIN is empty.', details: [], fix: 'Waits on the project domain and the inbox (site/MAIL.md, "Switching email on").' };
 		const details = [`Domain: ${domain}`];
 		if (!setting(environment, 'projectEmail')) return { state: 'problem', summary: 'MAIL_DOMAIN is set but the projectEmail binding is missing, so replies cannot be sent.', details };
-		if (!text(environment, 'MAIL_SIGNING_KEY')) return { state: 'problem', summary: 'MAIL_SIGNING_KEY is not set.', details, fix: `Add it as a Secret in the ${settingsPlace}.` };
+		// Receiving mail and sending replies need no key. MAIL_SIGNING_KEY only signs the links in big-file downloads and, once
+		// outreach is on, its unsubscribe and "got it" links (site/MAIL.md, "Settings"), so its absence is a note, not a fault.
+		if (!text(environment, 'MAIL_SIGNING_KEY')) details.push('MAIL_SIGNING_KEY is not set, so files too big to attach cannot be sent as download links. Receiving and replying work without it.');
 		return { state: 'working', summary: `On for ${domain}. This check does not send a message.`, details };
 	}
 };

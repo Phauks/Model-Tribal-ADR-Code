@@ -1,8 +1,8 @@
 /**
  * Follows which heading of the page is being read, for the sidebar's outline
  * (SiteSidebar.svelte): the heading nearest above the top third of the
- * screen, by position, so a heading in a side column (such as a nation page's
- * "At a glance") is not marked early. It measures at most once a frame.
+ * screen, by position, so a heading in a side column is not marked early. It
+ * measures at most once a frame.
  */
 export function followActiveHeading(ids: string[], onchange: (id: string) => void): () => void {
 	const headings = ids
