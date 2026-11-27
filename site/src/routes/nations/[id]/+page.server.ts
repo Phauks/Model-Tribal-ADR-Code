@@ -43,6 +43,8 @@ import { displayName, humanize, regionAnchor, presenceNote, reviewStatusLabels, 
 import { legalHelpCitation, legalHelpFor, legalHelpHeading } from '#lib/server/legal-help.ts';
 import { formatSource } from '#lib/server/markdown.ts';
 import { recordPageLink } from '#lib/server/law-records.ts';
+import { builderAreaName, surveyFigures, surveyPeople, surveyRows, surveySource, surveyYears } from '#lib/server/census-areas.ts';
+import { builderPath } from '#lib/table-builder.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => [
@@ -67,6 +69,8 @@ interface FactItem {
 	note?: string;
 	/** The markers of the fact's sources (src/lib/citation-marks.ts). */
 	citations?: CitationMark[];
+	/** An estimate's margin of error, shown after it as "± 5" (Census figures). */
+	margin?: string;
 }
 
 const opinionsHeading = 'Court opinions';
@@ -129,6 +133,14 @@ interface FactGroup {
 	items: FactItem[];
 	/** The note every value shares, said once under the label (FactGroups.svelte). */
 	note?: string;
+	/** The group takes the panel's full width, its label above its values (FactGroups.svelte). */
+	wide?: boolean;
+	/** Values shown as a small table, with any items after it (FactGroups.svelte). */
+	table?: {
+		headers: string[];
+		rows: { text: string; link?: string; value: string; citations?: CitationMark[] }[];
+		note?: string;
+	};
 }
 
 function group(field: string, label: string, items: FactItem[], note?: string): FactGroup[] {
@@ -290,7 +302,117 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 			(record.memberships ?? []).map((fact) =>
 				cited(sources, 'Member of', fact, { text: fact.organization, link: organizationHome(fact) })
 			)
-		)
+		),
+		...censusGroups(record, sources)
+	];
+}
+
+/** Where in the survey's file an area's figures are, for the References list. */
+const surveyWhere = (code: string) => `summary level 250, GEOID 2500000US${code}`;
+
+/** The table builder's Census areas, narrowed by one column's values. */
+function censusBuilderLink(column: string, values: string[]): string {
+	const parameters = new URLSearchParams({ data: 'census-areas' });
+	for (const value of values) parameters.append(`where.${column}`, value);
+	return `${builderPath}?${parameters}`;
+}
+
+/** At most this many areas show their figures one by one; more make a table of the people living in each. */
+const censusAreasShownInFull = 2;
+
+/**
+ * The Census figures for the land areas the nation's entry names (Trevor,
+ * Nov. 27, 2026; src/lib/server/census-areas.ts), last in Key facts, just
+ * above the map that draws the same areas. One or two areas each show their
+ * name, the dates of the figures, the people the 2020 Census counted living
+ * there and the survey's seven figures with their margins of error; three or
+ * more make a small table of the people living in each, with a link to all
+ * their figures in the table builder. The group is named for the area, not
+ * the nation: the figures describe everyone living there, and none counts a
+ * nation's citizens. A nation with no Census area has no group.
+ */
+function censusGroups(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const survey = surveyRows();
+	const residents = new Map<string, CitedFact & { count: number }>();
+	for (const fact of record.population ?? []) {
+		const code = /GEOID 2500000US(\w{4})/.exec(fact.locator ?? '')?.[1];
+		if (fact.kind === 'resident-population' && code && typeof fact.count === 'number') residents.set(code, { ...fact, count: fact.count });
+	}
+	const seen = new Set<string>();
+	const areas = (record.census_areas ?? [])
+		.filter((fact) => !fact.vintage || fact.vintage === '2020')
+		.map((fact) => ({ fact, code: String(fact.geographic_identifier).padStart(4, '0') }))
+		.filter(({ code }) => !seen.has(code) && seen.add(code))
+		.map(({ fact, code }) => ({ fact, code, row: survey.get(code), resident: residents.get(code) }))
+		.filter((area) => area.row || area.resident);
+	if (areas.length === 0) return [];
+
+	if (areas.length <= censusAreasShownInFull) {
+		const label = 'Census area';
+		return areas.map(({ fact, code, row, resident }) => {
+			sources.use(fact, label, fact.name);
+			const surveyItem = (figure: { label: string; text: string; margin?: string }): FactItem => {
+				const citations: CitationMark[] = [];
+				sources.cite(surveySource, { section: label, text: `${figure.label}: ${figure.text}${figure.margin ? ` ± ${figure.margin}` : ''}`, where: surveyWhere(code) }, citations);
+				return { ...figure, citations };
+			};
+			const figures = row ? surveyFigures(row).map(surveyItem) : [];
+			// The 2020 count where the entry records it; otherwise the survey's estimate.
+			const estimate = !resident && row ? surveyPeople(row) : undefined;
+			const people = resident
+				? [cited(sources, label, resident, { label: 'People living there', text: resident.count.toLocaleString('en-US') })]
+				: estimate
+					? [surveyItem(estimate)]
+					: [];
+			const dates = !resident
+				? `${surveyYears} estimates.`
+				: figures.length > 0
+					? `Counted in 2020; other figures are ${surveyYears} estimates.`
+					: 'Counted in 2020.';
+			const items: FactItem[] = [
+				{ text: fact.name, link: row ? censusBuilderLink('name', [builderAreaName(row)]) : undefined, note: dates },
+				...people,
+				...figures
+			];
+			return { field: `census-area-${code}`, label, wide: true, items };
+		});
+	}
+
+	const label = 'Census areas';
+	const rows = areas.map(({ fact, row, resident }) => {
+		sources.use(fact, label, fact.name);
+		const estimate = row ? surveyPeople(row) : undefined;
+		return {
+			text: fact.name,
+			link: row ? censusBuilderLink('name', [builderAreaName(row)]) : undefined,
+			value: resident ? resident.count.toLocaleString('en-US') : `${estimate!.text}${estimate!.margin ? ` ± ${estimate!.margin}` : ''}`,
+			counted: Boolean(resident)
+		};
+	});
+	// One marker for each source, on the last line, as a paragraph's citation covers the whole of it.
+	const citations: CitationMark[] = [];
+	const counted = areas.filter((area) => area.resident);
+	if (counted.length > 0) {
+		const first = counted[0].resident!;
+		sources.cite(first.source!, { section: label, text: `People living there in ${counted.length} areas`, where: 'usgeo2020.npl, summary level 250, field POP100, as of 2020-04-01' }, citations);
+	}
+	if (rows.some((row) => !row.counted)) {
+		sources.cite(surveySource, { section: label, text: 'People living there, where the 2020 count is missing', where: 'summary level 250' }, citations);
+	}
+	const shown = rows.map(({ counted: _counted, ...row }, index) => (index === rows.length - 1 ? { ...row, citations } : row));
+	const everyCounted = rows.every((row) => row.counted);
+	return [
+		{
+			field: 'census-areas',
+			label,
+			wide: true,
+			table: {
+				headers: ['Area', 'People living there'],
+				rows: shown,
+				note: everyCounted ? 'Counted in 2020.' : `Counted in 2020, or estimated for ${surveyYears} where marked ±.`
+			},
+			items: [{ text: 'All Census figures for these areas', link: censusBuilderLink('nations', [displayName(record.names.official)]) }]
+		}
 	];
 }
 
