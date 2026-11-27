@@ -43,9 +43,11 @@ class Wisconsin(State):
                     print(f'WI: {index} failed: {error}')
                     continue
             page = path.read_text(errors='replace')
-            chapters += re.findall(r'href="(?:https://docs\.legis\.wisconsin\.gov)?/statutes/statutes/(\d+[a-z]?)"', page)
+            chapters += re.findall(r'href="/document/statutes/(\d+[a-z]?)"', page)
         chapters = list(dict.fromkeys(chapters))
-        failed = self.download_all((f'{SITE}/statutes/statutes/{chapter}', raw / 'chapters' / f'{chapter}.html') for chapter in chapters)
+        # Each chapter has a page on the site and a plain HTML version (<chapter>.html); both are kept until the parser picks one.
+        failed = self.download_all([(f'{SITE}/document/statutes/{chapter}', raw / 'chapters' / f'{chapter}.page.html') for chapter in chapters]
+                                   + [(f'{SITE}/document/statutes/{chapter}.html', raw / 'chapters' / f'{chapter}.html') for chapter in chapters])
         print(f'WI: {len(chapters)} chapters, {len(failed)} failed', *failed[:10])
 
     def parse(self, raw: Path) -> Iterator[Section]:
