@@ -4,7 +4,7 @@ Design note, Nov. 27, 2026, revised the same day. Nothing here is built. Trevor 
 
 Trevor asked on Nov. 27, 2026 what Wikiwand-style AI tools (Summarize, Timeline, Top questions, Fact check) would look like here, especially Fact check, for the team's own use and for visitors, and asked that visitors also be able to ask an agent to do research for them rather than do it all by hand.
 
-Mockups are in the project files, in `design/fact-check-and-ask/`. The revised Fact check is in `round-2/`: marks and the legend, a section's checked words (desktop light and dark, phone), a prose section (Worcester v. Georgia) and the citation card (light and dark). The first round (the side panel, Ask desktop light and dark and phone, and the workspace review queue) is in the folder itself; its Fact check panel is replaced by round 2, and its Ask and review queue mockups still stand. They are drawn over the live Karuk Tribe and Worcester v. Georgia pages. Every verdict and quoted line in them comes from the test runs in section 3, not from imagination.
+Mockups are in the project files, in `design/fact-check-and-ask/`. The revised Fact check is in `round-2/`: marks and the legend, a section's checked words (desktop light and dark, phone), a prose section (Worcester v. Georgia) and the citation card (light and dark). The third round, in `round-3/`, compares two marks that add no width, and draws Check again now (idle, running in light and dark), and readers' answers in the citation card (light and dark) and in References on a phone. The first round (the side panel, Ask desktop light and dark and phone, and the workspace review queue) is in the folder itself; its Fact check panel is replaced by round 2, and its Ask and review queue mockups still stand. They are drawn over the live Karuk Tribe and Worcester v. Georgia pages. Every verdict and quoted line in them comes from the test runs in section 3, not from imagination.
 
 ## 1. Recommendation
 
@@ -15,7 +15,7 @@ Mockups are in the project files, in `design/fact-check-and-ask/`. The revised F
 5. **Retrieval: the library we already have.** Use the full-text library in D1 (299,511 passages with page numbers) and the site's search index. Add Vectorize for meaning-based search only if the test questions show keyword search missing answers. Do not use Cloudflare AI Search (section 7).
 6. **Model: Inkling 2 Small on Workers AI**, through the binding the source watch already uses, with Claude through AI Gateway kept as a setting.
 
-Estimated cost (section 8): about $15 for a first fact check of the whole site, about $1 a month after that, and about half a cent per Ask question, under a hard daily budget.
+Estimated cost (section 8): about $15 for a first fact check of the whole site, about $12 a month after that to recheck every fact monthly (about $1 a month if only changed facts were rechecked), and about half a cent per Ask question, under a hard daily budget.
 
 ## 2. How others do it
 
@@ -76,12 +76,12 @@ Results are kept per claim, keyed by the page's text, the source document's text
 
 Fact check has no panel and no header button. It lives in the page itself, in three places a reader already looks: the citation marks, the section headings, and the badge line under the title. (This replaces the first round's side panel.)
 
-**Marks on citations.** Each checked fact carries a small mark tucked inside its citation marker, so the mark never wraps onto a line of its own. There are three marks, each with its own icon and words, never color alone:
+**Marks on citations.** Trevor Goldsmith asked on Nov. 26, 2026 that the marks not take up space. Round 2 put an icon after each citation number (clear, but about 13px each); round 3 tried an underline and a small dot on the number, which he found odd. Round 4 (`round-4/marks-options-facts-*.png` and `marks-options-prose-*.png`) compares the icon, a colored number, a check inside the number, and a check in the margin. The recommendation, waiting for his choice, is **a check in the margin**: one icon per fact row, lined up at the right edge of the value column, and one per paragraph in the left margin for prose, so nothing is added inside a line. Hovering or focusing the check names its status, source and date. A paragraph with several sources shows its lowest status (Can't check over Checked by computer over Confirmed by our team), and opening the section shows each fact on its own. Color alone and bold or italic text were set aside: color alone would undo the site's color-blindness work, italics already mark case names, and bold reads as emphasis.
 
-| Mark | Icon | Means |
+| Mark | Icon in the margin, card and legend | Means |
 | --- | --- | --- |
 | Checked by computer | outline circle with a check | The nightly check found the fact in the cited source and the words were found in our copy. |
-| Confirmed by our team | filled badge with a check | A person compared the fact with the source and agreed. |
+| Confirmed by our team | filled badge with a check | A person compared the fact with the source and agreed. On a claimed nation's page, the nation's team can confirm too, shown as "Confirmed by the nation". |
 | Can't check | circle with a minus | We do not hold the source's text, or may not show it. |
 
 Flags (Partly or Not supported) have no mark for visitors until a person confirms them (section 4.3 and 4.4 rules still apply). A reader who does not want the marks turns them off in Settings, under Citations, with "Show fact check marks" (on by default).
@@ -89,8 +89,9 @@ Flags (Partly or Not supported) have no mark for visitors until a person confirm
 **How people get into it.**
 
 1. **The badge line.** Beside the page's Verified or Unverified badge, a "Fact check" badge with a count (for example "Fact check 11") opens a short legend: what the three marks mean, that a computer did the checking and can be wrong, the date of the last run, that it does not change whether the page is Verified, and "How Fact check works". This is the page-level entry, and it is where a first-time reader learns what the marks are.
-2. **Each section heading.** Each section with checked facts gets a small button at the right of its heading, an icon with a count ("8"), labeled for screen readers "Fact check this section: 8 checked". Pressing it opens the checked words inside that section: under each fact, the matching words from our copy of the source, with the citation and date ("Constitution, Article V · Nov. 27, 2026"). Pressing it again closes them. This is the per-section check Trevor asked for; it reads stored results, so it costs nothing and opens at once. Sections can be opened one at a time or all together from the legend.
+2. **Each section heading.** Each section with checked facts gets a small button at the right of its heading, an icon with a count ("8"), labeled for screen readers "Fact check this section: 8 checked". Pressing it opens the checked words inside that section: under each fact, the matching words from our copy of the source, with the citation and date ("Constitution, Article V · Nov. 27, 2026"). Pressing it again closes them. This is the per-section check Trevor asked for; it reads stored results, so it costs nothing and opens at once. Sections can be opened one at a time or all together from the legend. An open section also offers **Check again now**, which rechecks every fact in the section live while the reader watches: a progress line ("Checking 5 of 8…"), each fact turning from Waiting to Checking to its result, and the date becoming "checked just now". Trevor's reason: a reader trusts what they saw happen. The new result is saved, so the next reader sees today's date. If the live check finds a possible problem, the reader who ran it sees it, worded as "Our check found the source may not say this. Sent to our team."; other visitors see no change until a person confirms it. Check again needs a Turnstile pass, and is limited per person (for example 5 sections an hour) and by a daily budget for all readers. A 10-fact section costs about half a cent (section 8).
 3. **The citation card.** Hovering or focusing a citation marker on a desktop already shows the source card. The card gains a line for the check, "Checked by computer · Nov. 27, 2026" or "Confirmed by our team · Nov. 27, 2026", the words from our copy with their pinpoints ("at 516"), and Copy, Show the paragraph and Report a problem buttons. On phones, tapping a marker goes to References as it does today, and each reference shows the same check details under the fact it supports.
+4. **Readers' answers.** Under the check, signed-in readers see "Does this match the source?" with Matches the source and Doesn't match (with an optional reason). Answers go to the team's review queue, ranked by how many readers disagree; they never change the public mark, because a few accounts could game it. A mark becomes Confirmed only when someone accountable confirms it: our team, or the nation's own team on a page the nation has claimed, shown as "Confirmed by the nation".
 
 Every place that shows words says whose they are: our copy of the source, found by alignment. "Think a result is wrong? Report a problem" opens the existing report form with the fact and source filled in.
 
@@ -106,7 +107,7 @@ Every place that shows words says whose they are: our copy of the source, found 
 
 ### 4.4 When it runs
 
-A nightly job (a Cloudflare Workflow started by the site's cron) checks claims whose page or source changed since the last run, newest pages first, and stops at a nightly budget. The first full run is spread over a few nights. Staff can check one page at once. The results live in D1 (two new tables), not in the Worker bundle, and the page reads them as a small JSON file per page through the edge cache (decision record [0061](decisions/0061-keep-public-worker-answers-at-the-edge.md)).
+A nightly job (a Cloudflare Workflow started by the site's cron) checks claims whose page or source changed since the last run, newest pages first, and stops at a nightly budget. A change to a source document (a new copy found by the source watch, new OCR text) rechecks every fact that cites it. On top of that, every result is rechecked on a rolling monthly cycle, so no result is more than about a month old, as Trevor asked on Nov. 26, 2026 ("we should always be checking sources, even when they change"). The first full run is spread over a few nights. Staff can check one page at once. The results live in D1 (two new tables), not in the Worker bundle, and the page reads them as a small JSON file per page through the edge cache (decision record [0061](decisions/0061-keep-public-worker-answers-at-the-edge.md)).
 
 ## 5. Ask
 
@@ -183,7 +184,9 @@ Prices, read Nov. 27, 2026: Workers AI bills $0.011 per 1,000 Neurons above 10,0
 | First full run, 30,000 claims | about 1.35 million | about $15 |
 | Second looks at high effort on about 5% of claims | about 0.2 million | about $2.50 |
 | Each month after: about 2,000 changed claims | about 90,000 | about $1, mostly inside the free 10,000 a day |
-| Visitors opening the panel | none | nothing beyond ordinary Worker requests |
+| Each month: rechecking all 30,000 claims on a rolling cycle | about 1.35 million, less about 300,000 free | about $12 (about $3 on a 90-day cycle) |
+| A reader's Check again now on a 10-fact section | about 450 | about $0.005, under a daily budget for all readers |
+| Visitors opening a section or a card | none | nothing beyond ordinary Worker requests |
 
 **Ask.** Estimated, not yet measured: a Whole site answer takes about three model calls with about 12,000 input tokens in all (instructions and tool descriptions repeated, search results, passages) and about 900 output tokens, so about $0.0045, or about $0.0033 with the repeated part cached. A This page answer is one call of about 6,000 tokens, about $0.0025.
 
