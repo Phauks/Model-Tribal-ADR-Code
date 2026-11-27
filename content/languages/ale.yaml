@@ -1,0 +1,224 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ale
+name: Aleut
+iso_639_3:
+  code: ale
+  reference_name: Aleut
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: aleu1260
+  level: language
+  source: glottolog-5-4
+family:
+  name: Eskimo-Aleut
+  glottocode: eski1264
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/671
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/aleut.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Eastern Aleut
+  glottocode: east2533
+  source: glottolog-5-4
+- name: Western Aleut
+  glottocode: west2616
+  source: glottolog-5-4
+works:
+- glottolog_reference: '450591'
+  title: Jean La Rue, Dictionnaire d’argot et des locutions populaires. Version raisonnée et commentée à partir des éditions de 1894 et du début du XXe siècle
+  kinds:
+  - dictionary
+  author: Christian Schmitt
+  year: 2013
+  publisher: De Gruyter
+  pages: 222
+  source: glottolog-5-4
+- glottolog_reference: '587277'
+  title: Slovar' Aleutsko-Russkij i Russko-Aleutskij (Beringovskij dialekt)
+  kinds:
+  - dictionary
+  author: Evgenij V. Golovko
+  year: 2009
+  publisher: Prosveščeniye
+  pages: 321
+  source: glottolog-5-4
+- glottolog_reference: '320112'
+  title: 'Materialy ob Aleutskom Jazykom na Ostrove Beringa: Slovar'' i Teksty'
+  kinds:
+  - dictionary
+  author: Minoru Oshima
+  year: 2003
+  publisher: ELPR
+  pages: 348
+  source: glottolog-5-4
+- glottolog_reference: '173761'
+  title: How to Use the Aleut Dictionary/Unagam Tunudgusii and Unangam Tunuu Sound System
+  kinds:
+  - dictionary
+  author: Barbara Svarný Carlson
+  year: 2001
+  source: glottolog-5-4
+- glottolog_reference: '173621'
+  title: Glosses missing from Aleut Dictionary
+  kinds:
+  - dictionary
+  author: Tom Alton
+  year: 1999
+  source: glottolog-5-4
+- glottolog_reference: '9575'
+  title: 'Aleut Grammar: Unangam Tunuganann Achixaasix̂'
+  kinds:
+  - grammar
+  author: Knut Bergsland
+  year: 1997
+  publisher: Alaska Native Language Center, University of Alaska
+  pages: 373
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '173746'
+  title: Netsvetov dictionary project
+  kinds:
+  - dictionary
+  author: Viacheslav Vsevolodovich. Ivanov and Michael E Krauss
+  year: 1997
+  source: glottolog-5-4
+- glottolog_reference: '173622'
+  title: Reviews of] Knut Bergsland, Aleut Dictionary
+  kinds:
+  - dictionary
+  author: Various Authors
+  year: 1996
+  source: glottolog-5-4
+- glottolog_reference: '173676'
+  title: Review of] Knut Bergsland (comp.) Aleut Dictionary
+  kinds:
+  - dictionary
+  author: Minoru Oshima
+  year: 1995
+  source: glottolog-5-4
+- glottolog_reference: '91608'
+  title: Aleut Dictionary
+  kinds:
+  - dictionary
+  author: Knut Bergsland
+  year: 1994
+  publisher: Alaska Native Language Center
+  source: glottolog-5-4
+- glottolog_reference: '51031'
+  title: 'Aleut Dictionary / Unangam Tunudgusii: an unabridged lexicon of the Aleutian, Pribilof, and Commander Islands Aleut language'
+  kinds:
+  - dictionary
+  author: Knut Bergsland
+  year: 1994
+  publisher: Alaska Native Language Center
+  pages: 739
+  source: glottolog-5-4
+- glottolog_reference: '173638'
+  title: Draft corrections to Aleut Dictionary layout
+  kinds:
+  - dictionary
+  author: Knut Bergsland
+  year: 1994
+  source: glottolog-5-4
+- glottolog_reference: '721583'
+  title: Introduction to Atkan Aleut Grammar and Lexicon
+  kinds:
+  - dictionary
+  author: Knut Bergsland and Moses Dirks
+  year: 1982
+  publisher: National Bilingual Materials Development Center
+  pages: 309
+  source: glottolog-5-4
+- glottolog_reference: '173426'
+  title: Atkan Aleut-English Dictionary
+  kinds:
+  - dictionary
+  author: Knut Bergsland, Larry Dirks, Moses Dirks, Dirks, Sr., William, Jenny Golley, Sergey Golley and Cedor L Snigaroff
+  year: 1980
+  source: glottolog-5-4
+- glottolog_reference: '173433'
+  title: 'Qawalangim tunugan kaduuĝingin: eastern Aleut grammar and lexicon'
+  kinds:
+  - dictionary
+  author: Knut Bergsland, Moses Dirks, Olga. Mensoff, Agnes. Sovoroff and Sergei Sovoroff
+  year: 1978
+  publisher: National Bilingual Materials Development Center
+  pages: 200
+  source: glottolog-5-4
+- glottolog_reference: '173415'
+  title: Atkan Aleut dictionary
+  kinds:
+  - dictionary
+  author: Knut Bergsland
+  year: 1973
+  source: glottolog-5-4
+- glottolog_reference: '19356'
+  title: 'The Aleut language: the elements of Aleut grammar with a dictionary in two parts containing basic vocabularies of Aleut and English'
+  kinds:
+  - grammar
+  author: Richard Henry Geoghegan
+  year: 1944
+  publisher: 'Washington: Dept. of the Interior'
+  pages: 172
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '173313'
+  title: Morphemes of Fox Island Aleut.[Earlier title, A brief grammar of Fox Island Aleut
+  kinds:
+  - grammar
+  author: Jay Ellis Ransom
+  year: 1941
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '173275'
+  title: Essay on the grammar of the Aleut language
+  kinds:
+  - grammar
+  author: Jochelson, Waldemar [Iokhel'son and Vladimir]
+  year: 1930
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '173265'
+  title: The Aleutian language according to the interpretation of Veniaminov's grammar.Bulletin of the Academy of Sciences of Russia, 1918
+  kinds:
+  - grammar
+  author: Jochelson, Waldemar [Iokhel'son and Vladimir]
+  year: 1919
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '173613'
+  title: Descriptive Catalogue of Ethnological Specimens collected by Lucien M. Turner in Alaska
+  kinds:
+  - grammar
+  author: Lucien M Turner
+  year: 1889
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '302784'
+  title: Esquisse d'une Grammaire Raisonnée de la langue Aléoute d'après la grammaire et le vocabulaire de Ivan Veniaminov
+  kinds:
+  - grammar
+  author: Victor Henri
+  year: 1879
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '173190'
+  title: Atkan Aleut dictionary
+  kinds:
+  - dictionary
+  author: Iakov G Netsvetov
+  year: 1840
+  source: glottolog-5-4
+- glottolog_reference: '706287'
+  title: Table analytique et raisonnée des matieres … du dictionnaire des sciences, des arts et des métiers, et dans son supplement
+  kinds:
+  - dictionary
+  author: Anon
+  year: 1782
+  publisher: chez Panckoucke
+  source: glottolog-5-4
+retrieved: '2026-11-27'

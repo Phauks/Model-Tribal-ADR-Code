@@ -15,8 +15,10 @@ import Files from '@lucide/svelte/icons/files';
 import Film from '@lucide/svelte/icons/film';
 import Gavel from '@lucide/svelte/icons/gavel';
 import Globe from '@lucide/svelte/icons/globe';
+import HandHeart from '@lucide/svelte/icons/hand-heart';
 import Handshake from '@lucide/svelte/icons/handshake';
 import Landmark from '@lucide/svelte/icons/landmark';
+import Languages from '@lucide/svelte/icons/languages';
 import Library from '@lucide/svelte/icons/library';
 import ListChecks from '@lucide/svelte/icons/list-checks';
 import MapIcon from '@lucide/svelte/icons/map';
@@ -47,6 +49,8 @@ const collectionIcons: Record<string, Component> = {
 	'intergovernmental-agreements': Handshake,
 	'oklahoma-state-tribal-agreements': Handshake,
 	stories: BookOpen,
+	languages: Languages,
+	'language-families': Languages,
 	treaties: Scroll,
 	'federal-statutes': BookText,
 	'federal-regulations': ListChecks,
@@ -54,12 +58,14 @@ const collectionIcons: Record<string, Component> = {
 	'federal-register-notices': Newspaper,
 	'national-indian-gaming-commission': Dices,
 	'federal-acknowledgment': Stamp,
+	'repatriation-notices': HandHeart,
 	'solicitor-opinions': BookOpen,
 	'indian-affairs-films': Film,
 	'supreme-court-cases': Gavel,
 	'other-court-cases': Scale,
 	'federal-court-opinions': Gavel,
 	'state-court-opinions': Gavel,
+	'indian-claims-commission': Scroll,
 	'tribal-court-opinions': FileText,
 	'supreme-courts': Landmark,
 	biographies: UserRound,

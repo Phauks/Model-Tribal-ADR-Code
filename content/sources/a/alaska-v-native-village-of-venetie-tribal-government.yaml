@@ -93,6 +93,20 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Alaska_v._Native_Village_of_Venetie_Tribal_Government
+argument_audio:
+- kind: argument
+  date: '1997-10-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1047.mp3
+  catalog: https://catalog.archives.gov/id/138282687
+  whole_session: true
+  note: "The National Archives dates the recording 1997-10-10; the case was argued on 1997-12-10."
+  duration_seconds: 7834
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1047.mp3
+    checksum: 736a720eed452e6b039af11351d3921ea1d4011b3417996b091e61f545042daf
+    media_type: audio/mpeg
+    bytes: 125342740
 rights:
   status: no-permission-needed
   basis: us-government-work

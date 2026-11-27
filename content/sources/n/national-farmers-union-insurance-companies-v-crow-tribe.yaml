@@ -89,6 +89,103 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=471%20U.S.%20845
+argument_audio:
+- kind: argument
+  date: '1985-04-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-524-r1.mp3
+  catalog: https://catalog.archives.gov/id/118974699
+  whole_session: true
+  duration_seconds: 2006
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-524-r1.mp3
+    checksum: 6facb774e026725dc4f6fa4648a7fedb1aab087edee35b23b71ea4b5a069e91a
+    media_type: audio/mpeg
+    bytes: 32098140
+- kind: argument
+  date: '1985-04-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-524-r2.mp3
+  catalog: https://catalog.archives.gov/id/118974699
+  whole_session: true
+  duration_seconds: 1817
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-524-r2.mp3
+    checksum: 68da9cf38a524e9c9d356efabe6188b1593700c235bdfd157c8f77c4527a965c
+    media_type: audio/mpeg
+    bytes: 29077967
+- kind: argument
+  date: '1985-04-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-524-r3.mp3
+  catalog: https://catalog.archives.gov/id/118974699
+  whole_session: true
+  duration_seconds: 1689
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-524-r3.mp3
+    checksum: ce548d75a19c74b7535750faf8aa55ad96645b6f5c77c8f2b89d52c2a3fe2687
+    media_type: audio/mpeg
+    bytes: 27019100
+- kind: argument
+  date: '1985-04-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-524-r4.mp3
+  catalog: https://catalog.archives.gov/id/118974699
+  whole_session: true
+  duration_seconds: 2018
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-524-r4.mp3
+    checksum: 88f573b9139e8a43445467cfcaadc15ac65d36be9bc331cb29296e03bca1cac7
+    media_type: audio/mpeg
+    bytes: 32284968
+- kind: argument
+  date: '1985-04-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-524-r5.mp3
+  catalog: https://catalog.archives.gov/id/118974699
+  whole_session: true
+  duration_seconds: 1976
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-524-r5.mp3
+    checksum: a1146eba5e1d3cd8023d6f3de669ff08c017373bc2d338f8d7ff4897748161c6
+    media_type: audio/mpeg
+    bytes: 31621249
+- kind: argument
+  date: '1985-04-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-524-r6.mp3
+  catalog: https://catalog.archives.gov/id/118974699
+  whole_session: true
+  duration_seconds: 663
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-524-r6.mp3
+    checksum: a2d09e8f5019121295e65ce2e6ffdce8f0a293426a01852f8037712235a766c9
+    media_type: audio/mpeg
+    bytes: 10615456
+- kind: argument
+  date: '1985-04-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-524-r7.mp3
+  catalog: https://catalog.archives.gov/id/118974699
+  whole_session: true
+  duration_seconds: 919
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-524-r7.mp3
+    checksum: 6e6a1bf57ab032e65a153fd787425c79c3dc159c328bd96f6906828cfd5845fa
+    media_type: audio/mpeg
+    bytes: 14698499
+- kind: argument
+  date: '1985-04-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-524-r8.mp3
+  catalog: https://catalog.archives.gov/id/118974699
+  whole_session: true
+  duration_seconds: 1490
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-524-r8.mp3
+    checksum: f41ca5b7ecbbf914a70e0a20ce2b8262573fb7707e0011babcde2f594f1bd4d0
+    media_type: audio/mpeg
+    bytes: 23845536
 rights:
   status: no-permission-needed
   basis: us-government-work

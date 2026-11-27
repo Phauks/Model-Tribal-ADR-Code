@@ -74,6 +74,57 @@ function boardGroup(copy: PublicCopy): string {
 }
 
 /**
+ * The Indian Claims Commission's decisions, five of its 43 volumes to a list
+ * (about 320 decisions each), by the volume in the file name, such as
+ * "oksd_icc_d337_v12_p404.pdf" (volume 12): one list of all 2,779 would be
+ * past what the accessibility check reads in 90 seconds.
+ */
+const claimsVolumesPerList = 5;
+const claimsVolumeRanges: [number, number][] = Array.from({ length: Math.ceil(43 / claimsVolumesPerList) }, (_, index) => [index * claimsVolumesPerList + 1, Math.min(43, (index + 1) * claimsVolumesPerList)]);
+const claimsSlug = ([first, last]: [number, number]) => `indian-claims-commission-volumes-${first}-${last}`;
+
+function claimsGroup(copy: PublicCopy): string {
+	const volume = Number(/_v(\d+)_p/i.exec(copy.key)?.[1] ?? Number.NaN);
+	return claimsSlug(claimsVolumeRanges.find(([first, last]) => volume >= first && volume <= last) ?? claimsVolumeRanges.at(-1)!);
+}
+
+/**
+ * The repatriation notices, by the year the Federal Register printed them (in
+ * the GovInfo address, ".../FR-2024-05-19/..."), so no list holds much more
+ * than 500: a few early years together, then a list a year, and two a year
+ * from 2024, when the notices grew past 700 a year.
+ */
+const repatriationEarly: [number, number][] = [
+	[1994, 2000],
+	[2001, 2004],
+	[2005, 2007]
+];
+const repatriationHalvesFrom = 2024;
+/** The last year with lists of its own; later notices go in its last list until this moves on. (A Worker's clock reads 1970 when a module loads, so the year is not read from it.) */
+const repatriationListedTo = 2030;
+const repatriationLists: { slug: string; title: string }[] = [
+	...repatriationEarly.map(([first, last]) => ({ slug: `repatriation-notices-${first}-${last}`, title: `Repatriation notices, ${first} to ${last}` })),
+	...Array.from({ length: repatriationListedTo - 2007 }, (_, index) => 2008 + index).flatMap((year) =>
+		year < repatriationHalvesFrom
+			? [{ slug: `repatriation-notices-${year}`, title: `Repatriation notices, ${year}` }]
+			: [
+					{ slug: `repatriation-notices-${year}-january-to-june`, title: `Repatriation notices, January to June ${year}` },
+					{ slug: `repatriation-notices-${year}-july-to-december`, title: `Repatriation notices, July to December ${year}` }
+				]
+	)
+];
+
+function repatriationGroup(copy: PublicCopy): string {
+	const printed = copy.links.map((link) => /\/FR-(\d{4})-(\d{2})-/.exec(link)).find(Boolean);
+	const year = Number(printed?.[1] ?? copy.captured.slice(0, 4));
+	const early = repatriationEarly.find(([first, last]) => year >= first && year <= last);
+	if (early || year < 2008) return `repatriation-notices-${(early ?? repatriationEarly[0]).join('-')}`;
+	if (year < repatriationHalvesFrom) return `repatriation-notices-${year}`;
+	const slug = `repatriation-notices-${year}-${Number(printed?.[2] ?? 1) <= 6 ? 'january-to-june' : 'july-to-december'}`;
+	return repatriationLists.some((list) => list.slug === slug) ? slug : repatriationLists.at(-1)!.slug;
+}
+
+/**
  * Congress's documents, in lists by the year of the document (its source record's date), each a few hundred long:
  * hearings, committee reports from the Serial Set back to the 1820s and from GovInfo since 1995, and committee prints
  * (scripts/law/congressional_documents.py), then the Congressional Research Service's products (scripts/law/crs_reports.py).
@@ -138,6 +189,8 @@ const fixedGroups: Record<string, string> = {
 	'solicitor-opinions': 'Solicitor’s opinions',
 	// Films are large; a list of their own keeps them out of the documents' offline sets.
 	'indian-affairs-films': 'Indian Affairs films',
+	...Object.fromEntries(repatriationLists.map((list) => [list.slug, list.title])),
+	...Object.fromEntries(claimsVolumeRanges.map((range) => [claimsSlug(range), `Indian Claims Commission decisions, volumes ${range[0]} to ${range[1]}`])),
 	'other-federal': 'Other federal documents',
 	// Published state and territorial court opinions (decision record 0060).
 	'state-court-opinions': 'State court opinions',
@@ -212,6 +265,7 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (pagedGroups.has(copy.topic)) return pages().get(copy.key)?.slug ?? copy.topic;
 	// The Supreme Court's opinions as text, split by opinion, beside the scans of the United States Reports (scripts/caselaw/case_opinion_texts.py).
 	if (copy.topic === 'supreme-court-opinions') return 'supreme-court';
+	if (copy.topic === 'indian-claims-commission') return claimsGroup(copy);
 	if (copy.topic === 'oklahoma-secretary-of-state') return 'oklahoma-state-tribal-agreements';
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
 		const [first] = namesOf(copy, names);
@@ -227,6 +281,7 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'federal-register') return 'federal-register';
 	if (copy.topic === 'nigc') return 'gaming-commission';
 	if (copy.topic === 'acknowledgment') return 'acknowledgment';
+	if (copy.topic === 'repatriation-notices') return repatriationGroup(copy);
 	if (copy.topic === 'congress') return congressGroup(copy);
 	if (copy.topic === 'crs') return 'congressional-research-service';
 	if (copy.topic === 'solicitor-opinions') return 'solicitor-opinions';

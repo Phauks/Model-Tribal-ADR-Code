@@ -1,0 +1,59 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: lui
+name: Luiseno-Juaneño
+iso_639_3:
+  code: lui
+  reference_name: Luiseño
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: luis1253
+  level: language
+  source: glottolog-5-4
+family:
+  name: Uto-Aztecan
+  glottocode: utoa1244
+  source: glottolog-5-4
+iso_names:
+- name: Luiseño
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1932
+  source: glottolog-5-4
+dialects:
+- name: Juaneño
+  glottocode: juan1251
+  source: glottolog-5-4
+- name: Luiseño
+  glottocode: luis1254
+  source: glottolog-5-4
+works:
+- glottolog_reference: '114118'
+  title: Dictionary of Rincón Luiseño
+  kinds:
+  - dictionary
+  author: Eric B. Elliott
+  year: 1999
+  publisher: University of California at San Diego
+  pages: 1863
+  source: glottolog-5-4
+- glottolog_reference: '70712'
+  title: A Luiseño dictionary
+  kinds:
+  - dictionary
+  author: William Bright
+  year: 1968
+  publisher: University of California Press
+  pages: 88
+  source: glottolog-5-4
+- glottolog_reference: '144940'
+  title: The Sparkman grammar of Luiseño
+  kinds:
+  - grammar
+  author: A[lfred] L[ouis] Kroeber and George William Grace
+  year: 1960
+  publisher: University of California Press
+  pages: 266
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

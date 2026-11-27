@@ -1,0 +1,74 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: nez
+name: Nez Perce
+iso_639_3:
+  code: nez
+  reference_name: Nez Perce
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: nezp1238
+  level: language
+  source: glottolog-5-4
+family:
+  name: Sahaptian
+  glottocode: saha1239
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1715
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '181839'
+  title: Writing a Nez Percé Dictionary
+  kinds:
+  - dictionary
+  author: Haruo Aoki
+  year: 2002
+  pages: 298
+  source: glottolog-5-4
+- glottolog_reference: '676840'
+  title: Writing a Nez Percé Dictionary
+  kinds:
+  - dictionary
+  author: W. Frawley, K.C. Hill and P. Munro
+  year: 2002
+  source: glottolog-5-4
+- glottolog_reference: '148830'
+  title: Nez Perce dictionary
+  kinds:
+  - dictionary
+  author: Haruo Aoki
+  year: 1994
+  publisher: University of California Press
+  pages: 1280
+  source: glottolog-5-4
+- glottolog_reference: '148827'
+  title: Nez Perce dictionary
+  kinds:
+  - dictionary
+  author: Haruo Aoki
+  year: 1992
+  publisher: University of California Press. (University of California Publications in Linguistics 122)
+  source: glottolog-5-4
+- glottolog_reference: '43740'
+  title: Studies in Nez Perce Grammar and Discourse
+  kinds:
+  - grammar
+  author: Noel E. Rude
+  year: 1985
+  publisher: University of Oregon
+  pages: 319
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '43720'
+  title: Nez Perce Grammar
+  kinds:
+  - grammar
+  author: Haruo Aoki
+  year: 1965
+  publisher: University of California at Berkeley
+  pages: 267
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

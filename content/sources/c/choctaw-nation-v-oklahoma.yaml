@@ -108,6 +108,62 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=397%20U.S.%20620
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1969-10-22'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-754-41-59-19691022-19691023.mp3
+  catalog: https://catalog.archives.gov/id/81140323
+  duration_seconds: 3484
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-754-41-59-19691022-19691023.mp3
+    checksum: 14cedbc3cf36c9605efc8277f57bfac65aa64f953a4ebf5c9acdc9a0c1f988ad
+    media_type: audio/mpeg
+    bytes: 55748230
+- kind: argument
+  date: '1969-10-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-755-41-59-19691022-19691023-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81140328
+  duration_seconds: 3742
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-755-41-59-19691022-19691023-1of2.mp3
+    checksum: ac8977609464752b75ab663c77c66fdc273d4724ed2ad750efacbede9a1fe389
+    media_type: audio/mpeg
+    bytes: 59876831
+- kind: argument
+  date: '1969-10-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-755-41-59-19691022-19691023-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81140328
+  duration_seconds: 1801
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-755-41-59-19691022-19691023-2of2.mp3
+    checksum: 136cf2a31b202e05d401825929e0b1520b759bb2e62dfe59fda45c3a2d471a75
+    media_type: audio/mpeg
+    bytes: 28822046
+- kind: argument
+  date: '1970-03-05'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-780-41-59-19700305-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81140452
+  duration_seconds: 3645
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-780-41-59-19700305-1of2.mp3
+    checksum: 50eb4f5c101044cd3488144d3103daeade8ffd2adc303dde34b0dd0357b08d4d
+    media_type: audio/mpeg
+    bytes: 58317008
+- kind: argument
+  date: '1970-03-05'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-780-41-59-19700305-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81140452
+  duration_seconds: 2605
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-780-41-59-19700305-2of2.mp3
+    checksum: d0c04bc32de794f2bd65b2ade0e0c8f4d0135a535cd36be95f4a63a587894781
+    media_type: audio/mpeg
+    bytes: 41683486
 rights:
   status: no-permission-needed
   basis: us-government-work

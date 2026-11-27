@@ -104,6 +104,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=510%20U.S.%20399
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1993-11-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-889.mp3
+  catalog: https://catalog.archives.gov/id/118975016
+  whole_session: true
+  duration_seconds: 7341
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-889.mp3
+    checksum: 10b61b49d66e736a44623c7c2dc3f68416fbde2ee2509b457788a51c7d2d0f3f
+    media_type: audio/mpeg
+    bytes: 117451251
 rights:
   status: no-permission-needed
   basis: us-government-work

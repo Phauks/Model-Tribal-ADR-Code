@@ -1,0 +1,70 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: kut
+name: Kutenai
+iso_639_3:
+  code: kut
+  reference_name: Ktunaxa
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: kute1249
+  level: language
+  source: glottolog-5-4
+family: null
+iso_names:
+- name: Ksanka
+  source: iso-639-3-code-tables
+- name: Ktunaxa
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1937
+  source: glottolog-5-4
+dialects:
+- name: Lower Kutenai
+  glottocode: lowe1468
+  source: glottolog-5-4
+- name: Upper Kutenai
+  glottocode: uppe1489
+  source: glottolog-5-4
+works:
+- glottolog_reference: '11326'
+  title: A description of the Kutenai language Version 1.2.2 of A description of the Kutenai language
+  kinds:
+  - grammar
+  author: Lawrence R. Morgan
+  year: 1992
+  publisher: '[Univ. of California]'
+  pages: 692
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '59300'
+  title: A Description of the Kutenai Language
+  kinds:
+  - grammar
+  author: Lawrence Morgan
+  year: 1991
+  publisher: University of California at Berkeley
+  pages: 566
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '39841'
+  title: Various Kutenai Papers in IJAL 1947-1954
+  kinds:
+  - grammar
+  author: Paul L. Garvin
+  year: 1947
+  publisher: International Journal of American Linguistics
+  pages: 86
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '672497'
+  title: Annotated version of Grammar of the Kutenai Language, by Pater Philippo Canestrelli; Additional notes on the Kutenai language
+  kinds:
+  - grammar
+  author: Franz Boas
+  year: 1927
+  publisher: International Journal of American Linguistics
+  pages: 52
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

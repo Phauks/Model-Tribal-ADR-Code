@@ -1,0 +1,26 @@
+key: iso-639-3-code-tables
+kind: dataset
+citation:
+  type: dataset
+  title: ISO 639-3 Code Tables and Language Names Index
+  author:
+  - literal: SIL International
+  publisher: SIL International, the registration authority for ISO 639-3
+  medium: Tab-delimited code tables (iso-639-3.tab, iso-639-3_Name_Index.tab, iso-639-3_Retirements.tab)
+  URL: https://iso639-3.sil.org/code_tables/download_tables
+  accessed:
+    date-parts: [[2026, 11, 27]]
+original_link: https://iso639-3.sil.org/code_tables/download_tables
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: The terms of use allow the codes in web-based systems "provided that" attribution is given to iso639-3.sil.org, the codes are not modified, and the system "does not provide a means to redistribute the code set". The site keeps only the codes of the languages nations' records name, each cited here, and links to the code's page at iso639-3.sil.org.
+  redistribution: false
+found_in:
+- 2026-11-27-language-pages
+notes: 'Each language page gives the ISO 639-3 code, linked to its page at https://iso639-3.sil.org/code/<code>, and the names the Language Names Index gives. Facts from other catalogs are cited to them, so nothing else is presented as part of the standard, as the terms ask.'

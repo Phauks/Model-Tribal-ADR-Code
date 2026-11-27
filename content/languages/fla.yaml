@@ -1,0 +1,60 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: fla
+name: Kalispel-Pend d'Oreille
+iso_639_3:
+  code: fla
+  reference_name: Kalispel-Pend d'Oreille
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: kali1308
+  level: language
+  source: glottolog-5-4
+family:
+  name: Salishan
+  glottocode: sali1255
+  source: glottolog-5-4
+dialects:
+- name: Kalispel
+  glottocode: kali1309
+  source: glottolog-5-4
+- name: Pend D'oreille
+  glottocode: pend1243
+  source: glottolog-5-4
+works:
+- glottolog_reference: '115858'
+  title: 'The Kalispel Language: An Outline of the Grammar with Texts, Translations and Dictionary'
+  kinds:
+  - grammar
+  author: Hans Vogt
+  year: 1940
+  publisher: Det norske videnskaps-akademi i Oslo
+  pages: 178
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '319503'
+  title: A Dictionary of the Kalispel or Flat-head Indian Language
+  kinds:
+  - dictionary
+  author: Missionaries of the Society of Jesus
+  year: 1879
+  publisher: St. Ignatius Print
+  pages: 477
+  source: glottolog-5-4
+- glottolog_reference: '677405'
+  title: A Dictionary of the Kalispel or Flat-head Indian Language
+  kinds:
+  - dictionary
+  author: Joseph Giorda
+  year: 1877
+  publisher: St. Ignatius Print
+  source: glottolog-5-4
+- glottolog_reference: '689825'
+  title: A dictionary of the Kalispel or Flat-Head Indian language
+  kinds:
+  - dictionary
+  author: Gregory Mengarini, Joseph Giorda, Leopold van Gorp, Joseph Bandin and Joseph Guidi
+  year: 1877
+  publisher: St. Ignatius Print
+  source: glottolog-5-4
+retrieved: '2026-11-27'

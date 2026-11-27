@@ -254,7 +254,7 @@ export function finishMotion(): void {
 		try {
 			animation.finish();
 		} catch {
-			// An animation with no end, such as a looping one, cannot finish; it stops on paper anyway.
+			// expected: an animation with no end, such as a looping one, cannot finish; it stops on paper anyway.
 		}
 	}
 }

@@ -179,6 +179,16 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: New Kituwah Academy is the 'Cherokee language campus' of the Eastern Band.
+language_programs:
+- name: New Kituwah Academy Immersion Program
+  link: https://www.ebci.gov/department-of-education/
+  run_by: nation
+  source: ebci-department-of-education
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: New Kituwah Academy section
+  note: Part of the Department of Education.
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Cherokee Agency

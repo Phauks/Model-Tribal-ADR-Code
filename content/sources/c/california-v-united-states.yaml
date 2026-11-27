@@ -99,6 +99,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=490%20U.S.%20920
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1988-11-28'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-678.mp3
+  catalog: https://catalog.archives.gov/id/118974831
+  whole_session: true
+  duration_seconds: 13708
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-678.mp3
+    checksum: 211bd581a33ab33e05718a0054f9f51afcb63535d42d8f338e9955f44f83d179
+    media_type: audio/mpeg
+    bytes: 219327966
 rights:
   status: no-permission-needed
   basis: us-government-work

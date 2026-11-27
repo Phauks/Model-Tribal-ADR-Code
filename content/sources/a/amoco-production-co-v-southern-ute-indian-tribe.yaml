@@ -104,6 +104,20 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=526%20U.S.%20865
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1999-04-05'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1104.mp3
+  catalog: https://catalog.archives.gov/id/138282745
+  whole_session: true
+  note: "The National Archives dates the recording 1999-04-05; the case was argued on 1999-04-19."
+  duration_seconds: 8346
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1104.mp3
+    checksum: 4eab216d28332ceb85b33ff978275c4ae38dd054775ca70cd381e20d0faea7cd
+    media_type: audio/mpeg
+    bytes: 133537248
 rights:
   status: no-permission-needed
   basis: us-government-work

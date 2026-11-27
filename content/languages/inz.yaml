@@ -1,0 +1,54 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: inz
+name: Ineseño
+iso_639_3:
+  code: inz
+  reference_name: Ineseño
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: ines1240
+  level: language
+  source: glottolog-5-4
+family:
+  name: Chumashan
+  glottocode: chum1262
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '44790'
+  title: ': Samala-English Dictionary. A Guide to the Samala Language of the Ineseño Chumash People'
+  kinds:
+  - dictionary
+  author: Ph.D. Santa Ynez Band of Chumash Indians in collaboration with Richard B. Applegate and the Santa Ynez Chumash Education Committee
+  year: 2008
+  publisher: Santa Ynez Band of Chumash Indians
+  source: glottolog-5-4
+- glottolog_reference: '683744'
+  title: 'Samala-English dictionary: A guide to the Samala language of the Ineseño Chumash people'
+  kinds:
+  - dictionary
+  author: Santa Ynez Band of Chumash Indians
+  year: 2007
+  publisher: Santa Ynez Band of Chumash Indians
+  pages: 608
+  source: glottolog-5-4
+- glottolog_reference: '670881'
+  title: Ineseño Dictionary
+  kinds:
+  - dictionary
+  author: Richard Applegate
+  year: 1992
+  publisher: Library, Santa Barbara Museum of Natural History
+  source: glottolog-5-4
+- glottolog_reference: '16383'
+  title: Ineseño Chumash Grammar
+  kinds:
+  - grammar
+  author: Richard Brian Applegate
+  year: 1972
+  publisher: University of California at Berkeley
+  pages: 550
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

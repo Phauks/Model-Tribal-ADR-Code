@@ -43,12 +43,14 @@
 		panels?: Snippet;
 		/** A status badge beside the title, such as "Unverified". */
 		status?: Snippet;
+		/** A line under the lead, such as an executive order's place in its list with the orders before and after it. */
+		pager?: Snippet;
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any -- SourceList's own type
 		sources?: any[];
 		children?: Snippet;
 	}
 
-	let { title: titleText, lead, names = [], trail, crumb, picture, glance = [], panels, status, sources = [], children }: Props = $props();
+	let { title: titleText, lead, names = [], trail, crumb, picture, glance = [], panels, status, pager, sources = [], children }: Props = $props();
 	// The panel's picture snippet shares the prop's name.
 	const pictureView = $derived(picture);
 	// Key facts only where it earns its place (src/lib/info-page.ts): without
@@ -81,6 +83,7 @@
 		{#if lead}<p class="lead">{lead}</p>{/if}
 		{#if rowFacts.length > 0}<div class="fact-rows"><FactGroups groups={rowFacts} /></div>{/if}
 		{#if status}<div class="info-status">{@render status()}</div>{/if}
+		{@render pager?.()}
 	{/snippet}
 
 	{@render children?.()}

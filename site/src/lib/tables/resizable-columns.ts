@@ -56,6 +56,7 @@ function storage(): Storage | undefined {
 	try {
 		return window.localStorage;
 	} catch {
+		// expected: storage is blocked, as in a private window; widths last until the page closes.
 		return undefined;
 	}
 }
@@ -129,6 +130,7 @@ export function readWidths(key: string, columns: number): number[] | undefined {
 		if (!saved.every((value) => typeof value === 'number' && Number.isFinite(value))) return undefined;
 		return saved.map((value) => clampWidth(value));
 	} catch {
+		// expected: saved widths that are not JSON, or blocked storage, mean the table's own widths.
 		return undefined;
 	}
 }
@@ -138,7 +140,7 @@ function writeWidths(key: string, widths: number[] | undefined) {
 		if (widths) storage()?.setItem(storagePrefix + key, JSON.stringify(widths.map(round)));
 		else storage()?.removeItem(storagePrefix + key);
 	} catch {
-		// Private windows and blocked storage: widths last until the page closes.
+		// expected: private windows and blocked storage: widths last until the page closes.
 	}
 }
 

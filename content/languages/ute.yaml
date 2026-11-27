@@ -1,0 +1,94 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ute
+name: Ute-Southern Paiute
+iso_639_3:
+  code: ute
+  reference_name: Ute-Southern Paiute
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: utes1238
+  level: language
+  source: glottolog-5-4
+family:
+  name: Uto-Aztecan
+  glottocode: utoa1244
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2965
+  source: glottolog-5-4
+dialects:
+- name: Chemehuevi
+  glottocode: chem1251
+  source: glottolog-5-4
+- name: Southern Paiute
+  glottocode: sout2969
+  source: glottolog-5-4
+- name: Ute
+  glottocode: utee1244
+  source: glottolog-5-4
+works:
+- glottolog_reference: '315648'
+  title: Ute Dictionary
+  kinds:
+  - dictionary
+  author: Tom Givón, Pear Casias, Vida Peabody and Mary Inez Cloud
+  year: 2016
+  publisher: John Benjamins
+  pages: 373
+  source: glottolog-5-4
+- glottolog_reference: '92433'
+  title: Ute Reference Grammar
+  kinds:
+  - grammar
+  author: Tom Givón
+  year: 2011
+  publisher: John Benjamins
+  pages: 461
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '102535'
+  title: Southern Paiute and Ute Linguistics and Ethnography
+  kinds:
+  - grammar
+  - dictionary
+  author: Edward Sapir
+  year: 1992
+  publisher: Mouton de Gruyter
+  pages: 311
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '303306'
+  title: Ute reference grammar
+  kinds:
+  - grammar
+  year: 1980
+  publisher: Ute Press, Southern Ute Tribe
+  pages: 411
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '669900'
+  title: Ute Dictionary
+  kinds:
+  - dictionary
+  year: 1979
+  publisher: Ute Press
+  source: glottolog-5-4
+- glottolog_reference: '83767'
+  title: Ute dictionary
+  kinds:
+  - dictionary
+  author: Talmy Givón
+  year: 1979
+  publisher: Ute Press, Ignacio, Colo
+  source: glottolog-5-4
+- glottolog_reference: '312117'
+  title: Southern Paiute and Ute Linguistics and Ethnography
+  kinds:
+  - dictionary
+  author: Edward Sapir
+  year: 1931
+  publisher: Proceedings of the American Academy of Arts and Sciences
+  pages: 730
+  source: glottolog-5-4
+retrieved: '2026-11-27'

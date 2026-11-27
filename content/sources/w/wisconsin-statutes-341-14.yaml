@@ -1,0 +1,47 @@
+key: wisconsin-statutes-341-14
+kind: state-statute
+citation:
+  type: legislation
+  title: Application for and issuance of special plates
+  title-short: Wis. Stat. § 341.14
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '341.14'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/341.14
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/341.14
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 341.14 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 341.14 (2023-24). History: 1971 c. 164 s. 83; 1971 c. 299; 1975 c. 384, 417; 1977 c. 16; 1977 c. 29 ss. 1417, 1418, 1654 (7) (a), (e); 1977 c. 43, 183, 292, 418, 447; 1979 c. 236; 1981 c. 255; 1983 a. 227, 430, 511; 1985 a. 29, 55; 1985 a. 87 ss. 1, 5; 1985 a. 124, 202; 1985 a. 332 ss. 191, 251 (4); 1987 a. 19, 64, 112, 145, 315, 399, 403; 1989 a. 31, 54, 56, 137, 302, 304, 312, 359; 1991 a. 2, 39, 100, 240; 1993 a. 16, 291, 303, 415, 491; 1995 a. 147, 253, 255, 445; 1997 a. 27, 67, 252, 255; 1999 a. 9, 32, 80, 92, 167, 186; 2001 a. 16, 38, 103, 109; 2003 a. 83, 184; 2005 a. 22, 25, 109, 199, 260, 319, 472; 2007 a. 38, 97, 107, 120, 160, 194; 2009 a. 28, 135, 159, 182, 195, 224, 226, 230, Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian tribe; indian; tribe); AI reader''s verdict incidental: Federally recognized tribe may get law enforcement plates. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian tribe; indian; tribe'

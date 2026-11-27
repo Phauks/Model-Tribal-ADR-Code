@@ -50,6 +50,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Find recourse', also: ['Recourse', 'Remedies', 'Dispute resolution', 'Peacemaking'], detail: 'Where a dispute can be heard, by nation and method', link: '/nations/recourse' },
 	{ kind: 'page', title: 'Federal offices', also: ['Bureau of Indian Affairs', 'BIA', 'Indian Health Service', 'IHS', 'Agencies'], detail: 'Bureau of Indian Affairs regions and Indian Health Service areas', link: '/nations/federal-offices' },
 	{ kind: 'page', title: 'Self-governance and federal programs', also: ['Self-governance', 'Self-determination', '638 contracts', 'Compacts', 'ISDEAA', '477 plans', 'Indian Housing Block Grants'], detail: 'Federal programs that nations run themselves, and who takes part', link: '/nations/federal-programs' },
+	{ kind: 'page', title: 'Languages', also: ['Heritage languages', 'Native languages', 'Language families', 'ISO 639-3', 'Glottolog'], detail: 'The languages nations name, with their codes, dialects, grammars and dictionaries', link: '/languages' },
 	{ kind: 'page', title: 'Data and charts', also: ['Data', 'Charts', 'Statistics'], link: '/nations/data' },
 	{ kind: 'page', title: 'Build a table', also: ['Table builder', 'Compare nations', 'Export'], link: '/nations/data/build' },
 	{ kind: 'page', title: 'Stories', also: ['Traditional stories', 'Peacemaking stories', 'Treaty stories', 'Accounts', 'Teachings'], detail: 'Stories about law, justice and governance, in the words of the nations and people who tell them', link: '/stories' },
