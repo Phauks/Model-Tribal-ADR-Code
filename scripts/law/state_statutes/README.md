@@ -62,3 +62,6 @@ Records the project already holds under the same key (most were made by hand for
 | Utah | `adapters/utah.py` | XML file of each title, le.utah.gov/xcode |
 | Maine | `adapters/maine.py` (cited by title: section numbers are `<title>:<section>`; a section with versions keeps the one in force) | Section pages, legislature.maine.gov/statutes, listed on each chapter's page |
 | Florida | `adapters/florida.py` | Whole-chapter pages, leg.state.fl.us/statutes; each record links to the section's own page |
+| Kentucky | `adapters/kentucky.py` | PDF of each section, apps.legislature.ky.gov/law/statutes, listed on each chapter's page |
+| Louisiana | `adapters/louisiana.py` (the Revised Statutes and the Children's Code, cited "La. Stat. Ann. § <title>:<section>" and "La. Child. Code Ann. art. <n>"; chapter headings print only on a chapter's first section, so the parser carries them forward) | Section pages, legis.la.gov/Legis/Law.aspx, listed on each title's table of contents |
+| Hawaii | `adapters/hawaii.py` (Native Hawaiians are Native people, not a tribe: records say "Native Hawaiian or Indian law", and readers are told so; the Hawaiian Homes Commission Act, 1920 and the volume's federal acts are left out) | Section pages, data.capitol.hawaii.gov/hrscurrent (capitol.hawaii.gov refuses cloud addresses), found by walking its folder listings |

@@ -25,15 +25,17 @@ LAW = re.compile(r'^L (?:Sp |2d Sp |3d Sp )?(\d{4}), c (\d+)')
 
 
 def text_of(fragment: str) -> str:
-    return clean(html.unescape(re.sub(r'<[^>]+>', ' ', fragment)).replace('\xa0', ' '))
+    return clean(html.unescape(re.sub(r'<[^>]+>', ' ', fragment)).replace('\xa0', ' ').replace('\u2011', '-'))
 
 
 def number_of(name: str) -> str:
-    """HRS_0006E-0043_0005.htm -> 6E-43.5"""
+    """HRS_0006E-0043_0005.htm -> 6E-43.5; HRS_0010-0014_0005_0005.htm -> 10-14.55"""
     match = re.match(r'HRS_0*([0-9]+[A-Z]*)-([0-9A-Z_]+)\.htm$', name)
     if not match:
         return ''
-    return f"{match.group(1)}-{'.'.join(part.lstrip('0') or '0' for part in match.group(2).split('_'))}"
+    # Each digit after the decimal point has its own group: HRS_0010-0014_0005_0005 is 10-14.55 and HRS_0046-0015_0000_0001 is 46-15.01.
+    head, *decimals = match.group(2).split('_')
+    return f"{match.group(1)}-{head.lstrip('0') or '0'}" + ('.' + ''.join(part.lstrip('0') or '0' for part in decimals) if decimals else '')
 
 
 class Hawaii(State):
@@ -110,9 +112,9 @@ class Hawaii(State):
                 found = re.search(r'CHAPTER\s+([0-9A-Z]+)\s*</?[^>]*>?\s*(.*?)</p>', body, re.S)
                 parts = [text_of(p) for p in re.findall(r'<p[^>]*>(.*?)</p>', body, re.S)]
                 parts = [p for p in parts if p]
-                at = next((i for i, p in enumerate(parts) if re.match(r'^CHAPTER\s+[0-9A-Z]+$', p)), None)
+                at = next((i for i, p in enumerate(parts) if re.match(r'^\[?CHAPTER\s+[0-9A-Z]+\]?$', p)), None)
                 if at is not None and at + 1 < len(parts):
-                    name = f'{parts[at].title()} {parts[at + 1].title()}'
+                    name = f"{parts[at].strip('[]').title()} {parts[at + 1].strip('[]').title()}"
                 elif found:
                     name = f'Chapter {found.group(1)} {text_of(found.group(2)).title()}'
             cache[url] = name
@@ -121,7 +123,7 @@ class Hawaii(State):
     def parse(self, raw: Path) -> Iterator[Section]:
         seen, names = set(), {}
         for row in json.loads((raw / 'sections.json').read_text()):
-            number = row['number']
+            number = number_of(row['url'].rsplit('/', 1)[1])  # not the listing's: its numbers came from an earlier, wrong reading of decimals
             if number in seen:
                 continue
             seen.add(number)
@@ -130,19 +132,27 @@ class Hawaii(State):
                 raise SystemExit(f"HI section {row['url']} was not downloaded: run fetch again")
             page = path.read_text(errors='replace')
             body = page[page.find('<body'):]
-            notes = re.search(r'<p class="XNotes', body)
-            if notes:
-                body = body[:notes.start()]
-            paragraphs = re.findall(r'<p[^>]*>(.*?)</p>', body, re.S)
-            first = next((i for i, p in enumerate(paragraphs) if '§' in text_of(p)[:12]), None)
+            # A section page can open with its part's heading and that part's notes; the section starts at the first "§" paragraph
+            # (or "[§...]", the code's mark for a section the revisor numbered) and ends at its own notes.
+            paragraphs = re.findall(r'<p([^>]*)>(.*?)</p>', body, re.S)
+            first = next((i for i, (a, p) in enumerate(paragraphs) if 'XNotes' not in a and re.match(r'^\[?§', text_of(p))), None)
             if first is None:
                 continue
-            bold = text_of(' '.join(re.findall(r'<b>(.*?)</b>', paragraphs[first], re.S)))
-            heading = re.sub(r'^§\s*[0-9A-Z]+\s*-?\s*[0-9A-Z.]*\s*', '', bold).strip()
-            heading = re.sub(r'^-\s*[0-9A-Z.]+\s*', '', heading).strip()
-            text = ' '.join(text_of(p) for p in paragraphs[first:])
-            at = text.find(heading) if heading else -1
-            text = text[at + len(heading):].strip() if at >= 0 else re.sub(r'^§\s*\S+\s*', '', text)
+            own = []
+            for attributes, p in paragraphs[first:]:
+                if 'XNotes' in attributes:
+                    break
+                own.append(p)
+            bold = text_of(' '.join(re.findall(r'<b>(.*?)</b>', own[0], re.S)))
+            # The number can be split by markup ("§9</b>2-7.5"), so match it with spaces allowed between its characters.
+            lead = re.compile(r'^\[?§\s*' + r'\s*'.join(map(re.escape, number)) + r'\s*\]?\s*')
+            text = ' '.join(text_of(p) for p in own)
+            rest = lead.sub('', text)
+            heading = lead.sub('', bold).strip()
+            if not heading or not rest.startswith(heading[:20]):
+                match = re.match(r'^(.*?\.)(?:\s|$)', rest)
+                heading = match.group(1) if match else ''
+            text = rest[len(heading):].strip() if rest.startswith(heading) else rest
             history = ''
             source = re.search(r'\[([^\[\]]*)\]\s*$', text)
             if source and re.match(r'^(?:L |RL |PC |CC |HRS |RLH |Gen\. Laws|\w+ \d{4})', source.group(1)):
@@ -150,11 +160,11 @@ class Hawaii(State):
                 text = text[:source.start()].strip()
             heading = heading.rstrip('.').strip()
             gone = r'^\[?(?:REPEALED|Repealed|Reserved|Renumbered|Transferred|Expired|Obsolete)\b'
-            status = 'repealed' if re.match(gone, heading) or (re.match(gone, text, re.I) and len(text) < 300) else ('reserved' if not text else 'live')
+            status = 'repealed' if re.match(gone, heading) or re.search(r'\bREPEALED\b', heading) or (re.match(gone, text, re.I) and len(text) < 300) else ('reserved' if not text else 'live')
             law = LAW.search(history)
             chapter = number.split('-')[0]
             yield Section(number=number, heading=heading, text=text, url=row['url'], title=chapter,
-                          title_name=self.chapter_name(raw, row['chapter_page'], names) if row['chapter_page'] else f'Chapter {chapter}',
+                          title_name=(self.chapter_name(raw, row['chapter_page'], names) if row['chapter_page'] else '') or f'Chapter {chapter}',
                           history=history, status=status, act=f'{law.group(1)}-{law.group(2)}' if law else '',
                           enacted=[int(law.group(1))] if law else None)
 
