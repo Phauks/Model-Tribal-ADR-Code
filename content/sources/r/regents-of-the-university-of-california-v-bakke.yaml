@@ -1,0 +1,163 @@
+key: regents-of-the-university-of-california-v-bakke
+kind: federal-case
+citation:
+  type: legal_case
+  title: Regents of the University of California v. Bakke
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '438'
+  page: '265'
+  issued:
+    date-parts:
+    - - 1978
+      - 6
+      - 28
+  URL: https://www.loc.gov/item/usrep438265/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: REGENTS OF THE UNIVERSITY OF CALIFORNIA v. BAKKE
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep438/usrep438265/usrep438265.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep438/usrep438265/usrep438265.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: judgment
+    justice: Lewis F. Powell, Jr.
+    page: 269
+  - kind: concurrence in part and dissent in part
+    justice: William J. Brennan, Jr.
+    page: 324
+    note: Headed "concurring in the judgment in part and dissenting in part"; the joint opinion of Justices Brennan, White, Marshall and Blackmun.
+  - kind: concurrence in part and dissent in part
+    justice: Byron R. White
+    page: 379
+    note: Headed only with his name; on Title VI.
+  - kind: concurrence in part and dissent in part
+    justice: Thurgood Marshall
+    page: 387
+    note: Headed only with his name.
+  - kind: concurrence in part and dissent in part
+    justice: Harry A. Blackmun
+    page: 402
+    note: Headed only with his name.
+  - kind: concurrence in part and dissent in part
+    justice: John Paul Stevens
+    page: 408
+    note: Headed "concurring in the judgment in part and dissenting in part"; joined by Chief Justice Burger and Justices Stewart and Rehnquist.
+original_link: https://www.loc.gov/item/usrep438265/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '1977-10-12'
+  printed: Argued October 12, 1977 Decided June 28, 1978
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep438/usrep438265/usrep438265.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1975-1981)
+  decision_type: plurality opinion
+  vote:
+    majority: 8
+    minority: 1
+  justices:
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+    opinion: plurality
+  - name: William J. Brennan, Jr.
+    vote: majority
+    opinion: concurrence
+  - name: Thurgood Marshall
+    vote: majority
+  - name: Byron R. White
+    vote: minority
+    opinion: dissent
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+    opinion: special concurrence
+  - name: Warren E. Burger
+    vote: majority
+  - name: Potter Stewart
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+  source: https://api.oyez.org/cases/1979/76-811
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep438265/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/438/265/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1977/76-811
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22438%20U.S.%20265%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=438%20U.S.%20265
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=438%20U.S.%20265
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 438 U.S. 265 (1978). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep438/usrep438265/usrep438265.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1977-147), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 438 U.S. 265 "Regents of the University of California v. Bakke"; Database 438 U.S. 265 "REGENTS OF THE UNIVERSITY OF CALIFORNIA v. BAKKE"
+  - check: scan
+    result: agree
+    detail: Scan has 157 pages; the report runs 265 to 421
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued October 12, 1977 Decided June 28, 1978"; scan "Argued October 12, 1977-Decided June 28, 1978"
+  - check: decided
+    result: confirmed
+    detail: 'Printed "Argued October 12, 1977 Decided June 28, 1978"; Database 1978-06-26. Confirmed: the report prints "Argued October 12, 1977 Decided June 28, 1978" on p. 265 (text layer, 1.00)'
+  - check: opinions
+    result: confirmed
+    detail: 'Report: judgment White p. 269, dissent in part Stevens p. 408; Database writers: Blackmun, Brennan, Marshall, Powell, Stevens, White. Confirmed: the report prints (read from the page images) p. 269: "MR. JUSTICE POWELL announced the judgment of the Court."; p. 324: "Opinion of MR. JUSTICE BRENNAN, MR. JUSTICE WHITE, MR. JUSTICE MARSHALL, and MR. JUSTICE BLACKMUN, concurring in the judgment in part and dissenting in part."; p. 379: "MR. JUSTICE WHITE."; p. 387: "MR. JUSTICE MARSHALL."; p. 402: "MR. JUSTICE BLACKMUN."; p. 408: "MR. JUSTICE STEVENS, with whom THE CHIEF JUSTICE, MR. JUSTICE STEWART, and MR. JUSTICE REHNQUIST join, concurring in the judgment in part and dissenting in part." (the OCR reads this line poorly; checked on the page image)'
+  - check: bench
+    result: differs
+    detail: Oyez and the Database differ for Harry A. Blackmun (Oyez majority, Database minority), Thurgood Marshall (Oyez majority, Database minority), William J. Brennan, Jr. (Oyez majority, Database minority)
