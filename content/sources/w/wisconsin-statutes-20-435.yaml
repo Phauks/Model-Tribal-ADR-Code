@@ -1,0 +1,47 @@
+key: wisconsin-statutes-20-435
+kind: state-statute
+citation:
+  type: legislation
+  title: Health services, department of
+  title-short: Wis. Stat. § 20.435
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '20.435'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/20.435
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/20.435
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 20.435 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 20.435 (2023-24). History: 1971 c. 125 ss. 138 to 155, 522 (1); 1971 c. 211, 215, 302, 307, 322; 1973 c. 90, 198, 243; 1973 c. 284 s. 32; 1973 c. 308, 321, 322, 333, 336; 1975 c. 39 ss. 153 to 173, 732 (1), (2); 1975 c. 41 s. 52; 1975 c. 82, 224, 292; 1975 c. 413 s. 18; 1975 c. 422, 423; 1975 c. 430 ss. 1, 2, 80; 1977 c. 29 ss. 236 to 273, 1657 (18); 1977 c. 112; 1977 c. 203 s. 106; 1977 c. 213, 233, 327; 1977 c. 354 s. 101; 1977 c. 359; 1977 c. 418 ss. 129 to 137, 924 (18) (d), 929 (55); 1977 c. 428 s. 115; 1977 c. 447; 1979 c. 32 s. 92 (11); 1979 c. 34, 48; 1979 c. 102 s. 237; 1979 c. 111, 175, 177; 1979. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; american indians; indian tribe; tribal court; tribal governing bodies; indian; indians; tribal; tribe; tribes; winnebago); AI reader''s verdict incidental: Health appropriation includes American Indian health and diabetes accounts. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; american indians; indian tribe; tribal court; tribal governing bodies; indian; indians; tribal; tribe; tribes; winnebago'

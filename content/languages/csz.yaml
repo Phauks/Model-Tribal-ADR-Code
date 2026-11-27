@@ -1,0 +1,44 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: csz
+name: Hanis
+iso_639_3:
+  code: csz
+  reference_name: Coos
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: coos1249
+  level: language
+  source: glottolog-5-4
+family:
+  name: Coosan
+  glottocode: coos1248
+  source: glottolog-5-4
+iso_names:
+- name: Coos
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/4057
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '107286'
+  title: Coos
+  kinds:
+  - grammar
+  author: Leo J. Frachtenberg
+  year: 1922
+  publisher: Government Printing Office
+  pages: 134
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '21963'
+  title: Grammar of the Coos Language of Oregon
+  kinds:
+  - grammar
+  author: Leo Joachim Frachtenberg
+  year: 1910
+  publisher: Columbia University
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

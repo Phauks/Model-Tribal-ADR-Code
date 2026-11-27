@@ -1,0 +1,112 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: haw
+name: Hawaiian
+iso_639_3:
+  code: haw
+  reference_name: Hawaiian
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: hawa1245
+  level: language
+  source: glottolog-5-4
+family:
+  name: Austronesian
+  glottocode: aust1307
+  source: glottolog-5-4
+own_names:
+- name: ‘Ōlelo Hawai‘i
+  language: haw
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/125
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '133173'
+  title: Illustrated Hawaiian dictionary
+  kinds:
+  - dictionary
+  author: Kahikahealani Wight
+  year: 2005
+  publisher: Bess Press
+  pages: 448
+  source: glottolog-5-4
+- glottolog_reference: '135978'
+  title: 'Hawaiian Dictionary: Hawaiian-English, English-Hawaiian'
+  kinds:
+  - dictionary
+  author: Mary Kawena Pukui and Samuel H. Elbert
+  year: 1986
+  publisher: University of Hawai'i Press
+  pages: 572
+  source: glottolog-5-4
+- glottolog_reference: '701809'
+  title: 'Hawaiian dictionary: Revised and enlarged edition'
+  kinds:
+  - dictionary
+  author: Samuel H Elbert and Mary Kawena Pukui
+  year: 1986
+  publisher: University of Hawaii Press
+  source: glottolog-5-4
+- glottolog_reference: '660876'
+  title: The Pocket Hawaiian Dictionary, with a Concise Hawaiian Grammar
+  kinds:
+  - dictionary
+  author: Mary Kawena Pukui, Samuel H. Elbert and Esther T. Mookini
+  year: 1975
+  publisher: University of Hawaii Press
+  source: glottolog-5-4
+- glottolog_reference: '71458'
+  title: Hawaiian Dictionary
+  kinds:
+  - dictionary
+  author: Mary Kawena Pukui and Samuel H. Elbert
+  year: 1971
+  publisher: University Press of Hawaii
+  source: glottolog-5-4
+- glottolog_reference: '469534'
+  title: Spoken Hawaiian
+  kinds:
+  - grammar
+  author: Samuel H. Elbert
+  year: 1970
+  publisher: University Press of Hawaii
+  pages: 272
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '670457'
+  title: A Short Synopsis of the Most Essential Points in Hawaiian Grammar
+  kinds:
+  - grammar
+  author: W. D. Alexander
+  year: 1968
+  publisher: Charles E. Tuttle Company
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '160530'
+  title: Hawaiian-English Dictionary
+  kinds:
+  - dictionary
+  author: Mary Kawena Pukui and Samuel H. Elbert
+  year: 1965
+  publisher: University of Hawaii Press
+  source: glottolog-5-4
+- glottolog_reference: '612341'
+  title: Hawaiian-English dictionary
+  kinds:
+  - dictionary
+  author: Mary Kawena Pukui and Samuel H. Elbert
+  year: 1957
+  publisher: University of Hawaii Press
+  source: glottolog-5-4
+- glottolog_reference: '406164'
+  title: Introduction to the Hawaiian language
+  kinds:
+  - dictionary
+  author: Henry P. Judd, Maru Kawena Pukui and John F. G. Stokes
+  year: 1943
+  publisher: Tongg Publishing
+  pages: 325
+  source: glottolog-5-4
+retrieved: '2026-11-27'

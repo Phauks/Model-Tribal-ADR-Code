@@ -79,7 +79,7 @@ export async function fetchOriginal(
 			const bytes = await response.arrayBuffer();
 			if (bytes.byteLength === copy.bytes && (await hexDigest(bytes)) === copy.sha256) return { bytes, source: link };
 		} catch {
-			// Try the next address.
+			// expected: try the next address.
 		}
 	}
 	return undefined;

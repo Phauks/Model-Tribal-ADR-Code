@@ -1,0 +1,44 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: oma
+name: Omaha-Ponca
+iso_639_3:
+  code: oma
+  reference_name: Omaha-Ponca
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: omah1247
+  level: language
+  source: glottolog-5-4
+family:
+  name: Siouan
+  glottocode: siou1252
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1920
+  source: glottolog-5-4
+dialects:
+- name: Omaha
+  glottocode: omah1248
+  source: glottolog-5-4
+- name: Ponca
+  glottocode: ponc1241
+  source: glottolog-5-4
+works:
+- glottolog_reference: '585929'
+  title: 'The Omaha Language and the Omaha Way: An Introduction to Omaha Language and Culture'
+  kinds:
+  - grammar
+  author: Mark Awakuni-Swetland, Alberta Grant Canby, Emmaline Walker Sanchez, Rory Larson, Arlene Walker, Delores Black, Aubrey Streit Krug and Loren H. Frerichs
+  year: 2018
+  publisher: University of Nebraska Press
+  pages: 707
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '611117'
+  title: Ȼegiha slip file (a dictionary of Omaha and Ponca)
+  kinds:
+  - dictionary
+  author: James Owen Dorsey
+  source: glottolog-5-4
+retrieved: '2026-11-27'

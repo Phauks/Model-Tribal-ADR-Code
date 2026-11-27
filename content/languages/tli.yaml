@@ -1,0 +1,300 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: tli
+name: Tlingit
+iso_639_3:
+  code: tli
+  reference_name: Tlingit
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: tlin1245
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/850
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/tlingit.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Northern Tlingit
+  glottocode: nort3355
+  source: glottolog-5-4
+- name: Southern Tlingit
+  glottocode: sout3338
+  source: glottolog-5-4
+- name: Tongass
+  glottocode: tong1333
+  source: glottolog-5-4
+works:
+- glottolog_reference: '318318'
+  title: '575 Tlingit Verbs: A study of Tlingit Verb Paradigms'
+  kinds:
+  - grammar
+  author: Keri M. Eggleston
+  year: 2013
+  publisher: University of Alaska Fairbanks
+  pages: 1351
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '168470'
+  title: Dictionary of Tlingit
+  kinds:
+  - dictionary
+  author: Keri Edwards
+  year: 2009
+  publisher: Sealaska Heritage Institute
+  pages: 610
+  source: glottolog-5-4
+- glottolog_reference: '167912'
+  title: The New Tlingit Noun Dictionary
+  kinds:
+  - dictionary
+  author: James Crippen
+  year: 2005
+  source: glottolog-5-4
+- glottolog_reference: '39351'
+  title: 'English-Tlingit Dictionary: Nouns'
+  kinds:
+  - dictionary
+  author: Constance Naish and Gillian Story
+  year: 1996
+  publisher: Sheldon Jackson College
+  pages: 117
+  source: glottolog-5-4
+- glottolog_reference: '160265'
+  title: The schetic categories of the Tlingit verb
+  kinds:
+  - grammar
+  author: Jeffry A. Leer
+  year: 1991
+  publisher: University of Chicago
+  pages: 532
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '172534'
+  title: Sentences and glosses for Tlingit dictionary
+  kinds:
+  - dictionary
+  author: John Marks
+  year: 1979
+  pages: 200
+  source: glottolog-5-4
+- glottolog_reference: '172448'
+  title: Studies for Tlingit dictionary format
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1979
+  pages: 20
+  source: glottolog-5-4
+- glottolog_reference: '172451'
+  title: Tlingit dictionary files
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1979
+  source: glottolog-5-4
+- glottolog_reference: '172442'
+  title: Rehearing of verb dictionary, stems beginning with front and back velar series, with Frank and Emma Williams
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1978
+  pages: 54
+  source: glottolog-5-4
+- glottolog_reference: '172446'
+  title: Tlingit stem list
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1978
+  pages: 79
+  source: glottolog-5-4
+- glottolog_reference: '172532'
+  title: Review of Naish and Story, Tlingit Verb Dictionary
+  kinds:
+  - dictionary
+  author: Robert L Oswalt
+  year: 1977
+  source: glottolog-5-4
+- glottolog_reference: '168182'
+  title: Tlingit Language Course
+  kinds:
+  - grammar
+  author: Vesta L. Dominicks and Charles. (participant) Natkong
+  year: 1977
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '167675'
+  title: Tlingit Verb Dictionary; Announcement
+  kinds:
+  - dictionary
+  author: Robert L Oswalt
+  year: 1977
+  source: glottolog-5-4
+- glottolog_reference: '172434'
+  title: Dictionary format study and sample verb theme entries
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1976
+  pages: 11
+  source: glottolog-5-4
+- glottolog_reference: '172515'
+  title: English-Tlingit Dictionary:Nouns
+  kinds:
+  - dictionary
+  author: Henry Davis
+  year: 1976
+  source: glottolog-5-4
+- glottolog_reference: '172436'
+  title: Rehearing of Naish-Story 1976 revised noun dictionary with Frank and Emma Williams
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1976
+  pages: 102
+  source: glottolog-5-4
+- glottolog_reference: '172431'
+  title: Revisions for Naish and Story, Tlingit Noun Dictionary
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1976
+  pages: 107
+  source: glottolog-5-4
+- glottolog_reference: '553541'
+  title: Tlingit Noun Dictionary
+  kinds:
+  - dictionary
+  author: Gillian L. Story and Constance Naish
+  year: 1976
+  publisher: Alaska Native Language Center
+  pages: 117
+  source: glottolog-5-4
+- glottolog_reference: '172427'
+  title: English-Tlingit Dictionary
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1975
+  pages: 31
+  source: glottolog-5-4
+- glottolog_reference: '172423'
+  title: Rehearing of verb dictionary with Frank and Emma Williams, Ketchikan, for Tongass forms
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1975
+  source: glottolog-5-4
+- glottolog_reference: '172419'
+  title: Tlingit Bilingual Teacher's Handbook, Revised
+  kinds:
+  - grammar
+  author: Jeff Leer
+  year: 1975
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '172409'
+  title: Materials on Tlingit dictionary format
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1973
+  pages: 84
+  source: glottolog-5-4
+- glottolog_reference: '172384'
+  title: Tlingit Verb Dictionary
+  kinds:
+  - dictionary
+  author: Gillian L. Story and Constance Naish
+  year: 1973
+  publisher: Alaska Native Language Center
+  pages: 393
+  source: glottolog-5-4
+- glottolog_reference: '141828'
+  title: 'Tlingit Verb Dictionary: Part 1 English-Tlingit, Part 2 Tlingit-English'
+  kinds:
+  - dictionary
+  author: Gillian L. Story and Constance M. Naish
+  year: 1973
+  publisher: Alaska Native Language Center
+  pages: 392
+  source: glottolog-5-4
+- glottolog_reference: '172408'
+  title: Tlingit verb stem dictionary preface
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1973
+  pages: 67
+  source: glottolog-5-4
+- glottolog_reference: '172585'
+  title: Sample grammar of Tlingit
+  kinds:
+  - grammar
+  author: Gillian L Story
+  year: 1972
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '49845'
+  title: English-Tlingit dictionary (nouns)
+  kinds:
+  - dictionary
+  author: Constance M. Naish
+  year: 1963
+  publisher: Summer Institute of Linguistics
+  pages: 81
+  source: glottolog-5-4
+- glottolog_reference: '172379'
+  title: English-Tlingit Dictionary:Nouns
+  kinds:
+  - dictionary
+  author: Constance. Naish and Gillian L Story
+  year: 1963
+  source: glottolog-5-4
+- glottolog_reference: '172295'
+  title: Notes and grammar draft
+  kinds:
+  - grammar
+  author: Franz Boas
+  year: 1915
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '470800'
+  title: Grammar and vocabulary of the Hlingit [Tlingit] Laguage of Southeastern Alaska
+  kinds:
+  - grammar
+  author: William A. Kelly and Frances H Willard
+  year: 1905
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '680225'
+  title: Grammar and Vocabulary of the Hlingit, Language of Southeastern Alaska. Report of the Commissioner of Education for 1903-1904
+  kinds:
+  - grammar
+  author: William A. Kelly and Frances. H. Willard
+  year: 1904
+  publisher: Bureau of Education
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '172305'
+  title: Thlingit and English Dictionary
+  kinds:
+  - dictionary
+  author: James E Coffin
+  year: 1900
+  source: glottolog-5-4
+- glottolog_reference: '172275'
+  title: A dictionary of the Thlingit language of Southeastern Alaska
+  kinds:
+  - dictionary
+  author: John J. McLean and J.M Vanderbilt
+  year: 1882
+  source: glottolog-5-4
+retrieved: '2026-11-27'

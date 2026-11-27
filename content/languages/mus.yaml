@@ -1,0 +1,98 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: mus
+name: Creek
+iso_639_3:
+  code: mus
+  reference_name: Creek
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: cree1270
+  level: language
+  source: glottolog-5-4
+family:
+  name: Muskogean
+  glottocode: musk1252
+  source: glottolog-5-4
+own_names:
+- name: Mvskoke
+  language: mus
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2007
+  source: glottolog-5-4
+dialects:
+- name: Nuclear Creek
+  glottocode: nucl1645
+  source: glottolog-5-4
+- name: Seminole
+  glottocode: semi1265
+  source: glottolog-5-4
+works:
+- glottolog_reference: '99428'
+  title: A Grammar of Creek (Muskogee)
+  kinds:
+  - grammar
+  author: Jack B. Martin
+  year: 2011
+  publisher: University of Nebraska Press
+  pages: 489
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '682284'
+  title: A Dictionary of Creek/Muskogee
+  kinds:
+  - dictionary
+  author: Jack B. Martin and Margaret McKane Mauldin
+  year: 2000
+  publisher: University of Nebraska Press
+  source: glottolog-5-4
+- glottolog_reference: '34745'
+  title: 'A dictionary of Creek/Muskogee: with notes on the Florida and Oklahoma Seminole dialects of Creek'
+  kinds:
+  - dictionary
+  author: Jack B. Martin and Margaret McKane Mauldin
+  year: 2000
+  publisher: University of Nebraska Press
+  pages: 353
+  source: glottolog-5-4
+- glottolog_reference: '153056'
+  title: The Semantics of Creek Morphosyntax
+  kinds:
+  - grammar
+  author: Donald Edward Hardy
+  year: 1988
+  publisher: Rice University
+  pages: 421
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '36310'
+  title: Grammatical Description of the Florida Seminole Dialect of Creek
+  kinds:
+  - grammar
+  author: Michele Nathan
+  year: 1977
+  publisher: Tulane University
+  pages: 163
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '315963'
+  title: Dictionary of English and Muskokee
+  kinds:
+  - dictionary
+  author: R. M. Loughridge
+  year: 1914
+  publisher: The Westminster Press
+  pages: 254
+  source: glottolog-5-4
+- glottolog_reference: '45549'
+  title: A grammar of the Maskwke, or Creek language, to which are prefixed lessons in spelling, reading and defining
+  kinds:
+  - grammar
+  author: Henri Frieland Buckner and Goliah Herrod
+  year: 1860
+  publisher: The Domestic and Indian Misison Board
+  pages: 138
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

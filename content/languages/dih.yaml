@@ -1,0 +1,73 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: dih
+name: Tipai-Kumeyaay-Huerteno
+iso_639_3:
+  code: dih
+  reference_name: Kumiai
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: kumi1248
+  level: language
+  source: glottolog-5-4
+family:
+  name: Cochimi-Yuman
+  glottocode: coch1271
+  source: glottolog-5-4
+iso_names:
+- name: Kumiai
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/847
+  source: glottolog-5-4
+dialects:
+- name: Huerteno
+  glottocode: huer1234
+  source: glottolog-5-4
+- name: Kumeyaay
+  glottocode: kume1234
+  source: glottolog-5-4
+- name: Tipai
+  glottocode: tipa1241
+  source: glottolog-5-4
+works:
+- glottolog_reference: '664280'
+  title: 'Barona inter-tribal dictionary: ''lipay Aa Tiipay Aa Uumall'
+  kinds:
+  - dictionary
+  author: Amy Miller and Margaret Langdon
+  year: 2008
+  publisher: Barona Museum Press
+  pages: 694
+  source: glottolog-5-4
+- glottolog_reference: '52621'
+  title: A Grammar of Jamul Tiipay
+  kinds:
+  - grammar
+  author: Amy Miller
+  year: 2001
+  publisher: Mouton de Gruyter
+  pages: 395
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '102117'
+  title: A grammar of Jamul Diegueño
+  kinds:
+  - grammar
+  author: Amy Whitmore Miller
+  year: 1999
+  publisher: UMI
+  pages: 261
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '75376'
+  title: A Grammar of Jamul Diegueno
+  kinds:
+  - grammar
+  author: Amy Whitmore Miller
+  year: 1990
+  publisher: University of California at San Diego
+  pages: 261
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

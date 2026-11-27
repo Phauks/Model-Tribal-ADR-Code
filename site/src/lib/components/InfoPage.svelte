@@ -24,7 +24,6 @@
 	import Breadcrumbs from './Breadcrumbs.svelte';
 	import CitationMarks from './CitationMarks.svelte';
 	import FactGroups from './FactGroups.svelte';
-	import FactLine from './FactLine.svelte';
 	import GlancePanel from './GlancePanel.svelte';
 	import RecordPage from './RecordPage.svelte';
 	import SourceList from './SourceList.svelte';
@@ -44,22 +43,31 @@
 		panels?: Snippet;
 		/** A status badge beside the title, such as "Unverified". */
 		status?: Snippet;
+		/** A line under the lead, such as an executive order's place in its list with the orders before and after it. */
+		pager?: Snippet;
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any -- SourceList's own type
 		sources?: any[];
 		children?: Snippet;
 	}
 
-	let { title: titleText, lead, names = [], trail, crumb, picture, glance = [], panels, status, sources = [], children }: Props = $props();
+	let { title: titleText, lead, names = [], trail, crumb, picture, glance = [], panels, status, pager, sources = [], children }: Props = $props();
 	// The panel's picture snippet shares the prop's name.
 	const pictureView = $derived(picture);
 	// Key facts only where it earns its place (src/lib/info-page.ts): without
 	// the facts the title and lead already say, and as a panel only with enough
-	// facts or a picture or panel; one or two facts join the lead line.
+	// facts or a picture or panel; fewer facts are label rows under the lead.
 	const facts = $derived(withoutRepeats(glance, [titleText, lead, ...names.map((other) => other.name)]));
 	const hasGlance = $derived(picture !== undefined || panels !== undefined || facts.length >= glancePanelMinimum);
-	const lineFacts = $derived(hasGlance ? [] : facts);
-	// A lead that is a citation or a short line takes the facts after it; a lead that is a sentence has them on the line under it.
-	const factsAfterLead = $derived(lead !== undefined && !/[.!?]$/.test(lead.trim()));
+	// Too few for a panel, the facts are labeled rows under the lead, one for each, such as Type, Nation and Date (Trevor, Nov. 27, 2026, option C).
+	// Under a citation the rows keep what the citation only implies, such as its date; a fact that is the citation itself is left out.
+	const leadIsCitation = $derived(lead !== undefined && !/[.!?]$/.test(lead.trim()));
+	const rowFacts = $derived(
+		hasGlance
+			? []
+			: leadIsCitation
+				? withoutRepeats(glance, [titleText, ...names.map((other) => other.name)]).filter((group: { items: { text: string }[] }) => !group.items.every((item) => item.text.trim() === lead?.trim()))
+				: facts
+	);
 </script>
 
 {#if trail}<Breadcrumbs {trail} current={crumb ?? titleText} />{/if}
@@ -72,11 +80,10 @@
 				{#each names as other, index (other.name)}{#if index > 0}{'; '}{/if}<span lang={other.language ?? 'und'}><strong>{other.name}</strong></span>{#if other.note}<span class="muted">, {other.note}</span>{/if}<CitationMarks marks={other.citations ?? []} />{/each}
 			</p>
 		{/if}
-		{#if lead}<p class="lead">{lead}{#if factsAfterLead && lineFacts.length > 0}<span class="lead-facts">{' · '}<FactLine groups={lineFacts} /></span>{/if}</p>{/if}
-		{#if lineFacts.length > 0 && !factsAfterLead}<p class="fact-line">
-				<FactLine groups={lineFacts} />
-			</p>{/if}
+		{#if lead}<p class="lead">{lead}</p>{/if}
+		{#if rowFacts.length > 0}<div class="fact-rows"><FactGroups groups={rowFacts} /></div>{/if}
 		{#if status}<div class="info-status">{@render status()}</div>{/if}
+		{@render pager?.()}
 	{/snippet}
 
 	{@render children?.()}
@@ -110,14 +117,31 @@
 		margin-top: calc(-1 * var(--space-2));
 	}
 
-	/* The facts too few for a panel, in muted type (FactLine.svelte). */
-	.lead-facts,
-	.fact-line {
-		color: var(--color-ink-muted);
+	/* The facts too few for a panel: compact label rows, the label small and muted, the value in body type. */
+	.fact-rows {
+		margin-top: calc(-1 * var(--space-2));
 	}
 
-	.fact-line {
-		margin-top: calc(-1 * var(--space-2));
+	.fact-rows :global(.summary-list) {
+		grid-template-columns: max-content minmax(0, 1fr);
+		column-gap: var(--space-4);
+		margin: 0;
+		border-top: 0;
+	}
+
+	.fact-rows :global(.summary-list > div > dt),
+	.fact-rows :global(.summary-list > div > dd) {
+		padding: var(--space-1) 0;
+		border-bottom: 0;
+	}
+
+	.fact-rows :global(.summary-list > div > dt) {
+		padding-top: 0.3em;
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
 	}
 
 	.info-status {

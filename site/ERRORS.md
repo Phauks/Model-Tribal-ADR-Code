@@ -27,6 +27,22 @@ Nothing secret is logged. Fields with secret-looking names are left out, and mes
 
 `afterResponse(work, code)` reports a failure of work that runs after the answer under the code given.
 
+## Worker runs
+
+The live, scanner, Wayback and source watch Workers report the same way as the site, through `report` with their own short name as the source (`live`, `scanner`, `wayback` and `radar`) and the site's database, so their problems are counted in the same `problems` table. The Wayback Worker has the database binding for this alone.
+
+Each Worker wraps its default export in `reported(source, handlers)` from `src/lib/server/reported.ts`, and each Durable Object's alarm in `runReported(place, work)`:
+
+- A scheduled run or an alarm that throws is reported under the error's code, or `<source>.scheduled` or `<source>.alarm`, and still throws, so Cloudflare's cron events and alarm retries see it as before.
+- A fetch that throws is reported as `<source>.fetch` and answered with 500 and the reference, instead of Cloudflare's error page.
+- When a scheduled run or an alarm ends, finished or failed, it writes one row in the `worker_runs` table: when it last started, how long it took, whether it finished, how many runs and failures, and the last failure's code, reference and message. A fetch writes a row only when it fails. A run stopped at its time limit writes nothing, so it shows as late.
+
+A Worker with more than one cron trigger names each, as the scanner does (`scheduled:wake` every minute, `scheduled:rebuild` once a day). The Wayback and source watch Workers now wait for their minute's run inside the handler, rather than handing it to `waitUntil`, so the row says how it ended.
+
+The Service checks page's Scheduled runs and alarms row reads `worker_runs`. `expectedRuns` lists each scheduled run, when it runs and how late it may be (ten minutes for the minute runs, 26 hours for the daily one); `tests/reported.test.ts` checks the list against each Worker's cron triggers. A scheduled run that is late, has never recorded a run, or failed last time is Not working. An alarm or a fetch that failed in the last day Needs a look.
+
+The site Worker's own scheduled runs are not recorded in `worker_runs` yet. Each passes through one of the site's addresses (`tools/add-scheduled-run.mjs`), so an unexpected error is reported by `handleError`, and a run whose address answers with an error throws.
+
 ## Problems in the browser
 
 `src/hooks.client.ts` sends every error SvelteKit catches while moving between pages, and every error a page's scripts throw that nothing catches, to `POST /problems` (`src/lib/problem-reports.ts`). The site reports it with source `browser`. A page sends at most ten, and the same message once. Each network address may send 30 a minute (`problemReportLimit` in `wrangler.jsonc`). Nothing about the reader is sent: only the code, the message and stack without secrets, the path without its query, and the reference.

@@ -1,0 +1,54 @@
+{
+  "state": "MI",
+  "code": "Michigan Compiled Laws",
+  "edition": 2026,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 41824,
+    "live": 38907,
+    "strong": 160,
+    "weak_only": 309,
+    "reserved": 200,
+    "repealed": 2717
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 214,
+    "core": 52,
+    "incidental": 162,
+    "by_pool": {
+      "A": {
+        "core": 35,
+        "incidental": 124,
+        "none": 1
+      },
+      "B": {
+        "none": 261,
+        "incidental": 38,
+        "core": 10
+      },
+      "C": {
+        "none": 299,
+        "core": 1
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 6
+      }
+    },
+    "meta": {
+      "live": 38907,
+      "A": 160,
+      "B": 309,
+      "E": 6,
+      "C": 1091,
+      "C_sample": 300,
+      "D": 37341,
+      "D_sample": 300,
+      "items": 1075,
+      "batches": 8
+    }
+  }
+}

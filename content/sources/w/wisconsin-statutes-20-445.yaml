@@ -1,0 +1,47 @@
+key: wisconsin-statutes-20-445
+kind: state-statute
+citation:
+  type: legislation
+  title: Workforce development, department of
+  title-short: Wis. Stat. § 20.445
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '20.445'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/20.445
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/20.445
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Wis. Stat. § 20.445 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 20.445 (2023-24). History: 1971 c. 125 ss. 156, 522 (1); 1971 c. 211, 215; 1971 c. 228 s. 44; 1971 c. 259; 1973 c. 90, 180, 243, 333; 1975 c. 39, 147, 224, 274, 344; 1975 c. 404 ss. 3, 10 (1); 1975 c. 405 ss. 3, 11 (1); 1977 c. 29, 48, 203, 418; 1979 c. 34 ss. 512 to 522, 2102 (25) (a); 1979 c. 189, 221, 309; 1979 c. 329 s. 25 (1); 1979 c. 350 ss. 3, 27 (6); 1979 c. 353, 355; 1981 c. 20, 36, 92, 93, 317, 325, 364; 1983 a. 8; 1983 a. 27 ss. 411 to 425; 1983 a. 98 ss. 1, 31; 1983 a. 192, 384, 388, 410; 1985 a. 17, 29, 153, 313, 332; 1987 a. 27; 1987 a. 38 ss. 2 to 4, 136; 1987 a. 399, 403; 1989 a. 31, 44, 64, 77, 254, 284, 359; 1991 a. 39 ss. 372c, 545r, 545t, 545v, 547, 548, 548g, 548m, 549, 549b, 549g, 549p; 1991 a. 85, 89, 269, 315; 1993 a. 16, 126, 243, 437, 491; 1995 a. 27 ss. 772mm, 772mn, 776p to 778b, 778L, 778n, 778q, 778v, 778z to 780m, 781m to 782p, 782u, 841, 842, 849, 850, 854, 855, 858c, 873 to 876, 878, 880, 890 to 896, 962 to 1014c, 9126 (19), 9130 (4); 1995 a. 113 s. 2t; 1995 a. 117, 201, 216, 225, 289; 1995 a. 404 ss. 4, 6 to 8, 10 to 17; 1997 a. 3; 1997 a. 27 ss. 610 to 642m, 722; 1997 a. 35, 38, 39, 105, 112, 191, 235, 236, 237, 252; 1999 a. 9 ss. 270, 458 to 478; 1999 a. 15, 32; 2001 a. 16, 35, 43, 104, 109; 2003 a. 33, 197; 2005 a. 25, 86, 172; 2005 a. 443 s. 265; 2007 a. 20, 59; 2009 a. 28, 180; 2011 a. 32, 123, 183, 198; 2013 a. 9, 20; 2013 a. 36 ss. 6p to 7, 236m; 2013 a. 57, 139; 2015 a. 55, 180, 194, 283; 2015 a. 334 ss. 96, 100; 2015 a. 348; 2017 a. 11, 58; 2017 a. 59 ss. 192, 216m, 398 to 405; 2017 a. 157, 336, 370; 2019 a. 9; 2021 a. 58, 217; 2023 a. 153; 2025 a. 144. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; native american; indian; native; tribes); AI reader''s verdict core: Vocational rehabilitation appropriation for tribes and Native individuals. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: american indian; native american; indian; native; tribes'

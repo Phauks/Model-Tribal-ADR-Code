@@ -34,6 +34,7 @@ import { fromGeojsonVt } from '@maplibre/vt-pbf';
 import polylabel from 'polylabel';
 import { unzipSync } from 'fflate';
 import * as shapefile from 'shapefile';
+import { addToCaptureIndex } from './capture-index.mjs';
 import { writePmtiles } from './pmtiles-writer.mjs';
 
 const geography = new URL('../geography/', import.meta.url);
@@ -640,9 +641,6 @@ function layerSources(work) {
 }
 
 const roycesRecord = 'royce-1899-indian-land-cessions-in-the-united-states';
-const indexPath = new URL('../../research/capture-index.csv', import.meta.url);
-const indexColumns = ['key', 'bytes', 'sha256', 'media_type', 'topic', 'title', 'nations', 'obtained', 'link', 'captured', 'records', 'record_kinds', 'listed_in', 'catalog', 'derived_from', 'rights', 'redistribution', 'keep_local', 'orphan'];
-const csvField = (value) => (/[",\n]/.test(String(value)) ? `"${String(value).replaceAll('"', '""')}"` : String(value));
 
 /** Adds the uploaded files to the capture index (research/capture-index.csv). */
 function index() {
@@ -681,12 +679,8 @@ function index() {
 		}),
 		...Object.entries(censusYears).map(([year, url]) => row({ key: `historic-maps/census-land-areas/${basename(url)}`, ...file(join(work, 'census', `${year}.zip`)), media_type: 'application/zip', title: `U.S. Census Bureau, American Indian/Alaska Native/Native Hawaiian Areas, ${year}`, obtained: `downloaded from the Census Bureau by tools/build-historic-maps.mjs, ${today}`, link: url, records: 'census-tiger-aiannh-1990-2026' }))
 	];
-	const keys = new Set(rows.map((entry) => entry.key));
-	const lines = readFileSync(indexPath, 'utf8').split('\n').filter((line) => line !== '');
-	// Rows already in the index keep their place; only the rows for these keys are replaced, at the end.
-	const kept = lines.filter((line, number) => number === 0 || !keys.has(line.split(',')[0].replace(/^"|"$/g, '')));
-	const added = rows.map((entry) => indexColumns.map((column) => csvField(entry[column] ?? '')).join(','));
-	writeFileSync(indexPath, `${[...kept, ...added].join('\n')}\n`);
+	// Each row replaces any row with the same key, and the index stays in key order (tools/capture-index.mjs).
+	addToCaptureIndex(rows);
 	console.log(`Indexed ${rows.length} files in research/capture-index.csv.`);
 }
 

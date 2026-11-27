@@ -14,6 +14,7 @@ All content is kept as plain files in git, and the website and the print edition
 │   ├── documents/           One version history per changing document   CC BY
 │   ├── stories/             Stories, quoted in tellers' own words       CC BY
 │   ├── biographies/         One record per Native person with a page    CC BY
+│   ├── languages/           One record per language nations name        CC BY
 │   ├── glossary/            One entry per defined term or acronym       CC BY
 │   ├── methods/             One record per dispute resolution method    CC BY
 │   ├── bibliographies/      Annotated reading lists                     CC BY

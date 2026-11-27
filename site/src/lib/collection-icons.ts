@@ -16,6 +16,7 @@ import Gavel from '@lucide/svelte/icons/gavel';
 import Globe from '@lucide/svelte/icons/globe';
 import Handshake from '@lucide/svelte/icons/handshake';
 import Landmark from '@lucide/svelte/icons/landmark';
+import Languages from '@lucide/svelte/icons/languages';
 import Library from '@lucide/svelte/icons/library';
 import ListChecks from '@lucide/svelte/icons/list-checks';
 import MapIcon from '@lucide/svelte/icons/map';
@@ -46,6 +47,8 @@ const collectionIcons: Record<string, Component> = {
 	'intergovernmental-agreements': Handshake,
 	'oklahoma-state-tribal-agreements': Handshake,
 	stories: BookOpen,
+	languages: Languages,
+	'language-families': Languages,
 	treaties: Scroll,
 	'federal-statutes': BookText,
 	'federal-regulations': ListChecks,

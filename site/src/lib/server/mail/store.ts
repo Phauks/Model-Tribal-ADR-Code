@@ -339,6 +339,7 @@ function parseList(value: string | null): MailAddress[] {
 		const list = JSON.parse(value ?? '[]') as MailAddress[];
 		return Array.isArray(list) ? list : [];
 	} catch {
+		// expected: a damaged stored list of addresses reads as empty.
 		return [];
 	}
 }
