@@ -28,7 +28,7 @@ describe('the ZIP of a set of documents', () => {
 		const served = new Set(['constitutions/a/one file.pdf', 'constitutions/a/missing.pdf']);
 		const stream = documentsZip(list, bucket as unknown as R2Bucket, served, 'Read me');
 		const zip = unzipSync(new Uint8Array(await new Response(stream).arrayBuffer()));
-		expect(Object.keys(zip).sort()).toEqual(['README.txt', 'SHA256SUMS.txt', 'documents.csv', 'documents/one file.pdf']);
+		expect(Object.keys(zip).sort()).toEqual(['README.txt', 'SHA256SUMS.txt', 'documents.csv', 'documents/one file.pdf', 'verify.ps1', 'verify.sh']);
 		expect(sha(zip['documents/one file.pdf'])).toBe(sha(first));
 		expect(strFromU8(zip['SHA256SUMS.txt'])).toBe(`${sha(first)}  documents/one file.pdf\n`);
 		const csv = strFromU8(zip['documents.csv']);
