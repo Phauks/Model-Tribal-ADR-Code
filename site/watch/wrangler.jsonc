@@ -12,7 +12,7 @@
 // are reached through the AI binding.
 {
 	"$schema": "../node_modules/wrangler/config-schema.json",
-	"name": "tribal-law-project-watch",
+	"name": "tribal-law-project-radar",
 	"main": "worker.ts",
 	"compatibility_date": "2026-11-20",
 	"compatibility_flags": ["nodejs_compat"],
@@ -39,7 +39,7 @@
 	// One Workflows instance per watcher run, so each step is retried on its own.
 	"workflows": [
 		{
-			"name": "tribal-law-project-watch-run",
+			"name": "tribal-law-project-radar-run",
 			"binding": "watchRuns",
 			"class_name": "WatchRun"
 		}
