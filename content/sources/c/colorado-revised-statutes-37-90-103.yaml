@@ -1,0 +1,58 @@
+key: colorado-revised-statutes-37-90-103
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions - rules
+  title-short: Colo. Rev. Stat. § 37-90-103
+  container-title: Colorado Revised Statutes
+  container-title-short: Colo. Rev. Stat.
+  section: 37-90-103
+  author:
+  - literal: Colorado Office of Legislative Legal Services
+  issued:
+    date-parts:
+    - - 1965
+  URL: https://olls.info/crs/crs2026-title-37.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://olls.info/crs/crs2026-title-37.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- colorado-revised-statutes-37-60-106-3
+- colorado-revised-statutes-37-60-121
+- colorado-revised-statutes-37-60-135
+- colorado-revised-statutes-37-61-101
+- colorado-revised-statutes-37-62-101
+- colorado-revised-statutes-37-66-101
+- colorado-revised-statutes-37-92-103
+state_law:
+  relevance: incidental
+  citation: Colo. Rev. Stat. § 37-90-103 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CO
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Colo. Rev. Stat. § 37-90-103 (2026). History: Source: L. 65: R&RE, p. 1246, § 1. C.R.S. 1963: § 148-18-2. L. 67: p. 275, §§ 1, 2. L. 71: p. 1311, § 1. L. 83: (6) amended, p. 1414, § 1, effective May 23. L. 85: (6) amended, p. 1170, § 1, effective July 1; (10.5) added, p. 1161, § 2, effective July 1. L. 92: (12.5) added and (13) amended, p. 2297, § 1, effective March 19. L. 95: (21) amended, p. 139, § 1, effective April 7. L. 96: (10.5) amended and (10.7) added, p. 1360, § 1, effective June 1. L. 98: (12.7) added, p. 1212, § 2, effective August 5. L. 2003: (21)(a) amended, p. 1453, § 2, effective April 30. L. 2009: (10.5) amended and (10.9) added, (HB 09-1303), ch. 390, p. 2107, § 1, effective June 2. L. 2023: IP and (10.9) amended, (SB 23-285), ch. 235, p. 1257, § 38, effective July 1. L. 2025: (3.5) and (5.5) added, (HB 25-1014), ch. 388, p. 2188, § 8, effective August 6; (10.5) amended, (HB 25-1165), ch. 257, p. 1302, § 9, effective August 6. Text read from the Colorado Office of Legislative Legal Services'' 2026 download of the Colorado Revised Statutes (content.leg.colorado.gov, 2026 CRS Titles for Download) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Definition counts wells authorized by tribal entity as oil and gas wells. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

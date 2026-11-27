@@ -17,6 +17,7 @@ import type { OpinionEntry } from '../case-opinions.ts';
 import type { RecordBox } from '../essays/record-boxes.ts';
 import { glossary, nationNameVariants, nationNamesAndKinds, repositoryRoot, sources, type SourceRecord } from './content.ts';
 import { sectionWithSymbol } from './citations.ts';
+import { report } from './report.ts';
 import { caseItem } from './case-citations.ts';
 import { caseFacts, lawFacts, type CaseRecord, type FactLine } from './case-facts.ts';
 
@@ -69,7 +70,9 @@ export function citationTexts(records: SourceRecord[] = [...sources().values()])
 				[]
 			);
 			text = updates[0]?.[1];
-		} catch {
+		} catch (problem) {
+			// The record is left out of the essay's citations; the failure is reported.
+			report(problem, { code: 'essay-library.citation', place: 'essay-library', details: { record: record.key } });
 			text = undefined;
 		}
 		if (!text || /CSL STYLE ERROR/.test(text)) continue;

@@ -1,0 +1,47 @@
+key: wisconsin-statutes-343-06
+kind: state-statute
+citation:
+  type: legislation
+  title: Persons not to be licensed
+  title-short: Wis. Stat. § 343.06
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '343.06'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/343.06
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/343.06
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 343.06 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 343.06 (2023-24). History: 1971 c. 40 s. 93; 1971 c. 154 s. 79 (3); 1971 c. 219; 1975 c. 184 s. 13; 1975 c. 421; 1977 c. 29 s. 1654 (7) (a), (c); 1977 c. 41, 238, 273, 360, 447; 1983 a. 17, 243; 1985 a. 202; 1987 a. 40, 122; 1987 a. 332 s. 64; 1987 a. 403; 1989 a. 31, 105; 1993 a. 16, 227, 363, 399, 491; 1995 a. 27 s. 9145 (1); 1995 a. 77, 113, 448; 1997 a. 27, 84, 283; 1999 a. 9, 140; 2001 a. 38; 2003 a. 33; 2005 a. 126, 149, 277, 387; 2007 a. 20, 97; 2009 a. 28, 103, 302; 2011 a. 23, 32, 260; 2013 a. 371; 2021 a. 64, 152; 2025 a. 88, 129. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal schools; tribal); AI reader''s verdict incidental: Driver licensing course may be completed at tribal schools. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal schools; tribal'

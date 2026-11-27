@@ -82,6 +82,13 @@ export const essayRecordFiles: SpreadFiles = { name: 'essay-records', count: 512
 export const essayCaseNamesFile = 'essay-case-names';
 
 /**
+ * The pages a citation inside a document's text links to, by the key the
+ * linker finds it by, such as "case:309 us 506" or "usc:25:5321"
+ * (src/lib/server/text-link-index.ts): about 2 MB, in files of about 30 KB.
+ */
+export const textLinkFiles: SpreadFiles = { name: 'text-links', count: 64 };
+
+/**
  * Each search result's copy, citation and nation, by the result's link, which the Worker reads when a
  * reader downloads several results at once (src/lib/server/search-selection.ts).
  */

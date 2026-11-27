@@ -1,0 +1,58 @@
+key: wyoming-statutes-35-7-1044
+kind: state-statute
+citation:
+  type: legislation
+  title: Peyote delivered, possessed or used for religious sacramental purposes
+  title-short: Wyo. Stat. Ann. § 35-7-1044
+  container-title: Wyoming Statutes
+  container-title-short: Wyo. Stat. Ann.
+  section: 35-7-1044
+  author:
+  - literal: Wyoming Legislative Service Office
+  URL: https://wyoleg.gov/statutes/compress/title35.pdf#page=344
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://wyoleg.gov/statutes/compress/title35.pdf#page=344
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- wyoming-statutes-35-1-613
+- wyoming-statutes-35-12-102
+- wyoming-statutes-35-12-107
+- wyoming-statutes-35-12-110
+- wyoming-statutes-35-21-109
+- wyoming-statutes-35-21-111
+- wyoming-statutes-35-25-205
+- wyoming-statutes-35-25-301
+- wyoming-statutes-35-9-152
+- wyoming-statutes-35-9-153
+state_law:
+  relevance: core
+  citation: Wyo. Stat. Ann. § 35-7-1044 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WY
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wyo. Stat. Ann. § 35-7-1044 (2025). Text read from the Wyoming Legislative Service Office''s PDF of the section''s title of the Wyoming Statutes (wyoleg.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native); AI reader''s verdict core: Peyote religious sacramental use exemption for Native American Church. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: native american; native'

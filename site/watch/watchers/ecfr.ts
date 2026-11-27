@@ -69,6 +69,7 @@ export function readCursor(cursor: string | null): Record<string, string> {
 		const parsed = cursor ? (JSON.parse(cursor) as Record<string, string>) : {};
 		return typeof parsed === 'object' && parsed !== null ? parsed : {};
 	} catch {
+		// expected: a cursor that is not JSON starts the watcher from nothing, as on its first run.
 		return {};
 	}
 }

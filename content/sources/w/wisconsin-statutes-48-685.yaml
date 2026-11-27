@@ -1,0 +1,47 @@
+key: wisconsin-statutes-48-685
+kind: state-statute
+citation:
+  type: legislation
+  title: Criminal history and child abuse record search
+  title-short: Wis. Stat. § 48.685
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '48.685'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/48.685
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/48.685
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 48.685 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 48.685 (2023-24). History: 1997 a. 27, 237, 281; 1999 a. 9, 32, 56, 185, 186; 2001 a. 109; 2003 a. 321; 2005 a. 149, 184, 277; 2007 a. 20 ss. 1346 to 1358, 9121 (6) (a); 2007 a. 97, 111, 116, 130, 153; 2009 a. 28, 76, 94, 185; 2011 a. 32, 35, 87, 258; 2013 a. 20, 165, 170, 334; 2015 a. 55, 129, 172, 366, 371; 2017 a. 12, 59, 128, 283; 2017 a. 364 s. 49; 2017 a. 365; 2019 a. 9; 2021 a. 72, 76, 209, 238; 2023 a. 10, 19, 224; 2025 a. 24 s. 93; 2025 a. 26, 48, 88, 129. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: bureau of indian affairs; indian tribe; ho-chunk; indian; nation; reservation; tribe); AI reader''s verdict incidental: Background checks define reservation; tribes review rehabilitation and license. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: bureau of indian affairs; indian tribe; ho-chunk; indian; nation; reservation; tribe'

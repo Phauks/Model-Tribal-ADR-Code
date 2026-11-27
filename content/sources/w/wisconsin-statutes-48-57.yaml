@@ -1,0 +1,47 @@
+key: wisconsin-statutes-48-57
+kind: state-statute
+citation:
+  type: legislation
+  title: Powers and duties of department and county departments providing child welfare services
+  title-short: Wis. Stat. § 48.57
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '48.57'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/48.57
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/48.57
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 48.57 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 48.57 (2023-24). History: 1977 c. 29; 1977 c. 83 s. 26; 1977 c. 271, 354, 418, 447, 449; 1979 c. 34, 221; 1981 c. 329; 1983 a. 189 s. 329 (17); 1983 a. 447; 1985 a. 176; 1987 a. 339; 1993 a. 385, 395, 446, 491; 1995 a. 27 ss. 2575 to 2579m, 9126 (19); 1995 a. 77, 289, 443; 1997 a. 3, 27, 35, 36, 41, 105, 237, 252, 292; 1999 a. 9, 103, 133, 162; 2001 a. 16 ss. 1629, 4036-4038, 4040, 4042, 4043; 2001 a. 38, 59, 69, 109; 2005 a. 25, 232, 293; 2007 a. 20; 2009 a. 28, 71, 94, 180; 2011 a. 32; 2013 a. 20, 334, 335, 362; 2015 a. 55, 166, 172; 2017 a. 59, 145, 365, 366; 2019 a. 9, 109; 2021 a. 58, 76; 2023 a. 19, 119; 2025 a. 15. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; reservation; tribe); AI reader''s verdict incidental: Kinship care review role for Indian tribe governing body. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; reservation; tribe'

@@ -1,0 +1,50 @@
+key: michigan-compiled-laws-18-351
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Mich. Comp. Laws § 18.351
+  container-title: Michigan Compiled Laws
+  container-title-short: Mich. Comp. Laws
+  section: '18.351'
+  author:
+  - literal: Michigan Legislature
+  issued:
+    date-parts:
+    - - 1976
+  URL: https://legislature.mi.gov/Laws/MCL?objectName=mcl-18.351
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.mi.gov/Laws/MCL?objectName=mcl-18.351
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mich. Comp. Laws § 18.351 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Mich. Comp. Laws § 18.351 (2026). History: 1976, Act 223, Eff. Mar. 31, 1977; Am. 1985, Act 157, Imd. Eff. Nov. 15, 1985; Am. 1990, Act 316, Imd. Eff. Dec. 20, 1990; Am. 1993, Act 348, Imd. Eff. Jan. 10, 1994; Am. 1996, Act 519, Imd. Eff. Jan. 13, 1997; Am. 2022, Act 77, Eff. Aug. 12, 2023. Text read from the Michigan Legislature''s page for the section''s chapter of the Michigan Compiled Laws (legislature.mi.gov), complete through Public Act 114 of 2026, on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized tribe; tribe); AI reader''s verdict incidental: Crime definition includes crimes under federally recognized tribe law. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized tribe; tribe'

@@ -24,13 +24,17 @@ import {
 } from '#lib/server/nonprofit.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
+import { isMissingTable } from '#lib/problems.ts';
 
 export const load: PageServerLoad = async (event) => {
 	requirePermission(event, 'manage-nonprofit');
 	const { database } = storage(event);
 	const today = nevadaToday();
 	// Until the nonprofit migration (20261123T0440_add_nonprofit_records) is applied the tables are missing: say so instead of failing.
-	const stored = await Promise.all([readFacts(database), readCompletions(database), readTasks(database)]).catch(() => undefined);
+	const stored = await Promise.all([readFacts(database), readCompletions(database), readTasks(database)]).catch((problem: unknown) => {
+		if (!isMissingTable(problem)) throw problem;
+		return undefined;
+	});
 	const notReady = stored === undefined;
 	const [facts, completions, tasks] = stored ?? [{}, [], []];
 	const byFact = setupDoneByFact(facts);
