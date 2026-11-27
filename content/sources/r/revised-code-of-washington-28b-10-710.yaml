@@ -1,0 +1,50 @@
+key: revised-code-of-washington-28b-10-710
+kind: state-statute
+citation:
+  type: legislation
+  title: Washington state or Pacific Northwest history in curriculum
+  title-short: Wash. Rev. Code § 28B.10.710
+  container-title: Revised Code of Washington
+  container-title-short: Wash. Rev. Code
+  section: 28B.10.710
+  author:
+  - literal: Washington State Legislature
+  issued:
+    date-parts:
+    - - 1941
+  URL: https://app.leg.wa.gov/RCW/default.aspx?cite=28B.10.710
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://app.leg.wa.gov/RCW/default.aspx?cite=28B.10.710
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Wash. Rev. Code § 28B.10.710 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Wash. Rev. Code § 28B.10.710 (2026). History: [2018 c 144 s 2; 2006 c 263 s 823; 1993 c 77 s 1; 1969 ex.s. c 223 s 28B.10.710. Prior: 1967 c 64 s 1, part; 1963 c 31 s 1, part; 1961 c 47 s 2, part; 1941 c 203 s 1, part; Rem. Supp. 1941 s 4898-3, part. Formerly RCW 28.05.050, part.]. Text read from the Washington State Legislature''s full-text chapter page for the section (app.leg.wa.gov/RCW) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian); AI reader''s verdict core: Required curriculum on American Indian culture, history and government. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: american indian; indian'

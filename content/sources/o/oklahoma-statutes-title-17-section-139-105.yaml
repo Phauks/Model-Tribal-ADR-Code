@@ -49,10 +49,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 17, § 139.105 (2026). History: from the Oklahoma Lifeline Fund shall file tariffs with the Corporation Commission Added by Laws 1997, c. 408, § 5, eff. July 1, 1997. Amended by Laws 1998, c. 246, § 10, eff. Text read from the Legislative Service Bureau''s Title 17 PDF (updated Nov. 12, 2026), page 68. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Lifeline eligibility accepts tribal identification number. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 17, § 139.105 (2026). History: Added by Laws 1997, c. 408, § 5, eff. July 1, 1997. Amended by Laws 1998, c. 246, § 10, eff. Text read from the Legislative Service Bureau''s Title 17 PDF (updated Nov. 12, 2026), page 68. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Lifeline eligibility accepts tribal identification number. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

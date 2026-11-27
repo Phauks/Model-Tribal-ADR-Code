@@ -54,10 +54,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 3A, § 280.1 (2026). History: codified compact offer provides the state may approve additional forms of covered games from time to time. Added by Laws 2018, c. 11, § 2. Text read from the Legislative Service Bureau''s Title 3A PDF (updated Nov. 12, 2026), page 98. Found by the state statutes pilot (terms: state-tribal; tribal gaming); AI reader''s verdict core: Non-house-banked table games supplement to tribal gaming compacts. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 3A, § 280.1 (2026). History: Added by Laws 2018, c. 11, § 2. Text read from the Legislative Service Bureau''s Title 3A PDF (updated Nov. 12, 2026), page 98. Found by the state statutes pilot (terms: state-tribal; tribal gaming); AI reader''s verdict core: Non-house-banked table games supplement to tribal gaming compacts. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

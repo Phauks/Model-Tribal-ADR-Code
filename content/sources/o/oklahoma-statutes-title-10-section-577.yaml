@@ -72,7 +72,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10, § 577 (2026). History: Laws Annotated, Vol. 15, p. 1 (2000), or such other administrative procedure acts as the Added by Laws 2008, c. 156, § 1, eff. upon enactment by 35 states or July 1, 2008, Text read from the Legislative Service Bureau''s Title 10 PDF (updated Nov. 12, 2026), page 149. Found by the state statutes pilot (terms: alaska native; indian child; indian children; indian tribe; indian tribes); AI reader''s verdict incidental: Placement compact requires guidelines with tribes for Indian children. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

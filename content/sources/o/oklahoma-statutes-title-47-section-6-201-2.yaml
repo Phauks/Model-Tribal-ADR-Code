@@ -55,7 +55,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 47, § 6-201.2 (2026). History: Added by Laws 2022, c. 409, § 1, emerg. eff. May 27, 2022. Amended by Laws 2024, c. 11, § Text read from the Legislative Service Bureau''s Title 47 PDF (updated Nov. 12, 2026), page 318. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict core: Requires recognizing convictions reported by tribal courts for licensing. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

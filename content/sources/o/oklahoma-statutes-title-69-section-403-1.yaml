@@ -52,7 +52,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 69, § 403.1 (2026). History: Added by Laws 1998, c. 292, § 3, eff. Nov. 1, 1998. Amended by Laws 2012, c. 356, § 2, eff. Text read from the Legislative Service Bureau''s Title 69 PDF (updated Nov. 12, 2026), page 53. Found by the state statutes pilot (terms: tribal governments); AI reader''s verdict incidental: Indian tribal governments are eligible applicants for transportation funds. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

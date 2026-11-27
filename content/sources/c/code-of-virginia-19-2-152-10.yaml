@@ -1,0 +1,50 @@
+key: code-of-virginia-19-2-152-10
+kind: state-statute
+citation:
+  type: legislation
+  title: Protective order
+  title-short: Va. Code Ann. § 19.2-152.10
+  container-title: Code of Virginia
+  container-title-short: Va. Code Ann.
+  section: 19.2-152.10
+  author:
+  - literal: Virginia General Assembly
+  issued:
+    date-parts:
+    - - 1997
+  URL: https://law.lis.virginia.gov/vacode/title19.2/chapter9.1/section19.2-152.10/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://law.lis.virginia.gov/vacode/title19.2/chapter9.1/section19.2-152.10/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Va. Code Ann. § 19.2-152.10 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Va. Code Ann. § 19.2-152.10 (2025). History: 1997, c. 831; 1998, cc. 569, 684; 1999, c. 371; 2002, cc. 507, 810, 818; 2003, c. 730; 2008, cc. 73, 246; 2009, cc. 341, 732; 2010, cc. 425, 468; 2011, cc. 445, 480; 2012, cc. 152, 261; 2014, c. 346; 2018, c. 652; 2020, cc. 137, 1005; 2021, Sp. Sess. I, c. 489; 2023, cc. 620, 621, 742; 2024, c. 594; 2025, c. 26. Text read from the Virginia Division of Legislative Systems'' page for the section in the Code of Virginia (law.lis.virginia.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal court; tribal); AI reader''s verdict incidental: Protective orders; tribal court orders given full faith and credit. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal court; tribal'

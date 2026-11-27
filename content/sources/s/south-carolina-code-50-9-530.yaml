@@ -1,0 +1,52 @@
+key: south-carolina-code-50-9-530
+kind: state-statute
+citation:
+  type: legislation
+  title: Gratis, senior, and Catawba licenses
+  title-short: S.C. Code Ann. § 50-9-530
+  container-title: Code of Laws of South Carolina 1976
+  container-title-short: S.C. Code Ann.
+  section: 50-9-530
+  author:
+  - literal: South Carolina General Assembly
+  issued:
+    date-parts:
+    - - 2010
+  URL: https://www.scstatehouse.gov/code/t50c009.php
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.scstatehouse.gov/code/t50c009.php
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- south-carolina-code-50-9-20
+state_law:
+  relevance: core
+  citation: S.C. Code Ann. § 50-9-530 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: SC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: S.C. Code Ann. § 50-9-530 (2025). History: 2010 Act No. 233, SECTION 8, eff July 1, 2010; 2013 Act No. 94, SECTION 7, eff July 1, 2013. Text read from the South Carolina Legislative Services Agency''s page for the section''s chapter of the Code of Laws (scstatehouse.gov/code) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; catawba; indian; tribe); AI reader''s verdict core: Catawba Indian Tribe member hunting and fishing licenses. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian tribe; catawba; indian; tribe'

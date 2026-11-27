@@ -54,7 +54,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 73, § 304 (2026). History: Added by Laws 2003, c. 378, § 1, emerg. eff. June 4, 2003. Text read from the Legislative Service Bureau''s Title 73 PDF (updated Nov. 12, 2026), page 130. Found by the state statutes pilot (terms: native american); AI reader''s verdict core: Financing completion of Native American Cultural Center and Museum. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

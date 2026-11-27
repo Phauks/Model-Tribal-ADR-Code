@@ -43,10 +43,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 42, § 91 (2026). History: from the date of the Notice of Sale as evidenced by certified mail. R.L.1910, § 3852. Amended by Laws 1955, p. 248, § 1; Laws 1973, c. 111, § 1, emerg. eff. Laws 2006, c. 247, § 1; Laws 2008, c. 98, § 1, eff. July 1, 2008; Laws 2011, c. 355, § 11, eff. Text read from the Legislative Service Bureau''s Title 42 PDF (updated Nov. 12, 2026), page 18. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Vehicle lien applies to titles issued by federally recognized tribes. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 42, § 91 (2026). History: R.L.1910, § 3852. Amended by Laws 1955, p. 248, § 1; Laws 1973, c. 111, § 1, emerg. eff. Laws 2006, c. 247, § 1; Laws 2008, c. 98, § 1, eff. July 1, 2008; Laws 2011, c. 355, § 11, eff. Text read from the Legislative Service Bureau''s Title 42 PDF (updated Nov. 12, 2026), page 18. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Vehicle lien applies to titles issued by federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

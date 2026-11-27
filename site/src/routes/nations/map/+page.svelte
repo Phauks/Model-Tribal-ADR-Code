@@ -16,6 +16,7 @@
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
 	import type { LandAreaRow, ShadedViewData } from '#lib/server/nations-map.ts';
 	import { isShadedMapView, shadedMapViews, shadedViewDefinitions, type ShadedMapView } from '#lib/shaded-map-views.ts';
+	import { patternDefinitions, patternFor, shapeFor, shapePath } from '#lib/map-shapes.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import { byStateColumns, byStateRows, categoryColumns, categoryRows, landAreaColumns, landAreaRows as buildLandAreaRows, mapTableFile, nationColumns, nationRows, regionColumns, regionRows as buildRegionRows, stateColumns, stateRows as buildStateRows } from '#lib/map-tables.ts';
 	import { mapTableOnScreen } from '#lib/map-table-on-screen.svelte.ts';
@@ -32,6 +33,8 @@
 	/**
 	 * The views of the one map, picked from a searchable dropdown (Trevor, 2026-11-23) and listed in src/lib/map-views.ts. A new view needs an entry there, a drawing in src/lib/nations-map-drawing.ts and a snippet below for what goes under the map.
 	 */
+	/** The shade each land area group is drawn in, which picks its pattern and shape in the key. */
+	const landGroupShade: Record<string, number> = { federal: 4, state: 3, statistical: 2 };
 	const views = mapViews;
 	let current = $state<NationsMapView>('states');
 
@@ -659,6 +662,9 @@
 
 <Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Map of Native Nations" />
 
+<!-- The category patterns, drawn once for the map's drawings and keys (src/lib/map-shapes.ts). -->
+<svg class="pattern-definitions" aria-hidden="true" focusable="false"><defs>{@html patternDefinitions()}</defs></svg>
+
 <div class="reading">
 	<h1>Map of Native Nations</h1>
 </div>
@@ -757,11 +763,11 @@
 						{/each}
 					{:else if isShadedMapView(view.key) && shaded[view.key]}
 						{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
-							<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
+							<li>{@render categorySwatch(entry.shade)}{entry.label}</li>
 						{/each}
 					{:else if view.key === 'lands'}
 						{#each data.landAreaGroups as group (group.key)}
-							<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
+							<li>{@render categorySwatch(landGroupShade[group.key] ?? 0)}{group.label}</li>
 						{/each}
 					{/if}
 					</ul>
@@ -917,11 +923,11 @@
 		{#if layers.lands && !(pastShown && censusShown === undefined)}
 			{#if isShadedMapView(colorBy) && shaded[colorBy]}
 				{#each shaded[colorBy]?.legend ?? [] as entry (entry.key)}
-					<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
+					<li>{@render categorySwatch(entry.shade)}{entry.label}</li>
 				{/each}
 			{:else}
 				{#each data.landAreaGroups as group (group.key)}
-					<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}{#if pastShown}, {censusShown}{/if}</li>
+					<li>{@render categorySwatch(landGroupShade[group.key] ?? 0)}{group.label}{#if pastShown}, {censusShown}{/if}</li>
 				{/each}
 			{/if}
 		{/if}
@@ -969,6 +975,16 @@
 			contact={detail ? [detail.website, detail.address, detail.phone, detail.email].filter((entry) => entry !== undefined) : []}
 			back={{ label: 'Close', onclick: () => void closeDetails(current) }}
 		/>
+	{/if}
+{/snippet}
+
+<!-- A category's key mark: its shape in its shade, as on the map (src/lib/map-shapes.ts), or a plain swatch for no fact recorded. -->
+{#snippet categorySwatch(shade: number)}
+	{@const shape = shapeFor(shade)}
+	{#if shape}
+		<svg class="shape-swatch" viewBox="0 0 44 20" aria-hidden="true"><rect class="area-swatch" x="0.5" y="2.5" width="19" height="15" style:fill={patternFor(shade) ? `url(#area-pattern-${shade})` : `var(--color-map-class-${shade})`} /><path d={shapePath(shape, 33, 10, 6)} style:fill="var(--color-map-class-{shade})" /></svg>
+	{:else}
+		<span class="swatch count-{shade}" aria-hidden="true"></span>
 	{/if}
 {/snippet}
 
@@ -1354,6 +1370,47 @@
 	.map-drawing :global(.land-area.dot) {
 		stroke: var(--color-paper);
 		stroke-width: calc(0.8px * var(--map-unzoom, 1));
+	}
+	/* A category's shape (src/lib/map-shapes.ts) keeps its size on screen as the drawing zooms, as the dots do, and is ringed in ink, as on the tiled map. */
+	.map-drawing :global(.land-area.dot.shape),
+	.map-drawing :global(.office.shape) {
+		transform-box: fill-box;
+		transform-origin: center;
+		scale: var(--map-unzoom, 1);
+		stroke: var(--color-ink);
+		stroke-width: 1px;
+	}
+	.map-drawing :global(.office.shape) {
+		stroke-width: 1.5px;
+	}
+	.shape-swatch {
+		flex: none;
+		width: 2.75rem;
+		height: 1.25rem;
+	}
+	.shape-swatch .area-swatch {
+		stroke: var(--color-control-border);
+		stroke-width: 1;
+	}
+	.pattern-definitions {
+		position: absolute;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+	.shape-swatch path {
+		stroke: var(--color-ink);
+		stroke-width: 1.2;
+	}
+	/* A category's pattern over its shade (src/lib/map-shapes.ts), from the definitions drawn once on this page; the darkest shade stays solid. */
+	.map-drawing :global(.category-3) {
+		fill: url(#area-pattern-3);
+	}
+	.map-drawing :global(.category-2) {
+		fill: url(#area-pattern-2);
+	}
+	.map-drawing :global(.category-1) {
+		fill: url(#area-pattern-1);
 	}
 	.map-drawing :global(a:hover .land-area),
 	.map-drawing :global(a:focus .land-area) {

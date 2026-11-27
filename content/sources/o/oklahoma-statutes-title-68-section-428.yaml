@@ -86,7 +86,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 428 (2026). History: Added by Laws 1992, c. 339, § 12, eff. Jan. 1, 1993. Amended by Laws 2009, c. 434, § 22, Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 269. Found by the state statutes pilot (terms: tribally); AI reader''s verdict core: Seizure of untaxed tobacco sold to tribally owned stores. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

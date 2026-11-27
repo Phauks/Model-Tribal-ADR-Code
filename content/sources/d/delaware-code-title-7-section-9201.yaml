@@ -1,0 +1,48 @@
+key: delaware-code-title-7-section-9201
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions [Effective upon promulgation of regulations by the Secretary pursuant to § 9203(c) of this title]
+  title-short: Del. Code Ann. tit. 7, § 9201
+  container-title: Delaware Code Annotated
+  container-title-short: Del. Code Ann.
+  volume: '7'
+  section: '9201'
+  author:
+  - literal: Delaware General Assembly
+  URL: https://delcode.delaware.gov/title7/c092/index.html#9201
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://delcode.delaware.gov/title7/c092/index.html#9201
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Del. Code Ann. tit. 7, § 9201 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: DE
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Del. Code Ann. tit. 7, § 9201 (2025). History: 76 Del. Laws, c. 220, § 1. Text read from the Delaware Legislative Council''s page for the section''s chapter in the Delaware Code (delcode.delaware.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Hazardous establishment transfer definition of Person includes Indian tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

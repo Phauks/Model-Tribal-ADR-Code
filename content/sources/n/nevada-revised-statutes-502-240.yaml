@@ -1,0 +1,49 @@
+key: nevada-revised-statutes-502-240
+kind: state-statute
+citation:
+  type: legislation
+  title: Fees for licenses and permits
+  title-short: Nev. Rev. Stat. § 502.240
+  container-title: Nevada Revised Statutes
+  container-title-short: Nev. Rev. Stat.
+  section: '502.240'
+  author:
+  - literal: Nevada Legislature
+  URL: https://www.leg.state.nv.us/nrs/NRS-502.html#NRS502Sec240
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.nv.us/nrs/NRS-502.html#NRS502Sec240
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- nevada-revised-statutes-502-280
+state_law:
+  relevance: incidental
+  citation: Nev. Rev. Stat. § 502.240 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Nev. Rev. Stat. § 502.240 (2025). History: [Part 50:101:1947; A 1949, 292; 1951, 395; 1953, 667; 1955, 602]—(NRS A 1957, 536; 1965, 1442; 1967, 134; 1969, 1148; 1971, 1540; 1973, 364, 725; 1975, 1174; 1977, 1091; 1979, 923, 1359; 1981, 355; 1985, 1705; 1987, 561, 1450; 1989, 1477, 1779; 1991, 1573; 1993, 1666; 1995, 1092, 1930; 2003, 1539, 2545; 2007, 1800; 2011, 602; 2017, 3633; 2021, 1758). Text read from the Nevada Legislature''s chapter page for the section (leg.state.nv.us/nrs) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native); AI reader''s verdict incidental: Resident Native American gets reduced hunting and fishing license fee. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; native'

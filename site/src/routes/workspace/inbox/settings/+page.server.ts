@@ -17,7 +17,10 @@ import {
 } from '#lib/server/mail/writing.ts';
 import { currentTime } from '#lib/server/mail/context.ts';
 import { blockSender, listBlocked, SenderError, unblockSender } from '#lib/server/mail/senders.ts';
+import { can } from '#lib/permissions.ts';
+import { requireMail } from '#lib/server/mail/inbox-access.ts';
 import {
+	addInboxAddress,
 	addInboxMember,
 	createInbox,
 	deleteInbox,
@@ -25,8 +28,10 @@ import {
 	inboxCandidates,
 	inboxesForManaging,
 	makeCatchAll,
+	removeInboxAddress,
 	removeInboxMember,
-	renameInbox
+	renameInbox,
+	setInboxAlerts
 } from '#lib/server/mail/inboxes.ts';
 import { formText, requirePermission } from '#lib/server/workspace.ts';
 import { whenFromForm } from '../compose.ts';
@@ -36,12 +41,25 @@ import type { Actions, PageServerLoad } from './$types';
 // the inboxes and who is on each, the signature of each address, saved
 // replies, the pause before a message goes (undo send), and the away
 // message. They belong to the whole project, so only someone who manages
-// mail changes them.
+// mail changes them. Anyone else on an inbox sees only the Inboxes card,
+// with the inboxes they are on, where they choose their own new-mail alerts
+// (site/MAIL.md, "New-mail alerts") and can leave a shared inbox.
 export const prerender = false;
 
 export const load: PageServerLoad = async (event) => {
-	requirePermission(event, 'manage-mail');
+	const person = await requireMail(event);
 	const context = mailContext();
+	const canManage = can(person, 'manage-mail');
+	const shown = (inbox: Awaited<ReturnType<typeof inboxesForManaging>>[number]) => ({
+		...inbox,
+		// What a manager sees of someone else's personal inbox is only that it exists.
+		conversationCount: inbox.kind === 'personal' && inbox.ownerIdentifier !== person.identifier ? null : inbox.conversationCount,
+		unread: inbox.kind === 'personal' && inbox.ownerIdentifier !== person.identifier ? null : inbox.unread
+	});
+	if (!canManage) {
+		const mine = (await inboxesForManaging(context)).filter((inbox) => inbox.members.some((member) => member.identifier === person.identifier));
+		return { canManage: false as const, me: person.identifier, domain: context.settings.domain, inboxes: mine.map(shown), candidates: [] };
+	}
 	const [inboxes, candidates, signatures, savedReplies, undoSeconds, away, blocked] = await Promise.all([
 		inboxesForManaging(context),
 		inboxCandidates(context),
@@ -52,15 +70,13 @@ export const load: PageServerLoad = async (event) => {
 		listBlocked(context)
 	]);
 	return {
+		canManage: true as const,
+		me: person.identifier,
 		domain: context.settings.domain,
-		inboxes: inboxes.map((inbox) => ({
-			...inbox,
-			// What a manager sees of someone's personal inbox is only that it exists.
-			conversationCount: inbox.kind === 'personal' ? null : inbox.conversationCount,
-			unread: inbox.kind === 'personal' ? null : inbox.unread
-		})),
+		inboxes: inboxes.map(shown),
 		candidates,
-		addresses: inboxes.flatMap((inbox) => (inbox.address ? [inbox.address] : [])),
+		// Each address, extra ones included, can have its own signature.
+		addresses: inboxes.flatMap((inbox) => inbox.addresses),
 		signatures,
 		savedReplies,
 		undoSeconds,
@@ -123,6 +139,43 @@ export const actions: Actions = {
 		return attempt('inboxes', async () => {
 			await removeInboxMember(mailContext(), person.identifier, formText(form, 'inbox', 100) ?? '', formText(form, 'member', 100) ?? '');
 			return 'Took them off the inbox. Conversations assigned to them there are now unassigned.';
+		});
+	},
+	addAddress: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const form = await event.request.formData();
+		return attempt('inboxes', async () => {
+			const localPart = await addInboxAddress(mailContext(), person.identifier, formText(form, 'inbox', 100) ?? '', formText(form, 'localPart', 100) ?? '');
+			return `Added ${localPart}@. Mail to it files into this inbox, and replies to that mail go from it.`;
+		});
+	},
+	removeAddress: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const form = await event.request.formData();
+		const localPart = formText(form, 'localPart', 100) ?? '';
+		return attempt('inboxes', async () => {
+			await removeInboxAddress(mailContext(), person.identifier, formText(form, 'inbox', 100) ?? '', localPart);
+			return `Took ${localPart}@ off the inbox. Mail to it now goes to the inbox that gets other mail.`;
+		});
+	},
+	alerts: async (event) => {
+		const person = await requireMail(event);
+		const form = await event.request.formData();
+		return attempt('inboxes', async () => {
+			const level = await setInboxAlerts(mailContext(), person.identifier, formText(form, 'inbox', 100) ?? '', formText(form, 'level', 10) ?? '');
+			return level === 'now'
+				? 'You will get an alert as new mail arrives, at most one every 30 minutes.'
+				: level === 'daily'
+					? 'You will get one summary a day, starting about a day from now.'
+					: 'You will get no alerts for this inbox.';
+		});
+	},
+	leaveInbox: async (event) => {
+		const person = await requireMail(event);
+		const form = await event.request.formData();
+		return attempt('inboxes', async () => {
+			await removeInboxMember(mailContext(), person.identifier, formText(form, 'inbox', 100) ?? '', person.identifier);
+			return 'You left the inbox. Conversations assigned to you there are now unassigned.';
 		});
 	},
 	makeCatchAll: async (event) => {

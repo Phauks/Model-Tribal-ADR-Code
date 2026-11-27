@@ -1,0 +1,57 @@
+key: nevada-revised-statutes-612-553
+kind: state-statute
+citation:
+  type: legislation
+  title: 'Nonprofit organizations, political subdivisions and Indian tribes: Payment of contributions or reimbursement in lieu of contributions'
+  title-short: Nev. Rev. Stat. § 612.553
+  container-title: Nevada Revised Statutes
+  container-title-short: Nev. Rev. Stat.
+  section: '612.553'
+  author:
+  - literal: Nevada Legislature
+  issued:
+    date-parts:
+    - - 1971
+  URL: https://www.leg.state.nv.us/nrs/NRS-612.html#NRS612Sec553
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.nv.us/nrs/NRS-612.html#NRS612Sec553
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- nevada-revised-statutes-612-055
+- nevada-revised-statutes-612-123
+- nevada-revised-statutes-612-168
+- nevada-revised-statutes-612-6132
+- nevada-revised-statutes-612-6175
+- nevada-revised-statutes-612-732
+state_law:
+  relevance: incidental
+  citation: Nev. Rev. Stat. § 612.553 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Nev. Rev. Stat. § 612.553 (2025). History: (Added to NRS by 1971, 1353; A 1973, 1366; 1977, 840; 1993, 1836; 2001, 1460; 2021, 1483). Text read from the Nevada Legislature''s chapter page for the section (leg.state.nv.us/nrs) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian tribes; indian; tribe; tribes); AI reader''s verdict incidental: Indian tribes may elect reimbursement in lieu of unemployment contributions. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian tribes; indian; tribe; tribes'
