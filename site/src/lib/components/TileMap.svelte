@@ -131,8 +131,19 @@
 	// The shape can change while the map is open; the style built for each theme carries it too.
 	$effect(() => {
 		const type = shape === 'globe' ? 'globe' : 'mercator';
+		showShape();
 		if (ready && map) map.setProjection({ type });
 	});
+
+	/** The flat-or-globe button, which names and shows the shape it switches to. */
+	let shapeButton: HTMLButtonElement | undefined;
+	function showShape(): void {
+		if (!shapeButton) return;
+		const next = shape === 'globe' ? { label: 'Show as a flat map', icon: shapeIcons.flat } : { label: 'Show as a globe, every place at its true size', icon: shapeIcons.globe };
+		shapeButton.title = next.label;
+		shapeButton.setAttribute('aria-label', next.label);
+		shapeButton.innerHTML = next.icon;
+	}
 
 	let container: HTMLDivElement | undefined = $state();
 	let map: MapLibreMap | undefined;
@@ -826,32 +837,18 @@
 					viewGroup.append(fullScreenButton);
 				}
 				map.addControl({ onAdd: () => viewGroup, onRemove: () => viewGroup.remove() }, 'bottom-right');
-				// Flat or globe, as two buttons inside the map (Trevor, 2026-11-23).
+				// Flat or globe, as one button inside the map that switches between them (Trevor, 2026-11-23; one button rather than two, 2026-11-26). It shows the shape it switches to.
 				const shapeButtons = document.createElement('div');
 				shapeButtons.className = 'maplibregl-ctrl maplibregl-ctrl-group map-buttons map-shape';
-				shapeButtons.setAttribute('role', 'group');
-				shapeButtons.setAttribute('aria-label', 'Map shape');
-				const shapeChoices: { value: 'flat' | 'globe'; label: string; icon: string }[] = [
-					{ value: 'flat', label: 'Flat map', icon: shapeIcons.flat },
-					{ value: 'globe', label: 'Globe, every place at its true size', icon: shapeIcons.globe }
-				];
-				const pressed = () => {
-					for (const button of shapeButtons.querySelectorAll('button')) button.setAttribute('aria-pressed', String(button.dataset.shape === shape));
-				};
-				for (const choice of shapeChoices) {
-					const button = document.createElement('button');
-					button.type = 'button';
-					button.dataset.shape = choice.value;
-					button.title = choice.label;
-					button.setAttribute('aria-label', choice.label);
-					button.innerHTML = choice.icon;
-					button.addEventListener('click', () => {
-						shape = choice.value;
-						pressed();
-					});
-					shapeButtons.append(button);
-				}
-				pressed();
+				const shapeToggle = document.createElement('button');
+				shapeToggle.type = 'button';
+				shapeToggle.addEventListener('click', () => {
+					shape = shape === 'globe' ? 'flat' : 'globe';
+					showShape();
+				});
+				shapeButtons.append(shapeToggle);
+				shapeButton = shapeToggle;
+				showShape();
 				map.addControl({ onAdd: () => shapeButtons, onRemove: () => shapeButtons.remove() }, 'bottom-right');
 				map.addControl(new maplibre.NavigationControl({ showCompass: false }), 'bottom-right');
 				// The Layers button, at the top of the stack (mockup 1A): it opens the menu of base maps drawn below in this component.
@@ -1087,10 +1084,6 @@
 	}
 
 	/* The shape on screen is marked as the site marks a chosen option. */
-	.tile-map :global(.map-shape button[aria-pressed='true']) {
-		background: var(--color-action);
-		color: var(--color-action-text);
-	}
 
 	.tile-map :global(.maplibregl-ctrl-attrib),
 	.tile-map :global(.maplibregl-ctrl-scale) {
