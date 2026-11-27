@@ -58,6 +58,18 @@
 		group.items.length > 1 && !group.items[0].label && group.items.slice(1).every((item) => item.label);
 
 	/**
+	 * Several values with no label, such as the branches of a government,
+	 * stack one per line, and the labeled values after them, such as
+	 * "Separation of powers", stay label rows under them (Trevor chose this,
+	 * "one line per branch", on Nov. 27, 2026; design/branches-of-government).
+	 */
+	function stackThenLabeled(group: FactGroup): number | undefined {
+		const first = group.items.findIndex((item) => item.label);
+		if (first < 2 || !group.items.slice(first).every((item) => item.label)) return undefined;
+		return group.items.slice(0, first).some((item) => item.label) ? undefined : first;
+	}
+
+	/**
 	 * The detail and note every value of the group shares, said once under the
 	 * group's label. Only plain words; a detail with links stays with its value.
 	 */
@@ -129,6 +141,14 @@
 				{:else if leadThenLabeled(group)}
 					<div class="lead-value">{@render value(items[0])}</div>
 					{@render labelRows(items.slice(1))}
+				{:else if stackThenLabeled(group)}
+					{@const first = stackThenLabeled(group) ?? 0}
+					<ul class="stacked-list lead-value">
+						{#each items.slice(0, first) as item, index (index)}
+							<li>{@render fact(item)}</li>
+						{/each}
+					</ul>
+					{@render labelRows(items.slice(first))}
 				{:else}
 					<ul class="stacked-list">
 						{#each items as item, index (index)}
@@ -171,6 +191,11 @@
 	/* The same gap as between two label rows. */
 	.lead-value {
 		margin-bottom: var(--space-1);
+	}
+
+	/* Branches stacked above their label rows: the gap between stacked lines. */
+	.stacked-list.lead-value {
+		margin-bottom: var(--space-2);
 	}
 
 	.link-tail {
