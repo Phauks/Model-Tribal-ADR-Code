@@ -139,6 +139,8 @@ A court's `appeals_to` names the court that hears appeals from it, written exact
 | `violence-against-women-act-special-tribal-criminal-jurisdiction` | `exercising`; `implementation-grant` for a Tribal Jurisdiction Program grant, which can fund planning and so never counts as exercising |
 | `tribal-law-and-order-act-enhanced-sentencing` | `implementing` |
 | `indian-child-welfare-act` | `designated-agent-listed`, `reassumed-jurisdiction` |
+| `hearth-act-leasing-regulations` | `approved`: the Secretary of the Interior approved the nation's own leasing regulations under the HEARTH Act, 25 U.S.C. § 415(h), so the nation approves leases of its trust land of the kinds the regulations cover (Bureau of Indian Affairs list; the fact cites the regulations' record) |
+| `environmental-treatment-as-a-state` | The program EPA approved the nation to run in a similar manner as a state (EPA's treatment-as-a-state table): `clean-water-act-water-quality-standards`, `clean-water-act-discharge-permits`, `safe-drinking-water-act-public-water-systems`, `safe-drinking-water-act-underground-injection`, `toxic-substances-control-act-lead-programs`, `clean-air-act-implementation-plan`, `clean-air-act-new-source-standards`, `clean-air-act-hazardous-air-pollutants`, `clean-air-act-operating-permits`, `clean-air-act-administrative-functions` (the detail lists EPA's sections) |
 
 Public Law 280 facts apply to the nation's Indian country in the state the detail names. When the profile places the nation in a state only by its office address, the fact is medium confidence. A negative (`not-a-public-law-280-state`) is inferred from an official list and says so in its note.
 
