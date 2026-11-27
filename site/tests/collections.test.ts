@@ -35,6 +35,8 @@ describe('the collections the Statistics page counts', () => {
 		// An address with spaces in it still finds the copy filed under it.
 		expect(byKey.get('constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text')?.href).toMatch(/^\/copies\/view\//);
 		for (const item of constitutions) if (item.copies?.length) expect(item.href ?? '').toMatch(/^\/copies\/view\//);
+		// A record cited at the National Indian Law Library opens another publisher's copy of the same text when the site has one.
+		expect(byKey.get('constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text')?.href).toBe('/copies/view/constitutions/ute-indian-tribe-of-the-uintah-and-ouray-reservation/fcf7098402c35d0d.html');
 		// Copies taken from the National Indian Law Library stay link-only until the nation consents (decision record 0043).
 		expect(byKey.get('hopi-constitution-nill')?.copies).toBeUndefined();
 	});
