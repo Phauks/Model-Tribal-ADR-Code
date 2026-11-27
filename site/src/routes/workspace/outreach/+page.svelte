@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import { batchStatusLabels } from '#lib/mail.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -84,8 +85,8 @@
 	<p class="small muted">Outreach goes from {data.carrier}.</p>
 {/if}
 
-<h2>Batches</h2>
 {#if data.batches.length === 0}
+	<h2>Batches</h2>
 	<p class="muted">No batches yet.</p>
 {:else}
 	<DataTable
@@ -95,7 +96,9 @@
 		rows={batchRows}
 		defaultSort={{ key: 'made', direction: 'descending' }}
 		rowName={['batch', 'batches']}
-	/>
+	>
+		{#snippet heading(count: Snippet)}<h2>Batches {@render count()}</h2>{/snippet}
+	</DataTable>
 {/if}
 
 {#if liveTemplates.length === 0}

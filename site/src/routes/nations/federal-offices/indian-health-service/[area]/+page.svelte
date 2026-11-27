@@ -58,8 +58,7 @@
 
 	<Collapsible heading="Nations served" identifier="nations-served" count={data.count} class="past-glance">
 		{#each data.groups as group (group.entityType)}
-			{#if data.groups.length > 1}<h3>{group.label}</h3>{/if}
-			<NationTable {group} identifier="health-area-{data.office.key}-{group.entityType}" />
+			<NationTable {group} identifier="health-area-{data.office.key}-{group.entityType}" headingLevel={3} />
 		{/each}
 	</Collapsible>
 </InfoPage>

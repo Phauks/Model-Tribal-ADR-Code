@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import Dropdown from '#lib/components/Dropdown.svelte';
@@ -146,11 +147,13 @@
 	</form>
 {/if}
 
-<h2>Recipients</h2>
 {#if data.recipients.length === 0}
+	<h2>Recipients</h2>
 	<p class="muted">None yet.</p>
 {:else}
-	<DataTable identifier="recipients" label="Table: recipients" {columns} {rows} rowName={['recipient', 'recipients']} {cell} />
+	<DataTable identifier="recipients" label="Table: recipients" {columns} {rows} rowName={['recipient', 'recipients']} {cell}>
+		{#snippet heading(count: Snippet)}<h2>Recipients {@render count()}</h2>{/snippet}
+	</DataTable>
 {/if}
 
 <style>

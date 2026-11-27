@@ -54,7 +54,9 @@
 	on the table"). The row is part of the page as built, so the table no
 	longer moves down when scripts run. At its left is the page's `heading`
 	snippet with the table's count badge ("19", then "8 of 19" when narrowed),
-	or, with no heading, the count in words ("229 courts"). At its right are
+	or, with no heading, the table's title from `title` or `label` with the
+	same badge, so every table names itself inside its box (Trevor, Nov. 27,
+	2026: "check that all tables have titles"). At its right are
 	borderless icons, always in this order: Search (when searchLabel is
 	given; it opens a box in the row), Columns, Copy link (when shareable),
 	download (always: a list of .csv and .xlsx, TableDownload.svelte; the files
@@ -153,9 +155,11 @@
 		/** The keys of the columns shown; undefined shows every column not marked optional. Bind it to set or follow the reader's choice. */
 		shownColumns?: string[];
 		/**
-		 * The table's heading, drawn at the left of its title row; it gets the table's count badge to place, such as `<h3 id="treaties-heading">Treaties {@render count()}</h3>`. Without it the title row shows the count in words ("229 courts").
+		 * The table's heading, drawn at the left of its title row; it gets the table's count badge to place, such as `<h3 id="treaties-heading">Treaties {@render count()}</h3>`. Without it the title row shows `title` (or `label` without "Table: ") and the badge. A heading that names only this table belongs here, not above the box.
 		 */
 		heading?: Snippet<[count: Snippet]>;
+		/** The table's title in its title row, when there is no `heading`; defaults to `label` without "Table: ", such as "Treaties" for "Table: treaties". */
+		title?: string;
 		/** Each column's filter. A page can bind it to set the filters and to hear when the reader changes them, as Build a table does to carry them into a grouped table. */
 		columnFilters?: ColumnFilters;
 	}
@@ -181,7 +185,8 @@
 		total,
 		shownColumns = $bindable(undefined),
 		columnFilters = $bindable({}),
-		heading
+		heading,
+		title
 	}: Props = $props();
 
 	// A table drawn on the server gets its buttons once the browser has it; one made later in the browser, such as a map view's table, starts with them, so it is drawn once and does not jump (src/lib/page-started.ts).
@@ -241,12 +246,14 @@
 	const partial = $derived(shownRows.length < allRows);
 	/** The count in the heading's badge: "19", or "8 of 19" when narrowed. */
 	const badgeText = $derived(partial ? `${shownRows.length.toLocaleString('en-US')} of ${allRows.toLocaleString('en-US')}` : allRows.toLocaleString('en-US'));
-	/** The count in words, for a title row without a heading: "229 courts", or "48 of 229 courts". */
-	const countText = $derived(
-		showCount || narrowed
-			? `${partial ? `${shownRows.length.toLocaleString('en-US')} of ` : ''}${allRows.toLocaleString('en-US')} ${allRows === 1 ? rowName[0] : rowName[1]}`
-			: ''
-	);
+	/** The table's title, for a title row without a heading of its own: every table names itself (Trevor, Nov. 27, 2026: "check that all tables have titles"). */
+	const tableTitle = $derived.by(() => {
+		const text = (title ?? label.replace(/^Table:\s*/, '')).trim();
+		return text.charAt(0).toLocaleUpperCase('en-US') + text.slice(1);
+	});
+	/** The count badge shows unless the page turned the count off and nothing is narrowed. */
+	const badgeShown = $derived(showCount || narrowed || partial);
+
 	/** One chip for each column being filtered, naming what it keeps. */
 	const chips = $derived(
 		columns.flatMap((column) => {
@@ -408,8 +415,8 @@
 		<div class="table-title">
 			{#if heading}
 				{@render heading(countBadge)}
-			{:else if countText}
-				<p class="small muted table-count">{countText}</p>
+			{:else}
+				<p class="table-name">{tableTitle}{#if badgeShown}{' '}{@render countBadge()}{/if}</p>
 			{/if}
 		</div>
 		{#if searchLabel && searchOpen}
@@ -709,11 +716,6 @@
 		min-width: 0;
 	}
 
-	/* The count in words is short, so the icons stay beside it on a phone. */
-	.table-title:has(> .table-count) {
-		flex-basis: 10rem;
-	}
-
 	.table-title:empty {
 		flex-basis: 0;
 	}
@@ -899,8 +901,14 @@
 		font-weight: var(--font-weight-bold);
 	}
 
-	.table-count {
+	/* A title without a heading of its own reads as one: the heading face, bold, at the size of a section heading inside a page. */
+	.table-name {
 		margin: 0;
+		font-family: var(--font-family-heading);
+		font-size: var(--font-size-heading-3);
+		font-weight: var(--font-weight-bold);
+		line-height: var(--font-line-height-heading);
+		text-wrap: pretty;
 	}
 
 	.table-copied {
