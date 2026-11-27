@@ -1,7 +1,7 @@
 import { buildCommit } from 'virtual:build';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { workerSocketOpener } from '#lib/server/mail/socket-opener.ts';
-import { runServiceChecks } from '#lib/server/service-checks.ts';
+import { oldResources, runServiceChecks } from '#lib/server/service-checks.ts';
 import { requirePermission } from '#lib/server/workspace.ts';
 import type { PageServerLoad } from './$types';
 
@@ -21,5 +21,5 @@ export const load: PageServerLoad = async (event) => {
 		migrationFiles,
 		now: checkedAt
 	});
-	return { results, checkedAt: checkedAt.toISOString(), buildCommit };
+	return { results, oldResources, checkedAt: checkedAt.toISOString(), buildCommit };
 };
