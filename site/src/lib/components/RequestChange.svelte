@@ -9,31 +9,33 @@
 	// missing nation), the page they were on already filled in and who they
 	// are; on the right what should change and any files (RequestForm.svelte,
 	// compact). The form is sent in place, and the dialog shows the reference
-	// number. Without scripts the control is a link to the request page, which
-	// asks the same questions. An error page or an error box opens it already
-	// filled in, as "Report a broken page" with the address (openReport in
-	// src/lib/report-request.ts; site/ERRORS.md).
-	import { onMount, tick } from 'svelte';
+	// number.
+	//
+	// It is the site's only way to ask for a change (Trevor, Nov. 28, 2026):
+	// the separate request page is gone, and every link that opened it, such
+	// as "Ask to remove it" on a copy or "Write to the team" on a claimed
+	// nation's badge, opens this dialog already filled in. Such a link ends in
+	// #request=... (requestLink in src/lib/report-request.ts); the dialog opens
+	// on the click, or on arrival from another page, and the fragment leaves
+	// the address. An error page or an error box opens it already filled in,
+	// as "Report a broken page" with the address (openReport; site/ERRORS.md).
+	import { onMount, tick, untrack } from 'svelte';
 	import { page } from '$app/state';
+	import { replaceState } from '$app/navigation';
 	import type { applyAction } from '$app/forms';
 	import Flag from '@lucide/svelte/icons/flag';
 	import { requestKindHints, requestKindLabels, type RequestKind } from '#lib/requests.ts';
-	import { reportedAddress, reportRequestEvent, type ReportPreset } from '#lib/report-request.ts';
+	import { presetFromFragment, reportedAddress, reportRequestEvent, type RequestPreset } from '#lib/report-request.ts';
 	import Dropdown from './Dropdown.svelte';
 	import Modal from './Modal.svelte';
 	import RequestForm from './RequestForm.svelte';
 	import RequestSent from './RequestSent.svelte';
 
-	/** The request page's address for this page, used without scripts. */
-	let { link }: { link: string } = $props();
+	/** The record the page shows, such as "tribes/navajo-nation", or empty. */
+	let { record: pageRecord = '' }: { record?: string } = $props();
 
-	/** The kinds of request the dialog offers; Contribute has its own link in the sidebar. */
-	const reportKinds: RequestKind[] = ['correct', 'broken-page', 'add-nation', 'restrict', 'remove', 'question'];
-	const kindChoices = reportKinds.map((value) => ({
-		value,
-		label: requestKindLabels[value],
-		hint: requestKindHints[value]
-	}));
+	/** The kinds of request the dialog offers; "Replace a name with initials" only from a court opinion's link. */
+	const offeredKinds: RequestKind[] = ['correct', 'broken-page', 'add-nation', 'restrict', 'remove', 'contribute', 'question'];
 
 	type ActionResult = Parameters<typeof applyAction>[0];
 	type Sent = { reference: string; kind: RequestKind; receivedAt: string };
@@ -41,50 +43,101 @@
 	let scripted = $state(false);
 	let modal: Modal<string> | undefined = $state();
 	let opener: HTMLButtonElement | undefined = $state();
-	let kind = $state<RequestKind>(reportKinds[0]);
+	let kind = $state<RequestKind>(offeredKinds[0]);
 	let values = $state<Record<string, string>>({});
 	let errors = $state<Record<string, string>>({});
 	let problem = $state<string | undefined>();
 	let sent = $state<Sent | undefined>();
+	/** What a link filled in, kept until the dialog is opened from the flag again. */
+	let preset = $state<RequestPreset | undefined>();
+
+	const kindChoices = $derived(
+		(kind === 'replace-name' ? [...offeredKinds.slice(0, 5), 'replace-name' as const, ...offeredKinds.slice(5)] : offeredKinds).map((value) => ({
+			value,
+			label: requestKindLabels[value],
+			hint: requestKindHints[value]
+		}))
+	);
 
 	onMount(() => {
 		scripted = true;
-		const fromProblem = (event: Event) => openWith((event as CustomEvent<ReportPreset>).detail);
+		const fromProblem = (event: Event) => openWith((event as CustomEvent<RequestPreset>).detail);
+		const fromFragment = () => void arrive(presetFromFragment(location.hash));
+		// A link on this page that ends in #request=... opens the dialog without moving the page.
+		const fromLink = (event: MouseEvent) => {
+			if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+			const link = (event.target as Element | null)?.closest?.('a[href]');
+			if (!(link instanceof HTMLAnchorElement)) return;
+			const target = new URL(link.href, location.href);
+			if (target.origin !== location.origin || target.pathname !== location.pathname) return;
+			const linked = presetFromFragment(target.hash);
+			if (!linked) return;
+			event.preventDefault();
+			openWith(linked);
+		};
 		addEventListener(reportRequestEvent, fromProblem);
-		return () => removeEventListener(reportRequestEvent, fromProblem);
+		addEventListener('hashchange', fromFragment);
+		document.addEventListener('click', fromLink, true);
+		return () => {
+			removeEventListener(reportRequestEvent, fromProblem);
+			removeEventListener('hashchange', fromFragment);
+			document.removeEventListener('click', fromLink, true);
+		};
 	});
+
+	// A link from another page, or an old /requests address, arrives with #request=...
+	$effect(() => {
+		if (!scripted) return;
+		const linked = presetFromFragment(page.url.hash) ?? presetFromFragment(location.hash);
+		if (linked) untrack(() => void arrive(linked));
+	});
+
+	/** Opens the dialog for a link's fragment, then takes the fragment out of the address. */
+	async function arrive(linked: RequestPreset | undefined) {
+		if (!linked) return;
+		// On arrival the dialog is drawn in the same moment, so it opens once it is there.
+		await tick();
+		openWith(linked);
+		replaceState(`${location.pathname}${location.search}`, page.state);
+	}
 
 	/** On an error page the flag reports the page as broken, with its whole address. */
 	const onErrorPage = $derived(page.status >= 400);
 
-	// The request page itself keeps the plain link: it already is the form.
-	const onRequestPage = $derived(page.url.pathname === '/requests');
+	const record = $derived(preset?.record ?? pageRecord);
 
-	/** The record named in the link, such as "tribes/navajo-nation". */
-	const record = $derived(new URL(link, page.url.origin).searchParams.get('record') ?? '');
-
-	/** What the report is about: the record, or else the page's address. */
-	const material = $derived(onErrorPage ? reportedAddress(page.url) : record || reportedAddress(page.url));
+	/** What the request is about: the record (and its part), the address a link named, or else the page's address. */
+	const material = $derived.by(() => {
+		if (onErrorPage && !preset) return reportedAddress(page.url);
+		if (record) return preset?.field ? `${record} (${preset.field})` : record;
+		return preset?.material ?? reportedAddress(page.url);
+	});
 	const nationIdentifier = $derived(record.startsWith('tribes/') ? record.slice('tribes/'.length) : '');
+	const toTeam = $derived(Boolean(preset?.toTeam && nationIdentifier));
 
 	function reset() {
-		kind = onErrorPage ? 'broken-page' : reportKinds[0];
+		kind = onErrorPage ? 'broken-page' : offeredKinds[0];
 		values = {};
 		errors = {};
 		problem = undefined;
 		sent = undefined;
+		preset = undefined;
 	}
 
 	function open() {
-		if (sent || (onErrorPage && Object.keys(values).length === 0)) reset();
+		if (sent || preset || (onErrorPage && Object.keys(values).length === 0)) reset();
 		modal?.open();
 	}
 
 	/** Opens the dialog with answers already filled in, keeping nothing from before. */
-	function openWith(preset: ReportPreset) {
+	function openWith(next: RequestPreset) {
 		reset();
-		kind = preset.kind;
-		values = { material: preset.material, ...(preset.details ? { details: preset.details } : {}) };
+		preset = next;
+		kind = next.toTeam ? 'question' : (next.kind ?? kind);
+		values = {
+			...(next.material && !next.record ? { material: next.material } : {}),
+			...(next.details ? { details: next.details } : {})
+		};
 		modal?.open();
 	}
 
@@ -113,26 +166,20 @@
 	}
 </script>
 
-{#if scripted && !onRequestPage}
-	<button
-		bind:this={opener}
-		class="icon-button"
-		type="button"
-		aria-haspopup="dialog"
-		aria-label="Request a Change"
-		title="Request a Change"
-		onclick={open}
-	>
-		<Flag size={24} />
-	</button>
-{:else}
-	<a class="icon-button" href={link} aria-label="Request a Change" title="Request a Change">
-		<Flag size={24} />
-	</a>
-{/if}
+<button
+	bind:this={opener}
+	class="icon-button"
+	type="button"
+	aria-haspopup="dialog"
+	aria-label="Request a Change"
+	title="Request a Change"
+	onclick={open}
+>
+	<Flag size={24} />
+</button>
 
-{#if scripted && !onRequestPage}
-	<Modal bind:this={modal} title="Request a Change" onclose={() => opener?.focus()}>
+{#if scripted}
+	<Modal bind:this={modal} title={toTeam ? 'Write to the Nation’s Team' : 'Request a Change'} onclose={() => opener?.focus()}>
 		{#if sent}
 			<div id="report-sent" tabindex="-1">
 				<RequestSent {sent} headingLevel={3} />
@@ -145,13 +192,14 @@
 				</div>
 			{/snippet}
 			<RequestForm
-				lead={kindChoice}
+				lead={toTeam ? undefined : kindChoice}
 				{kind}
 				{nationIdentifier}
 				{material}
 				{values}
 				{errors}
 				{problem}
+				{toTeam}
 				headingLevel={3}
 				compact
 				prefix="report-"
@@ -163,11 +211,6 @@
 {/if}
 
 <style>
-	/* A link without scripts keeps the band's color after a visit. */
-	a.icon-button:visited {
-		color: inherit;
-	}
-
 	/* The choice heads the left column, level with the right column's first question. */
 	.kind-choice :global(.dropdown) {
 		margin-top: 0;

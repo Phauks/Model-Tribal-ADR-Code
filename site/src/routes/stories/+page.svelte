@@ -63,7 +63,7 @@
 	{/if}
 
 	<p class="small muted">
-		More stories are being gathered. A nation or teller can <a href="/requests?kind=contribute&record=stories">offer a story</a>.
+		More stories are being gathered. A nation or teller can <a href="#request=contribute&record=stories">offer a story</a>.
 	</p>
 </div>
 

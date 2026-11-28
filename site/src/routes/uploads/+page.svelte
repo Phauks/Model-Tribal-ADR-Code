@@ -136,7 +136,7 @@
 	{/if}
 	<p class="small muted">
 		You can withdraw a file at any time before it is filed. After that, use
-		<a href="/requests?kind=restrict">Change or withdrawal</a> and we will take it down.
+		<a href="#request=restrict">Request a Change</a> and we will take it down.
 	</p>
 </div>
 

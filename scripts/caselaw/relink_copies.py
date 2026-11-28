@@ -93,7 +93,7 @@ def relink_served(page: str, key: str, links: CitationLinks) -> str:
     """A Tribal opinion page as served, with its citations linked and its header links opening outside the frame."""
     head, rest = page.split("<main>", 1)
     head = head.replace(tribal_script.PAGE_STYLE.split("a.external")[0], tribal_script.PAGE_STYLE, 1) if "a.external" not in head else head
-    head = re.sub(r'<a href="(/requests[^"]*)">', r'<a href="\1" target="_top">', head)
+    head = re.sub(r'<a href="(/requests[^"]*|/copies/view/[^"#]*#request[^"]*)">', r'<a href="\1" target="_top">', head)
     head = re.sub(r'<a href="(https://static\.case\.law/[^"]*)">', r'<a class="external" href="\1" target="_blank" rel="noopener">', head)
     return head + "<main>" + links.rewrite(rest, key)
 

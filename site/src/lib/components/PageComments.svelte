@@ -282,6 +282,13 @@
 	afterNavigate(({ type }) => {
 		if (type === 'enter') return;
 		current = null;
+		// Signed out, there are no comments to read: asking would only be refused, once for every page opened.
+		if (!readSignedInHint(document.cookie).signedIn) {
+			path = pathHere();
+			level = 'no-access';
+			comments = [];
+			return;
+		}
 		void load();
 	});
 

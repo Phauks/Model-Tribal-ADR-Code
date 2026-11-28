@@ -16,7 +16,7 @@
 			<li><a href="/using-ai">Using AI with Tribal law</a></li>
 			<li><a href="/people">People</a></li>
 			<li><a href="/about/timeline">Timeline to public review</a></li>
-			<li><a href="/requests">Request a correction or removal</a></li>
+			<li><a href="#request">Request a correction or removal</a></li>
 			<li><a href="/forms">Forms</a></li>
 			<li><a href="/charter">Charter</a></li>
 			<li><a href="/acknowledgments">Acknowledgments</a></li>

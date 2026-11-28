@@ -57,6 +57,11 @@ const limits = {
 	stalled: 5 * 60_000
 };
 const attemptsPerPage = 2;
+// Pages whose prerendered file is larger than this, such as the 12,564-row
+// federal court opinions list or the nations' timeline, are checked after the
+// rest, one at a time: two of them side by side starve each other and both
+// run past the time limit (PR #764, Nov. 28, 2026).
+const heavyPageBytes = 4 * 1024 * 1024;
 // A tab's memory grows with every page it shows (about 30 MB a page here), and
 // a tab that runs out of memory crashes. Each tab is replaced after this many
 // pages so its memory is given back.
@@ -194,7 +199,12 @@ async function closeQuietly(page) {
 	await withLimit(page.close(), limits.close, 'close timed out').catch(() => {});
 }
 
-const queue = [...pages];
+const bytesOf = (pathname) => {
+	const file = fileFor(pathname);
+	return file ? statSync(file).size : 0;
+};
+const heavyPages = pages.filter((pathname) => bytesOf(pathname) > heavyPageBytes);
+const queue = pages.filter((pathname) => !heavyPages.includes(pathname));
 
 async function worker(number) {
 	let page = await context.newPage();
@@ -259,6 +269,8 @@ const watchdog = setInterval(() => {
 }, 10_000);
 
 await Promise.all(Array.from({ length: workers }, (_, index) => worker(index)));
+queue.push(...heavyPages);
+await worker(0);
 
 clearInterval(watchdog);
 await withLimit(browser.close(), limits.close, 'browser close timed out').catch(() => {});

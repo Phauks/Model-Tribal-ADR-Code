@@ -11,6 +11,7 @@
  *
  * Shared by the build, the Worker and the page, so it must stay plain.
  */
+import { requestLink } from './report-request.ts';
 import { fileName, verifyLink } from './checksums.ts';
 import { copyPagePath, copyPath, fileSize, nameRequestPath, removalRequestPath, type PublicCopy } from './public-copies.ts';
 import { readableDate } from './readable-date.ts';
@@ -209,9 +210,9 @@ export function documentFile(
 	};
 }
 
-/** The request form, filled in to offer something a copy lacks, such as a drawing its text refers to (docs/requests.md, "contribute"). */
+/** Request a Change, filled in to offer something a copy lacks, such as a drawing its text refers to (docs/requests.md, "contribute"). */
 export function suggestionPath(key: string): string {
-	return `/requests?${new URLSearchParams({ kind: 'contribute', record: `copies/${key}` }).toString().replaceAll('%2F', '/')}`;
+	return requestLink({ kind: 'contribute', record: `copies/${key}` });
 }
 
 /** Where a copy's reading version is served, without its extension: /copies/reading/<key>, with .json, .md or .html after it. */

@@ -22,6 +22,7 @@
 		{ field: 'department', label: 'Department', items: [{ text: 'U.S. Department of the Interior' }] },
 		{ field: 'agencies', label: 'Agencies', items: [{ text: data.agencies.length.toLocaleString('en-US') }] },
 		{ field: 'nations', label: 'Nations', items: [{ text: data.count.toLocaleString('en-US') }] },
+		...(data.office.office ? [{ field: 'office', label: 'Regional office', items: [{ text: data.office.office.lines.join(', ') }] }] : []),
 		{ field: 'official', label: 'Official page', items: [{ text: shortLink(data.office.link), link: data.office.link }] }
 	]);
 </script>

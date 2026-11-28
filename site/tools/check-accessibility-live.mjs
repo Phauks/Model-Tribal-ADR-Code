@@ -164,7 +164,6 @@ const visits = {
 		'/glossary/peacemaking/changes',
 		'/sign-in',
 		'/sign-in/forgot',
-		['/requests', ['sign-in panel']],
 		'/events',
 		`/events/${fixtureEvent}`
 	],

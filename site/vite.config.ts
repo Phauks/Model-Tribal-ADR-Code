@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import adapter from '@sveltejs/adapter-cloudflare';
@@ -40,6 +40,7 @@ import { markSiteText, type SiteTextEntry } from './src/lib/site-text-markers.ts
 import { copyRestriction } from './src/lib/nation-restrictions.ts';
 import { copyFileNames } from './src/lib/server/copy-lists.ts';
 import { installCandidates, readerToolFiles, type ManifestChunk } from './src/lib/offline-shell.ts';
+import { builtPdfDecoderFolder, isPdfDecoderFile } from './src/lib/pdf-decoders.ts';
 import { loadPublishedSiteText, siteTextCatalog } from './src/lib/server/site-text-build.ts';
 import { loadLiveChanges, loadRepositoryHistory } from './src/lib/server/recent-changes-build.ts';
 import { publishedRecordText, recordTextCatalog, usePublishedRecordText } from './src/lib/server/record-text-build.ts';
@@ -694,6 +695,33 @@ function buildInformation(): Plugin {
 	};
 }
 
+/** The folder of pdf.js's image decoders in node_modules, and where the built site serves them (src/lib/pdf-decoders.ts). */
+const pdfDecoderFolder = fileURLToPath(new URL('./node_modules/pdfjs-dist/wasm/', import.meta.url));
+
+/**
+ * Copies pdf.js's image decoders (JPEG 2000, JBIG2 and color profiles, with
+ * their licenses) into the built site, under a folder named for the pdf.js
+ * version, for the site's PDF viewer (src/lib/components/PdfViewer.svelte).
+ * pdf.js asks for them by fixed names inside one folder, so they cannot go
+ * through Vite's hashed assets. Without them, scanned pages stored as
+ * JPEG 2000 or JBIG2, as most of the Government Publishing Office's scanned
+ * hearings are, draw blank. In development Vite serves them from
+ * node_modules itself.
+ */
+function pdfDecoders(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:pdf-decoders',
+		generateBundle() {
+			if (this.environment.name !== 'client') return;
+			const version = (JSON.parse(readFileSync(new URL('./node_modules/pdfjs-dist/package.json', import.meta.url), 'utf8')) as { version: string }).version;
+			for (const name of readdirSync(pdfDecoderFolder)) {
+				if (!isPdfDecoderFile(name)) continue;
+				this.emitFile({ type: 'asset', fileName: builtPdfDecoderFolder(version).slice(1) + name, source: readFileSync(path.join(pdfDecoderFolder, name)) });
+			}
+		}
+	};
+}
+
 const offlineFilesModule = 'virtual:offline-files';
 const resolvedOfflineFilesModule = `\0${offlineFilesModule}`;
 
@@ -771,6 +799,7 @@ export default defineConfig({
 		pageHistory(),
 		siteText(),
 		offlineFiles(),
+		pdfDecoders(),
 		sveltekit({
 			preprocess: [siteTextMarkers],
 			compilerOptions: {
@@ -814,7 +843,11 @@ export default defineConfig({
 					if (path === '/checksums.txt' || path === '/checksums.json') return;
 					throw new Error(message);
 				},
-				handleMissingId: 'fail'
+				// A link ending in #request=... opens Request a Change rather than going to an element (src/lib/report-request.ts).
+				handleMissingId: ({ id, message }) => {
+					if (id === 'request' || id.startsWith('request=') || id.startsWith('request&')) return;
+					throw new Error(message);
+				}
 			},
 			version: {
 				// The service worker names its caches after this, so each build replaces the old copy.

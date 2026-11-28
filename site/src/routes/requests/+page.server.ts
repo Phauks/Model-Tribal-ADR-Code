@@ -1,6 +1,6 @@
-import { fail } from '@sveltejs/kit';
-import { reviewSubjects } from 'virtual:review-subjects';
-import { isRequestKind, maximumRequestFiles } from '#lib/requests.ts';
+import { fail, redirect } from '@sveltejs/kit';
+import { maximumRequestFiles } from '#lib/requests.ts';
+import { oldRequestTarget } from '#lib/report-request.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { BodyTooLarge, formWithin } from '#lib/server/limited-body.ts';
 import { maximumFileBytes, readRequestForm, sourceSlots } from '#lib/server/request-form.ts';
@@ -12,33 +12,15 @@ import type { Actions, PageServerLoad } from './$types';
 export const prerender = false;
 
 /**
- * Pages link here with the record and field already filled in
- * (docs/requests.md, "Where the request starts"), for example
- * /requests?record=tribes/sample-nation&field=recognition. An error page's
- * Report link, for a reader without scripts, sends the page's address and
- * what to say in Details (src/lib/report-request.ts).
+ * Where Request a Change sends its form (src/lib/components/RequestChange.svelte).
+ * The request page that was here is gone: the site has one way to ask for a
+ * change, the masthead's dialog (Trevor, Nov. 28, 2026). An old address such
+ * as /requests?kind=remove&record=copies/<key>, which saved copies of court
+ * opinions still carry, goes to the record's page with the dialog open and
+ * filled in the same way (src/lib/report-request.ts).
  */
-export const load: PageServerLoad = ({ url }) => {
-	const kind = url.searchParams.get('kind');
-	const record = (url.searchParams.get('record') ?? '').slice(0, 200);
-	const field = (url.searchParams.get('field') ?? '').slice(0, 200);
-	const address = (url.searchParams.get('address') ?? '').slice(0, 500);
-	const details = (url.searchParams.get('details') ?? '').slice(0, 2000);
-	const material = record ? (field ? `${record} (${field})` : record) : address;
-	const nationIdentifier = record.startsWith('tribes/') ? record.slice('tribes/'.length) : '';
-	// From a claimed nation page's badge: a message to the nation's team.
-	const nation = reviewSubjects.find((subject) => subject.kind === 'nation' && subject.identifier === nationIdentifier);
-	const toTeam = url.searchParams.get('to') === 'team' && nation !== undefined && kind === 'question';
-	return {
-		toTeam,
-		teamPage: toTeam && nation?.page ? { title: nation.title, link: nation.page } : undefined,
-		kind: isRequestKind(kind) ? kind : undefined,
-		record,
-		field,
-		material,
-		details,
-		nationIdentifier
-	};
+export const load: PageServerLoad = ({ url, request }) => {
+	redirect(request.method === 'GET' ? 301 : 303, oldRequestTarget(url));
 };
 
 /** The largest form the request form takes: its files (or a missing nation's source copies) at their largest, and a megabyte for the text and the form's own wrapping. */

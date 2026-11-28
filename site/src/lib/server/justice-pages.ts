@@ -36,6 +36,7 @@ import { courtPath, courts, justicesFile, surname, type Justice } from './suprem
 import { pictureView } from './supreme-court-pictures.ts';
 import type { InfoPicture } from '../info-page.ts';
 import type { OutlineItem, PageFamily, PageOutline } from '../site-sections.ts';
+import { eras, type Era } from '../timeline.ts';
 import { presidentDocuments, termsOf, treatyDates, type PresidentDocument, type TermCase } from './president-documents.ts';
 
 interface FactItem {
@@ -610,4 +611,61 @@ export function peopleIndex(): {
 		};
 	});
 	return { justices, presidents };
+}
+
+/** One President's card on the U.S. Presidents page. */
+export interface PresidentPortrait {
+	key: string;
+	name: string;
+	link: string;
+	/** "1885–1889, 1893–1897"; a President in office now ends "–today". */
+	years: string;
+	justices: number;
+	portrait?: InfoPicture;
+}
+
+/** The Presidents of one era of federal Indian policy, for the U.S. Presidents page. */
+export interface PresidentEra {
+	/** The heading's id, such as "treaty-era". */
+	id: string;
+	/** The era's name in Title Case, such as "Reservations and Allotment". */
+	title: string;
+	/** The years as the legal history timeline gives them, such as "1871 to 1934". */
+	years: string;
+	presidents: PresidentPortrait[];
+}
+
+const minorWords = new Set(['and', 'of', 'the', 'to']);
+const eraTitle = (era: Era) =>
+	era.name.replace(/[A-Za-z]+/g, (word, offset) => (offset > 0 && minorWords.has(word) ? word : word[0].toUpperCase() + word.slice(1)));
+
+/**
+ * Each President under the era of federal Indian policy in which most of their
+ * time in office fell (src/lib/timeline.ts, the legal history timeline's eras),
+ * so Grant (1869–1877) stands with Reservations and Allotment and Franklin
+ * D. Roosevelt (1933–1945) with Reorganization. Eras with no President are left out.
+ */
+export function presidentsByEra(): PresidentEra[] {
+	const thisYear = Number(today().slice(0, 4));
+	const index = peopleIndex().presidents;
+	const groups = new Map<Era, PresidentPortrait[]>();
+	for (const president of peopleFile().presidents) {
+		const runs = president.years.map(([start, end]) => [start, Math.max(end, start + 0.5)]);
+		if (president.serving_since) runs.push([Number(president.serving_since.slice(0, 4)), thisYear + 0.5]);
+		const yearsIn = (era: Era) => runs.reduce((sum, [start, end]) => sum + Math.max(0, Math.min(end, era.end) - Math.max(start, era.start)), 0);
+		const era = eras.reduce((best, candidate) => (yearsIn(candidate) > yearsIn(best) ? candidate : best));
+		const listed = index.find((item) => item.key === president.key)!;
+		const card: PresidentPortrait = {
+			key: president.key,
+			name: president.name,
+			link: listed.link,
+			years: listed.years.endsWith('–') ? `${listed.years}today` : listed.years,
+			justices: listed.justices,
+			portrait: pictureView(president.key)
+		};
+		groups.set(era, [...(groups.get(era) ?? []), card]);
+	}
+	return eras
+		.filter((era) => groups.has(era))
+		.map((era) => ({ id: era.name.toLowerCase().replace(/[^a-z]+/g, '-'), title: eraTitle(era), years: era.years, presidents: groups.get(era)! }));
 }

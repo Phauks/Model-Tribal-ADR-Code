@@ -1,8 +1,8 @@
 <script lang="ts">
 	// The request form's questions for one kind of request (docs/requests.md):
 	// what the request is about, who is asking, the details and, for a missing
-	// nation, its proof. Used by the request page and by the Request a Change
-	// dialog (RequestChange.svelte), so both ask the same questions. Given
+	// nation, its proof. Used by the Request a Change dialog
+	// (RequestChange.svelte), the site's one way to ask for a change. Given
 	// onresult, the form sends itself in place, without leaving the page.
 	// Compact, for the Request a Change dialog, asks them on one page in two
 	// columns (Trevor, Nov. 27, 2026): who is asking and what it is about on
