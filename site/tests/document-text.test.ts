@@ -26,6 +26,10 @@ describe('trustOf', () => {
 		expect(trustOf({ mediaType: 'application/pdf', links: ['https://narf.org/x.pdf'] }).kind).toBe('publisher');
 		expect(trustOf({ mediaType: 'text/html', links: ['https://treaties.okstate.edu/x'] }).kind).toBe('transcription');
 	});
+
+	it('never calls a text taken from a government scan official', () => {
+		expect(trustOf({ mediaType: 'text/plain', links: ['https://www.govinfo.gov/link/statute/9/842'], derivedFrom: 'treaties/a.pdf' })).toMatchObject({ kind: 'ocr', verified: false, label: 'Text from the scan, unchecked' });
+	});
 });
 
 describe('documentFile', () => {

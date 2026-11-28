@@ -29,6 +29,7 @@ import {
 	nationsForReview,
 	copyMoves,
 	publicCopies,
+	scanTextCopies,
 	servableImages,
 	sources,
 	storyRecords
@@ -320,12 +321,13 @@ const servedCopiesOnce = () => {
 	// The name a reader saves each file under: its title rather than the code its key ends in (src/lib/readable-file-names.ts).
 	const names = copyFileNames();
 	servedCopies = Object.fromEntries(
-		publicCopies().map((copy) => {
-			const { key, mediaType, sha256, bytes, links, charset } = copy;
+		// The texts taken from served scans are served too, though no list counts them (scanTextCopies).
+		[...publicCopies(), ...scanTextCopies()].map((copy) => {
+			const { key, mediaType, sha256, bytes, links, charset, derivedFrom } = copy;
 			// A nation's law or opinion carries its kind and nations, so the Worker can follow the nation's choices (src/lib/nation-restrictions.ts).
 			const restrict = copyRestriction(copy);
 			const name = names.get(key);
-			return [key, { mediaType, sha256, bytes, links, ...(charset ? { charset } : {}), ...(name ? { name } : {}), ...(restrict ? { restrict } : {}) }];
+			return [key, { mediaType, sha256, bytes, links, ...(charset ? { charset } : {}), ...(derivedFrom ? { derivedFrom } : {}), ...(name ? { name } : {}), ...(restrict ? { restrict } : {}) }];
 		})
 	);
 	return servedCopies;

@@ -24,7 +24,7 @@ import { privateFile, privateSpreadReader } from './built-files.ts';
  * is saved under (src/lib/readable-file-names.ts), and for a nation's law or
  * court opinion, the choices it follows.
  */
-export type ServedCopy = Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links' | 'charset'> & { name?: string; restrict?: CopyRestriction };
+export type ServedCopy = Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links' | 'charset' | 'derivedFrom'> & { name?: string; restrict?: CopyRestriction };
 
 /** A copy as its file keeps it, under its key. */
 export type StoredCopy = Omit<ServedCopy, 'key'>;

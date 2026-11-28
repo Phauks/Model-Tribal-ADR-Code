@@ -652,8 +652,8 @@ function indexedCopies(): PublicCopy[] {
 					row.redistribution === 'yes' &&
 					!neverServedTopics.has(row.key.split('/')[0]) &&
 					!neverServedTopics.has(row.topic) &&
-					// A file made from another is served only when it is a text taken from a served scan (scripts/law/scan_texts.py); the other extracts are private working copies.
-					(!row.derived_from || row.media_type === 'text/plain') &&
+					// A text taken from a served scan is kept apart (scanTextCopies); the other extracts are private working copies.
+					(!row.derived_from || (row.media_type === 'text/plain' && /^[a-z0-9][a-z0-9._/-]*$/i.test(row.derived_from))) &&
 					servedMediaTypes.has(row.media_type) &&
 					/^[0-9a-f]{64}$/.test(row.sha256) &&
 					/^[a-z0-9][a-z0-9._/-]*$/i.test(row.key) &&
@@ -769,8 +769,24 @@ export function redactedOpinionKeys(): Set<string> {
  * the indexed copies, without those of material the site does not publish.
  */
 export function publicCopies(): PublicCopy[] {
-	publicCopyCache ??= indexedCopies().filter((copy) => !isWithheld(copy));
+	publicCopyCache ??= indexedCopies().filter((copy) => !copy.derivedFrom && !isWithheld(copy));
 	return publicCopyCache;
+}
+
+let scanTextCache: PublicCopy[] | undefined;
+
+/**
+ * The texts taken from the words of served scans (scripts/law/scan_texts.py,
+ * Nov. 28, 2026). The site serves each one and shows it in its scan's Text
+ * card, but does not list or count it as a document of its own: it is the
+ * same document as its scan. A text whose scan is not served is not served.
+ */
+export function scanTextCopies(): PublicCopy[] {
+	if (!scanTextCache) {
+		const scans = new Set(publicCopies().map((copy) => copy.key));
+		scanTextCache = indexedCopies().filter((copy) => copy.derivedFrom && scans.has(copy.derivedFrom) && !isWithheld(copy));
+	}
+	return scanTextCache;
 }
 
 let publicCopyLinks: Map<string, PublicCopy> | undefined;

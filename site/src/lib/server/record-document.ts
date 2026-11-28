@@ -9,7 +9,7 @@ import { documentFile, publisherName, type DocumentFile } from '../document-text
 import { escapeHtml } from '../escape-html.ts';
 import { linkForMatching, type PublicCopy } from '../public-copies.ts';
 import { officialReportLinks, type ReadingLinks } from '../reading-links.ts';
-import { publicCopies, publicCopyFor, publicCopyWithDigest, type SourceRecord } from './content.ts';
+import { publicCopies, publicCopyFor, publicCopyWithDigest, scanTextCopies, type SourceRecord } from './content.ts';
 import { copyFileNames } from './copy-lists.ts';
 
 let byKey: Map<string, PublicCopy> | undefined;
@@ -39,7 +39,7 @@ let scanTexts: Map<string, PublicCopy> | undefined;
 
 /** The text taken from a served scan's words (scripts/law/scan_texts.py), by the scan's key. */
 export function textOfScan(key: string): PublicCopy | undefined {
-	scanTexts ??= new Map(publicCopies().flatMap((copy) => (copy.derivedFrom && copy.mediaType === 'text/plain' ? [[copy.derivedFrom, copy] as const] : [])));
+	scanTexts ??= new Map(scanTextCopies().map((copy) => [copy.derivedFrom as string, copy] as const));
 	return scanTexts.get(key);
 }
 
