@@ -32,9 +32,9 @@ class Missouri(State):
     CODE_SHORT = 'Mo. Rev. Stat.'
     AUTHOR = 'Missouri Revisor of Statutes'
     EDITION = 2026
-    RETRIEVED = '2026-11-27'
+    RETRIEVED = '2026-11-28'
     KEY_PREFIX = 'revised-statutes-of-missouri'
-    SOURCE_NOTE = "Text read from the Missouri Revisor of Statutes' page for the section in the Revised Statutes of Missouri (revisor.mo.gov) on Nov. 27, 2026."
+    SOURCE_NOTE = "Text read from the Missouri Revisor of Statutes' page for the section in the Revised Statutes of Missouri (revisor.mo.gov) on Nov. 27 or 28, 2026."
     NATION_NAMES = ('Osage Nation', 'Osage Tribe', 'Missouria', 'Otoe', 'Ioway', 'Shawnee Tribe', 'Delaware Nation', 'Kickapoo', 'Sac and Fox', 'Quapaw')
     PLACE_NAMES = ('Osage Beach', 'Osage County', 'Osage River', 'Lake of the Ozarks', 'Shawnee Bend', 'Miami County', 'Kansas City', 'Cherokee Place',
                    'Seneca', 'Neosho', 'Indian Creek', 'Indian Trail', 'Arrow Rock', 'Sac River', 'Pemiscot')
@@ -117,8 +117,13 @@ class Missouri(State):
             text = text_of(body)
             # Take the number and catchline off the front: "21.010. Meeting of the general assembly. — The general assembly ..."
             text = re.sub(r'^' + re.escape(number) + r'\.\s*', '', text)
-            caption = re.match(r'(.{0,400}?)\s+—\s+', text)
+            # A catchline may hold dashes of its own ("... by director, when — purposes of corporation. — 1. The director ..."), and the
+            # chapter page cuts it at the first, so the catchline runs to the first dash the text goes on from with a capital, a number
+            # or a quotation mark (a catchline's own parts go on in lower case), and the page's whole catchline is the heading.
+            caption = re.match(r'(.{0,600}?)\s+—\s+(?=[A-Z0-9"“(\[*§])', text) or re.match(r'(.{0,400}?)\s+—\s+', text)
             if caption:
+                if caption.group(1).rstrip('.').startswith(heading[:20]):
+                    heading = clean(caption.group(1).rstrip('.'))
                 text = text[caption.end():]
             status = 'repealed' if re.match(r'^\(?(?:Repealed|Transferred)\b', text, re.I) and len(text) < 300 else ('reserved' if not text else 'live')
             law = LAW.match(history.split(',')[0].strip())
