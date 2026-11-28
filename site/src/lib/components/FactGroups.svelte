@@ -22,7 +22,7 @@
 		link?: string;
 		detail?: string;
 		/** A detail with linked citations, such as a recognition status's legal basis. */
-		detailParts?: { text: string; link?: string; viewer?: string; original?: string }[];
+		detailParts?: { text: string; link?: string; viewer?: string; original?: string; italic?: boolean }[];
 		/** A short line under the value, such as what sources record in each state. */
 		note?: string;
 		citations?: CitationMark[];
@@ -30,6 +30,8 @@
 		badges?: { text: string; link?: string }[];
 		/** An estimate's margin of error, shown after it as "± 5" (Census figures). */
 		margin?: string;
+		/** In a wide group, the value goes on its own line under its label, as words such as a law's title do not fit beside it. */
+		below?: boolean;
 	}
 
 	interface FactTable {
@@ -103,7 +105,7 @@
 	}
 </script>
 
-{#snippet value(item: FactItem)}
+{#snippet main(item: FactItem)}
 	{#if item.badges}<TopicBadges topics={item.badges} /><CitationMarks marks={item.citations} />{:else if item.link && outside(item.link)}<a
 			href={item.link}>{item.text}</a
 		><span class="link-tail"
@@ -114,9 +116,13 @@
 				class="fact-margin muted small"
 				><span class="visually-hidden">, margin of error</span> ± {item.margin}</span
 			>{/if}<CitationMarks marks={item.citations} />{/if}
+{/snippet}
+
+{#snippet details(item: FactItem)}
 	{#if item.detailParts}
 		<span class="fact-detail muted small"
 			>{#each item.detailParts as part, partIndex (partIndex)}{#if part.link && part.viewer}<a href={part.link} {...imageViewerAttributes(part.viewer, { title: part.viewer, original: part.original })}>{part.text}</a
+					>{:else if part.link && part.italic}<a href={part.link}><i>{part.text}</i></a
 					>{:else if part.link}<a href={part.link}>{part.text}</a
 					>{:else}{part.text}{/if}{/each}</span
 		>
@@ -126,12 +132,30 @@
 	{#if item.note}<span class="fact-detail muted small">{item.note}</span>{/if}
 {/snippet}
 
-{#snippet labelRows(rows: FactItem[])}
+{#snippet value(item: FactItem)}
+	{@render main(item)}
+	{@render details(item)}
+{/snippet}
+
+<!--
+	In a wide group the numbers line up on the right and do not wrap, so a
+	value's note or legal basis takes its own line under the row, the panel's
+	full width, as a narrow column would break it into a stack of short lines
+	on a phone (Trevor, Nov. 27, 2026, on the Land Buy-Back mockup).
+-->
+{#snippet labelRows(rows: FactItem[], wide = false)}
 	<dl class="label-rows">
 		{#each rows as item, index (index)}
-			<div>
+			<div class:row-own={wide && (item.below || item.note || item.detail || item.detailParts)}>
 				<dt>{item.label}</dt>
-				<dd>{@render value(item)}</dd>
+				{#if wide && item.below}
+					<dd class="row-note row-below">{@render value(item)}</dd>
+				{:else if wide && (item.note || item.detail || item.detailParts)}
+					<dd>{@render main(item)}</dd>
+					<dd class="row-note">{@render details(item)}</dd>
+				{:else}
+					<dd>{@render value(item)}</dd>
+				{/if}
 			</div>
 		{/each}
 	</dl>
@@ -170,10 +194,10 @@
 				{:else if items.length === 1}
 					{@render fact(items[0])}
 				{:else if labeled(group)}
-					{@render labelRows(items)}
+					{@render labelRows(items, group.wide)}
 				{:else if leadThenLabeled(group)}
 					<div class="lead-value">{@render value(items[0])}</div>
-					{@render labelRows(items.slice(1))}
+					{@render labelRows(items.slice(1), group.wide)}
 				{:else if stackThenLabeled(group)}
 					{@const first = stackThenLabeled(group) ?? 0}
 					<ul class="stacked-list lead-value">
@@ -181,7 +205,7 @@
 							<li>{@render fact(item)}</li>
 						{/each}
 					</ul>
-					{@render labelRows(items.slice(first))}
+					{@render labelRows(items.slice(first), group.wide)}
 				{:else}
 					<ul class="stacked-list">
 						{#each items as item, index (index)}
@@ -265,6 +289,36 @@
 		text-align: right;
 		white-space: nowrap;
 		font-variant-numeric: tabular-nums;
+	}
+
+	/*
+	 * A row with a note is its own grid, so a wide number in another row, such
+	 * as an amount with two markers, does not narrow its label to a stack of
+	 * short lines in the narrow panel or on a phone.
+	 */
+	.summary-list > .wide .label-rows > div.row-own {
+		display: grid;
+		grid-column: 1 / -1;
+		grid-template-columns: 1fr auto;
+		column-gap: var(--space-4);
+		row-gap: var(--space-1);
+	}
+
+	/* A row's note, under the label and the value, the full width of the group. */
+	.summary-list > .wide .label-rows dd.row-note {
+		grid-column: 1 / -1;
+		margin-top: calc(-1 * var(--space-1));
+		text-align: left;
+		white-space: normal;
+	}
+
+	/* A value set under its label, such as a legal basis: the panel's type, not a note's. */
+	.summary-list > .wide .label-rows dd.row-below {
+		margin-top: 0;
+	}
+
+	.row-note .fact-detail:first-child {
+		margin-top: 0;
 	}
 
 	/* The panel's own type size, as in the approved mockup, not the smaller size of a data table. */

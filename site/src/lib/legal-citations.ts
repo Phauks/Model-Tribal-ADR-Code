@@ -24,6 +24,8 @@
 export interface CitationPart {
 	text: string;
 	link?: string;
+	/** A case name, set in italics. */
+	italic?: boolean;
 }
 
 interface CitationRule {
