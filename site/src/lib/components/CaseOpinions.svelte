@@ -12,11 +12,14 @@
 	part, with a button to show all of it. Without the text (no copy, or the
 	copy cannot be read), each opinion keeps its link to where it starts in
 	the official report.
+
+	It is only ever the body of the case's Text card (DocumentText.svelte),
+	which gives it its section and heading, the copy's header, tools and
+	footer, and the official report's scan beside it.
 -->
 <script lang="ts">
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import FileText from '@lucide/svelte/icons/file';
-	import Collapsible from '#lib/components/Collapsible.svelte';
 	import type { CaseOpinion } from '#lib/server/case-pages.ts';
 	import type { CaseOpinionTexts } from '#lib/opinion-text.ts';
 
@@ -26,11 +29,9 @@
 		opinions: CaseOpinion[];
 		/** The page of the served copy that holds the text, for a reader the text could not be read for. */
 		copyPage?: string;
-		/** Inside the document text card, which gives the section and its heading (DocumentText.svelte). */
-		bare?: boolean;
 	}
 
-	let { caseKey, opinions, copyPage, bare = false }: Props = $props();
+	let { caseKey, opinions, copyPage }: Props = $props();
 
 	/** Opinions longer than this show their first part, with a button for the rest. */
 	const longOpinion = 600;
@@ -83,49 +84,39 @@
 	}
 </script>
 
-{#snippet folds()}
-	<div class="case-opinions" bind:this={section}>
-		{#each opinions as opinion, index (index)}
-			{@const summaryLine = [pages(opinion), opinion.words ? `${opinion.words.toLocaleString('en-US')} words` : ''].filter(Boolean).join(' · ')}
-			{@const text = textFor(opinion)}
-			{@const clipped = !!opinion.words && opinion.words > longOpinion && !shownWhole[index]}
-			<details class="opinion-fold" open={index === 0} ontoggle={(event) => (event.currentTarget as HTMLDetailsElement).open && load()}>
-				<summary>
-					<span class="fold-mark" aria-hidden="true"><ChevronDown size={20} strokeWidth={2} /></span>
-					<h3>{opinion.title}{#if opinion.justice}<span class="writer">{` · ${opinion.justice}`}</span>{/if}</h3>
-					{#if summaryLine}<span class="summary-detail">{summaryLine}</span>{/if}
-				</summary>
-				<p class="opinion-meta">
-					{#if opinion.justice}<span>{#if opinion.justiceLink}<a href={opinion.justiceLink}>{opinion.justice}</a>{:else}{opinion.justice}{/if}</span>{/if}
-					{#if opinion.words}<span>{minutes(opinion.words)}</span>{/if}
-					{#if opinion.link}<a class="opinion-scan" href={opinion.link} title="Page {opinion.page} in the official report"><FileText size={14} strokeWidth={2} aria-hidden="true" />PDF</a>{/if}
-				</p>
-				{#if opinion.note}<p class="opinion-note">{opinion.note}</p>{/if}
-				{#if opinion.position !== undefined}
-					{#if text !== undefined}
-						<!-- eslint-disable-next-line svelte/no-at-html-tags -- the served copy's text, cleaned to a short list of elements (src/lib/opinion-text.ts) -->
-						<div class="opinion-text" class:opinion-clip={clipped}>{@html text}</div>
-						{#if clipped}
-							<p class="opinion-more"><button type="button" onclick={() => (shownWhole[index] = true)}>Show all {opinion.words?.toLocaleString('en-US')} words</button></p>
-						{/if}
-					{:else if failed}
-						<p class="opinion-note">The text could not be read just now.{#if copyPage} <a href={copyPage}>Read it in the saved copy</a>.{/if}</p>
-					{:else}
-						<p class="opinion-note" aria-live="polite">Loading the opinion…</p>
+<div class="case-opinions" bind:this={section}>
+	{#each opinions as opinion, index (index)}
+		{@const summaryLine = [pages(opinion), opinion.words ? `${opinion.words.toLocaleString('en-US')} words` : ''].filter(Boolean).join(' · ')}
+		{@const text = textFor(opinion)}
+		{@const clipped = !!opinion.words && opinion.words > longOpinion && !shownWhole[index]}
+		<details class="opinion-fold" open={index === 0} ontoggle={(event) => (event.currentTarget as HTMLDetailsElement).open && load()}>
+			<summary>
+				<span class="fold-mark" aria-hidden="true"><ChevronDown size={20} strokeWidth={2} /></span>
+				<h3>{opinion.title}{#if opinion.justice}<span class="writer">{` · ${opinion.justice}`}</span>{/if}</h3>
+				{#if summaryLine}<span class="summary-detail">{summaryLine}</span>{/if}
+			</summary>
+			<p class="opinion-meta">
+				{#if opinion.justice}<span>{#if opinion.justiceLink}<a href={opinion.justiceLink}>{opinion.justice}</a>{:else}{opinion.justice}{/if}</span>{/if}
+				{#if opinion.words}<span>{minutes(opinion.words)}</span>{/if}
+				{#if opinion.link}<a class="opinion-scan" href={opinion.link} title="Page {opinion.page} in the official report"><FileText size={14} strokeWidth={2} aria-hidden="true" />PDF</a>{/if}
+			</p>
+			{#if opinion.note}<p class="opinion-note">{opinion.note}</p>{/if}
+			{#if opinion.position !== undefined}
+				{#if text !== undefined}
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -- the served copy's text, cleaned to a short list of elements (src/lib/opinion-text.ts) -->
+					<div class="opinion-text" class:opinion-clip={clipped}>{@html text}</div>
+					{#if clipped}
+						<p class="opinion-more"><button type="button" onclick={() => (shownWhole[index] = true)}>Show all {opinion.words?.toLocaleString('en-US')} words</button></p>
 					{/if}
+				{:else if failed}
+					<p class="opinion-note">The text could not be read just now.{#if copyPage} <a href={copyPage}>Read it in the saved copy</a>.{/if}</p>
+				{:else}
+					<p class="opinion-note" aria-live="polite">Loading the opinion…</p>
 				{/if}
-			</details>
-		{/each}
-	</div>
-{/snippet}
-
-{#if bare}
-	{@render folds()}
-{:else}
-	<Collapsible heading="Opinions" identifier="opinions" count={opinions.length}>
-		{@render folds()}
-	</Collapsible>
-{/if}
+			{/if}
+		</details>
+	{/each}
+</div>
 
 <style>
 	.opinion-fold {

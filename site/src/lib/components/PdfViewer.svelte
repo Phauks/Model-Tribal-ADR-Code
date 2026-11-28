@@ -13,6 +13,11 @@
 	text. The file is never changed: its SHA-256 must match the publisher's.
 	Every page has an anchor, #pdf-page-N, and #page=N in the address opens
 	the file at that page, as the browser's viewer did.
+
+	pdf.js decodes some images with WebAssembly it loads on demand: JBIG2,
+	which the Library of Congress's scans of the United States Reports use,
+	and JPEG 2000. Without it those pages were drawn blank, so the viewer
+	hands pdf.js the decoders, served with the site's other files.
 -->
 <script lang="ts">
 	import { onMount } from 'svelte';
@@ -33,6 +38,24 @@
 	}
 
 	let { file, title, name, startPage, onpages }: Props = $props();
+
+	/** The decoders pdf.js asks for by file name, each loaded only when a page needs it. */
+	const decoders: Record<string, () => Promise<{ default: string }>> = {
+		'jbig2.wasm': () => import('pdfjs-dist/wasm/jbig2.wasm?url'),
+		'openjpeg.wasm': () => import('pdfjs-dist/wasm/openjpeg.wasm?url'),
+		'qcms_bg.wasm': () => import('pdfjs-dist/wasm/qcms_bg.wasm?url')
+	};
+
+	/** What pdf.js fetches beside the file (its BinaryDataFactory option): only the decoders. */
+	class DecoderFiles {
+		async fetch({ kind, filename }: { kind: string; filename: string }): Promise<Uint8Array> {
+			const decoder = kind === 'wasmUrl' ? decoders[filename] : undefined;
+			if (!decoder) throw new Error(`pdf.js asked for ${kind} ${filename}, which this viewer does not serve`);
+			const response = await fetch((await decoder()).default);
+			if (!response.ok) throw new Error(`Loading ${filename} failed: ${response.status}`);
+			return new Uint8Array(await response.arrayBuffer());
+		}
+	}
 
 	let pageCount = $state(0);
 	let failed = $state(false);
@@ -56,7 +79,7 @@
 				const [pdfjs, worker] = await Promise.all([import('pdfjs-dist'), import('pdfjs-dist/build/pdf.worker.min.mjs?url')]);
 				library = pdfjs;
 				pdfjs.GlobalWorkerOptions.workerSrc = worker.default;
-				pdf = await pdfjs.getDocument({ url: file }).promise;
+				pdf = await pdfjs.getDocument({ url: file, BinaryDataFactory: DecoderFiles }).promise;
 				if (stopped) return;
 				pageCount = pdf.numPages;
 				onpages?.(pageCount);
