@@ -17,7 +17,7 @@ The state statutes sweep (`scripts/law/state_statutes/`, Nov. 27, 2026) wrote 11
 
 ## Consequences
 
-- A state whose site refuses cloud sessions (New Hampshire, West Virginia, and bot-challenged hosts) keeps link-only records until its text can be fetched another way; the law page then links the official text, as before.
+- On Nov. 28, 2026 the script stored 10,312 of the 11,119 texts. A state whose site refuses cloud sessions (North Carolina, whose ncleg.gov answers 503, and Wisconsin) keeps link-only records until its text can be fetched another way, and so do a few records that are not one section (a whole chapter, a session law); the law page then links the official text, as before.
 - The records written by the sweep still say "Linked, not served" in their rights note; a later run of the sweep's `write` step should say the text is stored.
 - The stored text is the code as read on Nov. 28, 2026, a day after the records were written; a section the legislature amends later needs the script run again.
 

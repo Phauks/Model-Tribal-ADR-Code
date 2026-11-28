@@ -24,6 +24,7 @@ that two stored texts share (site/src/lib/server/content.ts, `storedStatuteText`
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import contextlib
 import datetime
 import hashlib
@@ -32,7 +33,6 @@ import json
 import os
 import re
 import sys
-import concurrent.futures
 from collections import Counter, defaultdict
 from pathlib import Path, PosixPath
 from urllib.parse import urlsplit
@@ -40,17 +40,18 @@ from urllib.parse import urlsplit
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import adapters  # noqa: E402
-import core  # noqa: E402
+import adapters
+import core
 
 sys.path.insert(0, str(core.ROOT / 'scripts' / 'captures'))
-import capture_index  # noqa: E402
+import capture_index
 
 SOURCES = core.ROOT / 'content/sources'
 SCRIPT = 'scripts/law/state_statutes/texts.py'
 FOLDER = 'state-statutes'
 RIGHTS = ("Public domain statutory text: the text of a state's statutes has no copyright (Georgia v. Public.Resource.Org, Inc., "
           "590 U.S. 255 (2020)). The section's text and history line only, without publisher annotations or editor's notes.")
+TODAY = datetime.datetime.now(datetime.UTC).date().isoformat()
 WORK = Path(os.environ.get('STATE_STATUTE_TEXTS_WORK', '/tmp/state-statute-texts'))
 
 # States whose adapters walk hundreds of index pages to list the code's sections: their listing is written from the records' own
@@ -63,8 +64,16 @@ NARROWED = {'AZ': 'sections.json', 'ID': 'sections.json', 'KS': 'sections.json',
             'NV': 'chapters.json', 'SD': 'chapters.json', 'DE': 'pages.json'}
 
 
+def state_of_key(key: str) -> str:
+    """The state whose adapter writes keys like this one, for a record made by hand that names no state ("?" when none does)."""
+    for state in adapters.NAMES:
+        if key.startswith(adapters.load(state).KEY_PREFIX + '-'):
+            return state
+    return '?'
+
+
 def records_by_state() -> dict[str, list[dict]]:
-    """Every state-statute record, by its state's two-letter code."""
+    """Every state-statute record, by its state's two-letter code (or, when it names none, its key's)."""
     found = defaultdict(list)
     for path in sorted(SOURCES.glob('*/*.yaml')):
         text = path.read_text()
@@ -74,7 +83,7 @@ def records_by_state() -> dict[str, list[dict]]:
         if record.get('kind') != 'state-statute':
             continue
         states = [entry.get('state') for entry in record.get('jurisdictions') or [] if entry.get('level') == 'state' and entry.get('state')]
-        found[states[0] if states else '?'].append({
+        found[states[0] if states else state_of_key(record['key'])].append({
             'key': record['key'], 'link': record.get('original_link') or '', 'url': (record.get('citation') or {}).get('URL') or '',
             'title': (record.get('citation') or {}).get('title') or '', 'short': (record.get('citation') or {}).get('title-short') or ''})
     return dict(found)
@@ -111,8 +120,10 @@ class Needed:
     def wants_text(self, value: str) -> bool:
         return bool(value) and (value in self.links or value in self.ends or value in self.pages or any(bounded_in(value, link) for link in self.pages))
 
-    def narrow(self, entries: list) -> list:
+    def narrow(self, entries: list | dict) -> list | dict:
         state = self.adapter.STATE
+        if isinstance(entries, dict):  # a listing by chapter number (South Dakota's chapter -> title name)
+            return {name: value for name, value in entries.items() if self.wants_text(name)}
         if state == 'NE':  # a chapter row lists its sections as [number, catchline]
             out = []
             for row in entries:
@@ -169,9 +180,15 @@ def narrowed_path(raw: Path, name: str, needed: Needed, log) -> Path:
     return NarrowedPath(raw)
 
 
+# An editor's note printed inside the text, as Colorado prints one before a subsection not yet in force
+# ("[Editor's note: Subsection (2) is effective (see editor's note following this section)]"), or Minnesota's pointer to the Revisor's notes ("[See Note.]"): not part of the statute.
+EDITORS_NOTE = re.compile(r"\[(?:Editor['’]s note:|See Note\b)[^\]]*\]\s*", re.IGNORECASE)
+
+
 def text_of_section(adapter, section: core.Section) -> str:
     heading = section.heading.strip().rstrip('.').strip()
-    lines = [f'{adapter.short_citation(section.number)}. {heading}.' if heading else f'{adapter.short_citation(section.number)}.', '', section.text.strip()]
+    body = EDITORS_NOTE.sub('', section.text).strip()
+    lines = [f'{adapter.short_citation(section.number)}. {heading}.' if heading else f'{adapter.short_citation(section.number)}.', '', body]
     if section.history.strip():
         lines += ['', f'History: {section.history.strip()}']
     return '\n'.join(lines) + '\n'
@@ -214,9 +231,12 @@ def match(adapter, records: list[dict], sections: list[core.Section]) -> tuple[d
 
 def upload_all(state: str, texts: dict[str, bytes], log) -> dict[str, str]:
     """Send each text to the bucket unless it is there already, then check its size, SHA-256 and MD5 there. Returns key -> problem."""
-    from mirror_captures import bucket_name, client, remote_state  # noqa: E402  (needs boto3)
+    from mirror_captures import (
+        bucket_name,
+        client,
+        remote_state,
+    )
     storage, bucket = client(), bucket_name()
-    today = datetime.date.today().isoformat()
 
     def one(item):
         key, body = item
@@ -224,7 +244,7 @@ def upload_all(state: str, texts: dict[str, bytes], log) -> dict[str, str]:
         try:
             if remote_state(storage, bucket, key) != (len(body), digest):
                 storage.put_object(Bucket=bucket, Key=key, Body=body, ContentType='text/plain; charset=utf-8',
-                              Metadata={'sha256': digest, 'captured': today, 'records': key.rsplit('/', 1)[1].removesuffix('.txt')})
+                              Metadata={'sha256': digest, 'captured': TODAY, 'records': key.rsplit('/', 1)[1].removesuffix('.txt')})
             head = storage.head_object(Bucket=bucket, Key=key)
             if (head['ContentLength'], head.get('Metadata', {}).get('sha256')) != (len(body), digest):
                 return key, 'size or SHA-256 differs in the bucket'
@@ -244,14 +264,14 @@ def upload_all(state: str, texts: dict[str, bytes], log) -> dict[str, str]:
     return problems
 
 
-def index_row(adapter, record: dict, key: str, body: bytes) -> dict:
-    host = urlsplit(record['link']).netloc or adapter.AUTHOR
+def index_row(adapter, record: dict, key: str, body: bytes, link: str) -> dict:
+    host = urlsplit(link).netloc or adapter.AUTHOR
     row = dict.fromkeys(capture_index.FIELDS, '')
     row.update({
         'key': key, 'bytes': str(len(body)), 'sha256': hashlib.sha256(body).hexdigest(), 'media_type': 'text/plain', 'topic': FOLDER,
         'title': f"{record['short']}: {record['title']}" if record['short'] and record['title'] else (record['title'] or record['short'] or record['key']),
-        'obtained': f"downloaded from the {adapter.AUTHOR} ({host}) by {SCRIPT}, {datetime.date.today().isoformat()}: the section's text and history line as the state's adapter splits them",
-        'link': record['link'] or record['url'], 'captured': datetime.date.today().isoformat(), 'records': record['key'],
+        'obtained': f"downloaded from the {adapter.AUTHOR} ({host}) by {SCRIPT}, {TODAY}: the section's text and history line as the state's adapter splits them",
+        'link': link, 'captured': TODAY, 'records': record['key'],
         'record_kinds': 'source', 'rights': RIGHTS, 'redistribution': 'yes', 'keep_local': 'no', 'orphan': 'no'})
     return row
 
@@ -275,15 +295,15 @@ def run(state: str, work_root: Path, full: bool, skip_fetch: bool) -> int:
     needed = Needed(adapter, records)
     raw = work / 'raw'
     raw.mkdir(exist_ok=True)
-    if not full and adapter.STATE in SEEDED and not (raw / SEEDED[adapter.STATE]).exists():
+    if not full and adapter.STATE in SEEDED:  # written again each run, so a record added since is listed too
         (raw / SEEDED[adapter.STATE]).write_text(json.dumps(sorted(needed.links)))
         log(f'{adapter.STATE}: listing written from {len(needed.links)} record links')
     reading = raw if full or adapter.STATE not in NARROWED else narrowed_path(raw, NARROWED[adapter.STATE], needed, log)
-    started = datetime.datetime.now()
+    started = datetime.datetime.now(datetime.UTC)
     if not skip_fetch:
         with contextlib.redirect_stdout(log_file):  # the adapter's own progress lines go to the log
             adapter.fetch(reading)
-        log(f'{adapter.STATE}: fetch done in {(datetime.datetime.now() - started).seconds // 60} min')
+        log(f'{adapter.STATE}: fetch done in {(datetime.datetime.now(datetime.UTC) - started).seconds // 60} min')
     with contextlib.redirect_stdout(io.StringIO()):
         sections = list(adapter.parse(reading))
     found, counts = match(adapter, records, sections)
@@ -296,7 +316,7 @@ def run(state: str, work_root: Path, full: bool, skip_fetch: bool) -> int:
         (texts_dir / f'{record_key}.txt').write_bytes(body)
         key = f'{FOLDER}/{code}/{record_key}.txt'
         texts[key] = body
-        rows.append(index_row(adapter, by_key[record_key], key, body))
+        rows.append(index_row(adapter, by_key[record_key], key, body, section.url or by_key[record_key]['link']))
     problems = upload_all(adapter.STATE, texts, log) if texts else {}
     checked = [row for row in rows if row['key'] not in problems]
     (work / 'rows.json').write_text(json.dumps(checked, ensure_ascii=False, indent=0))
