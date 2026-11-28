@@ -1,0 +1,27 @@
+key: newberry-atlas-historical-counties
+kind: dataset
+citation:
+  type: dataset
+  title: 'Atlas of Historical County Boundaries: U.S. Historical Counties (generalized)'
+  author:
+  - literal: Newberry Library, Dr. William M. Scholl Center for American History and Culture
+  medium: Shapefile
+  URL: https://publications.newberry.org/ahcb/downloads/united_states.html
+  accessed:
+    date-parts: [[2026, 11, 28]]
+original_link: https://publications.newberry.org/ahcb/downloads/united_states.html
+retrieved: '2026-11-28'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-28'
+rights:
+  status: no-permission-needed
+  basis: open-license
+  basis_note: 'The Library''s download page says the Atlas files are available "to be consulted, reviewed, and reused for any lawful purpose, commercial or non-commercial, without licensing or permission fees to the library", and that the out-of-date Creative Commons notice inside some files "can be ignored".'
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-28-colonial-era-maps-collection
+notes: 'Every county and county-level area of the colonies and the United States from March 4, 1629 to December 31, 2000 (17,727 shapes), each with the day it began and ended, the change that made it and the source the Atlas cites for that change; 1,160 shapes began before September 3, 1783. The Library leaves out the large, vaguely bounded areas of western Virginia, New York and New England in much of the seventeenth century, and areas under foreign governments, among them Spanish Texas and Florida and British Florida. A colonial county was a colony''s claim of jurisdiction over land Native nations held, not settled or empty land. Kept as the Library''s zip file in the project''s bucket under historic-maps/newberry-counties/ (site/tools/collect-historic-maps.mjs). Not drawn on the website''s map yet.'
