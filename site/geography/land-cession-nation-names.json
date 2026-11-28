@@ -1,5 +1,5 @@
 {
-	"description": "Names the U.S. Forest Service's land cession table uses for present-day nations (older Federal Register spellings) that differ from a nation record's official name, with the record each means (null: no record is that nation). Read by scripts/maps/land_cessions.py. First matched by a Claude (AI assistant) subagent on Nov. 26, 2026 and checked by hand; Pueblo of San Juan is Ohkay Owingeh's name before 2005.",
+	"description": "Names the U.S. Forest Service's land cession table uses for present-day nations (older Federal Register spellings) that differ from a nation record's official name, with the record each means (null: no record is that nation). Read by scripts/maps/land_cessions.py. First matched by a Claude (AI assistant) subagent on Nov. 26, 2026 and checked by hand; Pueblo of San Juan is Ohkay Owingeh's name before 2005. \"cessions\" adds, by Royce number, the nations today for cessions the Forest Service lists no present-day nation for or misses a people Royce names (with \"replace\" where the Forest Service’s list is wrong), each with its basis; matched by Claude (AI assistant) on Nov. 28, 2026 from Royce’s own name for the people and the cession’s place, and not yet reviewed by a person.",
 	"names": {
 		"Arapaho Tribe of the Wind River Reservation, Wyoming": "northern-arapaho-tribe-of-the-wind-river-reservation",
 		"Big Pine Band of Owens Valley Paiute Shoshone Indians of the Big Pine Reservation, California": "big-pine-paiute-tribe-of-the-owens-valley",
@@ -43,6 +43,7 @@
 		"North Fork Rancheria of Mono Indians of California": "northfork-rancheria-of-mono-indians-of-california",
 		"Northwestern Band of Shoshoni Nation of Utah (Washakie)": "northwestern-band-of-the-shoshone-nation",
 		"Oglala Sioux Tribe of the Pine Ridge Reservation, South Dakota": "oglala-sioux-tribe",
+		"Oneida Nation of New York": "oneida-indian-nation",
 		"Osage Tribe, Oklahoma": "the-osage-nation",
 		"Paiute-Shoshone Indians of the Bishop Community of the Bishop Colony, California": "bishop-paiute-tribe",
 		"Paiute-Shoshone Indians of the Lone Pine Community of the Lone Pine Reservation, California": "lone-pine-paiute-shoshone-tribe",
@@ -73,5 +74,388 @@
 		"White Earth Band of Minnesota Chippewa Tribe, Minnesota": "white-earth-band",
 		"Wichita and Affiliated Tribes (Wichita, Keechi, Waco & Tawakonie), Oklahoma": "wichita-and-affiliated-tribes",
 		"Winnemem Wintu Tribe (Nonfederally Recognized Indian Group)": null
+	},
+	"cessions": {
+		"7": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"28": {
+			"nations": [
+				"saint-regis-mohawk-tribe"
+			],
+			"basis": "The Seven Nations of Canada ceded land at St. Regis (Akwesasne), where the Saint Regis Mohawk Tribe lives today."
+		},
+		"44": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"60": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"75": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"92": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"93": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"116": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"127": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"131": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"141": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"172": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"221": {
+			"nations": [
+				"citizen-potawatomi-nation",
+				"forest-county-potawatomi-community",
+				"hannahville-indian-community",
+				"match-e-be-nash-she-wish-band-of-pottawatomi",
+				"nottawaseppi-huron-band-of-the-potawatomi",
+				"pokagon-band-of-potawatomi-indians",
+				"prairie-band-potawatomi-nation"
+			],
+			"basis": "Masac's band was a band of the Potawatomi; the nations are those the Forest Service lists for the Potawatomi's other cessions under the same 1832 treaty (Royce 222 to 225)."
+		},
+		"248": {
+			"nations": [
+				"cayuga-nation",
+				"oneida-indian-nation",
+				"onondaga-nation",
+				"seneca-nation-of-indians",
+				"saint-regis-mohawk-tribe",
+				"tonawanda-band-of-seneca",
+				"tuscarora-nation"
+			],
+			"basis": "The nations the Forest Service lists for the same 1838 treaty with the New York Indians (Royce 250)."
+		},
+		"249": {
+			"nations": [
+				"cayuga-nation",
+				"oneida-indian-nation",
+				"onondaga-nation",
+				"seneca-nation-of-indians",
+				"saint-regis-mohawk-tribe",
+				"tonawanda-band-of-seneca",
+				"tuscarora-nation"
+			],
+			"basis": "The nations the Forest Service lists for the same 1838 treaty with the New York Indians (Royce 250)."
+		},
+		"402": {
+			"nations": [
+				"tule-river-indian-tribe-of-the-tule-river-reservation"
+			],
+			"basis": "The Tule River (Madden Farm) reservation, today the Tule River Indian Tribe."
+		},
+		"404": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek and the Seminole; the Forest Service lists only the Seminole nations, so the Muscogee (Creek) Nation is added."
+		},
+		"415": {
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation"
+			],
+			"basis": "Pima and Maricopa land on the Gila River, today the Gila River Indian Community."
+		},
+		"431": {
+			"nations": [
+				"ute-indian-tribe-of-the-uintah-and-ouray-reservation"
+			],
+			"basis": "The Uintah Ute reservation, today the Ute Indian Tribe of the Uintah and Ouray Reservation."
+		},
+		"447": {
+			"nations": [
+				"confederated-tribes-of-the-goshute-reservation",
+				"skull-valley-band-of-goshute-indians-of-utah"
+			],
+			"basis": "Royce names the Shoshone-Goship (Goshute), today the Goshute Reservation and the Skull Valley Band."
+		},
+		"466": {
+			"nations": [
+				"colorado-river-indian-tribes-of-the-colorado-river-indian-reservation"
+			],
+			"basis": "The Colorado River reservation, today the Colorado River Indian Tribes."
+		},
+		"486": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"487": {
+			"nations": [
+				"the-muscogee-nation"
+			],
+			"basis": "Royce names the Creek; the Muscogee (Creek) Nation is the Creek Nation that signed these treaties."
+		},
+		"492": {
+			"nations": [
+				"cherokee-nation",
+				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
+			],
+			"replace": true,
+			"basis": "Royce names the Cherokee, for land in Oklahoma; the Forest Service lists the Santee Sioux Nation, which is an error, so its list is replaced with the Oklahoma Cherokee nations it lists for the Cherokee’s other cessions."
+		},
+		"518": {
+			"nations": [
+				"navajo-nation"
+			],
+			"replace": true,
+			"basis": "Royce names the Navaho, for the 1868 Navajo treaty; the Forest Service lists two Arapaho nations, which is an error, so its list is replaced with the Navajo Nation."
+		},
+		"521": {
+			"nations": [
+				"tolowa-dee-ni-nation"
+			],
+			"basis": "The Smith River reservation, in the homeland of the Tolowa Dee-ni’ Nation (formerly the Smith River Rancheria)."
+		},
+		"541": {
+			"nations": [
+				"san-carlos-apache-tribe-of-the-san-carlos-reservation"
+			],
+			"basis": "The Camp Grant reservation, whose Apache people were moved to San Carlos in 1872."
+		},
+		"544": {
+			"nations": [
+				"round-valley-indian-tribes-round-valley-reservation"
+			],
+			"basis": "The Round Valley reservation, today the Round Valley Indian Tribes."
+		},
+		"554": {
+			"nations": [
+				"colorado-river-indian-tribes-of-the-colorado-river-indian-reservation"
+			],
+			"basis": "The Colorado River reservation, today the Colorado River Indian Tribes."
+		},
+		"564": {
+			"nations": [
+				"muckleshoot-indian-tribe"
+			],
+			"basis": "The Muckleshoot reservation, today the Muckleshoot Indian Tribe."
+		},
+		"572": {
+			"nations": [
+				"tohono-oodham-nation-of-arizona"
+			],
+			"basis": "Papago (Tohono O’odham) reservations at San Xavier and Gila Bend, today part of the Tohono O’odham Nation."
+		},
+		"578": {
+			"nations": [
+				"confederated-tribes-of-siletz-indians-of-oregon"
+			],
+			"basis": "The Coast (Siletz) reservation, today the Confederated Tribes of Siletz Indians."
+		},
+		"579": {
+			"nations": [
+				"confederated-tribes-of-siletz-indians-of-oregon"
+			],
+			"basis": "The Coast (Siletz) reservation, today the Confederated Tribes of Siletz Indians."
+		},
+		"582": {
+			"nations": [
+				"yavapai-apache-nation-of-the-camp-verde-indian-reservation"
+			],
+			"basis": "The Rio Verde reservation, today the Yavapai-Apache Nation at Camp Verde."
+		},
+		"583": {
+			"nations": [
+				"round-valley-indian-tribes-round-valley-reservation"
+			],
+			"basis": "The Round Valley reservation, today the Round Valley Indian Tribes."
+		},
+		"596": {
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation"
+			],
+			"basis": "Pima and Maricopa land on the Gila River, today the Gila River Indian Community."
+		},
+		"611": {
+			"nations": [
+				"salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation"
+			],
+			"basis": "Pima and Maricopa land on the Salt River, today the Salt River Pima-Maricopa Indian Community."
+		},
+		"612": {
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation"
+			],
+			"basis": "Pima and Maricopa land on the Gila River, today the Gila River Indian Community."
+		},
+		"633": {
+			"nations": [
+				"havasupai-tribe-of-the-havasupai-reservation"
+			],
+			"basis": "Royce names the Havasupai."
+		},
+		"634": {
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation"
+			],
+			"basis": "Pima and Maricopa land on the Gila River, today the Gila River Indian Community."
+		},
+		"638": {
+			"nations": [
+				"burns-paiute-tribe"
+			],
+			"basis": "The Malheur reservation, whose Paiute people are today the Burns Paiute Tribe."
+		},
+		"639": {
+			"nations": [
+				"tohono-oodham-nation-of-arizona"
+			],
+			"basis": "Papago (Tohono O’odham) reservations at San Xavier and Gila Bend, today part of the Tohono O’odham Nation."
+		},
+		"640": {
+			"nations": [
+				"hopi-tribe-of-arizona",
+				"navajo-nation"
+			],
+			"basis": "The 1882 reservation for the Moki (Hopi) \"and such other Indians,\" which the Hopi Tribe and the Navajo Nation share today."
+		},
+		"641": {
+			"nations": [
+				"hualapai-indian-tribe-of-the-hualapai-indian-reservation"
+			],
+			"basis": "Royce names the Walapai (Hualapai)."
+		},
+		"646": {
+			"nations": [
+				"burns-paiute-tribe"
+			],
+			"basis": "The Malheur reservation, whose Paiute people are today the Burns Paiute Tribe."
+		},
+		"647": {
+			"nations": [
+				"burns-paiute-tribe"
+			],
+			"basis": "The Malheur reservation, whose Paiute people are today the Burns Paiute Tribe."
+		},
+		"648": {
+			"nations": [
+				"quechan-tribe-of-the-fort-yuma-indian-reservation"
+			],
+			"basis": "Royce names the Yuma (Quechan), as the Forest Service does for its other Yuma cession."
+		},
+		"651": {
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation"
+			],
+			"basis": "Pima and Maricopa land on the Gila River, today the Gila River Indian Community."
+		},
+		"661": {
+			"nations": [
+				"confederated-tribes-of-the-chehalis-reservation"
+			],
+			"basis": "The Chehalis reservation, today the Confederated Tribes of the Chehalis Reservation."
+		},
+		"676": {
+			"nations": [
+				"pueblo-of-sandia"
+			],
+			"basis": "Royce names Sandia Pueblo."
+		},
+		"682": {
+			"nations": [
+				"hopi-tribe-of-arizona"
+			],
+			"basis": "Royce names the Moki (Hopi)."
+		},
+		"683": {
+			"nations": [
+				"hualapai-indian-tribe-of-the-hualapai-indian-reservation"
+			],
+			"basis": "Royce names the Walapai (Hualapai)."
+		},
+		"684": {
+			"nations": [
+				"fort-mojave-indian-tribe",
+				"colorado-river-indian-tribes-of-the-colorado-river-indian-reservation"
+			],
+			"basis": "Royce names the Mohave, today the Fort Mojave Indian Tribe and, with others, the Colorado River Indian Tribes."
+		},
+		"685": {
+			"nations": [
+				"quechan-tribe-of-the-fort-yuma-indian-reservation"
+			],
+			"basis": "Royce names the Yuma (Quechan), as the Forest Service does for its other Yuma cession."
+		},
+		"686": {
+			"nations": [
+				"cocopah-tribe-of-arizona"
+			],
+			"basis": "Royce names the Cocopa (Cocopah)."
+		},
+		"687": {
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation",
+				"salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation",
+				"tohono-oodham-nation-of-arizona",
+				"ak-chin-indian-community"
+			],
+			"basis": "Pima, Maricopa and Papago land, today the Gila River, Salt River and Ak-Chin communities and the Tohono O’odham Nation."
+		},
+		"717": {
+			"nations": [
+				"confederated-tribes-of-the-colville-reservation"
+			],
+			"basis": "The Colville reservation, today the Confederated Tribes of the Colville Reservation."
+		},
+		"718": {
+			"nations": [
+				"confederated-tribes-of-the-colville-reservation"
+			],
+			"basis": "The Colville reservation, today the Confederated Tribes of the Colville Reservation."
+		},
+		"720": {
+			"nations": [
+				"white-mountain-apache-tribe-of-the-fort-apache-reservation"
+			],
+			"basis": "Royce names the White Mountain Apache."
+		}
 	}
 }
