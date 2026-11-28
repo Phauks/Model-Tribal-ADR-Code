@@ -144,6 +144,22 @@ def request(args: argparse.Namespace) -> None:
     for argument in arguments():
         for f in argument["files"]:
             files.setdefault(f["key"], {"key": f["key"], "link": f["link"], "duration": f["duration"]})
+    if args.again:
+        # Hear again what a lost runner took with it: the recordings in these shards of the first request
+        # whose words are not in the folder given, in shards of about two hours each.
+        first = json.loads(REQUEST.read_text(encoding="utf-8"))
+        held = {path.name.removesuffix(".json.gz") for path in Path(args.words).glob("*.json.gz")}
+        wanted = [f for i in args.again for f in first["shards"][i] if f["key"].replace("/", "__") not in held]
+        count = max(1, round(sum(f["duration"] for f in wanted) / 7200))
+        shards, totals = [[] for _ in range(count)], [0] * count
+        for f in sorted(wanted, key=lambda f: -f["duration"]):
+            i = totals.index(min(totals))
+            shards[i].append(f)
+            totals[i] += f["duration"]
+        target = REQUEST.with_name(f"{REQUEST.stem}-{args.name}.json")
+        target.write_text(json.dumps({"model": first["model"], "shards": shards}, indent=1) + "\n", encoding="utf-8")
+        print(f"{len(wanted)} recordings, {sum(totals) / 3600:.1f} hours, in {count} shards: {target}")
+        return
     # Shards of about equal length: longest first, each to the shortest shard so far.
     shards = [[] for _ in range(SHARDS)]
     totals = [0] * SHARDS
@@ -165,6 +181,27 @@ def decode(path: Path):
     raw = subprocess.run(["ffmpeg", "-nostdin", "-loglevel", "error", "-i", str(path), "-f", "s16le", "-ac", "1", "-ar", "16000", "-"],
                          capture_output=True, check=True).stdout
     return np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768.0
+
+
+PIECE_SECONDS = 3600
+
+
+def pieces(samples) -> list[tuple[int, int]]:
+    """Where to cut a long recording so each piece is heard on its own: about an hour each, at the
+    quietest half second near each hour. The model's feature step holds a whole piece in memory at
+    once, and a four-hour reel heard whole used more than a GitHub runner has (Nov. 28, 2026: the
+    runners hearing the four longest reels shut down)."""
+    import numpy as np  # noqa: PLC0415
+    rate, step = 16000, 8000
+    cuts, at = [0], PIECE_SECONDS * rate
+    while at < len(samples) - 10 * 60 * rate:
+        lo, hi = max(cuts[-1] + rate, at - 60 * rate), min(len(samples) - step, at + 60 * rate)
+        window = samples[lo:hi][: (hi - lo) // step * step].reshape(-1, step)
+        quiet = int(np.argmin((window ** 2).mean(axis=1)))
+        cuts.append(lo + quiet * step + step // 2)
+        at = cuts[-1] + PIECE_SECONDS * rate
+    cuts.append(len(samples))
+    return list(zip(cuts, cuts[1:]))
 
 
 def fetch(link: str, path: Path, tries: int = 4) -> None:
@@ -199,10 +236,13 @@ def transcribe(args: argparse.Namespace) -> None:
             fetch(f["link"], path)
             digest = hashlib.sha256(path.read_bytes()).hexdigest()
             samples = decode(path)
-        segments, _ = model.transcribe(samples, language="en", beam_size=5, vad_filter=True, word_timestamps=True,
-                                       condition_on_previous_text=False)
-        heard = [[round(s.start, 2), round(s.end, 2), s.text.strip(),
-                  [[round(w.start, 2), round(w.end, 2), w.word.strip()] for w in (s.words or [])]] for s in segments]
+        heard = []
+        for start, end in pieces(samples):
+            offset = start / 16000
+            segments, _ = model.transcribe(samples[start:end], language="en", beam_size=5, vad_filter=True, word_timestamps=True,
+                                           condition_on_previous_text=False)
+            heard += [[round(offset + s.start, 2), round(offset + s.end, 2), s.text.strip(),
+                       [[round(offset + w.start, 2), round(offset + w.end, 2), w.word.strip()] for w in (s.words or [])]] for s in segments]
         with gzip.open(target, "wt", encoding="utf-8") as handle:
             json.dump({"key": f["key"], "link": f["link"], "sha256": digest, "model": MODEL_NAME,
                        "seconds": round(len(samples) / 16000, 2), "segments": heard}, handle)
@@ -217,6 +257,25 @@ SPEAKER = re.compile(
     r"\s*[:;]\s*(?P<rest>.*)$")
 SECTION = re.compile(r"^(?:ORAL\s+ARGUMENT|REBUTTAL\s+ARGUMENT|FURTHER\s+REBUTTAL|ARGUMENT|REARGUMENT)\b.*\bOF\b", re.I)
 PROCEEDINGS = re.compile(r"P\s*R\s*[O0Q]\s*C\s*E\s*E\s*D\s*[I1l|]\s*[NM]\s*G\s*S", re.I)
+# A scanned transcript's speaker as the text layer gives it: "MR» HILL;", "QUESTIONS", "HR. SELLER»", "CHIEF JUSTICE
+# REHNQU1ST•", "QUEST TON;". Read from the line before its spaces are closed up: the speaker is followed by two or more.
+LOOSE_SPEAKER = re.compile(
+    r"^\s*(?:\d{1,2}\s+)?(?P<label>(?:[MHN]R\W{0,2}\s*)?CHIEF\s+JUSTICE\s+[A-Z][A-Z0-9'\-]+|JUSTICE\s+[A-Z][A-Z0-9'\-]+|"
+    r"QUEST\s?[IT1l]ON|(?:[MHN]R|MS|MRS)\W{0,2}\s*[A-Z][A-Z0-9'\-]+|GENERAL\s+[A-Z][A-Z'\-]+)"
+    r"(?:[^\sA-Za-z0-9]{1,2}|[s3S?'’]{1,2})?\s{2,}(?P<rest>\S.*)$")
+
+
+def loose_label(label: str) -> str:
+    """A scanned speaker's label in the form SPEAKER reads: "MR® CHIEF JUSTICE BURGER" is "MR. CHIEF JUSTICE BURGER"."""
+    label = re.sub(r"\s+", " ", label).strip()
+    if re.match(r"QUEST\s?[IT1l]ON$", label):
+        return "QUESTION"
+    label = re.sub(r"^[MHN]R\W{0,2}\s*", "MR. ", label)
+    label = re.sub(r"^MS\W{0,2}\s*", "MS. ", label)
+    label = re.sub(r"^MRS\W{0,2}\s*", "MRS. ", label)
+    words = label.split()
+    words[-1] = words[-1].replace("1", "I").replace("0", "O")
+    return " ".join(words)
 NOISE = re.compile(r"(Heritage Reporting Corporation|Alderson Reporting|Ace-Federal Reporters|Hoover Reporting|"
                    r"^\s*Official\s*$|^\s*\d{1,3}\s*$|www\.\S+|^\s*\(\d{3}\)\s*\d{3}-\d{4}\s*$|1111 14th Street|Washington, D\.?\s*C\.?\s*\d{5})", re.I)
 END = re.compile(r"\((?:Whereupon|The case was submitted)", re.I)
@@ -238,33 +297,34 @@ def clean_line(line: str) -> str:
 def read_transcript(path: Path) -> dict:
     """Counsel (from the appearances), and each turn: who speaks, the text and its page."""
     pages = pdf_text(path)
-    lines = [(number, clean_line(line)) for number, page in enumerate(pages, 1) for line in page.split("\n")]
-    lines = [(n, l) for n, l in lines if l and not NOISE.search(l)]
-    text_all = "\n".join(l for _, l in lines)
-    start = next((i for i, (_, l) in enumerate(lines) if PROCEEDINGS.search(l.replace(" ", "")) or PROCEEDINGS.search(l)), None)
+    lines = [(number, clean_line(line), line) for number, page in enumerate(pages, 1) for line in page.split("\n")]
+    lines = [(n, l, r) for n, l, r in lines if l and not NOISE.search(l)]
+    text_all = "\n".join(l for _, l, _r in lines)
+    alone = [i for i, (_, l, _r) in enumerate(lines) if mostly_capitals(l) and PROCEEDINGS.fullmatch(re.sub(r"[^A-Za-z0-9|]", "", l))]
+    start = alone[0] if alone else next((i for i, (_, l, _r) in enumerate(lines) if PROCEEDINGS.search(l.replace(" ", "")) or PROCEEDINGS.search(l)), None)
     appearances = []
-    head = "\n".join(l for _, l in lines[: start or 0])
+    head = "\n".join(l for _, l, _r in lines[: start or 0])
     found = re.search(r"APPEARANCES?\s*:?(.*?)(?:C\s*O\s*N\s*T\s*E\s*N\s*T\s*S|ORAL\s+ARGUMENT\s+OF|$)", head, re.S | re.I)
     if found:
         block = re.sub(r"\s+", " ", found.group(1)).strip()
-        for entry in re.split(r"(?<=[.;])\s+(?=[A-Z][A-Z.'\-]+(?:\s+[A-Z][A-Za-z.'\-]+)*,\s+(?:ESQ|JR|II|III|Solicitor|Deputy|Assistant|Attorney|General|Special))", block):
+        for entry in re.split(r"(?<![\s.][A-Z]\.)(?<=[.;])\s+(?=[A-Z][A-Z.'\-]+(?:\s+[A-Z][A-Za-z.'\-]+)*,\s+(?:ESQ|JR|II|III|Solicitor|Deputy|Assistant|Attorney|General|Special))", block):
             name = re.match(r"([A-Z][A-Za-z.'\-]*(?:\s+[A-Za-z][A-Za-z.'\-]*)*?(?:,\s+(?:JR\.|II|III))?),", entry)
             if not name:
                 continue
             behalf = re.search(r"(?:on behalf of|for)\s+(?:the\s+)?(.+?)\.?$", entry, re.I)
-            appearances.append({"name": titlecase(name.group(1)), "for": behalf.group(1).strip().rstrip(".") if behalf else "",
+            appearances.append({"name": clean_name(name.group(1)), "for": behalf.group(1).strip().rstrip(".") if behalf else "",
                                 "text": entry.strip()})
     turns, sections = [], []
     current = None
     body = lines[(start or 0) + 1:]
     i = 0
     while i < len(body):
-        page, line = body[i]
+        page, line, raw = body[i]
         if END.search(line):
             break
         if SECTION.match(line) and mostly_capitals(line):
             heading = line
-            while i + 1 < len(body) and mostly_capitals(body[i + 1][1]) and re.match(r"(ON BEHALF|FOR THE|FOR |AS AMICUS|SUPPORTING|ESQ|[A-Z .,']+$)", body[i + 1][1]) \
+            while i + 1 < len(body) and mostly_capitals(body[i + 1][1]) and re.match(r"(ON BEHALF|BEHALF|OF THE|IN CASE|FOR THE|FOR |AS AMICUS|SUPPORTING|ESQ|[A-Z0-9 .,'\-]+$)", body[i + 1][1]) \
                     and not SPEAKER.match(body[i + 1][1]) and not SECTION.match(body[i + 1][1]):
                 heading += " " + body[i + 1][1]
                 i += 1
@@ -272,8 +332,12 @@ def read_transcript(path: Path) -> dict:
             i += 1
             continue
         m = SPEAKER.match(line)
+        loose = None if m else LOOSE_SPEAKER.match(re.sub(r"^\s*\d{1,2}(?=\s)", "", raw))
         if m:
             current = {"label": re.sub(r"\s+", " ", m.group("label")), "page": page, "text": m.group("rest")}
+            turns.append(current)
+        elif loose:
+            current = {"label": loose_label(loose.group("label")), "page": page, "text": re.sub(r"\s+", " ", loose.group("rest")).strip()}
             turns.append(current)
         elif current:
             current["text"] = (current["text"] + " " + line).strip()
@@ -283,8 +347,13 @@ def read_transcript(path: Path) -> dict:
         m = re.search(r"\bOF\s+(.+?)(?:,?\s+ESQ\.?(?:UIRE)?)?(?:,?\s+(?:ON BEHALF OF|FOR|AS AMICUS|SUPPORTING)\s+(.+?))?[.,]?$", section["heading"], re.I)
         if not m or not re.search(r"[A-Za-z]", m.group(1)):
             continue
-        raw = re.split(r"[,*]?\s*\b(?:ESQ|ESC|ON\s+BEHALF|FOR\s+THE)\b", m.group(1), maxsplit=1, flags=re.I)[0]
-        name = titlecase(raw.strip(" ,.:*"))
+        raw = re.split(r"[,*]?\s*\b(?:ESQ|ESC|ES[O0]|EBO|ON\s+BEHALF|FOR\s+THE)\b", m.group(1), maxsplit=1, flags=re.I)[0]
+        raw = re.sub(r"\s+ON$", "", raw.strip(" ,.:*#"), flags=re.I)
+        raw = re.sub(r"^(?:[A-Z]\s+)?(?:PAGE|PACE|FACE)\b\W*", "", raw, flags=re.I)
+        raw = re.sub(r"^(?:M[RS]S?|NS)\.?\s+", "", raw)
+        name = clean_name(raw)
+        if not name:
+            continue
         name = re.sub(r",? (Jr)\.?$", r", \1.", name)
         rebuttal = bool(re.match(r"REBUTTAL|FURTHER REBUTTAL", section["heading"], re.I))
         section["counsel"] = name
@@ -292,16 +361,36 @@ def read_transcript(path: Path) -> dict:
         if not any(c["name"] == name for c in counsel):
             behalf = (m.group(2) or "").strip(" .,")
             behalf = sentence_case_keep(behalf) if behalf else ""
-            behalf = re.sub(r"\s*-\s*Rebuttal$", "", re.sub(r"^The ", "the ", behalf), flags=re.I)
+            behalf = re.sub(r"\s*[-—–]+\s*Rebuttal$", "", re.sub(r"^The ", "the ", behalf), flags=re.I)
             counsel.append({"name": name, "for": re.sub(r"\bet al$", "et al.", behalf)})
-    # The appearances say whom each counsel argued for when the heading does not.
+    # The appearances say whom each counsel argued for when the heading does not, and spell the name
+    # as the appearances do where a heading's scan misreads it ("SCWHARTZ" for SCHWARTZ).
     for c in counsel:
-        for a in appearances:
-            if surname_of(c["name"]).lower() in a["text"].lower():
-                c["for"] = c["for"] or a["for"]
-                c["title"] = appearance_title(a["text"])
-                break
-    appearances = counsel
+        best = max(appearances, key=lambda a: similar(a["name"], c["name"]), default=None)
+        if best and similar(best["name"], c["name"]) >= 0.8:
+            renamed = re.sub(r",? (Jr)\.?$", r", \1.", best["name"])
+            for section in sections:
+                if section.get("counsel") == c["name"]:
+                    section["counsel"] = renamed
+                    section["label"] = section["label"] if section["label"] == "Rebuttal" else surname_of(renamed)
+            c["name"] = renamed
+            c["for"] = c["for"] or best["for"]
+            c["title"] = appearance_title(best["text"])
+    merged: list[dict] = []
+    for c in counsel:
+        same = next((k for k in merged if similar(k["name"], c["name"]) >= 0.85), None)
+        if same is None:
+            merged.append(c)
+            continue
+        for section in sections:
+            if section.get("counsel") == c["name"]:
+                section["counsel"] = same["name"]
+        same["for"] = same["for"] or c["for"]
+        same.setdefault("title", c.get("title"))
+    if not merged:
+        # No argument headings could be read: the appearances name the counsel.
+        merged = [{"name": a["name"], "for": a["for"], "title": appearance_title(a["text"])} for a in appearances if a["name"]]
+    appearances = merged
     for t in turns:
         t["text"] = re.sub(r"\s+", " ", t["text"]).strip()
     # Sections point at the turn they open; keep them pointing there once empty turns are dropped.
@@ -337,6 +426,32 @@ def appearance_title(text: str) -> str:
     return re.sub(r"D\.\s*C$", "D.C.", place).replace("D. C.", "D.C.")
 
 
+def clean_name(raw: str) -> str:
+    """A counsel's name from a heading or the appearances, without what a scan adds: "ROBERT P» WILL" is Robert P. Will,
+    "DREW So DAYS, III" Drew S. Days, III, "IAN Aa MACPEERSON, ESQOJ" Ian A. Macpeerson."""
+    raw = re.split(r"\s\d{2,}\s|,?\s*\bESQ\w*", raw, maxsplit=1, flags=re.I)[0]
+    raw = re.sub(r"^(?:M[RS]S?|NS)\W?\d?\s+", "", raw.strip())
+    raw = re.sub(r"(?<=\b[A-Z])(?:[,*•»=]|[oa](?=\s))", ".", raw)
+    raw = re.sub(r"\b0\.", "O.", raw)
+    raw = re.sub(r"\s+,", ",", raw)
+    raw = raw.strip(" ,.:*#»?")
+    if not re.search(r"[A-Za-z]{2}", raw):
+        return ""
+    name = titlecase(raw)
+    return re.sub(r",? (Jr)\.?$", r", \1.", name)
+
+
+def similar(one: str, other: str) -> float:
+    """How alike two counsel names are, ignoring case, titles and punctuation."""
+    plain = lambda text: re.sub(r"[^a-z ]", "", re.sub(r",?\s*\b(?:jr|ii|iii|esq)\b\.?", "", text.lower())).split()
+    a, b = plain(one), plain(other)
+    if not a or not b:
+        return 0.0
+    surname = difflib.SequenceMatcher(None, a[-1], b[-1]).ratio()
+    # A heading that gives the surname alone ("ARGUMENT OF MR. KNEEDLER") is compared by the surname.
+    return surname if len(a) == 1 or len(b) == 1 or a[0][:1] == b[0][:1] else surname * 0.7
+
+
 def mostly_capitals(text: str) -> bool:
     letters = [c for c in text if c.isalpha()]
     return len(letters) >= 3 and sum(c.isupper() for c in letters) / len(letters) > 0.85
@@ -365,7 +480,9 @@ def titlecase(name: str) -> str:
         elif re.match(r"^MC[A-Z]", word, re.I) and len(word) > 3:
             parts.append("Mc" + word[2:].capitalize())
         else:
-            parts.append("-".join(w.capitalize() for w in word.split("-")))
+            # O'TOOLE is O'Toole.
+            parts.append("-".join(re.sub(r"^([A-Za-z]['’])([a-z])", lambda m: m.group(1).upper() + m.group(2).upper(), w.capitalize())
+                                  for w in word.split("-")))
     return " ".join(parts).replace("Jr.", "Jr.")
 
 
@@ -430,6 +547,9 @@ def locate(official: list[str], heard: list[str]) -> tuple[int, int]:
 SECONDS_PER_WORD = 0.36  # about 165 words a minute, the pace of argument
 
 
+MISSING_TURNS = 8
+
+
 def time_turns(turns: list[dict], stream: list[tuple[float, str]]) -> dict:
     """Give each turn the moment it begins, from the words of it that were heard.
 
@@ -476,7 +596,17 @@ def time_turns(turns: list[dict], stream: list[tuple[float, str]]) -> dict:
         times[i] = max(times[i], times[i - 1])
     for t, s in zip(turns, times):
         t["t"] = round(max(0.0, s), 1)
-    return {"matched": matched / max(1, len(official)), "timed": len(known), "span": span}
+    # A recording that begins or ends partway through the argument (Minnesota v. Mille Lacs Band, 1998: the
+    # Archives' reel begins some forty minutes in): the turns before the first one heard, or after the last,
+    # are not in it. A few unheard turns at either end are only the call of the case or a closing word.
+    if known:
+        head = known[0] > MISSING_TURNS
+        tail = len(turns) - 1 - known[-1] > MISSING_TURNS
+        for i, t in enumerate(turns):
+            if (head and i < known[0]) or (tail and i > known[-1]):
+                t["missing"] = True
+    return {"matched": matched / max(1, len(official)), "timed": len(known), "span": span,
+            "missing": sum(1 for t in turns if t.get("missing"))}
 
 
 # ---------------------------------------------------------------- our own transcripts, where there is none
@@ -573,6 +703,8 @@ def record_of(case: str) -> dict:
 def turn_out(t: dict, counsel: list[dict]) -> dict:
     speaker, role = display_name(t["label"])
     out = {"t": t["t"], "speaker": speaker, "role": role, "page": t["page"], "text": t["text"]}
+    if t.get("missing"):
+        out["missing"] = True
     if role == "counsel":
         surname = speaker.split()[-1].lower()
         for i, c in enumerate(counsel):
@@ -599,7 +731,7 @@ def align(args: argparse.Namespace) -> None:
                  "files": [{"key": f["key"], "offset": f["offset"], "duration": f["duration"], "sha256": f["heard"]["sha256"]}
                            for f in files]}
         if argument["official"]:
-            counsel, sections, turns, matched, spans, timed_turns, words = [], [], [], [], [], 0, 0
+            counsel, sections, turns, matched, spans, timed_turns, words, missing = [], [], [], [], [], 0, 0, 0
             for official in argument["official"]:
                 path = work / official["key"]
                 if not path.exists():
@@ -617,12 +749,14 @@ def align(args: argparse.Namespace) -> None:
                         if any(other["counsel"] == section["counsel"] for other in sections):
                             section["label"] = "Rebuttal"
                         sections.append({"label": section["label"], "counsel": section["counsel"],
-                                         "t": read["turns"][section["turn"]]["t"], "turn": base + section["turn"]})
+                                         "t": read["turns"][section["turn"]]["t"], "turn": base + section["turn"],
+                                         **({"missing": True} if read["turns"][section["turn"]].get("missing") else {})})
                 turns += [turn_out(t, counsel) for t in read["turns"]]
                 n = sum(len(words_of(t["text"])) for t in read["turns"])
                 matched.append(result["matched"] * n)
                 words += n
                 timed_turns += result["timed"]
+                missing += result["missing"]
                 spans.append(result["span"])
             spans = [s for s in spans if s[0] is not None]
             whole = any(f["whole_session"] for f in argument["files"])
@@ -634,7 +768,8 @@ def align(args: argparse.Namespace) -> None:
                           "sections": sections, "turns": turns})
             share = sum(matched) / max(1, words)
             report.append({"case": argument["case"], "date": argument["date"], "status": "official",
-                           "matched": round(share, 3), "turns": len(turns), "timed": timed_turns, "span": timed["span"]})
+                           "matched": round(share, 3), "turns": len(turns), "timed": timed_turns, "span": timed["span"],
+                           **({"not_in_recording": missing} if missing else {})})
         else:
             segments = segments_in(files)
             whole = any(f["whole_session"] for f in argument["files"])
@@ -741,7 +876,9 @@ def store(args: argparse.Namespace) -> None:
         by_case[timed["case"]].append({"date": timed["date"], "made": "official transcript" if official else "speech recognition",
                                        "model": timed["model"], "turns": len(timed["turns"]), "key": key,
                                        "recording": timed["files"], "span": timed["span"],
-                                       "counsel": timed["counsel"], "sections": timed["sections"],
+                                       "counsel": timed["counsel"],
+                                       # A counsel whose argument is not in the recording has no place on its track.
+                                       "sections": [x for x in timed["sections"] if not x.get("missing")],
                                        "sha256": digest, "bytes": size})
     mirror_captures.count_new_pages = lambda rows: None
     mirror_captures.write_index(index)
@@ -762,7 +899,10 @@ def store(args: argparse.Namespace) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
-    sub.add_parser("request")
+    p = sub.add_parser("request")
+    p.add_argument("--again", type=int, nargs="*", help="shards of the first request to hear again")
+    p.add_argument("--words", help="with --again: the words already heard")
+    p.add_argument("--name", default="again", help="with --again: the new request's name")
     p = sub.add_parser("transcribe")
     p.add_argument("--request", required=True)
     p.add_argument("--shard", type=int, required=True)
