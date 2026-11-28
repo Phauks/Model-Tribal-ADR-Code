@@ -284,12 +284,13 @@
 		}
 
 		/* On a page with no column, such as the home page, there is nothing to
-		   hide or show; the button keeps its place so the name does not move. */
+		   hide or show, so the button leaves no gap and the name sits at the
+		   page's usual margin (Trevor, Nov. 28, 2026). */
 		:global(:root:has(.sidebar-wide.empty)) .sidebar-toggle {
-			visibility: hidden;
+			display: none;
 		}
 
-		:global(:root[data-scripts='on']) .masthead-row {
+		:global(:root[data-scripts='on']:not(:has(.sidebar-wide.empty))) .masthead-row {
 			padding-left: var(--space-2);
 		}
 	}

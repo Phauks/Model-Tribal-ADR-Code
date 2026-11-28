@@ -455,7 +455,13 @@
 		if (!feature.label) lines.push({ label: 'Name', value: 'The name printed here cannot be read; this is the name of the 1990 Census area under it' });
 		const nations = feature.nations.map((id) => ({ label: nationIndex.get(id)?.name ?? id, href: `/nations/${id}` }));
 		lines.push(nations.length > 0 ? { label: nations.length === 1 ? 'Nation today' : 'Nations today', value: '', links: nations } : { label: 'Nation today', value: 'None Identified' });
-		if (feature.placed && feature.neighbors.length > 0) {
+		// Trevor's choice (2026-11-28): a reservation whose land is the same today takes its surveyed line; the rest are traced from the 1909 map.
+		lines.push(
+			feature.surveyed
+				? { label: 'Line', value: 'Surveyed, from the 2020 Census reservation area; its outer line is the same as in 1909' }
+				: { label: 'Line', value: `Traced from the 1909 map, so approximate${feature.boundary ? `. ${feature.boundary}` : ''}` }
+		);
+		if (!feature.surveyed && feature.placed && feature.neighbors.length > 0) {
 			const named = feature.neighbors.length <= 2 ? feature.neighbors.join(' and ') : '';
 			lines.push({ label: named ? `Line with ${named}` : 'Lines with its neighbors', value: `Printed touching${named ? '' : ` ${feature.neighbors.join(', ')}`}; placed from the 2020 Census ${named ? 'line' : 'lines'}, not traced` });
 		}

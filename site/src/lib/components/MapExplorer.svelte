@@ -89,10 +89,12 @@
 		details,
 		filter,
 		restLabel = 'Today',
-		searchLabel = 'Find a nation or place',
 		ticks,
 		thinMarks = true,
-		yearTurnsOnBorders = true
+		yearTurnsOnBorders = true,
+		switcher,
+		timeline = true,
+		searchLabel = 'Find a nation or place'
 	}: {
 		layers: TileMapLayers;
 		/** Royce's land cessions, a switch the nation and treaty pages share. */
@@ -121,13 +123,18 @@
 		filter?: { label: string; count: number; panel: Snippet };
 		/** What the timeline rests on, at its end: Today, or "All years" on a map of the past. */
 		restLabel?: string;
-		searchLabel?: string;
 		/** The years written under the timeline's bar; by default its ends and every fifty years from 1830. */
 		ticks?: number[];
 		/** Whether the marks on the bar are thinned to about twenty; a short span of years, such as the removals', shows every one. */
 		thinMarks?: boolean;
 		/** Whether moving back in time turns on the borders of that time; a map of one subject, such as the removals, keeps its own layers. */
 		yearTurnsOnBorders?: boolean;
+		/** A page's own choice in place of the Layers button and list, such as the Federal offices page's switch between the two agencies (approved mockup, 2026-11-28). */
+		switcher?: Snippet;
+		/** Whether the timeline runs along the bottom; a page about today only has none. */
+		timeline?: boolean;
+		/** What the search box says it finds. */
+		searchLabel?: string;
 	} = $props();
 
 	const identifier = $props.id();
@@ -378,6 +385,9 @@
 			<Search aria-hidden="true" size={18} />
 		</button>
 	{/if}
+	{#if switcher}
+		{@render switcher()}
+	{:else}
 	<button
 		type="button"
 		class="map-control map-float explorer-layers-button"
@@ -394,8 +404,10 @@
 			<CountBadge count={onCount} label="on" />
 		{/if}
 	</button>
+	{/if}
 </div>
 
+{#if !switcher}
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <div
 	class="explorer-layers map-float map-panel"
@@ -456,8 +468,10 @@
 	{/if}
 </div>
 
+{/if}
+
 <!-- The key folds down to one button, so it never has to cover the map (Trevor, 2026-11-27). -->
-<div class="explorer-key" class:map-float={!keyFolded} class:map-panel={!keyFolded} class:folded={keyFolded} class:beside-details={details !== undefined} aria-label="Key" role="group">
+<div class="explorer-key" class:map-float={!keyFolded} class:map-panel={!keyFolded} class:folded={keyFolded} class:beside-details={details !== undefined} class:no-timeline={!timeline} class:with-switcher={switcher !== undefined} aria-label="Key" role="group">
 	{#if keyFolded}
 		<button type="button" class="map-control map-float" aria-expanded="false" aria-controls="{identifier}-key" onclick={toggleKey}>
 			<List aria-hidden="true" size={18} /><span class="explorer-key-word">Key</span><ChevronDown aria-hidden="true" size={18} />
@@ -476,6 +490,7 @@
 	</div>
 {/if}
 
+{#if timeline}
 <div class="explorer-timeline map-float map-panel">
 	<button type="button" class="map-control map-control-square map-float explorer-flat explorer-play" aria-label={playing ? 'Stop' : 'Play the years'} title={playing ? 'Stop' : 'Play the years'} onclick={play}>
 		{#if playing}<Pause aria-hidden="true" size={20} />{:else}<Play aria-hidden="true" size={20} />{/if}
@@ -550,6 +565,7 @@
 		{#if year === undefined}<Check class="map-control-check" aria-hidden="true" size={18} strokeWidth={2.5} />{/if}{restLabel}
 	</button>
 </div>
+{/if}
 
 <style>
 	/* Everything here sits over the map (the page's .map-frame), clear of the map's own buttons at the top right. */
@@ -823,6 +839,11 @@
 		min-height: 2rem;
 	}
 
+	/* With no timeline the key rests just above the map's credits. */
+	.explorer-key.no-timeline {
+		bottom: 2.25rem;
+	}
+
 	.explorer-key > div[hidden] {
 		display: none;
 	}
@@ -1057,6 +1078,14 @@
 
 		.explorer-key.beside-details {
 			left: calc(var(--space-3) + var(--layout-target-minimum) + var(--space-2) + 5.5rem);
+		}
+
+		/* A page's switch is wider than the Layers button, so the key takes the row under it. */
+		.explorer-key.with-switcher,
+		.explorer-key.with-switcher.beside-details {
+			top: calc(var(--space-3) * 2 + var(--layout-target-minimum));
+			left: var(--space-3);
+			max-width: calc(100% - var(--space-3) * 3 - var(--layout-target-minimum));
 		}
 
 		.explorer-key-word {
