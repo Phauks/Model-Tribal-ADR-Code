@@ -42,7 +42,7 @@ class NewHampshire(State):
     SOURCE_NOTE = "Text read from the New Hampshire General Court's merged chapter page for the section in the online Revised Statutes (gc.nh.gov/rsa) on Nov. 28, 2026."
     NATION_NAMES = ('Abenaki', 'Abnaki', 'Pennacook', 'Cowasuck', 'Koasek', 'Sokoki', 'Wabanaki')
     PLACE_NAMES = ('Penacook', 'Ossipee', 'Pequawket', 'Indian Stream', 'Indian Head', 'Indian Pond', 'Indian River', 'Indian Brook')
-    WORKERS = 4
+    WORKERS = 8
 
     def fetch(self, raw: Path) -> None:
         raw.mkdir(parents=True, exist_ok=True)
