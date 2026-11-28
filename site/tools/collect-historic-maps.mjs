@@ -1,7 +1,10 @@
 // Collects the rest of steps A and B of the historic maps study (research/analyses/2026-11-26-historic-maps-of-indian-lands.md; Trevor, 2026-11-26: "lets get A, and B"), beside what tools/build-historic-maps.mjs already holds (Royce's sheets, the Forest Service's cessions, the Census years):
 //
 // - A: the Bureau of Indian Affairs' land area representations (its national land areas, its Oklahoma Tribal Statistical Areas and its supplemental areas), saved as GeoJSON. They are today's areas only; the Bureau publishes no past years.
-// - B: the Library of Congress's scans of historic maps of Indian lands, the rows marked "keep" in research/reviews/2026-11-26-historic-maps-library-of-congress.csv. Each is kept as the Library's JPEG 2000 file and as a JPEG (with a thumbnail) the site's image viewer can show. geography/historic-map-scans.json lists them with their bucket keys, sizes and SHA-256 (geography/historic-map-scans-served.json is the short list the website reads), and their source records are content/sources/*/<record>.yaml.
+// - B: the Library of Congress's scans of historic maps of Indian lands, the rows marked "keep" in research/reviews/2026-11-26-historic-maps-library-of-congress.csv and, for the years before 1784, research/reviews/2026-11-28-colonial-era-maps-library-of-congress.csv (a row in the later list wins over the same map in the earlier one). Each is kept as the Library's JPEG 2000 file and as a JPEG (with a thumbnail) the site's image viewer can show. geography/historic-map-scans.json lists them with their bucket keys, sizes and SHA-256 (geography/historic-map-scans-served.json is the short list the website reads), and their source records are content/sources/*/<record>.yaml.
+// - The colonial era (research/analyses/2026-11-27-colonial-era-maps-1492-1783.md; Trevor, 2026-11-28: "lets bring in these maps"): the Newberry Library's Atlas of Historical County Boundaries, U.S. historical counties (generalized), every county from March 4, 1629 to December 31, 2000 with its start and end dates, the change and the source the Atlas cites, kept as the Library's zip file; and the maps of the second list above.
+//
+// `--only colonial` does just the colonial era: fetch downloads the county file and only the maps not yet in geography/historic-map-scans.json; build keeps the entries of maps already listed there when their files are not in the work folder; upload and index pass over files that are not in the work folder (they are already in the bucket).
 //
 // Commands, from site/:
 //   node tools/collect-historic-maps.mjs fetch [--work folder]    downloads the Bureau's areas, then each kept map's record and scans from the Library (slowly: the Library turns away fast robots)
@@ -20,7 +23,11 @@ import { addToCaptureIndex } from './capture-index.mjs';
 const root = new URL('../../', import.meta.url);
 const scansPath = new URL('site/geography/historic-map-scans.json', root);
 const servedPath = new URL('site/geography/historic-map-scans-served.json', root);
-const listPath = new URL('research/reviews/2026-11-26-historic-maps-library-of-congress.csv', root);
+/** The review lists, each with the research session that made it (a new map's source record names that session). */
+const lists = [
+	['research/reviews/2026-11-26-historic-maps-library-of-congress.csv', '2026-11-26-historic-maps-collection'],
+	['research/reviews/2026-11-28-colonial-era-maps-library-of-congress.csv', '2026-11-28-colonial-era-maps-collection']
+].map(([path, session]) => ({ path: new URL(path, root), session }));
 const sourcesFolder = new URL('content/sources/', root);
 
 const bureau = 'https://biamaps.geoplatform.gov/server/rest/services/DivLTR';
@@ -33,6 +40,11 @@ export const bureauLayers = [
 const bureauRecord = 'bia-land-area-representations';
 const bureauPrefix = 'historic-maps/bia-land-areas/';
 const scansPrefix = 'historic-maps/library-of-congress/';
+const countiesPage = 'https://publications.newberry.org/ahcb/downloads/united_states.html';
+const countiesFile = 'https://publications.newberry.org/ahcb/downloads/gis/US_AtlasHCB_Counties_Gen001.zip';
+const countiesPrefix = 'historic-maps/newberry-counties/';
+const countiesRecord = 'newberry-atlas-historical-counties';
+const colonialOnly = () => option('only', 'all') === 'colonial';
 const agent = 'Mozilla/5.0 (compatible; model-tribal-code-maps/1.0)';
 
 function option(name, fallback) {
@@ -93,9 +105,29 @@ function readCsv(text) {
 	return body.map((values) => Object.fromEntries(header.map((name, index) => [name, values[index] ?? ''])));
 }
 
-/** The Library of Congress maps marked "keep" in the review list. */
+/** The Library of Congress maps marked "keep" in the review lists; a row in a later list replaces the same map's row in an earlier one. */
 function keptMaps() {
-	return readCsv(readFileSync(listPath, 'utf8')).filter((row) => row.keep === 'yes');
+	const rows = new Map();
+	for (const { path, session } of lists) for (const row of readCsv(readFileSync(path, 'utf8'))) rows.set(itemAddress(row.url), { ...row, session });
+	return [...rows.values()].filter((row) => row.keep === 'yes');
+}
+
+const itemAddress = (url) => url.replace(/^http:/, 'https:').replace(/\/?$/, '/');
+
+/** The maps already in geography/historic-map-scans.json, by item address. */
+function listedMaps() {
+	if (!existsSync(scansPath)) return new Map();
+	return new Map(JSON.parse(readFileSync(scansPath, 'utf8')).maps.map((map) => [itemAddress(map.item), map]));
+}
+
+/** Downloads the Newberry Library's historical counties; its site sometimes asks a person to pass a check first, and then the file must be downloaded by hand. */
+async function fetchCounties(work) {
+	const folder = join(work, 'newberry');
+	mkdirSync(folder, { recursive: true });
+	const path = join(folder, basename(countiesFile));
+	await download(countiesFile, path);
+	if (readFileSync(path).subarray(0, 2).toString('latin1') !== 'PK') throw new Error(`The Newberry Library sent a page, not the file. Download ${countiesFile} by hand (from ${countiesPage}) to ${path}.`);
+	console.log(`Downloaded the Newberry Library's historical counties to ${path}.`);
 }
 
 const itemId = (url) => url.replace(/\/$/, '').split('/').pop();
@@ -123,7 +155,9 @@ async function fetchBureau(work) {
 async function fetchScans(work) {
 	const folder = join(work, 'loc');
 	mkdirSync(folder, { recursive: true });
-	for (const row of keptMaps()) {
+	const listed = listedMaps();
+	const wanted = keptMaps().filter((row) => !colonialOnly() || !listed.has(itemAddress(row.url)));
+	for (const row of wanted) {
 		const id = itemId(row.url);
 		const recordPath = join(folder, `${id}.json`);
 		if (!existsSync(recordPath)) {
@@ -136,7 +170,7 @@ async function fetchScans(work) {
 			await pause(1000);
 		}
 	}
-	console.log(`Downloaded ${keptMaps().length} maps' records and scans to ${folder}.`);
+	console.log(`Downloaded ${wanted.length} maps' records and scans to ${folder}.`);
 }
 
 /** The JPEG 2000 file of each image in a Library record. */
@@ -184,9 +218,18 @@ function buildScans(work) {
 	const jpegs = join(work, 'loc-jpeg');
 	mkdirSync(jpegs, { recursive: true });
 	const used = new Set();
+	const sessions = new Map();
+	const listed = listedMaps();
 	const maps = keptMaps().map((row) => {
 		const id = itemId(row.url);
-		const record = JSON.parse(readFileSync(join(folder, `${id}.json`), 'utf8'));
+		const recordPath = join(folder, `${id}.json`);
+		const already = listed.get(itemAddress(row.url));
+		// A map already listed whose files are not in the work folder keeps its entry (its files are in the bucket).
+		if (already && !existsSync(recordPath)) {
+			used.add(already.record);
+			return already;
+		}
+		const record = JSON.parse(readFileSync(recordPath, 'utf8'));
 		const item = record.item ?? {};
 		const year = Number(String(item.date ?? row.date).match(/\d{4}/)?.[0]) || null;
 		const rights = plain(first(item.rights_advisory) || first(item.rights));
@@ -216,6 +259,7 @@ function buildScans(work) {
 				thumbnail: entry(thumbnail, `${scansPrefix}${basename(thumbnail)}`, 'image/jpeg')
 			};
 		});
+		sessions.set(key, row.session);
 		return {
 			record: key,
 			item: row.url.replace(/^http:/, 'https:'),
@@ -242,7 +286,7 @@ function buildScans(work) {
 		.map((map) => ({ record: map.record, item: map.item, title: map.title, year: map.year, images: map.images.map((image) => ({ image: image.image.key, thumbnail: image.thumbnail.key })) }));
 	writeFileSync(servedPath, `${JSON.stringify({ description: 'The served maps in geography/historic-map-scans.json, with only what the website shows. Written by tools/collect-historic-maps.mjs.', maps: served }, null, '\t')}\n`);
 	console.log(`Wrote ${maps.length} maps (${maps.reduce((sum, map) => sum + map.images.length, 0)} images) to geography/historic-map-scans.json.`);
-	writeRecords(maps);
+	writeRecords(maps, sessions);
 }
 
 /** Whether the Library's rights line says the item may be reused freely. */
@@ -251,7 +295,7 @@ const freeToUse = (rights) => /public domain|no known restrictions|free to use/i
 const yamlString = (text) => `'${String(text).replaceAll("'", "''")}'`;
 
 /** Writes a source record for each map, so it can be cited; records already there are left alone. */
-function writeRecords(maps) {
+function writeRecords(maps, sessions) {
 	const today = new Date().toISOString().slice(0, 10);
 	const [year, month, day] = today.split('-').map(Number);
 	let written = 0;
@@ -290,7 +334,7 @@ function writeRecords(maps) {
 			'jurisdictions:',
 			'- level: federal',
 			'found_in:',
-			'- 2026-11-26-historic-maps-collection',
+			`- ${sessions.get(map.record) ?? '2026-11-26-historic-maps-collection'}`,
 			`notes: ${yamlString(`A historic map of Indian lands from the Library of Congress (call number ${map.call_number || 'not given'}). The scans are kept in the project's bucket under ${scansPrefix} and shown in the site's image viewer; they are not georeferenced. Listed in site/geography/historic-map-scans.json (tools/collect-historic-maps.mjs).`)}`
 		].filter((line) => line !== '');
 		writeFileSync(path, `${lines.join('\n')}\n`);
@@ -313,6 +357,7 @@ function bucketFiles(work) {
 	const scans = JSON.parse(readFileSync(scansPath, 'utf8'));
 	return [
 		...bureauLayers.map(([file]) => [join(work, 'bia', file), `${bureauPrefix}${file}`, 'application/geo+json']),
+		[join(work, 'newberry', basename(countiesFile)), `${countiesPrefix}${basename(countiesFile)}`, 'application/zip'],
 		...scans.maps.flatMap((map) =>
 			map.images.flatMap((image) => [
 				[join(work, 'loc', basename(image.original.key)), image.original.key, 'image/jp2'],
@@ -327,7 +372,10 @@ function bucketFiles(work) {
 async function upload() {
 	const work = option('work', '/tmp/historic-maps');
 	const { client, base } = await bucketClient();
-	const queue = bucketFiles(work);
+	// A file not in the work folder is already in the bucket (`--only colonial` downloads only what is new).
+	const all = bucketFiles(work);
+	const queue = all.filter(([path]) => existsSync(path));
+	if (queue.length < all.length) console.log(`Passing over ${all.length - queue.length} files not in ${work}.`);
 	let sent = 0;
 	let skipped = 0;
 	async function worker() {
@@ -363,11 +411,15 @@ function index() {
 	const today = new Date().toISOString().slice(0, 10);
 	const row = (fields) => ({ topic: 'historic-maps', nations: '', captured: today, record_kinds: 'source', listed_in: '', catalog: '', derived_from: '', redistribution: 'yes', keep_local: 'no', orphan: 'no', ...fields });
 	const rows = [
-		...bureauLayers.map(([file, layer, title]) => {
+		...bureauLayers.filter(([file]) => existsSync(join(work, 'bia', file))).map(([file, layer, title]) => {
 			const found = entry(join(work, 'bia', file), `${bureauPrefix}${file}`, 'application/geo+json');
 			return row({ ...found, title: `Bureau of Indian Affairs, ${title}`, obtained: `downloaded from the Bureau's map service by tools/collect-historic-maps.mjs, ${today}`, link: layer, records: bureauRecord, rights: 'United States government work (17 U.S.C. § 105).' });
 		}),
-		...scans.maps.flatMap((map) =>
+		...[join(work, 'newberry', basename(countiesFile))].filter((path) => existsSync(path)).map((path) =>
+			row({ ...entry(path, `${countiesPrefix}${basename(countiesFile)}`, 'application/zip'), title: 'Newberry Library, Atlas of Historical County Boundaries, U.S. Historical Counties (generalized)', obtained: `downloaded by tools/collect-historic-maps.mjs, ${today}`, link: countiesPage, records: countiesRecord, rights: 'The Newberry Library makes the Atlas files available for any lawful purpose, commercial or non-commercial, without licensing or permission fees.' })
+		),
+		// With `--only colonial`, only the maps downloaded this time (their rows already in the index keep their dates).
+		...scans.maps.filter((map) => !colonialOnly() || map.images.every((image) => existsSync(join(work, 'loc', basename(image.original.key))))).flatMap((map) =>
 			map.images.flatMap((image) => {
 				const title = `${map.title}${map.images.length > 1 ? `, image ${image.number}` : ''}`;
 				const rights = `Library of Congress rights line: ${map.rights || 'none given'}`;
@@ -388,9 +440,10 @@ function index() {
 const command = process.argv[2];
 const work = option('work', '/tmp/historic-maps');
 if (command === 'fetch') {
-	await fetchBureau(work);
+	if (colonialOnly()) await fetchCounties(work);
+	else await fetchBureau(work);
 	await fetchScans(work);
 } else if (command === 'build') buildScans(work);
 else if (command === 'upload') await upload();
 else if (command === 'index') index();
-else console.log('Usage: node tools/collect-historic-maps.mjs fetch|build|upload|index [--work folder]');
+else console.log('Usage: node tools/collect-historic-maps.mjs fetch|build|upload|index [--work folder] [--only colonial]');

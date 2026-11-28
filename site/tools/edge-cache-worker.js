@@ -37,6 +37,8 @@ export const edgeCacheRules = [
 	{ pattern: /^\/supreme-court\/(?:justices|presidents)\/[^/]+(?:\/__data\.json)?$/, seconds: day, tags: ['record-pages'], statuses: [200] },
 	{ pattern: /^\/supreme-court\/(?!justices$|presidents$|portraits$)[^/]+(?:\/__data\.json)?$/, seconds: day, tags: ['record-pages'], statuses: [200] },
 	{ pattern: /^\/supreme-court\/portraits\/[^/]+$/, seconds: 30 * day, tags: ['record-pages'], statuses: [200] },
+	// A Title 25 section's page (/laws/usc-25/<section>), drawn from built data as the other item pages are.
+	{ pattern: /^\/laws\/usc-25\/[^/]+(?:\/__data\.json)?$/, seconds: day, tags: ['record-pages'], statuses: [200] },
 	// A case's opinions, read from the copy that holds their text
 	// (src/routes/cases/[id]/opinions.json). Federal and state opinions are
 	// always shown (decision record 0056); the route itself sends a copy a
@@ -71,26 +73,43 @@ export const edgeCacheRules = [
 	{ pattern: /^\/sponsor\/row\.json$/, seconds: 300, tags: ['sponsors'], statuses: [200] }
 ];
 
+/**
+ * What SvelteKit marks every page's data with (its __data.json), whatever the
+ * page. Browsers are not to keep it, since the next build may need other
+ * data; SvelteKit does not know whether the data is the same for everyone.
+ * For the item pages above it is: the page itself, which carries the same
+ * data, is kept already. So for those, and only when the mark is SvelteKit's
+ * own, the edge keeps the data too and browsers are told to ask again each
+ * time. Without it, every move to a case, law or biography ran the Worker,
+ * taking 125 to 175 ms in the middle (Worker logs, Nov. 27 to 28, 2026). A
+ * load that wants its data kept from the edge sets plain no-store, which this
+ * leaves alone.
+ */
+export const pageDataMark = 'private, no-store';
+
 export const edgeHeader = 'cloudflare-cdn-cache-control';
 export const tagHeader = 'cache-tag';
 
 /**
  * What the edge is told about one answer: how long it may keep it (or
- * no-store), and the tags it is kept under.
+ * no-store), the tags it is kept under, and, for page data it may keep, what
+ * browsers are told in place of SvelteKit's mark.
  * @param {string} method
  * @param {string} pathname
  * @param {Response} response
- * @returns {{ control: string, tags?: string[] }}
+ * @returns {{ control: string, tags?: string[], browser?: string }}
  */
 export function edgePolicy(method, pathname, response) {
 	const never = { control: 'no-store' };
 	if (method !== 'GET' && method !== 'HEAD') return never;
 	if (response.headers.has('set-cookie')) return never;
-	if (/\b(?:private|no-store)\b/i.test(response.headers.get('cache-control') ?? '')) return never;
+	const control = response.headers.get('cache-control') ?? '';
+	const pageData = pathname.endsWith('/__data.json') && control === pageDataMark;
+	if (!pageData && /\b(?:private|no-store)\b/i.test(control)) return never;
 	if ((response.headers.get('vary') ?? '').includes('*')) return never;
 	const rule = edgeCacheRules.find((candidate) => candidate.pattern.test(pathname));
 	if (!rule || !rule.statuses.includes(response.status)) return never;
-	return { control: `public, max-age=${rule.seconds}`, tags: rule.tags };
+	return { control: `public, max-age=${rule.seconds}`, tags: rule.tags, ...(pageData ? { browser: 'no-cache' } : {}) };
 }
 
 /**
@@ -116,6 +135,8 @@ export function withEdgeCachePolicy(worker) {
 				response = new Response(given.body, given);
 				response.headers.set(edgeHeader, policy.control);
 			}
+			// The edge keeps what the answer's own Cache-Control says too, so SvelteKit's mark on page data gives way here.
+			if (policy.browser) response.headers.set('cache-control', policy.browser);
 			if (policy.tags) response.headers.set(tagHeader, policy.tags.join(','));
 			else response.headers.delete(tagHeader);
 			return response;

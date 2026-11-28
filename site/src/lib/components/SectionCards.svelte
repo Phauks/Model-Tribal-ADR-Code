@@ -23,9 +23,9 @@
 		links: { label: string; href: string; count?: number }[];
 	}
 
-	/** A section's menu groups as cards, each link with its count (src/lib/site-navigation.ts). Links not published yet are left out. */
+	/** A section's menu groups as cards, each link with its count (src/lib/site-navigation.ts). Links not published yet are left out, and so is a group the menu sets beneath the others, which the page shows under the cards. */
 	export function sectionCardsOf(section: NavigationSection, counts?: NavigationCounts): SectionCard[] {
-		return section.groups.map((group) => ({
+		return section.groups.filter((group) => !group.beneath).map((group) => ({
 			title: group.title,
 			line: group.line ?? '',
 			picture: group.picture,

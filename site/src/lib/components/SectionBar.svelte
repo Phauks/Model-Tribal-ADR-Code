@@ -179,9 +179,9 @@
 				<ChevronDown size={16} aria-hidden="true" />
 			</summary>
 			<div class="menu-panel">
-				<div class="menu-columns page-width" class:workspace-columns={section === workspace}>
+				<div class="menu-columns page-width" class:workspace-columns={section === workspace} class:even-columns={section.groups.some((group) => group.beneath)} style:--columns={section.groups.filter((group) => !group.beneath).length}>
 					{#each section.groups as group (group.title)}
-						<div class="menu-group">
+						<div class="menu-group" class:beneath={group.beneath}>
 							<h2 class="group-title">{group.title}</h2>
 							<ul>
 								{#each group.links as item (item.link)}
@@ -386,6 +386,21 @@
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 		gap: var(--space-5) var(--space-6);
+	}
+
+	/* A section with a group beneath the others (Courts and Cases' Directory) sets the rest side by side in equal columns, and the group beneath across them all (Trevor, Nov. 27, 2026, design/section-homes/nav/2-balanced-menu-and-page.png). */
+	.even-columns {
+		display: grid;
+		grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+		gap: var(--space-5) var(--space-5);
+	}
+
+	.even-columns .beneath {
+		grid-column: 1 / -1;
+	}
+
+	.even-columns .beneath ul {
+		max-width: 22rem;
 	}
 
 	/* Each group takes room by the length of its links, so long names wrap least. */

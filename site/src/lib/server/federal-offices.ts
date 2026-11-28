@@ -6,7 +6,10 @@
  * lists the sources those records cite, as References with the fact each
  * one supports (site/DESIGN.md, "Info pages").
  */
-import { agencyLink, bureauRegions, healthAreas, officeKey, type FederalOffice } from '../federal-offices.ts';
+import { agencyLink, bureauRegionPage, bureauRegions, healthAreaPage, healthAreas, officeKey, regionOfficesChecked, type FederalOffice, type OfficeAddress } from '../federal-offices.ts';
+import { regionAnchor, stateName } from '../nation-labels.ts';
+import { recognitionBadges, type RecognitionBadge } from '../recognition-badges.ts';
+import { shadedRowAnchor } from '../shaded-map-views.ts';
 import { nations, type NationRecord } from './content.ts';
 import { groupsOf, nationIndexRows, type NationGroup, type NationIndexRow } from './nation-index.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
@@ -94,7 +97,7 @@ export interface AgencyView {
 }
 
 export interface BureauRegionView {
-	office: FederalOffice;
+	office: FederalOffice & { office?: OfficeAddress };
 	agencies: AgencyView[];
 	unassigned: NationIndexRow[];
 	count: number;
@@ -133,4 +136,131 @@ export function bureauRegionView(key: string): BureauRegionView | undefined {
 		count: records.length,
 		sources: uses.list
 	};
+}
+
+/** A regional office, Area or agency on the Federal offices page's map and in its Offices table. */
+export interface OfficePlace {
+	name: string;
+	key: string;
+	/** The id the map's shapes and the search choose it by. */
+	anchor: string;
+	/** Its page on this site. */
+	href: string;
+	/** Its own page on bia.gov or ihs.gov. */
+	link?: string;
+	address?: OfficeAddress;
+	nations: { id: string; name: string }[];
+	/** State and territory names. */
+	states: string[];
+}
+
+export interface RegionPlace extends OfficePlace {
+	agencies: OfficePlace[];
+}
+
+export interface AreaPlace extends OfficePlace {
+	serviceUnits: string[];
+}
+
+/** One nation's federal offices, for its details on the map. */
+export interface NationOffices {
+	name: string;
+	badges: RecognitionBadge[];
+	region?: { name: string; href: string };
+	agency?: { name: string; href: string };
+	area?: { name: string; href: string };
+	serviceUnit?: string;
+}
+
+/** Writes each state code as the state's name, in name order. */
+const stateNames = (codes: Iterable<string>) => [...new Set(codes)].map(stateName).sort((first, second) => first.localeCompare(second, 'en'));
+
+/**
+ * The Federal offices page (approved mockup, 2026-11-28): the regions with their regional offices and agencies, the Indian Health Service Areas, each nation's offices, and the nations on each Census land area, so a place chosen on the map opens its offices. Which office serves a nation comes from the nations' own records; the regional offices' addresses from the regions' pages on bia.gov.
+ */
+export function federalOfficesPage() {
+	const rows = new Map(nationIndexRows().map((row) => [row.id, row]));
+	const uses = new SourceUses();
+	const byName = (first: { name: string }, second: { name: string }) => first.name.localeCompare(second.name, 'en');
+	const nationsOf = (records: NationRecord[]) => records.flatMap((record) => (rows.has(record.id) ? [{ id: record.id, name: rows.get(record.id)!.name }] : [])).sort(byName);
+	const statesOf = (records: NationRecord[]) => stateNames(records.flatMap((record) => rows.get(record.id)?.states ?? []));
+
+	uses.add('bia-regions-2026', { section: 'Map', text: 'the twelve regions, simplified for a national map' });
+	const regions: RegionPlace[] = bureauRegions.map((office) => {
+		const records = servedByRegion(office.name);
+		const href = bureauRegionPage(office.name) ?? '';
+		const agencies = new Map<string, NationRecord[]>();
+		for (const record of records) {
+			const administration = record.federal_administration;
+			if (administration?.source) uses.add(administration.source, { section: 'Offices', text: 'the Bureau of Indian Affairs region and agency that serve each nation' });
+			const agency = administration?.bureau_of_indian_affairs_agency;
+			if (agency) agencies.set(agency, [...(agencies.get(agency) ?? []), record]);
+		}
+		if (office.office) uses.add('bia-regional-office-pages-2026', { section: 'Offices', text: `${office.name} Regional Office: ${office.office.lines.join(', ')}` });
+		return {
+			name: `${office.name} Region`,
+			key: office.key,
+			anchor: regionAnchor(office.name),
+			href,
+			link: office.link,
+			address: office.office,
+			nations: nationsOf(records),
+			states: statesOf(records),
+			agencies: [...agencies.entries()]
+				.map(([name, served]) => ({ name, key: officeKey(name), anchor: `agency-${officeKey(name)}`, href: bureauRegionPage(office.name, name) ?? href, link: agencyLink(name), nations: nationsOf(served), states: statesOf(served) }))
+				.sort(byName)
+		};
+	});
+
+	const areas: AreaPlace[] = healthAreas.map((office) => {
+		const records = servedByArea(office.name);
+		const units = new Set<string>();
+		for (const record of records) {
+			for (const fact of record.indian_health_service ?? []) {
+				if (fact.area !== office.name) continue;
+				if (fact.source) uses.add(fact.source, { section: 'Offices', text: 'the Indian Health Service Area that serves each nation' });
+				if (fact.service_unit) units.add(fact.service_unit);
+			}
+		}
+		return {
+			name: `${office.name} Area`,
+			key: office.key,
+			anchor: shadedRowAnchor('indian-health-service', office.name),
+			href: healthAreaPage(office.name) ?? '',
+			link: office.link,
+			nations: nationsOf(records),
+			states: statesOf(records),
+			serviceUnits: [...units].sort((first, second) => first.localeCompare(second, 'en'))
+		};
+	});
+
+	const nationOffices: Record<string, NationOffices> = {};
+	const landAreas: Record<string, string[]> = {};
+	for (const record of nations()) {
+		const row = rows.get(record.id);
+		if (!row) continue;
+		const administration = record.federal_administration;
+		const region = administration?.bureau_of_indian_affairs_region;
+		const agency = administration?.bureau_of_indian_affairs_agency;
+		const health = record.indian_health_service ?? [];
+		const area = health.find((fact) => fact.area)?.area;
+		const unit = health.find((fact) => fact.area === area && fact.service_unit);
+		const operator = health.find((fact) => fact.area === area && fact.service_unit === unit?.service_unit && fact.operator)?.operator ?? unit?.operator;
+		const runBy = operator === 'tribal' ? 'run by the nation or a Tribal organization' : operator === 'indian-health-service' ? 'run by the Indian Health Service' : undefined;
+		nationOffices[record.id] = {
+			name: row.name,
+			badges: recognitionBadges(record.recognition ?? []),
+			region: region ? { name: `${region} Region`, href: bureauRegionPage(region) ?? '' } : undefined,
+			agency: region && agency ? { name: agency, href: bureauRegionPage(region, agency) ?? '' } : undefined,
+			area: area ? { name: `${area} Area`, href: healthAreaPage(area) ?? '' } : undefined,
+			serviceUnit: unit?.service_unit ? [unit.service_unit, runBy].filter(Boolean).join(', ') : undefined
+		};
+		for (const census of record.census_areas ?? []) {
+			if (census.vintage && census.vintage !== '2020') continue;
+			const list = (landAreas[census.geographic_identifier] ??= []);
+			if (!list.includes(record.id)) list.push(record.id);
+		}
+	}
+
+	return { regions, areas, nations: nationOffices, landAreas, checked: regionOfficesChecked, sources: uses.list };
 }

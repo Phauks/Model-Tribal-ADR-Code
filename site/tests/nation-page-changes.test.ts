@@ -149,7 +149,7 @@ describe('changes in the database', () => {
 		expect(overlay.slots.status).toContain('Claimed by the nation');
 		expect(overlay.slots.status).toContain('[data-build-status]{display:none!important}');
 		expect(overlay.slots.status).toContain(
-			'<a href="/requests?kind=question&amp;record=tribes%2Fnavajo-nation&amp;to=team">Write to the team</a>'
+			'<a href="#request=question&amp;record=tribes/navajo-nation&amp;to=team">Write to the team</a>'
 		);
 	});
 

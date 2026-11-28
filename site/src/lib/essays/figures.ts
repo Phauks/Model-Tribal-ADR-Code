@@ -17,6 +17,7 @@
  *
  * Shared by the website (render.ts), the editor and the tests.
  */
+import { requestLink } from '../report-request.ts';
 import { isUploadReference } from '../uploads.ts';
 import { youtubeVideoIdentifier, youtubeWatchAddress } from '../video-links.ts';
 import { essayBlocks } from './syntax.ts';
@@ -115,12 +116,12 @@ export function figureKindFor(mediaType: string): FigureKind | undefined {
 }
 
 /**
- * The request form, filled in to ask that a figure be taken down (the same
+ * Request a Change, filled in to ask that a figure be taken down (the same
  * removal path as nation pictures and stories).
  */
 export function figureRemovalLink(source: FigureSource): string {
 	const record = source.kind === 'file' ? `uploads/${source.reference}` : `videos/youtube-${source.identifier}`;
-	return `/requests?${new URLSearchParams({ kind: 'remove', record }).toString().replaceAll('%2F', '/')}`;
+	return requestLink({ kind: 'remove', record });
 }
 
 /** One bar of a chart, with its number as written in the table ("1,234", "45%"). */

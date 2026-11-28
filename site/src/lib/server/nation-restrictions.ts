@@ -15,6 +15,7 @@ import {
 	noRestrictions,
 	pageRestrictions,
 	readSettings,
+	restrictionKinds,
 	restrictsAnything,
 	type PageRestrictions,
 	type RestrictableItem,
@@ -27,6 +28,7 @@ import {
 import type { SiteRestrictions } from '../restricted-files.ts';
 import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
+import { isMissingTable, Problem } from '../problems.ts';
 import { report } from './report.ts';
 import type { SignedInPerson } from './people.ts';
 
@@ -72,10 +74,32 @@ function parse(text: string): unknown {
 	try {
 		return JSON.parse(text);
 	} catch (problem) {
-		// The site writes these itself, so damage is a problem worth knowing about. What a damaged row means is unchanged until Trevor decides whether restrictions should fail closed.
+		// The site writes these itself, so damage is a problem worth knowing about; settingsInForce withholds everything for a damaged choice.
 		report(problem, { code: 'nation-restrictions.read', place: 'nation-restrictions' });
 		return undefined;
 	}
+}
+
+/**
+ * Restrictions fail closed (Trevor, Nov. 27, 2026): when the site cannot
+ * tell what a nation chose, it does not show what the nation could have
+ * restricted. A saved choice that cannot be read withholds everything.
+ */
+export const unreadableSettings: RestrictionSettings = readSettings({ kinds: Object.fromEntries(restrictionKinds.map((kind) => [kind, 'hide'])) });
+
+/** A nation's saved choice as the site follows it: a damaged one is unreadableSettings. */
+export function settingsInForce(text: string): RestrictionSettings {
+	const raw = parse(text);
+	return raw === undefined ? unreadableSettings : readSettings(raw);
+}
+
+/**
+ * What is thrown when the choices or a nation's list cannot be read, so the
+ * page or file answers with the error page rather than in full. Only a
+ * missing table, before any nation has chosen, still means nothing is restricted.
+ */
+export function choicesUnknown(cause: unknown, what: string): Problem {
+	return new Problem('nation-restrictions.unavailable', `What the nations chose could not be read for ${what}, so nothing they could restrict is shown.`, { cause });
 }
 
 function fromStored(row: StoredSave): RestrictionSave {
@@ -92,7 +116,7 @@ export async function currentSettings(database: D1Database, nationIdentifier: st
 		)
 		.bind(nationIdentifier)
 		.first<{ settings: string }>();
-	return row ? readSettings(parse(row.settings)) : noRestrictions;
+	return row ? settingsInForce(row.settings) : noRestrictions;
 }
 
 /** The settings of several nations at once, for a copy that belongs to more than one. */
@@ -109,7 +133,7 @@ export async function settingsOf(database: D1Database, nationIdentifiers: readon
 		)
 		.bind(JSON.stringify(nationIdentifiers))
 		.all<{ nationIdentifier: string; settings: string }>();
-	for (const row of result.results) settings.set(row.nationIdentifier, readSettings(parse(row.settings)));
+	for (const row of result.results) settings.set(row.nationIdentifier, settingsInForce(row.settings));
 	return settings;
 }
 
@@ -219,9 +243,9 @@ export async function copyLevels(database: D1Database | undefined, copies: reado
 	try {
 		settings = await settingsOf(database, [...new Set(restrictable.flatMap((copy) => copy.restrict?.nations ?? []))]);
 	} catch (problem) {
-		// Before the migration runs, or if the database is busy: show as before rather than fail the page.
-		console.error('Nation restrictions could not be read', problem);
-		return levels;
+		// Before the migration runs no nation has chosen anything; otherwise the copies are not shown (choicesUnknown).
+		if (isMissingTable(problem)) return levels;
+		throw choicesUnknown(problem, 'copies of nations’ laws and opinions');
 	}
 	if (settings.size === 0) return levels;
 	for (const copy of restrictable) {
@@ -257,8 +281,8 @@ export async function nationPageRestrictions(
 		// Most of the time no nation restricts anything, and the list need not be read at all.
 		if (!(await database.prepare('SELECT 1 AS found FROM nation_restriction_changes LIMIT 1').first())) return noPageRestrictions;
 	} catch (problem) {
-		console.error('Nation restrictions could not be read', problem);
-		return noPageRestrictions;
+		if (isMissingTable(problem)) return noPageRestrictions;
+		throw choicesUnknown(problem, `the page of ${nationIdentifier}`);
 	}
 	const list = await loadList();
 	if (list.items.length === 0) return noPageRestrictions;
@@ -269,8 +293,7 @@ export async function nationPageRestrictions(
 	try {
 		settings = await settingsOf(database, [...new Set([nationIdentifier, ...others])]);
 	} catch (problem) {
-		console.error('Nation restrictions could not be read', problem);
-		return noPageRestrictions;
+		throw choicesUnknown(problem, `the page of ${nationIdentifier}`);
 	}
 	if (settings.size === 0) return noPageRestrictions;
 	const own = settings.get(nationIdentifier) ?? noRestrictions;
@@ -337,11 +360,11 @@ export async function restrictableList(nationIdentifier: string, url: URL, fetch
 	const address = new URL(`/nations/${encodeURIComponent(nationIdentifier)}/restrictable.json`, url).toString();
 	try {
 		const response = assets ? await assets.fetch(address) : await fetcher(address);
-		if (!response.ok) return { nation: nationIdentifier, items: [] };
+		// Every nation's list is built with the site, so a missing one is a fault too.
+		if (!response.ok) throw new Error(`/nations/${nationIdentifier}/restrictable.json answered ${response.status}.`);
 		return (await response.json()) as RestrictableList;
 	} catch (problem) {
-		// Reported; the empty list (restrictions fail open) stays until Trevor decides whether a failure should hide the pages instead.
-		report(problem, { code: 'nation-restrictions.list', place: 'restrictableList', path: `/nations/${nationIdentifier}/restrictable.json` });
-		return { nation: nationIdentifier, items: [] };
+		// Without the list the site cannot tell what the nation's choices cover.
+		throw choicesUnknown(problem, `the list of what ${nationIdentifier} can restrict`);
 	}
 }

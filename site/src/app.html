@@ -68,7 +68,8 @@
 		</script>
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover">
+	<!-- A link's page data loads when the pointer rests on it; its code loads as soon as the link is on screen, since the code never changes within a build. So the first page of a kind, such as the first case opened, waits only for its data, on phones too, where there is no pointer to rest (Trevor, Nov. 28, 2026). -->
+	<body data-sveltekit-preload-data="hover" data-sveltekit-preload-code="viewport">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

@@ -40,7 +40,7 @@
 		Signing up is not permission to use anything you share. Stories,
 		interviews and documents each get their own contributor statement, where you choose how they may
 		be used. If you would rather not make an account, you can
-		<a href="/requests?kind=contribute">offer to contribute through the request form</a>.
+		<a href="#request=contribute">offer to contribute through Request a Change</a>.
 	</p>
 {:else}
 	<h1>Your profile</h1>

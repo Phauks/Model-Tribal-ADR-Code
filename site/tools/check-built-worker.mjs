@@ -4,9 +4,9 @@
 //   node tools/check-built-worker.mjs
 //
 // The Cloudflare adapter makes a Worker with only a fetch handler; the build
-// then wraps it four times (tools/add-scheduled-run.mjs,
-// tools/add-nation-page-changes.mjs, tools/add-mail-handlers.mjs,
-// tools/add-edge-cache.mjs). Those
+// then wraps it five times (tools/add-scheduled-run.mjs,
+// tools/split-large-files.mjs, tools/add-nation-page-changes.mjs,
+// tools/add-mail-handlers.mjs, tools/add-edge-cache.mjs). Those
 // steps rely on how the adapter lays out its output, so a new adapter could
 // break them without any error at build time. The adapter's version is
 // pinned in package.json for that reason; this check is what to run after
@@ -15,15 +15,17 @@
 // It starts the built Worker with `wrangler dev` on the local copy of the
 // database (migrated first, never the live one), then asks for a
 // prerendered page, a page only the Worker answers, a nation page (which the
-// Worker answers first), runs two of the scheduled handler's cron triggers
+// Worker answers first) and each file split into parts, runs two of the scheduled handler's cron triggers
 // and hands the email handler a message.
 
+import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { builtConfiguration, startLocalWorker } from './local-worker.mjs';
 import { migrateLocally } from './seed-local-database.mjs';
 import { mailCron } from './add-mail-handlers.mjs';
 import { scheduledPaths } from './add-scheduled-run.mjs';
+import { partsListFile } from './split-large-files.mjs';
 
 const problems = [];
 const check = (condition, message) => {
@@ -32,8 +34,9 @@ const check = (condition, message) => {
 
 // 1. The entry files wrap one another in the order the build wrote them.
 const workerFolder = path.dirname(builtConfiguration);
+const staticFolder = path.join(workerFolder, '..', 'client');
 const configuration = JSON.parse(readFileSync(builtConfiguration, 'utf8'));
-const chain = ['edge-cache-entry.js', 'mail-entry.js', 'nation-pages-entry.js', 'scheduled-entry.js', 'index.js'];
+const chain = ['edge-cache-entry.js', 'mail-entry.js', 'nation-pages-entry.js', 'joined-files-entry.js', 'scheduled-entry.js', 'index.js'];
 check(configuration.main === chain[0], `The built Worker's main file is ${configuration.main}, not ${chain[0]}`);
 for (const [index, entry] of chain.slice(0, -1).entries()) {
 	const source = readFileSync(path.join(workerFolder, entry), 'utf8');
@@ -71,6 +74,17 @@ try {
 	check(casePage.status === 200 && /^public, max-age=\d+$/.test(casePage.headers.get('cloudflare-cdn-cache-control') ?? ''), `A case page answered ${casePage.status} and told the edge ${casePage.headers.get('cloudflare-cdn-cache-control')}`);
 	const nation = await get('/nations/hannahville-indian-community');
 	check(nation.status === 200 && nation.text.includes('<h1'), `A nation page answered ${nation.status}`);
+
+	// Each file split into parts answers at its own address with the whole file, and its parts are not served (tools/split-large-files.mjs).
+	const split = JSON.parse(readFileSync(path.join(staticFolder, partsListFile), 'utf8'));
+	for (const [address, file] of Object.entries(split)) {
+		const response = await fetch(`${worker.base}${address}`, { signal: AbortSignal.timeout(120_000) });
+		const body = Buffer.from(await response.arrayBuffer());
+		const sha256 = createHash('sha256').update(body).digest('hex');
+		check(response.status === 200 && body.length === file.bytes && sha256 === file.sha256, `${address}, split into parts, answered ${response.status} with ${body.length} bytes of SHA-256 ${sha256}`);
+		const part = await get(file.parts[0]);
+		check(part.status === 404, `${file.parts[0]}, a part of ${address}, answered ${part.status}, not 404`);
+	}
 
 	// 3. The scheduled handler runs the mail run and another cron trigger's run.
 	const otherCron = Object.keys(scheduledPaths).find((cron) => [scheduledPaths[cron]].flat().includes('/events/scheduled'));

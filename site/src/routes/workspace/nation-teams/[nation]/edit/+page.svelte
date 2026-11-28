@@ -30,6 +30,7 @@
 	import { mediumDateAndTime, readableDate } from '#lib/readable-date.ts';
 	import { requestKindLabels } from '#lib/requests.ts';
 	import type { PageProps } from './$types';
+	import { requestLink } from '#lib/report-request.ts';
 
 	let { data, form }: PageProps = $props();
 
@@ -125,7 +126,7 @@
 	const generalMessage = $derived(form && !('kind' in form) ? (form as { problem?: string; done?: string }) : undefined);
 	const pictureBase = $derived(`/workspace/nation-teams/${data.nation.identifier}/pictures`);
 	const correctionLink = (section: StatementSection) =>
-		`/requests?kind=correct&record=${encodeURIComponent(`tribes/${data.nation.identifier}`)}&field=${section}`;
+		requestLink({ kind: 'correct', record: `tribes/${data.nation.identifier}`, field: section });
 </script>
 
 <svelte:head>

@@ -107,7 +107,7 @@ export interface PageDownloads {
 /** On the map page, the view on screen, whose table the menu offers first. */
 export function pageDownloads(path: string, mapTable?: { file: string; label: string }): PageDownloads {
 	const nation = /^\/nations\/([^/]+)$/.exec(path)?.[1];
-	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'federal-programs' && nation !== 'coverage') {
+	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'federal-programs' && nation !== 'coverage' && nation !== 'removals') {
 		return {
 			citable: true,
 			files: [

@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import {
 	copyItemId,
@@ -16,7 +16,7 @@ import {
 	type RestrictionSettings
 } from '#lib/nation-restrictions.ts';
 import { pageOverlay, restrictionsSlot } from '#lib/server/nation-page-overlay.ts';
-import { copyLevels, currentSettings, nationPageRestrictions, saveSettings, savesOf, unreadSaves } from '#lib/server/nation-restrictions.ts';
+import { copyLevels, currentSettings, nationPageRestrictions, restrictableList, saveSettings, savesOf, unreadableSettings, unreadSaves } from '#lib/server/nation-restrictions.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
 import { withNationPageChanges } from '../tools/nation-page-changes-worker.js';
 import { testDatabase } from './database.ts';
@@ -172,6 +172,42 @@ describe('saving a nation’s choices', () => {
 		const page = await nationPageRestrictions(database, cherokee, async () => ((read = true), { nation: cherokee, items }), async () => new Map());
 		expect(read).toBe(false);
 		expect(page.levels).toEqual({});
+	});
+});
+
+describe('when the choices cannot be read (restrictions fail closed)', () => {
+	afterEach(() => vi.restoreAllMocks());
+	const own = { key: 'caselaw-access-project/own.html', restrict: { kind: 'opinions' as const, nations: [cherokee] } };
+	const unavailable = expect.objectContaining({ code: 'nation-restrictions.unavailable' });
+	const failing = (message: string) => {
+		const statement = {
+			bind: () => statement,
+			first: async () => Promise.reject(new Error(message)),
+			all: async () => Promise.reject(new Error(message))
+		};
+		return { prepare: () => statement } as unknown as D1Database;
+	};
+
+	it('withholds everything a nation could restrict when its saved choice is damaged', async () => {
+		vi.spyOn(console, 'error').mockImplementation(() => {});
+		const database = testDatabase();
+		const result = await matchSignIn(database, { subject: 'account-lead', email: 'lead@example.org', emailVerified: true, name: 'Lead' }, 'lead@example.org');
+		if (result.outcome !== 'signed-in') throw new Error('No lead author');
+		await saveSettings(database, cherokee, { kinds: {}, items: { [`copy:${own.key}`]: 'cite' } }, [], null, result.person);
+		await database.prepare(`UPDATE nation_restriction_changes SET settings = '{"kinds":'`).run();
+		expect(await currentSettings(database, cherokee)).toEqual(unreadableSettings);
+		expect(Object.fromEntries(await copyLevels(database, [own]))).toEqual({ [own.key]: 'hide' });
+	});
+
+	it('answers with an error rather than in full when the database or a list fails', async () => {
+		await expect(copyLevels(failing('D1_ERROR: database is busy'), [own])).rejects.toEqual(unavailable);
+		await expect(nationPageRestrictions(failing('D1_ERROR: database is busy'), cherokee, async () => ({ nation: cherokee, items }), async () => new Map())).rejects.toEqual(unavailable);
+		await expect(restrictableList(cherokee, new URL('https://site.example/'), async () => new Response('Not found', { status: 404 }))).rejects.toEqual(unavailable);
+		await expect(restrictableList(cherokee, new URL('https://site.example/'), async () => new Response('not JSON'))).rejects.toEqual(unavailable);
+	});
+
+	it('still shows everything before any nation has chosen, when the table is missing', async () => {
+		expect(Object.fromEntries(await copyLevels(failing('D1_ERROR: no such table: nation_restriction_changes'), [own]))).toEqual({});
 	});
 });
 

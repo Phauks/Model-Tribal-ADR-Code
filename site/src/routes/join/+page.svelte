@@ -43,7 +43,7 @@
 	<p><a class="button" href="/sign-in?returnTo=%2Fprofile" data-sveltekit-reload>Sign in to sign up</a></p>
 	<p class="small muted">
 		For people 13 or older. Rather not make an account?
-		<a href="/requests?kind=contribute">Offer to contribute through the request form</a>. See who has
+		<a href="#request=contribute">Offer to contribute through Request a Change</a>. See who has
 		helped on the <a href="/contributors">Contributors</a> page.
 	</p>
 </div>

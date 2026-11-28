@@ -6,7 +6,9 @@
 	import { tick } from 'svelte';
 	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
 	import Search from '@lucide/svelte/icons/search';
+	import CountBadge from './CountBadge.svelte';
 	import RecognitionBadges from './RecognitionBadges.svelte';
 	import { imageViewerAttributes } from '#lib/image-viewer.ts';
 	import type { MapDetails, MapDetailsContact, MapDetailsLine, MapDetailsNation } from '#lib/map-details.ts';
@@ -72,6 +74,8 @@
 			{details.title}{#if details.badges}{' '}<RecognitionBadges badges={details.badges} size="small" />{/if}
 		</h3>
 	</div>
+	{#if details.pill}<p class="pill-line"><span class="move-pill">{details.pill}</span></p>{/if}
+	{#if details.summary}<p class="summary">{details.summary}</p>{/if}
 	{#each details.lines as line, index (line.label)}
 		<div class="fact">
 			{#if line.nations && line.nations.length > 0}
@@ -83,7 +87,7 @@
 						class="count"
 						aria-expanded={open[line.label] ? 'true' : 'false'}
 						aria-controls={listIdentifier}
-						aria-label="{line.label}: {line.value} {line.nations.length === 1 ? 'nation' : 'nations'}"
+						aria-label="{line.label}: {line.value} {line.nations.length === 1 ? (line.noun?.one ?? 'nation') : (line.noun?.many ?? 'nations')}"
 						onclick={() => (open[line.label] = !open[line.label])}
 					>
 						{line.value}<ChevronDown aria-hidden="true" size={16} />
@@ -97,8 +101,8 @@
 							<input
 								type="search"
 								autocomplete="off"
-								placeholder="Filter {line.nations.length.toLocaleString('en-US')} nations"
-								aria-label="Filter the {line.nations.length.toLocaleString('en-US')} nations: {line.label}"
+								placeholder="Filter {line.nations.length.toLocaleString('en-US')} {line.noun?.many ?? 'nations'}"
+								aria-label="Filter the {line.nations.length.toLocaleString('en-US')} {line.noun?.many ?? 'nations'}: {line.label}"
 								bind:value={filters[line.label]}
 							/>
 							</div>
@@ -110,16 +114,36 @@
 							{/each}
 						</ul>
 						{#if shown.length === 0}
-							<p class="small muted">No nation’s name has these words.</p>
+							<p class="small muted">{line.noun ? 'No name has these words.' : 'No nation’s name has these words.'}</p>
 						{/if}
 					{/if}
+				</div>
+			{:else if line.counts}
+				<div class="row">
+					<span>{line.label}</span>
+					<span class="value counts">
+						{#each line.counts as entry (entry.label)}<span class="count-row">{entry.label}<CountBadge count={entry.count} /></span>{/each}
+					</span>
+				</div>
+			{:else if line.block}
+				<div class="block">
+					<span class="label">{line.label}</span>
+					{#each line.block as part, partIndex (partIndex)}
+						<span class="block-line" class:small={part.small}>{#if part.href}<a href={part.href}>{part.text}</a>{:else}{part.text}{/if}</span>
+					{/each}
+				</div>
+			{:else if line.links?.length === 1 && line.links[0].external && !line.value}
+				{@const link = line.links[0]}
+				<div class="row">
+					<span>{line.label}</span>
+					<span class="value"><a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}<ExternalLinkIcon class="external-icon" aria-label="(opens in a new tab)" size={14} /></a></span>
 				</div>
 			{:else if line.links || line.pictures || line.after || details.table}
 				<!-- Links and pictures are long, so the fact's name sits beside them as in a table (historic maps mockup 2A). -->
 				<div class="row wide">
 					<span class="label">{line.label}</span>
 					<span class="value">
-						{#each line.links ?? [] as link, linkIndex (linkIndex)}{#if linkIndex > 0}{', '}{/if}{#if link.href}<a href={link.href}>{link.label}</a>{:else}{link.label}{/if}{/each}{#if line.value}{line.links?.length ? ', ' : ''}{line.value}{/if}
+						{#each line.links ?? [] as link, linkIndex (linkIndex)}{#if linkIndex > 0}{', '}{/if}{#if link.href && link.external}<a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}<ExternalLinkIcon class="external-icon" aria-label="(opens in a new tab)" size={14} /></a>{:else if link.href}<a href={link.href}>{link.label}</a>{:else}{link.label}{/if}{/each}{#if line.value}{line.links?.length ? ', ' : ''}{line.value}{/if}
 						{#if line.after}<a class="after" href={line.after.href}>{line.after.label}</a>{/if}
 						{#if line.pictures}
 							<span class="pictures">
@@ -185,6 +209,28 @@
 		cursor: pointer;
 	}
 
+	/* A fact written under its name, such as an address. */
+	.block {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		padding: var(--space-1) 0;
+	}
+
+	.block-line {
+		line-height: var(--line-height-tight, 1.4);
+	}
+
+	.block-line.small {
+		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
+	}
+
+	.map-details :global(.external-icon) {
+		margin-left: 0.2em;
+		vertical-align: -0.1em;
+	}
+
 	.kind {
 		margin: 0;
 		color: var(--color-ink-muted);
@@ -224,6 +270,20 @@
 
 	.value {
 		text-align: right;
+	}
+
+	.pill-line {
+		margin: calc(-1 * var(--space-2)) 0 var(--space-2);
+	}
+
+	.summary {
+		margin: 0 0 var(--space-3);
+	}
+
+	.counts {
+		display: grid;
+		justify-items: end;
+		gap: var(--space-1);
 	}
 
 	.row.wide {

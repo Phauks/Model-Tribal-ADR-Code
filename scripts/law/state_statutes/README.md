@@ -36,6 +36,10 @@ Check the split against the code's own table of contents before reading: a secti
 
 Records the project already holds under the same key (most were made by hand for a nation page) are left as they are; so are any listed in the adapter's `HELD`.
 
+## Stored texts
+
+Each record's section text is stored too (decision record 0068, Nov. 28, 2026): `texts.py run <state>` fetches and parses the code again into `/tmp/state-statute-texts/<state>/`, writes one text per record (catchline, text, history line), uploads it to the bucket at `state-statutes/<state>/<record key>.txt` and checks it there; `texts.py index` adds the rows to research/capture-index.csv. The site finds each text by the record's key, since many records share a chapter page or a title's PDF. North Carolina (ncleg.gov answers 503 to cloud sessions) and Wisconsin (refuses cloud sessions) have no stored texts yet.
+
 ## States
 
 | State | Adapter | Source |
