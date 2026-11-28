@@ -52,7 +52,9 @@ class NewHampshire(State):
             (raw / 'index.html').write_text(index)
             titles = list(dict.fromkeys((m.group(1), text_of(m.group(2))) for m in TITLE_LINK.finditer(index)))
             rows = []
+            print(f'NH: {len(titles)} titles in the index', flush=True)
             for title, title_name in titles:
+                print(f'NH: title {title}', flush=True)
                 page = self.get(f'{SITE}/NHTOC/NHTOC-{title}.htm').decode('utf-8', 'replace')
                 (raw / 'toc').mkdir(exist_ok=True)
                 (raw / 'toc' / f'{title}.htm').write_text(page)
