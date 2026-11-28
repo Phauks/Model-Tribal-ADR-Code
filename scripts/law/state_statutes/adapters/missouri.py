@@ -15,6 +15,7 @@ from adapters.base import State
 from core import Section, clean
 
 SITE = 'https://revisor.mo.gov'
+STOP_AFTER = 25  # failures in a row before a run stops asking (the site's block page answers every request)
 PAUSE = 1.5  # seconds between one worker's requests: the site blocks scripts that ask faster (it did at eight workers with no pause)
 # A session law at the head of the history line: "L. 1990 H.B. 1070", "L. 2021 S.B. 26 merged with ...", "L. 1993 1st Ex. Sess. S.B. 1".
 LAW = re.compile(r'L\. (\d{4})\s*(?:(\d\w*) Ex\. Sess\.\s*)?((?:[HS]\.(?:C\.)?(?:C\.)?(?:S\.)?(?:B\.|J\.R\.))\s*(?:Nos?\.\s*)?\d+|p\. \d+)?')
@@ -65,16 +66,22 @@ class Missouri(State):
         (raw / 'sections').mkdir(exist_ok=True)
         todo = [row for row in sections if not (raw / 'sections' / f"{row['number']}-{row['bid']}.html").exists()]
 
+        misses = [0]  # failures in a row: past STOP_AFTER the site is taken to be blocking us, and the run stops asking
+
         def one(row):
+            if misses[0] >= STOP_AFTER:
+                return row['number']
             try:
                 page = self.get(f"{SITE}/main/PageSelect.aspx?section={row['number']}&bid={row['bid']}").decode('utf-8', 'replace')
             except Exception:
-                return row['number']
+                page = ''
             start, end = page.find('id="effdt"'), page.find('use this link to bookmark')
-            if start < 0:  # the site's robot block page, or an error page: keep nothing, so the next run asks again
-                return row['number']
-            (raw / 'sections' / f"{row['number']}-{row['bid']}.html").write_text(page[start:end])
             time.sleep(PAUSE)
+            if start < 0:  # the site's robot block page, or an error page: keep nothing, so the next run asks again
+                misses[0] += 1
+                return row['number']
+            misses[0] = 0
+            (raw / 'sections' / f"{row['number']}-{row['bid']}.html").write_text(page[start:end])
             return None
 
         failed = []
@@ -84,7 +91,9 @@ class Missouri(State):
                     failed.append(result)
                 if done % 1000 == 0:
                     print(f'  {done} of {len(todo)} downloaded', flush=True)
-        print(f'MO: {len(sections)} section versions, {len(todo)} fetched now, {len(failed)} failed', *failed[:10])
+        print(f'MO: {len(sections)} section versions, {len(todo)} asked for now, {len(failed)} failed', *failed[:10])
+        if misses[0] >= STOP_AFTER:
+            print(f'MO: stopped after {STOP_AFTER} failures in a row; the site may be blocking this machine')
 
     def parse(self, raw: Path) -> Iterator[Section]:
         seen = set()
