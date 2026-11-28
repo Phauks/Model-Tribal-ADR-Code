@@ -1,0 +1,28 @@
+# Temporary: downloads New Hampshire's and West Virginia's statutes, whose
+# sites refuse connections from cloud sessions, and commits them to this
+# branch for the state statutes pipeline. Removed before the pull request.
+name: fetch-state-code
+
+on:
+  push:
+    branches: [claude/project-thread-0yycxm]
+    paths: [state-code-download/request.txt]
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch
+        run: bash state-code-download/fetch.sh
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add state-code-download
+          git commit -m "chore: state code download ($(cat state-code-download/request.txt | head -1))" || exit 0
+          for i in 1 2 3 4; do git pull --rebase -q origin "$GITHUB_REF_NAME" && git push origin HEAD:"$GITHUB_REF_NAME" && break; sleep 5; done
