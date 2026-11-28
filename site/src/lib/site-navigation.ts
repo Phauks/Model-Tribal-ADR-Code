@@ -163,6 +163,7 @@ export const navigationSections: NavigationSection[] = [
 	{
 		key: 'nations',
 		label: 'Nations',
+		title: 'Native nations',
 		home: '/nations',
 		groups: [
 			{
