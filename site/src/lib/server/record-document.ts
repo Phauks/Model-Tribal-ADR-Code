@@ -9,7 +9,7 @@ import { documentFile, publisherName, type DocumentFile } from '../document-text
 import { escapeHtml } from '../escape-html.ts';
 import { linkForMatching, type PublicCopy } from '../public-copies.ts';
 import { officialReportLinks, type ReadingLinks } from '../reading-links.ts';
-import { publicCopies, publicCopyFor, publicCopyWithDigest, scanTextCopies, type SourceRecord } from './content.ts';
+import { publicCopies, publicCopyFor, publicCopyWithDigest, scanTextCopies, storedStatuteText, type SourceRecord } from './content.ts';
 import { copyFileNames } from './copy-lists.ts';
 
 let byKey: Map<string, PublicCopy> | undefined;
@@ -24,7 +24,7 @@ export function publicCopyByKey(key: string | undefined): PublicCopy | undefined
 /** Every copy the site serves of a record's document, in the order savedCopyFor tries them, each once. */
 export function recordCopies(record: SourceRecord): PublicCopy[] {
 	const stored = (record as SourceRecord & { file?: { checksum?: string } }).file?.checksum;
-	const found = [...officialReportLinks(record.reading_links).map(publicCopyFor), publicCopyWithDigest(stored), publicCopyFor(record.original_link), publicCopyFor(record.citation.URL)];
+	const found = [...officialReportLinks(record.reading_links).map(publicCopyFor), publicCopyWithDigest(stored), storedStatuteText(record.key), publicCopyFor(record.original_link), publicCopyFor(record.citation.URL)];
 	const seen = new Set<string>();
 	return found.filter((copy): copy is PublicCopy => {
 		if (!copy || seen.has(copy.key)) return false;

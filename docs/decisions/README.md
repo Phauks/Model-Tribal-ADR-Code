@@ -73,5 +73,6 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0065](0065-take-in-public-domain-myths-and-religious-texts.md) | Take in public-domain myths and religious texts, including ceremonial ones | Accepted |
 | [0066](0066-show-case-opinions-in-full-on-the-case-page.md) | Show a case's opinions in full on its page, read from the copy the site serves | Accepted |
 | [0067](0067-form-an-indigenous-advisory-council.md) | Form an Indigenous Advisory Council, starting with a small unpaid group | Accepted |
+| [0068](0068-store-the-text-of-state-statutes.md) | Store the text of the state statutes the site lists | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

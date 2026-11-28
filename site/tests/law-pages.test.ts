@@ -138,6 +138,31 @@ describe('A state statute section’s page', () => {
 	});
 });
 
+describe('A state statute’s stored text (decision record 0068)', () => {
+	// Four South Carolina sections link the same chapter page; a Rhode Island section links its own page.
+	const sharedPage = 'https://www.scstatehouse.gov/code/t56c003.php';
+	const licensePlates = 'south-carolina-code-56-3-780';
+	const rhodeIsland = 'rhode-island-general-laws-11-37-1-2';
+
+	it('shows in the Text card, found by the record even when sections share one page', async () => {
+		const { lawPage } = await import('#lib/server/law-pages.ts');
+		for (const key of [licensePlates, rhodeIsland]) {
+			const page = lawPage(key);
+			if ('movedTo' in page) throw new Error('A state statute is not a Title 25 section.');
+			expect(page.text).toMatchObject({ key: `state-statutes/${key.startsWith('south') ? 'sc' : 'ri'}/${key}.txt`, shown: 'text', extension: '.txt' });
+			// The legislature's page stays the first place to read it.
+			expect(page.readingHtml).toContain('data-reading-site="original"');
+		}
+	});
+
+	it('is not opened by a link that several sections share, and is by a section’s own link', async () => {
+		const { publicCopyFor, storedStatuteText } = await import('#lib/server/content.ts');
+		expect(publicCopyFor(sharedPage)).toBeUndefined();
+		expect(storedStatuteText(licensePlates)?.links).toEqual([sharedPage]);
+		expect(publicCopyFor(sources().get(rhodeIsland)?.original_link)?.key).toBe(`state-statutes/ri/${rhodeIsland}.txt`);
+	});
+});
+
 describe('Title 25 as an outline', () => {
 	it('gives every section its own page, with its place, status and neighbors', async () => {
 		const { sectionPage, titleTwentyFiveSectionLink } = await import('#lib/server/code-outline.ts');
