@@ -32,6 +32,14 @@
 		scan1909: boolean;
 	}
 
+	/** A place a page marks on the map with a labeled pin, such as a federal regional office; choosing it goes to its anchor. */
+	export interface TileMapPin {
+		name: string;
+		/** [longitude, latitude]. */
+		point: [number, number];
+		anchor: string;
+	}
+
 	/** A shape from a history layer that the reader chose, for the details beside the map. */
 	export type TileMapFeature =
 		| { kind: 'border'; id: string; name: string; territory: string; from: number; to: number; change: string; citation: string }
@@ -114,7 +122,8 @@
 		statesBy = 'count',
 		onfeature,
 		baseMap = $bindable(storedBaseMap()),
-		outlines = $bindable(storedOutlines())
+		outlines = $bindable(storedOutlines()),
+		pins
 	}: {
 		view: TileMapView;
 		/** For a shaded view: shade each nation's land areas, or each state by the category most of its nations have. */
@@ -156,6 +165,8 @@
 		baseMap?: TileMapBase;
 		/** Whether the land areas are outlined. */
 		outlines?: boolean;
+		/** Places the page marks with a labeled pin, drawn over everything else: the Federal offices page's regional offices (approved mockup, 2026-11-28). */
+		pins?: TileMapPin[];
 	} = $props();
 
 	const explorer = $derived(layerSwitches !== undefined);
@@ -769,6 +780,20 @@
 			);
 		};
 
+		/** The page's pins: a dot in the action color with a paper ring, and its name under it. */
+		const addPins = () => {
+			tops.push(
+				{ id: 'pins', type: 'circle', source: 'pins', paint: { 'circle-color': colors.action, 'circle-radius': ['case', ['boolean', ['feature-state', 'hover'], false], 8.5, 7], 'circle-stroke-color': colors.paper, 'circle-stroke-width': 2.5 } },
+				{
+					id: 'pin-names',
+					type: 'symbol',
+					source: 'pins',
+					layout: { 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Medium'], 'text-size': 12, 'text-offset': [0, 1.1], 'text-anchor': 'top', 'text-optional': true },
+					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 1.6 }
+				}
+			);
+		};
+
 		const layersOn = layerSwitches;
 		if (layersOn) {
 			// The Map page (map redesign D): every layer that is on, from the bottom up. Today's layers are drawn at Today only.
@@ -789,6 +814,7 @@
 			}
 			if (layersOn.routes) addRoutes();
 			if (layersOn.offices) addOffices();
+			if (pins?.length) addPins();
 		} else {
 			if (view === 'states') addStatesByCount();
 			else if (view === 'regions') addRegions(false);
@@ -950,6 +976,10 @@
 							};
 						})
 					}
+				},
+				pins: {
+					type: 'geojson',
+					data: { type: 'FeatureCollection', features: (pins ?? []).map((pin, index) => ({ type: 'Feature', id: index, properties: { name: pin.name, anchor: pin.anchor }, geometry: { type: 'Point', coordinates: pin.point } })) }
 				},
 				'shaded-labels': {
 					type: 'geojson',
@@ -1307,6 +1337,7 @@
 				// Selecting a place goes to its row; hovering marks it, as the drawn map does.
 				const interactive: { layer: string; source: string; sourceLayer?: string; anchor: (properties: Record<string, unknown>) => string | undefined }[] = [
 					{ layer: 'states', source: 'places', sourceLayer: 'states', anchor: (properties) => (explorer ? (isShadedMapView(statesBy) ? data.shading?.[statesBy]?.states[String(properties.code)]?.anchor : data.states[String(properties.code)]?.anchor) : by === 'state' ? shadingIn(data)?.states[String(properties.code)]?.anchor : data.states[String(properties.code)]?.anchor) },
+					{ layer: 'pins', source: 'pins', anchor: (properties) => String(properties.anchor) },
 					{ layer: 'regions', source: 'regions', anchor: (properties) => String(properties.anchor) },
 					{ layer: 'area-dots', source: 'area-points', anchor: (properties) => String(properties.anchor) },
 					{ layer: 'office-dots', source: 'offices', anchor: (properties) => String(properties.anchor ?? '') },
@@ -1375,7 +1406,7 @@
 						'reservations-1909-markers': reservation1909,
 						borders: (properties) => ({ kind: 'border', id: String(properties.id), name: String(properties.name ?? ''), territory: String(properties.kind ?? ''), from: Number(properties.from), to: Number(properties.to), change: String(properties.change ?? ''), citation: String(properties.citation ?? '') })
 					};
-					const order = ['routes', 'reservations-1909-dots', 'reservations-1909-markers', 'area-groups', 'area-dots', 'office-dots', 'land-areas', 'reservations-1909', 'homelands', 'cession-fills', 'regions', 'states', 'borders'];
+					const order = ['pins', 'routes', 'reservations-1909-dots', 'reservations-1909-markers', 'area-groups', 'area-dots', 'office-dots', 'land-areas', 'reservations-1909', 'homelands', 'cession-fills', 'regions', 'states', 'borders'];
 					map.on('click', (event) => {
 						if (!map) return;
 						for (const layer of order) {

@@ -64,11 +64,41 @@ const regionPaths: Record<string, string> = {
 	Western: 'regional-offices/western'
 };
 
+/** Where a regional office is: its street address as its page gives it, and the point the Census Bureau's geocoder matched it to. */
+export interface OfficeAddress {
+	lines: string[];
+	/** [longitude, latitude]. */
+	point: [number, number];
+	/** Placed from a description rather than a matched street address. */
+	approximate?: boolean;
+}
+
+/**
+ * Each regional office's address, from the "Contact Us" part of the region's own page on bia.gov (read Nov. 28, 2026), placed by the Census Bureau's geocoder (Public_AR_Current) on the same day. The Northwest Region's page gives no address. The Southern Plains Regional Office gives a post office box and "1 Mile North on Hwy 281", so its point is placed one mile north of Anadarko.
+ */
+const regionOffices: Record<string, OfficeAddress> = {
+	Alaska: { lines: ['3601 C Street, Suite 1200', 'Anchorage, AK 99503'], point: [-149.8865, 61.188] },
+	Eastern: { lines: ['545 Marriott Drive, Suite 700', 'Nashville, TN 37214'], point: [-86.6898, 36.1519] },
+	'Eastern Oklahoma': { lines: ['3100 W. Peak Blvd.', 'Muskogee, OK 74401'], point: [-95.3983, 35.7117] },
+	'Great Plains': { lines: ['115 4th Avenue Southeast, Suite 400', 'Aberdeen, SD 57401'], point: [-98.4864, 45.4612] },
+	Midwest: { lines: ['5600 W. American Blvd., Suite 500', 'Bloomington, MN 55437'], point: [-93.3523, 44.8557] },
+	Navajo: { lines: ['301 West Hill Street', 'Gallup, NM 87301'], point: [-108.7432, 35.5249] },
+	Pacific: { lines: ['2800 Cottage Way, Suite W-2820', 'Sacramento, CA 95825'], point: [-121.3974, 38.6033] },
+	'Rocky Mountain': { lines: ['2021 4th Avenue North', 'Billings, MT 59101'], point: [-108.4988, 45.7893] },
+	'Southern Plains': { lines: ['1 mile north on Highway 281', 'Anadarko, OK 73005'], point: [-98.2437, 35.087], approximate: true },
+	Southwest: { lines: ['1001 Indian School Road NW', 'Albuquerque, NM 87104'], point: [-106.6565, 35.1079] },
+	Western: { lines: ['2600 North Central Avenue', 'Phoenix, AZ 85004'], point: [-112.0738, 33.4767] }
+};
+
+/** When the regional office addresses were read from bia.gov. */
+export const regionOfficesChecked = '2026-11-28';
+
 /** The 12 regional offices of the Bureau of Indian Affairs. */
-export const bureauRegions: FederalOffice[] = Object.entries(regionPaths).map(([name, path]) => ({
+export const bureauRegions: (FederalOffice & { office?: OfficeAddress })[] = Object.entries(regionPaths).map(([name, path]) => ({
 	name,
 	key: officeKey(name),
-	link: `https://www.bia.gov/${path}`
+	link: `https://www.bia.gov/${path}`,
+	office: regionOffices[name]
 }));
 
 /**
