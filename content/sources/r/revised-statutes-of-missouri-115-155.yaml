@@ -1,0 +1,50 @@
+key: revised-statutes-of-missouri-115-155
+kind: state-statute
+citation:
+  type: legislation
+  title: Registration — application — oath — transfer of data to election authority — documents, preservation of
+  title-short: Mo. Rev. Stat. § 115.155
+  container-title: Revised Statutes of Missouri
+  container-title-short: Mo. Rev. Stat.
+  section: '115.155'
+  author:
+  - literal: Missouri Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1977
+  URL: https://revisor.mo.gov/main/OneSection.aspx?section=115.155
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 28
+original_link: https://revisor.mo.gov/main/OneSection.aspx?section=115.155
+retrieved: '2026-11-28'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-28'
+state_law:
+  relevance: incidental
+  citation: Mo. Rev. Stat. § 115.155 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MO
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Mo. Rev. Stat. § 115.155 (2026). History: L. 1977 H.B. 101 § 7.065, A.L. 1986 H.B. 1471, et al., A.L. 1988 H.B. 933, et al., A.L. 1993 S.B. 88, A.L. 1997 S.B. 132, A.L. 1999 H.B. 676, A.L. 2003 H.B. 511, A.L. 2005 H.B. 353, A.L. 2018 S.B. 592 merged with S.B. 975 & 1024 Revision, A.L. 2022 H.B. 1878. Text read from the Missouri Revisor of Statutes'' page for the section in the Revised Statutes of Missouri (revisor.mo.gov) on Nov. 27 or 28, 2026. Found by the state statutes sweep (terms: native american; native; tribal); AI reader''s verdict incidental: Voter form lists Native American tribal document as identification. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-28'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; native; tribal'
