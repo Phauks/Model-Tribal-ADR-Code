@@ -276,7 +276,9 @@ def loose_label(label: str) -> str:
     words = label.split()
     words[-1] = words[-1].replace("1", "I").replace("0", "O")
     return " ".join(words)
-NOISE = re.compile(r"(Heritage Reporting Corporation|Alderson Reporting|Ace-Federal Reporters|Hoover Reporting|"
+NOISE = re.compile(r"(Heritage Reporting Corporation|Alderson Reporting|A[LI1]DERSON\s+REPORTING|REPORTING\s+COMPANY|"
+                   r"FOURTEENTH\s+STREET|^\s*SUITE\s+\d+\s*$|\(800\)\s*FOR\s+DEPO|\(202\)\s*\d{2,3}\s*-\s*\d{4}|Subject to Final Review|"
+                   r"VIRGINIA\s+AVE|^\s*20\s+F\s+ST|Ace-Federal Reporters|Hoover Reporting|"
                    r"^\s*Official\s*$|^\s*\d{1,3}\s*$|www\.\S+|^\s*\(\d{3}\)\s*\d{3}-\d{4}\s*$|1111 14th Street|Washington, D\.?\s*C\.?\s*\d{5})", re.I)
 END = re.compile(r"\((?:Whereupon|The case was submitted)", re.I)
 
@@ -304,7 +306,7 @@ def read_transcript(path: Path) -> dict:
     start = alone[0] if alone else next((i for i, (_, l, _r) in enumerate(lines) if PROCEEDINGS.search(l.replace(" ", "")) or PROCEEDINGS.search(l)), None)
     appearances = []
     head = "\n".join(l for _, l, _r in lines[: start or 0])
-    found = re.search(r"APPEARANCES?\s*:?(.*?)(?:C\s*O\s*N\s*T\s*E\s*N\s*T\s*S|ORAL\s+ARGUMENT\s+OF|$)", head, re.S | re.I)
+    found = re.search(r"APPEARANCES?\s*:?(.*?)(?:C\s*[O0]\s*N\s*T\s*E\s*[NH]\s*T\s*S|ORAL\s+ARGUMENT\s+OF|$)", head, re.S | re.I)
     if found:
         block = re.sub(r"\s+", " ", found.group(1)).strip()
         for entry in re.split(r"(?<![\s.][A-Z]\.)(?<=[.;])\s+(?=[A-Z][A-Z.'\-]+(?:\s+[A-Z][A-Za-z.'\-]+)*,\s+(?:ESQ|JR|II|III|Solicitor|Deputy|Assistant|Attorney|General|Special))", block):
@@ -611,7 +613,7 @@ def time_turns(turns: list[dict], stream: list[tuple[float, str]]) -> dict:
 
 # ---------------------------------------------------------------- our own transcripts, where there is none
 
-CALL = re.compile(r"\b(?:hear|heard)\s+(?:the\s+)?arguments?\b|\bnumber\s+\d+|\bno\.\s*\d+", re.I)
+CALL = re.compile(r"\b(?:hear|heard|resume)\s+(?:the\s+)?arguments?\b|\bnumber\s+\d+|\bno\.\s*\d+", re.I)
 SUBMITTED = re.compile(r"\b(?:case is|is) submitted\b|\bsubmitted\b", re.I)
 COMMON = {"v", "the", "of", "and", "united", "states", "state", "county", "tribe", "tribes", "indian", "indians", "nation",
           "nations", "inc", "co", "company", "et", "al", "district", "court", "for", "village", "community", "department",
@@ -623,17 +625,33 @@ def segments_in(files: list[dict]) -> list[tuple[float, float, str]]:
             for f in files for a, b, text, _words in f["heard"]["segments"]]
 
 
-def case_span(segments: list[tuple[float, float, str]], title: str, total: float) -> tuple[float, float, str]:
+def named(names: set[str], text: str) -> bool:
+    """Whether the words heard name the case: "Clark" for Clarke, as the model hears it."""
+    for heard in words_of(text):
+        for name in names:
+            if heard == name or (len(heard) >= 5 and (name.startswith(heard) or heard.startswith(name))) \
+                    or (len(heard) > 4 and difflib.SequenceMatcher(None, heard, name).ratio() >= 0.85):
+                return True
+    return False
+
+
+def case_span(segments: list[tuple[float, float, str]], title: str, total: float, continues: bool = False) -> tuple[float, float, str]:
     """Where one case lies in a whole day's recording: from the Chief Justice's call of the case
-    ("We'll hear arguments next in No. 72-1309, Oneida Indian Nation against ...") to "submitted"
-    or the next call. A second day's reel, which goes straight on with the case, starts at its beginning."""
+    ("We'll hear arguments next in No. 72-1309, Oneida Indian Nation against ...", or "We'll resume
+    arguments in ...") to "submitted" or the next call. Where the call is not heard: a case argued on
+    into the next day is the day's last case called; a second day's reel goes straight on with the case
+    from its beginning."""
     names = {w for w in words_of(title) if len(w) > 3 and w not in COMMON}
     start, how = None, "call"
     for i, (a, _b, text) in enumerate(segments):
         near = " ".join(t for _, _, t in segments[i:i + 3])
-        if CALL.search(text) and names & set(words_of(near)):
+        if CALL.search(text) and named(names, near):
             start = a
             break
+    if start is None and continues:
+        calls = [a for a, _b, text in segments if CALL.search(text) and re.search(r"\bhear", text, re.I)]
+        if calls:
+            start, how = calls[-1], "the day's last case called"
     if start is None:
         start, how = 0.0, "start of the recording"
     end = total
@@ -643,7 +661,7 @@ def case_span(segments: list[tuple[float, float, str]], title: str, total: float
         if SUBMITTED.search(text):
             end = b + 2
             break
-        if CALL.search(text) and re.search(r"hear", text, re.I) and not names & set(words_of(text)):
+        if CALL.search(text) and re.search(r"hear", text, re.I) and not named(names, text):
             end = a
             break
     return start, end, how
@@ -718,7 +736,8 @@ def align(args: argparse.Namespace) -> None:
     words_dir, out_dir, work = Path(args.words), Path(args.out), Path(args.work)
     out_dir.mkdir(parents=True, exist_ok=True)
     report = []
-    for argument in arguments():
+    every = arguments()
+    for argument in every:
         if args.case and argument["case"] not in args.case:
             continue
         found = heard_words(argument, words_dir)
@@ -760,6 +779,22 @@ def align(args: argparse.Namespace) -> None:
                 spans.append(result["span"])
             spans = [s for s in spans if s[0] is not None]
             whole = any(f["whole_session"] for f in argument["files"])
+            if spans and not whole:
+                # The Archives' one-file-a-case reels, where the plan took a whole reel's files for want of a
+                # docket in their names (Affiliated Ute Citizens, 1971: four cases' files): keep the files the
+                # argument was heard in.
+                lo, hi = min(x[0] for x in spans), max(x[1] for x in spans)
+                keep = [f for f in files if f["offset"] < hi and f["offset"] + f["duration"] > lo]
+                if keep and len(keep) < len(files):
+                    shift = keep[0]["offset"]
+                    for t in turns:
+                        t["t"] = round(max(0.0, t["t"] - shift), 1)
+                    for x in sections:
+                        x["t"] = round(max(0.0, x["t"] - shift), 1)
+                    files = [{**f, "offset": round(f["offset"] - shift, 2)} for f in keep]
+                    total = round(sum(f["duration"] for f in files), 2)
+                    timed["files"] = [{"key": f["key"], "offset": f["offset"], "duration": f["duration"], "sha256": f["heard"]["sha256"]}
+                                      for f in files]
             span = [max(0.0, min(s[0] for s in spans) - 20), min(total, max(s[1] for s in spans) + 20)] if (spans and whole) else [0.0, total]
             for c in counsel:
                 c["for"] = c.get("for") or ""
@@ -775,7 +810,10 @@ def align(args: argparse.Namespace) -> None:
             whole = any(f["whole_session"] for f in argument["files"])
             record = record_of(argument["case"])
             if whole:
-                start, end, how = case_span(segments, record["citation"]["title"], total)
+                # Argued on into the next day ("We'll resume arguments in the United States against Clark").
+                continues = any(other["case"] == argument["case"] and 0 < (dt.date.fromisoformat(other["date"]) - dt.date.fromisoformat(argument["date"])).days <= 3
+                                for other in every)
+                start, end, how = case_span(segments, record["citation"]["title"], total, continues)
             else:
                 start, end, how = 0.0, total, "the case's own recording"
             counsel = reported_counsel(argument["case"], argument["date"])

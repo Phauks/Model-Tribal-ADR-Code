@@ -69,6 +69,8 @@ export interface TimedTurn {
 	text: string;
 	/** The counsel's place in the counsel list. */
 	counsel?: number;
+	/** The recording does not hold this turn: it begins or ends partway through the argument. */
+	missing?: boolean;
 }
 
 export interface TimedTranscript {
@@ -76,7 +78,7 @@ export interface TimedTranscript {
 	date: string;
 	made: 'official' | 'speech recognition';
 	model: string;
-	sections: { label: string; counsel: string; t: number; turn: number }[];
+	sections: { label: string; counsel: string; t: number; turn: number; missing?: boolean }[];
 	turns: TimedTurn[];
 }
 

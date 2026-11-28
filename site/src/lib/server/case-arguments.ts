@@ -98,12 +98,18 @@ function sidesOf(title: string): [string, string] {
 }
 
 /** The parties a counsel argued for, each with the nation's seal where the party is one of the case's nations. */
-function partiesFor(behalf: string, title: string, tribes: string[]): ArgumentParty[] {
+function partiesFor(behalf: string, title: string, tribes: string[], docket: string | undefined): ArgumentParty[] {
 	const [first, second] = sidesOf(title);
 	const names: string[] = [];
 	const role = generic.exec(behalf)?.[1]?.toLowerCase();
-	if (role) names.push(/^(petitioner|appellant|complainant|plaintiff)/.test(role) ? first : second);
-	else if (/United States/.test(behalf)) names.push('United States');
+	// "the Petitioners in Case No. 20-544": a case heard with this one, whose parties the name does not give.
+	const other = /Case No\.?\s*([\w-]+)/i.exec(behalf)?.[1];
+	if (role && other && docket && other !== docket) return [];
+	// "the Respondent United States", "the Respondents John W. Thompson, et al.": the party named after the role.
+	const named = role ? behalf.replace(generic, '').replace(/,?\s*et al\.?$/i, '').trim() : '';
+	if (/United States/.test(behalf) && !/^the State/i.test(behalf)) names.push('United States');
+	else if (/^[A-Z]/.test(named) && !/^(?:in|on|of|for)\b/i.test(named)) names.push(named);
+	else if (role) names.push(/^(petitioner|appellant|complainant|plaintiff)/.test(role) ? first : second);
 	const nations = nationNamesAndKinds();
 	const seals = new Set(servableImages().map((image) => image.nation));
 	const plain = (text: string) => text.toLowerCase().replace(/[^a-z ]/g, '').replace(/\s+/g, ' ').trim();
@@ -148,6 +154,7 @@ export function argumentDays(record: SourceRecord & ArgumentParts): ArgumentDay[
 				offset += part.duration;
 				return part;
 			});
+			const docket = (record.argument_transcripts ?? [])[0]?.docket.split(/[\s,]+/)[0];
 			const source = audio.get(entry.recording[0].key)!.source.replace(/^Supreme Court of the United States$/, 'Supreme Court');
 			const transcripts = entry.made === 'official transcript'
 				? (record.argument_transcripts ?? [])
@@ -175,7 +182,7 @@ export function argumentDays(record: SourceRecord & ArgumentParts): ArgumentDay[
 					...(counsel.title ? { title: counsel.title } : {}),
 					...(counsel.for ? { for: counsel.for } : {}),
 					...(counsel.source ? { source: counsel.source } : {}),
-					parties: counsel.for ? partiesFor(counsel.for, title, record.tribes ?? []) : [],
+					parties: counsel.for ? partiesFor(counsel.for, title, record.tribes ?? [], docket) : [],
 					times: sections.filter((section) => section.counsel === counsel.name).map((section) => section.t)
 				})),
 				sections: sections.map((section) => ({ label: section.label, t: section.t })),

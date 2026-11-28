@@ -42,6 +42,12 @@
 		`${ownReason} The project made this one from the recording with the ${day.model} speech recognition model. It has not been checked against the recording and has errors; speakers are not marked.`
 	);
 	const partial = $derived(day.span[0] > 30 || day.span[1] < day.total - 30);
+	// Turns of the transcript that the recording does not hold: it begins or ends partway through the argument.
+	const heard = $derived(data.turns.flatMap((turn, index) => (turn.missing ? [] : [index])));
+	const firstHeard = $derived(heard[0] ?? -1);
+	const lastHeard = $derived(heard.at(-1) ?? -1);
+	const beginsLate = $derived(firstHeard > 0);
+	const endsEarly = $derived(lastHeard >= 0 && lastHeard < data.turns.length - 1);
 	const unnamedJustices = $derived(data.turns.some((turn) => turn.speaker === 'A Justice'));
 	const speeds = [1, 1.25, 1.5, 2, 0.75];
 
@@ -67,7 +73,10 @@
 	let ready = $state(false);
 	let problem = $state(false);
 
-	const current = $derived(turnAt(data.turns, now));
+	const current = $derived.by(() => {
+		const found = turnAt(heard.map((index) => data.turns[index]), now);
+		return found < 0 ? -1 : heard[found];
+	});
 	const speaking = $derived<TimedTurn | undefined>(data.turns[current]);
 	const benchSpeaking = $derived(
 		speaking?.role === 'justice' ? day.bench.find((justice) => speaking.speaker.endsWith(` ${justice.surname}`)) : undefined
@@ -141,7 +150,7 @@
 
 	function onTurnClick(event: MouseEvent, turn: TimedTurn) {
 		// A reader selecting words to copy does not want the recording to jump.
-		if (window.getSelection()?.toString()) return;
+		if (window.getSelection()?.toString() || turn.missing) return;
 		event.preventDefault();
 		seek(turn.t);
 	}
@@ -198,6 +207,7 @@
 			</span>
 		</div>
 		{#if partial}<p class="ap-sub ap-note">The whole day in court, as the Archives keeps it. This case runs from {clock(day.span[0])} to {clock(day.span[1])}.</p>{/if}
+		{#if beginsLate || endsEarly}<p class="ap-sub ap-note">The recording {beginsLate ? 'begins partway through the argument' : ''}{beginsLate && endsEarly ? ' and ' : ''}{endsEarly ? 'ends before the argument does' : ''}; the transcript’s turns it does not hold are marked.</p>{/if}
 		{#if data.others.length}<p class="ap-sub ap-note">Also argued {#each data.others as other, index (other.date)}{index ? ', ' : ''}<a href={other.path}>{other.when}</a>{/each}.</p>{/if}
 	</header>
 
@@ -291,23 +301,27 @@
 						{@const heading = headings.get(index)}
 						{#if heading && !wanted}<h3>{heading.label === 'Rebuttal' ? 'Rebuttal argument' : 'Argument'} of {heading.counsel}{counselHeading(heading.counsel)}</h3>{/if}
 						{#if !wanted && turn.page && turn.page !== data.turns[index - 1]?.page}<div class="ap-page">PAGE {turn.page}</div>{/if}
+						{#if !wanted && beginsLate && index === firstHeard}<div class="ap-page ap-edge">THE RECORDING BEGINS HERE</div>{/if}
 						{#if shown[index]}
 							{@const justice = justiceOf(turn)}
 							<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -- the time link is the keyboard's way in -->
-							<div class="ap-turn" class:now={index === current} class:past={index < current} data-turn={index} onclick={(event) => onTurnClick(event, turn)}>
+							<div class="ap-turn" class:now={index === current} class:past={index < current && !turn.missing} class:missing={turn.missing} data-turn={index} onclick={(event) => onTurnClick(event, turn)}>
 								<span class="av">
 									{#if justice?.portrait}<img src={justice.portrait} alt="" loading="lazy" />{:else}<span class="ph">{turn.role === 'counsel' ? initials(turn.counsel !== undefined ? (day.counsel[turn.counsel]?.name ?? turn.speaker) : turn.speaker) : turn.speaker === 'A Justice' ? '?' : '—'}</span>{/if}
 								</span>
 								<div>
 									<div class="head">
 										{#if turn.speaker}<span class="who" class:unnamed={turn.speaker === 'A Justice'}>{turn.speaker}</span>{:else}<span class="who unnamed">Speaker not marked</span>{/if}
-										<span class="seek"><Play size={12} fill="currentColor" aria-hidden="true" /> Play from here</span>
-										<a class="t" href="#t={turn.t}" onclick={(event) => onTurnClick(event, turn)} aria-label="Play from {clock(turn.t)}">{clock(turn.t)}</a>
+										{#if turn.missing}<span class="t gone">Not in the recording</span>{:else}
+											<span class="seek"><Play size={12} fill="currentColor" aria-hidden="true" /> Play from here</span>
+											<a class="t" href="#t={turn.t}" onclick={(event) => onTurnClick(event, turn)} aria-label="Play from {clock(turn.t)}">{clock(turn.t)}</a>
+										{/if}
 									</div>
 									<p>{turn.text}</p>
 								</div>
 							</div>
 						{/if}
+						{#if !wanted && endsEarly && index === lastHeard}<div class="ap-page ap-edge">THE RECORDING ENDS HERE</div>{/if}
 					{/each}
 				</div>
 			</section>
@@ -827,6 +841,23 @@
 	}
 	.ap-turn.past p {
 		color: var(--color-ink-muted);
+	}
+	.ap-turn.missing {
+		cursor: default;
+	}
+	.ap-turn.missing:hover {
+		background: none;
+	}
+	.ap-turn.missing p,
+	.ap-turn.missing .who {
+		color: var(--color-ink-muted);
+	}
+	.ap-turn .t.gone {
+		color: var(--color-ink-muted);
+	}
+	.ap-edge {
+		color: var(--color-ink);
+		font-weight: 600;
 	}
 	.ap-turn.now {
 		background: var(--color-selection);
