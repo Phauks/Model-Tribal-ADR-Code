@@ -166,10 +166,25 @@ describe('Title 25 as an outline', () => {
 		expect(lawPage('usc-25-5329-c-model-agreement-disputes')).toEqual({ movedTo: '/laws/usc-25/5329' });
 	});
 
-	it('shows the official text kept for a section’s older record', async () => {
+	it('shows each section’s own official words from GovInfo, with its PDF as the scan', async () => {
 		const { sectionPageData } = await import('#lib/server/law-pages.ts');
-		expect(sectionPageData('1911').text).toMatchObject({ shown: 'pdf', extension: '.pdf', codeTitle: '25' });
-		expect(sectionPageData('5321').text).toBeUndefined();
+		// A section with an older record, whose copy is a PDF: the section's own words come first.
+		expect(sectionPageData('1911').text).toMatchObject({
+			shown: 'page',
+			extension: '.html',
+			codeTitle: '25',
+			trust: { kind: 'official' },
+			scan: { file: '/copies/united-states-code/2024/title-25-section-1911.pdf' }
+		});
+		// A section with no older record.
+		expect(sectionPageData('5321').text).toMatchObject({
+			key: 'united-states-code/2024/title-25-section-5321.html',
+			shown: 'page',
+			scan: { file: '/copies/united-states-code/2024/title-25-section-5321.pdf' }
+		});
+		expect(sectionPageData('13d-1').text?.key).toBe('united-states-code/2024/title-25-section-13d-1.html');
+		// A section no longer in force has no text of its own.
+		expect(sectionPageData('450f').text).toBeUndefined();
 	});
 
 	it('lists a chapter’s contents under its subchapters', async () => {
