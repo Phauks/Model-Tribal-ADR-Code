@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readRequestForm } from '#lib/server/request-form.ts';
-import { partReport, reportedAddress, reportLink } from '#lib/report-request.ts';
+import { partReport, presetFromFragment, reportedAddress, reportLink } from '#lib/report-request.ts';
 import { similarPages, similarQuery } from '#lib/similar-pages.ts';
 import type { PanelAnswer } from '#lib/search-everything.ts';
 
@@ -41,12 +41,13 @@ describe('Report from an error', () => {
 		expect(reportedAddress(new URL('https://triballawproject.org/sign-in/link?code=123456'))).toBe('https://triballawproject.org/sign-in/link');
 	});
 
-	it('links to the request page with the same answers for a reader without scripts', () => {
+	it('links to Request a Change with the same answers', () => {
 		const link = reportLink(partReport(new URL('https://triballawproject.org/nations/map?view=lands'), 'The map failed to load.'));
-		const query = new URL(link, 'https://triballawproject.org').searchParams;
-		expect(query.get('kind')).toBe('broken-page');
-		expect(query.get('address')).toBe('https://triballawproject.org/nations/map');
-		expect(query.get('details')).toBe('The map failed to load.');
+		expect(presetFromFragment(new URL(link, 'https://triballawproject.org/nations/map').hash)).toEqual({
+			kind: 'broken-page',
+			material: 'https://triballawproject.org/nations/map',
+			details: 'The map failed to load.'
+		});
 	});
 
 	it('keeps a broken page as a correction that needs the address but not details', async () => {
