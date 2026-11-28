@@ -70,6 +70,25 @@ export function recordDocument(record: SourceRecord, title: string, copy: Public
 	});
 }
 
+/**
+ * A Title 25 section's own copy, for a section page whose older record has no
+ * text (scripts/law/title_25_section_texts.py): the section's web page from
+ * GovInfo, with the section's PDF beside it as its scan; the PDF alone when
+ * the site keeps no web page of it.
+ */
+export function codeSectionDocument(slug: string, edition: number, title: string): DocumentFile | undefined {
+	const stem = `united-states-code/${edition}/title-25-section-${slug}`;
+	const text = publicCopyByKey(`${stem}.html`);
+	const scan = publicCopyByKey(`${stem}.pdf`);
+	const shown = text ?? scan;
+	if (!shown) return undefined;
+	return documentFile({ ...shown, name: copyFileNames().get(shown.key) }, {
+		title,
+		...(text && scan ? { scan: { key: scan.key, pages: scan.pages } } : {}),
+		codeTitle: '25'
+	});
+}
+
 /** The record's own published address: where the document is, at its publisher. */
 export function originalLink(record: SourceRecord): string | undefined {
 	const link = record.original_link ?? record.citation.URL;
