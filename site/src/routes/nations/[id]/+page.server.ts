@@ -75,6 +75,8 @@ interface FactItem {
 	citations?: CitationMark[];
 	/** An estimate's margin of error, shown after it as "± 5" (Census figures). */
 	margin?: string;
+	/** In a wide group, the value on its own line under its label, such as a legal basis (FactGroups.svelte). */
+	below?: boolean;
 }
 
 const opinionsHeading = 'Court opinions';
@@ -472,8 +474,8 @@ function spectrumGroups(record: NationRecord, sources: SourceUses): FactGroup[] 
 		sources.cite(licenseFileSource, { section: label, text: `${license.call_sign}: ${licenseNote(license)}`, where }, citations);
 		return { text: license.call_sign, link: licensePage(license), note: licenseNote(license), citations };
 	});
-	items.push({ label: 'Legal basis', text: 'FCC Rural Tribal Priority Window (2019)', link: recordPageLink(orderSource) });
-	return [{ field: 'spectrum-licenses', label, items }];
+	items.push({ label: 'Legal basis', text: 'FCC Rural Tribal Priority Window (2019)', link: recordPageLink(orderSource), below: true });
+	return [{ field: 'spectrum-licenses', label, wide: true, items }];
 }
 
 /**
@@ -506,7 +508,8 @@ function landBuyBackGroups(record: NationRecord, sources: SourceUses): FactGroup
 			label: 'Legal basis',
 			text: 'Claims Resolution Act of 2010',
 			link: recordPageLink(statuteSource),
-			detailParts: [{ text: '(the ' }, { text: 'Cobell', link: recordPageLink(settlementCaseSource) }, { text: ' settlement)' }]
+			below: true,
+			detailParts: [{ text: 'Carries out the ' }, { text: 'Cobell', link: recordPageLink(settlementCaseSource), italic: true }, { text: ' settlement.' }]
 		});
 		return { field: index === 0 ? 'land-buy-back' : `land-buy-back-${index}`, label, wide: true, items };
 	});

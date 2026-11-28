@@ -88,9 +88,9 @@ export function landLines(row: LocationRow, sharedWith: string[] = []): LandLine
 			},
 			{ label: 'Landowners offered who sold', text: row.landowner_rate, from: ['table'] },
 			{
-				label: 'Paid at six small locations together',
+				label: 'Paid at six locations',
 				text: dollars(paid),
-				note: `For ${whole(interests)} fractional interests, ${whole(acres)} equivalent acres, at Agua Caliente, Cabazon, Rincon, Stockbridge Munsee, Sycuan and Quapaw.`,
+				note: `Together, for ${whole(interests)} fractional interests, ${whole(acres)} equivalent acres, at Agua Caliente, Cabazon, Rincon, Stockbridge Munsee, Sycuan and Quapaw.`,
 				from: ['final']
 			}
 		];
