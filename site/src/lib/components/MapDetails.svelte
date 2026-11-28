@@ -8,6 +8,7 @@
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
 	import Search from '@lucide/svelte/icons/search';
+	import CountBadge from './CountBadge.svelte';
 	import RecognitionBadges from './RecognitionBadges.svelte';
 	import { imageViewerAttributes } from '#lib/image-viewer.ts';
 	import type { MapDetails, MapDetailsContact, MapDetailsLine, MapDetailsNation } from '#lib/map-details.ts';
@@ -73,6 +74,8 @@
 			{details.title}{#if details.badges}{' '}<RecognitionBadges badges={details.badges} size="small" />{/if}
 		</h3>
 	</div>
+	{#if details.pill}<p class="pill-line"><span class="move-pill">{details.pill}</span></p>{/if}
+	{#if details.summary}<p class="summary">{details.summary}</p>{/if}
 	{#each details.lines as line, index (line.label)}
 		<div class="fact">
 			{#if line.nations && line.nations.length > 0}
@@ -114,6 +117,13 @@
 							<p class="small muted">{line.noun ? 'No name has these words.' : 'No nation’s name has these words.'}</p>
 						{/if}
 					{/if}
+				</div>
+			{:else if line.counts}
+				<div class="row">
+					<span>{line.label}</span>
+					<span class="value counts">
+						{#each line.counts as entry (entry.label)}<span class="count-row">{entry.label}<CountBadge count={entry.count} /></span>{/each}
+					</span>
 				</div>
 			{:else if line.block}
 				<div class="block">
@@ -260,6 +270,20 @@
 
 	.value {
 		text-align: right;
+	}
+
+	.pill-line {
+		margin: calc(-1 * var(--space-2)) 0 var(--space-2);
+	}
+
+	.summary {
+		margin: 0 0 var(--space-3);
+	}
+
+	.counts {
+		display: grid;
+		justify-items: end;
+		gap: var(--space-1);
 	}
 
 	.row.wide {

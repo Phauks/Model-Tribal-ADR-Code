@@ -2404,6 +2404,19 @@ details > .nation-edit-link {
 	margin-right: 0;
 }
 
+/* A removal's kind of move, Forced, Pressured, Negotiated or Not carried out, in a pill on the Removals page's details and table (Removals mockup v2). */
+.move-pill {
+	display: inline-block;
+	padding: 0 0.55rem;
+	border: 1px solid var(--color-control-border);
+	border-radius: 999px;
+	color: var(--color-ink);
+	font-size: 0.8125rem;
+	font-weight: var(--font-weight-bold);
+	line-height: 1.5rem;
+	white-space: nowrap;
+}
+
 .stub-badge .stub-mark {
 	color: var(--color-link);
 }

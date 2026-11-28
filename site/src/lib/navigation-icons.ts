@@ -59,6 +59,7 @@ import PenLine from '@lucide/svelte/icons/pen-line';
 import PenTool from '@lucide/svelte/icons/pen-tool';
 import Radar from '@lucide/svelte/icons/radar';
 import Receipt from '@lucide/svelte/icons/receipt';
+import Route from '@lucide/svelte/icons/route';
 import Scale from '@lucide/svelte/icons/scale';
 import Scroll from '@lucide/svelte/icons/scroll';
 import ScrollText from '@lucide/svelte/icons/scroll-text';
@@ -132,6 +133,7 @@ export const navigationIcons: Record<NavigationIconName, typeof BookA> = {
 	'pen-tool': PenTool,
 	radar: Radar,
 	receipt: Receipt,
+	route: Route,
 	scale: Scale,
 	scroll: Scroll,
 	'scroll-text': ScrollText,

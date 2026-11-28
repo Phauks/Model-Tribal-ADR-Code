@@ -330,7 +330,7 @@ export function lastChangeSentence(change: Pick<ChangeView, 'change' | 'parts' |
 }
 
 /** Pages under /nations/ that list nations rather than being one nation's page. */
-const nationListings = new Set(['data', 'map', 'recourse', 'law', 'timeline', 'federal-offices', 'federal-programs', 'coverage']);
+const nationListings = new Set(['data', 'map', 'recourse', 'law', 'timeline', 'federal-offices', 'federal-programs', 'coverage', 'removals']);
 
 /**
  * The address whose history "Changes to this page" opens, for a page whose
