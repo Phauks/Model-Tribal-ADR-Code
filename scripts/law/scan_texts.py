@@ -27,6 +27,8 @@ Steps:
            upload the text, check the upload's size and SHA-256, and add a line
            to <work>/results.jsonl. Resumable: a PDF already in results.jsonl
            or already given a text in the index is skipped.
+  library  For the scans in needs-ocr.csv, file the OCR text the source library
+           (scripts/library/) already read from them with tesseract.
   index    Add a capture index row for each text in results.jsonl
            (capture_index.write_rows keeps the rows in key order).
 
@@ -63,7 +65,7 @@ TOOL = "scripts/law/scan_texts.py"
 
 def served_pdfs(rows: list[dict], topics: set[str]) -> list[dict]:
     """The served PDFs in these topics (by the first folder of the key) that have no text taken from them yet."""
-    taken = {row["derived_from"] for row in rows if row["derived_from"] and row["media_type"] == "text/plain"}
+    taken = {row["derived_from"] for row in rows if row["derived_from"] and row["media_type"] == "text/plain" and row["redistribution"] == "yes"}
     keys = {row["key"] for row in rows}
     found = []
     for row in rows:
@@ -75,14 +77,17 @@ def served_pdfs(rows: list[dict], topics: set[str]) -> list[dict]:
             continue
         if row["key"] in taken or not row["key"].lower().endswith(".pdf"):
             continue
-        if text_key(row["key"]) in keys:
+        target = text_key(row["key"], keys)
+        if target in keys:
             continue
-        found.append(row)
+        found.append({**row, "text_key": target})
     return found
 
 
-def text_key(pdf_key: str) -> str:
-    return re.sub(r"\.pdf$", "", pdf_key, flags=re.I) + ".txt"
+def text_key(pdf_key: str, keys: set[str] | None = None) -> str:
+    """Where the text goes: beside the PDF as .txt, or as .scan-text.txt when a private extract already holds the .txt name."""
+    stem = re.sub(r"\.pdf$", "", pdf_key, flags=re.I)
+    return f"{stem}.scan-text.txt" if keys is not None and f"{stem}.txt" in keys else f"{stem}.txt"
 
 
 def clean(text: str) -> str:
@@ -118,7 +123,7 @@ def extract_one(s3, bucket: str, row: dict, min_chars: int) -> dict:
             return {"key": row["key"], "status": "needs-ocr", "letters_per_page": round(density)}
         data = text.encode("utf-8")
         text_digest = hashlib.sha256(data).hexdigest()
-        target = text_key(row["key"])
+        target = row["text_key"]
         out = Path(folder) / "text.txt"
         out.write_bytes(data)
         metadata = {"sha256": text_digest, "captured": dt.date.today().isoformat()}
@@ -176,6 +181,45 @@ def extract(args) -> None:
                 writer.writerow([result["key"], result["letters_per_page"]])
 
 
+def from_library(args) -> None:
+    """For each scan with no usable text layer, the OCR text the source library already holds (scripts/library/, read by tesseract), uploaded like a text layer."""
+    import sqlite3
+    work = Path(args.work)
+    needs = [row["key"] for row in csv.DictReader((work / "needs-ocr.csv").open(encoding="utf-8"))]
+    rows = {row["key"]: row for row in capture_index.read_rows()}
+    keys = set(rows)
+    database = sqlite3.connect(args.library)
+    s3, bucket = mirror_captures.client(), mirror_captures.bucket_name()
+    counts: dict[str, int] = {}
+    with (work / "results.jsonl").open("a", encoding="utf-8") as results:
+        for key in needs:
+            found = database.execute("select document_id from bucket_files where key = ? and document_id is not null", (key,)).fetchone()
+            pages: dict[int, list[str]] = {}
+            if found:
+                for page, text in database.execute("select coalesce(page, 1), text from pages where document_id = ? order by sequence", found):
+                    pages.setdefault(page, []).append(text)
+            text = clean("\f".join("\n".join(pages.get(number, [])) for number in range(1, max(pages, default=0) + 1))) if pages else ""
+            if letters_per_page(text) < args.min_chars / 4 or key not in rows:
+                counts["no-library-text"] = counts.get("no-library-text", 0) + 1
+                continue
+            data = text.encode("utf-8")
+            digest = hashlib.sha256(data).hexdigest()
+            target = text_key(key, keys)
+            with tempfile.NamedTemporaryFile(suffix=".txt") as handle:
+                handle.write(data)
+                handle.flush()
+                metadata = {"sha256": digest, "captured": dt.date.today().isoformat(), "records": rows[key].get("records", "")[:1000]}
+                s3.upload_file(handle.name, bucket, target, ExtraArgs={"ContentType": "text/plain; charset=utf-8",
+                               "Metadata": {k: v.encode("ascii", "ignore").decode() for k, v in metadata.items()}})
+            if mirror_captures.remote_state(s3, bucket, target) != (len(data), digest):
+                counts["upload-check-failed"] = counts.get("upload-check-failed", 0) + 1
+                continue
+            results.write(json.dumps({"key": key, "status": "ok", "text_key": target, "bytes": len(data), "sha256": digest,
+                                      "pages": text.count("\f") + 1, "method": "ocr"}) + "\n")
+            counts["ok"] = counts.get("ok", 0) + 1
+    print(json.dumps(counts))
+
+
 def index(args) -> None:
     rows = capture_index.read_rows()
     by_key = {row["key"]: row for row in rows}
@@ -196,7 +240,8 @@ def index(args) -> None:
         row.update({
             "key": result["text_key"], "bytes": str(result["bytes"]), "sha256": result["sha256"], "media_type": "text/plain",
             "topic": pdf["topic"], "title": f"{pdf['title'] or pdf['key']} (text from the scan)", "nations": pdf["nations"],
-            "obtained": f"text layer of the served scan {pdf['key']}, taken with pdftotext by {TOOL}, {today}",
+            "obtained": (f"OCR of the served scan {pdf['key']} by tesseract, from the source library (scripts/library/), filed by {TOOL}, {today}"
+                         if result.get("method") == "ocr" else f"text layer of the served scan {pdf['key']}, taken with pdftotext by {TOOL}, {today}"),
             "link": pdf["link"], "captured": today, "records": pdf["records"], "record_kinds": pdf["record_kinds"],
             "listed_in": "", "catalog": "", "derived_from": pdf["key"], "rights": pdf["rights"],
             "redistribution": pdf["redistribution"], "keep_local": "no", "orphan": pdf["orphan"],
@@ -218,6 +263,11 @@ def main() -> None:
     one.add_argument("--limit", type=int, default=0)
     one.add_argument("--min-chars", type=int, default=200, help="fewest letters a page, on average, for a usable text layer")
     one.set_defaults(func=extract)
+    library = sub.add_parser("library", help="file the source library's OCR text for the scans in needs-ocr.csv")
+    library.add_argument("--work", required=True)
+    library.add_argument("--library", default=str(Path.home() / ".cache" / "model-tribal-library" / "library.sqlite"))
+    library.add_argument("--min-chars", type=int, default=200)
+    library.set_defaults(func=from_library)
     two = sub.add_parser("index")
     two.add_argument("--work", required=True)
     two.set_defaults(func=index)
