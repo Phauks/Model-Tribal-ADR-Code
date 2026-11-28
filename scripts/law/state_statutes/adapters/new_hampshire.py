@@ -48,7 +48,7 @@ class NewHampshire(State):
         raw.mkdir(parents=True, exist_ok=True)
         listing = raw / 'chapters.json'
         if not listing.exists():
-            index = self.get(f'{SITE}/indexes/default.aspx').decode('utf-8', 'replace')
+            index = self.get(f'{SITE}/nhtoc.htm').decode('utf-8', 'replace')
             (raw / 'index.html').write_text(index)
             titles = list(dict.fromkeys((m.group(1), text_of(m.group(2))) for m in TITLE_LINK.finditer(index)))
             rows = []
