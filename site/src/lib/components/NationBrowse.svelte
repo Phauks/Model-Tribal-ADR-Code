@@ -27,7 +27,7 @@
 			</li>
 		{/each}
 	</ul>
-	<p class="small"><a href="/nations">All Native nations</a> · <a href="/nations/map">See the map</a></p>
+	<p class="small"><a href="/nations/directory">All Native nations</a> · <a href="/nations/map">See the map</a></p>
 </nav>
 
 <style>

@@ -13,9 +13,9 @@ import { browseIdentifiers } from '../src/lib/browse-identifiers.ts';
 const sectionOf = (path: string) => navigationSectionOf(path)?.label;
 const section = (key: string) => navigationSections.find((candidate) => candidate.key === key)!;
 
-describe('the six sections in the bar under the masthead', () => {
-	it('lists the sections Trevor chose, in order (design/navigation-models, model C)', () => {
-		expect(navigationSections.map((candidate) => candidate.label)).toEqual(['Nations', 'Federal Law', 'Courts and Cases', 'Library', 'Writing', 'About']);
+describe('the sections in the bar under the masthead', () => {
+	it('lists the sections Trevor chose, in order (design/navigation-models, model C; Support and Store apart from About, Nov. 28, 2026)', () => {
+		expect(navigationSections.map((candidate) => candidate.label)).toEqual(['Nations', 'Federal Law', 'Courts and Cases', 'Library', 'Writing', 'About', 'Support', 'Store']);
 	});
 
 	it('links only to pages that exist, apart from those marked soon', () => {
@@ -37,7 +37,7 @@ describe('the six sections in the bar under the masthead', () => {
 	});
 
 	it('gives every section a home page of its own, which its name links to (Trevor, Nov. 27, 2026)', () => {
-		expect(navigationSections.map((candidate) => candidate.home)).toEqual(['/nations', '/laws', '/cases', '/library', '/writing', '/about']);
+		expect(navigationSections.map((candidate) => candidate.home)).toEqual(['/nations', '/laws', '/cases', '/library', '/writing', '/about', '/sponsor', '/store']);
 		for (const candidate of navigationSections) {
 			expect(existsSync(`src/routes${candidate.home}/+page.svelte`), `${candidate.label}: ${candidate.home}`).toBe(true);
 		}
@@ -59,7 +59,10 @@ describe('the six sections in the bar under the masthead', () => {
 		expect(sectionOf('/glossary/adr')).toBe('Library');
 		expect(sectionOf('/stories/some-story')).toBe('Writing');
 		expect(sectionOf('/essays/first')).toBe('Writing');
-		expect(sectionOf('/book')).toBe('About');
+		expect(sectionOf('/book')).toBe('Store');
+		expect(sectionOf('/sponsor/levels')).toBe('Support');
+		expect(sectionOf('/about/project')).toBe('About');
+		expect(sectionOf('/nations/directory')).toBe('Nations');
 		expect(sectionOf('/requests')).toBe('About');
 		expect(sectionOf('/')).toBeUndefined();
 		expect(sectionOf('/nationsx')).toBeUndefined();

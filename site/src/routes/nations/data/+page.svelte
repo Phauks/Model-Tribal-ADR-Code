@@ -29,6 +29,10 @@
 		{/each}
 	</ul>
 	<div class="build">
+		<h2><a href="/laws/by-decade">Federal law by decade</a></h2>
+		<p>How many treaties, statutes, executive orders, regulations and other federal documents were made in each decade.</p>
+	</div>
+	<div class="build">
 		<h2><a href="/nations/data/build">Build a table</a></h2>
 		<p>Pick a data set, choose its columns, filter, group and count, and see it as a table or a chart.</p>
 	</div>

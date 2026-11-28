@@ -1,5 +1,5 @@
 <script lang="ts">
-	// The Library section's own page: its pages, in the groups of its menu (SectionHome.svelte).
+	// The Library section's own page: a picture card for each group of its menu (design/section-homes/landing-v2/3-library.png).
 	import SectionHome from '#lib/components/SectionHome.svelte';
 	import { navigationSections } from '#lib/site-navigation.ts';
 	import type { PageProps } from './$types';
@@ -13,4 +13,4 @@
 	<meta name="description" content="The glossary, biographies, historic maps, source documents, data sets, forms and statistics." />
 </svelte:head>
 
-<SectionHome {section} counts={data.counts} />
+<SectionHome {section} counts={data.counts} lead="Reference works, files to download and what the collection holds." />

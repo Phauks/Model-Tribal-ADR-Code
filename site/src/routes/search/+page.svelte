@@ -480,7 +480,7 @@
 	<noscript>
 		<div class="notice" role="note">
 			<p>
-				Search needs scripts, which are off in this browser. You can still browse the <a href="/nations">nations by first letter or state</a> and the <a href="/glossary">glossary from A to Z</a>.
+				Search needs scripts, which are off in this browser. You can still browse the <a href="/nations/directory">nations by first letter or state</a> and the <a href="/glossary">glossary from A to Z</a>.
 			</p>
 		</div>
 	</noscript>
@@ -488,7 +488,7 @@
 	{#if failed}
 		<div class="notice notice-problem" role="note">
 			<p>
-				The search index could not be loaded. If you are offline, save the site for offline reading in Settings first. You can still browse the <a href="/nations">nations</a>, the <a href="/stories">stories</a> and the <a href="/glossary">glossary</a>.
+				The search index could not be loaded. If you are offline, save the site for offline reading in Settings first. You can still browse the <a href="/nations/directory">nations</a>, the <a href="/stories">stories</a> and the <a href="/glossary">glossary</a>.
 			</p>
 		</div>
 	{/if}
@@ -618,7 +618,7 @@
 			<p>
 				Nothing matches{trimmed ? ` “${trimmed}”` : ''}{filterCount > 0 || filesOnly ? ' with these filters' : ''}.
 				{#if filterCount > 0 || filesOnly}Try removing a filter, or{:else}Check the spelling, try fewer words, or{/if}
-				browse the <a href="/nations">nations</a> and the <a href="/glossary">glossary</a>.
+				browse the <a href="/nations/directory">nations</a> and the <a href="/glossary">glossary</a>.
 			</p>
 		{/if}
 	{/if}

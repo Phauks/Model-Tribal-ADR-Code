@@ -330,7 +330,7 @@ export function lastChangeSentence(change: Pick<ChangeView, 'change' | 'parts' |
 }
 
 /** Pages under /nations/ that list nations rather than being one nation's page. */
-const nationListings = new Set(['data', 'map', 'recourse', 'law', 'timeline', 'federal-offices', 'federal-programs', 'coverage']);
+const nationListings = new Set(['directory', 'data', 'map', 'recourse', 'law', 'timeline', 'federal-offices', 'federal-programs', 'coverage']);
 
 /**
  * The address whose history "Changes to this page" opens, for a page whose
@@ -343,7 +343,7 @@ export function followedPageAddress(path: string): string | undefined {
 	const nation = /^\/nations\/([a-z0-9-]+)$/.exec(address);
 	if (nation) return nationListings.has(nation[1]) ? undefined : address;
 	if (/^\/(stories|glossary|essays|foundations|back-matter|news|licenses)\/[a-z0-9][a-z0-9-]*$/.test(address)) return address;
-	return ['/acknowledgments', '/charter', '/licenses', '/about', '/sponsor'].includes(address) ? address : undefined;
+	return ['/acknowledgments', '/charter', '/licenses', '/about/project', '/sponsor'].includes(address) ? address : undefined;
 }
 
 /** What a nation's page shows above its text, for its Changes view (src/routes/nations/[id]/heading.json). */

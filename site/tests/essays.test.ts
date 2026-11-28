@@ -124,7 +124,7 @@ describe('essays in the bucket', () => {
 
 	it('keeps pages about the site at their own addresses', () => {
 		expect(partOf('about', 'title: "About"\npart: about')).toBe('about');
-		expect(essayPath('about', 'about')).toBe('/about');
+		expect(essayPath('about', 'about')).toBe('/about/project');
 		expect(essayPath('sponsor', 'about')).toBe('/sponsor');
 		expect(identifierFromPath('about', 'sponsor')).toBe('sponsor');
 		expect(essayPath('using-ai', 'about')).toBe('/using-ai');

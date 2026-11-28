@@ -1,31 +1,16 @@
 <script lang="ts">
-	import CountBadge from '#lib/components/CountBadge.svelte';
-	import NationTable from '#lib/components/NationTable.svelte';
+	// The Nations section's own page: a picture card for each group of its menu (Trevor, Nov. 28, 2026, design/section-homes/landing-v2/2-nations.png). The table of every nation is the Directory, at /nations/directory.
+	import SectionHome from '#lib/components/SectionHome.svelte';
+	import { navigationSections } from '#lib/site-navigation.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+	const section = navigationSections.find((item) => item.key === 'nations')!;
 </script>
 
 <svelte:head>
 	<title>Native nations · Tribal Law Project</title>
+	<meta name="description" content="Every Native nation in a table and on a map, each nation’s own law, its history, data, federal offices and programs, and languages." />
 </svelte:head>
 
-<h1>
-	Native nations{#if data.nationGroup}{' '}<CountBadge count={data.nationGroup.rows.length} label="nations" />{/if}
-</h1>
-{#if data.example}
-	<div class="notice" role="note">
-		<p>The nation records are not published yet. The page below is a fictitious example that shows the layout.</p>
-	</div>
-{/if}
-
-{#if data.nationGroup}
-	<!-- No search box: the site search at the top finds a nation, and the Name column filters by name (Trevor, Nov. 24, 2026). -->
-	<NationTable group={data.nationGroup} identifier="nations" regions count={false} />
-{/if}
-
-{#each data.otherGroups as group (group.entityType)}
-	<section aria-labelledby="group-{group.entityType}">
-		<NationTable {group} identifier="nations-{group.entityType}" headingLevel={2} headingIdentifier="group-{group.entityType}" />
-	</section>
-{/each}
+<SectionHome {section} counts={data.counts} lead="Each Native nation, its own law, and where it meets the law of the United States." />
