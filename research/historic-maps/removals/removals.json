@@ -2142,7 +2142,7 @@
 				}
 			],
 			"verified": "fetched",
-			"notes": "Removal enforced by U.S. troops in 1846 (not separately sourced here); many Miami families with reserves stayed in Indiana. Treaty deadline was 1845."
+			"notes": "Removal enforced by U.S. troops in 1846; many Miami families with reserves stayed in Indiana. Treaty deadline was 1845. The enforcement by U.S. troops is sourced in evidence.json; about 161 Miami stayed in Indiana by treaty or joint resolution."
 		},
 		{
 			"id": "miami-1867",
@@ -2726,7 +2726,7 @@
 				}
 			],
 			"verified": "fetched",
-			"notes": "Removal was ordered 1850-52 but the Menominee refused; the 1854 treaty reversed it and set the Wolf River reservation. The quote does not name Crow Wing; the 1854 treaty recital does (\"upon Crow Wing, which had been assigned them\")."
+			"notes": "Removal was ordered 1850-52 but the Menominee refused; the 1854 treaty reversed it and set the Wolf River reservation. The quote does not name Crow Wing; the 1854 treaty recital does (\"upon Crow Wing, which had been assigned them\"). The Menominee never reached Crow Wing; the only move (Nov. 1852) was within Wisconsin."
 		},
 		{
 			"id": "osage-1825",
@@ -3127,7 +3127,7 @@
 				}
 			],
 			"verified": "memory",
-			"notes": "Dates: TSHA gives 1884 (Texas to Indian Territory), OHS says placed on the former Nez Perce reservation in 1885. The 1859 Tonkawa move is in texas-reserves-1859."
+			"notes": "Dates: TSHA gives 1884 (Texas to Indian Territory), OHS says placed on the former Nez Perce reservation in 1885. The 1859 Tonkawa move is in texas-reserves-1859. The destination differs by document (the Iowa reservation, the Quapaw reservation, Oakland); the 1886 annual report puts them at Oakland."
 		},
 		{
 			"id": "ponca-1877",
@@ -3318,12 +3318,12 @@
 			},
 			"legal_basis": [
 				{
-					"citation": "19 Stat. 29",
-					"article": "Act of Apr. 10, 1876, ch. 51 (sale of Nebraska reservation; payment of removal expenses already incurred)"
+					"citation": "19 Stat. 28",
+					"article": "Act of Apr. 10, 1876, ch. 51 (sale of the Nebraska reservation with the tribe’s consent; payment of removal expenses already incurred)"
 				}
 			],
-			"quote": "for their removal to the Indian Territory, and other necessary expenses connected with their establishment and settlement therein",
-			"quote_source": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_019/llsal_019.pdf",
+			"quote": "authorized to cause to be appraised and sold the entire reservation set apart for said Indians, in the State of Nebraska",
+			"quote_source": "https://www.govinfo.gov/content/pkg/STATUTE-19/pdf/STATUTE-19-Pg28.pdf",
 			"sources": [
 				{
 					"url": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_019/llsal_019.pdf",
@@ -3331,7 +3331,7 @@
 				}
 			],
 			"verified": "fetched",
-			"notes": "The move itself (autumn 1874 to 1875) preceded the act, which ratified expenses already incurred; removal was authorised by earlier appropriation language not fetched."
+			"notes": "The move itself (autumn 1874 to 1875) preceded the act, which ratified expenses already incurred; removal was authorised by earlier appropriation language not fetched. Corrected Nov. 28, 2026: the act is 19 Stat. 28 (ch. 51), not 19 Stat. 29; it authorizes a sale with the tribe’s consent and orders no removal. The tribe asked to go (S. Misc. Doc. No. 35, 43d Cong., 2d Sess.)."
 		},
 		{
 			"id": "otoe-1854",
@@ -3717,16 +3717,16 @@
 			},
 			"legal_basis": [
 				{
-					"citation": "12 Stat. 652",
-					"article": "Act of Feb. 16, 1863, ch. 37 (treaties with the Sioux annulled, lands and annuities forfeited)"
+					"citation": "12 Stat. 819",
+					"article": "Act of Mar. 3, 1863, ch. 119, sec. 1 (the President directed to set apart land outside any state for the four bands and to remove them there)"
 				},
 				{
-					"citation": "12 Stat. 784",
-					"article": "Act of Mar. 3, 1863, ch. 99, appropriation for removal of the Sioux of the Mississippi"
+					"citation": "12 Stat. 652",
+					"article": "Act of Feb. 16, 1863, ch. 37 (treaties with the Sioux annulled, lands and annuities forfeited; orders no move)"
 				}
 			],
-			"quote": "to cause the Sioux of the Mississippi to be removed beyond the limits of",
-			"quote_source": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_012/llsal_012.pdf",
+			"quote": "the President is authorized and hereby directed to assign to and set apart for the Sisseton, Wahpaton, Medawakanton, and Wahpakoota bands of Sioux Indians",
+			"quote_source": "https://www.govinfo.gov/content/pkg/STATUTE-12/pdf/STATUTE-12-Pg819.pdf",
 			"sources": [
 				{
 					"url": "https://tile.loc.gov/storage-services/service/ll/llsalvol/llsal_012/llsal_012.pdf",
@@ -3734,7 +3734,7 @@
 				}
 			],
 			"verified": "fetched",
-			"notes": "Destination (Crow Creek) not named in either act; the March 3 appropriation funds removal outside any state. Census 0855 = Crow Creek Reservation; Santee later moved on (dakota-1866)."
+			"notes": "Destination (Crow Creek) not named in either act; the March 3 appropriation funds removal outside any state. Census 0855 = Crow Creek Reservation; Santee later moved on (dakota-1866). Corrected Nov. 28, 2026 from the evidence file: the removal act is 12 Stat. 819 (ch. 119); 12 Stat. 652 annuls the treaties and orders no move, and the earlier quotation (\"to cause the Sioux of the Mississippi to be removed beyond the limits of\") was not found in it."
 		},
 		{
 			"id": "dakota-1866",
@@ -3974,7 +3974,7 @@
 				}
 			],
 			"verified": "fetched",
-			"notes": "Branch: Geronimo's group and men were held at Fort Pickens (Q1438650); both branches left for Mount Vernon Barracks 1887-88. Fort Bowie QID not resolved."
+			"notes": "Branch: Geronimo's group and men were held at Fort Pickens (Q1438650); both branches left for Mount Vernon Barracks 1887-88. Fort Bowie QID not resolved. Geronimo’s men went to Fort Pickens and the women and children to Fort Marion (Oct. 1886); the Fort Apache band, who had not fought, were seized Sept. 7, 1886."
 		},
 		{
 			"id": "chiricahua-1887",
@@ -4217,7 +4217,7 @@
 				}
 			],
 			"verified": "fetched",
-			"notes": "NPS names only 'Indian Territory (Oklahoma)'; Quapaw Agency location from memory and secondary sources."
+			"notes": "NPS names only 'Indian Territory (Oklahoma)'; Quapaw Agency location from memory and secondary sources. The Act of May 27, 1878, ch. 142, 20 Stat. 63, 74 speaks of the Nez Perce \"now held as prisoners of war at Fort Leavenworth\"; arrival at Oakland was June 14, 1879."
 		},
 		{
 			"id": "nezperce-1879-oakland",
@@ -4410,7 +4410,7 @@
 				}
 			],
 			"verified": "fetched",
-			"notes": "Modoc Nation (OK) census code 5740 is near the Quapaw Agency but equivalence not verified, so not given. Some Modoc returned to Klamath after 1909."
+			"notes": "Modoc Nation (OK) census code 5740 is near the Quapaw Agency but equivalence not verified, so not given. Some Modoc returned to Klamath after 1909. By army to Fort McPherson, Nebraska, then to Baxter Springs (Nov. 14-16, 1873) and the Quapaw agency (152 people, Nov. 22, 1873). The 1872 order (July 6, 1872) tried to enforce the 1864 treaty and led to the war."
 		},
 		{
 			"id": "ncheyenne-1877",
@@ -4506,7 +4506,7 @@
 				}
 			],
 			"verified": "memory",
-			"notes": "A flight and recapture (Dull Knife's group held at Fort Robinson, Jan. 1879) rather than an ordered removal; included because requested. Census code 2490 applies to the 1884 reservation destination."
+			"notes": "A flight and recapture (Dull Knife's group held at Fort Robinson, Jan. 1879) rather than an ordered removal; included because requested. Census code 2490 applies to the 1884 reservation destination. The 1878 move north was a flight (Sept. 9, 1878); the 1884 executive order only made the Montana reservation."
 		},
 		{
 			"id": "paiute-1879",
@@ -4649,7 +4649,7 @@
 				}
 			],
 			"verified": "fetched",
-			"notes": "Removal followed the Meeker incident (1879); military escort in 1881. Royce 616/617 dated 1880-03-06 and 1880-09-11 Colorado."
+			"notes": "Removal followed the Meeker incident (1879); the troops and the Aug. 27, 1881 march belong to the Uncompahgre; the White River people moved to Uintah through 1880 and 1881. Royce 616/617 dated 1880-03-06 and 1880-09-11 Colorado."
 		},
 		{
 			"id": "nomecult-1863",

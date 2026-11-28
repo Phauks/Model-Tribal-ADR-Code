@@ -11,6 +11,7 @@
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import type { RequestEvent } from '@sveltejs/kit';
 import { unflatten } from 'devalue';
+import { Problem } from '../problems.ts';
 import { filterPageData, restrictedPageView, type RestrictedPageView } from '../restricted-pages.ts';
 import { timelineKinds } from '../timeline.ts';
 import { workerEnvironment } from './environment.ts';
@@ -80,9 +81,9 @@ export async function restrictedPage(path: string, assets: Assets | undefined, d
 				return { view: found.view, params: paramsOf(found.view, found.match), data: filtered, changed: filtered !== data && JSON.stringify(filtered) !== JSON.stringify(data) };
 			})
 			.catch((problem) => {
-				console.error('A restricted page could not be read', path, problem);
 				memory.delete(key);
-				return undefined;
+				// A page that cannot be filtered is not sent as built (restrictions fail closed).
+				throw new Problem('nation-restrictions.page-data', `The built data of ${path} could not be read to leave out what nations restrict.`, { cause: problem });
 			});
 		// Some pages' data is large (the full timeline's is about 1 MB), so only the last few dozen are kept.
 		if (memory.size >= 40) memory.delete(memory.keys().next().value as string);

@@ -18,6 +18,7 @@
 	import { onMount } from 'svelte';
 	import FileText from '@lucide/svelte/icons/file-text';
 	import { sendProblem } from '#lib/problem-reports.ts';
+	import { pdfDecoderFolder } from '#lib/pdf-decoders.ts';
 
 	interface Props {
 		/** The file's address on this site, /copies/<key>. */
@@ -56,7 +57,8 @@
 				const [pdfjs, worker] = await Promise.all([import('pdfjs-dist'), import('pdfjs-dist/build/pdf.worker.min.mjs?url')]);
 				library = pdfjs;
 				pdfjs.GlobalWorkerOptions.workerSrc = worker.default;
-				pdf = await pdfjs.getDocument({ url: file }).promise;
+				// The image decoders: without them, scanned pages stored as JPEG 2000 or JBIG2 draw blank.
+				pdf = await pdfjs.getDocument({ url: file, wasmUrl: pdfDecoderFolder(pdfjs.version, import.meta.env.DEV) }).promise;
 				if (stopped) return;
 				pageCount = pdf.numPages;
 				onpages?.(pageCount);

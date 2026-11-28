@@ -11,6 +11,7 @@
  *
  * Shared by the build, the Worker and the page, so it must stay plain.
  */
+import { requestLink } from './report-request.ts';
 import { fileName, verifyLink } from './checksums.ts';
 import { copyPagePath, copyPath, fileSize, nameRequestPath, removalRequestPath, type PublicCopy } from './public-copies.ts';
 import { readableDate } from './readable-date.ts';
@@ -127,9 +128,17 @@ function isGovernmentHost(host: string | undefined): boolean {
 }
 
 /** How far a copy's words can be trusted, from where it was published and what kind of file it is. */
-export function trustOf(copy: Pick<PublicCopy, 'mediaType' | 'links'>): TrustLabel {
+export function trustOf(copy: Pick<PublicCopy, 'mediaType' | 'links'> & Partial<Pick<PublicCopy, 'derivedFrom'>>): TrustLabel {
 	const host = hostOf(copy.links.at(-1) ?? copy.links[0] ?? '');
 	const publisher = host ? (publisherName(`https://${host}/`) ?? host) : 'its publisher';
+	if (copy.derivedFrom) {
+		return {
+			kind: 'ocr',
+			label: 'Text from the scan, unchecked',
+			detail: `Taken by computer from the words in the scan ${publisher} published, and not checked word for word. A word can be misread or out of order, and margin notes can fall between lines; check a quotation against the scan.`,
+			verified: false
+		};
+	}
 	if (host === 'static.case.law' || host === 'case.law') {
 		return {
 			kind: 'ocr',
@@ -163,7 +172,7 @@ export interface DocumentFileOptions {
 
 /** The Text card's details for one served copy. */
 export function documentFile(
-	copy: Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'> & Partial<Pick<PublicCopy, 'captured' | 'namesReplaced' | 'pages'>> & { name?: string },
+	copy: Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'> & Partial<Pick<PublicCopy, 'captured' | 'namesReplaced' | 'pages' | 'derivedFrom'>> & { name?: string },
 	options: DocumentFileOptions
 ): DocumentFile {
 	const file = copyPath(copy);
@@ -201,9 +210,9 @@ export function documentFile(
 	};
 }
 
-/** The request form, filled in to offer something a copy lacks, such as a drawing its text refers to (docs/requests.md, "contribute"). */
+/** Request a Change, filled in to offer something a copy lacks, such as a drawing its text refers to (docs/requests.md, "contribute"). */
 export function suggestionPath(key: string): string {
-	return `/requests?${new URLSearchParams({ kind: 'contribute', record: `copies/${key}` }).toString().replaceAll('%2F', '/')}`;
+	return requestLink({ kind: 'contribute', record: `copies/${key}` });
 }
 
 /** Where a copy's reading version is served, without its extension: /copies/reading/<key>, with .json, .md or .html after it. */

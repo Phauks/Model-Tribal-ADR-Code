@@ -90,6 +90,7 @@ function routes(folder = path.resolve('src/routes'), prefix = ''): string[] {
 const notSearched: Record<string, string> = {
 	'/': 'the home page',
 	'/search': 'search itself',
+	'/requests': 'where Request a Change sends its form; a visit goes on to the dialog',
 	'/workspace': 'for signed-in editors only',
 	'/profile': 'a reader’s own account',
 	'/account': 'a reader’s own account',

@@ -1,0 +1,34 @@
+key: fcc-uls-2-5-ghz-license-file-2026-11-22
+kind: dataset
+citation:
+  type: dataset
+  title: Universal Licensing System Complete License File, Broadband Radio Service and Educational Broadband Service (l_mdsitfs.zip)
+  author:
+  - literal: Federal Communications Commission
+  container-title: data.fcc.gov
+  URL: https://data.fcc.gov/download/pub/uls/complete/l_mdsitfs.zip
+  issued:
+    date-parts: [[2026, 11, 22]]
+  accessed:
+    date-parts: [[2026, 11, 27]]
+original_link: https://data.fcc.gov/download/pub/uls/complete/l_mdsitfs.zip
+retrieved: '2026-11-27'
+archives: []
+file:
+  storage_key: fcc/fcc-uls-l-mdsitfs-2026-11-22.zip
+  checksum: d102aa0260e1ee0cce1a85ffe5435c163b69e13b395c53559e44d36c6aee6492
+  media_type: application/zip
+  bytes: 15508521
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Data published by the Federal Communications Commission, a federal agency, so not protected by copyright in the United States (17 U.S.C. § 105).
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-27-land-buy-back-and-spectrum
+notes: 'The FCC''s weekly complete file for the 2.5 GHz band, created Nov. 22, 2026. scripts/tribes/fcc_tribal_spectrum.py keeps every license whose market is a tribal land area (market codes beginning TL, the Rural Tribal Priority Window''s licenses): 426 licenses, 397 active, with call sign, status, grant and expiration dates and licensee, in research/fcc-tribal-spectrum/licenses.csv. Licensees are matched to nations by name and by research/fcc-tribal-spectrum/licensee-nations.csv. Each license''s own page is https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey= followed by its unique system identifier.'

@@ -34,7 +34,7 @@ import { isoOf, nationsCiting, orderNumber, orderPresident, type LawNation } fro
 import { isLawRecord, recordName } from './law-records.ts';
 import { boundsOfCessions, cessionsOfTreaty, treatyMapData } from './land-cessions.ts';
 import { savedCopyFor } from './markdown.ts';
-import { recordDocument, whereToRead } from './record-document.ts';
+import { codeSectionDocument, recordDocument, whereToRead } from './record-document.ts';
 import { presidentByKey } from './supreme-court-people.ts';
 import { partialDate } from './stories.ts';
 import type { SourceEntry } from './source-uses.ts';
@@ -94,17 +94,23 @@ export interface LawMoved {
 /** A section of Title 25 on its own page, with what the site's older record of that section holds: its box, accounts and where the site cites it. */
 export interface SectionPageData extends SectionPage {
 	kept: Pick<LawPage, 'key' | 'name' | 'boxSections' | 'accounts' | 'essays' | 'nations' | 'sources'>[];
-	/** The official text this site keeps for the section, from its older record (us_code_sections.py), when it has one, for the Text card. */
+	/**
+	 * The official text this site keeps for the section, for the Text card: its older record's (us_code_sections.py) when
+	 * that shows the official words, else the section's own copy (title_25_section_texts.py), else its older record's PDF.
+	 */
 	text?: DocumentFile;
 }
 
 export function sectionPageData(slug: string): SectionPageData {
 	const page = sectionPage(slug);
 	const laws = page.records.map(lawContent);
+	const kept = laws.flatMap((law) => (law.text ? [law.text] : []));
+	const words = kept.find((text) => text.shown !== 'pdf' && text.trust.verified);
+	const text = words ?? (page.status === 'in force' ? codeSectionDocument(slug, page.edition, page.name) : undefined) ?? kept[0];
 	return {
 		...page,
 		kept: laws.map((law) => ({ key: law.key, name: law.name, boxSections: law.boxSections, accounts: law.accounts, essays: law.essays, nations: law.nations, sources: law.sources })),
-		text: laws.find((law) => law.text)?.text
+		text
 	};
 }
 
@@ -283,11 +289,13 @@ function lawContent(key: string): LawPage {
 	]
 		// A chapter of the Code needs no "Kind": its outline says what it is.
 		.filter((group) => group.items.length > 0 && !(group.field === 'kind' && /^usc-25-chapter-/.test(key)));
-	// A state statute is linked, not served (decision record 0060): with no saved copy, its official text is the first place to read it.
+	// A state statute's section text is stored and shows in the Text card (decision record 0068, Trevor, Nov. 28, 2026), found by
+	// the record's key since many sections share one chapter or title page. A section whose text is not stored yet (its state's
+	// site refuses scripts) links its official text instead, as the first place to read it.
 	const official = record.kind === 'state-statute' && record.original_link ? `<a href="${escapeHtml(record.original_link)}">${escapeHtml(record.citation.author?.[0]?.literal ?? 'Official text')}</a>` : '';
 	const copy = savedCopyFor(record);
 	const text = recordDocument(record, named.name, copy);
-	// Where to read it: the original publisher first; our copy is in the Text card, and a state statute's official text when the site keeps none.
+	// Where to read it: the original publisher first; our copy is in the Text card, and a state statute's official text when the site stores none.
 	const where = whereToRead(record, text ? '' : official);
 	const title = record.citation.title;
 	const accounts = accountsOf({ record: key });

@@ -17,6 +17,8 @@
  * PDFs and saved web pages, so a private capture (a Westlaw printout, a
  * journal article) is never served, whatever the bucket holds.
  */
+import { requestLink } from './report-request.ts';
+
 
 export interface PublicCopy {
 	/** The file's key in the bucket, which is also its path below /copies/. */
@@ -40,6 +42,12 @@ export interface PublicCopy {
 	 * It has no links: the original still has the names in it.
 	 */
 	namesReplaced?: boolean;
+	/**
+	 * For a text taken from the words in a scan the site serves (the PDF's own
+	 * text layer, or OCR), the scan's key: the Text card shows this text with
+	 * the scan beside it, as unchecked.
+	 */
+	derivedFrom?: string;
 	/** The records the copy belongs to, such as the source record of the case it reports, by key. */
 	records: string[];
 	/**
@@ -72,14 +80,14 @@ export function mediaLabel(mediaType: string): string {
 	return 'PDF';
 }
 
-/** The request form, filled in to ask that a name in a court opinion be replaced with initials (docs/requests.md). */
+/** Request a Change, filled in to ask that a name in a court opinion be replaced with initials (docs/requests.md). */
 export function nameRequestPath(copy: Pick<PublicCopy, 'key'>): string {
-	return `/requests?${new URLSearchParams({ kind: 'replace-name', record: `copies/${copy.key}` }).toString().replaceAll('%2F', '/')}`;
+	return requestLink({ kind: 'replace-name', record: `copies/${copy.key}` });
 }
 
-/** The request form, filled in to ask that a copy be taken down or redacted (docs/requests.md). */
+/** Request a Change, filled in to ask that a copy be taken down or redacted (docs/requests.md). */
 export function removalRequestPath(copy: Pick<PublicCopy, 'key'>): string {
-	return `/requests?${new URLSearchParams({ kind: 'remove', record: `copies/${copy.key}` }).toString().replaceAll('%2F', '/')}`;
+	return requestLink({ kind: 'remove', record: `copies/${copy.key}` });
 }
 
 /**

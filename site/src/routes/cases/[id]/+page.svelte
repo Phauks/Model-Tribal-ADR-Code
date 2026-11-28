@@ -64,7 +64,7 @@
 	{#if data.opinionFile && data.opinionCopy && !data.opinionAsText}
 		<!-- Each opinion in a fold of its own (design/case-opinion-reader/, B), inside the card that names the copy they are read from. -->
 		<DocumentText file={data.opinionFile} heading="Opinions" identifier="opinions" count={data.opinions.length} name={data.name} italic citation={data.citation} firstPage={data.firstPage}>
-			<CaseOpinions caseKey={data.key} opinions={data.opinions} copyPage={copyPagePath({ key: data.opinionCopy })} bare />
+			<CaseOpinions caseKey={data.key} opinions={data.opinions} copyPage={copyPagePath({ key: data.opinionCopy })} />
 		</DocumentText>
 	{:else if data.opinions.length > 0 && !data.opinionAsText}
 		<Collapsible heading="Opinions" identifier="opinions" count={data.opinions.length}>

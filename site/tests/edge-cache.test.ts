@@ -16,7 +16,9 @@ describe('what the edge may keep', () => {
 			'/supreme-court/justices/abe-fortas',
 			'/presidents/andrew-jackson',
 			'/supreme-court/marshall-court',
-			'/supreme-court/portraits/abe-fortas'
+			'/supreme-court/portraits/abe-fortas',
+			'/laws/usc-25/1654',
+			'/laws/usc-25/1654/__data.json'
 		]) {
 			const policy = edgePolicy('GET', path, ok());
 			expect(policy.control, path).toMatch(/^public, max-age=\d+$/);
@@ -73,6 +75,21 @@ describe('what the edge may keep', () => {
 		expect(edgePolicy('GET', path, ok({ vary: '*' })).control).toBe('no-store');
 	});
 
+	it('keeps a record page’s data despite SvelteKit’s own mark, and tells browsers to ask again', () => {
+		const mark = { 'cache-control': 'private, no-store' };
+		const data = edgePolicy('GET', '/cases/worcester-v-georgia/__data.json', ok(mark));
+		expect(data).toEqual({ control: 'public, max-age=86400', tags: ['record-pages'], browser: 'no-cache' });
+		expect(edgePolicy('GET', '/laws/usc-25/1654/__data.json', ok(mark)).browser).toBe('no-cache');
+		// Only SvelteKit's mark on page data gives way: the page itself, other words, and other families stay as they say.
+		expect(edgePolicy('GET', '/cases/worcester-v-georgia', ok(mark)).control).toBe('no-store');
+		expect(edgePolicy('GET', '/cases/worcester-v-georgia/__data.json', ok({ 'cache-control': 'no-store' })).control).toBe('no-store');
+		expect(edgePolicy('GET', '/cases/worcester-v-georgia/__data.json', ok({ 'cache-control': 'private' })).control).toBe('no-store');
+		expect(edgePolicy('GET', '/cases/worcester-v-georgia/__data.json', ok({ ...mark, 'set-cookie': 'a=b' })).control).toBe('no-store');
+		expect(edgePolicy('GET', '/nations/navajo-nation/__data.json', ok(mark)).control).toBe('no-store');
+		expect(edgePolicy('GET', '/workspace/x/__data.json', ok(mark)).control).toBe('no-store');
+		expect(edgePolicy('GET', '/cases/worcester-v-georgia', ok()).browser).toBeUndefined();
+	});
+
 	it('keeps only answers that went well, and only for reading', () => {
 		expect(edgePolicy('GET', '/cases/no-such-case', ok({}, 404)).control).toBe('no-store');
 		expect(edgePolicy('GET', '/cases/worcester-v-georgia', ok({}, 503)).control).toBe('no-store');
@@ -94,6 +111,14 @@ describe('the wrapper around the built Worker', () => {
 		expect(answer.headers.get(edgeHeader)).toMatch(/^public, max-age=\d+$/);
 		expect(answer.headers.get(tagHeader)).toBe('record-pages');
 		expect(await answer.text()).toBe('body');
+	});
+
+	it('lets the edge keep a record page’s data and tells browsers to ask again', async () => {
+		const worker = withEdgeCachePolicy(inner(() => ok({ 'cache-control': 'private, no-store' })));
+		const answer = await worker.fetch(new Request('https://triballawproject.org/cases/worcester-v-georgia/__data.json?x-sveltekit-invalidated=01'), {}, {});
+		expect(answer.headers.get(edgeHeader)).toBe('public, max-age=86400');
+		expect(answer.headers.get('cache-control')).toBe('no-cache');
+		expect(answer.headers.get(tagHeader)).toBe('record-pages');
 	});
 
 	it('tells the edge even on an answer whose headers cannot change', async () => {

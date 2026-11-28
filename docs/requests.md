@@ -20,7 +20,7 @@ This page specifies how a Native nation, or anyone connected to one, asks the pr
 - A "Contribute" link in the main menu.
 - A line at the top of the nations directory, and on a search with no matching nation: "Is your nation missing? Ask to be added".
 
-Each link opens `/requests` with the page and record already filled in.
+Each link opens Request a Change, the masthead's dialog, over the page with the record already filled in: the link ends in `#request=<kind>&record=<record>` (`requestLink` in `site/src/lib/report-request.ts`). It is the site's only way to ask for a change (Trevor, Nov. 28, 2026); the separate request page at `/requests` is gone, and an old `/requests?kind=...&record=...` address redirects to the record's page with the dialog open.
 
 A nation that has claimed its page can also choose, without a request, how the site shows its own laws and its courts' opinions: shown, cited only or hidden, by kind or item by item. Its editors and stewards do this on the team's "Laws and cases" page; it takes effect at once, and the project reads each change afterwards ([decision record 0056](decisions/0056-let-nations-restrict-their-laws-and-opinions.md)).
 

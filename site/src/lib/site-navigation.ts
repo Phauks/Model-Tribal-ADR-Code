@@ -69,6 +69,7 @@ export const navigationIconNames = [
 	'pen-line',
 	'pen-tool',
 	'radar',
+	'route',
 	'receipt',
 	'scale',
 	'scroll',
@@ -122,6 +123,8 @@ export type NavigationGroup = {
 	line?: string;
 	/** The picture at the top of the group's card on the section's home page. */
 	picture?: SectionPicture;
+	/** Sits beneath the other groups, across the whole menu, rather than beside them, and under the cards on the home page (Courts and Cases' Directory, which covers every kind of court). */
+	beneath?: boolean;
 };
 
 export type NavigationSection = {
@@ -145,6 +148,18 @@ export type NavigationSection = {
 	holds: string[];
 };
 
+/** The directory's kinds of court behind each Courts link in the Courts and Cases menu (src/lib/server/courts.ts names the kinds), keyed by the count beside the link. */
+export const courtKindGroups: Record<string, string[]> = {
+	'courts-tribal': ['Tribal court'],
+	'courts-state-and-territorial': ['State court', 'Territorial court'],
+	'courts-federal': ['Federal court']
+};
+
+/** The directory of courts, filtered to one group of kinds through its table's address (DataTable `shareable`, identifier `courts`). */
+function courtsOfKind(key: string): string {
+	return `/courts?${courtKindGroups[key].map((kind) => `courts.kind=${kind.replaceAll(' ', '+')}`).join('&')}`;
+}
+
 export const navigationSections: NavigationSection[] = [
 	{
 		key: 'nations',
@@ -164,6 +179,7 @@ export const navigationSections: NavigationSection[] = [
 				title: 'Explore',
 				links: [
 					{ label: 'Timeline', link: '/nations/timeline', icon: 'history' },
+					{ label: 'Removals', link: '/nations/removals', icon: 'route' },
 					{ label: 'Data and Charts', link: '/nations/data', icon: 'chart-column', count: 'charts' },
 					{ label: 'Federal Offices', link: '/nations/federal-offices', icon: 'landmark' },
 					{ label: 'Self-Governance and Federal Programs', link: '/nations/federal-programs', icon: 'handshake' },
@@ -242,9 +258,30 @@ export const navigationSections: NavigationSection[] = [
 		label: 'Courts and Cases',
 		title: 'Courts and cases',
 		home: '/cases',
+		// One group for each court system, side by side and none above another (Trevor, Nov. 27, 2026: "imposing the supreme court over all the others is a bit imposing, we should try and treat it more fairy"), Tribal courts first; the directory of every court sits beneath them (design/section-homes/nav/2-balanced-menu-and-page.png).
 		groups: [
 			{
+				title: 'Tribal Courts',
+				line: 'Courts of Native nations, deciding under each nation’s own law.',
+				picture: { src: '/pictures/courts-and-cases/tribal-courts-leech-lake.jpg', alt: '', width: 720, height: 400, credit: 'Entrance of the Leech Lake Band of Ojibwe Tribal Justice Center, Cass Lake, Minnesota, photograph by Myotus, August 27, 2023. Wikimedia Commons, CC BY-SA 4.0 (cropped).', source: 'https://commons.wikimedia.org/wiki/File:Leech_Lake_Band_of_Ojibwe-05-Tribal_Justice_Center_entrance.jpg' },
+				links: [
+					{ label: 'Opinions', link: '/stats/tribal-court-opinions', icon: 'file-text', count: 'tribal-court-opinions' },
+					{ label: 'Courts', link: courtsOfKind('courts-tribal'), icon: 'building', count: 'courts-tribal' }
+				]
+			},
+			{
+				title: 'State Courts',
+				line: 'State and territorial courts, in cases that reach Native nations, people and lands.',
+				picture: { src: '/pictures/courts-and-cases/state-courts.jpg', alt: '', width: 720, height: 400, credit: 'New Mexico Supreme Court Building, Santa Fe, photograph by WhisperToMe, released by the photographer to the public domain.', source: 'https://commons.wikimedia.org/wiki/File:NMSupremeCourtSantaFe.JPG' },
+				links: [
+					{ label: 'Opinions', link: '/stats/state-court-opinions', icon: 'building-2', count: 'state-court-opinions' },
+					{ label: 'Courts', link: courtsOfKind('courts-state-and-territorial'), icon: 'building', count: 'courts-state-and-territorial' }
+				]
+			},
+			{
 				title: 'U.S. Supreme Court',
+				line: 'Its cases on Native law, its Justices and each Court by Chief Justice.',
+				picture: { src: '/pictures/courts-and-cases/supreme-court.jpg', alt: '', width: 720, height: 400, credit: 'Supreme Court Building, west front, Washington, D.C., photograph by Carol M. Highsmith, between 1980 and 2006. Carol M. Highsmith Archive, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011631106' },
 				links: [
 					{ label: 'Cases', link: '/stats/supreme-court-cases', icon: 'gavel', count: 'supreme-court-cases' },
 					{ label: 'Courts by Chief Justice', link: '/supreme-court', icon: 'landmark', count: 'supreme-courts' },
@@ -253,17 +290,28 @@ export const navigationSections: NavigationSection[] = [
 				]
 			},
 			{
-				title: 'Other Courts',
+				title: 'Other Federal Courts',
+				line: 'District courts, courts of appeals, the Court of Claims and others.',
+				picture: { src: '/pictures/courts-and-cases/federal-courts.jpg', alt: '', width: 720, height: 400, credit: 'Robert T. Matsui United States Courthouse, Sacramento, California, photograph by Carol M. Highsmith, between 1980 and 2006. Carol M. Highsmith Archive, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011634780' },
 				links: [
-					{ label: 'Tribal Court Opinions', link: '/stats/tribal-court-opinions', icon: 'file-text', count: 'tribal-court-opinions' },
-					{ label: 'State Court Opinions', link: '/stats/state-court-opinions', icon: 'building-2', count: 'state-court-opinions' },
+					{ label: 'Cases', link: '/stats/other-court-cases', icon: 'folder', count: 'other-court-cases' },
+					{ label: 'Courts', link: courtsOfKind('courts-federal'), icon: 'building', count: 'courts-federal' }
+				]
+			},
+			{
+				title: 'Federal Agency Boards',
+				line: 'Appeals and final decisions made inside federal agencies.',
+				picture: { src: '/pictures/federal-law/agencies.jpg', alt: '', width: 720, height: 400, credit: 'Department of the Interior headquarters, Washington, D.C., photograph by Carol M. Highsmith, between 1980 and 2006. Carol M. Highsmith Archive, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011634641' },
+				links: [
 					{ label: 'Interior Board of Indian Appeals', link: '/stats/interior-board-of-indian-appeals', icon: 'scale', count: 'interior-board-of-indian-appeals' },
-					{ label: 'Other Court Cases', link: '/stats/other-court-cases', icon: 'folder', count: 'other-court-cases' }
+					{ label: 'Gaming Commission Decisions', link: '/stats/national-indian-gaming-commission?national-indian-gaming-commission.detail=Commission+final+decision', icon: 'dices', count: 'gaming-commission-final-decisions' }
 				]
 			},
 			{
 				title: 'Directory',
-				links: [{ label: 'Courts', link: '/courts', icon: 'building', count: 'courts' }]
+				line: 'Every court named on this site, with its kind, nation, opinions and cases.',
+				beneath: true,
+				links: [{ label: 'All Courts', link: '/courts', icon: 'building', count: 'courts' }]
 			}
 		],
 		holds: ['/cases', '/stats/supreme-courts', '/stats/courts']
@@ -346,13 +394,13 @@ export const navigationSections: NavigationSection[] = [
 			{
 				title: 'Take Part',
 				links: [
-					{ label: 'Contribute', link: '/requests?kind=contribute', icon: 'hand-heart' },
+					{ label: 'Contribute', link: '#request=contribute', icon: 'hand-heart' },
 					{ label: 'Sponsorship', link: '/sponsor', icon: 'heart' },
 					{ label: 'Store', link: '/store', icon: 'shopping-bag' }
 				]
 			}
 		],
-		holds: ['/requests', '/sponsors', '/sponsorship', '/book', '/orders', '/contributors', '/acknowledgments', '/charter', '/changelog', '/using-ai', '/join']
+		holds: ['/sponsors', '/sponsorship', '/book', '/orders', '/contributors', '/acknowledgments', '/charter', '/changelog', '/using-ai', '/join']
 	}
 ];
 
@@ -378,7 +426,7 @@ export function navigationSectionOf(path: string): NavigationSection | undefined
 
 /**
  * The link in a section's menu that is the page being read: an exact match,
- * with its query where the link has one (Contribute is /requests?kind=contribute).
+ * with its query where the link has one.
  */
 export function currentNavigationLink(section: NavigationSection | undefined, path: string, search: string): NavigationLink | undefined {
 	if (!section) return undefined;

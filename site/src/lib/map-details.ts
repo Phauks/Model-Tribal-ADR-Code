@@ -8,15 +8,30 @@ import type { RecognitionBadge } from './recognition-badges.ts';
 export type MapDetailsNation = { id: string; name: string; href: string };
 
 /** A link in a fact's value; one with no address is plain text. */
-export type MapDetailsLink = { label: string; href?: string };
+export type MapDetailsLink = { label: string; href?: string; external?: boolean };
+/** A line of a fact written under its name, such as an office's address or the office that serves a nation and the part of it under that. */
+export type MapDetailsBlockLine = { text: string; href?: string; small?: boolean };
 
 /** A picture in a fact's value, which opens in the image viewer, such as one of Royce's map sheets. */
 export type MapDetailsPicture = { label: string; src: string; href: string; original?: string };
 
 /**
- * A fact in the details. A count of nations opens to those nations (mockup 3A). A fact may instead be links, written after each other with commas and then the value, or pictures (historic maps mockup 2A). A link "after" sits on its own line under the value, as the 1909 map's "See the original map" under its source (1909 reservations mockup 2).
+ * A fact in the details. A count of nations opens to those nations (mockup 3A). A fact may instead be links, written after each other with commas and then the value, or pictures (historic maps mockup 2A). A link "after" sits on its own line under the value, as the 1909 map's "See the original map" under its source (1909 reservations mockup 2). Counts are stacked labels each with its count in a badge, as a removal's evidence (Removals mockup v2).
  */
-export type MapDetailsLine = { label: string; value: string; nations?: MapDetailsNation[]; links?: MapDetailsLink[]; pictures?: MapDetailsPicture[]; after?: { label: string; href: string } };
+export type MapDetailsLine = {
+	label: string;
+	value: string;
+	nations?: MapDetailsNation[];
+	/** What a count's list holds, when not nations, such as a region's agencies. */
+	noun?: { one: string; many: string };
+	links?: MapDetailsLink[];
+	pictures?: MapDetailsPicture[];
+	after?: { label: string; href: string };
+	/** Lines written under the fact's name rather than beside it (Federal offices mockup, 2026-11-28). */
+	block?: MapDetailsBlockLine[];
+	/** Counts written each on its own line with a badge, such as a removal's records of the order, the move and the force. */
+	counts?: { label: string; count: number }[];
+};
 
 /** A line of a nation's contact, from its preview file (/nations/<id>/preview.json). */
 export type MapDetailsContact = { label: string; lines: string[]; link?: string; external?: boolean };
@@ -27,6 +42,10 @@ export type MapDetails = {
 	/** The nation the details are about, when they are about one. */
 	nation?: string;
 	badges?: RecognitionBadge[];
+	/** A word in a pill under the title, such as a removal's kind of move (Removals mockup v2). */
+	pill?: string;
+	/** A sentence under the title, such as a removal's finding. */
+	summary?: string;
 	lines: MapDetailsLine[];
 	/** The nations the place's entry names, which a place with one nation uses to open that nation's details. */
 	nations?: { id: string; name: string; badges?: RecognitionBadge[] }[];

@@ -49,6 +49,8 @@ import { recordPageLink } from '#lib/server/law-records.ts';
 import { agencyRows, awardsDates, awardsFiscalYear, awardsSource, dollars, nationAwards, recipientPage } from '#lib/server/federal-awards.ts';
 import { builderAreaName, surveyFigures, surveyPeople, surveyRows, surveySource, surveyYears } from '#lib/server/census-areas.ts';
 import { builderPath } from '#lib/table-builder.ts';
+import { finalReportSource, landLines, locationsByNation, salesTableSource, settlementCaseSource, statuteSource } from '#lib/server/land-buy-back.ts';
+import { licenseFileSource, licenseNote, licensePage, licensesByNation, orderSource } from '#lib/server/tribal-spectrum.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => [
@@ -75,6 +77,8 @@ interface FactItem {
 	citations?: CitationMark[];
 	/** An estimate's margin of error, shown after it as "± 5" (Census figures). */
 	margin?: string;
+	/** In a wide group, the value on its own line under its label, such as a legal basis (FactGroups.svelte). */
+	below?: boolean;
 }
 
 const opinionsHeading = 'Court opinions';
@@ -314,6 +318,8 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 				cited(sources, 'Member of', fact, { text: fact.organization, link: organizationHome(fact) })
 			)
 		),
+		...spectrumGroups(record, sources),
+		...landBuyBackGroups(record, sources),
 		...awardsGroups(record, sources),
 		...censusGroups(record, sources)
 	];
@@ -457,6 +463,65 @@ function censusGroups(record: NationRecord, sources: SourceUses): FactGroup[] {
 			items: [{ text: 'All Census figures for these areas', link: censusBuilderLink('nations', [displayName(record.names.official)]) }]
 		}
 	];
+}
+
+/**
+ * The 2.5 GHz licenses the FCC granted the nation, or its own company or
+ * utility, over its rural tribal lands (src/lib/server/tribal-spectrum.ts):
+ * one line for each call sign, linked to the license's FCC page, with its
+ * dates under it, and the order that opened the Rural Tribal Priority Window
+ * as the legal basis. A nation with no active license has no group.
+ */
+function spectrumGroups(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const licenses = licensesByNation().get(record.id) ?? [];
+	if (licenses.length === 0) return [];
+	const label = licenses.length === 1 ? '2.5 GHz spectrum license' : '2.5 GHz spectrum licenses';
+	// One locator for all the call signs, so neighboring lines share one marker, on the last.
+	const where = `HD.dat and EN.dat, call ${licenses.length === 1 ? 'sign' : 'signs'} ${licenses.map((license) => license.call_sign).join(', ')}`;
+	const items: FactItem[] = licenses.map((license) => {
+		const citations: CitationMark[] = [];
+		sources.cite(licenseFileSource, { section: label, text: `${license.call_sign}: ${licenseNote(license)}`, where }, citations);
+		return { text: license.call_sign, link: licensePage(license), note: licenseNote(license), citations };
+	});
+	items.push({ label: 'Legal basis', text: 'FCC Rural Tribal Priority Window (2019)', link: recordPageLink(orderSource), below: true });
+	return [{ field: 'spectrum-licenses', label, wide: true, items }];
+}
+
+/**
+ * What the Land Buy-Back Program for Tribal Nations bought back on the
+ * nation's land (src/lib/server/land-buy-back.ts), a full-width group like a
+ * Census area's: the equivalent acres restored to tribal trust, with the
+ * years of the offers under them, then the fractional interests bought and
+ * the amount paid, each with a line that says more about the number, and the
+ * Program's legal basis. Wind River's figures are the whole reservation's and
+ * show on both of its nations' pages. A nation with no location has no group.
+ */
+function landBuyBackGroups(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const locations = locationsByNation().get(record.id) ?? [];
+	if (locations.length === 0) return [];
+	const label = 'Land Buy-Back Program';
+	const names = new Map(nations().map((nation) => [nation.id, displayName(nation.names.official)]));
+	return locations.map((row, index) => {
+		const others = row.nations.split(';').filter((nation) => nation && nation !== record.id).map((nation) => names.get(nation) ?? nation);
+		const items: FactItem[] = landLines(row, others).map((line) => {
+			const citations: CitationMark[] = [];
+			const text = [line.label, line.text].filter(Boolean).join(': ');
+			if (line.from.includes('final')) {
+				const printed = row.final_report_name.includes(',') ? 'the row for six locations together' : `the figures printed beside “${row.final_report_name}”`;
+				sources.cite(finalReportSource, { section: label, text, where: `pp. 28–29, ${printed}` }, citations);
+			}
+			if (line.from.includes('table')) sources.cite(salesTableSource, { section: label, text, where: `row “${row.location}”` }, citations);
+			return { label: line.label, text: line.text, note: line.note, citations };
+		});
+		items.push({
+			label: 'Legal basis',
+			text: 'Claims Resolution Act of 2010',
+			link: recordPageLink(statuteSource),
+			below: true,
+			detailParts: [{ text: 'Carries out the ' }, { text: 'Cobell', link: recordPageLink(settlementCaseSource), italic: true }, { text: ' settlement.' }]
+		});
+		return { field: index === 0 ? 'land-buy-back' : `land-buy-back-${index}`, label, wide: true, items };
+	});
 }
 
 const documentsLabel = 'Where the nation publishes its laws';

@@ -59,19 +59,19 @@
 	/**
 	 * "Request a Change" opens a dialog with the request form (RequestChange),
 	 * where the reader picks what is wrong, including "Add a nation that is
-	 * missing"; without scripts it goes to the request page. On a nation or
+	 * missing". It is the site's only way to ask for a change. On a nation or
 	 * glossary page, or a story's page, it names that record, so the report
 	 * says which page it is
 	 * about. Trevor asked on Nov. 22, 2026 for this one link in the masthead in
 	 * place of a link on each page.
 	 */
-	const reportLink = $derived.by(() => {
+	const pageRecord = $derived.by(() => {
 		const path = page.url.pathname;
 		const nation = /^\/nations\/([^/]+)$/.exec(path)?.[1];
 		const term = /^\/glossary\/([^/]+)$/.exec(path)?.[1];
 		const story = /^\/stories\/([^/]+)$/.exec(path)?.[1];
 		const record =
-			nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'federal-programs' && nation !== 'coverage'
+			nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'federal-programs' && nation !== 'coverage' && nation !== 'removals'
 				? `tribes/${nation}`
 				: term
 					? `glossary/${term}`
@@ -80,7 +80,7 @@
 						: path === '/glossary' || path === '/stories'
 							? path.slice(1)
 							: undefined;
-		return record ? `/requests?record=${encodeURIComponent(record).replaceAll('%2F', '/')}` : '/requests';
+		return record ?? '';
 	});
 
 	let search: SiteSearch | undefined = $state();
@@ -149,7 +149,7 @@
 			</button>
 			<div class="masthead-more" id="masthead-more" popover>
 				<span class="page-controls-panel"><PageControls place="panel" /></span>
-				<RequestChange link={reportLink} />
+				<RequestChange record={pageRecord} />
 				<StarButton />
 				<SaveOfflineButton />
 				<FollowButton />
@@ -284,12 +284,13 @@
 		}
 
 		/* On a page with no column, such as the home page, there is nothing to
-		   hide or show; the button keeps its place so the name does not move. */
+		   hide or show, so the button leaves no gap and the name sits at the
+		   page's usual margin (Trevor, Nov. 28, 2026). */
 		:global(:root:has(.sidebar-wide.empty)) .sidebar-toggle {
-			visibility: hidden;
+			display: none;
 		}
 
-		:global(:root[data-scripts='on']) .masthead-row {
+		:global(:root[data-scripts='on']:not(:has(.sidebar-wide.empty))) .masthead-row {
 			padding-left: var(--space-2);
 		}
 	}

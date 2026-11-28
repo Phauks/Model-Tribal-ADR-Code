@@ -28,7 +28,9 @@
 	With no copy, the section says "None Identified", or shows what the page
 	gives it instead (the children snippet). A page can also give the card a
 	body of its own, as a case's opinions do (CaseOpinions.svelte), and keep
-	the header, footer and tools.
+	the header, footer and tools, and the View toolbar with the scan beside
+	that body when the copy has one (Trevor, Nov. 28, 2026: "cases should use
+	universal text component we built").
 -->
 <script lang="ts">
 	import { onMount, tick, type Snippet } from 'svelte';
@@ -497,7 +499,13 @@
 					</p>
 				{/if}
 				{#if children}
-					<div class="own-body">{@render children()}</div>
+					<!-- The page's own body, such as a case's opinions, in the text's place: beside the scan, as a text is. -->
+					{#if view !== 'scan' || !file.scan}<div class="own-body reading-column">{@render children()}</div>{/if}
+					{#if file.scan && view !== 'text'}
+						<div class="scan-column">
+							<PdfViewer file={file.scan.file} title={file.title} name={file.scan.name} startPage={file.scan.page} />
+						</div>
+					{/if}
 				{:else if file.shown === 'pdf'}
 					<PdfViewer file={file.file} title={file.title} name={file.name} onpages={(count) => (pdfPages = count)} />
 					<p class="print-only">This copy is at {file.file} on this site{#if file.publishedAt}, and was published at {file.publishedAt.link}{/if}.</p>

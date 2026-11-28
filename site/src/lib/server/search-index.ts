@@ -39,6 +39,8 @@ import { glossaryTermSummaries, publishedGlossary } from './glossary-entries.ts'
 import { recordName, recordPageLink } from './law-records.ts';
 import { nationIndexRows } from './nation-index.ts';
 import { publishedStories, storySummaries, storyTags } from './stories.ts';
+import { removalJourneys } from './removals.ts';
+import { journeyYears } from '../removal-journeys.ts';
 
 /** The site's own pages a reader may look for by name. */
 export const sitePages: SearchEntry[] = [
@@ -46,6 +48,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Map of Native Nations', also: ['Map', 'Bureau of Indian Affairs Regions', 'Land Areas'], detail: 'Nations by State, Bureau of Indian Affairs Regions and Land Areas', link: '/nations/map' },
 	{ kind: 'page', title: 'Coverage', also: ['None Identified', 'What we have found'], detail: 'What each nation page has found so far', link: '/nations/coverage' },
 	{ kind: 'page', title: 'Timeline', also: ['History', 'Laws by year', 'Federal Indian policy'], detail: 'Laws, treaties, cases and opinions by year', link: '/nations/timeline' },
+	{ kind: 'page', title: 'Removals', also: ['Removal', 'Indian Removal', 'Trail of Tears', 'Forced removal', 'Journeys'], detail: 'Where the United States moved Native nations, and the record of each move', link: '/nations/removals' },
 	{ kind: 'page', title: 'Find the law', also: ['Laws', 'Codes', 'Constitutions'], detail: 'A nation\'s laws, codes and court rules', link: '/nations/law' },
 	{ kind: 'page', title: 'Find recourse', also: ['Recourse', 'Remedies', 'Dispute resolution', 'Peacemaking'], detail: 'Where a dispute can be heard, by nation and method', link: '/nations/recourse' },
 	{ kind: 'page', title: 'Federal offices', also: ['Bureau of Indian Affairs', 'BIA', 'Indian Health Service', 'IHS', 'Agencies'], detail: 'Bureau of Indian Affairs regions and Indian Health Service areas', link: '/nations/federal-offices' },
@@ -87,7 +90,6 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Acknowledgments', also: ['Credits', 'Land acknowledgment', 'Southern Paiute', 'Nuwuvi'], detail: 'Credits, and the land where this work was written', link: '/acknowledgments' },
 	{ kind: 'page', title: 'Changelog', also: ['Versions', 'What changed'], detail: 'What changed in each version', link: '/changelog' },
 	{ kind: 'page', title: 'Recent changes', also: ['Changes', 'Edits', 'Page history'], link: '/changes' },
-	{ kind: 'page', title: 'Make a request', also: ['Correct', 'Remove', 'Request a Change', 'Add a nation', 'Contribute'], detail: 'Correct, restrict, remove, add or contribute', link: '/requests' },
 	{ kind: 'page', title: 'Help with this work', also: ['Join', 'Volunteer'], link: '/join' },
 	{ kind: 'page', title: 'Project charter', also: ['Charter', 'CARE principles', 'Commitments'], detail: 'How knowledge is gathered, credited, published and protected here', link: '/charter' },
 	{ kind: 'page', title: 'Licenses by material', also: ['License', 'Licenses', 'Copyright', 'CC0', 'CC BY'], detail: 'Which license covers each part of the site, the code and the book', link: '/licenses' },
@@ -212,6 +214,8 @@ function otherPages(): SearchEntry[] {
 			detail: 'Federal office',
 			link: `/nations/federal-offices/indian-health-service/${office.key}`
 		})),
+		// Each removal's page, by the people moved and the years (src/lib/server/removals.ts).
+		...removalJourneys().map((journey) => ({ kind: 'reference' as const, title: `${journey.people} removal (${journeyYears(journey.years)})`, also: [journey.peopleFull], detail: 'Removals', link: `/nations/removals/${journey.id}` })),
 		...dataTopicList.map((topic) => ({ kind: 'reference' as const, title: topic.title, detail: 'Data and charts', link: dataTopicLink(topic.identifier) })),
 		...listedCollections().map((collection) => ({ kind: 'reference' as const, title: collection.title, detail: 'Statistics', link: collectionPath(collection.identifier) }))
 	];

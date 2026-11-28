@@ -4,7 +4,7 @@
  * Register documents, other federal documents, tribal court opinions by
  * nation, and nations' documents by the first letter of the nation's name.
  */
-import { displayName } from '../nation-labels.ts';
+import { displayName, stateName } from '../nation-labels.ts';
 import {
 	copyDetailsShard,
 	copyPagePath,
@@ -194,6 +194,7 @@ const fixedGroups: Record<string, string> = {
 	'indian-affairs-films': 'Indian Affairs films',
 	...Object.fromEntries(repatriationLists.map((list) => [list.slug, list.title])),
 	...Object.fromEntries(claimsVolumeRanges.map((range) => [claimsSlug(range), `Indian Claims Commission decisions, volumes ${range[0]} to ${range[1]}`])),
+	'united-states-code': 'United States Code sections',
 	'other-federal': 'Other federal documents',
 	// Published state and territorial court opinions (decision record 0060).
 	'state-court-opinions': 'State court opinions',
@@ -275,6 +276,9 @@ const nationTopics = new Set(['constitutions', 'tribal-law', 'caselaw-access-pro
 /** Tribal court opinions (decision record 0047) are listed one nation at a time. */
 const opinionPrefix = 'opinions-';
 
+/** State statutes are listed one state at a time. */
+const statePrefix = 'state-statutes-';
+
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
 	if (copy.topic === 'ibia-decisions') return boardGroup(copy);
@@ -301,6 +305,10 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'crs') return 'congressional-research-service';
 	if (copy.topic === 'solicitor-opinions') return 'solicitor-opinions';
 	if (copy.topic === 'national-archives-films') return 'indian-affairs-films';
+	// The state statutes (decision record 0068) and the sections of the United States Code each have lists of their own:
+	// in the other federal documents' list they made a 49 MiB page, over Cloudflare's 25 MiB limit for one file (Nov. 28, 2026).
+	if (copy.topic === 'state-statutes') return `${statePrefix}${copy.key.split('/')[1] ?? 'other'}`;
+	if (copy.topic.startsWith('united-states-code')) return 'united-states-code';
 	return 'other-federal';
 }
 
@@ -312,6 +320,7 @@ function groupTitle(slug: string, names = nationNames()): string {
 		const name = names.get(slug.slice(opinionPrefix.length));
 		return name ? `Tribal court opinions: ${name}` : 'Tribal court opinions';
 	}
+	if (slug.startsWith(statePrefix)) return `State statutes: ${stateName(slug.slice(statePrefix.length).toUpperCase())}`;
 	if (slug === 'other-nations') return 'Nations’ documents, other names';
 	return `Nations’ documents: ${slug.toUpperCase()}`;
 }
@@ -347,7 +356,9 @@ export function copyGroups(): CopyGroup[] {
 			? Object.keys(fixedGroups).indexOf(pageOf(slug)?.group ?? '') + (pageOf(slug)?.part ?? 1) / 100
 			: fixedGroups[slug]
 				? Object.keys(fixedGroups).indexOf(slug)
-				: slug.startsWith(opinionPrefix)
+				: slug.startsWith(statePrefix)
+					? Object.keys(fixedGroups).indexOf('state-court-opinions') + 0.5
+					: slug.startsWith(opinionPrefix)
 					? Object.keys(fixedGroups).indexOf('gaming-commission')
 					: slug === 'other-nations'
 						? 1000
