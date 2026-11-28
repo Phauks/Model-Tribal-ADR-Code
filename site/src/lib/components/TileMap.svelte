@@ -37,7 +37,7 @@
 		| { kind: 'border'; id: string; name: string; territory: string; from: number; to: number; change: string; citation: string }
 		| { kind: 'homeland'; area: number; named: string }
 		| { kind: 'route'; routes: string }
-		| { kind: 'reservation1909'; n: number; id: string; name: string; status: string; nations: string[]; label: boolean; neighbors: string[]; placed: boolean; panel: string; note: string; review: string };
+		| { kind: 'reservation1909'; n: number; id: string; name: string; status: string; nations: string[]; label: boolean; neighbors: string[]; placed: boolean; panel: string; note: string; review: string; surveyed: boolean; boundary: string };
 
 	/** The base map and switches are remembered on the device, and every map on the site shares them. */
 	const baseStorage = 'map-base';
@@ -1363,7 +1363,9 @@
 						placed: Number(properties.placed) === 1,
 						panel: String(properties.panel ?? ''),
 						note: String(properties.note ?? ''),
-						review: String(properties.review ?? '')
+						review: String(properties.review ?? ''),
+						surveyed: Number(properties.surveyed) === 1,
+						boundary: String(properties.boundary ?? '')
 					});
 					const history: Record<string, (properties: Record<string, unknown>) => TileMapFeature> = {
 						routes: (properties) => ({ kind: 'route', routes: String(properties.routes ?? '') }),
