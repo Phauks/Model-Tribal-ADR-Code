@@ -404,6 +404,11 @@
 	}
 
 	/* Each group takes room by the length of its links, so long names wrap least. */
+	/* A section with one group (Support, Store) keeps its links to a column's width rather than across the whole panel. */
+	.menu-group:only-child ul {
+		max-width: 22rem;
+	}
+
 	.menu-group {
 		flex: 1 1 auto;
 		min-width: 0;

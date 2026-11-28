@@ -1,7 +1,7 @@
 <script lang="ts">
-	// The Federal law section's own page (Home A in picture cards, Trevor, Nov. 27, 2026, mockup home-A2): a card for each group of its menu, by who made the law, then how many documents each made in each decade.
-	import ColumnChart from '#lib/components/ColumnChart.svelte';
-	import SectionCards, { sectionCardsOf } from '#lib/components/SectionCards.svelte';
+	// The Federal law section's own page (Home A in picture cards, Trevor, Nov. 27, 2026, mockup home-A2): a card for each group of its menu, by who made the law, each with its years. The decade chart is a page of its own, /laws/by-decade, since a section's home is for finding the way only (Trevor, Nov. 28, 2026).
+	import SectionHome from '#lib/components/SectionHome.svelte';
+	import { sectionCardsOf } from '#lib/components/SectionCards.svelte';
 	import { navigationSections } from '#lib/site-navigation.ts';
 	import type { PageProps } from './$types';
 
@@ -20,24 +20,4 @@
 	<meta name="description" content="The United States’ treaties, statutes, the U.S. Code’s Title 25, executive orders, regulations, Federal Register notices and agency records about Native nations." />
 </svelte:head>
 
-<div class="federal-home">
-	<h1>{section.title}</h1>
-	<p class="lead">What the United States has made about Native nations{data.home.years ? `, ${data.home.years},` : ''} by who made it.</p>
-	<SectionCards {cards} swatches>
-		{#snippet footer()}
-			<ColumnChart chart={data.home.chart} />
-		{/snippet}
-	</SectionCards>
-</div>
-
-<style>
-	.federal-home h1 {
-		margin-bottom: var(--space-1);
-	}
-
-	.lead {
-		margin: 0 0 var(--space-5);
-		color: var(--color-ink-muted);
-		font-size: 1.05rem;
-	}
-</style>
+<SectionHome {section} {cards} lead="What the United States has made about Native nations{data.home.years ? `, ${data.home.years},` : ''} by who made it." />

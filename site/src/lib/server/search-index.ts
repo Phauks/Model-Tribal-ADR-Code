@@ -42,7 +42,8 @@ import { publishedStories, storySummaries, storyTags } from './stories.ts';
 
 /** The site's own pages a reader may look for by name. */
 export const sitePages: SearchEntry[] = [
-	{ kind: 'page', title: 'Native nations', also: ['Nations', 'Tribes', 'Directory'], detail: 'Every nation and community, by first letter and by state', link: '/nations' },
+	{ kind: 'page', title: 'Native nations', also: ['Nations', 'Tribes'], detail: 'The nations’ directory and map, their own law, history, data and languages', link: '/nations' },
+	{ kind: 'page', title: 'Directory of Native nations', also: ['Directory', 'All nations', 'List of tribes'], detail: 'Every nation and community, by first letter and by state', link: '/nations/directory' },
 	{ kind: 'page', title: 'Map of Native Nations', also: ['Map', 'Bureau of Indian Affairs Regions', 'Land Areas'], detail: 'Nations by State, Bureau of Indian Affairs Regions and Land Areas', link: '/nations/map' },
 	{ kind: 'page', title: 'Coverage', also: ['None Identified', 'What we have found'], detail: 'What each nation page has found so far', link: '/nations/coverage' },
 	{ kind: 'page', title: 'Timeline', also: ['History', 'Laws by year', 'Federal Indian policy'], detail: 'Laws, treaties, cases and opinions by year', link: '/nations/timeline' },
@@ -52,6 +53,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Self-governance and federal programs', also: ['Self-governance', 'Self-determination', '638 contracts', 'Compacts', 'ISDEAA', '477 plans', 'Indian Housing Block Grants'], detail: 'Federal programs that nations run themselves, and who takes part', link: '/nations/federal-programs' },
 	{ kind: 'page', title: 'Languages', also: ['Heritage languages', 'Native languages', 'Language families', 'ISO 639-3', 'Glottolog'], detail: 'The languages nations name, with their codes, dialects, grammars and dictionaries', link: '/languages' },
 	{ kind: 'page', title: 'Data and charts', also: ['Data', 'Charts', 'Statistics'], link: '/nations/data' },
+	{ kind: 'page', title: 'Federal law by decade', also: ['Federal law chart', 'Documents by decade'], detail: 'How many federal documents about Native nations were made in each decade, by who made them', link: '/laws/by-decade' },
 	{ kind: 'page', title: 'Build a table', also: ['Table builder', 'Compare nations', 'Export'], link: '/nations/data/build' },
 	{ kind: 'page', title: 'Stories', also: ['Traditional stories', 'Peacemaking stories', 'Treaty stories', 'Accounts', 'Teachings'], detail: 'Stories about law, justice and governance, in the words of the nations and people who tell them', link: '/stories' },
 	{ kind: 'page', title: 'Glossary', also: ['Terms', 'Definitions'], detail: 'Defined terms, and how to use them', link: '/glossary' },
@@ -78,7 +80,8 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Store', also: ['Shop', 'Buy'], link: '/store' },
 	{ kind: 'page', title: 'Verify a file', also: ['Checksum', 'SHA-256', 'Hash', 'Check a download'], detail: 'Check that a file you downloaded is the one published here', link: '/verify' },
 	{ kind: 'page', title: 'Events', also: ['Calendar', 'Talks', 'Workshops', 'Register', 'Continuing legal education'], detail: 'Talks, panels, workshops and gatherings, and how to register', link: '/events' },
-	{ kind: 'page', title: 'About', also: ['About this work'], link: '/about' },
+	{ kind: 'page', title: 'About', also: ['Take part'], detail: 'The project, its news and events, and how to take part', link: '/about' },
+	{ kind: 'page', title: 'About the project', also: ['About this work'], link: '/about/project' },
 	{ kind: 'page', title: 'Sponsorship', also: ['Sponsor', 'Funding', 'Support', 'Donate'], detail: 'How organizations can help fund this work', link: '/sponsor' },
 	{ kind: 'page', title: 'Sponsorship levels', also: ['Sponsor levels', 'Monthly gift', 'Yearly gift'], link: '/sponsor/levels' },
 	{ kind: 'page', title: 'Using AI with Tribal Law', also: ['AI', 'Artificial intelligence', 'ChatGPT', 'Chatbot'], detail: 'How to use AI tools safely when learning about a nation\'s law', link: '/using-ai' },

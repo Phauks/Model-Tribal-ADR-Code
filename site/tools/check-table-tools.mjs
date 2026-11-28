@@ -91,11 +91,11 @@ for (const viewport of viewports) {
 	const at = (what) => `${what} (${viewport.name})`;
 
 	// The Native nations table: no search box, a filter on each column header.
-	await page.goto(`${base}/nations`, { waitUntil: 'load' });
+	await page.goto(`${base}/nations/directory`, { waitUntil: 'load' });
 	const nations = page.locator('.data-table').first();
 	await nations.locator('.filter-button').first().waitFor();
-	check((await nations.locator('input[type="search"]').count()) === 0, at('/nations: the table still has its own search box'));
-	check((await page.getByRole('button', { name: 'Add filter' }).count()) === 0, at('/nations: the "Add filter" bar is still there'));
+	check((await nations.locator('input[type="search"]').count()) === 0, at('/nations/directory: the table still has its own search box'));
+	check((await page.getByRole('button', { name: 'Add filter' }).count()) === 0, at('/nations/directory: the "Add filter" bar is still there'));
 	for (const header of ['Name', 'Recognition', 'States', 'Region', 'Review status']) {
 		check((await nations.getByRole('button', { name: `Filter ${header}`, exact: true }).count()) === 1, at(`/nations: the ${header} column has no filter on its header`));
 	}
@@ -104,11 +104,11 @@ for (const viewport of viewports) {
 
 	// Tick one value: the rows narrow, the funnel shows it, and the address keeps it.
 	await nations.getByRole('button', { name: 'Filter Recognition', exact: true }).click();
-	checkInside(at('/nations, Recognition filter'), await openMenu(page));
+	checkInside(at('/nations/directory, Recognition filter'), await openMenu(page));
 	await page.locator('.table-popover:popover-open label', { hasText: /^\s*Federal\s*\d/ }).click();
 	const federal = await count(page);
 	check(federal !== all && /^Showing [\d,]+ of /.test(federal ?? ''), at(`/nations: ticking Federal did not narrow the table (${all} then ${federal})`));
-	check(new URL(page.url()).searchParams.getAll('nations.recognition').includes('Federal'), at('/nations: the address does not keep the Federal filter'));
+	check(new URL(page.url()).searchParams.getAll('nations.recognition').includes('Federal'), at('/nations/directory: the address does not keep the Federal filter'));
 	const under = await page.evaluate(() => {
 		const button = document.querySelector('.data-table .filter-button.open');
 		const menu = document.querySelector('.table-popover:popover-open');
@@ -117,8 +117,8 @@ for (const viewport of viewports) {
 	check(under !== undefined && under >= 0 && under <= 12, at(`/nations: after ticking a value, the menu no longer sits under its button (${under} px)`));
 	await picture(page, `${viewport.name}-2-recognition-filter`);
 	await page.keyboard.press('Escape');
-	check(!(await openMenu(page)), at('/nations: Escape did not close the filter'));
-	check((await nations.getByRole('button', { name: 'Filter Recognition, filtered', exact: true }).count()) === 1, at('/nations: the Recognition funnel does not show that it filters'));
+	check(!(await openMenu(page)), at('/nations/directory: Escape did not close the filter'));
+	check((await nations.getByRole('button', { name: 'Filter Recognition, filtered', exact: true }).count()) === 1, at('/nations/directory: the Recognition funnel does not show that it filters'));
 
 	// The Name column's "Contains" box.
 	await nations.getByRole('button', { name: 'Filter Name', exact: true }).click();
@@ -127,21 +127,21 @@ for (const viewport of viewports) {
 	await page.waitForFunction((text) => document.querySelector('.table-live-count')?.textContent !== text, federal, { timeout: 3000 }).catch(() => {});
 	const paiute = await nations.locator('tbody tr').evaluateAll((rows) => rows.map((row) => row.cells[0].textContent ?? ''));
 	check(paiute.length > 0 && paiute.every((name) => /paiute/i.test(name)), at(`/nations: "Contains Paiute" left names without it: ${paiute.filter((name) => !/paiute/i.test(name)).slice(0, 3).join('; ')}`));
-	checkInside(at('/nations, Name filter'), await openMenu(page));
+	checkInside(at('/nations/directory, Name filter'), await openMenu(page));
 	await page.keyboard.press('Escape');
 
 	// After a reload the filters are still there; "Show all" takes them away.
 	await page.reload({ waitUntil: 'load' });
 	await nations.locator('.filter-button').first().waitFor();
 	await page.waitForFunction((text) => document.querySelector('.table-live-count')?.textContent !== text, all, { timeout: 3000 }).catch(() => {});
-	check((await nations.getByRole('button', { name: 'Filter Name, filtered', exact: true }).count()) === 1, at('/nations: after reloading, the Name filter is gone'));
+	check((await nations.getByRole('button', { name: 'Filter Name, filtered', exact: true }).count()) === 1, at('/nations/directory: after reloading, the Name filter is gone'));
 	await page.getByRole('button', { name: 'Show all' }).first().click();
-	check((await nations.locator('.filter-button.active').count()) === 0, at('/nations: "Show all" left a filter on'));
+	check((await nations.locator('.filter-button.active').count()) === 0, at('/nations/directory: "Show all" left a filter on'));
 
 	// Hide a column and add one; the address keeps the columns, and the widths handles follow.
 	await nations.getByRole('button', { name: 'Columns', exact: true }).click();
-	checkInside(at('/nations, Columns'), await openMenu(page));
-	check(await page.locator('.table-popover:popover-open label', { hasText: 'Name' }).first().locator('input').isDisabled(), at('/nations: the Name column can be hidden'));
+	checkInside(at('/nations/directory, Columns'), await openMenu(page));
+	check(await page.locator('.table-popover:popover-open label', { hasText: 'Name' }).first().locator('input').isDisabled(), at('/nations/directory: the Name column can be hidden'));
 	await page.locator('.table-popover:popover-open label', { hasText: 'Review status' }).click();
 	await page.locator('.table-popover:popover-open label', { hasText: 'Citizens' }).click();
 	await picture(page, `${viewport.name}-3-columns`);
@@ -151,25 +151,25 @@ for (const viewport of viewports) {
 	check(!shown.includes('Review status') && shown.includes('Citizens'), at(`/nations: after hiding Review status and adding Citizens the headers are ${shown.join(', ')}`));
 	check(new URL(page.url()).searchParams.get('nations.columns') === 'name,recognition,states,region,citizens', at(`/nations: the address keeps the columns as ${new URL(page.url()).searchParams.get('nations.columns')}`));
 	await page.waitForTimeout(100);
-	check((await nations.locator('thead .column-resizer').count()) === shown.length, at('/nations: the column width handles do not follow the columns shown'));
+	check((await nations.locator('thead .column-resizer').count()) === shown.length, at('/nations/directory: the column width handles do not follow the columns shown'));
 	await page.reload({ waitUntil: 'load' });
 	await nations.locator('.filter-button').first().waitFor();
 	await page.waitForFunction(() => [...document.querySelectorAll('.data-table thead th')].some((th) => th.textContent.includes('Citizens')), undefined, { timeout: 3000 }).catch(() => {});
 	shown = await headers();
-	check(shown.includes('Citizens') && !shown.includes('Review status'), at('/nations: after reloading, the columns chosen are gone'));
+	check(shown.includes('Citizens') && !shown.includes('Review status'), at('/nations/directory: after reloading, the columns chosen are gone'));
 	await nations.getByRole('button', { name: 'Columns', exact: true }).click();
 	await page.locator('.table-popover:popover-open').getByRole('button', { name: 'Reset columns' }).click();
 	await page.keyboard.press('Escape');
 	shown = await headers();
-	check(shown.includes('Review status') && !shown.includes('Citizens'), at('/nations: "Reset columns" did not bring back the default columns'));
+	check(shown.includes('Review status') && !shown.includes('Citizens'), at('/nations/directory: "Reset columns" did not bring back the default columns'));
 
 	// A recognition badge opens its source; the source is not beside it.
 	const firstRecognition = nations.locator('tbody tr').first().locator('td').first();
-	check(!/Fed\. Reg\./.test(await firstRecognition.innerText()), at('/nations: the recognition source still sits beside the badge'));
+	check(!/Fed\. Reg\./.test(await firstRecognition.innerText()), at('/nations/directory: the recognition source still sits beside the badge'));
 	await nations.locator('.recognition-badge-button').first().click();
 	const explanation = page.locator('.recognition-explanation:popover-open');
-	check((await explanation.count()) === 1 && (await explanation.locator('a').count()) > 0, at('/nations: the badge did not open its source'));
-	checkInside(at('/nations, recognition badge'), await openMenu(page));
+	check((await explanation.count()) === 1 && (await explanation.locator('a').count()) > 0, at('/nations/directory: the badge did not open its source'));
+	checkInside(at('/nations/directory, recognition badge'), await openMenu(page));
 	await picture(page, `${viewport.name}-4-badge`);
 	await page.keyboard.press('Escape');
 

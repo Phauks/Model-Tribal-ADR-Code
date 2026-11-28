@@ -24,7 +24,7 @@ export type EssayPart = (typeof essayParts)[number];
  * the workspace (Trevor, Nov. 23, 2026: "Continue with page editing").
  */
 export const aboutPageAddresses: Record<string, string> = {
-	about: '/about',
+	about: '/about/project',
 	sponsor: '/sponsor',
 	'using-ai': '/using-ai',
 	watch: '/about/watch'

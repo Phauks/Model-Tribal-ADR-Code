@@ -87,7 +87,7 @@ function nationDataset(): BuilderDataset {
 	const count = (value: number | undefined): number | null => (value ? value : null);
 
 	return datasetOf(
-		{ identifier: 'nations', title: 'Native nations', rowName: ['nation', 'nations'], nameColumn: 'name', sourceHref: '/nations' },
+		{ identifier: 'nations', title: 'Native nations', rowName: ['nation', 'nations'], nameColumn: 'name', sourceHref: '/nations/directory' },
 		records,
 		[
 			{ key: 'name', header: 'Name', type: 'text', starting: true, value: (record) => displayName(record.names.official) },

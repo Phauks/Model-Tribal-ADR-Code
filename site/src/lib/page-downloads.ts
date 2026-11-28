@@ -145,7 +145,7 @@ export function pageDownloads(path: string, mapTable?: { file: string; label: st
 			]
 		};
 	}
-	if (path === '/nations' || /^\/nations\/(letter|state)\/[^/]+$/.test(path)) {
+	if (path === '/nations/directory' || /^\/nations\/(letter|state)\/[^/]+$/.test(path)) {
 		return {
 			citable: false,
 			files: [

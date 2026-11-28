@@ -158,8 +158,9 @@ describe('shared rules', () => {
 		expect(followedPageAddress('/glossary/mediation/')).toBe('/glossary/mediation');
 		expect(followedPageAddress('/essays/peacemaking')).toBe('/essays/peacemaking');
 		expect(followedPageAddress('/charter')).toBe('/charter');
-		expect(followedPageAddress('/about')).toBe('/about');
-		for (const listing of ['/nations', '/nations/map', '/nations/recourse', '/nations/letter/a', '/changes', '/workspace/changes', '/', '/search']) {
+		expect(followedPageAddress('/about/project')).toBe('/about/project');
+		expect(followedPageAddress('/about')).toBeUndefined();
+		for (const listing of ['/nations', '/nations/directory', '/nations/map', '/nations/recourse', '/nations/letter/a', '/changes', '/workspace/changes', '/', '/search']) {
 			expect(followedPageAddress(listing)).toBeUndefined();
 		}
 	});
@@ -171,7 +172,7 @@ describe('shared rules', () => {
 		// Anything else, such as an address the site does not follow, stays on Recent changes.
 		expect(pageChangesLink('/code/section-1')).toBe('/changes?page=%2Fcode%2Fsection-1');
 		expect(pageOfChangesView('/nations/karuk-tribe/changes')).toBe('/nations/karuk-tribe');
-		expect(pageOfChangesView('/about/changes/')).toBe('/about');
+		expect(pageOfChangesView('/about/project/changes/')).toBe('/about/project');
 		for (const path of ['/changes', '/nations/changes', '/nations/map/changes', '/nations/karuk-tribe', '/workspace/changes', '/a/b/c/changes']) {
 			expect(pageOfChangesView(path)).toBeUndefined();
 		}
@@ -381,6 +382,6 @@ describe('pages about the site in Recent changes', () => {
 		await publishVersion(database, 'about', 1, 'lead');
 		const list = await listChanges(database, all, directoryOf(build('2026-11-23T00:00:00Z', [])));
 		expect(list.changes.map((change) => [change.address, change.kind, change.change])).toEqual([[essayPath('about', 'about'), 'about', 'new']]);
-		expect(list.changes[0].address).toBe('/about');
+		expect(list.changes[0].address).toBe('/about/project');
 	});
 });

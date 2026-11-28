@@ -47,8 +47,8 @@ function recognitionTiles(): RecognitionTile[] {
 			note: petitioning ? `${petitioning} with a petition in process` : undefined
 		},
 		{ identifier: 'alaska-native-entities', title: 'Alaska Native Entities', href: chartRecordsPath('federal-list-sections', 'alaska'), count: federal.filter((record) => listSection(record)?.slug === 'alaska').length, note: 'Federally recognized' },
-		{ identifier: 'native-hawaiian-community', title: 'Native Hawaiian Community', href: '/nations#group-native-hawaiian', count: others('native-hawaiian'), note: 'Not a tribe' },
-		{ identifier: 'territorial-peoples', title: 'Indigenous Peoples of the Territories', href: '/nations#group-territorial-indigenous-people', count: others('territorial-indigenous-people'), note: 'Status under territorial law' }
+		{ identifier: 'native-hawaiian-community', title: 'Native Hawaiian Community', href: '/nations/directory#group-native-hawaiian', count: others('native-hawaiian'), note: 'Not a tribe' },
+		{ identifier: 'territorial-peoples', title: 'Indigenous Peoples of the Territories', href: '/nations/directory#group-territorial-indigenous-people', count: others('territorial-indigenous-people'), note: 'Status under territorial law' }
 	];
 	return tiles.filter((tile) => tile.count > 0);
 }

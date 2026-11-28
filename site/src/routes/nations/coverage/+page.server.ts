@@ -16,7 +16,7 @@ export const load: PageServerLoad = () => {
 		labelHeader: 'Section',
 		valueHeader: 'Nations',
 		source: 'The nation pages',
-		sourceHref: '/nations',
+		sourceHref: '/nations/directory',
 		bars: coverageSections.map((section) => ({
 			label: section.label,
 			value: rows.filter((row) => !row.found[section.key]).length,

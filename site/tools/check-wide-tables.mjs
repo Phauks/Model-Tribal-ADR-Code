@@ -55,7 +55,7 @@ const viewports = [
 	{ name: 'phone', width: 390, height: 844 }
 ];
 // Court pages (/supreme-court/roberts-court) are drawn on request now (src/lib/server/page-data.ts), so this static server can't serve them; the Supreme Court page's own tables use the same component.
-const pages = ['/nations', '/supreme-court'];
+const pages = ['/nations/directory', '/supreme-court'];
 
 /** Where the first table's box and the table end, and how far the page and the full-screen frame scroll sideways. */
 function measure(page) {

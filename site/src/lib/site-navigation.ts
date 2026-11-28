@@ -122,7 +122,7 @@ export type NavigationGroup = {
 	line?: string;
 	/** The picture at the top of the group's card on the section's home page. */
 	picture?: SectionPicture;
-	/** Sits beneath the other groups, across the whole menu, rather than beside them, and under the cards on the home page (Courts and Cases' Directory, which covers every kind of court). */
+	/** Sits beneath the other groups, across the whole menu, rather than beside them (Courts and Cases' Directory, which covers every kind of court); on the home page it is a card like the others (Trevor, Nov. 28, 2026: "All sub-page sections should" get an image). */
 	beneath?: boolean;
 };
 
@@ -163,12 +163,15 @@ export const navigationSections: NavigationSection[] = [
 	{
 		key: 'nations',
 		label: 'Nations',
+		title: 'Native nations',
 		home: '/nations',
 		groups: [
 			{
 				title: 'Find',
+				line: 'Every Native nation, in a table and on the map, with its law and where to seek help.',
+				picture: { src: '/pictures/nations/find.jpg', alt: '', width: 720, height: 400, credit: 'Reference Map for American Indian and Alaska Native Areas in the United States, 2010, U.S. Census Bureau (cropped). Public domain.', source: 'https://commons.wikimedia.org/wiki/File:(Decennial)_Census_of_Population_and_Housing,_2010-_Reference_Map_for_American_Indians_and_Alaska_Natives_Areas_in_the_United_States,_2010_-_DPLA_-_97a2040ee190ac083cdfa4aa3c628681.pdf' },
 				links: [
-					{ label: 'Directory', link: '/nations', icon: 'list', count: 'native-nations' },
+					{ label: 'Directory', link: '/nations/directory', icon: 'list', count: 'native-nations' },
 					{ label: 'Map', link: '/nations/map', icon: 'map' },
 					{ label: 'Find the Law', link: '/nations/law', icon: 'scale' },
 					{ label: 'Find Recourse', link: '/nations/recourse', icon: 'life-buoy' }
@@ -176,6 +179,8 @@ export const navigationSections: NavigationSection[] = [
 			},
 			{
 				title: 'Explore',
+				line: 'History, data, federal offices and programs, and languages.',
+				picture: { src: '/pictures/nations/explore.jpg', alt: '', width: 720, height: 400, credit: 'Smithsonian National Museum of the American Indian, Washington, D.C., photograph by Carol M. Highsmith, between 1980 and 2006. Carol M. Highsmith Archive, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011633096' },
 				links: [
 					{ label: 'Timeline', link: '/nations/timeline', icon: 'history' },
 					{ label: 'Data and Charts', link: '/nations/data', icon: 'chart-column', count: 'charts' },
@@ -187,6 +192,8 @@ export const navigationSections: NavigationSection[] = [
 			},
 			{
 				title: 'Nations’ Own Law',
+				line: 'Constitutions, codes and agreements the nations made.',
+				picture: { src: '/pictures/nations/own-law.jpg', alt: '', width: 720, height: 400, credit: 'Cherokee Phoenix, first issue, New Echota, February 21, 1828, Elias Boudinot, editor, its front page printing the Constitution of the Cherokee Nation (cropped). Public domain.', source: 'https://commons.wikimedia.org/wiki/File:Cherokee_Phoenix_first_issue.jpg' },
 				links: [
 					{ label: 'Constitutions', link: '/stats/tribal-constitutions', icon: 'scroll-text', count: 'tribal-constitutions' },
 					{ label: 'Codes and Laws', link: '/stats/tribal-codes', icon: 'book-open', count: 'tribal-codes' },
@@ -308,6 +315,7 @@ export const navigationSections: NavigationSection[] = [
 			{
 				title: 'Directory',
 				line: 'Every court named on this site, with its kind, nation, opinions and cases.',
+				picture: { src: '/pictures/courts-and-cases/directory.jpg', alt: '', width: 720, height: 400, credit: 'The five court pictures above, together.' },
 				beneath: true,
 				links: [{ label: 'All Courts', link: '/courts', icon: 'building', count: 'courts' }]
 			}
@@ -321,6 +329,8 @@ export const navigationSections: NavigationSection[] = [
 		groups: [
 			{
 				title: 'Reference',
+				line: 'Terms, people, presidents and maps.',
+				picture: { src: '/pictures/library/reference.jpg', alt: '', width: 720, height: 400, credit: 'Main Reading Room, Library of Congress Thomas Jefferson Building, Washington, D.C., photograph by Carol M. Highsmith, 2009. Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011646836' },
 				links: [
 					{ label: 'Glossary', link: '/glossary', icon: 'book-a', count: 'glossary-terms' },
 					{ label: 'Biographies', link: '/biographies', icon: 'user-round', count: 'biographies' },
@@ -332,6 +342,8 @@ export const navigationSections: NavigationSection[] = [
 			},
 			{
 				title: 'Files',
+				line: 'Copies of source documents, data sets and court forms.',
+				picture: { src: '/pictures/library/files.jpg', alt: '', width: 720, height: 400, credit: 'Entrance of the National Archives Building, Washington, D.C., photograph by Carol M. Highsmith, between 1980 and 2006. Carol M. Highsmith Archive, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011636058' },
 				links: [
 					{ label: 'Source Documents', link: '/copies', icon: 'file-text', count: 'source-copies' },
 					{ label: 'Data Sets', link: '/downloads', icon: 'database' },
@@ -340,6 +352,8 @@ export const navigationSections: NavigationSection[] = [
 			},
 			{
 				title: 'About the Collection',
+				line: 'What the collection holds and how its materials may be used.',
+				picture: { src: '/pictures/library/collection.jpg', alt: '', width: 720, height: 400, credit: 'Archway to the Main Reading Room, Library of Congress Thomas Jefferson Building, Washington, D.C., photograph by Carol M. Highsmith, between 1980 and 2006. Carol M. Highsmith Archive, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011632422' },
 				links: [
 					{ label: 'Statistics', link: '/stats', icon: 'chart-pie' },
 					{ label: 'Licenses by Material', link: '/licenses', icon: 'copyright' },
@@ -356,6 +370,8 @@ export const navigationSections: NavigationSection[] = [
 		groups: [
 			{
 				title: 'Published',
+				line: 'The foundations, essays, methods and stories.',
+				picture: { src: '/pictures/writing/published.jpg', alt: '', width: 720, height: 400, credit: 'Printing Press, mural by John W. Alexander in the Evolution of the Book series, Library of Congress Thomas Jefferson Building, photograph by Carol M. Highsmith, 2007. Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2007684315' },
 				links: [
 					{ label: 'Foundations', link: '/foundations', icon: 'layers' },
 					{ label: 'Essays', link: '/essays', icon: 'pen-tool' },
@@ -364,6 +380,8 @@ export const navigationSections: NavigationSection[] = [
 			},
 			{
 				title: 'Being Written',
+				line: 'The model code and the model peacemaking code.',
+				picture: { src: '/pictures/writing/being-written.jpg', alt: '', width: 720, height: 400, credit: 'The Manuscript Book, mural by John W. Alexander in the Evolution of the Book series, Library of Congress Thomas Jefferson Building, photograph by Carol M. Highsmith, 2007. Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2007684314' },
 				links: [
 					{ label: 'Model Code', link: '/code', icon: 'file-code', soon: true },
 					{ label: 'Peacemaking', link: '/peacemaking', icon: 'handshake', soon: true }
@@ -379,26 +397,60 @@ export const navigationSections: NavigationSection[] = [
 		groups: [
 			{
 				title: 'The Project',
+				line: 'What the project is, how it is going and how to help with it.',
+				picture: { src: '/pictures/about/project.jpg', alt: '', width: 720, height: 400, credit: 'William S. Boyd School of Law, University of Nevada, Las Vegas, photograph by VinceyB, 2006. Wikimedia Commons, released to the public domain by the photographer.', source: 'https://commons.wikimedia.org/wiki/File:UNLVLawschool.JPG' },
 				links: [
-					{ label: 'About the Project', link: '/about', icon: 'info' },
-					// Posts for readers, written and published on the site like the essays (src/lib/server/news-posts.ts; design/news-section).
-					{ label: 'News', link: '/news', icon: 'newspaper' },
+					{ label: 'About the Project', link: '/about/project', icon: 'info' },
 					{ label: 'Timeline to Public Review', link: '/about/timeline', icon: 'calendar-clock' },
-					{ label: 'Events', link: '/events', icon: 'calendar' },
 					// Every change to the site's pages, like a wiki's (site/COLLABORATION.md, "Recent changes"); it left the side column on Nov. 27, 2026.
-					{ label: 'Recent Changes', link: '/changes', icon: 'history' }
+					{ label: 'Recent Changes', link: '/changes', icon: 'history' },
+					// Offering help or material, not money, so it stays here when Sponsorship and the Store left (Nov. 28, 2026).
+					{ label: 'Contribute', link: '#request=contribute', icon: 'hand-heart' }
 				]
 			},
 			{
-				title: 'Take Part',
+				title: 'News and Events',
+				line: 'Posts for readers, and talks and gatherings.',
+				picture: { src: '/pictures/about/news-and-events.jpg', alt: '', width: 720, height: 400, credit: 'West front of the Library of Congress Thomas Jefferson Building, Washington, D.C., photograph by Carol M. Highsmith, 2007. Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2007684221' },
 				links: [
-					{ label: 'Contribute', link: '#request=contribute', icon: 'hand-heart' },
-					{ label: 'Sponsorship', link: '/sponsor', icon: 'heart' },
-					{ label: 'Store', link: '/store', icon: 'shopping-bag' }
+					// Posts for readers, written and published on the site like the essays (src/lib/server/news-posts.ts; design/news-section).
+					{ label: 'News', link: '/news', icon: 'newspaper' },
+					{ label: 'Events', link: '/events', icon: 'calendar' }
 				]
 			}
 		],
-		holds: ['/sponsors', '/sponsorship', '/book', '/orders', '/contributors', '/acknowledgments', '/charter', '/changelog', '/using-ai', '/join']
+		holds: ['/contributors', '/acknowledgments', '/charter', '/changelog', '/using-ai', '/join']
+	},
+	// Sponsorship and the Store involve people spending money, so each is a section of its own, apart from About and from each other (Trevor, Nov. 28, 2026: "two sections, store feels separate as well?"); each section's existing page is its home.
+	{
+		key: 'support',
+		label: 'Support',
+		home: '/sponsor',
+		groups: [
+			{
+				title: 'Sponsorship',
+				links: [
+					{ label: 'Sponsor the Work', link: '/sponsor', icon: 'heart' },
+					{ label: 'Sponsorship Levels', link: '/sponsor/levels', icon: 'list-ordered' }
+				]
+			}
+		],
+		holds: ['/sponsors', '/sponsorship']
+	},
+	{
+		key: 'store',
+		label: 'Store',
+		home: '/store',
+		groups: [
+			{
+				title: 'Books',
+				links: [
+					{ label: 'Books', link: '/store', icon: 'shopping-bag' },
+					{ label: 'Special Order', link: '/book', icon: 'book-open' }
+				]
+			}
+		],
+		holds: ['/orders']
 	}
 ];
 
