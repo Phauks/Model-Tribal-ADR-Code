@@ -366,6 +366,9 @@ function heldBackBoardDecisions(): number {
 
 const gamingCommission = 'National Indian Gaming Commission';
 
+/** The genre the Gaming Commission's final decisions are listed under (they are cases, with no genre of their own). */
+export const gamingCommissionFinalDecision = 'Commission final decision';
+
 /** The Indian Claims Commission's decisions (1948-1978), their own collection (scripts/law/indian_claims_commission.py). */
 const claimsCommission = (authority: string) => authority === 'Indian Claims Commission';
 
@@ -373,7 +376,12 @@ const claimsCommission = (authority: string) => authority === 'Indian Claims Com
 function gamingCommissionDocuments(): CollectionItem[] {
 	return [...sources().values()]
 		.filter((record) => (kindOf(record) === 'federal-agency-document' && record.citation.author?.some((author) => author.literal === gamingCommission)) || (typeOf(record) === 'legal_case' && record.citation.authority === gamingCommission))
-		.map((record) => sourceItem(record, (record.citation as { genre?: string }).genre ?? 'Commission final decision'));
+		.map((record) => sourceItem(record, (record.citation as { genre?: string }).genre ?? gamingCommissionFinalDecision));
+}
+
+/** How many of the Gaming Commission's documents are its final decisions, which the Courts and Cases menu lists with the other agency boards. */
+export function gamingCommissionFinalDecisionCount(): number {
+	return gamingCommissionDocuments().filter((item) => item.detail === gamingCommissionFinalDecision).length;
 }
 
 const manualGenre = 'Indian Affairs Manual chapter';
