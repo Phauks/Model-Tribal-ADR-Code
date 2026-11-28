@@ -6,6 +6,7 @@
 // - Land areas by year: the Census Bureau's American Indian, Alaska Native and Native Hawaiian areas for 1990, 2000 and every year 2007 to 2026, in one PMTiles file, layer "land-areas". Each shape carries its Census code, its kind, and the first and last years ("from", "to") in which the Bureau drew it exactly so; a shape the Bureau redrew is a new shape from that year. The map shows a year by keeping the shapes whose years include the latest Census year at or before it. Hawaiian home lands are left out, as on the 2020 map, and so is every area in geography/withdrawn-land-areas.json.
 // - Borders over time: the Newberry Library's Atlas of Historical County Boundaries, US Historical States and Territories (generalized), every state and territory from September 3, 1783 to December 31, 2000 with its start and end dates, the change that made it and the law cited for it. Layer "borders". The Library makes the Atlas's files available for any lawful purpose, commercial or non-commercial, without licensing or permission fees, and says the old Creative Commons notice inside the files can be ignored (https://publications.newberry.org/ahcb/downloads/united_states.html).
 // - Removal routes: the National Park Service's lines for the Trail of Tears National Historic Trail (the Cherokee removal routes of 1837 to 1839). Layer "routes", each line carrying the routes it is part of.
+// - Forced journeys: the Forest Service's line for the Nez Perce National Historic Trail (the flight of 1877), without its connectors to roads, and one arrow for each stage of a removal in geography/removals.json (written by scripts/maps/removals.py from research/historic-maps/removals/removals.json), from the land the nation was moved from to the land it was sent to. Layer "journeys", each line carrying its kind ("trail" or "removal"), its people and its years; layer "journey-places", the two ends of each arrow. The arrows show where, not the road taken (research/analyses/2026-11-27-removal-routes-for-the-map.md).
 // - Homelands found by the Indian Claims Commission: the National Park Service's tracing of the U.S. Geological Survey's 1978 map "Indian Land Areas Judicially Established". Layer "homelands", each area carrying the Commission's area number and the nation or nations it names. The map shows these as findings, dashed and credited, never as borders.
 // - Reservations on the 1909 map: the Office of Indian Affairs' "Map showing Indian reservations within the limits of the United States" (1909; National Archives, catalog 655555952), traced by scripts/maps/oia_1909_reservations.py into research/historic-maps/oia-1909/oia-1909-reservations.geojson. Layer "reservations", each shape or point with its name as printed, its status ("Reservation" or "Opened"), the nations suggested for it and its review status; a shape too small to see far out also gets a point ("marker"). With it, the scan itself warped onto web map tiles by that script's `warp` step, as WebP pictures, for the "Show the original map" switch.
 // - Royce's 67 map sheets, the Library of Congress's scans (g3701em.gct00002), each as the Library's JPEG 2000 file and as a JPEG the site's image viewer can show, with the full volume as one PDF. geography/royce-sheets.json lists them with their bucket keys, sizes and SHA-256.
@@ -18,6 +19,8 @@
 //   node --max-old-space-size=8192 tools/build-historic-maps.mjs build [--work /tmp/historic-maps]
 //   node tools/build-historic-maps.mjs upload [--work /tmp/historic-maps]
 //   node tools/build-historic-maps.mjs index [--work /tmp/historic-maps]
+//
+// The forced journeys alone (after tools/removal-places.mjs): `build --only journeys`, `upload --only journeys` and `index --only journeys`.
 //
 // The 1909 map alone: `build --only 1909`, `upload --only 1909` and `index --only 1909`, with the scan at <work>/oia-1909/oia-1909.jpg and its warped tiles at <work>/oia-1909/scan-tiles/ (python3 ../scripts/maps/oia_1909_reservations.py warp --work <that folder> --scan <the scan>).
 //
@@ -34,6 +37,7 @@ import { fromGeojsonVt } from '@maplibre/vt-pbf';
 import polylabel from 'polylabel';
 import { unzipSync } from 'fflate';
 import * as shapefile from 'shapefile';
+import { addToCaptureIndex } from './capture-index.mjs';
 import { writePmtiles } from './pmtiles-writer.mjs';
 
 const geography = new URL('../geography/', import.meta.url);
@@ -59,6 +63,8 @@ const newberryFile = 'https://publications.newberry.org/ahcb/downloads/gis/US_At
 const parkService = 'https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services';
 const removalRoutesLayer = `${parkService}/TRTE_NHT/FeatureServer/0`;
 const homelandsLayer = `${parkService}/Indian_Land_Areas_Judicially_Established_1978/FeatureServer/5`;
+const nezPerceLayer = 'https://services1.arcgis.com/gGHDlz6USftL5Pau/arcgis/rest/services/R01_NezPerceNeeMePoo_NationalHistoricTrail_Centerline/FeatureServer/0';
+const removalsPath = new URL('removals.json', geography);
 
 const sheetsItem = 'https://www.loc.gov/item/13023487/';
 const volumeFile = 'https://tile.loc.gov/storage-services/public/law/llss4015/llss4015.pdf';
@@ -72,6 +78,7 @@ const reservations1909MaxZoom = 11;
 const cessionsMaxZoom = 10;
 const bordersMaxZoom = 7;
 const removalRoutesMaxZoom = 10;
+const journeysMaxZoom = 10;
 const homelandsMaxZoom = 9;
 const landAreasMaxZoom = 12;
 
@@ -120,7 +127,8 @@ async function fetchLayers(work) {
 	if (head !== 'PK') throw new Error(`The Newberry Library sent a page, not the file. Download ${newberryFile} by hand (from ${newberryPage}) to ${newberry}.`);
 	await downloadLayer(removalRoutesLayer, join(work, 'removal-routes.geojson'));
 	await downloadLayer(homelandsLayer, join(work, 'homelands.geojson'));
-	console.log(`Downloaded the Newberry Library's states and territories and the two National Park Service layers to ${work}.`);
+	await downloadLayer(nezPerceLayer, join(work, 'nez-perce-trail.geojson'));
+	console.log(`Downloaded the Newberry Library's states and territories, the two National Park Service layers and the Forest Service's Nez Perce trail to ${work}.`);
 }
 
 /** Downloads the Census years and Royce's sheets and volume; the cession shapes come from scripts/maps/land_cessions.py. */
@@ -337,6 +345,42 @@ async function buildRemovalRoutes(work) {
 	return { ...describe(path, `removal-routes-${described.sha256.slice(0, 12)}`, {}), minZoom: 0, maxZoom: removalRoutesMaxZoom, bounds, layers: ['routes'], features: features.length, years: [1837, 1839], sources: [removalRoutesLayer], retrieved: new Date().toISOString().slice(0, 10) };
 }
 
+/** A gentle curve from one point to another, bowed to the left of the way it goes, so two arrows between the same places in opposite directions stay apart. */
+function arc(from, to, steps = 32) {
+	const [dx, dy] = [to[0] - from[0], to[1] - from[1]];
+	const bow = 0.18;
+	const control = [(from[0] + to[0]) / 2 - dy * bow, (from[1] + to[1]) / 2 + dx * bow];
+	return Array.from({ length: steps + 1 }, (_, step) => {
+		const t = step / steps;
+		const point = [0, 1].map((axis) => (1 - t) ** 2 * from[axis] + 2 * (1 - t) * t * control[axis] + t ** 2 * to[axis]);
+		return point.map((value) => Math.round(value * 1e4) / 1e4);
+	});
+}
+
+/** The Forest Service marks the short links from the trail to a road or trailhead "Connector"; those, and decommissioned pieces, are not part of the 1877 route. */
+const isTrailPiece = (properties) => !String(properties.OverallTrailComposition ?? '').startsWith('Connector') && !String(properties.TRAIL_STATUS ?? '').startsWith('DE');
+
+async function buildJourneys(work) {
+	const trail = JSON.parse(readFileSync(join(work, 'nez-perce-trail.geojson'), 'utf8'));
+	const pieces = trail.features.filter((feature) => feature.geometry && isTrailPiece(feature.properties)).flatMap((feature) => (feature.geometry.type === 'LineString' ? [feature.geometry.coordinates] : feature.geometry.coordinates).map((line) => rounded(line)));
+	const trailFeatures = [{ type: 'Feature', geometry: { type: 'MultiLineString', coordinates: joinLines(pieces) }, properties: { kind: 'trail', id: 'nez-perce-1877', name: 'Nez Perce National Historic Trail', people: 'Nez Perce (Nimiipuu)', from: 1877, to: 1877, source: 'U.S. Forest Service' } }];
+	const removals = JSON.parse(readFileSync(removalsPath, 'utf8')).removals.filter((removal) => removal.from.point && removal.to.point);
+	const arrows = removals.map((removal) => ({ type: 'Feature', geometry: { type: 'LineString', coordinates: arc(removal.from.point, removal.to.point) }, properties: { kind: 'removal', id: removal.id, journey: removal.journey, stage: removal.stage, people: removal.people, from: removal.years[0], to: removal.years[removal.years.length - 1] } }));
+	const places = removals.flatMap((removal) => [
+		{ type: 'Feature', geometry: { type: 'Point', coordinates: removal.from.point }, properties: { id: removal.id, end: 'from', name: removal.from.name, people: removal.people, from: removal.years[0], to: removal.years[removal.years.length - 1] } },
+		{ type: 'Feature', geometry: { type: 'Point', coordinates: removal.to.point }, properties: { id: removal.id, end: 'to', name: removal.to.name, people: removal.people, from: removal.years[0], to: removal.years[removal.years.length - 1] } }
+	]);
+	const features = [...trailFeatures, ...arrows];
+	const tiles = cutTiles(features, 'journeys', journeysMaxZoom, { 'journey-places': places });
+	const bounds = boundsOf([...features, ...places]);
+	const path = join(work, 'journeys.pmtiles');
+	const fields = { kind: 'String', id: 'String', journey: 'String', stage: 'Number', name: 'String', people: 'String', from: 'Number', to: 'Number', source: 'String' };
+	writePmtiles(path, tiles, { minZoom: 0, maxZoom: journeysMaxZoom, bounds, metadata: { name: 'Forced journeys', attribution: 'U.S. Forest Service; Tribal Law Project', vector_layers: [{ id: 'journeys', fields, minzoom: 0, maxzoom: journeysMaxZoom }, { id: 'journey-places', fields: { id: 'String', end: 'String', name: 'String', people: 'String', from: 'Number', to: 'Number' }, minzoom: 0, maxzoom: journeysMaxZoom }] } });
+	const described = describe(path, '', {});
+	const years = removals.flatMap((removal) => removal.years);
+	return { ...describe(path, `journeys-${described.sha256.slice(0, 12)}`, {}), minZoom: 0, maxZoom: journeysMaxZoom, bounds, layers: ['journeys', 'journey-places'], features: features.length, trailPieces: pieces.length, removals: arrows.length, years: [Math.min(1877, ...years), Math.max(1877, ...years)], sources: [nezPerceLayer, 'site/geography/removals.json'], retrieved: new Date().toISOString().slice(0, 10) };
+}
+
 async function buildHomelands(work) {
 	const source = JSON.parse(readFileSync(join(work, 'homelands.geojson'), 'utf8'));
 	const features = source.features
@@ -543,13 +587,16 @@ async function build() {
 	if (only === 'all' || only === 'land-areas') manifest.landAreasByYear = await buildLandAreasByYear(work);
 	if (only === 'all' || only === '1909') {
 		manifest.reservations1909 = buildReservations1909(work);
-		manifest.scan1909 = buildScan1909(work);
+		// The scan changes only when it is warped again: without its warped tiles in the work folder, the scan already in the bucket stays.
+		if (existsSync(join(work, 'oia-1909', 'scan-tiles'))) manifest.scan1909 = buildScan1909(work);
+		else console.log(`No warped scan in ${join(work, 'oia-1909', 'scan-tiles')}; keeping ${manifest.scan1909.key}.`);
 	}
 	if (only === 'all' || only === 'layers') {
 		manifest.borders = await buildBorders(work);
 		manifest.removalRoutes = await buildRemovalRoutes(work);
 		manifest.homelands = await buildHomelands(work);
 	}
+	if (only === 'all' || only === 'layers' || only === 'journeys') manifest.journeys = await buildJourneys(work);
 	writeFileSync(manifestPath, `${JSON.stringify(manifest, null, '\t')}\n`);
 	if (only === 'all' || only === 'sheets') buildSheets(work);
 	console.log('Recorded the tile sets in geography/map-tiles.json.');
@@ -574,15 +621,23 @@ async function upload() {
 		[join(work, 'borders.pmtiles'), manifest.borders.key, 'application/vnd.pmtiles'],
 		[join(work, 'removal-routes.pmtiles'), manifest.removalRoutes.key, 'application/vnd.pmtiles'],
 		[join(work, 'homelands.pmtiles'), manifest.homelands.key, 'application/vnd.pmtiles'],
+		[join(work, 'journeys.pmtiles'), manifest.journeys.key, 'application/vnd.pmtiles'],
 		...layerSources(work).map((entry) => [entry.path, entry.key, entry.mediaType])
 	];
+	const journeys = [
+		[join(work, 'journeys.pmtiles'), manifest.journeys.key, 'application/vnd.pmtiles'],
+		...layerSources(work).filter((entry) => entry.records === 'forest-service-nez-perce-trail').map((entry) => [entry.path, entry.key, entry.mediaType])
+	];
+	// The scan and its tiles are left out when they are not in the work folder (only the tracing was rebuilt).
 	const map1909 = [
 		[join(work, 'reservations-1909.pmtiles'), manifest.reservations1909.key, 'application/vnd.pmtiles'],
-		[join(work, 'scan-1909.pmtiles'), manifest.scan1909.key, 'application/vnd.pmtiles'],
-		[join(work, 'oia-1909', 'oia-1909.jpg'), scan1909Key, 'image/jpeg']
+		...[
+			[join(work, 'scan-1909.pmtiles'), manifest.scan1909.key, 'application/vnd.pmtiles'],
+			[join(work, 'oia-1909', 'oia-1909.jpg'), scan1909Key, 'image/jpeg']
+		].filter(([path]) => existsSync(path))
 	];
 	const only = option('only', 'all');
-	const files = only === '1909' ? map1909 : only === 'layers' ? layers : [
+	const files = only === '1909' ? map1909 : only === 'layers' ? layers : only === 'journeys' ? journeys : [
 		...map1909,
 		...layers,
 		[join(work, 'land-cessions.pmtiles'), manifest.landCessions.key, 'application/vnd.pmtiles'],
@@ -625,19 +680,17 @@ async function upload() {
 	console.log(`Uploaded ${sent} files; ${skipped} were already in the bucket.`);
 }
 
-/** The downloaded files behind the three newer layers, as kept in the bucket. */
+/** The downloaded files behind the four newer layers, as kept in the bucket. */
 function layerSources(work) {
 	return [
 		{ path: join(work, 'newberry', basename(newberryFile)), key: `historic-maps/newberry-states-and-territories/${basename(newberryFile)}`, mediaType: 'application/zip', title: 'Newberry Library, Atlas of Historical County Boundaries, US Historical States and Territories (generalized)', link: newberryPage, records: 'newberry-atlas-historical-states-and-territories', rights: 'The Newberry Library makes the Atlas files available for any lawful purpose, commercial or non-commercial, without licensing or permission fees.' },
 		{ path: join(work, 'removal-routes.geojson'), key: 'historic-maps/park-service-trail-of-tears/removal-routes.geojson', mediaType: 'application/geo+json', title: 'National Park Service, Trail of Tears National Historic Trail, designated alignment', link: removalRoutesLayer, records: 'park-service-trail-of-tears-routes' },
-		{ path: join(work, 'homelands.geojson'), key: 'historic-maps/park-service-indian-land-areas-1978/homelands.geojson', mediaType: 'application/geo+json', title: 'National Park Service, Indian Land Areas Judicially Established 1978', link: homelandsLayer, records: 'indian-land-areas-judicially-established-1978' }
+		{ path: join(work, 'homelands.geojson'), key: 'historic-maps/park-service-indian-land-areas-1978/homelands.geojson', mediaType: 'application/geo+json', title: 'National Park Service, Indian Land Areas Judicially Established 1978', link: homelandsLayer, records: 'indian-land-areas-judicially-established-1978' },
+		{ path: join(work, 'nez-perce-trail.geojson'), key: 'historic-maps/forest-service-nez-perce-trail/nez-perce-trail.geojson', mediaType: 'application/geo+json', title: 'U.S. Forest Service, Nez Perce (Nee-Me-Poo) National Historic Trail, centerline', link: nezPerceLayer, records: 'forest-service-nez-perce-trail' }
 	];
 }
 
 const roycesRecord = 'royce-1899-indian-land-cessions-in-the-united-states';
-const indexPath = new URL('../../research/capture-index.csv', import.meta.url);
-const indexColumns = ['key', 'bytes', 'sha256', 'media_type', 'topic', 'title', 'nations', 'obtained', 'link', 'captured', 'records', 'record_kinds', 'listed_in', 'catalog', 'derived_from', 'rights', 'redistribution', 'keep_local', 'orphan'];
-const csvField = (value) => (/[",\n]/.test(String(value)) ? `"${String(value).replaceAll('"', '""')}"` : String(value));
 
 /** Adds the uploaded files to the capture index (research/capture-index.csv). */
 function index() {
@@ -657,7 +710,7 @@ function index() {
 		? [row({ key: scan1909Key, ...file(scanPath), media_type: 'image/jpeg', title: 'Office of Indian Affairs, Map Showing Indian Reservations Within the Limits of the United States (1909)', obtained: `downloaded from the National Archives Catalog, ${today}`, link: scan1909Record, records: 'office-of-indian-affairs-reservations-map-1909' })]
 		: [];
 	const only = option('only', 'all');
-	const rows = only === '1909' ? map1909Rows : only === 'layers' ? layerRows() : [
+	const rows = only === '1909' ? map1909Rows : only === 'layers' ? layerRows() : only === 'journeys' ? layerRows().filter((entry) => entry.records === 'forest-service-nez-perce-trail') : [
 		...layerRows(),
 		...map1909Rows,
 		row({ key: sheets.volume.key, bytes: sheets.volume.bytes, sha256: sheets.volume.sha256, media_type: 'application/pdf', title: `${sheets.author}, ${sheets.title} (1899)`, obtained: `downloaded from the Library of Congress by script, ${today}`, link: sheets.volume.link, records: roycesRecord }),
@@ -676,12 +729,8 @@ function index() {
 		}),
 		...Object.entries(censusYears).map(([year, url]) => row({ key: `historic-maps/census-land-areas/${basename(url)}`, ...file(join(work, 'census', `${year}.zip`)), media_type: 'application/zip', title: `U.S. Census Bureau, American Indian/Alaska Native/Native Hawaiian Areas, ${year}`, obtained: `downloaded from the Census Bureau by tools/build-historic-maps.mjs, ${today}`, link: url, records: 'census-tiger-aiannh-1990-2026' }))
 	];
-	const keys = new Set(rows.map((entry) => entry.key));
-	const lines = readFileSync(indexPath, 'utf8').split('\n').filter((line) => line !== '');
-	// Rows already in the index keep their place; only the rows for these keys are replaced, at the end.
-	const kept = lines.filter((line, number) => number === 0 || !keys.has(line.split(',')[0].replace(/^"|"$/g, '')));
-	const added = rows.map((entry) => indexColumns.map((column) => csvField(entry[column] ?? '')).join(','));
-	writeFileSync(indexPath, `${[...kept, ...added].join('\n')}\n`);
+	// Each row replaces any row with the same key, and the index stays in key order (tools/capture-index.mjs).
+	addToCaptureIndex(rows);
 	console.log(`Indexed ${rows.length} files in research/capture-index.csv.`);
 }
 
@@ -690,4 +739,4 @@ if (command === 'fetch') await fetchSources();
 else if (command === 'build') await build();
 else if (command === 'upload') await upload();
 else if (command === 'index') index();
-else console.log('Usage: node tools/build-historic-maps.mjs fetch|build|upload|index [--work folder] [--only cessions|land-areas|sheets|layers]');
+else console.log('Usage: node tools/build-historic-maps.mjs fetch|build|upload|index [--work folder] [--only cessions|land-areas|sheets|layers|journeys|1909]');

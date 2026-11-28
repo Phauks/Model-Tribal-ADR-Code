@@ -54,6 +54,7 @@ export const navigationIconNames = [
 	'info',
 	'key-round',
 	'landmark',
+	'languages',
 	'layers',
 	'library',
 	'life-buoy',
@@ -101,7 +102,29 @@ export type NavigationLink = {
 	icon: NavigationIconName;
 };
 
-export type NavigationGroup = { title: string; links: NavigationLink[] };
+/** A picture on a section home's card (SectionCards.svelte): a copy served from this site, credited under the cards. */
+export type SectionPicture = {
+	src: string;
+	/** Empty when the picture only decorates the card's name. */
+	alt: string;
+	width: number;
+	height: number;
+	/** What it shows, who made it and when, where the original is, and its license, as the "Picture credits" fold lists it. */
+	credit: string;
+	/** The holding library's or archive's record of the original. */
+	source?: string;
+};
+
+export type NavigationGroup = {
+	title: string;
+	links: NavigationLink[];
+	/** One line under the group's name on the section's home page. */
+	line?: string;
+	/** The picture at the top of the group's card on the section's home page. */
+	picture?: SectionPicture;
+	/** Sits beneath the other groups, across the whole menu, rather than beside them, and under the cards on the home page (Courts and Cases' Directory, which covers every kind of court). */
+	beneath?: boolean;
+};
 
 export type NavigationSection = {
 	key: string;
@@ -123,6 +146,18 @@ export type NavigationSection = {
 	 */
 	holds: string[];
 };
+
+/** The directory's kinds of court behind each Courts link in the Courts and Cases menu (src/lib/server/courts.ts names the kinds), keyed by the count beside the link. */
+export const courtKindGroups: Record<string, string[]> = {
+	'courts-tribal': ['Tribal court'],
+	'courts-state-and-territorial': ['State court', 'Territorial court'],
+	'courts-federal': ['Federal court']
+};
+
+/** The directory of courts, filtered to one group of kinds through its table's address (DataTable `shareable`, identifier `courts`). */
+function courtsOfKind(key: string): string {
+	return `/courts?${courtKindGroups[key].map((kind) => `courts.kind=${kind.replaceAll(' ', '+')}`).join('&')}`;
+}
 
 export const navigationSections: NavigationSection[] = [
 	{
@@ -146,6 +181,7 @@ export const navigationSections: NavigationSection[] = [
 					{ label: 'Data and Charts', link: '/nations/data', icon: 'chart-column', count: 'charts' },
 					{ label: 'Federal Offices', link: '/nations/federal-offices', icon: 'landmark' },
 					{ label: 'Self-Governance and Federal Programs', link: '/nations/federal-programs', icon: 'handshake' },
+					{ label: 'Languages', link: '/languages', icon: 'languages', count: 'languages' },
 					{ label: 'Coverage', link: '/nations/coverage', icon: 'gauge' }
 				]
 			},
@@ -160,7 +196,7 @@ export const navigationSections: NavigationSection[] = [
 				]
 			}
 		],
-		holds: ['/nations', '/stats/native-nations', '/stats/charts']
+		holds: ['/nations', '/languages', '/stats/native-nations', '/stats/charts', '/stats/languages', '/stats/language-families']
 	},
 	{
 		key: 'federal-law',
@@ -169,37 +205,47 @@ export const navigationSections: NavigationSection[] = [
 		home: '/laws',
 		groups: [
 			{
-				title: 'Laws',
+				title: 'Treaties',
+				line: 'Made with Native nations',
+				picture: { src: '/pictures/federal-law/treaties.jpg', alt: '', width: 720, height: 400, credit: 'Treaty with the Delawares, Fort Pitt, September 17, 1778, the marks and seals of White Eyes and The Pipe. National Archives (Ratified Indian Treaty 8). Public domain.', source: 'https://catalog.archives.gov/id/176316991' },
 				links: [
 					{ label: 'Treaties and Agreements', link: '/stats/treaties', icon: 'scroll', count: 'treaties' },
-					{ label: 'Statutes', link: '/stats/federal-statutes', icon: 'book-marked', count: 'federal-statutes' },
-					{ label: 'U.S. Code, Title 25', link: '/stats/united-states-code-sections', icon: 'library', count: 'united-states-code-sections' },
-					{ label: 'Executive Orders', link: '/stats/executive-orders', icon: 'pen-line', count: 'executive-orders' }
-				]
-			},
-			{
-				title: 'Regulations and Notices',
-				links: [
-					{ label: 'Regulations', link: '/stats/federal-regulations', icon: 'clipboard-list', count: 'federal-regulations' },
-					{ label: '25 C.F.R. Sections', link: '/stats/regulation-sections', icon: 'list-ordered', count: 'regulation-sections' },
-					{ label: 'Federal Register Notices', link: '/stats/federal-register-notices', icon: 'newspaper', count: 'federal-register-notices' }
+					{ label: 'Land Cessions', link: '/stats/land-cessions', icon: 'map-pinned', count: 'land-cessions' }
 				]
 			},
 			{
 				title: 'Congress',
+				line: 'Acts of Congress and the record behind them',
+				picture: { src: '/pictures/federal-law/congress.jpg', alt: '', width: 720, height: 400, credit: 'United States Capitol, photograph by Carol M. Highsmith, December 7, 2008. Carol M. Highsmith’s America, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2010630189' },
 				links: [
+					{ label: 'Statutes', link: '/stats/federal-statutes', icon: 'book-marked', count: 'federal-statutes' },
+					{ label: 'U.S. Code, Title 25', link: '/laws/usc-25', icon: 'library', count: 'united-states-code-sections' },
 					{ label: 'Hearings', link: '/stats/congressional-hearings', icon: 'message-square', count: 'congressional-hearings' },
 					{ label: 'Committee Reports', link: '/stats/committee-reports', icon: 'file-text', count: 'committee-reports' },
 					{ label: 'Committee Prints', link: '/stats/committee-prints', icon: 'scroll-text', count: 'committee-prints' },
-					{ label: 'Research Service Reports', link: '/stats/congressional-research-service-reports', icon: 'library', count: 'congressional-research-service-reports' }
+					{ label: 'Research Service Reports', link: '/stats/congressional-research-service-reports', icon: 'library', count: 'congressional-research-service-reports' },
+					{ label: 'Serial Set, 1817–1899', link: '/stats/serial-set', icon: 'archive', count: 'serial-set' }
 				]
 			},
 			{
-				title: 'Agency Records',
+				title: 'President',
+				line: 'Orders, proclamations and memoranda',
+				picture: { src: '/pictures/federal-law/president.jpg', alt: '', width: 720, height: 400, credit: 'The White House, photograph by Carol M. Highsmith, October 3, 2008. Carol M. Highsmith’s America, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2010630940' },
+				links: [{ label: 'Executive Orders', link: '/laws/executive-orders', icon: 'pen-line', count: 'executive-orders' }]
+			},
+			{
+				title: 'Agencies',
+				line: 'Rules, notices, opinions and decisions',
+				picture: { src: '/pictures/federal-law/agencies.jpg', alt: '', width: 720, height: 400, credit: 'Department of the Interior headquarters, Washington, D.C., photograph by Carol M. Highsmith, between 1980 and 2006. Carol M. Highsmith Archive, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011634641' },
 				links: [
+					{ label: 'Regulations', link: '/stats/federal-regulations', icon: 'clipboard-list', count: 'federal-regulations' },
+					{ label: '25 C.F.R. Sections', link: '/stats/regulation-sections', icon: 'list-ordered', count: 'regulation-sections' },
+					{ label: 'Federal Register Notices', link: '/stats/federal-register-notices', icon: 'newspaper', count: 'federal-register-notices' },
+					{ label: 'Solicitor’s Opinions', link: '/stats/solicitor-opinions', icon: 'scale', count: 'solicitor-opinions' },
+					{ label: 'Indian Affairs Manual', link: '/stats/indian-affairs-manual', icon: 'book-open', count: 'indian-affairs-manual' },
 					{ label: 'Acknowledgment Petitions', link: '/stats/federal-acknowledgment', icon: 'file-check', count: 'federal-acknowledgment' },
 					{ label: 'Gaming Commission', link: '/stats/national-indian-gaming-commission', icon: 'dices', count: 'national-indian-gaming-commission' },
-					{ label: 'Land Cessions', link: '/stats/land-cessions', icon: 'map-pinned', count: 'land-cessions' }
+					{ label: 'Films and Recordings', link: '/stats/indian-affairs-films', icon: 'archive', count: 'indian-affairs-films' }
 				]
 			}
 		],
@@ -210,9 +256,30 @@ export const navigationSections: NavigationSection[] = [
 		label: 'Courts and Cases',
 		title: 'Courts and cases',
 		home: '/cases',
+		// One group for each court system, side by side and none above another (Trevor, Nov. 27, 2026: "imposing the supreme court over all the others is a bit imposing, we should try and treat it more fairy"), Tribal courts first; the directory of every court sits beneath them (design/section-homes/nav/2-balanced-menu-and-page.png).
 		groups: [
 			{
+				title: 'Tribal Courts',
+				line: 'Courts of Native nations, deciding under each nation’s own law.',
+				picture: { src: '/pictures/courts-and-cases/tribal-courts.jpg', alt: '', width: 720, height: 400, credit: 'Cherokee National Supreme Court Building (1844), Tahlequah, Oklahoma, photograph by the National Trails Office, U.S. National Park Service, March 31, 2016. Public domain.', source: 'https://commons.wikimedia.org/wiki/File:The_exterior_of_the_Cherokee_National_Supreme_Court_Museum_in_Tahlequah,_Oklahoma_(0c9bfdfd-54db-422b-85d7-786908473ff7).JPG' },
+				links: [
+					{ label: 'Opinions', link: '/stats/tribal-court-opinions', icon: 'file-text', count: 'tribal-court-opinions' },
+					{ label: 'Courts', link: courtsOfKind('courts-tribal'), icon: 'building', count: 'courts-tribal' }
+				]
+			},
+			{
+				title: 'State and Territorial Courts',
+				line: 'State and territorial courts, in cases that reach Native nations, people and lands.',
+				picture: { src: '/pictures/courts-and-cases/state-courts.jpg', alt: '', width: 720, height: 400, credit: 'New Mexico Supreme Court Building, Santa Fe, photograph by WhisperToMe, released by the photographer to the public domain.', source: 'https://commons.wikimedia.org/wiki/File:NMSupremeCourtSantaFe.JPG' },
+				links: [
+					{ label: 'Opinions', link: '/stats/state-court-opinions', icon: 'building-2', count: 'state-court-opinions' },
+					{ label: 'Courts', link: courtsOfKind('courts-state-and-territorial'), icon: 'building', count: 'courts-state-and-territorial' }
+				]
+			},
+			{
 				title: 'U.S. Supreme Court',
+				line: 'Its cases on Native law, its Justices and each Court by Chief Justice.',
+				picture: { src: '/pictures/courts-and-cases/supreme-court.jpg', alt: '', width: 720, height: 400, credit: 'Supreme Court Building, west front, Washington, D.C., photograph by Carol M. Highsmith, between 1980 and 2006. Carol M. Highsmith Archive, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011631106' },
 				links: [
 					{ label: 'Cases', link: '/stats/supreme-court-cases', icon: 'gavel', count: 'supreme-court-cases' },
 					{ label: 'Courts by Chief Justice', link: '/supreme-court', icon: 'landmark', count: 'supreme-courts' },
@@ -221,17 +288,28 @@ export const navigationSections: NavigationSection[] = [
 				]
 			},
 			{
-				title: 'Other Courts',
+				title: 'Other Federal Courts',
+				line: 'District courts, courts of appeals, the Court of Claims and others.',
+				picture: { src: '/pictures/courts-and-cases/federal-courts.jpg', alt: '', width: 720, height: 400, credit: 'Robert T. Matsui United States Courthouse, Sacramento, California, photograph by Carol M. Highsmith, between 1980 and 2006. Carol M. Highsmith Archive, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011634780' },
 				links: [
-					{ label: 'Tribal Court Opinions', link: '/stats/tribal-court-opinions', icon: 'file-text', count: 'tribal-court-opinions' },
-					{ label: 'State Court Opinions', link: '/stats/state-court-opinions', icon: 'building-2', count: 'state-court-opinions' },
+					{ label: 'Cases', link: '/stats/other-court-cases', icon: 'folder', count: 'other-court-cases' },
+					{ label: 'Courts', link: courtsOfKind('courts-federal'), icon: 'building', count: 'courts-federal' }
+				]
+			},
+			{
+				title: 'Federal Agency Boards',
+				line: 'Appeals and final decisions made inside federal agencies.',
+				picture: { src: '/pictures/federal-law/agencies.jpg', alt: '', width: 720, height: 400, credit: 'Department of the Interior headquarters, Washington, D.C., photograph by Carol M. Highsmith, between 1980 and 2006. Carol M. Highsmith Archive, Library of Congress. Public domain.', source: 'https://lccn.loc.gov/2011634641' },
+				links: [
 					{ label: 'Interior Board of Indian Appeals', link: '/stats/interior-board-of-indian-appeals', icon: 'scale', count: 'interior-board-of-indian-appeals' },
-					{ label: 'Other Court Cases', link: '/stats/other-court-cases', icon: 'folder', count: 'other-court-cases' }
+					{ label: 'Gaming Commission Decisions', link: '/stats/national-indian-gaming-commission?national-indian-gaming-commission.detail=Commission+final+decision', icon: 'dices', count: 'gaming-commission-final-decisions' }
 				]
 			},
 			{
 				title: 'Directory',
-				links: [{ label: 'Courts', link: '/courts', icon: 'building', count: 'courts' }]
+				line: 'Every court named on this site, with its kind, nation, opinions and cases.',
+				beneath: true,
+				links: [{ label: 'All Courts', link: '/courts', icon: 'building', count: 'courts' }]
 			}
 		],
 		holds: ['/cases', '/stats/supreme-courts', '/stats/courts']
@@ -269,7 +347,7 @@ export const navigationSections: NavigationSection[] = [
 				]
 			}
 		],
-		holds: ['/library', '/verify', '/stats/biographies', '/stats/glossary-terms', '/stats/source-copies', '/stats/forms']
+		holds: ['/library', '/verify', '/presidents', '/stats/biographies', '/stats/glossary-terms', '/stats/source-copies', '/stats/forms']
 	},
 	{
 		key: 'writing',
@@ -303,6 +381,8 @@ export const navigationSections: NavigationSection[] = [
 				title: 'The Project',
 				links: [
 					{ label: 'About the Project', link: '/about', icon: 'info' },
+					// Posts for readers, written and published on the site like the essays (src/lib/server/news-posts.ts; design/news-section).
+					{ label: 'News', link: '/news', icon: 'newspaper' },
 					{ label: 'Timeline to Public Review', link: '/about/timeline', icon: 'calendar-clock' },
 					{ label: 'Events', link: '/events', icon: 'calendar' },
 					// Every change to the site's pages, like a wiki's (site/COLLABORATION.md, "Recent changes"); it left the side column on Nov. 27, 2026.

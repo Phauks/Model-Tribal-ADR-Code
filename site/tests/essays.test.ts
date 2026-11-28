@@ -131,6 +131,25 @@ describe('essays in the bucket', () => {
 		expect(startableEssayParts).not.toContain('about');
 	});
 
+	it('puts News posts under /news, startable from the workspace', () => {
+		expect(partOf('supreme-court-pages', 'title: "Every Case"\npart: news')).toBe('news');
+		expect(essayPath('supreme-court-pages', 'news')).toBe('/news/supreme-court-pages');
+		expect(identifierFromPath('news', 'supreme-court-pages')).toBe('supreme-court-pages');
+		expect(startableEssayParts).toContain('news');
+	});
+
+	it('keeps a News post in its part in the database', async () => {
+		await saveVersion(database, bucket, {
+			identifier: 'welcome',
+			text: '---\ntitle: "Welcome"\npart: news\n---\n\n# Welcome\n\nHello.\n',
+			basedOn: null,
+			personIdentifier: 'lead',
+			origin: 'editor',
+			part: 'news'
+		});
+		expect((await essayRow(database, 'welcome'))?.part).toBe('news');
+	});
+
 	it('finds the page that holds each case and law box', () => {
 		const pages = boxPages({
 			'i-legal-history-timeline': '---\npart: i\n---\n\n:::: case worcester-v-georgia\n::::\n\n:::: law indian-reorganization-act\n::::\n',

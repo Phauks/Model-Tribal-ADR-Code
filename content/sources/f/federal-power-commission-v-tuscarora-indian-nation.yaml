@@ -34,6 +34,10 @@ opinions:
     page: 124
 original_link: https://www.loc.gov/item/usrep362099/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261126080812/https://www.loc.gov/item/usrep362099/
+  captured: '2026-11-26'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,40 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=362%20U.S.%2099
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1959-12-07'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-232-63-66-19591207-1of3.mp3
+  catalog: https://catalog.archives.gov/id/81137650
+  duration_seconds: 4524
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-232-63-66-19591207-1of3.mp3
+    checksum: 22c02c3785a18d180f9bf00cb4ebd465923520bfb00dbb94946cf5d8f3e0734f
+    media_type: audio/mpeg
+    bytes: 72377154
+- kind: argument
+  date: '1959-12-07'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-232-63-66-19591207-2of3.mp3
+  catalog: https://catalog.archives.gov/id/81137650
+  duration_seconds: 4055
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-232-63-66-19591207-2of3.mp3
+    checksum: 75b33e70d08b51ec5f2d858162c15255c669b3802c2f699abab28be9bbc59a4f
+    media_type: audio/mpeg
+    bytes: 64885654
+- kind: argument
+  date: '1959-12-07'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-232-63-66-19591207-3of3.mp3
+  catalog: https://catalog.archives.gov/id/81137650
+  duration_seconds: 1031
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-232-63-66-19591207-3of3.mp3
+    checksum: 3caf92b6c9be0a69842159b6a4db84fee44bc1f4fae974230142deaa15956bbf
+    media_type: audio/mpeg
+    bytes: 16502281
 rights:
   status: no-permission-needed
   basis: us-government-work

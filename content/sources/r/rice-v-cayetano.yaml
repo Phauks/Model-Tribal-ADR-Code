@@ -94,6 +94,42 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Rice_v._Cayetano
+argument_audio:
+- kind: argument
+  date: '1999-10-06'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1112.mp3
+  catalog: https://catalog.archives.gov/id/138282755
+  whole_session: true
+  duration_seconds: 7284
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1112.mp3
+    checksum: 18ded4693993e7d2c8ae459b22363104e38221f3c04660367243ca6544c89a43
+    media_type: audio/mpeg
+    bytes: 116549297
+- kind: opinion announcement
+  date: '2000-02-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1133.mp3
+  catalog: https://catalog.archives.gov/id/138282776
+  whole_session: true
+  duration_seconds: 8001
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1133.mp3
+    checksum: a846b6727060090640928c852a4169cfca731ccda4a16f23a479943d60b515d4
+    media_type: audio/mpeg
+    bytes: 128011828
+argument_transcripts:
+- date: '1999-10-06'
+  docket: "98-818"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1999/98-818_10-06-1999.pdf
+  pages: 61
+  file:
+    storage_key: supreme-court-transcripts/1999/98-818_10-06-1999.pdf
+    checksum: 17381ccce210929786bc1099454a99cbb3e0af2d4758e7badedad496811b7dad
+    media_type: application/pdf
+    bytes: 13720220
 rights:
   status: no-permission-needed
   basis: us-government-work

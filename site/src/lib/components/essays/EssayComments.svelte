@@ -270,8 +270,8 @@
 
 	async function loadPeople(): Promise<void> {
 		if (everyone) return;
-		const response = await fetch(peopleAddress ?? `/workspace/essays/${essay}/sharing`).catch(() => null);
-		const answer = (await response?.json().catch(() => null)) as { people?: { identifier: string; name: string }[] } | null;
+		const response = await fetch(peopleAddress ?? `/workspace/essays/${essay}/sharing`).catch(() => /* expected: offline; mentions offer no names until the list loads. */ null);
+		const answer = (await response?.json().catch(() => /* expected: an answer that is not JSON gives no names, as offline. */ null)) as { people?: { identifier: string; name: string }[] } | null;
 		everyone = answer?.people ?? [];
 	}
 

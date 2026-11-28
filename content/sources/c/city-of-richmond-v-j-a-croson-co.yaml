@@ -121,6 +121,66 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=488%20U.S.%20469
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1988-10-05'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-669-r1.mp3
+  catalog: https://catalog.archives.gov/id/118974823
+  whole_session: true
+  duration_seconds: 3661
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-669-r1.mp3
+    checksum: 4988f7613d65fd44dfb12aba731021ff70a0e37216ad471fd8069e07242ed0f6
+    media_type: audio/mpeg
+    bytes: 58573765
+- kind: argument
+  date: '1988-10-05'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-669-r2.mp3
+  catalog: https://catalog.archives.gov/id/118974823
+  whole_session: true
+  duration_seconds: 3054
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-669-r2.mp3
+    checksum: e5e632ec93dcd34daa9a1f7a6e1c5c48a4d7fddc84d15c604f39c26525ba2597
+    media_type: audio/mpeg
+    bytes: 48859975
+- kind: argument
+  date: '1988-10-05'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-669-r3.mp3
+  catalog: https://catalog.archives.gov/id/118974823
+  whole_session: true
+  duration_seconds: 3723
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-669-r3.mp3
+    checksum: d3100949172aebeacf6a897532dcd95cd30a164ddaac9374e7801d43aacff0d2
+    media_type: audio/mpeg
+    bytes: 59577703
+- kind: argument
+  date: '1988-10-05'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-669-r4.mp3
+  catalog: https://catalog.archives.gov/id/118974823
+  whole_session: true
+  duration_seconds: 1125
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-669-r4.mp3
+    checksum: 2bb9bcb11b427988962be9eedabcbc4ac57b0b280e62736ebc77444386166b56
+    media_type: audio/mpeg
+    bytes: 18000795
+argument_transcripts:
+- date: '1988-10-05'
+  docket: "87-998"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1988/87-998_10-05-1988.pdf
+  pages: 46
+  file:
+    storage_key: supreme-court-transcripts/1988/87-998_10-05-1988.pdf
+    checksum: 420df6fdf8fd168a80ca5786c1afc79c537e6d610eee02cf19ff6ce0968a21fb
+    media_type: application/pdf
+    bytes: 10539310
 rights:
   status: no-permission-needed
   basis: us-government-work

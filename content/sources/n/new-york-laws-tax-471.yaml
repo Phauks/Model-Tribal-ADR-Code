@@ -1,0 +1,47 @@
+key: new-york-laws-tax-471
+kind: state-statute
+citation:
+  type: legislation
+  title: Imposition of cigarette tax
+  title-short: N.Y. Tax Law § 471
+  container-title: New York Tax Law
+  container-title-short: N.Y. Tax Law
+  section: '471'
+  author:
+  - literal: New York State Legislature
+  URL: https://www.nysenate.gov/legislation/laws/TAX/471
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.nysenate.gov/legislation/laws/TAX/471
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: N.Y. Tax Law § 471 (McKinney 2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NY
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-new-york-state-statutes
+notes: 'Indigo Book citation: N.Y. Tax Law § 471 (McKinney 2026). Text read from the New York State Senate''s Open Legislation laws service (legislation.nysenate.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian nation; indian nations; indian reservation; indian; indians; nation; reservation; reservations; tribal; tribe; tribes); AI reader''s verdict core: Cigarette tax exemptions and stamps for Indian reservation sales. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian nation; indian nations; indian reservation; indian; indians; nation; reservation; reservations; tribal; tribe; tribes'

@@ -1,0 +1,37 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: cjh
+name: Upper Chehalis
+iso_639_3:
+  code: cjh
+  reference_name: Upper Chehalis
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: uppe1439
+  level: language
+  source: glottolog-5-4
+family:
+  name: Salishan
+  glottocode: sali1255
+  source: glottolog-5-4
+dialects:
+- name: Oakville
+  glottocode: oakv1234
+  source: glottolog-5-4
+- name: Satsop
+  glottocode: sats1243
+  source: glottolog-5-4
+- name: Tenino Chehalis
+  glottocode: teni1245
+  source: glottolog-5-4
+works:
+- glottolog_reference: '55892'
+  title: Upper Chehalis Dictionary
+  kinds:
+  - dictionary
+  author: M. Dale Kinkade
+  year: 1991
+  publisher: Univerity of Montana
+  pages: 378
+  source: glottolog-5-4
+retrieved: '2026-11-27'

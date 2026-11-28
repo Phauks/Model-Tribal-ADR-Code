@@ -1,0 +1,47 @@
+key: wisconsin-statutes-71-26
+kind: state-statute
+citation:
+  type: legislation
+  title: Income computation
+  title-short: Wis. Stat. § 71.26
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '71.26'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/71.26
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/71.26
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Wis. Stat. § 71.26 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 71.26 (2023-24). History: 1987 a. 312; 1987 a. 411 ss. 22, 124 to 129; 1989 a. 31, 336; 1991 a. 37, 39, 221, 269; 1993 a. 16, 112, 246, 263, 399, 437, 491; 1995 a. 27, 56, 351, 371, 380, 428; 1997 a. 27, 37, 184, 237; 1999 a. 9, 65; 1999 a. 150 s. 672; 1999 a. 167, 194; 2001 a. 16, 38, 106, 109; 2003 a. 33, 85, 99, 135, 255, 326; 2005 a. 25, 74, 335, 361, 362, 479, 483; 2007 a. 20, 96, 97, 151, 226; 2009 a. 2, 28, 161, 165, 180, 183, 205, 265, 269, 295, 332, 344; 2011 a. 3, 5, 7, 10, 32, 212, 232; 2011 a. 260 s. 80; 2013 a. 20, 145; 2013 a. 165 ss. 46, 115; 2015 a. 55, 60, 84, 196, 216; 2017 a. 58, 59, 197, 231, 364; 2017 a. 365 s. 111; 2019 a. 7, 9, 54, 136, 185; 2021 a. 1, 127, 156; 2023 a. 19, 36, 138, 146; 2025 a. 15, 118, 129, 183, 227, 242; s. 13.92 (2) (i); s. 35.17 correction in (2) (a) 4. t., te., tm., ts., u., w. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; menominee; nation; tribe); AI reader''s verdict core: Exempts Menominee Indian tribe asset distributions from income tax. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian tribe; indian; menominee; nation; tribe'

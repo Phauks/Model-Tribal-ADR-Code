@@ -93,6 +93,78 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/United_States_v._Wheeler
+argument_audio:
+- kind: argument
+  date: '1978-01-11'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-217-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048599
+  whole_session: true
+  duration_seconds: 159
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-217-r1.mp3
+    checksum: 968b6ebf25a01365e512251d04897750039c79a49e7c0066e87c53c0ec598875
+    media_type: audio/mpeg
+    bytes: 2543828
+- kind: argument
+  date: '1978-01-11'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-217-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048599
+  whole_session: true
+  duration_seconds: 177
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-217-r2.mp3
+    checksum: d769c308c8de8e166a0b8b03f11bf339f5a60f996b332060d9bc1cad56846c17
+    media_type: audio/mpeg
+    bytes: 2828459
+- kind: argument
+  date: '1978-01-11'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-217-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048599
+  whole_session: true
+  duration_seconds: 4365
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-217-r3.mp3
+    checksum: b69e13ac1aef4ccb51edb64212ad2a5b9234a1458e2589fd4b9ad27b79a2300b
+    media_type: audio/mpeg
+    bytes: 69849050
+- kind: argument
+  date: '1978-01-11'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-217-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048599
+  whole_session: true
+  duration_seconds: 3654
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-217-r4.mp3
+    checksum: e29319f4d1aa66161dfbaaca3178918152725c9c2cce30f9fced251bfa731b2d
+    media_type: audio/mpeg
+    bytes: 58463423
+- kind: argument
+  date: '1978-01-11'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-217-r5.mp3
+  catalog: https://catalog.archives.gov/id/102048599
+  whole_session: true
+  duration_seconds: 3151
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-217-r5.mp3
+    checksum: b3f30e5338b7d57aedaa155a65c100d0be84a4dd940887c5ff770156bdc52ad6
+    media_type: audio/mpeg
+    bytes: 50418127
+argument_transcripts:
+- date: '1978-01-11'
+  docket: "76-1629"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1977/76-1629_01-11-1978.pdf
+  pages: 52
+  file:
+    storage_key: supreme-court-transcripts/1977/76-1629_01-11-1978.pdf
+    checksum: 02cfaf4d7e827dd936a9a5878cf5d279b8d8b98e62d65c13549ad6453d9ef0b7
+    media_type: application/pdf
+    bytes: 11342991
 rights:
   status: no-permission-needed
   basis: us-government-work

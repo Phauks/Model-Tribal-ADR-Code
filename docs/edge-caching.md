@@ -11,7 +11,7 @@ The site has three kinds of answers.
 
   | Addresses | Kept for | Tag |
   | --- | --- | --- |
-  | `/cases/<id>`, `/laws/<key>`, `/biographies/<person>`, `/supreme-court/justices/<key>`, `/supreme-court/presidents/<key>`, `/supreme-court/<court>`, and the `__data.json` of each | 1 day | `record-pages` |
+  | `/cases/<id>`, `/laws/<key>`, `/biographies/<person>`, `/supreme-court/justices/<key>`, `/presidents/<key>`, `/supreme-court/<court>`, and the `__data.json` of each | 1 day | `record-pages` |
   | `/supreme-court/portraits/<person>` | 30 days | `record-pages` |
   | `/map-tiles/<set>/<z>/<x>/<y>.mvt`, `/map-tiles/imagery/<name>/<z>/<x>/<y>` | 30 days | `map-tiles` |
   | `/map-tiles/assets/…` (the map's fonts and icons) | 7 days | `map-tiles` |
@@ -65,9 +65,39 @@ Measured from one cloud machine in Cloudflare's IAD location (Ashburn, Virginia)
 
 Over the 24 hours to 23:00 UTC on Nov. 26, 2026: 14,428 requests were answered from a cache, 2,695 missed it, and 4,992 were made by the Worker with no cache at all (65% of all requests from a cache). None of the 376 map tile requests came from a cache.
 
-### After
+### After (live from Nov. 27, 2026, 01:45 UTC)
 
-To be measured after the deploy.
+Measured the same way at 01:46 UTC on Nov. 27, 2026, a minute after the deploy, so the first of the ten requests to each address was usually the miss that filled the cache.
+
+| Address | Median | 90th percentile | Kept? |
+| --- | --- | --- | --- |
+| `/` (prebuilt, for comparison) | 164 ms | 244 ms | REVALIDATED 9, MISS 1 |
+| `/cases/worcester-v-georgia` | 137 ms | 163 ms | HIT 10 |
+| `/cases/worcester-v-georgia/__data.json` | 151 ms | 172 ms | BYPASS 10 |
+| `/laws/treaty-with-the-cheyenne-and-arapaho-1867` | 150 ms | 169 ms | HIT 9, MISS 1 |
+| `/biographies/a-c-hunt` | 140 ms | 162 ms | HIT 9, MISS 1 |
+| `/supreme-court/justices/abe-fortas` | 137 ms | 182 ms | HIT 9, MISS 1 |
+| `/search/index.json` | 150 ms | 206 ms | HIT 9, MISS 1 |
+| `/map-tiles/land-areas-fe4ab6eac717/5/7/12.mvt` | 140 ms | 163 ms | HIT 9, MISS 1 |
+| `/map-tiles/basemap-20261122/6/15/24.mvt` | 141 ms | 156 ms | HIT 9, MISS 1 |
+| `/map-tiles/basemap-20261122/4/3/5.mvt` | 143 ms | 163 ms | HIT 9, MISS 1 |
+| `/map-tiles/imagery/satellite/6/15/24` | 135 ms | 158 ms | HIT 9, MISS 1 |
+| `/map-tiles/assets/sprites/white.json` | 143 ms | 159 ms | HIT 10 |
+
+About 135 ms of each time is the round trip from the measuring machine to Cloudflare. A page's `__data.json`, which the site asks for when a reader moves to another page within it, is never kept: SvelteKit marks it `private, no-store`, and the wrapper respects that. Signed-in and personal pages (`/sign-in`, `/profile`, `/workspace`, `/account`, `/changes`), nation pages and essays all answered BYPASS.
+
+Over the 24 hours from 01:50 UTC on Nov. 27 to 01:45 UTC on Nov. 28, 2026 (zone analytics, eyeball requests), traffic was about twelve times the day before, much of it the site's own checks:
+
+| Requests | Hit | Revalidated | Miss | Bypass | No cache | Hit rate |
+| --- | --- | --- | --- | --- | --- | --- |
+| All (266,715) | 202,786 | 35,848 | 18,631 | 7,722 | 1,727 | 76% (65% the day before) |
+| Map tiles (11,938) | 6,598 | 0 | 4,686 | 96 | 558 | 55% (0% the day before) |
+| Search files (2,024) | 1,302 | 505 | 179 | 31 | 7 | 64% |
+| Cases (331) | 76 | 11 | 32 | 212 | 0 | 23% |
+| Laws (374) | 157 | 8 | 66 | 143 | 0 | 42% |
+| Supreme Court (827) | 432 | 37 | 132 | 226 | 0 | 52% |
+
+Bypasses on the record pages are mostly their `__data.json`. Each Cloudflare location keeps its own copy, so the first reader of a page or tile at each location still misses.
 
 ## Sources
 

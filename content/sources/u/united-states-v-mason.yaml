@@ -31,6 +31,10 @@ opinions:
     page: 391
 original_link: https://www.loc.gov/item/usrep412391/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260123210447/https://www.loc.gov/item/usrep412391/
+  captured: '2026-01-23'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -100,6 +104,66 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=412%20U.S.%20391
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1973-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-24-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048373
+  whole_session: true
+  duration_seconds: 2648
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-24-r1.mp3
+    checksum: 02899bbeeeefba6a5d1bfdee223eeb6c11b250af23951eef5e10dab06d586399
+    media_type: audio/mpeg
+    bytes: 42364888
+- kind: argument
+  date: '1973-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-24-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048373
+  whole_session: true
+  duration_seconds: 3906
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-24-r2.mp3
+    checksum: 06842e4c0ac1a86b81f370446fabbca76b0bb9768919614a4ec10c87c6faccb9
+    media_type: audio/mpeg
+    bytes: 62497146
+- kind: argument
+  date: '1973-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-24-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048373
+  whole_session: true
+  duration_seconds: 3896
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-24-r3.mp3
+    checksum: 0b56e683fb86561ce065df978dec5ee49b8def3d3f72e02cbc7e1da2146935b5
+    media_type: audio/mpeg
+    bytes: 62334141
+- kind: argument
+  date: '1973-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-24-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048373
+  whole_session: true
+  duration_seconds: 4056
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-24-r4.mp3
+    checksum: 37c47f3a86aa3c7027129c7a325eeb6cafb4ee7add678bf1d2d717cf947407d7
+    media_type: audio/mpeg
+    bytes: 64900411
+argument_transcripts:
+- date: '1973-04-18'
+  docket: "72-606"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1972/72-606_72-654_04-18-1973.pdf
+  pages: 49
+  file:
+    storage_key: supreme-court-transcripts/1972/72-606_72-654_04-18-1973.pdf
+    checksum: fa1985e726221b0fe2557f9655e1c3def8ecc00de7686b4212c665494f8c1e81
+    media_type: application/pdf
+    bytes: 10610512
 rights:
   status: no-permission-needed
   basis: us-government-work

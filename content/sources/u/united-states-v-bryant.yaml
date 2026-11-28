@@ -88,6 +88,52 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/United_States_v._Bryant
+argument_audio:
+- kind: argument
+  date: '2016-04-19'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/15-420.mp3
+  duration_seconds: 2639
+  file:
+    storage_key: supreme-court-audio/court/2015/15-420.mp3
+    checksum: ce088f0acf27863a5dd823c2b8eb7079880b8e94b96a6cdaf46be398a49f3866
+    media_type: audio/mpeg
+    bytes: 21117432
+- kind: argument
+  date: '2016-04-19'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1970-April19_2016.MP3
+  catalog: https://catalog.archives.gov/id/183518352
+  whole_session: true
+  duration_seconds: 7339
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1970-april19_2016.mp3
+    checksum: 0106b7e0734237b8ac358b99ae13c3041f3adb6161f149069c43d4e08a7c25bf
+    media_type: audio/mpeg
+    bytes: 117431808
+- kind: opinion announcement
+  date: '2016-06-13'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1986-June13_2016Non-Argument.mp3
+  catalog: https://catalog.archives.gov/id/183518368
+  whole_session: true
+  duration_seconds: 1485
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1986-june13_2016non-argument.mp3
+    checksum: e27ebe8e214dd4d7295d7fee1a4d2df50b9afba6a543649a2fa1618c5883515f
+    media_type: audio/mpeg
+    bytes: 23763216
+argument_transcripts:
+- date: '2016-04-19'
+  docket: "15-420"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2015/15-420_3ea4.pdf
+  pages: 52
+  file:
+    storage_key: supreme-court-transcripts/2015/15-420_3ea4.pdf
+    checksum: 6ca687216c02f8fb1d542df49e523680d65194df141a8d07c15ab078f08cec57
+    media_type: application/pdf
+    bytes: 856810
 rights:
   status: no-permission-needed
   basis: us-government-work

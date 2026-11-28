@@ -31,6 +31,10 @@ opinions:
     page: 40
 original_link: https://www.loc.gov/item/usrep470039/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250208071032/https://www.loc.gov/item/usrep470039/
+  captured: '2025-02-08'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -100,6 +104,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=470%20U.S.%2039
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1984-11-05'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-497.mp3
+  catalog: https://catalog.archives.gov/id/102048873
+  whole_session: true
+  duration_seconds: 11835
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-497.mp3
+    checksum: c204e38ada4c31dd5b7334a7d8fc6f83063475214f085fad92783393e263c2c0
+    media_type: audio/mpeg
+    bytes: 189354859
+argument_transcripts:
+- date: '1984-11-05'
+  docket: "83-1476"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1984/83-1476_11-05-1984.pdf
+  pages: 49
+  file:
+    storage_key: supreme-court-transcripts/1984/83-1476_11-05-1984.pdf
+    checksum: 3fb714f05dedb18b941223c14ddd8d1e5b32029c54cbd6b9820adeecbbfca052
+    media_type: application/pdf
+    bytes: 11715366
 rights:
   status: no-permission-needed
   basis: us-government-work

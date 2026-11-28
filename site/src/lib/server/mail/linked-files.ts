@@ -271,7 +271,7 @@ export async function linkedFileForDownload(context: MailContext, identifier: st
 
 async function deleteLinkedFiles(context: MailContext, files: LinkedFileRow[]): Promise<void> {
 	for (const file of files) {
-		if (file.multipart_identifier) await context.bucket.resumeMultipartUpload(file.bucket_key, file.multipart_identifier).abort().catch(() => undefined);
+		if (file.multipart_identifier) await context.bucket.resumeMultipartUpload(file.bucket_key, file.multipart_identifier).abort().catch(() => /* expected: R2 removes an unfinished multipart upload after seven days */ undefined);
 	}
 	const keys = files.filter((file) => !file.multipart_identifier).map((file) => file.bucket_key);
 	if (keys.length) await context.bucket.delete(keys);

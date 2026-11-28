@@ -1,0 +1,74 @@
+key: midwater-trawlers-co-operative-v-department-of-commerce-2004
+kind: federal-case
+citation:
+  type: legal_case
+  title: Midwater Trawlers Co-Operative v. Department of Commerce
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '393'
+  page: '994'
+  issued:
+    date-parts:
+    - - 2004
+      - 12
+      - 28
+  URL: https://static.case.law/f3d/393/html/0994-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+  number: 03-35398
+original_link: https://static.case.law/f3d/393/html/0994-01.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+argument_audio:
+- kind: argument
+  date: '2004-06-07'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2004/06/07/03-35398.mp3
+  duration_seconds: 1857
+  file:
+    storage_key: appeals-court-audio/ca9/2004/2004-06-07-03-35398.mp3
+    checksum: ba16538322111a2bb7b46303d89d3557ed10566a2552e429a76abdf7c3b54e0d
+    media_type: audio/mpeg
+    bytes: 14858898
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- makah-indian-tribe-of-the-makah-indian-reservation
+nations_in_case:
+  checked: '2026-11-27'
+  named:
+  - nation: makah-indian-tribe-of-the-makah-indian-reservation
+    named_as: Makah Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 393 F.3d 994. Decided by the United States Court of Appeals for the Ninth Circuit on Dec. 28, 2004. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 10, at or above 10, the level kept without a reading. It was held at first for a privacy review because its text uses words about children or protected persons; two readings of the full opinion on Nov. 27, 2026 found no child or protected person named, so it is shown.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 10
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked
+  - check: 'Privacy: no child or protected person named in the opinion'
+    result: agree
+    detail: two AI readings of the full text, Nov. 27, 2026; released from the privacy hold

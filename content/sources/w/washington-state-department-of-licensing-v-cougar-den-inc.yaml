@@ -116,6 +116,52 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=586%20U.S.%20347
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2018-10-30'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/16-1498.mp3
+  duration_seconds: 3628
+  file:
+    storage_key: supreme-court-audio/court/2018/16-1498.mp3
+    checksum: 9739efbef76b65105c08f5df67aff08acd6b9eebee2971a78f9bf1b3a8ff13b3
+    media_type: audio/mpeg
+    bytes: 29026708
+- kind: argument
+  date: '2018-10-30'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2109-October30_2018.mp3
+  catalog: https://catalog.archives.gov/id/183518491
+  whole_session: true
+  duration_seconds: 7694
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2109-october30_2018.mp3
+    checksum: ecd72002a834dee7d3641802a015faeef8dce0c934600da0c4b8df0e9a01adf1
+    media_type: audio/mpeg
+    bytes: 153875078
+- kind: opinion announcement
+  date: '2019-03-19'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2132-March19_2019.mp3
+  catalog: https://catalog.archives.gov/id/183518514
+  whole_session: true
+  duration_seconds: 5155
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2132-march19_2019.mp3
+    checksum: d5b08a87f10c0905c9784d81f02f6b62a8733aa3fc9699aa258cebdb7069fa59
+    media_type: audio/mpeg
+    bytes: 103097318
+argument_transcripts:
+- date: '2018-10-30'
+  docket: "16-1498"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2018/16-1498_7mio.pdf
+  pages: 90
+  file:
+    storage_key: supreme-court-transcripts/2018/16-1498_7mio.pdf
+    checksum: 9c373ba6a477ae5ea996f2814a66fb2be0f6ce61284e4d7180c5c7739c816273
+    media_type: application/pdf
+    bytes: 776363
 rights:
   status: no-permission-needed
   basis: us-government-work

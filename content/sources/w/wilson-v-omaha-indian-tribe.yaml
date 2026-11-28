@@ -104,6 +104,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=442%20U.S.%20653
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1979-03-21'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-271.mp3
+  catalog: https://catalog.archives.gov/id/102048655
+  whole_session: true
+  duration_seconds: 12977
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-271.mp3
+    checksum: b4f3138ddb5505baf11d33dadbd44ef5798ae89d83674304c735cc1c53c5839c
+    media_type: audio/mpeg
+    bytes: 207628870
+argument_transcripts:
+- date: '1979-03-21'
+  docket: "78-160"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1978/78-160_78-161_03-21-1979.pdf
+  pages: 70
+  file:
+    storage_key: supreme-court-transcripts/1978/78-160_78-161_03-21-1979.pdf
+    checksum: 0a2f7003cb172319c2572663b83fa27bf50f80546d816ada9c833d73f2d5b63c
+    media_type: application/pdf
+    bytes: 17229758
 rights:
   status: no-permission-needed
   basis: us-government-work

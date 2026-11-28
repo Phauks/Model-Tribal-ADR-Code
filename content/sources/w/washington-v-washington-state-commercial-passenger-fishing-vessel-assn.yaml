@@ -104,6 +104,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=443%20U.S.%20658
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1979-02-28'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-268.mp3
+  catalog: https://catalog.archives.gov/id/102048652
+  whole_session: true
+  duration_seconds: 13167
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-268.mp3
+    checksum: 75faaca8962585b8047c24cd06f78033e43d948be9e7d8b5a6b64fe96620b289
+    media_type: audio/mpeg
+    bytes: 210669524
+argument_transcripts:
+- date: '1979-02-28'
+  docket: "77-983"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1978/77-983_78-119_78-139_02-28-1979.pdf
+  pages: 74
+  file:
+    storage_key: supreme-court-transcripts/1978/77-983_78-119_78-139_02-28-1979.pdf
+    checksum: 579ed67b71d48f527e4a221ccc782366e30b3451cb935f16ae34981b0c86ba17
+    media_type: application/pdf
+    bytes: 15534228
 rights:
   status: no-permission-needed
   basis: us-government-work

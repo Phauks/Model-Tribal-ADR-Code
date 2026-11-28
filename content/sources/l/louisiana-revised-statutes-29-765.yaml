@@ -1,0 +1,50 @@
+key: louisiana-revised-statutes-29-765
+kind: state-statute
+citation:
+  type: legislation
+  title: Measures to detect and track public health emergencies
+  title-short: La. Stat. Ann. § 29:765
+  container-title: Louisiana Revised Statutes
+  container-title-short: La. Stat. Ann.
+  section: 29:765
+  author:
+  - literal: Louisiana State Legislature
+  issued:
+    date-parts:
+    - - 2003
+  URL: https://legis.la.gov/Legis/Law.aspx?d=207681
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legis.la.gov/Legis/Law.aspx?d=207681
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: La. Stat. Ann. § 29:765 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: LA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: La. Stat. Ann. § 29:765 (2026). History: Acts 2003, No. 1206, §1; Acts 2006, 1 st Ex. Sess., No. 35, §8, eff. March 1, 2006; Acts 2006, No. 442, §3, eff. June 15, 2006. Text read from the Louisiana State Legislature''s page for the section (legis.la.gov/Legis/Law.aspx) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Bioterrorism reports must notify and share PHI with tribal authorities. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

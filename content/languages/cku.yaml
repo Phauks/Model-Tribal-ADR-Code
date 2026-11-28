@@ -1,0 +1,51 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: cku
+name: Koasati
+iso_639_3:
+  code: cku
+  reference_name: Koasati
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: koas1236
+  level: language
+  source: glottolog-5-4
+family:
+  name: Muskogean
+  glottocode: musk1252
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/843
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '151896'
+  title: Koasati dictionary
+  kinds:
+  - dictionary
+  author: Geoffrey D. Kimball
+  year: 1994
+  publisher: University of Nebraska Press
+  pages: 406
+  source: glottolog-5-4
+- glottolog_reference: '78659'
+  title: Koasati Grammar
+  kinds:
+  - grammar
+  author: Geoffrey D. Kimball
+  year: 1991
+  publisher: University of Nebraska Press
+  pages: 666
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '97103'
+  title: A Descriptive Grammar of Koasati (Louisiana)
+  kinds:
+  - grammar
+  author: Geoffrey David Kimball
+  year: 1985
+  publisher: Tulane University
+  pages: 571
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

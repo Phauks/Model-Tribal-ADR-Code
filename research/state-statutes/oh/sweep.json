@@ -1,0 +1,47 @@
+{
+  "state": "OH",
+  "code": "Ohio Revised Code",
+  "edition": 2026,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 33791,
+    "live": 33791,
+    "strong": 44,
+    "weak_only": 230
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 45,
+    "core": 4,
+    "incidental": 41,
+    "by_pool": {
+      "A": {
+        "core": 4,
+        "incidental": 38,
+        "none": 2
+      },
+      "B": {
+        "none": 227,
+        "incidental": 3
+      },
+      "C": {
+        "none": 141
+      },
+      "D": {
+        "none": 300
+      }
+    },
+    "meta": {
+      "live": 33791,
+      "A": 44,
+      "B": 230,
+      "E": 0,
+      "C": 141,
+      "C_sample": 141,
+      "D": 33376,
+      "D_sample": 300,
+      "items": 715,
+      "batches": 6
+    }
+  }
+}

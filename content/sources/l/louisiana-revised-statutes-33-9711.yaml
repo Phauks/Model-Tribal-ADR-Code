@@ -1,0 +1,50 @@
+key: louisiana-revised-statutes-33-9711
+kind: state-statute
+citation:
+  type: legislation
+  title: Municipal consortium
+  title-short: La. Stat. Ann. § 33:9711
+  container-title: Louisiana Revised Statutes
+  container-title-short: La. Stat. Ann.
+  section: 33:9711
+  author:
+  - literal: Louisiana State Legislature
+  issued:
+    date-parts:
+    - - 2018
+  URL: https://legis.la.gov/Legis/Law.aspx?d=1107441
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legis.la.gov/Legis/Law.aspx?d=1107441
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: La. Stat. Ann. § 33:9711 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: LA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: La. Stat. Ann. § 33:9711 (2026). History: Acts 2018, No. 331, §1. Text read from the Louisiana State Legislature''s page for the section (legis.la.gov/Legis/Law.aspx) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian tribe; indian; tribe); AI reader''s verdict incidental: Municipal consortium lets federally recognized Indian tribes join by resolution. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian tribe; indian; tribe'

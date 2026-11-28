@@ -93,6 +93,52 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Michigan_v._Bay_Mills_Indian_Community
+argument_audio:
+- kind: argument
+  date: '2013-12-02'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/12-515.mp3
+  duration_seconds: 3697
+  file:
+    storage_key: supreme-court-audio/court/2013/12-515.mp3
+    checksum: 47cdfd12688f20ff7b0c864f2804548a8435960bb2b385565ed943d96b7e4a12
+    media_type: audio/mpeg
+    bytes: 29580791
+- kind: argument
+  date: '2013-12-02'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1837-December2_2013.MP3
+  catalog: https://catalog.archives.gov/id/183518219
+  whole_session: true
+  duration_seconds: 7909
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1837-december2_2013.mp3
+    checksum: 0d52e91c4543c976f6a71b4cb24b8a4482bb498ed01d217bf1faa3f7e326dd38
+    media_type: audio/mpeg
+    bytes: 126548480
+- kind: opinion announcement
+  date: '2014-05-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1872-May27_2014Non-Argument.MP3
+  catalog: https://catalog.archives.gov/id/183518254
+  whole_session: true
+  duration_seconds: 1448
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1872-may27_2014non-argument.mp3
+    checksum: 35742547afa63c85bfe7f4f128659f0e1a446af83d3401f5972b95cc3e020e71
+    media_type: audio/mpeg
+    bytes: 23175680
+argument_transcripts:
+- date: '2013-12-02'
+  docket: "12-515"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2013/12-515_4357.pdf
+  pages: 78
+  file:
+    storage_key: supreme-court-transcripts/2013/12-515_4357.pdf
+    checksum: cd35a0405857a7403dcf6a448efe89d25de472df1db3e1bfc7028c031f8f0d4c
+    media_type: application/pdf
+    bytes: 782003
 rights:
   status: no-permission-needed
   basis: us-government-work

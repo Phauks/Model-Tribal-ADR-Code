@@ -16,7 +16,10 @@ citation:
       - 24
 original_link: https://www2.census.gov/geo/tiger/TIGER2025/ANRC/
 retrieved: '2026-11-24'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261125005611/https://www2.census.gov/geo/tiger/TIGER2025/ANRC/
+  captured: '2026-11-25'
 file:
   storage_key: census-boundaries/census-tiger-2025-anrc.zip
   checksum: db57264f27bcbcbe96b0e5a685170df48a6fb8c169279c7418de1a6a3b974607

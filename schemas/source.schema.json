@@ -128,6 +128,64 @@
         "checked": { "$ref": "common.schema.json#/$defs/calendarDate" }
       }
     },
+    "argument_transcripts": {
+      "type": "array",
+      "description": "Official transcripts of the court hearing the case argued, one per day of argument. For the Supreme Court, from the Court's own site, which has one for every argument since the October 1968 term (the Court's library scans before the 2000 term). Listed and stored by scripts/caselaw/supreme_court_argument_transcripts.py; the plan is research/supreme-court-coverage/argument-transcripts.csv.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["date", "docket", "source", "link"],
+        "properties": {
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "The day of the argument, as the transcript's list dates it."
+          },
+          "docket": {
+            "type": "string",
+            "description": "The docket number the transcript is listed under."
+          },
+          "source": {
+            "type": "string",
+            "description": "Who publishes the transcript (\"Supreme Court of the United States\")."
+          },
+          "link": {
+            "type": "string",
+            "format": "uri",
+            "description": "The transcript file at its source."
+          },
+          "pages": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Pages in the stored file."
+          },
+          "file": {
+            "$ref": "#/properties/file"
+          }
+        }
+      }
+    },
+    "argument_audio": {
+      "type": "array",
+      "description": "Sound recordings of the court hearing the case: each argument, and the court announcing its opinion where the recording holds that. For the Supreme Court, from the Court's own site (every argument since the October 2010 term) and the National Archives (Record Group 267, every recording since the 1955 term). Listed and stored by scripts/caselaw/supreme_court_argument_audio.py; the plan is research/supreme-court-coverage/argument-audio.csv.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "date", "source", "link"],
+        "properties": {
+          "kind": {"enum": ["argument", "opinion announcement"]},
+          "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "The day the recording was made, as the source dates it."},
+          "source": {"type": "string", "description": "Who holds the recording: the court itself (\"Supreme Court of the United States\", \"United States Court of Appeals for the Ninth Circuit\") or the \"National Archives\"."},
+          "link": {"type": "string", "format": "uri", "description": "The recording file at its source."},
+          "catalog": {"type": "string", "format": "uri", "description": "The National Archives Catalog entry for the recording."},
+          "whole_session": {"type": "boolean", "description": "The file holds the Court's whole session that day (one reel), so the case is somewhere inside it, with other cases."},
+          "note": {"type": "string", "description": "Where the source's date differs from the case's argument or decision date."},
+          "duration_seconds": {"type": "integer", "minimum": 0, "description": "Length of the recording, read from the stored file."},
+          "held": {"type": "boolean", "description": "True when the stored file is kept privately and not served (for example, a recording about a child)."},
+          "file": {"$ref": "#/properties/file"}
+        }
+      }
+    },
     "court_dates": {
       "type": "object",
       "description": "A case's dates other than its decision (citation.issued), each as the official report or the court's own record prints it: the U.S. Reports or the Court's own prints and docket for the Supreme Court, the reporter's head matter or the court's slip opinion for other courts. A date the source does not print is left out, never taken from secondary sources. The case box shows each date on its own line in order, with the decision among them (site/src/lib/server/case-facts.ts, pdf/pipeline/typst-writer.mjs). Checked by hand; the review is in research/reviews/2026-11-23-court-dates.csv.",

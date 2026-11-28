@@ -29,22 +29,16 @@ rights:
   basis: government-edict
   basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
   redistribution: true
-tribes:
-- confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
 nations_in_case:
   checked: '2026-11-26'
-  named:
-  - nation: confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
-    named_as: Tribes
-    role: party
-    note: Matched by the script to a name the nation record gives; not yet checked.
+  named: []
 jurisdictions:
 - level: federal
 topics:
 - federal-court-indian-law
 found_in:
 - 2026-11-26-federal-court-indian-law-opinions
-notes: Published at 163 F. Supp. 603. Decided by the United States Court of Claims on July 16, 1958. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 20, at or above 10, the level kept without a reading.
+notes: Published at 163 F. Supp. 603; 143 Ct. Cl. 534. Decided by the United States Court of Claims on July 16, 1958. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 20, at or above 10, the level kept without a reading.
 review:
   status: unverified
   by: scripts/caselaw/state_court_opinions.py
@@ -55,4 +49,4 @@ review:
     detail: score 20
   - check: Nations named in the caption, matched to nation records by name
     result: agree
-    detail: 1 matched, 0 not linked
+    detail: 0 matched, 0 not linked

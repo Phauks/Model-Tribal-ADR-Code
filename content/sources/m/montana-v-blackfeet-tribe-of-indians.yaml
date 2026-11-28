@@ -34,6 +34,10 @@ opinions:
     page: 768
 original_link: https://www.loc.gov/item/usrep471759/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20221218022848/https://www.loc.gov/item/usrep471759/
+  captured: '2022-12-18'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -106,6 +110,64 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=471%20U.S.%20759
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1985-01-15'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-510.mp3
+  catalog: https://catalog.archives.gov/id/118974684
+  whole_session: true
+  duration_seconds: 14153
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-510.mp3
+    checksum: a33fca957b6486ca8983139cde8dd3c0d1ab2892224e72fa968716c4df60264e
+    media_type: audio/mpeg
+    bytes: 226444557
+- kind: argument
+  date: '1985-04-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-527-r1.mp3
+  catalog: https://catalog.archives.gov/id/118974702
+  whole_session: true
+  duration_seconds: 6884
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-527-r1.mp3
+    checksum: bebba534b0dc1eaa8a051000abdd745ba7dce0987dadc1350cf7ccda1c54fc8b
+    media_type: audio/mpeg
+    bytes: 110139061
+- kind: argument
+  date: '1985-04-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-527-r2.mp3
+  catalog: https://catalog.archives.gov/id/118974702
+  whole_session: true
+  duration_seconds: 3640
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-527-r2.mp3
+    checksum: 1ac29458633ec1b05e50271e4edf216cdf9867e1b013958511f7f59ffc153ae3
+    media_type: audio/mpeg
+    bytes: 58246503
+argument_transcripts:
+- date: '1985-01-15'
+  docket: "83-2161"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1984/83-2161_01-15-1985.pdf
+  pages: 47
+  file:
+    storage_key: supreme-court-transcripts/1984/83-2161_01-15-1985.pdf
+    checksum: 760e8a0fb931e771cb646ad6f520247b3d8a90c085670b333d042563e9177d2a
+    media_type: application/pdf
+    bytes: 11202025
+- date: '1985-04-23'
+  docket: "83-2161"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1984/83-2161_04-23-1985.pdf
+  pages: 43
+  file:
+    storage_key: supreme-court-transcripts/1984/83-2161_04-23-1985.pdf
+    checksum: 56fb20c9f2d78d08ec8ac6bbfe68ed5f99de15dfa8cf60e57c36847d3f845f39
+    media_type: application/pdf
+    bytes: 10204965
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -8,7 +8,7 @@
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import LazySourceList from '#lib/components/LazySourceList.svelte';
 	import { mapViewChoices, mapViews } from '#lib/map-views.ts';
-	import TileMap, { storedBaseMap, storedPlaceNames, tileMapPlaces, type TileMapCamera, type TileMapFeature, type TileMapLayers, type TileMapPadding } from '#lib/components/TileMap.svelte';
+	import TileMap, { storedBaseMap, tileMapPlaces, type TileMapCamera, type TileMapFeature, type TileMapLayers, type TileMapPadding } from '#lib/components/TileMap.svelte';
 	import MapExplorer from '#lib/components/MapExplorer.svelte';
 	import Collapsible from '#lib/components/Collapsible.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
@@ -27,6 +27,7 @@
 	import ViewSwitch from '#lib/components/ViewSwitch.svelte';
 	import { censusYearFor, cessionLines, readCessionsSwitch, type CessionDetail } from '#lib/historic-map.ts';
 	import type { PageProps } from './$types';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let { data }: PageProps = $props();
 
@@ -69,7 +70,6 @@
 	]);
 	/** The base map and its switches, which the Layers list sets and every map on the site remembers. */
 	let baseMap = $state(storedBaseMap());
-	let placeNames = $state(storedPlaceNames());
 
 	/**
 	 * The view whose table is under the map, whose drawn copy prints, and which the Download menu offers: the land's coloring if it has one, then States, Nations' land or the regions, whichever is on first.
@@ -141,7 +141,8 @@
 			.then((body) => {
 				cessionList = body;
 			})
-			.catch(() => {
+			.catch((problem) => {
+				sendProblem(problem, { code: 'map.cessions' });
 				cessionsLoading = undefined;
 			});
 		return cessionsLoading;
@@ -199,7 +200,8 @@
 					for (const row of body.areaRows) listedNations.set(row.anchor, row.nations);
 					shaded = { ...shaded, [view]: body };
 				})
-				.catch(() => {
+				.catch((problem) => {
+					sendProblem(problem, { code: 'map.shaded', place: view });
 					shadedFailed[view] = true;
 					shadedLoading.delete(view);
 				});
@@ -236,7 +238,8 @@
 				.then((body: ViewDrawing) => {
 					viewDrawings = { ...viewDrawings, [key]: body };
 				})
-				.catch(() => {
+				.catch((problem) => {
+					sendProblem(problem, { code: 'map.drawings', place: key });
 					drawingsFailed[key] = true;
 					drawingLoading.delete(key);
 				})
@@ -388,7 +391,7 @@
 			.then((detail) => {
 				if (detail) nationDetails[id] = detail;
 			})
-			.catch(() => {});
+			.catch((problem) => sendProblem(problem, { code: 'map.nation-preview', place: id }));
 	}
 
 	/** Every nation the page knows, with its states, from the table of nations by state. */
@@ -743,7 +746,6 @@
 {#if tileMapWanted}
 	<div class="map-frame explorer-frame live-frame no-print" data-map-full-screen>
 		<div class="map-drawing" class:tiled={tileMapReady} class:waiting={!tileMapReady}>
-			<p class="map-loading small muted" aria-hidden="true">Loading the map…</p>
 			<div class="tile-holder">
 				<TileMap
 					bind:this={tileMap}
@@ -762,7 +764,6 @@
 				statesBy={statesColor}
 					onfeature={(feature) => void chooseFeature(feature)}
 					bind:baseMap
-					bind:placeNames
 					outlines={true}
 					onready={() => (tileMapReady = true)}
 					onfail={() => (tileMapReady = false)}
@@ -779,7 +780,6 @@
 					bind:statesColor
 					{statesColorChoices}
 					bind:baseMap
-					bind:placeNames
 					bind:year
 					first={firstYear}
 					last={lastYear}
@@ -1187,18 +1187,6 @@
 		:global(html[data-scripts='on']) .map-drawing.waiting .drawn-map {
 			visibility: hidden;
 		}
-
-		:global(html[data-scripts='on']) .map-drawing.waiting .map-loading {
-			display: block;
-		}
-	}
-
-	.map-loading {
-		display: none;
-		position: absolute;
-		inset: var(--space-6) 0 auto;
-		margin: 0;
-		text-align: center;
 	}
 
 	.map-note {

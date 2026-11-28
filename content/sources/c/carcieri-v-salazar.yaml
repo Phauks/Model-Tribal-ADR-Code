@@ -40,6 +40,10 @@ opinions:
     page: 401
 original_link: https://www.supremecourt.gov/opinions/boundvolumes/555bv.pdf
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260709025427/https://www.supremecourt.gov/opinions/boundvolumes/555bv.pdf
+  captured: '2026-07-09'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -109,6 +113,42 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=555%20U.S.%20379
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2008-11-03'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1550-November3AMPM.MP3
+  catalog: https://catalog.archives.gov/id/183517932
+  whole_session: true
+  duration_seconds: 11707
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1550-november3ampm.mp3
+    checksum: 6b2715b49f8a2ac6134d74b29779dacf2fa911728eaf96a1edc4b25fe0e14771
+    media_type: audio/mpeg
+    bytes: 187309568
+- kind: opinion announcement
+  date: '2009-02-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1568-February24.MP3
+  catalog: https://catalog.archives.gov/id/183517950
+  whole_session: true
+  duration_seconds: 8283
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1568-february24.mp3
+    checksum: 8dbe585dfec40ea8156c7db0d1348a8c8718548622b743deb0da3721c3682ffa
+    media_type: audio/mpeg
+    bytes: 132524032
+argument_transcripts:
+- date: '2008-11-03'
+  docket: "07-526."
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2008/07-526.pdf
+  pages: 69
+  file:
+    storage_key: supreme-court-transcripts/2008/07-526.pdf
+    checksum: 890bdffb96a26d674981622614d43b1f52f4864aa0a4b60b2af7d1450500cbb0
+    media_type: application/pdf
+    bytes: 330331
 rights:
   status: no-permission-needed
   basis: us-government-work

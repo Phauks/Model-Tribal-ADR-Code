@@ -325,10 +325,10 @@
 		"retrieved": "2026-11-27"
 	},
 	"reservations1909": {
-		"set": "reservations-1909-f7e1a081c12e",
-		"key": "map-tiles/reservations-1909-f7e1a081c12e.pmtiles",
-		"bytes": 1228683,
-		"sha256": "f7e1a081c12e6f7bc72e4cf0f23aaddb04f8df45019f7f311199fede22ee1e07",
+		"set": "reservations-1909-31ca29ac72ce",
+		"key": "map-tiles/reservations-1909-31ca29ac72ce.pmtiles",
+		"bytes": 1233185,
+		"sha256": "31ca29ac72ce7ca3a2c556293dd033dad88e7195a7f4f3b2215243f3bdcad918",
 		"minZoom": 0,
 		"maxZoom": 11,
 		"bounds": [
@@ -340,7 +340,7 @@
 		"layers": [
 			"reservations"
 		],
-		"features": 193,
+		"features": 182,
 		"years": [
 			1909
 		],
@@ -368,6 +368,36 @@
 		"sources": [
 			"https://catalog.archives.gov/medialz/cartographic/rg-075/305482/Batch0017/11/305482_11536_AA%20_01.jpg",
 			"https://catalog.archives.gov/id/655555952"
+		],
+		"retrieved": "2026-11-27"
+	},
+	"journeys": {
+		"set": "journeys-8b54c568d856",
+		"key": "map-tiles/journeys-8b54c568d856.pmtiles",
+		"bytes": 905208,
+		"sha256": "8b54c568d856ca291dff2b0f4ea924a285354a0fecb80acd40be934439068e13",
+		"minZoom": 0,
+		"maxZoom": 10,
+		"bounds": [
+			-124.4981,
+			26.6167,
+			-75.6392,
+			48.3781
+		],
+		"layers": [
+			"journeys",
+			"journey-places"
+		],
+		"features": 86,
+		"trailPieces": 718,
+		"removals": 85,
+		"years": [
+			1817,
+			1894
+		],
+		"sources": [
+			"https://services1.arcgis.com/gGHDlz6USftL5Pau/arcgis/rest/services/R01_NezPerceNeeMePoo_NationalHistoricTrail_Centerline/FeatureServer/0",
+			"site/geography/removals.json"
 		],
 		"retrieved": "2026-11-27"
 	}

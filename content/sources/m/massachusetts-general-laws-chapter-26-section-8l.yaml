@@ -1,0 +1,48 @@
+key: massachusetts-general-laws-chapter-26-section-8l
+kind: state-statute
+citation:
+  type: legislation
+  title: Implementation and enforcement of Patient Protection and Affordable Care Act and Women's Health and Cancer Rights Act of 1998 regarding licensed carriers pursuant to chapters 175, 176A, 176B, 176E, 176F and 176G
+  title-short: Mass. Gen. Laws ch. 26, § 8L
+  container-title: General Laws of Massachusetts
+  container-title-short: Mass. Gen. Laws
+  chapter-number: '26'
+  section: 8L
+  author:
+  - literal: Massachusetts General Court
+  URL: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleII/Chapter26/Section8L
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleII/Chapter26/Section8L
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mass. Gen. Laws ch. 26, § 8L (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Mass. Gen. Laws ch. 26, § 8L (2026). Text read from the Massachusetts Legislature''s open data service for the section of the General Laws (malegislature.gov/api) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian health; indian); AI reader''s verdict incidental: Enforces federal Indian Health Care Improvement Act amendments against carriers. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian health; indian'

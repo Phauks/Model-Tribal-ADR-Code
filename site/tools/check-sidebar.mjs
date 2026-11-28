@@ -163,7 +163,7 @@ const column = '.sidebar-wide .local-column';
 	await page.locator(`${bar} .section-name[href='/laws']`).click();
 	await page.waitForURL(`${base}/laws`);
 	check((await page.locator('main h1').textContent()).trim() === 'Federal law', 'A click on Federal Law does not open its page');
-	check(await page.locator("main a.tile[href='/stats/treaties']").isVisible(), 'The Federal law page does not list its pages');
+	check(await page.locator("main .card a[href='/stats/treaties']").isVisible(), 'The Federal law page does not list its pages');
 	// From the keyboard the name and the chevron are each one stop for Tab.
 	await page.locator(`${bar} .section-name[href='/nations']`).focus();
 	await page.keyboard.press('Tab');

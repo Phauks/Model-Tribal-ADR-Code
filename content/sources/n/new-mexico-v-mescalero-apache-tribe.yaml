@@ -31,6 +31,10 @@ opinions:
     page: 325
 original_link: https://www.loc.gov/item/usrep462324/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20251117232429/https://www.loc.gov/item/usrep462324/
+  captured: '2025-11-17'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -100,6 +104,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=462%20U.S.%20324
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1983-04-19'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-442.mp3
+  catalog: https://catalog.archives.gov/id/102048819
+  whole_session: true
+  duration_seconds: 14773
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-442.mp3
+    checksum: bc2b3530ebcdd131fa108da3df2f4df7b6fe787640a2602d87d92f6a98d30613
+    media_type: audio/mpeg
+    bytes: 236363982
+argument_transcripts:
+- date: '1983-04-19'
+  docket: "82-331"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1982/82-331_04-19-1983.pdf
+  pages: 55
+  file:
+    storage_key: supreme-court-transcripts/1982/82-331_04-19-1983.pdf
+    checksum: 93285769483f4dc45b4de2ac5c3b6221777d912ea8cd83a5207792cb99c870dc
+    media_type: application/pdf
+    bytes: 13605173
 rights:
   status: no-permission-needed
   basis: us-government-work

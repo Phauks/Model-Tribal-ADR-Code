@@ -124,6 +124,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=539%20U.S.%20244
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2003-04-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1260.mp3
+  catalog: https://catalog.archives.gov/id/300885143
+  whole_session: true
+  duration_seconds: 7593
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1260.mp3
+    checksum: 6fa448f35a48ea1ec5875a80a55e36841df03760183af45a083c109712603bcd
+    media_type: audio/mpeg
+    bytes: 121483305
+argument_transcripts:
+- date: '2003-04-01'
+  docket: "02-516"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2002/02-516.pdf
+  pages: 54
+  file:
+    storage_key: supreme-court-transcripts/2002/02-516.pdf
+    checksum: 0f6bff366204163d9750aeba129f9090ace00c8dcff80c34bea6ddba1900f1b8
+    media_type: application/pdf
+    bytes: 166135
 rights:
   status: no-permission-needed
   basis: us-government-work

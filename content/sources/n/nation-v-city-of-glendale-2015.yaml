@@ -2,7 +2,7 @@ key: nation-v-city-of-glendale-2015
 kind: federal-case
 citation:
   type: legal_case
-  title: Nation v. City of Glendale
+  title: Tohono O'odham Nation v. City of Glendale
   authority: United States Court of Appeals for the Ninth Circuit
   container-title: F.3d
   volume: '804'
@@ -18,12 +18,24 @@ citation:
     - - 2026
       - 11
       - 26
+  number: 11-16811, 11-16833
 original_link: https://static.case.law/f3d/804/html/1292-01.html
 retrieved: '2026-11-26'
 archives: []
 history:
   status: live
   last_checked: '2026-11-26'
+argument_audio:
+- kind: argument
+  date: '2013-02-12'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2013/02/12/11-16811.wma
+  duration_seconds: 2667
+  file:
+    storage_key: appeals-court-audio/ca9/2013/2013-02-12-11-16811.wma
+    checksum: c41478fb78d762af004a9f834bcff6fa51a7d11c7a39cc567dc82d0ffd481015
+    media_type: audio/x-ms-wma
+    bytes: 6900081
 rights:
   status: no-permission-needed
   basis: government-edict

@@ -34,6 +34,9 @@
 	const tileMapWanted = true;
 	let tileMapReady = $state(false);
 	let tileMapFailed = $state(false);
+	/** With scripts running, the tiled map takes its place at once and says it is loading in its own frame (Trevor, 2026-11-27, map loading mockup A), so nothing moves when it is ready. */
+	let scripted = $state(false);
+	onMount(() => (scripted = true));
 
 	/**
 	 * The year slider under the tiled map, and the Land cessions switch in its Layers menu, shared with the Map page (Trevor, 2026-11-26, historic maps mockup 6): the slider picks the Census year of the land areas, and with the switch on, the land the nation's predecessors had ceded by then.
@@ -116,6 +119,7 @@
 	{#each map.views as view, index (view.key)}
 		{@const layout = view.layout}
 		{@const tiled = view.key === 'lands' && (tileMapReady || tileMapFailed) && index === current}
+		{@const framed = view.key === 'lands' && map.tileMap !== undefined && tileMapWanted && scripted && index === current}
 		<figure
 			class="nation-map-view"
 			id="nation-map-view-{view.key}"
@@ -123,7 +127,7 @@
 			hidden={index !== current}
 		>
 			{#if view.key === 'lands' && map.tileMap && tileMapWanted && index === current}
-				<div class="tile-holder" class:tiled>
+				<div class="tile-holder" class:tiled={framed}>
 					<TileMap
 						view="lands"
 						label="Land Areas map of {nationName}"
@@ -141,7 +145,7 @@
 					/>
 				</div>
 			{/if}
-			<div class="drawing" class:tiled class:waiting={view.key === 'lands' && map.tileMap && tileMapWanted && !tileMapReady && index === current} style:max-width="{layout.shareOfFullWidth * 100}%">
+			<div class="drawing" class:tiled={framed} class:waiting={view.key === 'lands' && map.tileMap && tileMapWanted && !tileMapReady && index === current} style:max-width="{layout.shareOfFullWidth * 100}%">
 				<ZoomableMap label="{view.label} map of {nationName}" maximum={view.key === 'lands' ? 16 : 8}>
 					<svg viewBox="0 0 {layout.width} {layout.height}" role="img" aria-labelledby="nation-map-title-{view.key}">
 						<title id="nation-map-title-{view.key}">{titles[view.key]}</title>
@@ -265,7 +269,7 @@
 		margin: 0;
 	}
 
-	/* The tiled map is laid out out of sight while it loads, then takes the drawn map's place on screen; paper keeps the drawn map. */
+	/* Without scripts the tiled map stays out of sight and the drawn map is the map; with them, the tiled map takes the drawn map's place on screen from the start, loading in its own frame; paper keeps the drawn map. */
 	.tile-holder:not(.tiled) {
 		position: absolute;
 		inset: 0 0 auto;

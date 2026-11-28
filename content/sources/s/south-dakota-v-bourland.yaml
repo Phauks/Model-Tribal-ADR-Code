@@ -34,6 +34,10 @@ opinions:
     page: 698
 original_link: https://www.loc.gov/item/usrep508679/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250420191054/https://www.loc.gov/item/usrep508679/
+  captured: '2025-04-20'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=508%20U.S.%20679
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1993-03-02'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-872.mp3
+  catalog: https://catalog.archives.gov/id/118974999
+  whole_session: true
+  duration_seconds: 10733
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-872.mp3
+    checksum: 1a572236a42c6f7507996847be9e20634cd84fcda69243d66796299bd4b0868c
+    media_type: audio/mpeg
+    bytes: 171731192
+argument_transcripts:
+- date: '1993-03-02'
+  docket: "91-2051"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1992/91-2051_03-02-1993.pdf
+  pages: 58
+  file:
+    storage_key: supreme-court-transcripts/1992/91-2051_03-02-1993.pdf
+    checksum: 7bb20f123baa803efac4fd20c36a7e5d939a14fd8d62f0001d9c60accf6b5556
+    media_type: application/pdf
+    bytes: 13109172
 rights:
   status: no-permission-needed
   basis: us-government-work

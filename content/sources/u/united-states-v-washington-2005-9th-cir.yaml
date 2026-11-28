@@ -1,0 +1,128 @@
+key: united-states-v-washington-2005-9th-cir
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Washington
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '394'
+  page: '1152'
+  issued:
+    date-parts:
+    - - 2005
+      - 1
+      - 6
+  URL: https://static.case.law/f3d/394/html/1152-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+  number: 03-35145
+original_link: https://static.case.law/f3d/394/html/1152-01.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+argument_audio:
+- kind: argument
+  date: '2003-12-05'
+  source: United States Court of Appeals for the Ninth Circuit
+  link: https://cdn.ca9.uscourts.gov/datastore/media/2003/12/05/03-35145.mp3
+  duration_seconds: 2757
+  file:
+    storage_key: appeals-court-audio/ca9/2003/2003-12-05-03-35145.mp3
+    checksum: c2f041114e58f2ea5c6e8d0d47a7fc091839b6330a725477d814a83b41749855
+    media_type: audio/mpeg
+    bytes: 22061092
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- swinomish-indian-tribal-community
+- nisqually-indian-tribe
+- port-gamble-sklallam-tribe
+- lower-elwha-tribal-community
+- jamestown-sklallam-tribe
+- skokomish-indian-tribe
+- makah-indian-tribe-of-the-makah-indian-reservation
+- nooksack-indian-tribe
+- upper-skagit-indian-tribe
+- lummi-tribe-of-the-lummi-reservation
+- samish-indian-nation
+nations_in_case:
+  checked: '2026-11-27'
+  named:
+  - nation: swinomish-indian-tribal-community
+    named_as: Swinomish Tribal Community
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: nisqually-indian-tribe
+    named_as: Nisqually Indian Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: port-gamble-sklallam-tribe
+    named_as: Port Gamble S'Klallam Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: lower-elwha-tribal-community
+    named_as: Lower Elwha Band of Klallams
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: jamestown-sklallam-tribe
+    named_as: Jamestown S'Klallam Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: skokomish-indian-tribe
+    named_as: Skokomish Indian Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: makah-indian-tribe-of-the-makah-indian-reservation
+    named_as: Makah Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: nooksack-indian-tribe
+    named_as: Nooksack Indian Tribe of Washington State
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: upper-skagit-indian-tribe
+    named_as: Upper Skagit Indian Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: lummi-tribe-of-the-lummi-reservation
+    named_as: Lummi Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: samish-indian-nation
+    named_as: Defendants-Appellees. Samish Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 394 F.3d 1152. Decided by the United States Court of Appeals for the Ninth Circuit on Jan. 6, 2005. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 36, at or above 10, the level kept without a reading. It was held at first for a privacy review because its text uses words about children or protected persons; two readings of the full opinion on Nov. 27, 2026 found no child or protected person named, so it is shown.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 36
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 11 matched, 0 not linked
+  - check: 'Privacy: no child or protected person named in the opinion'
+    result: agree
+    detail: two AI readings of the full text, Nov. 27, 2026; released from the privacy hold

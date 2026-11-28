@@ -108,6 +108,126 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=433%20U.S.%20165
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1977-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-191-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048573
+  whole_session: true
+  duration_seconds: 269
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-191-r1.mp3
+    checksum: b33b555dcf04cad73f9d9e946a0334f00bec7774625d76e04ad24da3186a8fcb
+    media_type: audio/mpeg
+    bytes: 4308452
+- kind: argument
+  date: '1977-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-191-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048573
+  whole_session: true
+  duration_seconds: 190
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-191-r2.mp3
+    checksum: b37d8995bddbe1db0799eeeb79dec564078a9b745f12ab44affe077d4bce9c82
+    media_type: audio/mpeg
+    bytes: 3037856
+- kind: argument
+  date: '1977-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-191-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048573
+  whole_session: true
+  duration_seconds: 677
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-191-r3.mp3
+    checksum: 4a7268115bb29a2ab50719d9431ca8fe3ccd2895e794b9fbdcc0fb6080367bb0
+    media_type: audio/mpeg
+    bytes: 10838228
+- kind: argument
+  date: '1977-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-191-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048573
+  whole_session: true
+  duration_seconds: 3505
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-191-r4.mp3
+    checksum: f6ad74814e45e69a379a55fd6f40853457c073890e078087b37ccdaa58b2cde5
+    media_type: audio/mpeg
+    bytes: 56083564
+- kind: argument
+  date: '1977-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-191-r5.mp3
+  catalog: https://catalog.archives.gov/id/102048573
+  whole_session: true
+  duration_seconds: 1857
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-191-r5.mp3
+    checksum: 77df6a5b9b9d705cd7a27c479313f54961b5b33d0c2fd5fe141535135427152d
+    media_type: audio/mpeg
+    bytes: 29719116
+- kind: argument
+  date: '1977-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-191-r6.mp3
+  catalog: https://catalog.archives.gov/id/102048573
+  whole_session: true
+  duration_seconds: 3665
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-191-r6.mp3
+    checksum: 9257f64338d435eb96250f8277b92ba0f349dcdad77e552dabd1580cf0b6d673
+    media_type: audio/mpeg
+    bytes: 58642728
+- kind: argument
+  date: '1977-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-191-r7.mp3
+  catalog: https://catalog.archives.gov/id/102048573
+  whole_session: true
+  duration_seconds: 1963
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-191-r7.mp3
+    checksum: b408d1e4aae197547bc333c9c9b167af20e92d680317572145d9414d3633b935
+    media_type: audio/mpeg
+    bytes: 31406000
+- kind: argument
+  date: '1977-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-191-r8.mp3
+  catalog: https://catalog.archives.gov/id/102048573
+  whole_session: true
+  duration_seconds: 3641
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-191-r8.mp3
+    checksum: 6ec12b5e3450df1d6465335ef0a769589f4478ac8fd3e7b014d96e21cd9d8ef0
+    media_type: audio/mpeg
+    bytes: 58262385
+- kind: argument
+  date: '1977-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-191-r9.mp3
+  catalog: https://catalog.archives.gov/id/102048573
+  whole_session: true
+  duration_seconds: 1566
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-191-r9.mp3
+    checksum: 0e0fdae2ef803e56428352749deb65d6cbaf0a4ce0b9d800edab22e1d4bf2b61
+    media_type: audio/mpeg
+    bytes: 25058036
+argument_transcripts:
+- date: '1977-04-18'
+  docket: "76-423"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1976/76-423_04-18-1977.pdf
+  pages: 73
+  file:
+    storage_key: supreme-court-transcripts/1976/76-423_04-18-1977.pdf
+    checksum: 7b27fcc917ce9bd407cc23f0c35cdf409e47a984128beb304582da4fd9d1e76d
+    media_type: application/pdf
+    bytes: 15868778
 rights:
   status: no-permission-needed
   basis: us-government-work

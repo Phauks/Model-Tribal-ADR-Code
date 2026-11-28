@@ -31,6 +31,10 @@ opinions:
     page: 393
 original_link: https://www.loc.gov/item/usrep391392/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250503205451/https://www.loc.gov/item/usrep391392/
+  captured: '2025-05-03'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -101,6 +105,51 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=391%20U.S.%20392
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1968-03-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-682-247-319-19680325-19680326-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81139965
+  duration_seconds: 3755
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-682-247-319-19680325-19680326-1of2.mp3
+    checksum: 966d9178aadc38d935c715d0b10f595af5867cfe04c83e7f3e80983b830d191e
+    media_type: audio/mpeg
+    bytes: 60086647
+- kind: argument
+  date: '1968-03-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-682-247-319-19680325-19680326-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81139965
+  duration_seconds: 3220
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-682-247-319-19680325-19680326-2of2.mp3
+    checksum: 13e2af83f98fbecc97ec716a5b30c6e0651468f33499e7fef7be414c47c739bf
+    media_type: audio/mpeg
+    bytes: 51520991
+- kind: argument
+  date: '1968-03-26'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-683-247-319-19680325-19680326-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81139970
+  duration_seconds: 3776
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-683-247-319-19680325-19680326-1of2.mp3
+    checksum: e09e8cde71a8145e3851b46423f07edc0b8f19d57a0adc16774ccc7d36dfd453
+    media_type: audio/mpeg
+    bytes: 60416417
+- kind: argument
+  date: '1968-03-26'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-683-247-319-19680325-19680326-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81139970
+  duration_seconds: 2580
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-683-247-319-19680325-19680326-2of2.mp3
+    checksum: a16b287ee9bf73c6763f374fc7fae44cc54b2aefe62bdbbc0d80d4071985dded
+    media_type: audio/mpeg
+    bytes: 41286007
 rights:
   status: no-permission-needed
   basis: us-government-work

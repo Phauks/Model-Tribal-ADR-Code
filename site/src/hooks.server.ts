@@ -14,6 +14,7 @@ import { isLiveEditingRequest, openLiveEditing } from '#lib/server/live-editing.
 import { restrictedPageAnswer, restrictedPagePrefix } from '#lib/server/restricted-pages.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
 import { framePolicy, publicSecurityHeaders } from '#lib/server/security-headers.ts';
+import { report } from '#lib/server/report.ts';
 import { reportHere } from '#lib/server/report-here.ts';
 import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
@@ -152,13 +153,9 @@ export const handle: Handle = async ({ event, resolve }) => {
  */
 export const handleError: HandleServerError = ({ kind, error, event }) => {
 	if (kind !== 'unknown') return;
-	const { reference } = reportHere(error, {
-		code: 'page.unexpected',
-		place: event.route.id ?? event.url.pathname,
-		path: event.url.pathname,
-		method: event.request.method,
-		status: 500
-	});
+	const context = { code: 'page.unexpected', place: event.route.id ?? event.url.pathname, path: event.url.pathname, method: event.request.method, status: 500 };
+	// While the site is built there is no Worker, so a page that fails to prerender is only logged.
+	const { reference } = building ? report(error, context) : reportHere(error, context);
 	return { reference };
 };
 
@@ -173,7 +170,7 @@ function withSecurityHeaders(given: Response, path: string): Response {
 	try {
 		response.headers.set('x-content-type-options', 'nosniff');
 	} catch {
-		// A response passed on as it came, such as one fetched from elsewhere, has headers that cannot change; a copy's can.
+		// expected: a response passed on as it came, such as one fetched from elsewhere, has headers that cannot change; a copy's can.
 		response = new Response(given.body, given);
 	}
 	for (const [name, value] of Object.entries(publicSecurityHeaders)) {

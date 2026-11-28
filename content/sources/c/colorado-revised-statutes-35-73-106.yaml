@@ -1,0 +1,56 @@
+key: colorado-revised-statutes-35-73-106
+kind: state-statute
+citation:
+  type: legislation
+  title: Soil health advisory committee - repeal
+  title-short: Colo. Rev. Stat. § 35-73-106
+  container-title: Colorado Revised Statutes
+  container-title-short: Colo. Rev. Stat.
+  section: 35-73-106
+  author:
+  - literal: Colorado Office of Legislative Legal Services
+  issued:
+    date-parts:
+    - - 2021
+  URL: https://olls.info/crs/crs2026-title-35.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://olls.info/crs/crs2026-title-35.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- colorado-revised-statutes-35-1-119
+- colorado-revised-statutes-35-1-121
+- colorado-revised-statutes-35-5-5-103
+- colorado-revised-statutes-35-66-110
+- colorado-revised-statutes-35-73-102
+state_law:
+  relevance: incidental
+  citation: Colo. Rev. Stat. § 35-73-106 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CO
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Colo. Rev. Stat. § 35-73-106 (2026). History: Source: L. 2021: Entire article added, (HB 21-1181), ch. 279, p. 1611, § 2, effective September 7. Text read from the Colorado Office of Legislative Legal Services'' 2026 download of the Colorado Revised Statutes (content.leg.colorado.gov, 2026 CRS Titles for Download) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Soil health committee must include representative of an Indian tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

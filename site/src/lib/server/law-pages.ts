@@ -21,7 +21,7 @@
  * A section with nothing in it is left out.
  */
 import { error } from '@sveltejs/kit';
-import { copyPath } from '../public-copies.ts';
+import type { DocumentFile } from '../document-text.ts';
 import { readingLinksHtml } from '../reading-links.ts';
 import { signersOfTreaty } from './biographies.ts';
 import { boxSections, citationLine, type BoxSection, essaysCiting, type CaseMention } from './case-pages.ts';
@@ -33,12 +33,14 @@ import { accountsOf, type AccountEntry } from './impact-accounts.ts';
 import { isoOf, nationsCiting, orderNumber, orderPresident, type LawNation } from './law-facts.ts';
 import { isLawRecord, recordName } from './law-records.ts';
 import { boundsOfCessions, cessionsOfTreaty, treatyMapData } from './land-cessions.ts';
-import { savedCopyFor, savedCopyLink } from './markdown.ts';
+import { savedCopyFor } from './markdown.ts';
+import { recordDocument, whereToRead } from './record-document.ts';
 import { presidentByKey } from './supreme-court-people.ts';
 import { partialDate } from './stories.ts';
 import type { SourceEntry } from './source-uses.ts';
 import type { Stub } from '../stubs.ts';
 import { sectionsEnactedBy, sectionsOf, type SectionList } from './title-25-sections.ts';
+import { chapterNavigation, sectionPage, sectionPageOfRecord, type ChapterNavigation, type SectionPage } from './code-outline.ts';
 
 export interface LawPage {
 	key: string;
@@ -59,10 +61,12 @@ export interface LawPage {
 	essays: CaseMention[];
 	/** The nations whose pages cite the law, with what each page says it did there, such as the land it set aside. */
 	nations: LawNation[];
-	/** The law's text as this site keeps it, shown in a frame on the page. */
-	text?: LawText;
+	/** The copy of the law's text this site keeps, for the Text card (DocumentText.svelte); none when it keeps none. */
+	text?: DocumentFile;
+	/** For an executive order, its President's page, so the order's signature links there. */
+	signers: { name: string; link: string }[];
 	/** The people with a biography on this site who signed the treaty. */
-	signers: { name: string; link: string; detail?: string }[];
+	treatySigners: { name: string; link: string; detail?: string }[];
 	/** A Title 25 chapter's or part's sections. */
 	sections?: SectionList;
 	/** The Title 25 sections the Act enacted. */
@@ -74,13 +78,34 @@ export interface LawPage {
 	landCeded?: { royce: string[]; bounds: [number, number, number, number]; map: ReturnType<typeof treatyMapData> };
 	/** Set when the law has no box and no accounts of its impact: a stub (src/lib/stubs.ts). */
 	stub?: Stub;
+	/** A chapter of Title 25 of the Code: its contents, the chapters before and after, and the side column's outline (code-outline.ts). */
+	chapter?: Omit<ChapterNavigation, 'family' | 'trail'>;
+	/** The side column's outline, for a chapter of Title 25. */
+	family?: ChapterNavigation['family'];
+	/** The pages above this one, where the law sits in an outline. */
+	trail?: ChapterNavigation['trail'];
 }
 
+/** A record of a single Title 25 section: its page is the section's own (code-outline.ts). */
+export interface LawMoved {
+	movedTo: string;
+}
 
-export interface LawText {
-	/** The file itself, for the frame; "Where to read it" links the copy's own page. */
-	file: string;
-	isPdf: boolean;
+/** A section of Title 25 on its own page, with what the site's older record of that section holds: its box, accounts and where the site cites it. */
+export interface SectionPageData extends SectionPage {
+	kept: Pick<LawPage, 'key' | 'name' | 'boxSections' | 'accounts' | 'essays' | 'nations' | 'sources'>[];
+	/** The official text this site keeps for the section, from its older record (us_code_sections.py), when it has one, for the Text card. */
+	text?: DocumentFile;
+}
+
+export function sectionPageData(slug: string): SectionPageData {
+	const page = sectionPage(slug);
+	const laws = page.records.map(lawContent);
+	return {
+		...page,
+		kept: laws.map((law) => ({ key: law.key, name: law.name, boxSections: law.boxSections, accounts: law.accounts, essays: law.essays, nations: law.nations, sources: law.sources })),
+		text: laws.find((law) => law.text)?.text
+	};
 }
 
 const kindLabels: Record<string, string> = {
@@ -189,7 +214,12 @@ function ordinalOf(value: number): string {
 	return `${value}${suffix}`;
 }
 
-export function lawPage(key: string): LawPage {
+export function lawPage(key: string): LawPage | LawMoved {
+	const movedTo = sectionPageOfRecord(key);
+	return movedTo ? { movedTo } : lawContent(key);
+}
+
+function lawContent(key: string): LawPage {
 	const record = sources().get(key);
 	if (!record || !isLawRecord(record)) error(404, 'No law has this address.');
 	const named = recordName(key);
@@ -203,7 +233,7 @@ export function lawPage(key: string): LawPage {
 	const order = record.kind === 'executive-order';
 	const number = order ? orderNumber(record) : undefined;
 	const president = order ? orderPresident(record) : undefined;
-	const presidentPage = president && presidentByKey(president.key) ? `/supreme-court/presidents/${president.key}` : undefined;
+	const presidentPage = president && presidentByKey(president.key) ? `/presidents/${president.key}` : undefined;
 	const nationsCited = nationsCiting(key);
 	// An agency's document or notice no nation page cites yet still names its nations in the record (tribes).
 	const nationsNamed = nationsCited.length > 0 ? nationsCited : namedNations(record.tribes ?? []);
@@ -211,7 +241,7 @@ export function lawPage(key: string): LawPage {
 	const cededBounds = boundsOfCessions(ceded);
 	const glance: FactGroup[] = [
 		// An agency's document says which kind it is, such as "Indian lands opinion" (scripts/law/nigc_documents.py).
-		{ field: 'kind', label: 'Kind', items: [{ text: (record.citation as { genre?: string }).genre ?? kindLabels[record.kind] ?? record.kind }] },
+		{ field: 'kind', label: 'Type', items: [{ text: (record.citation as { genre?: string }).genre ?? kindLabels[record.kind] ?? record.kind }] },
 		{ field: 'state', label: 'State', items: record.kind === 'state-statute' ? stateNamesOf(record).map((text) => ({ text })) : [] },
 		{ field: 'indian-law', label: 'Indian law', items: record.state_law ? [{ text: relevanceLabels[record.state_law.relevance] ?? record.state_law.relevance }] : [] },
 		{ field: 'act', label: 'Act', items: record.state_law?.act ? [{ text: record.state_law.act }] : [] },
@@ -250,17 +280,24 @@ export function lawPage(key: string): LawPage {
 					? [{ text: `${nationsCited.length.toLocaleString('en-US')} nations`, link: '#on-this-site' }]
 					: nationsNamed.map((nation) => ({ text: nation.name, link: `/nations/${nation.id}` }))
 		}
-	].filter((group) => group.items.length > 0);
+	]
+		// A chapter of the Code needs no "Kind": its outline says what it is.
+		.filter((group) => group.items.length > 0 && !(group.field === 'kind' && /^usc-25-chapter-/.test(key)));
 	// A state statute is linked, not served (decision record 0060): with no saved copy, its official text is the first place to read it.
 	const official = record.kind === 'state-statute' && record.original_link ? `<a href="${escapeHtml(record.original_link)}">${escapeHtml(record.citation.author?.[0]?.literal ?? 'Official text')}</a>` : '';
-	const saved = savedCopyLink(record) || official;
 	const copy = savedCopyFor(record);
+	const text = recordDocument(record, named.name, copy);
+	// Where to read it: the original publisher first; our copy is in the Text card, and a state statute's official text when the site keeps none.
+	const where = whereToRead(record, text ? '' : official);
 	const title = record.citation.title;
 	const accounts = accountsOf({ record: key });
-	const sections = sectionsOf(key);
+	const navigation = chapterNavigation(key);
+	// A chapter of the Code lists its contents under its subchapters instead (code-outline.ts).
+	const sections = navigation ? undefined : sectionsOf(key);
 	return {
 		key,
-		name: named.what === 'Treaty' ? named.name : named.name.replace(/ \(\d{4}\)$/, ''),
+		// A chapter of the Code is named with its number, as the Code heads it: "Chapter 46. Indian Self-Determination and Education Assistance".
+		name: navigation ? `${navigation.family.title}` : named.what === 'Treaty' ? named.name : named.name.replace(/ \(\d{4}\)$/, ''),
 		citation,
 		kind: record.kind,
 		fullTitle: !title || named.name.startsWith(title) || citation.includes(title) ? undefined : title,
@@ -268,17 +305,20 @@ export function lawPage(key: string): LawPage {
 		boxSections: box.sections,
 		topics: box.topics,
 		accounts,
-		readingHtml: readingLinksHtml(record.reading_links, saved).replace(/<button[\s\S]*?<\/button>/, ''),
-		readingCount: (record.reading_links?.links.length ?? 0) + (saved ? 1 : 0),
+		readingHtml: readingLinksHtml(where.readingLinks, where.first).replace(/<button[\s\S]*?<\/button>/, ''),
+		readingCount: where.count,
 		essays: essaysCiting(key, named.name),
 		nations: nationsCited,
-		text: copy ? { file: copyPath(copy), isPdf: copy.mediaType === 'application/pdf' } : undefined,
-		signers: named.what === 'Treaty' ? signersOfTreaty(key) : [],
+		text,
+		// Who signed it with a page here, so a signature in its text links: an order's President, a treaty's signers.
+		signers: [...(president && presidentPage ? [{ name: president.name, link: presidentPage }] : []), ...(named.what === 'Treaty' ? signersOfTreaty(key).map(({ name, link }) => ({ name, link })) : [])],
+		treatySigners: named.what === 'Treaty' ? signersOfTreaty(key) : [],
 		sections,
 		enacted: record.kind === 'federal-statute' ? sectionsEnactedBy(key) : [],
 		legislativeHistory: record.kind === 'federal-statute' ? legislativeHistoryOf(key) : [],
 		landCeded: cededBounds ? { royce: ceded.map((cession) => cession.royce), bounds: cededBounds, map: treatyMapData() } : undefined,
 		sources: box.sources,
-		stub: box.sections.length === 0 && accounts.length === 0 && !sections ? { kind: 'law', record: `laws/${key}` } : undefined
+		stub: box.sections.length === 0 && accounts.length === 0 && !sections && !navigation ? { kind: 'law', record: `laws/${key}` } : undefined,
+		...(navigation ? { chapter: { contents: navigation.contents, previous: navigation.previous, next: navigation.next, inForce: navigation.inForce, notInForce: navigation.notInForce }, family: navigation.family, trail: navigation.trail } : {})
 	};
 }

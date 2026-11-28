@@ -35,6 +35,7 @@
 	import { matchEverything, panelAnswer, resultGroupLabels, type PanelAnswer, type ResultGroup } from '#lib/search-everything.ts';
 	import { loadSearchRecords, type SearchRecords } from '#lib/search-records.ts';
 	import { loadSearchIndex, prepareSearchIndex, type SearchEntry } from '#lib/site-search.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let { identifier = 'site-search' }: { identifier?: string } = $props();
 
@@ -99,8 +100,9 @@
 			try {
 				const response = await fetch(`/search/query?q=${encodeURIComponent(words)}`, { signal: controller.signal });
 				if (response.ok) fromServer = { words, answer: (await response.json()) as PanelAnswer };
-			} catch {
-				// Offline or cancelled: the files answer when they come.
+			} catch (problem) {
+				// The files answer when they come; offline or cancelled is not sent (sendProblem).
+				sendProblem(problem, { code: 'search.query' });
 			}
 			if (!controller.signal.aborted) loadFiles();
 		}, serverPause);

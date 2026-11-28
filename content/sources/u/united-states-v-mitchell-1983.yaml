@@ -34,6 +34,10 @@ opinions:
     page: 228
 original_link: https://www.loc.gov/item/usrep463206/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250210220646/https://www.loc.gov/item/usrep463206/
+  captured: '2025-02-10'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=463%20U.S.%20206
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1983-03-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-433.mp3
+  catalog: https://catalog.archives.gov/id/102048810
+  whole_session: true
+  duration_seconds: 14241
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-433.mp3
+    checksum: 718dc3b0557a2cdfbbff20f624d1a1761a28854e14200cbc6062562a983c484b
+    media_type: audio/mpeg
+    bytes: 227864364
+argument_transcripts:
+- date: '1983-03-01'
+  docket: "81-1748"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1982/81-1748_03-01-1983.pdf
+  pages: 50
+  file:
+    storage_key: supreme-court-transcripts/1982/81-1748_03-01-1983.pdf
+    checksum: 8dc7b3d3542c806832238688bfdfbeebedc338f5f831d67bc3f0c0c1f6af0212
+    media_type: application/pdf
+    bytes: 12332991
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -93,6 +93,40 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Yellen_v._Confederated_Tribes_of_the_Chehalis_Reservation
+argument_audio:
+- kind: argument
+  date: '2021-04-19'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/20-543.mp3
+  duration_seconds: 6250
+  file:
+    storage_key: supreme-court-audio/court/2020/20-543.mp3
+    checksum: f85a945a08aa1f039ad171994984ed8d0480d673f1cafe9c2d1b345d417071b0
+    media_type: audio/mpeg
+    bytes: 50008458
+- kind: argument
+  date: '2021-04-19'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_02/267a-2225.mp3
+  catalog: https://catalog.archives.gov/id/236674310
+  whole_session: true
+  duration_seconds: 10043
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2225.mp3
+    checksum: a3470a51a4c9e49c975cdc0a8ed67e5224f95e325741f305318af3c064d23dc0
+    media_type: audio/mpeg
+    bytes: 200866598
+argument_transcripts:
+- date: '2021-04-19'
+  docket: "20-543"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2020/20-543_hgci.pdf
+  pages: 116
+  file:
+    storage_key: supreme-court-transcripts/2020/20-543_hgci.pdf
+    checksum: d293fbb46078af1619a52cbb6f1a5589aee4db266079b33a1a3650709d04d908
+    media_type: application/pdf
+    bytes: 596573
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -34,6 +34,10 @@ opinions:
     page: 511
 original_link: https://www.loc.gov/item/usrep476498/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250208192510/https://www.loc.gov/item/usrep476498/
+  captured: '2025-02-08'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=476%20U.S.%20498
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1985-12-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-544.mp3
+  catalog: https://catalog.archives.gov/id/118974719
+  whole_session: true
+  duration_seconds: 14254
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-544.mp3
+    checksum: fc3894bd0946a731d7fddfb98f93e3376474fc7cbb17316e6b6cfa9edee2e007
+    media_type: audio/mpeg
+    bytes: 228065403
+argument_transcripts:
+- date: '1985-12-12'
+  docket: "84-782"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1985/84-782_12-12-1985.pdf
+  pages: 46
+  file:
+    storage_key: supreme-court-transcripts/1985/84-782_12-12-1985.pdf
+    checksum: 20f01e562a24c41f2d6bd0e7c0a550eb317ecd23e74f7d68fd82fd189742692d
+    media_type: application/pdf
+    bytes: 10795708
 rights:
   status: no-permission-needed
   basis: us-government-work

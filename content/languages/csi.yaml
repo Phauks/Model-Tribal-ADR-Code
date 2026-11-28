@@ -1,0 +1,40 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: csi
+name: Coast Miwok
+iso_639_3:
+  code: csi
+  reference_name: Coast Miwok
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: coas1301
+  level: language
+  source: glottolog-5-4
+family:
+  name: Miwok-Costanoan
+  glottocode: miwo1274
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1693
+  source: glottolog-5-4
+dialects:
+- name: Bodega
+  glottocode: bode1246
+  source: glottolog-5-4
+- name: Huimen
+  glottocode: huim1238
+  source: glottolog-5-4
+- name: Marin Miwok
+  glottocode: mari1441
+  source: glottolog-5-4
+works:
+- glottolog_reference: '23474'
+  title: Bodega Miwok dictionary
+  kinds:
+  - dictionary
+  author: Catherine A. Callaghan
+  year: 1970
+  publisher: University of California Press
+  pages: 133
+  source: glottolog-5-4
+retrieved: '2026-11-27'

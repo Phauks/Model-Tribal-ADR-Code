@@ -31,6 +31,10 @@ opinions:
     page: 685
 original_link: https://www.loc.gov/item/usrep380685/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250614131452/https://www.loc.gov/item/usrep380685/
+  captured: '2025-06-14'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -100,6 +104,18 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=380%20U.S.%20685
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1965-03-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-533-115-19650309.mp3
+  catalog: https://catalog.archives.gov/id/81139223
+  duration_seconds: 3500
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-533-115-19650309.mp3
+    checksum: 1d91fdde5e65820209b89a8d0631150471575dd12beba8e5225c191131ab90ed
+    media_type: audio/mpeg
+    bytes: 56006529
 rights:
   status: no-permission-needed
   basis: us-government-work

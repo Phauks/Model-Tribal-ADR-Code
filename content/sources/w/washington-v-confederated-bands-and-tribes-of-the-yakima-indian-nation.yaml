@@ -34,6 +34,10 @@ opinions:
     page: 502
 original_link: https://www.loc.gov/item/usrep439463/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250202063708/https://www.loc.gov/item/usrep439463/
+  captured: '2025-02-02'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=439%20U.S.%20463
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1978-10-02'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-241.mp3
+  catalog: https://catalog.archives.gov/id/102048624
+  whole_session: true
+  duration_seconds: 11731
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-241.mp3
+    checksum: 6ed394e14920d108e6f1a452f0a979315931e888a63ce526998b26f1d950564d
+    media_type: audio/mpeg
+    bytes: 187697651
+argument_transcripts:
+- date: '1978-10-02'
+  docket: "77-388"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1978/77-388_10-02-1978.pdf
+  pages: 67
+  file:
+    storage_key: supreme-court-transcripts/1978/77-388_10-02-1978.pdf
+    checksum: 79a494b5317005c9e85a3f289ccf0c77310a25fc1210f716d72a74393bef8d44
+    media_type: application/pdf
+    bytes: 14023346
 rights:
   status: no-permission-needed
   basis: us-government-work

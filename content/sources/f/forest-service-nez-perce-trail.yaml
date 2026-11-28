@@ -1,0 +1,27 @@
+key: forest-service-nez-perce-trail
+kind: dataset
+citation:
+  type: dataset
+  title: R01 Nez Perce Nee-Me-Poo National Historic Trail - Centerline
+  author:
+  - literal: U.S. Forest Service, Northern Region (Region 1), Trails and Land Status Programs
+  medium: ArcGIS feature service
+  URL: https://services1.arcgis.com/gGHDlz6USftL5Pau/arcgis/rest/services/R01_NezPerceNeeMePoo_NationalHistoricTrail_Centerline/FeatureServer/0
+  accessed:
+    date-parts: [[2026, 11, 27]]
+original_link: https://services1.arcgis.com/gGHDlz6USftL5Pau/arcgis/rest/services/R01_NezPerceNeeMePoo_NationalHistoricTrail_Centerline/FeatureServer/0
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the U.S. Forest Service, a federal agency, so not protected by copyright in the United States (17 U.S.C. § 105). The Bureau of Land Management's copy of the same trail says "these data are considered public domain."
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-27-removal-routes-for-the-map
+notes: 'The route of the Nez Perce National Historic Trail (16 U.S.C. § 1244(a)(14)), the flight of the Nez Perce in 1877 from the Wallowa country of Oregon to the Bear Paw Mountains of Montana, drawn as 532 line pieces. The Forest Service says the layer "contains the public route of the Nez Perce National Historic Trail (NPNHT), the interim public route of the NPNHT, and researched historic trail locations related to the 1877 flight of the Nez Perce" and that it "could be an approximation and may not represent the exact location of the trail." Most of its length follows roads chosen as the public route near the historic one. The website''s "Forced journeys" tiles draw it without the pieces marked "Connector" or decommissioned (site/tools/build-historic-maps.mjs). The downloaded lines are kept in the project''s bucket under historic-maps/forest-service-nez-perce-trail/.'

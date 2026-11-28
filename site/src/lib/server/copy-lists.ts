@@ -16,6 +16,7 @@ import {
 	type PublicCopy
 } from '../public-copies.ts';
 import type { DocumentFile, DocumentSetList, DocumentSetSummary } from '../offline-documents.ts';
+import { readableFileNames } from '../readable-file-names.ts';
 import { formatCaptureDate } from './markdown.ts';
 import { nations, publicCopies, sources, type SourceRecord } from './content.ts';
 import { citationTexts } from './essay-library.ts';
@@ -70,6 +71,57 @@ function boardGroup(copy: PublicCopy): string {
 	const volume = Number(/^(\d+)ibia/i.exec(copy.key.split('/').at(-1) ?? '')?.[1] ?? Number.NaN);
 	const range = boardVolumeRanges.find(([first, last]) => volume >= first && (last === undefined || volume <= last)) ?? boardVolumeRanges.at(-1)!;
 	return boardSlug(...range);
+}
+
+/**
+ * The Indian Claims Commission's decisions, five of its 43 volumes to a list
+ * (about 320 decisions each), by the volume in the file name, such as
+ * "oksd_icc_d337_v12_p404.pdf" (volume 12): one list of all 2,779 would be
+ * past what the accessibility check reads in 90 seconds.
+ */
+const claimsVolumesPerList = 5;
+const claimsVolumeRanges: [number, number][] = Array.from({ length: Math.ceil(43 / claimsVolumesPerList) }, (_, index) => [index * claimsVolumesPerList + 1, Math.min(43, (index + 1) * claimsVolumesPerList)]);
+const claimsSlug = ([first, last]: [number, number]) => `indian-claims-commission-volumes-${first}-${last}`;
+
+function claimsGroup(copy: PublicCopy): string {
+	const volume = Number(/_v(\d+)_p/i.exec(copy.key)?.[1] ?? Number.NaN);
+	return claimsSlug(claimsVolumeRanges.find(([first, last]) => volume >= first && volume <= last) ?? claimsVolumeRanges.at(-1)!);
+}
+
+/**
+ * The repatriation notices, by the year the Federal Register printed them (in
+ * the GovInfo address, ".../FR-2024-05-19/..."), so no list holds much more
+ * than 500: a few early years together, then a list a year, and two a year
+ * from 2024, when the notices grew past 700 a year.
+ */
+const repatriationEarly: [number, number][] = [
+	[1994, 2000],
+	[2001, 2004],
+	[2005, 2007]
+];
+const repatriationHalvesFrom = 2024;
+/** The last year with lists of its own; later notices go in its last list until this moves on. (A Worker's clock reads 1970 when a module loads, so the year is not read from it.) */
+const repatriationListedTo = 2030;
+const repatriationLists: { slug: string; title: string }[] = [
+	...repatriationEarly.map(([first, last]) => ({ slug: `repatriation-notices-${first}-${last}`, title: `Repatriation notices, ${first} to ${last}` })),
+	...Array.from({ length: repatriationListedTo - 2007 }, (_, index) => 2008 + index).flatMap((year) =>
+		year < repatriationHalvesFrom
+			? [{ slug: `repatriation-notices-${year}`, title: `Repatriation notices, ${year}` }]
+			: [
+					{ slug: `repatriation-notices-${year}-january-to-june`, title: `Repatriation notices, January to June ${year}` },
+					{ slug: `repatriation-notices-${year}-july-to-december`, title: `Repatriation notices, July to December ${year}` }
+				]
+	)
+];
+
+function repatriationGroup(copy: PublicCopy): string {
+	const printed = copy.links.map((link) => /\/FR-(\d{4})-(\d{2})-/.exec(link)).find(Boolean);
+	const year = Number(printed?.[1] ?? copy.captured.slice(0, 4));
+	const early = repatriationEarly.find(([first, last]) => year >= first && year <= last);
+	if (early || year < 2008) return `repatriation-notices-${(early ?? repatriationEarly[0]).join('-')}`;
+	if (year < repatriationHalvesFrom) return `repatriation-notices-${year}`;
+	const slug = `repatriation-notices-${year}-${Number(printed?.[2] ?? 1) <= 6 ? 'january-to-june' : 'july-to-december'}`;
+	return repatriationLists.some((list) => list.slug === slug) ? slug : repatriationLists.at(-1)!.slug;
 }
 
 /**
@@ -134,7 +186,14 @@ const fixedGroups: Record<string, string> = {
 	acknowledgment: 'Federal acknowledgment documents',
 	...Object.fromEntries(congressLists.map((list) => [list.slug, list.title])),
 	'congressional-research-service': 'Congressional Research Service reports',
+	// The Serial Set's documents on Indian affairs, 1817 to 1899: in the other federal documents' list they made a 29 MiB page,
+	// over Cloudflare's 25 MiB limit for one file (Nov. 27, 2026).
+	'serial-set': 'Congressional Serial Set, 1817 to 1899',
 	'solicitor-opinions': 'Solicitor’s opinions',
+	// Films are large; a list of their own keeps them out of the documents' offline sets.
+	'indian-affairs-films': 'Indian Affairs films',
+	...Object.fromEntries(repatriationLists.map((list) => [list.slug, list.title])),
+	...Object.fromEntries(claimsVolumeRanges.map((range) => [claimsSlug(range), `Indian Claims Commission decisions, volumes ${range[0]} to ${range[1]}`])),
 	'other-federal': 'Other federal documents',
 	// Published state and territorial court opinions (decision record 0060).
 	'state-court-opinions': 'State court opinions',
@@ -143,14 +202,27 @@ const fixedGroups: Record<string, string> = {
 };
 
 /**
- * Court opinion lists longer than pageSize rows (decision record 0060) are split into parts, in the
+ * Court opinion lists longer than pageSize rows (decision record 0060), the Serial Set's 5,575 documents
+ * (scripts/law/serial_set.py, in the order of their volumes' serial numbers) and the Federal Register's documents
+ * are split into parts, in the
  * order of the copies' keys (source, reporter, volume): the first part keeps the list's address and
  * the others add "-2", "-3" and so on. One page of thousands of rows is too big for a Worker asset
  * and for the accessibility check, which gives up on a page after 90 seconds.
  */
-const pagedGroups = new Set(['federal-court-opinions', 'state-court-opinions']);
+const pagedGroups = new Set(['federal-court-opinions', 'state-court-opinions', 'serial-set', 'federal-register']);
 const pageSize = 2500;
 let pageCache: Map<string, { slug: string; parts: number }> | undefined;
+
+/**
+ * The paged list a copy belongs to, if any: its topic's, or the Federal Register's for the documents GovInfo keeps
+ * under FR- packages, which share that list with the Federal Register's own (about 4,400 rows by Nov. 27, 2026, when
+ * the one page took the accessibility check over its 90 seconds).
+ */
+function pagedGroupOf(copy: PublicCopy): string | undefined {
+	if (pagedGroups.has(copy.topic)) return copy.topic;
+	if (copy.topic === 'govinfo' && /^FR-/.test(copy.key.split('/')[1] ?? '')) return 'federal-register';
+	return undefined;
+}
 
 /** The list each paged copy is in, by key. */
 function pages(): Map<string, { slug: string; parts: number }> {
@@ -158,7 +230,7 @@ function pages(): Map<string, { slug: string; parts: number }> {
 	const cache = new Map<string, { slug: string; parts: number }>();
 	for (const group of pagedGroups) {
 		const keys = publicCopies()
-			.filter((copy) => copy.topic === group)
+			.filter((copy) => pagedGroupOf(copy) === group)
 			.map((copy) => copy.key)
 			.sort();
 		const parts = Math.max(1, Math.ceil(keys.length / pageSize));
@@ -206,9 +278,11 @@ const opinionPrefix = 'opinions-';
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
 	if (copy.topic === 'ibia-decisions') return boardGroup(copy);
-	if (pagedGroups.has(copy.topic)) return pages().get(copy.key)?.slug ?? copy.topic;
+	const paged = pagedGroupOf(copy);
+	if (paged) return pages().get(copy.key)?.slug ?? paged;
 	// The Supreme Court's opinions as text, split by opinion, beside the scans of the United States Reports (scripts/caselaw/case_opinion_texts.py).
 	if (copy.topic === 'supreme-court-opinions') return 'supreme-court';
+	if (copy.topic === 'indian-claims-commission') return claimsGroup(copy);
 	if (copy.topic === 'oklahoma-secretary-of-state') return 'oklahoma-state-tribal-agreements';
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
 		const [first] = namesOf(copy, names);
@@ -219,14 +293,14 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'govinfo' && /^(STATUTE|PLAW)-/.test(file)) return 'statutes';
 	// The Library of Congress keeps both the Statutes at Large and the United States Reports.
 	if (copy.topic === 'tile.loc.gov') return copy.key.includes('/usrep/') ? 'supreme-court' : 'statutes';
-	if (copy.topic === 'govinfo' && /^FR-/.test(copy.key.split('/')[1] ?? '')) return 'federal-register';
 	// The tier 2 collections each have a list of their own; together they were too long for one page.
-	if (copy.topic === 'federal-register') return 'federal-register';
 	if (copy.topic === 'nigc') return 'gaming-commission';
 	if (copy.topic === 'acknowledgment') return 'acknowledgment';
+	if (copy.topic === 'repatriation-notices') return repatriationGroup(copy);
 	if (copy.topic === 'congress') return congressGroup(copy);
 	if (copy.topic === 'crs') return 'congressional-research-service';
 	if (copy.topic === 'solicitor-opinions') return 'solicitor-opinions';
+	if (copy.topic === 'national-archives-films') return 'indian-affairs-films';
 	return 'other-federal';
 }
 
@@ -298,6 +372,27 @@ export function allCopyRows(): CopyRow[] {
 }
 
 export { groupTitle };
+
+let fileNameCache: Map<string, string> | undefined;
+
+/**
+ * The name each copy is saved under, by key (src/lib/readable-file-names.ts): its title, and its
+ * nation where the title does not name it, rather than the code many keys end in.
+ */
+export function copyFileNames(): Map<string, string> {
+	if (fileNameCache) return fileNameCache;
+	const names = nationNames();
+	const opinions = new Map(tribalCourtOpinions().map((opinion) => [opinion.key, opinion]));
+	fileNameCache = readableFileNames(
+		publicCopies().map((copy) => ({
+			key: copy.key,
+			title: opinions.get(copy.key)?.name || copy.title,
+			links: copy.links,
+			nations: namesOf(copy, names)
+		}))
+	);
+	return fileNameCache;
+}
 
 let detailCache: Map<string, Record<string, CopyDetails>> | undefined;
 
@@ -391,6 +486,7 @@ export function offlineSets(): { federal: DocumentSetList; nations: Map<string, 
 
 function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, DocumentSetList> } {
 	const names = nationNames();
+	const fileNames = copyFileNames();
 	const federal: DocumentFile[] = [];
 	const byNation = new Map<string, DocumentFile[]>();
 	for (const copy of publicCopies()) {
@@ -399,7 +495,8 @@ function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, Do
 			copy.bytes,
 			copy.sha256,
 			copy.title,
-			copy.links.at(-1) ?? copy.links[0] ?? ''
+			copy.links.at(-1) ?? copy.links[0] ?? '',
+			fileNames.get(copy.key) ?? ''
 		];
 		// A nation's set holds its constitutions, its laws and its courts' opinions (decision record
 		// 0047); everything else the site holds is a United States document.

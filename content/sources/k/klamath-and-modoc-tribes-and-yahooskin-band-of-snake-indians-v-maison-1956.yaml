@@ -31,7 +31,6 @@ rights:
   redistribution: true
 tribes:
 - klamath-tribes
-- confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
 nations_in_case:
   checked: '2026-11-26'
   named:
@@ -40,10 +39,6 @@ nations_in_case:
     role: party
     historical: true
     note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
-  - nation: confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
-    named_as: Tribes
-    role: party
-    note: Matched by the script to a name the nation record gives; not yet checked.
 jurisdictions:
 - level: federal
 topics:
@@ -61,4 +56,4 @@ review:
     detail: score 10
   - check: Nations named in the caption, matched to nation records by name
     result: agree
-    detail: 2 matched, 0 not linked
+    detail: 1 matched, 0 not linked

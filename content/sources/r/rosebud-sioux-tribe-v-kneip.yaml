@@ -34,6 +34,10 @@ opinions:
     page: 615
 original_link: https://www.loc.gov/item/usrep430584/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250203083416/https://www.loc.gov/item/usrep430584/
+  captured: '2025-02-03'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,66 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=430%20U.S.%20584
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1977-01-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-176-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048558
+  whole_session: true
+  duration_seconds: 625
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-176-r1.mp3
+    checksum: ce87c03bc5201971757d19d7df02fd61f6d24b6335bad45adf013a7111cac292
+    media_type: audio/mpeg
+    bytes: 10006072
+- kind: argument
+  date: '1977-01-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-176-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048558
+  whole_session: true
+  duration_seconds: 3835
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-176-r2.mp3
+    checksum: 7fc2b3e56e83e9a6a3a7362d3f526fa1b480fff3bd45b43221dff40e045bcaee
+    media_type: audio/mpeg
+    bytes: 61360299
+- kind: argument
+  date: '1977-01-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-176-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048558
+  whole_session: true
+  duration_seconds: 3919
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-176-r3.mp3
+    checksum: 577e85fcae256b909a5d1b8cdb474ffe92b934dfaf63b6cb32903fc2a3430123
+    media_type: audio/mpeg
+    bytes: 62698186
+- kind: argument
+  date: '1977-01-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-176-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048558
+  whole_session: true
+  duration_seconds: 4284
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-176-r4.mp3
+    checksum: f76a204ea05d63042d0edae09f93975a724e653c86f37f798a8f9c4db6be6330
+    media_type: audio/mpeg
+    bytes: 68550450
+argument_transcripts:
+- date: '1977-01-12'
+  docket: "75-562"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1976/75-562_01-12-1977.pdf
+  pages: 61
+  file:
+    storage_key: supreme-court-transcripts/1976/75-562_01-12-1977.pdf
+    checksum: 77ff1c73344816a26af9f142f1ae48236628721bf611e7d1949e54282cbd0322
+    media_type: application/pdf
+    bytes: 12154815
 rights:
   status: no-permission-needed
   basis: us-government-work

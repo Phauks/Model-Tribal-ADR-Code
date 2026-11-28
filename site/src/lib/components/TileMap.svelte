@@ -41,14 +41,11 @@
 
 	/** The base map and switches are remembered on the device, and every map on the site shares them. */
 	const baseStorage = 'map-base';
-	const placeNamesStorage = 'map-place-names';
 	const outlinesStorage = 'map-land-outlines';
 	export function storedBaseMap(): TileMapBase {
 		const stored = typeof window === 'undefined' ? null : readStored(baseStorage);
 		return tileMapBases.some((entry) => entry.value === stored) ? (stored as TileMapBase) : 'map';
 	}
-	/** Whether place names and roads are drawn over a picture base map, as remembered on the device. */
-	export const storedPlaceNames = () => typeof window === 'undefined' || readStored(placeNamesStorage) !== 'off';
 	/** Whether land areas are outlined, as remembered on the device. */
 	export const storedOutlines = () => typeof window === 'undefined' || readStored(outlinesStorage) !== 'off';
 
@@ -79,7 +76,7 @@
 <script lang="ts">
 	// The map drawn in the browser with MapLibre GL JS from the project's own tiles (decision record 0039): the Census Bureau's land areas and states, over a basemap of OpenStreetMap data, all served by the site's own Worker under /map-tiles/. No third party sees where a reader looks.
 	//
-	// MapLibre and the map's data are loaded only when this component starts, so other pages carry none of it. If the device cannot draw it (no WebGL), the tiles do not load, or the reader is offline, the component calls onfail and the page keeps showing the drawn map, which also stays for printing.
+	// MapLibre and the map's data are loaded only when this component starts, so other pages carry none of it. If the device cannot draw it (no WebGL), the tiles do not load, or the reader is offline, the map says Map failed to load in its own frame (ProblemNotice.svelte), reports the failure with a reference and offers Report, and calls onfail; the drawn map stays for printing (site/ERRORS.md).
 	//
 	// Ways to zoom and move: the + and - buttons, the keyboard once the map has focus (arrows move, + and - zoom), the scroll wheel over the map, a trackpad pinch, and two fingers on a touch screen. On a touch screen one finger still scrolls the page, and MapLibre says to use two, so the map never traps a reader scrolling past it.
 	//
@@ -91,6 +88,10 @@
 	import { censusYearFor, writeCessionsSwitch } from '#lib/historic-map.ts';
 	import { loadAllNationsTileMapData, loadTileMapLibrary } from '#lib/tile-map-loading.ts';
 	import { drawGlobeSky, type GlobeSkyColors, type Star } from '#lib/globe-sky.ts';
+	import { page } from '$app/state';
+	import ProblemNotice from './ProblemNotice.svelte';
+	import { sendProblem } from '#lib/problem-reports.ts';
+	import { partReport } from '#lib/report-request.ts';
 
 	let {
 		view,
@@ -113,7 +114,6 @@
 		statesBy = 'count',
 		onfeature,
 		baseMap = $bindable(storedBaseMap()),
-		placeNames = $bindable(storedPlaceNames()),
 		outlines = $bindable(storedOutlines())
 	}: {
 		view: TileMapView;
@@ -154,8 +154,6 @@
 		onfeature?: (feature: TileMapFeature) => void;
 		/** The base map, which the page's Layers list can choose too; remembered on the device. */
 		baseMap?: TileMapBase;
-		/** On a picture base map, whether place names and roads are drawn over it. */
-		placeNames?: boolean;
 		/** Whether the land areas are outlined. */
 		outlines?: boolean;
 	} = $props();
@@ -234,8 +232,9 @@
 						skyStars = file.stars;
 						drawSkySoon();
 					})
-					.catch(() => {
+					.catch((problem) => {
 						// Without the stars the globe still shows, on the plain sky.
+						sendProblem(problem, { code: 'map.stars' });
 						skyStars = [];
 						drawSkySoon();
 					});
@@ -306,7 +305,6 @@
 
 	$effect(() => {
 		writeStored(baseStorage, baseMap);
-		writeStored(placeNamesStorage, placeNames ? 'on' : 'off');
 		// The Map page has its own Nations' land switch and no outline switch, so it leaves the nation pages' choice alone.
 		if (!explorer) writeStored(outlinesStorage, outlines ? 'on' : 'off');
 	});
@@ -328,7 +326,7 @@
 	// A new base map or switch redraws the map's layers on the same map, as changing the view does.
 	let styledWith = '';
 	$effect(() => {
-		const wanted = `${baseMap} ${placeNames} ${outlines} ${drawsCessions} ${year} ${statesBy} ${cessionsShown?.join(',')} ${JSON.stringify(layerSwitches ?? {})}`;
+		const wanted = `${baseMap} ${outlines} ${drawsCessions} ${year} ${statesBy} ${cessionsShown?.join(',')} ${JSON.stringify(layerSwitches ?? {})}`;
 		if (!ready || !map) return;
 		if (styledWith === '') styledWith = wanted;
 		if (wanted === styledWith) return;
@@ -389,6 +387,7 @@
 		try {
 			return Boolean(document.createElement('canvas').getContext('webgl2') ?? document.createElement('canvas').getContext('webgl'));
 		} catch {
+			// expected: a browser that refuses a drawing surface cannot draw the map, and the caller reports that.
 			return false;
 		}
 	}
@@ -866,16 +865,15 @@
 				worldLand,
 				...pictureLayers(baseMap),
 				...shownFills,
-				...(placeNames ? over : []),
+				// Place names and roads are always drawn (Trevor, 2026-11-27). The site's own fills (water, buildings, runways) are left off, so the picture shows its own water and ground.
+				...over.filter((layer) => layer.type !== 'fill'),
 				...shownTops
 			];
 		} else if (baseMap === 'topographic') {
-			// The site's own land, water and parks, with the survey's shaded relief laid over the land and its contour lines over that. Neither carries names, so the only names are the site's own, which the reader can turn off.
-			const water = under.findIndex((layer) => layer.id.startsWith('water'));
-			const firstWater = water === -1 ? under.length : water;
+			// The site's own land and parks, with the survey's shaded relief laid over the land and its contour lines over that, then the site's own water, roads and names. Protomaps lists the water after its first road layers (the runways), so the water comes in `over`: without it the relief covers the oceans and the globe is all white (Trevor, 2026-11-27, with place names turned off), so names and roads are always drawn.
 			const relief = pictureLayers('terrain', dark ? { 'raster-opacity': 0.55, 'raster-brightness-max': 0.45 } : { 'raster-opacity': 0.7 });
 			const contours: LayerSpecification = { id: 'contours', type: 'raster', source: 'imagery-contours', minzoom: 10, paint: { 'raster-opacity': dark ? 1 : 0.85 } };
-			layers = [...under.slice(0, firstWater), ...relief, ...under.slice(firstWater), contours, ...shownFills, ...(placeNames ? over : []), ...shownTops];
+			layers = [...under, ...relief, contours, ...shownFills, ...over, ...shownTops];
 		} else {
 			layers = [...under, ...shownFills, ...over, ...shownTops];
 		}
@@ -931,7 +929,8 @@
 				...(layerSwitches?.reservations1909
 					? {
 							reservations1909: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.reservations1909}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.reservations1909MaximumZoom, promoteId: { reservations: 'n' }, attribution: 'Office of Indian Affairs (1909), National Archives' } as SourceSpecification,
-							...(layerSwitches.scan1909 ? { scan1909: { type: 'raster', tiles: [`${origin}/map-tiles/${data.tiles.scan1909}/{z}/{x}/{y}.webp`], tileSize: 256, maxzoom: data.tiles.scan1909MaximumZoom } as SourceSpecification } : {})
+							// On a high-density screen each 256-pixel picture is laid out at 128 pixels, so the map asks for the next zoom's pictures and the old lettering stays sharp instead of being stretched (Trevor, 2026-11-27: "low resolution when zoomed out").
+							...(layerSwitches.scan1909 ? { scan1909: { type: 'raster', tiles: [`${origin}/map-tiles/${data.tiles.scan1909}/{z}/{x}/{y}.webp`], tileSize: devicePixelRatio >= 1.5 ? 128 : 256, maxzoom: data.tiles.scan1909MaximumZoom } as SourceSpecification } : {})
 						}
 					: {}),
 				...(layerSwitches?.routes ? { routes: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.removalRoutes}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.removalRoutesMaximumZoom, attribution: 'National Park Service' } as SourceSpecification } : {}),
@@ -1101,11 +1100,21 @@
 	 * When the map cannot start, it says so in its own frame, with Try again, rather than the page swapping in the drawn map (Trevor, 2026-11-27: "I would rather, map failed to load"). A device that cannot draw maps at all gets no Try again, since trying again would fail the same way.
 	 */
 	let failed = $state<'' | 'retry' | 'device'>('');
+	/** The reference the failure was reported under (site/ERRORS.md), shown with Report. */
+	let failureReference = $state<string | undefined>();
 	let attempt = $state(0);
 	function tryAgain(): void {
 		failed = '';
 		attempt += 1;
 	}
+
+	/**
+	 * While the map starts, it says so in the same place and style as the failed message, with a bar that moves through the three real steps of starting (Trevor, 2026-11-27, map loading mockup A): the map program, the land areas, then drawing the first view.
+	 */
+	let loadingStep = $state(0);
+	/** Set once the map starts in the browser, so a page sent without scripts never says it is loading. */
+	let starting = $state(false);
+	const loadingSteps = $derived(['Getting the map program', given ? 'Getting the land areas' : 'Getting the nations’ land areas', 'Drawing the map']);
 
 	// The map starts when the component does, and again from the start each time the reader presses Try again.
 	$effect(() => {
@@ -1117,24 +1126,37 @@
 		let stopped = false;
 		let cleanups: (() => void)[] = [];
 		ready = false;
-		const fail = (reason: 'retry' | 'device' = 'retry') => {
+		loadingStep = 0;
+		starting = true;
+		const fail = (problem: unknown, code: string, reason: 'retry' | 'device' = 'retry') => {
 			if (stopped) return;
 			stopped = true;
 			map?.remove();
 			map = undefined;
 			ready = false;
 			failed = reason;
+			// Offline, nothing could be sent and there is nothing to fix.
+			failureReference = navigator.onLine ? sendProblem(problem, { code, path: location.pathname, place: 'TileMap' }) : undefined;
 			onfail?.();
 		};
 		if (!canDrawMaps()) {
-			fail('device');
+			fail(new Error(navigator.onLine ? 'The browser has no WebGL' : 'The reader is offline'), 'map.webgl', 'device');
 			return;
 		}
 
 		void (async () => {
 			try {
-				const [[{ default: maplibre }], data] = await Promise.all([loadTileMapLibrary(), loadData()]);
+				// Both start at once; the bar moves on as each arrives, in the order the map needs them.
+				const dataComing = loadData();
+				dataComing.catch(() => {
+					// expected: the same failure is met where the data is awaited below, which reports it; this only keeps it from counting as unhandled while the map program arrives.
+				});
+				const [{ default: maplibre }] = await loadTileMapLibrary();
+				if (stopped) return;
+				loadingStep = 1;
+				const data = await dataComing;
 				if (stopped || !container) return;
+				loadingStep = 2;
 				if (data.areas.length === 0 && oneNation && !openingBox) throw new Error('The nation has no land areas to show');
 				const style = await styleFor(data);
 				const start = camera ?? undefined;
@@ -1206,7 +1228,7 @@
 					};
 					fullScreenButton.addEventListener('click', () => {
 						if (document.fullscreenElement) void document.exitFullscreen();
-						else void (mapElement.closest<HTMLElement>('[data-map-full-screen]') ?? mapElement).requestFullscreen().catch(() => {});
+						else void (mapElement.closest<HTMLElement>('[data-map-full-screen]') ?? mapElement).requestFullscreen().catch(() => /* expected: the browser refused full screen; the map stays as it was. */ {});
 					});
 					showFullScreenState();
 					document.addEventListener('fullscreenchange', showFullScreenState);
@@ -1262,7 +1284,7 @@
 				map.getCanvas().setAttribute('aria-label', `Map: ${label}. Use the arrow keys to move and the plus and minus keys to zoom. ${sameInWords}`);
 
 				// If the first view does not finish loading, the reader keeps the drawn map rather than an empty frame.
-				const giveUp = setTimeout(fail, 20000);
+				const giveUp = setTimeout(() => fail(new Error('The map did not finish loading in 20 seconds'), 'map.timeout'), 20000);
 				cleanups.push(() => clearTimeout(giveUp));
 				map.once('load', () => {
 					clearTimeout(giveUp);
@@ -1271,7 +1293,7 @@
 					drawSkySoon();
 				});
 				map.on('error', (event) => {
-					if (!ready && /\/map-tiles\//.test(String((event.error as Error | undefined)?.message ?? ''))) fail();
+					if (!ready && /\/map-tiles\//.test(String((event.error as Error | undefined)?.message ?? ''))) fail(event.error, 'map.tiles');
 				});
 				// The sky behind the globe follows the map as it moves and resizes.
 				map.on('move', drawSkySoon);
@@ -1447,8 +1469,8 @@
 				const scheme = matchMedia('(prefers-color-scheme: dark)');
 				scheme.addEventListener('change', restyle);
 				cleanups.push(() => themeWatcher.disconnect(), () => scheme.removeEventListener('change', restyle));
-			} catch {
-				fail();
+			} catch (problem) {
+				fail(problem, 'map.load');
 			}
 		})();
 
@@ -1464,13 +1486,26 @@
 	}
 </script>
 
-<div class="tile-map" class:ready class:explorer bind:this={container} role="region" aria-label="Map: {label}">
+<div class="tile-map" class:ready class:explorer class:failed={failed !== ''} bind:this={container} role="region" aria-label="Map: {label}">
 	<!-- The starry sky behind the globe, under MapLibre's canvas; only a picture, so screen readers skip it. -->
 	<canvas class="globe-sky" bind:this={skyCanvas} hidden aria-hidden="true"></canvas>
 	{#if failed}
-		<div class="map-failed" role="alert">
-			<p>{failed === 'device' ? 'This browser cannot draw the map.' : 'The map failed to load.'}</p>
-			{#if failed === 'retry'}<button type="button" class="button" onclick={tryAgain}>Try again</button>{/if}
+		<div class="map-failed">
+			<ProblemNotice
+				size={explorer ? 'section' : 'small'}
+				title="Map failed to load"
+				line={failed === 'device' ? (navigator.onLine ? 'This browser cannot draw the map.' : 'The map needs an internet connection.') : explorer ? 'The map could not be drawn. Try again, or report it if it keeps happening.' : 'The map could not be drawn.'}
+				reference={failureReference}
+				report={failureReference ? partReport(page.url, 'The map failed to load.') : undefined}
+				onretry={failed === 'retry' ? tryAgain : undefined}
+			/>
+		</div>
+	{:else if starting && !ready}
+		<div class="map-loading" role="status">
+			<span class="map-spinner" aria-hidden="true"></span>
+			<p>Loading the map…</p>
+			<span class="map-progress" aria-hidden="true"><span style:width="{Math.round(((loadingStep + 0.5) / loadingSteps.length) * 100)}%"></span></span>
+			<p class="map-step">{loadingSteps[loadingStep]}</p>
 		</div>
 	{/if}
 	<!-- The base map menu (mockup 1A), opened by the Layers button in the map's corner stack. Escape closes it and returns to the button. -->
@@ -1503,9 +1538,6 @@
 				{/each}
 			</div>
 		</fieldset>
-		{#if baseMap !== 'map'}
-			<label class="layers-switch"><input type="checkbox" bind:checked={placeNames} />Place names and roads</label>
-		{/if}
 		{#if hasLandAreas}
 			<label class="layers-switch"><input type="checkbox" bind:checked={outlines} />Land area outlines</label>
 		{/if}
@@ -1547,6 +1579,21 @@
 		position: absolute;
 		inset: 0;
 		z-index: 3;
+		display: grid;
+		background: var(--color-paper);
+	}
+
+	/* The box keeps the map's frame with its own dashed border, so the map's border steps aside (mockup 1, project files design/error-framework/). */
+	.tile-map.failed {
+		border-color: transparent;
+	}
+
+	/* Said in the same place and style while the map starts, over the map's own buttons and credits until it is drawn. The failed message takes its place if starting fails; the two never show together. */
+	.map-loading {
+		visibility: visible;
+		position: absolute;
+		inset: 0;
+		z-index: 4;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -1557,9 +1604,48 @@
 		text-align: center;
 	}
 
-	.map-failed p {
+	.map-loading p {
 		margin: 0;
 		font-weight: var(--font-weight-semibold);
+	}
+
+	/* A ring with one arc in the action color, turning while the map starts; still where the reader asks for less motion. */
+	.map-spinner {
+		width: 28px;
+		height: 28px;
+		border: 3px solid var(--color-line);
+		border-top-color: var(--color-action);
+		border-radius: 50%;
+		transform: rotate(40deg);
+		animation: map-spin calc(var(--motion-duration-long) * 3) var(--motion-easing-steady) infinite;
+	}
+
+	@keyframes map-spin {
+		to {
+			transform: rotate(400deg);
+		}
+	}
+
+	.map-progress {
+		width: min(16rem, 70%);
+		height: 6px;
+		overflow: hidden;
+		border-radius: 3px;
+		background: var(--color-line);
+	}
+
+	.map-progress > span {
+		display: block;
+		height: 100%;
+		border-radius: 3px;
+		background: var(--color-ink-muted);
+		transition: width var(--motion-duration-medium) var(--motion-easing-standard);
+	}
+
+	.map-loading p.map-step {
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+		font-weight: normal;
 	}
 
 	/* A map that is full screen by itself fills the screen. */

@@ -45,6 +45,10 @@ original_link: https://www.supremecourt.gov/opinions/boundvolumes/570bv.pdf
 shares_link_with:
 - arizona-v-inter-tribal-council-of-arizona-inc
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260815144624/https://www.supremecourt.gov/opinions/boundvolumes/570bv.pdf
+  captured: '2026-08-15'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -116,6 +120,52 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=570%20U.S.%20637
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2013-04-16'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/12-399.mp3
+  duration_seconds: 3742
+  file:
+    storage_key: supreme-court-audio/court/2012/12-399.mp3
+    checksum: 4f5c9881209eb59e0a32618148867a44f02cfc839b349516d82e7d109b74b442
+    media_type: audio/mpeg
+    bytes: 29943077
+- kind: argument
+  date: '2013-04-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1803-April16_2013.MP3
+  catalog: https://catalog.archives.gov/id/183518185
+  whole_session: true
+  duration_seconds: 8193
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1803-april16_2013.mp3
+    checksum: ee24070f7fa6c0b6723d5953ace42288e23c7fd7d4bbbc067006c77ae0388944
+    media_type: audio/mpeg
+    bytes: 131094528
+- kind: opinion announcement
+  date: '2013-06-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1822-Non-ArgumentJune25_2013.MP3
+  catalog: https://catalog.archives.gov/id/183518204
+  whole_session: true
+  duration_seconds: 1644
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1822-non-argumentjune25_2013.mp3
+    checksum: 1c2a555b62a25f9ccdf5bd36aefa1c3994969a7782b78e3e8b593591cc27ef4b
+    media_type: audio/mpeg
+    bytes: 26299904
+argument_transcripts:
+- date: '2013-04-16'
+  docket: "12-399"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2012/12-399_53k8.pdf
+  pages: 77
+  file:
+    storage_key: supreme-court-transcripts/2012/12-399_53k8.pdf
+    checksum: f91364025ccd27e98ff436b070a1453ac58ccee159d3b2a7aec73b204bd73031
+    media_type: application/pdf
+    bytes: 411434
 rights:
   status: no-permission-needed
   basis: us-government-work

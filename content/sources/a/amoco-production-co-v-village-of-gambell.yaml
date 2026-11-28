@@ -104,6 +104,31 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=480%20U.S.%20531
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1987-12-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-586.mp3
+  catalog: https://catalog.archives.gov/id/118974759
+  whole_session: true
+  note: "The National Archives dates the recording 1987-12-12; the case was argued on 1987-01-12."
+  duration_seconds: 10916
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-586.mp3
+    checksum: 705e83f5d5b0f7556495c7bafc58bcf369d4cf4f3d22774f4c5d64c455231121
+    media_type: audio/mpeg
+    bytes: 174651473
+argument_transcripts:
+- date: '1987-01-12'
+  docket: "85-1239"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1986/85-1239_85-1406_01-12-1987.pdf
+  pages: 54
+  file:
+    storage_key: supreme-court-transcripts/1986/85-1239_85-1406_01-12-1987.pdf
+    checksum: ef33831c46d917b698ee078380856d93093d22e53b3479de45d38dca25eab9cb
+    media_type: application/pdf
+    bytes: 12050526
 rights:
   status: no-permission-needed
   basis: us-government-work

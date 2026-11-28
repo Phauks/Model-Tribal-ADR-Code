@@ -34,6 +34,10 @@ opinions:
     page: 546
 original_link: https://www.loc.gov/item/usrep445535/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250828110335/https://www.loc.gov/item/usrep445535/
+  captured: '2025-08-28'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=445%20U.S.%20535
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1979-12-03'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-296.mp3
+  catalog: https://catalog.archives.gov/id/102048678
+  whole_session: true
+  duration_seconds: 13843
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-296.mp3
+    checksum: 14d27f7476c82d51b96fdeb9147c6c1ae2c877f4fb2d5fcacd546a9d5c5b0bcb
+    media_type: audio/mpeg
+    bytes: 221490905
+argument_transcripts:
+- date: '1979-12-03'
+  docket: "78-1756"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1979/78-1756_12-03-1979.pdf
+  pages: 45
+  file:
+    storage_key: supreme-court-transcripts/1979/78-1756_12-03-1979.pdf
+    checksum: 045d20be1c5dee55c1498a3483675278f8e4e7a91c81a996463205354049eb63
+    media_type: application/pdf
+    bytes: 9014484
 rights:
   status: no-permission-needed
   basis: us-government-work

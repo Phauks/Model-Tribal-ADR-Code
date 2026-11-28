@@ -89,6 +89,52 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Lac_du_Flambeau_Band_of_Lake_Superior_Chippewa_Indians_v._Coughlin
+argument_audio:
+- kind: argument
+  date: '2023-04-24'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/22-227.mp3
+  duration_seconds: 3493
+  file:
+    storage_key: supreme-court-audio/court/2022/22-227.mp3
+    checksum: ed321564637aaf12587a336f103cdc4a55b734d0177820679399ce6f3e7e45f3
+    media_type: audio/mpeg
+    bytes: 27947393
+- kind: argument
+  date: '2023-04-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2022_term/267-2308.mp3
+  catalog: https://catalog.archives.gov/id/326769298
+  whole_session: true
+  duration_seconds: 7377
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2308.mp3
+    checksum: d892deaf89f75b82852cc6be13daeda8679ea06deea355d69d3ddb8e551a6c76
+    media_type: audio/mpeg
+    bytes: 147539558
+- kind: opinion announcement
+  date: '2023-06-15'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2022_term/267-2320.mp3
+  catalog: https://catalog.archives.gov/id/326769322
+  whole_session: true
+  duration_seconds: 1133
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2320.mp3
+    checksum: 65e4b25abc2a525f35b8a97bcca515ffa68c324d1bc670157ba767700608eb78
+    media_type: audio/mpeg
+    bytes: 22667078
+argument_transcripts:
+- date: '2023-04-24'
+  docket: "22-227"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2022/22-227_94l8.pdf
+  pages: 78
+  file:
+    storage_key: supreme-court-transcripts/2022/22-227_94l8.pdf
+    checksum: 16c1f18c99c2c0b3a88a0bf1216fa02155038bf827c4c52533436d86e0f9e5c7
+    media_type: application/pdf
+    bytes: 418319
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -20,7 +20,10 @@ citation:
       - 21
 original_link: https://www.wicourts.gov/html/sc/01/01-1256.htm
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261125212347/https://www.wicourts.gov/html/sc/01/01-1256.htm
+  captured: '2026-11-25'
 history:
   status: live
   last_checked: '2026-11-21'

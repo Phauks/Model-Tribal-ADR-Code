@@ -34,6 +34,10 @@ opinions:
     page: 157
 original_link: https://www.loc.gov/item/usrep406128/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250203080605/https://www.loc.gov/item/usrep406128/
+  captured: '2025-02-03'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -103,6 +107,62 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=406%20U.S.%20128
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1971-10-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-840-71-45-19711018.mp3
+  catalog: https://catalog.archives.gov/id/81140753
+  duration_seconds: 4645
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-840-71-45-19711018.mp3
+    checksum: 0e5dbe169ef441d9a5e6f385c1afedf09b3ae676d068818160ef317a70411aa9
+    media_type: audio/mpeg
+    bytes: 74319411
+- kind: argument
+  date: '1971-10-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-840-71-54-19711018.mp3
+  catalog: https://catalog.archives.gov/id/81140753
+  duration_seconds: 1011
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-840-71-54-19711018.mp3
+    checksum: 011820b00a77d36a9d7f8b35a450c0d1706a98f9bafafcca8dc56964e223fb01
+    media_type: audio/mpeg
+    bytes: 16170839
+- kind: argument
+  date: '1971-10-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-840-71-71-19711018.mp3
+  catalog: https://catalog.archives.gov/id/81140753
+  duration_seconds: 3534
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-840-71-71-19711018.mp3
+    checksum: 0a9e46e63ee3a92210c7621ceffe6cfac793b9baf42533a103674d9343bdd354
+    media_type: audio/mpeg
+    bytes: 56541517
+- kind: argument
+  date: '1971-10-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-840-71-78-19711018.mp3
+  catalog: https://catalog.archives.gov/id/81140753
+  duration_seconds: 5025
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-840-71-78-19711018.mp3
+    checksum: eb041b7b553fda61613cad82f8e0faaa7f6d89a917426d2dc802483071d86675
+    media_type: audio/mpeg
+    bytes: 80392776
+argument_transcripts:
+- date: '1971-10-18'
+  docket: "70-78"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1971/70-78_10-18-1971.pdf
+  pages: 64
+  file:
+    storage_key: supreme-court-transcripts/1971/70-78_10-18-1971.pdf
+    checksum: 185075a39eac09b5157a776f61cc35d7cbdace374e0c516285c98e8184b29b8f
+    media_type: application/pdf
+    bytes: 12801978
 rights:
   status: no-permission-needed
   basis: us-government-work

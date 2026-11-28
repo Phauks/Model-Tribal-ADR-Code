@@ -93,6 +93,40 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Oklahoma_v._Castro-Huerta
+argument_audio:
+- kind: argument
+  date: '2022-04-27'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/21-429.mp3
+  duration_seconds: 7782
+  file:
+    storage_key: supreme-court-audio/court/2021/21-429.mp3
+    checksum: e1ed579aa49e3875d686ca3b3af9190e7064c5897cd14290290ba5e35bca9d8e
+    media_type: audio/mpeg
+    bytes: 62265856
+- kind: argument
+  date: '2022-04-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2021_term/267a-2271.mp3
+  catalog: https://catalog.archives.gov/id/318410253
+  whole_session: true
+  duration_seconds: 7948
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2271.mp3
+    checksum: 633e54486f53fcf0867686d5966c8b840710271a4eff94ffcb1a9578a18ceb70
+    media_type: audio/mpeg
+    bytes: 158962118
+argument_transcripts:
+- date: '2022-04-27'
+  docket: "21-429"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2021/21-429_09m1.pdf
+  pages: 147
+  file:
+    storage_key: supreme-court-transcripts/2021/21-429_09m1.pdf
+    checksum: a3f7c4ce621e18dc086cc7e1814aef07c9eaeb53ac91e7b70cd91e11ae21c0cb
+    media_type: application/pdf
+    bytes: 752193
 rights:
   status: no-permission-needed
   basis: us-government-work

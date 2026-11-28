@@ -1,0 +1,78 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ess
+name: Central Siberian Yupik
+iso_639_3:
+  code: ess
+  reference_name: Central Siberian Yupik
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: cent2128
+  level: language
+  source: glottolog-5-4
+family:
+  name: Eskimo-Aleut
+  glottocode: eski1264
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1683
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/siberianyupik.php
+  source: alaska-native-language-center-languages
+dialects: []
+works:
+- glottolog_reference: '568547'
+  title: St. Lawrence Island/Siberian Yupik Eskimo dictionary
+  kinds:
+  - dictionary
+  author: Linda W. Badten, Vera O. Kaneshiro, Marie Oovi, Christopher Koonooka and Steven A. Jacobson
+  year: 2008
+  publisher: Alaska Native Language Center, University of Alaska
+  pages: 981
+  source: glottolog-5-4
+- glottolog_reference: '574937'
+  title: Slovar' Èskimissko-Russkij i Russko-Èskimosskij
+  kinds:
+  - dictionary
+  author: Georgij A. Menovščikov
+  year: 1988
+  publisher: Prosveščeniye
+  pages: 268
+  source: glottolog-5-4
+- glottolog_reference: '135133'
+  title: Studies in Siberian Yupik Eskimo Morphology and Syntax
+  kinds:
+  - grammar
+  author: Willem Joseph De Reuse
+  year: 1988
+  publisher: University of Texas at Austin
+  pages: 741
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '129704'
+  title: A Dictionary of the St. Lawrence Island / Siberian Yupik Eskimo Language
+  kinds:
+  - dictionary
+  author: Linda Womkon Badten, Vera Oovi Kaneshiro and Marie Oovi
+  year: 1987
+  publisher: Alaska Native Language Center
+  pages: 410
+  source: glottolog-5-4
+- glottolog_reference: '148910'
+  title: A Dictionary of the St. Lawrence Island / Siberian Yupik Eskimo Language. Second Preliminary Edition
+  kinds:
+  - dictionary
+  author: Linda Womkon Badten, Vera Oori Kaneshiro and Marie Oori
+  year: 1987
+  publisher: Alaska Native Language Center, Fairbanks
+  source: glottolog-5-4
+- glottolog_reference: '13271'
+  title: Siberian Yupik literacy manual
+  kinds:
+  - grammar
+  year: 1976
+  pages: 62
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

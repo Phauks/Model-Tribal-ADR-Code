@@ -41,6 +41,7 @@
 		try {
 			return localStorage.getItem(key);
 		} catch {
+			// expected: storage is blocked, as in a private window; the defaults apply.
 			return null;
 		}
 	}
@@ -48,7 +49,7 @@
 		try {
 			localStorage.setItem(key, value);
 		} catch {
-			// The choice lasts for this visit only.
+			// expected: the choice lasts for this visit only.
 		}
 	}
 </script>
@@ -77,7 +78,6 @@
 		statesColor = $bindable(),
 		statesColorChoices,
 		baseMap = $bindable(),
-		placeNames = $bindable(),
 		year = $bindable(),
 		first,
 		last,
@@ -97,7 +97,6 @@
 		statesColor: string;
 		statesColorChoices: SearchableChoice<string>[];
 		baseMap: TileMapBase;
-		placeNames: boolean;
 		/** The timeline's year; undefined is Today. */
 		year: number | undefined;
 		first: number;
@@ -179,7 +178,7 @@
 			const stored = JSON.parse(readStored(foldedStorage) ?? '{}') as Partial<Record<Section, boolean>>;
 			folded = { ...folded, ...Object.fromEntries(Object.entries(stored).filter(([, value]) => typeof value === 'boolean')) };
 		} catch {
-			// A damaged entry leaves every section open.
+			// expected: a damaged entry leaves every section open.
 		}
 		const keyChoice = readStored(keyStorage);
 		keyFolded = keyChoice === null ? matchMedia('(max-width: 40rem)').matches : keyChoice === 'yes';
@@ -197,6 +196,25 @@
 	});
 
 	let searched = $state('');
+
+	/**
+	 * Search rests folded to a button beside Layers, to leave the map room, and opens in place when pressed (Trevor, 2026-11-27: "search should collapse in map until used to save space"). It folds again once a place is picked, on Escape, and when the reader moves away with the box empty.
+	 */
+	let searchOpen = $state(false);
+	let searchBox: HTMLDivElement | undefined = $state();
+	let searchButton: HTMLButtonElement | undefined = $state();
+	async function openSearch(): Promise<void> {
+		searchOpen = true;
+		await tick();
+		searchBox?.querySelector('input')?.focus();
+	}
+	async function foldSearch(returnFocus: boolean): Promise<void> {
+		searchOpen = false;
+		searched = '';
+		if (!returnFocus) return;
+		await tick();
+		searchButton?.focus();
+	}
 
 	/** Where the timeline's slider is: the year, or the end at Today. */
 	const sliderValue = $derived(year ?? last);
@@ -308,13 +326,40 @@
 {/snippet}
 
 <div class="explorer-top">
-	<div class="explorer-search map-float">
-		<Search class="explorer-search-icon" aria-hidden="true" size={18} />
-		<SearchableDropdown label="Find a nation or place" hideLabel placeholder="Find a nation or place" choices={places} bind:value={searched} onchange={(value) => {
-			onplace(value);
-			searched = '';
-		}} />
-	</div>
+	{#if searchOpen}
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<div
+			class="explorer-search map-float"
+			bind:this={searchBox}
+			onkeydowncapture={(event) => {
+				if (event.key !== 'Escape') return;
+				event.preventDefault();
+				void foldSearch(true);
+			}}
+			onfocusout={(event) => {
+				const next = event.relatedTarget as Node | null;
+				if (next && searchBox?.contains(next)) return;
+				if (!searchBox?.querySelector('input')?.value) void foldSearch(false);
+			}}
+		>
+			<Search class="explorer-search-icon" aria-hidden="true" size={18} />
+			<SearchableDropdown label="Find a nation or place" hideLabel placeholder="Find a nation or place" choices={places} bind:value={searched} onchange={(value) => {
+				onplace(value);
+				void foldSearch(true);
+			}} />
+		</div>
+	{:else}
+		<button
+			type="button"
+			class="map-control map-control-square map-float explorer-search-button"
+			aria-label="Find a nation or place"
+			title="Find a nation or place"
+			bind:this={searchButton}
+			onclick={() => void openSearch()}
+		>
+			<Search aria-hidden="true" size={18} />
+		</button>
+	{/if}
 	<button
 		type="button"
 		class="map-control map-float explorer-layers-button"
@@ -380,9 +425,6 @@
 					</label>
 				{/each}
 			</div>
-			{#if baseMap !== 'map'}
-				<label class="explorer-layer"><input type="checkbox" bind:checked={placeNames} /><span class="explorer-layer-words">Place names and roads</span></label>
-			{/if}
 		</div>
 	</section>
 </div>
@@ -958,32 +1000,36 @@
 		transform: translateX(-100%);
 	}
 
-	/* On a narrow map (a phone), search takes the top row; Layers and the layer buttons scroll sideways under it; the key folds away under the timeline. */
+	/* On a narrow map (a phone), the folded search, Layers and the key share the top row; search, opened, lies over that row; the key folds away under the timeline. */
 	@container map-frame (max-width: 40rem) {
 		.explorer-top {
 			right: var(--space-3);
-			flex-wrap: wrap;
 		}
 
 		.explorer-search {
-			flex: 1 0 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			min-width: 0;
 		}
 
 		.explorer-layers-word {
 			display: none;
 		}
 
-		/* The key, folded, sits beside Layers; open, it drops below them. */
+		/* The key, folded, sits beside search and Layers on the top row; open, it hangs down from there, clear of the map's buttons on the right. */
 		.explorer-key {
-			top: calc(var(--space-3) * 2 + var(--layout-target-minimum));
+			top: var(--space-3);
 			bottom: auto;
-			left: calc(var(--space-3) + 5.5rem);
+			left: calc(var(--space-3) + var(--layout-target-minimum) + var(--space-2) + 5.5rem);
 			right: auto;
-			max-width: calc(100% - var(--space-3) * 2 - 5.5rem);
+			max-width: calc(100% - var(--space-3) * 4 - var(--layout-target-minimum) * 2 - var(--space-2) - 5.5rem);
 		}
 
 		.explorer-key.beside-details {
-			left: calc(var(--space-3) + 5.5rem);
+			left: calc(var(--space-3) + var(--layout-target-minimum) + var(--space-2) + 5.5rem);
 		}
 
 		.explorer-key-word {
@@ -1034,10 +1080,6 @@
 		.explorer-year {
 			grid-area: year;
 			text-align: right;
-		}
-
-		.explorer-layers {
-			top: calc(var(--space-3) * 3 + var(--layout-target-minimum) * 2);
 		}
 
 		.explorer-details {

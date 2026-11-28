@@ -37,6 +37,10 @@ opinions:
     page: 643
 original_link: https://www.loc.gov/item/usrep397620/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250218143321/https://www.loc.gov/item/usrep397620/
+  captured: '2025-02-18'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -108,6 +112,93 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=397%20U.S.%20620
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1969-10-22'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-754-41-59-19691022-19691023.mp3
+  catalog: https://catalog.archives.gov/id/81140323
+  duration_seconds: 3484
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-754-41-59-19691022-19691023.mp3
+    checksum: 14cedbc3cf36c9605efc8277f57bfac65aa64f953a4ebf5c9acdc9a0c1f988ad
+    media_type: audio/mpeg
+    bytes: 55748230
+- kind: argument
+  date: '1969-10-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-755-41-59-19691022-19691023-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81140328
+  duration_seconds: 3742
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-755-41-59-19691022-19691023-1of2.mp3
+    checksum: ac8977609464752b75ab663c77c66fdc273d4724ed2ad750efacbede9a1fe389
+    media_type: audio/mpeg
+    bytes: 59876831
+- kind: argument
+  date: '1969-10-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-755-41-59-19691022-19691023-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81140328
+  duration_seconds: 1801
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-755-41-59-19691022-19691023-2of2.mp3
+    checksum: 136cf2a31b202e05d401825929e0b1520b759bb2e62dfe59fda45c3a2d471a75
+    media_type: audio/mpeg
+    bytes: 28822046
+- kind: argument
+  date: '1970-03-05'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-780-41-59-19700305-1of2.mp3
+  catalog: https://catalog.archives.gov/id/81140452
+  duration_seconds: 3645
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-780-41-59-19700305-1of2.mp3
+    checksum: 50eb4f5c101044cd3488144d3103daeade8ffd2adc303dde34b0dd0357b08d4d
+    media_type: audio/mpeg
+    bytes: 58317008
+- kind: argument
+  date: '1970-03-05'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-780-41-59-19700305-2of2.mp3
+  catalog: https://catalog.archives.gov/id/81140452
+  duration_seconds: 2605
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-780-41-59-19700305-2of2.mp3
+    checksum: d0c04bc32de794f2bd65b2ade0e0c8f4d0135a535cd36be95f4a63a587894781
+    media_type: audio/mpeg
+    bytes: 41683486
+argument_transcripts:
+- date: '1969-10-22'
+  docket: "41"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1969/69-41_69-59_10-22-1969.pdf
+  pages: 35
+  file:
+    storage_key: supreme-court-transcripts/1969/69-41_69-59_10-22-1969.pdf
+    checksum: 9147d4b2e01de9d984213e8a49c5e5f30019150920c697e44d16267c3e9c9b0b
+    media_type: application/pdf
+    bytes: 9235868
+- date: '1969-10-23'
+  docket: "41"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1969/69-41_69-59_10-23-1969.pdf
+  pages: 57
+  file:
+    storage_key: supreme-court-transcripts/1969/69-41_69-59_10-23-1969.pdf
+    checksum: 2937912c27009975458e23c79d256e38413adf3ff11e9c14350f7255f448d8b3
+    media_type: application/pdf
+    bytes: 14515582
+- date: '1970-03-05'
+  docket: "41"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1969/69-41_69-59_03-05-1970.pdf
+  pages: 62
+  file:
+    storage_key: supreme-court-transcripts/1969/69-41_69-59_03-05-1970.pdf
+    checksum: 36a08a862d2eee6f8e8182840c86697dfa11dba435026767413a5b342aa28053
+    media_type: application/pdf
+    bytes: 15419047
 rights:
   status: no-permission-needed
   basis: us-government-work

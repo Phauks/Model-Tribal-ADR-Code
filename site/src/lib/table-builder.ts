@@ -17,6 +17,7 @@
 import type { BarChartData } from './bar-chart.ts';
 import { readableDate } from './readable-date.ts';
 import { filterIsActive, foldForSearch, type ColumnFilter, type ColumnFilters, type TableColumn, type TableRow } from './tables/table-definition.ts';
+import { sendProblem } from './problem-reports.ts';
 
 export type BuilderColumnType = 'text' | 'number' | 'date' | 'list';
 
@@ -409,6 +410,7 @@ export function builderAddressParts(link: string): { dataset: string; parameters
 	try {
 		url = new URL(link, 'https://site.invalid');
 	} catch {
+		// expected: a link that is not an address is not a Build a table address.
 		return undefined;
 	}
 	if (url.pathname !== builderPath) return undefined;
@@ -468,7 +470,9 @@ export async function essayChartFrom(link: string, fetcher: typeof fetch = fetch
 		if (!response.ok) return null;
 		const dataset = (await response.json()) as BuilderDataset;
 		return essayChartOf(dataset, parts.parameters, readableDate(new Date().toISOString().slice(0, 10)));
-	} catch {
+	} catch (problem) {
+		// The editor says the chart could not be read.
+		sendProblem(problem, { code: 'table-builder.essay-chart' });
 		return null;
 	}
 }

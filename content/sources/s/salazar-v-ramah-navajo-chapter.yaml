@@ -36,6 +36,10 @@ original_link: https://www.supremecourt.gov/opinions/boundvolumes/567bv.pdf
 shares_link_with:
 - match-e-be-nash-she-wish-band-of-pottawatomi-indians-v-patchak
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260807210336/https://www.supremecourt.gov/opinions/boundvolumes/567BV.pdf
+  captured: '2026-08-07'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -103,6 +107,52 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=567%20U.S.%20182
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2012-04-18'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/11-551.mp3
+  duration_seconds: 3450
+  file:
+    storage_key: supreme-court-audio/court/2011/11-551.mp3
+    checksum: 0760929135432e0609354166e2e8700505f6540d785cb60f47eb9adc60faf71e
+    media_type: audio/mpeg
+    bytes: 27610480
+- kind: argument
+  date: '2012-04-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1750-April18_2012.MP3
+  catalog: https://catalog.archives.gov/id/183518132
+  whole_session: true
+  duration_seconds: 4172
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1750-april18_2012.mp3
+    checksum: c9a6587d20c2d42136a4125a03f545bbf42b87887abe05f05d7814bc3891cd25
+    media_type: audio/mpeg
+    bytes: 66757632
+- kind: opinion announcement
+  date: '2012-06-18'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1764-June18_2012Non-Argument.MP3
+  catalog: https://catalog.archives.gov/id/183518146
+  whole_session: true
+  duration_seconds: 1509
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1764-june18_2012non-argument.mp3
+    checksum: e986dd47bc2c816e856a55b07e56417c53f1c2841e4a34796d91a8f0c5b570e5
+    media_type: audio/mpeg
+    bytes: 24145920
+argument_transcripts:
+- date: '2012-04-18'
+  docket: "11-551"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2011/11-551.pdf
+  pages: 74
+  file:
+    storage_key: supreme-court-transcripts/2011/11-551.pdf
+    checksum: 9af5804015f1b50b4214d63b01d034b2d8d61fa415877dc45a3dd56f289b0b33
+    media_type: application/pdf
+    bytes: 348315
 rights:
   status: no-permission-needed
   basis: us-government-work

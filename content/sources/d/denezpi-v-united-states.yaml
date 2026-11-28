@@ -93,6 +93,40 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Denezpi_v._United_States
+argument_audio:
+- kind: argument
+  date: '2022-02-22'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/20-7622.mp3
+  duration_seconds: 3932
+  file:
+    storage_key: supreme-court-audio/court/2021/20-7622.mp3
+    checksum: 341d037bc3b7ac43c5f3593e31bcb6d8598e6404160c52e7bbf590895a70b604
+    media_type: audio/mpeg
+    bytes: 31466172
+- kind: argument
+  date: '2022-02-22'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2021_term/267a-2255.mp3
+  catalog: https://catalog.archives.gov/id/318410221
+  whole_session: true
+  duration_seconds: 9657
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2255.mp3
+    checksum: dfd4e0b722bb10a0341789dfb98bd5af291a8b3f23eca199611d2bdfcf885b85
+    media_type: audio/mpeg
+    bytes: 193148678
+argument_transcripts:
+- date: '2022-02-22'
+  docket: "20-7622"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2021/20-7622_1a7d.pdf
+  pages: 81
+  file:
+    storage_key: supreme-court-transcripts/2021/20-7622_1a7d.pdf
+    checksum: b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0
+    media_type: application/pdf
+    bytes: 474510
 rights:
   status: no-permission-needed
   basis: us-government-work

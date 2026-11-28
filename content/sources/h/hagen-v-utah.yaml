@@ -34,6 +34,10 @@ opinions:
     page: 422
 original_link: https://www.loc.gov/item/usrep510399/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261126084403/https://www.loc.gov/item/usrep510399/
+  captured: '2026-11-26'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=510%20U.S.%20399
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1993-11-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-889.mp3
+  catalog: https://catalog.archives.gov/id/118975016
+  whole_session: true
+  duration_seconds: 7341
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-889.mp3
+    checksum: 10b61b49d66e736a44623c7c2dc3f68416fbde2ee2509b457788a51c7d2d0f3f
+    media_type: audio/mpeg
+    bytes: 117451251
+argument_transcripts:
+- date: '1993-11-02'
+  docket: "92-6281"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1993/92-6281_11-02-1993.pdf
+  pages: 51
+  file:
+    storage_key: supreme-court-transcripts/1993/92-6281_11-02-1993.pdf
+    checksum: 6cb8ea8798d02e1b3508bab9ca331fa3164b06d801902d640e61e501701bfa93
+    media_type: application/pdf
+    bytes: 11441006
 rights:
   status: no-permission-needed
   basis: us-government-work

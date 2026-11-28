@@ -31,6 +31,10 @@ opinions:
     page: 100
 original_link: https://www.loc.gov/item/usrep507099/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20251209134257/https://www.loc.gov/item/usrep507099/
+  captured: '2025-12-09'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -100,6 +104,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=507%20U.S.%2099
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1993-01-11'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-865.mp3
+  catalog: https://catalog.archives.gov/id/118974992
+  whole_session: true
+  duration_seconds: 13328
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-865.mp3
+    checksum: 7e3ac7ac5cef959e3ebac5a1326e1fe6cb1dd71fc70eabd6f51c48efbd503041
+    media_type: audio/mpeg
+    bytes: 213255019
+argument_transcripts:
+- date: '1993-01-11'
+  docket: "91-5397"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1992/91-5397_01-11-1993.pdf
+  pages: 46
+  file:
+    storage_key: supreme-court-transcripts/1992/91-5397_01-11-1993.pdf
+    checksum: ceda40b5a8f6711fa2a2eeaeb64c7ef86849733e6c331687d57587b57df75f90
+    media_type: application/pdf
+    bytes: 10228408
 rights:
   status: no-permission-needed
   basis: us-government-work

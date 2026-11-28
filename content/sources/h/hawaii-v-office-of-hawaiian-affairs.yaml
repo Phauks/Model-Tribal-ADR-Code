@@ -102,6 +102,42 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=556%20U.S.%20163
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2009-02-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1569-February25.MP3
+  catalog: https://catalog.archives.gov/id/183517951
+  whole_session: true
+  duration_seconds: 7843
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1569-february25.mp3
+    checksum: 7e903adab825c17ab7051c53588bc754852d90ee2135345eed34e4c6cc92800a
+    media_type: audio/mpeg
+    bytes: 125486080
+- kind: opinion announcement
+  date: '2009-03-31'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1577-March31.MP3
+  catalog: https://catalog.archives.gov/id/183517959
+  whole_session: true
+  duration_seconds: 4205
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1577-march31.mp3
+    checksum: 2a1c4cfe9382cb0264f6827115e7fc6d3dc96ce044174aea67b7c13d7645ab32
+    media_type: audio/mpeg
+    bytes: 67275776
+argument_transcripts:
+- date: '2009-02-25'
+  docket: "07-1372"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/2008/07-1372.pdf
+  pages: 68
+  file:
+    storage_key: supreme-court-transcripts/2008/07-1372.pdf
+    checksum: 7b71e5e2d8beed064dde295e1418f6a4a12534de208094bed020f7c713ac85a2
+    media_type: application/pdf
+    bytes: 371125
 rights:
   status: no-permission-needed
   basis: us-government-work

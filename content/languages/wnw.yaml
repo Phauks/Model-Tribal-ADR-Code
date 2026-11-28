@@ -1,0 +1,33 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: wnw
+name: Nuclear Wintu
+iso_639_3:
+  code: wnw
+  reference_name: Wintu
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: nucl1651
+  level: dialect
+  source: glottolog-5-4
+family:
+  name: Wintuan
+  glottocode: wint1258
+  source: glottolog-5-4
+iso_names:
+- name: Wintu
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1145
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '685904'
+  title: Wintu Dictionary. Survey of California and Other Indian Languages
+  kinds:
+  - dictionary
+  author: Alice Schlichter
+  year: 1981
+  publisher: University of California Press
+  source: glottolog-5-4
+retrieved: '2026-11-27'

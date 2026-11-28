@@ -34,6 +34,10 @@ opinions:
     page: 642
 original_link: https://www.loc.gov/item/usrep460605/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260210143316/https://www.loc.gov/item/usrep460605/
+  captured: '2026-02-10'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=460%20U.S.%20605
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1982-12-08'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-422.mp3
+  catalog: https://catalog.archives.gov/id/102048800
+  whole_session: true
+  duration_seconds: 13998
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-422.mp3
+    checksum: c6fd9ad274e70fb1ecabb9594d555db8b5cf40e15adce68c91e4ceddbb243b5a
+    media_type: audio/mpeg
+    bytes: 223973582
+argument_transcripts:
+- date: '1982-12-08'
+  docket: "8 Orig."
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1982/No_8_Orig_12-08-1982.pdf
+  pages: 68
+  file:
+    storage_key: supreme-court-transcripts/1982/No_8_Orig_12-08-1982.pdf
+    checksum: bcbab32df0118b9e24319615aa9121fac767df154053efc94c11e97d7e8fe16c
+    media_type: application/pdf
+    bytes: 16741425
 rights:
   status: no-permission-needed
   basis: us-government-work

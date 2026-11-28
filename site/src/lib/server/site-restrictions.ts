@@ -13,23 +13,16 @@
  * out of view.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { readSettings, type RestrictionSettings } from '../nation-restrictions.ts';
+import type { RestrictionSettings } from '../nation-restrictions.ts';
+import { isMissingTable, Problem } from '../problems.ts';
 import type { SiteRestrictions } from '../restricted-files.ts';
 import { restrictableCopies } from './copy-list.ts';
-import { gatherRestrictions, restrictableList } from './nation-restrictions.ts';
+import { choicesUnknown, gatherRestrictions, restrictableList, settingsInForce } from './nation-restrictions.ts';
 import { restrictionStamp, restrictionStampSql, type RestrictionStampRow } from './restriction-stamp.ts';
 
 type Assets = { fetch: (input: string) => Promise<Response> };
 
 let cached: { stamp: string; value: Promise<SiteRestrictions | undefined> } | undefined;
-
-function parse(text: string): unknown {
-	try {
-		return JSON.parse(text);
-	} catch {
-		return undefined;
-	}
-}
 
 /** Each nation's setting in force: its newest save. */
 async function allSettings(database: D1Database): Promise<Map<string, RestrictionSettings>> {
@@ -42,13 +35,14 @@ async function allSettings(database: D1Database): Promise<Map<string, Restrictio
 			) WHERE position = 1`
 		)
 		.all<{ nationIdentifier: string; settings: string }>();
-	return new Map(result.results.map((row) => [row.nationIdentifier, readSettings(parse(row.settings))]));
+	return new Map(result.results.map((row) => [row.nationIdentifier, settingsInForce(row.settings)]));
 }
 
 /**
  * What every nation restricts now, or undefined when none restricts
- * anything (or the database cannot be read, when the files are served as
- * built rather than not at all).
+ * anything. When the choices cannot be read this throws (choicesUnknown),
+ * so the files and pages answer with the error page rather than as built:
+ * restrictions fail closed (Trevor, Nov. 27, 2026).
  */
 export async function siteRestrictions(database: D1Database | undefined, assets: Assets | undefined, origin: string): Promise<SiteRestrictions | undefined> {
 	if (!database) return undefined;
@@ -59,17 +53,18 @@ export async function siteRestrictions(database: D1Database | undefined, assets:
 		if (!read) return undefined;
 		stamp = read;
 	} catch (problem) {
-		console.error('Nation restrictions could not be read', problem);
-		return undefined;
+		// Before the migration runs no nation has chosen anything.
+		if (isMissingTable(problem)) return undefined;
+		throw choicesUnknown(problem, 'the site’s files');
 	}
 	if (cached?.stamp !== stamp) {
 		const url = new URL(origin);
 		const value = allSettings(database)
 			.then(async (settings) => gatherRestrictions(settings, (nation) => restrictableList(nation, url, fetch, assets), await restrictableCopies(), stamp))
 			.catch((problem) => {
-				console.error('Nation restrictions could not be gathered', problem);
+				// Asked again by the next request.
 				cached = undefined;
-				return undefined;
+				throw problem instanceof Problem ? problem : choicesUnknown(problem, 'the site’s files');
 			});
 		cached = { stamp, value };
 	}

@@ -104,6 +104,52 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=577%20U.S.%20481
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2016-01-20'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/14-1406.mp3
+  duration_seconds: 3505
+  file:
+    storage_key: supreme-court-audio/court/2015/14-1406.mp3
+    checksum: 1b762fd46093981d6172fc85eb761c816400f6731321145bb0d32a455259c8b8
+    media_type: audio/mpeg
+    bytes: 28048152
+- kind: argument
+  date: '2016-01-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1956-January20_2016.MP3
+  catalog: https://catalog.archives.gov/id/183518338
+  whole_session: true
+  duration_seconds: 8501
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1956-january20_2016.mp3
+    checksum: 71f6d537ad5555a58bfbf46c9b093e2059f821d525f7c740ff76444e57642658
+    media_type: audio/mpeg
+    bytes: 136016384
+- kind: opinion announcement
+  date: '2016-03-22'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1964-March22_2016.MP3
+  catalog: https://catalog.archives.gov/id/183518346
+  whole_session: true
+  duration_seconds: 8002
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1964-march22_2016.mp3
+    checksum: 10f6abe91b5a8a4337b69c1c155f775fd8d99273d709210442cfd9df7faf603f
+    media_type: audio/mpeg
+    bytes: 128033792
+argument_transcripts:
+- date: '2016-01-20'
+  docket: "14-1406"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2015/14-1406_22p6.pdf
+  pages: 64
+  file:
+    storage_key: supreme-court-transcripts/2015/14-1406_22p6.pdf
+    checksum: c027dea2756909bc94dbbfcbcf00bb68a3affb91bfc2924a5e1d51663857586b
+    media_type: application/pdf
+    bytes: 3072924
 rights:
   status: no-permission-needed
   basis: us-government-work

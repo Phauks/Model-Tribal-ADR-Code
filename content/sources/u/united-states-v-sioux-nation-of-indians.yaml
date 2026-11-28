@@ -37,6 +37,10 @@ opinions:
     page: 424
 original_link: https://www.loc.gov/item/usrep448371/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20240417010112/https://www.loc.gov/item/usrep448371/
+  captured: '2024-04-17'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -108,6 +112,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=448%20U.S.%20371
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1980-03-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-314.mp3
+  catalog: https://catalog.archives.gov/id/102048696
+  whole_session: true
+  duration_seconds: 15018
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-314.mp3
+    checksum: 8ed75e6119cc91a945772395f5e1ca6f6c7b6e12881658e6216484abc5f4fabd
+    media_type: audio/mpeg
+    bytes: 240285275
+argument_transcripts:
+- date: '1980-03-25'
+  docket: "79-639"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1979/79-639_03-25-1980.pdf
+  pages: 51
+  file:
+    storage_key: supreme-court-transcripts/1979/79-639_03-25-1980.pdf
+    checksum: 23a8b3436cf3d818fbdcf728ee0233fcd1d99ce68a5f54138ff330731c84c30b
+    media_type: application/pdf
+    bytes: 11013972
 rights:
   status: no-permission-needed
   basis: us-government-work

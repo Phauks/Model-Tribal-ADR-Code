@@ -1,0 +1,69 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: hid
+name: Hidatsa
+iso_639_3:
+  code: hid
+  reference_name: Hidatsa
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: hida1246
+  level: language
+  source: glottolog-5-4
+family:
+  name: Siouan
+  glottocode: siou1252
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2376
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '309312'
+  title: A grammar of Hidatsa
+  kinds:
+  - grammar
+  author: Indrek Park
+  year: 2012
+  publisher: Indiana University
+  pages: 580
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '99400'
+  title: Hidatsa Morpho-Syntax and Clause Structure
+  kinds:
+  - grammar
+  author: John P. Boyle
+  year: 2007
+  publisher: University of Chicago
+  pages: 426
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '16451'
+  title: Ethnology and Philology of the Hidatsa Indians
+  kinds:
+  - dictionary
+  author: Washington Matthews
+  year: 1877
+  publisher: 'United States Geological and Geographical Survey, Washington: Department of the Interior'
+  pages: 182
+  source: glottolog-5-4
+- glottolog_reference: '300642'
+  title: Grammar and dictionary of the language of the Hidatsa
+  kinds:
+  - dictionary
+  author: Washington Matthews
+  year: 1873
+  publisher: AMS Press
+  pages: 148
+  source: glottolog-5-4
+- glottolog_reference: '26580'
+  title: 'Grammar and dictionary of the language of the Hidatsa (Minnetarees, Grosventres of the Missouri). New York: Cramoisy Press. Mathews, Washington (1874). Hidatsa (Minnetaree) English dictionary. New York: Cramoisy Press. Mathews, Washington (1877). Ethnography and philology of the Hidatsa Indians'
+  kinds:
+  - grammar
+  author: Washington Mathews
+  year: 1873
+  publisher: U.S. Government Printing Office
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

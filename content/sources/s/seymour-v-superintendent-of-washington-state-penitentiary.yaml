@@ -31,6 +31,10 @@ opinions:
     page: 352
 original_link: https://www.loc.gov/item/usrep368351/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250425142623/https://www.loc.gov/item/usrep368351/
+  captured: '2025-04-25'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -100,6 +104,18 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=368%20U.S.%20351
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1961-12-13'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/black/267-354-62-19611213.mp3
+  catalog: https://catalog.archives.gov/id/81138286
+  duration_seconds: 3734
+  file:
+    storage_key: supreme-court-audio/national-archives/black-series/267-354-62-19611213.mp3
+    checksum: bc12226dc4ca6b66eb72241aa5a8825e0519a1374d026bae34139ef75496e171
+    media_type: audio/mpeg
+    bytes: 59740159
 rights:
   status: no-permission-needed
   basis: us-government-work

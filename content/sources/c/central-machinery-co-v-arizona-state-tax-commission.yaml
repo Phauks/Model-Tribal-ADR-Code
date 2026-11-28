@@ -37,6 +37,10 @@ opinions:
     page: 170
 original_link: https://www.loc.gov/item/usrep448160/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20190526224354/https://www.loc.gov/item/usrep448160/
+  captured: '2019-05-26'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -108,6 +112,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=448%20U.S.%20160
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1980-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-302.mp3
+  catalog: https://catalog.archives.gov/id/102048684
+  whole_session: true
+  duration_seconds: 14284
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-302.mp3
+    checksum: 530bcecc00f9df18f8d907a245d431e76d73e9602ce8c0af893bc93cc3a0c1b9
+    media_type: audio/mpeg
+    bytes: 228547728
+argument_transcripts:
+- date: '1980-01-14'
+  docket: "78-1604"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1979/78-1604_01-14-1980.pdf
+  pages: 49
+  file:
+    storage_key: supreme-court-transcripts/1979/78-1604_01-14-1980.pdf
+    checksum: 4ecd9fb699debb5dd729b8291b542f40454fa7301157e99996fd4d4f96f032d9
+    media_type: application/pdf
+    bytes: 9768528
 rights:
   status: no-permission-needed
   basis: us-government-work

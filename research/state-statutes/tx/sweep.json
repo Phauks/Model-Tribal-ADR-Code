@@ -1,0 +1,52 @@
+{
+  "state": "TX",
+  "code": "Texas Statutes",
+  "edition": 2025,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 122609,
+    "live": 122546,
+    "strong": 83,
+    "weak_only": 503,
+    "reserved": 63
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 88,
+    "core": 16,
+    "incidental": 72,
+    "by_pool": {
+      "A": {
+        "incidental": 68,
+        "none": 2,
+        "core": 13
+      },
+      "B": {
+        "none": 497,
+        "incidental": 4,
+        "core": 2
+      },
+      "C": {
+        "none": 300
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 1
+      }
+    },
+    "meta": {
+      "live": 122546,
+      "A": 83,
+      "B": 503,
+      "E": 1,
+      "C": 595,
+      "C_sample": 300,
+      "D": 121364,
+      "D_sample": 300,
+      "items": 1187,
+      "batches": 9
+    }
+  }
+}

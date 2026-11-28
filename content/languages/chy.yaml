@@ -1,0 +1,128 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: chy
+name: Cheyenne
+iso_639_3:
+  code: chy
+  reference_name: Cheyenne
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: chey1247
+  level: language
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+own_names:
+- name: Tsêhesenêstsestôtse
+  language: chy
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1685
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '693020'
+  title: Cheyenne Dictionary
+  kinds:
+  - dictionary
+  author: Louise Fisher, Wayne Leman, Leroy Pine Sr. and Marie Sanchez
+  year: 2017
+  publisher: Chief Dull Knife College
+  source: glottolog-5-4
+- glottolog_reference: '588211'
+  title: The Cheyenne Language
+  kinds:
+  - grammar
+  author: Wayne Leman
+  year: 2014
+  publisher: Chief Dull Knife College
+  pages: 381
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '20531'
+  title: Cheyenne dictionary
+  kinds:
+  - dictionary
+  author: Leroy Pine, Marie Sanchez, Louise Fisher and Wayne E. Leman
+  year: 2004
+  publisher: Chief Dull Knife College
+  source: glottolog-5-4
+- glottolog_reference: '77153'
+  title: Cheyenne dictionary
+  kinds:
+  - dictionary
+  author: Louise Fisher, Wayne Leman and Leroy Pine
+  year: 2004
+  publisher: Chief Dull Knife College
+  pages: 574
+  source: glottolog-5-4
+- glottolog_reference: '114576'
+  title: Cheyenne picture dictionary
+  kinds:
+  - dictionary
+  year: 2004
+  source: glottolog-5-4
+- glottolog_reference: '135594'
+  title: Cheyenne picture dictionary
+  kinds:
+  - dictionary
+  year: 2004
+  publisher: Chief Dull Knife College
+  pages: 51
+  source: glottolog-5-4
+- glottolog_reference: '62615'
+  title: Cheyenne topical dictionary
+  kinds:
+  - dictionary
+  author: Wayne E. Leman and Josephine S. Glenmore
+  year: 1984
+  publisher: Cheyenne Translation Project
+  pages: 223
+  source: glottolog-5-4
+- glottolog_reference: '124737'
+  title: A reference grammar of the Cheyenne language
+  kinds:
+  - grammar
+  author: Wayne Leman
+  year: 1979
+  publisher: Museum of Anthropology, University of Northern Colorado
+  pages: 234
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '153333'
+  title: 'Review of: English-Cheyenne student dictionary, by Wayne E. Leman and others, compilers'
+  kinds:
+  - dictionary
+  author: Donald G. Frantz
+  year: 1978
+  publisher: 'International Journal of American Linguistics 44: 77-78'
+  source: glottolog-5-4
+- glottolog_reference: '31467'
+  title: 'Review of: English-Cheyenne student dictionary, by Wayne E. Leman and others, compilers'
+  kinds:
+  - dictionary
+  author: Donald G. Frantz
+  year: 1977
+  publisher: 258-59
+  source: glottolog-5-4
+- glottolog_reference: '141966'
+  title: English-Cheyenne student dictionary
+  kinds:
+  - dictionary
+  author: Wayne E. Leman
+  year: 1976
+  publisher: Language Research Department, Northern Cheyenne Title VII ESEA Bilingual Education Program
+  pages: 163
+  source: glottolog-5-4
+- glottolog_reference: '155718'
+  title: English-Cheyenne Dictionary
+  kinds:
+  - dictionary
+  author: Rodolphe Petter
+  year: 1915
+  publisher: Mennonite Mission
+  pages: 1161
+  source: glottolog-5-4
+retrieved: '2026-11-27'

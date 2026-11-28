@@ -16,7 +16,13 @@ The usual command, after files are added to the bucket:
   update    List the bucket, download only the files the published library
             has not read, read them, rebuild and publish. It does nothing
             when there are no new files, so it is safe to run on a schedule.
-            Add --ocr to read scanned pages of the new files.
+            Add --ocr to read scanned pages of the new files. New files are
+            read in batches (--batch-gigabytes, default 4): each batch is
+            downloaded, read and deleted before the next, so the work folder
+            never holds more than one batch. --limit N and --minutes M end a
+            run early and publish what was read; the next run reads the rest.
+            A long run publishes along the way (--publish-every, default 120
+            minutes), so a run that is cut off keeps its work.
 
 The steps it runs, which can also be run one at a time (for a full rebuild):
 
@@ -40,7 +46,7 @@ R2_ACCOUNT_ID). Needs boto3, pymupdf and lxml (pip install boto3 pymupdf
 lxml) and, for --ocr, the tesseract program.
 
 Usage:
-  python3 scripts/library/build_library.py update --ocr
+  python3 scripts/library/build_library.py update --ocr [--batch-gigabytes 4] [--limit N] [--minutes M]
   python3 scripts/library/build_library.py sync --work ~/library-work
   python3 scripts/library/build_library.py extract --work ~/library-work [--ocr] [--seed]
   python3 scripts/library/build_library.py index --work ~/library-work
@@ -82,14 +88,22 @@ SCHEMA_VERSION = 2
 # which are not sources and some of which are private to the people who sent
 # them: proof sent with nations' requests, files people upload, profile
 # pictures, essay drafts and their versions, page versions, mail and the
-# printed book's own files. A key with no file extension is left out too,
-# since the website names its private files that way.
+# printed book's own files. The project's private files are left out as well:
+# the unredacted originals of the redacted opinions (decision record 0057)
+# and the names map, which must never be searchable. So are the scripts'
+# working files and progress records, audio and video (argument recordings,
+# films), scanned map images and map data. A key with no file extension is
+# left out too, since the website names its private files that way.
 SKIPPED_PREFIXES = ("map-tiles/", "nation-images/", "scanner-check/", LIBRARY_PREFIX,
                     "requests/", "uploads/", "profile-pictures/", "essays/", "page-versions/", "mail/",
                     "events/", "offline/", "books/current/", "event-recordings/", "sponsors/",
-                    "nation-pages/")
+                    "nation-pages/", "private/", "_work/", "_migration/", "watch/", "wayback/")
 SKIPPED_SUFFIXES = (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".ico", ".pbf",
-                    ".pmtiles", ".zip", ".epub", ".bin", ".ics", ".raw")
+                    ".pmtiles", ".zip", ".epub", ".bin", ".ics", ".raw",
+                    ".jp2", ".tif", ".tiff", ".bmp",
+                    ".mp3", ".wma", ".wav", ".m4a", ".aac", ".flac", ".ogg", ".oga", ".opus",
+                    ".mp4", ".m4v", ".wmv", ".mov", ".avi", ".webm", ".mkv", ".mpg", ".mpeg",
+                    ".geojson", ".jsonl", ".gz", ".done")
 # A fetch record next to a saved Tribal law page ({"link": ..., "status": ...})
 # is metadata, not text.
 METADATA_JSON = re.compile(r"^tribal-law/documents/[0-9a-f]+\.json$")
@@ -147,27 +161,43 @@ def list_bucket(client) -> list[dict]:
     return objects
 
 
-def download_objects(client, objects_folder: Path, targets: list[dict]) -> int:
+def download_objects(client, objects_folder: Path, targets: list[dict], quiet: bool = False) -> dict:
     """Download each target object into the work folder, skipping files
-    already there with the same size. Returns the bytes fetched."""
+    already there with the same size. A file that cannot be downloaded (gone
+    from the bucket since the listing, say) is reported, not fatal: it stays
+    unread and the next run tries it again. Returns the bytes fetched, the
+    keys fetched this run and the keys that failed."""
 
-    def download(item: dict) -> int:
+    def download(item: dict) -> tuple[str, str]:
         path = objects_folder / item["key"]
         if path.exists() and path.stat().st_size == item["bytes"]:
-            return 0
-        path.parent.mkdir(parents=True, exist_ok=True)
+            return "present", ""
         partial = path.with_name(path.name + ".part")
-        client.download_file(bucket_name(), item["key"], str(partial))
-        partial.replace(path)
-        return item["bytes"]
+        try:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            client.download_file(bucket_name(), item["key"], str(partial))
+            partial.replace(path)
+        except OSError:
+            # Out of disk space, most likely: stop rather than fail every file.
+            partial.unlink(missing_ok=True)
+            raise
+        except Exception as error:
+            partial.unlink(missing_ok=True)
+            return "failed", f"{type(error).__name__}: {error}"
+        return "fetched", ""
 
-    fetched = 0
+    result = {"bytes": 0, "fetched": [], "failed": []}
     with concurrent.futures.ThreadPoolExecutor(24) as pool:
-        for number, size in enumerate(pool.map(download, targets), 1):
-            fetched += size
-            if number % 1000 == 0:
-                print(f"{number}/{len(targets)} checked, {fetched / 1e9:.2f} GB fetched", flush=True)
-    return fetched
+        for number, (item, (outcome, error)) in enumerate(
+                zip(targets, pool.map(download, targets)), 1):
+            if outcome == "fetched":
+                result["bytes"] += item["bytes"]
+                result["fetched"].append(item["key"])
+            elif outcome == "failed":
+                result["failed"].append({"key": item["key"], "error": error})
+            if not quiet and number % 1000 == 0:
+                print(f"{number}/{len(targets)} checked, {result['bytes'] / 1e9:.2f} GB fetched", flush=True)
+    return result
 
 
 def save_listing(work: Path, client) -> list[dict]:
@@ -182,9 +212,10 @@ def command_sync(arguments) -> None:
     client = bucket_client()
     listing = save_listing(work, client)
     targets = [item for item in listing if wanted(item["key"])]
-    fetched = download_objects(client, work / "objects", targets)
-    print(f"{len(targets)} documents in the work folder ({len(listing)} objects in the bucket); "
-          f"{fetched / 1e9:.2f} GB fetched this run.")
+    downloaded = download_objects(client, work / "objects", targets)
+    print(f"{len(targets) - len(downloaded['failed'])} documents in the work folder "
+          f"({len(listing)} objects in the bucket); {downloaded['bytes'] / 1e9:.2f} GB fetched this run, "
+          f"{len(downloaded['failed'])} could not be downloaded.")
 
 
 # ---------------------------------------------------------------- extraction
@@ -480,6 +511,42 @@ def known_files(work: Path) -> dict[tuple[str, int], str]:
         connection.close()
 
 
+def file_hashes_path(work: Path) -> Path:
+    return work / "file-hashes.json"
+
+
+def read_file_hashes(work: Path) -> dict[tuple[str, int], str]:
+    """The SHA-256 of each file read in this work folder and deleted since
+    (update reads new files in batches and deletes each batch once it is
+    read), as (key, bytes) -> SHA-256."""
+    path = file_hashes_path(work)
+    if not path.exists():
+        return {}
+    return {(key, size): sha256 for key, size, sha256 in json.loads(path.read_text(encoding="utf-8"))}
+
+
+def save_file_hashes(work: Path, hashes: dict[tuple[str, int], str]) -> None:
+    path = file_hashes_path(work)
+    temporary = path.with_name(path.name + ".part")
+    temporary.write_text(json.dumps([[key, size, sha256] for (key, size), sha256 in hashes.items()]),
+                         encoding="utf-8")
+    temporary.replace(path)
+
+
+def held_keys(work: Path) -> set[str]:
+    """The keys of every file the library in the work folder has read."""
+    database = library_path(work)
+    if not database.exists():
+        return set()
+    connection = sqlite3.connect(database)
+    try:
+        return {key for (key,) in connection.execute("SELECT key FROM bucket_files WHERE status != 'not-read'")}
+    except sqlite3.OperationalError:
+        return set()
+    finally:
+        connection.close()
+
+
 def inventory(work: Path, captures: dict[str, dict]) -> list[dict]:
     """Every text-bearing object in the bucket listing, with its SHA-256 when
     known (from an earlier library, the capture index or the downloaded file)
@@ -492,6 +559,7 @@ def inventory(work: Path, captures: dict[str, dict]) -> list[dict]:
     listing = json.loads(listing_file.read_text(encoding="utf-8"))
     derived = {row["key"] for row in captures.values() if row.get("derived_from")}
     known = known_files(work)
+    read_earlier = read_file_hashes(work)
     objects_folder = work / "objects"
     files = []
     for item in listing:
@@ -501,7 +569,7 @@ def inventory(work: Path, captures: dict[str, dict]) -> list[dict]:
         path = objects_folder / key
         path = path if path.is_file() and path.stat().st_size == size else None
         row = captures.get(key) or {}
-        sha256 = known.get((key, size))
+        sha256 = known.get((key, size)) or read_earlier.get((key, size))
         if not sha256 and row.get("sha256") and str(size) == row.get("bytes"):
             sha256 = row["sha256"]
         if not sha256 and path:
@@ -577,7 +645,9 @@ def seed_from_library(work: Path) -> int:
     return seeded
 
 
-def command_extract(arguments) -> None:
+def command_extract(arguments) -> list[dict]:
+    """Read the downloaded documents not yet in the cache. Returns the
+    documents that could not be read."""
     work = Path(arguments.work).expanduser()
     if arguments.seed:
         print(f"Seeded {seed_from_library(work)} documents from the published library.")
@@ -618,6 +688,7 @@ def command_extract(arguments) -> None:
                 print(f"{number}/{len(jobs)} read, {len(failures)} failed", flush=True)
     (work / "extract-failures.json").write_text(json.dumps(failures, indent=1), encoding="utf-8")
     print(f"Done: {len(jobs) - len(failures)} read, {len(failures)} failed (extract-failures.json).")
+    return failures
 
 
 # ---------------------------------------------------------------- index
@@ -1138,10 +1209,58 @@ def command_publish(arguments) -> None:
     print(json.dumps(manifest, indent=1))
 
 
+def update_batches(items: list[dict], batch_bytes: int) -> list[list[dict]]:
+    """Group files, in the order given, into batches of about batch_bytes
+    each (a file larger than that gets a batch of its own), so no batch holds
+    more than the work folder can spare."""
+    batches, current, size = [], [], 0
+    for item in items:
+        if current and size + item["bytes"] > batch_bytes:
+            batches.append(current)
+            current, size = [], 0
+        current.append(item)
+        size += item["bytes"]
+    if current:
+        batches.append(current)
+    return batches
+
+
+def remove_downloads(objects_folder: Path, keys: list[str]) -> None:
+    """Delete downloaded files, and the folders they leave empty."""
+    folders = set()
+    for key in keys:
+        path = objects_folder / key
+        path.unlink(missing_ok=True)
+        folders.add(path.parent)
+    for folder in sorted(folders, key=lambda folder: len(folder.parts), reverse=True):
+        while folder != objects_folder and folder.is_relative_to(objects_folder):
+            try:
+                folder.rmdir()
+            except OSError:  # not empty
+                break
+            folder = folder.parent
+
+
+def rebuild_and_publish(arguments) -> None:
+    command_index(arguments)
+    command_publish(arguments)
+
+
 def command_update(arguments) -> None:
     """List the bucket, read only the files no published library has read,
-    rebuild and publish. Does nothing when the bucket has no new files."""
+    rebuild and publish. Does nothing when the bucket has no new files.
+
+    New files are read in batches of about --batch-gigabytes: each batch is
+    downloaded, read into the cache and deleted before the next, so the work
+    folder never holds more than one batch of documents. --limit reads at
+    most that many new files and --minutes stops starting batches after that
+    long; the library is then published with what was read, and the next run
+    reads the rest (the published library records which files it holds). A
+    long run also publishes along the way, every --publish-every minutes, so
+    a run that is cut off keeps what it had read by the last publish."""
+    started = dt.datetime.now(dt.timezone.utc)
     work = Path(arguments.work).expanduser()
+    objects_folder = work / "objects"
     client = bucket_client()
     listing = save_listing(work, client)
     fetch_published(work, client)
@@ -1153,13 +1272,74 @@ def command_update(arguments) -> None:
     if not new and not arguments.force:
         print(f"The library is up to date: no new files among {len(listing)} objects in the bucket.")
         return
-    print(f"{len(new)} new or changed files to read.", flush=True)
-    download_objects(client, work / "objects", new)
-    arguments.seed = True
-    arguments.limit = 0
-    command_extract(arguments)
-    command_index(arguments)
-    command_publish(arguments)
+    print(f"{len(new)} new or changed files ({sum(item['bytes'] for item in new) / 1e9:.2f} GB).", flush=True)
+    print(f"Seeded {seed_from_library(work)} documents from the published library.", flush=True)
+
+    # A new key holding the same bytes as a document already read (the
+    # capture index gives its SHA-256) needs no download: the index finds
+    # its text in the cache.
+    to_read = []
+    for item in new:
+        row = captures.get(item["key"]) or {}
+        if (row.get("sha256") and row.get("bytes") == str(item["bytes"])
+                and extract_cache_path(work, row["sha256"]).exists()):
+            continue
+        to_read.append(item)
+    if len(to_read) < len(new):
+        print(f"{len(new) - len(to_read)} of them are copies of documents already read.", flush=True)
+    # Changed files first: until a changed file is read again, the library
+    # leaves out its document, so a run cut short should not leave it out
+    # for long. Then the smallest files, so most files are read early.
+    held = held_keys(work)
+    to_read.sort(key=lambda item: (item["key"] not in held, item["bytes"], item["key"]))
+    left_for_later = 0
+    if arguments.limit and len(to_read) > arguments.limit:
+        left_for_later = len(to_read) - arguments.limit
+        to_read = to_read[: arguments.limit]
+    batches = update_batches(to_read, int(arguments.batch_gigabytes * 1e9))
+
+    batch_arguments = argparse.Namespace(**vars(arguments))
+    batch_arguments.seed = False
+    batch_arguments.limit = 0
+    hashes = read_file_hashes(work)
+    download_failures, read_failures = [], []
+    last_publish = started
+    attempted = 0
+    for number, batch in enumerate(batches, 1):
+        elapsed = (dt.datetime.now(dt.timezone.utc) - started).total_seconds() / 60
+        if arguments.minutes and elapsed >= arguments.minutes:
+            left_for_later += sum(len(rest) for rest in batches[number - 1:])
+            print(f"Stopped after {elapsed:.0f} minutes (--minutes {arguments.minutes}).", flush=True)
+            break
+        print(f"Batch {number}/{len(batches)}: {len(batch)} files, "
+              f"{sum(item['bytes'] for item in batch) / 1e9:.2f} GB.", flush=True)
+        downloaded = download_objects(client, objects_folder, batch, quiet=True)
+        attempted += len(batch)
+        download_failures.extend(downloaded["failed"])
+        failed_keys = {failure["key"] for failure in downloaded["failed"]}
+        for item in batch:
+            if item["key"] not in failed_keys:
+                hashes[(item["key"], item["bytes"])] = file_sha256(objects_folder / item["key"])
+        save_file_hashes(work, hashes)
+        read_failures.extend(command_extract(batch_arguments))
+        # Only the files this run downloaded: a file already in the work
+        # folder (from a full sync) stays.
+        remove_downloads(objects_folder, downloaded["fetched"])
+        if (arguments.publish_every and number < len(batches)
+                and (dt.datetime.now(dt.timezone.utc) - last_publish).total_seconds() / 60 >= arguments.publish_every):
+            print("Publishing what has been read so far.", flush=True)
+            rebuild_and_publish(arguments)
+            last_publish = dt.datetime.now(dt.timezone.utc)
+
+    (work / "download-failures.json").write_text(json.dumps(download_failures, indent=1), encoding="utf-8")
+    (work / "extract-failures.json").write_text(json.dumps(read_failures, indent=1), encoding="utf-8")
+    # Always, even when every new file was a copy of one already read, so
+    # the published library records the new keys and the next run skips them.
+    rebuild_and_publish(arguments)
+    print(f"Update done in {(dt.datetime.now(dt.timezone.utc) - started).total_seconds() / 60:.0f} minutes: "
+          f"{attempted - len(download_failures)} files downloaded and read "
+          f"({len(read_failures)} could not be read, extract-failures.json; {len(download_failures)} could not "
+          f"be downloaded, download-failures.json); {left_for_later} left for the next run.")
 
 
 def main() -> None:
@@ -1180,7 +1360,18 @@ def main() -> None:
             command.add_argument("--ocr", action="store_true", help="read pages without a text layer with Tesseract")
             command.add_argument("--seed", action="store_true", help="reuse text from the published library")
             command.add_argument("--workers", type=int, default=os.cpu_count() or 2)
-            command.add_argument("--limit", type=int, default=0)
+        if name == "extract":
+            command.add_argument("--limit", type=int, default=0, help="read at most this many documents")
+        if name == "update":
+            command.add_argument("--limit", type=int, default=0,
+                                 help="read at most this many new files this run; the next run reads the rest")
+            command.add_argument("--batch-gigabytes", type=float, default=4,
+                                 help="download and read new files in batches of about this size (default 4)")
+            command.add_argument("--minutes", type=float, default=0,
+                                 help="stop starting new batches after this many minutes, then publish")
+            command.add_argument("--publish-every", type=float, default=120,
+                                 help="publish what has been read every this many minutes of a long run "
+                                      "(default 120; 0 publishes only at the end)")
     arguments = parser.parse_args()
     {"d1-sql": command_d1_sql, "update": command_update, "sync": command_sync, "extract": command_extract, "index": command_index,
      "publish": command_publish}[arguments.command](arguments)

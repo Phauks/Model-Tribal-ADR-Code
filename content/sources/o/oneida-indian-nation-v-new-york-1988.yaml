@@ -1,0 +1,91 @@
+key: oneida-indian-nation-v-new-york-1988
+kind: federal-case
+citation:
+  type: legal_case
+  title: Oneida Indian Nation v. New York
+  authority: United States Court of Appeals for the Second Circuit
+  container-title: F.2d
+  volume: '860'
+  page: '1145'
+  issued:
+    date-parts:
+    - - 1988
+      - 10
+      - 31
+  URL: https://static.case.law/f2d/860/html/1145-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://static.case.law/f2d/860/html/1145-01.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- munsee-thames-river-delaware-indian-nation
+- oneida-nation
+- onondaga-nation
+- saint-regis-mohawk-tribe
+- tuscarora-nation
+- oneida-indian-nation
+nations_in_case:
+  checked: '2026-11-27'
+  named:
+  - nation: munsee-thames-river-delaware-indian-nation
+    named_as: Thames Band
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: oneida-nation
+    named_as: Oneida Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: onondaga-nation
+    named_as: Onondaga Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: saint-regis-mohawk-tribe
+    named_as: Mohawk Nation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: tuscarora-nation
+    named_as: Tuscarora Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: oneida-indian-nation
+    named_as: Oneida Indian Nation
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Seneca Nation
+    reason: More than one of today's nations shares this name (seneca-cayuga-nation, seneca-nation-of-indians, tonawanda-band-of-seneca); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 860 F.2d 1145. Decided by the United States Court of Appeals for the Second Circuit on Oct. 31, 1988. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 115, at or above 10, the level kept without a reading. It was held at first for a privacy review because its text uses words about children or protected persons; two readings of the full opinion on Nov. 27, 2026 found no child or protected person named, so it is shown.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 115
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 6 matched, 1 not linked
+  - check: 'Privacy: no child or protected person named in the opinion'
+    result: agree
+    detail: two AI readings of the full text, Nov. 27, 2026; released from the privacy hold

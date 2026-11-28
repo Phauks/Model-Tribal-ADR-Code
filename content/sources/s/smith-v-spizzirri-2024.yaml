@@ -68,6 +68,52 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Smith_v._Spizzirri
+argument_audio:
+- kind: argument
+  date: '2024-04-22'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/22-1218.mp3
+  duration_seconds: 2596
+  file:
+    storage_key: supreme-court-audio/court/2023/22-1218.mp3
+    checksum: caa80ab04ef201633c5f0ee5082e2569981b8f729cdbafc132fc54eda5f2a074
+    media_type: audio/mpeg
+    bytes: 20777293
+- kind: argument
+  date: '2024-04-22'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2023_term/267-2364.mp3
+  catalog: https://catalog.archives.gov/id/498154401
+  whole_session: true
+  duration_seconds: 11795
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2364.mp3
+    checksum: 367057c6dc7e9f5e6c7efd651dd9650686dcbef7cd7ed80d6c6e532f94cc30dc
+    media_type: audio/mpeg
+    bytes: 235908038
+- kind: opinion announcement
+  date: '2024-05-16'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/2023_term/267-2374.mp3
+  catalog: https://catalog.archives.gov/id/498154411
+  whole_session: true
+  duration_seconds: 732
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267-2374.mp3
+    checksum: 375c5c3256a3fb273abcb097028b5681eb95680ce7fd40a84d28d654efe74e1f
+    media_type: audio/mpeg
+    bytes: 14632838
+argument_transcripts:
+- date: '2024-04-22'
+  docket: "22-1218"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2023/22-1218_h3ci.pdf
+  pages: 52
+  file:
+    storage_key: supreme-court-transcripts/2023/22-1218_h3ci.pdf
+    checksum: 8a950433877af8b20ab809412c984d5772126dcfb8c9b6936611a92646518d8f
+    media_type: application/pdf
+    bytes: 334572
 rights:
   status: no-permission-needed
   basis: us-government-work

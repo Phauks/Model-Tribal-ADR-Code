@@ -1,0 +1,31 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: apm
+name: Mescalero-Chiricahua Apache
+iso_639_3:
+  code: apm
+  reference_name: Mescalero-Chiricahua Apache
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: mesc1238
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1925
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '164319'
+  title: Mescalero Apache dictionary
+  kinds:
+  - dictionary
+  author: Evelyn Breuninger, Elbys Hugar and Ellen Ann Lathan
+  year: 1982
+  publisher: Mescalero Apache Tribe
+  pages: 168
+  source: glottolog-5-4
+retrieved: '2026-11-27'

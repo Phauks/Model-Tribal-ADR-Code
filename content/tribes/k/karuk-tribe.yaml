@@ -196,6 +196,15 @@ languages:
   verification: title-only
   as_of: '2026-11-21'
   note: Language Program page.
+language_programs:
+- name: Language Program
+  link: https://www.karuk.us/departments/language-program
+  run_by: nation
+  source: karuk-departments-language-program
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: page heading
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Pacific Regional Office

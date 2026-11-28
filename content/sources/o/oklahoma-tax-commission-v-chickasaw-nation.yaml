@@ -34,6 +34,10 @@ opinions:
     page: 468
 original_link: https://www.loc.gov/item/usrep515450/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250430151457/https://www.loc.gov/item/usrep515450/
+  captured: '2025-04-30'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=515%20U.S.%20450
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1995-04-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-956.mp3
+  catalog: https://catalog.archives.gov/id/118975090
+  whole_session: true
+  duration_seconds: 14633
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-956.mp3
+    checksum: 4c1995f75b021e70dde63f55c77da7a75e487cd7130b3094101c549577ac6b5c
+    media_type: audio/mpeg
+    bytes: 234129990
+argument_transcripts:
+- date: '1995-04-24'
+  docket: "94-771"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1994/94-771_04-24-1995.pdf
+  pages: 63
+  file:
+    storage_key: supreme-court-transcripts/1994/94-771_04-24-1995.pdf
+    checksum: cd6ee779d9cdbeff8efb3b083b8d142aa5a1392ee16a04e552395712e4e10358
+    media_type: application/pdf
+    bytes: 13864259
 rights:
   status: no-permission-needed
   basis: us-government-work

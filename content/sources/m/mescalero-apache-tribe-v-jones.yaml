@@ -34,6 +34,10 @@ opinions:
     page: 159
 original_link: https://www.loc.gov/item/usrep411145/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250202220404/https://www.loc.gov/item/usrep411145/
+  captured: '2025-02-02'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=411%20U.S.%20145
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1972-12-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-2c.mp3
+  catalog: https://catalog.archives.gov/id/102048347
+  whole_session: true
+  duration_seconds: 2582
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-2c.mp3
+    checksum: 66b0a9fcb2745f992b2145054d8f6105ee0077cd8b8da8e3094c0a7ef2e30891
+    media_type: audio/mpeg
+    bytes: 41321655
+argument_transcripts:
+- date: '1972-12-12'
+  docket: "71-738"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1972/71-738_12-12-1972.pdf
+  pages: 33
+  file:
+    storage_key: supreme-court-transcripts/1972/71-738_12-12-1972.pdf
+    checksum: 40b01f7e221f828b5a9603d3aece6edb315b1781f7241c412b7ad7893141c6ed
+    media_type: application/pdf
+    bytes: 6350037
 rights:
   status: no-permission-needed
   basis: us-government-work

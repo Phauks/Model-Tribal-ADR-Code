@@ -16,7 +16,10 @@ citation:
       - 24
 original_link: https://www2.census.gov/geo/tiger/TIGER2025/AITSN/
 retrieved: '2026-11-24'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261124093239/https://www2.census.gov/geo/tiger/TIGER2025/AITSN/
+  captured: '2026-11-24'
 file:
   storage_key: census-boundaries/census-tiger-2025-aitsn.zip
   checksum: 36d9cc69f8436709fb9a2785b6d8df0e0cf85411532d25c0216488e641a21dad

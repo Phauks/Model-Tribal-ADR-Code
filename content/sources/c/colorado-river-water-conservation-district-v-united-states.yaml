@@ -108,6 +108,162 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=424%20U.S.%20800
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1976-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-133-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048509
+  whole_session: true
+  duration_seconds: 128
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-133-r1.mp3
+    checksum: 3ff013d81af128c7694c96a11efd60ad584b74eca829bfe5b7564b45b61808d6
+    media_type: audio/mpeg
+    bytes: 2042277
+- kind: argument
+  date: '1976-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-133-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048509
+  whole_session: true
+  duration_seconds: 342
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-133-r2.mp3
+    checksum: 1ea7372473ffbbfc2c140f9b0d90df32f9574af268dc39739338bda522adecd2
+    media_type: audio/mpeg
+    bytes: 5468289
+- kind: argument
+  date: '1976-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-133-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048509
+  whole_session: true
+  duration_seconds: 4179
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-133-r3.mp3
+    checksum: 9c03ff2cabf241596bc9a839c1f70fd629ed8709602531a906de57bda2af04a7
+    media_type: audio/mpeg
+    bytes: 66864821
+- kind: argument
+  date: '1976-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-133-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048509
+  whole_session: true
+  duration_seconds: 3781
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-133-r4.mp3
+    checksum: 922c9f3f9ce4ac606747a3cc20ec648b9e49c689005b42f4d7e1339a2fd5e460
+    media_type: audio/mpeg
+    bytes: 60503064
+- kind: argument
+  date: '1976-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-133-r5.mp3
+  catalog: https://catalog.archives.gov/id/102048509
+  whole_session: true
+  duration_seconds: 2999
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-133-r5.mp3
+    checksum: 9874559015d47986e3b60ab167b19059ead91db9d52bd7487cad62943e8f9074
+    media_type: audio/mpeg
+    bytes: 47990202
+- kind: argument
+  date: '1976-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-133-r6.mp3
+  catalog: https://catalog.archives.gov/id/102048509
+  whole_session: true
+  duration_seconds: 3648
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-133-r6.mp3
+    checksum: 5e4d080469fcca600959c6c11e2ba29fcde8527442e6115a82f661159782aea0
+    media_type: audio/mpeg
+    bytes: 58370219
+- kind: opinion announcement
+  date: '1976-03-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-145-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048523
+  whole_session: true
+  duration_seconds: 112
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-145-r1.mp3
+    checksum: 47100fb7e95e636eb61735f1773669ad8cfb521b0f59edcf82e3772c290017a9
+    media_type: audio/mpeg
+    bytes: 1789830
+- kind: opinion announcement
+  date: '1976-03-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-145-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048523
+  whole_session: true
+  duration_seconds: 956
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-145-r2.mp3
+    checksum: f1eccad642651a80ec421e2f3c32cd686237c5debbd17e0a116340ba474267dd
+    media_type: audio/mpeg
+    bytes: 15302450
+- kind: opinion announcement
+  date: '1976-03-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-145-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048523
+  whole_session: true
+  duration_seconds: 4078
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-145-r3.mp3
+    checksum: 7c42181cd77044c519cbbdfcd59920899aa39afe10410a5371855ae39cd7b217
+    media_type: audio/mpeg
+    bytes: 65250663
+- kind: opinion announcement
+  date: '1976-03-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-145-r4.mp3
+  catalog: https://catalog.archives.gov/id/102048523
+  whole_session: true
+  duration_seconds: 4004
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-145-r4.mp3
+    checksum: 2af44ea9ebc3243a755f9dcc225577cd3155c36b521f7af1336cf2692ccb7325
+    media_type: audio/mpeg
+    bytes: 64060733
+- kind: opinion announcement
+  date: '1976-03-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-145-r5.mp3
+  catalog: https://catalog.archives.gov/id/102048523
+  whole_session: true
+  duration_seconds: 3168
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-145-r5.mp3
+    checksum: 59fb5b8743f2a13cc1c6e8ab60bb14ccc8625c6094726319af35d601fde4febf
+    media_type: audio/mpeg
+    bytes: 50692726
+- kind: opinion announcement
+  date: '1976-03-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-145-r6.mp3
+  catalog: https://catalog.archives.gov/id/102048523
+  whole_session: true
+  duration_seconds: 3554
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-145-r6.mp3
+    checksum: b2586b1e5229ba6eefe372b6dbb6d82ab88fc1e98bc6d50f591d69144aa931de
+    media_type: audio/mpeg
+    bytes: 56860550
+argument_transcripts:
+- date: '1976-01-14'
+  docket: "74-940"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1975/74-940_74-949_01-14-1976.pdf
+  pages: 50
+  file:
+    storage_key: supreme-court-transcripts/1975/74-940_74-949_01-14-1976.pdf
+    checksum: a0d76d97d7ac9099771aeaf1b2f5e2d2e507b9ddb232e9b5e06aaeae74c8909d
+    media_type: application/pdf
+    bytes: 10405203
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -5,7 +5,7 @@
 		"sheets": "https://www.loc.gov/resource/g3701em.gct00002/",
 		"shapes": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TribalCessionLands_01/MapServer"
 	},
-	"retrieved": "2026-11-26",
+	"retrieved": "2026-11-28",
 	"sheets": [
 		{
 			"plate": 1,
@@ -285,13 +285,14 @@
 			],
 			"nations": [
 				"cayuga-nation",
+				"oneida-indian-nation",
 				"oneida-nation",
 				"onondaga-nation",
 				"saint-regis-mohawk-tribe",
 				"seneca-nation-of-indians",
 				"seneca-cayuga-nation",
 				"tonawanda-band-of-seneca",
-				"tuscarora-nation-of-north-carolina"
+				"tuscarora-nation"
 			],
 			"other_nations": [],
 			"sheets": [
@@ -319,13 +320,14 @@
 			],
 			"nations": [
 				"cayuga-nation",
+				"oneida-indian-nation",
 				"oneida-nation",
 				"onondaga-nation",
 				"saint-regis-mohawk-tribe",
 				"seneca-nation-of-indians",
 				"seneca-cayuga-nation",
 				"tonawanda-band-of-seneca",
-				"tuscarora-nation-of-north-carolina"
+				"tuscarora-nation"
 			],
 			"other_nations": [],
 			"sheets": [
@@ -352,7 +354,7 @@
 				"treaty-with-the-cherokee-1785"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -454,7 +456,9 @@
 			"treaties": [
 				"treaty-with-the-creeks-1790"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				15
@@ -481,7 +485,7 @@
 				"treaty-with-the-cherokee-1791"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -512,13 +516,14 @@
 			],
 			"nations": [
 				"cayuga-nation",
+				"oneida-indian-nation",
 				"oneida-nation",
 				"onondaga-nation",
 				"saint-regis-mohawk-tribe",
 				"seneca-nation-of-indians",
 				"seneca-cayuga-nation",
 				"tonawanda-band-of-seneca",
-				"tuscarora-nation-of-north-carolina"
+				"tuscarora-nation"
 			],
 			"other_nations": [],
 			"sheets": [
@@ -546,13 +551,14 @@
 			],
 			"nations": [
 				"cayuga-nation",
+				"oneida-indian-nation",
 				"oneida-nation",
 				"onondaga-nation",
 				"saint-regis-mohawk-tribe",
 				"seneca-nation-of-indians",
 				"seneca-cayuga-nation",
 				"tonawanda-band-of-seneca",
-				"tuscarora-nation-of-north-carolina"
+				"tuscarora-nation"
 			],
 			"other_nations": [],
 			"sheets": [
@@ -1689,7 +1695,9 @@
 			"treaties": [
 				"treaty-with-the-seven-nations-of-canada-1796"
 			],
-			"nations": [],
+			"nations": [
+				"saint-regis-mohawk-tribe"
+			],
 			"other_nations": [],
 			"sheets": [
 				47
@@ -2092,7 +2100,7 @@
 				"treaty-with-the-cherokee-1798"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -2122,7 +2130,7 @@
 				"treaty-with-the-choctaw-1801"
 			],
 			"nations": [
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"jena-band-of-choctaw-indians",
 				"mississippi-band-of-choctaw-indians"
 			],
@@ -2150,7 +2158,9 @@
 			"treaties": [
 				"treaty-with-the-creeks-1802"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				15
@@ -2209,7 +2219,7 @@
 				"treaty-with-the-choctaw-1802"
 			],
 			"nations": [
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"jena-band-of-choctaw-indians",
 				"mississippi-band-of-choctaw-indians"
 			],
@@ -2305,7 +2315,7 @@
 				"treaty-with-the-cherokee-1804"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -2597,7 +2607,7 @@
 				"treaty-with-the-cherokee-1805-oct-25"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -2629,7 +2639,7 @@
 				"treaty-with-the-cherokee-1819"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -2660,7 +2670,7 @@
 				"treaty-with-the-cherokee-1819"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -2691,7 +2701,7 @@
 				"treaty-with-the-cherokee-1819"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -2722,7 +2732,7 @@
 				"treaty-with-the-cherokee-1819"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -2751,7 +2761,7 @@
 				"treaty-with-the-cherokee-1805-oct-27"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -2780,7 +2790,7 @@
 				"treaty-with-the-cherokee-1805-oct-27"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -2808,7 +2818,9 @@
 			"treaties": [
 				"treaty-with-the-creeks-1805"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				15
@@ -2834,7 +2846,7 @@
 				"treaty-with-the-choctaw-1805"
 			],
 			"nations": [
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"jena-band-of-choctaw-indians",
 				"mississippi-band-of-choctaw-indians"
 			],
@@ -2865,7 +2877,7 @@
 				"treaty-with-the-choctaw-1805"
 			],
 			"nations": [
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"jena-band-of-choctaw-indians",
 				"mississippi-band-of-choctaw-indians"
 			],
@@ -2896,7 +2908,7 @@
 				"treaty-with-the-choctaw-1830"
 			],
 			"nations": [
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"jena-band-of-choctaw-indians",
 				"mississippi-band-of-choctaw-indians"
 			],
@@ -2954,7 +2966,7 @@
 				"treaty-with-the-cherokee-1806"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -2986,7 +2998,7 @@
 				"treaty-with-the-cherokee-1817"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -3017,7 +3029,7 @@
 				"treaty-with-the-cherokee-1817"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -3970,7 +3982,9 @@
 			"treaties": [
 				"treaty-with-the-creeks-1814"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				15,
@@ -3998,7 +4012,7 @@
 				"treaty-with-the-cherokee-1816-mar-22-7-stat-138"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama"
+				"cherokee-nation"
 			],
 			"other_nations": [],
 			"sheets": [
@@ -4238,7 +4252,7 @@
 				"treaty-with-the-cherokee-1816-sept-14"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -4328,7 +4342,7 @@
 				"treaty-with-the-choctaw-1816"
 			],
 			"nations": [
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"jena-band-of-choctaw-indians",
 				"mississippi-band-of-choctaw-indians"
 			],
@@ -4359,7 +4373,7 @@
 				"treaty-with-the-cherokee-1817"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -4388,7 +4402,7 @@
 				"treaty-with-the-cherokee-1817"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -4877,7 +4891,9 @@
 			"treaties": [
 				"treaty-with-the-creeks-1818"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				15
@@ -4902,7 +4918,9 @@
 			"treaties": [
 				"treaty-with-the-creeks-1818"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				15
@@ -5549,7 +5567,7 @@
 				"treaty-with-the-cherokee-1819"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -5579,7 +5597,7 @@
 				"treaty-with-the-cherokee-1819"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -5608,7 +5626,7 @@
 				"treaty-with-the-cherokee-1819"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -5639,7 +5657,7 @@
 				"treaty-with-the-cherokee-1819"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -5668,7 +5686,7 @@
 				"treaty-with-the-cherokee-1819"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -6342,7 +6360,7 @@
 				"treaty-with-the-choctaw-1820"
 			],
 			"nations": [
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"jena-band-of-choctaw-indians",
 				"mississippi-band-of-choctaw-indians"
 			],
@@ -6373,7 +6391,7 @@
 				"treaty-with-the-choctaw-1825"
 			],
 			"nations": [
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"mississippi-band-of-choctaw-indians"
 			],
 			"other_nations": [],
@@ -6400,7 +6418,9 @@
 			"treaties": [
 				"treaty-with-the-creeks-1821-jan-8-7-stat-215"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				15
@@ -6636,7 +6656,7 @@
 				"treaty-with-the-seminole-1832"
 			],
 			"nations": [
-				"seminole-nation-of-florida",
+				"the-seminole-nation-of-oklahoma",
 				"seminole-tribe-of-florida"
 			],
 			"other_nations": [],
@@ -7025,7 +7045,9 @@
 			"treaties": [
 				"treaty-with-the-creeks-1826"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				15
@@ -7050,7 +7072,9 @@
 			"treaties": [
 				"treaty-with-the-creeks-1826"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				15
@@ -7314,7 +7338,7 @@
 			"schedule": "Cherokee nation west of Mississippi river",
 			"treaties": [],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
 			"other_nations": [],
@@ -7340,7 +7364,7 @@
 			"schedule": "Cherokee nation west of Mississippi river",
 			"treaties": [],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
 			"other_nations": [],
@@ -7540,7 +7564,9 @@
 			"treaties": [
 				"treaty-with-the-creeks-1827"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				15
@@ -8005,7 +8031,7 @@
 				"treaty-with-the-choctaw-1830"
 			],
 			"nations": [
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"jena-band-of-choctaw-indians",
 				"mississippi-band-of-choctaw-indians"
 			],
@@ -8201,7 +8227,9 @@
 			"treaties": [
 				"treaty-with-the-creeks-1832"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				1
@@ -8734,7 +8762,15 @@
 				"treaty-with-the-potawatomi-1836-sept-20",
 				"treaty-with-the-potawatomi-1836-sept-22"
 			],
-			"nations": [],
+			"nations": [
+				"citizen-potawatomi-nation",
+				"forest-county-potawatomi-community",
+				"hannahville-indian-community",
+				"match-e-be-nash-she-wish-band-of-pottawatomi",
+				"nottawaseppi-huron-band-of-the-potawatomi",
+				"pokagon-band-of-potawatomi-indians",
+				"prairie-band-potawatomi-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				20
@@ -9289,8 +9325,9 @@
 				"treaty-with-the-creeks-etc-1856"
 			],
 			"nations": [
-				"seminole-nation-of-florida",
-				"seminole-tribe-of-florida"
+				"the-seminole-nation-of-oklahoma",
+				"seminole-tribe-of-florida",
+				"the-muscogee-nation"
 			],
 			"other_nations": [],
 			"sheets": [
@@ -9320,7 +9357,9 @@
 				"treaty-with-the-creeks-etc-1856",
 				"treaty-with-the-creeks-1866"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				22
@@ -9349,7 +9388,9 @@
 				"treaty-with-the-creeks-etc-1856",
 				"treaty-with-the-creeks-1866"
 			],
-			"nations": [],
+			"nations": [
+				"the-muscogee-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				22
@@ -9378,7 +9419,7 @@
 				"treaty-with-the-cherokee-1866"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -9409,7 +9450,8 @@
 				"treaty-with-the-cherokee-1866"
 			],
 			"nations": [
-				"santee-sioux-nation"
+				"cherokee-nation",
+				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
 			"other_nations": [],
 			"sheets": [
@@ -9713,7 +9755,7 @@
 				"treaty-with-the-cherokee-1835"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"eastern-band-of-cherokee-indians",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
@@ -9751,7 +9793,7 @@
 				"treaty-with-the-cherokee-1868"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
 			"other_nations": [],
@@ -10354,12 +10396,12 @@
 			],
 			"nations": [
 				"cayuga-nation",
-				"oneida-nation",
+				"oneida-indian-nation",
 				"onondaga-nation",
 				"seneca-nation-of-indians",
 				"saint-regis-mohawk-tribe",
 				"tonawanda-band-of-seneca",
-				"tuscarora-nation-of-north-carolina"
+				"tuscarora-nation"
 			],
 			"other_nations": [],
 			"sheets": [
@@ -10389,12 +10431,12 @@
 			],
 			"nations": [
 				"cayuga-nation",
-				"oneida-nation",
+				"oneida-indian-nation",
 				"onondaga-nation",
 				"seneca-nation-of-indians",
 				"saint-regis-mohawk-tribe",
 				"tonawanda-band-of-seneca",
-				"tuscarora-nation-of-north-carolina"
+				"tuscarora-nation"
 			],
 			"other_nations": [],
 			"sheets": [
@@ -10420,7 +10462,15 @@
 			"treaties": [
 				"treaty-with-the-new-york-indians-1838"
 			],
-			"nations": [],
+			"nations": [
+				"cayuga-nation",
+				"oneida-indian-nation",
+				"onondaga-nation",
+				"seneca-nation-of-indians",
+				"saint-regis-mohawk-tribe",
+				"tonawanda-band-of-seneca",
+				"tuscarora-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				27
@@ -10446,7 +10496,15 @@
 			"treaties": [
 				"treaty-with-the-new-york-indians-1838"
 			],
-			"nations": [],
+			"nations": [
+				"cayuga-nation",
+				"oneida-indian-nation",
+				"onondaga-nation",
+				"seneca-nation-of-indians",
+				"saint-regis-mohawk-tribe",
+				"tonawanda-band-of-seneca",
+				"tuscarora-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				27
@@ -10473,12 +10531,12 @@
 			],
 			"nations": [
 				"cayuga-nation",
-				"oneida-nation",
+				"oneida-indian-nation",
 				"onondaga-nation",
 				"seneca-nation-of-indians",
 				"saint-regis-mohawk-tribe",
 				"tonawanda-band-of-seneca",
-				"tuscarora-nation-of-north-carolina"
+				"tuscarora-nation"
 			],
 			"other_nations": [],
 			"sheets": [
@@ -14481,7 +14539,7 @@
 			],
 			"nations": [
 				"the-chickasaw-nation",
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"jena-band-of-choctaw-indians",
 				"mississippi-band-of-choctaw-indians"
 			],
@@ -14511,7 +14569,7 @@
 			],
 			"nations": [
 				"the-chickasaw-nation",
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"jena-band-of-choctaw-indians",
 				"mississippi-band-of-choctaw-indians"
 			],
@@ -14543,7 +14601,7 @@
 			],
 			"nations": [
 				"the-chickasaw-nation",
-				"choctaw-nation-of-florida",
+				"the-choctaw-nation-of-oklahoma",
 				"jena-band-of-choctaw-indians",
 				"mississippi-band-of-choctaw-indians"
 			],
@@ -15557,7 +15615,9 @@
 			],
 			"schedule": "Indians on the Oregon Coast",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"confederated-tribes-of-siletz-indians-of-oregon"
+			],
 			"other_nations": [],
 			"sheets": [
 				51
@@ -15581,7 +15641,9 @@
 			],
 			"schedule": "Indians on the Oregon Coast",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"confederated-tribes-of-siletz-indians-of-oregon"
+			],
 			"other_nations": [],
 			"sheets": [
 				51
@@ -15659,7 +15721,9 @@
 			],
 			"schedule": "Tule River or Madden Farm reservation Indians",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"tule-river-indian-tribe-of-the-tule-river-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				8
@@ -15711,7 +15775,7 @@
 				"treaty-with-the-seminole-1866"
 			],
 			"nations": [
-				"seminole-nation-of-florida",
+				"the-seminole-nation-of-oklahoma",
 				"seminole-tribe-of-florida"
 			],
 			"other_nations": [],
@@ -15788,7 +15852,9 @@
 			],
 			"schedule": "Muckleshoot Reservation",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"muckleshoot-indian-tribe"
+			],
 			"other_nations": [],
 			"sheets": [
 				62
@@ -16095,7 +16161,9 @@
 			],
 			"schedule": "Maricopa; Pima",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -16206,7 +16274,9 @@
 			],
 			"schedule": "Uintah Uta",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"ute-indian-tribe-of-the-uintah-and-ouray-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				58
@@ -16412,7 +16482,10 @@
 			"treaties": [
 				"treaty-with-the-shoshoni-goship-1863"
 			],
-			"nations": [],
+			"nations": [
+				"confederated-tribes-of-the-goshute-reservation",
+				"skull-valley-band-of-goshute-indians-of-utah"
+			],
 			"other_nations": [],
 			"sheets": [
 				58,
@@ -16790,7 +16863,9 @@
 			],
 			"schedule": "Colorado River",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"colorado-river-indian-tribes-of-the-colorado-river-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -17045,7 +17120,7 @@
 				"treaty-with-the-seminole-1866"
 			],
 			"nations": [
-				"seminole-nation-of-florida",
+				"the-seminole-nation-of-oklahoma",
 				"seminole-tribe-of-florida"
 			],
 			"other_nations": [],
@@ -17158,7 +17233,7 @@
 				"treaty-with-the-cherokee-1866"
 			],
 			"nations": [
-				"cherokee-nation-of-alabama",
+				"cherokee-nation",
 				"united-keetoowah-band-of-cherokee-indians-in-oklahoma"
 			],
 			"other_nations": [],
@@ -17926,8 +18001,7 @@
 				"treaty-with-the-navaho-1868"
 			],
 			"nations": [
-				"northern-arapaho-tribe-of-the-wind-river-reservation",
-				"cheyenne-and-arapaho-tribes"
+				"navajo-nation"
 			],
 			"other_nations": [],
 			"sheets": [
@@ -18088,7 +18162,9 @@
 			],
 			"schedule": "Smith River Reservation",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"tolowa-dee-ni-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				8
@@ -18411,7 +18487,9 @@
 			],
 			"schedule": "Apache",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"san-carlos-apache-tribe-of-the-san-carlos-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -18459,7 +18537,9 @@
 			],
 			"schedule": "Apache",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"yavapai-apache-nation-of-the-camp-verde-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -18584,7 +18664,9 @@
 			],
 			"schedule": "Paiute; Shoshone; Snake",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"burns-paiute-tribe"
+			],
 			"other_nations": [],
 			"sheets": [
 				52
@@ -18610,7 +18692,9 @@
 			],
 			"schedule": "Paiute; Shoshone; Snake",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"burns-paiute-tribe"
+			],
 			"other_nations": [],
 			"sheets": [
 				52
@@ -18739,7 +18823,9 @@
 			],
 			"schedule": "Round Valley Reservation Indians",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"round-valley-indian-tribes-round-valley-reservation"
+			],
 			"other_nations": [],
 			"sheets": [],
 			"states": [
@@ -18762,7 +18848,9 @@
 			],
 			"schedule": "Round Valley Reservation Indians",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"round-valley-indian-tribes-round-valley-reservation"
+			],
 			"other_nations": [],
 			"sheets": [],
 			"states": [
@@ -19096,7 +19184,9 @@
 			],
 			"schedule": "Colorado River",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"colorado-river-indian-tribes-of-the-colorado-river-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -19538,7 +19628,9 @@
 			],
 			"schedule": "Papago",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"tohono-oodham-nation-of-arizona"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -20012,7 +20104,9 @@
 			],
 			"schedule": "Maricopa; Pima",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -20441,7 +20535,9 @@
 			],
 			"schedule": "Maricopa; Pima",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -20464,7 +20560,9 @@
 			],
 			"schedule": "Maricopa; Pima",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -20777,7 +20875,9 @@
 			],
 			"schedule": "Havasupai",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"havasupai-tribe-of-the-havasupai-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -20800,7 +20900,9 @@
 			],
 			"schedule": "Maricopa; Pima",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -20823,7 +20925,9 @@
 			],
 			"schedule": "Papago and others",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"tohono-oodham-nation-of-arizona"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -20846,7 +20950,10 @@
 			],
 			"schedule": "Moki and others",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"hopi-tribe-of-arizona",
+				"navajo-nation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -20922,7 +21029,9 @@
 			],
 			"schedule": "Walapai",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"hualapai-indian-tribe-of-the-hualapai-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -20946,7 +21055,9 @@
 			],
 			"schedule": "Malheur Indian Reservation; Shoshone; Snake",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"burns-paiute-tribe"
+			],
 			"other_nations": [],
 			"sheets": [
 				52
@@ -20970,7 +21081,9 @@
 			],
 			"schedule": "Yuma",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"quechan-tribe-of-the-fort-yuma-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -21019,7 +21132,9 @@
 			],
 			"schedule": "Maricopa; Pima",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4
@@ -21236,7 +21351,9 @@
 			],
 			"schedule": "Chehalis",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"confederated-tribes-of-the-chehalis-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				61
@@ -21609,7 +21726,9 @@
 			],
 			"schedule": "Sandia Pueblo",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"pueblo-of-sandia"
+			],
 			"other_nations": [],
 			"sheets": [
 				46
@@ -21757,7 +21876,9 @@
 			],
 			"schedule": "Moki",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"hopi-tribe-of-arizona"
+			],
 			"other_nations": [],
 			"sheets": [
 				3
@@ -21780,7 +21901,9 @@
 			],
 			"schedule": "Walapai",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"hualapai-indian-tribe-of-the-hualapai-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				3
@@ -21803,7 +21926,10 @@
 			],
 			"schedule": "Mohave",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"fort-mojave-indian-tribe",
+				"colorado-river-indian-tribes-of-the-colorado-river-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				3
@@ -21826,7 +21952,9 @@
 			],
 			"schedule": "Yuma",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"quechan-tribe-of-the-fort-yuma-indian-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				3
@@ -21849,7 +21977,9 @@
 			],
 			"schedule": "Cocopa",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"cocopah-tribe-of-arizona"
+			],
 			"other_nations": [],
 			"sheets": [
 				3
@@ -21872,7 +22002,12 @@
 			],
 			"schedule": "Maricopa; Papago; Pima",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"gila-river-indian-community-of-the-gila-river-indian-reservation",
+				"salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation",
+				"tohono-oodham-nation-of-arizona",
+				"ak-chin-indian-community"
+			],
 			"other_nations": [],
 			"sheets": [
 				3
@@ -22637,7 +22772,9 @@
 			],
 			"schedule": "Colville Indian Reservation",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"confederated-tribes-of-the-colville-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				61
@@ -22660,7 +22797,9 @@
 			],
 			"schedule": "Colville Indian Reservation",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"confederated-tribes-of-the-colville-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				61
@@ -22729,7 +22868,9 @@
 			],
 			"schedule": "White Mountain Apache",
 			"treaties": [],
-			"nations": [],
+			"nations": [
+				"white-mountain-apache-tribe-of-the-fort-apache-reservation"
+			],
 			"other_nations": [],
 			"sheets": [
 				4

@@ -1,0 +1,140 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: esu
+name: Central Alaskan Yupik
+iso_639_3:
+  code: esu
+  reference_name: Central Yupik
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: cent2127
+  level: language
+  source: glottolog-5-4
+family:
+  name: Eskimo-Aleut
+  glottocode: eski1264
+  source: glottolog-5-4
+iso_names:
+- name: Central Yupik
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/845
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/centralakyupik.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: General Central Yup'ik
+  glottocode: kusk1241
+  source: glottolog-5-4
+- name: Hooper Bay-Chevak
+  glottocode: hoop1234
+  source: glottolog-5-4
+- name: Nunivak
+  glottocode: nuni1254
+  source: glottolog-5-4
+- name: Unaliq
+  glottocode: unal1234
+  source: glottolog-5-4
+works:
+- glottolog_reference: '696728'
+  title: 'A grammar of Central Alaskan Yupik: An Eskimo Language'
+  kinds:
+  - grammar
+  author: Osahito Miyaoka
+  year: 2012
+  publisher: Mouton de Gruyter
+  pages: 1709
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '694732'
+  title: Yup'ik Eskimo Dictionary
+  kinds:
+  - dictionary
+  author: Steven A. Jacobson
+  year: 2012
+  publisher: Alaska Native Language Center, University of Alaska
+  pages: 722
+  source: glottolog-5-4
+- glottolog_reference: '568266'
+  title: Cup'ig Eskimo dictionary
+  kinds:
+  - dictionary
+  author: Muriel Amos and Howard Amos
+  year: 2003
+  publisher: Alaska Native Language Center
+  pages: 557
+  source: glottolog-5-4
+- glottolog_reference: '134481'
+  title: A Practical Grammar of the Central Alaskan Yup'ik Eskimo Language
+  kinds:
+  - grammar
+  author: Steven A. Jacobson
+  year: 1995
+  publisher: Alaska Native Language Center, University of Alaska
+  pages: 560
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '114649'
+  title: Yup'ik Eskimo dictionary
+  kinds:
+  - dictionary
+  author: Steven A. Jacobson
+  year: 1984
+  publisher: Alaska Native Language Center
+  source: glottolog-5-4
+- glottolog_reference: '75549'
+  title: Study of the Chevak Dialect of Central Yup'ik Eskimo
+  kinds:
+  - grammar
+  author: Anthony Cabot Woodbury
+  year: 1981
+  publisher: University of California at Berkeley
+  pages: 515
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '98823'
+  title: Yup'ik Eskimo grammar
+  kinds:
+  - grammar
+  author: Irene Reed
+  year: 1977
+  publisher: Alaska Native Language Center, University of Alaska
+  pages: 338
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '682888'
+  title: Exuberant complexity. The interplay of morphology, syntax and prosody in Central Alaskan Yup'ik
+  kinds:
+  - grammar
+  author: Marianne Mithun
+  year: 1966
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '548517'
+  title: Yup'ik-English Dictionary
+  kinds:
+  - dictionary
+  author: Ferdinand Drebert
+  year: 1960
+  pages: 446
+  source: glottolog-5-4
+- glottolog_reference: '37933'
+  title: Grammar and Vocabulary of the Eskimo Language as spoken by the Kuskokwim and South West Coast Eskimos of Alaska
+  kinds:
+  - dictionary
+  author: John Hinz
+  year: 1944
+  publisher: Society for Propagating the Gospel, The Moravian Church
+  pages: 194
+  source: glottolog-5-4
+- glottolog_reference: '577029'
+  title: Grammar and Vocabulary of the Eskimo Language of North-Western Alaska, Kuskoquim district
+  kinds:
+  - dictionary
+  author: Augustus Schultze
+  year: 1894
+  publisher: Moravian Publication Office
+  pages: 67
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -1,0 +1,47 @@
+key: wisconsin-statutes-19-36
+kind: state-statute
+citation:
+  type: legislation
+  title: Limitations upon access and withholding
+  title-short: Wis. Stat. § 19.36
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '19.36'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/19.36
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/19.36
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 19.36 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 19.36 (2023-24). History: 1981 c. 335; 1985 a. 236; 1991 a. 39, 269, 317; 1993 a. 93; 1995 a. 27; 2001 a. 16; 2003 a. 33, 47; 2005 a. 59, 253; 2007 a. 97; 2009 a. 28; 2011 a. 32; 2013 a. 171; 2015 a. 55; 2017 a. 59; 2023 a. 126, 223, 235, 236; 2025 a. 7, 25, 130. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Judicial security profile definition includes tribal judges. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

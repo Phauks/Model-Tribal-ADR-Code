@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/language.schema.json",
+  "title": "Language",
+  "description": "content/languages/<tag>.yaml: one language that nation records name, by the language tag the records use. Written by scripts/languages/build_registry.py from Glottolog and the ISO 639-3 tables; every fact names its source record.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tag", "name", "iso_639_3", "glottolog", "family", "dialects", "works", "retrieved"],
+  "$defs": {
+    "cited": {
+      "type": "object",
+      "required": ["source"],
+      "properties": {
+        "source": { "type": "string", "description": "The key of a source record in content/sources/." }
+      }
+    },
+    "glottocode": { "type": "string", "pattern": "^[a-z0-9]{4}[0-9]{4}$" }
+  },
+  "properties": {
+    "tag": { "$ref": "common.schema.json#/$defs/languageTag", "description": "The tag the nation records use; equals the file name without .yaml." },
+    "name": { "type": "string", "description": "Glottolog's name for the language, the page title." },
+    "iso_639_3": {
+      "allOf": [{ "$ref": "#/$defs/cited" }],
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["code", "reference_name", "scope"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^[a-z]{3}$" },
+        "reference_name": { "type": "string" },
+        "scope": { "enum": ["individual", "macrolanguage"] },
+        "retired_code": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["code", "effective", "remedy"],
+          "description": "The code the records use, where ISO 639-3 has retired it, and what took its place.",
+          "properties": {
+            "code": { "type": "string", "pattern": "^[a-z]{3}$" },
+            "effective": { "$ref": "common.schema.json#/$defs/calendarDate" },
+            "remedy": { "type": "string" }
+          }
+        },
+        "source": true
+      }
+    },
+    "glottolog": {
+      "allOf": [{ "$ref": "#/$defs/cited" }],
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["glottocode", "level"],
+      "properties": {
+        "glottocode": { "$ref": "#/$defs/glottocode" },
+        "level": { "enum": ["language", "family", "dialect"] },
+        "source": true
+      }
+    },
+    "family": {
+      "description": "The top-level Glottolog family; null for an isolate.",
+      "oneOf": [
+        { "type": "null" },
+        {
+          "allOf": [{ "$ref": "#/$defs/cited" }],
+          "type": "object",
+          "unevaluatedProperties": false,
+          "required": ["name", "glottocode"],
+          "properties": { "name": { "type": "string" }, "glottocode": { "$ref": "#/$defs/glottocode" }, "source": true }
+        }
+      ]
+    },
+    "own_names": {
+      "type": "array",
+      "description": "The language's name for itself, as Glottolog's catalogs tag it with the language's own code.",
+      "items": {
+        "allOf": [{ "$ref": "#/$defs/cited" }],
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["name", "language"],
+        "properties": { "name": { "type": "string" }, "language": { "$ref": "common.schema.json#/$defs/languageTag" }, "source": true }
+      }
+    },
+    "iso_names": {
+      "type": "array",
+      "description": "Names the ISO 639-3 Language Names Index gives, other than the page title.",
+      "items": {
+        "allOf": [{ "$ref": "#/$defs/cited" }],
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["name"],
+        "properties": { "name": { "type": "string" }, "source": true }
+      }
+    },
+    "endangered_languages_project": {
+      "allOf": [{ "$ref": "#/$defs/cited" }],
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["link"],
+      "properties": { "link": { "type": "string", "pattern": "^https://endangeredlanguages\\.com/" }, "source": true }
+    },
+    "alaska_native_language_center": {
+      "allOf": [{ "$ref": "#/$defs/cited" }],
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["link"],
+      "properties": { "link": { "type": "string", "pattern": "^https://www\\.uaf\\.edu/anlc/" }, "source": true }
+    },
+    "dialects": {
+      "type": "array",
+      "description": "Glottolog's languoids one step below this one: its dialects, or for a family-level entry the languages in it.",
+      "items": {
+        "allOf": [{ "$ref": "#/$defs/cited" }],
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["name", "glottocode"],
+        "properties": { "name": { "type": "string" }, "glottocode": { "$ref": "#/$defs/glottocode" }, "source": true }
+      }
+    },
+    "works": {
+      "type": "array",
+      "description": "Grammars and dictionaries of the language that Glottolog lists, newest first.",
+      "items": {
+        "allOf": [{ "$ref": "#/$defs/cited" }],
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["glottolog_reference", "title", "kinds"],
+        "properties": {
+          "glottolog_reference": { "type": "string", "pattern": "^[0-9]+$" },
+          "title": { "type": "string" },
+          "kinds": { "type": "array", "minItems": 1, "items": { "enum": ["grammar", "dictionary"] } },
+          "author": { "type": "string" },
+          "year": { "type": "integer" },
+          "publisher": { "type": "string" },
+          "pages": { "type": "integer" },
+          "most_extensive_description": { "type": "boolean", "description": "Glottolog counts it among the language's most extensive descriptions." },
+          "source": true
+        }
+      }
+    },
+    "retrieved": { "$ref": "common.schema.json#/$defs/calendarDate" }
+  }
+}

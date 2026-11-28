@@ -1,0 +1,50 @@
+key: connecticut-general-statutes-12-18b
+kind: state-statute
+citation:
+  type: legislation
+  title: Grants in lieu of taxes for certain property
+  title-short: Conn. Gen. Stat. § 12-18b
+  container-title: General Statutes of Connecticut
+  container-title-short: Conn. Gen. Stat.
+  section: 12-18b
+  author:
+  - literal: Connecticut General Assembly
+  issued:
+    date-parts:
+    - - 2015
+  URL: https://www.cga.ct.gov/2026/sup/chap_201.htm#sec_12-18b
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.cga.ct.gov/2026/sup/chap_201.htm#sec_12-18b
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Conn. Gen. Stat. § 12-18b (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Conn. Gen. Stat. § 12-18b (2026). History: P.A. 15-244, S. 183; P.A. 16-146, S. 1; May Sp. Sess. P.A. 16-2, S. 43; May Sp. Sess. P.A. 16-3, S. 190; P.A. 18-86, S. 53; P.A. 21-3, S. 5; June Sp. Sess. P.A. 21-2, S. 445; P.A. 22-74, S. 18; 22-110, S. 36; P.A. 23-46, S. 1; 23-204, S. 76, 139; P.A. 25-168, S. 123; 25-174, S. 189. Text read from the Connecticut General Assembly''s chapter page for the section in the General Statutes of Connecticut, revised to Jan. 1, 2025, or in its 2026 Supplement (cga.ct.gov), on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal nation; tribe of indians; indians; mashantucket; mohegan; nation; pequot; tribal; tribe); AI reader''s verdict core: Tax grants covering tribal property and Mashantucket Pequot trust land. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: tribal nation; tribe of indians; indians; mashantucket; mohegan; nation; pequot; tribal; tribe'

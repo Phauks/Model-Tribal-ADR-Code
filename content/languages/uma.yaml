@@ -1,0 +1,36 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: uma
+name: Umatilla
+iso_639_3:
+  code: uma
+  reference_name: Umatilla
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: umat1237
+  level: language
+  source: glottolog-5-4
+family:
+  name: Sahaptian
+  glottocode: saha1239
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '642759'
+  title: Umatilla dictionary
+  kinds:
+  - dictionary
+  author: Noel Rude and Confederated Tribes of the Umatilla Indian Reservation
+  year: 2014
+  publisher: University of Washington Press
+  source: glottolog-5-4
+- glottolog_reference: '698100'
+  title: 'Umatilla dictionary: a project of the Confederated Tribes of the Umatilla Indian Reservation and Noel Rude'
+  kinds:
+  - dictionary
+  author: Noel Rude
+  year: 2014
+  publisher: Confederated Tribes of the Umatilla Indian Reservation in association with University of Washington Press
+  pages: 622
+  source: glottolog-5-4
+retrieved: '2026-11-27'

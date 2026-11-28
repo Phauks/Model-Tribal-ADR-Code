@@ -31,6 +31,10 @@ opinions:
     page: 106
 original_link: https://www.loc.gov/item/usrep524103/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20241005082738/https://www.loc.gov/item/usrep524103/
+  captured: '2024-10-05'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -100,6 +104,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=524%20U.S.%20103
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1998-02-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1054.mp3
+  catalog: https://catalog.archives.gov/id/138282694
+  whole_session: true
+  duration_seconds: 7276
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1054.mp3
+    checksum: 8d23ea70b3c69a94a33339c818cea5547d901292abfa7587ef20cef4e793eb45
+    media_type: audio/mpeg
+    bytes: 116424327
+argument_transcripts:
+- date: '1998-02-24'
+  docket: "97-174"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1997/97-174_02-24-1998.pdf
+  pages: 50
+  file:
+    storage_key: supreme-court-transcripts/1997/97-174_02-24-1998.pdf
+    checksum: b1aba591502a533d9c8fa4f2c3cf5f55049c6c3b2652438e2d78ea1c19d24d54
+    media_type: application/pdf
+    bytes: 11144900
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -23,7 +23,10 @@ citation:
       - 21
 original_link: https://www.federalregister.gov/documents/2007/02/22/E7-2966/final-determination-for-federal-acknowledgment-of-the-mashpee-wampanoag-indian-tribal-council-inc-of
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260330013332/https://www.federalregister.gov/documents/2007/02/22/E7-2966/final-determination-for-federal-acknowledgment-of-the-mashpee-wampanoag-indian-tribal-council-inc-of
+  captured: '2026-03-30'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -34,6 +37,8 @@ rights:
   redistribution: false
 tribes:
 - mashpee-wampanoag-tribe
+topics:
+- federal-recognition
 found_in:
 - 2026-11-21-petitioning
 notes: Metadata from the Federal Register API (federalregister.gov/api/v1).

@@ -27,6 +27,7 @@ The charter says a Native nation may ask that material about it be restricted or
 - Since `data.zip` is filtered when asked for, its SHA-256 differs from the one listed on Verify File while anything in it is restricted; the `SHA256SUMS.txt` inside it is made again and still checks each file.
 - A book already printed cannot change; the next edition follows the choices.
 - The list of a nation's restrictable items is built with the site (`/nations/<id>/restrictable.json`), so an item added in a later build appears on the team's page then, following its kind.
+- **Restrictions fail closed (Trevor, Nov. 27, 2026).** When the site cannot tell what a nation chose (the database fails, a nation's list of restrictable items cannot be read, or the built data of a page to filter cannot be read), the page or file a nation could restrict answers with the Something went wrong page and a reference instead of being shown in full, and the problem is reported (`nation-restrictions.unavailable`, `nation-restrictions.page-data`). A saved choice that cannot be read withholds everything the nation could restrict. Only a missing table, before any nation has chosen, still means nothing is restricted (`site/src/lib/server/nation-restrictions.ts`, `choicesUnknown` and `settingsInForce`).
 - The project keeps its private copy of every source it cites (standing rule), including hidden ones, unless the nation asks through the request form for it to be deleted.
 
 ## Sources

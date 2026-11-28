@@ -93,6 +93,40 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Dollar_General_Corp._v._Mississippi_Band_of_Choctaw_Indians
+argument_audio:
+- kind: argument
+  date: '2015-12-07'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/13-1496.mp3
+  duration_seconds: 3711
+  file:
+    storage_key: supreme-court-audio/court/2015/13-1496.mp3
+    checksum: c1e3599b1c64bf6588040bf7199a4c426e37c18c6e1f5890d101e5bf87a7f797
+    media_type: audio/mpeg
+    bytes: 29694523
+- kind: argument
+  date: '2015-12-07'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1949-December7_2015.MP3
+  catalog: https://catalog.archives.gov/id/183518331
+  whole_session: true
+  duration_seconds: 7727
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1949-december7_2015.mp3
+    checksum: 98faa165cad3492a4fb84565a4894296753a643071cdc91c3f281364904ad6f2
+    media_type: audio/mpeg
+    bytes: 123628544
+argument_transcripts:
+- date: '2015-12-07'
+  docket: "13-1496"
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/oral_arguments/argument_transcripts/2015/13-1496_p8k0.pdf
+  pages: 75
+  file:
+    storage_key: supreme-court-transcripts/2015/13-1496_p8k0.pdf
+    checksum: 663f20616706daeee7de6874f24a1515b5fb34136385e7edecf57ee7e582eb64
+    media_type: application/pdf
+    bytes: 1346134
 rights:
   status: no-permission-needed
   basis: us-government-work

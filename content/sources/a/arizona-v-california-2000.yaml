@@ -34,6 +34,10 @@ opinions:
     page: 422
 original_link: https://www.loc.gov/item/usrep530392/
 retrieved: '2026-11-24'
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20250311154425/https://www.loc.gov/item/usrep530392/
+  captured: '2025-03-11'
 history:
   status: live
   last_checked: '2026-11-24'
@@ -104,6 +108,30 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=530%20U.S.%20392
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2000-04-25'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1147.mp3
+  catalog: https://catalog.archives.gov/id/138282790
+  whole_session: true
+  duration_seconds: 7466
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1147.mp3
+    checksum: cf60bd349b8135ba230952d52500b3772e4b7eff9bdbfd87b42e0b08da7b7fff
+    media_type: audio/mpeg
+    bytes: 119455785
+argument_transcripts:
+- date: '2000-04-25'
+  docket: "8 Orig."
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/pdfs/transcripts/1999/8_Orig_04-25-2000.pdf
+  pages: 56
+  file:
+    storage_key: supreme-court-transcripts/1999/8_Orig_04-25-2000.pdf
+    checksum: f5519dc8cffbb4ff06ac6f7fdbaaa18d74aa25c4904b7c803d1484f59b28cc6c
+    media_type: application/pdf
+    bytes: 12838907
 rights:
   status: no-permission-needed
   basis: us-government-work

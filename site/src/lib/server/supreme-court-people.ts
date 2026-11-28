@@ -89,7 +89,7 @@ export function justicePath(person: Pick<JusticePerson, 'key'>): string {
 }
 
 export function presidentPath(person: Pick<PresidentPerson, 'key'>): string {
-	return `/supreme-court/presidents/${person.key}`;
+	return `/presidents/${person.key}`;
 }
 
 /** The President by the name the Court's list gives. */
@@ -161,6 +161,7 @@ export function justiceLinkFor(name: string, decided: string | undefined, caseKe
 	try {
 		return justicePath(personForCase(name, decided, caseKey));
 	} catch {
+		// expected: a name that is no one's, or fits more than one Justice that day, gets no link (see above).
 		return undefined;
 	}
 }
