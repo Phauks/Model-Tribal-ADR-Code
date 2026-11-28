@@ -631,8 +631,9 @@ def time_turns(turns: list[dict], stream: list[tuple[float, str]]) -> dict:
 
 CALL = re.compile(r"\b(?:hear|heard|resume)\s+(?:the\s+)?arguments?\b|\bnumber\s+\d+|\bno\.\s*\d+|\bcase on today's calendar\b", re.I)
 # "The case is submitted", "Gentlemen, cases submitted", "If there are no further questions, submitted." but not
-# "We know that this was submitted solely ..." (Bakke, 1977) or "submitted an application".
-SUBMITTED = re.compile(r"\b(?:case is|cases?|is)\s+submitted\b|\bsubmitted\s*\.", re.I)
+# "We know that this was submitted solely ..." (Bakke, 1977), "It is submitted that ..." (Oneida, 1973) or
+# "submitted an application".
+SUBMITTED = re.compile(r"\b(?:case is|cases?)\s+submitted\b|\bsubmitted\s*\.", re.I)
 COMMON = {"v", "the", "of", "and", "united", "states", "state", "county", "tribe", "tribes", "indian", "indians", "nation",
           "nations", "inc", "co", "company", "et", "al", "district", "court", "for", "village", "community", "department",
           "superintendent", "penitentiary", "game", "commission", "tax", "washington", "arizona", "california"}

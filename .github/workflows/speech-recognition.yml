@@ -40,10 +40,13 @@ jobs:
           if [ -n "$REQUEST" ]; then file="$REQUEST"; else
             file=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'research/speech-requests/*.json' | head -1); fi
           echo "request=$file" >> "$GITHUB_OUTPUT"
+          # A push that only removes request files has nothing to hear.
+          if [ -z "$file" ]; then echo "shards=[]" >> "$GITHUB_OUTPUT"; exit 0; fi
           echo "shards=$(python3 -c "import json,sys; print(json.dumps(list(range(len(json.load(open(sys.argv[1]))['shards'])))))" "$file")" >> "$GITHUB_OUTPUT"
 
   hear:
     needs: plan
+    if: needs.plan.outputs.shards != '[]'
     runs-on: ubuntu-latest
     timeout-minutes: 340
     strategy:
