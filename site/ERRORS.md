@@ -80,6 +80,6 @@ Every catch does one of these:
 - keeps it to show the reader; or
 - says why dropping it is right, with a comment that starts `expected:`, such as `// expected: storage is blocked in private windows.`
 
-Showing something else in place of what failed, as the map did, is allowed only where this file or `DESIGN.md` names the case (no scripts, print, offline), and the failure is still reported.
+Showing something else in place of what failed, as the map did, is allowed only where this file or `DESIGN.md` names the case (no scripts, print, offline), and the failure is still reported. A nation's restrictions never fall back to showing everything: they fail closed (decision record 0056).
 
 `npm run check:silent-catches` (`tools/check-silent-catches.mjs`, run in continuous integration) fails when a file has more silent catches than `tools/silent-catches-baseline.json` allows. The baseline began at 321 and reached none on Nov. 27, 2026, so every new catch must now do one of the four things above. `--list <file>` shows a file's silent catches by line.
