@@ -35,7 +35,7 @@ import { publicCopyByKey, recordDocument, whereToRead } from './record-document.
 import { documentFile, type DocumentFile } from '../document-text.ts';
 import { displayName } from '../nation-labels.ts';
 import { officialReportLinks, readingLinksHtml } from '../reading-links.ts';
-import { copyPagePath } from '../public-copies.ts';
+import { copyPagePath, type PublicCopy } from '../public-copies.ts';
 import { opinionTitle, surname, type OpinionEntry } from '../case-opinions.ts';
 import { opinionTextsOf } from './case-opinion-texts.ts';
 import type { SourceEntry } from './source-uses.ts';
@@ -245,10 +245,21 @@ export function caseOpinions(record: SourceRecord & CaseRecordParts): CaseOpinio
 		.map((justice) => ({ title: opinionTitle(justice.opinion!), justice: surname(justice.name), justiceLink: writerLink(justice.name) }));
 }
 
-/** The record's own list of opinions (its opinions block), each linked to its first page in the saved scan of the official report. */
-function recordOpinions(record: SourceRecord & CaseRecordParts, list: OpinionEntry[], writerLink: (name: string) => string | undefined): CaseOpinion[] {
+/**
+ * The site's copy of the case in the official report as the Library of
+ * Congress scanned it (the U.S. Reports PDF of the case alone, which starts at
+ * its first page), for the Scan beside the opinions' text and for each
+ * opinion's link to its first page.
+ */
+function reportScanOf(record: SourceRecord): PublicCopy | undefined {
 	const scan = officialReportLinks(record.reading_links).find((link) => /tile\.loc\.gov\/.+\/usrep\d+[a-z]?\.pdf$/.test(link));
 	const copy = scan ? publicCopyFor(scan) : undefined;
+	return copy?.mediaType === 'application/pdf' ? copy : undefined;
+}
+
+/** The record's own list of opinions (its opinions block), each linked to its first page in the saved scan of the official report. */
+function recordOpinions(record: SourceRecord & CaseRecordParts, list: OpinionEntry[], writerLink: (name: string) => string | undefined): CaseOpinion[] {
+	const copy = reportScanOf(record);
 	const first = Number(record.citation.page);
 	return [...list]
 		.sort((one, other) => one.page - other.page)
@@ -367,12 +378,14 @@ export function casePage(key: string): CasePage {
 	const text = textOf(record, name);
 	const opinionCopy = opinionTextsOf(key)[0]?.copy;
 	const opinionPublic = publicCopyByKey(opinionCopy);
-	const opinionFile = opinionPublic ? documentFile(opinionPublic, { title: name }) : undefined;
+	// The opinions' text with the official report's scan beside it (Trevor, Nov. 28, 2026: "cases should use universal text component we built").
+	const reportScan = opinionPublic ? reportScanOf(record) : undefined;
+	const opinionFile = opinionPublic ? documentFile(opinionPublic, { title: name, ...(reportScan ? { scan: reportScan } : {}) }) : undefined;
 	const opinionList = caseOpinions(record);
 	const opinionAsText = Boolean(opinionFile && !text && opinionList.filter((opinion) => opinion.position !== undefined).length === 1);
 	// A saved copy no card shows, such as a whole volume of the reports, keeps its line under the publisher.
 	const savedKey = savedCopyFor(record)?.key;
-	const where = whereToRead(record, savedKey && savedKey !== text?.key && savedKey !== opinionCopy ? savedCopyLink(record) : '');
+	const where = whereToRead(record, savedKey && savedKey !== text?.key && savedKey !== opinionCopy && savedKey !== reportScan?.key ? savedCopyLink(record) : '');
 	const bench = record.supreme_court;
 	const courtLink = bench ? courtPath(bench.court) : undefined;
 	const decider = caseCourtName(record);

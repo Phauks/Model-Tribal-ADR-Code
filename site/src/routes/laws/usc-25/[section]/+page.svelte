@@ -7,9 +7,10 @@
 	that enacted it, the sections before and after it, and its text. A
 	section no longer in force says what became of it in the Code's own words.
 
-	The text block is the place for the site's shared document text component
-	(thread "Standardize how document text is shown"); until it comes, the
-	section links to its page in our saved copy of its chapter and to GovInfo.
+	The text block is the site's shared Text card (DocumentText.svelte): the
+	section's own words from GovInfo (scripts/law/title_25_section_texts.py),
+	with its PDF as the scan. A section the site keeps no copy of links to its
+	page in our saved copy of its chapter and to GovInfo.
 	What the site's older record of the section holds (its box, the accounts of
 	its impact, where the site cites it) follows.
 -->
@@ -61,7 +62,7 @@
 	{/if}
 
 	{#if data.text || inForce}
-		<!-- The section's official text, kept from its older record, in the same Text card as every law's page; without it, where to read the section. -->
+		<!-- The section's official text (its own copy from GovInfo, or its older record's), in the same Text card as every law's page; without it, where to read the section. -->
 		<DocumentText file={data.text} identifier="text" name={data.name}>
 			{#snippet fallback()}
 				<div class="text-slot">

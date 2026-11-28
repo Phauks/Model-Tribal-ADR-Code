@@ -42,6 +42,12 @@ export interface PublicCopy {
 	 * It has no links: the original still has the names in it.
 	 */
 	namesReplaced?: boolean;
+	/**
+	 * For a text taken from the words in a scan the site serves (the PDF's own
+	 * text layer, or OCR), the scan's key: the Text card shows this text with
+	 * the scan beside it, as unchecked.
+	 */
+	derivedFrom?: string;
 	/** The records the copy belongs to, such as the source record of the case it reports, by key. */
 	records: string[];
 	/**
