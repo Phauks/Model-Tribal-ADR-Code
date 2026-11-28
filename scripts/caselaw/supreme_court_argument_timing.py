@@ -147,6 +147,14 @@ def request(args: argparse.Namespace) -> None:
     for argument in arguments():
         for f in argument["files"]:
             files.setdefault(f["key"], {"key": f["key"], "link": f["link"], "duration": f["duration"]})
+    if args.keys:
+        # Hear these recordings again; with --no-vad, every moment of them: the voice activity filter drops whole
+        # minutes of the telephone arguments of 2020-21 (Cooley: 3,849 words heard of the transcript's 10,267).
+        shards = [[{**files[k], **({"vad": False} if args.no_vad else {})}] for k in args.keys]
+        target = REQUEST.with_name(f"{REQUEST.stem}-{args.name}.json")
+        target.write_text(json.dumps({"model": MODEL, "shards": shards}, indent=1) + "\n", encoding="utf-8")
+        print(f"{len(shards)} recordings in {len(shards)} shards: {target}")
+        return
     if args.again or args.unheard:
         # Hear again what a lost runner took with it: the recordings in these shards of the first request
         # whose words are not in the folder given, in shards of about two hours each. With --unheard: every
@@ -244,13 +252,14 @@ def transcribe(args: argparse.Namespace) -> None:
         heard = []
         for start, end in pieces(samples):
             offset = start / 16000
-            segments, _ = model.transcribe(samples[start:end], language="en", beam_size=5, vad_filter=True, word_timestamps=True,
+            segments, _ = model.transcribe(samples[start:end], language="en", beam_size=5, vad_filter=f.get("vad", True), word_timestamps=True,
                                            condition_on_previous_text=False)
             heard += [[round(offset + s.start, 2), round(offset + s.end, 2), s.text.strip(),
                        [[round(offset + w.start, 2), round(offset + w.end, 2), w.word.strip()] for w in (s.words or [])]] for s in segments]
         with gzip.open(target, "wt", encoding="utf-8") as handle:
             json.dump({"key": f["key"], "link": f["link"], "sha256": digest, "model": MODEL_NAME,
-                       "seconds": round(len(samples) / 16000, 2), "segments": heard}, handle)
+                       "seconds": round(len(samples) / 16000, 2), **({"vad": False} if not f.get("vad", True) else {}),
+                       "segments": heard}, handle)
         print(f"{f['key']}: {len(samples) / 16000 / 60:.0f} min heard in {(time.time() - started) / 60:.1f} min", flush=True)
 
 
@@ -974,6 +983,8 @@ def main() -> None:
     sub = parser.add_subparsers(dest="command", required=True)
     p = sub.add_parser("request")
     p.add_argument("--again", type=int, nargs="*", help="shards of the first request to hear again")
+    p.add_argument("--keys", nargs="*", help="these recordings, one to a shard")
+    p.add_argument("--no-vad", action="store_true", help="with --keys: hear them without the voice activity filter")
     p.add_argument("--unheard", action="store_true", help="hear every recording the arguments play whose words are not in --words")
     p.add_argument("--words", help="with --again or --unheard: the words already heard")
     p.add_argument("--name", default="again", help="with --again: the new request's name")

@@ -1,0 +1,29 @@
+{
+ "model": "small.en",
+ "shards": [
+  [
+   {
+    "key": "supreme-court-audio/court/2020/19-1414.mp3",
+    "link": "https://www.supremecourt.gov/media/audio/mp3files/19-1414.mp3",
+    "duration": 4132,
+    "vad": false
+   }
+  ],
+  [
+   {
+    "key": "supreme-court-audio/court/2020/20-543.mp3",
+    "link": "https://www.supremecourt.gov/media/audio/mp3files/20-543.mp3",
+    "duration": 6250,
+    "vad": false
+   }
+  ],
+  [
+   {
+    "key": "supreme-court-audio/national-archives/black-series/267-840-71-78-19711018.mp3",
+    "link": "https://catalog.archives.gov/medialz/mopix/267a/black/267-840-71-78-19711018.mp3",
+    "duration": 5025,
+    "vad": false
+   }
+  ]
+ ]
+}
