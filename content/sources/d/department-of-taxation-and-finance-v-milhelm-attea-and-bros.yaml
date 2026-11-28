@@ -108,15 +108,15 @@ argument_audio:
 - kind: argument
   date: '1994-03-23'
   source: National Archives
-  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-912.mp3
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-911.mp3
   catalog: https://catalog.archives.gov/id/118975039
   whole_session: true
-  duration_seconds: 11405
+  duration_seconds: 7471
   file:
-    storage_key: supreme-court-audio/national-archives/red-series/267-912.mp3
-    checksum: 12992601979ab9a56a9b1200619a46f4efdb3fdad9142b778da135508773c971
+    storage_key: supreme-court-audio/national-archives/red-series/267-911.mp3
+    checksum: 06d0317c41cd91efbc5d20e1af783a603ff3ac9505dd7abf980a18c4b781aa37
     media_type: audio/mpeg
-    bytes: 182487372
+    bytes: 119532688
 argument_transcripts:
 - date: '1994-03-23'
   docket: "93-377"
