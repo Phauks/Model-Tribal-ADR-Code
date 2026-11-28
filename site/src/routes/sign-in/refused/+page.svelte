@@ -16,6 +16,6 @@
 	<p><a class="button" href="/sign-in">Sign in again</a></p>
 	<p>
 		Nobody needs an account to read the site or to send a request:
-		<a href="/requests">make a request</a> instead.
+		use <a href="#request">Request a Change</a> instead.
 	</p>
 </div>

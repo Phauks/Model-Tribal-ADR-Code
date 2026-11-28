@@ -8,6 +8,8 @@
  * Trevor, Nov. 23, 2026). Requests to restrict or remove material stay with
  * the project, which handles them under docs/requests.md.
  */
+import { requestLink } from './report-request.ts';
+
 export const teamReportKinds = ['correct', 'question', 'contribute'] as const;
 export type TeamReportKind = (typeof teamReportKinds)[number];
 
@@ -30,7 +32,7 @@ export function answersFor(senderShared: boolean): TeamAnswerOutcome[] {
 
 /** Where the badge's "Write to the team" link goes for a nation. */
 export function writeToTeamLink(nationIdentifier: string): string {
-	return `/requests?kind=question&record=${encodeURIComponent(`tribes/${nationIdentifier}`)}&to=team`;
+	return requestLink({ kind: 'question', record: `tribes/${nationIdentifier}`, toTeam: true });
 }
 
 export function isTeamReportKind(kind: string): kind is TeamReportKind {

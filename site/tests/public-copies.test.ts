@@ -227,7 +227,7 @@ describe('copies of nations’ documents', async () => {
 	const { removalRequestPath, mediaLabel } = await import('../src/lib/public-copies.ts');
 	it('links each copy to a filled-in removal request', () => {
 		expect(removalRequestPath({ key: 'constitutions/sample-nation/0123456789abcdef.pdf' })).toBe(
-			'/requests?kind=remove&record=copies/constitutions/sample-nation/0123456789abcdef.pdf'
+			'#request=remove&record=copies/constitutions/sample-nation/0123456789abcdef.pdf'
 		);
 	});
 

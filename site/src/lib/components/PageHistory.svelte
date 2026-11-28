@@ -10,6 +10,7 @@
 	import EyeOff from '@lucide/svelte/icons/eye-off';
 	import CountBadge from './CountBadge.svelte';
 	import { dateTime } from '#lib/change-dates.ts';
+	import { requestLink } from '#lib/report-request.ts';
 	import { largeChange, siteReleaseName, sizeChangeText, wordingIsShown, type ChangeView } from '#lib/page-history.ts';
 
 	let {
@@ -34,11 +35,10 @@
 	} = $props();
 
 	const showsWording = $derived(kind ? wordingIsShown(kind) : true);
-	/** The request form, filled in with this page, for "Ask for a change or removal". */
-	const requestLink = $derived.by(() => {
+	/** Request a Change, filled in with this page, for "Ask for a change or removal". */
+	const changeLink = $derived.by(() => {
 		const match = /^\/(nations|stories)\/([a-z0-9-]+)$/.exec(address);
-		if (!match) return '/requests';
-		return `/requests?record=${match[1] === 'nations' ? 'tribes' : 'stories'}/${match[2]}`;
+		return requestLink(match ? { record: `${match[1] === 'nations' ? 'tribes' : 'stories'}/${match[2]}` } : {});
 	});
 
 	let fromChoice = $state<string | undefined>(undefined);
@@ -181,7 +181,7 @@
 			</div>
 			<div class="history-note">
 				<p class="note-title"><strong>Something wrong on this page?</strong></p>
-				<p><a href={requestLink}>Ask for a change or removal</a></p>
+				<p><a href={changeLink}>Ask for a change or removal</a></p>
 			</div>
 		</aside>
 	{/if}

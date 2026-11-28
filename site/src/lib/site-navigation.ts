@@ -405,7 +405,7 @@ export const navigationSections: NavigationSection[] = [
 					// Every change to the site's pages, like a wiki's (site/COLLABORATION.md, "Recent changes"); it left the side column on Nov. 27, 2026.
 					{ label: 'Recent Changes', link: '/changes', icon: 'history' },
 					// Offering help or material, not money, so it stays here when Sponsorship and the Store left (Nov. 28, 2026).
-					{ label: 'Contribute', link: '/requests?kind=contribute', icon: 'hand-heart' }
+					{ label: 'Contribute', link: '#request=contribute', icon: 'hand-heart' }
 				]
 			},
 			{
@@ -419,7 +419,7 @@ export const navigationSections: NavigationSection[] = [
 				]
 			}
 		],
-		holds: ['/requests', '/contributors', '/acknowledgments', '/charter', '/changelog', '/using-ai', '/join']
+		holds: ['/contributors', '/acknowledgments', '/charter', '/changelog', '/using-ai', '/join']
 	},
 	// Sponsorship and the Store involve people spending money, so each is a section of its own, apart from About and from each other (Trevor, Nov. 28, 2026: "two sections, store feels separate as well?"); each section's existing page is its home.
 	{
@@ -476,7 +476,7 @@ export function navigationSectionOf(path: string): NavigationSection | undefined
 
 /**
  * The link in a section's menu that is the page being read: an exact match,
- * with its query where the link has one (Contribute is /requests?kind=contribute).
+ * with its query where the link has one.
  */
 export function currentNavigationLink(section: NavigationSection | undefined, path: string, search: string): NavigationLink | undefined {
 	if (!section) return undefined;

@@ -841,7 +841,11 @@ export default defineConfig({
 					if (path === '/checksums.txt' || path === '/checksums.json') return;
 					throw new Error(message);
 				},
-				handleMissingId: 'fail'
+				// A link ending in #request=... opens Request a Change rather than going to an element (src/lib/report-request.ts).
+				handleMissingId: ({ id, message }) => {
+					if (id === 'request' || id.startsWith('request=') || id.startsWith('request&')) return;
+					throw new Error(message);
+				}
 			},
 			version: {
 				// The service worker names its caches after this, so each build replaces the old copy.

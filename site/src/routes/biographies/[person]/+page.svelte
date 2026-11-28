@@ -18,6 +18,7 @@
 	import { nationVerification } from '#lib/review-status.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
+	import { requestLink } from '#lib/report-request.ts';
 
 	let { data }: PageProps = $props();
 
@@ -60,7 +61,7 @@
 	const treatyByKey = $derived(new Map(data.treaties.map((item) => [item.key, item])));
 	const caseByKey = $derived(new Map(data.cases.map((item) => [item.key, item])));
 	const nationNames = $derived(data.nations.map((nation) => nation.name).join(' and '));
-	const request = $derived(`/requests?${new URLSearchParams({ kind: 'correct', record: `biographies/${data.key}` }).toString().replaceAll('%2F', '/')}`);
+	const request = $derived(requestLink({ kind: 'correct', record: `biographies/${data.key}` }));
 </script>
 
 <svelte:head>

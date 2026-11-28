@@ -13,7 +13,7 @@ describe('tribal court opinions (decision record 0047)', () => {
 			expect(served.has(opinion.key)).toBe(true);
 			// Each opens as a page inside the site, with its masthead and sidebar (copyPagePath).
 			expect(opinion.path).toBe(`/copies/view/${opinion.key}`);
-			expect(opinion.removal).toContain('kind=remove');
+			expect(opinion.removal).toContain('#request=remove');
 			expect(opinion.nations.length).toBeGreaterThan(0);
 		}
 	});

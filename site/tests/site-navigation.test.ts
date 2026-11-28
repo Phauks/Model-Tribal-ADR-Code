@@ -21,7 +21,8 @@ describe('the sections in the bar under the masthead', () => {
 	it('links only to pages that exist, apart from those marked soon', () => {
 		for (const candidate of navigationSections) {
 			for (const link of sectionLinks(candidate)) {
-				if (link.soon) continue;
+				// Contribute opens Request a Change over the page being read (src/lib/report-request.ts).
+				if (link.soon || link.link.startsWith('#request')) continue;
 				const address = link.link.split('?')[0];
 				const route = `src/routes${address}`;
 				// A browsed Federal collection's page is drawn by /laws/[collection=browse] (src/lib/browse-identifiers.ts).
@@ -63,7 +64,6 @@ describe('the sections in the bar under the masthead', () => {
 		expect(sectionOf('/sponsor/levels')).toBe('Support');
 		expect(sectionOf('/about/project')).toBe('About');
 		expect(sectionOf('/nations/directory')).toBe('Nations');
-		expect(sectionOf('/requests')).toBe('About');
 		expect(sectionOf('/')).toBeUndefined();
 		expect(sectionOf('/nationsx')).toBeUndefined();
 		// Pages not published yet do not claim their addresses.
@@ -71,9 +71,10 @@ describe('the sections in the bar under the masthead', () => {
 	});
 
 	it('marks the link that is the page being read, with its query where it has one', () => {
-		const about = section('about');
-		expect(currentNavigationLink(about, '/requests', '?kind=contribute')?.label).toBe('Contribute');
-		expect(currentNavigationLink(about, '/requests', '')).toBeUndefined();
+		const courts = section('courts-and-cases');
+		const gaming = '/stats/national-indian-gaming-commission';
+		expect(currentNavigationLink(courts, gaming, '?national-indian-gaming-commission.detail=Commission+final+decision')?.label).toBe('Gaming Commission Decisions');
+		expect(currentNavigationLink(courts, gaming, '')?.label).not.toBe('Gaming Commission Decisions');
 		expect(currentNavigationLink(section('nations'), '/nations/map', '')?.label).toBe('Map');
 	});
 

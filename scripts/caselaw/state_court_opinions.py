@@ -577,7 +577,7 @@ def opinion_page(case: dict, key: str, link: str, fragment: str | None = None, l
     citations = ", ".join(c["cite"] for c in case.get("citations", []) if c.get("cite"))
     court = (case.get("court") or {}).get("name", "")
     date = case.get("decision_date", "")
-    removal = "/requests?kind=remove&record=copies/" + key
+    removal = f"/copies/view/{key}#request=remove&record=copies/{key}"
     parts = opinions_html(fragment) if fragment else []
     if parts and links is not None:
         parts = [links.rewrite(part, key) for part in parts]
