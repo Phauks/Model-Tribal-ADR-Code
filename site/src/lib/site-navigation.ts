@@ -274,7 +274,7 @@ export const navigationSections: NavigationSection[] = [
 				]
 			},
 			{
-				title: 'State and Territorial Courts',
+				title: 'State Courts',
 				line: 'State and territorial courts, in cases that reach Native nations, people and lands.',
 				picture: { src: '/pictures/courts-and-cases/state-courts.jpg', alt: '', width: 720, height: 400, credit: 'New Mexico Supreme Court Building, Santa Fe, photograph by WhisperToMe, released by the photographer to the public domain.', source: 'https://commons.wikimedia.org/wiki/File:NMSupremeCourtSantaFe.JPG' },
 				links: [
