@@ -652,7 +652,8 @@ function indexedCopies(): PublicCopy[] {
 					row.redistribution === 'yes' &&
 					!neverServedTopics.has(row.key.split('/')[0]) &&
 					!neverServedTopics.has(row.topic) &&
-					!row.derived_from &&
+					// A file made from another is served only when it is a text taken from a served scan (scripts/law/scan_texts.py); the other extracts are private working copies.
+					(!row.derived_from || row.media_type === 'text/plain') &&
 					servedMediaTypes.has(row.media_type) &&
 					/^[0-9a-f]{64}$/.test(row.sha256) &&
 					/^[a-z0-9][a-z0-9._/-]*$/i.test(row.key) &&
@@ -671,6 +672,7 @@ function indexedCopies(): PublicCopy[] {
 				rights: row.rights,
 				...(namesReplaced.has(row.key) ? { namesReplaced: true } : {}),
 				records: (row.records ?? '').split(';').filter(Boolean),
+				...(row.derived_from ? { derivedFrom: row.derived_from } : {}),
 				...(charsets.has(row.key) ? { charset: charsets.get(row.key) } : {}),
 				...(pages.has(row.sha256) ? { pages: pages.get(row.sha256) } : {})
 			}))

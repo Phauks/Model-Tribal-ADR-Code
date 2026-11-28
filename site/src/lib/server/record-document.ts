@@ -35,10 +35,19 @@ export function recordCopies(record: SourceRecord): PublicCopy[] {
 
 const isText = (copy: PublicCopy) => copy.mediaType === 'text/plain' || copy.mediaType === 'text/html';
 
+let scanTexts: Map<string, PublicCopy> | undefined;
+
+/** The text taken from a served scan's words (scripts/law/scan_texts.py), by the scan's key. */
+export function textOfScan(key: string): PublicCopy | undefined {
+	scanTexts ??= new Map(publicCopies().flatMap((copy) => (copy.derivedFrom && copy.mediaType === 'text/plain' ? [[copy.derivedFrom, copy] as const] : [])));
+	return scanTexts.get(key);
+}
+
 /**
  * The card's copy: the first of the record's copies, except that a text of
  * the document comes before its PDF, which the card shows beside the text
- * as its scan.
+ * as its scan. A PDF with no other text shows the text taken from its own
+ * words, when the site keeps one.
  */
 export function recordDocument(record: SourceRecord, title: string, copy: PublicCopy | undefined = recordCopies(record)[0]): DocumentFile | undefined {
 	if (!copy) return undefined;
@@ -46,7 +55,8 @@ export function recordDocument(record: SourceRecord, title: string, copy: Public
 	let shown = copy;
 	let scan = copies.find((other) => other.mediaType === 'application/pdf' && other.key !== copy.key);
 	if (copy.mediaType === 'application/pdf') {
-		const text = copies.find(isText);
+		// A text of the document first; else the text taken from this scan's own words.
+		const text = copies.find(isText) ?? textOfScan(copy.key);
 		if (text) {
 			shown = text;
 			scan = copy;

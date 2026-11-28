@@ -127,9 +127,17 @@ function isGovernmentHost(host: string | undefined): boolean {
 }
 
 /** How far a copy's words can be trusted, from where it was published and what kind of file it is. */
-export function trustOf(copy: Pick<PublicCopy, 'mediaType' | 'links'>): TrustLabel {
+export function trustOf(copy: Pick<PublicCopy, 'mediaType' | 'links'> & Partial<Pick<PublicCopy, 'derivedFrom'>>): TrustLabel {
 	const host = hostOf(copy.links.at(-1) ?? copy.links[0] ?? '');
 	const publisher = host ? (publisherName(`https://${host}/`) ?? host) : 'its publisher';
+	if (copy.derivedFrom) {
+		return {
+			kind: 'ocr',
+			label: 'Text from the scan, unchecked',
+			detail: `Taken by computer from the words in the scan ${publisher} published, and not checked word for word. A word can be misread or out of order, and margin notes can fall between lines; check a quotation against the scan.`,
+			verified: false
+		};
+	}
 	if (host === 'static.case.law' || host === 'case.law') {
 		return {
 			kind: 'ocr',
@@ -163,7 +171,7 @@ export interface DocumentFileOptions {
 
 /** The Text card's details for one served copy. */
 export function documentFile(
-	copy: Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'> & Partial<Pick<PublicCopy, 'captured' | 'namesReplaced' | 'pages'>> & { name?: string },
+	copy: Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'> & Partial<Pick<PublicCopy, 'captured' | 'namesReplaced' | 'pages' | 'derivedFrom'>> & { name?: string },
 	options: DocumentFileOptions
 ): DocumentFile {
 	const file = copyPath(copy);
