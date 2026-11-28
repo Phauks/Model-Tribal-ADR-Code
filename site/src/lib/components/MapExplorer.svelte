@@ -59,6 +59,7 @@
 	import Check from '@lucide/svelte/icons/check';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import ChevronUp from '@lucide/svelte/icons/chevron-up';
+	import Funnel from '@lucide/svelte/icons/funnel';
 	import Layers from '@lucide/svelte/icons/layers';
 	import List from '@lucide/svelte/icons/list';
 	import Play from '@lucide/svelte/icons/play';
@@ -86,6 +87,11 @@
 		onplace,
 		key,
 		details,
+		filter,
+		restLabel = 'Today',
+		ticks,
+		thinMarks = true,
+		yearTurnsOnBorders = true,
 		switcher,
 		timeline = true,
 		searchLabel = 'Find a nation or place'
@@ -113,6 +119,16 @@
 		key: Snippet;
 		/** The chosen place's details, over the map on the right. */
 		details?: Snippet;
+		/** In place of Layers, a filter of what the map shows, with its own panel, such as the Removals page's "Kind of move" (Removals mockup v2): its label, how many choices are on, and the panel. */
+		filter?: { label: string; count: number; panel: Snippet };
+		/** What the timeline rests on, at its end: Today, or "All years" on a map of the past. */
+		restLabel?: string;
+		/** The years written under the timeline's bar; by default its ends and every fifty years from 1830. */
+		ticks?: number[];
+		/** Whether the marks on the bar are thinned to about twenty; a short span of years, such as the removals', shows every one. */
+		thinMarks?: boolean;
+		/** Whether moving back in time turns on the borders of that time; a map of one subject, such as the removals, keeps its own layers. */
+		yearTurnsOnBorders?: boolean;
 		/** A page's own choice in place of the Layers button and list, such as the Federal offices page's switch between the two agencies (approved mockup, 2026-11-28). */
 		switcher?: Snippet;
 		/** Whether the timeline runs along the bottom; a page about today only has none. */
@@ -230,7 +246,7 @@
 	const at = (value: number) => `${((value - first) / (last - first)) * 100}%`;
 	/** The notches on the bar, thinned so that each stands clear of the last (about twenty across the bar, as in mockup D1); playing and stepping still go through every year in marks. */
 	const notches = $derived.by(() => {
-		const gap = (last - first) / 24;
+		const gap = thinMarks ? (last - first) / 24 : 0;
 		const kept: number[] = [];
 		for (const value of [...marks].sort((a, b) => a - b)) {
 			if (value <= first || value >= last - gap / 2) continue;
@@ -240,7 +256,7 @@
 		}
 		return kept;
 	});
-	const tickYears = $derived([first, 1830, 1880, 1930, 1980, last].filter((value, index, all) => value >= first && value <= last && all.indexOf(value) === index));
+	const tickYears = $derived((ticks ?? [first, 1830, 1880, 1930, 1980, last]).filter((value, index, all) => value >= first && value <= last && all.indexOf(value) === index));
 	/** The years in which the map changes, in order, which Play and the step buttons go through. */
 	const steps = $derived([...new Set(marks)].filter((value) => value >= first && value < last).sort((a, b) => a - b));
 
@@ -251,7 +267,7 @@
 	function moveTo(value: number): void {
 		if (value >= last) return backToToday();
 		year = value;
-		if (!layers.borders) {
+		if (yearTurnsOnBorders && !layers.borders) {
 			layers = { ...layers, borders: true };
 			bordersByTimeline = true;
 		}
@@ -380,8 +396,13 @@
 		bind:this={layersButton}
 		onclick={() => void toggleLayers()}
 	>
-		<Layers aria-hidden="true" size={18} /><span class="explorer-layers-word">Layers</span>
-		<CountBadge count={onCount} label="on" />
+		{#if filter}
+			<Funnel aria-hidden="true" size={18} /><span class="explorer-layers-word">{filter.label}</span>
+			<CountBadge count={filter.count} label="shown" />
+		{:else}
+			<Layers aria-hidden="true" size={18} /><span class="explorer-layers-word">Layers</span>
+			<CountBadge count={onCount} label="on" />
+		{/if}
 	</button>
 	{/if}
 </div>
@@ -392,7 +413,7 @@
 	class="explorer-layers map-float map-panel"
 	id="{identifier}-layers"
 	role="group"
-	aria-label="Layers"
+	aria-label={filter?.label ?? 'Layers'}
 	hidden={!layersOpen}
 	bind:this={layersPanel}
 	onkeydown={(event) => {
@@ -403,6 +424,9 @@
 		}
 	}}
 >
+	{#if filter}
+		{@render filter.panel()}
+	{:else}
 	<section class="explorer-group" aria-label="Layers today">
 		{@render foldButton('today', 'Layers today')}
 		<div id="{identifier}-today" hidden={folded.today}>{@render layerRows('today')}</div>
@@ -441,6 +465,7 @@
 			</div>
 		</div>
 	</section>
+	{/if}
 </div>
 
 {/if}
@@ -492,7 +517,7 @@
 			max={last}
 			step="1"
 			value={sliderValue}
-			aria-valuetext={year === undefined ? 'Today' : String(year)}
+			aria-valuetext={year === undefined ? restLabel : String(year)}
 			oninput={(event) => {
 				stop();
 				moveTo(Number(event.currentTarget.value));
@@ -537,7 +562,7 @@
 		stop();
 		backToToday();
 	}}>
-		{#if year === undefined}<Check class="map-control-check" aria-hidden="true" size={18} strokeWidth={2.5} />{/if}Today
+		{#if year === undefined}<Check class="map-control-check" aria-hidden="true" size={18} strokeWidth={2.5} />{/if}{restLabel}
 	</button>
 </div>
 {/if}

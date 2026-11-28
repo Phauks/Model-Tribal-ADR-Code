@@ -45,6 +45,7 @@
 		| { kind: 'border'; id: string; name: string; territory: string; from: number; to: number; change: string; citation: string }
 		| { kind: 'homeland'; area: number; named: string }
 		| { kind: 'route'; routes: string }
+		| { kind: 'journey'; id: string }
 		| { kind: 'reservation1909'; n: number; id: string; name: string; status: string; nations: string[]; label: boolean; neighbors: string[]; placed: boolean; panel: string; note: string; review: string; surveyed: boolean; boundary: string };
 
 	/** The base map and switches are remembered on the device, and every map on the site shares them. */
@@ -94,6 +95,7 @@
 	import type { TileMapData } from '#lib/server/nations-map.ts';
 	import { motionDuration, motionEasing } from '#lib/motion.ts';
 	import { censusYearFor, writeCessionsSwitch } from '#lib/historic-map.ts';
+	import { journeyFeatures, type RemovalJourneysShown } from '#lib/removal-journeys.ts';
 	import { loadAllNationsTileMapData, loadTileMapLibrary } from '#lib/tile-map-loading.ts';
 	import { drawGlobeSky, type GlobeSkyColors, type Star } from '#lib/globe-sky.ts';
 	import { page } from '$app/state';
@@ -123,6 +125,7 @@
 		onfeature,
 		baseMap = $bindable(storedBaseMap()),
 		outlines = $bindable(storedOutlines()),
+		journeys,
 		pins
 	}: {
 		view: TileMapView;
@@ -165,6 +168,8 @@
 		baseMap?: TileMapBase;
 		/** Whether the land areas are outlined. */
 		outlines?: boolean;
+		/** The removals of Native nations, as curved arrows from the land left to the land sent to, over the states' outlines and without roads (Removals page and each journey's page, mockup v2, Nov. 28, 2026). Choosing an arrow on the Removals page calls onfeature with the journey. */
+		journeys?: RemovalJourneysShown;
 		/** Places the page marks with a labeled pin, drawn over everything else: the Federal offices page's regional offices (approved mockup, 2026-11-28). */
 		pins?: TileMapPin[];
 	} = $props();
@@ -337,7 +342,7 @@
 	// A new base map or switch redraws the map's layers on the same map, as changing the view does.
 	let styledWith = '';
 	$effect(() => {
-		const wanted = `${baseMap} ${outlines} ${drawsCessions} ${year} ${statesBy} ${cessionsShown?.join(',')} ${JSON.stringify(layerSwitches ?? {})}`;
+		const wanted = `${baseMap} ${outlines} ${drawsCessions} ${year} ${statesBy} ${cessionsShown?.join(',')} ${JSON.stringify(layerSwitches ?? {})} ${journeys ? `${journeys.chosen} ${journeys.year} ${journeys.scale} ${journeys.lines.map((line) => line.id).join(',')}` : ''}`;
 		if (!ready || !map) return;
 		if (styledWith === '') styledWith = wanted;
 		if (wanted === styledWith) return;
@@ -462,7 +467,8 @@
 		// The project's layers go above the land and water and below the roads and names, so towns and roads still show through.
 		const firstRoad = base.findIndex((layer) => layer.id.startsWith('roads_'));
 		const under = base.slice(0, firstRoad);
-		const over = base.slice(firstRoad);
+		// The removals' map leaves out the roads, which are not the roads the nations took (Removals mockup v2).
+		const over = base.slice(firstRoad).filter((layer) => !(journeys && layer.id.startsWith('roads_')));
 
 		const stateShade: ExpressionSpecification = [
 			'match',
@@ -577,6 +583,28 @@
 				{ id: 'reservations-1909-lines', type: 'line', source: 'reservations1909', 'source-layer': 'reservations', filter: shapes, paint: { 'line-color': ['case', marked, colors.ink, edge], 'line-width': ['case', marked, 2.4, scan ? 1.6 : 1] } },
 				dot('reservations-1909-markers', ['all', ['==', ['geometry-type'], 'Point'], ['has', 'marker']], { maxzoom: 7 }),
 				dot('reservations-1909-dots', ['all', ['==', ['geometry-type'], 'Point'], ['!', ['has', 'marker']]])
+			);
+		};
+		/**
+		 * The removals of Native nations (Removals mockup v2): the states outlined faintly, then each journey's arrows in the action color with a paper edge, as the removal routes are drawn, solid where the move is on record and dashed where only the order is, a ring at the land left and an arrowhead at the land sent to. With one chosen, it takes the map-highlight glow and its people's name and the others fade; at a year, journeys under way are bolder and earlier ones fade.
+		 */
+		const addJourneys = (shown: RemovalJourneysShown) => {
+			const scale = shown.scale ?? 1;
+			const faded: ExpressionSpecification = ['match', ['get', 'state'], 'other', 0.35, 'past', 0.35, 1];
+			const width = (chosen: number, now: number, rest: number): ExpressionSpecification => ['*', scale, ['match', ['get', 'state'], 'chosen', chosen, 'now', now, rest]];
+			const solid: FilterSpecification = ['==', ['get', 'solid'], true];
+			const round = { 'line-cap': 'round', 'line-join': 'round' } as const;
+			fills.push({ id: 'journey-states', type: 'line', source: 'places', 'source-layer': 'states', paint: { 'line-color': colors.line, 'line-width': 0.8, 'line-opacity': 0.55 } });
+			tops.push(
+				{ id: 'journey-glow', type: 'line', source: 'journey-lines', filter: ['==', ['get', 'state'], 'chosen'], layout: round, paint: { 'line-color': colors.focus, 'line-width': 10 * scale } },
+				{ id: 'journey-edge', type: 'line', source: 'journey-lines', layout: round, paint: { 'line-color': colors.paper, 'line-width': width(6.5, 5.5, 4.5), 'line-opacity': faded } },
+				{ id: 'journey-solid', type: 'line', source: 'journey-lines', filter: solid, layout: round, paint: { 'line-color': colors.action, 'line-width': width(3.5, 3, 2.25), 'line-opacity': faded } },
+				{ id: 'journey-dashed', type: 'line', source: 'journey-lines', filter: ['!', solid], layout: { 'line-join': 'round' }, paint: { 'line-color': colors.action, 'line-width': width(3.5, 3, 2.25), 'line-dasharray': [2.2, 1.6], 'line-opacity': faded } },
+				{ id: 'journey-starts', type: 'circle', source: 'journey-starts', paint: { 'circle-radius': width(5, 3.5, 3.5), 'circle-color': colors.paper, 'circle-stroke-color': colors.ink, 'circle-stroke-width': 1.5, 'circle-opacity': faded, 'circle-stroke-opacity': faded } },
+				{ id: 'journey-heads', type: 'symbol', source: 'journey-heads', layout: { 'icon-image': ['match', ['get', 'state'], 'chosen', 'journey-head-big', scale < 1 ? 'journey-head-small' : 'journey-head'], 'icon-rotate': ['get', 'angle'], 'icon-rotation-alignment': 'map', 'icon-allow-overlap': true, 'icon-ignore-placement': true }, paint: { 'icon-opacity': faded } },
+				// A wide clear line over each arrow, so a reader can choose one without hitting it exactly.
+				{ id: 'journey-hits', type: 'line', source: 'journey-lines', paint: { 'line-color': colors.action, 'line-width': 14, 'line-opacity': 0 } },
+				{ id: 'journey-names', type: 'symbol', source: 'journey-labels', layout: { 'text-field': ['get', 'people'], 'text-font': ['Noto Sans Medium'], 'text-size': 14, 'text-offset': [0, -1.1] }, paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 2 } }
 			);
 		};
 		/** The removal routes the National Park Service maps (the Trail of Tears, 1837 to 1839), in the action color with a paper edge so they read over any layer. */
@@ -849,6 +877,7 @@
 				}
 			);
 		}
+		if (journeys) addJourneys(journeys);
 		const landAreaLayers = new Set(['land-areas', 'land-areas-patterns', 'land-areas-lines']);
 		const dotLayers = new Set(['area-groups', 'area-group-counts', 'area-dots', 'area-names']);
 		// The offices mark nations with no land area today, so they go with today's map too.
@@ -1015,11 +1044,46 @@
 					clusterMaxZoom: 5,
 					clusterRadius: 40
 				},
+				...(journeys ? journeySources(journeys) : {}),
 				...(shape === 'globe' ? { 'star-credit': starCreditSource } : {})
 			},
 			layers: shape === 'globe' ? [...layers, starCreditLayer] : layers
 		};
 	}
+
+	/** The journeys' arrows, rings, arrowheads and name, as GeoJSON (src/lib/removal-journeys.ts). The places come from Wikidata, the Census Bureau and Royce's cessions (tools/removal-places.mjs). */
+	function journeySources(shown: RemovalJourneysShown): Record<string, SourceSpecification> {
+		const features = journeyFeatures(shown);
+		return {
+			'journey-lines': { type: 'geojson', data: features.lines, attribution: 'Places: Census Bureau, Wikidata, after Royce (1899)' },
+			'journey-heads': { type: 'geojson', data: features.heads },
+			'journey-starts': { type: 'geojson', data: features.starts },
+			'journey-labels': { type: 'geojson', data: features.labels }
+		};
+	}
+
+	/** An arrowhead in the action color with a paper edge, drawn once per style at the screen's density. */
+	function journeyHead(size: number): { width: number; height: number; data: Uint8Array } {
+		const ratio = window.devicePixelRatio || 1;
+		const side = Math.round(size * ratio);
+		const canvas = document.createElement('canvas');
+		canvas.width = canvas.height = side;
+		const context = canvas.getContext('2d')!;
+		context.beginPath();
+		context.moveTo(side / 2, side * 0.08);
+		context.lineTo(side * 0.9, side * 0.92);
+		context.lineTo(side / 2, side * 0.72);
+		context.lineTo(side * 0.1, side * 0.92);
+		context.closePath();
+		context.lineJoin = 'round';
+		context.lineWidth = 2 * ratio;
+		context.strokeStyle = token('paper');
+		context.stroke();
+		context.fillStyle = token('action');
+		context.fill();
+		return { width: side, height: side, data: new Uint8Array(context.getImageData(0, 0, side, side).data.buffer) };
+	}
+	const journeyHeadSizes: Record<string, number> = { 'journey-head': 15, 'journey-head-small': 10.5, 'journey-head-big': 20 };
 
 	/** The current view's shades and rows, if it is a shaded view (src/lib/shaded-map-views.ts). */
 	function shadingIn(data: TileMapData) {
@@ -1076,6 +1140,11 @@
 	/** Clears what the search found, as when the reader closes its details. */
 	export function clearFound(): void {
 		markFound([]);
+	}
+
+	/** Moves the map to a box, [west, south, east, north] in degrees, leaving room for what floats over the map: the Removals page keeps a chosen journey clear of its details. */
+	export function showBounds(bounds: [number, number, number, number], padding: TileMapPadding = 24): void {
+		map?.fitBounds(bounds, { padding, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
 	}
 
 	/** Moves the map to one of the places in tileMapPlaces, or a state, by name; the map page's search calls it. A state is marked too. */
@@ -1226,6 +1295,7 @@
 					if (shape) loaded.addImage(event.id, shapeImage(shape, shapeImageSize, 1), { sdf: true, pixelRatio: 1 });
 					const pattern = patternOfImageName(event.id);
 					if (pattern) loaded.addImage(event.id, patternImage(pattern.pattern, pattern.color, 2), { pixelRatio: 2 });
+					if (event.id in journeyHeadSizes) loaded.addImage(event.id, journeyHead(journeyHeadSizes[event.id]), { pixelRatio: window.devicePixelRatio || 1 });
 				});
 				// The credit line, then the buttons, all in the bottom-right corner (Trevor, 2026-11-23). MapLibre stacks each later bottom control above the earlier ones, so the credit line is added first and the zoom buttons last, on top.
 				map.addControl(new maplibre.AttributionControl({ compact: false }), 'bottom-right');
@@ -1399,6 +1469,7 @@
 						boundary: String(properties.boundary ?? '')
 					});
 					const history: Record<string, (properties: Record<string, unknown>) => TileMapFeature> = {
+						'journey-hits': (properties) => ({ kind: 'journey', id: String(properties.journey ?? '') }),
 						routes: (properties) => ({ kind: 'route', routes: String(properties.routes ?? '') }),
 						homelands: (properties) => ({ kind: 'homeland', area: Number(properties.area), named: String(properties.named ?? '') }),
 						'reservations-1909': reservation1909,
@@ -1406,7 +1477,7 @@
 						'reservations-1909-markers': reservation1909,
 						borders: (properties) => ({ kind: 'border', id: String(properties.id), name: String(properties.name ?? ''), territory: String(properties.kind ?? ''), from: Number(properties.from), to: Number(properties.to), change: String(properties.change ?? ''), citation: String(properties.citation ?? '') })
 					};
-					const order = ['pins', 'routes', 'reservations-1909-dots', 'reservations-1909-markers', 'area-groups', 'area-dots', 'office-dots', 'land-areas', 'reservations-1909', 'homelands', 'cession-fills', 'regions', 'states', 'borders'];
+					const order = ['pins', 'journey-hits', 'routes', 'reservations-1909-dots', 'reservations-1909-markers', 'area-groups', 'area-dots', 'office-dots', 'land-areas', 'reservations-1909', 'homelands', 'cession-fills', 'regions', 'states', 'borders'];
 					map.on('click', (event) => {
 						if (!map) return;
 						for (const layer of order) {
@@ -1448,6 +1519,12 @@
 							if (map) map.getCanvas().style.cursor = '';
 						});
 					}
+					map.on('mouseenter', 'journey-hits', () => {
+						if (map) map.getCanvas().style.cursor = 'pointer';
+					});
+					map.on('mouseleave', 'journey-hits', () => {
+						if (map) map.getCanvas().style.cursor = '';
+					});
 					map.on('mouseenter', 'routes', () => {
 						if (map) map.getCanvas().style.cursor = 'pointer';
 					});
