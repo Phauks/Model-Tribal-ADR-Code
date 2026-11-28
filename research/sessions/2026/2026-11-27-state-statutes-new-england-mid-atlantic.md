@@ -41,4 +41,4 @@ The General Assembly's site sends its certificate without the issuing intermedia
 
 ## New Hampshire and West Virginia
 
-Both legislatures' sites (gc.nh.gov/rsa and code.wvlegislature.gov) reset the connection during the handshake from cloud sessions, as in the fifty-state survey. They are not read in this session; Trevor chose to fetch them through Cloudflare, which a separate thread is doing.
+Both legislatures' sites (gc.nh.gov/rsa and code.wvlegislature.gov) reset the connection during the handshake from cloud sessions, as in the fifty-state survey. They are not read in this session; Trevor chose to fetch them through Cloudflare, which a separate thread tried. That thread's results are in its own notes (research/sessions/2026/2026-11-28-state-statutes-new-hampshire-west-virginia.md): New Hampshire was downloaded on GitHub, and West Virginia still waits.

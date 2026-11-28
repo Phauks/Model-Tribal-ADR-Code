@@ -1,0 +1,50 @@
+key: new-hampshire-statutes-282-a-31
+kind: state-statute
+citation:
+  type: legislation
+  title: Benefit Eligibility Conditions
+  title-short: N.H. Rev. Stat. Ann. § 282-A:31
+  container-title: New Hampshire Revised Statutes Annotated
+  container-title-short: N.H. Rev. Stat. Ann.
+  section: 282-A:31
+  author:
+  - literal: New Hampshire General Court
+  issued:
+    date-parts:
+    - - 1937
+  URL: https://gc.nh.gov/rsa/html/XXIII/282-A/282-A-31.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 28
+original_link: https://gc.nh.gov/rsa/html/XXIII/282-A/282-A-31.htm
+retrieved: '2026-11-28'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-28'
+state_law:
+  relevance: incidental
+  citation: N.H. Rev. Stat. Ann. § 282-A:31 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NH
+topics:
+- state-indian-law
+found_in:
+- 2026-11-28-state-statutes-new-hampshire-west-virginia
+notes: 'Indigo Book citation: N.H. Rev. Stat. Ann. § 282-A:31 (2026). History: 1937, 178:1. 1939, 138:9. 1941, 103:16. RL 218:3. 1943, 56:3, 4. 1945, 138:8. 1947, 59:10, 11; 267:1. 1949, 30:2; 99:1. 1951, 34:3; 140:7. RSA 282:3. 1955, 7:2; 141:8. 1961, 88:9; 228:2. 1965, 208:2. 1967, 400:5. 1971, 156:19, 35. 1973, 446:1. 1977, 441:11, 17. 1979, 328:9. 1981, 408:3. 1982, 35:6. 1983, 124:1, 2. 1988, 179:1. 1994, 72:3. 1997, 40:1. 2003, 116:4, 5. 2005, 239:11. 2007, 123:1. 2008, 297:2, 5. 2009, 321:7, eff. Jan. 1, 2010. 2012, 212:2, eff. Oct. 1, 2012. 2019, 227:1, eff. July 12, 2019; 346:393, eff. July 12, 2019 at 12:01 a.m. Text read from the New Hampshire General Court''s merged chapter page for the section in the online Revised Statutes (gc.nh.gov/rsa) on Nov. 28, 2026. Found by the state statutes sweep (terms: indian tribes; indian; tribes); AI reader''s verdict incidental: Unemployment exclusions for services in employ of Indian tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-28'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribes; indian; tribes'

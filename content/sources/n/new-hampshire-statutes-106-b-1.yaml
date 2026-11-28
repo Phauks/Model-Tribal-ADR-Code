@@ -1,0 +1,50 @@
+key: new-hampshire-statutes-106-b-1
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: N.H. Rev. Stat. Ann. § 106-B:1
+  container-title: New Hampshire Revised Statutes Annotated
+  container-title-short: N.H. Rev. Stat. Ann.
+  section: 106-B:1
+  author:
+  - literal: New Hampshire General Court
+  issued:
+    date-parts:
+    - - 1937
+  URL: https://gc.nh.gov/rsa/html/VII/106-B/106-B-1.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 28
+original_link: https://gc.nh.gov/rsa/html/VII/106-B/106-B-1.htm
+retrieved: '2026-11-28'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-28'
+state_law:
+  relevance: incidental
+  citation: N.H. Rev. Stat. Ann. § 106-B:1 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NH
+topics:
+- state-indian-law
+found_in:
+- 2026-11-28-state-statutes-new-hampshire-west-virginia
+notes: 'Indigo Book citation: N.H. Rev. Stat. Ann. § 106-B:1 (2026). History: 1937, 134:2. RL 145:1. RSA 106:1. 1961, 166:4, eff. July 1, 1962. 2019, 297:1, eff. July 1, 2019. Text read from the New Hampshire General Court''s merged chapter page for the section in the online Revised Statutes (gc.nh.gov/rsa) on Nov. 28, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; tribe); AI reader''s verdict incidental: Criminal justice agency definition includes tribal government agencies. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-28'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; tribe'

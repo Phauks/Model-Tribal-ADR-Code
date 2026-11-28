@@ -76,8 +76,11 @@ class NewHampshire(State):
         print(f'NH: {len(chapters)} chapters, {len(failed)} failed', *failed[:20])
 
     def parse(self, raw: Path) -> Iterator[Section]:
-        seen = set()
+        seen, done = set(), set()
         for row in json.loads((raw / 'chapters.json').read_text()):
+            if row['chapter'] in done:  # a few titles' contents list a chapter more than once
+                continue
+            done.add(row['chapter'])
             path = raw / 'chapters' / f"{row['chapter']}.htm"
             title_name = f"Title {row['title']}: {name_case(row['title_name'])} / Chapter {row['chapter']}: {name_case(row['name'])}"
             common = dict(title=f"{row['title']}/{row['chapter']}", title_name=title_name)
