@@ -714,7 +714,7 @@ const opinionTopics = new Set(['state-court-opinions', 'caselaw-access-project',
 export function copyMoves(): Record<string, string> {
 	const indexPath = 'research/capture-index.csv';
 	if (!existsSync(path.join(repositoryRoot, indexPath))) return {};
-	const served = copiesByLink(publicCopies());
+	const served = copiesByLink(withoutSharedStatuteLinks(publicCopies()));
 	const moves: Record<string, string> = {};
 	for (const row of parseCsv(readText(indexPath))) {
 		if (row.media_type !== 'text/html' || row.derived_from || opinionTopics.has(row.topic)) continue;
@@ -790,8 +790,42 @@ export function publicCopyFor(link: string | undefined): PublicCopy | undefined 
 	if (!matching) return undefined;
 	// Matched before withheld copies are taken out, so a page that cites no
 	// copy never has to read every nation record to find that out.
-	publicCopyLinks ??= copiesByLink(indexedCopies());
+	publicCopyLinks ??= copiesByLink(withoutSharedStatuteLinks(indexedCopies()));
 	const copy = publicCopyLinks.get(matching);
+	return copy && !isWithheld(copy) ? copy : undefined;
+}
+
+/** The folder of the bucket that holds the stored texts of state statutes, one per record (scripts/law/state_statutes/texts.py). */
+const statuteTexts = 'state-statutes';
+
+/**
+ * The copies, with each state statute text's links taken off where another
+ * stored statute text has the same address. Many sections of a state's code
+ * are linked at one page, such as an Oregon chapter page or a Colorado
+ * title's PDF, or at one page with a different anchor for each, such as
+ * Alaska's statutes page; a link to that page is not any one section's text,
+ * so each section's record finds its text by its key instead
+ * (storedStatuteText).
+ */
+function withoutSharedStatuteLinks(copies: PublicCopy[]): PublicCopy[] {
+	const claims = new Map<string, number>();
+	const isStatuteText = (copy: PublicCopy) => copy.topic === statuteTexts;
+	for (const copy of copies.filter(isStatuteText)) {
+		for (const link of new Set(copy.links.map(linkForMatching))) if (link) claims.set(link, (claims.get(link) ?? 0) + 1);
+	}
+	return copies.map((copy) => (isStatuteText(copy) ? { ...copy, links: copy.links.filter((link) => claims.get(linkForMatching(link) ?? '') === 1) } : copy));
+}
+
+let statuteTextsByRecord: Map<string, PublicCopy> | undefined;
+
+/**
+ * The stored text of a state statute's section, by the record's key in the
+ * capture index row's records column (Trevor, Nov. 28, 2026: the site
+ * stores the text of the state statutes it lists; decision record 0068).
+ */
+export function storedStatuteText(recordKey: string): PublicCopy | undefined {
+	statuteTextsByRecord ??= new Map(indexedCopies().filter((copy) => copy.topic === statuteTexts).flatMap((copy) => copy.records.map((key): [string, PublicCopy] => [key, copy])));
+	const copy = statuteTextsByRecord.get(recordKey);
 	return copy && !isWithheld(copy) ? copy : undefined;
 }
 

@@ -283,11 +283,13 @@ function lawContent(key: string): LawPage {
 	]
 		// A chapter of the Code needs no "Kind": its outline says what it is.
 		.filter((group) => group.items.length > 0 && !(group.field === 'kind' && /^usc-25-chapter-/.test(key)));
-	// A state statute is linked, not served (decision record 0060): with no saved copy, its official text is the first place to read it.
+	// A state statute's section text is stored and shows in the Text card (decision record 0068, Trevor, Nov. 28, 2026), found by
+	// the record's key since many sections share one chapter or title page. A section whose text is not stored yet (its state's
+	// site refuses scripts) links its official text instead, as the first place to read it.
 	const official = record.kind === 'state-statute' && record.original_link ? `<a href="${escapeHtml(record.original_link)}">${escapeHtml(record.citation.author?.[0]?.literal ?? 'Official text')}</a>` : '';
 	const copy = savedCopyFor(record);
 	const text = recordDocument(record, named.name, copy);
-	// Where to read it: the original publisher first; our copy is in the Text card, and a state statute's official text when the site keeps none.
+	// Where to read it: the original publisher first; our copy is in the Text card, and a state statute's official text when the site stores none.
 	const where = whereToRead(record, text ? '' : official);
 	const title = record.citation.title;
 	const accounts = accountsOf({ record: key });
