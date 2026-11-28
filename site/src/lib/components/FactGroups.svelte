@@ -32,6 +32,8 @@
 		margin?: string;
 		/** In a wide group, the value goes on its own line under its label, as words such as a law's title do not fit beside it. */
 		below?: boolean;
+		/** Plain words after a linked value on its line, such as a law's citation after its name. */
+		after?: string;
 	}
 
 	interface FactTable {
@@ -112,7 +114,7 @@
 			>{joiner}<ExternalLink class="external-icon" size={14} strokeWidth={1.75} aria-hidden="true" /><CitationMarks
 				marks={item.citations}
 			/></span
-		>{:else if item.link}<a href={item.link}>{item.text}</a><CitationMarks marks={item.citations} />{:else}{item.text}{#if item.margin}<span
+		>{:else if item.link}<a href={item.link}>{item.text}</a>{item.after ?? ''}<CitationMarks marks={item.citations} />{:else}{item.text}{#if item.margin}<span
 				class="fact-margin muted small"
 				><span class="visually-hidden">, margin of error</span> ± {item.margin}</span
 			>{/if}<CitationMarks marks={item.citations} />{/if}

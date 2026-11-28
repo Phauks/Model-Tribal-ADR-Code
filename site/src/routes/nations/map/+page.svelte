@@ -436,7 +436,7 @@
 		}
 		return {
 			kind: 'Removal route',
-			title: feature.routes ? `Trail of Tears: ${feature.routes}` : 'Trail of Tears',
+			title: feature.kind === 'route' && feature.routes ? `Trail of Tears: ${feature.routes}` : 'Trail of Tears',
 			lines: [
 				{ label: 'When', value: '1837 to 1839' },
 				{ label: 'Who', value: 'The Cherokee Nation, removed from its homeland in the Southeast to Indian Territory' },

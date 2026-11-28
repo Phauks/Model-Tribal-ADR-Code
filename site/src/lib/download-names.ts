@@ -37,7 +37,7 @@ const savedNames: Record<string, string> = {
 };
 
 /** Folders under /nations that hold the site's own lists rather than one nation's files. */
-const sharedFolders = new Set(['map', 'recourse', 'law', 'timeline']);
+const sharedFolders = new Set(['map', 'recourse', 'law', 'timeline', 'removals']);
 
 /**
  * The dated name a file on this site is saved under, from its address: "/nations/recourse/provisions.csv" ->

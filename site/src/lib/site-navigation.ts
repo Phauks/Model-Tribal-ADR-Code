@@ -69,6 +69,7 @@ export const navigationIconNames = [
 	'pen-line',
 	'pen-tool',
 	'radar',
+	'route',
 	'receipt',
 	'scale',
 	'scroll',
@@ -178,6 +179,7 @@ export const navigationSections: NavigationSection[] = [
 				title: 'Explore',
 				links: [
 					{ label: 'Timeline', link: '/nations/timeline', icon: 'history' },
+					{ label: 'Removals', link: '/nations/removals', icon: 'route' },
 					{ label: 'Data and Charts', link: '/nations/data', icon: 'chart-column', count: 'charts' },
 					{ label: 'Federal Offices', link: '/nations/federal-offices', icon: 'landmark' },
 					{ label: 'Self-Governance and Federal Programs', link: '/nations/federal-programs', icon: 'handshake' },
