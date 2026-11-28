@@ -283,21 +283,24 @@ def read_transcript(path: Path) -> dict:
         m = re.search(r"\bOF\s+(.+?)(?:,?\s+ESQ\.?(?:UIRE)?)?(?:,?\s+(?:ON BEHALF OF|FOR|AS AMICUS|SUPPORTING)\s+(.+?))?[.,]?$", section["heading"], re.I)
         if not m or not re.search(r"[A-Za-z]", m.group(1)):
             continue
-        name = titlecase(re.sub(r",?\s+ESQ\.?(UIRE)?$", "", m.group(1).strip(" ,.:"), flags=re.I))
+        raw = re.split(r"[,*]?\s*\b(?:ESQ|ESC|ON\s+BEHALF|FOR\s+THE)\b", m.group(1), maxsplit=1, flags=re.I)[0]
+        name = titlecase(raw.strip(" ,.:*"))
+        name = re.sub(r",? (Jr)\.?$", r", \1.", name)
         rebuttal = bool(re.match(r"REBUTTAL|FURTHER REBUTTAL", section["heading"], re.I))
         section["counsel"] = name
         section["label"] = ("Rebuttal" if rebuttal else surname_of(name))
         if not any(c["name"] == name for c in counsel):
             behalf = (m.group(2) or "").strip(" .,")
             behalf = sentence_case_keep(behalf) if behalf else ""
-            counsel.append({"name": re.sub(r",? (Jr)$", r", \1.", name), "for": re.sub(r"^The ", "the ", behalf)})
+            behalf = re.sub(r"\s*-\s*Rebuttal$", "", re.sub(r"^The ", "the ", behalf), flags=re.I)
+            counsel.append({"name": name, "for": re.sub(r"\bet al$", "et al.", behalf)})
     # The appearances say whom each counsel argued for when the heading does not.
     for c in counsel:
-        if not c["for"]:
-            for a in appearances:
-                if surname_of(c["name"]).lower() in a["text"].lower():
-                    c["for"] = a["for"]
-                    break
+        for a in appearances:
+            if surname_of(c["name"]).lower() in a["text"].lower():
+                c["for"] = c["for"] or a["for"]
+                c["title"] = appearance_title(a["text"])
+                break
     appearances = counsel
     for t in turns:
         t["text"] = re.sub(r"\s+", " ", t["text"]).strip()
@@ -307,6 +310,31 @@ def read_transcript(path: Path) -> dict:
         section["turn"] = sum(1 for t in turns[: section["turn"]] if t["text"])
     return {"counsel": appearances, "turns": kept, "sections": sections,
             "has_proceedings": start is not None, "chars": len(text_all)}
+
+
+ROLE = re.compile(r"\b(General|Solicitor|Attorney|Counsel|Assistant|Deputy|Professor|Secretary|Governor|Chief)\b")
+OFFICE = re.compile(r"^(Department|Office|Bureau|Division)\b")
+
+
+def appearance_title(text: str) -> str:
+    """What the appearances say of a counsel besides the name: the office ("Assistant Attorney General",
+    "Solicitor General of Texas"), else the department, else the city ("Window Rock, Arizona")."""
+    rest = re.sub(r"^.*?,\s*ESQ(?:UIRE|\.)?\s*,?", "", text, count=1, flags=re.I | re.S)
+    if rest == text:
+        rest = re.sub(r"^[^,]+,", "", text, count=1)
+    rest = re.split(r";|\b(?:on behalf of|for the|for petitioner|for respondent|for appellant|for appellee)\b", rest, maxsplit=1, flags=re.I)[0]
+    parts = [re.sub(r"\s+\d{5}(?:-\d{4})?$", "", re.sub(r"\s+", " ", x).strip()) for x in rest.split(",")]
+    # A closing period goes, but not one that ends an abbreviation ("Ore.", "D.C.").
+    parts = [x[:-1] if x.endswith(".") and not re.search(r"\b(?:[A-Z][a-z]{0,3}|[A-Z])\.$", x) else x for x in parts]
+    parts = [x for x in parts if x and not re.search(r"\d|P\.\s*O\.|Box\b|Suite\b|Street|Avenue", x)]
+    roles = [x for x in parts if ROLE.search(x)]
+    if roles:
+        return re.sub(r"\s+of\s*$", "", roles[0])
+    offices = [x for x in parts if OFFICE.match(x)]
+    if offices:
+        return offices[0]
+    place = ", ".join(parts[-2:])
+    return re.sub(r"D\.\s*C$", "D.C.", place).replace("D. C.", "D.C.")
 
 
 def mostly_capitals(text: str) -> bool:
@@ -332,7 +360,7 @@ def sentence_case_keep(text: str) -> str:
 def titlecase(name: str) -> str:
     parts = []
     for word in name.split():
-        if word in ("II", "III", "IV"):
+        if word.strip(",.") in ("II", "III", "IV"):
             parts.append(word)
         elif re.match(r"^MC[A-Z]", word, re.I) and len(word) > 3:
             parts.append("Mc" + word[2:].capitalize())
@@ -585,6 +613,9 @@ def align(args: argparse.Namespace) -> None:
                         counsel.append(c)
                 for section in read["sections"]:
                     if section.get("counsel") and section["turn"] < len(read["turns"]):
+                        # A counsel's second turn at the lectern is the rebuttal, however the heading reads.
+                        if any(other["counsel"] == section["counsel"] for other in sections):
+                            section["label"] = "Rebuttal"
                         sections.append({"label": section["label"], "counsel": section["counsel"],
                                          "t": read["turns"][section["turn"]]["t"], "turn": base + section["turn"]})
                 turns += [turn_out(t, counsel) for t in read["turns"]]
@@ -599,7 +630,7 @@ def align(args: argparse.Namespace) -> None:
             for c in counsel:
                 c["for"] = c.get("for") or ""
             timed.update({"made": "official", "transcripts": [{"key": o["key"], "link": o["link"], "docket": o["docket"]} for o in argument["official"]],
-                          "span": [round(span[0], 1), round(span[1], 1)], "counsel": [{"name": c["name"], "for": c["for"]} for c in counsel],
+                          "span": [round(span[0], 1), round(span[1], 1)], "counsel": [{"name": c["name"], "title": c.get("title", ""), "for": c["for"]} for c in counsel],
                           "sections": sections, "turns": turns})
             share = sum(matched) / max(1, words)
             report.append({"case": argument["case"], "date": argument["date"], "status": "official",
@@ -626,6 +657,108 @@ def align(args: argparse.Namespace) -> None:
         print(json.dumps(r))
 
 
+# ---------------------------------------------------------------- store: the bucket, the capture index and the records
+
+TIMED_PREFIX = f"{TIMED_TOPIC}/timed"
+RIGHTS_OFFICIAL = ("The Supreme Court's transcript of the argument (supremecourt.gov), each turn timed against the "
+                   "recording by the Tribal Law Project with speech recognition (Whisper small.en).")
+RIGHTS_OWN = ("A transcript the Tribal Law Project made of the recording with speech recognition (Whisper small.en); "
+              "there is no official transcript of this argument. The recording is a record of the National Archives.")
+
+
+def timing_yaml(entries: list[dict]) -> str:
+    lines = ["argument_timing:"]
+    for e in entries:
+        lines.append(f"- date: '{e['date']}'")
+        lines.append(f"  made: {e['made']}")
+        lines.append(f"  model: {e['model']}")
+        lines.append(f"  turns: {e['turns']}")
+        lines.append("  recording:")
+        for f in e["recording"]:
+            lines.append(f"  - {{key: {f['key']}, seconds: {f['duration']}}}")
+        lines.append(f"  span: [{e['span'][0]}, {e['span'][1]}]")
+        if e["counsel"]:
+            lines.append("  counsel:")
+            for c in e["counsel"]:
+                lines.append(f"  - name: {json.dumps(c['name'], ensure_ascii=False)}")
+                if c.get("title"):
+                    lines.append(f"    title: {json.dumps(c['title'], ensure_ascii=False)}")
+                if c.get("for"):
+                    lines.append(f"    for: {json.dumps(c['for'], ensure_ascii=False)}")
+                if c.get("source"):
+                    lines.append(f"    source: {c['source']}")
+        if e["sections"]:
+            lines.append("  sections:")
+            for x in e["sections"]:
+                lines.append(f"  - {{label: {json.dumps(x['label'], ensure_ascii=False)}, counsel: {json.dumps(x['counsel'], ensure_ascii=False)}, t: {x['t']}}}")
+        lines.append("  file:")
+        lines.append(f"    storage_key: {e['key']}")
+        lines.append(f"    checksum: {e['sha256']}")
+        lines.append("    media_type: application/json")
+        lines.append(f"    bytes: {e['bytes']}")
+    return "\n".join(lines) + "\n"
+
+
+def store(args: argparse.Namespace) -> None:
+    sys.path.insert(0, str(ROOT / "scripts" / "captures"))
+    import mirror_captures  # noqa: PLC0415
+
+    timed_dir = Path(args.timed)
+    index = mirror_captures.load_index()
+    filed = {row["key"]: row for row in index}
+    s3 = mirror_captures.client()
+    bucket = mirror_captures.bucket_name()
+    by_case = collections.defaultdict(list)
+    uploaded = 0
+    for path in sorted(timed_dir.glob("*/*.json")):
+        timed = json.loads(path.read_text(encoding="utf-8"))
+        if not timed.get("turns"):
+            continue
+        data = path.read_bytes()
+        digest, size = hashlib.sha256(data).hexdigest(), len(data)
+        key = f"{TIMED_PREFIX}/{timed['case']}/{timed['date']}.json"
+        if mirror_captures.remote_state(s3, bucket, key) != (size, digest):
+            s3.put_object(Bucket=bucket, Key=key, Body=data, ContentType="application/json",
+                          Metadata={"sha256": digest, "captured": dt.date.today().isoformat()})
+            uploaded += 1
+        if mirror_captures.remote_state(s3, bucket, key) != (size, digest):
+            print(f"upload failed: {key}", file=sys.stderr)
+            continue
+        official = timed["made"] == "official"
+        row = mirror_captures.index_row(
+            key=key, size=size, digest=digest, media="application/json", topic=TIMED_TOPIC,
+            title=(f"Timed transcript of the argument of {timed['date']}" if official else
+                   f"Speech recognition transcript of the argument of {timed['date']}") + f" ({timed['case']})",
+            nations="", obtained="made by scripts/caselaw/supreme_court_argument_timing.py",
+            links=[t["link"] for t in timed.get("transcripts", [])] or [f["key"] for f in timed["files"]][:1],
+            record=timed["case"], redistribution="yes", rights=RIGHTS_OFFICIAL if official else RIGHTS_OWN,
+            existing_keys=set(filed))
+        if key in filed:
+            filed[key].update({k: row[k] for k in ("bytes", "sha256", "title", "link", "rights")})
+        else:
+            index.append(row)
+            filed[key] = row
+        by_case[timed["case"]].append({"date": timed["date"], "made": "official transcript" if official else "speech recognition",
+                                       "model": timed["model"], "turns": len(timed["turns"]), "key": key,
+                                       "recording": timed["files"], "span": timed["span"],
+                                       "counsel": timed["counsel"], "sections": timed["sections"],
+                                       "sha256": digest, "bytes": size})
+    mirror_captures.count_new_pages = lambda rows: None
+    mirror_captures.write_index(index)
+    written = 0
+    for path in sorted(SOURCES.rglob("*.yaml")):
+        text = path.read_text(encoding="utf-8")
+        found = re.search(r"(?m)^key: (\S+)", text)
+        if not found or found.group(1) not in by_case:
+            continue
+        text = re.sub(r"(?m)^argument_timing:\n(?:[- ] .*\n)*", "", text)
+        block = timing_yaml(sorted(by_case[found.group(1)], key=lambda e: e["date"]))
+        text = text.replace("\nrights:\n", "\n" + block + "rights:\n", 1) if "\nrights:\n" in text else text.rstrip("\n") + "\n" + block
+        path.write_text(text, encoding="utf-8")
+        written += 1
+    print(f"uploaded {uploaded}; argument_timing written on {written} records")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -639,8 +772,10 @@ def main() -> None:
     p.add_argument("--out", required=True)
     p.add_argument("--work", default=str(Path(tempfile.gettempdir()) / "argument-timing"), help="downloaded transcripts and reports")
     p.add_argument("--case", nargs="*", help="only these cases")
+    p = sub.add_parser("store")
+    p.add_argument("--timed", required=True, help="the folder align wrote")
     args = parser.parse_args()
-    {"request": request, "transcribe": transcribe, "align": align}[args.command](args)
+    {"request": request, "transcribe": transcribe, "align": align, "store": store}[args.command](args)
 
 
 if __name__ == "__main__":
