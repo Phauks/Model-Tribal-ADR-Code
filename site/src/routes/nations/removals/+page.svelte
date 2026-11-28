@@ -245,12 +245,12 @@
 		>
 	{:else if journey && column.key === 'ordered'}
 		{#if journey.orderedBy.length > 0}
-			{#each journey.orderedBy as order, index (order.citation)}{#if index > 0}{'; '}{/if}{#if order.link}<a href={order.link}>{order.citation}</a>{:else}{order.citation}{/if}{/each}
+			<span class="link-stack">{#each journey.orderedBy as order (order.citation)}{#if order.link}<a href={order.link}>{order.citation}</a>{:else}<span>{order.citation}</span>{/if}{/each}</span>
 		{:else}
 			<span class="muted">{journey.orderedOtherwise}</span>
 		{/if}
 	{:else if journey && column.key === 'nations'}
-		{#each journey.nations as nation, index (nation.id)}{#if index > 0}<br />{/if}<a href="/nations/{nation.id}">{nation.name}</a>{/each}
+		<span class="link-stack">{#each journey.nations as nation (nation.id)}<a href="/nations/{nation.id}">{nation.name}</a>{/each}</span>
 	{/if}
 {/snippet}
 
@@ -393,6 +393,18 @@
 
 	.removals-below {
 		margin-top: var(--space-4);
+	}
+
+	/* Several links in one cell, one to a line, each a full touch target (WCAG 2.2, 2.5.8). */
+	.link-stack {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.link-stack > :global(*) {
+		min-height: 1.5rem;
+		line-height: 1.5rem;
 	}
 
 	.move-line {
