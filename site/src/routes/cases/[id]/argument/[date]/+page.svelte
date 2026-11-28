@@ -34,9 +34,11 @@
 	]);
 	const own = $derived(day.made === 'speech recognition');
 	const ownReason = $derived(
-		day.date < '1968-10-07'
-			? 'The Court kept no official transcript before 1968.'
-			: 'The Court’s lists have no transcript of this argument.'
+		day.transcripts.length
+			? 'The Court’s transcript of this argument is a scan whose speakers could not be read; it can be downloaded as a PDF.'
+			: day.date < '1968-10-07'
+				? 'The Court kept no official transcript before 1968.'
+				: 'The Court’s lists have no transcript of this argument.'
 	);
 	const ownNote = $derived(
 		`${ownReason} The project made this one from the recording with the ${day.model} speech recognition model. It has not been checked against the recording and has errors; speakers are not marked.`

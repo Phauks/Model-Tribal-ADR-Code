@@ -97,7 +97,10 @@ def arguments() -> list[dict]:
         if official:
             gap = min(abs((dt.date.fromisoformat(t["date"]) - day_).days) for t in official)
             official = [t for t in official if abs((dt.date.fromisoformat(t["date"]) - day_).days) == gap]
+        # The docket numbers the Chief Justice may call the case by: the transcripts' and the catalog's ("[Case 72-5323]").
+        dockets = [t["docket"] for t in official] + [d for r in same for d in re.findall(r"\[Case ([^\]]+)\]", r["segment"])]
         out.append({"case": case, "date": day,
+                    "dockets": [d for d in dict.fromkeys(re.split(r"[\s,&/]+", " ".join(dockets))) if re.fullmatch(r"\d\d-\d{2,5}", d)],
                     "files": [{"key": audio_key(r), "link": r["link"], "duration": int(r["duration_seconds"] or 0),
                                "source": r["source"], "whole_session": r["whole_session"] == "yes"} for r in files],
                     "official": [{"link": t["link"], "docket": t["docket"], "date": t["date"],
@@ -144,12 +147,14 @@ def request(args: argparse.Namespace) -> None:
     for argument in arguments():
         for f in argument["files"]:
             files.setdefault(f["key"], {"key": f["key"], "link": f["link"], "duration": f["duration"]})
-    if args.again:
+    if args.again or args.unheard:
         # Hear again what a lost runner took with it: the recordings in these shards of the first request
-        # whose words are not in the folder given, in shards of about two hours each.
+        # whose words are not in the folder given, in shards of about two hours each. With --unheard: every
+        # recording the arguments play whose words are not there (a reel put right after the first request).
         first = json.loads(REQUEST.read_text(encoding="utf-8"))
         held = {path.name.removesuffix(".json.gz") for path in Path(args.words).glob("*.json.gz")}
-        wanted = [f for i in args.again for f in first["shards"][i] if f["key"].replace("/", "__") not in held]
+        pool = list(files.values()) if args.unheard else [f for i in args.again for f in first["shards"][i]]
+        wanted = [f for f in pool if f["key"].replace("/", "__") not in held]
         count = max(1, round(sum(f["duration"] for f in wanted) / 7200))
         shards, totals = [[] for _ in range(count)], [0] * count
         for f in sorted(wanted, key=lambda f: -f["duration"]):
@@ -550,6 +555,8 @@ SECONDS_PER_WORD = 0.36  # about 165 words a minute, the pace of argument
 
 
 MISSING_TURNS = 8
+# Fewer turns than this read from an official transcript means its scan could not be read turn by turn.
+MIN_OFFICIAL_TURNS = 20
 
 
 def time_turns(turns: list[dict], stream: list[tuple[float, str]]) -> dict:
@@ -613,8 +620,10 @@ def time_turns(turns: list[dict], stream: list[tuple[float, str]]) -> dict:
 
 # ---------------------------------------------------------------- our own transcripts, where there is none
 
-CALL = re.compile(r"\b(?:hear|heard|resume)\s+(?:the\s+)?arguments?\b|\bnumber\s+\d+|\bno\.\s*\d+", re.I)
-SUBMITTED = re.compile(r"\b(?:case is|is) submitted\b|\bsubmitted\b", re.I)
+CALL = re.compile(r"\b(?:hear|heard|resume)\s+(?:the\s+)?arguments?\b|\bnumber\s+\d+|\bno\.\s*\d+|\bcase on today's calendar\b", re.I)
+# "The case is submitted", "Gentlemen, cases submitted", "If there are no further questions, submitted." but not
+# "We know that this was submitted solely ..." (Bakke, 1977) or "submitted an application".
+SUBMITTED = re.compile(r"\b(?:case is|cases?|is)\s+submitted\b|\bsubmitted\s*\.", re.I)
 COMMON = {"v", "the", "of", "and", "united", "states", "state", "county", "tribe", "tribes", "indian", "indians", "nation",
           "nations", "inc", "co", "company", "et", "al", "district", "court", "for", "village", "community", "department",
           "superintendent", "penitentiary", "game", "commission", "tax", "washington", "arizona", "california"}
@@ -635,7 +644,15 @@ def named(names: set[str], text: str) -> bool:
     return False
 
 
-def case_span(segments: list[tuple[float, float, str]], title: str, total: float, continues: bool = False) -> tuple[float, float, str]:
+def called(names: set[str], docket: str, text: str) -> bool:
+    """Whether a call names the case, by a party's name or by its docket number as the model hears it:
+    "7253 23, Keeble against the United States" ("We'll hear arguments next in 7253 23 key bowl ...") for 72-5323."""
+    digits = re.sub(r"\D", "", docket)
+    return named(names, text) or (len(digits) >= 4 and digits in re.sub(r"[\s,.-]", "", text))
+
+
+def case_span(segments: list[tuple[float, float, str]], title: str, total: float, continues: bool = False,
+              docket: str = "", hint: tuple[float, float] | None = None) -> tuple[float, float, str]:
     """Where one case lies in a whole day's recording: from the Chief Justice's call of the case
     ("We'll hear arguments next in No. 72-1309, Oneida Indian Nation against ...", or "We'll resume
     arguments in ...") to "submitted" or the next call. Where the call is not heard: a case argued on
@@ -645,13 +662,17 @@ def case_span(segments: list[tuple[float, float, str]], title: str, total: float
     start, how = None, "call"
     for i, (a, _b, text) in enumerate(segments):
         near = " ".join(t for _, _, t in segments[i:i + 3])
-        if CALL.search(text) and named(names, near):
+        if CALL.search(text) and called(names, docket, near):
             start = a
             break
     if start is None and continues:
         calls = [a for a, _b, text in segments if CALL.search(text) and re.search(r"\bhear", text, re.I)]
         if calls:
             start, how = calls[-1], "the day's last case called"
+    if start is None and hint:
+        # Where the call is misheard ("the United States against no time" for Mottaz, 1986), the stretch where the
+        # words of the Court's transcript were heard, though its scan gives no turns.
+        return hint[0], hint[1], "the Court's transcript's words"
     if start is None:
         start, how = 0.0, "start of the recording"
     end = total
@@ -661,7 +682,7 @@ def case_span(segments: list[tuple[float, float, str]], title: str, total: float
         if SUBMITTED.search(text):
             end = b + 2
             break
-        if CALL.search(text) and re.search(r"hear", text, re.I) and not named(names, text):
+        if CALL.search(text) and re.search(r"hear", text, re.I) and not called(names, docket, text):
             end = a
             break
     return start, end, how
@@ -745,6 +766,7 @@ def align(args: argparse.Namespace) -> None:
             report.append({"case": argument["case"], "date": argument["date"], "status": "not heard yet"})
             continue
         stream, files = found
+        heard_files, hint = files, None
         total = round(sum(f["duration"] for f in files), 2)
         timed = {"case": argument["case"], "date": argument["date"], "model": MODEL_NAME,
                  "files": [{"key": f["key"], "offset": f["offset"], "duration": f["duration"], "sha256": f["heard"]["sha256"]}
@@ -805,7 +827,20 @@ def align(args: argparse.Namespace) -> None:
             report.append({"case": argument["case"], "date": argument["date"], "status": "official",
                            "matched": round(share, 3), "turns": len(turns), "timed": timed_turns, "span": timed["span"],
                            **({"not_in_recording": missing} if missing else {})})
-        else:
+            if len(turns) < MIN_OFFICIAL_TURNS:
+                trimmed = files if share >= 0.5 else heard_files
+                if share >= 0.2 and all(f["whole_session"] for f in argument["files"]):
+                    hint = tuple(report[-1]["span"])
+                # A scan whose speakers the text layer does not give (Keeble, 1973: two turns; Bakke, 1977: six) has
+                # no turns to time, so the player shows our own transcript and links the Court's.
+                report[-1]["status"] = "official unread"
+                # The files the argument was heard in stand where enough of the scan's words were matched.
+                files = trimmed
+                total = round(sum(f["duration"] for f in files), 2)
+                timed = {"case": argument["case"], "date": argument["date"], "model": MODEL_NAME,
+                         "files": [{"key": f["key"], "offset": f["offset"], "duration": f["duration"], "sha256": f["heard"]["sha256"]}
+                                   for f in files]}
+        if "made" not in timed:
             segments = segments_in(files)
             whole = any(f["whole_session"] for f in argument["files"])
             record = record_of(argument["case"])
@@ -813,7 +848,7 @@ def align(args: argparse.Namespace) -> None:
                 # Argued on into the next day ("We'll resume arguments in the United States against Clark").
                 continues = any(other["case"] == argument["case"] and 0 < (dt.date.fromisoformat(other["date"]) - dt.date.fromisoformat(argument["date"])).days <= 3
                                 for other in every)
-                start, end, how = case_span(segments, record["citation"]["title"], total, continues)
+                start, end, how = case_span(segments, record["citation"]["title"], total, continues, " ".join(argument["dockets"][:1]), hint)
             else:
                 start, end, how = 0.0, total, "the case's own recording"
             counsel = reported_counsel(argument["case"], argument["date"])
@@ -939,7 +974,8 @@ def main() -> None:
     sub = parser.add_subparsers(dest="command", required=True)
     p = sub.add_parser("request")
     p.add_argument("--again", type=int, nargs="*", help="shards of the first request to hear again")
-    p.add_argument("--words", help="with --again: the words already heard")
+    p.add_argument("--unheard", action="store_true", help="hear every recording the arguments play whose words are not in --words")
+    p.add_argument("--words", help="with --again or --unheard: the words already heard")
     p.add_argument("--name", default="again", help="with --again: the new request's name")
     p = sub.add_parser("transcribe")
     p.add_argument("--request", required=True)

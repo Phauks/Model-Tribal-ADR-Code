@@ -156,14 +156,13 @@ export function argumentDays(record: SourceRecord & ArgumentParts): ArgumentDay[
 			});
 			const docket = (record.argument_transcripts ?? [])[0]?.docket.split(/[\s,]+/)[0];
 			const source = audio.get(entry.recording[0].key)!.source.replace(/^Supreme Court of the United States$/, 'Supreme Court');
-			const transcripts = entry.made === 'official transcript'
-				? (record.argument_transcripts ?? [])
-						.filter((transcript) => transcript.file && Math.abs(Date.parse(transcript.date) - Date.parse(entry.date)) <= 4 * 86_400_000)
-						.flatMap((transcript) => {
-							const copy = publicCopyByKey(transcript.file!.storage_key);
-							return copy ? [{ link: copyPath(copy), docket: transcript.docket, verify: verifyLink(copy.sha256, copy.key.split('/').at(-1)) }] : [];
-						})
-				: [];
+			// The Court's transcripts of the day, also where the player shows our own because the scan gave no turns.
+			const transcripts = (record.argument_transcripts ?? [])
+				.filter((transcript) => transcript.file && Math.abs(Date.parse(transcript.date) - Date.parse(entry.date)) <= 4 * 86_400_000)
+				.flatMap((transcript) => {
+					const copy = publicCopyByKey(transcript.file!.storage_key);
+					return copy ? [{ link: copyPath(copy), docket: transcript.docket, verify: verifyLink(copy.sha256, copy.key.split('/').at(-1)) }] : [];
+				});
 			const sections = entry.sections ?? [];
 			return {
 				date: entry.date,
