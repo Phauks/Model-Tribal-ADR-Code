@@ -8,7 +8,7 @@ Steps, each writing into a work folder:
 - `georeference`: finds the printed latitude and longitude lines where they cross, growing out from four crossings read by eye in Washington State, and keeps the crossings that agree with a polyconic projection. Writes gcps.json. The committed copy is research/historic-maps/oia-1909/gcps.json.
 - `check-fit`: prints how far the fitted map lands from each crossing, and the error when each crossing is left out of the fit in turn.
 - `extract`: picks out the brown fill, turns each patch into a shape (or a point when it is too small to draw), and calls a patch "Opened" when it is mostly a band around paper. Writes shapes-raw.geojson, and the legend's red signs (schools and the asylum) as signs-raw.geojson.
-- `build`: takes out of each shape the red signs that stick out of it (a sign marks a place, not land), applies the reading of each patch in this file (NAMES, DROP, SPLITS, ADDED) and writes the layer, research/historic-maps/oia-1909/oia-1909-reservations.geojson, and a review table, research/reviews/2026-11-27-oia-1909-reservations.csv. Every shape is marked Unverified.
+- `build`: takes out of each shape the red signs that stick out of it (a sign marks a place, not land), applies the reading of each patch in this file (NAMES, DROP, SPLITS, ADDED) and writes the layer, research/historic-maps/oia-1909/oia-1909-reservations.geojson, and a review table, research/reviews/2026-11-27-oia-1909-reservations.csv. A reservation whose outer line is the same today takes the 2020 Census area's surveyed line instead of the tracing (SURVEYED); every other shape stays traced and is marked approximate. Every shape is marked Unverified.
 - `pictures`: draws the layer over the scan and over the 1990 Census reservation shapes for side-by-side checking.
 
 Where two reservations were printed touching, the patch is one piece of brown. `build` splits it along the line halfway between the matching areas in the Census Bureau's 2020 boundary file (cb_2020_us_aiannh_500k, which includes the Oklahoma Tribal Statistical Areas), and says so on each piece (internal_lines). Those inner lines are not traced from the 1909 map.
@@ -1008,6 +1008,69 @@ def _split(geom, refs, cell=500.0):
     return pieces
 
 
+# Surveyed lines (Trevor's choice, 2026-11-28). The 1909 map is too small and too loosely drawn to place a small reservation's
+# lines, so where a reservation's land is the same today as in 1909, its line is the Census Bureau's 2020 reservation area
+# (the code below), and the 1909 map gives only its name and status. Keyed by (patch, name) as built. Every Opened shape and every
+# reservation whose land has changed since 1909 keeps the tracing, marked approximate (TRACED_WHY says why for the notable ones).
+SURVEYED = {
+    # Main sheet.
+    (8, "Colville"): "0760", (8, "Spokane"): "3940", (9, "Quinaielt"): "3040", (15, "Blackfeet"): "0305", (19, "Coeur d'Alene"): "0705",
+    (20, "Flathead"): "1110", (21, "Fort Belknap"): "1150", (23, "Fort Peck"): "1250", (26, "Grand Portage"): "1355",
+    (32, "Fort Berthold"): "1160", (33, "Bois Fort"): "0335", (38, "Umatilla"): "4405", (42, "Warm Springs"): "4545", (43, "White Earth"): "4595",
+    (52, "La Pointe (Bad River)"): "0140", (54, "Crow"): "0845", (54, "Northern Cheyenne"): "2490", (59, "Lac Court d'Oreilles"): "1815",
+    (63, "Menominee"): "2175", (63, "Stockbridge"): "4015", (71, "Crow Creek"): "0855", (71, "Lower Brule"): "2030", (72, "Fort Hall"): "1185",
+    (75, "Pine Ridge"): "2810", (87, "Pyramid Lake"): "3010", (88, "Omaha"): "2550", (88, "Winnebago"): "4625", (103, "Jicarilla Apache"): "1700",
+    (104, "Walapai"): "1545", (105, "Osage"): "2595", (111, "Qualla"): "0990", (127, "Colorado River"): "0735",
+    (129, "White Mountain (Fort Apache)"): "1140", (129, "San Carlos"): "3355", (132, "Camp McDowell"): "1220", (132, "Salt River"): "3340",
+    (133, "Gila River"): "1310", (136, "Mescalero Apache"): "2205",
+    # Printed as dots.
+    (1, "Makah"): "2085", (2, "Lummi"): "2070", (6, "Tulalip"): "4290", (11, "Skokomish"): "3825", (17, "Puyallup"): "3000",
+    (50, "St. Regis"): "3320", (66, "Onondaga"): "2570", (68, "Tonawanda"): "4225", (74, "Cattaraugus"): "0540", (86, "Round Valley"): "3250",
+    (95, "Pottawatomie"): "2980", (101, "Tule River"): "4300",
+    ("added by hand", "Chehalis"): "0575", ("added by hand", "Squaxin"): "3955", ("added by hand", "Nisqually"): "2460",
+    ("added by hand", "Swinomish"): "4075", ("added by hand", "Port Madison"): "2925", ("added by hand", "Tuscarora"): "4360",
+    # The Pueblo panel.
+    ("pueblo-2", "Picuris"): "2785", ("pueblo-3", "San Juan"): "2510", ("pueblo-5", "Pojoaque"): "2990", ("pueblo-5", "Nambe"): "2400",
+    ("pueblo-5", "Tesucue"): "4170", ("pueblo-8", "Santo Domingo"): "3585", ("pueblo-8", "San Felipe"): "3400", ("pueblo-15", "Sandia"): "3370",
+    # The Mission panel.
+    ("mission-1", "San Manuel"): "3445", ("mission-2", "29 Palms"): "4375", ("mission-9", "Augustin"): "0125", ("mission-11", "Torros (Martinez)"): "4255",
+    ("mission-12", "Cahuilla"): "0435", ("mission-14", "Temecula (Pechanga)"): "2745", ("mission-16", "Los Coyotes"): "1995",
+    ("mission-17", "Potrero (La Jolla)"): "1850", ("mission-18", "Rincon"): "3165", ("mission-19", "San Pasqual"): "3460", ("mission-20", "Santa Ysabel"): "3550",
+    ("mission-21", "Mesa Grande"): "2190", ("mission-8", "Cabezon"): "0415",
+}
+SURVEYED_SOURCE = "2020 Census reservation area (U.S. Census Bureau, cb_2020_us_aiannh_500k)"
+# How far from the traced shape a part of the 2020 area may lie and still be kept; farther parts are later trust land.
+SURVEYED_REACH = 15_000.0
+TRACED_WHY = {
+    "Rosebud": "Parts were opened to settlers by acts of 1904, 1907 and 1910, so the land today differs from 1909",
+    "Cheyenne River": "Opened to settlers by the act of 1908, so the land today differs from 1909",
+    "Standing Rock": "Opened to settlers by the act of 1908, so the land today differs from 1909",
+    "Navajo": "The reservation has grown since 1909",
+    "Duck Valley": "Enlarged in 1910, so the land today differs from 1909",
+    "Hoopa Valley": "Included the Klamath River extension until 1988",
+    "Zuni": "The reservation has changed since 1909",
+    "Mille Lac": "Most of the 1909 reservation passed out of Indian hands",
+    "Red Lake": "The reservation has changed since 1909",
+    "Wind River": "The reservation has changed since 1909",
+    "Uintah": "Opened to settlers in 1905, so the land today differs from 1909",
+    "Klamath": "The reservation was ended in 1954",
+    "Nez Perce": "Opened to settlers in 1895, so the land held today differs from 1909",
+    "Grand Ronde": "The reservation was ended in 1954 and only part restored",
+    "Moapa River": "Only 1,000 acres in 1909; enlarged later",
+    "Yakima": "The Mount Adams land on the west side was returned in 1972, so the reservation today is larger than in 1909",
+}
+TRACED_NOTE = "Traced from the 1909 map, so the line is approximate"
+
+
+def _surveyed_shape(census_m, traced_m):
+    """The 2020 area's parts that stand where the 1909 map drew the reservation: its largest part, and others near the tracing."""
+    parts = sorted(getattr(census_m, "geoms", [census_m]), key=lambda p: p.area, reverse=True)
+    near = traced_m.buffer(SURVEYED_REACH)
+    keep = [p for i, p in enumerate(parts) if i == 0 or p.intersects(traced_m) or (p.area >= 0.05 * parts[0].area and p.intersects(near))]
+    from shapely.ops import unary_union
+    return unary_union(keep)
+
+
 def _status(kind):
     return "Opened" if kind == "opened" else "Reservation"
 
@@ -1034,11 +1097,28 @@ def build(args):
             props["neighbors"] = [n for n in neighbors if n != name]
         if note:
             props["note"] = note
+        code = SURVEYED.get((patch, name))
+        if code:
+            if status != "Reservation":
+                sys.exit(f"patch {patch} ({name}): only a reservation takes a surveyed line")
+            geom_ll = to_ll(_surveyed_shape(census[code], to_m(geom_ll)).simplify(30))
+            used.add((patch, name))
+            props.update(boundary="surveyed", boundary_source=SURVEYED_SOURCE, census_2020=code)
+            # The whole line is surveyed now, so the halfway line between touching neighbors no longer applies.
+            props.pop("internal_lines", None)
+            props.pop("neighbors", None)
+            internal = ""
+        else:
+            props.update(boundary="traced", boundary_source=TRACED_NOTE)
+            if name in TRACED_WHY and status == "Reservation":
+                props["boundary_note"] = TRACED_WHY[name]
         feats.append({"type": "Feature", "properties": props, "geometry": mapping(geom_ll)})
-        rows.append({"id": fid, "patch": patch, "name": name, "name_source": name_source, "status": status, "geometry": geom_ll.geom_type, "nations": " ".join(nation_list), "internal_lines": internal, "review": "Unverified", "note": note})
+        rows.append({"id": fid, "patch": patch, "name": name, "name_source": name_source, "status": status, "geometry": geom_ll.geom_type, "nations": " ".join(nation_list), "internal_lines": internal, "boundary": props["boundary"], "census_2020": code or "", "review": "Unverified", "note": note})
+
+    used = set()
 
     def drop_row(patch, reason):
-        rows.append({"id": "", "patch": patch, "name": "", "name_source": "", "status": "", "geometry": "", "nations": "", "internal_lines": "", "review": "", "note": "dropped: " + reason})
+        rows.append({"id": "", "patch": patch, "name": "", "name_source": "", "status": "", "geometry": "", "nations": "", "internal_lines": "", "boundary": "", "census_2020": "", "review": "", "note": "dropped: " + reason})
 
     # Red signs standing mostly on paper are places, not land (see _red_signs).
     signs = {}
@@ -1162,6 +1242,28 @@ def build(args):
         emit(shape({"type": "Point", "coordinates": [round(lo[0], 5), round(la[0], 5)]}), name, "label", status, nat, "added by hand")
     for args_ in inset_feats:
         emit(*args_)
+    unused = set(SURVEYED) - used
+    if unused:
+        sys.exit(f"SURVEYED names no built shape: {sorted(unused, key=str)}")
+    # A traced shape gives way where it runs over a surveyed one: the surveyed line is the better one.
+    surveyed = unary_union([to_m(shape(f["geometry"])) for f in feats if f["properties"]["boundary"] == "surveyed"]).buffer(0)
+    trimmed = []
+    for f in feats:
+        g = shape(f["geometry"])
+        if f["properties"]["boundary"] != "traced" or g.geom_type == "Point":
+            continue
+        gm = to_m(g)
+        if not gm.intersects(surveyed):
+            continue
+        rest = gm.difference(surveyed)
+        rest = type(rest)() if rest.is_empty else rest
+        parts = [p for p in getattr(rest, "geoms", [rest]) if p.geom_type == "Polygon" and p.area >= 0.5e6]
+        if not parts:
+            continue
+        cut = unary_union(parts)
+        if cut.area < 0.995 * gm.area:
+            trimmed.append((f["properties"]["name"], round(gm.area / 1e6, 1), round(cut.area / 1e6, 1)))
+            f["geometry"] = mapping(to_ll(cut))
     # Opened areas first, so reservations draw on top.
     feats.sort(key=lambda f: (f["properties"]["status"] != "Opened", f["geometry"]["type"] == "Point"))
     DATA.mkdir(parents=True, exist_ok=True)
@@ -1180,6 +1282,9 @@ def build(args):
     print(f"wrote {REVIEW}")
     for n, was, now in cleared:
         print(f"red signs taken out of patch {n}: {was} -> {round(now)} scan pixels")
+    print(f"{sum(1 for f in feats if f['properties']['boundary'] == 'surveyed')} surveyed lines, {sum(1 for f in feats if f['properties']['boundary'] == 'traced')} traced")
+    for name, was, now in trimmed:
+        print(f"traced {name} trimmed where it ran over a surveyed line: {was} -> {now} km2")
 
 
 # ---------------------------------------------------------------- pictures

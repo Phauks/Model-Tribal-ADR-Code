@@ -424,7 +424,9 @@ function buildReservations1909(work) {
 			placed: p.internal_lines ? 1 : 0,
 			panel: p.panel ?? '',
 			note: p.note ?? '',
-			review: p.review
+			review: p.review,
+			surveyed: p.boundary === 'surveyed' ? 1 : 0,
+			boundary: p.boundary_note ?? ''
 		};
 		features.push({ type: 'Feature', geometry: { type: feature.geometry.type, coordinates: rounded(feature.geometry.coordinates) }, properties });
 		// A shape smaller than a mid-sized county vanishes far out, so it also gets a point, which the map shows only there.
