@@ -7,7 +7,7 @@ How co-authors sign in, who can do what, how sign-offs are recorded, and how req
 - **Sign-in is the site's own** ([decision record 0024](../docs/decisions/0024-own-sign-in.md)). People sign in with a code sent to their email address, or with a password they chose. No outside sign-in service is used and nobody needs an account anywhere else. The account only proves who someone is. The site's database decides what they may do.
 - **Nobody reaches the workspace until the lead author adds them.** There is no open access to the workspace. Anyone with a verified email address may sign in to register as a contributor and keep a profile ([docs/contributor-profiles.md](../docs/contributor-profiles.md), [decision record 0022](../docs/decisions/0022-open-registration-for-contributors.md)).
 - **The lead author is the administrator**: full access to everything, and the only person who adds people, changes roles, grants and restricts access to documents, and reads the activity log ([decision record 0023](../docs/decisions/0023-permission-levels-per-document.md)).
-- **Readers and requesters never need an account.** The request form at `/requests` works without signing in and without JavaScript (docs/requests.md, principle 5).
+- **Readers and requesters never need an account.** Request a Change, the flag in the masthead, works without signing in (docs/requests.md, principle 5). It is the site's only way to ask for a change (Trevor, Nov. 28, 2026); it needs JavaScript, since the separate request page that worked without it is gone.
 - **Essays are edited here; other content changes by pull request.** Essays live in the private bucket and are written, saved and published in the workspace (see [Essays](#essays) and [docs/editing.md](../docs/editing.md)). Every other record still changes only by pull request; for those the workspace records who approved which version, handles requests, and manages access.
 - **Secrets live only in Cloudflare** ([decision record 0006](../docs/decisions/0006-secrets-only-in-cloudflare.md)).
 
@@ -180,7 +180,7 @@ OWASP recommends logging access-control failures and protecting logs from tamper
 
 ## Requests from nations
 
-The form at `/requests` follows docs/requests.md step by step, with a branch for adding a nation that is missing. Each request gets a reference such as `20261121-K7QX3M` (the date, then six characters from Crockford's base 32, which leaves out I, L, O and U so a reference read aloud is hard to get wrong).
+Request a Change (the masthead's dialog, which sends its form to `/requests`) follows docs/requests.md, with a branch for adding a nation that is missing. Each request gets a reference such as `20261121-K7QX3M` (the date, then six characters from Crockford's base 32, which leaves out I, L, O and U so a reference read aloud is hard to get wrong).
 
 In the workspace, `/workspace/requests` lists requests with the project's own targets from docs/requests.md: acknowledge within 7 days, hide material named in a restrict or remove request within 7 days, decide within 30 days of acknowledging. A request's page shows its details, its proof and uploaded files, and its history, and lets an editor change its status, add notes, resolve it (a declined request needs the reasons given to the requester) or reopen it.
 

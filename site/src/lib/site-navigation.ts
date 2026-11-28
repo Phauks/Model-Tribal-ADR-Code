@@ -69,6 +69,7 @@ export const navigationIconNames = [
 	'pen-line',
 	'pen-tool',
 	'radar',
+	'route',
 	'receipt',
 	'scale',
 	'scroll',
@@ -178,6 +179,7 @@ export const navigationSections: NavigationSection[] = [
 				title: 'Explore',
 				links: [
 					{ label: 'Timeline', link: '/nations/timeline', icon: 'history' },
+					{ label: 'Removals', link: '/nations/removals', icon: 'route' },
 					{ label: 'Data and Charts', link: '/nations/data', icon: 'chart-column', count: 'charts' },
 					{ label: 'Federal Offices', link: '/nations/federal-offices', icon: 'landmark' },
 					{ label: 'Self-Governance and Federal Programs', link: '/nations/federal-programs', icon: 'handshake' },
@@ -268,7 +270,7 @@ export const navigationSections: NavigationSection[] = [
 				]
 			},
 			{
-				title: 'State and Territorial Courts',
+				title: 'State Courts',
 				line: 'State and territorial courts, in cases that reach Native nations, people and lands.',
 				picture: { src: '/pictures/courts-and-cases/state-courts.jpg', alt: '', width: 720, height: 400, credit: 'New Mexico Supreme Court Building, Santa Fe, photograph by WhisperToMe, released by the photographer to the public domain.', source: 'https://commons.wikimedia.org/wiki/File:NMSupremeCourtSantaFe.JPG' },
 				links: [
@@ -392,13 +394,13 @@ export const navigationSections: NavigationSection[] = [
 			{
 				title: 'Take Part',
 				links: [
-					{ label: 'Contribute', link: '/requests?kind=contribute', icon: 'hand-heart' },
+					{ label: 'Contribute', link: '#request=contribute', icon: 'hand-heart' },
 					{ label: 'Sponsorship', link: '/sponsor', icon: 'heart' },
 					{ label: 'Store', link: '/store', icon: 'shopping-bag' }
 				]
 			}
 		],
-		holds: ['/requests', '/sponsors', '/sponsorship', '/book', '/orders', '/contributors', '/acknowledgments', '/charter', '/changelog', '/using-ai', '/join']
+		holds: ['/sponsors', '/sponsorship', '/book', '/orders', '/contributors', '/acknowledgments', '/charter', '/changelog', '/using-ai', '/join']
 	}
 ];
 
@@ -424,7 +426,7 @@ export function navigationSectionOf(path: string): NavigationSection | undefined
 
 /**
  * The link in a section's menu that is the page being read: an exact match,
- * with its query where the link has one (Contribute is /requests?kind=contribute).
+ * with its query where the link has one.
  */
 export function currentNavigationLink(section: NavigationSection | undefined, path: string, search: string): NavigationLink | undefined {
 	if (!section) return undefined;

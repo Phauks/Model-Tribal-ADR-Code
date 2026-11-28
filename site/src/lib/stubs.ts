@@ -10,6 +10,8 @@
  * Trevor dropped it on Nov. 27, 2026 ("we don't need to state stub twice on
  * a page"). The badge goes away on its own once the page has a write-up.
  */
+import { requestLink } from './report-request.ts';
+
 
 export type StubKind = 'court' | 'case' | 'law' | 'person';
 
@@ -27,10 +29,9 @@ export const stubPanelText: Record<StubKind, string> = {
 	person: 'This page has only the treaties the person signed.'
 };
 
-/** The request form, filled in to offer a write-up ("write-up") or a source ("sources") for the page. */
+/** Request a Change, filled in to offer a write-up ("write-up") or a source ("sources") for the page. */
 export function stubRequestLink(stub: Stub, field: 'write-up' | 'sources'): string {
-	const query = new URLSearchParams({ kind: 'contribute', record: stub.record, field });
-	return `/requests?${query.toString().replaceAll('%2F', '/')}`;
+	return requestLink({ kind: 'contribute', record: stub.record, field });
 }
 
 /** A row of Workspace › Stubs (src/lib/server/stub-list.ts). */

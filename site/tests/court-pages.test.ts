@@ -54,6 +54,6 @@ describe('court pages', () => {
 
 describe('stubs', () => {
 	it('links to the request form with the page filled in', () => {
-		expect(stubRequestLink({ kind: 'court', record: 'courts/fort-peck-court-of-appeals' }, 'write-up')).toBe('/requests?kind=contribute&record=courts/fort-peck-court-of-appeals&field=write-up');
+		expect(stubRequestLink({ kind: 'court', record: 'courts/fort-peck-court-of-appeals' }, 'write-up')).toBe('#request=contribute&record=courts/fort-peck-court-of-appeals&field=write-up');
 	});
 });

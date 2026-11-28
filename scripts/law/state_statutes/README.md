@@ -36,6 +36,10 @@ Check the split against the code's own table of contents before reading: a secti
 
 Records the project already holds under the same key (most were made by hand for a nation page) are left as they are; so are any listed in the adapter's `HELD`.
 
+## Stored texts
+
+Each record's section text is stored too (decision record 0068, Nov. 28, 2026): `texts.py run <state>` fetches and parses the code again into `/tmp/state-statute-texts/<state>/`, writes one text per record (catchline, text, history line), uploads it to the bucket at `state-statutes/<state>/<record key>.txt` and checks it there; `texts.py index` adds the rows to research/capture-index.csv. The site finds each text by the record's key, since many records share a chapter page or a title's PDF. North Carolina (ncleg.gov answers 503 to cloud sessions) and Wisconsin (refuses cloud sessions) have no stored texts yet.
+
 ## States
 
 | State | Adapter | Source |
@@ -60,6 +64,7 @@ Records the project already holds under the same key (most were made by hand for
 | New Jersey | `adapters/new_jersey.py` | The Legislature's plain-text file of the statutes, pub.njleg.state.nj.us/statutes (no stable address for one section: records link to the statutes database's search for the section's number) |
 | Pennsylvania | `adapters/pennsylvania.py` (cited by title: `<title>:<section>`; Consolidated Statutes only) | Whole-title pages, palegis.us/statutes/consolidated; each record links to the section's own page |
 | Connecticut | `adapters/connecticut.py` (the site omits its intermediate certificate, which fetch() adds) | Chapter pages of the revision of Jan. 1, 2025, cga.ct.gov/current/pub, with the 2026 Supplement's sections in their place |
+| New Hampshire | `adapters/new_hampshire.py` (section numbers are `<chapter>:<section>`, as the code prints them; a run of repealed sections prints as one entry, kept under its first number) | Merged chapter pages, gc.nh.gov/rsa/html/<title>/<chapter>/<chapter>-mrg.htm, listed on each title's contents page, downloaded on GitHub because the site refuses cloud sessions (and slows to a stop for stretches, so the adapter uses three workers and a short timeout); each record links to the section's own page |
 | Colorado | `adapters/colorado.py` (the HTML prints each title's contents first; a heading counts as a section only when text or a source note follows it) | The Office of Legislative Legal Services' yearly download of every title in HTML, olls.info/crs (listed on content.leg.colorado.gov); records link to the title's PDF |
 | Michigan | `adapters/michigan.py` (chapter 1, the constitution, is not read; a section's act is the public act it sits in) | Whole-chapter pages, legislature.mi.gov/Home/RenderDoc; each record links to the section's own page |
 | Wyoming | `adapters/wyoming.py` (no history lines in the PDFs, so no enactment years) | Title PDFs, wyoleg.gov/statutes/compress; each record links to its title's PDF at the section's page |
@@ -68,7 +73,7 @@ Records the project already holds under the same key (most were made by hand for
 | Iowa | `adapters/iowa.py` (each record links to the section's own PDF) | Chapter XML files, legis.iowa.gov (2026 edition), listed on each title's page |
 | Massachusetts | `adapters/massachusetts.py` (cited by chapter: section numbers are `<chapter>:<section>`; no history lines) | The Legislature's open data service, malegislature.gov/api, one call per chapter and per section |
 | Maryland | `adapters/maryland.py` (cited by article: section numbers are `<article>:<section>`; no catchlines and no history lines, so records are named by citation) | Whole-article HTML files, mgaleg.maryland.gov/2026RS/Statute_Web |
-| Missouri | `adapters/missouri.py` (not yet read; the site blocked this machine for some hours after about 850 pages, so the adapter asks for one page every 1.5 seconds on two workers) | Section pages, revisor.mo.gov, listed on each chapter's page |
+| Missouri | `adapters/missouri.py` (the site blocks scripts that ask quickly, so the adapter asks for one page every 1.5 seconds on two workers and stops after 25 failures in a row; the download was finished on GitHub; a catchline may hold dashes of its own, so it runs to the first dash the body goes on from) | Section pages, revisor.mo.gov, listed on each chapter's page |
 | Ohio | `adapters/ohio.py` (no history lines) | Whole-chapter pages, codes.ohio.gov, listed on each title's page |
 | Texas | `adapters/texas.py` (all 30 codes; section numbers are `<code>:<section>`, cited in each code's own form; catchlines given title case) | The Legislative Council's zipped HTML download of each code, tcss.legis.texas.gov/resources/Zips |
 | Oklahoma | `adapters/oklahoma.py` (read in the pilot; `run.py seed OK` turns the pilot's list into this pipeline's list) | Title PDFs, oklegislature.gov |

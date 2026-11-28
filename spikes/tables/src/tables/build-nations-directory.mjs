@@ -64,7 +64,7 @@ export function buildNationsDirectory(records) {
             reportProblem: {
               text: 'Report a problem',
               hiddenText: ` with ${name}`,
-              href: `/requests?record=tribes/${record.id}`,
+              href: `/nations/${record.id}#request&record=tribes/${record.id}`,
             },
           },
         };

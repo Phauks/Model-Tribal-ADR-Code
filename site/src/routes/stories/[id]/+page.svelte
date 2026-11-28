@@ -5,14 +5,11 @@
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
 	import type { PageProps } from './$types';
+	import { requestLink } from '#lib/report-request.ts';
 
 	let { data }: PageProps = $props();
 	const story = $derived(data.story);
-	const removal = $derived(
-		`/requests?${new URLSearchParams({ kind: 'remove', record: `stories/${story.id}` })
-			.toString()
-			.replaceAll('%2F', '/')}`
-	);
+	const removal = $derived(requestLink({ kind: 'remove', record: `stories/${story.id}` }));
 	const quoted = $derived(story.excerpts.filter((excerpt) => excerpt.text));
 	const cited = $derived(story.excerpts.filter((excerpt) => !excerpt.text));
 	/** The word count of the text shown in full, else the length the record gives (Trevor, Nov. 23, 2026). */

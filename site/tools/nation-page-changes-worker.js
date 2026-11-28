@@ -28,7 +28,9 @@ const restrictableList = /^\/nations\/[a-z0-9-]+\/restrictable\.json$/;
 const builtSitemap = /^\/sitemaps\/built\//;
 // The Worker's private data files (src/lib/built-files.ts), such as the list
 // of every copy it serves, which names copies nations chose to hide. Only
-// the Worker reads them, through its ASSETS binding.
+// the Worker reads them, through its ASSETS binding. The parts of the built
+// files too large to serve whole are kept there too, and go out only joined
+// at the file's own address (tools/split-large-files.mjs).
 const privateData = /^\/page-data\/private\//;
 
 /** Files the site filters (src/routes/restricted-files, restrictedFiles). */

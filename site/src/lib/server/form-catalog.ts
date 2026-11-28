@@ -46,7 +46,7 @@ const modelFolder = 'content/forms';
 /** Placeholders the website fills in itself. */
 const placeholderText: Record<string, string> = {
 	'project.lead_author': 'Trevor Goldsmith',
-	'project.contact': 'Ask through the [request page](/requests) on the project’s website.'
+	'project.contact': 'Use Request a Change, the flag at the top of every page of the project’s website.'
 };
 
 /** Readable names for the placeholders a form leaves to whoever fills it in. */
@@ -67,9 +67,7 @@ const placeholderLabels: Record<string, string> = {
 };
 
 /** Repository files a form may link to that have a page of their own on the site. */
-const sitePages: Record<string, string> = {
-	'docs/requests.md': '/requests'
-};
+const sitePages: Record<string, string> = {};
 
 /** A label without Markdown: no emphasis, code marks or link targets. */
 export function plainText(markdown: string): string {

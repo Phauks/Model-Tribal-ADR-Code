@@ -89,7 +89,7 @@ describe('form catalog', () => {
 			['text', 'Project use: Received', true]
 		]);
 		expect(markdown).toContain('| Name | %%F1%% |');
-		expect(markdown).toContain('[request page](/requests)');
+		expect(markdown).toContain('Use Request a Change, the flag at the top of every page');
 		expect(markdown).toContain('Led by Trevor Goldsmith.');
 	});
 
@@ -100,7 +100,7 @@ describe('form catalog', () => {
 		expect(interviewer.html).not.toContain('contributions.md');
 		expect(interviewer.html).toContain('rules for contributions and use only approved forms');
 		const withdrawal = catalog.find((form) => form.slug === 'change-or-withdrawal-request')!;
-		expect(withdrawal.html).toContain('href="/requests"');
+		expect(withdrawal.html).not.toContain('href="/requests"');
 		expect(statement.html).toContain('<p class="form-project-use"><strong>Project use.</strong>');
 		expect(statement.html).not.toMatch(/<h1/);
 	});

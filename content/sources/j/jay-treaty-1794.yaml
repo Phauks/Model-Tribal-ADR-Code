@@ -26,11 +26,16 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+file:
+  storage_key: treaties/jay-treaty-1794.txt
+  checksum: 2075c7dec35104e00af3665e482101bc53de9b14efbb1b0a83ff0606ed931059
+  media_type: text/plain
+  bytes: 56739
 rights:
   status: no-permission-needed
-  basis: public-domain
-  basis_note: Eighteenth-century treaty text; quoted with attribution.
-  redistribution: false
+  basis: us-government-work
+  basis_note: A work of the United States government, not subject to copyright (17 U.S.C. § 105).
+  redistribution: true
 jurisdictions:
 - level: international
   note: Great Britain (for Canada) and the United States
@@ -48,5 +53,5 @@ access:
   - free-web
 found_in:
 - 2026-11-21-canada-dispute-resolution
-notes: Read in the Avalon Project transcription (Yale Law School); the Statutes at Large page was not
-  checked. Existing Wayback capture found by scripts/find_archived_copies.py.
+- 2026-11-28-treaty-texts
+notes: 'Read in the Avalon Project transcription (Yale Law School); the Statutes at Large page was not checked. Existing Wayback capture found by scripts/find_archived_copies.py. Stored text, Nov. 28, 2026 (scripts/law/treaty_texts.py): the pages that hold it in 8 Stat. 116 (pp. 116–129), from the GovInfo scan''s text layer; the database''s transcription is not copied.'

@@ -88,6 +88,8 @@ declare module 'cloudflare:workers' {
 	export const env: WorkerEnvironment;
 	/** Keeps the Worker running until the promise settles, after the response has gone (at most 30 seconds). */
 	export function waitUntil(promise: Promise<unknown>): void;
+	/** Runs the work with env standing for these bindings, as tools/joined-files-worker.js does to join the files split into parts. */
+	export function withEnv<T>(env: unknown, work: () => T): T;
 	/** The Worker's own edge cache (Workers Cache), for purging what it keeps (src/lib/server/edge-cache.ts). Missing where the runtime has none. */
 	export const cache:
 		| {

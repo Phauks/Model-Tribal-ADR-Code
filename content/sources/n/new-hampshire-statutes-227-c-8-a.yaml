@@ -1,0 +1,50 @@
+key: new-hampshire-statutes-227-c-8-a
+kind: state-statute
+citation:
+  type: legislation
+  title: Discovery of Remains and Notification of Authorities
+  title-short: N.H. Rev. Stat. Ann. § 227-C:8-a
+  container-title: New Hampshire Revised Statutes Annotated
+  container-title-short: N.H. Rev. Stat. Ann.
+  section: 227-C:8-a
+  author:
+  - literal: New Hampshire General Court
+  issued:
+    date-parts:
+    - - 1986
+  URL: https://gc.nh.gov/rsa/html/XIX/227-C/227-C-8-a.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 28
+original_link: https://gc.nh.gov/rsa/html/XIX/227-C/227-C-8-a.htm
+retrieved: '2026-11-28'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-28'
+state_law:
+  relevance: core
+  citation: N.H. Rev. Stat. Ann. § 227-C:8-a (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NH
+topics:
+- state-indian-law
+found_in:
+- 2026-11-28-state-statutes-new-hampshire-west-virginia
+notes: 'Indigo Book citation: N.H. Rev. Stat. Ann. § 227-C:8-a (2026). History: 1986, 80:10, eff. Jan. 1, 1987. 2023, 200:1, eff. Oct. 3, 2023. 2026, 292:8, eff. July 10, 2026. Text read from the New Hampshire General Court''s merged chapter page for the section in the online Revised Statutes (gc.nh.gov/rsa) on Nov. 28, 2026. Found by the state statutes sweep (terms: native american; native); AI reader''s verdict core: Discovery of unmarked burials including Native American remains and disposition. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-28'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: native american; native'

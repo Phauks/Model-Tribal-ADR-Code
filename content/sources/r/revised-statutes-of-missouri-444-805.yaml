@@ -1,0 +1,50 @@
+key: revised-statutes-of-missouri-444-805
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Mo. Rev. Stat. § 444.805
+  container-title: Revised Statutes of Missouri
+  container-title-short: Mo. Rev. Stat.
+  section: '444.805'
+  author:
+  - literal: Missouri Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1979
+  URL: https://revisor.mo.gov/main/OneSection.aspx?section=444.805
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 28
+original_link: https://revisor.mo.gov/main/OneSection.aspx?section=444.805
+retrieved: '2026-11-28'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-28'
+state_law:
+  relevance: incidental
+  citation: Mo. Rev. Stat. § 444.805 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MO
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Mo. Rev. Stat. § 444.805 (2026). History: L. 1979 H.B. 459, A.L. 1982 S.B. 737, A.L. 1987 H.B. 669, A.L. 1988 H.B. 1836, A.L. 1993 H.B. 312 & 257, A.L. 2014 S.B. 642. Text read from the Missouri Revisor of Statutes'' page for the section in the Revised Statutes of Missouri (revisor.mo.gov) on Nov. 27 or 28, 2026. Found by the state statutes sweep (terms: indian lands; indian); AI reader''s verdict incidental: Mining definition excludes Indian lands from federal lands; excerpt cut. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-28'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian lands; indian'

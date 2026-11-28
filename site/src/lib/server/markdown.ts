@@ -15,7 +15,7 @@ import { verifyLink, fileName } from '../checksums.ts';
 import { copyHashHtml } from '../copy-hash.ts';
 import { copyPagePath, copyPath, mediaLabel, type PublicCopy } from '../public-copies.ts';
 import { officialReportLinks, readingLinksHtml } from '../reading-links.ts';
-import { glossary, publicCopyFor, publicCopyWithDigest, type SourceRecord } from './content.ts';
+import { glossary, publicCopyFor, publicCopyWithDigest, storedStatuteText, type SourceRecord } from './content.ts';
 import { escapeHtml } from '../escape-html.ts';
 import { recordPageLink } from './law-records.ts';
 
@@ -109,6 +109,8 @@ export function savedCopyFor(source: SourceRecord | undefined): PublicCopy | und
 	return (
 		officialReportLinks(source.reading_links).map(publicCopyFor).find(Boolean) ??
 		publicCopyWithDigest(stored) ??
+		// A state statute's stored text is found by its record, since many sections share one page (decision record 0068).
+		storedStatuteText(source.key) ??
 		publicCopyFor(source.original_link) ??
 		publicCopyFor(source.citation.URL)
 	);
