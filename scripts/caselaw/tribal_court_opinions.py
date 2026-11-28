@@ -82,7 +82,9 @@ SNIPPET_CHARS = 240
 # Redacted opinions (scripts/caselaw/redaction.py; policy in
 # research/analyses/2026-11-24-redaction-practices-for-opinions.md).
 REDACTED_NOTICE = "Names and some details are replaced to protect privacy. Our changes are in [brackets]."
-NAME_REQUEST = "/requests?kind=replace-name&record=copies/"
+def request_link(kind: str, key: str) -> str:
+    """The copy's own page with Request a Change open and filled in (site/src/lib/report-request.ts, requestLink)."""
+    return f"/copies/view/{key}#request={kind}&record=copies/{key}"
 
 
 def load_settings() -> dict:
@@ -197,13 +199,13 @@ def opinion_page(case: dict, fragment: str, key: str, source_link: str, redactor
         body = redactor.html(body)
     elif links is not None:
         body = links.rewrite(body, key)
-    removal = "/requests?kind=remove&record=copies/" + key
+    removal = request_link("remove", key)
     title = f"{name}, {citations} ({court} {date[:4]})" if citations else f"{name} ({court} {date[:4]})"
     if redacted:
         source = ("<p>Text from the Caselaw Access Project, Harvard Law School Library, with the publisher's headnotes removed. "
                   f"The nation can have this copy taken down: <a href=\"{html.escape(removal)}\" target=\"_top\">Ask to remove it</a>.</p>\n"
                   f"<p class=\"notice\">{REDACTED_NOTICE} "
-                  f"<a href=\"{html.escape(NAME_REQUEST + key)}\" target=\"_top\">Ask to replace a name</a>.</p>\n")
+                  f"<a href=\"{html.escape(request_link('replace-name', key))}\" target=\"_top\">Ask to replace a name</a>.</p>\n")
     else:
         source = ("<p>Text from the Caselaw Access Project, Harvard Law School Library, with the publisher's headnotes removed. "
                   f"<a class=\"external\" href=\"{html.escape(source_link)}\" target=\"_blank\" rel=\"noopener\">Original</a>. "

@@ -213,7 +213,7 @@
 			{/each}
 			<p>{event.recording}</p>
 			<p class="small muted">
-				To ask about access, or anything else about this event, <a href="/requests?kind=question&amp;record=events">write to the project</a>.
+				To ask about access, or anything else about this event, <a href="#request=question&amp;record=events">write to the project</a>.
 			</p>
 		</div>
 	</div>

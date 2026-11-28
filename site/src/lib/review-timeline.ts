@@ -131,7 +131,7 @@ export const steps: TimelineStep[] = [
 		summary:
 			'Every nation whose law is cited or described is offered the chance, through its own offices, to review what the work says about it before publication.',
 		details:
-			'Each nation’s page shows where its review stands, from “drafted from public sources” to “approved by nation,” as the [charter](/charter) sets out. A nation can also ask at any time to [correct, restrict or remove](/requests) material about it.'
+			'Each nation’s page shows where its review stands, from “drafted from public sources” to “approved by nation,” as the [charter](/charter) sets out. A nation can also ask at any time to correct, restrict or remove material about it.'
 	},
 	{
 		id: 'publish-the-first-edition',

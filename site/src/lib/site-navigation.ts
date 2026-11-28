@@ -392,13 +392,13 @@ export const navigationSections: NavigationSection[] = [
 			{
 				title: 'Take Part',
 				links: [
-					{ label: 'Contribute', link: '/requests?kind=contribute', icon: 'hand-heart' },
+					{ label: 'Contribute', link: '#request=contribute', icon: 'hand-heart' },
 					{ label: 'Sponsorship', link: '/sponsor', icon: 'heart' },
 					{ label: 'Store', link: '/store', icon: 'shopping-bag' }
 				]
 			}
 		],
-		holds: ['/requests', '/sponsors', '/sponsorship', '/book', '/orders', '/contributors', '/acknowledgments', '/charter', '/changelog', '/using-ai', '/join']
+		holds: ['/sponsors', '/sponsorship', '/book', '/orders', '/contributors', '/acknowledgments', '/charter', '/changelog', '/using-ai', '/join']
 	}
 ];
 
@@ -424,7 +424,7 @@ export function navigationSectionOf(path: string): NavigationSection | undefined
 
 /**
  * The link in a section's menu that is the page being read: an exact match,
- * with its query where the link has one (Contribute is /requests?kind=contribute).
+ * with its query where the link has one.
  */
 export function currentNavigationLink(section: NavigationSection | undefined, path: string, search: string): NavigationLink | undefined {
 	if (!section) return undefined;

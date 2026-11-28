@@ -51,7 +51,7 @@ describe('figure addresses', () => {
 
 	it('links the removal request to the upload', () => {
 		expect(figureRemovalLink(figureSource('picture', '/files/U-20261123-7KQ2MD/a.jpg')!)).toBe(
-			'/requests?kind=remove&record=uploads/U-20261123-7KQ2MD'
+			'#request=remove&record=uploads/U-20261123-7KQ2MD'
 		);
 	});
 });
@@ -85,7 +85,7 @@ describe('figures on the website', () => {
 			'<a href="/files/U-20261123-7KQ2MD/council%20house.jpg" class="image-viewer-link" aria-label="A wooden building with a porch and three people standing in front. (open larger)" title="Open larger" data-sveltekit-reload=""><img '
 		);
 		expect(html).toMatch(/<figcaption>\n<p>The council house in 1934.<\/p>\n<div class="essay-figure-credit">\n<p>Photo by the <em>Tribal Archives<\/em>.<\/p>/);
-		expect(html).toContain('href="/requests?kind=remove&amp;record=uploads/U-20261123-7KQ2MD"');
+		expect(html).toContain('href="#request=remove&amp;record=uploads/U-20261123-7KQ2MD"');
 		expect(html).not.toContain('<p>A wooden building');
 	});
 

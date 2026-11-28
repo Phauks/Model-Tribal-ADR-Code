@@ -97,7 +97,7 @@
 		A nation can ask us to correct, restrict or remove material about it, or offer to
 		contribute. Requests are private and need no account.
 	</p>
-	<p><a class="button" href="/requests">Make a request</a></p>
+	<p><a class="button" href="#request">Make a request</a></p>
 </section>
 
 <!-- The rolling row of sponsors (Trevor, Nov. 27, 2026; docs/sponsorship.md, "The home page row"). -->

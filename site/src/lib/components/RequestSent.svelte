@@ -1,7 +1,6 @@
 <script lang="ts">
 	// What the reader sees once a request is saved: the reference number and
-	// what happens next (docs/requests.md). Used by the request page and the
-	// Request a Change dialog.
+	// what happens next (docs/requests.md), in the Request a Change dialog.
 	import type { RequestKind } from '#lib/requests.ts';
 
 	let {
