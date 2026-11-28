@@ -100,6 +100,7 @@ const walkStatic = (folder) => {
 walkStatic(staticFolder);
 console.log(`Static files: ${fileCount.toLocaleString('en-US')} of Cloudflare's ${fileCountLimit.toLocaleString('en-US')} (this check fails above ${fileCountAtMost.toLocaleString('en-US')}).`);
 if (fileCount > fileCountAtMost) problems.push(`The site has ${fileCount.toLocaleString('en-US')} static files, over this check's ${fileCountAtMost.toLocaleString('en-US')} (Cloudflare's limit is ${fileCountLimit.toLocaleString('en-US')} a version).`);
+// The build splits a file this large into parts (tools/split-large-files.mjs), all but the scripts in /_app/, so one found here is a script, or the build skipped that step.
 for (const file of bigFiles) problems.push(`The static file ${file} is over this check's ${mib(fileAtMost)} (Cloudflare refuses one over ${mib(fileLimit)}).`);
 
 if (problems.length) {
