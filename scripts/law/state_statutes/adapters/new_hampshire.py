@@ -42,7 +42,12 @@ class NewHampshire(State):
     SOURCE_NOTE = "Text read from the New Hampshire General Court's merged chapter page for the section in the online Revised Statutes (gc.nh.gov/rsa) on Nov. 28, 2026."
     NATION_NAMES = ('Abenaki', 'Abnaki', 'Pennacook', 'Cowasuck', 'Koasek', 'Sokoki', 'Wabanaki')
     PLACE_NAMES = ('Penacook', 'Ossipee', 'Pequawket', 'Indian Stream', 'Indian Head', 'Indian Pond', 'Indian River', 'Indian Brook')
-    WORKERS = 8
+    WORKERS = 3
+
+    @staticmethod
+    def get(url: str, tries: int = 3, timeout: int = 30) -> bytes:
+        # The site slows to a stop for stretches; a short timeout lets the next round try again rather than wait.
+        return State.get(url, tries=tries, timeout=timeout)
 
     def fetch(self, raw: Path) -> None:
         raw.mkdir(parents=True, exist_ok=True)
@@ -98,11 +103,11 @@ class NewHampshire(State):
                 text = text_of(body.group(1)) if body else ''
                 note = re.search(r'<sourcenote>(.*?)</sourcenote>', part, re.S)
                 history = re.sub(r'^Source\.\s*', '', text_of(note.group(1))) if note else ''
+                # A run of repealed sections prints as one: "3:7-a to 3:7-c Repealed by 1977, 224:2" or "72:16, 72:17 Repealed by 1970, 5:8".
+                heading = re.sub(r'^(?:,|to)\s*[0-9]+[A-Za-z-]*:[0-9A-Za-z.-]+\s*', '', heading)
                 status = 'live'
-                if GONE.match(heading) or (not text and not heading):
-                    status = 'repealed'
-                elif not text:
-                    status = 'reserved'
+                if GONE.match(heading) or not text:
+                    status = 'reserved' if heading.lower().startswith('reserved') else 'repealed'
                 law = LAW.match(history)
                 yield Section(number=number, heading=heading.rstrip('.').strip(), text=text, url=url, history=history, status=status,
                               act=f'{law.group(1)}-{law.group(2)}' if law else '', enacted=[int(law.group(1))] if law else None, **common)
